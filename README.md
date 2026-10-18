@@ -484,10 +484,9 @@ see the comments there:
   (Qt 6.10+) only has template constructors over a C++ range and isn't bound.
 * `QReadWriteLock` derives from `QBasicReadWriteLock` since Qt 6.11, like
   `QMutex` from `QBasicMutex`: the bases are listed so the methods are
-  inherited.  The std-style `try_lock()` alias of `tryLock()` would be the
-  same Crystal method, so bindgen drops it; the `try_acquire()` alias of
-  `tryAcquire(int n = 1)` is ignored, as Crystal would let it replace
-  `try_acquire(n = 1)`.  `try_lock_for` and friends are templates.
+  inherited.  The std-style `try_lock()` and `try_acquire()` aliases of
+  `tryLock()` and `tryAcquire(n = 1)` would be the same Crystal methods, so
+  bindgen drops them.  `try_lock_for` and friends are templates.
   `QMutexLocker` is a template in Qt 6 and isn't bound.
   `QException`, which only serves throwing across QtConcurrent threads, isn't
   bound: it would shadow `::Exception` inside the module.

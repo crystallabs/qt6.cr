@@ -532,13 +532,6 @@ types: # Type rewrite rules
   # is never called from the thread.
   QThread: { sub_class: false }
   QRunnable: { sub_class: false }
-  # The std-style try_acquire() alias of tryAcquire(int n = 1) has another
-  # Crystal signature than `try_acquire(n = 1)`, so bindgen keeps both, and
-  # Crystal lets the zero-argument one replace the defaulted overload.  (The
-  # try_lock() aliases of tryLock() have the same signature and are dropped.)
-  QSemaphore:
-    ignore_methods:
-      - try_acquire
   # Remaining models, styles and providers
   "QIconEngine::ScaledPixmapArgument": { ignore: true } # Only virtual_hook's data
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above
