@@ -68,6 +68,21 @@ module Qt
     end
   end
 
+  # A date in a `Calendar`, see `Calendar#parts_from_date`.
+  struct CalendarYearMonthDay
+    def year : Int32
+      @unwrap.year
+    end
+
+    def month : Int32
+      @unwrap.month
+    end
+
+    def day : Int32
+      @unwrap.day
+    end
+  end
+
   # A range of pages, see `PageRanges#to_range_list`.
   struct PageRange
     def from : Int32

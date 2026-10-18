@@ -533,3 +533,41 @@ enums:
   "QTextBoundaryFinder::BoundaryReason": TextBoundaryFinder::BoundaryReason
   "QTextBoundaryFinder::BoundaryReasons": TextBoundaryFinder::BoundaryReasons
   "QChar::Script": { destination: UnicodeScript, prefix: "Script_" } # QFontDatabase fallback families
+  # Events, devices and input
+  "QEventPoint::State": EventPoint::State
+  "QEventPoint::States": EventPoint::States
+  "QInputDevice::Capability": InputDevice::Capability
+  "QInputDevice::Capabilities":
+    destination: InputDevice::Capabilities
+    # Qt's All is all bits set, which a Crystal @[Flags] enum defines itself,
+    # so map it as a plain enum; the constants still combine with `|`.
+    flags: false
+  "Qt::Modifier": Modifier # QKeyCombination
+  "Qt::Modifiers": Modifiers
+  "QPointingDevice::PointerTypes": PointingDevice::PointerTypes
+  "QPointingDevice::GrabTransition": PointingDevice::GrabTransition
+  "Qt::NativeGestureType": NativeGestureType
+  "QContextMenuEvent::Reason": ContextMenuEvent::Reason
+  "QPinchGesture::ChangeFlag": PinchGesture::ChangeFlag
+  "QPinchGesture::ChangeFlags": PinchGesture::ChangeFlags
+  "QSwipeGesture::SwipeDirection": SwipeGesture::SwipeDirection
+  "QGestureRecognizer::ResultFlag": GestureRecognizer::ResultFlag
+  "QGestureRecognizer::Result": GestureRecognizer::Result
+  "QInputMethod::Action": InputMethod::Action
+  "QProcessEnvironment::Initialization": ProcessEnvironment::Initialization
+  "QCalendar::System": Calendar::System
+  "QJsonDocument::JsonFormat": JsonDocument::JsonFormat
+  "QJsonValue::Type": JsonValue::Type
+  "QJsonParseError::ParseError": JsonParseError::ParseError
+  "QXmlStreamReader::TokenType": XmlStreamReader::TokenType
+  "QXmlStreamReader::ReadElementTextBehaviour": XmlStreamReader::ReadElementTextBehaviour
+  "QXmlStreamReader::Error": XmlStreamReader::Error
+  "QXmlStreamWriter::Error": XmlStreamWriter::Error
+  "QDataStream::Version": DataStream::Version
+  "QDataStream::ByteOrder": DataStream::ByteOrder
+  "QDataStream::Status": DataStream::Status
+  "QDataStream::FloatingPointPrecision": DataStream::FloatingPointPrecision
+  "QLibrary::LoadHint": Library::LoadHint
+  "QLibrary::LoadHints": Library::LoadHints
+  "QResource::Compression": Resource::Compression
+  QtMsgType: MsgType # QLoggingCategory

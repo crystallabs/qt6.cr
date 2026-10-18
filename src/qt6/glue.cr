@@ -38,6 +38,17 @@ module Qt
       end
     end
 
+    # `std::chrono::nanoseconds`
+    module TimeSpanNanoseconds
+      def self.unwrap(nsec : Int64) : ::Time::Span
+        ::Time::Span.new(nanoseconds: nsec)
+      end
+
+      def self.wrap(duration : ::Time::Span) : Int64
+        duration.total_nanoseconds.to_i64
+      end
+    end
+
     # `std::chrono::seconds`
     module TimeSpanSeconds
       def self.unwrap(secs : Int64) : ::Time::Span

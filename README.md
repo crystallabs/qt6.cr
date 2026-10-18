@@ -346,10 +346,9 @@ see the comments there:
   superclass methods as pointers: bindgen passes them as is, which Crystal
   only accepts for `nil` or an object, not for their union, which the jump
   table of a Crystal override passes on.
-* `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`),
-  `std::optional<QFont>` (`FontComboBox#display_font`) and
-  `QList<QKeyCombination>` (`KeySequenceEdit#finishing_key_combinations`) have
-  no mapping yet and are ignored.
+* `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`)
+  and `std::optional<QFont>` (`FontComboBox#display_font`) have no mapping yet
+  and are ignored.
 * `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
   `QPainterPath::Element`, `QPageRanges::Range` and
   `QColorSpace::PrimaryPoints` are copied structures passed by value, like
@@ -363,8 +362,31 @@ see the comments there:
 * `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
   `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`;
   `QGradientStops` (a list of `std::pair`) too, use `Gradient#set_color_at`.
-* Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
-  the `QEvent` constructor tags, are ignored, which drops the methods using them.
+* The QXmlStream classes return names, values and text as `QStringView`, which
+  has no mapping (a view of a temporary `QString` would dangle in
+  `RegularExpression#match`), so `src/qt6/xml_stream.cr` wraps the helpers of
+  `ext/xml_helper.hpp`: `reader.name`, `attribute.value`,
+  `reader.attributes.value("id")`.  `QXmlStreamAttributes` is a
+  `QList<QXmlStreamAttribute>`, so `reader.attributes.map(&.name)` works.
+* `QDataStream` streams `QString` and `QByteArray` through free operators,
+  which bindgen doesn't wrap as methods: `src/qt6/data_stream.cr` adds
+  `stream << "text"`, `stream.read(String)` and `stream.read(Int32)` over the
+  wrapped `>>(Int32*)`.  The `>>` of a copied structure (`QPoint &`) is
+  dropped like `QValidator::validate` above.
+* `std::chrono::nanoseconds` maps to `::Time::Span` like milliseconds:
+  `ChronoTimer.new(5.milliseconds)`, `ElapsedTimer#duration_elapsed`.
+* `QKeyCombination` and `QPointingDeviceUniqueId` are copied structures:
+  `KeyCombination.new(KeyboardModifiers::ControlModifier, Key::A)`.
+  `QCalendar::YearMonthDay` too, with its fields from `copied_fields.cr`.
+* `Qt::RegularExpressionMatchIterator` (`RegularExpression#global_match`) is
+  an `Iterator(RegularExpressionMatch)`.
+* `QJsonObject#[]` returns a `JsonValue` copy; `QJsonArray#[]` a
+  `JsonValueRef`, whose `#assign!` writes through.  `QJsonObject#insert`
+  returns a `JsonObjectIterator`.  The CBOR classes aren't bound.
+* Types without a mapping yet, like `QFont::Tag` or the `QEvent` constructor
+  tags, are ignored, which drops the methods using them.  A `bool *ok =
+  nullptr` argument comes out as `ok : Bool*? = true`, which only compiles
+  when `nil` is passed explicitly: `bits.to_u_int32(endian, nil)`.
 
 ## Future things to do
 

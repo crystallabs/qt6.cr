@@ -284,3 +284,21 @@ QImageWriter:
 QTextDocumentWriter:
   keep_alive:
     "^setDevice$": true
+QSignalMapper:
+  keep_alive:
+    "^setMapping$": true
+QGestureRecognizer:
+  keep_alive:
+    "^registerRecognizer$": true
+QXmlStreamReader:
+  keep_alive:
+    "^set(Device|EntityResolver)$": true
+QXmlStreamWriter:
+  keep_alive:
+    "^setDevice$": true
+QDataStream:
+  keep_alive:
+    "^setDevice$": true
+QBasicTimer:
+  keep_alive:
+    "^start$": true
