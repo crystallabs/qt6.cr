@@ -319,6 +319,15 @@ see the comments there:
   `StringListModel` can't be subclassed from Crystal (`sub_class: false`),
   as bindgen would forward those private overrides; subclass
   `AbstractListModel` instead.
+* `QAbstractTextDocumentLayout::PaintContext`, a bare struct, is ignored, which
+  drops `draw`, the layout's pure virtual: the class gets `sub_class: false`,
+  as a subclass from Crystal would stay abstract in C++.  Use
+  `PlainTextDocumentLayout`, or `TextDocument#document_layout`.
+* `QTreeWidgetItemIterator::IteratorFlags` maps as a plain enum, as Qt's
+  `All = 0` is what a Crystal `@[Flags]` enum calls `None`; its constants still
+  combine with `|`.  `Qt::TreeWidgetItemIterator` is an `Iterator`.
+* `QHeaderView`'s protected `initialize()` is dropped, as Crystal reserves the
+  name for constructors.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

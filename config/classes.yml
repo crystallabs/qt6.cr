@@ -231,6 +231,24 @@ classes:
   QSplitter: Splitter
   QStackedWidget: StackedWidget
   QTreeView: TreeView
+  QHeaderView: HeaderView
+  QTreeWidget: TreeWidget
+  QTreeWidgetItem: TreeWidgetItem
+  QTreeWidgetItemIterator: TreeWidgetItemIterator
+  QColumnView: ColumnView
+  QItemDelegate: ItemDelegate
+  QDataWidgetMapper: DataWidgetMapper
+  QPlainTextEdit: PlainTextEdit
+  QPlainTextDocumentLayout: PlainTextDocumentLayout
+  QAbstractTextDocumentLayout: AbstractTextDocumentLayout
+  QTextBrowser: TextBrowser
+  QTextBlock: TextBlock
+  QTextBlockUserData: TextBlockUserData
+  QSyntaxHighlighter: SyntaxHighlighter
+  QUndoCommand: UndoCommand
+  QUndoStack: UndoStack
+  QUndoGroup: UndoGroup
+  QUndoView: UndoView
   QAbstractProxyModel: AbstractProxyModel
   QSortFilterProxyModel: SortFilterProxyModel
   QProcess: Process

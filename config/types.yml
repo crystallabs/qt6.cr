@@ -216,6 +216,19 @@ types: # Type rewrite rules
   "QList<QInputMethodEvent::Attribute>": { ignore: true }
 
   "QList<QTextEdit::ExtraSelection>": { ignore: true }
+  # Bare structs of QPalette, QRectF and a QList of {QTextCursor,
+  # QTextCharFormat}, which drops QAbstractTextDocumentLayout#draw and
+  # QPlainTextEdit#get_paint_context.
+  "QAbstractTextDocumentLayout::PaintContext": { ignore: true }
+  # ...so `draw`, a pure virtual, isn't wrapped, and a subclass from Crystal
+  # would stay abstract in C++: use QPlainTextDocumentLayout.
+  QAbstractTextDocumentLayout: { sub_class: false }
+  "QAbstractTextDocumentLayout::Selection": { ignore: true }
+  "QList<QAbstractTextDocumentLayout::Selection>": { ignore: true }
+  # QTextLayout isn't bound; drops QTextBlock#text_formats.
+  "QTextLayout::FormatRange": { ignore: true }
+  "QList<QTextLayout::FormatRange>": { ignore: true }
+  "QTextBlock::iterator": { ignore: true } # Over QTextFragment, which isn't bound
   "QList<QTextOption::Tab>": { ignore: true }
   "QTextOption::Tab": { ignore: true }
   "QFormLayout::TakeRowResult": { ignore: true }
@@ -354,6 +367,11 @@ types: # Type rewrite rules
   # QAbstractListModel in between, which made them private, so the generated
   # C++ doesn't compile.  Subclass AbstractListModel instead.
   QStringListModel: { sub_class: false }
+  QHeaderView:
+    ignore_methods:
+      # bindgen wraps Qt's protected `initialize()` under that name, which
+      # Crystal reserves for constructors, so the wrapper doesn't compile.
+      - initialize
   QPolygon:
     ignore_methods: # Variadic, which can't be wrapped
       - setPoints

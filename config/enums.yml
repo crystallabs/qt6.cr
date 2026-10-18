@@ -364,3 +364,17 @@ enums:
   "QEasingCurve::Type": EasingCurve::Type
   "QTimeLine::State": TimeLine::State
   "QTimeLine::Direction": TimeLine::Direction
+  "QHeaderView::ResizeMode": HeaderView::ResizeMode
+  "QTreeWidgetItem::ItemType": TreeWidgetItem::ItemType
+  "QTreeWidgetItem::ChildIndicatorPolicy": TreeWidgetItem::ChildIndicatorPolicy
+  "QTreeWidgetItemIterator::IteratorFlags":
+    destination: TreeWidgetItemIterator::IteratorFlags
+    # Qt's `All = 0` means no filter, which a Crystal @[Flags] enum calls None
+    # and defines All as the union of the flags; so map it as a plain enum,
+    # whose constants still combine with `|`.
+    flags: false
+  "QDataWidgetMapper::SubmitPolicy": DataWidgetMapper::SubmitPolicy
+  "QPlainTextEdit::LineWrapMode": PlainTextEdit::LineWrapMode
+  "QTextDocument::ResourceType": TextDocument::ResourceType
+  "Qt::HitTestAccuracy": HitTestAccuracy
+  "Qt::ItemDataRole": ItemDataRole # The item methods take roles as `int`
