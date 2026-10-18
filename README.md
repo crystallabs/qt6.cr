@@ -38,8 +38,11 @@ This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
 
 # Installation
 
-Add the shard to your `shard.yml`.  The binding for your system's Qt is
-generated on first use, so bindgen's dependencies below are needed:
+Add the shard to your `shard.yml`.  The generated bindings for the platforms
+CI builds (see [Platform Support](#platform-support)) are included, and
+compiled on first use, which needs a C++ compiler, `make` and the Qt
+development files.  On other platforms, generate the binding for your system's
+Qt first, see [Generating the bindings](#generating-the-bindings).
 
 ```yaml
 dependencies:
@@ -53,7 +56,8 @@ under License below.)
 
 ## Additional development dependencies
 
-Using your system's package manager:
+Using your system's package manager (LLVM, Clang and CMake are only needed to
+generate a binding):
 
 * **ArchLinux** `pacman -S qt6-base gc cmake llvm clang pcre2`
 * **Debian/Ubuntu/Devuan** `apt-get install qt6-base-dev qt6-base-dev-tools libgc-dev cmake llvm-dev clang libclang-dev libpcre2-dev libz-dev libstdc++-dev`
@@ -180,6 +184,11 @@ versions, run the generation yourself as described below.
 
 **Important**: For this you'll also have to meet the dependencies of bindgen.
 See `lib/bindgen/README.md` and `lib/bindgen/clang/README.md`.
+
+The generated `src/qt6/binding/binding_*.cr` and `ext/qt_binding_*.cpp` of the
+platforms CI builds are committed.  CI regenerates them on every run, warns
+when the committed ones are out of date, and uploads the fresh ones as the
+`binding-<platform>` workflow artifact: download it and commit its two files.
 
 ## Deprecated Qt API
 

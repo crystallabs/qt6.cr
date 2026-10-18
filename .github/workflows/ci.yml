@@ -68,7 +68,7 @@ jobs:
       - name: Install shards
         run: shards install
 
-      # src/qt6/binding/ holds the generated bindings, which aren't checked.
+      # src/qt6/binding/ holds the generated bindings, which aren't formatted.
       - name: Check formatting
         run: crystal tool format --check src/qt6.cr src/qt6/*.cr spec samples support
 
@@ -91,6 +91,23 @@ jobs:
             echo "::error::The bindings use deprecated Qt API, see above."
             exit 1
           fi
+
+      # The bindings for the CI platforms are committed, so users don't need
+      # bindgen's dependencies.  When this warns, download the artifact and
+      # commit its files.
+      - name: Check the committed binding
+        run: |
+          if [ -n "$(git status --porcelain -- src/qt6/binding ext)" ]; then
+            echo "::warning::The committed binding for $BINDING_PLATFORM is missing or out of date, see the binding-$BINDING_PLATFORM artifact."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.llvm != 14
+        with:
+          name: binding-${{ env.BINDING_PLATFORM }}
+          path: |
+            src/qt6/binding/binding_${{ env.BINDING_PLATFORM }}.cr
+            ext/qt_binding_${{ env.BINDING_PLATFORM }}.cpp
 
       - name: Run specs
         run: crystal spec
