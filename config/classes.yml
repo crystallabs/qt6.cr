@@ -175,3 +175,20 @@ classes:
   QListWidgetItem: ListWidgetItem
   QMargins: Margins
   QLocale: Locale
+  QMessageBox: MessageBox
+  QSettings: Settings
+  QDate: Date
+  QTime: Time
+  QDateTime: DateTime
+  QRegularExpression: RegularExpression
+  QRegularExpressionMatch: RegularExpressionMatch
+  QClipboard: Clipboard
+  QSplitter: Splitter
+  QStackedWidget: StackedWidget
+  QTreeView: TreeView
+  QAbstractProxyModel: AbstractProxyModel
+  QSortFilterProxyModel: SortFilterProxyModel
+  QProcess: Process
+  QAbstractAnimation: AbstractAnimation
+  QVariantAnimation: VariantAnimation
+  QPropertyAnimation: PropertyAnimation

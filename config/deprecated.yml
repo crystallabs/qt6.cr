@@ -9,6 +9,22 @@ QPolygon:
 QCoreApplication:
   ignore_methods:
   - compressEvent
+QDate:
+  ignore_methods:
+  - startOfDay
+  - endOfDay
+QDateTime:
+  ignore_methods:
+  - setTimeSpec
+  - setOffsetFromUtc
+  - toTimeSpec
+  - fromMSecsSinceEpoch
+  - fromSecsSinceEpoch
+QSortFilterProxyModel:
+  ignore_methods:
+  - invalidateFilter
+  - invalidateRowsFilter
+  - invalidateColumnsFilter
 QImage:
   ignore_methods:
   - mirrored

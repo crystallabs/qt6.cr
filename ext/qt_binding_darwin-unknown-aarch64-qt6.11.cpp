@@ -200,8 +200,8 @@ extern "C" CrystalString bg_QObject_objectName_(QObject * _self_) {
   return qstring_to_crystal(_self_->objectName());
 }
 
-extern "C" void bg_QObject_setObjectName_QAnyStringView(QObject * _self_, QAnyStringView & name) {
-  _self_->setObjectName(name);
+extern "C" void bg_QObject_setObjectName_QAnyStringView(QObject * _self_, CrystalString name) {
+  _self_->setObjectName(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" bool bg_QObject_isWidgetType_(QObject * _self_) {
@@ -384,6 +384,10 @@ extern "C" void bg_QObject_disconnectNotify_const_QMetaMethod_R(QObject * _self_
   _self_->disconnectNotify(signal);
 }
 
+extern "C" QAbstractAnimation * bg_QObject_CAST_AbstractAnimation_(QObject * _self_) {
+  return bindgen_dynamic_cast<QAbstractAnimation *>(_self_);
+}
+
 extern "C" QEventLoop * bg_QObject_CAST_EventLoop_(QObject * _self_) {
   return bindgen_dynamic_cast<QEventLoop *>(_self_);
 }
@@ -394,6 +398,10 @@ extern "C" QAbstractEventDispatcher * bg_QObject_CAST_AbstractEventDispatcher_(Q
 
 extern "C" QAbstractItemModel * bg_QObject_CAST_AbstractItemModel_(QObject * _self_) {
   return bindgen_dynamic_cast<QAbstractItemModel *>(_self_);
+}
+
+extern "C" QAbstractProxyModel * bg_QObject_CAST_AbstractProxyModel_(QObject * _self_) {
+  return bindgen_dynamic_cast<QAbstractProxyModel *>(_self_);
 }
 
 extern "C" QCoreApplication * bg_QObject_CAST_CoreApplication_(QObject * _self_) {
@@ -412,8 +420,28 @@ extern "C" QMimeData * bg_QObject_CAST_MimeData_(QObject * _self_) {
   return bindgen_dynamic_cast<QMimeData *>(_self_);
 }
 
+extern "C" QProcess * bg_QObject_CAST_Process_(QObject * _self_) {
+  return bindgen_dynamic_cast<QProcess *>(_self_);
+}
+
+extern "C" QVariantAnimation * bg_QObject_CAST_VariantAnimation_(QObject * _self_) {
+  return bindgen_dynamic_cast<QVariantAnimation *>(_self_);
+}
+
+extern "C" QPropertyAnimation * bg_QObject_CAST_PropertyAnimation_(QObject * _self_) {
+  return bindgen_dynamic_cast<QPropertyAnimation *>(_self_);
+}
+
+extern "C" QSettings * bg_QObject_CAST_Settings_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSettings *>(_self_);
+}
+
 extern "C" QSocketNotifier * bg_QObject_CAST_SocketNotifier_(QObject * _self_) {
   return bindgen_dynamic_cast<QSocketNotifier *>(_self_);
+}
+
+extern "C" QSortFilterProxyModel * bg_QObject_CAST_SortFilterProxyModel_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSortFilterProxyModel *>(_self_);
 }
 
 extern "C" QScreen * bg_QObject_CAST_Screen_(QObject * _self_) {
@@ -434,6 +462,10 @@ extern "C" QAction * bg_QObject_CAST_Action_(QObject * _self_) {
 
 extern "C" QWindow * bg_QObject_CAST_Window_(QObject * _self_) {
   return bindgen_dynamic_cast<QWindow *>(_self_);
+}
+
+extern "C" QClipboard * bg_QObject_CAST_Clipboard_(QObject * _self_) {
+  return bindgen_dynamic_cast<QClipboard *>(_self_);
 }
 
 extern "C" QDrag * bg_QObject_CAST_Drag_(QObject * _self_) {
@@ -624,6 +656,10 @@ extern "C" QMenuBar * bg_QObject_CAST_MenuBar_(QObject * _self_) {
   return bindgen_dynamic_cast<QMenuBar *>(_self_);
 }
 
+extern "C" QMessageBox * bg_QObject_CAST_MessageBox_(QObject * _self_) {
+  return bindgen_dynamic_cast<QMessageBox *>(_self_);
+}
+
 extern "C" QTextEdit * bg_QObject_CAST_TextEdit_(QObject * _self_) {
   return bindgen_dynamic_cast<QTextEdit *>(_self_);
 }
@@ -648,8 +684,16 @@ extern "C" QDoubleSpinBox * bg_QObject_CAST_DoubleSpinBox_(QObject * _self_) {
   return bindgen_dynamic_cast<QDoubleSpinBox *>(_self_);
 }
 
+extern "C" QSplitter * bg_QObject_CAST_Splitter_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSplitter *>(_self_);
+}
+
 extern "C" QStackedLayout * bg_QObject_CAST_StackedLayout_(QObject * _self_) {
   return bindgen_dynamic_cast<QStackedLayout *>(_self_);
+}
+
+extern "C" QStackedWidget * bg_QObject_CAST_StackedWidget_(QObject * _self_) {
+  return bindgen_dynamic_cast<QStackedWidget *>(_self_);
 }
 
 extern "C" QStatusBar * bg_QObject_CAST_StatusBar_(QObject * _self_) {
@@ -678,6 +722,10 @@ extern "C" QToolBar * bg_QObject_CAST_ToolBar_(QObject * _self_) {
 
 extern "C" QToolButton * bg_QObject_CAST_ToolButton_(QObject * _self_) {
   return bindgen_dynamic_cast<QToolButton *>(_self_);
+}
+
+extern "C" QTreeView * bg_QObject_CAST_TreeView_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTreeView *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QObject_JUMPTABLE_BgJumptable_QObject_R(BgInherit_QObject * _self_, const BgJumptable_QObject & table) {
@@ -722,6 +770,320 @@ extern "C" void bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(QObject * _se
 
 extern "C" void bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(QObject * _self_, const QMetaMethod & signal) {
   _self_->QObject::disconnectNotify(signal);
+}
+
+struct BgJumptable_QAbstractAnimation {
+  CrystalProc<const QMetaObject *> bg_QAbstractAnimation_metaObject_;
+  CrystalProc<void *, const char *> bg_QAbstractAnimation_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractAnimation_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<int> bg_QAbstractAnimation_duration_;
+  CrystalProc<bool, QEvent *> bg_QAbstractAnimation_event_QEvent_X;
+  CrystalProc<void, int> bg_QAbstractAnimation_updateCurrentTime_int;
+  CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State;
+  CrystalProc<void, QAbstractAnimation::Direction> bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QAbstractAnimation : public QAbstractAnimation {
+  using QAbstractAnimation::QAbstractAnimation;
+  BgJumptable_QAbstractAnimation bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QAbstractAnimation_metaObject_();
+    } else {
+      return QAbstractAnimation::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractAnimation_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QAbstractAnimation::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QAbstractAnimation_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QAbstractAnimation::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  int duration() const override {
+    const BgInherit_QAbstractAnimation *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractAnimation_duration_.isValid())) {
+      return _self_->bgJump.bg_QAbstractAnimation_duration_();
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractAnimation::duration");
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractAnimation_event_QEvent_X(event);
+    } else {
+      return QAbstractAnimation::event(event);
+    }
+  }
+  
+  void updateCurrentTime(int currentTime) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractAnimation_updateCurrentTime_int.isValid())) {
+      _self_->bgJump.bg_QAbstractAnimation_updateCurrentTime_int(currentTime);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractAnimation::updateCurrentTime");
+    }
+  }
+  
+  void updateState(QAbstractAnimation::State newState, QAbstractAnimation::State oldState) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State.isValid()) {
+      _self_->bgJump.bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(newState, oldState);
+    } else {
+      QAbstractAnimation::updateState(newState, oldState);
+    }
+  }
+  
+  void updateDirection(QAbstractAnimation::Direction direction) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction.isValid()) {
+      _self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(direction);
+    } else {
+      QAbstractAnimation::updateDirection(direction);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QAbstractAnimation::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QAbstractAnimation::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QAbstractAnimation::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QAbstractAnimation::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractAnimation::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractAnimation::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QAbstractAnimation_metaObject_(QAbstractAnimation * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QAbstractAnimation_qt_metacast_const_char_X(QAbstractAnimation * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QAbstractAnimation_qt_metacall_QMetaObject__Call_int_void_XX(QAbstractAnimation * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QAbstractAnimation_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QAbstractAnimation::tr(s));
+}
+
+extern "C" CrystalString bg_QAbstractAnimation_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QAbstractAnimation::tr(s, c));
+}
+
+extern "C" CrystalString bg_QAbstractAnimation_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QAbstractAnimation::tr(s, c, n));
+}
+
+extern "C" QAbstractAnimation * bg_QAbstractAnimation__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractAnimation>(parent);
+}
+
+extern "C" QAbstractAnimation::State bg_QAbstractAnimation_state_(QAbstractAnimation * _self_) {
+  return _self_->state();
+}
+
+extern "C" QAnimationGroup * bg_QAbstractAnimation_group_(QAbstractAnimation * _self_) {
+  return _self_->group();
+}
+
+extern "C" QAbstractAnimation::Direction bg_QAbstractAnimation_direction_(QAbstractAnimation * _self_) {
+  return _self_->direction();
+}
+
+extern "C" void bg_QAbstractAnimation_setDirection_QAbstractAnimation__Direction(QAbstractAnimation * _self_, QAbstractAnimation::Direction direction) {
+  _self_->setDirection(direction);
+}
+
+extern "C" int bg_QAbstractAnimation_currentTime_(QAbstractAnimation * _self_) {
+  return _self_->currentTime();
+}
+
+extern "C" int bg_QAbstractAnimation_currentLoopTime_(QAbstractAnimation * _self_) {
+  return _self_->currentLoopTime();
+}
+
+extern "C" int bg_QAbstractAnimation_loopCount_(QAbstractAnimation * _self_) {
+  return _self_->loopCount();
+}
+
+extern "C" void bg_QAbstractAnimation_setLoopCount_int(QAbstractAnimation * _self_, int loopCount) {
+  _self_->setLoopCount(loopCount);
+}
+
+extern "C" int bg_QAbstractAnimation_currentLoop_(QAbstractAnimation * _self_) {
+  return _self_->currentLoop();
+}
+
+extern "C" int bg_QAbstractAnimation_duration_(QAbstractAnimation * _self_) {
+  return _self_->duration();
+}
+
+extern "C" int bg_QAbstractAnimation_totalDuration_(QAbstractAnimation * _self_) {
+  return _self_->totalDuration();
+}
+
+extern "C" void bg_QAbstractAnimation_finished_(QAbstractAnimation * _self_) {
+  _self_->finished();
+}
+
+extern "C" void bg_QAbstractAnimation_stateChanged_QAbstractAnimation__State_QAbstractAnimation__State(QAbstractAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->stateChanged(newState, oldState);
+}
+
+extern "C" void bg_QAbstractAnimation_currentLoopChanged_int(QAbstractAnimation * _self_, int currentLoop) {
+  _self_->currentLoopChanged(currentLoop);
+}
+
+extern "C" void bg_QAbstractAnimation_directionChanged_QAbstractAnimation__Direction(QAbstractAnimation * _self_, QAbstractAnimation::Direction unnamed_arg_0) {
+  _self_->directionChanged(unnamed_arg_0);
+}
+
+extern "C" void bg_QAbstractAnimation_start_QAbstractAnimation__DeletionPolicy(QAbstractAnimation * _self_, QAbstractAnimation::DeletionPolicy policy) {
+  _self_->start(policy);
+}
+
+extern "C" void bg_QAbstractAnimation_pause_(QAbstractAnimation * _self_) {
+  _self_->pause();
+}
+
+extern "C" void bg_QAbstractAnimation_resume_(QAbstractAnimation * _self_) {
+  _self_->resume();
+}
+
+extern "C" void bg_QAbstractAnimation_setPaused_bool(QAbstractAnimation * _self_, bool unnamed_arg_0) {
+  _self_->setPaused(unnamed_arg_0);
+}
+
+extern "C" void bg_QAbstractAnimation_stop_(QAbstractAnimation * _self_) {
+  _self_->stop();
+}
+
+extern "C" void bg_QAbstractAnimation_setCurrentTime_int(QAbstractAnimation * _self_, int msecs) {
+  _self_->setCurrentTime(msecs);
+}
+
+extern "C" QAbstractAnimation * bg_QAbstractAnimation__CONSTRUCT_QAbstractAnimationPrivate_R_QObject_X(QAbstractAnimationPrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractAnimation>(dd, parent);
+}
+
+extern "C" bool bg_QAbstractAnimation_event_QEvent_X(QAbstractAnimation * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QAbstractAnimation_updateCurrentTime_int(QAbstractAnimation * _self_, int currentTime) {
+  _self_->updateCurrentTime(currentTime);
+}
+
+extern "C" void bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(QAbstractAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->updateState(newState, oldState);
+}
+
+extern "C" void bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(QAbstractAnimation * _self_, QAbstractAnimation::Direction direction) {
+  _self_->updateDirection(direction);
+}
+
+extern "C" const QMetaObject * bg_QAbstractAnimation_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractAnimation::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QAbstractAnimation_CONNECT_finished_CrystalProc_void_(QAbstractAnimation * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractAnimation::*)())&QAbstractAnimation::finished, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QAbstractAnimation_CONNECT_stateChanged_CrystalProc_void__QAbstractAnimation__State__QAbstractAnimation__State_(QAbstractAnimation * _self_, CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractAnimation::*)(QAbstractAnimation::State, QAbstractAnimation::State))&QAbstractAnimation::stateChanged, [_proc_](QAbstractAnimation::State newState, QAbstractAnimation::State oldState){ _proc_(newState, oldState); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QAbstractAnimation_CONNECT_currentLoopChanged_CrystalProc_void__int_(QAbstractAnimation * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractAnimation::*)(int))&QAbstractAnimation::currentLoopChanged, [_proc_](int currentLoop){ _proc_(currentLoop); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QAbstractAnimation_CONNECT_directionChanged_CrystalProc_void__QAbstractAnimation__Direction_(QAbstractAnimation * _self_, CrystalProc<void, QAbstractAnimation::Direction> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractAnimation::*)(QAbstractAnimation::Direction))&QAbstractAnimation::directionChanged, [_proc_](QAbstractAnimation::Direction unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" bool bg_QAbstractAnimation_event_SUPER_QEvent_X(QAbstractAnimation * _self_, QEvent * event) {
+  return _self_->QAbstractAnimation::event(event);
+}
+
+extern "C" void bg_QAbstractAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(QAbstractAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->QAbstractAnimation::updateState(newState, oldState);
+}
+
+extern "C" void bg_QAbstractAnimation_updateDirection_SUPER_QAbstractAnimation__Direction(QAbstractAnimation * _self_, QAbstractAnimation::Direction direction) {
+  _self_->QAbstractAnimation::updateDirection(direction);
+}
+
+extern "C" void bg_BgInherit_QAbstractAnimation_JUMPTABLE_BgJumptable_QAbstractAnimation_R(BgInherit_QAbstractAnimation * _self_, const BgJumptable_QAbstractAnimation & table) {
+  _self_->bgJump = (table);
 }
 
 struct BgJumptable_QEventLoop {
@@ -2440,6 +2802,759 @@ extern "C" void bg_QAbstractItemModel_resetInternalData_SUPER_(QAbstractItemMode
 }
 
 extern "C" void bg_BgInherit_QAbstractItemModel_JUMPTABLE_BgJumptable_QAbstractItemModel_R(BgInherit_QAbstractItemModel * _self_, const BgJumptable_QAbstractItemModel & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QAbstractProxyModel {
+  CrystalProc<const QMetaObject *> bg_QAbstractProxyModel_metaObject_;
+  CrystalProc<void *, const char *> bg_QAbstractProxyModel_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractProxyModel_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QAbstractItemModel *> bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R;
+  CrystalProc<bool> bg_QAbstractProxyModel_submit_;
+  CrystalProc<void> bg_QAbstractProxyModel_revert_;
+  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R;
+  CrystalProc<void, const QModelIndex *> bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R;
+  CrystalProc<void, int, Qt::SortOrder> bg_QAbstractProxyModel_sort_int_Qt__SortOrder;
+  CrystalProc<QSize *, const QModelIndex *> bg_QAbstractProxyModel_span_const_QModelIndex_R;
+  CrystalProc<bool> bg_QAbstractProxyModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R;
+  CrystalProc<QMimeData *, const QModelIndexList *> bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<QStringList &> bg_QAbstractProxyModel_mimeTypes_;
+  CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
+  CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDropActions_;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractItemModel_index_int_int_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_parent_const_QModelIndex_R;
+  CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_rowCount_const_QModelIndex_R;
+  CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_columnCount_const_QModelIndex_R;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<QModelIndexList &, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
+  CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
+  using QAbstractProxyModel::QAbstractProxyModel;
+  BgJumptable_QAbstractProxyModel bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_metaObject_();
+    } else {
+      return QAbstractProxyModel::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QAbstractProxyModel::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QAbstractProxyModel::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setSourceModel(QAbstractItemModel * sourceModel) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X(sourceModel);
+    } else {
+      QAbstractProxyModel::setSourceModel(sourceModel);
+    }
+  }
+  
+  QModelIndex mapToSource(const QModelIndex & proxyIndex) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R(&(proxyIndex));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractProxyModel::mapToSource");
+    }
+  }
+  
+  QModelIndex mapFromSource(const QModelIndex & sourceIndex) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R(&(sourceIndex));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractProxyModel::mapFromSource");
+    }
+  }
+  
+  QItemSelection mapSelectionToSource(const QItemSelection & selection) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QAbstractProxyModel::mapSelectionToSource(selection);
+    }
+  }
+  
+  QItemSelection mapSelectionFromSource(const QItemSelection & selection) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QAbstractProxyModel::mapSelectionFromSource(selection);
+    }
+  }
+  
+  bool submit() override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_submit_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_submit_();
+    } else {
+      return QAbstractProxyModel::submit();
+    }
+  }
+  
+  void revert() override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_revert_.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_revert_();
+    } else {
+      QAbstractProxyModel::revert();
+    }
+  }
+  
+  QVariant data(const QModelIndex & index, int role) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
+    } else {
+      return QAbstractProxyModel::data(index, role);
+    }
+  }
+  
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+    } else {
+      return QAbstractProxyModel::headerData(section, orientation, role);
+    }
+  }
+  
+  Qt::ItemFlags flags(const QModelIndex & index) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R(&(index));
+    } else {
+      return QAbstractProxyModel::flags(index);
+    }
+  }
+  
+  bool setData(const QModelIndex & index, const QVariant & value, int role) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+    } else {
+      return QAbstractProxyModel::setData(index, value, role);
+    }
+  }
+  
+  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+    } else {
+      return QAbstractProxyModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  bool clearItemData(const QModelIndex & index) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(&(index));
+    } else {
+      return QAbstractProxyModel::clearItemData(index);
+    }
+  }
+  
+  QModelIndex buddy(const QModelIndex & index) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_buddy_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_buddy_const_QModelIndex_R(&(index));
+    } else {
+      return QAbstractProxyModel::buddy(index);
+    }
+  }
+  
+  bool canFetchMore(const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      return QAbstractProxyModel::canFetchMore(parent);
+    }
+  }
+  
+  void fetchMore(const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      QAbstractProxyModel::fetchMore(parent);
+    }
+  }
+  
+  void sort(int column, Qt::SortOrder order) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_sort_int_Qt__SortOrder.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_sort_int_Qt__SortOrder(column, order);
+    } else {
+      QAbstractProxyModel::sort(column, order);
+    }
+  }
+  
+  QSize span(const QModelIndex & index) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_span_const_QModelIndex_R.isValid()) {
+      return *_self_->bgJump.bg_QAbstractProxyModel_span_const_QModelIndex_R(&(index));
+    } else {
+      return QAbstractProxyModel::span(index);
+    }
+  }
+  
+  bool hasChildren(const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(&(parent));
+    } else {
+      return QAbstractProxyModel::hasChildren(parent);
+    }
+  }
+  
+  QModelIndex sibling(int row, int column, const QModelIndex & idx) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(row, column, &(idx));
+    } else {
+      return QAbstractProxyModel::sibling(row, column, idx);
+    }
+  }
+  
+  QMimeData * mimeData(const QModelIndexList & indexes) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(&(indexes));
+    } else {
+      return QAbstractProxyModel::mimeData(indexes);
+    }
+  }
+  
+  bool canDropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QAbstractProxyModel::canDropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QAbstractProxyModel::dropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  QStringList mimeTypes() const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mimeTypes_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mimeTypes_();
+    } else {
+      return QAbstractProxyModel::mimeTypes();
+    }
+  }
+  
+  Qt::DropActions supportedDragActions() const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_();
+    } else {
+      return QAbstractProxyModel::supportedDragActions();
+    }
+  }
+  
+  Qt::DropActions supportedDropActions() const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_();
+    } else {
+      return QAbstractProxyModel::supportedDropActions();
+    }
+  }
+  
+  QModelIndex index(int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_index_int_int_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractItemModel_index_int_int_const_QModelIndex_R(row, column, &(parent));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::index");
+    }
+  }
+  
+  QModelIndex parent(const QModelIndex & child) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_parent_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractItemModel_parent_const_QModelIndex_R(&(child));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::parent");
+    }
+  }
+  
+  int rowCount(const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_rowCount_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractItemModel_rowCount_const_QModelIndex_R(&(parent));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::rowCount");
+    }
+  }
+  
+  int columnCount(const QModelIndex & parent) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_columnCount_const_QModelIndex_R.isValid())) {
+      return _self_->bgJump.bg_QAbstractItemModel_columnCount_const_QModelIndex_R(&(parent));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::columnCount");
+    }
+  }
+  
+  bool insertRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QAbstractProxyModel::insertRows(row, count, parent);
+    }
+  }
+  
+  bool insertColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QAbstractProxyModel::insertColumns(column, count, parent);
+    }
+  }
+  
+  bool removeRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QAbstractProxyModel::removeRows(row, count, parent);
+    }
+  }
+  
+  bool removeColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QAbstractProxyModel::removeColumns(column, count, parent);
+    }
+  }
+  
+  bool moveRows(const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceRow, count, &(destinationParent), destinationChild);
+    } else {
+      return QAbstractProxyModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+    }
+  }
+  
+  bool moveColumns(const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceColumn, count, &(destinationParent), destinationChild);
+    } else {
+      return QAbstractProxyModel::moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+    }
+  }
+  
+  QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags);
+    } else {
+      return QAbstractProxyModel::match(start, role, value, hits, flags);
+    }
+  }
+  
+  void multiData(const QModelIndex & index, QModelRoleDataSpan roleDataSpan) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(&(index), new (UseGC, bindgen_gc_finalizer<QModelRoleDataSpan>()) QModelRoleDataSpan (roleDataSpan));
+    } else {
+      QAbstractProxyModel::multiData(index, roleDataSpan);
+    }
+  }
+  
+  void resetInternalData() override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_resetInternalData_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_resetInternalData_();
+    } else {
+      QAbstractProxyModel::resetInternalData();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QAbstractProxyModel::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QAbstractProxyModel::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QAbstractProxyModel::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QAbstractProxyModel::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QAbstractProxyModel::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractProxyModel::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractProxyModel::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QAbstractProxyModel_metaObject_(QAbstractProxyModel * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QAbstractProxyModel_qt_metacast_const_char_X(QAbstractProxyModel * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QAbstractProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(QAbstractProxyModel * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QAbstractProxyModel_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QAbstractProxyModel::tr(s));
+}
+
+extern "C" CrystalString bg_QAbstractProxyModel_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QAbstractProxyModel::tr(s, c));
+}
+
+extern "C" CrystalString bg_QAbstractProxyModel_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QAbstractProxyModel::tr(s, c, n));
+}
+
+extern "C" QAbstractProxyModel * bg_QAbstractProxyModel__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractProxyModel>(parent);
+}
+
+extern "C" void bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X(QAbstractProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->setSourceModel(sourceModel);
+}
+
+extern "C" QAbstractItemModel * bg_QAbstractProxyModel_sourceModel_(QAbstractProxyModel * _self_) {
+  return _self_->sourceModel();
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapToSource(proxyIndex));
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapFromSource(sourceIndex));
+}
+
+extern "C" QItemSelection * bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R(QAbstractProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->mapSelectionToSource(selection));
+}
+
+extern "C" QItemSelection * bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R(QAbstractProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->mapSelectionFromSource(selection));
+}
+
+extern "C" bool bg_QAbstractProxyModel_submit_(QAbstractProxyModel * _self_) {
+  return _self_->submit();
+}
+
+extern "C" void bg_QAbstractProxyModel_revert_(QAbstractProxyModel * _self_) {
+  _self_->revert();
+}
+
+extern "C" CrystalVariant bg_QAbstractProxyModel_data_const_QModelIndex_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->data(index, role));
+}
+
+extern "C" CrystalVariant bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->headerData(section, orientation, role));
+}
+
+extern "C" Qt::ItemFlags bg_QAbstractProxyModel_flags_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->flags(index);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->clearItemData(index);
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_buddy_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->buddy(index));
+}
+
+extern "C" bool bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->canFetchMore(parent);
+}
+
+extern "C" void bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  _self_->fetchMore(parent);
+}
+
+extern "C" void bg_QAbstractProxyModel_sort_int_Qt__SortOrder(QAbstractProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->sort(column, order);
+}
+
+extern "C" QSize bg_QAbstractProxyModel_span_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->span(index);
+}
+
+extern "C" bool bg_QAbstractProxyModel_hasChildren_(QAbstractProxyModel * _self_) {
+  return _self_->hasChildren();
+}
+
+extern "C" bool bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->hasChildren(parent);
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, int row, int column, const QModelIndex & idx) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->sibling(row, column, idx));
+}
+
+extern "C" QMimeData * bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(QAbstractProxyModel * _self_, const QModelIndexList & indexes) {
+  return _self_->mimeData(indexes);
+}
+
+extern "C" bool bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->canDropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" QStringList * bg_QAbstractProxyModel_mimeTypes_(QAbstractProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->mimeTypes());
+}
+
+extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDragActions_(QAbstractProxyModel * _self_) {
+  return _self_->supportedDragActions();
+}
+
+extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDropActions_(QAbstractProxyModel * _self_) {
+  return _self_->supportedDropActions();
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_createSourceIndex_int_int_void_X(QAbstractProxyModel * _self_, int row, int col, void * internalPtr) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->createSourceIndex(row, col, internalPtr));
+}
+
+extern "C" QAbstractProxyModel * bg_QAbstractProxyModel__CONSTRUCT_QAbstractProxyModelPrivate_R_QObject_X(QAbstractProxyModelPrivate & unnamed_arg_0, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractProxyModel>(unnamed_arg_0, parent);
+}
+
+extern "C" const QMetaObject * bg_QAbstractProxyModel_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractProxyModel::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QAbstractProxyModel_CONNECT_sourceModelChanged_CrystalProc_void_(QAbstractProxyModel * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractProxyModel::*)())&QAbstractProxyModel::sourceModelChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QAbstractProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(QAbstractProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->QAbstractProxyModel::setSourceModel(sourceModel);
+}
+
+extern "C" QItemSelection * bg_QAbstractProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(QAbstractProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->QAbstractProxyModel::mapSelectionToSource(selection));
+}
+
+extern "C" QItemSelection * bg_QAbstractProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(QAbstractProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->QAbstractProxyModel::mapSelectionFromSource(selection));
+}
+
+extern "C" bool bg_QAbstractProxyModel_submit_SUPER_(QAbstractProxyModel * _self_) {
+  return _self_->QAbstractProxyModel::submit();
+}
+
+extern "C" void bg_QAbstractProxyModel_revert_SUPER_(QAbstractProxyModel * _self_) {
+  _self_->QAbstractProxyModel::revert();
+}
+
+extern "C" CrystalVariant bg_QAbstractProxyModel_data_SUPER_const_QModelIndex_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->QAbstractProxyModel::data(index, role));
+}
+
+extern "C" CrystalVariant bg_QAbstractProxyModel_headerData_SUPER_int_Qt__Orientation_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->QAbstractProxyModel::headerData(section, orientation, role));
+}
+
+extern "C" Qt::ItemFlags bg_QAbstractProxyModel_flags_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QAbstractProxyModel::flags(index);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->QAbstractProxyModel::setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->QAbstractProxyModel::setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_clearItemData_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QAbstractProxyModel::clearItemData(index);
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_buddy_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QAbstractProxyModel::buddy(index));
+}
+
+extern "C" bool bg_QAbstractProxyModel_canFetchMore_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QAbstractProxyModel::canFetchMore(parent);
+}
+
+extern "C" void bg_QAbstractProxyModel_fetchMore_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  _self_->QAbstractProxyModel::fetchMore(parent);
+}
+
+extern "C" void bg_QAbstractProxyModel_sort_SUPER_int_Qt__SortOrder(QAbstractProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->QAbstractProxyModel::sort(column, order);
+}
+
+extern "C" QSize bg_QAbstractProxyModel_span_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QAbstractProxyModel::span(index);
+}
+
+extern "C" bool bg_QAbstractProxyModel_hasChildren_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QAbstractProxyModel::hasChildren(parent);
+}
+
+extern "C" QModelIndex * bg_QAbstractProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, int row, int column, const QModelIndex & idx) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QAbstractProxyModel::sibling(row, column, idx));
+}
+
+extern "C" QMimeData * bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(QAbstractProxyModel * _self_, const QModelIndexList & indexes) {
+  return _self_->QAbstractProxyModel::mimeData(indexes);
+}
+
+extern "C" bool bg_QAbstractProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->QAbstractProxyModel::canDropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QAbstractProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QAbstractProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->QAbstractProxyModel::dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" QStringList * bg_QAbstractProxyModel_mimeTypes_SUPER_(QAbstractProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->QAbstractProxyModel::mimeTypes());
+}
+
+extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDragActions_SUPER_(QAbstractProxyModel * _self_) {
+  return _self_->QAbstractProxyModel::supportedDragActions();
+}
+
+extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDropActions_SUPER_(QAbstractProxyModel * _self_) {
+  return _self_->QAbstractProxyModel::supportedDropActions();
+}
+
+extern "C" void bg_BgInherit_QAbstractProxyModel_JUMPTABLE_BgJumptable_QAbstractProxyModel_R(BgInherit_QAbstractProxyModel * _self_, const BgJumptable_QAbstractProxyModel & table) {
   _self_->bgJump = (table);
 }
 
@@ -4456,6 +5571,910 @@ extern "C" const QMetaObject * bg_QLocale_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QLocale::staticMetaObject);
 }
 
+extern "C" QDate * bg_QDate__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QDate>();
+}
+
+extern "C" QDate * bg_QDate__CONSTRUCT_int_int_int(int y, int m, int d) {
+  return new (UseGC) CrystalGCWrapper<QDate>(y, m, d);
+}
+
+extern "C" QDate * bg_QDate__CONSTRUCT_int_int_int_QCalendar(int y, int m, int d, QCalendar & cal) {
+  return new (UseGC) CrystalGCWrapper<QDate>(y, m, d, cal);
+}
+
+extern "C" bool bg_QDate_isNull_(QDate * _self_) {
+  return _self_->isNull();
+}
+
+extern "C" bool bg_QDate_isValid_(QDate * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" int bg_QDate_year_(QDate * _self_) {
+  return _self_->year();
+}
+
+extern "C" int bg_QDate_month_(QDate * _self_) {
+  return _self_->month();
+}
+
+extern "C" int bg_QDate_day_(QDate * _self_) {
+  return _self_->day();
+}
+
+extern "C" int bg_QDate_dayOfWeek_(QDate * _self_) {
+  return _self_->dayOfWeek();
+}
+
+extern "C" int bg_QDate_dayOfYear_(QDate * _self_) {
+  return _self_->dayOfYear();
+}
+
+extern "C" int bg_QDate_daysInMonth_(QDate * _self_) {
+  return _self_->daysInMonth();
+}
+
+extern "C" int bg_QDate_daysInYear_(QDate * _self_) {
+  return _self_->daysInYear();
+}
+
+extern "C" int bg_QDate_weekNumber_int_X(QDate * _self_, int * yearNum) {
+  return _self_->weekNumber(yearNum);
+}
+
+extern "C" int bg_QDate_year_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->year(cal);
+}
+
+extern "C" int bg_QDate_month_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->month(cal);
+}
+
+extern "C" int bg_QDate_day_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->day(cal);
+}
+
+extern "C" int bg_QDate_dayOfWeek_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->dayOfWeek(cal);
+}
+
+extern "C" int bg_QDate_dayOfYear_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->dayOfYear(cal);
+}
+
+extern "C" int bg_QDate_daysInMonth_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->daysInMonth(cal);
+}
+
+extern "C" int bg_QDate_daysInYear_QCalendar(QDate * _self_, QCalendar & cal) {
+  return _self_->daysInYear(cal);
+}
+
+extern "C" CrystalString bg_QDate_toString_Qt__DateFormat(QDate * _self_, Qt::DateFormat format) {
+  return qstring_to_crystal(_self_->toString(format));
+}
+
+extern "C" CrystalString bg_QDate_toString_const_QString_R(QDate * _self_, const CrystalString format) {
+  return qstring_to_crystal(_self_->toString(([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QDate_toString_const_QString_R_QCalendar(QDate * _self_, const CrystalString format, QCalendar & cal) {
+  return qstring_to_crystal(_self_->toString(([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cal));
+}
+
+extern "C" CrystalString bg_QDate_toString_QStringView(QDate * _self_, QStringView & format) {
+  return qstring_to_crystal(_self_->toString(format));
+}
+
+extern "C" CrystalString bg_QDate_toString_QStringView_QCalendar(QDate * _self_, QStringView & format, QCalendar & cal) {
+  return qstring_to_crystal(_self_->toString(format, cal));
+}
+
+extern "C" bool bg_QDate_setDate_int_int_int(QDate * _self_, int year, int month, int day) {
+  return _self_->setDate(year, month, day);
+}
+
+extern "C" bool bg_QDate_setDate_int_int_int_QCalendar(QDate * _self_, int year, int month, int day, QCalendar & cal) {
+  return _self_->setDate(year, month, day, cal);
+}
+
+extern "C" void bg_QDate_getDate_int_X_int_X_int_X(QDate * _self_, int * year, int * month, int * day) {
+  _self_->getDate(year, month, day);
+}
+
+extern "C" QDate * bg_QDate_addDays_qint64(QDate * _self_, qint64 days) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->addDays(days));
+}
+
+extern "C" QDate * bg_QDate_addMonths_int(QDate * _self_, int months) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->addMonths(months));
+}
+
+extern "C" QDate * bg_QDate_addYears_int(QDate * _self_, int years) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->addYears(years));
+}
+
+extern "C" QDate * bg_QDate_addMonths_int_QCalendar(QDate * _self_, int months, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->addMonths(months, cal));
+}
+
+extern "C" QDate * bg_QDate_addYears_int_QCalendar(QDate * _self_, int years, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->addYears(years, cal));
+}
+
+extern "C" qint64 bg_QDate_daysTo_QDate(QDate * _self_, QDate & d) {
+  return _self_->daysTo(d);
+}
+
+extern "C" QDate * bg_QDate_currentDate_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::currentDate());
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_QStringView_Qt__DateFormat(QStringView & string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(string, format));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_Qt__DateFormat(const CrystalString string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_QStringView_QStringView_QCalendar(QStringView & string, QStringView & format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(string, format, cal));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_QStringView_QCalendar(const CrystalString string, QStringView & format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, cal));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(const CrystalString string, const CrystalString format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cal));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_QStringView_QStringView_int(QStringView & string, QStringView & format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(string, format, baseYear));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_QStringView_QStringView_int_QCalendar(QStringView & string, QStringView & format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(string, format, baseYear, cal));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_QStringView_int(const CrystalString string, QStringView & format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, baseYear));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(const CrystalString string, QStringView & format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, baseYear, cal));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_int(const CrystalString string, const CrystalString format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), baseYear));
+}
+
+extern "C" QDate * bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(const CrystalString string, const CrystalString format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), baseYear, cal));
+}
+
+extern "C" bool bg_QDate_isValid_STATIC_int_int_int(int y, int m, int d) {
+  return QDate::isValid(y, m, d);
+}
+
+extern "C" bool bg_QDate_isLeapYear_STATIC_int(int year) {
+  return QDate::isLeapYear(year);
+}
+
+extern "C" QDate * bg_QDate_fromJulianDay_STATIC_qint64(qint64 jd_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (QDate::fromJulianDay(jd_));
+}
+
+extern "C" qint64 bg_QDate_toJulianDay_(QDate * _self_) {
+  return _self_->toJulianDay();
+}
+
+extern "C" QDate * bg_QDate__COPY_const_QDate_R(const QDate & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QDate>(unnamed_arg_0);
+}
+
+extern "C" QDate * bg_QDate__OPERATOR_assign_const_QDate_R(QDate * _self_, const QDate & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" bool bg_QDate__OPERATOR_eq_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QDate__OPERATOR_ne_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) != (rhs);
+}
+
+extern "C" bool bg_QDate__OPERATOR_lt_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) < (rhs);
+}
+
+extern "C" bool bg_QDate__OPERATOR_gt_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) > (rhs);
+}
+
+extern "C" bool bg_QDate__OPERATOR_le_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) <= (rhs);
+}
+
+extern "C" bool bg_QDate__OPERATOR_ge_const_QDate_R(QDate * _self_, const QDate & rhs) {
+  return (*_self_) >= (rhs);
+}
+
+extern "C" QDate * bg_QDate__OPERATOR_succ_(QDate * _self_) {
+  return &(++(*_self_));
+}
+
+extern "C" QDate * bg_QDate__OPERATOR_pred_(QDate * _self_) {
+  return &(--(*_self_));
+}
+
+extern "C" QDate * bg_QDate__OPERATOR_post_succ_(QDate * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate ((*_self_)++);
+}
+
+extern "C" QDate * bg_QDate__OPERATOR_post_pred_(QDate * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate ((*_self_)--);
+}
+
+extern "C" QTime * bg_QTime__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTime>();
+}
+
+extern "C" QTime * bg_QTime__CONSTRUCT_int_int_int_int(int h, int m, int s, int ms) {
+  return new (UseGC) CrystalGCWrapper<QTime>(h, m, s, ms);
+}
+
+extern "C" bool bg_QTime_isNull_(QTime * _self_) {
+  return _self_->isNull();
+}
+
+extern "C" bool bg_QTime_isValid_(QTime * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" int bg_QTime_hour_(QTime * _self_) {
+  return _self_->hour();
+}
+
+extern "C" int bg_QTime_minute_(QTime * _self_) {
+  return _self_->minute();
+}
+
+extern "C" int bg_QTime_second_(QTime * _self_) {
+  return _self_->second();
+}
+
+extern "C" int bg_QTime_msec_(QTime * _self_) {
+  return _self_->msec();
+}
+
+extern "C" CrystalString bg_QTime_toString_Qt__DateFormat(QTime * _self_, Qt::DateFormat f) {
+  return qstring_to_crystal(_self_->toString(f));
+}
+
+extern "C" CrystalString bg_QTime_toString_const_QString_R(QTime * _self_, const CrystalString format) {
+  return qstring_to_crystal(_self_->toString(([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QTime_toString_QStringView(QTime * _self_, QStringView & format) {
+  return qstring_to_crystal(_self_->toString(format));
+}
+
+extern "C" bool bg_QTime_setHMS_int_int_int_int(QTime * _self_, int h, int m, int s, int ms) {
+  return _self_->setHMS(h, m, s, ms);
+}
+
+extern "C" QTime * bg_QTime_addSecs_int(QTime * _self_, int secs) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (_self_->addSecs(secs));
+}
+
+extern "C" int bg_QTime_secsTo_QTime(QTime * _self_, QTime & t) {
+  return _self_->secsTo(t);
+}
+
+extern "C" QTime * bg_QTime_addMSecs_int(QTime * _self_, int ms) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (_self_->addMSecs(ms));
+}
+
+extern "C" int bg_QTime_msecsTo_QTime(QTime * _self_, QTime & t) {
+  return _self_->msecsTo(t);
+}
+
+extern "C" QTime * bg_QTime_fromMSecsSinceStartOfDay_STATIC_int(int msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromMSecsSinceStartOfDay(msecs));
+}
+
+extern "C" int bg_QTime_msecsSinceStartOfDay_(QTime * _self_) {
+  return _self_->msecsSinceStartOfDay();
+}
+
+extern "C" QTime * bg_QTime_currentTime_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::currentTime());
+}
+
+extern "C" QTime * bg_QTime_fromString_STATIC_QStringView_Qt__DateFormat(QStringView & string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromString(string, format));
+}
+
+extern "C" QTime * bg_QTime_fromString_STATIC_QStringView_QStringView(QStringView & string, QStringView & format) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromString(string, format));
+}
+
+extern "C" QTime * bg_QTime_fromString_STATIC_const_QString_R_QStringView(const CrystalString string, QStringView & format) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format));
+}
+
+extern "C" QTime * bg_QTime_fromString_STATIC_const_QString_R_Qt__DateFormat(const CrystalString string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format));
+}
+
+extern "C" QTime * bg_QTime_fromString_STATIC_const_QString_R_const_QString_R(const CrystalString string, const CrystalString format) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (QTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" bool bg_QTime_isValid_STATIC_int_int_int_int(int h, int m, int s, int ms) {
+  return QTime::isValid(h, m, s, ms);
+}
+
+extern "C" QTime * bg_QTime__COPY_const_QTime_R(const QTime & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTime>(unnamed_arg_0);
+}
+
+extern "C" bool bg_QTime__OPERATOR_eq_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QTime__OPERATOR_ne_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) != (rhs);
+}
+
+extern "C" bool bg_QTime__OPERATOR_lt_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) < (rhs);
+}
+
+extern "C" bool bg_QTime__OPERATOR_gt_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) > (rhs);
+}
+
+extern "C" bool bg_QTime__OPERATOR_le_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) <= (rhs);
+}
+
+extern "C" bool bg_QTime__OPERATOR_ge_const_QTime_R(QTime * _self_, const QTime & rhs) {
+  return (*_self_) >= (rhs);
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QDateTime>();
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_Qt__TimeSpec_int(QDate & date, QTime & time, Qt::TimeSpec spec, int offsetSeconds) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, spec, offsetSeconds);
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(QDate & date, QTime & time, const QTimeZone & timeZone) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, timeZone);
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R_QDateTime__TransitionResolution(QDate & date, QTime & time, const QTimeZone & timeZone, QDateTime::TransitionResolution resolve) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, timeZone, resolve);
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime(QDate & date, QTime & time) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time);
+}
+
+extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_QDateTime__TransitionResolution(QDate & date, QTime & time, QDateTime::TransitionResolution resolve) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, resolve);
+}
+
+extern "C" QDateTime * bg_QDateTime__COPY_const_QDateTime_R(const QDateTime & other) {
+  return new (UseGC) CrystalGCWrapper<QDateTime>(other);
+}
+
+extern "C" QDateTime * bg_QDateTime__OPERATOR_assign_const_QDateTime_R(QDateTime * _self_, const QDateTime & other) {
+  return &((*_self_) = (other));
+}
+
+extern "C" void bg_QDateTime_swap_QDateTime_R(QDateTime * _self_, QDateTime & other) {
+  _self_->swap(other);
+}
+
+extern "C" bool bg_QDateTime_isNull_(QDateTime * _self_) {
+  return _self_->isNull();
+}
+
+extern "C" bool bg_QDateTime_isValid_(QDateTime * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QDate * bg_QDateTime_date_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->date());
+}
+
+extern "C" QTime * bg_QDateTime_time_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (_self_->time());
+}
+
+extern "C" Qt::TimeSpec bg_QDateTime_timeSpec_(QDateTime * _self_) {
+  return _self_->timeSpec();
+}
+
+extern "C" int bg_QDateTime_offsetFromUtc_(QDateTime * _self_) {
+  return _self_->offsetFromUtc();
+}
+
+extern "C" QTimeZone * bg_QDateTime_timeRepresentation_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTimeZone>()) QTimeZone (_self_->timeRepresentation());
+}
+
+extern "C" QTimeZone * bg_QDateTime_timeZone_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTimeZone>()) QTimeZone (_self_->timeZone());
+}
+
+extern "C" CrystalString bg_QDateTime_timeZoneAbbreviation_(QDateTime * _self_) {
+  return qstring_to_crystal(_self_->timeZoneAbbreviation());
+}
+
+extern "C" bool bg_QDateTime_isDaylightTime_(QDateTime * _self_) {
+  return _self_->isDaylightTime();
+}
+
+extern "C" qint64 bg_QDateTime_toMSecsSinceEpoch_(QDateTime * _self_) {
+  return _self_->toMSecsSinceEpoch();
+}
+
+extern "C" qint64 bg_QDateTime_toSecsSinceEpoch_(QDateTime * _self_) {
+  return _self_->toSecsSinceEpoch();
+}
+
+extern "C" void bg_QDateTime_setDate_QDate(QDateTime * _self_, QDate & date) {
+  _self_->setDate(date);
+}
+
+extern "C" void bg_QDateTime_setDate_QDate_QDateTime__TransitionResolution(QDateTime * _self_, QDate & date, QDateTime::TransitionResolution resolve) {
+  _self_->setDate(date, resolve);
+}
+
+extern "C" void bg_QDateTime_setTime_QTime(QDateTime * _self_, QTime & time) {
+  _self_->setTime(time);
+}
+
+extern "C" void bg_QDateTime_setTime_QTime_QDateTime__TransitionResolution(QDateTime * _self_, QTime & time, QDateTime::TransitionResolution resolve) {
+  _self_->setTime(time, resolve);
+}
+
+extern "C" void bg_QDateTime_setTimeZone_const_QTimeZone_R(QDateTime * _self_, const QTimeZone & toZone) {
+  _self_->setTimeZone(toZone);
+}
+
+extern "C" void bg_QDateTime_setTimeZone_const_QTimeZone_R_QDateTime__TransitionResolution(QDateTime * _self_, const QTimeZone & toZone, QDateTime::TransitionResolution resolve) {
+  _self_->setTimeZone(toZone, resolve);
+}
+
+extern "C" void bg_QDateTime_setMSecsSinceEpoch_qint64(QDateTime * _self_, qint64 msecs) {
+  _self_->setMSecsSinceEpoch(msecs);
+}
+
+extern "C" void bg_QDateTime_setSecsSinceEpoch_qint64(QDateTime * _self_, qint64 secs) {
+  _self_->setSecsSinceEpoch(secs);
+}
+
+extern "C" CrystalString bg_QDateTime_toString_Qt__DateFormat(QDateTime * _self_, Qt::DateFormat format) {
+  return qstring_to_crystal(_self_->toString(format));
+}
+
+extern "C" CrystalString bg_QDateTime_toString_const_QString_R(QDateTime * _self_, const CrystalString format) {
+  return qstring_to_crystal(_self_->toString(([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QDateTime_toString_const_QString_R_QCalendar(QDateTime * _self_, const CrystalString format, QCalendar & cal) {
+  return qstring_to_crystal(_self_->toString(([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cal));
+}
+
+extern "C" CrystalString bg_QDateTime_toString_QStringView(QDateTime * _self_, QStringView & format) {
+  return qstring_to_crystal(_self_->toString(format));
+}
+
+extern "C" CrystalString bg_QDateTime_toString_QStringView_QCalendar(QDateTime * _self_, QStringView & format, QCalendar & cal) {
+  return qstring_to_crystal(_self_->toString(format, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_addDays_qint64(QDateTime * _self_, qint64 days) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addDays(days));
+}
+
+extern "C" QDateTime * bg_QDateTime_addMonths_int(QDateTime * _self_, int months) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addMonths(months));
+}
+
+extern "C" QDateTime * bg_QDateTime_addYears_int(QDateTime * _self_, int years) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addYears(years));
+}
+
+extern "C" QDateTime * bg_QDateTime_addSecs_qint64(QDateTime * _self_, qint64 secs) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addSecs(secs));
+}
+
+extern "C" QDateTime * bg_QDateTime_addMSecs_qint64(QDateTime * _self_, qint64 msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addMSecs(msecs));
+}
+
+extern "C" QDateTime * bg_QDateTime_addDuration_std__chrono__milliseconds(QDateTime * _self_, int64_t msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->addDuration(std::chrono::milliseconds(msecs)));
+}
+
+extern "C" QDateTime * bg_QDateTime_toLocalTime_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->toLocalTime());
+}
+
+extern "C" QDateTime * bg_QDateTime_toUTC_(QDateTime * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->toUTC());
+}
+
+extern "C" QDateTime * bg_QDateTime_toOffsetFromUtc_int(QDateTime * _self_, int offsetSeconds) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->toOffsetFromUtc(offsetSeconds));
+}
+
+extern "C" QDateTime * bg_QDateTime_toTimeZone_const_QTimeZone_R(QDateTime * _self_, const QTimeZone & toZone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->toTimeZone(toZone));
+}
+
+extern "C" qint64 bg_QDateTime_daysTo_const_QDateTime_R(QDateTime * _self_, const QDateTime & unnamed_arg_0) {
+  return _self_->daysTo(unnamed_arg_0);
+}
+
+extern "C" qint64 bg_QDateTime_secsTo_const_QDateTime_R(QDateTime * _self_, const QDateTime & unnamed_arg_0) {
+  return _self_->secsTo(unnamed_arg_0);
+}
+
+extern "C" qint64 bg_QDateTime_msecsTo_const_QDateTime_R(QDateTime * _self_, const QDateTime & unnamed_arg_0) {
+  return _self_->msecsTo(unnamed_arg_0);
+}
+
+extern "C" QDateTime * bg_QDateTime_currentDateTime_STATIC_const_QTimeZone_R(const QTimeZone & zone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::currentDateTime(zone));
+}
+
+extern "C" QDateTime * bg_QDateTime_currentDateTime_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::currentDateTime());
+}
+
+extern "C" QDateTime * bg_QDateTime_currentDateTimeUtc_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::currentDateTimeUtc());
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_QStringView_Qt__DateFormat(QStringView & string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(string, format));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_Qt__DateFormat(const CrystalString string, Qt::DateFormat format) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_QStringView_QStringView_QCalendar(QStringView & string, QStringView & format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(string, format, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_QCalendar(const CrystalString string, QStringView & format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(const CrystalString string, const CrystalString format, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_QStringView_QStringView_int(QStringView & string, QStringView & format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(string, format, baseYear));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_QStringView_QStringView_int_QCalendar(QStringView & string, QStringView & format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(string, format, baseYear, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int(const CrystalString string, QStringView & format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, baseYear));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(const CrystalString string, QStringView & format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, baseYear, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int(const CrystalString string, const CrystalString format, int baseYear) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), baseYear));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(const CrystalString string, const CrystalString format, int baseYear, QCalendar & cal) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), baseYear, cal));
+}
+
+extern "C" qint64 bg_QDateTime_currentMSecsSinceEpoch_STATIC_() {
+  return QDateTime::currentMSecsSinceEpoch();
+}
+
+extern "C" qint64 bg_QDateTime_currentSecsSinceEpoch_STATIC_() {
+  return QDateTime::currentSecsSinceEpoch();
+}
+
+extern "C" QDateTime * bg_QDateTime__OPERATOR_add_assign_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
+  return &((*_self_) += (std::chrono::milliseconds(duration)));
+}
+
+extern "C" QDateTime * bg_QDateTime__OPERATOR_sub_assign_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
+  return &((*_self_) -= (std::chrono::milliseconds(duration)));
+}
+
+extern "C" QDateTime * bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime ((*_self_) + (std::chrono::milliseconds(duration)));
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_eq_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_ne_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) != (rhs);
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_lt_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) < (rhs);
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_gt_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) > (rhs);
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_le_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) <= (rhs);
+}
+
+extern "C" bool bg_QDateTime__OPERATOR_ge_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
+  return (*_self_) >= (rhs);
+}
+
+extern "C" QRegularExpression::PatternOptions bg_QRegularExpression_patternOptions_(QRegularExpression * _self_) {
+  return _self_->patternOptions();
+}
+
+extern "C" void bg_QRegularExpression_setPatternOptions_QRegularExpression__PatternOptions(QRegularExpression * _self_, QRegularExpression::PatternOptions options) {
+  _self_->setPatternOptions(options);
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QRegularExpression>();
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression__CONSTRUCT_const_QString_R(const CrystalString pattern) {
+  return new (UseGC) CrystalGCWrapper<QRegularExpression>(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression__CONSTRUCT_const_QString_R_QRegularExpression__PatternOptions(const CrystalString pattern, QRegularExpression::PatternOptions options) {
+  return new (UseGC) CrystalGCWrapper<QRegularExpression>(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options);
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression__COPY_const_QRegularExpression_R(const QRegularExpression & re) {
+  return new (UseGC) CrystalGCWrapper<QRegularExpression>(re);
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression__OPERATOR_assign_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & re) {
+  return &((*_self_) = (re));
+}
+
+extern "C" void bg_QRegularExpression_swap_QRegularExpression_R(QRegularExpression * _self_, QRegularExpression & other) {
+  _self_->swap(other);
+}
+
+extern "C" CrystalString bg_QRegularExpression_pattern_(QRegularExpression * _self_) {
+  return qstring_to_crystal(_self_->pattern());
+}
+
+extern "C" void bg_QRegularExpression_setPattern_const_QString_R(QRegularExpression * _self_, const CrystalString pattern) {
+  _self_->setPattern(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QRegularExpression_isValid_(QRegularExpression * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" qsizetype bg_QRegularExpression_patternErrorOffset_(QRegularExpression * _self_) {
+  return _self_->patternErrorOffset();
+}
+
+extern "C" CrystalString bg_QRegularExpression_errorString_(QRegularExpression * _self_) {
+  return qstring_to_crystal(_self_->errorString());
+}
+
+extern "C" int bg_QRegularExpression_captureCount_(QRegularExpression * _self_) {
+  return _self_->captureCount();
+}
+
+extern "C" QStringList * bg_QRegularExpression_namedCaptureGroups_(QRegularExpression * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->namedCaptureGroups());
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType(QRegularExpression * _self_, const CrystalString subject, qsizetype offset, QRegularExpression::MatchType matchType) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatch>()) QRegularExpressionMatch (_self_->match(([&]() { auto &&bg_value = (subject); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), offset, matchType));
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(QRegularExpression * _self_, const CrystalString subject, qsizetype offset, QRegularExpression::MatchType matchType, QRegularExpression::MatchOptions matchOptions) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatch>()) QRegularExpressionMatch (_self_->match(([&]() { auto &&bg_value = (subject); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), offset, matchType, matchOptions));
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType(QRegularExpression * _self_, QStringView & subjectView, qsizetype offset, QRegularExpression::MatchType matchType) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatch>()) QRegularExpressionMatch (_self_->matchView(subjectView, offset, matchType));
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(QRegularExpression * _self_, QStringView & subjectView, qsizetype offset, QRegularExpression::MatchType matchType, QRegularExpression::MatchOptions matchOptions) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatch>()) QRegularExpressionMatch (_self_->matchView(subjectView, offset, matchType, matchOptions));
+}
+
+extern "C" QRegularExpressionMatchIterator * bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType(QRegularExpression * _self_, const CrystalString subject, qsizetype offset, QRegularExpression::MatchType matchType) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatchIterator>()) QRegularExpressionMatchIterator (_self_->globalMatch(([&]() { auto &&bg_value = (subject); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), offset, matchType));
+}
+
+extern "C" QRegularExpressionMatchIterator * bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(QRegularExpression * _self_, const CrystalString subject, qsizetype offset, QRegularExpression::MatchType matchType, QRegularExpression::MatchOptions matchOptions) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatchIterator>()) QRegularExpressionMatchIterator (_self_->globalMatch(([&]() { auto &&bg_value = (subject); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), offset, matchType, matchOptions));
+}
+
+extern "C" QRegularExpressionMatchIterator * bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType(QRegularExpression * _self_, QStringView & subjectView, qsizetype offset, QRegularExpression::MatchType matchType) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatchIterator>()) QRegularExpressionMatchIterator (_self_->globalMatchView(subjectView, offset, matchType));
+}
+
+extern "C" QRegularExpressionMatchIterator * bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(QRegularExpression * _self_, QStringView & subjectView, qsizetype offset, QRegularExpression::MatchType matchType, QRegularExpression::MatchOptions matchOptions) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpressionMatchIterator>()) QRegularExpressionMatchIterator (_self_->globalMatchView(subjectView, offset, matchType, matchOptions));
+}
+
+extern "C" void bg_QRegularExpression_optimize_(QRegularExpression * _self_) {
+  _self_->optimize();
+}
+
+extern "C" CrystalString bg_QRegularExpression_escape_STATIC_const_QString_R(const CrystalString str) {
+  return qstring_to_crystal(QRegularExpression::escape(([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R(const CrystalString str) {
+  return qstring_to_crystal(QRegularExpression::wildcardToRegularExpression(([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R_QRegularExpression__WildcardConversionOptions(const CrystalString str, QRegularExpression::WildcardConversionOptions options) {
+  return qstring_to_crystal(QRegularExpression::wildcardToRegularExpression(([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options));
+}
+
+extern "C" CrystalString bg_QRegularExpression_anchoredPattern_STATIC_const_QString_R(const CrystalString expression) {
+  return qstring_to_crystal(QRegularExpression::anchoredPattern(([&]() { auto &&bg_value = (expression); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QRegularExpression_escape_STATIC_QStringView(QStringView & str) {
+  return qstring_to_crystal(QRegularExpression::escape(str));
+}
+
+extern "C" CrystalString bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView(QStringView & str) {
+  return qstring_to_crystal(QRegularExpression::wildcardToRegularExpression(str));
+}
+
+extern "C" CrystalString bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView_QRegularExpression__WildcardConversionOptions(QStringView & str, QRegularExpression::WildcardConversionOptions options) {
+  return qstring_to_crystal(QRegularExpression::wildcardToRegularExpression(str, options));
+}
+
+extern "C" CrystalString bg_QRegularExpression_anchoredPattern_STATIC_QStringView(QStringView & expression) {
+  return qstring_to_crystal(QRegularExpression::anchoredPattern(expression));
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity(QStringView & pattern, Qt::CaseSensitivity cs) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpression>()) QRegularExpression (QRegularExpression::fromWildcard(pattern, cs));
+}
+
+extern "C" QRegularExpression * bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity_QRegularExpression__WildcardConversionOptions(QStringView & pattern, Qt::CaseSensitivity cs, QRegularExpression::WildcardConversionOptions options) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpression>()) QRegularExpression (QRegularExpression::fromWildcard(pattern, cs, options));
+}
+
+extern "C" bool bg_QRegularExpression__OPERATOR_eq_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QRegularExpression__OPERATOR_ne_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & rhs) {
+  return (*_self_) != (rhs);
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QRegularExpressionMatch>();
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__COPY_const_QRegularExpressionMatch_R(const QRegularExpressionMatch & match) {
+  return new (UseGC) CrystalGCWrapper<QRegularExpressionMatch>(match);
+}
+
+extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__OPERATOR_assign_const_QRegularExpressionMatch_R(QRegularExpressionMatch * _self_, const QRegularExpressionMatch & match) {
+  return &((*_self_) = (match));
+}
+
+extern "C" void bg_QRegularExpressionMatch_swap_QRegularExpressionMatch_R(QRegularExpressionMatch * _self_, QRegularExpressionMatch & other) {
+  _self_->swap(other);
+}
+
+extern "C" QRegularExpression * bg_QRegularExpressionMatch_regularExpression_(QRegularExpressionMatch * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpression>()) QRegularExpression (_self_->regularExpression());
+}
+
+extern "C" QRegularExpression::MatchType bg_QRegularExpressionMatch_matchType_(QRegularExpressionMatch * _self_) {
+  return _self_->matchType();
+}
+
+extern "C" QRegularExpression::MatchOptions bg_QRegularExpressionMatch_matchOptions_(QRegularExpressionMatch * _self_) {
+  return _self_->matchOptions();
+}
+
+extern "C" bool bg_QRegularExpressionMatch_hasMatch_(QRegularExpressionMatch * _self_) {
+  return _self_->hasMatch();
+}
+
+extern "C" bool bg_QRegularExpressionMatch_hasPartialMatch_(QRegularExpressionMatch * _self_) {
+  return _self_->hasPartialMatch();
+}
+
+extern "C" bool bg_QRegularExpressionMatch_isValid_(QRegularExpressionMatch * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" int bg_QRegularExpressionMatch_lastCapturedIndex_(QRegularExpressionMatch * _self_) {
+  return _self_->lastCapturedIndex();
+}
+
+extern "C" bool bg_QRegularExpressionMatch_hasCaptured_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return _self_->hasCaptured(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QRegularExpressionMatch_hasCaptured_int(QRegularExpressionMatch * _self_, int nth) {
+  return _self_->hasCaptured(nth);
+}
+
+extern "C" CrystalString bg_QRegularExpressionMatch_captured_int(QRegularExpressionMatch * _self_, int nth) {
+  return qstring_to_crystal(_self_->captured(nth));
+}
+
+extern "C" QStringView * bg_QRegularExpressionMatch_capturedView_int(QRegularExpressionMatch * _self_, int nth) {
+  return new (UseGC, bindgen_gc_finalizer<QStringView>()) QStringView (_self_->capturedView(nth));
+}
+
+extern "C" CrystalString bg_QRegularExpressionMatch_captured_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return qstring_to_crystal(_self_->captured(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QStringView * bg_QRegularExpressionMatch_capturedView_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return new (UseGC, bindgen_gc_finalizer<QStringView>()) QStringView (_self_->capturedView(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QStringList * bg_QRegularExpressionMatch_capturedTexts_(QRegularExpressionMatch * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->capturedTexts());
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedStart_int(QRegularExpressionMatch * _self_, int nth) {
+  return _self_->capturedStart(nth);
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedLength_int(QRegularExpressionMatch * _self_, int nth) {
+  return _self_->capturedLength(nth);
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedEnd_int(QRegularExpressionMatch * _self_, int nth) {
+  return _self_->capturedEnd(nth);
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedStart_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return _self_->capturedStart(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedLength_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return _self_->capturedLength(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" qsizetype bg_QRegularExpressionMatch_capturedEnd_QAnyStringView(QRegularExpressionMatch * _self_, CrystalString name) {
+  return _self_->capturedEnd(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
 extern "C" QUrl * bg_QUrl__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QUrl>();
 }
@@ -6306,6 +8325,1187 @@ extern "C" void bg_BgInherit_QMimeData_JUMPTABLE_BgJumptable_QMimeData_R(BgInher
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QProcess {
+  CrystalProc<const QMetaObject *> bg_QProcess_metaObject_;
+  CrystalProc<void *, const char *> bg_QProcess_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool> bg_QProcess_open_;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QProcess_open_QIODeviceBase__OpenMode;
+  CrystalProc<bool, int> bg_QProcess_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QProcess_waitForBytesWritten_int;
+  CrystalProc<qint64> bg_QProcess_bytesToWrite_;
+  CrystalProc<bool> bg_QProcess_isSequential_;
+  CrystalProc<void> bg_QProcess_close_;
+  CrystalProc<qint64, char *, qint64> bg_QProcess_readData_char_X_qint64;
+  CrystalProc<qint64, const char *, qint64> bg_QProcess_writeData_const_char_X_qint64;
+  CrystalProc<qint64> bg_QIODevice_pos_;
+  CrystalProc<qint64> bg_QIODevice_size_;
+  CrystalProc<bool, qint64> bg_QIODevice_seek_qint64;
+  CrystalProc<bool> bg_QIODevice_atEnd_;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<bool> bg_QIODevice_canReadLine_;
+  CrystalProc<qint64, char *, qint64> bg_QIODevice_readLineData_char_X_qint64;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QProcess : public QProcess {
+  using QProcess::QProcess;
+  BgJumptable_QProcess bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QProcess_metaObject_();
+    } else {
+      return QProcess::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QProcess_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QProcess::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QProcess::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QProcess_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QProcess::open(mode);
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QProcess_waitForReadyRead_int(msecs);
+    } else {
+      return QProcess::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QProcess_waitForBytesWritten_int(msecs);
+    } else {
+      return QProcess::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QProcess_bytesToWrite_();
+    } else {
+      return QProcess::bytesToWrite();
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QProcess_isSequential_();
+    } else {
+      return QProcess::isSequential();
+    }
+  }
+  
+  void close() override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_close_.isValid()) {
+      _self_->bgJump.bg_QProcess_close_();
+    } else {
+      QProcess::close();
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QProcess_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QProcess::readData(data, maxlen);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QProcess_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QProcess_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QProcess::writeData(data, len);
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_pos_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_pos_();
+    } else {
+      return QProcess::pos();
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_size_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_size_();
+    } else {
+      return QProcess::size();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_seek_qint64(pos);
+    } else {
+      return QProcess::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_atEnd_();
+    } else {
+      return QProcess::atEnd();
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QProcess::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QProcess::bytesAvailable();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_canReadLine_();
+    } else {
+      return QProcess::canReadLine();
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QProcess::readLineData(data, maxlen);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QProcess::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QProcess::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QProcess::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QProcess::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QProcess::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QProcess::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProcess::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProcess *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProcess::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QProcess_metaObject_(QProcess * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QProcess_qt_metacast_const_char_X(QProcess * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX(QProcess * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QProcess_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QProcess::tr(s));
+}
+
+extern "C" CrystalString bg_QProcess_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QProcess::tr(s, c));
+}
+
+extern "C" CrystalString bg_QProcess_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QProcess::tr(s, c, n));
+}
+
+extern "C" QProcess * bg_QProcess__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProcess>(parent);
+}
+
+extern "C" void bg_QProcess_start_const_QString_R(QProcess * _self_, const CrystalString program) {
+  _self_->start(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_start_const_QString_R_const_QStringList_R(QProcess * _self_, const CrystalString program, const QStringList & arguments) {
+  _self_->start(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments);
+}
+
+extern "C" void bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(QProcess * _self_, const CrystalString program, const QStringList & arguments, QIODeviceBase::OpenMode mode) {
+  _self_->start(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments, mode);
+}
+
+extern "C" void bg_QProcess_start_(QProcess * _self_) {
+  _self_->start();
+}
+
+extern "C" void bg_QProcess_start_QIODeviceBase__OpenMode(QProcess * _self_, QIODeviceBase::OpenMode mode) {
+  _self_->start(mode);
+}
+
+extern "C" void bg_QProcess_startCommand_const_QString_R(QProcess * _self_, const CrystalString command) {
+  _self_->startCommand(([&]() { auto &&bg_value = (command); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_startCommand_const_QString_R_QIODeviceBase__OpenMode(QProcess * _self_, const CrystalString command, QIODeviceBase::OpenMode mode) {
+  _self_->startCommand(([&]() { auto &&bg_value = (command); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), mode);
+}
+
+extern "C" bool bg_QProcess_startDetached_qint64_X(QProcess * _self_, qint64 * pid) {
+  return _self_->startDetached(pid);
+}
+
+extern "C" bool bg_QProcess_open_(QProcess * _self_) {
+  return _self_->open();
+}
+
+extern "C" bool bg_QProcess_open_QIODeviceBase__OpenMode(QProcess * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->open(mode);
+}
+
+extern "C" CrystalString bg_QProcess_program_(QProcess * _self_) {
+  return qstring_to_crystal(_self_->program());
+}
+
+extern "C" void bg_QProcess_setProgram_const_QString_R(QProcess * _self_, const CrystalString program) {
+  _self_->setProgram(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QStringList * bg_QProcess_arguments_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->arguments());
+}
+
+extern "C" void bg_QProcess_setArguments_const_QStringList_R(QProcess * _self_, const QStringList & arguments) {
+  _self_->setArguments(arguments);
+}
+
+extern "C" QProcess::ProcessChannelMode bg_QProcess_processChannelMode_(QProcess * _self_) {
+  return _self_->processChannelMode();
+}
+
+extern "C" void bg_QProcess_setProcessChannelMode_QProcess__ProcessChannelMode(QProcess * _self_, QProcess::ProcessChannelMode mode) {
+  _self_->setProcessChannelMode(mode);
+}
+
+extern "C" QProcess::InputChannelMode bg_QProcess_inputChannelMode_(QProcess * _self_) {
+  return _self_->inputChannelMode();
+}
+
+extern "C" void bg_QProcess_setInputChannelMode_QProcess__InputChannelMode(QProcess * _self_, QProcess::InputChannelMode mode) {
+  _self_->setInputChannelMode(mode);
+}
+
+extern "C" QProcess::ProcessChannel bg_QProcess_readChannel_(QProcess * _self_) {
+  return _self_->readChannel();
+}
+
+extern "C" void bg_QProcess_setReadChannel_QProcess__ProcessChannel(QProcess * _self_, QProcess::ProcessChannel channel) {
+  _self_->setReadChannel(channel);
+}
+
+extern "C" void bg_QProcess_closeReadChannel_QProcess__ProcessChannel(QProcess * _self_, QProcess::ProcessChannel channel) {
+  _self_->closeReadChannel(channel);
+}
+
+extern "C" void bg_QProcess_closeWriteChannel_(QProcess * _self_) {
+  _self_->closeWriteChannel();
+}
+
+extern "C" void bg_QProcess_setStandardInputFile_const_QString_R(QProcess * _self_, const CrystalString fileName) {
+  _self_->setStandardInputFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_setStandardOutputFile_const_QString_R(QProcess * _self_, const CrystalString fileName) {
+  _self_->setStandardOutputFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_setStandardOutputFile_const_QString_R_QIODeviceBase__OpenMode(QProcess * _self_, const CrystalString fileName, QIODeviceBase::OpenMode mode) {
+  _self_->setStandardOutputFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), mode);
+}
+
+extern "C" void bg_QProcess_setStandardErrorFile_const_QString_R(QProcess * _self_, const CrystalString fileName) {
+  _self_->setStandardErrorFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_setStandardErrorFile_const_QString_R_QIODeviceBase__OpenMode(QProcess * _self_, const CrystalString fileName, QIODeviceBase::OpenMode mode) {
+  _self_->setStandardErrorFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), mode);
+}
+
+extern "C" void bg_QProcess_setStandardOutputProcess_QProcess_X(QProcess * _self_, QProcess * destination) {
+  _self_->setStandardOutputProcess(destination);
+}
+
+extern "C" void bg_QProcess_failChildProcessModifier_const_char_X_int(QProcess * _self_, const char * description, int error) {
+  _self_->failChildProcessModifier(description, error);
+}
+
+extern "C" void bg_QProcess_setUnixProcessParameters_QProcess__UnixProcessFlags(QProcess * _self_, QProcess::UnixProcessFlags flagsOnly) {
+  _self_->setUnixProcessParameters(flagsOnly);
+}
+
+extern "C" CrystalString bg_QProcess_workingDirectory_(QProcess * _self_) {
+  return qstring_to_crystal(_self_->workingDirectory());
+}
+
+extern "C" void bg_QProcess_setWorkingDirectory_const_QString_R(QProcess * _self_, const CrystalString dir) {
+  _self_->setWorkingDirectory(([&]() { auto &&bg_value = (dir); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProcess_setEnvironment_const_QStringList_R(QProcess * _self_, const QStringList & environment) {
+  _self_->setEnvironment(environment);
+}
+
+extern "C" QStringList * bg_QProcess_environment_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->environment());
+}
+
+extern "C" void bg_QProcess_setProcessEnvironment_const_QProcessEnvironment_R(QProcess * _self_, const QProcessEnvironment & environment) {
+  _self_->setProcessEnvironment(environment);
+}
+
+extern "C" QProcessEnvironment * bg_QProcess_processEnvironment_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QProcessEnvironment>()) QProcessEnvironment (_self_->processEnvironment());
+}
+
+extern "C" QProcess::ProcessError bg_QProcess_error_(QProcess * _self_) {
+  return _self_->error();
+}
+
+extern "C" QProcess::ProcessState bg_QProcess_state_(QProcess * _self_) {
+  return _self_->state();
+}
+
+extern "C" qint64 bg_QProcess_processId_(QProcess * _self_) {
+  return _self_->processId();
+}
+
+extern "C" bool bg_QProcess_waitForStarted_int(QProcess * _self_, int msecs) {
+  return _self_->waitForStarted(msecs);
+}
+
+extern "C" bool bg_QProcess_waitForReadyRead_int(QProcess * _self_, int msecs) {
+  return _self_->waitForReadyRead(msecs);
+}
+
+extern "C" bool bg_QProcess_waitForBytesWritten_int(QProcess * _self_, int msecs) {
+  return _self_->waitForBytesWritten(msecs);
+}
+
+extern "C" bool bg_QProcess_waitForFinished_int(QProcess * _self_, int msecs) {
+  return _self_->waitForFinished(msecs);
+}
+
+extern "C" QByteArray * bg_QProcess_readAllStandardOutput_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readAllStandardOutput());
+}
+
+extern "C" QByteArray * bg_QProcess_readAllStandardError_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readAllStandardError());
+}
+
+extern "C" int bg_QProcess_exitCode_(QProcess * _self_) {
+  return _self_->exitCode();
+}
+
+extern "C" QProcess::ExitStatus bg_QProcess_exitStatus_(QProcess * _self_) {
+  return _self_->exitStatus();
+}
+
+extern "C" qint64 bg_QProcess_bytesToWrite_(QProcess * _self_) {
+  return _self_->bytesToWrite();
+}
+
+extern "C" bool bg_QProcess_isSequential_(QProcess * _self_) {
+  return _self_->isSequential();
+}
+
+extern "C" void bg_QProcess_close_(QProcess * _self_) {
+  _self_->close();
+}
+
+extern "C" int bg_QProcess_execute_STATIC_const_QString_R(const CrystalString program) {
+  return QProcess::execute(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(const CrystalString program, const QStringList & arguments) {
+  return QProcess::execute(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments);
+}
+
+extern "C" bool bg_QProcess_startDetached_STATIC_const_QString_R(const CrystalString program) {
+  return QProcess::startDetached(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(const CrystalString program, const QStringList & arguments) {
+  return QProcess::startDetached(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments);
+}
+
+extern "C" bool bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(const CrystalString program, const QStringList & arguments, const CrystalString workingDirectory) {
+  return QProcess::startDetached(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments, ([&]() { auto &&bg_value = (workingDirectory); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(const CrystalString program, const QStringList & arguments, const CrystalString workingDirectory, qint64 * pid) {
+  return QProcess::startDetached(([&]() { auto &&bg_value = (program); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), arguments, ([&]() { auto &&bg_value = (workingDirectory); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), pid);
+}
+
+extern "C" QStringList * bg_QProcess_systemEnvironment_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (QProcess::systemEnvironment());
+}
+
+extern "C" CrystalString bg_QProcess_nullDevice_STATIC_() {
+  return qstring_to_crystal(QProcess::nullDevice());
+}
+
+extern "C" QStringList * bg_QProcess_splitCommand_STATIC_QStringView(QStringView & command) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (QProcess::splitCommand(command));
+}
+
+extern "C" void bg_QProcess_terminate_(QProcess * _self_) {
+  _self_->terminate();
+}
+
+extern "C" void bg_QProcess_kill_(QProcess * _self_) {
+  _self_->kill();
+}
+
+extern "C" void bg_QProcess_finished_int_QProcess__ExitStatus(QProcess * _self_, int exitCode, QProcess::ExitStatus exitStatus) {
+  _self_->finished(exitCode, exitStatus);
+}
+
+extern "C" void bg_QProcess_errorOccurred_QProcess__ProcessError(QProcess * _self_, QProcess::ProcessError error) {
+  _self_->errorOccurred(error);
+}
+
+extern "C" void bg_QProcess_setProcessState_QProcess__ProcessState(QProcess * _self_, QProcess::ProcessState state) {
+  _self_->setProcessState(state);
+}
+
+extern "C" qint64 bg_QProcess_readData_char_X_qint64(QProcess * _self_, char * data, qint64 maxlen) {
+  return _self_->readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QProcess_writeData_const_char_X_qint64(QProcess * _self_, const char * data, qint64 len) {
+  return _self_->writeData(data, len);
+}
+
+extern "C" const QMetaObject * bg_QProcess_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QProcess::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_started_CrystalProc_void_(QProcess * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)())&QProcess::started, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_finished_CrystalProc_void__int__QProcess__ExitStatus_(QProcess * _self_, CrystalProc<void, int, QProcess::ExitStatus> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)(int, QProcess::ExitStatus))&QProcess::finished, [_proc_](int exitCode, QProcess::ExitStatus exitStatus){ _proc_(exitCode, exitStatus); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_errorOccurred_CrystalProc_void__QProcess__ProcessError_(QProcess * _self_, CrystalProc<void, QProcess::ProcessError> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)(QProcess::ProcessError))&QProcess::errorOccurred, [_proc_](QProcess::ProcessError error){ _proc_(error); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_stateChanged_CrystalProc_void__QProcess__ProcessState_(QProcess * _self_, CrystalProc<void, QProcess::ProcessState> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)(QProcess::ProcessState))&QProcess::stateChanged, [_proc_](QProcess::ProcessState state){ _proc_(state); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_readyReadStandardOutput_CrystalProc_void_(QProcess * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)())&QProcess::readyReadStandardOutput, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QProcess_CONNECT_readyReadStandardError_CrystalProc_void_(QProcess * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProcess::*)())&QProcess::readyReadStandardError, [_proc_](){ _proc_(); }));
+}
+
+extern "C" bool bg_QProcess_open_SUPER_QIODeviceBase__OpenMode(QProcess * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->QProcess::open(mode);
+}
+
+extern "C" bool bg_QProcess_waitForReadyRead_SUPER_int(QProcess * _self_, int msecs) {
+  return _self_->QProcess::waitForReadyRead(msecs);
+}
+
+extern "C" bool bg_QProcess_waitForBytesWritten_SUPER_int(QProcess * _self_, int msecs) {
+  return _self_->QProcess::waitForBytesWritten(msecs);
+}
+
+extern "C" qint64 bg_QProcess_bytesToWrite_SUPER_(QProcess * _self_) {
+  return _self_->QProcess::bytesToWrite();
+}
+
+extern "C" bool bg_QProcess_isSequential_SUPER_(QProcess * _self_) {
+  return _self_->QProcess::isSequential();
+}
+
+extern "C" void bg_QProcess_close_SUPER_(QProcess * _self_) {
+  _self_->QProcess::close();
+}
+
+extern "C" qint64 bg_QProcess_readData_SUPER_char_X_qint64(QProcess * _self_, char * data, qint64 maxlen) {
+  return _self_->QProcess::readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QProcess_writeData_SUPER_const_char_X_qint64(QProcess * _self_, const char * data, qint64 len) {
+  return _self_->QProcess::writeData(data, len);
+}
+
+extern "C" void bg_BgInherit_QProcess_JUMPTABLE_BgJumptable_QProcess_R(BgInherit_QProcess * _self_, const BgJumptable_QProcess & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QVariantAnimation {
+  CrystalProc<const QMetaObject *> bg_QVariantAnimation_metaObject_;
+  CrystalProc<void *, const char *> bg_QVariantAnimation_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QVariantAnimation_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<int> bg_QVariantAnimation_duration_;
+  CrystalProc<bool, QEvent *> bg_QVariantAnimation_event_QEvent_X;
+  CrystalProc<void, int> bg_QVariantAnimation_updateCurrentTime_int;
+  CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State;
+  CrystalProc<void, const CrystalVariant> bg_QVariantAnimation_updateCurrentValue_const_QVariant_R;
+  CrystalProc<CrystalVariant, const CrystalVariant, const CrystalVariant, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
+  CrystalProc<void, QAbstractAnimation::Direction> bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QVariantAnimation : public QVariantAnimation {
+  using QVariantAnimation::QVariantAnimation;
+  BgJumptable_QVariantAnimation bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_metaObject_();
+    } else {
+      return QVariantAnimation::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QVariantAnimation::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QVariantAnimation::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  int duration() const override {
+    const BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_duration_.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_duration_();
+    } else {
+      return QVariantAnimation::duration();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_event_QEvent_X(event);
+    } else {
+      return QVariantAnimation::event(event);
+    }
+  }
+  
+  void updateCurrentTime(int currentTime) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_updateCurrentTime_int.isValid()) {
+      _self_->bgJump.bg_QVariantAnimation_updateCurrentTime_int(currentTime);
+    } else {
+      QVariantAnimation::updateCurrentTime(currentTime);
+    }
+  }
+  
+  void updateState(QAbstractAnimation::State newState, QAbstractAnimation::State oldState) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State.isValid()) {
+      _self_->bgJump.bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(newState, oldState);
+    } else {
+      QVariantAnimation::updateState(newState, oldState);
+    }
+  }
+  
+  void updateCurrentValue(const QVariant & value) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_updateCurrentValue_const_QVariant_R.isValid()) {
+      _self_->bgJump.bg_QVariantAnimation_updateCurrentValue_const_QVariant_R(qvariant_to_crystal(value));
+    } else {
+      QVariantAnimation::updateCurrentValue(value);
+    }
+  }
+  
+  QVariant interpolated(const QVariant & from, const QVariant & to, qreal progress) const override {
+    const BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(qvariant_to_crystal(from), qvariant_to_crystal(to), progress));
+    } else {
+      return QVariantAnimation::interpolated(from, to, progress);
+    }
+  }
+  
+  void updateDirection(QAbstractAnimation::Direction direction) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction.isValid()) {
+      _self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(direction);
+    } else {
+      QVariantAnimation::updateDirection(direction);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QVariantAnimation::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QVariantAnimation::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QVariantAnimation::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QVariantAnimation::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QVariantAnimation::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QVariantAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QVariantAnimation::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QVariantAnimation_metaObject_(QVariantAnimation * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QVariantAnimation_qt_metacast_const_char_X(QVariantAnimation * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QVariantAnimation_qt_metacall_QMetaObject__Call_int_void_XX(QVariantAnimation * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QVariantAnimation_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QVariantAnimation::tr(s));
+}
+
+extern "C" CrystalString bg_QVariantAnimation_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QVariantAnimation::tr(s, c));
+}
+
+extern "C" CrystalString bg_QVariantAnimation_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QVariantAnimation::tr(s, c, n));
+}
+
+extern "C" QVariantAnimation * bg_QVariantAnimation__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QVariantAnimation>(parent);
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_startValue_(QVariantAnimation * _self_) {
+  return qvariant_to_crystal(_self_->startValue());
+}
+
+extern "C" void bg_QVariantAnimation_setStartValue_const_QVariant_R(QVariantAnimation * _self_, const CrystalVariant value) {
+  _self_->setStartValue(crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_endValue_(QVariantAnimation * _self_) {
+  return qvariant_to_crystal(_self_->endValue());
+}
+
+extern "C" void bg_QVariantAnimation_setEndValue_const_QVariant_R(QVariantAnimation * _self_, const CrystalVariant value) {
+  _self_->setEndValue(crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_keyValueAt_qreal(QVariantAnimation * _self_, qreal step) {
+  return qvariant_to_crystal(_self_->keyValueAt(step));
+}
+
+extern "C" void bg_QVariantAnimation_setKeyValueAt_qreal_const_QVariant_R(QVariantAnimation * _self_, qreal step, const CrystalVariant value) {
+  _self_->setKeyValueAt(step, crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_currentValue_(QVariantAnimation * _self_) {
+  return qvariant_to_crystal(_self_->currentValue());
+}
+
+extern "C" int bg_QVariantAnimation_duration_(QVariantAnimation * _self_) {
+  return _self_->duration();
+}
+
+extern "C" void bg_QVariantAnimation_setDuration_int(QVariantAnimation * _self_, int msecs) {
+  _self_->setDuration(msecs);
+}
+
+extern "C" QEasingCurve * bg_QVariantAnimation_easingCurve_(QVariantAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QEasingCurve>()) QEasingCurve (_self_->easingCurve());
+}
+
+extern "C" void bg_QVariantAnimation_setEasingCurve_const_QEasingCurve_R(QVariantAnimation * _self_, const QEasingCurve & easing) {
+  _self_->setEasingCurve(easing);
+}
+
+extern "C" void bg_QVariantAnimation_valueChanged_const_QVariant_R(QVariantAnimation * _self_, const CrystalVariant value) {
+  _self_->valueChanged(crystal_to_qvariant(value));
+}
+
+extern "C" QVariantAnimation * bg_QVariantAnimation__CONSTRUCT_QVariantAnimationPrivate_R_QObject_X(QVariantAnimationPrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QVariantAnimation>(dd, parent);
+}
+
+extern "C" bool bg_QVariantAnimation_event_QEvent_X(QVariantAnimation * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QVariantAnimation_updateCurrentTime_int(QVariantAnimation * _self_, int currentTime) {
+  _self_->updateCurrentTime(currentTime);
+}
+
+extern "C" void bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(QVariantAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->updateState(newState, oldState);
+}
+
+extern "C" void bg_QVariantAnimation_updateCurrentValue_const_QVariant_R(QVariantAnimation * _self_, const CrystalVariant value) {
+  _self_->updateCurrentValue(crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(QVariantAnimation * _self_, const CrystalVariant from, const CrystalVariant to, qreal progress) {
+  return qvariant_to_crystal(_self_->interpolated(crystal_to_qvariant(from), crystal_to_qvariant(to), progress));
+}
+
+extern "C" const QMetaObject * bg_QVariantAnimation_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QVariantAnimation::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QVariantAnimation_CONNECT_valueChanged_CrystalProc_void__const_QVariant_R_(QVariantAnimation * _self_, CrystalProc<void, const CrystalVariant> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QVariantAnimation::*)(const QVariant &))&QVariantAnimation::valueChanged, [_proc_](const QVariant & value){ _proc_(qvariant_to_crystal(value)); }));
+}
+
+extern "C" int bg_QVariantAnimation_duration_SUPER_(QVariantAnimation * _self_) {
+  return _self_->QVariantAnimation::duration();
+}
+
+extern "C" bool bg_QVariantAnimation_event_SUPER_QEvent_X(QVariantAnimation * _self_, QEvent * event) {
+  return _self_->QVariantAnimation::event(event);
+}
+
+extern "C" void bg_QVariantAnimation_updateCurrentTime_SUPER_int(QVariantAnimation * _self_, int currentTime) {
+  _self_->QVariantAnimation::updateCurrentTime(currentTime);
+}
+
+extern "C" void bg_QVariantAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(QVariantAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->QVariantAnimation::updateState(newState, oldState);
+}
+
+extern "C" void bg_QVariantAnimation_updateCurrentValue_SUPER_const_QVariant_R(QVariantAnimation * _self_, const CrystalVariant value) {
+  _self_->QVariantAnimation::updateCurrentValue(crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QVariantAnimation_interpolated_SUPER_const_QVariant_R_const_QVariant_R_qreal(QVariantAnimation * _self_, const CrystalVariant from, const CrystalVariant to, qreal progress) {
+  return qvariant_to_crystal(_self_->QVariantAnimation::interpolated(crystal_to_qvariant(from), crystal_to_qvariant(to), progress));
+}
+
+extern "C" void bg_BgInherit_QVariantAnimation_JUMPTABLE_BgJumptable_QVariantAnimation_R(BgInherit_QVariantAnimation * _self_, const BgJumptable_QVariantAnimation & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QPropertyAnimation {
+  CrystalProc<const QMetaObject *> bg_QPropertyAnimation_metaObject_;
+  CrystalProc<void *, const char *> bg_QPropertyAnimation_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QPropertyAnimation_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QPropertyAnimation_event_QEvent_X;
+  CrystalProc<void, const CrystalVariant> bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R;
+  CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State;
+  CrystalProc<int> bg_QVariantAnimation_duration_;
+  CrystalProc<void, int> bg_QVariantAnimation_updateCurrentTime_int;
+  CrystalProc<CrystalVariant, const CrystalVariant, const CrystalVariant, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
+  CrystalProc<void, QAbstractAnimation::Direction> bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QPropertyAnimation : public QPropertyAnimation {
+  using QPropertyAnimation::QPropertyAnimation;
+  BgJumptable_QPropertyAnimation bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QPropertyAnimation_metaObject_();
+    } else {
+      return QPropertyAnimation::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QPropertyAnimation_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QPropertyAnimation::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QPropertyAnimation_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QPropertyAnimation::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QPropertyAnimation_event_QEvent_X(event);
+    } else {
+      return QPropertyAnimation::event(event);
+    }
+  }
+  
+  void updateCurrentValue(const QVariant & value) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R.isValid()) {
+      _self_->bgJump.bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R(qvariant_to_crystal(value));
+    } else {
+      QPropertyAnimation::updateCurrentValue(value);
+    }
+  }
+  
+  void updateState(QAbstractAnimation::State newState, QAbstractAnimation::State oldState) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State.isValid()) {
+      _self_->bgJump.bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(newState, oldState);
+    } else {
+      QPropertyAnimation::updateState(newState, oldState);
+    }
+  }
+  
+  int duration() const override {
+    const BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_duration_.isValid()) {
+      return _self_->bgJump.bg_QVariantAnimation_duration_();
+    } else {
+      return QPropertyAnimation::duration();
+    }
+  }
+  
+  void updateCurrentTime(int currentTime) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_updateCurrentTime_int.isValid()) {
+      _self_->bgJump.bg_QVariantAnimation_updateCurrentTime_int(currentTime);
+    } else {
+      QPropertyAnimation::updateCurrentTime(currentTime);
+    }
+  }
+  
+  QVariant interpolated(const QVariant & from, const QVariant & to, qreal progress) const override {
+    const BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(qvariant_to_crystal(from), qvariant_to_crystal(to), progress));
+    } else {
+      return QPropertyAnimation::interpolated(from, to, progress);
+    }
+  }
+  
+  void updateDirection(QAbstractAnimation::Direction direction) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction.isValid()) {
+      _self_->bgJump.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(direction);
+    } else {
+      QPropertyAnimation::updateDirection(direction);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QPropertyAnimation::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QPropertyAnimation::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QPropertyAnimation::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QPropertyAnimation::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QPropertyAnimation::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QPropertyAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QPropertyAnimation::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QPropertyAnimation_metaObject_(QPropertyAnimation * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QPropertyAnimation_qt_metacast_const_char_X(QPropertyAnimation * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QPropertyAnimation_qt_metacall_QMetaObject__Call_int_void_XX(QPropertyAnimation * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QPropertyAnimation_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QPropertyAnimation::tr(s));
+}
+
+extern "C" CrystalString bg_QPropertyAnimation_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QPropertyAnimation::tr(s, c));
+}
+
+extern "C" CrystalString bg_QPropertyAnimation_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QPropertyAnimation::tr(s, c, n));
+}
+
+extern "C" QPropertyAnimation * bg_QPropertyAnimation__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QPropertyAnimation>(parent);
+}
+
+extern "C" QPropertyAnimation * bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X(QObject * target, const QByteArray & propertyName, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QPropertyAnimation>(target, propertyName, parent);
+}
+
+extern "C" QObject * bg_QPropertyAnimation_targetObject_(QPropertyAnimation * _self_) {
+  return _self_->targetObject();
+}
+
+extern "C" void bg_QPropertyAnimation_setTargetObject_QObject_X(QPropertyAnimation * _self_, QObject * target) {
+  _self_->setTargetObject(target);
+}
+
+extern "C" QByteArray * bg_QPropertyAnimation_propertyName_(QPropertyAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->propertyName());
+}
+
+extern "C" void bg_QPropertyAnimation_setPropertyName_const_QByteArray_R(QPropertyAnimation * _self_, const QByteArray & propertyName) {
+  _self_->setPropertyName(propertyName);
+}
+
+extern "C" bool bg_QPropertyAnimation_event_QEvent_X(QPropertyAnimation * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R(QPropertyAnimation * _self_, const CrystalVariant value) {
+  _self_->updateCurrentValue(crystal_to_qvariant(value));
+}
+
+extern "C" void bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(QPropertyAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->updateState(newState, oldState);
+}
+
+extern "C" const QMetaObject * bg_QPropertyAnimation_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPropertyAnimation::staticMetaObject);
+}
+
+extern "C" bool bg_QPropertyAnimation_event_SUPER_QEvent_X(QPropertyAnimation * _self_, QEvent * event) {
+  return _self_->QPropertyAnimation::event(event);
+}
+
+extern "C" void bg_QPropertyAnimation_updateCurrentValue_SUPER_const_QVariant_R(QPropertyAnimation * _self_, const CrystalVariant value) {
+  _self_->QPropertyAnimation::updateCurrentValue(crystal_to_qvariant(value));
+}
+
+extern "C" void bg_QPropertyAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(QPropertyAnimation * _self_, QAbstractAnimation::State newState, QAbstractAnimation::State oldState) {
+  _self_->QPropertyAnimation::updateState(newState, oldState);
+}
+
+extern "C" void bg_BgInherit_QPropertyAnimation_JUMPTABLE_BgJumptable_QPropertyAnimation_R(BgInherit_QPropertyAnimation * _self_, const BgJumptable_QPropertyAnimation & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" QSize bg_QSize__CONSTRUCT_() {
   return *(bg_deref<QSize>());
 }
@@ -7254,6 +10454,324 @@ extern "C" QRectF bg_QRectF__OPERATOR_sub_const_QMarginsF_R(QRectF * _self_, con
   return (*_self_) - (rhs);
 }
 
+struct BgJumptable_QSettings {
+  CrystalProc<const QMetaObject *> bg_QSettings_metaObject_;
+  CrystalProc<void *, const char *> bg_QSettings_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QSettings_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSettings : public QSettings {
+  using QSettings::QSettings;
+  BgJumptable_QSettings bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QSettings_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSettings_metaObject_();
+    } else {
+      return QSettings::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QSettings_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSettings_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSettings::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSettings::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QSettings_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSettings_event_QEvent_X(event);
+    } else {
+      return QSettings::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSettings::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSettings::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSettings::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSettings::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSettings::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSettings *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSettings::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSettings_metaObject_(QSettings * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSettings_qt_metacast_const_char_X(QSettings * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX(QSettings * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSettings_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSettings::tr(s));
+}
+
+extern "C" CrystalString bg_QSettings_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSettings::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSettings_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSettings::tr(s, c, n));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_const_QString_R(const CrystalString organization) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_const_QString_R_const_QString_R(const CrystalString organization, const CrystalString application) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_const_QString_R_const_QString_R_QObject_X(const CrystalString organization, const CrystalString application, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Scope_const_QString_R(QSettings::Scope scope, const CrystalString organization) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Scope_const_QString_R_const_QString_R(QSettings::Scope scope, const CrystalString organization, const CrystalString application) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Scope_const_QString_R_const_QString_R_QObject_X(QSettings::Scope scope, const CrystalString organization, const CrystalString application, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Format_QSettings__Scope_const_QString_R(QSettings::Format format, QSettings::Scope scope, const CrystalString organization) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(format, scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Format_QSettings__Scope_const_QString_R_const_QString_R(QSettings::Format format, QSettings::Scope scope, const CrystalString organization, const CrystalString application) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(format, scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Format_QSettings__Scope_const_QString_R_const_QString_R_QObject_X(QSettings::Format format, QSettings::Scope scope, const CrystalString organization, const CrystalString application, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(format, scope, ([&]() { auto &&bg_value = (organization); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (application); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_const_QString_R_QSettings__Format_QObject_X(const CrystalString fileName, QSettings::Format format, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), format, parent);
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(parent);
+}
+
+extern "C" QSettings * bg_QSettings__CONSTRUCT_QSettings__Scope_QObject_X(QSettings::Scope scope, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSettings>(scope, parent);
+}
+
+extern "C" void bg_QSettings_clear_(QSettings * _self_) {
+  _self_->clear();
+}
+
+extern "C" void bg_QSettings_sync_(QSettings * _self_) {
+  _self_->sync();
+}
+
+extern "C" QSettings::Status bg_QSettings_status_(QSettings * _self_) {
+  return _self_->status();
+}
+
+extern "C" bool bg_QSettings_isAtomicSyncRequired_(QSettings * _self_) {
+  return _self_->isAtomicSyncRequired();
+}
+
+extern "C" void bg_QSettings_setAtomicSyncRequired_bool(QSettings * _self_, bool enable) {
+  _self_->setAtomicSyncRequired(enable);
+}
+
+extern "C" void bg_QSettings_beginGroup_QAnyStringView(QSettings * _self_, CrystalString prefix) {
+  _self_->beginGroup(([&]() { auto &&bg_value = (prefix); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSettings_endGroup_(QSettings * _self_) {
+  _self_->endGroup();
+}
+
+extern "C" CrystalString bg_QSettings_group_(QSettings * _self_) {
+  return qstring_to_crystal(_self_->group());
+}
+
+extern "C" int bg_QSettings_beginReadArray_QAnyStringView(QSettings * _self_, CrystalString prefix) {
+  return _self_->beginReadArray(([&]() { auto &&bg_value = (prefix); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSettings_beginWriteArray_QAnyStringView_int(QSettings * _self_, CrystalString prefix, int size) {
+  _self_->beginWriteArray(([&]() { auto &&bg_value = (prefix); return QAnyStringView(bg_value.ptr, bg_value.size); }()), size);
+}
+
+extern "C" void bg_QSettings_endArray_(QSettings * _self_) {
+  _self_->endArray();
+}
+
+extern "C" void bg_QSettings_setArrayIndex_int(QSettings * _self_, int i) {
+  _self_->setArrayIndex(i);
+}
+
+extern "C" QStringList * bg_QSettings_allKeys_(QSettings * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->allKeys());
+}
+
+extern "C" QStringList * bg_QSettings_childKeys_(QSettings * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->childKeys());
+}
+
+extern "C" QStringList * bg_QSettings_childGroups_(QSettings * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->childGroups());
+}
+
+extern "C" bool bg_QSettings_isWritable_(QSettings * _self_) {
+  return _self_->isWritable();
+}
+
+extern "C" void bg_QSettings_setValue_QAnyStringView_const_QVariant_R(QSettings * _self_, CrystalString key, const CrystalVariant value) {
+  _self_->setValue(([&]() { auto &&bg_value = (key); return QAnyStringView(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QSettings_value_QAnyStringView_const_QVariant_R(QSettings * _self_, CrystalString key, const CrystalVariant defaultValue) {
+  return qvariant_to_crystal(_self_->value(([&]() { auto &&bg_value = (key); return QAnyStringView(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(defaultValue)));
+}
+
+extern "C" CrystalVariant bg_QSettings_value_QAnyStringView(QSettings * _self_, CrystalString key) {
+  return qvariant_to_crystal(_self_->value(([&]() { auto &&bg_value = (key); return QAnyStringView(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_QSettings_remove_QAnyStringView(QSettings * _self_, CrystalString key) {
+  _self_->remove(([&]() { auto &&bg_value = (key); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QSettings_contains_QAnyStringView(QSettings * _self_, CrystalString key) {
+  return _self_->contains(([&]() { auto &&bg_value = (key); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSettings_setFallbacksEnabled_bool(QSettings * _self_, bool b) {
+  _self_->setFallbacksEnabled(b);
+}
+
+extern "C" bool bg_QSettings_fallbacksEnabled_(QSettings * _self_) {
+  return _self_->fallbacksEnabled();
+}
+
+extern "C" CrystalString bg_QSettings_fileName_(QSettings * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" QSettings::Format bg_QSettings_format_(QSettings * _self_) {
+  return _self_->format();
+}
+
+extern "C" QSettings::Scope bg_QSettings_scope_(QSettings * _self_) {
+  return _self_->scope();
+}
+
+extern "C" CrystalString bg_QSettings_organizationName_(QSettings * _self_) {
+  return qstring_to_crystal(_self_->organizationName());
+}
+
+extern "C" CrystalString bg_QSettings_applicationName_(QSettings * _self_) {
+  return qstring_to_crystal(_self_->applicationName());
+}
+
+extern "C" void bg_QSettings_setDefaultFormat_STATIC_QSettings__Format(QSettings::Format format) {
+  QSettings::setDefaultFormat(format);
+}
+
+extern "C" QSettings::Format bg_QSettings_defaultFormat_STATIC_() {
+  return QSettings::defaultFormat();
+}
+
+extern "C" void bg_QSettings_setPath_STATIC_QSettings__Format_QSettings__Scope_const_QString_R(QSettings::Format format, QSettings::Scope scope, const CrystalString path) {
+  QSettings::setPath(format, scope, ([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QSettings_event_QEvent_X(QSettings * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QSettings_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSettings::staticMetaObject);
+}
+
+extern "C" bool bg_QSettings_event_SUPER_QEvent_X(QSettings * _self_, QEvent * event) {
+  return _self_->QSettings::event(event);
+}
+
+extern "C" void bg_BgInherit_QSettings_JUMPTABLE_BgJumptable_QSettings_R(BgInherit_QSettings * _self_, const BgJumptable_QSettings & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QSocketNotifier {
   CrystalProc<const QMetaObject *> bg_QSocketNotifier_metaObject_;
   CrystalProc<void *, const char *> bg_QSocketNotifier_qt_metacast_const_char_X;
@@ -7433,6 +10951,1057 @@ extern "C" bool bg_QSocketNotifier_event_SUPER_QEvent_X(QSocketNotifier * _self_
 }
 
 extern "C" void bg_BgInherit_QSocketNotifier_JUMPTABLE_BgJumptable_QSocketNotifier_R(BgInherit_QSocketNotifier * _self_, const BgJumptable_QSocketNotifier & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QSortFilterProxyModel {
+  CrystalProc<const QMetaObject *> bg_QSortFilterProxyModel_metaObject_;
+  CrystalProc<void *, const char *> bg_QSortFilterProxyModel_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSortFilterProxyModel_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QAbstractItemModel *> bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R;
+  CrystalProc<bool, int, const QModelIndex *> bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R;
+  CrystalProc<bool, int, const QModelIndex *> bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const QModelIndex *> bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int> bg_QSortFilterProxyModel_index_int_int;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QSortFilterProxyModel_index_int_int_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QSortFilterProxyModel_parent_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QSortFilterProxyModel_sibling_int_int_const_QModelIndex_R;
+  CrystalProc<int> bg_QSortFilterProxyModel_rowCount_;
+  CrystalProc<int, const QModelIndex *> bg_QSortFilterProxyModel_rowCount_const_QModelIndex_R;
+  CrystalProc<int> bg_QSortFilterProxyModel_columnCount_;
+  CrystalProc<int, const QModelIndex *> bg_QSortFilterProxyModel_columnCount_const_QModelIndex_R;
+  CrystalProc<bool> bg_QSortFilterProxyModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QSortFilterProxyModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QSortFilterProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<QMimeData *, const QModelIndexList *> bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QSortFilterProxyModel_insertRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QSortFilterProxyModel_insertColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QSortFilterProxyModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QSortFilterProxyModel_removeRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QSortFilterProxyModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QSortFilterProxyModel_removeColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QSortFilterProxyModel_removeColumns_int_int_const_QModelIndex_R;
+  CrystalProc<void, const QModelIndex *> bg_QSortFilterProxyModel_fetchMore_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *> bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R;
+  CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QSortFilterProxyModel_flags_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QSortFilterProxyModel_buddy_const_QModelIndex_R;
+  CrystalProc<QModelIndexList &, const QModelIndex *, int, const CrystalVariant, int> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<QModelIndexList &, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<QSize *, const QModelIndex *> bg_QSortFilterProxyModel_span_const_QModelIndex_R;
+  CrystalProc<void, int, Qt::SortOrder> bg_QSortFilterProxyModel_sort_int_Qt__SortOrder;
+  CrystalProc<QStringList &> bg_QSortFilterProxyModel_mimeTypes_;
+  CrystalProc<Qt::DropActions> bg_QSortFilterProxyModel_supportedDropActions_;
+  CrystalProc<bool> bg_QAbstractProxyModel_submit_;
+  CrystalProc<void> bg_QAbstractProxyModel_revert_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
+  CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
+  using QSortFilterProxyModel::QSortFilterProxyModel;
+  BgJumptable_QSortFilterProxyModel bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_metaObject_();
+    } else {
+      return QSortFilterProxyModel::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSortFilterProxyModel::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSortFilterProxyModel::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setSourceModel(QAbstractItemModel * sourceModel) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X.isValid()) {
+      _self_->bgJump.bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X(sourceModel);
+    } else {
+      QSortFilterProxyModel::setSourceModel(sourceModel);
+    }
+  }
+  
+  QModelIndex mapToSource(const QModelIndex & proxyIndex) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R(&(proxyIndex));
+    } else {
+      return QSortFilterProxyModel::mapToSource(proxyIndex);
+    }
+  }
+  
+  QModelIndex mapFromSource(const QModelIndex & sourceIndex) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R(&(sourceIndex));
+    } else {
+      return QSortFilterProxyModel::mapFromSource(sourceIndex);
+    }
+  }
+  
+  QItemSelection mapSelectionToSource(const QItemSelection & selection) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QSortFilterProxyModel::mapSelectionToSource(selection);
+    }
+  }
+  
+  QItemSelection mapSelectionFromSource(const QItemSelection & selection) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QSortFilterProxyModel::mapSelectionFromSource(selection);
+    }
+  }
+  
+  bool filterAcceptsRow(int source_row, const QModelIndex & source_parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R(source_row, &(source_parent));
+    } else {
+      return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+    }
+  }
+  
+  bool filterAcceptsColumn(int source_column, const QModelIndex & source_parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R(source_column, &(source_parent));
+    } else {
+      return QSortFilterProxyModel::filterAcceptsColumn(source_column, source_parent);
+    }
+  }
+  
+  bool lessThan(const QModelIndex & source_left, const QModelIndex & source_right) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R(&(source_left), &(source_right));
+    } else {
+      return QSortFilterProxyModel::lessThan(source_left, source_right);
+    }
+  }
+  
+  QModelIndex index(int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_index_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_index_int_int_const_QModelIndex_R(row, column, &(parent));
+    } else {
+      return QSortFilterProxyModel::index(row, column, parent);
+    }
+  }
+  
+  QModelIndex parent(const QModelIndex & child) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_parent_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_parent_const_QModelIndex_R(&(child));
+    } else {
+      return QSortFilterProxyModel::parent(child);
+    }
+  }
+  
+  QModelIndex sibling(int row, int column, const QModelIndex & idx) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_sibling_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_sibling_int_int_const_QModelIndex_R(row, column, &(idx));
+    } else {
+      return QSortFilterProxyModel::sibling(row, column, idx);
+    }
+  }
+  
+  int rowCount(const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_rowCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_rowCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QSortFilterProxyModel::rowCount(parent);
+    }
+  }
+  
+  int columnCount(const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_columnCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_columnCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QSortFilterProxyModel::columnCount(parent);
+    }
+  }
+  
+  bool hasChildren(const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_hasChildren_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_hasChildren_const_QModelIndex_R(&(parent));
+    } else {
+      return QSortFilterProxyModel::hasChildren(parent);
+    }
+  }
+  
+  QVariant data(const QModelIndex & index, int role) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_data_const_QModelIndex_R_int.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QSortFilterProxyModel_data_const_QModelIndex_R_int(&(index), role));
+    } else {
+      return QSortFilterProxyModel::data(index, role);
+    }
+  }
+  
+  bool setData(const QModelIndex & index, const QVariant & value, int role) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+    } else {
+      return QSortFilterProxyModel::setData(index, value, role);
+    }
+  }
+  
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+    } else {
+      return QSortFilterProxyModel::headerData(section, orientation, role);
+    }
+  }
+  
+  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+    } else {
+      return QSortFilterProxyModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  QMimeData * mimeData(const QModelIndexList & indexes) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(&(indexes));
+    } else {
+      return QSortFilterProxyModel::mimeData(indexes);
+    }
+  }
+  
+  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QSortFilterProxyModel::dropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  bool insertRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QSortFilterProxyModel::insertRows(row, count, parent);
+    }
+  }
+  
+  bool insertColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_insertColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_insertColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QSortFilterProxyModel::insertColumns(column, count, parent);
+    }
+  }
+  
+  bool removeRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_removeRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_removeRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QSortFilterProxyModel::removeRows(row, count, parent);
+    }
+  }
+  
+  bool removeColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_removeColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_removeColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QSortFilterProxyModel::removeColumns(column, count, parent);
+    }
+  }
+  
+  void fetchMore(const QModelIndex & parent) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_fetchMore_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QSortFilterProxyModel_fetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      QSortFilterProxyModel::fetchMore(parent);
+    }
+  }
+  
+  bool canFetchMore(const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      return QSortFilterProxyModel::canFetchMore(parent);
+    }
+  }
+  
+  Qt::ItemFlags flags(const QModelIndex & index) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_flags_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_flags_const_QModelIndex_R(&(index));
+    } else {
+      return QSortFilterProxyModel::flags(index);
+    }
+  }
+  
+  QModelIndex buddy(const QModelIndex & index) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_buddy_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_buddy_const_QModelIndex_R(&(index));
+    } else {
+      return QSortFilterProxyModel::buddy(index);
+    }
+  }
+  
+  QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags);
+    } else {
+      return QSortFilterProxyModel::match(start, role, value, hits, flags);
+    }
+  }
+  
+  QSize span(const QModelIndex & index) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_span_const_QModelIndex_R.isValid()) {
+      return *_self_->bgJump.bg_QSortFilterProxyModel_span_const_QModelIndex_R(&(index));
+    } else {
+      return QSortFilterProxyModel::span(index);
+    }
+  }
+  
+  void sort(int column, Qt::SortOrder order) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_sort_int_Qt__SortOrder.isValid()) {
+      _self_->bgJump.bg_QSortFilterProxyModel_sort_int_Qt__SortOrder(column, order);
+    } else {
+      QSortFilterProxyModel::sort(column, order);
+    }
+  }
+  
+  QStringList mimeTypes() const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_mimeTypes_.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_mimeTypes_();
+    } else {
+      return QSortFilterProxyModel::mimeTypes();
+    }
+  }
+  
+  Qt::DropActions supportedDropActions() const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QSortFilterProxyModel_supportedDropActions_.isValid()) {
+      return _self_->bgJump.bg_QSortFilterProxyModel_supportedDropActions_();
+    } else {
+      return QSortFilterProxyModel::supportedDropActions();
+    }
+  }
+  
+  bool submit() override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_submit_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_submit_();
+    } else {
+      return QSortFilterProxyModel::submit();
+    }
+  }
+  
+  void revert() override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_revert_.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_revert_();
+    } else {
+      QSortFilterProxyModel::revert();
+    }
+  }
+  
+  bool clearItemData(const QModelIndex & index) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(&(index));
+    } else {
+      return QSortFilterProxyModel::clearItemData(index);
+    }
+  }
+  
+  bool canDropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QSortFilterProxyModel::canDropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  Qt::DropActions supportedDragActions() const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_();
+    } else {
+      return QSortFilterProxyModel::supportedDragActions();
+    }
+  }
+  
+  bool moveRows(const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceRow, count, &(destinationParent), destinationChild);
+    } else {
+      return QSortFilterProxyModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+    }
+  }
+  
+  bool moveColumns(const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceColumn, count, &(destinationParent), destinationChild);
+    } else {
+      return QSortFilterProxyModel::moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+    }
+  }
+  
+  void multiData(const QModelIndex & index, QModelRoleDataSpan roleDataSpan) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(&(index), new (UseGC, bindgen_gc_finalizer<QModelRoleDataSpan>()) QModelRoleDataSpan (roleDataSpan));
+    } else {
+      QSortFilterProxyModel::multiData(index, roleDataSpan);
+    }
+  }
+  
+  void resetInternalData() override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_resetInternalData_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_resetInternalData_();
+    } else {
+      QSortFilterProxyModel::resetInternalData();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QSortFilterProxyModel::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSortFilterProxyModel::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSortFilterProxyModel::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSortFilterProxyModel::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSortFilterProxyModel::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSortFilterProxyModel::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSortFilterProxyModel::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSortFilterProxyModel_metaObject_(QSortFilterProxyModel * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSortFilterProxyModel_qt_metacast_const_char_X(QSortFilterProxyModel * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSortFilterProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(QSortFilterProxyModel * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSortFilterProxyModel_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSortFilterProxyModel::tr(s));
+}
+
+extern "C" CrystalString bg_QSortFilterProxyModel_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSortFilterProxyModel::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSortFilterProxyModel_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSortFilterProxyModel::tr(s, c, n));
+}
+
+extern "C" QSortFilterProxyModel * bg_QSortFilterProxyModel__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSortFilterProxyModel>(parent);
+}
+
+extern "C" void bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X(QSortFilterProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->setSourceModel(sourceModel);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapToSource(proxyIndex));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapFromSource(sourceIndex));
+}
+
+extern "C" QItemSelection * bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R(QSortFilterProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->mapSelectionToSource(selection));
+}
+
+extern "C" QItemSelection * bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R(QSortFilterProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->mapSelectionFromSource(selection));
+}
+
+extern "C" QRegularExpression * bg_QSortFilterProxyModel_filterRegularExpression_(QSortFilterProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpression>()) QRegularExpression (_self_->filterRegularExpression());
+}
+
+extern "C" int bg_QSortFilterProxyModel_filterKeyColumn_(QSortFilterProxyModel * _self_) {
+  return _self_->filterKeyColumn();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterKeyColumn_int(QSortFilterProxyModel * _self_, int column) {
+  _self_->setFilterKeyColumn(column);
+}
+
+extern "C" Qt::CaseSensitivity bg_QSortFilterProxyModel_filterCaseSensitivity_(QSortFilterProxyModel * _self_) {
+  return _self_->filterCaseSensitivity();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterCaseSensitivity_Qt__CaseSensitivity(QSortFilterProxyModel * _self_, Qt::CaseSensitivity cs) {
+  _self_->setFilterCaseSensitivity(cs);
+}
+
+extern "C" Qt::CaseSensitivity bg_QSortFilterProxyModel_sortCaseSensitivity_(QSortFilterProxyModel * _self_) {
+  return _self_->sortCaseSensitivity();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setSortCaseSensitivity_Qt__CaseSensitivity(QSortFilterProxyModel * _self_, Qt::CaseSensitivity cs) {
+  _self_->setSortCaseSensitivity(cs);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_isSortLocaleAware_(QSortFilterProxyModel * _self_) {
+  return _self_->isSortLocaleAware();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setSortLocaleAware_bool(QSortFilterProxyModel * _self_, bool on) {
+  _self_->setSortLocaleAware(on);
+}
+
+extern "C" int bg_QSortFilterProxyModel_sortColumn_(QSortFilterProxyModel * _self_) {
+  return _self_->sortColumn();
+}
+
+extern "C" Qt::SortOrder bg_QSortFilterProxyModel_sortOrder_(QSortFilterProxyModel * _self_) {
+  return _self_->sortOrder();
+}
+
+extern "C" bool bg_QSortFilterProxyModel_dynamicSortFilter_(QSortFilterProxyModel * _self_) {
+  return _self_->dynamicSortFilter();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setDynamicSortFilter_bool(QSortFilterProxyModel * _self_, bool enable) {
+  _self_->setDynamicSortFilter(enable);
+}
+
+extern "C" int bg_QSortFilterProxyModel_sortRole_(QSortFilterProxyModel * _self_) {
+  return _self_->sortRole();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setSortRole_int(QSortFilterProxyModel * _self_, int role) {
+  _self_->setSortRole(role);
+}
+
+extern "C" int bg_QSortFilterProxyModel_filterRole_(QSortFilterProxyModel * _self_) {
+  return _self_->filterRole();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterRole_int(QSortFilterProxyModel * _self_, int role) {
+  _self_->setFilterRole(role);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_isRecursiveFilteringEnabled_(QSortFilterProxyModel * _self_) {
+  return _self_->isRecursiveFilteringEnabled();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setRecursiveFilteringEnabled_bool(QSortFilterProxyModel * _self_, bool recursive) {
+  _self_->setRecursiveFilteringEnabled(recursive);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_autoAcceptChildRows_(QSortFilterProxyModel * _self_) {
+  return _self_->autoAcceptChildRows();
+}
+
+extern "C" void bg_QSortFilterProxyModel_setAutoAcceptChildRows_bool(QSortFilterProxyModel * _self_, bool accept) {
+  _self_->setAutoAcceptChildRows(accept);
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterRegularExpression_const_QString_R(QSortFilterProxyModel * _self_, const CrystalString pattern) {
+  _self_->setFilterRegularExpression(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterRegularExpression_const_QRegularExpression_R(QSortFilterProxyModel * _self_, const QRegularExpression & regularExpression) {
+  _self_->setFilterRegularExpression(regularExpression);
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterWildcard_const_QString_R(QSortFilterProxyModel * _self_, const CrystalString pattern) {
+  _self_->setFilterWildcard(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSortFilterProxyModel_setFilterFixedString_const_QString_R(QSortFilterProxyModel * _self_, const CrystalString pattern) {
+  _self_->setFilterFixedString(([&]() { auto &&bg_value = (pattern); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSortFilterProxyModel_invalidate_(QSortFilterProxyModel * _self_) {
+  _self_->invalidate();
+}
+
+extern "C" bool bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int source_row, const QModelIndex & source_parent) {
+  return _self_->filterAcceptsRow(source_row, source_parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int source_column, const QModelIndex & source_parent) {
+  return _self_->filterAcceptsColumn(source_column, source_parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & source_left, const QModelIndex & source_right) {
+  return _self_->lessThan(source_left, source_right);
+}
+
+extern "C" void bg_QSortFilterProxyModel_beginFilterChange_(QSortFilterProxyModel * _self_) {
+  _self_->beginFilterChange();
+}
+
+extern "C" void bg_QSortFilterProxyModel_endFilterChange_(QSortFilterProxyModel * _self_) {
+  _self_->endFilterChange();
+}
+
+extern "C" void bg_QSortFilterProxyModel_endFilterChange_QSortFilterProxyModel__Directions(QSortFilterProxyModel * _self_, QSortFilterProxyModel::Directions directions) {
+  _self_->endFilterChange(directions);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_index_int_int(QSortFilterProxyModel * _self_, int row, int column) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_index_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column, parent));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_parent_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->parent(child));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_sibling_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int column, const QModelIndex & idx) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->sibling(row, column, idx));
+}
+
+extern "C" int bg_QSortFilterProxyModel_rowCount_(QSortFilterProxyModel * _self_) {
+  return _self_->rowCount();
+}
+
+extern "C" int bg_QSortFilterProxyModel_rowCount_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->rowCount(parent);
+}
+
+extern "C" int bg_QSortFilterProxyModel_columnCount_(QSortFilterProxyModel * _self_) {
+  return _self_->columnCount();
+}
+
+extern "C" int bg_QSortFilterProxyModel_columnCount_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->columnCount(parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_hasChildren_(QSortFilterProxyModel * _self_) {
+  return _self_->hasChildren();
+}
+
+extern "C" bool bg_QSortFilterProxyModel_hasChildren_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->hasChildren(parent);
+}
+
+extern "C" CrystalVariant bg_QSortFilterProxyModel_data_const_QModelIndex_R_int(QSortFilterProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->data(index, role));
+}
+
+extern "C" bool bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(QSortFilterProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" CrystalVariant bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int(QSortFilterProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->headerData(section, orientation, role));
+}
+
+extern "C" bool bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(QSortFilterProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" QMimeData * bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(QSortFilterProxyModel * _self_, const QModelIndexList & indexes) {
+  return _self_->mimeData(indexes);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertRows_int_int(QSortFilterProxyModel * _self_, int row, int count) {
+  return _self_->insertRows(row, count);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->insertRows(row, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertColumns_int_int(QSortFilterProxyModel * _self_, int column, int count) {
+  return _self_->insertColumns(column, count);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertColumns_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->insertColumns(column, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeRows_int_int(QSortFilterProxyModel * _self_, int row, int count) {
+  return _self_->removeRows(row, count);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeRows_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->removeRows(row, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeColumns_int_int(QSortFilterProxyModel * _self_, int column, int count) {
+  return _self_->removeColumns(column, count);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeColumns_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->removeColumns(column, count, parent);
+}
+
+extern "C" void bg_QSortFilterProxyModel_fetchMore_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  _self_->fetchMore(parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->canFetchMore(parent);
+}
+
+extern "C" Qt::ItemFlags bg_QSortFilterProxyModel_flags_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return _self_->flags(index);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_buddy_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->buddy(index));
+}
+
+extern "C" QModelIndexList * bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(QSortFilterProxyModel * _self_, const QModelIndex & start, int role, const CrystalVariant value, int hits) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndexList>()) QModelIndexList (_self_->match(start, role, crystal_to_qvariant(value), hits));
+}
+
+extern "C" QModelIndexList * bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(QSortFilterProxyModel * _self_, const QModelIndex & start, int role, const CrystalVariant value, int hits, Qt::MatchFlags flags) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndexList>()) QModelIndexList (_self_->match(start, role, crystal_to_qvariant(value), hits, flags));
+}
+
+extern "C" QSize bg_QSortFilterProxyModel_span_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return _self_->span(index);
+}
+
+extern "C" void bg_QSortFilterProxyModel_sort_int_Qt__SortOrder(QSortFilterProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->sort(column, order);
+}
+
+extern "C" QStringList * bg_QSortFilterProxyModel_mimeTypes_(QSortFilterProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->mimeTypes());
+}
+
+extern "C" Qt::DropActions bg_QSortFilterProxyModel_supportedDropActions_(QSortFilterProxyModel * _self_) {
+  return _self_->supportedDropActions();
+}
+
+extern "C" void bg_QSortFilterProxyModel_dynamicSortFilterChanged_bool(QSortFilterProxyModel * _self_, bool dynamicSortFilter) {
+  _self_->dynamicSortFilterChanged(dynamicSortFilter);
+}
+
+extern "C" void bg_QSortFilterProxyModel_filterCaseSensitivityChanged_Qt__CaseSensitivity(QSortFilterProxyModel * _self_, Qt::CaseSensitivity filterCaseSensitivity) {
+  _self_->filterCaseSensitivityChanged(filterCaseSensitivity);
+}
+
+extern "C" void bg_QSortFilterProxyModel_sortCaseSensitivityChanged_Qt__CaseSensitivity(QSortFilterProxyModel * _self_, Qt::CaseSensitivity sortCaseSensitivity) {
+  _self_->sortCaseSensitivityChanged(sortCaseSensitivity);
+}
+
+extern "C" void bg_QSortFilterProxyModel_sortLocaleAwareChanged_bool(QSortFilterProxyModel * _self_, bool sortLocaleAware) {
+  _self_->sortLocaleAwareChanged(sortLocaleAware);
+}
+
+extern "C" void bg_QSortFilterProxyModel_sortRoleChanged_int(QSortFilterProxyModel * _self_, int sortRole) {
+  _self_->sortRoleChanged(sortRole);
+}
+
+extern "C" void bg_QSortFilterProxyModel_filterRoleChanged_int(QSortFilterProxyModel * _self_, int filterRole) {
+  _self_->filterRoleChanged(filterRole);
+}
+
+extern "C" void bg_QSortFilterProxyModel_recursiveFilteringEnabledChanged_bool(QSortFilterProxyModel * _self_, bool recursiveFilteringEnabled) {
+  _self_->recursiveFilteringEnabledChanged(recursiveFilteringEnabled);
+}
+
+extern "C" void bg_QSortFilterProxyModel_autoAcceptChildRowsChanged_bool(QSortFilterProxyModel * _self_, bool autoAcceptChildRows) {
+  _self_->autoAcceptChildRowsChanged(autoAcceptChildRows);
+}
+
+extern "C" const QMetaObject * bg_QSortFilterProxyModel_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSortFilterProxyModel::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_dynamicSortFilterChanged_CrystalProc_void__bool_(QSortFilterProxyModel * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(bool))&QSortFilterProxyModel::dynamicSortFilterChanged, [_proc_](bool dynamicSortFilter){ _proc_(dynamicSortFilter); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_filterCaseSensitivityChanged_CrystalProc_void__Qt__CaseSensitivity_(QSortFilterProxyModel * _self_, CrystalProc<void, Qt::CaseSensitivity> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(Qt::CaseSensitivity))&QSortFilterProxyModel::filterCaseSensitivityChanged, [_proc_](Qt::CaseSensitivity filterCaseSensitivity){ _proc_(filterCaseSensitivity); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_sortCaseSensitivityChanged_CrystalProc_void__Qt__CaseSensitivity_(QSortFilterProxyModel * _self_, CrystalProc<void, Qt::CaseSensitivity> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(Qt::CaseSensitivity))&QSortFilterProxyModel::sortCaseSensitivityChanged, [_proc_](Qt::CaseSensitivity sortCaseSensitivity){ _proc_(sortCaseSensitivity); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_sortLocaleAwareChanged_CrystalProc_void__bool_(QSortFilterProxyModel * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(bool))&QSortFilterProxyModel::sortLocaleAwareChanged, [_proc_](bool sortLocaleAware){ _proc_(sortLocaleAware); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_sortRoleChanged_CrystalProc_void__int_(QSortFilterProxyModel * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(int))&QSortFilterProxyModel::sortRoleChanged, [_proc_](int sortRole){ _proc_(sortRole); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_filterRoleChanged_CrystalProc_void__int_(QSortFilterProxyModel * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(int))&QSortFilterProxyModel::filterRoleChanged, [_proc_](int filterRole){ _proc_(filterRole); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_recursiveFilteringEnabledChanged_CrystalProc_void__bool_(QSortFilterProxyModel * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(bool))&QSortFilterProxyModel::recursiveFilteringEnabledChanged, [_proc_](bool recursiveFilteringEnabled){ _proc_(recursiveFilteringEnabled); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QSortFilterProxyModel_CONNECT_autoAcceptChildRowsChanged_CrystalProc_void__bool_(QSortFilterProxyModel * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSortFilterProxyModel::*)(bool))&QSortFilterProxyModel::autoAcceptChildRowsChanged, [_proc_](bool autoAcceptChildRows){ _proc_(autoAcceptChildRows); }));
+}
+
+extern "C" void bg_QSortFilterProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(QSortFilterProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->QSortFilterProxyModel::setSourceModel(sourceModel);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_mapToSource_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::mapToSource(proxyIndex));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_mapFromSource_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::mapFromSource(sourceIndex));
+}
+
+extern "C" QItemSelection * bg_QSortFilterProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(QSortFilterProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->QSortFilterProxyModel::mapSelectionToSource(selection));
+}
+
+extern "C" QItemSelection * bg_QSortFilterProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(QSortFilterProxyModel * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QItemSelection>()) QItemSelection (_self_->QSortFilterProxyModel::mapSelectionFromSource(selection));
+}
+
+extern "C" bool bg_QSortFilterProxyModel_filterAcceptsRow_SUPER_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int source_row, const QModelIndex & source_parent) {
+  return _self_->QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_filterAcceptsColumn_SUPER_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int source_column, const QModelIndex & source_parent) {
+  return _self_->QSortFilterProxyModel::filterAcceptsColumn(source_column, source_parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_lessThan_SUPER_const_QModelIndex_R_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & source_left, const QModelIndex & source_right) {
+  return _self_->QSortFilterProxyModel::lessThan(source_left, source_right);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_index_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::index(row, column, parent));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_parent_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::parent(child));
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int column, const QModelIndex & idx) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::sibling(row, column, idx));
+}
+
+extern "C" int bg_QSortFilterProxyModel_rowCount_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::rowCount(parent);
+}
+
+extern "C" int bg_QSortFilterProxyModel_columnCount_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::columnCount(parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_hasChildren_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::hasChildren(parent);
+}
+
+extern "C" CrystalVariant bg_QSortFilterProxyModel_data_SUPER_const_QModelIndex_R_int(QSortFilterProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->QSortFilterProxyModel::data(index, role));
+}
+
+extern "C" bool bg_QSortFilterProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(QSortFilterProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->QSortFilterProxyModel::setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" CrystalVariant bg_QSortFilterProxyModel_headerData_SUPER_int_Qt__Orientation_int(QSortFilterProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->QSortFilterProxyModel::headerData(section, orientation, role));
+}
+
+extern "C" bool bg_QSortFilterProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(QSortFilterProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->QSortFilterProxyModel::setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" QMimeData * bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(QSortFilterProxyModel * _self_, const QModelIndexList & indexes) {
+  return _self_->QSortFilterProxyModel::mimeData(indexes);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertRows_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::insertRows(row, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_insertColumns_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::insertColumns(column, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeRows_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::removeRows(row, count, parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_removeColumns_SUPER_int_int_const_QModelIndex_R(QSortFilterProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::removeColumns(column, count, parent);
+}
+
+extern "C" void bg_QSortFilterProxyModel_fetchMore_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  _self_->QSortFilterProxyModel::fetchMore(parent);
+}
+
+extern "C" bool bg_QSortFilterProxyModel_canFetchMore_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QSortFilterProxyModel::canFetchMore(parent);
+}
+
+extern "C" Qt::ItemFlags bg_QSortFilterProxyModel_flags_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QSortFilterProxyModel::flags(index);
+}
+
+extern "C" QModelIndex * bg_QSortFilterProxyModel_buddy_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QSortFilterProxyModel::buddy(index));
+}
+
+extern "C" QModelIndexList * bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(QSortFilterProxyModel * _self_, const QModelIndex & start, int role, const CrystalVariant value, int hits, Qt::MatchFlags flags) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndexList>()) QModelIndexList (_self_->QSortFilterProxyModel::match(start, role, crystal_to_qvariant(value), hits, flags));
+}
+
+extern "C" QSize bg_QSortFilterProxyModel_span_SUPER_const_QModelIndex_R(QSortFilterProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QSortFilterProxyModel::span(index);
+}
+
+extern "C" void bg_QSortFilterProxyModel_sort_SUPER_int_Qt__SortOrder(QSortFilterProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->QSortFilterProxyModel::sort(column, order);
+}
+
+extern "C" QStringList * bg_QSortFilterProxyModel_mimeTypes_SUPER_(QSortFilterProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QStringList>()) QStringList (_self_->QSortFilterProxyModel::mimeTypes());
+}
+
+extern "C" Qt::DropActions bg_QSortFilterProxyModel_supportedDropActions_SUPER_(QSortFilterProxyModel * _self_) {
+  return _self_->QSortFilterProxyModel::supportedDropActions();
+}
+
+extern "C" void bg_BgInherit_QSortFilterProxyModel_JUMPTABLE_BgJumptable_QSortFilterProxyModel_R(BgInherit_QSortFilterProxyModel * _self_, const BgJumptable_QSortFilterProxyModel & table) {
   _self_->bgJump = (table);
 }
 
@@ -7756,6 +12325,10 @@ extern "C" QMenuBar * bg_QPaintDevice_CAST_MenuBar_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QMenuBar *>(_self_);
 }
 
+extern "C" QMessageBox * bg_QPaintDevice_CAST_MessageBox_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QMessageBox *>(_self_);
+}
+
 extern "C" QTextEdit * bg_QPaintDevice_CAST_TextEdit_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QTextEdit *>(_self_);
 }
@@ -7780,6 +12353,14 @@ extern "C" QDoubleSpinBox * bg_QPaintDevice_CAST_DoubleSpinBox_(QPaintDevice * _
   return bindgen_dynamic_cast<QDoubleSpinBox *>(_self_);
 }
 
+extern "C" QSplitter * bg_QPaintDevice_CAST_Splitter_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QSplitter *>(_self_);
+}
+
+extern "C" QStackedWidget * bg_QPaintDevice_CAST_StackedWidget_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QStackedWidget *>(_self_);
+}
+
 extern "C" QStatusBar * bg_QPaintDevice_CAST_StatusBar_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QStatusBar *>(_self_);
 }
@@ -7798,6 +12379,10 @@ extern "C" QToolBar * bg_QPaintDevice_CAST_ToolBar_(QPaintDevice * _self_) {
 
 extern "C" QToolButton * bg_QPaintDevice_CAST_ToolButton_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QToolButton *>(_self_);
+}
+
+extern "C" QTreeView * bg_QPaintDevice_CAST_TreeView_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QTreeView *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QPaintDevice_JUMPTABLE_BgJumptable_QPaintDevice_R(BgInherit_QPaintDevice * _self_, const BgJumptable_QPaintDevice & table) {
@@ -7868,8 +12453,8 @@ extern "C" QColor * bg_QColor__CONSTRUCT_QColor__Spec(QColor::Spec spec) {
   return new (UseGC) CrystalGCWrapper<QColor>(spec);
 }
 
-extern "C" QColor * bg_QColor_fromString_STATIC_QAnyStringView(QAnyStringView & name) {
-  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColor::fromString(name));
+extern "C" QColor * bg_QColor_fromString_STATIC_QAnyStringView(CrystalString name) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColor::fromString(([&]() { auto &&bg_value = (name); return QAnyStringView(bg_value.ptr, bg_value.size); }())));
 }
 
 extern "C" QColor * bg_QColor__OPERATOR_assign_Qt__GlobalColor(QColor * _self_, Qt::GlobalColor color) {
@@ -8232,8 +12817,8 @@ extern "C" CrystalVariant bg_QColor__CONVERT_QVariant_(QColor * _self_) {
   return qvariant_to_crystal(_self_->operator QVariant());
 }
 
-extern "C" bool bg_QColor_isValidColorName_STATIC_QAnyStringView(QAnyStringView & unnamed_arg_0) {
-  return QColor::isValidColorName(unnamed_arg_0);
+extern "C" bool bg_QColor_isValidColorName_STATIC_QAnyStringView(CrystalString unnamed_arg_0) {
+  return QColor::isValidColorName(([&]() { auto &&bg_value = (unnamed_arg_0); return QAnyStringView(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" QColor * bg_QColor__CONSTRUCT_QColor__Spec_ushort_ushort_ushort_ushort_ushort(QColor::Spec spec, ushort a1, ushort a2, ushort a3, ushort a4, ushort a5) {
@@ -18002,6 +22587,122 @@ extern "C" bool bg_QWindow_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X
 
 extern "C" void bg_BgInherit_QWindow_JUMPTABLE_BgJumptable_QWindow_R(BgInherit_QWindow * _self_, const BgJumptable_QWindow & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" const QMetaObject * bg_QClipboard_metaObject_(QClipboard * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QClipboard_qt_metacast_const_char_X(QClipboard * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QClipboard_qt_metacall_QMetaObject__Call_int_void_XX(QClipboard * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QClipboard_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QClipboard::tr(s));
+}
+
+extern "C" CrystalString bg_QClipboard_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QClipboard::tr(s, c));
+}
+
+extern "C" CrystalString bg_QClipboard_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QClipboard::tr(s, c, n));
+}
+
+extern "C" void bg_QClipboard_clear_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  _self_->clear(mode);
+}
+
+extern "C" bool bg_QClipboard_supportsSelection_(QClipboard * _self_) {
+  return _self_->supportsSelection();
+}
+
+extern "C" bool bg_QClipboard_supportsFindBuffer_(QClipboard * _self_) {
+  return _self_->supportsFindBuffer();
+}
+
+extern "C" bool bg_QClipboard_ownsSelection_(QClipboard * _self_) {
+  return _self_->ownsSelection();
+}
+
+extern "C" bool bg_QClipboard_ownsClipboard_(QClipboard * _self_) {
+  return _self_->ownsClipboard();
+}
+
+extern "C" bool bg_QClipboard_ownsFindBuffer_(QClipboard * _self_) {
+  return _self_->ownsFindBuffer();
+}
+
+extern "C" CrystalString bg_QClipboard_text_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  return qstring_to_crystal(_self_->text(mode));
+}
+
+extern "C" void bg_QClipboard_setText_const_QString_R_QClipboard__Mode(QClipboard * _self_, const CrystalString unnamed_arg_0, QClipboard::Mode mode) {
+  _self_->setText(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), mode);
+}
+
+extern "C" const QMimeData * bg_QClipboard_mimeData_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  return _self_->mimeData(mode);
+}
+
+extern "C" void bg_QClipboard_setMimeData_QMimeData_X_QClipboard__Mode(QClipboard * _self_, QMimeData * data, QClipboard::Mode mode) {
+  _self_->setMimeData(data, mode);
+}
+
+extern "C" QImage * bg_QClipboard_image_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (_self_->image(mode));
+}
+
+extern "C" QPixmap * bg_QClipboard_pixmap_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap(mode));
+}
+
+extern "C" void bg_QClipboard_setImage_const_QImage_R_QClipboard__Mode(QClipboard * _self_, const QImage & unnamed_arg_0, QClipboard::Mode mode) {
+  _self_->setImage(unnamed_arg_0, mode);
+}
+
+extern "C" void bg_QClipboard_setPixmap_const_QPixmap_R_QClipboard__Mode(QClipboard * _self_, const QPixmap & unnamed_arg_0, QClipboard::Mode mode) {
+  _self_->setPixmap(unnamed_arg_0, mode);
+}
+
+extern "C" void bg_QClipboard_changed_QClipboard__Mode(QClipboard * _self_, QClipboard::Mode mode) {
+  _self_->changed(mode);
+}
+
+extern "C" void bg_QClipboard_selectionChanged_(QClipboard * _self_) {
+  _self_->selectionChanged();
+}
+
+extern "C" void bg_QClipboard_findBufferChanged_(QClipboard * _self_) {
+  _self_->findBufferChanged();
+}
+
+extern "C" void bg_QClipboard_dataChanged_(QClipboard * _self_) {
+  _self_->dataChanged();
+}
+
+extern "C" const QMetaObject * bg_QClipboard_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QClipboard::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QClipboard_CONNECT_changed_CrystalProc_void__QClipboard__Mode_(QClipboard * _self_, CrystalProc<void, QClipboard::Mode> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QClipboard::*)(QClipboard::Mode))&QClipboard::changed, [_proc_](QClipboard::Mode mode){ _proc_(mode); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QClipboard_CONNECT_selectionChanged_CrystalProc_void_(QClipboard * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QClipboard::*)())&QClipboard::selectionChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QClipboard_CONNECT_findBufferChanged_CrystalProc_void_(QClipboard * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QClipboard::*)())&QClipboard::findBufferChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QClipboard_CONNECT_dataChanged_CrystalProc_void_(QClipboard * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QClipboard::*)())&QClipboard::dataChanged, [_proc_](){ _proc_(); }));
 }
 
 extern "C" bool bg_QDesktopServices_openUrl_STATIC_const_QUrl_R(const QUrl & url) {
@@ -62230,6 +66931,888 @@ extern "C" void bg_BgInherit_QMenuBar_JUMPTABLE_BgJumptable_QMenuBar_R(BgInherit
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QMessageBox {
+  CrystalProc<const QMetaObject *> bg_QMessageBox_metaObject_;
+  CrystalProc<void *, const char *> bg_QMessageBox_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QMessageBox_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QMessageBox_event_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QMessageBox_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QMessageBox_showEvent_QShowEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QMessageBox_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QMessageBox_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QEvent *> bg_QMessageBox_changeEvent_QEvent_X;
+  CrystalProc<void, bool> bg_QDialog_setVisible_bool;
+  CrystalProc<QSize *> bg_QDialog_sizeHint_;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void, int> bg_QDialog_done_int;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QMessageBox : public QMessageBox {
+  using QMessageBox::QMessageBox;
+  BgJumptable_QMessageBox bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QMessageBox_metaObject_();
+    } else {
+      return QMessageBox::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QMessageBox_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QMessageBox::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QMessageBox_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QMessageBox::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMessageBox_event_QEvent_X(event);
+    } else {
+      return QMessageBox::event(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QMessageBox_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QMessageBox::resizeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QMessageBox_showEvent_QShowEvent_X(event);
+    } else {
+      QMessageBox::showEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMessageBox_closeEvent_QCloseEvent_X(event);
+    } else {
+      QMessageBox::closeEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QMessageBox_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QMessageBox::keyPressEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QMessageBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QMessageBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QMessageBox::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QDialog_setVisible_bool(visible);
+    } else {
+      QMessageBox::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_sizeHint_();
+    } else {
+      return QMessageBox::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QMessageBox::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QMessageBox::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QMessageBox::exec();
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_done_int.isValid()) {
+      _self_->bgJump.bg_QDialog_done_int(unnamed_arg_0);
+    } else {
+      QMessageBox::done(unnamed_arg_0);
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QMessageBox::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QMessageBox::reject();
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QMessageBox::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QMessageBox::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QMessageBox::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QMessageBox::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QMessageBox::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QMessageBox::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QMessageBox::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QMessageBox::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QMessageBox::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QMessageBox::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QMessageBox::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QMessageBox::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QMessageBox::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QMessageBox::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QMessageBox::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QMessageBox::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QMessageBox::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QMessageBox::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QMessageBox::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QMessageBox::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QMessageBox::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QMessageBox::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QMessageBox::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QMessageBox::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QMessageBox::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+    } else {
+      return QMessageBox::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QMessageBox::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QMessageBox::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QMessageBox::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QMessageBox::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QMessageBox::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QMessageBox::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QMessageBox::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QMessageBox::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QMessageBox::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMessageBox::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMessageBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMessageBox::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QMessageBox_metaObject_(QMessageBox * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QMessageBox_qt_metacast_const_char_X(QMessageBox * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QMessageBox_qt_metacall_QMetaObject__Call_int_void_XX(QMessageBox * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QMessageBox_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QMessageBox::tr(s));
+}
+
+extern "C" CrystalString bg_QMessageBox_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QMessageBox::tr(s, c));
+}
+
+extern "C" CrystalString bg_QMessageBox_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QMessageBox::tr(s, c, n));
+}
+
+extern "C" QMessageBox * bg_QMessageBox__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMessageBox>(parent);
+}
+
+extern "C" QMessageBox * bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R(QMessageBox::Icon icon, const CrystalString title, const CrystalString text) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMessageBox>(icon, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox * bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons(QMessageBox::Icon icon, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMessageBox>(icon, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons);
+}
+
+extern "C" QMessageBox * bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QWidget_X(QMessageBox::Icon icon, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMessageBox>(icon, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, parent);
+}
+
+extern "C" QMessageBox * bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QWidget_X_Qt__WindowFlags(QMessageBox::Icon icon, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMessageBox>(icon, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, parent, flags);
+}
+
+extern "C" void bg_QMessageBox_addButton_QAbstractButton_X_QMessageBox__ButtonRole(QMessageBox * _self_, QAbstractButton * button, QMessageBox::ButtonRole role) {
+  _self_->addButton(button, role);
+}
+
+extern "C" QPushButton * bg_QMessageBox_addButton_const_QString_R_QMessageBox__ButtonRole(QMessageBox * _self_, const CrystalString text, QMessageBox::ButtonRole role) {
+  return _self_->addButton(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), role);
+}
+
+extern "C" QPushButton * bg_QMessageBox_addButton_QMessageBox__StandardButton(QMessageBox * _self_, QMessageBox::StandardButton button) {
+  return _self_->addButton(button);
+}
+
+extern "C" void bg_QMessageBox_removeButton_QAbstractButton_X(QMessageBox * _self_, QAbstractButton * button) {
+  _self_->removeButton(button);
+}
+
+extern "C" void bg_QMessageBox_open_QObject_X_const_char_X(QMessageBox * _self_, QObject * receiver, const char * member) {
+  _self_->open(receiver, member);
+}
+
+extern "C" Container_QList_QAbstractButton_X_ * bg_QMessageBox_buttons_(QMessageBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QAbstractButton_X_>()) Container_QList_QAbstractButton_X_ (_self_->buttons());
+}
+
+extern "C" QMessageBox::ButtonRole bg_QMessageBox_buttonRole_QAbstractButton_X(QMessageBox * _self_, QAbstractButton * button) {
+  return _self_->buttonRole(button);
+}
+
+extern "C" void bg_QMessageBox_setStandardButtons_QMessageBox__StandardButtons(QMessageBox * _self_, QMessageBox::StandardButtons buttons) {
+  _self_->setStandardButtons(buttons);
+}
+
+extern "C" QMessageBox::StandardButtons bg_QMessageBox_standardButtons_(QMessageBox * _self_) {
+  return _self_->standardButtons();
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_standardButton_QAbstractButton_X(QMessageBox * _self_, QAbstractButton * button) {
+  return _self_->standardButton(button);
+}
+
+extern "C" QAbstractButton * bg_QMessageBox_button_QMessageBox__StandardButton(QMessageBox * _self_, QMessageBox::StandardButton which) {
+  return _self_->button(which);
+}
+
+extern "C" QPushButton * bg_QMessageBox_defaultButton_(QMessageBox * _self_) {
+  return _self_->defaultButton();
+}
+
+extern "C" void bg_QMessageBox_setDefaultButton_QPushButton_X(QMessageBox * _self_, QPushButton * button) {
+  _self_->setDefaultButton(button);
+}
+
+extern "C" void bg_QMessageBox_setDefaultButton_QMessageBox__StandardButton(QMessageBox * _self_, QMessageBox::StandardButton button) {
+  _self_->setDefaultButton(button);
+}
+
+extern "C" QAbstractButton * bg_QMessageBox_escapeButton_(QMessageBox * _self_) {
+  return _self_->escapeButton();
+}
+
+extern "C" void bg_QMessageBox_setEscapeButton_QAbstractButton_X(QMessageBox * _self_, QAbstractButton * button) {
+  _self_->setEscapeButton(button);
+}
+
+extern "C" void bg_QMessageBox_setEscapeButton_QMessageBox__StandardButton(QMessageBox * _self_, QMessageBox::StandardButton button) {
+  _self_->setEscapeButton(button);
+}
+
+extern "C" QAbstractButton * bg_QMessageBox_clickedButton_(QMessageBox * _self_) {
+  return _self_->clickedButton();
+}
+
+extern "C" CrystalString bg_QMessageBox_text_(QMessageBox * _self_) {
+  return qstring_to_crystal(_self_->text());
+}
+
+extern "C" void bg_QMessageBox_setText_const_QString_R(QMessageBox * _self_, const CrystalString text) {
+  _self_->setText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox::Icon bg_QMessageBox_icon_(QMessageBox * _self_) {
+  return _self_->icon();
+}
+
+extern "C" void bg_QMessageBox_setIcon_QMessageBox__Icon(QMessageBox * _self_, QMessageBox::Icon unnamed_arg_0) {
+  _self_->setIcon(unnamed_arg_0);
+}
+
+extern "C" QPixmap * bg_QMessageBox_iconPixmap_(QMessageBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->iconPixmap());
+}
+
+extern "C" void bg_QMessageBox_setIconPixmap_const_QPixmap_R(QMessageBox * _self_, const QPixmap & pixmap) {
+  _self_->setIconPixmap(pixmap);
+}
+
+extern "C" Qt::TextFormat bg_QMessageBox_textFormat_(QMessageBox * _self_) {
+  return _self_->textFormat();
+}
+
+extern "C" void bg_QMessageBox_setTextFormat_Qt__TextFormat(QMessageBox * _self_, Qt::TextFormat format) {
+  _self_->setTextFormat(format);
+}
+
+extern "C" void bg_QMessageBox_setTextInteractionFlags_Qt__TextInteractionFlags(QMessageBox * _self_, Qt::TextInteractionFlags flags) {
+  _self_->setTextInteractionFlags(flags);
+}
+
+extern "C" Qt::TextInteractionFlags bg_QMessageBox_textInteractionFlags_(QMessageBox * _self_) {
+  return _self_->textInteractionFlags();
+}
+
+extern "C" void bg_QMessageBox_setCheckBox_QCheckBox_X(QMessageBox * _self_, QCheckBox * cb) {
+  _self_->setCheckBox(cb);
+}
+
+extern "C" QCheckBox * bg_QMessageBox_checkBox_(QMessageBox * _self_) {
+  return _self_->checkBox();
+}
+
+extern "C" void bg_QMessageBox_setOption_QMessageBox__Option_bool(QMessageBox * _self_, QMessageBox::Option option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QMessageBox_testOption_QMessageBox__Option(QMessageBox * _self_, QMessageBox::Option option) {
+  return _self_->testOption(option);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
+  return QMessageBox::information(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons) {
+  return QMessageBox::information(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+  return QMessageBox::information(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, defaultButton);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButton_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1) {
+  return QMessageBox::information(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), button0, button1);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_question_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
+  return QMessageBox::question(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_question_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons) {
+  return QMessageBox::question(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_question_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+  return QMessageBox::question(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, defaultButton);
+}
+
+extern "C" int bg_QMessageBox_question_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButton_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1) {
+  return QMessageBox::question(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), button0, button1);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_warning_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
+  return QMessageBox::warning(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_warning_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons) {
+  return QMessageBox::warning(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_warning_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+  return QMessageBox::warning(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, defaultButton);
+}
+
+extern "C" int bg_QMessageBox_warning_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButton_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1) {
+  return QMessageBox::warning(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), button0, button1);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_critical_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
+  return QMessageBox::critical(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_critical_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons) {
+  return QMessageBox::critical(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons);
+}
+
+extern "C" QMessageBox::StandardButton bg_QMessageBox_critical_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+  return QMessageBox::critical(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), buttons, defaultButton);
+}
+
+extern "C" int bg_QMessageBox_critical_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButton_QMessageBox__StandardButton(QWidget * parent, const CrystalString title, const CrystalString text, QMessageBox::StandardButton button0, QMessageBox::StandardButton button1) {
+  return QMessageBox::critical(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), button0, button1);
+}
+
+extern "C" void bg_QMessageBox_about_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
+  QMessageBox::about(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QMessageBox_aboutQt_STATIC_QWidget_X(QWidget * parent) {
+  QMessageBox::aboutQt(parent);
+}
+
+extern "C" void bg_QMessageBox_aboutQt_STATIC_QWidget_X_const_QString_R(QWidget * parent, const CrystalString title) {
+  QMessageBox::aboutQt(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QMessageBox_informativeText_(QMessageBox * _self_) {
+  return qstring_to_crystal(_self_->informativeText());
+}
+
+extern "C" void bg_QMessageBox_setInformativeText_const_QString_R(QMessageBox * _self_, const CrystalString text) {
+  _self_->setInformativeText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QMessageBox_detailedText_(QMessageBox * _self_) {
+  return qstring_to_crystal(_self_->detailedText());
+}
+
+extern "C" void bg_QMessageBox_setDetailedText_const_QString_R(QMessageBox * _self_, const CrystalString text) {
+  _self_->setDetailedText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QMessageBox_setWindowTitle_const_QString_R(QMessageBox * _self_, const CrystalString title) {
+  _self_->setWindowTitle(([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QMessageBox_setWindowModality_Qt__WindowModality(QMessageBox * _self_, Qt::WindowModality windowModality) {
+  _self_->setWindowModality(windowModality);
+}
+
+extern "C" void bg_QMessageBox_buttonClicked_QAbstractButton_X(QMessageBox * _self_, QAbstractButton * button) {
+  _self_->buttonClicked(button);
+}
+
+extern "C" bool bg_QMessageBox_event_QEvent_X(QMessageBox * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QMessageBox_resizeEvent_QResizeEvent_X(QMessageBox * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QMessageBox_showEvent_QShowEvent_X(QMessageBox * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QMessageBox_closeEvent_QCloseEvent_X(QMessageBox * _self_, QCloseEvent * event) {
+  _self_->closeEvent(event);
+}
+
+extern "C" void bg_QMessageBox_keyPressEvent_QKeyEvent_X(QMessageBox * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QMessageBox_changeEvent_QEvent_X(QMessageBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QMessageBox_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QMessageBox::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QMessageBox_CONNECT_buttonClicked_CrystalProc_void__QAbstractButton_X_(QMessageBox * _self_, CrystalProc<void, QAbstractButton *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMessageBox::*)(QAbstractButton *))&QMessageBox::buttonClicked, [_proc_](QAbstractButton * button){ _proc_(button); }));
+}
+
+extern "C" bool bg_QMessageBox_event_SUPER_QEvent_X(QMessageBox * _self_, QEvent * event) {
+  return _self_->QMessageBox::event(event);
+}
+
+extern "C" void bg_QMessageBox_resizeEvent_SUPER_QResizeEvent_X(QMessageBox * _self_, QResizeEvent * event) {
+  _self_->QMessageBox::resizeEvent(event);
+}
+
+extern "C" void bg_QMessageBox_showEvent_SUPER_QShowEvent_X(QMessageBox * _self_, QShowEvent * event) {
+  _self_->QMessageBox::showEvent(event);
+}
+
+extern "C" void bg_QMessageBox_closeEvent_SUPER_QCloseEvent_X(QMessageBox * _self_, QCloseEvent * event) {
+  _self_->QMessageBox::closeEvent(event);
+}
+
+extern "C" void bg_QMessageBox_keyPressEvent_SUPER_QKeyEvent_X(QMessageBox * _self_, QKeyEvent * event) {
+  _self_->QMessageBox::keyPressEvent(event);
+}
+
+extern "C" void bg_QMessageBox_changeEvent_SUPER_QEvent_X(QMessageBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->QMessageBox::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QMessageBox_JUMPTABLE_BgJumptable_QMessageBox_R(BgInherit_QMessageBox * _self_, const BgJumptable_QMessageBox & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QTextEdit {
   CrystalProc<const QMetaObject *> bg_QTextEdit_metaObject_;
   CrystalProc<void *, const char *> bg_QTextEdit_qt_metacast_const_char_X;
@@ -66890,6 +72473,734 @@ extern "C" void bg_BgInherit_QDoubleSpinBox_JUMPTABLE_BgJumptable_QDoubleSpinBox
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QSplitter {
+  CrystalProc<const QMetaObject *> bg_QSplitter_metaObject_;
+  CrystalProc<void *, const char *> bg_QSplitter_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSplitter_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QSplitter_sizeHint_;
+  CrystalProc<QSize *> bg_QSplitter_minimumSizeHint_;
+  CrystalProc<QSplitterHandle *> bg_QSplitter_createHandle_;
+  CrystalProc<void, QChildEvent *> bg_QSplitter_childEvent_QChildEvent_X;
+  CrystalProc<bool, QEvent *> bg_QSplitter_event_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QSplitter_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QEvent *> bg_QSplitter_changeEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QFrame_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSplitter : public QSplitter {
+  using QSplitter::QSplitter;
+  BgJumptable_QSplitter bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSplitter_metaObject_();
+    } else {
+      return QSplitter::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSplitter_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSplitter::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSplitter_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSplitter::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QSplitter_sizeHint_();
+    } else {
+      return QSplitter::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QSplitter_minimumSizeHint_();
+    } else {
+      return QSplitter::minimumSizeHint();
+    }
+  }
+  
+  QSplitterHandle * createHandle() override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_createHandle_.isValid()) {
+      return _self_->bgJump.bg_QSplitter_createHandle_();
+    } else {
+      return QSplitter::createHandle();
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitter_childEvent_QChildEvent_X(event);
+    } else {
+      QSplitter::childEvent(event);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSplitter_event_QEvent_X(event);
+    } else {
+      return QSplitter::event(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitter_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QSplitter::resizeEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QSplitter_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitter_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QSplitter::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X(event);
+    } else {
+      QSplitter::paintEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionFrame * option) const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X.isValid()) {
+      _self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X(option);
+    } else {
+      QSplitter::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QSplitter::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QSplitter::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QSplitter::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QSplitter::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QSplitter::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QSplitter::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QSplitter::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QSplitter::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QSplitter::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QSplitter::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QSplitter::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QSplitter::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QSplitter::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QSplitter::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QSplitter::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QSplitter::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QSplitter::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QSplitter::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QSplitter::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QSplitter::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QSplitter::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QSplitter::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QSplitter::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QSplitter::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QSplitter::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QSplitter::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QSplitter::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+    } else {
+      return QSplitter::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QSplitter::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QSplitter::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QSplitter::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QSplitter::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QSplitter::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QSplitter::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSplitter::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSplitter::timerEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSplitter::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplitter::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplitter *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplitter::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSplitter_metaObject_(QSplitter * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSplitter_qt_metacast_const_char_X(QSplitter * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSplitter_qt_metacall_QMetaObject__Call_int_void_XX(QSplitter * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSplitter_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSplitter::tr(s));
+}
+
+extern "C" CrystalString bg_QSplitter_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSplitter::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSplitter_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSplitter::tr(s, c, n));
+}
+
+extern "C" QSplitter * bg_QSplitter__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplitter>(parent);
+}
+
+extern "C" QSplitter * bg_QSplitter__CONSTRUCT_Qt__Orientation_QWidget_X(Qt::Orientation unnamed_arg_0, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplitter>(unnamed_arg_0, parent);
+}
+
+extern "C" void bg_QSplitter_addWidget_QWidget_X(QSplitter * _self_, QWidget * widget) {
+  _self_->addWidget(widget);
+}
+
+extern "C" void bg_QSplitter_insertWidget_int_QWidget_X(QSplitter * _self_, int index, QWidget * widget) {
+  _self_->insertWidget(index, widget);
+}
+
+extern "C" QWidget * bg_QSplitter_replaceWidget_int_QWidget_X(QSplitter * _self_, int index, QWidget * widget) {
+  return _self_->replaceWidget(index, widget);
+}
+
+extern "C" void bg_QSplitter_setOrientation_Qt__Orientation(QSplitter * _self_, Qt::Orientation unnamed_arg_0) {
+  _self_->setOrientation(unnamed_arg_0);
+}
+
+extern "C" Qt::Orientation bg_QSplitter_orientation_(QSplitter * _self_) {
+  return _self_->orientation();
+}
+
+extern "C" void bg_QSplitter_setChildrenCollapsible_bool(QSplitter * _self_, bool unnamed_arg_0) {
+  _self_->setChildrenCollapsible(unnamed_arg_0);
+}
+
+extern "C" bool bg_QSplitter_childrenCollapsible_(QSplitter * _self_) {
+  return _self_->childrenCollapsible();
+}
+
+extern "C" void bg_QSplitter_setCollapsible_int_bool(QSplitter * _self_, int index, bool unnamed_arg_1) {
+  _self_->setCollapsible(index, unnamed_arg_1);
+}
+
+extern "C" bool bg_QSplitter_isCollapsible_int(QSplitter * _self_, int index) {
+  return _self_->isCollapsible(index);
+}
+
+extern "C" void bg_QSplitter_setOpaqueResize_bool(QSplitter * _self_, bool opaque) {
+  _self_->setOpaqueResize(opaque);
+}
+
+extern "C" bool bg_QSplitter_opaqueResize_(QSplitter * _self_) {
+  return _self_->opaqueResize();
+}
+
+extern "C" void bg_QSplitter_refresh_(QSplitter * _self_) {
+  _self_->refresh();
+}
+
+extern "C" QSize bg_QSplitter_sizeHint_(QSplitter * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" QSize bg_QSplitter_minimumSizeHint_(QSplitter * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" Container_QList_int_ * bg_QSplitter_sizes_(QSplitter * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (_self_->sizes());
+}
+
+extern "C" void bg_QSplitter_setSizes_const_QList_int__R(QSplitter * _self_, const Container_QList_int_ * list) {
+  _self_->setSizes(*(list));
+}
+
+extern "C" QByteArray * bg_QSplitter_saveState_(QSplitter * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->saveState());
+}
+
+extern "C" bool bg_QSplitter_restoreState_const_QByteArray_R(QSplitter * _self_, const QByteArray & state) {
+  return _self_->restoreState(state);
+}
+
+extern "C" int bg_QSplitter_handleWidth_(QSplitter * _self_) {
+  return _self_->handleWidth();
+}
+
+extern "C" void bg_QSplitter_setHandleWidth_int(QSplitter * _self_, int unnamed_arg_0) {
+  _self_->setHandleWidth(unnamed_arg_0);
+}
+
+extern "C" int bg_QSplitter_indexOf_QWidget_X(QSplitter * _self_, QWidget * w) {
+  return _self_->indexOf(w);
+}
+
+extern "C" QWidget * bg_QSplitter_widget_int(QSplitter * _self_, int index) {
+  return _self_->widget(index);
+}
+
+extern "C" int bg_QSplitter_count_(QSplitter * _self_) {
+  return _self_->count();
+}
+
+extern "C" void bg_QSplitter_getRange_int_int_X_int_X(QSplitter * _self_, int index, int * unnamed_arg_1, int * unnamed_arg_2) {
+  _self_->getRange(index, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" QSplitterHandle * bg_QSplitter_handle_int(QSplitter * _self_, int index) {
+  return _self_->handle(index);
+}
+
+extern "C" void bg_QSplitter_setStretchFactor_int_int(QSplitter * _self_, int index, int stretch) {
+  _self_->setStretchFactor(index, stretch);
+}
+
+extern "C" void bg_QSplitter_splitterMoved_int_int(QSplitter * _self_, int pos, int index) {
+  _self_->splitterMoved(pos, index);
+}
+
+extern "C" QSplitterHandle * bg_QSplitter_createHandle_(QSplitter * _self_) {
+  return _self_->createHandle();
+}
+
+extern "C" void bg_QSplitter_childEvent_QChildEvent_X(QSplitter * _self_, QChildEvent * event) {
+  _self_->childEvent(event);
+}
+
+extern "C" bool bg_QSplitter_event_QEvent_X(QSplitter * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QSplitter_resizeEvent_QResizeEvent_X(QSplitter * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QSplitter_changeEvent_QEvent_X(QSplitter * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QSplitter_moveSplitter_int_int(QSplitter * _self_, int pos, int index) {
+  _self_->moveSplitter(pos, index);
+}
+
+extern "C" void bg_QSplitter_setRubberBand_int(QSplitter * _self_, int position) {
+  _self_->setRubberBand(position);
+}
+
+extern "C" int bg_QSplitter_closestLegalPosition_int_int(QSplitter * _self_, int unnamed_arg_0, int unnamed_arg_1) {
+  return _self_->closestLegalPosition(unnamed_arg_0, unnamed_arg_1);
+}
+
+extern "C" const QMetaObject * bg_QSplitter_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSplitter::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QSplitter_CONNECT_splitterMoved_CrystalProc_void__int__int_(QSplitter * _self_, CrystalProc<void, int, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSplitter::*)(int, int))&QSplitter::splitterMoved, [_proc_](int pos, int index){ _proc_(pos, index); }));
+}
+
+extern "C" QSize bg_QSplitter_sizeHint_SUPER_(QSplitter * _self_) {
+  return _self_->QSplitter::sizeHint();
+}
+
+extern "C" QSize bg_QSplitter_minimumSizeHint_SUPER_(QSplitter * _self_) {
+  return _self_->QSplitter::minimumSizeHint();
+}
+
+extern "C" QSplitterHandle * bg_QSplitter_createHandle_SUPER_(QSplitter * _self_) {
+  return _self_->QSplitter::createHandle();
+}
+
+extern "C" void bg_QSplitter_childEvent_SUPER_QChildEvent_X(QSplitter * _self_, QChildEvent * event) {
+  _self_->QSplitter::childEvent(event);
+}
+
+extern "C" bool bg_QSplitter_event_SUPER_QEvent_X(QSplitter * _self_, QEvent * event) {
+  return _self_->QSplitter::event(event);
+}
+
+extern "C" void bg_QSplitter_resizeEvent_SUPER_QResizeEvent_X(QSplitter * _self_, QResizeEvent * event) {
+  _self_->QSplitter::resizeEvent(event);
+}
+
+extern "C" void bg_QSplitter_changeEvent_SUPER_QEvent_X(QSplitter * _self_, QEvent * unnamed_arg_0) {
+  _self_->QSplitter::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QSplitter_JUMPTABLE_BgJumptable_QSplitter_R(BgInherit_QSplitter * _self_, const BgJumptable_QSplitter & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QStackedLayout {
   CrystalProc<const QMetaObject *> bg_QStackedLayout_metaObject_;
   CrystalProc<void *, const char *> bg_QStackedLayout_qt_metacast_const_char_X;
@@ -67379,6 +73690,620 @@ extern "C" int bg_QStackedLayout_heightForWidth_SUPER_int(QStackedLayout * _self
 }
 
 extern "C" void bg_BgInherit_QStackedLayout_JUMPTABLE_BgJumptable_QStackedLayout_R(BgInherit_QStackedLayout * _self_, const BgJumptable_QStackedLayout & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QStackedWidget {
+  CrystalProc<const QMetaObject *> bg_QStackedWidget_metaObject_;
+  CrystalProc<void *, const char *> bg_QStackedWidget_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QStackedWidget_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QStackedWidget_event_QEvent_X;
+  CrystalProc<QSize *> bg_QFrame_sizeHint_;
+  CrystalProc<void, QPaintEvent *> bg_QFrame_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QEvent *> bg_QFrame_changeEvent_QEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QStackedWidget : public QStackedWidget {
+  using QStackedWidget::QStackedWidget;
+  BgJumptable_QStackedWidget bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QStackedWidget_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QStackedWidget_metaObject_();
+    } else {
+      return QStackedWidget::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QStackedWidget_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QStackedWidget_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QStackedWidget::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QStackedWidget_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QStackedWidget_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QStackedWidget::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QStackedWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QStackedWidget_event_QEvent_X(event);
+    } else {
+      return QStackedWidget::event(event);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QFrame_sizeHint_();
+    } else {
+      return QStackedWidget::sizeHint();
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X(event);
+    } else {
+      QStackedWidget::paintEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QFrame_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QStackedWidget::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionFrame * option) const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X.isValid()) {
+      _self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X(option);
+    } else {
+      QStackedWidget::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QStackedWidget::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QStackedWidget::setVisible(visible);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QStackedWidget::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QStackedWidget::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QStackedWidget::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QStackedWidget::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QStackedWidget::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QStackedWidget::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QStackedWidget::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QStackedWidget::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QStackedWidget::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QStackedWidget::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QStackedWidget::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QStackedWidget::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QStackedWidget::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QStackedWidget::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QStackedWidget::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QStackedWidget::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QStackedWidget::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QStackedWidget::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QStackedWidget::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QStackedWidget::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QStackedWidget::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QStackedWidget::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QStackedWidget::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QStackedWidget::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QStackedWidget::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QStackedWidget::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QStackedWidget::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+    } else {
+      return QStackedWidget::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QStackedWidget::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QStackedWidget::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QStackedWidget::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QStackedWidget::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QStackedWidget::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QStackedWidget::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QStackedWidget::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QStackedWidget::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QStackedWidget::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QStackedWidget::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStackedWidget::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStackedWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStackedWidget::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QStackedWidget_metaObject_(QStackedWidget * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QStackedWidget_qt_metacast_const_char_X(QStackedWidget * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QStackedWidget_qt_metacall_QMetaObject__Call_int_void_XX(QStackedWidget * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QStackedWidget_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QStackedWidget::tr(s));
+}
+
+extern "C" CrystalString bg_QStackedWidget_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QStackedWidget::tr(s, c));
+}
+
+extern "C" CrystalString bg_QStackedWidget_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QStackedWidget::tr(s, c, n));
+}
+
+extern "C" QStackedWidget * bg_QStackedWidget__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QStackedWidget>(parent);
+}
+
+extern "C" int bg_QStackedWidget_addWidget_QWidget_X(QStackedWidget * _self_, QWidget * w) {
+  return _self_->addWidget(w);
+}
+
+extern "C" int bg_QStackedWidget_insertWidget_int_QWidget_X(QStackedWidget * _self_, int index, QWidget * w) {
+  return _self_->insertWidget(index, w);
+}
+
+extern "C" void bg_QStackedWidget_removeWidget_QWidget_X(QStackedWidget * _self_, QWidget * w) {
+  _self_->removeWidget(w);
+}
+
+extern "C" QWidget * bg_QStackedWidget_currentWidget_(QStackedWidget * _self_) {
+  return _self_->currentWidget();
+}
+
+extern "C" int bg_QStackedWidget_currentIndex_(QStackedWidget * _self_) {
+  return _self_->currentIndex();
+}
+
+extern "C" int bg_QStackedWidget_indexOf_const_QWidget_X(QStackedWidget * _self_, const QWidget * unnamed_arg_0) {
+  return _self_->indexOf(unnamed_arg_0);
+}
+
+extern "C" QWidget * bg_QStackedWidget_widget_int(QStackedWidget * _self_, int unnamed_arg_0) {
+  return _self_->widget(unnamed_arg_0);
+}
+
+extern "C" int bg_QStackedWidget_count_(QStackedWidget * _self_) {
+  return _self_->count();
+}
+
+extern "C" void bg_QStackedWidget_setCurrentIndex_int(QStackedWidget * _self_, int index) {
+  _self_->setCurrentIndex(index);
+}
+
+extern "C" void bg_QStackedWidget_setCurrentWidget_QWidget_X(QStackedWidget * _self_, QWidget * w) {
+  _self_->setCurrentWidget(w);
+}
+
+extern "C" void bg_QStackedWidget_currentChanged_int(QStackedWidget * _self_, int unnamed_arg_0) {
+  _self_->currentChanged(unnamed_arg_0);
+}
+
+extern "C" void bg_QStackedWidget_widgetRemoved_int(QStackedWidget * _self_, int index) {
+  _self_->widgetRemoved(index);
+}
+
+extern "C" void bg_QStackedWidget_widgetAdded_int(QStackedWidget * _self_, int index) {
+  _self_->widgetAdded(index);
+}
+
+extern "C" bool bg_QStackedWidget_event_QEvent_X(QStackedWidget * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QStackedWidget_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStackedWidget::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QStackedWidget_CONNECT_currentChanged_CrystalProc_void__int_(QStackedWidget * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStackedWidget::*)(int))&QStackedWidget::currentChanged, [_proc_](int unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStackedWidget_CONNECT_widgetRemoved_CrystalProc_void__int_(QStackedWidget * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStackedWidget::*)(int))&QStackedWidget::widgetRemoved, [_proc_](int index){ _proc_(index); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStackedWidget_CONNECT_widgetAdded_CrystalProc_void__int_(QStackedWidget * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStackedWidget::*)(int))&QStackedWidget::widgetAdded, [_proc_](int index){ _proc_(index); }));
+}
+
+extern "C" bool bg_QStackedWidget_event_SUPER_QEvent_X(QStackedWidget * _self_, QEvent * event) {
+  return _self_->QStackedWidget::event(event);
+}
+
+extern "C" void bg_BgInherit_QStackedWidget_JUMPTABLE_BgJumptable_QStackedWidget_R(BgInherit_QStackedWidget * _self_, const BgJumptable_QStackedWidget & table) {
   _self_->bgJump = (table);
 }
 
@@ -73100,6 +80025,1579 @@ extern "C" void bg_QToolButton_initStyleOption_SUPER_QStyleOptionToolButton_X(QT
 }
 
 extern "C" void bg_BgInherit_QToolButton_JUMPTABLE_BgJumptable_QToolButton_R(BgInherit_QToolButton * _self_, const BgJumptable_QToolButton & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QTreeView {
+  CrystalProc<const QMetaObject *> bg_QTreeView_metaObject_;
+  CrystalProc<void *, const char *> bg_QTreeView_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QAbstractItemModel *> bg_QTreeView_setModel_QAbstractItemModel_X;
+  CrystalProc<void, const QModelIndex *> bg_QTreeView_setRootIndex_const_QModelIndex_R;
+  CrystalProc<void, QItemSelectionModel *> bg_QTreeView_setSelectionModel_QItemSelectionModel_X;
+  CrystalProc<void, const CrystalString> bg_QTreeView_keyboardSearch_const_QString_R;
+  CrystalProc<QRect *, const QModelIndex *> bg_QTreeView_visualRect_const_QModelIndex_R;
+  CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
+  CrystalProc<QModelIndex &, const QPoint> bg_QTreeView_indexAt_const_QPoint_R;
+  CrystalProc<void> bg_QTreeView_doItemsLayout_;
+  CrystalProc<void> bg_QTreeView_reset_;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
+  CrystalProc<void> bg_QTreeView_selectAll_;
+  CrystalProc<void, int> bg_QTreeView_verticalScrollbarValueChanged_int;
+  CrystalProc<void, int, int> bg_QTreeView_scrollContentsBy_int_int;
+  CrystalProc<void, const QModelIndex *, int, int> bg_QTreeView_rowsInserted_const_QModelIndex_R_int_int;
+  CrystalProc<void, const QModelIndex *, int, int> bg_QTreeView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
+  CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
+  CrystalProc<int> bg_QTreeView_horizontalOffset_;
+  CrystalProc<int> bg_QTreeView_verticalOffset_;
+  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<QRegion &, const QItemSelection *> bg_QTreeView_visualRegionForSelection_const_QItemSelection_R;
+  CrystalProc<QModelIndexList &> bg_QTreeView_selectedIndexes_;
+  CrystalProc<void, QEvent *> bg_QTreeView_changeEvent_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QTreeView_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QTreeView_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QModelIndex *> bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
+  CrystalProc<void, QPainter *, const QRect, const QModelIndex *> bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R;
+  CrystalProc<void, QMouseEvent *> bg_QTreeView_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QTreeView_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QTreeView_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<bool, QEvent *> bg_QTreeView_viewportEvent_QEvent_X;
+  CrystalProc<void> bg_QTreeView_updateGeometries_;
+  CrystalProc<QSize *> bg_QTreeView_viewportSizeHint_;
+  CrystalProc<int, int> bg_QTreeView_sizeHintForColumn_int;
+  CrystalProc<void, int> bg_QTreeView_horizontalScrollbarAction_int;
+  CrystalProc<bool, const QModelIndex *> bg_QTreeView_isIndexHidden_const_QModelIndex_R;
+  CrystalProc<void, const QItemSelection *, const QItemSelection *> bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
+  CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
+  CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
+  CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
+  CrystalProc<void, int> bg_QAbstractItemView_verticalScrollbarAction_int;
+  CrystalProc<void, int> bg_QAbstractItemView_horizontalScrollbarValueChanged_int;
+  CrystalProc<void, QWidget *, QAbstractItemDelegate::EndEditHint> bg_QAbstractItemView_closeEditor_QWidget_X_QAbstractItemDelegate__EndEditHint;
+  CrystalProc<void, QWidget *> bg_QAbstractItemView_commitData_QWidget_X;
+  CrystalProc<void, QObject *> bg_QAbstractItemView_editorDestroyed_QObject_X;
+  CrystalProc<bool, const QModelIndex *, QAbstractItemView::EditTrigger, QEvent *> bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X;
+  CrystalProc<QItemSelectionModel::SelectionFlags, const QModelIndex *, const QEvent *> bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X;
+  CrystalProc<void, Qt::DropActions> bg_QAbstractItemView_startDrag_Qt__DropActions;
+  CrystalProc<void, QStyleOptionViewItem *> bg_QAbstractItemView_initViewItemOption_QStyleOptionViewItem_X;
+  CrystalProc<bool, bool> bg_QAbstractItemView_focusNextPrevChild_bool;
+  CrystalProc<bool, QEvent *> bg_QAbstractItemView_event_QEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QAbstractItemView_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QAbstractItemView_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QAbstractItemView_dropEvent_QDropEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QAbstractItemView_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QAbstractItemView_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QAbstractItemView_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QInputMethodEvent *> bg_QAbstractItemView_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QAbstractItemView_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<QSize *> bg_QAbstractScrollArea_minimumSizeHint_;
+  CrystalProc<QSize *> bg_QAbstractScrollArea_sizeHint_;
+  CrystalProc<void, QWidget *> bg_QAbstractScrollArea_setupViewport_QWidget_X;
+  CrystalProc<void, QWheelEvent *> bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTreeView : public QTreeView {
+  using QTreeView::QTreeView;
+  BgJumptable_QTreeView bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTreeView_metaObject_();
+    } else {
+      return QTreeView::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTreeView_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTreeView::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTreeView::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setModel(QAbstractItemModel * model) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_setModel_QAbstractItemModel_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_setModel_QAbstractItemModel_X(model);
+    } else {
+      QTreeView::setModel(model);
+    }
+  }
+  
+  void setRootIndex(const QModelIndex & index) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_setRootIndex_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_setRootIndex_const_QModelIndex_R(&(index));
+    } else {
+      QTreeView::setRootIndex(index);
+    }
+  }
+  
+  void setSelectionModel(QItemSelectionModel * selectionModel) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_setSelectionModel_QItemSelectionModel_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(selectionModel);
+    } else {
+      QTreeView::setSelectionModel(selectionModel);
+    }
+  }
+  
+  void keyboardSearch(const QString & search) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+    } else {
+      QTreeView::keyboardSearch(search);
+    }
+  }
+  
+  QRect visualRect(const QModelIndex & index) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_visualRect_const_QModelIndex_R.isValid()) {
+      return *_self_->bgJump.bg_QTreeView_visualRect_const_QModelIndex_R(&(index));
+    } else {
+      return QTreeView::visualRect(index);
+    }
+  }
+  
+  void scrollTo(const QModelIndex & index, QAbstractItemView::ScrollHint hint) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint.isValid()) {
+      _self_->bgJump.bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint(&(index), hint);
+    } else {
+      QTreeView::scrollTo(index, hint);
+    }
+  }
+  
+  QModelIndex indexAt(const QPoint & point) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R.isValid()) {
+      return _self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R(point);
+    } else {
+      return QTreeView::indexAt(point);
+    }
+  }
+  
+  void doItemsLayout() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_doItemsLayout_.isValid()) {
+      _self_->bgJump.bg_QTreeView_doItemsLayout_();
+    } else {
+      QTreeView::doItemsLayout();
+    }
+  }
+  
+  void reset() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_reset_.isValid()) {
+      _self_->bgJump.bg_QTreeView_reset_();
+    } else {
+      QTreeView::reset();
+    }
+  }
+  
+  void dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight, const QList<int> & roles) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R.isValid()) {
+      _self_->bgJump.bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R(&(topLeft), &(bottomRight), new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (roles));
+    } else {
+      QTreeView::dataChanged(topLeft, bottomRight, roles);
+    }
+  }
+  
+  void selectAll() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_selectAll_.isValid()) {
+      _self_->bgJump.bg_QTreeView_selectAll_();
+    } else {
+      QTreeView::selectAll();
+    }
+  }
+  
+  void verticalScrollbarValueChanged(int value) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_verticalScrollbarValueChanged_int.isValid()) {
+      _self_->bgJump.bg_QTreeView_verticalScrollbarValueChanged_int(value);
+    } else {
+      QTreeView::verticalScrollbarValueChanged(value);
+    }
+  }
+  
+  void scrollContentsBy(int dx, int dy) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_scrollContentsBy_int_int.isValid()) {
+      _self_->bgJump.bg_QTreeView_scrollContentsBy_int_int(dx, dy);
+    } else {
+      QTreeView::scrollContentsBy(dx, dy);
+    }
+  }
+  
+  void rowsInserted(const QModelIndex & parent, int start, int end) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_rowsInserted_const_QModelIndex_R_int_int.isValid()) {
+      _self_->bgJump.bg_QTreeView_rowsInserted_const_QModelIndex_R_int_int(&(parent), start, end);
+    } else {
+      QTreeView::rowsInserted(parent, start, end);
+    }
+  }
+  
+  void rowsAboutToBeRemoved(const QModelIndex & parent, int start, int end) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int.isValid()) {
+      _self_->bgJump.bg_QTreeView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int(&(parent), start, end);
+    } else {
+      QTreeView::rowsAboutToBeRemoved(parent, start, end);
+    }
+  }
+  
+  QModelIndex moveCursor(QAbstractItemView::CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers.isValid()) {
+      return _self_->bgJump.bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(cursorAction, modifiers);
+    } else {
+      return QTreeView::moveCursor(cursorAction, modifiers);
+    }
+  }
+  
+  int horizontalOffset() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_horizontalOffset_.isValid()) {
+      return _self_->bgJump.bg_QTreeView_horizontalOffset_();
+    } else {
+      return QTreeView::horizontalOffset();
+    }
+  }
+  
+  int verticalOffset() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_verticalOffset_.isValid()) {
+      return _self_->bgJump.bg_QTreeView_verticalOffset_();
+    } else {
+      return QTreeView::verticalOffset();
+    }
+  }
+  
+  void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
+      _self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+    } else {
+      QTreeView::setSelection(rect, command);
+    }
+  }
+  
+  QRegion visualRegionForSelection(const QItemSelection & selection) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_visualRegionForSelection_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QTreeView_visualRegionForSelection_const_QItemSelection_R(&(selection));
+    } else {
+      return QTreeView::visualRegionForSelection(selection);
+    }
+  }
+  
+  QModelIndexList selectedIndexes() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_selectedIndexes_.isValid()) {
+      return _self_->bgJump.bg_QTreeView_selectedIndexes_();
+    } else {
+      return QTreeView::selectedIndexes();
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QTreeView::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTreeView::timerEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_paintEvent_QPaintEvent_X(event);
+    } else {
+      QTreeView::paintEvent(event);
+    }
+  }
+  
+  void drawRow(QPainter * painter, const QStyleOptionViewItem & options, const QModelIndex & index) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(painter, &(options), &(index));
+    } else {
+      QTreeView::drawRow(painter, options, index);
+    }
+  }
+  
+  void drawBranches(QPainter * painter, const QRect & rect, const QModelIndex & index) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(painter, rect, &(index));
+    } else {
+      QTreeView::drawBranches(painter, rect, index);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QTreeView::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QTreeView::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QTreeView::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QTreeView::mouseMoveEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QTreeView::keyPressEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QTreeView_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QTreeView::dragMoveEvent(event);
+    }
+  }
+  
+  bool viewportEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_viewportEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QTreeView_viewportEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      return QTreeView::viewportEvent(unnamed_arg_0);
+    }
+  }
+  
+  void updateGeometries() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_updateGeometries_.isValid()) {
+      _self_->bgJump.bg_QTreeView_updateGeometries_();
+    } else {
+      QTreeView::updateGeometries();
+    }
+  }
+  
+  QSize viewportSizeHint() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_viewportSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QTreeView_viewportSizeHint_();
+    } else {
+      return QTreeView::viewportSizeHint();
+    }
+  }
+  
+  int sizeHintForColumn(int column) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_sizeHintForColumn_int.isValid()) {
+      return _self_->bgJump.bg_QTreeView_sizeHintForColumn_int(column);
+    } else {
+      return QTreeView::sizeHintForColumn(column);
+    }
+  }
+  
+  void horizontalScrollbarAction(int action) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_horizontalScrollbarAction_int.isValid()) {
+      _self_->bgJump.bg_QTreeView_horizontalScrollbarAction_int(action);
+    } else {
+      QTreeView::horizontalScrollbarAction(action);
+    }
+  }
+  
+  bool isIndexHidden(const QModelIndex & index) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_isIndexHidden_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTreeView_isIndexHidden_const_QModelIndex_R(&(index));
+    } else {
+      return QTreeView::isIndexHidden(index);
+    }
+  }
+  
+  void selectionChanged(const QItemSelection & selected, const QItemSelection & deselected) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(&(selected), &(deselected));
+    } else {
+      QTreeView::selectionChanged(selected, deselected);
+    }
+  }
+  
+  void currentChanged(const QModelIndex & current, const QModelIndex & previous) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(&(current), &(previous));
+    } else {
+      QTreeView::currentChanged(current, previous);
+    }
+  }
+  
+  int sizeHintForRow(int row) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_sizeHintForRow_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_sizeHintForRow_int(row);
+    } else {
+      return QTreeView::sizeHintForRow(row);
+    }
+  }
+  
+  QAbstractItemDelegate * itemDelegateForIndex(const QModelIndex & index) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(&(index));
+    } else {
+      return QTreeView::itemDelegateForIndex(index);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QTreeView::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  void updateEditorData() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_updateEditorData_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_updateEditorData_();
+    } else {
+      QTreeView::updateEditorData();
+    }
+  }
+  
+  void updateEditorGeometries() override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_updateEditorGeometries_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_updateEditorGeometries_();
+    } else {
+      QTreeView::updateEditorGeometries();
+    }
+  }
+  
+  void verticalScrollbarAction(int action) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_verticalScrollbarAction_int.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_verticalScrollbarAction_int(action);
+    } else {
+      QTreeView::verticalScrollbarAction(action);
+    }
+  }
+  
+  void horizontalScrollbarValueChanged(int value) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_horizontalScrollbarValueChanged_int.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_horizontalScrollbarValueChanged_int(value);
+    } else {
+      QTreeView::horizontalScrollbarValueChanged(value);
+    }
+  }
+  
+  void closeEditor(QWidget * editor, QAbstractItemDelegate::EndEditHint hint) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_closeEditor_QWidget_X_QAbstractItemDelegate__EndEditHint.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_closeEditor_QWidget_X_QAbstractItemDelegate__EndEditHint(editor, hint);
+    } else {
+      QTreeView::closeEditor(editor, hint);
+    }
+  }
+  
+  void commitData(QWidget * editor) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_commitData_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_commitData_QWidget_X(editor);
+    } else {
+      QTreeView::commitData(editor);
+    }
+  }
+  
+  void editorDestroyed(QObject * editor) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_editorDestroyed_QObject_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_editorDestroyed_QObject_X(editor);
+    } else {
+      QTreeView::editorDestroyed(editor);
+    }
+  }
+  
+  bool edit(const QModelIndex & index, QAbstractItemView::EditTrigger trigger, QEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X(&(index), trigger, event);
+    } else {
+      return QTreeView::edit(index, trigger, event);
+    }
+  }
+  
+  QItemSelectionModel::SelectionFlags selectionCommand(const QModelIndex & index, const QEvent * event) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X(&(index), event);
+    } else {
+      return QTreeView::selectionCommand(index, event);
+    }
+  }
+  
+  void startDrag(Qt::DropActions supportedActions) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_startDrag_Qt__DropActions.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_startDrag_Qt__DropActions(supportedActions);
+    } else {
+      QTreeView::startDrag(supportedActions);
+    }
+  }
+  
+  void initViewItemOption(QStyleOptionViewItem * option) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_initViewItemOption_QStyleOptionViewItem_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_initViewItemOption_QStyleOptionViewItem_X(option);
+    } else {
+      QTreeView::initViewItemOption(option);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_focusNextPrevChild_bool(next);
+    } else {
+      return QTreeView::focusNextPrevChild(next);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_event_QEvent_X(event);
+    } else {
+      return QTreeView::event(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QTreeView::dragEnterEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QTreeView::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_dropEvent_QDropEvent_X(event);
+    } else {
+      QTreeView::dropEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QTreeView::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QTreeView::focusOutEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QTreeView::resizeEvent(event);
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractItemView_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QTreeView::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemView_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemView_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTreeView::eventFilter(watched, event);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QAbstractScrollArea_minimumSizeHint_();
+    } else {
+      return QTreeView::minimumSizeHint();
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QAbstractScrollArea_sizeHint_();
+    } else {
+      return QTreeView::sizeHint();
+    }
+  }
+  
+  void setupViewport(QWidget * viewport) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_setupViewport_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_setupViewport_QWidget_X(viewport);
+    } else {
+      QTreeView::setupViewport(viewport);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QTreeView::wheelEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QTreeView::contextMenuEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionFrame * option) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X.isValid()) {
+      _self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X(option);
+    } else {
+      QTreeView::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QTreeView::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QTreeView::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QTreeView::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QTreeView::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QTreeView::paintEngine();
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QTreeView::keyReleaseEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QTreeView::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QTreeView::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QTreeView::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QTreeView::closeEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QTreeView::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QTreeView::actionEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QTreeView::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QTreeView::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+    } else {
+      return QTreeView::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QTreeView::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QTreeView::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QTreeView::sharedPainter();
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTreeView::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTreeView::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTreeView::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTreeView *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTreeView::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTreeView_metaObject_(QTreeView * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTreeView_qt_metacast_const_char_X(QTreeView * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX(QTreeView * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTreeView_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTreeView::tr(s));
+}
+
+extern "C" CrystalString bg_QTreeView_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTreeView::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTreeView_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTreeView::tr(s, c, n));
+}
+
+extern "C" QTreeView * bg_QTreeView__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTreeView>(parent);
+}
+
+extern "C" void bg_QTreeView_setModel_QAbstractItemModel_X(QTreeView * _self_, QAbstractItemModel * model) {
+  _self_->setModel(model);
+}
+
+extern "C" void bg_QTreeView_setRootIndex_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->setRootIndex(index);
+}
+
+extern "C" void bg_QTreeView_setSelectionModel_QItemSelectionModel_X(QTreeView * _self_, QItemSelectionModel * selectionModel) {
+  _self_->setSelectionModel(selectionModel);
+}
+
+extern "C" QHeaderView * bg_QTreeView_header_(QTreeView * _self_) {
+  return _self_->header();
+}
+
+extern "C" void bg_QTreeView_setHeader_QHeaderView_X(QTreeView * _self_, QHeaderView * header) {
+  _self_->setHeader(header);
+}
+
+extern "C" int bg_QTreeView_autoExpandDelay_(QTreeView * _self_) {
+  return _self_->autoExpandDelay();
+}
+
+extern "C" void bg_QTreeView_setAutoExpandDelay_int(QTreeView * _self_, int delay) {
+  _self_->setAutoExpandDelay(delay);
+}
+
+extern "C" int bg_QTreeView_indentation_(QTreeView * _self_) {
+  return _self_->indentation();
+}
+
+extern "C" void bg_QTreeView_setIndentation_int(QTreeView * _self_, int i) {
+  _self_->setIndentation(i);
+}
+
+extern "C" void bg_QTreeView_resetIndentation_(QTreeView * _self_) {
+  _self_->resetIndentation();
+}
+
+extern "C" bool bg_QTreeView_rootIsDecorated_(QTreeView * _self_) {
+  return _self_->rootIsDecorated();
+}
+
+extern "C" void bg_QTreeView_setRootIsDecorated_bool(QTreeView * _self_, bool show) {
+  _self_->setRootIsDecorated(show);
+}
+
+extern "C" bool bg_QTreeView_uniformRowHeights_(QTreeView * _self_) {
+  return _self_->uniformRowHeights();
+}
+
+extern "C" void bg_QTreeView_setUniformRowHeights_bool(QTreeView * _self_, bool uniform) {
+  _self_->setUniformRowHeights(uniform);
+}
+
+extern "C" bool bg_QTreeView_itemsExpandable_(QTreeView * _self_) {
+  return _self_->itemsExpandable();
+}
+
+extern "C" void bg_QTreeView_setItemsExpandable_bool(QTreeView * _self_, bool enable) {
+  _self_->setItemsExpandable(enable);
+}
+
+extern "C" bool bg_QTreeView_expandsOnDoubleClick_(QTreeView * _self_) {
+  return _self_->expandsOnDoubleClick();
+}
+
+extern "C" void bg_QTreeView_setExpandsOnDoubleClick_bool(QTreeView * _self_, bool enable) {
+  _self_->setExpandsOnDoubleClick(enable);
+}
+
+extern "C" int bg_QTreeView_columnViewportPosition_int(QTreeView * _self_, int column) {
+  return _self_->columnViewportPosition(column);
+}
+
+extern "C" int bg_QTreeView_columnWidth_int(QTreeView * _self_, int column) {
+  return _self_->columnWidth(column);
+}
+
+extern "C" void bg_QTreeView_setColumnWidth_int_int(QTreeView * _self_, int column, int width) {
+  _self_->setColumnWidth(column, width);
+}
+
+extern "C" int bg_QTreeView_columnAt_int(QTreeView * _self_, int x) {
+  return _self_->columnAt(x);
+}
+
+extern "C" bool bg_QTreeView_isColumnHidden_int(QTreeView * _self_, int column) {
+  return _self_->isColumnHidden(column);
+}
+
+extern "C" void bg_QTreeView_setColumnHidden_int_bool(QTreeView * _self_, int column, bool hide) {
+  _self_->setColumnHidden(column, hide);
+}
+
+extern "C" bool bg_QTreeView_isHeaderHidden_(QTreeView * _self_) {
+  return _self_->isHeaderHidden();
+}
+
+extern "C" void bg_QTreeView_setHeaderHidden_bool(QTreeView * _self_, bool hide) {
+  _self_->setHeaderHidden(hide);
+}
+
+extern "C" bool bg_QTreeView_isRowHidden_int_const_QModelIndex_R(QTreeView * _self_, int row, const QModelIndex & parent) {
+  return _self_->isRowHidden(row, parent);
+}
+
+extern "C" void bg_QTreeView_setRowHidden_int_const_QModelIndex_R_bool(QTreeView * _self_, int row, const QModelIndex & parent, bool hide) {
+  _self_->setRowHidden(row, parent, hide);
+}
+
+extern "C" bool bg_QTreeView_isFirstColumnSpanned_int_const_QModelIndex_R(QTreeView * _self_, int row, const QModelIndex & parent) {
+  return _self_->isFirstColumnSpanned(row, parent);
+}
+
+extern "C" void bg_QTreeView_setFirstColumnSpanned_int_const_QModelIndex_R_bool(QTreeView * _self_, int row, const QModelIndex & parent, bool span) {
+  _self_->setFirstColumnSpanned(row, parent, span);
+}
+
+extern "C" bool bg_QTreeView_isExpanded_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->isExpanded(index);
+}
+
+extern "C" void bg_QTreeView_setExpanded_const_QModelIndex_R_bool(QTreeView * _self_, const QModelIndex & index, bool expand) {
+  _self_->setExpanded(index, expand);
+}
+
+extern "C" void bg_QTreeView_setSortingEnabled_bool(QTreeView * _self_, bool enable) {
+  _self_->setSortingEnabled(enable);
+}
+
+extern "C" bool bg_QTreeView_isSortingEnabled_(QTreeView * _self_) {
+  return _self_->isSortingEnabled();
+}
+
+extern "C" void bg_QTreeView_setAnimated_bool(QTreeView * _self_, bool enable) {
+  _self_->setAnimated(enable);
+}
+
+extern "C" bool bg_QTreeView_isAnimated_(QTreeView * _self_) {
+  return _self_->isAnimated();
+}
+
+extern "C" void bg_QTreeView_setAllColumnsShowFocus_bool(QTreeView * _self_, bool enable) {
+  _self_->setAllColumnsShowFocus(enable);
+}
+
+extern "C" bool bg_QTreeView_allColumnsShowFocus_(QTreeView * _self_) {
+  return _self_->allColumnsShowFocus();
+}
+
+extern "C" void bg_QTreeView_setWordWrap_bool(QTreeView * _self_, bool on) {
+  _self_->setWordWrap(on);
+}
+
+extern "C" bool bg_QTreeView_wordWrap_(QTreeView * _self_) {
+  return _self_->wordWrap();
+}
+
+extern "C" void bg_QTreeView_setTreePosition_int(QTreeView * _self_, int logicalIndex) {
+  _self_->setTreePosition(logicalIndex);
+}
+
+extern "C" int bg_QTreeView_treePosition_(QTreeView * _self_) {
+  return _self_->treePosition();
+}
+
+extern "C" void bg_QTreeView_keyboardSearch_const_QString_R(QTreeView * _self_, const CrystalString search) {
+  _self_->keyboardSearch(([&]() { auto &&bg_value = (search); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QTreeView_visualRect_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->visualRect(index);
+}
+
+extern "C" void bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint(QTreeView * _self_, const QModelIndex & index, QAbstractItemView::ScrollHint hint) {
+  _self_->scrollTo(index, hint);
+}
+
+extern "C" QModelIndex * bg_QTreeView_indexAt_const_QPoint_R(QTreeView * _self_, const QPoint point) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->indexAt(point));
+}
+
+extern "C" QModelIndex * bg_QTreeView_indexAbove_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->indexAbove(index));
+}
+
+extern "C" QModelIndex * bg_QTreeView_indexBelow_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->indexBelow(index));
+}
+
+extern "C" void bg_QTreeView_doItemsLayout_(QTreeView * _self_) {
+  _self_->doItemsLayout();
+}
+
+extern "C" void bg_QTreeView_reset_(QTreeView * _self_) {
+  _self_->reset();
+}
+
+extern "C" void bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & topLeft, const QModelIndex & bottomRight) {
+  _self_->dataChanged(topLeft, bottomRight);
+}
+
+extern "C" void bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R(QTreeView * _self_, const QModelIndex & topLeft, const QModelIndex & bottomRight, const Container_QList_int_ * roles) {
+  _self_->dataChanged(topLeft, bottomRight, *(roles));
+}
+
+extern "C" void bg_QTreeView_selectAll_(QTreeView * _self_) {
+  _self_->selectAll();
+}
+
+extern "C" void bg_QTreeView_expanded_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->expanded(index);
+}
+
+extern "C" void bg_QTreeView_collapsed_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->collapsed(index);
+}
+
+extern "C" void bg_QTreeView_hideColumn_int(QTreeView * _self_, int column) {
+  _self_->hideColumn(column);
+}
+
+extern "C" void bg_QTreeView_showColumn_int(QTreeView * _self_, int column) {
+  _self_->showColumn(column);
+}
+
+extern "C" void bg_QTreeView_expand_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->expand(index);
+}
+
+extern "C" void bg_QTreeView_collapse_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->collapse(index);
+}
+
+extern "C" void bg_QTreeView_resizeColumnToContents_int(QTreeView * _self_, int column) {
+  _self_->resizeColumnToContents(column);
+}
+
+extern "C" void bg_QTreeView_sortByColumn_int_Qt__SortOrder(QTreeView * _self_, int column, Qt::SortOrder order) {
+  _self_->sortByColumn(column, order);
+}
+
+extern "C" void bg_QTreeView_expandAll_(QTreeView * _self_) {
+  _self_->expandAll();
+}
+
+extern "C" void bg_QTreeView_expandRecursively_const_QModelIndex_R_int(QTreeView * _self_, const QModelIndex & index, int depth) {
+  _self_->expandRecursively(index, depth);
+}
+
+extern "C" void bg_QTreeView_collapseAll_(QTreeView * _self_) {
+  _self_->collapseAll();
+}
+
+extern "C" void bg_QTreeView_expandToDepth_int(QTreeView * _self_, int depth) {
+  _self_->expandToDepth(depth);
+}
+
+extern "C" void bg_QTreeView_columnResized_int_int_int(QTreeView * _self_, int column, int oldSize, int newSize) {
+  _self_->columnResized(column, oldSize, newSize);
+}
+
+extern "C" void bg_QTreeView_columnCountChanged_int_int(QTreeView * _self_, int oldCount, int newCount) {
+  _self_->columnCountChanged(oldCount, newCount);
+}
+
+extern "C" void bg_QTreeView_columnMoved_(QTreeView * _self_) {
+  _self_->columnMoved();
+}
+
+extern "C" void bg_QTreeView_reexpand_(QTreeView * _self_) {
+  _self_->reexpand();
+}
+
+extern "C" void bg_QTreeView_rowsRemoved_const_QModelIndex_R_int_int(QTreeView * _self_, const QModelIndex & parent, int first, int last) {
+  _self_->rowsRemoved(parent, first, last);
+}
+
+extern "C" void bg_QTreeView_verticalScrollbarValueChanged_int(QTreeView * _self_, int value) {
+  _self_->verticalScrollbarValueChanged(value);
+}
+
+extern "C" QTreeView * bg_QTreeView__CONSTRUCT_QTreeViewPrivate_R_QWidget_X(QTreeViewPrivate & dd, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTreeView>(dd, parent);
+}
+
+extern "C" void bg_QTreeView_scrollContentsBy_int_int(QTreeView * _self_, int dx, int dy) {
+  _self_->scrollContentsBy(dx, dy);
+}
+
+extern "C" void bg_QTreeView_rowsInserted_const_QModelIndex_R_int_int(QTreeView * _self_, const QModelIndex & parent, int start, int end) {
+  _self_->rowsInserted(parent, start, end);
+}
+
+extern "C" void bg_QTreeView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int(QTreeView * _self_, const QModelIndex & parent, int start, int end) {
+  _self_->rowsAboutToBeRemoved(parent, start, end);
+}
+
+extern "C" QModelIndex * bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(QTreeView * _self_, QAbstractItemView::CursorAction cursorAction, Qt::KeyboardModifiers modifiers) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->moveCursor(cursorAction, modifiers));
+}
+
+extern "C" int bg_QTreeView_horizontalOffset_(QTreeView * _self_) {
+  return _self_->horizontalOffset();
+}
+
+extern "C" int bg_QTreeView_verticalOffset_(QTreeView * _self_) {
+  return _self_->verticalOffset();
+}
+
+extern "C" void bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(QTreeView * _self_, const QRect rect, QItemSelectionModel::SelectionFlags command) {
+  _self_->setSelection(rect, command);
+}
+
+extern "C" QRegion * bg_QTreeView_visualRegionForSelection_const_QItemSelection_R(QTreeView * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (_self_->visualRegionForSelection(selection));
+}
+
+extern "C" QModelIndexList * bg_QTreeView_selectedIndexes_(QTreeView * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndexList>()) QModelIndexList (_self_->selectedIndexes());
+}
+
+extern "C" void bg_QTreeView_changeEvent_QEvent_X(QTreeView * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QTreeView_timerEvent_QTimerEvent_X(QTreeView * _self_, QTimerEvent * event) {
+  _self_->timerEvent(event);
+}
+
+extern "C" void bg_QTreeView_paintEvent_QPaintEvent_X(QTreeView * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QTreeView_drawTree_QPainter_X_const_QRegion_R(QTreeView * _self_, QPainter * painter, const QRegion & region) {
+  _self_->drawTree(painter, region);
+}
+
+extern "C" void bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(QTreeView * _self_, QPainter * painter, const QStyleOptionViewItem & options, const QModelIndex & index) {
+  _self_->drawRow(painter, options, index);
+}
+
+extern "C" void bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(QTreeView * _self_, QPainter * painter, const QRect rect, const QModelIndex & index) {
+  _self_->drawBranches(painter, rect, index);
+}
+
+extern "C" void bg_QTreeView_mousePressEvent_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseReleaseEvent_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseMoveEvent_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->mouseMoveEvent(event);
+}
+
+extern "C" void bg_QTreeView_keyPressEvent_QKeyEvent_X(QTreeView * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QTreeView_dragMoveEvent_QDragMoveEvent_X(QTreeView * _self_, QDragMoveEvent * event) {
+  _self_->dragMoveEvent(event);
+}
+
+extern "C" bool bg_QTreeView_viewportEvent_QEvent_X(QTreeView * _self_, QEvent * unnamed_arg_0) {
+  return _self_->viewportEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QTreeView_updateGeometries_(QTreeView * _self_) {
+  _self_->updateGeometries();
+}
+
+extern "C" QSize bg_QTreeView_viewportSizeHint_(QTreeView * _self_) {
+  return _self_->viewportSizeHint();
+}
+
+extern "C" int bg_QTreeView_sizeHintForColumn_int(QTreeView * _self_, int column) {
+  return _self_->sizeHintForColumn(column);
+}
+
+extern "C" int bg_QTreeView_indexRowSizeHint_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->indexRowSizeHint(index);
+}
+
+extern "C" int bg_QTreeView_rowHeight_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->rowHeight(index);
+}
+
+extern "C" void bg_QTreeView_horizontalScrollbarAction_int(QTreeView * _self_, int action) {
+  _self_->horizontalScrollbarAction(action);
+}
+
+extern "C" bool bg_QTreeView_isIndexHidden_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->isIndexHidden(index);
+}
+
+extern "C" void bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(QTreeView * _self_, const QItemSelection & selected, const QItemSelection & deselected) {
+  _self_->selectionChanged(selected, deselected);
+}
+
+extern "C" void bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & current, const QModelIndex & previous) {
+  _self_->currentChanged(current, previous);
+}
+
+extern "C" const QMetaObject * bg_QTreeView_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTreeView::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QTreeView_CONNECT_expanded_CrystalProc_void__const_QModelIndex_R_(QTreeView * _self_, CrystalProc<void, const QModelIndex *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QTreeView::*)(const QModelIndex &))&QTreeView::expanded, [_proc_](const QModelIndex & index){ _proc_(&(index)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QTreeView_CONNECT_collapsed_CrystalProc_void__const_QModelIndex_R_(QTreeView * _self_, CrystalProc<void, const QModelIndex *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QTreeView::*)(const QModelIndex &))&QTreeView::collapsed, [_proc_](const QModelIndex & index){ _proc_(&(index)); }));
+}
+
+extern "C" void bg_QTreeView_setModel_SUPER_QAbstractItemModel_X(QTreeView * _self_, QAbstractItemModel * model) {
+  _self_->QTreeView::setModel(model);
+}
+
+extern "C" void bg_QTreeView_setRootIndex_SUPER_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  _self_->QTreeView::setRootIndex(index);
+}
+
+extern "C" void bg_QTreeView_setSelectionModel_SUPER_QItemSelectionModel_X(QTreeView * _self_, QItemSelectionModel * selectionModel) {
+  _self_->QTreeView::setSelectionModel(selectionModel);
+}
+
+extern "C" void bg_QTreeView_keyboardSearch_SUPER_const_QString_R(QTreeView * _self_, const CrystalString search) {
+  _self_->QTreeView::keyboardSearch(([&]() { auto &&bg_value = (search); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QTreeView_visualRect_SUPER_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->QTreeView::visualRect(index);
+}
+
+extern "C" void bg_QTreeView_scrollTo_SUPER_const_QModelIndex_R_QAbstractItemView__ScrollHint(QTreeView * _self_, const QModelIndex & index, QAbstractItemView::ScrollHint hint) {
+  _self_->QTreeView::scrollTo(index, hint);
+}
+
+extern "C" QModelIndex * bg_QTreeView_indexAt_SUPER_const_QPoint_R(QTreeView * _self_, const QPoint point) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTreeView::indexAt(point));
+}
+
+extern "C" void bg_QTreeView_doItemsLayout_SUPER_(QTreeView * _self_) {
+  _self_->QTreeView::doItemsLayout();
+}
+
+extern "C" void bg_QTreeView_reset_SUPER_(QTreeView * _self_) {
+  _self_->QTreeView::reset();
+}
+
+extern "C" void bg_QTreeView_dataChanged_SUPER_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R(QTreeView * _self_, const QModelIndex & topLeft, const QModelIndex & bottomRight, const Container_QList_int_ * roles) {
+  _self_->QTreeView::dataChanged(topLeft, bottomRight, *(roles));
+}
+
+extern "C" void bg_QTreeView_selectAll_SUPER_(QTreeView * _self_) {
+  _self_->QTreeView::selectAll();
+}
+
+extern "C" void bg_QTreeView_verticalScrollbarValueChanged_SUPER_int(QTreeView * _self_, int value) {
+  _self_->QTreeView::verticalScrollbarValueChanged(value);
+}
+
+extern "C" void bg_QTreeView_scrollContentsBy_SUPER_int_int(QTreeView * _self_, int dx, int dy) {
+  _self_->QTreeView::scrollContentsBy(dx, dy);
+}
+
+extern "C" void bg_QTreeView_rowsInserted_SUPER_const_QModelIndex_R_int_int(QTreeView * _self_, const QModelIndex & parent, int start, int end) {
+  _self_->QTreeView::rowsInserted(parent, start, end);
+}
+
+extern "C" void bg_QTreeView_rowsAboutToBeRemoved_SUPER_const_QModelIndex_R_int_int(QTreeView * _self_, const QModelIndex & parent, int start, int end) {
+  _self_->QTreeView::rowsAboutToBeRemoved(parent, start, end);
+}
+
+extern "C" QModelIndex * bg_QTreeView_moveCursor_SUPER_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(QTreeView * _self_, QAbstractItemView::CursorAction cursorAction, Qt::KeyboardModifiers modifiers) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTreeView::moveCursor(cursorAction, modifiers));
+}
+
+extern "C" int bg_QTreeView_horizontalOffset_SUPER_(QTreeView * _self_) {
+  return _self_->QTreeView::horizontalOffset();
+}
+
+extern "C" int bg_QTreeView_verticalOffset_SUPER_(QTreeView * _self_) {
+  return _self_->QTreeView::verticalOffset();
+}
+
+extern "C" void bg_QTreeView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(QTreeView * _self_, const QRect rect, QItemSelectionModel::SelectionFlags command) {
+  _self_->QTreeView::setSelection(rect, command);
+}
+
+extern "C" QRegion * bg_QTreeView_visualRegionForSelection_SUPER_const_QItemSelection_R(QTreeView * _self_, const QItemSelection & selection) {
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (_self_->QTreeView::visualRegionForSelection(selection));
+}
+
+extern "C" QModelIndexList * bg_QTreeView_selectedIndexes_SUPER_(QTreeView * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndexList>()) QModelIndexList (_self_->QTreeView::selectedIndexes());
+}
+
+extern "C" void bg_QTreeView_changeEvent_SUPER_QEvent_X(QTreeView * _self_, QEvent * unnamed_arg_0) {
+  _self_->QTreeView::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QTreeView_timerEvent_SUPER_QTimerEvent_X(QTreeView * _self_, QTimerEvent * event) {
+  _self_->QTreeView::timerEvent(event);
+}
+
+extern "C" void bg_QTreeView_paintEvent_SUPER_QPaintEvent_X(QTreeView * _self_, QPaintEvent * event) {
+  _self_->QTreeView::paintEvent(event);
+}
+
+extern "C" void bg_QTreeView_drawRow_SUPER_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(QTreeView * _self_, QPainter * painter, const QStyleOptionViewItem & options, const QModelIndex & index) {
+  _self_->QTreeView::drawRow(painter, options, index);
+}
+
+extern "C" void bg_QTreeView_drawBranches_SUPER_QPainter_X_const_QRect_R_const_QModelIndex_R(QTreeView * _self_, QPainter * painter, const QRect rect, const QModelIndex & index) {
+  _self_->QTreeView::drawBranches(painter, rect, index);
+}
+
+extern "C" void bg_QTreeView_mousePressEvent_SUPER_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->QTreeView::mousePressEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseReleaseEvent_SUPER_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->QTreeView::mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseDoubleClickEvent_SUPER_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->QTreeView::mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QTreeView_mouseMoveEvent_SUPER_QMouseEvent_X(QTreeView * _self_, QMouseEvent * event) {
+  _self_->QTreeView::mouseMoveEvent(event);
+}
+
+extern "C" void bg_QTreeView_keyPressEvent_SUPER_QKeyEvent_X(QTreeView * _self_, QKeyEvent * event) {
+  _self_->QTreeView::keyPressEvent(event);
+}
+
+extern "C" void bg_QTreeView_dragMoveEvent_SUPER_QDragMoveEvent_X(QTreeView * _self_, QDragMoveEvent * event) {
+  _self_->QTreeView::dragMoveEvent(event);
+}
+
+extern "C" bool bg_QTreeView_viewportEvent_SUPER_QEvent_X(QTreeView * _self_, QEvent * unnamed_arg_0) {
+  return _self_->QTreeView::viewportEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QTreeView_updateGeometries_SUPER_(QTreeView * _self_) {
+  _self_->QTreeView::updateGeometries();
+}
+
+extern "C" QSize bg_QTreeView_viewportSizeHint_SUPER_(QTreeView * _self_) {
+  return _self_->QTreeView::viewportSizeHint();
+}
+
+extern "C" int bg_QTreeView_sizeHintForColumn_SUPER_int(QTreeView * _self_, int column) {
+  return _self_->QTreeView::sizeHintForColumn(column);
+}
+
+extern "C" void bg_QTreeView_horizontalScrollbarAction_SUPER_int(QTreeView * _self_, int action) {
+  _self_->QTreeView::horizontalScrollbarAction(action);
+}
+
+extern "C" bool bg_QTreeView_isIndexHidden_SUPER_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & index) {
+  return _self_->QTreeView::isIndexHidden(index);
+}
+
+extern "C" void bg_QTreeView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(QTreeView * _self_, const QItemSelection & selected, const QItemSelection & deselected) {
+  _self_->QTreeView::selectionChanged(selected, deselected);
+}
+
+extern "C" void bg_QTreeView_currentChanged_SUPER_const_QModelIndex_R_const_QModelIndex_R(QTreeView * _self_, const QModelIndex & current, const QModelIndex & previous) {
+  _self_->QTreeView::currentChanged(current, previous);
+}
+
+extern "C" void bg_BgInherit_QTreeView_JUMPTABLE_BgJumptable_QTreeView_R(BgInherit_QTreeView * _self_, const BgJumptable_QTreeView & table) {
   _self_->bgJump = (table);
 }
 

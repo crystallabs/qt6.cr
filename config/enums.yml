@@ -294,3 +294,29 @@ enums:
   "QInputDevice::DeviceType": InputDevice::DeviceType
   "QInputDevice::DeviceTypes": InputDevice::DeviceTypes
   "QPointingDevice::PointerType": PointingDevice::PointerType
+  "Qt::DateFormat": DateFormat
+  "QMessageBox::Icon": MessageBox::Icon
+  "QMessageBox::ButtonRole": MessageBox::ButtonRole
+  "QMessageBox::StandardButton": MessageBox::StandardButton
+  "QMessageBox::StandardButtons": MessageBox::StandardButtons
+  "QSettings::Format": Settings::Format
+  "QSettings::Scope": Settings::Scope
+  "QSettings::Status": Settings::Status
+  "QRegularExpression::PatternOptions": RegularExpression::PatternOptions
+  "QRegularExpression::MatchType": RegularExpression::MatchType
+  "QRegularExpression::MatchOptions": RegularExpression::MatchOptions
+  "QRegularExpression::WildcardConversionOptions": RegularExpression::WildcardConversionOptions
+  "QClipboard::Mode": Clipboard::Mode
+  "QProcess::ProcessError": Process::ProcessError
+  "QProcess::ProcessState": Process::ProcessState
+  "QProcess::ProcessChannel": Process::ProcessChannel
+  "QProcess::ProcessChannelMode": Process::ProcessChannelMode
+  "QProcess::InputChannelMode": Process::InputChannelMode
+  "QProcess::ExitStatus": Process::ExitStatus
+  "QAbstractAnimation::Direction": AbstractAnimation::Direction
+  "QAbstractAnimation::State": AbstractAnimation::State
+  "QAbstractAnimation::DeletionPolicy": AbstractAnimation::DeletionPolicy
+  "QDateTime::TransitionResolution": DateTime::TransitionResolution
+  "QMessageBox::Option": MessageBox::Option
+  "QProcess::UnixProcessFlags": Process::UnixProcessFlags
+  "QSortFilterProxyModel::Directions": SortFilterProxyModel::Directions

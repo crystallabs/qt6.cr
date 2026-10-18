@@ -10,6 +10,17 @@ types: # Type rewrite rules
     builtin: true
     pass_by: Value
     wrapper_pass_by: Value
+  QAnyStringView: # A view of the Crystal String's UTF-8 bytes, like QString
+    converter: Qt::Converter::QString
+    crystal_type: String
+    cpp_type: CrystalString
+    binding_type: CrystalString
+    to_cpp: "QAnyStringView(%.ptr, %.size)"
+    from_cpp: "qstring_to_crystal(%.toString())"
+    kind: Struct
+    builtin: true
+    pass_by: Value
+    wrapper_pass_by: Value
   QChar: # Map as Crystal Char
     cpp_type: int32_t
     binding_type: Int32
@@ -163,6 +174,14 @@ types: # Type rewrite rules
   "QTextOption::Tab": { ignore: true }
   "QFormLayout::TakeRowResult": { ignore: true }
 
+  # Bare struct holding QProcess::UnixProcessFlags and an int (Qt 6.6+).
+  "QProcess::UnixProcessParameters": { ignore: true }
+
+  # QList<QPair<double, QVariant>>, no mapping for QPair yet
+  "QVariantAnimation::KeyValues": { ignore: true }
+  "QVariantAnimation::KeyValue": { ignore: true }
+  "QList<QVariantAnimation::KeyValue>": { ignore: true }
+
   # No support for associative containers yet
   "QMap<int, QVariant>": { ignore: true }
   "QHash<int, QByteArray>": { ignore: true }
@@ -229,9 +248,25 @@ types: # Type rewrite rules
   NSMenu: {ignore: true}
   CFURLRef: {ignore: true}
   NSURL: {ignore: true}
+  __CFDate: {ignore: true} # QDateTime#toCFDate, named invalidly for Crystal
+  NSDate: {ignore: true}
   QListWidgetItem:
     ignore_methods:
       - "operator<"
       - setBackgroundColor # Deprecated, but virtual: not hidden by QT_DISABLE_DEPRECATED_BEFORE
+  QDateTime:
+    ignore_methods:
+      # Returns std::chrono::milliseconds, whose from_cpp rule bindgen applies
+      # to the right operand only: `(a - (b).count())`.  Use msecs_to instead.
+      - "operator-"
+  QMessageBox:
+    ignore_methods:
+      # bindgen's clang parser crashes on the `QMessageBox::Options` enum
+      # (QFlags of an `enum class`, which nothing instantiates).
+      - setOptions
+      - options
+  QSettings:
+    ignore_methods:
+      - registerFormat # Takes C function pointers over QMap<QString, QVariant>
   <<+: deprecated.yml # Deep merge: adds to the `ignore_methods` listed above
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above
