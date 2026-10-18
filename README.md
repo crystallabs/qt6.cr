@@ -16,6 +16,7 @@ This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
       * [String lists](#string-lists)
       * [Object lifetime](#object-lifetime)
       * [Null pointers](#null-pointers)
+      * [Downcasts](#downcasts)
       * [Differences to qt5.cr](#differences-to-qt5cr)
    * [Developer perspective](#developer-perspective)
       * [Generating the bindings](#generating-the-bindings)
@@ -213,6 +214,21 @@ signal or an overridden virtual method receives: a block of
 override of `Qt::Widget#mouse_press_event` takes a `Qt::MouseEvent`, as
 declared (see `samples/virtual_override.cr`).  This is bindgen's
 `nilable_results` option, set in `qt.yml`.
+
+## Downcasts
+
+A wrapper is of the class a method declares, so `Qt::Layout#item_at` returns a
+`Qt::LayoutItem` and `Qt::Object#children` holds `Qt::Object`s.  `#to?`
+casts to a subclass, returning `nil` when the object isn't one:
+
+```crystal
+if button = widget.to?(Qt::PushButton)
+  button.flat = true
+end
+```
+
+The cast is C++'s `dynamic_cast`, so the binding is built with RTTI
+(`ext/Makefile`), as Qt itself is.
 
 ## Differences to qt5.cr
 
