@@ -25,6 +25,7 @@ module Qt
       end
     end
 
+    # `std::chrono::milliseconds`
     module TimeSpan
       NANO_PER_MILLI = 1_000_000
 
@@ -34,6 +35,17 @@ module Qt
 
       def self.wrap(duration : ::Time::Span) : Int64
         duration.total_milliseconds.to_i64
+      end
+    end
+
+    # `std::chrono::seconds`
+    module TimeSpanSeconds
+      def self.unwrap(secs : Int64) : ::Time::Span
+        ::Time::Span.new(seconds: secs)
+      end
+
+      def self.wrap(duration : ::Time::Span) : Int64
+        duration.total_seconds.to_i64
       end
     end
   end

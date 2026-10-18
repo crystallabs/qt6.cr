@@ -458,6 +458,7 @@ module Qt
     alias QListSpecialMethodsQString = Void
     alias ContainerQListQString = Void
     alias QRegularExpression = Void
+    alias QSysInfo = Void
     alias QMetaObjectConnection = Void
     alias QObject = Void
     alias QMetaObject = Void
@@ -490,6 +491,7 @@ module Qt
     alias QSocketNotifier = Void
     alias QSortFilterProxyModel = Void
     alias QTemporaryFile = Void
+    alias QTranslator = Void
     alias QScreen = Void
     alias QGuiApplication = Void
     alias QTextDocument = Void
@@ -618,7 +620,6 @@ module Qt
     alias QGraphicsSceneEvent = Void
     alias QBasicTimer = Void
     alias QPermission = Void
-    alias QTranslator = Void
     alias QCoreApplicationPrivate = Void
     alias QIODevicePrivate = Void
     alias QDate = Void
@@ -631,26 +632,47 @@ module Qt
     alias QRegularExpressionMatch = Void
     alias QRegularExpressionMatchIterator = Void
     alias QUrl = Void
-    alias QByteArrayView = Void
     alias QUrlQuery = Void
     alias ContainerQListQUrl = Void
+    alias QUuid = Void
+    alias QCollatorSortKey = Void
+    alias QCollatorSortKeyPrivate = Void
+    alias QCollator = Void
+    alias QCommandLineOption = Void
+    alias QCommandLineParser = Void
+    alias ContainerQListQCommandLineOption = Void
+    alias QCryptographicHash = Void
     alias QFileDevicePrivate = Void
     alias QFilePrivate = Void
+    alias QTimeZone_OffsetData = Void
+    alias ContainerQListQTimeZoneOffsetData = Void
     alias QFileInfo = Void
     alias QFileInfoPrivate = Void
     alias QDir = Void
     alias QFileInfoList = Void
     alias QDirPrivate = Void
     alias QDirIterator = Void
+    alias QElapsedTimer = Void
+    alias QVersionNumber = Void
+    alias QLibraryInfo = Void
     alias QTransform = Void
     alias QMatrix4x4 = Void
     alias QLockFile = Void
     alias QMargins = Void
     alias QMarginsF = Void
     alias QMetaType = Void
+    alias QMimeType = Void
+    alias QMimeTypePrivate = Void
+    alias QMimeDatabase = Void
+    alias ContainerQListQMimeType = Void
+    alias QOperatingSystemVersionBase = Void
+    alias QOperatingSystemVersionUnexported = Void
+    alias QOperatingSystemVersion = Void
     alias QProcessEnvironment = Void
     alias QEasingCurve = Void
     alias QVariantAnimationPrivate = Void
+    alias QRandomGenerator = Void
+    alias QRandomGenerator64 = Void
     alias QStandardPaths = Void
     alias QTemporaryDir = Void
     alias QPaintDevice = Void
@@ -1456,6 +1478,22 @@ module Qt
       bg_QIODevice_waitForReadyRead_int : CrystalProc
       bg_QIODevice_waitForBytesWritten_int : CrystalProc
       bg_QIODevice_skipData_qint64 : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTranslator
+      bg_QTranslator_metaObject_ : CrystalProc
+      bg_QTranslator_qt_metacast_const_char_X : CrystalProc
+      bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QTranslator_translate_const_char_X_const_char_X : CrystalProc
+      bg_QTranslator_translate_const_char_X_const_char_X_const_char_X : CrystalProc
+      bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int : CrystalProc
+      bg_QTranslator_isEmpty_ : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
@@ -5343,6 +5381,19 @@ module Qt
     fun bg_QListSpecialMethods_QString___COPY_const_QListSpecialMethods_QString__R(unnamed_arg_0 : QListSpecialMethodsQString*) : QListSpecialMethodsQString*
     fun bg_QListSpecialMethods_QString___OPERATOR_assign_const_QListSpecialMethods_QString__R(_self_ : QListSpecialMethodsQString*, unnamed_arg_0 : QListSpecialMethodsQString*) : QListSpecialMethodsQString*
     fun bg_QListSpecialMethods_QString___CONSTRUCT_() : QListSpecialMethodsQString*
+    fun bg_QSysInfo_buildCpuArchitecture_STATIC_() : CrystalString
+    fun bg_QSysInfo_currentCpuArchitecture_STATIC_() : CrystalString
+    fun bg_QSysInfo_buildAbi_STATIC_() : CrystalString
+    fun bg_QSysInfo_kernelType_STATIC_() : CrystalString
+    fun bg_QSysInfo_kernelVersion_STATIC_() : CrystalString
+    fun bg_QSysInfo_productType_STATIC_() : CrystalString
+    fun bg_QSysInfo_productVersion_STATIC_() : CrystalString
+    fun bg_QSysInfo_prettyProductName_STATIC_() : CrystalString
+    fun bg_QSysInfo_machineHostName_STATIC_() : CrystalString
+    fun bg_QSysInfo_machineUniqueId_STATIC_() : CrystalString
+    fun bg_QSysInfo_bootUniqueId_STATIC_() : CrystalString
+    fun bg_QSysInfo__CONSTRUCT_() : QSysInfo*
+    fun bg_QSysInfo__COPY_const_QSysInfo_R(unnamed_arg_0 : QSysInfo*) : QSysInfo*
     fun bg_QMetaObject__Connection__CONSTRUCT_() : QMetaObjectConnection*
     fun bg_QMetaObject__Connection__COPY_const_QMetaObject__Connection_R(other : QMetaObjectConnection*) : QMetaObjectConnection*
     fun bg_QMetaObject__Connection__OPERATOR_assign_const_QMetaObject__Connection_R(_self_ : QMetaObjectConnection*, other : QMetaObjectConnection*) : QMetaObjectConnection*
@@ -5426,6 +5477,7 @@ module Qt
     fun bg_QObject_CAST_SocketNotifier_(_self_ : QObject*) : QSocketNotifier*
     fun bg_QObject_CAST_SortFilterProxyModel_(_self_ : QObject*) : QSortFilterProxyModel*
     fun bg_QObject_CAST_TemporaryFile_(_self_ : QObject*) : QTemporaryFile*
+    fun bg_QObject_CAST_Translator_(_self_ : QObject*) : QTranslator*
     fun bg_QObject_CAST_Screen_(_self_ : QObject*) : QScreen*
     fun bg_QObject_CAST_GuiApplication_(_self_ : QObject*) : QGuiApplication*
     fun bg_QObject_CAST_TextDocument_(_self_ : QObject*) : QTextDocument*
@@ -5561,6 +5613,36 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractAnimation*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractAnimation*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAbstractAnimation_JUMPTABLE_BgJumptable_QAbstractAnimation_R(_self_ : QAbstractAnimation*, table : BgJumptable_QAbstractAnimation*) : Void
+    fun bg_QDeadlineTimer__CONSTRUCT_() : QDeadlineTimer*
+    fun bg_QDeadlineTimer__CONSTRUCT_Qt__TimerType(type_ : TimerType) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__CONSTRUCT_QDeadlineTimer__ForeverConstant_Qt__TimerType(unnamed_arg_0 : DeadlineTimer::ForeverConstant, type_ : TimerType) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__CONSTRUCT_qint64_Qt__TimerType(msecs : Int64, type : TimerType) : QDeadlineTimer*
+    fun bg_QDeadlineTimer_swap_QDeadlineTimer_R(_self_ : QDeadlineTimer*, other : QDeadlineTimer*) : Void
+    fun bg_QDeadlineTimer_isForever_(_self_ : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer_hasExpired_(_self_ : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer_timerType_(_self_ : QDeadlineTimer*) : TimerType
+    fun bg_QDeadlineTimer_setTimerType_Qt__TimerType(_self_ : QDeadlineTimer*, type : TimerType) : Void
+    fun bg_QDeadlineTimer_remainingTime_(_self_ : QDeadlineTimer*) : Int64
+    fun bg_QDeadlineTimer_remainingTimeNSecs_(_self_ : QDeadlineTimer*) : Int64
+    fun bg_QDeadlineTimer_setRemainingTime_qint64_Qt__TimerType(_self_ : QDeadlineTimer*, msecs : Int64, type : TimerType) : Void
+    fun bg_QDeadlineTimer_setPreciseRemainingTime_qint64_qint64_Qt__TimerType(_self_ : QDeadlineTimer*, secs : Int64, nsecs : Int64, type : TimerType) : Void
+    fun bg_QDeadlineTimer_deadline_(_self_ : QDeadlineTimer*) : Int64
+    fun bg_QDeadlineTimer_deadlineNSecs_(_self_ : QDeadlineTimer*) : Int64
+    fun bg_QDeadlineTimer_setDeadline_qint64_Qt__TimerType(_self_ : QDeadlineTimer*, msecs : Int64, timer_type : TimerType) : Void
+    fun bg_QDeadlineTimer_setPreciseDeadline_qint64_qint64_Qt__TimerType(_self_ : QDeadlineTimer*, secs : Int64, nsecs : Int64, type : TimerType) : Void
+    fun bg_QDeadlineTimer_addNSecs_STATIC_QDeadlineTimer_qint64(dt : QDeadlineTimer*, nsecs : Int64) : QDeadlineTimer*
+    fun bg_QDeadlineTimer_current_STATIC_Qt__TimerType(timer_type : TimerType) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_add_assign_qint64(_self_ : QDeadlineTimer*, msecs : Int64) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_sub_assign_qint64(_self_ : QDeadlineTimer*, msecs : Int64) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__COPY_const_QDeadlineTimer_R(unnamed_arg_0 : QDeadlineTimer*) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, unnamed_arg_0 : QDeadlineTimer*) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer__OPERATOR_ne_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer__OPERATOR_lt_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer__OPERATOR_gt_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer__OPERATOR_le_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer__OPERATOR_ge_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
+    fun bg_QDeadlineTimer_Forever_STATIC_GETTER_() : DeadlineTimer::ForeverConstant
     fun bg_QEventLoop_metaObject_(_self_ : QEventLoop*) : QMetaObject*
     fun bg_QEventLoop_qt_metacast_const_char_X(_self_ : QEventLoop*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QEventLoop_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QEventLoop*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -6675,7 +6757,7 @@ module Qt
     fun bg_QUrl_adjusted_QUrl__FormattingOptions(_self_ : QUrl*, options : Url::FormattingOptions) : QUrl*
     fun bg_QUrl_toEncoded_(_self_ : QUrl*) : CrystalString
     fun bg_QUrl_toEncoded_QUrl__FormattingOptions(_self_ : QUrl*, options : Url::FormattingOptions) : CrystalString
-    fun bg_QUrl_fromEncoded_STATIC_QByteArrayView_QUrl__ParsingMode(input : QByteArrayView*, mode : Url::ParsingMode) : QUrl*
+    fun bg_QUrl_fromEncoded_STATIC_QByteArrayView_QUrl__ParsingMode(input : CrystalString, mode : Url::ParsingMode) : QUrl*
     fun bg_QUrl_fromUserInput_STATIC_const_QString_R(user_input : CrystalString) : QUrl*
     fun bg_QUrl_fromUserInput_STATIC_const_QString_R_const_QString_R(user_input : CrystalString, working_directory : CrystalString) : QUrl*
     fun bg_QUrl_fromUserInput_STATIC_const_QString_R_const_QString_R_QUrl__UserInputResolutionOptions(user_input : CrystalString, working_directory : CrystalString, options : Url::UserInputResolutionOptions) : QUrl*
@@ -6744,6 +6826,36 @@ module Qt
     fun bg_QUrl__OPERATOR_gt_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_le_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_ge_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
+    fun bg_QUuid__CONSTRUCT_() : QUuid*
+    fun bg_QUuid__CONSTRUCT_uint_ushort_ushort_uchar_uchar_uchar_uchar_uchar_uchar_uchar_uchar(l : UInt32, w1 : UInt16, w2 : UInt16, b1 : UInt8, b2 : UInt8, b3 : UInt8, b4 : UInt8, b5 : UInt8, b6 : UInt8, b7 : UInt8, b8 : UInt8) : QUuid*
+    fun bg_QUuid__CONSTRUCT_QAnyStringView(string : CrystalString) : QUuid*
+    fun bg_QUuid_fromString_STATIC_QAnyStringView(string : CrystalString) : QUuid*
+    fun bg_QUuid_toString_QUuid__StringFormat(_self_ : QUuid*, mode : Uuid::StringFormat) : CrystalString
+    fun bg_QUuid_toByteArray_QUuid__StringFormat(_self_ : QUuid*, mode : Uuid::StringFormat) : CrystalString
+    fun bg_QUuid_toRfc4122_(_self_ : QUuid*) : CrystalString
+    fun bg_QUuid_fromBytes_STATIC_const_void_X_QSysInfo__Endian(bytes : Void*, order : SysInfo::Endian) : QUuid*
+    fun bg_QUuid_fromRfc4122_STATIC_QByteArrayView(unnamed_arg_0 : CrystalString) : QUuid*
+    fun bg_QUuid_isNull_(_self_ : QUuid*) : Bool
+    fun bg_QUuid_createUuid_STATIC_() : QUuid*
+    fun bg_QUuid_createUuidV5_STATIC_QUuid_QByteArrayView(ns : QUuid*, base_data : CrystalString) : QUuid*
+    fun bg_QUuid_createUuidV3_STATIC_QUuid_QByteArrayView(ns : QUuid*, base_data : CrystalString) : QUuid*
+    fun bg_QUuid_createUuidV7_STATIC_() : QUuid*
+    fun bg_QUuid_variant_(_self_ : QUuid*) : Uuid::Variant
+    fun bg_QUuid_version_(_self_ : QUuid*) : Uuid::Version
+    fun bg_QUuid__COPY_const_QUuid_R(unnamed_arg_0 : QUuid*) : QUuid*
+    fun bg_QUuid__OPERATOR_eq_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid__OPERATOR_ne_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid__OPERATOR_lt_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid__OPERATOR_gt_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid__OPERATOR_le_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid__OPERATOR_ge_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid_data1_GETTER_(_self_ : QUuid*) : UInt32
+    fun bg_QUuid_data1_SETTER_uint(_self_ : QUuid*, data1 : UInt32) : Void
+    fun bg_QUuid_data2_GETTER_(_self_ : QUuid*) : UInt16
+    fun bg_QUuid_data2_SETTER_ushort(_self_ : QUuid*, data2 : UInt16) : Void
+    fun bg_QUuid_data3_GETTER_(_self_ : QUuid*) : UInt16
+    fun bg_QUuid_data3_SETTER_ushort(_self_ : QUuid*, data3 : UInt16) : Void
+    fun bg_QUuid_data4_GETTER_(_self_ : QUuid*) : Binding::CrystalSlice
     fun bg_QTimer_metaObject_(_self_ : QTimer*) : QMetaObject*
     fun bg_QTimer_qt_metacast_const_char_X(_self_ : QTimer*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QTimer_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTimer*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -6787,6 +6899,93 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTimer_JUMPTABLE_BgJumptable_QTimer_R(_self_ : QTimer*, table : BgJumptable_QTimer*) : Void
+    fun bg_QCollatorSortKey__COPY_const_QCollatorSortKey_R(other : QCollatorSortKey*) : QCollatorSortKey*
+    fun bg_QCollatorSortKey__OPERATOR_assign_const_QCollatorSortKey_R(_self_ : QCollatorSortKey*, other : QCollatorSortKey*) : QCollatorSortKey*
+    fun bg_QCollatorSortKey_swap_QCollatorSortKey_R(_self_ : QCollatorSortKey*, other : QCollatorSortKey*) : Void
+    fun bg_QCollatorSortKey_compare_const_QCollatorSortKey_R(_self_ : QCollatorSortKey*, key : QCollatorSortKey*) : Int32
+    fun bg_QCollatorSortKey__CONSTRUCT_QCollatorSortKeyPrivate_X(unnamed_arg_0 : QCollatorSortKeyPrivate*) : QCollatorSortKey*
+    fun bg_QCollatorSortKey__OPERATOR_lt_const_QCollatorSortKey_R(_self_ : QCollatorSortKey*, rhs : QCollatorSortKey*) : Bool
+    fun bg_QCollator__CONSTRUCT_() : QCollator*
+    fun bg_QCollator__CONSTRUCT_const_QLocale_R(locale : QLocale*) : QCollator*
+    fun bg_QCollator__COPY_const_QCollator_R(unnamed_arg_0 : QCollator*) : QCollator*
+    fun bg_QCollator__OPERATOR_assign_const_QCollator_R(_self_ : QCollator*, unnamed_arg_0 : QCollator*) : QCollator*
+    fun bg_QCollator_swap_QCollator_R(_self_ : QCollator*, other : QCollator*) : Void
+    fun bg_QCollator_setLocale_const_QLocale_R(_self_ : QCollator*, locale : QLocale*) : Void
+    fun bg_QCollator_locale_(_self_ : QCollator*) : QLocale*
+    fun bg_QCollator_caseSensitivity_(_self_ : QCollator*) : CaseSensitivity
+    fun bg_QCollator_setCaseSensitivity_Qt__CaseSensitivity(_self_ : QCollator*, cs : CaseSensitivity) : Void
+    fun bg_QCollator_setNumericMode_bool(_self_ : QCollator*, on : Bool) : Void
+    fun bg_QCollator_numericMode_(_self_ : QCollator*) : Bool
+    fun bg_QCollator_setIgnorePunctuation_bool(_self_ : QCollator*, on : Bool) : Void
+    fun bg_QCollator_ignorePunctuation_(_self_ : QCollator*) : Bool
+    fun bg_QCollator_compare_const_QString_R_const_QString_R(_self_ : QCollator*, s1 : CrystalString, s2 : CrystalString) : Int32
+    fun bg_QCollator__OPERATOR_call_const_QString_R_const_QString_R(_self_ : QCollator*, s1 : CrystalString, s2 : CrystalString) : Bool
+    fun bg_QCollator_sortKey_const_QString_R(_self_ : QCollator*, string : CrystalString) : QCollatorSortKey*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QString_R(name : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QStringList_R(names : ContainerQListQString*) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R(name : CrystalString, description : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R_const_QString_R(name : CrystalString, description : CrystalString, value_name : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R_const_QString_R_const_QString_R(name : CrystalString, description : CrystalString, value_name : CrystalString, default_value : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R(names : ContainerQListQString*, description : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R_const_QString_R(names : ContainerQListQString*, description : CrystalString, value_name : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R_const_QString_R_const_QString_R(names : ContainerQListQString*, description : CrystalString, value_name : CrystalString, default_value : CrystalString) : QCommandLineOption*
+    fun bg_QCommandLineOption__COPY_const_QCommandLineOption_R(other : QCommandLineOption*) : QCommandLineOption*
+    fun bg_QCommandLineOption__OPERATOR_assign_const_QCommandLineOption_R(_self_ : QCommandLineOption*, other : QCommandLineOption*) : QCommandLineOption*
+    fun bg_QCommandLineOption_swap_QCommandLineOption_R(_self_ : QCommandLineOption*, other : QCommandLineOption*) : Void
+    fun bg_QCommandLineOption_names_(_self_ : QCommandLineOption*) : ContainerQListQString*
+    fun bg_QCommandLineOption_setValueName_const_QString_R(_self_ : QCommandLineOption*, name : CrystalString) : Void
+    fun bg_QCommandLineOption_valueName_(_self_ : QCommandLineOption*) : CrystalString
+    fun bg_QCommandLineOption_setDescription_const_QString_R(_self_ : QCommandLineOption*, description : CrystalString) : Void
+    fun bg_QCommandLineOption_description_(_self_ : QCommandLineOption*) : CrystalString
+    fun bg_QCommandLineOption_setDefaultValue_const_QString_R(_self_ : QCommandLineOption*, default_value : CrystalString) : Void
+    fun bg_QCommandLineOption_setDefaultValues_const_QStringList_R(_self_ : QCommandLineOption*, default_values : ContainerQListQString*) : Void
+    fun bg_QCommandLineOption_defaultValues_(_self_ : QCommandLineOption*) : ContainerQListQString*
+    fun bg_QCommandLineOption_flags_(_self_ : QCommandLineOption*) : CommandLineOption::Flags
+    fun bg_QCommandLineOption_setFlags_QCommandLineOption__Flags(_self_ : QCommandLineOption*, aflags : CommandLineOption::Flags) : Void
+    fun bg_QCommandLineParser_tr_STATIC_const_char_X(source_text : UInt8*) : CrystalString
+    fun bg_QCommandLineParser_tr_STATIC_const_char_X_const_char_X(source_text : UInt8*, disambiguation : UInt8*) : CrystalString
+    fun bg_QCommandLineParser_tr_STATIC_const_char_X_const_char_X_int(source_text : UInt8*, disambiguation : UInt8*, n : Int32) : CrystalString
+    fun bg_QCommandLineParser__CONSTRUCT_() : QCommandLineParser*
+    fun bg_QCommandLineParser_setSingleDashWordOptionMode_QCommandLineParser__SingleDashWordOptionMode(_self_ : QCommandLineParser*, parsing_mode : CommandLineParser::SingleDashWordOptionMode) : Void
+    fun bg_QCommandLineParser_setOptionsAfterPositionalArgumentsMode_QCommandLineParser__OptionsAfterPositionalArgumentsMode(_self_ : QCommandLineParser*, mode : CommandLineParser::OptionsAfterPositionalArgumentsMode) : Void
+    fun bg_QCommandLineParser_addOption_const_QCommandLineOption_R(_self_ : QCommandLineParser*, command_line_option : QCommandLineOption*) : Bool
+    fun bg_QCommandLineParser_addOptions_const_QList_QCommandLineOption__R(_self_ : QCommandLineParser*, options : ContainerQListQCommandLineOption*) : Bool
+    fun bg_QCommandLineParser_addVersionOption_(_self_ : QCommandLineParser*) : QCommandLineOption*
+    fun bg_QCommandLineParser_addHelpOption_(_self_ : QCommandLineParser*) : QCommandLineOption*
+    fun bg_QCommandLineParser_setApplicationDescription_const_QString_R(_self_ : QCommandLineParser*, description : CrystalString) : Void
+    fun bg_QCommandLineParser_applicationDescription_(_self_ : QCommandLineParser*) : CrystalString
+    fun bg_QCommandLineParser_addPositionalArgument_const_QString_R_const_QString_R(_self_ : QCommandLineParser*, name : CrystalString, description : CrystalString) : Void
+    fun bg_QCommandLineParser_addPositionalArgument_const_QString_R_const_QString_R_const_QString_R(_self_ : QCommandLineParser*, name : CrystalString, description : CrystalString, syntax : CrystalString) : Void
+    fun bg_QCommandLineParser_clearPositionalArguments_(_self_ : QCommandLineParser*) : Void
+    fun bg_QCommandLineParser_process_const_QStringList_R(_self_ : QCommandLineParser*, arguments : ContainerQListQString*) : Void
+    fun bg_QCommandLineParser_process_const_QCoreApplication_R(_self_ : QCommandLineParser*, app : QCoreApplication*) : Void
+    fun bg_QCommandLineParser_parse_const_QStringList_R(_self_ : QCommandLineParser*, arguments : ContainerQListQString*) : Bool
+    fun bg_QCommandLineParser_errorText_(_self_ : QCommandLineParser*) : CrystalString
+    fun bg_QCommandLineParser_isSet_const_QString_R(_self_ : QCommandLineParser*, name : CrystalString) : Bool
+    fun bg_QCommandLineParser_value_const_QString_R(_self_ : QCommandLineParser*, name : CrystalString) : CrystalString
+    fun bg_QCommandLineParser_values_const_QString_R(_self_ : QCommandLineParser*, name : CrystalString) : ContainerQListQString*
+    fun bg_QCommandLineParser_isSet_const_QCommandLineOption_R(_self_ : QCommandLineParser*, option : QCommandLineOption*) : Bool
+    fun bg_QCommandLineParser_value_const_QCommandLineOption_R(_self_ : QCommandLineParser*, option : QCommandLineOption*) : CrystalString
+    fun bg_QCommandLineParser_values_const_QCommandLineOption_R(_self_ : QCommandLineParser*, option : QCommandLineOption*) : ContainerQListQString*
+    fun bg_QCommandLineParser_positionalArguments_(_self_ : QCommandLineParser*) : ContainerQListQString*
+    fun bg_QCommandLineParser_optionNames_(_self_ : QCommandLineParser*) : ContainerQListQString*
+    fun bg_QCommandLineParser_unknownOptionNames_(_self_ : QCommandLineParser*) : ContainerQListQString*
+    fun bg_QCommandLineParser_showVersion_(_self_ : QCommandLineParser*) : Void
+    fun bg_QCommandLineParser_showHelp_int(_self_ : QCommandLineParser*, exit_code : Int32) : Void
+    fun bg_QCommandLineParser_helpText_(_self_ : QCommandLineParser*) : CrystalString
+    fun bg_QCommandLineParser_showMessageAndExit_STATIC_QCommandLineParser__MessageType_const_QString_R_int(type : CommandLineParser::MessageType, message : CrystalString, exit_code : Int32) : Void
+    fun bg_QCryptographicHash__CONSTRUCT_QCryptographicHash__Algorithm(method : CryptographicHash::Algorithm) : QCryptographicHash*
+    fun bg_QCryptographicHash_swap_QCryptographicHash_R(_self_ : QCryptographicHash*, other : QCryptographicHash*) : Void
+    fun bg_QCryptographicHash_reset_(_self_ : QCryptographicHash*) : Void
+    fun bg_QCryptographicHash_algorithm_(_self_ : QCryptographicHash*) : CryptographicHash::Algorithm
+    fun bg_QCryptographicHash_addData_QByteArrayView(_self_ : QCryptographicHash*, data : CrystalString) : Void
+    fun bg_QCryptographicHash_addData_QIODevice_X(_self_ : QCryptographicHash*, device : QIODevice*) : Bool
+    fun bg_QCryptographicHash_result_(_self_ : QCryptographicHash*) : CrystalString
+    fun bg_QCryptographicHash_resultView_(_self_ : QCryptographicHash*) : CrystalString
+    fun bg_QCryptographicHash_hash_STATIC_QByteArrayView_QCryptographicHash__Algorithm(data : CrystalString, method : CryptographicHash::Algorithm) : CrystalString
+    fun bg_QCryptographicHash_hashLength_STATIC_QCryptographicHash__Algorithm(method : CryptographicHash::Algorithm) : Int32
+    fun bg_QCryptographicHash_supportsAlgorithm_STATIC_QCryptographicHash__Algorithm(method : CryptographicHash::Algorithm) : Bool
+    fun bg_QCryptographicHash_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFileDevice_metaObject_(_self_ : QFileDevice*) : QMetaObject*
     fun bg_QFileDevice_qt_metacast_const_char_X(_self_ : QFileDevice*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileDevice*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -6958,6 +7157,70 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(_self_ : QFile*, table : BgJumptable_QFile*) : Void
+    fun bg_QTimeZone__CONSTRUCT_() : QTimeZone*
+    fun bg_QTimeZone__CONSTRUCT_QTimeZone__Initialization(spec : TimeZone::Initialization) : QTimeZone*
+    fun bg_QTimeZone__CONSTRUCT_int(offset_seconds : Int32) : QTimeZone*
+    fun bg_QTimeZone__CONSTRUCT_const_QByteArray_R(iana_id : CrystalString) : QTimeZone*
+    fun bg_QTimeZone__CONSTRUCT_const_QByteArray_R_int_const_QString_R_const_QString_R_QLocale__Territory(zone_id : CrystalString, offset_seconds : Int32, name : CrystalString, abbreviation : CrystalString, territory : Locale::Territory) : QTimeZone*
+    fun bg_QTimeZone__CONSTRUCT_const_QByteArray_R_int_const_QString_R_const_QString_R_QLocale__Territory_const_QString_R(zone_id : CrystalString, offset_seconds : Int32, name : CrystalString, abbreviation : CrystalString, territory : Locale::Territory, comment : CrystalString) : QTimeZone*
+    fun bg_QTimeZone__COPY_const_QTimeZone_R(other : QTimeZone*) : QTimeZone*
+    fun bg_QTimeZone__OPERATOR_assign_const_QTimeZone_R(_self_ : QTimeZone*, other : QTimeZone*) : QTimeZone*
+    fun bg_QTimeZone_swap_QTimeZone_R(_self_ : QTimeZone*, other : QTimeZone*) : Void
+    fun bg_QTimeZone_isValid_(_self_ : QTimeZone*) : Bool
+    fun bg_QTimeZone_fromDurationAheadOfUtc_STATIC_std__chrono__seconds(offset : Int64) : QTimeZone*
+    fun bg_QTimeZone_fromSecondsAheadOfUtc_STATIC_int(offset : Int32) : QTimeZone*
+    fun bg_QTimeZone_timeSpec_(_self_ : QTimeZone*) : TimeSpec
+    fun bg_QTimeZone_fixedSecondsAheadOfUtc_(_self_ : QTimeZone*) : Int32
+    fun bg_QTimeZone_isUtcOrFixedOffset_STATIC_Qt__TimeSpec(spec : TimeSpec) : Bool
+    fun bg_QTimeZone_isUtcOrFixedOffset_(_self_ : QTimeZone*) : Bool
+    fun bg_QTimeZone_asBackendZone_(_self_ : QTimeZone*) : QTimeZone*
+    fun bg_QTimeZone_hasAlternativeName_QByteArrayView(_self_ : QTimeZone*, alias_ : CrystalString) : Bool
+    fun bg_QTimeZone_id_(_self_ : QTimeZone*) : CrystalString
+    fun bg_QTimeZone_territory_(_self_ : QTimeZone*) : Locale::Territory
+    fun bg_QTimeZone_comment_(_self_ : QTimeZone*) : CrystalString
+    fun bg_QTimeZone_displayName_const_QDateTime_R_QTimeZone__NameType(_self_ : QTimeZone*, at_date_time : QDateTime*, name_type : TimeZone::NameType) : CrystalString
+    fun bg_QTimeZone_displayName_const_QDateTime_R_QTimeZone__NameType_const_QLocale_R(_self_ : QTimeZone*, at_date_time : QDateTime*, name_type : TimeZone::NameType, locale : QLocale*) : CrystalString
+    fun bg_QTimeZone_displayName_QTimeZone__TimeType_QTimeZone__NameType(_self_ : QTimeZone*, time_type : TimeZone::TimeType, name_type : TimeZone::NameType) : CrystalString
+    fun bg_QTimeZone_displayName_QTimeZone__TimeType_QTimeZone__NameType_const_QLocale_R(_self_ : QTimeZone*, time_type : TimeZone::TimeType, name_type : TimeZone::NameType, locale : QLocale*) : CrystalString
+    fun bg_QTimeZone_abbreviation_const_QDateTime_R(_self_ : QTimeZone*, at_date_time : QDateTime*) : CrystalString
+    fun bg_QTimeZone_offsetFromUtc_const_QDateTime_R(_self_ : QTimeZone*, at_date_time : QDateTime*) : Int32
+    fun bg_QTimeZone_standardTimeOffset_const_QDateTime_R(_self_ : QTimeZone*, at_date_time : QDateTime*) : Int32
+    fun bg_QTimeZone_daylightTimeOffset_const_QDateTime_R(_self_ : QTimeZone*, at_date_time : QDateTime*) : Int32
+    fun bg_QTimeZone_hasDaylightTime_(_self_ : QTimeZone*) : Bool
+    fun bg_QTimeZone_isDaylightTime_const_QDateTime_R(_self_ : QTimeZone*, at_date_time : QDateTime*) : Bool
+    fun bg_QTimeZone_offsetData_const_QDateTime_R(_self_ : QTimeZone*, for_date_time : QDateTime*) : QTimeZone_OffsetData*
+    fun bg_QTimeZone_hasTransitions_(_self_ : QTimeZone*) : Bool
+    fun bg_QTimeZone_nextTransition_const_QDateTime_R(_self_ : QTimeZone*, after_date_time : QDateTime*) : QTimeZone_OffsetData*
+    fun bg_QTimeZone_previousTransition_const_QDateTime_R(_self_ : QTimeZone*, before_date_time : QDateTime*) : QTimeZone_OffsetData*
+    fun bg_QTimeZone_transitions_const_QDateTime_R_const_QDateTime_R(_self_ : QTimeZone*, from_date_time : QDateTime*, to_date_time : QDateTime*) : ContainerQListQTimeZoneOffsetData*
+    fun bg_QTimeZone_systemTimeZoneId_STATIC_() : CrystalString
+    fun bg_QTimeZone_systemTimeZone_STATIC_() : QTimeZone*
+    fun bg_QTimeZone_utc_STATIC_() : QTimeZone*
+    fun bg_QTimeZone_isTimeZoneIdAvailable_STATIC_const_QByteArray_R(iana_id : CrystalString) : Bool
+    fun bg_QTimeZone_availableTimeZoneIds_STATIC_() : ContainerQListQByteArray*
+    fun bg_QTimeZone_availableTimeZoneIds_STATIC_QLocale__Territory(territory : Locale::Territory) : ContainerQListQByteArray*
+    fun bg_QTimeZone_availableTimeZoneIds_STATIC_int(offset_seconds : Int32) : ContainerQListQByteArray*
+    fun bg_QTimeZone_ianaIdToWindowsId_STATIC_const_QByteArray_R(iana_id : CrystalString) : CrystalString
+    fun bg_QTimeZone_windowsIdToDefaultIanaId_STATIC_const_QByteArray_R(windows_id : CrystalString) : CrystalString
+    fun bg_QTimeZone_windowsIdToDefaultIanaId_STATIC_const_QByteArray_R_QLocale__Territory(windows_id : CrystalString, territory : Locale::Territory) : CrystalString
+    fun bg_QTimeZone_windowsIdToIanaIds_STATIC_const_QByteArray_R(windows_id : CrystalString) : ContainerQListQByteArray*
+    fun bg_QTimeZone_windowsIdToIanaIds_STATIC_const_QByteArray_R_QLocale__Territory(windows_id : CrystalString, territory : Locale::Territory) : ContainerQListQByteArray*
+    fun bg_QTimeZone__OPERATOR_eq_const_QTimeZone_R(_self_ : QTimeZone*, rhs : QTimeZone*) : Bool
+    fun bg_QTimeZone__OPERATOR_ne_const_QTimeZone_R(_self_ : QTimeZone*, rhs : QTimeZone*) : Bool
+    fun bg_QTimeZone__OffsetData__COPY_const_QTimeZone__OffsetData_R(unnamed_arg_0 : QTimeZone_OffsetData*) : QTimeZone_OffsetData*
+    fun bg_QTimeZone__OffsetData__OPERATOR_assign_const_QTimeZone__OffsetData_R(_self_ : QTimeZone_OffsetData*, unnamed_arg_0 : QTimeZone_OffsetData*) : QTimeZone_OffsetData*
+    fun bg_QTimeZone__OffsetData__CONSTRUCT_() : QTimeZone_OffsetData*
+    fun bg_QTimeZone__OffsetData__AGGREGATE_QString_QDateTime_int_int_int(abbreviation : CrystalString, at_utc : QDateTime*, offset_from_utc : Int32, standard_time_offset : Int32, daylight_time_offset : Int32) : QTimeZone_OffsetData*
+    fun bg_QTimeZone__OffsetData_abbreviation_GETTER_(_self_ : QTimeZone_OffsetData*) : CrystalString
+    fun bg_QTimeZone__OffsetData_abbreviation_SETTER_QString(_self_ : QTimeZone_OffsetData*, abbreviation : CrystalString) : Void
+    fun bg_QTimeZone__OffsetData_atUtc_GETTER_(_self_ : QTimeZone_OffsetData*) : QDateTime*
+    fun bg_QTimeZone__OffsetData_atUtc_SETTER_QDateTime(_self_ : QTimeZone_OffsetData*, at_utc : QDateTime*) : Void
+    fun bg_QTimeZone__OffsetData_offsetFromUtc_GETTER_(_self_ : QTimeZone_OffsetData*) : Int32
+    fun bg_QTimeZone__OffsetData_offsetFromUtc_SETTER_int(_self_ : QTimeZone_OffsetData*, offset_from_utc : Int32) : Void
+    fun bg_QTimeZone__OffsetData_standardTimeOffset_GETTER_(_self_ : QTimeZone_OffsetData*) : Int32
+    fun bg_QTimeZone__OffsetData_standardTimeOffset_SETTER_int(_self_ : QTimeZone_OffsetData*, standard_time_offset : Int32) : Void
+    fun bg_QTimeZone__OffsetData_daylightTimeOffset_GETTER_(_self_ : QTimeZone_OffsetData*) : Int32
+    fun bg_QTimeZone__OffsetData_daylightTimeOffset_SETTER_int(_self_ : QTimeZone_OffsetData*, daylight_time_offset : Int32) : Void
     fun bg_QFileInfo__CONSTRUCT_QFileInfoPrivate_X(d : QFileInfoPrivate*) : QFileInfo*
     fun bg_QFileInfo__CONSTRUCT_() : QFileInfo*
     fun bg_QFileInfo__CONSTRUCT_const_QString_R(file : CrystalString) : QFileInfo*
@@ -7126,6 +7389,26 @@ module Qt
     fun bg_QDirIterator_filePath_(_self_ : QDirIterator*) : CrystalString
     fun bg_QDirIterator_fileInfo_(_self_ : QDirIterator*) : QFileInfo*
     fun bg_QDirIterator_path_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QElapsedTimer__CONSTRUCT_() : QElapsedTimer*
+    fun bg_QElapsedTimer_clockType_STATIC_() : ElapsedTimer::ClockType
+    fun bg_QElapsedTimer_isMonotonic_STATIC_() : Bool
+    fun bg_QElapsedTimer_start_(_self_ : QElapsedTimer*) : Void
+    fun bg_QElapsedTimer_restart_(_self_ : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer_invalidate_(_self_ : QElapsedTimer*) : Void
+    fun bg_QElapsedTimer_isValid_(_self_ : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer_nsecsElapsed_(_self_ : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer_elapsed_(_self_ : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer_hasExpired_qint64(_self_ : QElapsedTimer*, timeout : Int64) : Bool
+    fun bg_QElapsedTimer_msecsSinceReference_(_self_ : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer_msecsTo_const_QElapsedTimer_R(_self_ : QElapsedTimer*, other : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer_secsTo_const_QElapsedTimer_R(_self_ : QElapsedTimer*, other : QElapsedTimer*) : Int64
+    fun bg_QElapsedTimer__COPY_const_QElapsedTimer_R(unnamed_arg_0 : QElapsedTimer*) : QElapsedTimer*
+    fun bg_QElapsedTimer__OPERATOR_lt_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer__OPERATOR_eq_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer__OPERATOR_ne_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer__OPERATOR_gt_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer__OPERATOR_le_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
+    fun bg_QElapsedTimer__OPERATOR_ge_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
     fun bg_QFileSystemWatcher_metaObject_(_self_ : QFileSystemWatcher*) : QMetaObject*
     fun bg_QFileSystemWatcher_qt_metacast_const_char_X(_self_ : QFileSystemWatcher*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileSystemWatcher*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -7158,6 +7441,40 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(_self_ : QFileSystemWatcher*, table : BgJumptable_QFileSystemWatcher*) : Void
+    fun bg_QVersionNumber__CONSTRUCT_() : QVersionNumber*
+    fun bg_QVersionNumber__CONSTRUCT_int(maj : Int32) : QVersionNumber*
+    fun bg_QVersionNumber__CONSTRUCT_int_int(maj : Int32, min : Int32) : QVersionNumber*
+    fun bg_QVersionNumber__CONSTRUCT_int_int_int(maj : Int32, min : Int32, mic : Int32) : QVersionNumber*
+    fun bg_QVersionNumber_isNull_(_self_ : QVersionNumber*) : Bool
+    fun bg_QVersionNumber_isNormalized_(_self_ : QVersionNumber*) : Bool
+    fun bg_QVersionNumber_majorVersion_(_self_ : QVersionNumber*) : Int32
+    fun bg_QVersionNumber_minorVersion_(_self_ : QVersionNumber*) : Int32
+    fun bg_QVersionNumber_microVersion_(_self_ : QVersionNumber*) : Int32
+    fun bg_QVersionNumber_normalized_(_self_ : QVersionNumber*) : QVersionNumber*
+    fun bg_QVersionNumber_segments_(_self_ : QVersionNumber*) : ContainerQListInt*
+    fun bg_QVersionNumber_segmentAt_qsizetype(_self_ : QVersionNumber*, index : Int64) : Int32
+    fun bg_QVersionNumber_segmentCount_(_self_ : QVersionNumber*) : Int64
+    fun bg_QVersionNumber_isPrefixOf_const_QVersionNumber_R(_self_ : QVersionNumber*, other : QVersionNumber*) : Bool
+    fun bg_QVersionNumber_compare_STATIC_const_QVersionNumber_R_const_QVersionNumber_R(v1 : QVersionNumber*, v2 : QVersionNumber*) : Int32
+    fun bg_QVersionNumber_commonPrefix_STATIC_const_QVersionNumber_R_const_QVersionNumber_R(v1 : QVersionNumber*, v2 : QVersionNumber*) : QVersionNumber*
+    fun bg_QVersionNumber_toString_(_self_ : QVersionNumber*) : CrystalString
+    fun bg_QVersionNumber_fromString_STATIC_QAnyStringView_qsizetype_X(string : CrystalString, suffix_index : Int64*) : QVersionNumber*
+    fun bg_QVersionNumber__COPY_const_QVersionNumber_R(unnamed_arg_0 : QVersionNumber*) : QVersionNumber*
+    fun bg_QVersionNumber__OPERATOR_assign_const_QVersionNumber_R(_self_ : QVersionNumber*, unnamed_arg_0 : QVersionNumber*) : QVersionNumber*
+    fun bg_QVersionNumber__OPERATOR_eq_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QVersionNumber__OPERATOR_ne_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QVersionNumber__OPERATOR_lt_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QVersionNumber__OPERATOR_gt_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QVersionNumber__OPERATOR_le_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QVersionNumber__OPERATOR_ge_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
+    fun bg_QLibraryInfo_build_STATIC_() : UInt8*
+    fun bg_QLibraryInfo_isDebugBuild_STATIC_() : Bool
+    fun bg_QLibraryInfo_isSharedBuild_STATIC_() : Bool
+    fun bg_QLibraryInfo_version_STATIC_() : QVersionNumber*
+    fun bg_QLibraryInfo_path_STATIC_QLibraryInfo__LibraryPath(p : LibraryInfo::LibraryPath) : CrystalString
+    fun bg_QLibraryInfo_paths_STATIC_QLibraryInfo__LibraryPath(p : LibraryInfo::LibraryPath) : ContainerQListQString*
+    fun bg_QLibraryInfo_platformPluginArguments_STATIC_const_QString_R(platform_name : CrystalString) : ContainerQListQString*
+    fun bg_QLibraryInfo__COPY_const_QLibraryInfo_R(unnamed_arg_0 : QLibraryInfo*) : QLibraryInfo*
     fun bg_QPoint__CONSTRUCT_() : QPoint
     fun bg_QPoint__CONSTRUCT_int_int(xpos : Int32, ypos : Int32) : QPoint
     fun bg_QPoint_isNull_(_self_ : QPoint*) : Bool
@@ -7391,6 +7708,113 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QMimeData*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QMimeData*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QMimeData_JUMPTABLE_BgJumptable_QMimeData_R(_self_ : QMimeData*, table : BgJumptable_QMimeData*) : Void
+    fun bg_QMimeType__CONSTRUCT_() : QMimeType*
+    fun bg_QMimeType__COPY_const_QMimeType_R(other : QMimeType*) : QMimeType*
+    fun bg_QMimeType__OPERATOR_assign_const_QMimeType_R(_self_ : QMimeType*, other : QMimeType*) : QMimeType*
+    fun bg_QMimeType_swap_QMimeType_R(_self_ : QMimeType*, other : QMimeType*) : Void
+    fun bg_QMimeType__CONSTRUCT_const_QMimeTypePrivate_R(dd : QMimeTypePrivate*) : QMimeType*
+    fun bg_QMimeType_isValid_(_self_ : QMimeType*) : Bool
+    fun bg_QMimeType_isDefault_(_self_ : QMimeType*) : Bool
+    fun bg_QMimeType_name_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_comment_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_genericIconName_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_iconName_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_globPatterns_(_self_ : QMimeType*) : ContainerQListQString*
+    fun bg_QMimeType_parentMimeTypes_(_self_ : QMimeType*) : ContainerQListQString*
+    fun bg_QMimeType_allAncestors_(_self_ : QMimeType*) : ContainerQListQString*
+    fun bg_QMimeType_aliases_(_self_ : QMimeType*) : ContainerQListQString*
+    fun bg_QMimeType_suffixes_(_self_ : QMimeType*) : ContainerQListQString*
+    fun bg_QMimeType_preferredSuffix_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_inherits_const_QString_R(_self_ : QMimeType*, mime_type_name : CrystalString) : Bool
+    fun bg_QMimeType_filterString_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType__OPERATOR_eq_const_QMimeType_R(_self_ : QMimeType*, rhs : QMimeType*) : Bool
+    fun bg_QMimeType__OPERATOR_ne_const_QMimeType_R(_self_ : QMimeType*, rhs : QMimeType*) : Bool
+    fun bg_QMimeType_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QMimeDatabase__CONSTRUCT_() : QMimeDatabase*
+    fun bg_QMimeDatabase_mimeTypeForName_const_QString_R(_self_ : QMimeDatabase*, name_or_alias : CrystalString) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForFile_const_QString_R_QMimeDatabase__MatchMode(_self_ : QMimeDatabase*, file_name : CrystalString, mode : MimeDatabase::MatchMode) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForFile_const_QFileInfo_R_QMimeDatabase__MatchMode(_self_ : QMimeDatabase*, file_info : QFileInfo*, mode : MimeDatabase::MatchMode) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypesForFileName_const_QString_R(_self_ : QMimeDatabase*, file_name : CrystalString) : ContainerQListQMimeType*
+    fun bg_QMimeDatabase_mimeTypeForData_const_QByteArray_R(_self_ : QMimeDatabase*, data : CrystalString) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForData_QIODevice_X(_self_ : QMimeDatabase*, device : QIODevice*) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForUrl_const_QUrl_R(_self_ : QMimeDatabase*, url : QUrl*) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForFileNameAndData_const_QString_R_QIODevice_X(_self_ : QMimeDatabase*, file_name : CrystalString, device : QIODevice*) : QMimeType*
+    fun bg_QMimeDatabase_mimeTypeForFileNameAndData_const_QString_R_const_QByteArray_R(_self_ : QMimeDatabase*, file_name : CrystalString, data : CrystalString) : QMimeType*
+    fun bg_QMimeDatabase_suffixForFileName_const_QString_R(_self_ : QMimeDatabase*, file_name : CrystalString) : CrystalString
+    fun bg_QMimeDatabase_allMimeTypes_(_self_ : QMimeDatabase*) : ContainerQListQMimeType*
+    fun bg_QOperatingSystemVersionBase__CONSTRUCT_QOperatingSystemVersionBase__OSType_int_int_int(os_type : OperatingSystemVersionBase::OSType, vmajor : Int32, vminor : Int32, vmicro : Int32) : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionBase_current_STATIC_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionBase_name_STATIC_QOperatingSystemVersionBase(osversion : QOperatingSystemVersionBase*) : CrystalString
+    fun bg_QOperatingSystemVersionBase_currentType_STATIC_() : OperatingSystemVersionBase::OSType
+    fun bg_QOperatingSystemVersionBase_version_(_self_ : QOperatingSystemVersionBase*) : QVersionNumber*
+    fun bg_QOperatingSystemVersionBase_majorVersion_(_self_ : QOperatingSystemVersionBase*) : Int32
+    fun bg_QOperatingSystemVersionBase_minorVersion_(_self_ : QOperatingSystemVersionBase*) : Int32
+    fun bg_QOperatingSystemVersionBase_microVersion_(_self_ : QOperatingSystemVersionBase*) : Int32
+    fun bg_QOperatingSystemVersionBase_segmentCount_(_self_ : QOperatingSystemVersionBase*) : Int32
+    fun bg_QOperatingSystemVersionBase_type_(_self_ : QOperatingSystemVersionBase*) : OperatingSystemVersionBase::OSType
+    fun bg_QOperatingSystemVersionBase_name_(_self_ : QOperatingSystemVersionBase*) : CrystalString
+    fun bg_QOperatingSystemVersionBase_compare_STATIC_QOperatingSystemVersionBase_QOperatingSystemVersionBase(v1 : QOperatingSystemVersionBase*, v2 : QOperatingSystemVersionBase*) : Int32
+    fun bg_QOperatingSystemVersionBase__CONSTRUCT_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionBase__COPY_const_QOperatingSystemVersionBase_R(unnamed_arg_0 : QOperatingSystemVersionBase*) : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase(other : QOperatingSystemVersionBase*) : QOperatingSystemVersionUnexported*
+    fun bg_QOperatingSystemVersionUnexported__CONSTRUCT_() : QOperatingSystemVersionUnexported*
+    fun bg_QOperatingSystemVersionUnexported__COPY_const_QOperatingSystemVersionUnexported_R(unnamed_arg_0 : QOperatingSystemVersionUnexported*) : QOperatingSystemVersionUnexported*
+    fun bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase__OSType_int_int_int(unnamed_arg_0 : OperatingSystemVersionBase::OSType, unnamed_arg_1 : Int32, unnamed_arg_2 : Int32, unnamed_arg_3 : Int32) : QOperatingSystemVersionUnexported*
+    fun bg_QOperatingSystemVersionUnexported_MacOSSonoma_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_MacOSSequoia_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_MacOSTahoe_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_Android14_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_Windows11_23H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_Windows11_24H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionUnexported_Windows11_25H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion__CONSTRUCT_const_QOperatingSystemVersionBase_R(osversion : QOperatingSystemVersionBase*) : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion__CONSTRUCT_QOperatingSystemVersion__OSType_int_int_int(os_type : OperatingSystemVersion::OSType, vmajor : Int32, vminor : Int32, vmicro : Int32) : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_current_STATIC_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_currentType_STATIC_() : OperatingSystemVersion::OSType
+    fun bg_QOperatingSystemVersion_type_(_self_ : QOperatingSystemVersion*) : OperatingSystemVersion::OSType
+    fun bg_QOperatingSystemVersion__COPY_const_QOperatingSystemVersion_R(unnamed_arg_0 : QOperatingSystemVersion*) : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Windows7_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Windows8_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Windows8_1_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Windows10_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_OSXMavericks_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_OSXYosemite_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_OSXElCapitan_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSSierra_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSHighSierra_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSMojave_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSCatalina_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSBigSur_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_MacOSMonterey_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidJellyBean_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidJellyBean_MR1_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidJellyBean_MR2_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidKitKat_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidLollipop_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidLollipop_MR1_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidMarshmallow_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidNougat_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidNougat_MR1_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidOreo_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidOreo_MR1_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_AndroidPie_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Android10_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Android11_STATIC_GETTER_() : QOperatingSystemVersion*
+    fun bg_QOperatingSystemVersion_Windows10_1809_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_1903_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_1909_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_2004_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_20H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_21H1_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_21H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows10_22H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows11_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows11_21H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Windows11_22H2_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Android12_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Android12L_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_Android13_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersion_MacOSVentura_STATIC_GETTER_() : QOperatingSystemVersionBase*
     fun bg_QProcess_metaObject_(_self_ : QProcess*) : QMetaObject*
     fun bg_QProcess_qt_metacast_const_char_X(_self_ : QProcess*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QProcess*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -7599,6 +8023,52 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QPropertyAnimation*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QPropertyAnimation*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QPropertyAnimation_JUMPTABLE_BgJumptable_QPropertyAnimation_R(_self_ : QPropertyAnimation*, table : BgJumptable_QPropertyAnimation*) : Void
+    fun bg_QRandomGenerator__CONSTRUCT_quint32(seed_value : UInt32) : QRandomGenerator*
+    fun bg_QRandomGenerator__CONSTRUCT_const_quint32_X_qsizetype(seed_buffer : UInt32*, len : Int64) : QRandomGenerator*
+    fun bg_QRandomGenerator__CONSTRUCT_const_quint32_X_const_quint32_X(begin_ : UInt32*, end_ : UInt32*) : QRandomGenerator*
+    fun bg_QRandomGenerator__COPY_const_QRandomGenerator_R(other : QRandomGenerator*) : QRandomGenerator*
+    fun bg_QRandomGenerator__OPERATOR_assign_const_QRandomGenerator_R(_self_ : QRandomGenerator*, other : QRandomGenerator*) : QRandomGenerator*
+    fun bg_QRandomGenerator_generate_(_self_ : QRandomGenerator*) : UInt32
+    fun bg_QRandomGenerator_generate64_(_self_ : QRandomGenerator*) : UInt64
+    fun bg_QRandomGenerator_generateDouble_(_self_ : QRandomGenerator*) : Float64
+    fun bg_QRandomGenerator_bounded_double(_self_ : QRandomGenerator*, highest : Float64) : Float64
+    fun bg_QRandomGenerator_bounded_quint32(_self_ : QRandomGenerator*, highest : UInt32) : UInt32
+    fun bg_QRandomGenerator_bounded_quint32_quint32(_self_ : QRandomGenerator*, lowest : UInt32, highest : UInt32) : UInt32
+    fun bg_QRandomGenerator_bounded_int(_self_ : QRandomGenerator*, highest : Int32) : Int32
+    fun bg_QRandomGenerator_bounded_int_int(_self_ : QRandomGenerator*, lowest : Int32, highest : Int32) : Int32
+    fun bg_QRandomGenerator_bounded_quint64(_self_ : QRandomGenerator*, highest : UInt64) : UInt64
+    fun bg_QRandomGenerator_bounded_quint64_quint64(_self_ : QRandomGenerator*, lowest : UInt64, highest : UInt64) : UInt64
+    fun bg_QRandomGenerator_bounded_qint64(_self_ : QRandomGenerator*, highest : Int64) : Int64
+    fun bg_QRandomGenerator_bounded_qint64_qint64(_self_ : QRandomGenerator*, lowest : Int64, highest : Int64) : Int64
+    fun bg_QRandomGenerator_bounded_int_qint64(_self_ : QRandomGenerator*, lowest : Int32, highest : Int64) : Int64
+    fun bg_QRandomGenerator_bounded_qint64_int(_self_ : QRandomGenerator*, lowest : Int64, highest : Int32) : Int64
+    fun bg_QRandomGenerator_bounded_unsigned_int_quint64(_self_ : QRandomGenerator*, lowest : UInt32, highest : UInt64) : UInt64
+    fun bg_QRandomGenerator_bounded_quint64_unsigned_int(_self_ : QRandomGenerator*, lowest : UInt64, highest : UInt32) : UInt64
+    fun bg_QRandomGenerator_generate_quint32_X_quint32_X(_self_ : QRandomGenerator*, begin_ : UInt32*, end_ : UInt32*) : Void
+    fun bg_QRandomGenerator__OPERATOR_call_(_self_ : QRandomGenerator*) : UInt32
+    fun bg_QRandomGenerator_seed_quint32(_self_ : QRandomGenerator*, s : UInt32) : Void
+    fun bg_QRandomGenerator_discard_unsigned_long_long(_self_ : QRandomGenerator*, z : LibC::ULongLong) : Void
+    fun bg_QRandomGenerator_min_STATIC_() : UInt32
+    fun bg_QRandomGenerator_max_STATIC_() : UInt32
+    fun bg_QRandomGenerator_system_STATIC_() : QRandomGenerator*
+    fun bg_QRandomGenerator_global_STATIC_() : QRandomGenerator*
+    fun bg_QRandomGenerator_securelySeeded_STATIC_() : QRandomGenerator*
+    fun bg_QRandomGenerator__OPERATOR_eq_const_QRandomGenerator_R(_self_ : QRandomGenerator*, rng2 : QRandomGenerator*) : Bool
+    fun bg_QRandomGenerator__OPERATOR_ne_const_QRandomGenerator_R(_self_ : QRandomGenerator*, rng2 : QRandomGenerator*) : Bool
+    fun bg_QRandomGenerator64_generate_(_self_ : QRandomGenerator64*) : UInt64
+    fun bg_QRandomGenerator64__OPERATOR_call_(_self_ : QRandomGenerator64*) : UInt64
+    fun bg_QRandomGenerator64__CONSTRUCT_quint32(seed_value : UInt32) : QRandomGenerator64*
+    fun bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_qsizetype(seed_buffer : UInt32*, len : Int64) : QRandomGenerator64*
+    fun bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_const_quint32_X(begin_ : UInt32*, end_ : UInt32*) : QRandomGenerator64*
+    fun bg_QRandomGenerator64__CONSTRUCT_const_QRandomGenerator_R(other : QRandomGenerator*) : QRandomGenerator64*
+    fun bg_QRandomGenerator64_discard_unsigned_long_long(_self_ : QRandomGenerator64*, z : LibC::ULongLong) : Void
+    fun bg_QRandomGenerator64_min_STATIC_() : UInt64
+    fun bg_QRandomGenerator64_max_STATIC_() : UInt64
+    fun bg_QRandomGenerator64_system_STATIC_() : QRandomGenerator64*
+    fun bg_QRandomGenerator64_global_STATIC_() : QRandomGenerator64*
+    fun bg_QRandomGenerator64_securelySeeded_STATIC_() : QRandomGenerator64*
+    fun bg_QRandomGenerator64__COPY_const_QRandomGenerator64_R(unnamed_arg_0 : QRandomGenerator64*) : QRandomGenerator64*
+    fun bg_QRandomGenerator64__OPERATOR_assign_const_QRandomGenerator64_R(_self_ : QRandomGenerator64*, unnamed_arg_0 : QRandomGenerator64*) : QRandomGenerator64*
     fun bg_QSize__CONSTRUCT_() : QSize
     fun bg_QSize__CONSTRUCT_int_int(w : Int32, h : Int32) : QSize
     fun bg_QSize_isNull_(_self_ : QSize*) : Bool
@@ -8261,6 +8731,76 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(_self_ : QTemporaryFile*, table : BgJumptable_QTemporaryFile*) : Void
+    fun bg_QTranslator_metaObject_(_self_ : QTranslator*) : QMetaObject*
+    fun bg_QTranslator_qt_metacast_const_char_X(_self_ : QTranslator*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTranslator*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTranslator_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTranslator_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTranslator_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTranslator__CONSTRUCT_QObject_X(parent : QObject*) : QTranslator*
+    fun bg_QTranslator_translate_const_char_X_const_char_X(_self_ : QTranslator*, context : UInt8*, source_text : UInt8*) : CrystalString
+    fun bg_QTranslator_translate_const_char_X_const_char_X_const_char_X(_self_ : QTranslator*, context : UInt8*, source_text : UInt8*, disambiguation : UInt8*) : CrystalString
+    fun bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int(_self_ : QTranslator*, context : UInt8*, source_text : UInt8*, disambiguation : UInt8*, n : Int32) : CrystalString
+    fun bg_QTranslator_isEmpty_(_self_ : QTranslator*) : Bool
+    fun bg_QTranslator_language_(_self_ : QTranslator*) : CrystalString
+    fun bg_QTranslator_filePath_(_self_ : QTranslator*) : CrystalString
+    fun bg_QTranslator_load_const_QString_R(_self_ : QTranslator*, filename : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QString_R_const_QString_R(_self_ : QTranslator*, filename : CrystalString, directory : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QString_R_const_QString_R_const_QString_R(_self_ : QTranslator*, filename : CrystalString, directory : CrystalString, search_delimiters : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QString_R_const_QString_R_const_QString_R_const_QString_R(_self_ : QTranslator*, filename : CrystalString, directory : CrystalString, search_delimiters : CrystalString, suffix : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QLocale_R_const_QString_R(_self_ : QTranslator*, locale : QLocale*, filename : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R(_self_ : QTranslator*, locale : QLocale*, filename : CrystalString, prefix : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R_const_QString_R(_self_ : QTranslator*, locale : QLocale*, filename : CrystalString, prefix : CrystalString, directory : CrystalString) : Bool
+    fun bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R_const_QString_R_const_QString_R(_self_ : QTranslator*, locale : QLocale*, filename : CrystalString, prefix : CrystalString, directory : CrystalString, suffix : CrystalString) : Bool
+    fun bg_QTranslator_load_const_uchar_X_int(_self_ : QTranslator*, data : UInt8*, len : Int32) : Bool
+    fun bg_QTranslator_load_const_uchar_X_int_const_QString_R(_self_ : QTranslator*, data : UInt8*, len : Int32, directory : CrystalString) : Bool
+    fun bg_QTranslator_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTranslator*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTranslator*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTranslator*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTranslator*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTranslator*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTranslator*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTranslator*, signal : QMetaMethod*) : Void
+    fun bg_QTranslator_translate_SUPER_const_char_X_const_char_X_const_char_X_int(_self_ : QTranslator*, context : UInt8*, source_text : UInt8*, disambiguation : UInt8*, n : Int32) : CrystalString
+    fun bg_QTranslator_isEmpty_SUPER_(_self_ : QTranslator*) : Bool
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTranslator*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTranslator*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTranslator*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTranslator*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTranslator*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTranslator*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTranslator*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTranslator_JUMPTABLE_BgJumptable_QTranslator_R(_self_ : QTranslator*, table : BgJumptable_QTranslator*) : Void
+    fun bg_QUrlQuery__CONSTRUCT_() : QUrlQuery*
+    fun bg_QUrlQuery__CONSTRUCT_const_QUrl_R(url : QUrl*) : QUrlQuery*
+    fun bg_QUrlQuery__CONSTRUCT_const_QString_R(query_string : CrystalString) : QUrlQuery*
+    fun bg_QUrlQuery__COPY_const_QUrlQuery_R(other : QUrlQuery*) : QUrlQuery*
+    fun bg_QUrlQuery__OPERATOR_assign_const_QUrlQuery_R(_self_ : QUrlQuery*, other : QUrlQuery*) : QUrlQuery*
+    fun bg_QUrlQuery_swap_QUrlQuery_R(_self_ : QUrlQuery*, other : QUrlQuery*) : Void
+    fun bg_QUrlQuery_isEmpty_(_self_ : QUrlQuery*) : Bool
+    fun bg_QUrlQuery_isDetached_(_self_ : QUrlQuery*) : Bool
+    fun bg_QUrlQuery_clear_(_self_ : QUrlQuery*) : Void
+    fun bg_QUrlQuery_query_(_self_ : QUrlQuery*) : CrystalString
+    fun bg_QUrlQuery_query_QUrl__ComponentFormattingOptions(_self_ : QUrlQuery*, encoding : Url::ComponentFormattingOptions) : CrystalString
+    fun bg_QUrlQuery_setQuery_const_QString_R(_self_ : QUrlQuery*, query_string : CrystalString) : Void
+    fun bg_QUrlQuery_toString_(_self_ : QUrlQuery*) : CrystalString
+    fun bg_QUrlQuery_toString_QUrl__ComponentFormattingOptions(_self_ : QUrlQuery*, encoding : Url::ComponentFormattingOptions) : CrystalString
+    fun bg_QUrlQuery_setQueryDelimiters_QChar_QChar(_self_ : QUrlQuery*, value_delimiter : Int32, pair_delimiter : Int32) : Void
+    fun bg_QUrlQuery_queryValueDelimiter_(_self_ : QUrlQuery*) : Int32
+    fun bg_QUrlQuery_queryPairDelimiter_(_self_ : QUrlQuery*) : Int32
+    fun bg_QUrlQuery_hasQueryItem_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : Bool
+    fun bg_QUrlQuery_addQueryItem_const_QString_R_const_QString_R(_self_ : QUrlQuery*, key : CrystalString, value : CrystalString) : Void
+    fun bg_QUrlQuery_removeQueryItem_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : Void
+    fun bg_QUrlQuery_queryItemValue_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : CrystalString
+    fun bg_QUrlQuery_queryItemValue_const_QString_R_QUrl__ComponentFormattingOptions(_self_ : QUrlQuery*, key : CrystalString, encoding : Url::ComponentFormattingOptions) : CrystalString
+    fun bg_QUrlQuery_allQueryItemValues_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : ContainerQListQString*
+    fun bg_QUrlQuery_allQueryItemValues_const_QString_R_QUrl__ComponentFormattingOptions(_self_ : QUrlQuery*, key : CrystalString, encoding : Url::ComponentFormattingOptions) : ContainerQListQString*
+    fun bg_QUrlQuery_removeAllQueryItems_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : Void
+    fun bg_QUrlQuery_defaultQueryValueDelimiter_STATIC_() : UInt16
+    fun bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_() : UInt16
+    fun bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
+    fun bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
     fun bg_QPaintDevice_devType_(_self_ : QPaintDevice*) : Int32
     fun bg_QPaintDevice_paintingActive_(_self_ : QPaintDevice*) : Bool
     fun bg_QPaintDevice_paintEngine_(_self_ : QPaintDevice*) : QPaintEngine*
@@ -8616,8 +9156,8 @@ module Qt
     fun bg_QImage_load_QIODevice_X_const_char_X(_self_ : QImage*, device : QIODevice*, format : UInt8*) : Bool
     fun bg_QImage_load_const_QString_R(_self_ : QImage*, file_name : CrystalString) : Bool
     fun bg_QImage_load_const_QString_R_const_char_X(_self_ : QImage*, file_name : CrystalString, format : UInt8*) : Bool
-    fun bg_QImage_loadFromData_QByteArrayView(_self_ : QImage*, data : QByteArrayView*) : Bool
-    fun bg_QImage_loadFromData_QByteArrayView_const_char_X(_self_ : QImage*, data : QByteArrayView*, format : UInt8*) : Bool
+    fun bg_QImage_loadFromData_QByteArrayView(_self_ : QImage*, data : CrystalString) : Bool
+    fun bg_QImage_loadFromData_QByteArrayView_const_char_X(_self_ : QImage*, data : CrystalString, format : UInt8*) : Bool
     fun bg_QImage_loadFromData_const_uchar_X_int(_self_ : QImage*, buf : UInt8*, len : Int32) : Bool
     fun bg_QImage_loadFromData_const_uchar_X_int_const_char_X(_self_ : QImage*, buf : UInt8*, len : Int32, format : UInt8*) : Bool
     fun bg_QImage_loadFromData_const_QByteArray_R(_self_ : QImage*, data : CrystalString) : Bool
@@ -8628,8 +9168,8 @@ module Qt
     fun bg_QImage_save_QIODevice_X(_self_ : QImage*, device : QIODevice*) : Bool
     fun bg_QImage_save_QIODevice_X_const_char_X(_self_ : QImage*, device : QIODevice*, format : UInt8*) : Bool
     fun bg_QImage_save_QIODevice_X_const_char_X_int(_self_ : QImage*, device : QIODevice*, format : UInt8*, quality : Int32) : Bool
-    fun bg_QImage_fromData_STATIC_QByteArrayView(data : QByteArrayView*) : QImage*
-    fun bg_QImage_fromData_STATIC_QByteArrayView_const_char_X(data : QByteArrayView*, format : UInt8*) : QImage*
+    fun bg_QImage_fromData_STATIC_QByteArrayView(data : CrystalString) : QImage*
+    fun bg_QImage_fromData_STATIC_QByteArrayView_const_char_X(data : CrystalString, format : UInt8*) : QImage*
     fun bg_QImage_fromData_STATIC_const_uchar_X_int(data : UInt8*, size : Int32) : QImage*
     fun bg_QImage_fromData_STATIC_const_uchar_X_int_const_char_X(data : UInt8*, size : Int32, format : UInt8*) : QImage*
     fun bg_QImage_fromData_STATIC_const_QByteArray_R(data : CrystalString) : QImage*
@@ -21046,6 +21586,10 @@ module Qt
     fun bg_Container_QList_QByteArray__at_int(_self_ : ContainerQListQByteArray*, index : Int32) : CrystalString
     fun bg_Container_QList_QByteArray__push_back_QByteArray(_self_ : ContainerQListQByteArray*, value : CrystalString) : Void
     fun bg_Container_QList_QByteArray__size_(_self_ : ContainerQListQByteArray*) : Int32
+    fun bg_Container_QList_int___CONSTRUCT_() : ContainerQListInt*
+    fun bg_Container_QList_int__at_int(_self_ : ContainerQListInt*, index : Int32) : Int32
+    fun bg_Container_QList_int__push_back_int(_self_ : ContainerQListInt*, value : Int32) : Void
+    fun bg_Container_QList_int__size_(_self_ : ContainerQListInt*) : Int32
     fun bg_QList_QString__swap_QList_QString__R(_self_ : ContainerQListQString*, other : ContainerQListQString*) : Void
     fun bg_QList_QString__maxSize_STATIC_() : Int64
     fun bg_QList_QString__count_(_self_ : ContainerQListQString*) : Int64
@@ -21122,10 +21666,6 @@ module Qt
     fun bg_Container_QList_QVariant__at_int(_self_ : ContainerQListQVariant*, index : Int32) : CrystalVariant
     fun bg_Container_QList_QVariant__push_back_QVariant(_self_ : ContainerQListQVariant*, value : CrystalVariant) : Void
     fun bg_Container_QList_QVariant__size_(_self_ : ContainerQListQVariant*) : Int32
-    fun bg_Container_QList_int___CONSTRUCT_() : ContainerQListInt*
-    fun bg_Container_QList_int__at_int(_self_ : ContainerQListInt*, index : Int32) : Int32
-    fun bg_Container_QList_int__push_back_int(_self_ : ContainerQListInt*, value : Int32) : Void
-    fun bg_Container_QList_int__size_(_self_ : ContainerQListInt*) : Int32
     fun bg_Container_QList_QPersistentModelIndex___CONSTRUCT_() : ContainerQListQPersistentModelIndex*
     fun bg_Container_QList_QPersistentModelIndex__at_int(_self_ : ContainerQListQPersistentModelIndex*, index : Int32) : QPersistentModelIndex*
     fun bg_Container_QList_QPersistentModelIndex__push_back_QPersistentModelIndex(_self_ : ContainerQListQPersistentModelIndex*, value : QPersistentModelIndex*) : Void
@@ -21142,6 +21682,18 @@ module Qt
     fun bg_Container_QList_QUrl__at_int(_self_ : ContainerQListQUrl*, index : Int32) : QUrl*
     fun bg_Container_QList_QUrl__push_back_QUrl(_self_ : ContainerQListQUrl*, value : QUrl*) : Void
     fun bg_Container_QList_QUrl__size_(_self_ : ContainerQListQUrl*) : Int32
+    fun bg_Container_QList_QCommandLineOption___CONSTRUCT_() : ContainerQListQCommandLineOption*
+    fun bg_Container_QList_QCommandLineOption__at_int(_self_ : ContainerQListQCommandLineOption*, index : Int32) : QCommandLineOption*
+    fun bg_Container_QList_QCommandLineOption__push_back_QCommandLineOption(_self_ : ContainerQListQCommandLineOption*, value : QCommandLineOption*) : Void
+    fun bg_Container_QList_QCommandLineOption__size_(_self_ : ContainerQListQCommandLineOption*) : Int32
+    fun bg_Container_QList_QTimeZone__OffsetData___CONSTRUCT_() : ContainerQListQTimeZoneOffsetData*
+    fun bg_Container_QList_QTimeZone__OffsetData__at_int(_self_ : ContainerQListQTimeZoneOffsetData*, index : Int32) : QTimeZone_OffsetData*
+    fun bg_Container_QList_QTimeZone__OffsetData__push_back_QTimeZone__OffsetData(_self_ : ContainerQListQTimeZoneOffsetData*, value : QTimeZone_OffsetData*) : Void
+    fun bg_Container_QList_QTimeZone__OffsetData__size_(_self_ : ContainerQListQTimeZoneOffsetData*) : Int32
+    fun bg_Container_QList_QMimeType___CONSTRUCT_() : ContainerQListQMimeType*
+    fun bg_Container_QList_QMimeType__at_int(_self_ : ContainerQListQMimeType*, index : Int32) : QMimeType*
+    fun bg_Container_QList_QMimeType__push_back_QMimeType(_self_ : ContainerQListQMimeType*, value : QMimeType*) : Void
+    fun bg_Container_QList_QMimeType__size_(_self_ : ContainerQListQMimeType*) : Int32
     fun bg_Container_QList_QPoint___CONSTRUCT_() : ContainerQListQPoint*
     fun bg_Container_QList_QPoint__at_int(_self_ : ContainerQListQPoint*, index : Int32) : QPoint
     fun bg_Container_QList_QPoint__push_back_QPoint(_self_ : ContainerQListQPoint*, value : QPoint) : Void
@@ -21312,6 +21864,80 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QListSpecialMethodsQString*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class SysInfo
+    @unwrap : Binding::QSysInfo*
+    
+    def self.build_cpu_architecture() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_buildCpuArchitecture_STATIC_())
+    end
+    
+    def self.current_cpu_architecture() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_currentCpuArchitecture_STATIC_())
+    end
+    
+    def self.build_abi() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_buildAbi_STATIC_())
+    end
+    
+    def self.kernel_type() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_kernelType_STATIC_())
+    end
+    
+    def self.kernel_version() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_kernelVersion_STATIC_())
+    end
+    
+    def self.product_type() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_productType_STATIC_())
+    end
+    
+    def self.product_version() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_productVersion_STATIC_())
+    end
+    
+    def self.pretty_product_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_prettyProductName_STATIC_())
+    end
+    
+    def self.machine_host_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSysInfo_machineHostName_STATIC_())
+    end
+    
+    def self.machine_unique_id() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QSysInfo_machineUniqueId_STATIC_())
+    end
+    
+    def self.boot_unique_id() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QSysInfo_bootUniqueId_STATIC_())
+    end
+    
+    def initialize()
+      result = Binding.bg_QSysInfo__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : SysInfo)
+      result = Binding.bg_QSysInfo__COPY_const_QSysInfo_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    enum Sizes : UInt32
+      WordSize = 64
+    end
+    enum Endian : UInt32
+      BigEndian = 0
+      LittleEndian = 1
+      ByteOrder = 1
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QSysInfo*)
       result = unwrap
     @unwrap = result
     end
@@ -21675,6 +22301,8 @@ module Qt
         Binding.bg_QObject_CAST_SortFilterProxyModel_(self).try {|ptr| SortFilterProxyModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TemporaryFile %}
         Binding.bg_QObject_CAST_TemporaryFile_(self).try {|ptr| TemporaryFile.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == Translator %}
+        Binding.bg_QObject_CAST_Translator_(self).try {|ptr| Translator.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Screen %}
         Binding.bg_QObject_CAST_Screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GuiApplication %}
@@ -22225,6 +22853,146 @@ module Qt
     end
     
   end
+  class DeadlineTimer
+    @unwrap : Binding::QDeadlineTimer*
+    
+    def initialize()
+      result = Binding.bg_QDeadlineTimer__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(type_ : TimerType)
+      result = Binding.bg_QDeadlineTimer__CONSTRUCT_Qt__TimerType(type_)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : DeadlineTimer::ForeverConstant, type_ : TimerType = TimerType::CoarseTimer)
+      result = Binding.bg_QDeadlineTimer__CONSTRUCT_QDeadlineTimer__ForeverConstant_Qt__TimerType(unnamed_arg_0, type_)
+    @unwrap = result
+    end
+    
+    def initialize(msecs : Int64, type : TimerType = TimerType::CoarseTimer)
+      result = Binding.bg_QDeadlineTimer__CONSTRUCT_qint64_Qt__TimerType(msecs, type)
+    @unwrap = result
+    end
+    
+    def swap(other : DeadlineTimer) : Void
+      Binding.bg_QDeadlineTimer_swap_QDeadlineTimer_R(self, other)
+    end
+    
+    def forever?() : Bool
+      Binding.bg_QDeadlineTimer_isForever_(self)
+    end
+    
+    def has_expired?() : Bool
+      Binding.bg_QDeadlineTimer_hasExpired_(self)
+    end
+    
+    def timer_type() : TimerType
+      Binding.bg_QDeadlineTimer_timerType_(self)
+    end
+    
+    def timer_type=(type : TimerType) : Void
+      Binding.bg_QDeadlineTimer_setTimerType_Qt__TimerType(self, type)
+    end
+    
+    def remaining_time() : Int64
+      Binding.bg_QDeadlineTimer_remainingTime_(self)
+    end
+    
+    def remaining_time_n_secs() : Int64
+      Binding.bg_QDeadlineTimer_remainingTimeNSecs_(self)
+    end
+    
+    def set_remaining_time(msecs : Int64, type : TimerType = TimerType::CoarseTimer) : Void
+      Binding.bg_QDeadlineTimer_setRemainingTime_qint64_Qt__TimerType(self, msecs, type)
+    end
+    
+    def set_precise_remaining_time(secs : Int64, nsecs : Int64 = 0i64, type : TimerType = TimerType::CoarseTimer) : Void
+      Binding.bg_QDeadlineTimer_setPreciseRemainingTime_qint64_qint64_Qt__TimerType(self, secs, nsecs, type)
+    end
+    
+    def deadline() : Int64
+      Binding.bg_QDeadlineTimer_deadline_(self)
+    end
+    
+    def deadline_n_secs() : Int64
+      Binding.bg_QDeadlineTimer_deadlineNSecs_(self)
+    end
+    
+    def set_deadline(msecs : Int64, timer_type : TimerType = TimerType::CoarseTimer) : Void
+      Binding.bg_QDeadlineTimer_setDeadline_qint64_Qt__TimerType(self, msecs, timer_type)
+    end
+    
+    def set_precise_deadline(secs : Int64, nsecs : Int64 = 0i64, type : TimerType = TimerType::CoarseTimer) : Void
+      Binding.bg_QDeadlineTimer_setPreciseDeadline_qint64_qint64_Qt__TimerType(self, secs, nsecs, type)
+    end
+    
+    def self.add_n_secs(dt : DeadlineTimer, nsecs : Int64) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer_addNSecs_STATIC_QDeadlineTimer_qint64(dt, nsecs))
+    end
+    
+    def self.current(timer_type : TimerType = TimerType::CoarseTimer) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer_current_STATIC_Qt__TimerType(timer_type))
+    end
+    
+    def add!(msecs : Int64) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_add_assign_qint64(self, msecs))
+    end
+    
+    def sub!(msecs : Int64) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_sub_assign_qint64(self, msecs))
+    end
+    
+    def initialize(unnamed_arg_0 : DeadlineTimer)
+      result = Binding.bg_QDeadlineTimer__COPY_const_QDeadlineTimer_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : DeadlineTimer) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTimer_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def !=(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_ne_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def <(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_lt_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def >(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_gt_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def <=(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_le_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def >=(rhs : DeadlineTimer) : Bool
+      Binding.bg_QDeadlineTimer__OPERATOR_ge_const_QDeadlineTimer_R(self, rhs)
+    end
+    
+    def self.forever() : DeadlineTimer::ForeverConstant
+      Binding.bg_QDeadlineTimer_Forever_STATIC_GETTER_()
+    end
+    
+    enum ForeverConstant : Int32
+      Forever = 0
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QDeadlineTimer*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class EventLoop < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QEventLoop_metaObject_(self)
@@ -22313,7 +23081,7 @@ module Qt
       Binding.bg_QEventLoop_processEvents_QEventLoop__ProcessEventsFlags_int(self, flags, maximum_time)
     end
     
-    def process_events(flags : EventLoop::ProcessEventsFlags, deadline : Binding::QDeadlineTimer*) : Void
+    def process_events(flags : EventLoop::ProcessEventsFlags, deadline : DeadlineTimer) : Void
       Binding.bg_QEventLoop_processEvents_QEventLoop__ProcessEventsFlags_QDeadlineTimer(self, flags, deadline)
     end
     
@@ -25666,7 +26434,7 @@ module Qt
       Binding.bg_QCoreApplication_processEvents_STATIC_QEventLoop__ProcessEventsFlags_int(flags, maxtime)
     end
     
-    def self.process_events(flags : EventLoop::ProcessEventsFlags, deadline : Binding::QDeadlineTimer*) : Void
+    def self.process_events(flags : EventLoop::ProcessEventsFlags, deadline : DeadlineTimer) : Void
       Binding.bg_QCoreApplication_processEvents_STATIC_QEventLoop__ProcessEventsFlags_QDeadlineTimer(flags, deadline)
     end
     
@@ -25739,11 +26507,11 @@ module Qt
       Binding.bg_QCoreApplication_removeLibraryPath_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0))
     end
     
-    def self.install_translator(message_file : Binding::QTranslator*) : Bool
+    def self.install_translator(message_file : Translator) : Bool
       Binding.bg_QCoreApplication_installTranslator_STATIC_QTranslator_X(message_file)
     end
     
-    def self.remove_translator(message_file : Binding::QTranslator*) : Bool
+    def self.remove_translator(message_file : Translator) : Bool
       Binding.bg_QCoreApplication_removeTranslator_STATIC_QTranslator_X(message_file)
     end
     
@@ -28507,11 +29275,11 @@ module Qt
       Binding.bg_QDate_daysInYear_QCalendar(self, cal)
     end
     
-    def start_of_day(zone : Binding::QTimeZone*) : DateTime
+    def start_of_day(zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDate_startOfDay_const_QTimeZone_R(self, zone))
     end
     
-    def end_of_day(zone : Binding::QTimeZone*) : DateTime
+    def end_of_day(zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDate_endOfDay_const_QTimeZone_R(self, zone))
     end
     
@@ -28800,12 +29568,12 @@ module Qt
     @unwrap = result
     end
     
-    def initialize(date : Date, time : Time, time_zone : Binding::QTimeZone*)
+    def initialize(date : Date, time : Time, time_zone : TimeZone)
       result = Binding.bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(date, time, time_zone)
     @unwrap = result
     end
     
-    def initialize(date : Date, time : Time, time_zone : Binding::QTimeZone*, resolve : DateTime::TransitionResolution)
+    def initialize(date : Date, time : Time, time_zone : TimeZone, resolve : DateTime::TransitionResolution)
       result = Binding.bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R_QDateTime__TransitionResolution(date, time, time_zone, resolve)
     @unwrap = result
     end
@@ -28857,12 +29625,12 @@ module Qt
       Binding.bg_QDateTime_offsetFromUtc_(self)
     end
     
-    def time_representation() : Binding::QTimeZone*
-      Binding.bg_QDateTime_timeRepresentation_(self)
+    def time_representation() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QDateTime_timeRepresentation_(self))
     end
     
-    def time_zone() : Binding::QTimeZone*
-      Binding.bg_QDateTime_timeZone_(self)
+    def time_zone() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QDateTime_timeZone_(self))
     end
     
     def time_zone_abbreviation() : String
@@ -28897,11 +29665,11 @@ module Qt
       Binding.bg_QDateTime_setTime_QTime_QDateTime__TransitionResolution(self, time, resolve)
     end
     
-    def time_zone=(to_zone : Binding::QTimeZone*) : Void
+    def time_zone=(to_zone : TimeZone) : Void
       Binding.bg_QDateTime_setTimeZone_const_QTimeZone_R(self, to_zone)
     end
     
-    def set_time_zone(to_zone : Binding::QTimeZone*, resolve : DateTime::TransitionResolution) : Void
+    def set_time_zone(to_zone : TimeZone, resolve : DateTime::TransitionResolution) : Void
       Binding.bg_QDateTime_setTimeZone_const_QTimeZone_R_QDateTime__TransitionResolution(self, to_zone, resolve)
     end
     
@@ -28961,7 +29729,7 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QDateTime_toOffsetFromUtc_int(self, offset_seconds))
     end
     
-    def to_time_zone(to_zone : Binding::QTimeZone*) : DateTime
+    def to_time_zone(to_zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_toTimeZone_const_QTimeZone_R(self, to_zone))
     end
     
@@ -28977,7 +29745,7 @@ module Qt
       Binding.bg_QDateTime_msecsTo_const_QDateTime_R(self, unnamed_arg_0)
     end
     
-    def self.current_date_time(zone : Binding::QTimeZone*) : DateTime
+    def self.current_date_time(zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_currentDateTime_STATIC_const_QTimeZone_R(zone))
     end
     
@@ -29005,11 +29773,11 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(Qt::Converter::QString.wrap(string), Qt::Converter::QString.wrap(format), base_year, cal))
     end
     
-    def self.from_m_secs_since_epoch(msecs : Int64, time_zone : Binding::QTimeZone*) : DateTime
+    def self.from_m_secs_since_epoch(msecs : Int64, time_zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(msecs, time_zone))
     end
     
-    def self.from_secs_since_epoch(secs : Int64, time_zone : Binding::QTimeZone*) : DateTime
+    def self.from_secs_since_epoch(secs : Int64, time_zone : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(secs, time_zone))
     end
     
@@ -29406,8 +30174,8 @@ module Qt
       Qt::Converter::QByteArray.unwrap(Binding.bg_QUrl_toEncoded_QUrl__FormattingOptions(self, options))
     end
     
-    def self.from_encoded(input : Binding::QByteArrayView*, mode : Url::ParsingMode = Url::ParsingMode::TolerantMode) : Url
-      Url.new(unwrap: Binding.bg_QUrl_fromEncoded_STATIC_QByteArrayView_QUrl__ParsingMode(input, mode))
+    def self.from_encoded(input : Bytes, mode : Url::ParsingMode = Url::ParsingMode::TolerantMode) : Url
+      Url.new(unwrap: Binding.bg_QUrl_fromEncoded_STATIC_QByteArrayView_QUrl__ParsingMode(Qt::Converter::QByteArray.wrap(input), mode))
     end
     
     def self.from_user_input(user_input : String) : Url
@@ -29542,7 +30310,7 @@ module Qt
       Binding.bg_QUrl_setQuery_const_QString_R_QUrl__ParsingMode(self, Qt::Converter::QString.wrap(query), mode)
     end
     
-    def query=(query : Binding::QUrlQuery*) : Void
+    def query=(query : UrlQuery) : Void
       Binding.bg_QUrl_setQuery_const_QUrlQuery_R(self, query)
     end
     
@@ -29745,6 +30513,164 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QUrl*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Uuid
+    @unwrap : Binding::QUuid*
+    
+    def initialize()
+      result = Binding.bg_QUuid__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(l : UInt32, w1 : UInt16, w2 : UInt16, b1 : UInt8, b2 : UInt8, b3 : UInt8, b4 : UInt8, b5 : UInt8, b6 : UInt8, b7 : UInt8, b8 : UInt8)
+      result = Binding.bg_QUuid__CONSTRUCT_uint_ushort_ushort_uchar_uchar_uchar_uchar_uchar_uchar_uchar_uchar(l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)
+    @unwrap = result
+    end
+    
+    def initialize(string : String)
+      result = Binding.bg_QUuid__CONSTRUCT_QAnyStringView(Qt::Converter::QString.wrap(string))
+    @unwrap = result
+    end
+    
+    def self.from_string(string : String) : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_fromString_STATIC_QAnyStringView(Qt::Converter::QString.wrap(string)))
+    end
+    
+    def to_string(mode : Uuid::StringFormat = Uuid::StringFormat::WithBraces) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUuid_toString_QUuid__StringFormat(self, mode))
+    end
+    
+    def to_byte_array(mode : Uuid::StringFormat = Uuid::StringFormat::WithBraces) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QUuid_toByteArray_QUuid__StringFormat(self, mode))
+    end
+    
+    def to_rfc4122() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QUuid_toRfc4122_(self))
+    end
+    
+    def self.from_bytes(bytes : Void**, order : SysInfo::Endian = SysInfo::Endian::BigEndian) : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_fromBytes_STATIC_const_void_X_QSysInfo__Endian(bytes, order))
+    end
+    
+    def self.from_rfc4122(unnamed_arg_0 : Bytes) : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_fromRfc4122_STATIC_QByteArrayView(Qt::Converter::QByteArray.wrap(unnamed_arg_0)))
+    end
+    
+    def null?() : Bool
+      Binding.bg_QUuid_isNull_(self)
+    end
+    
+    def self.create_uuid() : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_createUuid_STATIC_())
+    end
+    
+    def self.create_uuid_v5(ns : Uuid, base_data : Bytes) : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_createUuidV5_STATIC_QUuid_QByteArrayView(ns, Qt::Converter::QByteArray.wrap(base_data)))
+    end
+    
+    def self.create_uuid_v3(ns : Uuid, base_data : Bytes) : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_createUuidV3_STATIC_QUuid_QByteArrayView(ns, Qt::Converter::QByteArray.wrap(base_data)))
+    end
+    
+    def self.create_uuid_v7() : Uuid
+      Uuid.new(unwrap: Binding.bg_QUuid_createUuidV7_STATIC_())
+    end
+    
+    def variant() : Uuid::Variant
+      Binding.bg_QUuid_variant_(self)
+    end
+    
+    def version() : Uuid::Version
+      Binding.bg_QUuid_version_(self)
+    end
+    
+    def initialize(unnamed_arg_0 : Uuid)
+      result = Binding.bg_QUuid__COPY_const_QUuid_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def ==(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_eq_const_QUuid_R(self, rhs)
+    end
+    
+    def !=(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_ne_const_QUuid_R(self, rhs)
+    end
+    
+    def <(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_lt_const_QUuid_R(self, rhs)
+    end
+    
+    def >(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_gt_const_QUuid_R(self, rhs)
+    end
+    
+    def <=(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_le_const_QUuid_R(self, rhs)
+    end
+    
+    def >=(rhs : Uuid) : Bool
+      Binding.bg_QUuid__OPERATOR_ge_const_QUuid_R(self, rhs)
+    end
+    
+    def data1() : UInt32
+      Binding.bg_QUuid_data1_GETTER_(self)
+    end
+    
+    def data1=(data1 : UInt32) : Void
+      Binding.bg_QUuid_data1_SETTER_uint(self, data1)
+    end
+    
+    def data2() : UInt16
+      Binding.bg_QUuid_data2_GETTER_(self)
+    end
+    
+    def data2=(data2 : UInt16) : Void
+      Binding.bg_QUuid_data2_SETTER_ushort(self, data2)
+    end
+    
+    def data3() : UInt16
+      Binding.bg_QUuid_data3_GETTER_(self)
+    end
+    
+    def data3=(data3 : UInt16) : Void
+      Binding.bg_QUuid_data3_SETTER_ushort(self, data3)
+    end
+    
+    def data4() : Slice(UInt8)
+      BindgenHelper::SliceConverter(UInt8).unwrap(Binding.bg_QUuid_data4_GETTER_(self))
+    end
+    
+    enum Variant : Int32
+      VarUnknown = -1
+      Ncs = 0
+      Dce = 2
+      Microsoft = 6
+      Reserved = 7
+    end
+    enum Version : Int32
+      VerUnknown = -1
+      Time = 1
+      EmbeddedPOSIX = 2
+      Md5 = 3
+      Name = 3
+      Random = 4
+      Sha1 = 5
+      UnixEpoch = 7
+    end
+    enum StringFormat : UInt32
+      WithBraces = 0
+      WithoutBraces = 1
+      Id128 = 3
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QUuid*)
       result = unwrap
     @unwrap = result
     end
@@ -29984,6 +30910,483 @@ module Qt
     end
     def on_timeout(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTimer_CONNECT_timeout_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
+  end
+  class CollatorSortKey
+    @unwrap : Binding::QCollatorSortKey*
+    
+    def initialize(other : CollatorSortKey)
+      result = Binding.bg_QCollatorSortKey__COPY_const_QCollatorSortKey_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : CollatorSortKey) : CollatorSortKey
+      CollatorSortKey.new(unwrap: Binding.bg_QCollatorSortKey__OPERATOR_assign_const_QCollatorSortKey_R(self, other))
+    end
+    
+    def swap(other : CollatorSortKey) : Void
+      Binding.bg_QCollatorSortKey_swap_QCollatorSortKey_R(self, other)
+    end
+    
+    def compare(key : CollatorSortKey) : Int32
+      Binding.bg_QCollatorSortKey_compare_const_QCollatorSortKey_R(self, key)
+    end
+    
+    protected def initialize(unnamed_arg_0 : Binding::QCollatorSortKeyPrivate*)
+      result = Binding.bg_QCollatorSortKey__CONSTRUCT_QCollatorSortKeyPrivate_X(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def <(rhs : CollatorSortKey) : Bool
+      Binding.bg_QCollatorSortKey__OPERATOR_lt_const_QCollatorSortKey_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QCollatorSortKey*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Collator
+    @unwrap : Binding::QCollator*
+    
+    def initialize()
+      result = Binding.bg_QCollator__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(locale : Locale)
+      result = Binding.bg_QCollator__CONSTRUCT_const_QLocale_R(locale)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : Collator)
+      result = Binding.bg_QCollator__COPY_const_QCollator_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : Collator) : Collator
+      Collator.new(unwrap: Binding.bg_QCollator__OPERATOR_assign_const_QCollator_R(self, unnamed_arg_0))
+    end
+    
+    def swap(other : Collator) : Void
+      Binding.bg_QCollator_swap_QCollator_R(self, other)
+    end
+    
+    def locale=(locale : Locale) : Void
+      Binding.bg_QCollator_setLocale_const_QLocale_R(self, locale)
+    end
+    
+    def locale() : Locale
+      Locale.new(unwrap: Binding.bg_QCollator_locale_(self))
+    end
+    
+    def case_sensitivity() : CaseSensitivity
+      Binding.bg_QCollator_caseSensitivity_(self)
+    end
+    
+    def case_sensitivity=(cs : CaseSensitivity) : Void
+      Binding.bg_QCollator_setCaseSensitivity_Qt__CaseSensitivity(self, cs)
+    end
+    
+    def numeric_mode=(on : Bool) : Void
+      Binding.bg_QCollator_setNumericMode_bool(self, on)
+    end
+    
+    def numeric_mode() : Bool
+      Binding.bg_QCollator_numericMode_(self)
+    end
+    
+    def ignore_punctuation=(on : Bool) : Void
+      Binding.bg_QCollator_setIgnorePunctuation_bool(self, on)
+    end
+    
+    def ignore_punctuation() : Bool
+      Binding.bg_QCollator_ignorePunctuation_(self)
+    end
+    
+    def compare(s1 : String, s2 : String) : Int32
+      Binding.bg_QCollator_compare_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(s1), Qt::Converter::QString.wrap(s2))
+    end
+    
+    def call(s1 : String, s2 : String) : Bool
+      Binding.bg_QCollator__OPERATOR_call_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(s1), Qt::Converter::QString.wrap(s2))
+    end
+    
+    def sort_key(string : String) : CollatorSortKey
+      CollatorSortKey.new(unwrap: Binding.bg_QCollator_sortKey_const_QString_R(self, Qt::Converter::QString.wrap(string)))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QCollator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class CommandLineOption
+    @unwrap : Binding::QCommandLineOption*
+    
+    def initialize(name : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(name))
+    @unwrap = result
+    end
+    
+    def initialize(names : Enumerable(String))
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QStringList_R(BindgenHelper.wrap_container(StringList, names).to_unsafe)
+    @unwrap = result
+    end
+    
+    def initialize(name : String, description : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(description))
+    @unwrap = result
+    end
+    
+    def initialize(name : String, description : String, value_name : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(description), Qt::Converter::QString.wrap(value_name))
+    @unwrap = result
+    end
+    
+    def initialize(name : String, description : String, value_name : String, default_value : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QString_R_const_QString_R_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(description), Qt::Converter::QString.wrap(value_name), Qt::Converter::QString.wrap(default_value))
+    @unwrap = result
+    end
+    
+    def initialize(names : Enumerable(String), description : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R(BindgenHelper.wrap_container(StringList, names).to_unsafe, Qt::Converter::QString.wrap(description))
+    @unwrap = result
+    end
+    
+    def initialize(names : Enumerable(String), description : String, value_name : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R_const_QString_R(BindgenHelper.wrap_container(StringList, names).to_unsafe, Qt::Converter::QString.wrap(description), Qt::Converter::QString.wrap(value_name))
+    @unwrap = result
+    end
+    
+    def initialize(names : Enumerable(String), description : String, value_name : String, default_value : String)
+      result = Binding.bg_QCommandLineOption__CONSTRUCT_const_QStringList_R_const_QString_R_const_QString_R_const_QString_R(BindgenHelper.wrap_container(StringList, names).to_unsafe, Qt::Converter::QString.wrap(description), Qt::Converter::QString.wrap(value_name), Qt::Converter::QString.wrap(default_value))
+    @unwrap = result
+    end
+    
+    def initialize(other : CommandLineOption)
+      result = Binding.bg_QCommandLineOption__COPY_const_QCommandLineOption_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : CommandLineOption) : CommandLineOption
+      CommandLineOption.new(unwrap: Binding.bg_QCommandLineOption__OPERATOR_assign_const_QCommandLineOption_R(self, other))
+    end
+    
+    def swap(other : CommandLineOption) : Void
+      Binding.bg_QCommandLineOption_swap_QCommandLineOption_R(self, other)
+    end
+    
+    def names() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineOption_names_(self))
+    end
+    
+    def value_name=(name : String) : Void
+      Binding.bg_QCommandLineOption_setValueName_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def value_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineOption_valueName_(self))
+    end
+    
+    def description=(description : String) : Void
+      Binding.bg_QCommandLineOption_setDescription_const_QString_R(self, Qt::Converter::QString.wrap(description))
+    end
+    
+    def description() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineOption_description_(self))
+    end
+    
+    def default_value=(default_value : String) : Void
+      Binding.bg_QCommandLineOption_setDefaultValue_const_QString_R(self, Qt::Converter::QString.wrap(default_value))
+    end
+    
+    def default_values=(default_values : Enumerable(String)) : Void
+      Binding.bg_QCommandLineOption_setDefaultValues_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, default_values).to_unsafe)
+    end
+    
+    def default_values() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineOption_defaultValues_(self))
+    end
+    
+    def flags() : CommandLineOption::Flags
+      Binding.bg_QCommandLineOption_flags_(self)
+    end
+    
+    def flags=(aflags : CommandLineOption::Flags) : Void
+      Binding.bg_QCommandLineOption_setFlags_QCommandLineOption__Flags(self, aflags)
+    end
+    
+    enum Flag : UInt32
+      HiddenFromHelp = 1
+      ShortOptionStyle = 2
+      IgnoreOptionsAfter = 4
+    end
+    @[Flags]
+    enum Flags : UInt32
+      HiddenFromHelp = 1
+      ShortOptionStyle = 2
+      IgnoreOptionsAfter = 4
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QCommandLineOption*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class CommandLineParser
+    @unwrap : Binding::QCommandLineParser*
+    
+    def self.tr(source_text : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_tr_STATIC_const_char_X(source_text))
+    end
+    
+    def self.tr(source_text : UInt8*, disambiguation : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_tr_STATIC_const_char_X_const_char_X(source_text, disambiguation))
+    end
+    
+    def self.tr(source_text : UInt8*, disambiguation : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_tr_STATIC_const_char_X_const_char_X_int(source_text, disambiguation, n))
+    end
+    
+    def initialize()
+      result = Binding.bg_QCommandLineParser__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def single_dash_word_option_mode=(parsing_mode : CommandLineParser::SingleDashWordOptionMode) : Void
+      Binding.bg_QCommandLineParser_setSingleDashWordOptionMode_QCommandLineParser__SingleDashWordOptionMode(self, parsing_mode)
+    end
+    
+    def options_after_positional_arguments_mode=(mode : CommandLineParser::OptionsAfterPositionalArgumentsMode) : Void
+      Binding.bg_QCommandLineParser_setOptionsAfterPositionalArgumentsMode_QCommandLineParser__OptionsAfterPositionalArgumentsMode(self, mode)
+    end
+    
+    def add_option(command_line_option : CommandLineOption) : Bool
+      Binding.bg_QCommandLineParser_addOption_const_QCommandLineOption_R(self, command_line_option)
+    end
+    
+    def add_options(options : Enumerable(CommandLineOption)) : Bool
+      Binding.bg_QCommandLineParser_addOptions_const_QList_QCommandLineOption__R(self, BindgenHelper.wrap_container(Container_QList_QCommandLineOption_, options).to_unsafe)
+    end
+    
+    def add_version_option() : CommandLineOption
+      CommandLineOption.new(unwrap: Binding.bg_QCommandLineParser_addVersionOption_(self))
+    end
+    
+    def add_help_option() : CommandLineOption
+      CommandLineOption.new(unwrap: Binding.bg_QCommandLineParser_addHelpOption_(self))
+    end
+    
+    def application_description=(description : String) : Void
+      Binding.bg_QCommandLineParser_setApplicationDescription_const_QString_R(self, Qt::Converter::QString.wrap(description))
+    end
+    
+    def application_description() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_applicationDescription_(self))
+    end
+    
+    def add_positional_argument(name : String, description : String) : Void
+      Binding.bg_QCommandLineParser_addPositionalArgument_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(description))
+    end
+    
+    def add_positional_argument(name : String, description : String, syntax : String) : Void
+      Binding.bg_QCommandLineParser_addPositionalArgument_const_QString_R_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(description), Qt::Converter::QString.wrap(syntax))
+    end
+    
+    def clear_positional_arguments() : Void
+      Binding.bg_QCommandLineParser_clearPositionalArguments_(self)
+    end
+    
+    def process(arguments : Enumerable(String)) : Void
+      Binding.bg_QCommandLineParser_process_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
+    end
+    
+    def process(app : CoreApplication) : Void
+      Binding.bg_QCommandLineParser_process_const_QCoreApplication_R(self, app)
+    end
+    
+    def parse(arguments : Enumerable(String)) : Bool
+      Binding.bg_QCommandLineParser_parse_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
+    end
+    
+    def error_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_errorText_(self))
+    end
+    
+    def is_set(name : String) : Bool
+      Binding.bg_QCommandLineParser_isSet_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def value(name : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_value_const_QString_R(self, Qt::Converter::QString.wrap(name)))
+    end
+    
+    def values(name : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineParser_values_const_QString_R(self, Qt::Converter::QString.wrap(name)))
+    end
+    
+    def is_set(option : CommandLineOption) : Bool
+      Binding.bg_QCommandLineParser_isSet_const_QCommandLineOption_R(self, option)
+    end
+    
+    def value(option : CommandLineOption) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_value_const_QCommandLineOption_R(self, option))
+    end
+    
+    def values(option : CommandLineOption) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineParser_values_const_QCommandLineOption_R(self, option))
+    end
+    
+    def positional_arguments() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineParser_positionalArguments_(self))
+    end
+    
+    def option_names() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineParser_optionNames_(self))
+    end
+    
+    def unknown_option_names() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QCommandLineParser_unknownOptionNames_(self))
+    end
+    
+    def show_version() : Void
+      Binding.bg_QCommandLineParser_showVersion_(self)
+    end
+    
+    def show_help(exit_code : Int32 = 0) : Void
+      Binding.bg_QCommandLineParser_showHelp_int(self, exit_code)
+    end
+    
+    def help_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QCommandLineParser_helpText_(self))
+    end
+    
+    def self.show_message_and_exit(type : CommandLineParser::MessageType, message : String, exit_code : Int32 = 0) : Void
+      Binding.bg_QCommandLineParser_showMessageAndExit_STATIC_QCommandLineParser__MessageType_const_QString_R_int(type, Qt::Converter::QString.wrap(message), exit_code)
+    end
+    
+    enum SingleDashWordOptionMode : UInt32
+      ParseAsCompactedShortOptions = 0
+      ParseAsLongOptions = 1
+    end
+    enum OptionsAfterPositionalArgumentsMode : UInt32
+      ParseAsOptions = 0
+      ParseAsPositionalArguments = 1
+    end
+    enum MessageType : Int32
+      Information = 0
+      Error = 1
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QCommandLineParser*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class CryptographicHash
+    @unwrap : Binding::QCryptographicHash*
+    
+    def initialize(method : CryptographicHash::Algorithm)
+      result = Binding.bg_QCryptographicHash__CONSTRUCT_QCryptographicHash__Algorithm(method)
+    @unwrap = result
+    end
+    
+    def swap(other : CryptographicHash) : Void
+      Binding.bg_QCryptographicHash_swap_QCryptographicHash_R(self, other)
+    end
+    
+    def reset() : Void
+      Binding.bg_QCryptographicHash_reset_(self)
+    end
+    
+    def algorithm() : CryptographicHash::Algorithm
+      Binding.bg_QCryptographicHash_algorithm_(self)
+    end
+    
+    def add_data(data : Bytes) : Void
+      Binding.bg_QCryptographicHash_addData_QByteArrayView(self, Qt::Converter::QByteArray.wrap(data))
+    end
+    
+    def add_data(device : IODevice) : Bool
+      Binding.bg_QCryptographicHash_addData_QIODevice_X(self, device)
+    end
+    
+    def result() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QCryptographicHash_result_(self))
+    end
+    
+    def result_view() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QCryptographicHash_resultView_(self))
+    end
+    
+    def self.hash(data : Bytes, method : CryptographicHash::Algorithm) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QCryptographicHash_hash_STATIC_QByteArrayView_QCryptographicHash__Algorithm(Qt::Converter::QByteArray.wrap(data), method))
+    end
+    
+    def self.hash_length(method : CryptographicHash::Algorithm) : Int32
+      Binding.bg_QCryptographicHash_hashLength_STATIC_QCryptographicHash__Algorithm(method)
+    end
+    
+    def self.supports_algorithm(method : CryptographicHash::Algorithm) : Bool
+      Binding.bg_QCryptographicHash_supportsAlgorithm_STATIC_QCryptographicHash__Algorithm(method)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QCryptographicHash_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Algorithm : UInt32
+      Md4 = 0
+      Md5 = 1
+      Sha1 = 2
+      Sha224 = 3
+      Sha256 = 4
+      Sha384 = 5
+      Sha512 = 6
+      Keccak_224 = 7
+      Keccak_256 = 8
+      Keccak_384 = 9
+      Keccak_512 = 10
+      RealSha3_224 = 11
+      RealSha3_256 = 12
+      RealSha3_384 = 13
+      RealSha3_512 = 14
+      Sha3_224 = 11
+      Sha3_256 = 12
+      Sha3_384 = 13
+      Sha3_512 = 14
+      Blake2b_160 = 15
+      Blake2b_256 = 16
+      Blake2b_384 = 17
+      Blake2b_512 = 18
+      Blake2s_128 = 19
+      Blake2s_160 = 20
+      Blake2s_224 = 21
+      Blake2s_256 = 22
+      NumAlgorithms = 23
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QCryptographicHash*)
+      result = unwrap
+    @unwrap = result
     end
     
   end
@@ -31489,6 +32892,313 @@ module Qt
       Superclass.new(self)
     end
   end
+  class TimeZone
+    @unwrap : Binding::QTimeZone*
+    
+    def initialize()
+      result = Binding.bg_QTimeZone__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(spec : TimeZone::Initialization)
+      result = Binding.bg_QTimeZone__CONSTRUCT_QTimeZone__Initialization(spec)
+    @unwrap = result
+    end
+    
+    def initialize(offset_seconds : Int32)
+      result = Binding.bg_QTimeZone__CONSTRUCT_int(offset_seconds)
+    @unwrap = result
+    end
+    
+    def initialize(iana_id : Bytes)
+      result = Binding.bg_QTimeZone__CONSTRUCT_const_QByteArray_R(Qt::Converter::QByteArray.wrap(iana_id))
+    @unwrap = result
+    end
+    
+    def initialize(zone_id : Bytes, offset_seconds : Int32, name : String, abbreviation : String, territory : Locale::Territory = Locale::Territory::AnyTerritory)
+      result = Binding.bg_QTimeZone__CONSTRUCT_const_QByteArray_R_int_const_QString_R_const_QString_R_QLocale__Territory(Qt::Converter::QByteArray.wrap(zone_id), offset_seconds, Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(abbreviation), territory)
+    @unwrap = result
+    end
+    
+    def initialize(zone_id : Bytes, offset_seconds : Int32, name : String, abbreviation : String, territory : Locale::Territory, comment : String)
+      result = Binding.bg_QTimeZone__CONSTRUCT_const_QByteArray_R_int_const_QString_R_const_QString_R_QLocale__Territory_const_QString_R(Qt::Converter::QByteArray.wrap(zone_id), offset_seconds, Qt::Converter::QString.wrap(name), Qt::Converter::QString.wrap(abbreviation), territory, Qt::Converter::QString.wrap(comment))
+    @unwrap = result
+    end
+    
+    def initialize(other : TimeZone)
+      result = Binding.bg_QTimeZone__COPY_const_QTimeZone_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : TimeZone) : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone__OPERATOR_assign_const_QTimeZone_R(self, other))
+    end
+    
+    def swap(other : TimeZone) : Void
+      Binding.bg_QTimeZone_swap_QTimeZone_R(self, other)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTimeZone_isValid_(self)
+    end
+    
+    def self.from_duration_ahead_of_utc(offset : ::Time::Span) : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone_fromDurationAheadOfUtc_STATIC_std__chrono__seconds(Qt::Converter::TimeSpanSeconds.wrap(offset)))
+    end
+    
+    def self.from_seconds_ahead_of_utc(offset : Int32) : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone_fromSecondsAheadOfUtc_STATIC_int(offset))
+    end
+    
+    def time_spec() : TimeSpec
+      Binding.bg_QTimeZone_timeSpec_(self)
+    end
+    
+    def fixed_seconds_ahead_of_utc() : Int32
+      Binding.bg_QTimeZone_fixedSecondsAheadOfUtc_(self)
+    end
+    
+    def self.is_utc_or_fixed_offset(spec : TimeSpec) : Bool
+      Binding.bg_QTimeZone_isUtcOrFixedOffset_STATIC_Qt__TimeSpec(spec)
+    end
+    
+    def utc_or_fixed_offset?() : Bool
+      Binding.bg_QTimeZone_isUtcOrFixedOffset_(self)
+    end
+    
+    def as_backend_zone() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone_asBackendZone_(self))
+    end
+    
+    def has_alternative_name(alias_ : Bytes) : Bool
+      Binding.bg_QTimeZone_hasAlternativeName_QByteArrayView(self, Qt::Converter::QByteArray.wrap(alias_))
+    end
+    
+    def id() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTimeZone_id_(self))
+    end
+    
+    def territory() : Locale::Territory
+      Binding.bg_QTimeZone_territory_(self)
+    end
+    
+    def comment() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_comment_(self))
+    end
+    
+    def display_name(at_date_time : DateTime, name_type : TimeZone::NameType = TimeZone::NameType::DefaultName) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_displayName_const_QDateTime_R_QTimeZone__NameType(self, at_date_time, name_type))
+    end
+    
+    def display_name(at_date_time : DateTime, name_type : TimeZone::NameType, locale : Locale) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_displayName_const_QDateTime_R_QTimeZone__NameType_const_QLocale_R(self, at_date_time, name_type, locale))
+    end
+    
+    def display_name(time_type : TimeZone::TimeType, name_type : TimeZone::NameType = TimeZone::NameType::DefaultName) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_displayName_QTimeZone__TimeType_QTimeZone__NameType(self, time_type, name_type))
+    end
+    
+    def display_name(time_type : TimeZone::TimeType, name_type : TimeZone::NameType, locale : Locale) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_displayName_QTimeZone__TimeType_QTimeZone__NameType_const_QLocale_R(self, time_type, name_type, locale))
+    end
+    
+    def abbreviation(at_date_time : DateTime) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone_abbreviation_const_QDateTime_R(self, at_date_time))
+    end
+    
+    def offset_from_utc(at_date_time : DateTime) : Int32
+      Binding.bg_QTimeZone_offsetFromUtc_const_QDateTime_R(self, at_date_time)
+    end
+    
+    def standard_time_offset(at_date_time : DateTime) : Int32
+      Binding.bg_QTimeZone_standardTimeOffset_const_QDateTime_R(self, at_date_time)
+    end
+    
+    def daylight_time_offset(at_date_time : DateTime) : Int32
+      Binding.bg_QTimeZone_daylightTimeOffset_const_QDateTime_R(self, at_date_time)
+    end
+    
+    def has_daylight_time?() : Bool
+      Binding.bg_QTimeZone_hasDaylightTime_(self)
+    end
+    
+    def is_daylight_time(at_date_time : DateTime) : Bool
+      Binding.bg_QTimeZone_isDaylightTime_const_QDateTime_R(self, at_date_time)
+    end
+    
+    def offset_data(for_date_time : DateTime) : TimeZoneOffsetData
+      TimeZoneOffsetData.new(unwrap: Binding.bg_QTimeZone_offsetData_const_QDateTime_R(self, for_date_time))
+    end
+    
+    def has_transitions?() : Bool
+      Binding.bg_QTimeZone_hasTransitions_(self)
+    end
+    
+    def next_transition(after_date_time : DateTime) : TimeZoneOffsetData
+      TimeZoneOffsetData.new(unwrap: Binding.bg_QTimeZone_nextTransition_const_QDateTime_R(self, after_date_time))
+    end
+    
+    def previous_transition(before_date_time : DateTime) : TimeZoneOffsetData
+      TimeZoneOffsetData.new(unwrap: Binding.bg_QTimeZone_previousTransition_const_QDateTime_R(self, before_date_time))
+    end
+    
+    def transitions(from_date_time : DateTime, to_date_time : DateTime) : Enumerable(TimeZoneOffsetData)
+      Container_QList_QTimeZone__OffsetData_.new(unwrap: Binding.bg_QTimeZone_transitions_const_QDateTime_R_const_QDateTime_R(self, from_date_time, to_date_time))
+    end
+    
+    def self.system_time_zone_id() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTimeZone_systemTimeZoneId_STATIC_())
+    end
+    
+    def self.system_time_zone() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone_systemTimeZone_STATIC_())
+    end
+    
+    def self.utc() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QTimeZone_utc_STATIC_())
+    end
+    
+    def self.is_time_zone_id_available(iana_id : Bytes) : Bool
+      Binding.bg_QTimeZone_isTimeZoneIdAvailable_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(iana_id))
+    end
+    
+    def self.available_time_zone_ids() : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTimeZone_availableTimeZoneIds_STATIC_())
+    end
+    
+    def self.available_time_zone_ids(territory : Locale::Territory) : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTimeZone_availableTimeZoneIds_STATIC_QLocale__Territory(territory))
+    end
+    
+    def self.available_time_zone_ids(offset_seconds : Int32) : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTimeZone_availableTimeZoneIds_STATIC_int(offset_seconds))
+    end
+    
+    def self.iana_id_to_windows_id(iana_id : Bytes) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTimeZone_ianaIdToWindowsId_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(iana_id)))
+    end
+    
+    def self.windows_id_to_default_iana_id(windows_id : Bytes) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTimeZone_windowsIdToDefaultIanaId_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(windows_id)))
+    end
+    
+    def self.windows_id_to_default_iana_id(windows_id : Bytes, territory : Locale::Territory) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTimeZone_windowsIdToDefaultIanaId_STATIC_const_QByteArray_R_QLocale__Territory(Qt::Converter::QByteArray.wrap(windows_id), territory))
+    end
+    
+    def self.windows_id_to_iana_ids(windows_id : Bytes) : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTimeZone_windowsIdToIanaIds_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(windows_id)))
+    end
+    
+    def self.windows_id_to_iana_ids(windows_id : Bytes, territory : Locale::Territory) : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTimeZone_windowsIdToIanaIds_STATIC_const_QByteArray_R_QLocale__Territory(Qt::Converter::QByteArray.wrap(windows_id), territory))
+    end
+    
+    def ==(rhs : TimeZone) : Bool
+      Binding.bg_QTimeZone__OPERATOR_eq_const_QTimeZone_R(self, rhs)
+    end
+    
+    def !=(rhs : TimeZone) : Bool
+      Binding.bg_QTimeZone__OPERATOR_ne_const_QTimeZone_R(self, rhs)
+    end
+    
+    MIN_UTC_OFFSET_SECS = -57600
+    MAX_UTC_OFFSET_SECS = 57600
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTimeZone*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    enum Initialization : UInt32
+      LocalTime = 0
+      Utc = 1
+    end
+    enum TimeType : UInt32
+      StandardTime = 0
+      DaylightTime = 1
+      GenericTime = 2
+    end
+    enum NameType : UInt32
+      DefaultName = 0
+      LongName = 1
+      ShortName = 2
+      OffsetName = 3
+    end
+  end
+  class TimeZoneOffsetData
+    @unwrap : Binding::QTimeZone_OffsetData*
+    
+    def initialize(unnamed_arg_0 : TimeZoneOffsetData)
+      result = Binding.bg_QTimeZone__OffsetData__COPY_const_QTimeZone__OffsetData_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : TimeZoneOffsetData) : TimeZoneOffsetData
+      TimeZoneOffsetData.new(unwrap: Binding.bg_QTimeZone__OffsetData__OPERATOR_assign_const_QTimeZone__OffsetData_R(self, unnamed_arg_0))
+    end
+    
+    def initialize()
+      result = Binding.bg_QTimeZone__OffsetData__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(*, abbreviation : String, at_utc : DateTime, offset_from_utc : Int32, standard_time_offset : Int32, daylight_time_offset : Int32)
+      result = Binding.bg_QTimeZone__OffsetData__AGGREGATE_QString_QDateTime_int_int_int(Qt::Converter::QString.wrap(abbreviation), at_utc, offset_from_utc, standard_time_offset, daylight_time_offset)
+    @unwrap = result
+    end
+    
+    def abbreviation() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeZone__OffsetData_abbreviation_GETTER_(self))
+    end
+    
+    def abbreviation=(abbreviation : String) : Void
+      Binding.bg_QTimeZone__OffsetData_abbreviation_SETTER_QString(self, Qt::Converter::QString.wrap(abbreviation))
+    end
+    
+    def at_utc() : DateTime
+      DateTime.new(unwrap: Binding.bg_QTimeZone__OffsetData_atUtc_GETTER_(self))
+    end
+    
+    def at_utc=(at_utc : DateTime) : Void
+      Binding.bg_QTimeZone__OffsetData_atUtc_SETTER_QDateTime(self, at_utc)
+    end
+    
+    def offset_from_utc() : Int32
+      Binding.bg_QTimeZone__OffsetData_offsetFromUtc_GETTER_(self)
+    end
+    
+    def offset_from_utc=(offset_from_utc : Int32) : Void
+      Binding.bg_QTimeZone__OffsetData_offsetFromUtc_SETTER_int(self, offset_from_utc)
+    end
+    
+    def standard_time_offset() : Int32
+      Binding.bg_QTimeZone__OffsetData_standardTimeOffset_GETTER_(self)
+    end
+    
+    def standard_time_offset=(standard_time_offset : Int32) : Void
+      Binding.bg_QTimeZone__OffsetData_standardTimeOffset_SETTER_int(self, standard_time_offset)
+    end
+    
+    def daylight_time_offset() : Int32
+      Binding.bg_QTimeZone__OffsetData_daylightTimeOffset_GETTER_(self)
+    end
+    
+    def daylight_time_offset=(daylight_time_offset : Int32) : Void
+      Binding.bg_QTimeZone__OffsetData_daylightTimeOffset_SETTER_int(self, daylight_time_offset)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTimeZone_OffsetData*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class FileInfo
     @unwrap : Binding::QFileInfo*
     
@@ -31742,23 +33452,23 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QFileInfo_fileTime_QFileDevice__FileTime(self, time))
     end
     
-    def birth_time(tz : Binding::QTimeZone*) : DateTime
+    def birth_time(tz : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QFileInfo_birthTime_const_QTimeZone_R(self, tz))
     end
     
-    def metadata_change_time(tz : Binding::QTimeZone*) : DateTime
+    def metadata_change_time(tz : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QFileInfo_metadataChangeTime_const_QTimeZone_R(self, tz))
     end
     
-    def last_modified(tz : Binding::QTimeZone*) : DateTime
+    def last_modified(tz : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QFileInfo_lastModified_const_QTimeZone_R(self, tz))
     end
     
-    def last_read(tz : Binding::QTimeZone*) : DateTime
+    def last_read(tz : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QFileInfo_lastRead_const_QTimeZone_R(self, tz))
     end
     
-    def file_time(time : FileDevice::FileTime, tz : Binding::QTimeZone*) : DateTime
+    def file_time(time : FileDevice::FileTime, tz : TimeZone) : DateTime
       DateTime.new(unwrap: Binding.bg_QFileInfo_fileTime_QFileDevice__FileTime_const_QTimeZone_R(self, time, tz))
     end
     
@@ -32268,6 +33978,107 @@ module Qt
     end
     
   end
+  class ElapsedTimer
+    @unwrap : Binding::QElapsedTimer*
+    
+    def initialize()
+      result = Binding.bg_QElapsedTimer__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def self.clock_type() : ElapsedTimer::ClockType
+      Binding.bg_QElapsedTimer_clockType_STATIC_()
+    end
+    
+    def self.monotonic?() : Bool
+      Binding.bg_QElapsedTimer_isMonotonic_STATIC_()
+    end
+    
+    def start() : Void
+      Binding.bg_QElapsedTimer_start_(self)
+    end
+    
+    def restart() : Int64
+      Binding.bg_QElapsedTimer_restart_(self)
+    end
+    
+    def invalidate() : Void
+      Binding.bg_QElapsedTimer_invalidate_(self)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QElapsedTimer_isValid_(self)
+    end
+    
+    def nsecs_elapsed() : Int64
+      Binding.bg_QElapsedTimer_nsecsElapsed_(self)
+    end
+    
+    def elapsed() : Int64
+      Binding.bg_QElapsedTimer_elapsed_(self)
+    end
+    
+    def has_expired(timeout : Int64) : Bool
+      Binding.bg_QElapsedTimer_hasExpired_qint64(self, timeout)
+    end
+    
+    def msecs_since_reference() : Int64
+      Binding.bg_QElapsedTimer_msecsSinceReference_(self)
+    end
+    
+    def msecs_to(other : ElapsedTimer) : Int64
+      Binding.bg_QElapsedTimer_msecsTo_const_QElapsedTimer_R(self, other)
+    end
+    
+    def secs_to(other : ElapsedTimer) : Int64
+      Binding.bg_QElapsedTimer_secsTo_const_QElapsedTimer_R(self, other)
+    end
+    
+    def initialize(unnamed_arg_0 : ElapsedTimer)
+      result = Binding.bg_QElapsedTimer__COPY_const_QElapsedTimer_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def <(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_lt_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    def ==(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_eq_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    def !=(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_ne_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    def >(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_gt_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    def <=(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_le_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    def >=(rhs : ElapsedTimer) : Bool
+      Binding.bg_QElapsedTimer__OPERATOR_ge_const_QElapsedTimer_R(self, rhs)
+    end
+    
+    enum ClockType : UInt32
+      SystemTime = 0
+      MonotonicClock = 1
+      TickCounter = 2
+      MachAbsoluteTime = 3
+      PerformanceCounter = 4
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QElapsedTimer*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class FileSystemWatcher < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QFileSystemWatcher_metaObject_(self)
@@ -32505,6 +34316,192 @@ module Qt
     
     def on_directory_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
+    end
+    
+  end
+  class VersionNumber
+    @unwrap : Binding::QVersionNumber*
+    
+    def initialize()
+      result = Binding.bg_QVersionNumber__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(maj : Int32)
+      result = Binding.bg_QVersionNumber__CONSTRUCT_int(maj)
+    @unwrap = result
+    end
+    
+    def initialize(maj : Int32, min : Int32)
+      result = Binding.bg_QVersionNumber__CONSTRUCT_int_int(maj, min)
+    @unwrap = result
+    end
+    
+    def initialize(maj : Int32, min : Int32, mic : Int32)
+      result = Binding.bg_QVersionNumber__CONSTRUCT_int_int_int(maj, min, mic)
+    @unwrap = result
+    end
+    
+    def null?() : Bool
+      Binding.bg_QVersionNumber_isNull_(self)
+    end
+    
+    def normalized?() : Bool
+      Binding.bg_QVersionNumber_isNormalized_(self)
+    end
+    
+    def major_version() : Int32
+      Binding.bg_QVersionNumber_majorVersion_(self)
+    end
+    
+    def minor_version() : Int32
+      Binding.bg_QVersionNumber_minorVersion_(self)
+    end
+    
+    def micro_version() : Int32
+      Binding.bg_QVersionNumber_microVersion_(self)
+    end
+    
+    def normalized() : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QVersionNumber_normalized_(self))
+    end
+    
+    def segments() : Enumerable(Int32)
+      Container_QList_int_.new(unwrap: Binding.bg_QVersionNumber_segments_(self))
+    end
+    
+    def segment_at(index : Int64) : Int32
+      Binding.bg_QVersionNumber_segmentAt_qsizetype(self, index)
+    end
+    
+    def segment_count() : Int64
+      Binding.bg_QVersionNumber_segmentCount_(self)
+    end
+    
+    def is_prefix_of(other : VersionNumber) : Bool
+      Binding.bg_QVersionNumber_isPrefixOf_const_QVersionNumber_R(self, other)
+    end
+    
+    def self.compare(v1 : VersionNumber, v2 : VersionNumber) : Int32
+      Binding.bg_QVersionNumber_compare_STATIC_const_QVersionNumber_R_const_QVersionNumber_R(v1, v2)
+    end
+    
+    def self.common_prefix(v1 : VersionNumber, v2 : VersionNumber) : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QVersionNumber_commonPrefix_STATIC_const_QVersionNumber_R_const_QVersionNumber_R(v1, v2))
+    end
+    
+    def to_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QVersionNumber_toString_(self))
+    end
+    
+    def self.from_string(string : String, suffix_index : Int64*? = nil) : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QVersionNumber_fromString_STATIC_QAnyStringView_qsizetype_X(Qt::Converter::QString.wrap(string), suffix_index))
+    end
+    
+    def initialize(unnamed_arg_0 : VersionNumber)
+      result = Binding.bg_QVersionNumber__COPY_const_QVersionNumber_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : VersionNumber) : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QVersionNumber__OPERATOR_assign_const_QVersionNumber_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_eq_const_QVersionNumber_R(self, rhs)
+    end
+    
+    def !=(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_ne_const_QVersionNumber_R(self, rhs)
+    end
+    
+    def <(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_lt_const_QVersionNumber_R(self, rhs)
+    end
+    
+    def >(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_gt_const_QVersionNumber_R(self, rhs)
+    end
+    
+    def <=(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_le_const_QVersionNumber_R(self, rhs)
+    end
+    
+    def >=(rhs : VersionNumber) : Bool
+      Binding.bg_QVersionNumber__OPERATOR_ge_const_QVersionNumber_R(self, rhs)
+    end
+    
+    INLINE_SEGMENT_MARKER = 0u32
+    INLINE_SEGMENT_START_IDX = 1u32
+    INLINE_SEGMENT_COUNT = 7u32
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QVersionNumber*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class LibraryInfo
+    @unwrap : Binding::QLibraryInfo*
+    
+    def self.build() : UInt8*
+      Binding.bg_QLibraryInfo_build_STATIC_()
+    end
+    
+    def self.debug_build?() : Bool
+      Binding.bg_QLibraryInfo_isDebugBuild_STATIC_()
+    end
+    
+    def self.shared_build?() : Bool
+      Binding.bg_QLibraryInfo_isSharedBuild_STATIC_()
+    end
+    
+    def self.version() : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QLibraryInfo_version_STATIC_())
+    end
+    
+    def self.path(p : LibraryInfo::LibraryPath) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QLibraryInfo_path_STATIC_QLibraryInfo__LibraryPath(p))
+    end
+    
+    def self.paths(p : LibraryInfo::LibraryPath) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QLibraryInfo_paths_STATIC_QLibraryInfo__LibraryPath(p))
+    end
+    
+    def self.platform_plugin_arguments(platform_name : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QLibraryInfo_platformPluginArguments_STATIC_const_QString_R(Qt::Converter::QString.wrap(platform_name)))
+    end
+    
+    def initialize(unnamed_arg_0 : LibraryInfo)
+      result = Binding.bg_QLibraryInfo__COPY_const_QLibraryInfo_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    enum LibraryPath : UInt32
+      PrefixPath = 0
+      DocumentationPath = 1
+      HeadersPath = 2
+      LibrariesPath = 3
+      LibraryExecutablesPath = 4
+      BinariesPath = 5
+      PluginsPath = 6
+      QmlImportsPath = 7
+      Qml2ImportsPath = 7
+      ArchDataPath = 8
+      DataPath = 9
+      TranslationsPath = 10
+      ExamplesPath = 11
+      TestsPath = 12
+      SettingsPath = 100
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QLibraryInfo*)
+      result = unwrap
+    @unwrap = result
     end
     
   end
@@ -33633,6 +35630,523 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class MimeType
+    @unwrap : Binding::QMimeType*
+    
+    def initialize()
+      result = Binding.bg_QMimeType__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(other : MimeType)
+      result = Binding.bg_QMimeType__COPY_const_QMimeType_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : MimeType) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeType__OPERATOR_assign_const_QMimeType_R(self, other))
+    end
+    
+    def swap(other : MimeType) : Void
+      Binding.bg_QMimeType_swap_QMimeType_R(self, other)
+    end
+    
+    def initialize(dd : Binding::QMimeTypePrivate*)
+      result = Binding.bg_QMimeType__CONSTRUCT_const_QMimeTypePrivate_R(dd)
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QMimeType_isValid_(self)
+    end
+    
+    def default?() : Bool
+      Binding.bg_QMimeType_isDefault_(self)
+    end
+    
+    def name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_name_(self))
+    end
+    
+    def comment() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_comment_(self))
+    end
+    
+    def generic_icon_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_genericIconName_(self))
+    end
+    
+    def icon_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_iconName_(self))
+    end
+    
+    def glob_patterns() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QMimeType_globPatterns_(self))
+    end
+    
+    def parent_mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QMimeType_parentMimeTypes_(self))
+    end
+    
+    def all_ancestors() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QMimeType_allAncestors_(self))
+    end
+    
+    def aliases() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QMimeType_aliases_(self))
+    end
+    
+    def suffixes() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QMimeType_suffixes_(self))
+    end
+    
+    def preferred_suffix() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_preferredSuffix_(self))
+    end
+    
+    def inherits(mime_type_name : String) : Bool
+      Binding.bg_QMimeType_inherits_const_QString_R(self, Qt::Converter::QString.wrap(mime_type_name))
+    end
+    
+    def filter_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeType_filterString_(self))
+    end
+    
+    def ==(rhs : MimeType) : Bool
+      Binding.bg_QMimeType__OPERATOR_eq_const_QMimeType_R(self, rhs)
+    end
+    
+    def !=(rhs : MimeType) : Bool
+      Binding.bg_QMimeType__OPERATOR_ne_const_QMimeType_R(self, rhs)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMimeType_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QMimeType*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class MimeDatabase
+    @unwrap : Binding::QMimeDatabase*
+    
+    def initialize()
+      result = Binding.bg_QMimeDatabase__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def mime_type_for_name(name_or_alias : String) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForName_const_QString_R(self, Qt::Converter::QString.wrap(name_or_alias)))
+    end
+    
+    def mime_type_for_file(file_name : String, mode : MimeDatabase::MatchMode = MimeDatabase::MatchMode::MatchDefault) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForFile_const_QString_R_QMimeDatabase__MatchMode(self, Qt::Converter::QString.wrap(file_name), mode))
+    end
+    
+    def mime_type_for_file(file_info : FileInfo, mode : MimeDatabase::MatchMode = MimeDatabase::MatchMode::MatchDefault) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForFile_const_QFileInfo_R_QMimeDatabase__MatchMode(self, file_info, mode))
+    end
+    
+    def mime_types_for_file_name(file_name : String) : Enumerable(MimeType)
+      Container_QList_QMimeType_.new(unwrap: Binding.bg_QMimeDatabase_mimeTypesForFileName_const_QString_R(self, Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def mime_type_for_data(data : Bytes) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForData_const_QByteArray_R(self, Qt::Converter::QByteArray.wrap(data)))
+    end
+    
+    def mime_type_for_data(device : IODevice) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForData_QIODevice_X(self, device))
+    end
+    
+    def mime_type_for_url(url : Url) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForUrl_const_QUrl_R(self, url))
+    end
+    
+    def mime_type_for_file_name_and_data(file_name : String, device : IODevice) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForFileNameAndData_const_QString_R_QIODevice_X(self, Qt::Converter::QString.wrap(file_name), device))
+    end
+    
+    def mime_type_for_file_name_and_data(file_name : String, data : Bytes) : MimeType
+      MimeType.new(unwrap: Binding.bg_QMimeDatabase_mimeTypeForFileNameAndData_const_QString_R_const_QByteArray_R(self, Qt::Converter::QString.wrap(file_name), Qt::Converter::QByteArray.wrap(data)))
+    end
+    
+    def suffix_for_file_name(file_name : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QMimeDatabase_suffixForFileName_const_QString_R(self, Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def all_mime_types() : Enumerable(MimeType)
+      Container_QList_QMimeType_.new(unwrap: Binding.bg_QMimeDatabase_allMimeTypes_(self))
+    end
+    
+    enum MatchMode : UInt32
+      MatchDefault = 0
+      MatchExtension = 1
+      MatchContent = 2
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QMimeDatabase*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class OperatingSystemVersionBase
+    @unwrap : Binding::QOperatingSystemVersionBase*
+    
+    def initialize(os_type : OperatingSystemVersionBase::OSType, vmajor : Int32, vminor : Int32 = -1, vmicro : Int32 = -1)
+      result = Binding.bg_QOperatingSystemVersionBase__CONSTRUCT_QOperatingSystemVersionBase__OSType_int_int_int(os_type, vmajor, vminor, vmicro)
+    @unwrap = result
+    end
+    
+    def self.current() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionBase_current_STATIC_())
+    end
+    
+    def self.name(osversion : OperatingSystemVersionBase) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QOperatingSystemVersionBase_name_STATIC_QOperatingSystemVersionBase(osversion))
+    end
+    
+    def self.current_type() : OperatingSystemVersionBase::OSType
+      Binding.bg_QOperatingSystemVersionBase_currentType_STATIC_()
+    end
+    
+    def version() : VersionNumber
+      VersionNumber.new(unwrap: Binding.bg_QOperatingSystemVersionBase_version_(self))
+    end
+    
+    def major_version() : Int32
+      Binding.bg_QOperatingSystemVersionBase_majorVersion_(self)
+    end
+    
+    def minor_version() : Int32
+      Binding.bg_QOperatingSystemVersionBase_minorVersion_(self)
+    end
+    
+    def micro_version() : Int32
+      Binding.bg_QOperatingSystemVersionBase_microVersion_(self)
+    end
+    
+    def segment_count() : Int32
+      Binding.bg_QOperatingSystemVersionBase_segmentCount_(self)
+    end
+    
+    def type() : OperatingSystemVersionBase::OSType
+      Binding.bg_QOperatingSystemVersionBase_type_(self)
+    end
+    
+    def name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QOperatingSystemVersionBase_name_(self))
+    end
+    
+    protected def self.compare(v1 : OperatingSystemVersionBase, v2 : OperatingSystemVersionBase) : Int32
+      Binding.bg_QOperatingSystemVersionBase_compare_STATIC_QOperatingSystemVersionBase_QOperatingSystemVersionBase(v1, v2)
+    end
+    
+    protected def initialize()
+      result = Binding.bg_QOperatingSystemVersionBase__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : OperatingSystemVersionBase)
+      result = Binding.bg_QOperatingSystemVersionBase__COPY_const_QOperatingSystemVersionBase_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    enum OSType : UInt32
+      Unknown = 0
+      Windows = 1
+      MacOS = 2
+      Ios = 3
+      TvOS = 4
+      WatchOS = 5
+      Android = 6
+      VisionOS = 7
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QOperatingSystemVersionBase*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class OperatingSystemVersionUnexported < OperatingSystemVersionBase
+    def initialize(other : OperatingSystemVersionBase)
+      result = Binding.bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase(other)
+    @unwrap = result
+    end
+    
+    def initialize()
+      result = Binding.bg_QOperatingSystemVersionUnexported__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : OperatingSystemVersionUnexported)
+      result = Binding.bg_QOperatingSystemVersionUnexported__COPY_const_QOperatingSystemVersionUnexported_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : OperatingSystemVersionBase::OSType, unnamed_arg_1 : Int32, unnamed_arg_2 : Int32, unnamed_arg_3 : Int32)
+      result = Binding.bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase__OSType_int_int_int(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2, unnamed_arg_3)
+    @unwrap = result
+    end
+    
+    def self.mac_os_sonoma() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_MacOSSonoma_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_sequoia() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_MacOSSequoia_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_tahoe() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_MacOSTahoe_STATIC_GETTER_())
+    end
+    
+    def self.android14() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_Android14_STATIC_GETTER_())
+    end
+    
+    def self.windows11_23_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_Windows11_23H2_STATIC_GETTER_())
+    end
+    
+    def self.windows11_24_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_Windows11_24H2_STATIC_GETTER_())
+    end
+    
+    def self.windows11_25_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersionUnexported_Windows11_25H2_STATIC_GETTER_())
+    end
+    
+    def initialize(unwrap : Binding::QOperatingSystemVersionUnexported*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class OperatingSystemVersion < OperatingSystemVersionUnexported
+    def initialize(osversion : OperatingSystemVersionBase)
+      result = Binding.bg_QOperatingSystemVersion__CONSTRUCT_const_QOperatingSystemVersionBase_R(osversion)
+    @unwrap = result
+    end
+    
+    def initialize(os_type : OperatingSystemVersion::OSType, vmajor : Int32, vminor : Int32 = -1, vmicro : Int32 = -1)
+      result = Binding.bg_QOperatingSystemVersion__CONSTRUCT_QOperatingSystemVersion__OSType_int_int_int(os_type, vmajor, vminor, vmicro)
+    @unwrap = result
+    end
+    
+    def self.current() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_current_STATIC_())
+    end
+    
+    def self.current_type() : OperatingSystemVersion::OSType
+      Binding.bg_QOperatingSystemVersion_currentType_STATIC_()
+    end
+    
+    def type() : OperatingSystemVersion::OSType
+      Binding.bg_QOperatingSystemVersion_type_(self)
+    end
+    
+    def initialize(unnamed_arg_0 : OperatingSystemVersion)
+      result = Binding.bg_QOperatingSystemVersion__COPY_const_QOperatingSystemVersion_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def self.windows7() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows7_STATIC_GETTER_())
+    end
+    
+    def self.windows8() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows8_STATIC_GETTER_())
+    end
+    
+    def self.windows8_1() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows8_1_STATIC_GETTER_())
+    end
+    
+    def self.windows10() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_STATIC_GETTER_())
+    end
+    
+    def self.osx_mavericks() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_OSXMavericks_STATIC_GETTER_())
+    end
+    
+    def self.osx_yosemite() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_OSXYosemite_STATIC_GETTER_())
+    end
+    
+    def self.osx_el_capitan() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_OSXElCapitan_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_sierra() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSSierra_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_high_sierra() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSHighSierra_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_mojave() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSMojave_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_catalina() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSCatalina_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_big_sur() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSBigSur_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_monterey() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSMonterey_STATIC_GETTER_())
+    end
+    
+    def self.android_jelly_bean() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidJellyBean_STATIC_GETTER_())
+    end
+    
+    def self.android_jelly_bean_mr1() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidJellyBean_MR1_STATIC_GETTER_())
+    end
+    
+    def self.android_jelly_bean_mr2() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidJellyBean_MR2_STATIC_GETTER_())
+    end
+    
+    def self.android_kit_kat() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidKitKat_STATIC_GETTER_())
+    end
+    
+    def self.android_lollipop() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidLollipop_STATIC_GETTER_())
+    end
+    
+    def self.android_lollipop_mr1() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidLollipop_MR1_STATIC_GETTER_())
+    end
+    
+    def self.android_marshmallow() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidMarshmallow_STATIC_GETTER_())
+    end
+    
+    def self.android_nougat() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidNougat_STATIC_GETTER_())
+    end
+    
+    def self.android_nougat_mr1() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidNougat_MR1_STATIC_GETTER_())
+    end
+    
+    def self.android_oreo() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidOreo_STATIC_GETTER_())
+    end
+    
+    def self.android_oreo_mr1() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidOreo_MR1_STATIC_GETTER_())
+    end
+    
+    def self.android_pie() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_AndroidPie_STATIC_GETTER_())
+    end
+    
+    def self.android10() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Android10_STATIC_GETTER_())
+    end
+    
+    def self.android11() : OperatingSystemVersion
+      OperatingSystemVersion.new(unwrap: Binding.bg_QOperatingSystemVersion_Android11_STATIC_GETTER_())
+    end
+    
+    def self.windows10_1809() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_1809_STATIC_GETTER_())
+    end
+    
+    def self.windows10_1903() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_1903_STATIC_GETTER_())
+    end
+    
+    def self.windows10_1909() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_1909_STATIC_GETTER_())
+    end
+    
+    def self.windows10_2004() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_2004_STATIC_GETTER_())
+    end
+    
+    def self.windows10_20_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_20H2_STATIC_GETTER_())
+    end
+    
+    def self.windows10_21_h1() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_21H1_STATIC_GETTER_())
+    end
+    
+    def self.windows10_21_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_21H2_STATIC_GETTER_())
+    end
+    
+    def self.windows10_22_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows10_22H2_STATIC_GETTER_())
+    end
+    
+    def self.windows11() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows11_STATIC_GETTER_())
+    end
+    
+    def self.windows11_21_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows11_21H2_STATIC_GETTER_())
+    end
+    
+    def self.windows11_22_h2() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Windows11_22H2_STATIC_GETTER_())
+    end
+    
+    def self.android12() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Android12_STATIC_GETTER_())
+    end
+    
+    def self.android12_l() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Android12L_STATIC_GETTER_())
+    end
+    
+    def self.android13() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_Android13_STATIC_GETTER_())
+    end
+    
+    def self.mac_os_ventura() : OperatingSystemVersionBase
+      OperatingSystemVersionBase.new(unwrap: Binding.bg_QOperatingSystemVersion_MacOSVentura_STATIC_GETTER_())
+    end
+    
+    enum OSType : UInt32
+      Unknown = 0
+      Windows = 1
+      MacOS = 2
+      Ios = 3
+      TvOS = 4
+      WatchOS = 5
+      Android = 6
+      VisionOS = 7
+    end
+    def initialize(unwrap : Binding::QOperatingSystemVersion*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class Process < IODevice
     def meta_object() : Binding::QMetaObject*
@@ -34881,6 +37395,218 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class RandomGenerator
+    @unwrap : Binding::QRandomGenerator*
+    
+    def initialize(seed_value : UInt32 = 1u32)
+      result = Binding.bg_QRandomGenerator__CONSTRUCT_quint32(seed_value)
+    @unwrap = result
+    end
+    
+    def initialize(seed_buffer : UInt32*, len : Int64)
+      result = Binding.bg_QRandomGenerator__CONSTRUCT_const_quint32_X_qsizetype(seed_buffer, len)
+    @unwrap = result
+    end
+    
+    def initialize(begin_ : UInt32*, end_ : UInt32*)
+      result = Binding.bg_QRandomGenerator__CONSTRUCT_const_quint32_X_const_quint32_X(begin_, end_)
+    @unwrap = result
+    end
+    
+    def initialize(other : RandomGenerator)
+      result = Binding.bg_QRandomGenerator__COPY_const_QRandomGenerator_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : RandomGenerator) : RandomGenerator
+      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator__OPERATOR_assign_const_QRandomGenerator_R(self, other))
+    end
+    
+    def generate() : UInt32
+      Binding.bg_QRandomGenerator_generate_(self)
+    end
+    
+    def generate64() : UInt64
+      Binding.bg_QRandomGenerator_generate64_(self)
+    end
+    
+    def generate_double() : Float64
+      Binding.bg_QRandomGenerator_generateDouble_(self)
+    end
+    
+    def bounded(highest : Float64) : Float64
+      Binding.bg_QRandomGenerator_bounded_double(self, highest)
+    end
+    
+    def bounded(highest : UInt32) : UInt32
+      Binding.bg_QRandomGenerator_bounded_quint32(self, highest)
+    end
+    
+    def bounded(lowest : UInt32, highest : UInt32) : UInt32
+      Binding.bg_QRandomGenerator_bounded_quint32_quint32(self, lowest, highest)
+    end
+    
+    def bounded(highest : Int32) : Int32
+      Binding.bg_QRandomGenerator_bounded_int(self, highest)
+    end
+    
+    def bounded(lowest : Int32, highest : Int32) : Int32
+      Binding.bg_QRandomGenerator_bounded_int_int(self, lowest, highest)
+    end
+    
+    def bounded(highest : UInt64) : UInt64
+      Binding.bg_QRandomGenerator_bounded_quint64(self, highest)
+    end
+    
+    def bounded(lowest : UInt64, highest : UInt64) : UInt64
+      Binding.bg_QRandomGenerator_bounded_quint64_quint64(self, lowest, highest)
+    end
+    
+    def bounded(highest : Int64) : Int64
+      Binding.bg_QRandomGenerator_bounded_qint64(self, highest)
+    end
+    
+    def bounded(lowest : Int64, highest : Int64) : Int64
+      Binding.bg_QRandomGenerator_bounded_qint64_qint64(self, lowest, highest)
+    end
+    
+    def bounded(lowest : Int32, highest : Int64) : Int64
+      Binding.bg_QRandomGenerator_bounded_int_qint64(self, lowest, highest)
+    end
+    
+    def bounded(lowest : Int64, highest : Int32) : Int64
+      Binding.bg_QRandomGenerator_bounded_qint64_int(self, lowest, highest)
+    end
+    
+    def bounded(lowest : UInt32, highest : UInt64) : UInt64
+      Binding.bg_QRandomGenerator_bounded_unsigned_int_quint64(self, lowest, highest)
+    end
+    
+    def bounded(lowest : UInt64, highest : UInt32) : UInt64
+      Binding.bg_QRandomGenerator_bounded_quint64_unsigned_int(self, lowest, highest)
+    end
+    
+    def generate(begin_ : UInt32*, end_ : UInt32*) : Void
+      Binding.bg_QRandomGenerator_generate_quint32_X_quint32_X(self, begin_, end_)
+    end
+    
+    def call() : UInt32
+      Binding.bg_QRandomGenerator__OPERATOR_call_(self)
+    end
+    
+    def seed(s : UInt32 = 1u32) : Void
+      Binding.bg_QRandomGenerator_seed_quint32(self, s)
+    end
+    
+    def discard(z : LibC::ULongLong) : Void
+      Binding.bg_QRandomGenerator_discard_unsigned_long_long(self, z)
+    end
+    
+    def self.min() : UInt32
+      Binding.bg_QRandomGenerator_min_STATIC_()
+    end
+    
+    def self.max() : UInt32
+      Binding.bg_QRandomGenerator_max_STATIC_()
+    end
+    
+    def self.system() : RandomGenerator
+      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator_system_STATIC_())
+    end
+    
+    def self.global() : RandomGenerator
+      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator_global_STATIC_())
+    end
+    
+    def self.securely_seeded() : RandomGenerator
+      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator_securelySeeded_STATIC_())
+    end
+    
+    def ==(rng2 : RandomGenerator) : Bool
+      Binding.bg_QRandomGenerator__OPERATOR_eq_const_QRandomGenerator_R(self, rng2)
+    end
+    
+    def !=(rng2 : RandomGenerator) : Bool
+      Binding.bg_QRandomGenerator__OPERATOR_ne_const_QRandomGenerator_R(self, rng2)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QRandomGenerator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class RandomGenerator64 < RandomGenerator
+    def generate() : UInt64
+      Binding.bg_QRandomGenerator64_generate_(self)
+    end
+    
+    def call() : UInt64
+      Binding.bg_QRandomGenerator64__OPERATOR_call_(self)
+    end
+    
+    def initialize(seed_value : UInt32 = 1u32)
+      result = Binding.bg_QRandomGenerator64__CONSTRUCT_quint32(seed_value)
+    @unwrap = result
+    end
+    
+    def initialize(seed_buffer : UInt32*, len : Int64)
+      result = Binding.bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_qsizetype(seed_buffer, len)
+    @unwrap = result
+    end
+    
+    def initialize(begin_ : UInt32*, end_ : UInt32*)
+      result = Binding.bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_const_quint32_X(begin_, end_)
+    @unwrap = result
+    end
+    
+    def initialize(other : RandomGenerator)
+      result = Binding.bg_QRandomGenerator64__CONSTRUCT_const_QRandomGenerator_R(other)
+    @unwrap = result
+    end
+    
+    def discard(z : LibC::ULongLong) : Void
+      Binding.bg_QRandomGenerator64_discard_unsigned_long_long(self, z)
+    end
+    
+    def self.min() : UInt64
+      Binding.bg_QRandomGenerator64_min_STATIC_()
+    end
+    
+    def self.max() : UInt64
+      Binding.bg_QRandomGenerator64_max_STATIC_()
+    end
+    
+    def self.system() : RandomGenerator64
+      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64_system_STATIC_())
+    end
+    
+    def self.global() : RandomGenerator64
+      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64_global_STATIC_())
+    end
+    
+    def self.securely_seeded() : RandomGenerator64
+      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64_securelySeeded_STATIC_())
+    end
+    
+    def initialize(unnamed_arg_0 : RandomGenerator64)
+      result = Binding.bg_QRandomGenerator64__COPY_const_QRandomGenerator64_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : RandomGenerator64) : RandomGenerator64
+      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64__OPERATOR_assign_const_QRandomGenerator64_R(self, unnamed_arg_0))
+    end
+    
+    def initialize(unwrap : Binding::QRandomGenerator64*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   struct Size
     @unwrap : Binding::QSize
@@ -39136,6 +41862,375 @@ module Qt
       Superclass.new(self)
     end
   end
+  class Translator < Object
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTranslator_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTranslator_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QTranslator__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(Translator)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTranslator_metaObject_", "meta_object", [] of String},
+        {"bg_QTranslator_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTranslator_translate_const_char_X_const_char_X", "translate", ["UInt8*", "UInt8*"] of String},
+        {"bg_QTranslator_translate_const_char_X_const_char_X_const_char_X", "translate", ["UInt8*", "UInt8*", "UInt8*"] of String},
+        {"bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int", "translate", ["UInt8*", "UInt8*", "UInt8*", "Int32"] of String},
+        {"bg_QTranslator_isEmpty_", "empty?", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTranslator.new(
+      bg_QTranslator_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTranslator_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTranslator_translate_const_char_X_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_translate_const_char_X_const_char_X") %} Proc(UInt8*, UInt8*, Binding::CrystalString).new{|context, source_text| Qt::Converter::QString.wrap(self.translate(context, source_text)) } {% else %} nil {% end %}),
+      bg_QTranslator_translate_const_char_X_const_char_X_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_translate_const_char_X_const_char_X_const_char_X") %} Proc(UInt8*, UInt8*, UInt8*, Binding::CrystalString).new{|context, source_text, disambiguation| Qt::Converter::QString.wrap(self.translate(context, source_text, disambiguation)) } {% else %} nil {% end %}),
+      bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int") %} Proc(UInt8*, UInt8*, UInt8*, Int32, Binding::CrystalString).new{|context, source_text, disambiguation, n| Qt::Converter::QString.wrap(self.translate(context, source_text, disambiguation, n)) } {% else %} nil {% end %}),
+      bg_QTranslator_isEmpty_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTranslator_isEmpty_") %} Proc(Bool).new{ self.empty?() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTranslator_JUMPTABLE_BgJumptable_QTranslator_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def translate(context : UInt8*, source_text : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_translate_const_char_X_const_char_X(self, context, source_text))
+    end
+    
+    def translate(context : UInt8*, source_text : UInt8*, disambiguation : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_translate_const_char_X_const_char_X_const_char_X(self, context, source_text, disambiguation))
+    end
+    
+    def translate(context : UInt8*, source_text : UInt8*, disambiguation : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int(self, context, source_text, disambiguation, n))
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QTranslator_isEmpty_(self)
+    end
+    
+    def language() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_language_(self))
+    end
+    
+    def file_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTranslator_filePath_(self))
+    end
+    
+    def load(filename : String) : Bool
+      Binding.bg_QTranslator_load_const_QString_R(self, Qt::Converter::QString.wrap(filename))
+    end
+    
+    def load(filename : String, directory : String) : Bool
+      Binding.bg_QTranslator_load_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(directory))
+    end
+    
+    def load(filename : String, directory : String, search_delimiters : String) : Bool
+      Binding.bg_QTranslator_load_const_QString_R_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(directory), Qt::Converter::QString.wrap(search_delimiters))
+    end
+    
+    def load(filename : String, directory : String, search_delimiters : String, suffix : String) : Bool
+      Binding.bg_QTranslator_load_const_QString_R_const_QString_R_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(directory), Qt::Converter::QString.wrap(search_delimiters), Qt::Converter::QString.wrap(suffix))
+    end
+    
+    def load(locale : Locale, filename : String) : Bool
+      Binding.bg_QTranslator_load_const_QLocale_R_const_QString_R(self, locale, Qt::Converter::QString.wrap(filename))
+    end
+    
+    def load(locale : Locale, filename : String, prefix : String) : Bool
+      Binding.bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R(self, locale, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(prefix))
+    end
+    
+    def load(locale : Locale, filename : String, prefix : String, directory : String) : Bool
+      Binding.bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R_const_QString_R(self, locale, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(prefix), Qt::Converter::QString.wrap(directory))
+    end
+    
+    def load(locale : Locale, filename : String, prefix : String, directory : String, suffix : String) : Bool
+      Binding.bg_QTranslator_load_const_QLocale_R_const_QString_R_const_QString_R_const_QString_R_const_QString_R(self, locale, Qt::Converter::QString.wrap(filename), Qt::Converter::QString.wrap(prefix), Qt::Converter::QString.wrap(directory), Qt::Converter::QString.wrap(suffix))
+    end
+    
+    def load(data : UInt8*, len : Int32) : Bool
+      Binding.bg_QTranslator_load_const_uchar_X_int(self, data, len)
+    end
+    
+    def load(data : UInt8*, len : Int32, directory : String) : Bool
+      Binding.bg_QTranslator_load_const_uchar_X_int_const_QString_R(self, data, len, Qt::Converter::QString.wrap(directory))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTranslator_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == Translator %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTranslator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : Translator)
+      end
+      def translate(context : UInt8*, source_text : UInt8*, disambiguation : UInt8*, n : Int32 = -1) : String
+        Qt::Converter::QString.unwrap(Binding.bg_QTranslator_translate_SUPER_const_char_X_const_char_X_const_char_X_int(@myself, context, source_text, disambiguation, n))
+      end
+      
+      def empty?() : Bool
+        Binding.bg_QTranslator_isEmpty_SUPER_(@myself)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class UrlQuery
+    @unwrap : Binding::QUrlQuery*
+    
+    def initialize()
+      result = Binding.bg_QUrlQuery__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(url : Url)
+      result = Binding.bg_QUrlQuery__CONSTRUCT_const_QUrl_R(url)
+    @unwrap = result
+    end
+    
+    def initialize(query_string : String)
+      result = Binding.bg_QUrlQuery__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(query_string))
+    @unwrap = result
+    end
+    
+    def initialize(other : UrlQuery)
+      result = Binding.bg_QUrlQuery__COPY_const_QUrlQuery_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : UrlQuery) : UrlQuery
+      UrlQuery.new(unwrap: Binding.bg_QUrlQuery__OPERATOR_assign_const_QUrlQuery_R(self, other))
+    end
+    
+    def swap(other : UrlQuery) : Void
+      Binding.bg_QUrlQuery_swap_QUrlQuery_R(self, other)
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QUrlQuery_isEmpty_(self)
+    end
+    
+    def detached?() : Bool
+      Binding.bg_QUrlQuery_isDetached_(self)
+    end
+    
+    def clear() : Void
+      Binding.bg_QUrlQuery_clear_(self)
+    end
+    
+    def query() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_query_(self))
+    end
+    
+    def query(encoding : Url::ComponentFormattingOptions) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_query_QUrl__ComponentFormattingOptions(self, encoding))
+    end
+    
+    def query=(query_string : String) : Void
+      Binding.bg_QUrlQuery_setQuery_const_QString_R(self, Qt::Converter::QString.wrap(query_string))
+    end
+    
+    def to_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_toString_(self))
+    end
+    
+    def to_string(encoding : Url::ComponentFormattingOptions) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_toString_QUrl__ComponentFormattingOptions(self, encoding))
+    end
+    
+    def set_query_delimiters(value_delimiter : Char, pair_delimiter : Char) : Void
+      Binding.bg_QUrlQuery_setQueryDelimiters_QChar_QChar(self, (value_delimiter.ord), (pair_delimiter.ord))
+    end
+    
+    def query_value_delimiter() : Char
+      (Binding.bg_QUrlQuery_queryValueDelimiter_(self).chr)
+    end
+    
+    def query_pair_delimiter() : Char
+      (Binding.bg_QUrlQuery_queryPairDelimiter_(self).chr)
+    end
+    
+    def has_query_item(key : String) : Bool
+      Binding.bg_QUrlQuery_hasQueryItem_const_QString_R(self, Qt::Converter::QString.wrap(key))
+    end
+    
+    def add_query_item(key : String, value : String) : Void
+      Binding.bg_QUrlQuery_addQueryItem_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(key), Qt::Converter::QString.wrap(value))
+    end
+    
+    def remove_query_item(key : String) : Void
+      Binding.bg_QUrlQuery_removeQueryItem_const_QString_R(self, Qt::Converter::QString.wrap(key))
+    end
+    
+    def query_item_value(key : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_queryItemValue_const_QString_R(self, Qt::Converter::QString.wrap(key)))
+    end
+    
+    def query_item_value(key : String, encoding : Url::ComponentFormattingOptions) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QUrlQuery_queryItemValue_const_QString_R_QUrl__ComponentFormattingOptions(self, Qt::Converter::QString.wrap(key), encoding))
+    end
+    
+    def all_query_item_values(key : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QUrlQuery_allQueryItemValues_const_QString_R(self, Qt::Converter::QString.wrap(key)))
+    end
+    
+    def all_query_item_values(key : String, encoding : Url::ComponentFormattingOptions) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QUrlQuery_allQueryItemValues_const_QString_R_QUrl__ComponentFormattingOptions(self, Qt::Converter::QString.wrap(key), encoding))
+    end
+    
+    def remove_all_query_items(key : String) : Void
+      Binding.bg_QUrlQuery_removeAllQueryItems_const_QString_R(self, Qt::Converter::QString.wrap(key))
+    end
+    
+    def self.default_query_value_delimiter() : Char
+      (Binding.bg_QUrlQuery_defaultQueryValueDelimiter_STATIC_().chr)
+    end
+    
+    def self.default_query_pair_delimiter() : Char
+      (Binding.bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_().chr)
+    end
+    
+    def ==(rhs : UrlQuery) : Bool
+      Binding.bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(self, rhs)
+    end
+    
+    def !=(rhs : UrlQuery) : Bool
+      Binding.bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QUrlQuery*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   abstract class PaintDevice
     @unwrap : Binding::QPaintDevice*
     
@@ -40478,12 +43573,12 @@ module Qt
       Binding.bg_QImage_load_const_QString_R_const_char_X(self, Qt::Converter::QString.wrap(file_name), format)
     end
     
-    def load_from_data(data : Binding::QByteArrayView*) : Bool
-      Binding.bg_QImage_loadFromData_QByteArrayView(self, data)
+    def load_from_data(data : Bytes) : Bool
+      Binding.bg_QImage_loadFromData_QByteArrayView(self, Qt::Converter::QByteArray.wrap(data))
     end
     
-    def load_from_data(data : Binding::QByteArrayView*, format : UInt8*) : Bool
-      Binding.bg_QImage_loadFromData_QByteArrayView_const_char_X(self, data, format)
+    def load_from_data(data : Bytes, format : UInt8*) : Bool
+      Binding.bg_QImage_loadFromData_QByteArrayView_const_char_X(self, Qt::Converter::QByteArray.wrap(data), format)
     end
     
     def load_from_data(buf : UInt8*, len : Int32) : Bool
@@ -40526,12 +43621,12 @@ module Qt
       Binding.bg_QImage_save_QIODevice_X_const_char_X_int(self, device, format, quality)
     end
     
-    def self.from_data(data : Binding::QByteArrayView*) : Image
-      Image.new(unwrap: Binding.bg_QImage_fromData_STATIC_QByteArrayView(data))
+    def self.from_data(data : Bytes) : Image
+      Image.new(unwrap: Binding.bg_QImage_fromData_STATIC_QByteArrayView(Qt::Converter::QByteArray.wrap(data)))
     end
     
-    def self.from_data(data : Binding::QByteArrayView*, format : UInt8*) : Image
-      Image.new(unwrap: Binding.bg_QImage_fromData_STATIC_QByteArrayView_const_char_X(data, format))
+    def self.from_data(data : Bytes, format : UInt8*) : Image
+      Image.new(unwrap: Binding.bg_QImage_fromData_STATIC_QByteArrayView_const_char_X(Qt::Converter::QByteArray.wrap(data), format))
     end
     
     def self.from_data(data : UInt8*, size : Int32) : Image
@@ -76265,11 +79360,11 @@ module Qt
       Binding.bg_QDateTimeEdit_setCalendarPopup_bool(self, enable)
     end
     
-    def time_zone() : Binding::QTimeZone*
-      Binding.bg_QDateTimeEdit_timeZone_(self)
+    def time_zone() : TimeZone
+      TimeZone.new(unwrap: Binding.bg_QDateTimeEdit_timeZone_(self))
     end
     
-    def time_zone=(zone : Binding::QTimeZone*) : Void
+    def time_zone=(zone : TimeZone) : Void
       Binding.bg_QDateTimeEdit_setTimeZone_const_QTimeZone_R(self, zone)
     end
     
@@ -121051,14 +124146,17 @@ module Qt
       {% if types == {Float64} %} {{ Container_QList_qreal_ }}
       {% elsif types == {UInt32} %} {{ Container_QList_unsigned_int_ }}
       {% elsif types == {Bytes} %} {{ Container_QList_QByteArray_ }}
+      {% elsif types == {Int32} %} {{ Container_QList_int_ }}
       {% elsif types == {String} %} {{ StringList }}
       {% elsif types == {Binding::EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
       {% elsif types == {Variant} %} {{ Container_QList_QVariant_ }}
-      {% elsif types == {Int32} %} {{ Container_QList_int_ }}
       {% elsif types == {Pointer(Binding::QPersistentModelIndex)} %} {{ Container_QList_QPersistentModelIndex_ }}
       {% elsif types == {DayOfWeek} %} {{ Container_QList_Qt__DayOfWeek_ }}
       {% elsif types == {Locale} %} {{ Container_QList_QLocale_ }}
       {% elsif types == {Url} %} {{ Container_QList_QUrl_ }}
+      {% elsif types == {CommandLineOption} %} {{ Container_QList_QCommandLineOption_ }}
+      {% elsif types == {TimeZoneOffsetData} %} {{ Container_QList_QTimeZone__OffsetData_ }}
+      {% elsif types == {MimeType} %} {{ Container_QList_QMimeType_ }}
       {% elsif types == {Point} %} {{ Container_QList_QPoint_ }}
       {% elsif types == {PointF} %} {{ Container_QList_QPointF_ }}
       {% elsif types == {Size} %} {{ Container_QList_QSize_ }}
@@ -121178,6 +124276,38 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQByteArray*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_int_
+    include BindgenHelper::SequentialContainer(Int32)
+    include QList(Int32)
+    
+    @unwrap : Binding::ContainerQListInt*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_int___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : Int32
+      Binding.bg_Container_QList_int__at_int(self, index)
+    end
+    
+    def push(value : Int32) : Void
+      Binding.bg_Container_QList_int__push_back_int(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_int__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListInt*)
       result = unwrap
     @unwrap = result
     end
@@ -121535,38 +124665,6 @@ module Qt
     end
     
   end
-  class Container_QList_int_
-    include BindgenHelper::SequentialContainer(Int32)
-    include QList(Int32)
-    
-    @unwrap : Binding::ContainerQListInt*
-    
-    def initialize()
-      result = Binding.bg_Container_QList_int___CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def unsafe_at(index : Int32) : Int32
-      Binding.bg_Container_QList_int__at_int(self, index)
-    end
-    
-    def push(value : Int32) : Void
-      Binding.bg_Container_QList_int__push_back_int(self, value)
-    end
-    
-    def size() : Int32
-      Binding.bg_Container_QList_int__size_(self)
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::ContainerQListInt*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
   class Container_QList_QPersistentModelIndex_
     include BindgenHelper::SequentialContainer(Binding::QPersistentModelIndex*)
     include QList(Binding::QPersistentModelIndex*)
@@ -121690,6 +124788,102 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQUrl*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QCommandLineOption_
+    include BindgenHelper::SequentialContainer(CommandLineOption)
+    include QList(CommandLineOption)
+    
+    @unwrap : Binding::ContainerQListQCommandLineOption*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QCommandLineOption___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : CommandLineOption
+      CommandLineOption.new(unwrap: Binding.bg_Container_QList_QCommandLineOption__at_int(self, index))
+    end
+    
+    def push(value : CommandLineOption) : Void
+      Binding.bg_Container_QList_QCommandLineOption__push_back_QCommandLineOption(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QCommandLineOption__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQCommandLineOption*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QTimeZone__OffsetData_
+    include BindgenHelper::SequentialContainer(TimeZoneOffsetData)
+    include QList(TimeZoneOffsetData)
+    
+    @unwrap : Binding::ContainerQListQTimeZoneOffsetData*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTimeZone__OffsetData___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TimeZoneOffsetData
+      TimeZoneOffsetData.new(unwrap: Binding.bg_Container_QList_QTimeZone__OffsetData__at_int(self, index))
+    end
+    
+    def push(value : TimeZoneOffsetData) : Void
+      Binding.bg_Container_QList_QTimeZone__OffsetData__push_back_QTimeZone__OffsetData(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTimeZone__OffsetData__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTimeZoneOffsetData*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QMimeType_
+    include BindgenHelper::SequentialContainer(MimeType)
+    include QList(MimeType)
+    
+    @unwrap : Binding::ContainerQListQMimeType*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QMimeType___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : MimeType
+      MimeType.new(unwrap: Binding.bg_Container_QList_QMimeType__at_int(self, index))
+    end
+    
+    def push(value : MimeType) : Void
+      Binding.bg_Container_QList_QMimeType__push_back_QMimeType(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QMimeType__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQMimeType*)
       result = unwrap
     @unwrap = result
     end

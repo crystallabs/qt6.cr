@@ -285,9 +285,9 @@ see the comments there:
   structures can be copied and the methods wrapped.
 * `char32_t`, which the `QLocale::toString` overloads take, and `char16_t`,
   which `QTextStream#<<` takes, map to `Char` like `QChar`.
-* `std::chrono::milliseconds` maps to `::Time::Span` (qualified, as `Qt::Time`
-  shadows `Time` inside the module): `timer.start(2.seconds)`,
-  `lock_file.try_lock(10.milliseconds)`.
+* `std::chrono::milliseconds` and `std::chrono::seconds` map to `::Time::Span`
+  (qualified, as `Qt::Time` shadows `Time` inside the module):
+  `timer.start(2.seconds)`, `lock_file.try_lock(10.milliseconds)`.
 * `QStringList` and `QVariantList` are aliases of `QList<QString>` and
   `QList<QVariant>`, so methods take any `Enumerable(String)`:
   `combo_box.add_items(["a", "b"])`.  `QList<QString>` and
@@ -304,7 +304,9 @@ see the comments there:
   returns `nil`).  See `Qt::Variant`.
 * `QByteArray` maps to `Bytes`, copied in both directions like `QString`:
   `String.new(process.read_all_standard_output)`, `mime_data.set_data(type,
-  bytes)`.  `QList<QByteArray>` is an `Enumerable(Bytes)`.
+  bytes)`.  `QList<QByteArray>` is an `Enumerable(Bytes)`.  `QByteArrayView`
+  maps to `Bytes` as well, like `QAnyStringView` to `String`:
+  `CryptographicHash.hash(bytes, algorithm)`.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

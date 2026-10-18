@@ -226,6 +226,26 @@ enums:
   "QDirIterator::IteratorFlag": DirIterator::IteratorFlag
   "QDirIterator::IteratorFlags": DirIterator::IteratorFlags
   "QLockFile::LockError": LockFile::LockError
+  "QUuid::Variant": Uuid::Variant
+  "QUuid::Version": Uuid::Version
+  "QUuid::StringFormat": Uuid::StringFormat
+  "QTimeZone::Initialization": TimeZone::Initialization
+  "QTimeZone::TimeType": TimeZone::TimeType
+  "QTimeZone::NameType": TimeZone::NameType
+  "QCryptographicHash::Algorithm": CryptographicHash::Algorithm
+  "QElapsedTimer::ClockType": ElapsedTimer::ClockType
+  "QDeadlineTimer::ForeverConstant": DeadlineTimer::ForeverConstant
+  "QCommandLineParser::SingleDashWordOptionMode": CommandLineParser::SingleDashWordOptionMode
+  "QCommandLineParser::OptionsAfterPositionalArgumentsMode": CommandLineParser::OptionsAfterPositionalArgumentsMode
+  "QCommandLineParser::MessageType": CommandLineParser::MessageType
+  "QCommandLineOption::Flag": CommandLineOption::Flag
+  "QCommandLineOption::Flags": CommandLineOption::Flags
+  "QLibraryInfo::LibraryPath": LibraryInfo::LibraryPath
+  "QMimeDatabase::MatchMode": MimeDatabase::MatchMode
+  "QOperatingSystemVersionBase::OSType": OperatingSystemVersionBase::OSType
+  "QOperatingSystemVersion::OSType": OperatingSystemVersion::OSType
+  "QSysInfo::Sizes": SysInfo::Sizes
+  "QSysInfo::Endian": SysInfo::Endian
   "QScrollEvent::ScrollState": ScrollEvent::ScrollState
   "Qt::ScreenOrientation": ScreenOrientation
   "Qt::GestureState": GestureState

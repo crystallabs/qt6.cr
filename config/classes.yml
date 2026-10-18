@@ -153,6 +153,30 @@ classes:
   QLockFile: LockFile
   QFileSystemWatcher: FileSystemWatcher
   QBuffer: Buffer
+  QUuid: Uuid
+  QUrlQuery: UrlQuery
+  QTimeZone: TimeZone
+  "QTimeZone::OffsetData": TimeZoneOffsetData
+  QVersionNumber: VersionNumber
+  QCryptographicHash: CryptographicHash
+  QRandomGenerator: RandomGenerator
+  QRandomGenerator64: RandomGenerator64
+  QElapsedTimer: ElapsedTimer
+  QDeadlineTimer: DeadlineTimer
+  QCommandLineParser: CommandLineParser
+  QCommandLineOption: CommandLineOption
+  QLibraryInfo: LibraryInfo
+  QCollator: Collator
+  QCollatorSortKey: CollatorSortKey
+  QTranslator: Translator
+  QMimeDatabase: MimeDatabase
+  QMimeType: MimeType
+  # Qt 6 splits QOperatingSystemVersion in three: the named versions it adds
+  # over time live in the unexported middle class.
+  QOperatingSystemVersionBase: OperatingSystemVersionBase
+  QOperatingSystemVersionUnexported: OperatingSystemVersionUnexported
+  QOperatingSystemVersion: OperatingSystemVersion
+  QSysInfo: SysInfo
   QGesture: Gesture
   QPainter: Painter
   # "QPainter::PixmapFragment": PainterPixmapFragment

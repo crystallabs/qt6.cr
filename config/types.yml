@@ -32,6 +32,17 @@ types: # Type rewrite rules
     builtin: true
     pass_by: Value
     wrapper_pass_by: Value
+  QByteArrayView: # A view of the Bytes, like QAnyStringView of the String
+    converter: Qt::Converter::QByteArray
+    crystal_type: Bytes
+    cpp_type: CrystalString
+    binding_type: CrystalString
+    to_cpp: "QByteArrayView(%.ptr, %.size)"
+    from_cpp: "qbytearray_to_crystal(%.toByteArray())"
+    kind: Struct
+    builtin: true
+    pass_by: Value
+    wrapper_pass_by: Value
   QChar: # Map as Crystal Char
     cpp_type: int32_t
     binding_type: Int32
@@ -213,6 +224,10 @@ types: # Type rewrite rules
   "QVariantAnimation::KeyValue": { ignore: true }
   "QList<QVariantAnimation::KeyValue>": { ignore: true }
 
+  # QList<QPair<QString, QString>>, no mapping for std::pair yet; use
+  # UrlQuery#query_item_value and #add_query_item.
+  "QList<std::pair<QString, QString>>": { ignore: true }
+
   # No support for associative containers yet
   "QMap<int, QVariant>": { ignore: true }
   "QHash<int, QByteArray>": { ignore: true }
@@ -224,6 +239,7 @@ types: # Type rewrite rules
   QImageData: { ignore: true }
   QIconPrivate: { ignore: true }
   "QPixmap::DataPtr": { ignore: true }
+  "QUrlQuery::DataPtr": { ignore: true }
   "QBrush::DataPtr": { ignore: true }
   QPenPrivate: { ignore: true }
 
@@ -234,6 +250,16 @@ types: # Type rewrite rules
   # Qt 6 types without a mapping yet
   "Qt::Disambiguated_t": { ignore: true } # Overload tag
   "std::chrono::nanoseconds": { ignore: true }
+  "QElapsedTimer::Duration": { ignore: true } # std::chrono::nanoseconds
+  "QVersionNumber::const_iterator": { ignore: true } # Use #segments
+  "QVersionNumber::const_reverse_iterator": { ignore: true }
+  "QUuid::Id128Bytes": { ignore: true } # A union; use #to_rfc4122 (Bytes)
+  quint128: { ignore: true } # unsigned __int128, which the C ABI can't pass
+  "QRandomGenerator::result_type": { alias_for: "quint32" }
+  "QRandomGenerator64::result_type": { alias_for: "quint64" }
+  "std::seed_seq": { ignore: true }
+  "QRandomGenerator::System": { ignore: true } # Tag of a protected constructor
+  "QTimeZone::OffsetDataList": { alias_for: "QList<QTimeZone::OffsetData>" }
   "QAbstractEventDispatcher::Duration": { ignore: true } # std::chrono::nanoseconds
   "QAbstractEventDispatcher::TimerInfoV2": { ignore: true }
   "QList<QAbstractEventDispatcher::TimerInfoV2>": { ignore: true }
@@ -285,6 +311,17 @@ types: # Type rewrite rules
     to_cpp: "std::chrono::milliseconds(%)"
     from_cpp: "(%.count())"
     converter: Qt::Converter::TimeSpan
+  "std::chrono::seconds": # Like milliseconds; QTimeZone.from_duration_ahead_of_utc
+    cpp_type: int64_t
+    binding_type: Int64
+    crystal_type: "::Time::Span"
+    generate_binding: false
+    generate_wrapper: false
+    pass_by: Value
+    builtin: true
+    to_cpp: "std::chrono::seconds(%)"
+    from_cpp: "(%.count())"
+    converter: Qt::Converter::TimeSpanSeconds
   CGRect: {ignore: true} # Apple types Qt exposes on macOS
   CGSize: {ignore: true}
   CGPoint: {ignore: true}
@@ -294,6 +331,10 @@ types: # Type rewrite rules
   NSURL: {ignore: true}
   __CFDate: {ignore: true} # QDateTime#toCFDate, named invalidly for Crystal
   NSDate: {ignore: true}
+  __CFUUID: {ignore: true} # QUuid#toCFUUID
+  NSUUID: {ignore: true}
+  __CFTimeZone: {ignore: true} # QTimeZone#toCFTimeZone
+  NSTimeZone: {ignore: true}
   QDateTime:
     ignore_methods:
       # Returns std::chrono::milliseconds, whose from_cpp rule bindgen applies

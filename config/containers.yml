@@ -6,3 +6,4 @@ containers:
       - [ "qreal" ]
       - [ "QRgb" ]
       - [ "QByteArray" ] # As Bytes, see types.yml
+      - [ "int" ] # QVersionNumber#segments
