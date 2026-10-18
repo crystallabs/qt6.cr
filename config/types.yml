@@ -21,6 +21,14 @@ types: # Type rewrite rules
     from_crystal: "(%.ord)"
     kind: Struct
     pass_by: Value
+  char32_t: # Map as Crystal Char, like QChar
+    binding_type: UInt32
+    builtin: true
+    crystal_type: Char
+    to_crystal: "(%.chr)"
+    from_crystal: "(%.ord.to_u32)"
+    kind: Struct
+    pass_by: Value
   QVariant:
     crystal_type: Variant
     binding_type: CrystalVariant
@@ -137,6 +145,12 @@ types: # Type rewrite rules
 
   # Typedefs
   QRgb: { alias_for: "unsigned int" }
+  # Qt 6.10+ stores the fields of these as `QCheckedInt<int>`, which is laid
+  # out like an `int`.
+  "QPoint::Representation": { alias_for: "int" }
+  "QSize::Representation": { alias_for: "int" }
+  "QRect::Representation": { alias_for: "int" }
+  "QPalette::ResolveMask": { alias_for: "quint64" }
   WId: { alias_for: "unsigned int" }
   QVariantList: { alias_for: "QList<QVariant>" }
 
@@ -166,6 +180,23 @@ types: # Type rewrite rules
   # Waiting for a reasonable pass-through implementation of QByteArray
   "QList<QByteArray>": { ignore: true }
   "QSet<QByteArray>": { ignore: true }
+
+  # Qt 6 types without a mapping yet
+  "Qt::Disambiguated_t": { ignore: true } # Overload tag
+  "std::chrono::nanoseconds": { ignore: true }
+  "QAbstractEventDispatcher::Duration": { ignore: true } # std::chrono::nanoseconds
+  "QAbstractEventDispatcher::TimerInfoV2": { ignore: true }
+  "QList<QAbstractEventDispatcher::TimerInfoV2>": { ignore: true }
+  "QEvent::InputEventTag": { ignore: true } # Tags of protected constructors
+  "QEvent::PointerEventTag": { ignore: true }
+  "QEvent::SinglePointEventTag": { ignore: true }
+  "std::filesystem::path": { ignore: true }
+  "QFont::Tag": { ignore: true }
+  "QList<QFont::Tag>": { ignore: true }
+  "QTextDocument::ResourceProvider": { ignore: true } # std::function
+  "QPen::DataPtr": { ignore: true }
+  "QPointer<QObject>": { ignore: true }
+  "QList<QPointer<QObject>>": { ignore: true }
 
   # Ignore pure template types
   "QList<T>": { ignore: true }
@@ -202,5 +233,5 @@ types: # Type rewrite rules
     ignore_methods:
       - "operator<"
       - setBackgroundColor # Deprecated, but virtual: not hidden by QT_DISABLE_DEPRECATED_BEFORE
-  <<: deprecated.yml
+  <<+: deprecated.yml # Deep merge: adds to the `ignore_methods` listed above
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above

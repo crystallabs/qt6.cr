@@ -104,8 +104,9 @@ classes:
   QEvent: Event
   QTimerEvent: TimerEvent
   QDynamicPropertyChangeEvent: DynamicPropertyChangeEvent
-  QDeferredDeleteEvent: DeferredDeleteEvent
   QInputEvent: InputEvent
+  QPointerEvent: PointerEvent # Qt 6: base of mouse events
+  QSinglePointEvent: SinglePointEvent
   QKeyEvent: KeyEvent
   QMouseEvent: MouseEvent
   QEnterEvent: EnterEvent
@@ -150,7 +151,6 @@ classes:
   QPolygonF: PolygonF
   QSystemTrayIcon: SystemTrayIcon
   QDesktopServices: DesktopServices
-  QDesktopWidget: DesktopWidget
   QStandardPaths: StandardPaths
   QMimeData: MimeData
   QSizePolicy: SizePolicy

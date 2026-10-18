@@ -1,9 +1,7 @@
 containers:
+  # Qt 6 has no separate QVector: it's an alias of QList.
   - class: QList
     type: Sequential
     instantiations:
       - [ "qreal" ]
-  - class: QVector
-    type: Sequential
-    instantiations:
       - [ "QRgb" ]

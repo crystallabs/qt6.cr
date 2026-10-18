@@ -67,6 +67,7 @@ enums:
   "QFrame::Shadow": Frame::Shadow
   "QComboBox::InsertPolicy": ComboBox::InsertPolicy
   "QComboBox::SizeAdjustPolicy": ComboBox::SizeAdjustPolicy
+  "QComboBox::LabelDrawingMode": ComboBox::LabelDrawingMode
   "QImage::Format": { destination: "Image::Format", prefix: "Format_" }
   "Qt::ImageConversionFlags": ImageConversionFlags
   "Qt::GlobalColor": GlobalColor
@@ -168,6 +169,8 @@ enums:
   # "QUrl::FormattingOptions": This one is actually a `QUrlTwoFlags`.  Manually implemented.
   "QUrl::UserInputResolutionOption": Url::UserInputResolutionOption
   "QUrl::UserInputResolutionOptions": Url::UserInputResolutionOptions
+  "QUrl::AceProcessingOption": Url::AceProcessingOption
+  "QUrl::AceProcessingOptions": Url::AceProcessingOptions
   "QSurface::SurfaceClass": Surface::SurfaceClass
   "QSurface::SurfaceType": Surface::SurfaceType
   "QWindow::AncestorMode": Window::AncestorMode
@@ -204,7 +207,8 @@ enums:
   "Qt::InputMethodQueries": InputMethodQueries
   "Qt::DropActions": DropActions
   "Qt::DropAction": DropAction
-  "QIODevice::OpenMode": IODevice::OpenMode
+  "QIODeviceBase::OpenMode": IODevice::OpenMode
+  "QIODeviceBase::OpenModeFlag": IODevice::OpenModeFlag
   "QScrollEvent::ScrollState": ScrollEvent::ScrollState
   "Qt::ScreenOrientation": ScreenOrientation
   "Qt::GestureState": GestureState
@@ -214,6 +218,7 @@ enums:
   "Qt::MouseEventFlags": MouseEventFlags
   "QIcon::Mode": Icon::Mode
   "QIcon::State": Icon::State
+  "QIcon::ThemeIcon": Icon::ThemeIcon
   "QSystemTrayIcon::ActivationReason": SystemTrayIcon::ActivationReason
   "QSystemTrayIcon::MessageIcon": SystemTrayIcon::MessageIcon
   "QStandardPaths::LocateOption": StandardPaths::LocateOption
@@ -236,7 +241,7 @@ enums:
   "QFont::StyleStrategy": Font::StyleStrategy
   "QFont::Weight": Font::Weight
   "Qt::ItemFlags": ItemFlags
-  "Qt::TtemFlag": ItemFlag
+  "Qt::ItemFlag": ItemFlag
   "QAbstractItemModel::CheckIndexOptions": AbstractItemModel::CheckIndexOptions
   "QAbstractItemModel::CheckIndexOption": AbstractItemModel::CheckIndexOption
   "QAbstractItemModel::LayoutChangeHint": AbstractItemModel::LayoutChangeHint
@@ -267,7 +272,10 @@ enums:
   "QListView::ResizeMode": ListView::ResizeMode
   "QListView::LayoutMode": ListView::LayoutMode
   "QListView::ViewMode": ListView::ViewMode
-  "QLocale::Country": Locale::Country
+  "QLocale::Territory": Locale::Territory # `Country` is an alias of this in Qt 6
+  "QLocale::TagSeparator": Locale::TagSeparator
+  "QLocale::LanguageCodeType": Locale::LanguageCodeType
+  "QLocale::LanguageCodeTypes": Locale::LanguageCodeTypes
   "QLocale::CurrencySymbolFormat": Locale::CurrencySymbolFormat
   "QLocale::DataSizeFormat": Locale::DataSizeFormat
   "QLocale::DataSizeFormats": Locale::DataSizeFormats
@@ -279,3 +287,9 @@ enums:
   "QLocale::NumberOptions": Locale::NumberOptions
   "QLocale::QuotationStyle": Locale::QuotationStyle
   "QLocale::Script": Locale::Script
+  # New in Qt 6
+  "Qt::TimerId": TimerId
+  "Qt::PermissionStatus": PermissionStatus
+  "QInputDevice::DeviceType": InputDevice::DeviceType
+  "QInputDevice::DeviceTypes": InputDevice::DeviceTypes
+  "QPointingDevice::PointerType": PointingDevice::PointerType
