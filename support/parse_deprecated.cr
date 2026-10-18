@@ -12,7 +12,7 @@ EXT_DIR = "ext" # The compiler runs in here, file names are relative to it.
 record Deprecation, klass : String, method : String
 
 # GCC reports the full declaration, e.g.:
-#   qt_binding_linux-gnu-x86_64-qt5.15.cpp:123:45: warning:
+#   qt_binding_linux-gnu-x86_64-qt6.8.cpp:123:45: warning:
 #   'static QString QSpinBox::trUtf8(const char*, const char*, int)' is deprecated
 module GccWarning
   PATTERN = /warning: [‘'][^‘’']*?\b(Q\w+)::(\w+)\(.*[’'] is deprecated/
@@ -23,7 +23,7 @@ module GccWarning
 end
 
 # Clang only reports the name, e.g.:
-#   qt_binding_darwin-unknown-aarch64-qt5.15.cpp:123:45: warning:
+#   qt_binding_darwin-unknown-aarch64-qt6.8.cpp:123:45: warning:
 #   'trUtf8' is deprecated
 # The class is the one of the enclosing `bg_<Class>_<method>_<args>` wrapper
 # function in the generated C++ file.
@@ -33,7 +33,9 @@ module ClangWarning
   # Start of a wrapper function, e.g.:
   #   extern "C" QString bg_QSpinBox_trUtf8_const_char_X_const_char_X_int(...) {
   # Nested classes are mangled like `QFoo__Bar`, just use the inner one.
-  WRAPPER = /^extern "C" .*?\bbg_(?:[A-Za-z0-9]+__)*([A-Za-z0-9]+)_/
+  # Or of the subclass overriding the virtual methods, e.g.:
+  #   struct BgInherit_QCoreApplication : public QCoreApplication {
+  WRAPPER = /^extern "C" .*?\bbg_(?:[A-Za-z0-9]+__)*([A-Za-z0-9]+)_|^struct BgInherit_(?:[A-Za-z0-9]+__)*([A-Za-z0-9]+) /
 
   @@sources = Hash(String, Array(String)).new
 
@@ -50,7 +52,7 @@ module ClangWarning
     lines = @@sources[path] ||= File.read_lines(path)
     (line_number - 1).clamp(..lines.size - 1).downto(0) do |index|
       line = lines[index]
-      return $1 if line =~ WRAPPER
+      return $~[1]? || $~[2]? if line =~ WRAPPER
       return if line.starts_with?('}') # Past the end of a previous definition.
     end
   end
