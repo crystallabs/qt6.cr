@@ -221,11 +221,7 @@ types: # Type rewrite rules
   # Bare struct holding QProcess::UnixProcessFlags and an int (Qt 6.6+).
   "QProcess::UnixProcessParameters": { ignore: true }
 
-  # No support for associative containers yet
-  "QMap<int, QVariant>": { ignore: true }
-  "QMap<QDate, QTextCharFormat>": { ignore: true } # Use CalendarWidget#date_text_format(date)
   "std::optional<QFont>": { ignore: true } # QFontComboBox#displayFont
-  "QHash<int, QByteArray>": { ignore: true }
 
   # Ignore private data structures
   QObjectPrivate: { ignore: true }
@@ -266,6 +262,11 @@ types: # Type rewrite rules
   "std::filesystem::path": { ignore: true }
   "QFont::Tag": { ignore: true }
   "QList<QFont::Tag>": { ignore: true }
+  # bindgen instantiates the maps of an ignored key type too (the methods
+  # using them are dropped), which doesn't compile; QFont#features and
+  # #variable_axes.
+  "QMap<QFont::Tag, quint32>": { ignore: true }
+  "QMap<QFont::Tag, float>": { ignore: true }
   "QTextDocument::ResourceProvider": { ignore: true } # std::function
   "QEasingCurve::EasingFunction": { ignore: true } # C function pointer
   "QPen::DataPtr": { ignore: true }
@@ -460,8 +461,6 @@ types: # Type rewrite rules
   QCborArray: { ignore: true }
   QCborMap: { ignore: true }
   QCborSimpleType: { ignore: true }
-  QVariantMap: { ignore: true } # No support for associative containers yet
-  QVariantHash: { ignore: true }
   QJsonObjectKeyValues: { ignore: true } # Private
   "QJsonObject::const_iterator": { ignore: true } # Use #keys and #value
   "QJsonObject::key_value_iterator": { ignore: true }

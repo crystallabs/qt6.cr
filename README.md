@@ -395,9 +395,16 @@ see the comments there:
 * `QGraphicsWidget` derives from `QGraphicsObject` and `QGraphicsLayoutItem`:
   the wrapper has the layout item methods, and `#as_graphics_layout_item`
   casts it for `GraphicsLinearLayout#add_item` and friends.
-* `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`)
-  and `std::optional<QFont>` (`FontComboBox#display_font`) have no mapping yet
-  and are ignored.
+* `QMap` and `QHash` are associative containers, exchanged as a `Hash`-like
+  `Enumerable({K, V})` with `#[]`, `#[]?`, `#has_key?` and `#keys`:
+  `StandardItemModel#item_data(index)` is one of `Int32` to `Variant`,
+  `AbstractItemModel#role_names` of `Int32` to `Bytes`,
+  `CalendarWidget#date_text_format` of `Date` to `TextCharFormat`, and the
+  setters take a `Hash`: `model.set_item_data(index, {role => Qt.variant(x)})`.
+  bindgen instantiates the maps of an ignored key type too, so
+  `QMap<QFont::Tag, ...>` is ignored explicitly.
+* `std::optional<QFont>` (`FontComboBox#display_font`) has no mapping yet and
+  is ignored.
 * `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
   `QPainterPath::Element`, `QPageRanges::Range` and
   `QColorSpace::PrimaryPoints` are copied structures passed by value, like

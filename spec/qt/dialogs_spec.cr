@@ -316,6 +316,16 @@ describe Qt::CalendarWidget do
     calendar.selection_mode.should eq(Qt::CalendarWidget::SelectionMode::NoSelection)
     calendar.grid_visible = true
     calendar.grid_visible?.should be_true
+
+    format = Qt::TextCharFormat.new
+    format.font_italic = true
+    calendar.set_date_text_format(Qt::Date.new(2026, 10, 18), format)
+    calendar.date_text_format(Qt::Date.new(2026, 10, 18)).font_italic.should be_true
+    formats = calendar.date_text_format # A QMap<QDate, QTextCharFormat>, Hash-like
+    formats.size.should eq(1)
+    formats.keys.should eq([Qt::Date.new(2026, 10, 18)])
+    formats[Qt::Date.new(2026, 10, 18)].font_italic.should be_true
+    formats[Qt::Date.new(2026, 10, 19)]?.should be_nil
   end
 end
 

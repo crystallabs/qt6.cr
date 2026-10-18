@@ -66,6 +66,17 @@ describe Qt::StandardItem do
     child.text = "renamed"
     child.set_data(Qt.variant(42))
     child.data.to(Int32).should eq(42)
+    roles = model.item_data(child.index) # A QMap<int, QVariant>, Hash-like
+    roles[Qt::ItemDataRole::DisplayRole.to_i].to(String).should eq("renamed")
+    roles[Qt::ItemDataRole::UserRole.to_i + 1].to(Int32).should eq(42)
+    roles[Qt::ItemDataRole::ToolTipRole.to_i]?.should be_nil
+    roles.keys.includes?(Qt::ItemDataRole::DisplayRole.to_i).should be_true
+    model.set_item_data(child.index, {Qt::ItemDataRole::ToolTipRole.to_i => Qt.variant("tip")}).should be_true
+    child.tool_tip.should eq("tip")
+    names = model.role_names # A QHash<int, QByteArray>
+    String.new(names[Qt::ItemDataRole::DisplayRole.to_i]).should eq("display")
+    names.has_key?(Qt::ItemDataRole::EditRole.to_i).should be_true
+    names.to_h.size.should eq(names.size)
     child.checkable = true
     child.check_state = Qt::CheckState::Checked
     child.check_state.should eq(Qt::CheckState::Checked)

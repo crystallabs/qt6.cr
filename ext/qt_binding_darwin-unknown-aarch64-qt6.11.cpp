@@ -8,6 +8,16 @@
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 
+typedef BindgenMapEntries<QHash<int, QByteArray>> Container_QHash_int__QByteArray__Entries;
+typedef QHash<int, QByteArray> Container_QHash_int__QByteArray_;
+typedef BindgenMapEntries<QHash<QString, QVariant>> Container_QHash_QString__QVariant__Entries;
+typedef QHash<QString, QVariant> Container_QHash_QString__QVariant_;
+typedef BindgenMapEntries<QMap<QDate, QTextCharFormat>> Container_QMap_QDate__QTextCharFormat__Entries;
+typedef QMap<QDate, QTextCharFormat> Container_QMap_QDate__QTextCharFormat_;
+typedef BindgenMapEntries<QMap<int, QVariant>> Container_QMap_int__QVariant__Entries;
+typedef QMap<int, QVariant> Container_QMap_int__QVariant_;
+typedef BindgenMapEntries<QMap<QString, QVariant>> Container_QMap_QString__QVariant__Entries;
+typedef QMap<QString, QVariant> Container_QMap_QString__QVariant_;
 typedef QList<std::pair<qreal, qreal> > Container_QList_std__pair_qreal__qreal___;
 typedef QList<std::pair<qreal, QPointF> > Container_QList_std__pair_qreal__QPointF___;
 typedef QList<std::pair<double, QColor> > Container_QList_std__pair_double__QColor___;
@@ -3592,6 +3602,8 @@ struct BgJumptable_QAbstractItemModel {
   CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
   CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractItemModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
@@ -3617,6 +3629,7 @@ struct BgJumptable_QAbstractItemModel {
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractItemModel_roleNames_;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
   CrystalProc<void> bg_QAbstractItemModel_revert_;
@@ -3746,6 +3759,24 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
       return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractItemModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QAbstractItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QAbstractItemModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QAbstractItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QAbstractItemModel::setItemData(index, roles);
     }
   }
   
@@ -3926,6 +3957,15 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
       return *_self_->bgJump.bg_QAbstractItemModel_span_const_QModelIndex_R(&(index));
     } else {
       return QAbstractItemModel::span(index);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QAbstractItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_roleNames_());
+    } else {
+      return QAbstractItemModel::roleNames();
     }
   }
   
@@ -4121,6 +4161,14 @@ extern "C" bool bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QV
   return _self_->setHeaderData(section, orientation, crystal_to_qvariant(value), role);
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QAbstractItemModel_itemData_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
+extern "C" bool bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QAbstractItemModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
+}
+
 extern "C" bool bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
   return _self_->clearItemData(index);
 }
@@ -4259,6 +4307,10 @@ extern "C" Container_QList_QModelIndex_ * bg_QAbstractItemModel_match_const_QMod
 
 extern "C" QSize bg_QAbstractItemModel_span_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
   return _self_->span(index);
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QAbstractItemModel_roleNames_(QAbstractItemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->roleNames());
 }
 
 extern "C" bool bg_QAbstractItemModel_checkIndex_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
@@ -4525,6 +4577,14 @@ extern "C" bool bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_co
   return _self_->QAbstractItemModel::setHeaderData(section, orientation, crystal_to_qvariant(value), role);
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QAbstractItemModel_itemData_SUPER_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QAbstractItemModel::itemData(index));
+}
+
+extern "C" bool bg_QAbstractItemModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QAbstractItemModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QAbstractItemModel::setItemData(index, *(roles));
+}
+
 extern "C" bool bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(QAbstractItemModel * _self_, const QModelIndex & index) {
   return _self_->QAbstractItemModel::clearItemData(index);
 }
@@ -4605,6 +4665,10 @@ extern "C" QSize bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(QAbstractI
   return _self_->QAbstractItemModel::span(index);
 }
 
+extern "C" Container_QHash_int__QByteArray_ * bg_QAbstractItemModel_roleNames_SUPER_(QAbstractItemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->QAbstractItemModel::roleNames());
+}
+
 extern "C" void bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(QAbstractItemModel * _self_, const QModelIndex & index, QModelRoleDataSpan & roleDataSpan) {
   _self_->QAbstractItemModel::multiData(index, roleDataSpan);
 }
@@ -4645,6 +4709,8 @@ struct BgJumptable_QAbstractTableModel {
   CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
   CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractItemModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
@@ -4668,6 +4734,7 @@ struct BgJumptable_QAbstractTableModel {
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractItemModel_roleNames_;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
   CrystalProc<void> bg_QAbstractItemModel_revert_;
@@ -4797,6 +4864,24 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
       return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractTableModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QAbstractTableModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QAbstractTableModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QAbstractTableModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QAbstractTableModel::setItemData(index, roles);
     }
   }
   
@@ -4959,6 +5044,15 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
       return *_self_->bgJump.bg_QAbstractItemModel_span_const_QModelIndex_R(&(index));
     } else {
       return QAbstractTableModel::span(index);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QAbstractTableModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_roleNames_());
+    } else {
+      return QAbstractTableModel::roleNames();
     }
   }
   
@@ -5158,6 +5252,8 @@ struct BgJumptable_QAbstractListModel {
   CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
   CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractItemModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
@@ -5181,6 +5277,7 @@ struct BgJumptable_QAbstractListModel {
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractItemModel_roleNames_;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
   CrystalProc<void> bg_QAbstractItemModel_revert_;
@@ -5301,6 +5398,24 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
       return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractListModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QAbstractListModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QAbstractListModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QAbstractListModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QAbstractListModel::setItemData(index, roles);
     }
   }
   
@@ -5463,6 +5578,15 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
       return *_self_->bgJump.bg_QAbstractItemModel_span_const_QModelIndex_R(&(index));
     } else {
       return QAbstractListModel::span(index);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QAbstractListModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_roleNames_());
+    } else {
+      return QAbstractListModel::roleNames();
     }
   }
   
@@ -5655,8 +5779,10 @@ struct BgJumptable_QAbstractProxyModel {
   CrystalProc<void> bg_QAbstractProxyModel_revert_;
   CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
   CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractProxyModel_itemData_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
@@ -5673,6 +5799,7 @@ struct BgJumptable_QAbstractProxyModel {
   CrystalProc<QList<QString> *> bg_QAbstractProxyModel_mimeTypes_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDropActions_;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractProxyModel_roleNames_;
   CrystalProc<QModelIndex &, int, int> bg_QAbstractItemModel_index_int_int;
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractItemModel_index_int_int_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_parent_const_QModelIndex_R;
@@ -5813,6 +5940,15 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
     }
   }
   
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QAbstractProxyModel::itemData(index);
+    }
+  }
+  
   Qt::ItemFlags flags(const QModelIndex & index) const override {
     const BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R.isValid()) {
@@ -5828,6 +5964,15 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
       return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractProxyModel::setData(index, value, role);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QAbstractProxyModel::setItemData(index, roles);
     }
   }
   
@@ -5963,6 +6108,15 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
       return _self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_();
     } else {
       return QAbstractProxyModel::supportedDropActions();
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QAbstractProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_roleNames_());
+    } else {
+      return QAbstractProxyModel::roleNames();
     }
   }
   
@@ -6215,12 +6369,20 @@ extern "C" CrystalVariant bg_QAbstractProxyModel_headerData_int_Qt__Orientation_
   return qvariant_to_crystal(_self_->headerData(section, orientation, role));
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QAbstractProxyModel_itemData_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
 extern "C" Qt::ItemFlags bg_QAbstractProxyModel_flags_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
   return _self_->flags(index);
 }
 
 extern "C" bool bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
   return _self_->setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QAbstractProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
 }
 
 extern "C" bool bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
@@ -6287,6 +6449,10 @@ extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDropActions_(QAbstrac
   return _self_->supportedDropActions();
 }
 
+extern "C" Container_QHash_int__QByteArray_ * bg_QAbstractProxyModel_roleNames_(QAbstractProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->roleNames());
+}
+
 extern "C" QModelIndex * bg_QAbstractProxyModel_createSourceIndex_int_int_void_X(QAbstractProxyModel * _self_, int row, int col, void * internalPtr) {
   return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->createSourceIndex(row, col, internalPtr));
 }
@@ -6331,12 +6497,20 @@ extern "C" CrystalVariant bg_QAbstractProxyModel_headerData_SUPER_int_Qt__Orient
   return qvariant_to_crystal(_self_->QAbstractProxyModel::headerData(section, orientation, role));
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QAbstractProxyModel_itemData_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QAbstractProxyModel::itemData(index));
+}
+
 extern "C" Qt::ItemFlags bg_QAbstractProxyModel_flags_SUPER_const_QModelIndex_R(QAbstractProxyModel * _self_, const QModelIndex & index) {
   return _self_->QAbstractProxyModel::flags(index);
 }
 
 extern "C" bool bg_QAbstractProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(QAbstractProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
   return _self_->QAbstractProxyModel::setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QAbstractProxyModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QAbstractProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QAbstractProxyModel::setItemData(index, *(roles));
 }
 
 extern "C" bool bg_QAbstractProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(QAbstractProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
@@ -6397,6 +6571,10 @@ extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDragActions_SUPER_(QA
 
 extern "C" Qt::DropActions bg_QAbstractProxyModel_supportedDropActions_SUPER_(QAbstractProxyModel * _self_) {
   return _self_->QAbstractProxyModel::supportedDropActions();
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QAbstractProxyModel_roleNames_SUPER_(QAbstractProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->QAbstractProxyModel::roleNames());
 }
 
 extern "C" void bg_BgInherit_QAbstractProxyModel_JUMPTABLE_BgJumptable_QAbstractProxyModel_R(BgInherit_QAbstractProxyModel * _self_, const BgJumptable_QAbstractProxyModel & table) {
@@ -14047,8 +14225,10 @@ struct BgJumptable_QIdentityProxyModel {
   CrystalProc<bool> bg_QAbstractProxyModel_submit_;
   CrystalProc<void> bg_QAbstractProxyModel_revert_;
   CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractProxyModel_itemData_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
@@ -14063,6 +14243,7 @@ struct BgJumptable_QIdentityProxyModel {
   CrystalProc<QList<QString> *> bg_QAbstractProxyModel_mimeTypes_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDropActions_;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractProxyModel_roleNames_;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
@@ -14301,6 +14482,15 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
     }
   }
   
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QIdentityProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QIdentityProxyModel::itemData(index);
+    }
+  }
+  
   Qt::ItemFlags flags(const QModelIndex & index) const override {
     const BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R.isValid()) {
@@ -14316,6 +14506,15 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
       return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QIdentityProxyModel::setData(index, value, role);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QIdentityProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QIdentityProxyModel::setItemData(index, roles);
     }
   }
   
@@ -14433,6 +14632,15 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
       return _self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_();
     } else {
       return QIdentityProxyModel::supportedDropActions();
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QIdentityProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_roleNames_());
+    } else {
+      return QIdentityProxyModel::roleNames();
     }
   }
   
@@ -16054,6 +16262,22 @@ extern "C" QJsonObject * bg_QJsonObject__OPERATOR_assign_const_QJsonObject_R(QJs
 
 extern "C" void bg_QJsonObject_swap_QJsonObject_R(QJsonObject * _self_, QJsonObject & other) {
   _self_->swap(other);
+}
+
+extern "C" QJsonObject * bg_QJsonObject_fromVariantMap_STATIC_const_QVariantMap_R(const Container_QMap_QString__QVariant_ * map) {
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject>()) QJsonObject (QJsonObject::fromVariantMap(*(map)));
+}
+
+extern "C" Container_QMap_QString__QVariant_ * bg_QJsonObject_toVariantMap_(QJsonObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_QString__QVariant_>()) Container_QMap_QString__QVariant_ (_self_->toVariantMap());
+}
+
+extern "C" QJsonObject * bg_QJsonObject_fromVariantHash_STATIC_const_QVariantHash_R(const Container_QHash_QString__QVariant_ * map) {
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject>()) QJsonObject (QJsonObject::fromVariantHash(*(map)));
+}
+
+extern "C" Container_QHash_QString__QVariant_ * bg_QJsonObject_toVariantHash_(QJsonObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_QString__QVariant_>()) Container_QHash_QString__QVariant_ (_self_->toVariantHash());
 }
 
 extern "C" QList<QString> * bg_QJsonObject_keys_(QJsonObject * _self_) {
@@ -22566,9 +22790,12 @@ struct BgJumptable_QSortFilterProxyModel {
   CrystalProc<Qt::DropActions> bg_QSortFilterProxyModel_supportedDropActions_;
   CrystalProc<bool> bg_QAbstractProxyModel_submit_;
   CrystalProc<void> bg_QAbstractProxyModel_revert_;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractProxyModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractProxyModel_roleNames_;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
@@ -22926,6 +23153,24 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
     }
   }
   
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QSortFilterProxyModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QSortFilterProxyModel::setItemData(index, roles);
+    }
+  }
+  
   bool clearItemData(const QModelIndex & index) override {
     BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R.isValid()) {
@@ -22950,6 +23195,15 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
       return _self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_();
     } else {
       return QSortFilterProxyModel::supportedDragActions();
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QSortFilterProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_roleNames_());
+    } else {
+      return QSortFilterProxyModel::roleNames();
     }
   }
   
@@ -23737,6 +23991,8 @@ struct BgJumptable_QStringListModel {
   CrystalProc<bool, int, int> bg_QStringListModel_removeRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QStringListModel_removeRows_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QStringListModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QStringListModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QStringListModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<void, int, Qt::SortOrder> bg_QStringListModel_sort_int_Qt__SortOrder;
   CrystalProc<Qt::DropActions> bg_QStringListModel_supportedDropActions_;
   CrystalProc<QModelIndex &, int, int> bg_QAbstractListModel_index_int_int;
@@ -23764,6 +24020,7 @@ struct BgJumptable_QStringListModel {
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
   CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractItemModel_roleNames_;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
   CrystalProc<void> bg_QAbstractItemModel_revert_;
@@ -23884,6 +24141,24 @@ struct BgInherit_QStringListModel : public QStringListModel {
       return _self_->bgJump.bg_QStringListModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceRow, count, &(destinationParent), destinationChild);
     } else {
       return QStringListModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QStringListModel *_self_ = this;
+    if (_self_->bgJump.bg_QStringListModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QStringListModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QStringListModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QStringListModel *_self_ = this;
+    if (_self_->bgJump.bg_QStringListModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QStringListModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QStringListModel::setItemData(index, roles);
     }
   }
   
@@ -24046,6 +24321,15 @@ struct BgInherit_QStringListModel : public QStringListModel {
       return *_self_->bgJump.bg_QAbstractItemModel_span_const_QModelIndex_R(&(index));
     } else {
       return QStringListModel::span(index);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QStringListModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_roleNames_());
+    } else {
+      return QStringListModel::roleNames();
     }
   }
   
@@ -24229,6 +24513,14 @@ extern "C" bool bg_QStringListModel_moveRows_const_QModelIndex_R_int_int_const_Q
   return _self_->moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QStringListModel_itemData_const_QModelIndex_R(QStringListModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
+extern "C" bool bg_QStringListModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QStringListModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
+}
+
 extern "C" void bg_QStringListModel_sort_int_Qt__SortOrder(QStringListModel * _self_, int column, Qt::SortOrder order) {
   _self_->sort(column, order);
 }
@@ -24283,6 +24575,14 @@ extern "C" bool bg_QStringListModel_removeRows_SUPER_int_int_const_QModelIndex_R
 
 extern "C" bool bg_QStringListModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(QStringListModel * _self_, const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) {
   return _self_->QStringListModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QStringListModel_itemData_SUPER_const_QModelIndex_R(QStringListModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QStringListModel::itemData(index));
+}
+
+extern "C" bool bg_QStringListModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QStringListModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QStringListModel::setItemData(index, *(roles));
 }
 
 extern "C" void bg_QStringListModel_sort_SUPER_int_Qt__SortOrder(QStringListModel * _self_, int column, Qt::SortOrder order) {
@@ -36834,6 +37134,10 @@ extern "C" void bg_QTextFormat_setProperty_int_const_QList_QTextLength__R(QTextF
   _self_->setProperty(propertyId, *(lengths));
 }
 
+extern "C" Container_QMap_int__QVariant_ * bg_QTextFormat_properties_(QTextFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->properties());
+}
+
 extern "C" int bg_QTextFormat_propertyCount_(QTextFormat * _self_) {
   return _self_->propertyCount();
 }
@@ -42292,9 +42596,12 @@ struct BgJumptable_QFileSystemModel {
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QFileSystemModel_mimeData_const_QModelIndexList_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QFileSystemModel_supportedDropActions_;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QFileSystemModel_roleNames_;
   CrystalProc<void, QTimerEvent *> bg_QFileSystemModel_timerEvent_QTimerEvent_X;
   CrystalProc<bool, QEvent *> bg_QFileSystemModel_event_QEvent_X;
   CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QAbstractItemModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDragActions_;
@@ -42505,6 +42812,15 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
     }
   }
   
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QFileSystemModel *_self_ = this;
+    if (_self_->bgJump.bg_QFileSystemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QFileSystemModel_roleNames_());
+    } else {
+      return QFileSystemModel::roleNames();
+    }
+  }
+  
   void timerEvent(QTimerEvent * event) override {
     BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QFileSystemModel_timerEvent_QTimerEvent_X.isValid()) {
@@ -42529,6 +42845,24 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
       return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QFileSystemModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QFileSystemModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QFileSystemModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QFileSystemModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QFileSystemModel::setItemData(index, roles);
     }
   }
   
@@ -42854,6 +43188,10 @@ extern "C" Qt::DropActions bg_QFileSystemModel_supportedDropActions_(QFileSystem
   return _self_->supportedDropActions();
 }
 
+extern "C" Container_QHash_int__QByteArray_ * bg_QFileSystemModel_roleNames_(QFileSystemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->roleNames());
+}
+
 extern "C" QModelIndex * bg_QFileSystemModel_setRootPath_const_QString_R(QFileSystemModel * _self_, const CrystalString path) {
   return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->setRootPath(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
@@ -43076,6 +43414,10 @@ extern "C" bool bg_QFileSystemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__Dro
 
 extern "C" Qt::DropActions bg_QFileSystemModel_supportedDropActions_SUPER_(QFileSystemModel * _self_) {
   return _self_->QFileSystemModel::supportedDropActions();
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QFileSystemModel_roleNames_SUPER_(QFileSystemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->QFileSystemModel::roleNames());
 }
 
 extern "C" void bg_QFileSystemModel_timerEvent_SUPER_QTimerEvent_X(QFileSystemModel * _self_, QTimerEvent * event) {
@@ -49302,6 +49644,7 @@ struct BgJumptable_QStandardItemModel {
   CrystalProc<const QMetaObject *> bg_QStandardItemModel_metaObject_;
   CrystalProc<void *, const char *> bg_QStandardItemModel_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QStandardItemModel_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QStandardItemModel_roleNames_;
   CrystalProc<QModelIndex &, int, int> bg_QStandardItemModel_index_int_int;
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QStandardItemModel_index_int_int_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QStandardItemModel_parent_const_QModelIndex_R;
@@ -49327,6 +49670,8 @@ struct BgJumptable_QStandardItemModel {
   CrystalProc<bool, int, int, const QModelIndex *> bg_QStandardItemModel_removeColumns_int_int_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QStandardItemModel_flags_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QStandardItemModel_supportedDropActions_;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QStandardItemModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QStandardItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
   CrystalProc<void, int, Qt::SortOrder> bg_QStandardItemModel_sort_int_Qt__SortOrder;
   CrystalProc<QList<QString> *> bg_QStandardItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QStandardItemModel_mimeData_const_QModelIndexList_R;
@@ -49380,6 +49725,15 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
       return _self_->bgJump.bg_QStandardItemModel_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
     } else {
       return QStandardItemModel::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QStandardItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QStandardItemModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QStandardItemModel_roleNames_());
+    } else {
+      return QStandardItemModel::roleNames();
     }
   }
   
@@ -49533,6 +49887,24 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
       return _self_->bgJump.bg_QStandardItemModel_supportedDropActions_();
     } else {
       return QStandardItemModel::supportedDropActions();
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QStandardItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QStandardItemModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QStandardItemModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QStandardItemModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QStandardItemModel *_self_ = this;
+    if (_self_->bgJump.bg_QStandardItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QStandardItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QStandardItemModel::setItemData(index, roles);
     }
   }
   
@@ -49785,6 +50157,14 @@ extern "C" QStandardItemModel * bg_QStandardItemModel__CONSTRUCT_int_int_QObject
   return new (UseGC) CrystalGCWrapper<BgInherit_QStandardItemModel>(rows, columns, parent);
 }
 
+extern "C" void bg_QStandardItemModel_setItemRoleNames_const_QHash_int__QByteArray__R(QStandardItemModel * _self_, const Container_QHash_int__QByteArray_ * roleNames) {
+  _self_->setItemRoleNames(*(roleNames));
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QStandardItemModel_roleNames_(QStandardItemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->roleNames());
+}
+
 extern "C" QModelIndex * bg_QStandardItemModel_index_int_int(QStandardItemModel * _self_, int row, int column) {
   return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column));
 }
@@ -49883,6 +50263,14 @@ extern "C" Qt::ItemFlags bg_QStandardItemModel_flags_const_QModelIndex_R(QStanda
 
 extern "C" Qt::DropActions bg_QStandardItemModel_supportedDropActions_(QStandardItemModel * _self_) {
   return _self_->supportedDropActions();
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QStandardItemModel_itemData_const_QModelIndex_R(QStandardItemModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
+extern "C" bool bg_QStandardItemModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QStandardItemModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
 }
 
 extern "C" void bg_QStandardItemModel_clear_(QStandardItemModel * _self_) {
@@ -50065,6 +50453,10 @@ extern "C" QMetaObject::Connection * bg_QStandardItemModel_CONNECT_itemChanged_C
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStandardItemModel::*)(QStandardItem *))&QStandardItemModel::itemChanged, [_proc_](QStandardItem * item){ _proc_(item); }));
 }
 
+extern "C" Container_QHash_int__QByteArray_ * bg_QStandardItemModel_roleNames_SUPER_(QStandardItemModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->QStandardItemModel::roleNames());
+}
+
 extern "C" QModelIndex * bg_QStandardItemModel_index_SUPER_int_int_const_QModelIndex_R(QStandardItemModel * _self_, int row, int column, const QModelIndex & parent) {
   return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QStandardItemModel::index(row, column, parent));
 }
@@ -50131,6 +50523,14 @@ extern "C" Qt::ItemFlags bg_QStandardItemModel_flags_SUPER_const_QModelIndex_R(Q
 
 extern "C" Qt::DropActions bg_QStandardItemModel_supportedDropActions_SUPER_(QStandardItemModel * _self_) {
   return _self_->QStandardItemModel::supportedDropActions();
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QStandardItemModel_itemData_SUPER_const_QModelIndex_R(QStandardItemModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QStandardItemModel::itemData(index));
+}
+
+extern "C" bool bg_QStandardItemModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QStandardItemModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QStandardItemModel::setItemData(index, *(roles));
 }
 
 extern "C" void bg_QStandardItemModel_sort_SUPER_int_Qt__SortOrder(QStandardItemModel * _self_, int column, Qt::SortOrder order) {
@@ -71778,6 +72178,10 @@ extern "C" QTextCharFormat * bg_QCalendarWidget_weekdayTextFormat_Qt__DayOfWeek(
 
 extern "C" void bg_QCalendarWidget_setWeekdayTextFormat_Qt__DayOfWeek_const_QTextCharFormat_R(QCalendarWidget * _self_, Qt::DayOfWeek dayOfWeek, const QTextCharFormat & format) {
   _self_->setWeekdayTextFormat(dayOfWeek, format);
+}
+
+extern "C" Container_QMap_QDate__QTextCharFormat_ * bg_QCalendarWidget_dateTextFormat_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_QDate__QTextCharFormat_>()) Container_QMap_QDate__QTextCharFormat_ (_self_->dateTextFormat());
 }
 
 extern "C" QTextCharFormat * bg_QCalendarWidget_dateTextFormat_QDate(QCalendarWidget * _self_, QDate & date) {
@@ -146627,5 +147031,205 @@ extern "C" void bg_Container_QList_std__pair_qreal__qreal____push_back_std__pair
 
 extern "C" int bg_Container_QList_std__pair_qreal__qreal____size_(Container_QList_std__pair_qreal__qreal___ * _self_) {
   return _self_->size();
+}
+
+extern "C" Container_QMap_QString__QVariant_ * bg_Container_QMap_QString__QVariant___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QString__QVariant_>();
+}
+
+extern "C" int bg_Container_QMap_QString__QVariant__size_(Container_QMap_QString__QVariant_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_QString__QVariant__contains_QString(Container_QMap_QString__QVariant_ * _self_, CrystalString key) {
+  return _self_->contains(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_Container_QMap_QString__QVariant__remove_QString(Container_QMap_QString__QVariant_ * _self_, CrystalString key) {
+  _self_->remove(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalVariant bg____Container_QMap_QString__QVariant__fetch_QMap_QString__QVariant__R_QString(Container_QMap_QString__QVariant_ * map, CrystalString key) {
+  return qvariant_to_crystal(::bindgen_map_fetch(*(map), ([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_Container_QMap_QString__QVariant__insert_QString_QVariant(Container_QMap_QString__QVariant_ * _self_, CrystalString key, CrystalVariant value) {
+  _self_->insert(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(value));
+}
+
+extern "C" Container_QMap_QString__QVariant__Entries * bg_Container_QMap_QString__QVariant__Entries__CONSTRUCT_const_QMap_QString__QVariant__R(const Container_QMap_QString__QVariant_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QString__QVariant__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QMap_QString__QVariant__Entries_size_(Container_QMap_QString__QVariant__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" CrystalString bg_Container_QMap_QString__QVariant__Entries_key_int(Container_QMap_QString__QVariant__Entries * _self_, int index) {
+  return qstring_to_crystal(_self_->key(index));
+}
+
+extern "C" CrystalVariant bg_Container_QMap_QString__QVariant__Entries_value_int(Container_QMap_QString__QVariant__Entries * _self_, int index) {
+  return qvariant_to_crystal(_self_->value(index));
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_Container_QMap_int__QVariant___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_int__QVariant_>();
+}
+
+extern "C" int bg_Container_QMap_int__QVariant__size_(Container_QMap_int__QVariant_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_int__QVariant__contains_int(Container_QMap_int__QVariant_ * _self_, int key) {
+  return _self_->contains(key);
+}
+
+extern "C" void bg_Container_QMap_int__QVariant__remove_int(Container_QMap_int__QVariant_ * _self_, int key) {
+  _self_->remove(key);
+}
+
+extern "C" CrystalVariant bg____Container_QMap_int__QVariant__fetch_QMap_int__QVariant__R_int(Container_QMap_int__QVariant_ * map, int key) {
+  return qvariant_to_crystal(::bindgen_map_fetch(*(map), key));
+}
+
+extern "C" void bg_Container_QMap_int__QVariant__insert_int_QVariant(Container_QMap_int__QVariant_ * _self_, int key, CrystalVariant value) {
+  _self_->insert(key, crystal_to_qvariant(value));
+}
+
+extern "C" Container_QMap_int__QVariant__Entries * bg_Container_QMap_int__QVariant__Entries__CONSTRUCT_const_QMap_int__QVariant__R(const Container_QMap_int__QVariant_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_int__QVariant__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QMap_int__QVariant__Entries_size_(Container_QMap_int__QVariant__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_int__QVariant__Entries_key_int(Container_QMap_int__QVariant__Entries * _self_, int index) {
+  return _self_->key(index);
+}
+
+extern "C" CrystalVariant bg_Container_QMap_int__QVariant__Entries_value_int(Container_QMap_int__QVariant__Entries * _self_, int index) {
+  return qvariant_to_crystal(_self_->value(index));
+}
+
+extern "C" Container_QMap_QDate__QTextCharFormat_ * bg_Container_QMap_QDate__QTextCharFormat___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QDate__QTextCharFormat_>();
+}
+
+extern "C" int bg_Container_QMap_QDate__QTextCharFormat__size_(Container_QMap_QDate__QTextCharFormat_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_QDate__QTextCharFormat__contains_QDate(Container_QMap_QDate__QTextCharFormat_ * _self_, QDate & key) {
+  return _self_->contains(key);
+}
+
+extern "C" void bg_Container_QMap_QDate__QTextCharFormat__remove_QDate(Container_QMap_QDate__QTextCharFormat_ * _self_, QDate & key) {
+  _self_->remove(key);
+}
+
+extern "C" QTextCharFormat * bg____Container_QMap_QDate__QTextCharFormat__fetch_QMap_QDate__QTextCharFormat__R_QDate(Container_QMap_QDate__QTextCharFormat_ * map, QDate & key) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (::bindgen_map_fetch(*(map), key));
+}
+
+extern "C" void bg_Container_QMap_QDate__QTextCharFormat__insert_QDate_QTextCharFormat(Container_QMap_QDate__QTextCharFormat_ * _self_, QDate & key, QTextCharFormat & value) {
+  _self_->insert(key, value);
+}
+
+extern "C" Container_QMap_QDate__QTextCharFormat__Entries * bg_Container_QMap_QDate__QTextCharFormat__Entries__CONSTRUCT_const_QMap_QDate__QTextCharFormat__R(const Container_QMap_QDate__QTextCharFormat_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QDate__QTextCharFormat__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QMap_QDate__QTextCharFormat__Entries_size_(Container_QMap_QDate__QTextCharFormat__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" QDate * bg_Container_QMap_QDate__QTextCharFormat__Entries_key_int(Container_QMap_QDate__QTextCharFormat__Entries * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->key(index));
+}
+
+extern "C" QTextCharFormat * bg_Container_QMap_QDate__QTextCharFormat__Entries_value_int(Container_QMap_QDate__QTextCharFormat__Entries * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->value(index));
+}
+
+extern "C" Container_QHash_QString__QVariant_ * bg_Container_QHash_QString__QVariant___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QHash_QString__QVariant_>();
+}
+
+extern "C" int bg_Container_QHash_QString__QVariant__size_(Container_QHash_QString__QVariant_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QHash_QString__QVariant__contains_QString(Container_QHash_QString__QVariant_ * _self_, CrystalString key) {
+  return _self_->contains(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_Container_QHash_QString__QVariant__remove_QString(Container_QHash_QString__QVariant_ * _self_, CrystalString key) {
+  _self_->remove(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalVariant bg____Container_QHash_QString__QVariant__fetch_QHash_QString__QVariant__R_QString(Container_QHash_QString__QVariant_ * map, CrystalString key) {
+  return qvariant_to_crystal(::bindgen_map_fetch(*(map), ([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_Container_QHash_QString__QVariant__insert_QString_QVariant(Container_QHash_QString__QVariant_ * _self_, CrystalString key, CrystalVariant value) {
+  _self_->insert(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(value));
+}
+
+extern "C" Container_QHash_QString__QVariant__Entries * bg_Container_QHash_QString__QVariant__Entries__CONSTRUCT_const_QHash_QString__QVariant__R(const Container_QHash_QString__QVariant_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QHash_QString__QVariant__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QHash_QString__QVariant__Entries_size_(Container_QHash_QString__QVariant__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" CrystalString bg_Container_QHash_QString__QVariant__Entries_key_int(Container_QHash_QString__QVariant__Entries * _self_, int index) {
+  return qstring_to_crystal(_self_->key(index));
+}
+
+extern "C" CrystalVariant bg_Container_QHash_QString__QVariant__Entries_value_int(Container_QHash_QString__QVariant__Entries * _self_, int index) {
+  return qvariant_to_crystal(_self_->value(index));
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_Container_QHash_int__QByteArray___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QHash_int__QByteArray_>();
+}
+
+extern "C" int bg_Container_QHash_int__QByteArray__size_(Container_QHash_int__QByteArray_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QHash_int__QByteArray__contains_int(Container_QHash_int__QByteArray_ * _self_, int key) {
+  return _self_->contains(key);
+}
+
+extern "C" void bg_Container_QHash_int__QByteArray__remove_int(Container_QHash_int__QByteArray_ * _self_, int key) {
+  _self_->remove(key);
+}
+
+extern "C" CrystalString bg____Container_QHash_int__QByteArray__fetch_QHash_int__QByteArray__R_int(Container_QHash_int__QByteArray_ * map, int key) {
+  return qbytearray_to_crystal(::bindgen_map_fetch(*(map), key));
+}
+
+extern "C" void bg_Container_QHash_int__QByteArray__insert_int_QByteArray(Container_QHash_int__QByteArray_ * _self_, int key, CrystalString value) {
+  _self_->insert(key, ([&]() { auto &&bg_value = (value); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" Container_QHash_int__QByteArray__Entries * bg_Container_QHash_int__QByteArray__Entries__CONSTRUCT_const_QHash_int__QByteArray__R(const Container_QHash_int__QByteArray_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QHash_int__QByteArray__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QHash_int__QByteArray__Entries_size_(Container_QHash_int__QByteArray__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QHash_int__QByteArray__Entries_key_int(Container_QHash_int__QByteArray__Entries * _self_, int index) {
+  return _self_->key(index);
+}
+
+extern "C" CrystalString bg_Container_QHash_int__QByteArray__Entries_value_int(Container_QHash_int__QByteArray__Entries * _self_, int index) {
+  return qbytearray_to_crystal(_self_->value(index));
 }
 
