@@ -22,6 +22,8 @@ typedef QList<QGraphicsItem *> Container_QList_QGraphicsItem_X_;
 typedef QList<QGesture *> Container_QList_QGesture_X_;
 typedef QList<QAbstractButton *> Container_QList_QAbstractButton_X_;
 typedef QList<QUndoStack *> Container_QList_QUndoStack_X_;
+typedef QList<QTextFrame *> Container_QList_QTextFrame_X_;
+typedef QList<QTextBlock> Container_QList_QTextBlock_;
 typedef QList<QStandardItem *> Container_QList_QStandardItem_X_;
 typedef QList<QPolygonF> Container_QList_QPolygonF_;
 typedef QList<QRect> Container_QList_QRect_;
@@ -29,11 +31,18 @@ typedef QList<QRectF> Container_QList_QRectF_;
 typedef QList<QLine> Container_QList_QLine_;
 typedef QList<QLineF> Container_QList_QLineF_;
 typedef QList<QPageRanges::Range> Container_QList_QPageRanges__Range_;
+typedef QList<QFontVariableAxis> Container_QList_QFontVariableAxis_;
 typedef QList<uint16_t> Container_QList_uint16_t_;
 typedef QList<QAction *> Container_QList_QAction_X_;
 typedef QList<QObject *> Container_QList_QObject_X_;
+typedef QList<QAbstractTextDocumentLayout::Selection> Container_QList_QAbstractTextDocumentLayout__Selection_;
+typedef QList<QGlyphRun> Container_QList_QGlyphRun_;
+typedef QList<QTextLayout::FormatRange> Container_QList_QTextLayout__FormatRange_;
 typedef QList<QTextLength> Container_QList_QTextLength_;
 typedef QList<QTextFormat> Container_QList_QTextFormat_;
+typedef QList<qsizetype> Container_QList_qsizetype_;
+typedef QList<quint32> Container_QList_quint32_;
+typedef QList<QFontDatabase::WritingSystem> Container_QList_QFontDatabase__WritingSystem_;
 typedef QList<QEventPoint> Container_QList_QEventPoint_;
 typedef QList<QKeySequence> Container_QList_QKeySequence_;
 typedef QList<QScreen *> Container_QList_QScreen_X_;
@@ -727,8 +736,28 @@ extern "C" QStyleHints * bg_QObject_CAST_StyleHints_(QObject * _self_) {
   return bindgen_dynamic_cast<QStyleHints *>(_self_);
 }
 
+extern "C" QTextObject * bg_QObject_CAST_TextObject_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTextObject *>(_self_);
+}
+
+extern "C" QTextBlockGroup * bg_QObject_CAST_TextBlockGroup_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTextBlockGroup *>(_self_);
+}
+
+extern "C" QTextFrame * bg_QObject_CAST_TextFrame_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTextFrame *>(_self_);
+}
+
 extern "C" QSyntaxHighlighter * bg_QObject_CAST_SyntaxHighlighter_(QObject * _self_) {
   return bindgen_dynamic_cast<QSyntaxHighlighter *>(_self_);
+}
+
+extern "C" QTextList * bg_QObject_CAST_TextList_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTextList *>(_self_);
+}
+
+extern "C" QTextTable * bg_QObject_CAST_TextTable_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTextTable *>(_self_);
 }
 
 extern "C" QUndoGroup * bg_QObject_CAST_UndoGroup_(QObject * _self_) {
@@ -20766,6 +20795,70 @@ extern "C" void bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile
   _self_->bgJump = (table);
 }
 
+extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextBoundaryFinder>();
+}
+
+extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__COPY_const_QTextBoundaryFinder_R(const QTextBoundaryFinder & other) {
+  return new (UseGC) CrystalGCWrapper<QTextBoundaryFinder>(other);
+}
+
+extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__OPERATOR_assign_const_QTextBoundaryFinder_R(QTextBoundaryFinder * _self_, const QTextBoundaryFinder & other) {
+  return &((*_self_) = (other));
+}
+
+extern "C" void bg_QTextBoundaryFinder_swap_QTextBoundaryFinder_R(QTextBoundaryFinder * _self_, QTextBoundaryFinder & other) {
+  _self_->swap(other);
+}
+
+extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__CONSTRUCT_QTextBoundaryFinder__BoundaryType_const_QString_R(QTextBoundaryFinder::BoundaryType type, const CrystalString string) {
+  return new (UseGC) CrystalGCWrapper<QTextBoundaryFinder>(type, ([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QTextBoundaryFinder_isValid_(QTextBoundaryFinder * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QTextBoundaryFinder::BoundaryType bg_QTextBoundaryFinder_type_(QTextBoundaryFinder * _self_) {
+  return _self_->type();
+}
+
+extern "C" CrystalString bg_QTextBoundaryFinder_string_(QTextBoundaryFinder * _self_) {
+  return qstring_to_crystal(_self_->string());
+}
+
+extern "C" void bg_QTextBoundaryFinder_toStart_(QTextBoundaryFinder * _self_) {
+  _self_->toStart();
+}
+
+extern "C" void bg_QTextBoundaryFinder_toEnd_(QTextBoundaryFinder * _self_) {
+  _self_->toEnd();
+}
+
+extern "C" qsizetype bg_QTextBoundaryFinder_position_(QTextBoundaryFinder * _self_) {
+  return _self_->position();
+}
+
+extern "C" void bg_QTextBoundaryFinder_setPosition_qsizetype(QTextBoundaryFinder * _self_, qsizetype position) {
+  _self_->setPosition(position);
+}
+
+extern "C" qsizetype bg_QTextBoundaryFinder_toNextBoundary_(QTextBoundaryFinder * _self_) {
+  return _self_->toNextBoundary();
+}
+
+extern "C" qsizetype bg_QTextBoundaryFinder_toPreviousBoundary_(QTextBoundaryFinder * _self_) {
+  return _self_->toPreviousBoundary();
+}
+
+extern "C" bool bg_QTextBoundaryFinder_isAtBoundary_(QTextBoundaryFinder * _self_) {
+  return _self_->isAtBoundary();
+}
+
+extern "C" QTextBoundaryFinder::BoundaryReasons bg_QTextBoundaryFinder_boundaryReasons_(QTextBoundaryFinder * _self_) {
+  return _self_->boundaryReasons();
+}
+
 struct BgJumptable_QTimeLine {
   CrystalProc<const QMetaObject *> bg_QTimeLine_metaObject_;
   CrystalProc<void *, const char *> bg_QTimeLine_qt_metacast_const_char_X;
@@ -28663,6 +28756,466 @@ extern "C" const QMetaObject * bg_QFont_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFont::staticMetaObject);
 }
 
+extern "C" Container_QList_int_ * bg_QFontDatabase_standardSizes_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (QFontDatabase::standardSizes());
+}
+
+extern "C" Container_QList_QFontDatabase__WritingSystem_ * bg_QFontDatabase_writingSystems_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFontDatabase__WritingSystem_>()) Container_QList_QFontDatabase__WritingSystem_ (QFontDatabase::writingSystems());
+}
+
+extern "C" Container_QList_QFontDatabase__WritingSystem_ * bg_QFontDatabase_writingSystems_STATIC_const_QString_R(const CrystalString family) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFontDatabase__WritingSystem_>()) Container_QList_QFontDatabase__WritingSystem_ (QFontDatabase::writingSystems(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QList<QString> * bg_QFontDatabase_families_STATIC_QFontDatabase__WritingSystem(QFontDatabase::WritingSystem writingSystem) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QFontDatabase::families(writingSystem));
+}
+
+extern "C" QList<QString> * bg_QFontDatabase_styles_STATIC_const_QString_R(const CrystalString family) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QFontDatabase::styles(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" Container_QList_int_ * bg_QFontDatabase_pointSizes_STATIC_const_QString_R(const CrystalString family) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (QFontDatabase::pointSizes(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" Container_QList_int_ * bg_QFontDatabase_pointSizes_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (QFontDatabase::pointSizes(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" Container_QList_int_ * bg_QFontDatabase_smoothSizes_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (QFontDatabase::smoothSizes(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QFontDatabase_styleString_STATIC_const_QFont_R(const QFont & font) {
+  return qstring_to_crystal(QFontDatabase::styleString(font));
+}
+
+extern "C" CrystalString bg_QFontDatabase_styleString_STATIC_const_QFontInfo_R(const QFontInfo & fontInfo) {
+  return qstring_to_crystal(QFontDatabase::styleString(fontInfo));
+}
+
+extern "C" QFont * bg_QFontDatabase_font_STATIC_const_QString_R_const_QString_R_int(const CrystalString family, const CrystalString style, int pointSize) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDatabase::font(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), pointSize));
+}
+
+extern "C" bool bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::isBitmapScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::isBitmapScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::isSmoothlyScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::isSmoothlyScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isScalable_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::isScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isScalable_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::isScalable(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::isFixedPitch(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::isFixedPitch(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_italic_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::italic(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_bold_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::bold(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QFontDatabase_weight_STATIC_const_QString_R_const_QString_R(const CrystalString family, const CrystalString style) {
+  return QFontDatabase::weight(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (style); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_hasFamily_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::hasFamily(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_isPrivateFamily_STATIC_const_QString_R(const CrystalString family) {
+  return QFontDatabase::isPrivateFamily(([&]() { auto &&bg_value = (family); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QFontDatabase_writingSystemName_STATIC_QFontDatabase__WritingSystem(QFontDatabase::WritingSystem writingSystem) {
+  return qstring_to_crystal(QFontDatabase::writingSystemName(writingSystem));
+}
+
+extern "C" CrystalString bg_QFontDatabase_writingSystemSample_STATIC_QFontDatabase__WritingSystem(QFontDatabase::WritingSystem writingSystem) {
+  return qstring_to_crystal(QFontDatabase::writingSystemSample(writingSystem));
+}
+
+extern "C" int bg_QFontDatabase_addApplicationFont_STATIC_const_QString_R(const CrystalString fileName) {
+  return QFontDatabase::addApplicationFont(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QFontDatabase_addApplicationFontFromData_STATIC_const_QByteArray_R(const CrystalString fontData) {
+  return QFontDatabase::addApplicationFontFromData(([&]() { auto &&bg_value = (fontData); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QList<QString> * bg_QFontDatabase_applicationFontFamilies_STATIC_int(int id) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QFontDatabase::applicationFontFamilies(id));
+}
+
+extern "C" bool bg_QFontDatabase_removeApplicationFont_STATIC_int(int id) {
+  return QFontDatabase::removeApplicationFont(id);
+}
+
+extern "C" bool bg_QFontDatabase_removeAllApplicationFonts_STATIC_() {
+  return QFontDatabase::removeAllApplicationFonts();
+}
+
+extern "C" void bg_QFontDatabase_addApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(QChar::Script script, const CrystalString familyName) {
+  QFontDatabase::addApplicationFallbackFontFamily(script, ([&]() { auto &&bg_value = (familyName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_removeApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(QChar::Script script, const CrystalString familyName) {
+  return QFontDatabase::removeApplicationFallbackFontFamily(script, ([&]() { auto &&bg_value = (familyName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QFontDatabase_setApplicationFallbackFontFamilies_STATIC_QChar__Script_const_QStringList_R(QChar::Script unnamed_arg_0, const QList<QString> * familyNames) {
+  QFontDatabase::setApplicationFallbackFontFamilies(unnamed_arg_0, *(familyNames));
+}
+
+extern "C" QList<QString> * bg_QFontDatabase_applicationFallbackFontFamilies_STATIC_QChar__Script(QChar::Script script) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QFontDatabase::applicationFallbackFontFamilies(script));
+}
+
+extern "C" void bg_QFontDatabase_addApplicationEmojiFontFamily_STATIC_const_QString_R(const CrystalString familyName) {
+  QFontDatabase::addApplicationEmojiFontFamily(([&]() { auto &&bg_value = (familyName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFontDatabase_removeApplicationEmojiFontFamily_STATIC_const_QString_R(const CrystalString familyName) {
+  return QFontDatabase::removeApplicationEmojiFontFamily(([&]() { auto &&bg_value = (familyName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QFontDatabase_setApplicationEmojiFontFamilies_STATIC_const_QStringList_R(const QList<QString> * familyNames) {
+  QFontDatabase::setApplicationEmojiFontFamilies(*(familyNames));
+}
+
+extern "C" QList<QString> * bg_QFontDatabase_applicationEmojiFontFamilies_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QFontDatabase::applicationEmojiFontFamilies());
+}
+
+extern "C" QFont * bg_QFontDatabase_systemFont_STATIC_QFontDatabase__SystemFont(QFontDatabase::SystemFont type) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDatabase::systemFont(type));
+}
+
+extern "C" QFontDatabase * bg_QFontDatabase__COPY_const_QFontDatabase_R(const QFontDatabase & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFontDatabase>(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QFontDatabase_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFontDatabase::staticMetaObject);
+}
+
+extern "C" QRawFont * bg_QRawFont__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QRawFont>();
+}
+
+extern "C" QRawFont * bg_QRawFont__CONSTRUCT_const_QString_R_qreal_QFont__HintingPreference(const CrystalString fileName, qreal pixelSize, QFont::HintingPreference hintingPreference) {
+  return new (UseGC) CrystalGCWrapper<QRawFont>(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), pixelSize, hintingPreference);
+}
+
+extern "C" QRawFont * bg_QRawFont__CONSTRUCT_const_QByteArray_R_qreal_QFont__HintingPreference(const CrystalString fontData, qreal pixelSize, QFont::HintingPreference hintingPreference) {
+  return new (UseGC) CrystalGCWrapper<QRawFont>(([&]() { auto &&bg_value = (fontData); return QByteArray(bg_value.ptr, bg_value.size); }()), pixelSize, hintingPreference);
+}
+
+extern "C" QRawFont * bg_QRawFont__COPY_const_QRawFont_R(const QRawFont & other) {
+  return new (UseGC) CrystalGCWrapper<QRawFont>(other);
+}
+
+extern "C" QRawFont * bg_QRawFont__OPERATOR_assign_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
+  return &((*_self_) = (other));
+}
+
+extern "C" void bg_QRawFont_swap_QRawFont_R(QRawFont * _self_, QRawFont & other) {
+  _self_->swap(other);
+}
+
+extern "C" bool bg_QRawFont_isValid_(QRawFont * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" bool bg_QRawFont__OPERATOR_eq_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
+  return (*_self_) == (other);
+}
+
+extern "C" bool bg_QRawFont__OPERATOR_ne_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
+  return (*_self_) != (other);
+}
+
+extern "C" quint32 bg_QRawFont_glyphCount_(QRawFont * _self_) {
+  return _self_->glyphCount();
+}
+
+extern "C" CrystalString bg_QRawFont_familyName_(QRawFont * _self_) {
+  return qstring_to_crystal(_self_->familyName());
+}
+
+extern "C" CrystalString bg_QRawFont_styleName_(QRawFont * _self_) {
+  return qstring_to_crystal(_self_->styleName());
+}
+
+extern "C" QFont::Style bg_QRawFont_style_(QRawFont * _self_) {
+  return _self_->style();
+}
+
+extern "C" int bg_QRawFont_weight_(QRawFont * _self_) {
+  return _self_->weight();
+}
+
+extern "C" Container_QList_quint32_ * bg_QRawFont_glyphIndexesForString_const_QString_R(QRawFont * _self_, const CrystalString text) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_quint32_>()) Container_QList_quint32_ (_self_->glyphIndexesForString(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" Container_QList_QPointF_ * bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R(QRawFont * _self_, const Container_QList_quint32_ * glyphIndexes) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QPointF_>()) Container_QList_QPointF_ (_self_->advancesForGlyphIndexes(*(glyphIndexes)));
+}
+
+extern "C" Container_QList_QPointF_ * bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R_QRawFont__LayoutFlags(QRawFont * _self_, const Container_QList_quint32_ * glyphIndexes, QRawFont::LayoutFlags layoutFlags) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QPointF_>()) Container_QList_QPointF_ (_self_->advancesForGlyphIndexes(*(glyphIndexes), layoutFlags));
+}
+
+extern "C" QImage * bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType(QRawFont * _self_, quint32 glyphIndex, QRawFont::AntialiasingType antialiasingType) {
+  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (_self_->alphaMapForGlyph(glyphIndex, antialiasingType));
+}
+
+extern "C" QImage * bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType_const_QTransform_R(QRawFont * _self_, quint32 glyphIndex, QRawFont::AntialiasingType antialiasingType, const QTransform & transform) {
+  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (_self_->alphaMapForGlyph(glyphIndex, antialiasingType, transform));
+}
+
+extern "C" QPainterPath * bg_QRawFont_pathForGlyph_quint32(QRawFont * _self_, quint32 glyphIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->pathForGlyph(glyphIndex));
+}
+
+extern "C" QRectF bg_QRawFont_boundingRect_quint32(QRawFont * _self_, quint32 glyphIndex) {
+  return _self_->boundingRect(glyphIndex);
+}
+
+extern "C" void bg_QRawFont_setPixelSize_qreal(QRawFont * _self_, qreal pixelSize) {
+  _self_->setPixelSize(pixelSize);
+}
+
+extern "C" qreal bg_QRawFont_pixelSize_(QRawFont * _self_) {
+  return _self_->pixelSize();
+}
+
+extern "C" QFont::HintingPreference bg_QRawFont_hintingPreference_(QRawFont * _self_) {
+  return _self_->hintingPreference();
+}
+
+extern "C" qreal bg_QRawFont_ascent_(QRawFont * _self_) {
+  return _self_->ascent();
+}
+
+extern "C" qreal bg_QRawFont_capHeight_(QRawFont * _self_) {
+  return _self_->capHeight();
+}
+
+extern "C" qreal bg_QRawFont_descent_(QRawFont * _self_) {
+  return _self_->descent();
+}
+
+extern "C" qreal bg_QRawFont_leading_(QRawFont * _self_) {
+  return _self_->leading();
+}
+
+extern "C" qreal bg_QRawFont_xHeight_(QRawFont * _self_) {
+  return _self_->xHeight();
+}
+
+extern "C" qreal bg_QRawFont_averageCharWidth_(QRawFont * _self_) {
+  return _self_->averageCharWidth();
+}
+
+extern "C" qreal bg_QRawFont_maxCharWidth_(QRawFont * _self_) {
+  return _self_->maxCharWidth();
+}
+
+extern "C" qreal bg_QRawFont_lineThickness_(QRawFont * _self_) {
+  return _self_->lineThickness();
+}
+
+extern "C" qreal bg_QRawFont_underlinePosition_(QRawFont * _self_) {
+  return _self_->underlinePosition();
+}
+
+extern "C" qreal bg_QRawFont_unitsPerEm_(QRawFont * _self_) {
+  return _self_->unitsPerEm();
+}
+
+extern "C" CrystalString bg_QRawFont_glyphName_quint32(QRawFont * _self_, quint32 glyphIndex) {
+  return qstring_to_crystal(_self_->glyphName(glyphIndex));
+}
+
+extern "C" void bg_QRawFont_loadFromFile_const_QString_R_qreal_QFont__HintingPreference(QRawFont * _self_, const CrystalString fileName, qreal pixelSize, QFont::HintingPreference hintingPreference) {
+  _self_->loadFromFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), pixelSize, hintingPreference);
+}
+
+extern "C" void bg_QRawFont_loadFromData_const_QByteArray_R_qreal_QFont__HintingPreference(QRawFont * _self_, const CrystalString fontData, qreal pixelSize, QFont::HintingPreference hintingPreference) {
+  _self_->loadFromData(([&]() { auto &&bg_value = (fontData); return QByteArray(bg_value.ptr, bg_value.size); }()), pixelSize, hintingPreference);
+}
+
+extern "C" bool bg_QRawFont_supportsCharacter_uint(QRawFont * _self_, uint ucs4) {
+  return _self_->supportsCharacter(ucs4);
+}
+
+extern "C" bool bg_QRawFont_supportsCharacter_QChar(QRawFont * _self_, int32_t character) {
+  return _self_->supportsCharacter(QChar(character));
+}
+
+extern "C" Container_QList_QFontDatabase__WritingSystem_ * bg_QRawFont_supportedWritingSystems_(QRawFont * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFontDatabase__WritingSystem_>()) Container_QList_QFontDatabase__WritingSystem_ (_self_->supportedWritingSystems());
+}
+
+extern "C" CrystalString bg_QRawFont_fontTable_const_char_X(QRawFont * _self_, const char * tagName) {
+  return qbytearray_to_crystal(_self_->fontTable(tagName));
+}
+
+extern "C" QRawFont * bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(const QFont & font, QFontDatabase::WritingSystem writingSystem) {
+  return new (UseGC, bindgen_gc_finalizer<QRawFont>()) QRawFont (QRawFont::fromFont(font, writingSystem));
+}
+
+extern "C" QGlyphRun * bg_QGlyphRun__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QGlyphRun>();
+}
+
+extern "C" QGlyphRun * bg_QGlyphRun__COPY_const_QGlyphRun_R(const QGlyphRun & other) {
+  return new (UseGC) CrystalGCWrapper<QGlyphRun>(other);
+}
+
+extern "C" QGlyphRun * bg_QGlyphRun__OPERATOR_assign_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
+  return &((*_self_) = (other));
+}
+
+extern "C" void bg_QGlyphRun_swap_QGlyphRun_R(QGlyphRun * _self_, QGlyphRun & other) {
+  _self_->swap(other);
+}
+
+extern "C" QRawFont * bg_QGlyphRun_rawFont_(QGlyphRun * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QRawFont>()) QRawFont (_self_->rawFont());
+}
+
+extern "C" void bg_QGlyphRun_setRawFont_const_QRawFont_R(QGlyphRun * _self_, const QRawFont & rawFont) {
+  _self_->setRawFont(rawFont);
+}
+
+extern "C" Container_QList_quint32_ * bg_QGlyphRun_glyphIndexes_(QGlyphRun * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_quint32_>()) Container_QList_quint32_ (_self_->glyphIndexes());
+}
+
+extern "C" void bg_QGlyphRun_setGlyphIndexes_const_QList_quint32__R(QGlyphRun * _self_, const Container_QList_quint32_ * glyphIndexes) {
+  _self_->setGlyphIndexes(*(glyphIndexes));
+}
+
+extern "C" Container_QList_QPointF_ * bg_QGlyphRun_positions_(QGlyphRun * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QPointF_>()) Container_QList_QPointF_ (_self_->positions());
+}
+
+extern "C" void bg_QGlyphRun_setPositions_const_QList_QPointF__R(QGlyphRun * _self_, const Container_QList_QPointF_ * positions) {
+  _self_->setPositions(*(positions));
+}
+
+extern "C" void bg_QGlyphRun_clear_(QGlyphRun * _self_) {
+  _self_->clear();
+}
+
+extern "C" bool bg_QGlyphRun__OPERATOR_eq_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
+  return (*_self_) == (other);
+}
+
+extern "C" bool bg_QGlyphRun__OPERATOR_ne_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
+  return (*_self_) != (other);
+}
+
+extern "C" void bg_QGlyphRun_setOverline_bool(QGlyphRun * _self_, bool overline) {
+  _self_->setOverline(overline);
+}
+
+extern "C" bool bg_QGlyphRun_overline_(QGlyphRun * _self_) {
+  return _self_->overline();
+}
+
+extern "C" void bg_QGlyphRun_setUnderline_bool(QGlyphRun * _self_, bool underline) {
+  _self_->setUnderline(underline);
+}
+
+extern "C" bool bg_QGlyphRun_underline_(QGlyphRun * _self_) {
+  return _self_->underline();
+}
+
+extern "C" void bg_QGlyphRun_setStrikeOut_bool(QGlyphRun * _self_, bool strikeOut) {
+  _self_->setStrikeOut(strikeOut);
+}
+
+extern "C" bool bg_QGlyphRun_strikeOut_(QGlyphRun * _self_) {
+  return _self_->strikeOut();
+}
+
+extern "C" void bg_QGlyphRun_setRightToLeft_bool(QGlyphRun * _self_, bool on) {
+  _self_->setRightToLeft(on);
+}
+
+extern "C" bool bg_QGlyphRun_isRightToLeft_(QGlyphRun * _self_) {
+  return _self_->isRightToLeft();
+}
+
+extern "C" void bg_QGlyphRun_setFlag_QGlyphRun__GlyphRunFlag_bool(QGlyphRun * _self_, QGlyphRun::GlyphRunFlag flag, bool enabled) {
+  _self_->setFlag(flag, enabled);
+}
+
+extern "C" void bg_QGlyphRun_setFlags_QGlyphRun__GlyphRunFlags(QGlyphRun * _self_, QGlyphRun::GlyphRunFlags flags) {
+  _self_->setFlags(flags);
+}
+
+extern "C" QGlyphRun::GlyphRunFlags bg_QGlyphRun_flags_(QGlyphRun * _self_) {
+  return _self_->flags();
+}
+
+extern "C" void bg_QGlyphRun_setBoundingRect_const_QRectF_R(QGlyphRun * _self_, const QRectF boundingRect) {
+  _self_->setBoundingRect(boundingRect);
+}
+
+extern "C" QRectF bg_QGlyphRun_boundingRect_(QGlyphRun * _self_) {
+  return _self_->boundingRect();
+}
+
+extern "C" Container_QList_qsizetype_ * bg_QGlyphRun_stringIndexes_(QGlyphRun * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_qsizetype_>()) Container_QList_qsizetype_ (_self_->stringIndexes());
+}
+
+extern "C" void bg_QGlyphRun_setStringIndexes_const_QList_qsizetype__R(QGlyphRun * _self_, const Container_QList_qsizetype_ * stringIndexes) {
+  _self_->setStringIndexes(*(stringIndexes));
+}
+
+extern "C" void bg_QGlyphRun_setSourceString_const_QString_R(QGlyphRun * _self_, const CrystalString sourceString) {
+  _self_->setSourceString(([&]() { auto &&bg_value = (sourceString); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QGlyphRun_sourceString_(QGlyphRun * _self_) {
+  return qstring_to_crystal(_self_->sourceString());
+}
+
+extern "C" bool bg_QGlyphRun_isEmpty_(QGlyphRun * _self_) {
+  return _self_->isEmpty();
+}
+
 struct BgJumptable_QTextDocument {
   CrystalProc<const QMetaObject *> bg_QTextDocument_metaObject_;
   CrystalProc<void *, const char *> bg_QTextDocument_qt_metacast_const_char_X;
@@ -29257,10 +29810,6 @@ extern "C" QTextObject * bg_QTextDocument_createObject_const_QTextFormat_R(QText
 
 extern "C" CrystalVariant bg_QTextDocument_loadResource_int_const_QUrl_R(QTextDocument * _self_, int type, const QUrl & name) {
   return qvariant_to_crystal(_self_->loadResource(type, name));
-}
-
-extern "C" QTextDocument * bg_QTextDocument__CONSTRUCT_QTextDocumentPrivate_R_QObject_X(QTextDocumentPrivate & dd, QObject * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QTextDocument>(dd, parent);
 }
 
 extern "C" const QMetaObject * bg_QTextDocument_staticMetaObject_STATIC_GETTER_() {
@@ -30635,6 +31184,62 @@ extern "C" QTextListFormat * bg_QTextListFormat__OPERATOR_assign_const_QTextList
   return &((*_self_) = (unnamed_arg_0));
 }
 
+extern "C" QTextImageFormat * bg_QTextImageFormat__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextImageFormat>();
+}
+
+extern "C" bool bg_QTextImageFormat_isValid_(QTextImageFormat * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" void bg_QTextImageFormat_setName_const_QString_R(QTextImageFormat * _self_, const CrystalString name) {
+  _self_->setName(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QTextImageFormat_name_(QTextImageFormat * _self_) {
+  return qstring_to_crystal(_self_->name());
+}
+
+extern "C" void bg_QTextImageFormat_setWidth_qreal(QTextImageFormat * _self_, qreal width) {
+  _self_->setWidth(width);
+}
+
+extern "C" qreal bg_QTextImageFormat_width_(QTextImageFormat * _self_) {
+  return _self_->width();
+}
+
+extern "C" void bg_QTextImageFormat_setMaximumWidth_QTextLength(QTextImageFormat * _self_, QTextLength & maxWidth) {
+  _self_->setMaximumWidth(maxWidth);
+}
+
+extern "C" QTextLength * bg_QTextImageFormat_maximumWidth_(QTextImageFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLength>()) QTextLength (_self_->maximumWidth());
+}
+
+extern "C" void bg_QTextImageFormat_setHeight_qreal(QTextImageFormat * _self_, qreal height) {
+  _self_->setHeight(height);
+}
+
+extern "C" qreal bg_QTextImageFormat_height_(QTextImageFormat * _self_) {
+  return _self_->height();
+}
+
+extern "C" void bg_QTextImageFormat_setQuality_int(QTextImageFormat * _self_, int quality) {
+  _self_->setQuality(quality);
+}
+
+extern "C" int bg_QTextImageFormat_quality_(QTextImageFormat * _self_) {
+  return _self_->quality();
+}
+
+extern "C" QTextImageFormat * bg_QTextImageFormat__CONSTRUCT_const_QTextFormat_R(const QTextFormat & format) {
+  return new (UseGC) CrystalGCWrapper<QTextImageFormat>(format);
+}
+
+extern "C" QTextImageFormat * bg_QTextImageFormat__COPY_const_QTextImageFormat_R(const QTextImageFormat & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextImageFormat>(unnamed_arg_0);
+}
+
 extern "C" QTextFrameFormat * bg_QTextFrameFormat__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QTextFrameFormat>();
 }
@@ -30767,16 +31372,248 @@ extern "C" QTextFrameFormat * bg_QTextFrameFormat__OPERATOR_assign_const_QTextFr
   return &((*_self_) = (unnamed_arg_0));
 }
 
+extern "C" QTextTableFormat * bg_QTextTableFormat__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextTableFormat>();
+}
+
+extern "C" bool bg_QTextTableFormat_isValid_(QTextTableFormat * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" int bg_QTextTableFormat_columns_(QTextTableFormat * _self_) {
+  return _self_->columns();
+}
+
+extern "C" void bg_QTextTableFormat_setColumns_int(QTextTableFormat * _self_, int columns) {
+  _self_->setColumns(columns);
+}
+
+extern "C" void bg_QTextTableFormat_setColumnWidthConstraints_const_QList_QTextLength__R(QTextTableFormat * _self_, const Container_QList_QTextLength_ * constraints) {
+  _self_->setColumnWidthConstraints(*(constraints));
+}
+
+extern "C" Container_QList_QTextLength_ * bg_QTextTableFormat_columnWidthConstraints_(QTextTableFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextLength_>()) Container_QList_QTextLength_ (_self_->columnWidthConstraints());
+}
+
+extern "C" void bg_QTextTableFormat_clearColumnWidthConstraints_(QTextTableFormat * _self_) {
+  _self_->clearColumnWidthConstraints();
+}
+
+extern "C" qreal bg_QTextTableFormat_cellSpacing_(QTextTableFormat * _self_) {
+  return _self_->cellSpacing();
+}
+
+extern "C" void bg_QTextTableFormat_setCellSpacing_qreal(QTextTableFormat * _self_, qreal spacing) {
+  _self_->setCellSpacing(spacing);
+}
+
+extern "C" qreal bg_QTextTableFormat_cellPadding_(QTextTableFormat * _self_) {
+  return _self_->cellPadding();
+}
+
+extern "C" void bg_QTextTableFormat_setCellPadding_qreal(QTextTableFormat * _self_, qreal padding) {
+  _self_->setCellPadding(padding);
+}
+
+extern "C" void bg_QTextTableFormat_setAlignment_Qt__Alignment(QTextTableFormat * _self_, Qt::Alignment alignment) {
+  _self_->setAlignment(alignment);
+}
+
+extern "C" Qt::Alignment bg_QTextTableFormat_alignment_(QTextTableFormat * _self_) {
+  return _self_->alignment();
+}
+
+extern "C" void bg_QTextTableFormat_setHeaderRowCount_int(QTextTableFormat * _self_, int count) {
+  _self_->setHeaderRowCount(count);
+}
+
+extern "C" int bg_QTextTableFormat_headerRowCount_(QTextTableFormat * _self_) {
+  return _self_->headerRowCount();
+}
+
+extern "C" void bg_QTextTableFormat_setBorderCollapse_bool(QTextTableFormat * _self_, bool borderCollapse) {
+  _self_->setBorderCollapse(borderCollapse);
+}
+
+extern "C" bool bg_QTextTableFormat_borderCollapse_(QTextTableFormat * _self_) {
+  return _self_->borderCollapse();
+}
+
+extern "C" QTextTableFormat * bg_QTextTableFormat__CONSTRUCT_const_QTextFormat_R(const QTextFormat & fmt) {
+  return new (UseGC) CrystalGCWrapper<QTextTableFormat>(fmt);
+}
+
+extern "C" QTextTableFormat * bg_QTextTableFormat__COPY_const_QTextTableFormat_R(const QTextTableFormat & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextTableFormat>(unnamed_arg_0);
+}
+
+extern "C" QTextTableCellFormat * bg_QTextTableCellFormat__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextTableCellFormat>();
+}
+
+extern "C" bool bg_QTextTableCellFormat_isValid_(QTextTableCellFormat * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" void bg_QTextTableCellFormat_setTopPadding_qreal(QTextTableCellFormat * _self_, qreal padding) {
+  _self_->setTopPadding(padding);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_topPadding_(QTextTableCellFormat * _self_) {
+  return _self_->topPadding();
+}
+
+extern "C" void bg_QTextTableCellFormat_setBottomPadding_qreal(QTextTableCellFormat * _self_, qreal padding) {
+  _self_->setBottomPadding(padding);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_bottomPadding_(QTextTableCellFormat * _self_) {
+  return _self_->bottomPadding();
+}
+
+extern "C" void bg_QTextTableCellFormat_setLeftPadding_qreal(QTextTableCellFormat * _self_, qreal padding) {
+  _self_->setLeftPadding(padding);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_leftPadding_(QTextTableCellFormat * _self_) {
+  return _self_->leftPadding();
+}
+
+extern "C" void bg_QTextTableCellFormat_setRightPadding_qreal(QTextTableCellFormat * _self_, qreal padding) {
+  _self_->setRightPadding(padding);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_rightPadding_(QTextTableCellFormat * _self_) {
+  return _self_->rightPadding();
+}
+
+extern "C" void bg_QTextTableCellFormat_setPadding_qreal(QTextTableCellFormat * _self_, qreal padding) {
+  _self_->setPadding(padding);
+}
+
+extern "C" void bg_QTextTableCellFormat_setTopBorder_qreal(QTextTableCellFormat * _self_, qreal width) {
+  _self_->setTopBorder(width);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_topBorder_(QTextTableCellFormat * _self_) {
+  return _self_->topBorder();
+}
+
+extern "C" void bg_QTextTableCellFormat_setBottomBorder_qreal(QTextTableCellFormat * _self_, qreal width) {
+  _self_->setBottomBorder(width);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_bottomBorder_(QTextTableCellFormat * _self_) {
+  return _self_->bottomBorder();
+}
+
+extern "C" void bg_QTextTableCellFormat_setLeftBorder_qreal(QTextTableCellFormat * _self_, qreal width) {
+  _self_->setLeftBorder(width);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_leftBorder_(QTextTableCellFormat * _self_) {
+  return _self_->leftBorder();
+}
+
+extern "C" void bg_QTextTableCellFormat_setRightBorder_qreal(QTextTableCellFormat * _self_, qreal width) {
+  _self_->setRightBorder(width);
+}
+
+extern "C" qreal bg_QTextTableCellFormat_rightBorder_(QTextTableCellFormat * _self_) {
+  return _self_->rightBorder();
+}
+
+extern "C" void bg_QTextTableCellFormat_setBorder_qreal(QTextTableCellFormat * _self_, qreal width) {
+  _self_->setBorder(width);
+}
+
+extern "C" void bg_QTextTableCellFormat_setTopBorderStyle_QTextFrameFormat__BorderStyle(QTextTableCellFormat * _self_, QTextFrameFormat::BorderStyle style) {
+  _self_->setTopBorderStyle(style);
+}
+
+extern "C" QTextFrameFormat::BorderStyle bg_QTextTableCellFormat_topBorderStyle_(QTextTableCellFormat * _self_) {
+  return _self_->topBorderStyle();
+}
+
+extern "C" void bg_QTextTableCellFormat_setBottomBorderStyle_QTextFrameFormat__BorderStyle(QTextTableCellFormat * _self_, QTextFrameFormat::BorderStyle style) {
+  _self_->setBottomBorderStyle(style);
+}
+
+extern "C" QTextFrameFormat::BorderStyle bg_QTextTableCellFormat_bottomBorderStyle_(QTextTableCellFormat * _self_) {
+  return _self_->bottomBorderStyle();
+}
+
+extern "C" void bg_QTextTableCellFormat_setLeftBorderStyle_QTextFrameFormat__BorderStyle(QTextTableCellFormat * _self_, QTextFrameFormat::BorderStyle style) {
+  _self_->setLeftBorderStyle(style);
+}
+
+extern "C" QTextFrameFormat::BorderStyle bg_QTextTableCellFormat_leftBorderStyle_(QTextTableCellFormat * _self_) {
+  return _self_->leftBorderStyle();
+}
+
+extern "C" void bg_QTextTableCellFormat_setRightBorderStyle_QTextFrameFormat__BorderStyle(QTextTableCellFormat * _self_, QTextFrameFormat::BorderStyle style) {
+  _self_->setRightBorderStyle(style);
+}
+
+extern "C" QTextFrameFormat::BorderStyle bg_QTextTableCellFormat_rightBorderStyle_(QTextTableCellFormat * _self_) {
+  return _self_->rightBorderStyle();
+}
+
+extern "C" void bg_QTextTableCellFormat_setBorderStyle_QTextFrameFormat__BorderStyle(QTextTableCellFormat * _self_, QTextFrameFormat::BorderStyle style) {
+  _self_->setBorderStyle(style);
+}
+
+extern "C" void bg_QTextTableCellFormat_setTopBorderBrush_const_QBrush_R(QTextTableCellFormat * _self_, const QBrush & brush) {
+  _self_->setTopBorderBrush(brush);
+}
+
+extern "C" QBrush * bg_QTextTableCellFormat_topBorderBrush_(QTextTableCellFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->topBorderBrush());
+}
+
+extern "C" void bg_QTextTableCellFormat_setBottomBorderBrush_const_QBrush_R(QTextTableCellFormat * _self_, const QBrush & brush) {
+  _self_->setBottomBorderBrush(brush);
+}
+
+extern "C" QBrush * bg_QTextTableCellFormat_bottomBorderBrush_(QTextTableCellFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->bottomBorderBrush());
+}
+
+extern "C" void bg_QTextTableCellFormat_setLeftBorderBrush_const_QBrush_R(QTextTableCellFormat * _self_, const QBrush & brush) {
+  _self_->setLeftBorderBrush(brush);
+}
+
+extern "C" QBrush * bg_QTextTableCellFormat_leftBorderBrush_(QTextTableCellFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->leftBorderBrush());
+}
+
+extern "C" void bg_QTextTableCellFormat_setRightBorderBrush_const_QBrush_R(QTextTableCellFormat * _self_, const QBrush & brush) {
+  _self_->setRightBorderBrush(brush);
+}
+
+extern "C" QBrush * bg_QTextTableCellFormat_rightBorderBrush_(QTextTableCellFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->rightBorderBrush());
+}
+
+extern "C" void bg_QTextTableCellFormat_setBorderBrush_const_QBrush_R(QTextTableCellFormat * _self_, const QBrush & brush) {
+  _self_->setBorderBrush(brush);
+}
+
+extern "C" QTextTableCellFormat * bg_QTextTableCellFormat__CONSTRUCT_const_QTextFormat_R(const QTextFormat & fmt) {
+  return new (UseGC) CrystalGCWrapper<QTextTableCellFormat>(fmt);
+}
+
+extern "C" QTextTableCellFormat * bg_QTextTableCellFormat__COPY_const_QTextTableCellFormat_R(const QTextTableCellFormat & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextTableCellFormat>(unnamed_arg_0);
+}
+
 extern "C" QTextCursor * bg_QTextCursor__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QTextCursor>();
 }
 
 extern "C" QTextCursor * bg_QTextCursor__CONSTRUCT_QTextDocument_X(QTextDocument * document) {
   return new (UseGC) CrystalGCWrapper<QTextCursor>(document);
-}
-
-extern "C" QTextCursor * bg_QTextCursor__CONSTRUCT_QTextDocumentPrivate_X_int(QTextDocumentPrivate * p, int pos) {
-  return new (UseGC) CrystalGCWrapper<QTextCursor>(p, pos);
 }
 
 extern "C" QTextCursor * bg_QTextCursor__CONSTRUCT_QTextCursorPrivate_X(QTextCursorPrivate * d) {
@@ -31103,6 +31940,418 @@ extern "C" QTextDocument * bg_QTextCursor_document_(QTextCursor * _self_) {
   return _self_->document();
 }
 
+extern "C" QTextInlineObject * bg_QTextInlineObject__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextInlineObject>();
+}
+
+extern "C" bool bg_QTextInlineObject_isValid_(QTextInlineObject * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QRectF bg_QTextInlineObject_rect_(QTextInlineObject * _self_) {
+  return _self_->rect();
+}
+
+extern "C" qreal bg_QTextInlineObject_width_(QTextInlineObject * _self_) {
+  return _self_->width();
+}
+
+extern "C" qreal bg_QTextInlineObject_ascent_(QTextInlineObject * _self_) {
+  return _self_->ascent();
+}
+
+extern "C" qreal bg_QTextInlineObject_descent_(QTextInlineObject * _self_) {
+  return _self_->descent();
+}
+
+extern "C" qreal bg_QTextInlineObject_height_(QTextInlineObject * _self_) {
+  return _self_->height();
+}
+
+extern "C" Qt::LayoutDirection bg_QTextInlineObject_textDirection_(QTextInlineObject * _self_) {
+  return _self_->textDirection();
+}
+
+extern "C" void bg_QTextInlineObject_setWidth_qreal(QTextInlineObject * _self_, qreal w) {
+  _self_->setWidth(w);
+}
+
+extern "C" void bg_QTextInlineObject_setAscent_qreal(QTextInlineObject * _self_, qreal a) {
+  _self_->setAscent(a);
+}
+
+extern "C" void bg_QTextInlineObject_setDescent_qreal(QTextInlineObject * _self_, qreal d) {
+  _self_->setDescent(d);
+}
+
+extern "C" int bg_QTextInlineObject_textPosition_(QTextInlineObject * _self_) {
+  return _self_->textPosition();
+}
+
+extern "C" int bg_QTextInlineObject_formatIndex_(QTextInlineObject * _self_) {
+  return _self_->formatIndex();
+}
+
+extern "C" QTextFormat * bg_QTextInlineObject_format_(QTextInlineObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFormat>()) QTextFormat (_self_->format());
+}
+
+extern "C" QTextInlineObject * bg_QTextInlineObject__COPY_const_QTextInlineObject_R(const QTextInlineObject & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextInlineObject>(unnamed_arg_0);
+}
+
+extern "C" QTextLayout * bg_QTextLayout__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextLayout>();
+}
+
+extern "C" QTextLayout * bg_QTextLayout__CONSTRUCT_const_QString_R(const CrystalString text) {
+  return new (UseGC) CrystalGCWrapper<QTextLayout>(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTextLayout * bg_QTextLayout__CONSTRUCT_const_QString_R_const_QFont_R_const_QPaintDevice_X(const CrystalString text, const QFont & font, const QPaintDevice * paintdevice) {
+  return new (UseGC) CrystalGCWrapper<QTextLayout>(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), font, paintdevice);
+}
+
+extern "C" QTextLayout * bg_QTextLayout__CONSTRUCT_const_QTextBlock_R(const QTextBlock & b) {
+  return new (UseGC) CrystalGCWrapper<QTextLayout>(b);
+}
+
+extern "C" void bg_QTextLayout_setFont_const_QFont_R(QTextLayout * _self_, const QFont & f) {
+  _self_->setFont(f);
+}
+
+extern "C" QFont * bg_QTextLayout_font_(QTextLayout * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->font());
+}
+
+extern "C" void bg_QTextLayout_setRawFont_const_QRawFont_R(QTextLayout * _self_, const QRawFont & rawFont) {
+  _self_->setRawFont(rawFont);
+}
+
+extern "C" void bg_QTextLayout_setText_const_QString_R(QTextLayout * _self_, const CrystalString string) {
+  _self_->setText(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QTextLayout_text_(QTextLayout * _self_) {
+  return qstring_to_crystal(_self_->text());
+}
+
+extern "C" void bg_QTextLayout_setTextOption_const_QTextOption_R(QTextLayout * _self_, const QTextOption & option) {
+  _self_->setTextOption(option);
+}
+
+extern "C" const QTextOption * bg_QTextLayout_textOption_(QTextLayout * _self_) {
+  return &(_self_->textOption());
+}
+
+extern "C" void bg_QTextLayout_setPreeditArea_int_const_QString_R(QTextLayout * _self_, int position, const CrystalString text) {
+  _self_->setPreeditArea(position, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QTextLayout_preeditAreaPosition_(QTextLayout * _self_) {
+  return _self_->preeditAreaPosition();
+}
+
+extern "C" CrystalString bg_QTextLayout_preeditAreaText_(QTextLayout * _self_) {
+  return qstring_to_crystal(_self_->preeditAreaText());
+}
+
+extern "C" void bg_QTextLayout_setFormats_const_QList_QTextLayout__FormatRange__R(QTextLayout * _self_, const Container_QList_QTextLayout__FormatRange_ * overrides) {
+  _self_->setFormats(*(overrides));
+}
+
+extern "C" Container_QList_QTextLayout__FormatRange_ * bg_QTextLayout_formats_(QTextLayout * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextLayout__FormatRange_>()) Container_QList_QTextLayout__FormatRange_ (_self_->formats());
+}
+
+extern "C" void bg_QTextLayout_clearFormats_(QTextLayout * _self_) {
+  _self_->clearFormats();
+}
+
+extern "C" void bg_QTextLayout_setCacheEnabled_bool(QTextLayout * _self_, bool enable) {
+  _self_->setCacheEnabled(enable);
+}
+
+extern "C" bool bg_QTextLayout_cacheEnabled_(QTextLayout * _self_) {
+  return _self_->cacheEnabled();
+}
+
+extern "C" void bg_QTextLayout_setCursorMoveStyle_Qt__CursorMoveStyle(QTextLayout * _self_, Qt::CursorMoveStyle style) {
+  _self_->setCursorMoveStyle(style);
+}
+
+extern "C" Qt::CursorMoveStyle bg_QTextLayout_cursorMoveStyle_(QTextLayout * _self_) {
+  return _self_->cursorMoveStyle();
+}
+
+extern "C" void bg_QTextLayout_beginLayout_(QTextLayout * _self_) {
+  _self_->beginLayout();
+}
+
+extern "C" void bg_QTextLayout_endLayout_(QTextLayout * _self_) {
+  _self_->endLayout();
+}
+
+extern "C" void bg_QTextLayout_clearLayout_(QTextLayout * _self_) {
+  _self_->clearLayout();
+}
+
+extern "C" QTextLine * bg_QTextLayout_createLine_(QTextLayout * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLine>()) QTextLine (_self_->createLine());
+}
+
+extern "C" int bg_QTextLayout_lineCount_(QTextLayout * _self_) {
+  return _self_->lineCount();
+}
+
+extern "C" QTextLine * bg_QTextLayout_lineAt_int(QTextLayout * _self_, int i) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLine>()) QTextLine (_self_->lineAt(i));
+}
+
+extern "C" QTextLine * bg_QTextLayout_lineForTextPosition_int(QTextLayout * _self_, int pos) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLine>()) QTextLine (_self_->lineForTextPosition(pos));
+}
+
+extern "C" bool bg_QTextLayout_isValidCursorPosition_int(QTextLayout * _self_, int pos) {
+  return _self_->isValidCursorPosition(pos);
+}
+
+extern "C" int bg_QTextLayout_nextCursorPosition_int_QTextLayout__CursorMode(QTextLayout * _self_, int oldPos, QTextLayout::CursorMode mode) {
+  return _self_->nextCursorPosition(oldPos, mode);
+}
+
+extern "C" int bg_QTextLayout_previousCursorPosition_int_QTextLayout__CursorMode(QTextLayout * _self_, int oldPos, QTextLayout::CursorMode mode) {
+  return _self_->previousCursorPosition(oldPos, mode);
+}
+
+extern "C" int bg_QTextLayout_leftCursorPosition_int(QTextLayout * _self_, int oldPos) {
+  return _self_->leftCursorPosition(oldPos);
+}
+
+extern "C" int bg_QTextLayout_rightCursorPosition_int(QTextLayout * _self_, int oldPos) {
+  return _self_->rightCursorPosition(oldPos);
+}
+
+extern "C" void bg_QTextLayout_draw_QPainter_X_const_QPointF_R(QTextLayout * _self_, QPainter * p, const QPointF pos) {
+  _self_->draw(p, pos);
+}
+
+extern "C" void bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R(QTextLayout * _self_, QPainter * p, const QPointF pos, const Container_QList_QTextLayout__FormatRange_ * selections) {
+  _self_->draw(p, pos, *(selections));
+}
+
+extern "C" void bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R_const_QRectF_R(QTextLayout * _self_, QPainter * p, const QPointF pos, const Container_QList_QTextLayout__FormatRange_ * selections, const QRectF clip) {
+  _self_->draw(p, pos, *(selections), clip);
+}
+
+extern "C" void bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int(QTextLayout * _self_, QPainter * p, const QPointF pos, int cursorPosition) {
+  _self_->drawCursor(p, pos, cursorPosition);
+}
+
+extern "C" void bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int_int(QTextLayout * _self_, QPainter * p, const QPointF pos, int cursorPosition, int width) {
+  _self_->drawCursor(p, pos, cursorPosition, width);
+}
+
+extern "C" QPointF bg_QTextLayout_position_(QTextLayout * _self_) {
+  return _self_->position();
+}
+
+extern "C" void bg_QTextLayout_setPosition_const_QPointF_R(QTextLayout * _self_, const QPointF p) {
+  _self_->setPosition(p);
+}
+
+extern "C" QRectF bg_QTextLayout_boundingRect_(QTextLayout * _self_) {
+  return _self_->boundingRect();
+}
+
+extern "C" qreal bg_QTextLayout_minimumWidth_(QTextLayout * _self_) {
+  return _self_->minimumWidth();
+}
+
+extern "C" qreal bg_QTextLayout_maximumWidth_(QTextLayout * _self_) {
+  return _self_->maximumWidth();
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_QTextLayout_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(QTextLayout * _self_, int from, int length, QTextLayout::GlyphRunRetrievalFlags flags) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QGlyphRun_>()) Container_QList_QGlyphRun_ (_self_->glyphRuns(from, length, flags));
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_QTextLayout_glyphRuns_int_int(QTextLayout * _self_, int from, int length) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QGlyphRun_>()) Container_QList_QGlyphRun_ (_self_->glyphRuns(from, length));
+}
+
+extern "C" void bg_QTextLayout_setFlags_int(QTextLayout * _self_, int flags) {
+  _self_->setFlags(flags);
+}
+
+extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextLayout::FormatRange>();
+}
+
+extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__COPY_const_QTextLayout__FormatRange_R(const QTextLayout::FormatRange & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextLayout::FormatRange>(unnamed_arg_0);
+}
+
+extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__OPERATOR_assign_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" bool bg_QTextLayout__FormatRange__OPERATOR_eq_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QTextLayout__FormatRange__OPERATOR_ne_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & rhs) {
+  return (*_self_) != (rhs);
+}
+
+extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__AGGREGATE_int_int_QTextCharFormat(int start, int length, QTextCharFormat & format) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLayout::FormatRange>()) QTextLayout::FormatRange {start, length, format};
+}
+
+extern "C" int bg_QTextLayout__FormatRange_start_GETTER_(QTextLayout::FormatRange * _self_) {
+  return _self_->start;
+}
+
+extern "C" void bg_QTextLayout__FormatRange_start_SETTER_int(QTextLayout::FormatRange * _self_, int start) {
+  _self_->start = start;
+}
+
+extern "C" int bg_QTextLayout__FormatRange_length_GETTER_(QTextLayout::FormatRange * _self_) {
+  return _self_->length;
+}
+
+extern "C" void bg_QTextLayout__FormatRange_length_SETTER_int(QTextLayout::FormatRange * _self_, int length) {
+  _self_->length = length;
+}
+
+extern "C" QTextCharFormat * bg_QTextLayout__FormatRange_format_GETTER_(QTextLayout::FormatRange * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->format);
+}
+
+extern "C" void bg_QTextLayout__FormatRange_format_SETTER_QTextCharFormat(QTextLayout::FormatRange * _self_, QTextCharFormat & format) {
+  _self_->format = format;
+}
+
+extern "C" QTextLine * bg_QTextLine__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextLine>();
+}
+
+extern "C" bool bg_QTextLine_isValid_(QTextLine * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QRectF bg_QTextLine_rect_(QTextLine * _self_) {
+  return _self_->rect();
+}
+
+extern "C" qreal bg_QTextLine_x_(QTextLine * _self_) {
+  return _self_->x();
+}
+
+extern "C" qreal bg_QTextLine_y_(QTextLine * _self_) {
+  return _self_->y();
+}
+
+extern "C" qreal bg_QTextLine_width_(QTextLine * _self_) {
+  return _self_->width();
+}
+
+extern "C" qreal bg_QTextLine_ascent_(QTextLine * _self_) {
+  return _self_->ascent();
+}
+
+extern "C" qreal bg_QTextLine_descent_(QTextLine * _self_) {
+  return _self_->descent();
+}
+
+extern "C" qreal bg_QTextLine_height_(QTextLine * _self_) {
+  return _self_->height();
+}
+
+extern "C" qreal bg_QTextLine_leading_(QTextLine * _self_) {
+  return _self_->leading();
+}
+
+extern "C" void bg_QTextLine_setLeadingIncluded_bool(QTextLine * _self_, bool included) {
+  _self_->setLeadingIncluded(included);
+}
+
+extern "C" bool bg_QTextLine_leadingIncluded_(QTextLine * _self_) {
+  return _self_->leadingIncluded();
+}
+
+extern "C" qreal bg_QTextLine_naturalTextWidth_(QTextLine * _self_) {
+  return _self_->naturalTextWidth();
+}
+
+extern "C" qreal bg_QTextLine_horizontalAdvance_(QTextLine * _self_) {
+  return _self_->horizontalAdvance();
+}
+
+extern "C" QRectF bg_QTextLine_naturalTextRect_(QTextLine * _self_) {
+  return _self_->naturalTextRect();
+}
+
+extern "C" qreal bg_QTextLine_cursorToX_int_X_QTextLine__Edge(QTextLine * _self_, int * cursorPos, QTextLine::Edge edge) {
+  return _self_->cursorToX(cursorPos, edge);
+}
+
+extern "C" qreal bg_QTextLine_cursorToX_int_QTextLine__Edge(QTextLine * _self_, int cursorPos, QTextLine::Edge edge) {
+  return _self_->cursorToX(cursorPos, edge);
+}
+
+extern "C" int bg_QTextLine_xToCursor_qreal_QTextLine__CursorPosition(QTextLine * _self_, qreal x, QTextLine::CursorPosition unnamed_arg_1) {
+  return _self_->xToCursor(x, unnamed_arg_1);
+}
+
+extern "C" void bg_QTextLine_setLineWidth_qreal(QTextLine * _self_, qreal width) {
+  _self_->setLineWidth(width);
+}
+
+extern "C" void bg_QTextLine_setNumColumns_int(QTextLine * _self_, int columns) {
+  _self_->setNumColumns(columns);
+}
+
+extern "C" void bg_QTextLine_setNumColumns_int_qreal(QTextLine * _self_, int columns, qreal alignmentWidth) {
+  _self_->setNumColumns(columns, alignmentWidth);
+}
+
+extern "C" void bg_QTextLine_setPosition_const_QPointF_R(QTextLine * _self_, const QPointF pos) {
+  _self_->setPosition(pos);
+}
+
+extern "C" QPointF bg_QTextLine_position_(QTextLine * _self_) {
+  return _self_->position();
+}
+
+extern "C" int bg_QTextLine_textStart_(QTextLine * _self_) {
+  return _self_->textStart();
+}
+
+extern "C" int bg_QTextLine_textLength_(QTextLine * _self_) {
+  return _self_->textLength();
+}
+
+extern "C" int bg_QTextLine_lineNumber_(QTextLine * _self_) {
+  return _self_->lineNumber();
+}
+
+extern "C" void bg_QTextLine_draw_QPainter_X_const_QPointF_R(QTextLine * _self_, QPainter * painter, const QPointF position) {
+  _self_->draw(painter, position);
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_QTextLine_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(QTextLine * _self_, int from, int length, QTextLayout::GlyphRunRetrievalFlags flags) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QGlyphRun_>()) Container_QList_QGlyphRun_ (_self_->glyphRuns(from, length, flags));
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_QTextLine_glyphRuns_int_int(QTextLine * _self_, int from, int length) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QGlyphRun_>()) Container_QList_QGlyphRun_ (_self_->glyphRuns(from, length));
+}
+
+extern "C" QTextLine * bg_QTextLine__COPY_const_QTextLine_R(const QTextLine & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextLine>(unnamed_arg_0);
+}
+
 extern "C" QPalette * bg_QPalette__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QPalette>();
 }
@@ -31311,6 +32560,212 @@ extern "C" const QMetaObject * bg_QPalette_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPalette::staticMetaObject);
 }
 
+struct BgJumptable_QAbstractTextDocumentLayout {
+  CrystalProc<const QMetaObject *> bg_QAbstractTextDocumentLayout_metaObject_;
+  CrystalProc<void *, const char *> bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QPainter *, const QAbstractTextDocumentLayout::PaintContext *> bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R;
+  CrystalProc<int, const QPointF, Qt::HitTestAccuracy> bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
+  CrystalProc<int> bg_QAbstractTextDocumentLayout_pageCount_;
+  CrystalProc<QSizeF *> bg_QAbstractTextDocumentLayout_documentSize_;
+  CrystalProc<QRectF *, QTextFrame *> bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X;
+  CrystalProc<QRectF *, const QTextBlock *> bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R;
+  CrystalProc<void, int, int, int> bg_QAbstractTextDocumentLayout_documentChanged_int_int_int;
+  CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R;
+  CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R;
+  CrystalProc<void, QPainter *, const QRectF, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QAbstractTextDocumentLayout : public QAbstractTextDocumentLayout {
+  using QAbstractTextDocumentLayout::QAbstractTextDocumentLayout;
+  BgJumptable_QAbstractTextDocumentLayout bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_metaObject_();
+    } else {
+      return QAbstractTextDocumentLayout::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QAbstractTextDocumentLayout::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QAbstractTextDocumentLayout::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void draw(QPainter * painter, const QAbstractTextDocumentLayout::PaintContext & context) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R.isValid())) {
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(painter, &(context));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::draw");
+    }
+  }
+  
+  int hitTest(const QPointF & point, Qt::HitTestAccuracy accuracy) const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy.isValid())) {
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(point, accuracy);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::hitTest");
+    }
+  }
+  
+  int pageCount() const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_pageCount_.isValid())) {
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_pageCount_();
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::pageCount");
+    }
+  }
+  
+  QSizeF documentSize() const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_documentSize_.isValid())) {
+      return *_self_->bgJump.bg_QAbstractTextDocumentLayout_documentSize_();
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::documentSize");
+    }
+  }
+  
+  QRectF frameBoundingRect(QTextFrame * frame) const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X.isValid())) {
+      return *_self_->bgJump.bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X(frame);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::frameBoundingRect");
+    }
+  }
+  
+  QRectF blockBoundingRect(const QTextBlock & block) const override {
+    const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R.isValid())) {
+      return *_self_->bgJump.bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R(&(block));
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::blockBoundingRect");
+    }
+  }
+  
+  void documentChanged(int from, int charsRemoved, int charsAdded) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_documentChanged_int_int_int.isValid())) {
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_documentChanged_int_int_int(from, charsRemoved, charsAdded);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::documentChanged");
+    }
+  }
+  
+  void resizeInlineObject(QTextInlineObject item, int posInDocument, const QTextFormat & format) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R.isValid()) {
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R(new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (item), posInDocument, &(format));
+    } else {
+      QAbstractTextDocumentLayout::resizeInlineObject(item, posInDocument, format);
+    }
+  }
+  
+  void positionInlineObject(QTextInlineObject item, int posInDocument, const QTextFormat & format) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R.isValid()) {
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R(new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (item), posInDocument, &(format));
+    } else {
+      QAbstractTextDocumentLayout::positionInlineObject(item, posInDocument, format);
+    }
+  }
+  
+  void drawInlineObject(QPainter * painter, const QRectF & rect, QTextInlineObject object, int posInDocument, const QTextFormat & format) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R.isValid()) {
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(painter, rect, new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (object), posInDocument, &(format));
+    } else {
+      QAbstractTextDocumentLayout::drawInlineObject(painter, rect, object, posInDocument, format);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QAbstractTextDocumentLayout::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QAbstractTextDocumentLayout::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QAbstractTextDocumentLayout::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QAbstractTextDocumentLayout::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QAbstractTextDocumentLayout::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractTextDocumentLayout::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QAbstractTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QAbstractTextDocumentLayout::disconnectNotify(signal);
+    }
+  }
+  
+};
 extern "C" const QMetaObject * bg_QAbstractTextDocumentLayout_metaObject_(QAbstractTextDocumentLayout * _self_) {
   return _self_->metaObject();
 }
@@ -31333,6 +32788,14 @@ extern "C" CrystalString bg_QAbstractTextDocumentLayout_tr_STATIC_const_char_X_c
 
 extern "C" CrystalString bg_QAbstractTextDocumentLayout_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
   return qstring_to_crystal(QAbstractTextDocumentLayout::tr(s, c, n));
+}
+
+extern "C" QAbstractTextDocumentLayout * bg_QAbstractTextDocumentLayout__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractTextDocumentLayout>(doc);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(QAbstractTextDocumentLayout * _self_, QPainter * painter, const QAbstractTextDocumentLayout::PaintContext & context) {
+  _self_->draw(painter, context);
 }
 
 extern "C" int bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(QAbstractTextDocumentLayout * _self_, const QPointF point, Qt::HitTestAccuracy accuracy) {
@@ -31415,6 +32878,10 @@ extern "C" void bg_QAbstractTextDocumentLayout_pageCountChanged_int(QAbstractTex
   _self_->pageCountChanged(newPages);
 }
 
+extern "C" QAbstractTextDocumentLayout * bg_QAbstractTextDocumentLayout__CONSTRUCT_QAbstractTextDocumentLayoutPrivate_R_QTextDocument_X(QAbstractTextDocumentLayoutPrivate & unnamed_arg_0, QTextDocument * unnamed_arg_1) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractTextDocumentLayout>(unnamed_arg_0, unnamed_arg_1);
+}
+
 extern "C" void bg_QAbstractTextDocumentLayout_documentChanged_int_int_int(QAbstractTextDocumentLayout * _self_, int from, int charsRemoved, int charsAdded) {
   _self_->documentChanged(from, charsRemoved, charsAdded);
 }
@@ -31461,6 +32928,98 @@ extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_docu
 
 extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_pageCountChanged_CrystalProc_void__int_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, int> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(int))&QAbstractTextDocumentLayout::pageCountChanged, [_proc_](int newPages){ _proc_(newPages); }));
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout_resizeInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QTextInlineObject & item, int posInDocument, const QTextFormat & format) {
+  _self_->QAbstractTextDocumentLayout::resizeInlineObject(item, posInDocument, format);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout_positionInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QTextInlineObject & item, int posInDocument, const QTextFormat & format) {
+  _self_->QAbstractTextDocumentLayout::positionInlineObject(item, posInDocument, format);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout_drawInlineObject_SUPER_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QPainter * painter, const QRectF rect, QTextInlineObject & object, int posInDocument, const QTextFormat & format) {
+  _self_->QAbstractTextDocumentLayout::drawInlineObject(painter, rect, object, posInDocument, format);
+}
+
+extern "C" void bg_BgInherit_QAbstractTextDocumentLayout_JUMPTABLE_BgJumptable_QAbstractTextDocumentLayout_R(BgInherit_QAbstractTextDocumentLayout * _self_, const BgJumptable_QAbstractTextDocumentLayout & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__COPY_const_QAbstractTextDocumentLayout__Selection_R(const QAbstractTextDocumentLayout::Selection & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QAbstractTextDocumentLayout::Selection>(unnamed_arg_0);
+}
+
+extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__OPERATOR_assign_const_QAbstractTextDocumentLayout__Selection_R(QAbstractTextDocumentLayout::Selection * _self_, const QAbstractTextDocumentLayout::Selection & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QAbstractTextDocumentLayout::Selection>();
+}
+
+extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__AGGREGATE_QTextCursor_QTextCharFormat(QTextCursor & cursor, QTextCharFormat & format) {
+  return new (UseGC, bindgen_gc_finalizer<QAbstractTextDocumentLayout::Selection>()) QAbstractTextDocumentLayout::Selection {cursor, format};
+}
+
+extern "C" QTextCursor * bg_QAbstractTextDocumentLayout__Selection_cursor_GETTER_(QAbstractTextDocumentLayout::Selection * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->cursor);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__Selection_cursor_SETTER_QTextCursor(QAbstractTextDocumentLayout::Selection * _self_, QTextCursor & cursor) {
+  _self_->cursor = cursor;
+}
+
+extern "C" QTextCharFormat * bg_QAbstractTextDocumentLayout__Selection_format_GETTER_(QAbstractTextDocumentLayout::Selection * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->format);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__Selection_format_SETTER_QTextCharFormat(QAbstractTextDocumentLayout::Selection * _self_, QTextCharFormat & format) {
+  _self_->format = format;
+}
+
+extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QAbstractTextDocumentLayout__PaintContext__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QAbstractTextDocumentLayout::PaintContext>();
+}
+
+extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QAbstractTextDocumentLayout__PaintContext__COPY_const_QAbstractTextDocumentLayout__PaintContext_R(const QAbstractTextDocumentLayout::PaintContext & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QAbstractTextDocumentLayout::PaintContext>(unnamed_arg_0);
+}
+
+extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QAbstractTextDocumentLayout__PaintContext__OPERATOR_assign_const_QAbstractTextDocumentLayout__PaintContext_R(QAbstractTextDocumentLayout::PaintContext * _self_, const QAbstractTextDocumentLayout::PaintContext & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" int bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_GETTER_(QAbstractTextDocumentLayout::PaintContext * _self_) {
+  return _self_->cursorPosition;
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_SETTER_int(QAbstractTextDocumentLayout::PaintContext * _self_, int cursorPosition) {
+  _self_->cursorPosition = cursorPosition;
+}
+
+extern "C" QPalette * bg_QAbstractTextDocumentLayout__PaintContext_palette_GETTER_(QAbstractTextDocumentLayout::PaintContext * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->palette);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__PaintContext_palette_SETTER_QPalette(QAbstractTextDocumentLayout::PaintContext * _self_, QPalette & palette) {
+  _self_->palette = palette;
+}
+
+extern "C" QRectF bg_QAbstractTextDocumentLayout__PaintContext_clip_GETTER_(QAbstractTextDocumentLayout::PaintContext * _self_) {
+  return _self_->clip;
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__PaintContext_clip_SETTER_QRectF(QAbstractTextDocumentLayout::PaintContext * _self_, QRectF clip) {
+  _self_->clip = clip;
+}
+
+extern "C" QList<QAbstractTextDocumentLayout::Selection> * bg_QAbstractTextDocumentLayout__PaintContext_selections_GETTER_(QAbstractTextDocumentLayout::PaintContext * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QList<QAbstractTextDocumentLayout::Selection>>()) QList<QAbstractTextDocumentLayout::Selection> (_self_->selections);
+}
+
+extern "C" void bg_QAbstractTextDocumentLayout__PaintContext_selections_SETTER_QList_QAbstractTextDocumentLayout__Selection_(QAbstractTextDocumentLayout::PaintContext * _self_, QList<QAbstractTextDocumentLayout::Selection> & selections) {
+  _self_->selections = selections;
 }
 
 struct BgJumptable_QAction {
@@ -35264,6 +36823,86 @@ extern "C" void bg_BgInherit_QFileSystemModel_JUMPTABLE_BgJumptable_QFileSystemM
   _self_->bgJump = (table);
 }
 
+extern "C" QFontInfo * bg_QFontInfo__CONSTRUCT_const_QFont_R(const QFont & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFontInfo>(unnamed_arg_0);
+}
+
+extern "C" QFontInfo * bg_QFontInfo__COPY_const_QFontInfo_R(const QFontInfo & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFontInfo>(unnamed_arg_0);
+}
+
+extern "C" QFontInfo * bg_QFontInfo__OPERATOR_assign_const_QFontInfo_R(QFontInfo * _self_, const QFontInfo & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" void bg_QFontInfo_swap_QFontInfo_R(QFontInfo * _self_, QFontInfo & other) {
+  _self_->swap(other);
+}
+
+extern "C" CrystalString bg_QFontInfo_family_(QFontInfo * _self_) {
+  return qstring_to_crystal(_self_->family());
+}
+
+extern "C" CrystalString bg_QFontInfo_styleName_(QFontInfo * _self_) {
+  return qstring_to_crystal(_self_->styleName());
+}
+
+extern "C" int bg_QFontInfo_pixelSize_(QFontInfo * _self_) {
+  return _self_->pixelSize();
+}
+
+extern "C" int bg_QFontInfo_pointSize_(QFontInfo * _self_) {
+  return _self_->pointSize();
+}
+
+extern "C" qreal bg_QFontInfo_pointSizeF_(QFontInfo * _self_) {
+  return _self_->pointSizeF();
+}
+
+extern "C" bool bg_QFontInfo_italic_(QFontInfo * _self_) {
+  return _self_->italic();
+}
+
+extern "C" QFont::Style bg_QFontInfo_style_(QFontInfo * _self_) {
+  return _self_->style();
+}
+
+extern "C" int bg_QFontInfo_weight_(QFontInfo * _self_) {
+  return _self_->weight();
+}
+
+extern "C" bool bg_QFontInfo_bold_(QFontInfo * _self_) {
+  return _self_->bold();
+}
+
+extern "C" bool bg_QFontInfo_underline_(QFontInfo * _self_) {
+  return _self_->underline();
+}
+
+extern "C" bool bg_QFontInfo_overline_(QFontInfo * _self_) {
+  return _self_->overline();
+}
+
+extern "C" bool bg_QFontInfo_strikeOut_(QFontInfo * _self_) {
+  return _self_->strikeOut();
+}
+
+extern "C" bool bg_QFontInfo_fixedPitch_(QFontInfo * _self_) {
+  return _self_->fixedPitch();
+}
+
+extern "C" QFont::StyleHint bg_QFontInfo_styleHint_(QFontInfo * _self_) {
+  return _self_->styleHint();
+}
+
+extern "C" Container_QList_QFontVariableAxis_ * bg_QFontInfo_variableAxes_(QFontInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFontVariableAxis_>()) Container_QList_QFontVariableAxis_ (_self_->variableAxes());
+}
+
+extern "C" bool bg_QFontInfo_exactMatch_(QFontInfo * _self_) {
+  return _self_->exactMatch();
+}
+
 extern "C" QFontMetrics * bg_QFontMetrics__CONSTRUCT_const_QFont_R(const QFont & unnamed_arg_0) {
   return new (UseGC) CrystalGCWrapper<QFontMetrics>(unnamed_arg_0);
 }
@@ -35417,6 +37056,166 @@ extern "C" bool bg_QFontMetrics__OPERATOR_eq_const_QFontMetrics_R(QFontMetrics *
 }
 
 extern "C" bool bg_QFontMetrics__OPERATOR_ne_const_QFontMetrics_R(QFontMetrics * _self_, const QFontMetrics & other) {
+  return (*_self_) != (other);
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__CONSTRUCT_const_QFont_R(const QFont & font) {
+  return new (UseGC) CrystalGCWrapper<QFontMetricsF>(font);
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(const QFont & font, const QPaintDevice * pd) {
+  return new (UseGC) CrystalGCWrapper<QFontMetricsF>(font, pd);
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__CONSTRUCT_const_QFontMetrics_R(const QFontMetrics & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFontMetricsF>(unnamed_arg_0);
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__COPY_const_QFontMetricsF_R(const QFontMetricsF & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFontMetricsF>(unnamed_arg_0);
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__OPERATOR_assign_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QFontMetricsF * bg_QFontMetricsF__OPERATOR_assign_const_QFontMetrics_R(QFontMetricsF * _self_, const QFontMetrics & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" void bg_QFontMetricsF_swap_QFontMetricsF_R(QFontMetricsF * _self_, QFontMetricsF & other) {
+  _self_->swap(other);
+}
+
+extern "C" qreal bg_QFontMetricsF_ascent_(QFontMetricsF * _self_) {
+  return _self_->ascent();
+}
+
+extern "C" qreal bg_QFontMetricsF_capHeight_(QFontMetricsF * _self_) {
+  return _self_->capHeight();
+}
+
+extern "C" qreal bg_QFontMetricsF_descent_(QFontMetricsF * _self_) {
+  return _self_->descent();
+}
+
+extern "C" qreal bg_QFontMetricsF_height_(QFontMetricsF * _self_) {
+  return _self_->height();
+}
+
+extern "C" qreal bg_QFontMetricsF_leading_(QFontMetricsF * _self_) {
+  return _self_->leading();
+}
+
+extern "C" qreal bg_QFontMetricsF_lineSpacing_(QFontMetricsF * _self_) {
+  return _self_->lineSpacing();
+}
+
+extern "C" qreal bg_QFontMetricsF_minLeftBearing_(QFontMetricsF * _self_) {
+  return _self_->minLeftBearing();
+}
+
+extern "C" qreal bg_QFontMetricsF_minRightBearing_(QFontMetricsF * _self_) {
+  return _self_->minRightBearing();
+}
+
+extern "C" qreal bg_QFontMetricsF_maxWidth_(QFontMetricsF * _self_) {
+  return _self_->maxWidth();
+}
+
+extern "C" qreal bg_QFontMetricsF_xHeight_(QFontMetricsF * _self_) {
+  return _self_->xHeight();
+}
+
+extern "C" qreal bg_QFontMetricsF_averageCharWidth_(QFontMetricsF * _self_) {
+  return _self_->averageCharWidth();
+}
+
+extern "C" bool bg_QFontMetricsF_inFont_QChar(QFontMetricsF * _self_, int32_t unnamed_arg_0) {
+  return _self_->inFont(QChar(unnamed_arg_0));
+}
+
+extern "C" bool bg_QFontMetricsF_inFontUcs4_uint(QFontMetricsF * _self_, uint ucs4) {
+  return _self_->inFontUcs4(ucs4);
+}
+
+extern "C" qreal bg_QFontMetricsF_leftBearing_QChar(QFontMetricsF * _self_, int32_t unnamed_arg_0) {
+  return _self_->leftBearing(QChar(unnamed_arg_0));
+}
+
+extern "C" qreal bg_QFontMetricsF_rightBearing_QChar(QFontMetricsF * _self_, int32_t unnamed_arg_0) {
+  return _self_->rightBearing(QChar(unnamed_arg_0));
+}
+
+extern "C" qreal bg_QFontMetricsF_horizontalAdvance_const_QString_R_int(QFontMetricsF * _self_, const CrystalString string, int length) {
+  return _self_->horizontalAdvance(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), length);
+}
+
+extern "C" qreal bg_QFontMetricsF_horizontalAdvance_QChar(QFontMetricsF * _self_, int32_t unnamed_arg_0) {
+  return _self_->horizontalAdvance(QChar(unnamed_arg_0));
+}
+
+extern "C" qreal bg_QFontMetricsF_horizontalAdvance_const_QString_R_const_QTextOption_R(QFontMetricsF * _self_, const CrystalString string, const QTextOption & textOption) {
+  return _self_->horizontalAdvance(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textOption);
+}
+
+extern "C" QRectF bg_QFontMetricsF_boundingRect_const_QString_R(QFontMetricsF * _self_, const CrystalString string) {
+  return _self_->boundingRect(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRectF bg_QFontMetricsF_boundingRect_const_QString_R_const_QTextOption_R(QFontMetricsF * _self_, const CrystalString text, const QTextOption & textOption) {
+  return _self_->boundingRect(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textOption);
+}
+
+extern "C" QRectF bg_QFontMetricsF_boundingRect_QChar(QFontMetricsF * _self_, int32_t unnamed_arg_0) {
+  return _self_->boundingRect(QChar(unnamed_arg_0));
+}
+
+extern "C" QRectF bg_QFontMetricsF_boundingRect_const_QRectF_R_int_const_QString_R_int_int_X(QFontMetricsF * _self_, const QRectF r, int flags, const CrystalString string, int tabstops, int * tabarray) {
+  return _self_->boundingRect(r, flags, ([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), tabstops, tabarray);
+}
+
+extern "C" QSizeF bg_QFontMetricsF_size_int_const_QString_R_int_int_X(QFontMetricsF * _self_, int flags, const CrystalString str, int tabstops, int * tabarray) {
+  return _self_->size(flags, ([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), tabstops, tabarray);
+}
+
+extern "C" QRectF bg_QFontMetricsF_tightBoundingRect_const_QString_R(QFontMetricsF * _self_, const CrystalString text) {
+  return _self_->tightBoundingRect(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRectF bg_QFontMetricsF_tightBoundingRect_const_QString_R_const_QTextOption_R(QFontMetricsF * _self_, const CrystalString text, const QTextOption & textOption) {
+  return _self_->tightBoundingRect(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textOption);
+}
+
+extern "C" CrystalString bg_QFontMetricsF_elidedText_const_QString_R_Qt__TextElideMode_qreal_int(QFontMetricsF * _self_, const CrystalString text, Qt::TextElideMode mode, qreal width, int flags) {
+  return qstring_to_crystal(_self_->elidedText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), mode, width, flags));
+}
+
+extern "C" qreal bg_QFontMetricsF_underlinePos_(QFontMetricsF * _self_) {
+  return _self_->underlinePos();
+}
+
+extern "C" qreal bg_QFontMetricsF_overlinePos_(QFontMetricsF * _self_) {
+  return _self_->overlinePos();
+}
+
+extern "C" qreal bg_QFontMetricsF_strikeOutPos_(QFontMetricsF * _self_) {
+  return _self_->strikeOutPos();
+}
+
+extern "C" qreal bg_QFontMetricsF_lineWidth_(QFontMetricsF * _self_) {
+  return _self_->lineWidth();
+}
+
+extern "C" qreal bg_QFontMetricsF_fontDpi_(QFontMetricsF * _self_) {
+  return _self_->fontDpi();
+}
+
+extern "C" bool bg_QFontMetricsF__OPERATOR_eq_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & other) {
+  return (*_self_) == (other);
+}
+
+extern "C" bool bg_QFontMetricsF__OPERATOR_ne_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & other) {
   return (*_self_) != (other);
 }
 
@@ -41994,6 +43793,90 @@ extern "C" void bg_BgInherit_QStandardItemModel_JUMPTABLE_BgJumptable_QStandardI
   _self_->bgJump = (table);
 }
 
+extern "C" QStaticText * bg_QStaticText__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStaticText>();
+}
+
+extern "C" QStaticText * bg_QStaticText__CONSTRUCT_const_QString_R(const CrystalString text) {
+  return new (UseGC) CrystalGCWrapper<QStaticText>(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QStaticText * bg_QStaticText__COPY_const_QStaticText_R(const QStaticText & other) {
+  return new (UseGC) CrystalGCWrapper<QStaticText>(other);
+}
+
+extern "C" QStaticText * bg_QStaticText__OPERATOR_assign_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" void bg_QStaticText_swap_QStaticText_R(QStaticText * _self_, QStaticText & other) {
+  _self_->swap(other);
+}
+
+extern "C" void bg_QStaticText_setText_const_QString_R(QStaticText * _self_, const CrystalString text) {
+  _self_->setText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QStaticText_text_(QStaticText * _self_) {
+  return qstring_to_crystal(_self_->text());
+}
+
+extern "C" void bg_QStaticText_setTextFormat_Qt__TextFormat(QStaticText * _self_, Qt::TextFormat textFormat) {
+  _self_->setTextFormat(textFormat);
+}
+
+extern "C" Qt::TextFormat bg_QStaticText_textFormat_(QStaticText * _self_) {
+  return _self_->textFormat();
+}
+
+extern "C" void bg_QStaticText_setTextWidth_qreal(QStaticText * _self_, qreal textWidth) {
+  _self_->setTextWidth(textWidth);
+}
+
+extern "C" qreal bg_QStaticText_textWidth_(QStaticText * _self_) {
+  return _self_->textWidth();
+}
+
+extern "C" void bg_QStaticText_setTextOption_const_QTextOption_R(QStaticText * _self_, const QTextOption & textOption) {
+  _self_->setTextOption(textOption);
+}
+
+extern "C" QTextOption * bg_QStaticText_textOption_(QStaticText * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextOption>()) QTextOption (_self_->textOption());
+}
+
+extern "C" QSizeF bg_QStaticText_size_(QStaticText * _self_) {
+  return _self_->size();
+}
+
+extern "C" void bg_QStaticText_prepare_(QStaticText * _self_) {
+  _self_->prepare();
+}
+
+extern "C" void bg_QStaticText_prepare_const_QTransform_R(QStaticText * _self_, const QTransform & matrix) {
+  _self_->prepare(matrix);
+}
+
+extern "C" void bg_QStaticText_prepare_const_QTransform_R_const_QFont_R(QStaticText * _self_, const QTransform & matrix, const QFont & font) {
+  _self_->prepare(matrix, font);
+}
+
+extern "C" void bg_QStaticText_setPerformanceHint_QStaticText__PerformanceHint(QStaticText * _self_, QStaticText::PerformanceHint performanceHint) {
+  _self_->setPerformanceHint(performanceHint);
+}
+
+extern "C" QStaticText::PerformanceHint bg_QStaticText_performanceHint_(QStaticText * _self_) {
+  return _self_->performanceHint();
+}
+
+extern "C" bool bg_QStaticText__OPERATOR_eq_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
+  return (*_self_) == (unnamed_arg_0);
+}
+
+extern "C" bool bg_QStaticText__OPERATOR_ne_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
+  return (*_self_) != (unnamed_arg_0);
+}
+
 struct BgJumptable_QStyleHints {
   CrystalProc<const QMetaObject *> bg_QStyleHints_metaObject_;
   CrystalProc<void *, const char *> bg_QStyleHints_qt_metacast_const_char_X;
@@ -42400,6 +44283,610 @@ extern "C" void bg_BgInherit_QStyleHints_JUMPTABLE_BgJumptable_QStyleHints_R(BgI
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QTextObject {
+  CrystalProc<const QMetaObject *> bg_QTextObject_metaObject_;
+  CrystalProc<void *, const char *> bg_QTextObject_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTextObject : public QTextObject {
+  using QTextObject::QTextObject;
+  BgJumptable_QTextObject bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QTextObject_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTextObject_metaObject_();
+    } else {
+      return QTextObject::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QTextObject_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTextObject_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTextObject::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTextObject::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTextObject::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTextObject::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTextObject::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTextObject::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTextObject::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextObject::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextObject *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextObject::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTextObject_metaObject_(QTextObject * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTextObject_qt_metacast_const_char_X(QTextObject * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX(QTextObject * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTextObject_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTextObject::tr(s));
+}
+
+extern "C" CrystalString bg_QTextObject_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTextObject::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTextObject_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTextObject::tr(s, c, n));
+}
+
+extern "C" QTextObject * bg_QTextObject__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextObject>(doc);
+}
+
+extern "C" void bg_QTextObject_setFormat_const_QTextFormat_R(QTextObject * _self_, const QTextFormat & format) {
+  _self_->setFormat(format);
+}
+
+extern "C" QTextFormat * bg_QTextObject_format_(QTextObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFormat>()) QTextFormat (_self_->format());
+}
+
+extern "C" int bg_QTextObject_formatIndex_(QTextObject * _self_) {
+  return _self_->formatIndex();
+}
+
+extern "C" QTextDocument * bg_QTextObject_document_(QTextObject * _self_) {
+  return _self_->document();
+}
+
+extern "C" int bg_QTextObject_objectIndex_(QTextObject * _self_) {
+  return _self_->objectIndex();
+}
+
+extern "C" QTextObject * bg_QTextObject__CONSTRUCT_QTextObjectPrivate_R_QTextDocument_X(QTextObjectPrivate & p, QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextObject>(p, doc);
+}
+
+extern "C" const QMetaObject * bg_QTextObject_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextObject::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QTextObject_JUMPTABLE_BgJumptable_QTextObject_R(BgInherit_QTextObject * _self_, const BgJumptable_QTextObject & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QTextBlockGroup {
+  CrystalProc<const QMetaObject *> bg_QTextBlockGroup_metaObject_;
+  CrystalProc<void *, const char *> bg_QTextBlockGroup_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockInserted_const_QTextBlock_R;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTextBlockGroup : public QTextBlockGroup {
+  using QTextBlockGroup::QTextBlockGroup;
+  BgJumptable_QTextBlockGroup bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTextBlockGroup_metaObject_();
+    } else {
+      return QTextBlockGroup::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTextBlockGroup_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTextBlockGroup::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTextBlockGroup::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void blockInserted(const QTextBlock & block) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(&(block));
+    } else {
+      QTextBlockGroup::blockInserted(block);
+    }
+  }
+  
+  void blockRemoved(const QTextBlock & block) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(&(block));
+    } else {
+      QTextBlockGroup::blockRemoved(block);
+    }
+  }
+  
+  void blockFormatChanged(const QTextBlock & block) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(&(block));
+    } else {
+      QTextBlockGroup::blockFormatChanged(block);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTextBlockGroup::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTextBlockGroup::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTextBlockGroup::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTextBlockGroup::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTextBlockGroup::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextBlockGroup::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextBlockGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextBlockGroup::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTextBlockGroup_metaObject_(QTextBlockGroup * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTextBlockGroup_qt_metacast_const_char_X(QTextBlockGroup * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX(QTextBlockGroup * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTextBlockGroup_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTextBlockGroup::tr(s));
+}
+
+extern "C" CrystalString bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTextBlockGroup::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTextBlockGroup::tr(s, c, n));
+}
+
+extern "C" QTextBlockGroup * bg_QTextBlockGroup__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextBlockGroup>(doc);
+}
+
+extern "C" void bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->blockInserted(block);
+}
+
+extern "C" void bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->blockRemoved(block);
+}
+
+extern "C" void bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->blockFormatChanged(block);
+}
+
+extern "C" Container_QList_QTextBlock_ * bg_QTextBlockGroup_blockList_(QTextBlockGroup * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextBlock_>()) Container_QList_QTextBlock_ (_self_->blockList());
+}
+
+extern "C" QTextBlockGroup * bg_QTextBlockGroup__CONSTRUCT_QTextBlockGroupPrivate_R_QTextDocument_X(QTextBlockGroupPrivate & p, QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextBlockGroup>(p, doc);
+}
+
+extern "C" const QMetaObject * bg_QTextBlockGroup_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextBlockGroup::staticMetaObject);
+}
+
+extern "C" void bg_QTextBlockGroup_blockInserted_SUPER_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->QTextBlockGroup::blockInserted(block);
+}
+
+extern "C" void bg_QTextBlockGroup_blockRemoved_SUPER_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->QTextBlockGroup::blockRemoved(block);
+}
+
+extern "C" void bg_QTextBlockGroup_blockFormatChanged_SUPER_const_QTextBlock_R(QTextBlockGroup * _self_, const QTextBlock & block) {
+  _self_->QTextBlockGroup::blockFormatChanged(block);
+}
+
+extern "C" void bg_BgInherit_QTextBlockGroup_JUMPTABLE_BgJumptable_QTextBlockGroup_R(BgInherit_QTextBlockGroup * _self_, const BgJumptable_QTextBlockGroup & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QTextFrame {
+  CrystalProc<const QMetaObject *> bg_QTextFrame_metaObject_;
+  CrystalProc<void *, const char *> bg_QTextFrame_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTextFrame : public QTextFrame {
+  using QTextFrame::QTextFrame;
+  BgJumptable_QTextFrame bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QTextFrame_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTextFrame_metaObject_();
+    } else {
+      return QTextFrame::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QTextFrame_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTextFrame_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTextFrame::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTextFrame::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTextFrame::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTextFrame::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTextFrame::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTextFrame::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTextFrame::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextFrame::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextFrame::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTextFrame_metaObject_(QTextFrame * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTextFrame_qt_metacast_const_char_X(QTextFrame * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX(QTextFrame * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTextFrame_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTextFrame::tr(s));
+}
+
+extern "C" CrystalString bg_QTextFrame_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTextFrame::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTextFrame_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTextFrame::tr(s, c, n));
+}
+
+extern "C" QTextFrame * bg_QTextFrame__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextFrame>(doc);
+}
+
+extern "C" void bg_QTextFrame_setFrameFormat_const_QTextFrameFormat_R(QTextFrame * _self_, const QTextFrameFormat & format) {
+  _self_->setFrameFormat(format);
+}
+
+extern "C" QTextFrameFormat * bg_QTextFrame_frameFormat_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrameFormat>()) QTextFrameFormat (_self_->frameFormat());
+}
+
+extern "C" QTextCursor * bg_QTextFrame_firstCursorPosition_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->firstCursorPosition());
+}
+
+extern "C" QTextCursor * bg_QTextFrame_lastCursorPosition_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->lastCursorPosition());
+}
+
+extern "C" int bg_QTextFrame_firstPosition_(QTextFrame * _self_) {
+  return _self_->firstPosition();
+}
+
+extern "C" int bg_QTextFrame_lastPosition_(QTextFrame * _self_) {
+  return _self_->lastPosition();
+}
+
+extern "C" Container_QList_QTextFrame_X_ * bg_QTextFrame_childFrames_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextFrame_X_>()) Container_QList_QTextFrame_X_ (_self_->childFrames());
+}
+
+extern "C" QTextFrame * bg_QTextFrame_parentFrame_(QTextFrame * _self_) {
+  return _self_->parentFrame();
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame_begin_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (_self_->begin());
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame_end_(QTextFrame * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (_self_->end());
+}
+
+extern "C" QTextFrame * bg_QTextFrame__CONSTRUCT_QTextFramePrivate_R_QTextDocument_X(QTextFramePrivate & p, QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextFrame>(p, doc);
+}
+
+extern "C" const QMetaObject * bg_QTextFrame_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextFrame::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QTextFrame_JUMPTABLE_BgJumptable_QTextFrame_R(BgInherit_QTextFrame * _self_, const BgJumptable_QTextFrame & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextFrame::iterator>();
+}
+
+extern "C" QTextFrame * bg_QTextFrame__iterator_parentFrame_(QTextFrame::iterator * _self_) {
+  return _self_->parentFrame();
+}
+
+extern "C" QTextFrame * bg_QTextFrame__iterator_currentFrame_(QTextFrame::iterator * _self_) {
+  return _self_->currentFrame();
+}
+
+extern "C" QTextBlock * bg_QTextFrame__iterator_currentBlock_(QTextFrame::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock>()) QTextBlock (_self_->currentBlock());
+}
+
+extern "C" bool bg_QTextFrame__iterator_atEnd_(QTextFrame::iterator * _self_) {
+  return _self_->atEnd();
+}
+
+extern "C" bool bg_QTextFrame__iterator__OPERATOR_eq_const_QTextFrame__iterator_R(QTextFrame::iterator * _self_, const QTextFrame::iterator & o) {
+  return (*_self_) == (o);
+}
+
+extern "C" bool bg_QTextFrame__iterator__OPERATOR_ne_const_QTextFrame__iterator_R(QTextFrame::iterator * _self_, const QTextFrame::iterator & o) {
+  return (*_self_) != (o);
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_succ_(QTextFrame::iterator * _self_) {
+  return &(++(*_self_));
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_post_succ_(QTextFrame::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator ((*_self_)++);
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_pred_(QTextFrame::iterator * _self_) {
+  return &(--(*_self_));
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_post_pred_(QTextFrame::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator ((*_self_)--);
+}
+
+extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__COPY_const_QTextFrame__iterator_R(const QTextFrame::iterator & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextFrame::iterator>(unnamed_arg_0);
+}
+
 extern "C" QTextBlockUserData * bg_QTextBlockUserData__OPERATOR_assign_const_QTextBlockUserData_R(QTextBlockUserData * _self_, const QTextBlockUserData & unnamed_arg_0) {
   return &((*_self_) = (unnamed_arg_0));
 }
@@ -42410,10 +44897,6 @@ extern "C" QTextBlockUserData * bg_QTextBlockUserData__CONSTRUCT_() {
 
 extern "C" QTextBlockUserData * bg_QTextBlockUserData__COPY_const_QTextBlockUserData_R(const QTextBlockUserData & unnamed_arg_0) {
   return new (UseGC) CrystalGCWrapper<QTextBlockUserData>(unnamed_arg_0);
-}
-
-extern "C" QTextBlock * bg_QTextBlock__CONSTRUCT_QTextDocumentPrivate_X_int(QTextDocumentPrivate * priv, int b) {
-  return new (UseGC) CrystalGCWrapper<QTextBlock>(priv, b);
 }
 
 extern "C" QTextBlock * bg_QTextBlock__CONSTRUCT_() {
@@ -42488,6 +44971,10 @@ extern "C" CrystalString bg_QTextBlock_text_(QTextBlock * _self_) {
   return qstring_to_crystal(_self_->text());
 }
 
+extern "C" Container_QList_QTextLayout__FormatRange_ * bg_QTextBlock_textFormats_(QTextBlock * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextLayout__FormatRange_>()) Container_QList_QTextLayout__FormatRange_ (_self_->textFormats());
+}
+
 extern "C" const QTextDocument * bg_QTextBlock_document_(QTextBlock * _self_) {
   return _self_->document();
 }
@@ -42544,6 +45031,14 @@ extern "C" int bg_QTextBlock_lineCount_(QTextBlock * _self_) {
   return _self_->lineCount();
 }
 
+extern "C" QTextBlock::iterator * bg_QTextBlock_begin_(QTextBlock * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator (_self_->begin());
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock_end_(QTextBlock * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator (_self_->end());
+}
+
 extern "C" QTextBlock * bg_QTextBlock_next_(QTextBlock * _self_) {
   return new (UseGC, bindgen_gc_finalizer<QTextBlock>()) QTextBlock (_self_->next());
 }
@@ -42554,6 +45049,102 @@ extern "C" QTextBlock * bg_QTextBlock_previous_(QTextBlock * _self_) {
 
 extern "C" int bg_QTextBlock_fragmentIndex_(QTextBlock * _self_) {
   return _self_->fragmentIndex();
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextBlock::iterator>();
+}
+
+extern "C" QTextFragment * bg_QTextBlock__iterator_fragment_(QTextBlock::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFragment>()) QTextFragment (_self_->fragment());
+}
+
+extern "C" bool bg_QTextBlock__iterator_atEnd_(QTextBlock::iterator * _self_) {
+  return _self_->atEnd();
+}
+
+extern "C" bool bg_QTextBlock__iterator__OPERATOR_eq_const_QTextBlock__iterator_R(QTextBlock::iterator * _self_, const QTextBlock::iterator & o) {
+  return (*_self_) == (o);
+}
+
+extern "C" bool bg_QTextBlock__iterator__OPERATOR_ne_const_QTextBlock__iterator_R(QTextBlock::iterator * _self_, const QTextBlock::iterator & o) {
+  return (*_self_) != (o);
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_succ_(QTextBlock::iterator * _self_) {
+  return &(++(*_self_));
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_post_succ_(QTextBlock::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator ((*_self_)++);
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_pred_(QTextBlock::iterator * _self_) {
+  return &(--(*_self_));
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_post_pred_(QTextBlock::iterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator ((*_self_)--);
+}
+
+extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__COPY_const_QTextBlock__iterator_R(const QTextBlock::iterator & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextBlock::iterator>(unnamed_arg_0);
+}
+
+extern "C" QTextFragment * bg_QTextFragment__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextFragment>();
+}
+
+extern "C" QTextFragment * bg_QTextFragment__COPY_const_QTextFragment_R(const QTextFragment & o) {
+  return new (UseGC) CrystalGCWrapper<QTextFragment>(o);
+}
+
+extern "C" QTextFragment * bg_QTextFragment__OPERATOR_assign_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
+  return &((*_self_) = (o));
+}
+
+extern "C" bool bg_QTextFragment_isValid_(QTextFragment * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" bool bg_QTextFragment__OPERATOR_eq_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
+  return (*_self_) == (o);
+}
+
+extern "C" bool bg_QTextFragment__OPERATOR_ne_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
+  return (*_self_) != (o);
+}
+
+extern "C" bool bg_QTextFragment__OPERATOR_lt_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
+  return (*_self_) < (o);
+}
+
+extern "C" int bg_QTextFragment_position_(QTextFragment * _self_) {
+  return _self_->position();
+}
+
+extern "C" int bg_QTextFragment_length_(QTextFragment * _self_) {
+  return _self_->length();
+}
+
+extern "C" bool bg_QTextFragment_contains_int(QTextFragment * _self_, int position) {
+  return _self_->contains(position);
+}
+
+extern "C" QTextCharFormat * bg_QTextFragment_charFormat_(QTextFragment * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->charFormat());
+}
+
+extern "C" int bg_QTextFragment_charFormatIndex_(QTextFragment * _self_) {
+  return _self_->charFormatIndex();
+}
+
+extern "C" CrystalString bg_QTextFragment_text_(QTextFragment * _self_) {
+  return qstring_to_crystal(_self_->text());
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_QTextFragment_glyphRuns_int_int(QTextFragment * _self_, int from, int length) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QGlyphRun_>()) Container_QList_QGlyphRun_ (_self_->glyphRuns(from, length));
 }
 
 struct BgJumptable_QSyntaxHighlighter {
@@ -42769,6 +45360,620 @@ extern "C" const QMetaObject * bg_QSyntaxHighlighter_staticMetaObject_STATIC_GET
 }
 
 extern "C" void bg_BgInherit_QSyntaxHighlighter_JUMPTABLE_BgJumptable_QSyntaxHighlighter_R(BgInherit_QSyntaxHighlighter * _self_, const BgJumptable_QSyntaxHighlighter & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentFragment>();
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__CONSTRUCT_const_QTextDocument_X(const QTextDocument * document) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentFragment>(document);
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__CONSTRUCT_const_QTextCursor_R(const QTextCursor & range) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentFragment>(range);
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__COPY_const_QTextDocumentFragment_R(const QTextDocumentFragment & rhs) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentFragment>(rhs);
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__OPERATOR_assign_const_QTextDocumentFragment_R(QTextDocumentFragment * _self_, const QTextDocumentFragment & rhs) {
+  return &((*_self_) = (rhs));
+}
+
+extern "C" bool bg_QTextDocumentFragment_isEmpty_(QTextDocumentFragment * _self_) {
+  return _self_->isEmpty();
+}
+
+extern "C" CrystalString bg_QTextDocumentFragment_toPlainText_(QTextDocumentFragment * _self_) {
+  return qstring_to_crystal(_self_->toPlainText());
+}
+
+extern "C" CrystalString bg_QTextDocumentFragment_toRawText_(QTextDocumentFragment * _self_) {
+  return qstring_to_crystal(_self_->toRawText());
+}
+
+extern "C" CrystalString bg_QTextDocumentFragment_toHtml_(QTextDocumentFragment * _self_) {
+  return qstring_to_crystal(_self_->toHtml());
+}
+
+extern "C" CrystalString bg_QTextDocumentFragment_toMarkdown_(QTextDocumentFragment * _self_) {
+  return qstring_to_crystal(_self_->toMarkdown());
+}
+
+extern "C" CrystalString bg_QTextDocumentFragment_toMarkdown_QTextDocument__MarkdownFeatures(QTextDocumentFragment * _self_, QTextDocument::MarkdownFeatures features) {
+  return qstring_to_crystal(_self_->toMarkdown(features));
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment_fromPlainText_STATIC_const_QString_R(const CrystalString plainText) {
+  return new (UseGC, bindgen_gc_finalizer<QTextDocumentFragment>()) QTextDocumentFragment (QTextDocumentFragment::fromPlainText(([&]() { auto &&bg_value = (plainText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment_fromHtml_STATIC_const_QString_R_const_QTextDocument_X(const CrystalString html, const QTextDocument * resourceProvider) {
+  return new (UseGC, bindgen_gc_finalizer<QTextDocumentFragment>()) QTextDocumentFragment (QTextDocumentFragment::fromHtml(([&]() { auto &&bg_value = (html); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), resourceProvider));
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R(const CrystalString markdown) {
+  return new (UseGC, bindgen_gc_finalizer<QTextDocumentFragment>()) QTextDocumentFragment (QTextDocumentFragment::fromMarkdown(([&]() { auto &&bg_value = (markdown); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QTextDocumentFragment * bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R_QTextDocument__MarkdownFeatures(const CrystalString markdown, QTextDocument::MarkdownFeatures features) {
+  return new (UseGC, bindgen_gc_finalizer<QTextDocumentFragment>()) QTextDocumentFragment (QTextDocumentFragment::fromMarkdown(([&]() { auto &&bg_value = (markdown); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), features));
+}
+
+extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentWriter>();
+}
+
+extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_QIODevice_X_const_QByteArray_R(QIODevice * device, const CrystalString format) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentWriter>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_const_QString_R(const CrystalString fileName) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentWriter>(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_const_QString_R_const_QByteArray_R(const CrystalString fileName, const CrystalString format) {
+  return new (UseGC) CrystalGCWrapper<QTextDocumentWriter>(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QTextDocumentWriter_setFormat_const_QByteArray_R(QTextDocumentWriter * _self_, const CrystalString format) {
+  _self_->setFormat(([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QTextDocumentWriter_format_(QTextDocumentWriter * _self_) {
+  return qbytearray_to_crystal(_self_->format());
+}
+
+extern "C" void bg_QTextDocumentWriter_setDevice_QIODevice_X(QTextDocumentWriter * _self_, QIODevice * device) {
+  _self_->setDevice(device);
+}
+
+extern "C" QIODevice * bg_QTextDocumentWriter_device_(QTextDocumentWriter * _self_) {
+  return _self_->device();
+}
+
+extern "C" void bg_QTextDocumentWriter_setFileName_const_QString_R(QTextDocumentWriter * _self_, const CrystalString fileName) {
+  _self_->setFileName(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QTextDocumentWriter_fileName_(QTextDocumentWriter * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" bool bg_QTextDocumentWriter_write_const_QTextDocument_X(QTextDocumentWriter * _self_, const QTextDocument * document) {
+  return _self_->write(document);
+}
+
+extern "C" bool bg_QTextDocumentWriter_write_const_QTextDocumentFragment_R(QTextDocumentWriter * _self_, const QTextDocumentFragment & fragment) {
+  return _self_->write(fragment);
+}
+
+extern "C" Container_QList_QByteArray_ * bg_QTextDocumentWriter_supportedDocumentFormats_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QByteArray_>()) Container_QList_QByteArray_ (QTextDocumentWriter::supportedDocumentFormats());
+}
+
+struct BgJumptable_QTextList {
+  CrystalProc<const QMetaObject *> bg_QTextList_metaObject_;
+  CrystalProc<void *, const char *> bg_QTextList_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockInserted_const_QTextBlock_R;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R;
+  CrystalProc<void, const QTextBlock *> bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTextList : public QTextList {
+  using QTextList::QTextList;
+  BgJumptable_QTextList bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextList_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTextList_metaObject_();
+    } else {
+      return QTextList::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextList_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTextList_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTextList::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTextList::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void blockInserted(const QTextBlock & block) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(&(block));
+    } else {
+      QTextList::blockInserted(block);
+    }
+  }
+  
+  void blockRemoved(const QTextBlock & block) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(&(block));
+    } else {
+      QTextList::blockRemoved(block);
+    }
+  }
+  
+  void blockFormatChanged(const QTextBlock & block) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R.isValid()) {
+      _self_->bgJump.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(&(block));
+    } else {
+      QTextList::blockFormatChanged(block);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTextList::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTextList::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTextList::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTextList::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTextList::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextList::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextList *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextList::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTextList_metaObject_(QTextList * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTextList_qt_metacast_const_char_X(QTextList * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX(QTextList * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTextList_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTextList::tr(s));
+}
+
+extern "C" CrystalString bg_QTextList_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTextList::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTextList_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTextList::tr(s, c, n));
+}
+
+extern "C" QTextList * bg_QTextList__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextList>(doc);
+}
+
+extern "C" int bg_QTextList_count_(QTextList * _self_) {
+  return _self_->count();
+}
+
+extern "C" QTextBlock * bg_QTextList_item_int(QTextList * _self_, int i) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock>()) QTextBlock (_self_->item(i));
+}
+
+extern "C" int bg_QTextList_itemNumber_const_QTextBlock_R(QTextList * _self_, const QTextBlock & unnamed_arg_0) {
+  return _self_->itemNumber(unnamed_arg_0);
+}
+
+extern "C" CrystalString bg_QTextList_itemText_const_QTextBlock_R(QTextList * _self_, const QTextBlock & unnamed_arg_0) {
+  return qstring_to_crystal(_self_->itemText(unnamed_arg_0));
+}
+
+extern "C" void bg_QTextList_removeItem_int(QTextList * _self_, int i) {
+  _self_->removeItem(i);
+}
+
+extern "C" void bg_QTextList_remove_const_QTextBlock_R(QTextList * _self_, const QTextBlock & unnamed_arg_0) {
+  _self_->remove(unnamed_arg_0);
+}
+
+extern "C" void bg_QTextList_add_const_QTextBlock_R(QTextList * _self_, const QTextBlock & block) {
+  _self_->add(block);
+}
+
+extern "C" void bg_QTextList_setFormat_const_QTextListFormat_R(QTextList * _self_, const QTextListFormat & format) {
+  _self_->setFormat(format);
+}
+
+extern "C" QTextListFormat * bg_QTextList_format_(QTextList * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextListFormat>()) QTextListFormat (_self_->format());
+}
+
+extern "C" const QMetaObject * bg_QTextList_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextList::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QTextList_JUMPTABLE_BgJumptable_QTextList_R(BgInherit_QTextList * _self_, const BgJumptable_QTextList & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QTextTableCell * bg_QTextTableCell__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextTableCell>();
+}
+
+extern "C" QTextTableCell * bg_QTextTableCell__COPY_const_QTextTableCell_R(const QTextTableCell & o) {
+  return new (UseGC) CrystalGCWrapper<QTextTableCell>(o);
+}
+
+extern "C" QTextTableCell * bg_QTextTableCell__OPERATOR_assign_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & o) {
+  return &((*_self_) = (o));
+}
+
+extern "C" void bg_QTextTableCell_setFormat_const_QTextCharFormat_R(QTextTableCell * _self_, const QTextCharFormat & format) {
+  _self_->setFormat(format);
+}
+
+extern "C" QTextCharFormat * bg_QTextTableCell_format_(QTextTableCell * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->format());
+}
+
+extern "C" int bg_QTextTableCell_row_(QTextTableCell * _self_) {
+  return _self_->row();
+}
+
+extern "C" int bg_QTextTableCell_column_(QTextTableCell * _self_) {
+  return _self_->column();
+}
+
+extern "C" int bg_QTextTableCell_rowSpan_(QTextTableCell * _self_) {
+  return _self_->rowSpan();
+}
+
+extern "C" int bg_QTextTableCell_columnSpan_(QTextTableCell * _self_) {
+  return _self_->columnSpan();
+}
+
+extern "C" bool bg_QTextTableCell_isValid_(QTextTableCell * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QTextCursor * bg_QTextTableCell_firstCursorPosition_(QTextTableCell * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->firstCursorPosition());
+}
+
+extern "C" QTextCursor * bg_QTextTableCell_lastCursorPosition_(QTextTableCell * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->lastCursorPosition());
+}
+
+extern "C" int bg_QTextTableCell_firstPosition_(QTextTableCell * _self_) {
+  return _self_->firstPosition();
+}
+
+extern "C" int bg_QTextTableCell_lastPosition_(QTextTableCell * _self_) {
+  return _self_->lastPosition();
+}
+
+extern "C" bool bg_QTextTableCell__OPERATOR_eq_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & other) {
+  return (*_self_) == (other);
+}
+
+extern "C" bool bg_QTextTableCell__OPERATOR_ne_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & other) {
+  return (*_self_) != (other);
+}
+
+extern "C" QTextFrame::iterator * bg_QTextTableCell_begin_(QTextTableCell * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (_self_->begin());
+}
+
+extern "C" QTextFrame::iterator * bg_QTextTableCell_end_(QTextTableCell * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (_self_->end());
+}
+
+extern "C" int bg_QTextTableCell_tableCellFormatIndex_(QTextTableCell * _self_) {
+  return _self_->tableCellFormatIndex();
+}
+
+struct BgJumptable_QTextTable {
+  CrystalProc<const QMetaObject *> bg_QTextTable_metaObject_;
+  CrystalProc<void *, const char *> bg_QTextTable_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTextTable : public QTextTable {
+  using QTextTable::QTextTable;
+  BgJumptable_QTextTable bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QTextTable_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTextTable_metaObject_();
+    } else {
+      return QTextTable::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QTextTable_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTextTable_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTextTable::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTextTable::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTextTable::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTextTable::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTextTable::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTextTable::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTextTable::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextTable::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTextTable *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTextTable::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTextTable_metaObject_(QTextTable * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTextTable_qt_metacast_const_char_X(QTextTable * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX(QTextTable * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTextTable_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTextTable::tr(s));
+}
+
+extern "C" CrystalString bg_QTextTable_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTextTable::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTextTable_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTextTable::tr(s, c, n));
+}
+
+extern "C" QTextTable * bg_QTextTable__CONSTRUCT_QTextDocument_X(QTextDocument * doc) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTextTable>(doc);
+}
+
+extern "C" void bg_QTextTable_resize_int_int(QTextTable * _self_, int rows, int cols) {
+  _self_->resize(rows, cols);
+}
+
+extern "C" void bg_QTextTable_insertRows_int_int(QTextTable * _self_, int pos, int num) {
+  _self_->insertRows(pos, num);
+}
+
+extern "C" void bg_QTextTable_insertColumns_int_int(QTextTable * _self_, int pos, int num) {
+  _self_->insertColumns(pos, num);
+}
+
+extern "C" void bg_QTextTable_appendRows_int(QTextTable * _self_, int count) {
+  _self_->appendRows(count);
+}
+
+extern "C" void bg_QTextTable_appendColumns_int(QTextTable * _self_, int count) {
+  _self_->appendColumns(count);
+}
+
+extern "C" void bg_QTextTable_removeRows_int_int(QTextTable * _self_, int pos, int num) {
+  _self_->removeRows(pos, num);
+}
+
+extern "C" void bg_QTextTable_removeColumns_int_int(QTextTable * _self_, int pos, int num) {
+  _self_->removeColumns(pos, num);
+}
+
+extern "C" void bg_QTextTable_mergeCells_int_int_int_int(QTextTable * _self_, int row, int col, int numRows, int numCols) {
+  _self_->mergeCells(row, col, numRows, numCols);
+}
+
+extern "C" void bg_QTextTable_mergeCells_const_QTextCursor_R(QTextTable * _self_, const QTextCursor & cursor) {
+  _self_->mergeCells(cursor);
+}
+
+extern "C" void bg_QTextTable_splitCell_int_int_int_int(QTextTable * _self_, int row, int col, int numRows, int numCols) {
+  _self_->splitCell(row, col, numRows, numCols);
+}
+
+extern "C" int bg_QTextTable_rows_(QTextTable * _self_) {
+  return _self_->rows();
+}
+
+extern "C" int bg_QTextTable_columns_(QTextTable * _self_) {
+  return _self_->columns();
+}
+
+extern "C" QTextTableCell * bg_QTextTable_cellAt_int_int(QTextTable * _self_, int row, int col) {
+  return new (UseGC, bindgen_gc_finalizer<QTextTableCell>()) QTextTableCell (_self_->cellAt(row, col));
+}
+
+extern "C" QTextTableCell * bg_QTextTable_cellAt_int(QTextTable * _self_, int position) {
+  return new (UseGC, bindgen_gc_finalizer<QTextTableCell>()) QTextTableCell (_self_->cellAt(position));
+}
+
+extern "C" QTextTableCell * bg_QTextTable_cellAt_const_QTextCursor_R(QTextTable * _self_, const QTextCursor & c) {
+  return new (UseGC, bindgen_gc_finalizer<QTextTableCell>()) QTextTableCell (_self_->cellAt(c));
+}
+
+extern "C" QTextCursor * bg_QTextTable_rowStart_const_QTextCursor_R(QTextTable * _self_, const QTextCursor & c) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->rowStart(c));
+}
+
+extern "C" QTextCursor * bg_QTextTable_rowEnd_const_QTextCursor_R(QTextTable * _self_, const QTextCursor & c) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->rowEnd(c));
+}
+
+extern "C" void bg_QTextTable_setFormat_const_QTextTableFormat_R(QTextTable * _self_, const QTextTableFormat & format) {
+  _self_->setFormat(format);
+}
+
+extern "C" QTextTableFormat * bg_QTextTable_format_(QTextTable * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextTableFormat>()) QTextTableFormat (_self_->format());
+}
+
+extern "C" const QMetaObject * bg_QTextTable_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextTable::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QTextTable_JUMPTABLE_BgJumptable_QTextTable_R(BgInherit_QTextTable * _self_, const BgJumptable_QTextTable & table) {
   _self_->bgJump = (table);
 }
 
@@ -111782,6 +114987,10 @@ extern "C" QRectF bg_QPlainTextEdit_blockBoundingGeometry_const_QTextBlock_R(QPl
   return _self_->blockBoundingGeometry(block);
 }
 
+extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QPlainTextEdit_getPaintContext_(QPlainTextEdit * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QAbstractTextDocumentLayout::PaintContext>()) QAbstractTextDocumentLayout::PaintContext (_self_->getPaintContext());
+}
+
 extern "C" void bg_QPlainTextEdit_zoomInF_float(QPlainTextEdit * _self_, float range) {
   _self_->zoomInF(range);
 }
@@ -111950,6 +115159,7 @@ struct BgJumptable_QPlainTextDocumentLayout {
   CrystalProc<const QMetaObject *> bg_QPlainTextDocumentLayout_metaObject_;
   CrystalProc<void *, const char *> bg_QPlainTextDocumentLayout_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QPainter *, const QAbstractTextDocumentLayout::PaintContext *> bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R;
   CrystalProc<int, const QPointF, Qt::HitTestAccuracy> bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
   CrystalProc<int> bg_QPlainTextDocumentLayout_pageCount_;
   CrystalProc<QSizeF *> bg_QPlainTextDocumentLayout_documentSize_;
@@ -111994,6 +115204,15 @@ struct BgInherit_QPlainTextDocumentLayout : public QPlainTextDocumentLayout {
       return _self_->bgJump.bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
     } else {
       return QPlainTextDocumentLayout::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void draw(QPainter * painter, const QAbstractTextDocumentLayout::PaintContext & context) override {
+    BgInherit_QPlainTextDocumentLayout *_self_ = this;
+    if (_self_->bgJump.bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R.isValid()) {
+      _self_->bgJump.bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(painter, &(context));
+    } else {
+      QPlainTextDocumentLayout::draw(painter, context);
     }
   }
   
@@ -112170,6 +115389,10 @@ extern "C" QPlainTextDocumentLayout * bg_QPlainTextDocumentLayout__CONSTRUCT_QTe
   return new (UseGC) CrystalGCWrapper<BgInherit_QPlainTextDocumentLayout>(document);
 }
 
+extern "C" void bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(QPlainTextDocumentLayout * _self_, QPainter * painter, const QAbstractTextDocumentLayout::PaintContext & context) {
+  _self_->draw(painter, context);
+}
+
 extern "C" int bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(QPlainTextDocumentLayout * _self_, const QPointF point, Qt::HitTestAccuracy accuracy) {
   return _self_->hitTest(point, accuracy);
 }
@@ -112214,6 +115437,10 @@ extern "C" const QMetaObject * bg_QPlainTextDocumentLayout_staticMetaObject_STAT
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPlainTextDocumentLayout::staticMetaObject);
 }
 
+extern "C" void bg_QPlainTextDocumentLayout_draw_SUPER_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(QPlainTextDocumentLayout * _self_, QPainter * painter, const QAbstractTextDocumentLayout::PaintContext & context) {
+  _self_->QPlainTextDocumentLayout::draw(painter, context);
+}
+
 extern "C" int bg_QPlainTextDocumentLayout_hitTest_SUPER_const_QPointF_R_Qt__HitTestAccuracy(QPlainTextDocumentLayout * _self_, const QPointF point, Qt::HitTestAccuracy accuracy) {
   return _self_->QPlainTextDocumentLayout::hitTest(point, accuracy);
 }
@@ -112236,18 +115463,6 @@ extern "C" QRectF bg_QPlainTextDocumentLayout_blockBoundingRect_SUPER_const_QTex
 
 extern "C" void bg_QPlainTextDocumentLayout_documentChanged_SUPER_int_int_int(QPlainTextDocumentLayout * _self_, int from, int charsRemoved, int charsAdded) {
   _self_->QPlainTextDocumentLayout::documentChanged(from, charsRemoved, charsAdded);
-}
-
-extern "C" void bg_QAbstractTextDocumentLayout_resizeInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QTextInlineObject & item, int posInDocument, const QTextFormat & format) {
-  _self_->QAbstractTextDocumentLayout::resizeInlineObject(item, posInDocument, format);
-}
-
-extern "C" void bg_QAbstractTextDocumentLayout_positionInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QTextInlineObject & item, int posInDocument, const QTextFormat & format) {
-  _self_->QAbstractTextDocumentLayout::positionInlineObject(item, posInDocument, format);
-}
-
-extern "C" void bg_QAbstractTextDocumentLayout_drawInlineObject_SUPER_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(QAbstractTextDocumentLayout * _self_, QPainter * painter, const QRectF rect, QTextInlineObject & object, int posInDocument, const QTextFormat & format) {
-  _self_->QAbstractTextDocumentLayout::drawInlineObject(painter, rect, object, posInDocument, format);
 }
 
 extern "C" void bg_BgInherit_QPlainTextDocumentLayout_JUMPTABLE_BgJumptable_QPlainTextDocumentLayout_R(BgInherit_QPlainTextDocumentLayout * _self_, const BgJumptable_QPlainTextDocumentLayout & table) {
@@ -135027,6 +138242,54 @@ extern "C" int bg_Container_QList_QEventPoint__size_(Container_QList_QEventPoint
   return _self_->size();
 }
 
+extern "C" Container_QList_QFontDatabase__WritingSystem_ * bg_Container_QList_QFontDatabase__WritingSystem___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QFontDatabase__WritingSystem_>();
+}
+
+extern "C" QFontDatabase::WritingSystem bg_Container_QList_QFontDatabase__WritingSystem__at_int(Container_QList_QFontDatabase__WritingSystem_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QFontDatabase__WritingSystem__push_back_QFontDatabase__WritingSystem(Container_QList_QFontDatabase__WritingSystem_ * _self_, QFontDatabase::WritingSystem value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QFontDatabase__WritingSystem__size_(Container_QList_QFontDatabase__WritingSystem_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_quint32_ * bg_Container_QList_quint32___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_quint32_>();
+}
+
+extern "C" quint32 bg_Container_QList_quint32__at_int(Container_QList_quint32_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_quint32__push_back_quint32(Container_QList_quint32_ * _self_, quint32 value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_quint32__size_(Container_QList_quint32_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_qsizetype_ * bg_Container_QList_qsizetype___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_qsizetype_>();
+}
+
+extern "C" qsizetype bg_Container_QList_qsizetype__at_int(Container_QList_qsizetype_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_qsizetype__push_back_qsizetype(Container_QList_qsizetype_ * _self_, qsizetype value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_qsizetype__size_(Container_QList_qsizetype_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_QTextFormat_ * bg_Container_QList_QTextFormat___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QTextFormat_>();
 }
@@ -135056,6 +138319,54 @@ extern "C" void bg_Container_QList_QTextLength__push_back_QTextLength(Container_
 }
 
 extern "C" int bg_Container_QList_QTextLength__size_(Container_QList_QTextLength_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QTextLayout__FormatRange_ * bg_Container_QList_QTextLayout__FormatRange___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QTextLayout__FormatRange_>();
+}
+
+extern "C" QTextLayout::FormatRange * bg_Container_QList_QTextLayout__FormatRange__at_int(Container_QList_QTextLayout__FormatRange_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QTextLayout::FormatRange>()) QTextLayout::FormatRange (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QTextLayout__FormatRange__push_back_QTextLayout__FormatRange(Container_QList_QTextLayout__FormatRange_ * _self_, QTextLayout::FormatRange & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QTextLayout__FormatRange__size_(Container_QList_QTextLayout__FormatRange_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QGlyphRun_ * bg_Container_QList_QGlyphRun___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QGlyphRun_>();
+}
+
+extern "C" QGlyphRun * bg_Container_QList_QGlyphRun__at_int(Container_QList_QGlyphRun_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QGlyphRun>()) QGlyphRun (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QGlyphRun__push_back_QGlyphRun(Container_QList_QGlyphRun_ * _self_, QGlyphRun & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QGlyphRun__size_(Container_QList_QGlyphRun_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QAbstractTextDocumentLayout__Selection_ * bg_Container_QList_QAbstractTextDocumentLayout__Selection___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QAbstractTextDocumentLayout__Selection_>();
+}
+
+extern "C" QAbstractTextDocumentLayout::Selection * bg_Container_QList_QAbstractTextDocumentLayout__Selection__at_int(Container_QList_QAbstractTextDocumentLayout__Selection_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QAbstractTextDocumentLayout::Selection>()) QAbstractTextDocumentLayout::Selection (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QAbstractTextDocumentLayout__Selection__push_back_QAbstractTextDocumentLayout__Selection(Container_QList_QAbstractTextDocumentLayout__Selection_ * _self_, QAbstractTextDocumentLayout::Selection & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QAbstractTextDocumentLayout__Selection__size_(Container_QList_QAbstractTextDocumentLayout__Selection_ * _self_) {
   return _self_->size();
 }
 
@@ -135104,6 +138415,22 @@ extern "C" void bg_Container_QList_uint16_t__push_back_uint16_t(Container_QList_
 }
 
 extern "C" int bg_Container_QList_uint16_t__size_(Container_QList_uint16_t_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QFontVariableAxis_ * bg_Container_QList_QFontVariableAxis___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QFontVariableAxis_>();
+}
+
+extern "C" QFontVariableAxis * bg_Container_QList_QFontVariableAxis__at_int(Container_QList_QFontVariableAxis_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QFontVariableAxis>()) QFontVariableAxis (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QFontVariableAxis__push_back_QFontVariableAxis(Container_QList_QFontVariableAxis_ * _self_, QFontVariableAxis & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QFontVariableAxis__size_(Container_QList_QFontVariableAxis_ * _self_) {
   return _self_->size();
 }
 
@@ -135216,6 +138543,38 @@ extern "C" void bg_Container_QList_QStandardItem_X__push_back_QStandardItem_X(Co
 }
 
 extern "C" int bg_Container_QList_QStandardItem_X__size_(Container_QList_QStandardItem_X_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QTextBlock_ * bg_Container_QList_QTextBlock___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QTextBlock_>();
+}
+
+extern "C" QTextBlock * bg_Container_QList_QTextBlock__at_int(Container_QList_QTextBlock_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock>()) QTextBlock (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QTextBlock__push_back_QTextBlock(Container_QList_QTextBlock_ * _self_, QTextBlock & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QTextBlock__size_(Container_QList_QTextBlock_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QTextFrame_X_ * bg_Container_QList_QTextFrame_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QTextFrame_X_>();
+}
+
+extern "C" QTextFrame * bg_Container_QList_QTextFrame_X__at_int(Container_QList_QTextFrame_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QTextFrame_X__push_back_QTextFrame_X(Container_QList_QTextFrame_X_ * _self_, QTextFrame * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QTextFrame_X__size_(Container_QList_QTextFrame_X_ * _self_) {
   return _self_->size();
 }
 

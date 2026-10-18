@@ -216,19 +216,6 @@ types: # Type rewrite rules
   "QList<QInputMethodEvent::Attribute>": { ignore: true }
 
   "QList<QTextEdit::ExtraSelection>": { ignore: true }
-  # Bare structs of QPalette, QRectF and a QList of {QTextCursor,
-  # QTextCharFormat}, which drops QAbstractTextDocumentLayout#draw and
-  # QPlainTextEdit#get_paint_context.
-  "QAbstractTextDocumentLayout::PaintContext": { ignore: true }
-  # ...so `draw`, a pure virtual, isn't wrapped, and a subclass from Crystal
-  # would stay abstract in C++: use QPlainTextDocumentLayout.
-  QAbstractTextDocumentLayout: { sub_class: false }
-  "QAbstractTextDocumentLayout::Selection": { ignore: true }
-  "QList<QAbstractTextDocumentLayout::Selection>": { ignore: true }
-  # QTextLayout isn't bound; drops QTextBlock#text_formats.
-  "QTextLayout::FormatRange": { ignore: true }
-  "QList<QTextLayout::FormatRange>": { ignore: true }
-  "QTextBlock::iterator": { ignore: true } # Over QTextFragment, which isn't bound
   "QList<QTextOption::Tab>": { ignore: true }
   "QTextOption::Tab": { ignore: true }
   "QFormLayout::TakeRowResult": { ignore: true }
@@ -468,6 +455,10 @@ types: # Type rewrite rules
   "QRegion::const_iterator": { ignore: true } # Use #rect_count and #bounding_rect
   "QRegion::const_reverse_iterator": { ignore: true }
   "QPicture::DataPtr": { ignore: true }
+  # Text and fonts
+  QTextFrameLayoutData: { ignore: true } # Private layout data of QTextFrame
+  QTextDocumentPrivate: { ignore: true } # Private; drops a QTextFragment constructor
+  QTextEngine: { ignore: true } # Private; drops TextLayout#engine
   QTransform:
     ignore_methods:
       # Private, with a deduced (`auto`) return type the parser reports as the

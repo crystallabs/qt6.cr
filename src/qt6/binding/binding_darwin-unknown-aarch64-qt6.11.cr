@@ -520,7 +520,12 @@ module Qt
     alias QShortcut = Void
     alias QStandardItemModel = Void
     alias QStyleHints = Void
+    alias QTextObject = Void
+    alias QTextBlockGroup = Void
+    alias QTextFrame = Void
     alias QSyntaxHighlighter = Void
+    alias QTextList = Void
+    alias QTextTable = Void
     alias QUndoGroup = Void
     alias QUndoStack = Void
     alias QValidator = Void
@@ -762,6 +767,7 @@ module Qt
     alias QSequentialAnimationGroupPrivate = Void
     alias QStandardPaths = Void
     alias QTemporaryDir = Void
+    alias QTextBoundaryFinder = Void
     alias QPaintDevice = Void
     alias QPaintEngine = Void
     alias QPainter = Void
@@ -804,15 +810,19 @@ module Qt
     alias QPointingDevice = Void
     alias ContainerQListQEventPoint = Void
     alias QEventPoint = Void
+    alias QFontDatabase = Void
+    alias ContainerQListQFontDatabaseWritingSystem = Void
+    alias QFontInfo = Void
+    alias QRawFont = Void
+    alias ContainerQListQuint32 = Void
+    alias QGlyphRun = Void
+    alias ContainerQListQsizetype = Void
     alias QTextCursor = Void
-    alias QTextFrame = Void
-    alias QTextObject = Void
     alias QTextFormat = Void
     alias QTextBlock = Void
     alias ContainerQListQTextFormat = Void
     alias QTextOption = Void
     alias QAbstractUndoItem = Void
-    alias QTextDocumentPrivate = Void
     alias QGradient = Void
     alias QLinearGradient = Void
     alias QRadialGradient = Void
@@ -829,11 +839,17 @@ module Qt
     alias QTextTableCellFormat = Void
     alias QTextCursorPrivate = Void
     alias QTextDocumentFragment = Void
-    alias QTextList = Void
-    alias QTextTable = Void
+    alias QTextInlineObject = Void
+    alias QTextLayout = Void
+    alias ContainerQListQTextLayoutFormatRange = Void
+    alias QTextLine = Void
+    alias ContainerQListQGlyphRun = Void
+    alias QTextLayout_FormatRange = Void
+    alias QAbstractTextDocumentLayout_PaintContext = Void
     alias QTextObjectInterface = Void
     alias QAbstractTextDocumentLayoutPrivate = Void
-    alias QTextInlineObject = Void
+    alias QAbstractTextDocumentLayout_Selection = Void
+    alias ContainerQListQAbstractTextDocumentLayoutSelection = Void
     alias ContainerQListQObjectX = Void
     alias QActionPrivate = Void
     alias ContainerQListQActionX = Void
@@ -855,7 +871,9 @@ module Qt
     alias QDesktopServices = Void
     alias QAbstractFileIconProvider = Void
     alias QFileSystemModelPrivate = Void
+    alias ContainerQListQFontVariableAxis = Void
     alias QFontMetrics = Void
+    alias QFontMetricsF = Void
     alias QImageWriter = Void
     alias QPlatformOffscreenSurface = Void
     alias QPageSize = Void
@@ -864,12 +882,10 @@ module Qt
     alias ContainerQListQPageRangesRange = Void
     alias QPagedPaintDevicePrivate = Void
     alias QPaintDeviceWindowPrivate = Void
-    alias QFontInfo = Void
     alias ContainerQListQLineF = Void
     alias ContainerQListQLine = Void
     alias ContainerQListQRectF = Void
     alias ContainerQListQRect = Void
-    alias QGlyphRun = Void
     alias QStaticText = Void
     alias QTextItem = Void
     alias ContainerQListQPolygonF = Void
@@ -883,8 +899,17 @@ module Qt
     alias QStandardItemPrivate = Void
     alias QStandardItemModelPrivate = Void
     alias QAccessibilityHints = Void
+    alias QTextObjectPrivate = Void
+    alias ContainerQListQTextBlock = Void
+    alias QTextBlockGroupPrivate = Void
+    alias ContainerQListQTextFrameX = Void
+    alias QTextFrame_Iterator = Void
+    alias QTextFramePrivate = Void
     alias QTextBlockUserData = Void
-    alias QTextLayout = Void
+    alias QTextBlock_Iterator = Void
+    alias QTextFragment = Void
+    alias QTextDocumentWriter = Void
+    alias QTextTableCell = Void
     alias ContainerQListQUndoStackX = Void
     alias QUndoCommand = Void
     alias QValidatorPrivate = Void
@@ -998,6 +1023,7 @@ module Qt
     alias ContainerQListQWizardWizardButton = Void
     alias ContainerQListQVariant = Void
     alias ContainerQListQItemSelectionRange = Void
+    alias QFontVariableAxis = Void
     struct QPoint
       xp : Int32
       yp : Int32
@@ -2115,6 +2141,28 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QAbstractTextDocumentLayout
+      bg_QAbstractTextDocumentLayout_metaObject_ : CrystalProc
+      bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X : CrystalProc
+      bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R : CrystalProc
+      bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy : CrystalProc
+      bg_QAbstractTextDocumentLayout_pageCount_ : CrystalProc
+      bg_QAbstractTextDocumentLayout_documentSize_ : CrystalProc
+      bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X : CrystalProc
+      bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R : CrystalProc
+      bg_QAbstractTextDocumentLayout_documentChanged_int_int_int : CrystalProc
+      bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R : CrystalProc
+      bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R : CrystalProc
+      bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
     struct BgJumptable_QAction
       bg_QAction_metaObject_ : CrystalProc
       bg_QAction_qt_metacast_const_char_X : CrystalProc
@@ -2486,11 +2534,77 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QTextObject
+      bg_QTextObject_metaObject_ : CrystalProc
+      bg_QTextObject_qt_metacast_const_char_X : CrystalProc
+      bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTextBlockGroup
+      bg_QTextBlockGroup_metaObject_ : CrystalProc
+      bg_QTextBlockGroup_qt_metacast_const_char_X : CrystalProc
+      bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QTextBlockGroup_blockInserted_const_QTextBlock_R : CrystalProc
+      bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R : CrystalProc
+      bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTextFrame
+      bg_QTextFrame_metaObject_ : CrystalProc
+      bg_QTextFrame_qt_metacast_const_char_X : CrystalProc
+      bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
     struct BgJumptable_QSyntaxHighlighter
       bg_QSyntaxHighlighter_metaObject_ : CrystalProc
       bg_QSyntaxHighlighter_qt_metacast_const_char_X : CrystalProc
       bg_QSyntaxHighlighter_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
       bg_QSyntaxHighlighter_highlightBlock_const_QString_R : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTextList
+      bg_QTextList_metaObject_ : CrystalProc
+      bg_QTextList_qt_metacast_const_char_X : CrystalProc
+      bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QTextBlockGroup_blockInserted_const_QTextBlock_R : CrystalProc
+      bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R : CrystalProc
+      bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTextTable
+      bg_QTextTable_metaObject_ : CrystalProc
+      bg_QTextTable_qt_metacast_const_char_X : CrystalProc
+      bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
@@ -6732,6 +6846,7 @@ module Qt
       bg_QPlainTextDocumentLayout_metaObject_ : CrystalProc
       bg_QPlainTextDocumentLayout_qt_metacast_const_char_X : CrystalProc
       bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R : CrystalProc
       bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy : CrystalProc
       bg_QPlainTextDocumentLayout_pageCount_ : CrystalProc
       bg_QPlainTextDocumentLayout_documentSize_ : CrystalProc
@@ -8494,7 +8609,12 @@ module Qt
     fun bg_QObject_CAST_Shortcut_(_self_ : QObject*) : QShortcut*
     fun bg_QObject_CAST_StandardItemModel_(_self_ : QObject*) : QStandardItemModel*
     fun bg_QObject_CAST_StyleHints_(_self_ : QObject*) : QStyleHints*
+    fun bg_QObject_CAST_TextObject_(_self_ : QObject*) : QTextObject*
+    fun bg_QObject_CAST_TextBlockGroup_(_self_ : QObject*) : QTextBlockGroup*
+    fun bg_QObject_CAST_TextFrame_(_self_ : QObject*) : QTextFrame*
     fun bg_QObject_CAST_SyntaxHighlighter_(_self_ : QObject*) : QSyntaxHighlighter*
+    fun bg_QObject_CAST_TextList_(_self_ : QObject*) : QTextList*
+    fun bg_QObject_CAST_TextTable_(_self_ : QObject*) : QTextTable*
     fun bg_QObject_CAST_UndoGroup_(_self_ : QObject*) : QUndoGroup*
     fun bg_QObject_CAST_UndoStack_(_self_ : QObject*) : QUndoStack*
     fun bg_QObject_CAST_Validator_(_self_ : QObject*) : QValidator*
@@ -12464,6 +12584,22 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(_self_ : QTemporaryFile*, table : BgJumptable_QTemporaryFile*) : Void
+    fun bg_QTextBoundaryFinder__CONSTRUCT_() : QTextBoundaryFinder*
+    fun bg_QTextBoundaryFinder__COPY_const_QTextBoundaryFinder_R(other : QTextBoundaryFinder*) : QTextBoundaryFinder*
+    fun bg_QTextBoundaryFinder__OPERATOR_assign_const_QTextBoundaryFinder_R(_self_ : QTextBoundaryFinder*, other : QTextBoundaryFinder*) : QTextBoundaryFinder*
+    fun bg_QTextBoundaryFinder_swap_QTextBoundaryFinder_R(_self_ : QTextBoundaryFinder*, other : QTextBoundaryFinder*) : Void
+    fun bg_QTextBoundaryFinder__CONSTRUCT_QTextBoundaryFinder__BoundaryType_const_QString_R(type : TextBoundaryFinder::BoundaryType, string : CrystalString) : QTextBoundaryFinder*
+    fun bg_QTextBoundaryFinder_isValid_(_self_ : QTextBoundaryFinder*) : Bool
+    fun bg_QTextBoundaryFinder_type_(_self_ : QTextBoundaryFinder*) : TextBoundaryFinder::BoundaryType
+    fun bg_QTextBoundaryFinder_string_(_self_ : QTextBoundaryFinder*) : CrystalString
+    fun bg_QTextBoundaryFinder_toStart_(_self_ : QTextBoundaryFinder*) : Void
+    fun bg_QTextBoundaryFinder_toEnd_(_self_ : QTextBoundaryFinder*) : Void
+    fun bg_QTextBoundaryFinder_position_(_self_ : QTextBoundaryFinder*) : Int64
+    fun bg_QTextBoundaryFinder_setPosition_qsizetype(_self_ : QTextBoundaryFinder*, position : Int64) : Void
+    fun bg_QTextBoundaryFinder_toNextBoundary_(_self_ : QTextBoundaryFinder*) : Int64
+    fun bg_QTextBoundaryFinder_toPreviousBoundary_(_self_ : QTextBoundaryFinder*) : Int64
+    fun bg_QTextBoundaryFinder_isAtBoundary_(_self_ : QTextBoundaryFinder*) : Bool
+    fun bg_QTextBoundaryFinder_boundaryReasons_(_self_ : QTextBoundaryFinder*) : TextBoundaryFinder::BoundaryReasons
     fun bg_QTimeLine_metaObject_(_self_ : QTimeLine*) : QMetaObject*
     fun bg_QTimeLine_qt_metacast_const_char_X(_self_ : QTimeLine*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTimeLine*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -14180,6 +14316,121 @@ module Qt
     fun bg_QFont_resolveMask_(_self_ : QFont*) : UInt32
     fun bg_QFont_setResolveMask_uint(_self_ : QFont*, mask : UInt32) : Void
     fun bg_QFont_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QFontDatabase_standardSizes_STATIC_() : ContainerQListInt*
+    fun bg_QFontDatabase_writingSystems_STATIC_() : ContainerQListQFontDatabaseWritingSystem*
+    fun bg_QFontDatabase_writingSystems_STATIC_const_QString_R(family : CrystalString) : ContainerQListQFontDatabaseWritingSystem*
+    fun bg_QFontDatabase_families_STATIC_QFontDatabase__WritingSystem(writing_system : FontDatabase::WritingSystem) : ContainerQListQString*
+    fun bg_QFontDatabase_styles_STATIC_const_QString_R(family : CrystalString) : ContainerQListQString*
+    fun bg_QFontDatabase_pointSizes_STATIC_const_QString_R(family : CrystalString) : ContainerQListInt*
+    fun bg_QFontDatabase_pointSizes_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : ContainerQListInt*
+    fun bg_QFontDatabase_smoothSizes_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : ContainerQListInt*
+    fun bg_QFontDatabase_styleString_STATIC_const_QFont_R(font : QFont*) : CrystalString
+    fun bg_QFontDatabase_styleString_STATIC_const_QFontInfo_R(font_info : QFontInfo*) : CrystalString
+    fun bg_QFontDatabase_font_STATIC_const_QString_R_const_QString_R_int(family : CrystalString, style : CrystalString, point_size : Int32) : QFont*
+    fun bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_isScalable_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_isScalable_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_italic_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_bold_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Bool
+    fun bg_QFontDatabase_weight_STATIC_const_QString_R_const_QString_R(family : CrystalString, style : CrystalString) : Int32
+    fun bg_QFontDatabase_hasFamily_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_isPrivateFamily_STATIC_const_QString_R(family : CrystalString) : Bool
+    fun bg_QFontDatabase_writingSystemName_STATIC_QFontDatabase__WritingSystem(writing_system : FontDatabase::WritingSystem) : CrystalString
+    fun bg_QFontDatabase_writingSystemSample_STATIC_QFontDatabase__WritingSystem(writing_system : FontDatabase::WritingSystem) : CrystalString
+    fun bg_QFontDatabase_addApplicationFont_STATIC_const_QString_R(file_name : CrystalString) : Int32
+    fun bg_QFontDatabase_addApplicationFontFromData_STATIC_const_QByteArray_R(font_data : CrystalString) : Int32
+    fun bg_QFontDatabase_applicationFontFamilies_STATIC_int(id : Int32) : ContainerQListQString*
+    fun bg_QFontDatabase_removeApplicationFont_STATIC_int(id : Int32) : Bool
+    fun bg_QFontDatabase_removeAllApplicationFonts_STATIC_() : Bool
+    fun bg_QFontDatabase_addApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(script : UnicodeScript, family_name : CrystalString) : Void
+    fun bg_QFontDatabase_removeApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(script : UnicodeScript, family_name : CrystalString) : Bool
+    fun bg_QFontDatabase_setApplicationFallbackFontFamilies_STATIC_QChar__Script_const_QStringList_R(unnamed_arg_0 : UnicodeScript, family_names : ContainerQListQString*) : Void
+    fun bg_QFontDatabase_applicationFallbackFontFamilies_STATIC_QChar__Script(script : UnicodeScript) : ContainerQListQString*
+    fun bg_QFontDatabase_addApplicationEmojiFontFamily_STATIC_const_QString_R(family_name : CrystalString) : Void
+    fun bg_QFontDatabase_removeApplicationEmojiFontFamily_STATIC_const_QString_R(family_name : CrystalString) : Bool
+    fun bg_QFontDatabase_setApplicationEmojiFontFamilies_STATIC_const_QStringList_R(family_names : ContainerQListQString*) : Void
+    fun bg_QFontDatabase_applicationEmojiFontFamilies_STATIC_() : ContainerQListQString*
+    fun bg_QFontDatabase_systemFont_STATIC_QFontDatabase__SystemFont(type : FontDatabase::SystemFont) : QFont*
+    fun bg_QFontDatabase__COPY_const_QFontDatabase_R(unnamed_arg_0 : QFontDatabase*) : QFontDatabase*
+    fun bg_QFontDatabase_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QRawFont__CONSTRUCT_() : QRawFont*
+    fun bg_QRawFont__CONSTRUCT_const_QString_R_qreal_QFont__HintingPreference(file_name : CrystalString, pixel_size : Float64, hinting_preference : Font::HintingPreference) : QRawFont*
+    fun bg_QRawFont__CONSTRUCT_const_QByteArray_R_qreal_QFont__HintingPreference(font_data : CrystalString, pixel_size : Float64, hinting_preference : Font::HintingPreference) : QRawFont*
+    fun bg_QRawFont__COPY_const_QRawFont_R(other : QRawFont*) : QRawFont*
+    fun bg_QRawFont__OPERATOR_assign_const_QRawFont_R(_self_ : QRawFont*, other : QRawFont*) : QRawFont*
+    fun bg_QRawFont_swap_QRawFont_R(_self_ : QRawFont*, other : QRawFont*) : Void
+    fun bg_QRawFont_isValid_(_self_ : QRawFont*) : Bool
+    fun bg_QRawFont__OPERATOR_eq_const_QRawFont_R(_self_ : QRawFont*, other : QRawFont*) : Bool
+    fun bg_QRawFont__OPERATOR_ne_const_QRawFont_R(_self_ : QRawFont*, other : QRawFont*) : Bool
+    fun bg_QRawFont_glyphCount_(_self_ : QRawFont*) : UInt32
+    fun bg_QRawFont_familyName_(_self_ : QRawFont*) : CrystalString
+    fun bg_QRawFont_styleName_(_self_ : QRawFont*) : CrystalString
+    fun bg_QRawFont_style_(_self_ : QRawFont*) : Font::Style
+    fun bg_QRawFont_weight_(_self_ : QRawFont*) : Int32
+    fun bg_QRawFont_glyphIndexesForString_const_QString_R(_self_ : QRawFont*, text : CrystalString) : ContainerQListQuint32*
+    fun bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R(_self_ : QRawFont*, glyph_indexes : ContainerQListQuint32*) : ContainerQListQPointF*
+    fun bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R_QRawFont__LayoutFlags(_self_ : QRawFont*, glyph_indexes : ContainerQListQuint32*, layout_flags : RawFont::LayoutFlags) : ContainerQListQPointF*
+    fun bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType(_self_ : QRawFont*, glyph_index : UInt32, antialiasing_type : RawFont::AntialiasingType) : QImage*
+    fun bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType_const_QTransform_R(_self_ : QRawFont*, glyph_index : UInt32, antialiasing_type : RawFont::AntialiasingType, transform : QTransform*) : QImage*
+    fun bg_QRawFont_pathForGlyph_quint32(_self_ : QRawFont*, glyph_index : UInt32) : QPainterPath*
+    fun bg_QRawFont_boundingRect_quint32(_self_ : QRawFont*, glyph_index : UInt32) : QRectF
+    fun bg_QRawFont_setPixelSize_qreal(_self_ : QRawFont*, pixel_size : Float64) : Void
+    fun bg_QRawFont_pixelSize_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_hintingPreference_(_self_ : QRawFont*) : Font::HintingPreference
+    fun bg_QRawFont_ascent_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_capHeight_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_descent_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_leading_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_xHeight_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_averageCharWidth_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_maxCharWidth_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_lineThickness_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_underlinePosition_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_unitsPerEm_(_self_ : QRawFont*) : Float64
+    fun bg_QRawFont_glyphName_quint32(_self_ : QRawFont*, glyph_index : UInt32) : CrystalString
+    fun bg_QRawFont_loadFromFile_const_QString_R_qreal_QFont__HintingPreference(_self_ : QRawFont*, file_name : CrystalString, pixel_size : Float64, hinting_preference : Font::HintingPreference) : Void
+    fun bg_QRawFont_loadFromData_const_QByteArray_R_qreal_QFont__HintingPreference(_self_ : QRawFont*, font_data : CrystalString, pixel_size : Float64, hinting_preference : Font::HintingPreference) : Void
+    fun bg_QRawFont_supportsCharacter_uint(_self_ : QRawFont*, ucs4 : UInt32) : Bool
+    fun bg_QRawFont_supportsCharacter_QChar(_self_ : QRawFont*, character : Int32) : Bool
+    fun bg_QRawFont_supportedWritingSystems_(_self_ : QRawFont*) : ContainerQListQFontDatabaseWritingSystem*
+    fun bg_QRawFont_fontTable_const_char_X(_self_ : QRawFont*, tag_name : UInt8*) : CrystalString
+    fun bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(font : QFont*, writing_system : FontDatabase::WritingSystem) : QRawFont*
+    fun bg_QGlyphRun__CONSTRUCT_() : QGlyphRun*
+    fun bg_QGlyphRun__COPY_const_QGlyphRun_R(other : QGlyphRun*) : QGlyphRun*
+    fun bg_QGlyphRun__OPERATOR_assign_const_QGlyphRun_R(_self_ : QGlyphRun*, other : QGlyphRun*) : QGlyphRun*
+    fun bg_QGlyphRun_swap_QGlyphRun_R(_self_ : QGlyphRun*, other : QGlyphRun*) : Void
+    fun bg_QGlyphRun_rawFont_(_self_ : QGlyphRun*) : QRawFont*
+    fun bg_QGlyphRun_setRawFont_const_QRawFont_R(_self_ : QGlyphRun*, raw_font : QRawFont*) : Void
+    fun bg_QGlyphRun_glyphIndexes_(_self_ : QGlyphRun*) : ContainerQListQuint32*
+    fun bg_QGlyphRun_setGlyphIndexes_const_QList_quint32__R(_self_ : QGlyphRun*, glyph_indexes : ContainerQListQuint32*) : Void
+    fun bg_QGlyphRun_positions_(_self_ : QGlyphRun*) : ContainerQListQPointF*
+    fun bg_QGlyphRun_setPositions_const_QList_QPointF__R(_self_ : QGlyphRun*, positions : ContainerQListQPointF*) : Void
+    fun bg_QGlyphRun_clear_(_self_ : QGlyphRun*) : Void
+    fun bg_QGlyphRun__OPERATOR_eq_const_QGlyphRun_R(_self_ : QGlyphRun*, other : QGlyphRun*) : Bool
+    fun bg_QGlyphRun__OPERATOR_ne_const_QGlyphRun_R(_self_ : QGlyphRun*, other : QGlyphRun*) : Bool
+    fun bg_QGlyphRun_setOverline_bool(_self_ : QGlyphRun*, overline : Bool) : Void
+    fun bg_QGlyphRun_overline_(_self_ : QGlyphRun*) : Bool
+    fun bg_QGlyphRun_setUnderline_bool(_self_ : QGlyphRun*, underline : Bool) : Void
+    fun bg_QGlyphRun_underline_(_self_ : QGlyphRun*) : Bool
+    fun bg_QGlyphRun_setStrikeOut_bool(_self_ : QGlyphRun*, strike_out : Bool) : Void
+    fun bg_QGlyphRun_strikeOut_(_self_ : QGlyphRun*) : Bool
+    fun bg_QGlyphRun_setRightToLeft_bool(_self_ : QGlyphRun*, on : Bool) : Void
+    fun bg_QGlyphRun_isRightToLeft_(_self_ : QGlyphRun*) : Bool
+    fun bg_QGlyphRun_setFlag_QGlyphRun__GlyphRunFlag_bool(_self_ : QGlyphRun*, flag : GlyphRun::GlyphRunFlag, enabled : Bool) : Void
+    fun bg_QGlyphRun_setFlags_QGlyphRun__GlyphRunFlags(_self_ : QGlyphRun*, flags : GlyphRun::GlyphRunFlags) : Void
+    fun bg_QGlyphRun_flags_(_self_ : QGlyphRun*) : GlyphRun::GlyphRunFlags
+    fun bg_QGlyphRun_setBoundingRect_const_QRectF_R(_self_ : QGlyphRun*, bounding_rect : QRectF) : Void
+    fun bg_QGlyphRun_boundingRect_(_self_ : QGlyphRun*) : QRectF
+    fun bg_QGlyphRun_stringIndexes_(_self_ : QGlyphRun*) : ContainerQListQsizetype*
+    fun bg_QGlyphRun_setStringIndexes_const_QList_qsizetype__R(_self_ : QGlyphRun*, string_indexes : ContainerQListQsizetype*) : Void
+    fun bg_QGlyphRun_setSourceString_const_QString_R(_self_ : QGlyphRun*, source_string : CrystalString) : Void
+    fun bg_QGlyphRun_sourceString_(_self_ : QGlyphRun*) : CrystalString
+    fun bg_QGlyphRun_isEmpty_(_self_ : QGlyphRun*) : Bool
     fun bg_QTextDocument_metaObject_(_self_ : QTextDocument*) : QMetaObject*
     fun bg_QTextDocument_qt_metacast_const_char_X(_self_ : QTextDocument*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextDocument*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -14295,7 +14546,6 @@ module Qt
     fun bg_QTextDocument_setModified_bool(_self_ : QTextDocument*, m : Bool) : Void
     fun bg_QTextDocument_createObject_const_QTextFormat_R(_self_ : QTextDocument*, f : QTextFormat*) : QTextObject*
     fun bg_QTextDocument_loadResource_int_const_QUrl_R(_self_ : QTextDocument*, type : Int32, name : QUrl*) : CrystalVariant
-    fun bg_QTextDocument__CONSTRUCT_QTextDocumentPrivate_R_QObject_X(dd : QTextDocumentPrivate*, parent : QObject*) : QTextDocument*
     fun bg_QTextDocument_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QTextDocument*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextDocument*, watched : QObject*, event : QEvent*) : Bool
@@ -14653,6 +14903,20 @@ module Qt
     fun bg_QTextListFormat__CONSTRUCT_const_QTextFormat_R(fmt : QTextFormat*) : QTextListFormat*
     fun bg_QTextListFormat__COPY_const_QTextListFormat_R(unnamed_arg_0 : QTextListFormat*) : QTextListFormat*
     fun bg_QTextListFormat__OPERATOR_assign_const_QTextListFormat_R(_self_ : QTextListFormat*, unnamed_arg_0 : QTextListFormat*) : QTextListFormat*
+    fun bg_QTextImageFormat__CONSTRUCT_() : QTextImageFormat*
+    fun bg_QTextImageFormat_isValid_(_self_ : QTextImageFormat*) : Bool
+    fun bg_QTextImageFormat_setName_const_QString_R(_self_ : QTextImageFormat*, name : CrystalString) : Void
+    fun bg_QTextImageFormat_name_(_self_ : QTextImageFormat*) : CrystalString
+    fun bg_QTextImageFormat_setWidth_qreal(_self_ : QTextImageFormat*, width : Float64) : Void
+    fun bg_QTextImageFormat_width_(_self_ : QTextImageFormat*) : Float64
+    fun bg_QTextImageFormat_setMaximumWidth_QTextLength(_self_ : QTextImageFormat*, max_width : QTextLength*) : Void
+    fun bg_QTextImageFormat_maximumWidth_(_self_ : QTextImageFormat*) : QTextLength*
+    fun bg_QTextImageFormat_setHeight_qreal(_self_ : QTextImageFormat*, height : Float64) : Void
+    fun bg_QTextImageFormat_height_(_self_ : QTextImageFormat*) : Float64
+    fun bg_QTextImageFormat_setQuality_int(_self_ : QTextImageFormat*, quality : Int32) : Void
+    fun bg_QTextImageFormat_quality_(_self_ : QTextImageFormat*) : Int32
+    fun bg_QTextImageFormat__CONSTRUCT_const_QTextFormat_R(format : QTextFormat*) : QTextImageFormat*
+    fun bg_QTextImageFormat__COPY_const_QTextImageFormat_R(unnamed_arg_0 : QTextImageFormat*) : QTextImageFormat*
     fun bg_QTextFrameFormat__CONSTRUCT_() : QTextFrameFormat*
     fun bg_QTextFrameFormat_isValid_(_self_ : QTextFrameFormat*) : Bool
     fun bg_QTextFrameFormat_setPosition_QTextFrameFormat__Position(_self_ : QTextFrameFormat*, f : TextFrameFormat::Position) : Void
@@ -14686,9 +14950,67 @@ module Qt
     fun bg_QTextFrameFormat__CONSTRUCT_const_QTextFormat_R(fmt : QTextFormat*) : QTextFrameFormat*
     fun bg_QTextFrameFormat__COPY_const_QTextFrameFormat_R(unnamed_arg_0 : QTextFrameFormat*) : QTextFrameFormat*
     fun bg_QTextFrameFormat__OPERATOR_assign_const_QTextFrameFormat_R(_self_ : QTextFrameFormat*, unnamed_arg_0 : QTextFrameFormat*) : QTextFrameFormat*
+    fun bg_QTextTableFormat__CONSTRUCT_() : QTextTableFormat*
+    fun bg_QTextTableFormat_isValid_(_self_ : QTextTableFormat*) : Bool
+    fun bg_QTextTableFormat_columns_(_self_ : QTextTableFormat*) : Int32
+    fun bg_QTextTableFormat_setColumns_int(_self_ : QTextTableFormat*, columns : Int32) : Void
+    fun bg_QTextTableFormat_setColumnWidthConstraints_const_QList_QTextLength__R(_self_ : QTextTableFormat*, constraints : ContainerQListQTextLength*) : Void
+    fun bg_QTextTableFormat_columnWidthConstraints_(_self_ : QTextTableFormat*) : ContainerQListQTextLength*
+    fun bg_QTextTableFormat_clearColumnWidthConstraints_(_self_ : QTextTableFormat*) : Void
+    fun bg_QTextTableFormat_cellSpacing_(_self_ : QTextTableFormat*) : Float64
+    fun bg_QTextTableFormat_setCellSpacing_qreal(_self_ : QTextTableFormat*, spacing : Float64) : Void
+    fun bg_QTextTableFormat_cellPadding_(_self_ : QTextTableFormat*) : Float64
+    fun bg_QTextTableFormat_setCellPadding_qreal(_self_ : QTextTableFormat*, padding : Float64) : Void
+    fun bg_QTextTableFormat_setAlignment_Qt__Alignment(_self_ : QTextTableFormat*, alignment : Alignment) : Void
+    fun bg_QTextTableFormat_alignment_(_self_ : QTextTableFormat*) : Alignment
+    fun bg_QTextTableFormat_setHeaderRowCount_int(_self_ : QTextTableFormat*, count : Int32) : Void
+    fun bg_QTextTableFormat_headerRowCount_(_self_ : QTextTableFormat*) : Int32
+    fun bg_QTextTableFormat_setBorderCollapse_bool(_self_ : QTextTableFormat*, border_collapse : Bool) : Void
+    fun bg_QTextTableFormat_borderCollapse_(_self_ : QTextTableFormat*) : Bool
+    fun bg_QTextTableFormat__CONSTRUCT_const_QTextFormat_R(fmt : QTextFormat*) : QTextTableFormat*
+    fun bg_QTextTableFormat__COPY_const_QTextTableFormat_R(unnamed_arg_0 : QTextTableFormat*) : QTextTableFormat*
+    fun bg_QTextTableCellFormat__CONSTRUCT_() : QTextTableCellFormat*
+    fun bg_QTextTableCellFormat_isValid_(_self_ : QTextTableCellFormat*) : Bool
+    fun bg_QTextTableCellFormat_setTopPadding_qreal(_self_ : QTextTableCellFormat*, padding : Float64) : Void
+    fun bg_QTextTableCellFormat_topPadding_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setBottomPadding_qreal(_self_ : QTextTableCellFormat*, padding : Float64) : Void
+    fun bg_QTextTableCellFormat_bottomPadding_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setLeftPadding_qreal(_self_ : QTextTableCellFormat*, padding : Float64) : Void
+    fun bg_QTextTableCellFormat_leftPadding_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setRightPadding_qreal(_self_ : QTextTableCellFormat*, padding : Float64) : Void
+    fun bg_QTextTableCellFormat_rightPadding_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setPadding_qreal(_self_ : QTextTableCellFormat*, padding : Float64) : Void
+    fun bg_QTextTableCellFormat_setTopBorder_qreal(_self_ : QTextTableCellFormat*, width : Float64) : Void
+    fun bg_QTextTableCellFormat_topBorder_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setBottomBorder_qreal(_self_ : QTextTableCellFormat*, width : Float64) : Void
+    fun bg_QTextTableCellFormat_bottomBorder_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setLeftBorder_qreal(_self_ : QTextTableCellFormat*, width : Float64) : Void
+    fun bg_QTextTableCellFormat_leftBorder_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setRightBorder_qreal(_self_ : QTextTableCellFormat*, width : Float64) : Void
+    fun bg_QTextTableCellFormat_rightBorder_(_self_ : QTextTableCellFormat*) : Float64
+    fun bg_QTextTableCellFormat_setBorder_qreal(_self_ : QTextTableCellFormat*, width : Float64) : Void
+    fun bg_QTextTableCellFormat_setTopBorderStyle_QTextFrameFormat__BorderStyle(_self_ : QTextTableCellFormat*, style : TextFrameFormat::BorderStyle) : Void
+    fun bg_QTextTableCellFormat_topBorderStyle_(_self_ : QTextTableCellFormat*) : TextFrameFormat::BorderStyle
+    fun bg_QTextTableCellFormat_setBottomBorderStyle_QTextFrameFormat__BorderStyle(_self_ : QTextTableCellFormat*, style : TextFrameFormat::BorderStyle) : Void
+    fun bg_QTextTableCellFormat_bottomBorderStyle_(_self_ : QTextTableCellFormat*) : TextFrameFormat::BorderStyle
+    fun bg_QTextTableCellFormat_setLeftBorderStyle_QTextFrameFormat__BorderStyle(_self_ : QTextTableCellFormat*, style : TextFrameFormat::BorderStyle) : Void
+    fun bg_QTextTableCellFormat_leftBorderStyle_(_self_ : QTextTableCellFormat*) : TextFrameFormat::BorderStyle
+    fun bg_QTextTableCellFormat_setRightBorderStyle_QTextFrameFormat__BorderStyle(_self_ : QTextTableCellFormat*, style : TextFrameFormat::BorderStyle) : Void
+    fun bg_QTextTableCellFormat_rightBorderStyle_(_self_ : QTextTableCellFormat*) : TextFrameFormat::BorderStyle
+    fun bg_QTextTableCellFormat_setBorderStyle_QTextFrameFormat__BorderStyle(_self_ : QTextTableCellFormat*, style : TextFrameFormat::BorderStyle) : Void
+    fun bg_QTextTableCellFormat_setTopBorderBrush_const_QBrush_R(_self_ : QTextTableCellFormat*, brush : QBrush*) : Void
+    fun bg_QTextTableCellFormat_topBorderBrush_(_self_ : QTextTableCellFormat*) : QBrush*
+    fun bg_QTextTableCellFormat_setBottomBorderBrush_const_QBrush_R(_self_ : QTextTableCellFormat*, brush : QBrush*) : Void
+    fun bg_QTextTableCellFormat_bottomBorderBrush_(_self_ : QTextTableCellFormat*) : QBrush*
+    fun bg_QTextTableCellFormat_setLeftBorderBrush_const_QBrush_R(_self_ : QTextTableCellFormat*, brush : QBrush*) : Void
+    fun bg_QTextTableCellFormat_leftBorderBrush_(_self_ : QTextTableCellFormat*) : QBrush*
+    fun bg_QTextTableCellFormat_setRightBorderBrush_const_QBrush_R(_self_ : QTextTableCellFormat*, brush : QBrush*) : Void
+    fun bg_QTextTableCellFormat_rightBorderBrush_(_self_ : QTextTableCellFormat*) : QBrush*
+    fun bg_QTextTableCellFormat_setBorderBrush_const_QBrush_R(_self_ : QTextTableCellFormat*, brush : QBrush*) : Void
+    fun bg_QTextTableCellFormat__CONSTRUCT_const_QTextFormat_R(fmt : QTextFormat*) : QTextTableCellFormat*
+    fun bg_QTextTableCellFormat__COPY_const_QTextTableCellFormat_R(unnamed_arg_0 : QTextTableCellFormat*) : QTextTableCellFormat*
     fun bg_QTextCursor__CONSTRUCT_() : QTextCursor*
     fun bg_QTextCursor__CONSTRUCT_QTextDocument_X(document : QTextDocument*) : QTextCursor*
-    fun bg_QTextCursor__CONSTRUCT_QTextDocumentPrivate_X_int(p : QTextDocumentPrivate*, pos : Int32) : QTextCursor*
     fun bg_QTextCursor__CONSTRUCT_QTextCursorPrivate_X(d : QTextCursorPrivate*) : QTextCursor*
     fun bg_QTextCursor__CONSTRUCT_QTextFrame_X(frame : QTextFrame*) : QTextCursor*
     fun bg_QTextCursor__CONSTRUCT_const_QTextBlock_R(block : QTextBlock*) : QTextCursor*
@@ -14770,6 +15092,109 @@ module Qt
     fun bg_QTextCursor_blockNumber_(_self_ : QTextCursor*) : Int32
     fun bg_QTextCursor_columnNumber_(_self_ : QTextCursor*) : Int32
     fun bg_QTextCursor_document_(_self_ : QTextCursor*) : QTextDocument*
+    fun bg_QTextInlineObject__CONSTRUCT_() : QTextInlineObject*
+    fun bg_QTextInlineObject_isValid_(_self_ : QTextInlineObject*) : Bool
+    fun bg_QTextInlineObject_rect_(_self_ : QTextInlineObject*) : QRectF
+    fun bg_QTextInlineObject_width_(_self_ : QTextInlineObject*) : Float64
+    fun bg_QTextInlineObject_ascent_(_self_ : QTextInlineObject*) : Float64
+    fun bg_QTextInlineObject_descent_(_self_ : QTextInlineObject*) : Float64
+    fun bg_QTextInlineObject_height_(_self_ : QTextInlineObject*) : Float64
+    fun bg_QTextInlineObject_textDirection_(_self_ : QTextInlineObject*) : LayoutDirection
+    fun bg_QTextInlineObject_setWidth_qreal(_self_ : QTextInlineObject*, w : Float64) : Void
+    fun bg_QTextInlineObject_setAscent_qreal(_self_ : QTextInlineObject*, a : Float64) : Void
+    fun bg_QTextInlineObject_setDescent_qreal(_self_ : QTextInlineObject*, d : Float64) : Void
+    fun bg_QTextInlineObject_textPosition_(_self_ : QTextInlineObject*) : Int32
+    fun bg_QTextInlineObject_formatIndex_(_self_ : QTextInlineObject*) : Int32
+    fun bg_QTextInlineObject_format_(_self_ : QTextInlineObject*) : QTextFormat*
+    fun bg_QTextInlineObject__COPY_const_QTextInlineObject_R(unnamed_arg_0 : QTextInlineObject*) : QTextInlineObject*
+    fun bg_QTextLayout__CONSTRUCT_() : QTextLayout*
+    fun bg_QTextLayout__CONSTRUCT_const_QString_R(text : CrystalString) : QTextLayout*
+    fun bg_QTextLayout__CONSTRUCT_const_QString_R_const_QFont_R_const_QPaintDevice_X(text : CrystalString, font : QFont*, paintdevice : QPaintDevice*) : QTextLayout*
+    fun bg_QTextLayout__CONSTRUCT_const_QTextBlock_R(b : QTextBlock*) : QTextLayout*
+    fun bg_QTextLayout_setFont_const_QFont_R(_self_ : QTextLayout*, f : QFont*) : Void
+    fun bg_QTextLayout_font_(_self_ : QTextLayout*) : QFont*
+    fun bg_QTextLayout_setRawFont_const_QRawFont_R(_self_ : QTextLayout*, raw_font : QRawFont*) : Void
+    fun bg_QTextLayout_setText_const_QString_R(_self_ : QTextLayout*, string : CrystalString) : Void
+    fun bg_QTextLayout_text_(_self_ : QTextLayout*) : CrystalString
+    fun bg_QTextLayout_setTextOption_const_QTextOption_R(_self_ : QTextLayout*, option : QTextOption*) : Void
+    fun bg_QTextLayout_textOption_(_self_ : QTextLayout*) : QTextOption*
+    fun bg_QTextLayout_setPreeditArea_int_const_QString_R(_self_ : QTextLayout*, position : Int32, text : CrystalString) : Void
+    fun bg_QTextLayout_preeditAreaPosition_(_self_ : QTextLayout*) : Int32
+    fun bg_QTextLayout_preeditAreaText_(_self_ : QTextLayout*) : CrystalString
+    fun bg_QTextLayout_setFormats_const_QList_QTextLayout__FormatRange__R(_self_ : QTextLayout*, overrides : ContainerQListQTextLayoutFormatRange*) : Void
+    fun bg_QTextLayout_formats_(_self_ : QTextLayout*) : ContainerQListQTextLayoutFormatRange*
+    fun bg_QTextLayout_clearFormats_(_self_ : QTextLayout*) : Void
+    fun bg_QTextLayout_setCacheEnabled_bool(_self_ : QTextLayout*, enable : Bool) : Void
+    fun bg_QTextLayout_cacheEnabled_(_self_ : QTextLayout*) : Bool
+    fun bg_QTextLayout_setCursorMoveStyle_Qt__CursorMoveStyle(_self_ : QTextLayout*, style : CursorMoveStyle) : Void
+    fun bg_QTextLayout_cursorMoveStyle_(_self_ : QTextLayout*) : CursorMoveStyle
+    fun bg_QTextLayout_beginLayout_(_self_ : QTextLayout*) : Void
+    fun bg_QTextLayout_endLayout_(_self_ : QTextLayout*) : Void
+    fun bg_QTextLayout_clearLayout_(_self_ : QTextLayout*) : Void
+    fun bg_QTextLayout_createLine_(_self_ : QTextLayout*) : QTextLine*
+    fun bg_QTextLayout_lineCount_(_self_ : QTextLayout*) : Int32
+    fun bg_QTextLayout_lineAt_int(_self_ : QTextLayout*, i : Int32) : QTextLine*
+    fun bg_QTextLayout_lineForTextPosition_int(_self_ : QTextLayout*, pos : Int32) : QTextLine*
+    fun bg_QTextLayout_isValidCursorPosition_int(_self_ : QTextLayout*, pos : Int32) : Bool
+    fun bg_QTextLayout_nextCursorPosition_int_QTextLayout__CursorMode(_self_ : QTextLayout*, old_pos : Int32, mode : TextLayout::CursorMode) : Int32
+    fun bg_QTextLayout_previousCursorPosition_int_QTextLayout__CursorMode(_self_ : QTextLayout*, old_pos : Int32, mode : TextLayout::CursorMode) : Int32
+    fun bg_QTextLayout_leftCursorPosition_int(_self_ : QTextLayout*, old_pos : Int32) : Int32
+    fun bg_QTextLayout_rightCursorPosition_int(_self_ : QTextLayout*, old_pos : Int32) : Int32
+    fun bg_QTextLayout_draw_QPainter_X_const_QPointF_R(_self_ : QTextLayout*, p : QPainter*, pos : QPointF) : Void
+    fun bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R(_self_ : QTextLayout*, p : QPainter*, pos : QPointF, selections : ContainerQListQTextLayoutFormatRange*) : Void
+    fun bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R_const_QRectF_R(_self_ : QTextLayout*, p : QPainter*, pos : QPointF, selections : ContainerQListQTextLayoutFormatRange*, clip : QRectF) : Void
+    fun bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int(_self_ : QTextLayout*, p : QPainter*, pos : QPointF, cursor_position : Int32) : Void
+    fun bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int_int(_self_ : QTextLayout*, p : QPainter*, pos : QPointF, cursor_position : Int32, width : Int32) : Void
+    fun bg_QTextLayout_position_(_self_ : QTextLayout*) : QPointF
+    fun bg_QTextLayout_setPosition_const_QPointF_R(_self_ : QTextLayout*, p : QPointF) : Void
+    fun bg_QTextLayout_boundingRect_(_self_ : QTextLayout*) : QRectF
+    fun bg_QTextLayout_minimumWidth_(_self_ : QTextLayout*) : Float64
+    fun bg_QTextLayout_maximumWidth_(_self_ : QTextLayout*) : Float64
+    fun bg_QTextLayout_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(_self_ : QTextLayout*, from : Int32, length : Int32, flags : TextLayout::GlyphRunRetrievalFlags) : ContainerQListQGlyphRun*
+    fun bg_QTextLayout_glyphRuns_int_int(_self_ : QTextLayout*, from : Int32, length : Int32) : ContainerQListQGlyphRun*
+    fun bg_QTextLayout_setFlags_int(_self_ : QTextLayout*, flags : Int32) : Void
+    fun bg_QTextLayout__FormatRange__CONSTRUCT_() : QTextLayout_FormatRange*
+    fun bg_QTextLayout__FormatRange__COPY_const_QTextLayout__FormatRange_R(unnamed_arg_0 : QTextLayout_FormatRange*) : QTextLayout_FormatRange*
+    fun bg_QTextLayout__FormatRange__OPERATOR_assign_const_QTextLayout__FormatRange_R(_self_ : QTextLayout_FormatRange*, unnamed_arg_0 : QTextLayout_FormatRange*) : QTextLayout_FormatRange*
+    fun bg_QTextLayout__FormatRange__OPERATOR_eq_const_QTextLayout__FormatRange_R(_self_ : QTextLayout_FormatRange*, rhs : QTextLayout_FormatRange*) : Bool
+    fun bg_QTextLayout__FormatRange__OPERATOR_ne_const_QTextLayout__FormatRange_R(_self_ : QTextLayout_FormatRange*, rhs : QTextLayout_FormatRange*) : Bool
+    fun bg_QTextLayout__FormatRange__AGGREGATE_int_int_QTextCharFormat(start : Int32, length : Int32, format : QTextCharFormat*) : QTextLayout_FormatRange*
+    fun bg_QTextLayout__FormatRange_start_GETTER_(_self_ : QTextLayout_FormatRange*) : Int32
+    fun bg_QTextLayout__FormatRange_start_SETTER_int(_self_ : QTextLayout_FormatRange*, start : Int32) : Void
+    fun bg_QTextLayout__FormatRange_length_GETTER_(_self_ : QTextLayout_FormatRange*) : Int32
+    fun bg_QTextLayout__FormatRange_length_SETTER_int(_self_ : QTextLayout_FormatRange*, length : Int32) : Void
+    fun bg_QTextLayout__FormatRange_format_GETTER_(_self_ : QTextLayout_FormatRange*) : QTextCharFormat*
+    fun bg_QTextLayout__FormatRange_format_SETTER_QTextCharFormat(_self_ : QTextLayout_FormatRange*, format : QTextCharFormat*) : Void
+    fun bg_QTextLine__CONSTRUCT_() : QTextLine*
+    fun bg_QTextLine_isValid_(_self_ : QTextLine*) : Bool
+    fun bg_QTextLine_rect_(_self_ : QTextLine*) : QRectF
+    fun bg_QTextLine_x_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_y_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_width_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_ascent_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_descent_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_height_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_leading_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_setLeadingIncluded_bool(_self_ : QTextLine*, included : Bool) : Void
+    fun bg_QTextLine_leadingIncluded_(_self_ : QTextLine*) : Bool
+    fun bg_QTextLine_naturalTextWidth_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_horizontalAdvance_(_self_ : QTextLine*) : Float64
+    fun bg_QTextLine_naturalTextRect_(_self_ : QTextLine*) : QRectF
+    fun bg_QTextLine_cursorToX_int_X_QTextLine__Edge(_self_ : QTextLine*, cursor_pos : Int32*, edge : TextLine::Edge) : Float64
+    fun bg_QTextLine_cursorToX_int_QTextLine__Edge(_self_ : QTextLine*, cursor_pos : Int32, edge : TextLine::Edge) : Float64
+    fun bg_QTextLine_xToCursor_qreal_QTextLine__CursorPosition(_self_ : QTextLine*, x : Float64, unnamed_arg_1 : TextLine::CursorPosition) : Int32
+    fun bg_QTextLine_setLineWidth_qreal(_self_ : QTextLine*, width : Float64) : Void
+    fun bg_QTextLine_setNumColumns_int(_self_ : QTextLine*, columns : Int32) : Void
+    fun bg_QTextLine_setNumColumns_int_qreal(_self_ : QTextLine*, columns : Int32, alignment_width : Float64) : Void
+    fun bg_QTextLine_setPosition_const_QPointF_R(_self_ : QTextLine*, pos : QPointF) : Void
+    fun bg_QTextLine_position_(_self_ : QTextLine*) : QPointF
+    fun bg_QTextLine_textStart_(_self_ : QTextLine*) : Int32
+    fun bg_QTextLine_textLength_(_self_ : QTextLine*) : Int32
+    fun bg_QTextLine_lineNumber_(_self_ : QTextLine*) : Int32
+    fun bg_QTextLine_draw_QPainter_X_const_QPointF_R(_self_ : QTextLine*, painter : QPainter*, position : QPointF) : Void
+    fun bg_QTextLine_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(_self_ : QTextLine*, from : Int32, length : Int32, flags : TextLayout::GlyphRunRetrievalFlags) : ContainerQListQGlyphRun*
+    fun bg_QTextLine_glyphRuns_int_int(_self_ : QTextLine*, from : Int32, length : Int32) : ContainerQListQGlyphRun*
+    fun bg_QTextLine__COPY_const_QTextLine_R(unnamed_arg_0 : QTextLine*) : QTextLine*
     fun bg_QPalette__CONSTRUCT_() : QPalette*
     fun bg_QPalette__CONSTRUCT_const_QColor_R(button : QColor*) : QPalette*
     fun bg_QPalette__CONSTRUCT_Qt__GlobalColor(button : GlobalColor) : QPalette*
@@ -14829,6 +15254,7 @@ module Qt
     fun bg_QAbstractTextDocumentLayout_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
     fun bg_QAbstractTextDocumentLayout_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QAbstractTextDocumentLayout__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QAbstractTextDocumentLayout*
+    fun bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(_self_ : QAbstractTextDocumentLayout*, painter : QPainter*, context : QAbstractTextDocumentLayout_PaintContext*) : Void
     fun bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(_self_ : QAbstractTextDocumentLayout*, point : QPointF, accuracy : HitTestAccuracy) : Int32
     fun bg_QAbstractTextDocumentLayout_anchorAt_const_QPointF_R(_self_ : QAbstractTextDocumentLayout*, pos : QPointF) : CrystalString
     fun bg_QAbstractTextDocumentLayout_imageAt_const_QPointF_R(_self_ : QAbstractTextDocumentLayout*, pos : QPointF) : CrystalString
@@ -14869,6 +15295,36 @@ module Qt
     fun bg_QAbstractTextDocumentLayout_CONNECT_updateBlock_CrystalProc_void__const_QTextBlock_R_(_self_ : QAbstractTextDocumentLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractTextDocumentLayout_CONNECT_documentSizeChanged_CrystalProc_void__const_QSizeF_R_(_self_ : QAbstractTextDocumentLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractTextDocumentLayout_CONNECT_pageCountChanged_CrystalProc_void__int_(_self_ : QAbstractTextDocumentLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QAbstractTextDocumentLayout_resizeInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(_self_ : QAbstractTextDocumentLayout*, item : QTextInlineObject*, pos_in_document : Int32, format : QTextFormat*) : Void
+    fun bg_QAbstractTextDocumentLayout_positionInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(_self_ : QAbstractTextDocumentLayout*, item : QTextInlineObject*, pos_in_document : Int32, format : QTextFormat*) : Void
+    fun bg_QAbstractTextDocumentLayout_drawInlineObject_SUPER_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(_self_ : QAbstractTextDocumentLayout*, painter : QPainter*, rect : QRectF, object : QTextInlineObject*, pos_in_document : Int32, format : QTextFormat*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QAbstractTextDocumentLayout*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QAbstractTextDocumentLayout*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QAbstractTextDocumentLayout*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QAbstractTextDocumentLayout*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QAbstractTextDocumentLayout*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractTextDocumentLayout*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractTextDocumentLayout*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QAbstractTextDocumentLayout_JUMPTABLE_BgJumptable_QAbstractTextDocumentLayout_R(_self_ : QAbstractTextDocumentLayout*, table : BgJumptable_QAbstractTextDocumentLayout*) : Void
+    fun bg_QAbstractTextDocumentLayout__Selection__COPY_const_QAbstractTextDocumentLayout__Selection_R(unnamed_arg_0 : QAbstractTextDocumentLayout_Selection*) : QAbstractTextDocumentLayout_Selection*
+    fun bg_QAbstractTextDocumentLayout__Selection__OPERATOR_assign_const_QAbstractTextDocumentLayout__Selection_R(_self_ : QAbstractTextDocumentLayout_Selection*, unnamed_arg_0 : QAbstractTextDocumentLayout_Selection*) : QAbstractTextDocumentLayout_Selection*
+    fun bg_QAbstractTextDocumentLayout__Selection__CONSTRUCT_() : QAbstractTextDocumentLayout_Selection*
+    fun bg_QAbstractTextDocumentLayout__Selection__AGGREGATE_QTextCursor_QTextCharFormat(cursor : QTextCursor*, format : QTextCharFormat*) : QAbstractTextDocumentLayout_Selection*
+    fun bg_QAbstractTextDocumentLayout__Selection_cursor_GETTER_(_self_ : QAbstractTextDocumentLayout_Selection*) : QTextCursor*
+    fun bg_QAbstractTextDocumentLayout__Selection_cursor_SETTER_QTextCursor(_self_ : QAbstractTextDocumentLayout_Selection*, cursor : QTextCursor*) : Void
+    fun bg_QAbstractTextDocumentLayout__Selection_format_GETTER_(_self_ : QAbstractTextDocumentLayout_Selection*) : QTextCharFormat*
+    fun bg_QAbstractTextDocumentLayout__Selection_format_SETTER_QTextCharFormat(_self_ : QAbstractTextDocumentLayout_Selection*, format : QTextCharFormat*) : Void
+    fun bg_QAbstractTextDocumentLayout__PaintContext__CONSTRUCT_() : QAbstractTextDocumentLayout_PaintContext*
+    fun bg_QAbstractTextDocumentLayout__PaintContext__COPY_const_QAbstractTextDocumentLayout__PaintContext_R(unnamed_arg_0 : QAbstractTextDocumentLayout_PaintContext*) : QAbstractTextDocumentLayout_PaintContext*
+    fun bg_QAbstractTextDocumentLayout__PaintContext__OPERATOR_assign_const_QAbstractTextDocumentLayout__PaintContext_R(_self_ : QAbstractTextDocumentLayout_PaintContext*, unnamed_arg_0 : QAbstractTextDocumentLayout_PaintContext*) : QAbstractTextDocumentLayout_PaintContext*
+    fun bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_GETTER_(_self_ : QAbstractTextDocumentLayout_PaintContext*) : Int32
+    fun bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_SETTER_int(_self_ : QAbstractTextDocumentLayout_PaintContext*, cursor_position : Int32) : Void
+    fun bg_QAbstractTextDocumentLayout__PaintContext_palette_GETTER_(_self_ : QAbstractTextDocumentLayout_PaintContext*) : QPalette*
+    fun bg_QAbstractTextDocumentLayout__PaintContext_palette_SETTER_QPalette(_self_ : QAbstractTextDocumentLayout_PaintContext*, palette : QPalette*) : Void
+    fun bg_QAbstractTextDocumentLayout__PaintContext_clip_GETTER_(_self_ : QAbstractTextDocumentLayout_PaintContext*) : QRectF
+    fun bg_QAbstractTextDocumentLayout__PaintContext_clip_SETTER_QRectF(_self_ : QAbstractTextDocumentLayout_PaintContext*, clip : QRectF) : Void
+    fun bg_QAbstractTextDocumentLayout__PaintContext_selections_GETTER_(_self_ : QAbstractTextDocumentLayout_PaintContext*) : ContainerQListQAbstractTextDocumentLayoutSelection*
+    fun bg_QAbstractTextDocumentLayout__PaintContext_selections_SETTER_QList_QAbstractTextDocumentLayout__Selection_(_self_ : QAbstractTextDocumentLayout_PaintContext*, selections : ContainerQListQAbstractTextDocumentLayoutSelection*) : Void
     fun bg_QAction_metaObject_(_self_ : QAction*) : QMetaObject*
     fun bg_QAction_qt_metacast_const_char_X(_self_ : QAction*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QAction_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAction*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -15625,6 +16081,26 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFileSystemModel_JUMPTABLE_BgJumptable_QFileSystemModel_R(_self_ : QFileSystemModel*, table : BgJumptable_QFileSystemModel*) : Void
+    fun bg_QFontInfo__CONSTRUCT_const_QFont_R(unnamed_arg_0 : QFont*) : QFontInfo*
+    fun bg_QFontInfo__COPY_const_QFontInfo_R(unnamed_arg_0 : QFontInfo*) : QFontInfo*
+    fun bg_QFontInfo__OPERATOR_assign_const_QFontInfo_R(_self_ : QFontInfo*, unnamed_arg_0 : QFontInfo*) : QFontInfo*
+    fun bg_QFontInfo_swap_QFontInfo_R(_self_ : QFontInfo*, other : QFontInfo*) : Void
+    fun bg_QFontInfo_family_(_self_ : QFontInfo*) : CrystalString
+    fun bg_QFontInfo_styleName_(_self_ : QFontInfo*) : CrystalString
+    fun bg_QFontInfo_pixelSize_(_self_ : QFontInfo*) : Int32
+    fun bg_QFontInfo_pointSize_(_self_ : QFontInfo*) : Int32
+    fun bg_QFontInfo_pointSizeF_(_self_ : QFontInfo*) : Float64
+    fun bg_QFontInfo_italic_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_style_(_self_ : QFontInfo*) : Font::Style
+    fun bg_QFontInfo_weight_(_self_ : QFontInfo*) : Int32
+    fun bg_QFontInfo_bold_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_underline_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_overline_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_strikeOut_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_fixedPitch_(_self_ : QFontInfo*) : Bool
+    fun bg_QFontInfo_styleHint_(_self_ : QFontInfo*) : Font::StyleHint
+    fun bg_QFontInfo_variableAxes_(_self_ : QFontInfo*) : ContainerQListQFontVariableAxis*
+    fun bg_QFontInfo_exactMatch_(_self_ : QFontInfo*) : Bool
     fun bg_QFontMetrics__CONSTRUCT_const_QFont_R(unnamed_arg_0 : QFont*) : QFontMetrics*
     fun bg_QFontMetrics__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(font : QFont*, pd : QPaintDevice*) : QFontMetrics*
     fun bg_QFontMetrics__COPY_const_QFontMetrics_R(unnamed_arg_0 : QFontMetrics*) : QFontMetrics*
@@ -15664,6 +16140,46 @@ module Qt
     fun bg_QFontMetrics_fontDpi_(_self_ : QFontMetrics*) : Float64
     fun bg_QFontMetrics__OPERATOR_eq_const_QFontMetrics_R(_self_ : QFontMetrics*, other : QFontMetrics*) : Bool
     fun bg_QFontMetrics__OPERATOR_ne_const_QFontMetrics_R(_self_ : QFontMetrics*, other : QFontMetrics*) : Bool
+    fun bg_QFontMetricsF__CONSTRUCT_const_QFont_R(font : QFont*) : QFontMetricsF*
+    fun bg_QFontMetricsF__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(font : QFont*, pd : QPaintDevice*) : QFontMetricsF*
+    fun bg_QFontMetricsF__CONSTRUCT_const_QFontMetrics_R(unnamed_arg_0 : QFontMetrics*) : QFontMetricsF*
+    fun bg_QFontMetricsF__COPY_const_QFontMetricsF_R(unnamed_arg_0 : QFontMetricsF*) : QFontMetricsF*
+    fun bg_QFontMetricsF__OPERATOR_assign_const_QFontMetricsF_R(_self_ : QFontMetricsF*, unnamed_arg_0 : QFontMetricsF*) : QFontMetricsF*
+    fun bg_QFontMetricsF__OPERATOR_assign_const_QFontMetrics_R(_self_ : QFontMetricsF*, unnamed_arg_0 : QFontMetrics*) : QFontMetricsF*
+    fun bg_QFontMetricsF_swap_QFontMetricsF_R(_self_ : QFontMetricsF*, other : QFontMetricsF*) : Void
+    fun bg_QFontMetricsF_ascent_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_capHeight_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_descent_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_height_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_leading_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_lineSpacing_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_minLeftBearing_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_minRightBearing_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_maxWidth_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_xHeight_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_averageCharWidth_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_inFont_QChar(_self_ : QFontMetricsF*, unnamed_arg_0 : Int32) : Bool
+    fun bg_QFontMetricsF_inFontUcs4_uint(_self_ : QFontMetricsF*, ucs4 : UInt32) : Bool
+    fun bg_QFontMetricsF_leftBearing_QChar(_self_ : QFontMetricsF*, unnamed_arg_0 : Int32) : Float64
+    fun bg_QFontMetricsF_rightBearing_QChar(_self_ : QFontMetricsF*, unnamed_arg_0 : Int32) : Float64
+    fun bg_QFontMetricsF_horizontalAdvance_const_QString_R_int(_self_ : QFontMetricsF*, string : CrystalString, length : Int32) : Float64
+    fun bg_QFontMetricsF_horizontalAdvance_QChar(_self_ : QFontMetricsF*, unnamed_arg_0 : Int32) : Float64
+    fun bg_QFontMetricsF_horizontalAdvance_const_QString_R_const_QTextOption_R(_self_ : QFontMetricsF*, string : CrystalString, text_option : QTextOption*) : Float64
+    fun bg_QFontMetricsF_boundingRect_const_QString_R(_self_ : QFontMetricsF*, string : CrystalString) : QRectF
+    fun bg_QFontMetricsF_boundingRect_const_QString_R_const_QTextOption_R(_self_ : QFontMetricsF*, text : CrystalString, text_option : QTextOption*) : QRectF
+    fun bg_QFontMetricsF_boundingRect_QChar(_self_ : QFontMetricsF*, unnamed_arg_0 : Int32) : QRectF
+    fun bg_QFontMetricsF_boundingRect_const_QRectF_R_int_const_QString_R_int_int_X(_self_ : QFontMetricsF*, r : QRectF, flags : Int32, string : CrystalString, tabstops : Int32, tabarray : Int32*) : QRectF
+    fun bg_QFontMetricsF_size_int_const_QString_R_int_int_X(_self_ : QFontMetricsF*, flags : Int32, str : CrystalString, tabstops : Int32, tabarray : Int32*) : QSizeF
+    fun bg_QFontMetricsF_tightBoundingRect_const_QString_R(_self_ : QFontMetricsF*, text : CrystalString) : QRectF
+    fun bg_QFontMetricsF_tightBoundingRect_const_QString_R_const_QTextOption_R(_self_ : QFontMetricsF*, text : CrystalString, text_option : QTextOption*) : QRectF
+    fun bg_QFontMetricsF_elidedText_const_QString_R_Qt__TextElideMode_qreal_int(_self_ : QFontMetricsF*, text : CrystalString, mode : TextElideMode, width : Float64, flags : Int32) : CrystalString
+    fun bg_QFontMetricsF_underlinePos_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_overlinePos_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_strikeOutPos_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_lineWidth_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF_fontDpi_(_self_ : QFontMetricsF*) : Float64
+    fun bg_QFontMetricsF__OPERATOR_eq_const_QFontMetricsF_R(_self_ : QFontMetricsF*, other : QFontMetricsF*) : Bool
+    fun bg_QFontMetricsF__OPERATOR_ne_const_QFontMetricsF_R(_self_ : QFontMetricsF*, other : QFontMetricsF*) : Bool
     fun bg_QImageReader_tr_STATIC_const_char_X(source_text : UInt8*) : CrystalString
     fun bg_QImageReader_tr_STATIC_const_char_X_const_char_X(source_text : UInt8*, disambiguation : UInt8*) : CrystalString
     fun bg_QImageReader_tr_STATIC_const_char_X_const_char_X_int(source_text : UInt8*, disambiguation : UInt8*, n : Int32) : CrystalString
@@ -17023,6 +17539,27 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QStandardItemModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QStandardItemModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QStandardItemModel_JUMPTABLE_BgJumptable_QStandardItemModel_R(_self_ : QStandardItemModel*, table : BgJumptable_QStandardItemModel*) : Void
+    fun bg_QStaticText__CONSTRUCT_() : QStaticText*
+    fun bg_QStaticText__CONSTRUCT_const_QString_R(text : CrystalString) : QStaticText*
+    fun bg_QStaticText__COPY_const_QStaticText_R(other : QStaticText*) : QStaticText*
+    fun bg_QStaticText__OPERATOR_assign_const_QStaticText_R(_self_ : QStaticText*, unnamed_arg_0 : QStaticText*) : QStaticText*
+    fun bg_QStaticText_swap_QStaticText_R(_self_ : QStaticText*, other : QStaticText*) : Void
+    fun bg_QStaticText_setText_const_QString_R(_self_ : QStaticText*, text : CrystalString) : Void
+    fun bg_QStaticText_text_(_self_ : QStaticText*) : CrystalString
+    fun bg_QStaticText_setTextFormat_Qt__TextFormat(_self_ : QStaticText*, text_format : TextFormatEnum) : Void
+    fun bg_QStaticText_textFormat_(_self_ : QStaticText*) : TextFormatEnum
+    fun bg_QStaticText_setTextWidth_qreal(_self_ : QStaticText*, text_width : Float64) : Void
+    fun bg_QStaticText_textWidth_(_self_ : QStaticText*) : Float64
+    fun bg_QStaticText_setTextOption_const_QTextOption_R(_self_ : QStaticText*, text_option : QTextOption*) : Void
+    fun bg_QStaticText_textOption_(_self_ : QStaticText*) : QTextOption*
+    fun bg_QStaticText_size_(_self_ : QStaticText*) : QSizeF
+    fun bg_QStaticText_prepare_(_self_ : QStaticText*) : Void
+    fun bg_QStaticText_prepare_const_QTransform_R(_self_ : QStaticText*, matrix : QTransform*) : Void
+    fun bg_QStaticText_prepare_const_QTransform_R_const_QFont_R(_self_ : QStaticText*, matrix : QTransform*, font : QFont*) : Void
+    fun bg_QStaticText_setPerformanceHint_QStaticText__PerformanceHint(_self_ : QStaticText*, performance_hint : StaticText::PerformanceHint) : Void
+    fun bg_QStaticText_performanceHint_(_self_ : QStaticText*) : StaticText::PerformanceHint
+    fun bg_QStaticText__OPERATOR_eq_const_QStaticText_R(_self_ : QStaticText*, unnamed_arg_0 : QStaticText*) : Bool
+    fun bg_QStaticText__OPERATOR_ne_const_QStaticText_R(_self_ : QStaticText*, unnamed_arg_0 : QStaticText*) : Bool
     fun bg_QStyleHints_metaObject_(_self_ : QStyleHints*) : QMetaObject*
     fun bg_QStyleHints_qt_metacast_const_char_X(_self_ : QStyleHints*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QStyleHints_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QStyleHints*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -17112,10 +17649,115 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QStyleHints*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QStyleHints*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QStyleHints_JUMPTABLE_BgJumptable_QStyleHints_R(_self_ : QStyleHints*, table : BgJumptable_QStyleHints*) : Void
+    fun bg_QTextObject_metaObject_(_self_ : QTextObject*) : QMetaObject*
+    fun bg_QTextObject_qt_metacast_const_char_X(_self_ : QTextObject*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextObject*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTextObject_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTextObject_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTextObject_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTextObject__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QTextObject*
+    fun bg_QTextObject_setFormat_const_QTextFormat_R(_self_ : QTextObject*, format : QTextFormat*) : Void
+    fun bg_QTextObject_format_(_self_ : QTextObject*) : QTextFormat*
+    fun bg_QTextObject_formatIndex_(_self_ : QTextObject*) : Int32
+    fun bg_QTextObject_document_(_self_ : QTextObject*) : QTextDocument*
+    fun bg_QTextObject_objectIndex_(_self_ : QTextObject*) : Int32
+    fun bg_QTextObject__CONSTRUCT_QTextObjectPrivate_R_QTextDocument_X(p : QTextObjectPrivate*, doc : QTextDocument*) : QTextObject*
+    fun bg_QTextObject_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTextObject*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextObject*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextObject*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextObject*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTextObject*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextObject*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextObject*, signal : QMetaMethod*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTextObject*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTextObject*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTextObject*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextObject*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTextObject*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextObject*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextObject*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTextObject_JUMPTABLE_BgJumptable_QTextObject_R(_self_ : QTextObject*, table : BgJumptable_QTextObject*) : Void
+    fun bg_QTextBlockGroup_metaObject_(_self_ : QTextBlockGroup*) : QMetaObject*
+    fun bg_QTextBlockGroup_qt_metacast_const_char_X(_self_ : QTextBlockGroup*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextBlockGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTextBlockGroup_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTextBlockGroup__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QTextBlockGroup*
+    fun bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockList_(_self_ : QTextBlockGroup*) : ContainerQListQTextBlock*
+    fun bg_QTextBlockGroup__CONSTRUCT_QTextBlockGroupPrivate_R_QTextDocument_X(p : QTextBlockGroupPrivate*, doc : QTextDocument*) : QTextBlockGroup*
+    fun bg_QTextBlockGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTextBlockGroup*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextBlockGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextBlockGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextBlockGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTextBlockGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextBlockGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextBlockGroup*, signal : QMetaMethod*) : Void
+    fun bg_QTextBlockGroup_blockInserted_SUPER_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockRemoved_SUPER_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockFormatChanged_SUPER_const_QTextBlock_R(_self_ : QTextBlockGroup*, block : QTextBlock*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTextBlockGroup*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTextBlockGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTextBlockGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextBlockGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTextBlockGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextBlockGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextBlockGroup*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTextBlockGroup_JUMPTABLE_BgJumptable_QTextBlockGroup_R(_self_ : QTextBlockGroup*, table : BgJumptable_QTextBlockGroup*) : Void
+    fun bg_QTextFrame_metaObject_(_self_ : QTextFrame*) : QMetaObject*
+    fun bg_QTextFrame_qt_metacast_const_char_X(_self_ : QTextFrame*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextFrame*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTextFrame_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTextFrame_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTextFrame_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTextFrame__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QTextFrame*
+    fun bg_QTextFrame_setFrameFormat_const_QTextFrameFormat_R(_self_ : QTextFrame*, format : QTextFrameFormat*) : Void
+    fun bg_QTextFrame_frameFormat_(_self_ : QTextFrame*) : QTextFrameFormat*
+    fun bg_QTextFrame_firstCursorPosition_(_self_ : QTextFrame*) : QTextCursor*
+    fun bg_QTextFrame_lastCursorPosition_(_self_ : QTextFrame*) : QTextCursor*
+    fun bg_QTextFrame_firstPosition_(_self_ : QTextFrame*) : Int32
+    fun bg_QTextFrame_lastPosition_(_self_ : QTextFrame*) : Int32
+    fun bg_QTextFrame_childFrames_(_self_ : QTextFrame*) : ContainerQListQTextFrameX*
+    fun bg_QTextFrame_parentFrame_(_self_ : QTextFrame*) : QTextFrame*
+    fun bg_QTextFrame_begin_(_self_ : QTextFrame*) : QTextFrame_Iterator*
+    fun bg_QTextFrame_end_(_self_ : QTextFrame*) : QTextFrame_Iterator*
+    fun bg_QTextFrame__CONSTRUCT_QTextFramePrivate_R_QTextDocument_X(p : QTextFramePrivate*, doc : QTextDocument*) : QTextFrame*
+    fun bg_QTextFrame_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTextFrame*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextFrame*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextFrame*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextFrame*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTextFrame*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextFrame*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextFrame*, signal : QMetaMethod*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTextFrame*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTextFrame*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTextFrame*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextFrame*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTextFrame*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextFrame*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextFrame*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTextFrame_JUMPTABLE_BgJumptable_QTextFrame_R(_self_ : QTextFrame*, table : BgJumptable_QTextFrame*) : Void
+    fun bg_QTextFrame__iterator__CONSTRUCT_() : QTextFrame_Iterator*
+    fun bg_QTextFrame__iterator_parentFrame_(_self_ : QTextFrame_Iterator*) : QTextFrame*
+    fun bg_QTextFrame__iterator_currentFrame_(_self_ : QTextFrame_Iterator*) : QTextFrame*
+    fun bg_QTextFrame__iterator_currentBlock_(_self_ : QTextFrame_Iterator*) : QTextBlock*
+    fun bg_QTextFrame__iterator_atEnd_(_self_ : QTextFrame_Iterator*) : Bool
+    fun bg_QTextFrame__iterator__OPERATOR_eq_const_QTextFrame__iterator_R(_self_ : QTextFrame_Iterator*, o : QTextFrame_Iterator*) : Bool
+    fun bg_QTextFrame__iterator__OPERATOR_ne_const_QTextFrame__iterator_R(_self_ : QTextFrame_Iterator*, o : QTextFrame_Iterator*) : Bool
+    fun bg_QTextFrame__iterator__OPERATOR_succ_(_self_ : QTextFrame_Iterator*) : QTextFrame_Iterator*
+    fun bg_QTextFrame__iterator__OPERATOR_post_succ_(_self_ : QTextFrame_Iterator*) : QTextFrame_Iterator*
+    fun bg_QTextFrame__iterator__OPERATOR_pred_(_self_ : QTextFrame_Iterator*) : QTextFrame_Iterator*
+    fun bg_QTextFrame__iterator__OPERATOR_post_pred_(_self_ : QTextFrame_Iterator*) : QTextFrame_Iterator*
+    fun bg_QTextFrame__iterator__COPY_const_QTextFrame__iterator_R(unnamed_arg_0 : QTextFrame_Iterator*) : QTextFrame_Iterator*
     fun bg_QTextBlockUserData__OPERATOR_assign_const_QTextBlockUserData_R(_self_ : QTextBlockUserData*, unnamed_arg_0 : QTextBlockUserData*) : QTextBlockUserData*
     fun bg_QTextBlockUserData__CONSTRUCT_() : QTextBlockUserData*
     fun bg_QTextBlockUserData__COPY_const_QTextBlockUserData_R(unnamed_arg_0 : QTextBlockUserData*) : QTextBlockUserData*
-    fun bg_QTextBlock__CONSTRUCT_QTextDocumentPrivate_X_int(priv : QTextDocumentPrivate*, b : Int32) : QTextBlock*
     fun bg_QTextBlock__CONSTRUCT_() : QTextBlock*
     fun bg_QTextBlock__COPY_const_QTextBlock_R(o : QTextBlock*) : QTextBlock*
     fun bg_QTextBlock__OPERATOR_assign_const_QTextBlock_R(_self_ : QTextBlock*, o : QTextBlock*) : QTextBlock*
@@ -17134,6 +17776,7 @@ module Qt
     fun bg_QTextBlock_charFormatIndex_(_self_ : QTextBlock*) : Int32
     fun bg_QTextBlock_textDirection_(_self_ : QTextBlock*) : LayoutDirection
     fun bg_QTextBlock_text_(_self_ : QTextBlock*) : CrystalString
+    fun bg_QTextBlock_textFormats_(_self_ : QTextBlock*) : ContainerQListQTextLayoutFormatRange*
     fun bg_QTextBlock_document_(_self_ : QTextBlock*) : QTextDocument*
     fun bg_QTextBlock_textList_(_self_ : QTextBlock*) : QTextList*
     fun bg_QTextBlock_userData_(_self_ : QTextBlock*) : QTextBlockUserData*
@@ -17148,9 +17791,35 @@ module Qt
     fun bg_QTextBlock_firstLineNumber_(_self_ : QTextBlock*) : Int32
     fun bg_QTextBlock_setLineCount_int(_self_ : QTextBlock*, count : Int32) : Void
     fun bg_QTextBlock_lineCount_(_self_ : QTextBlock*) : Int32
+    fun bg_QTextBlock_begin_(_self_ : QTextBlock*) : QTextBlock_Iterator*
+    fun bg_QTextBlock_end_(_self_ : QTextBlock*) : QTextBlock_Iterator*
     fun bg_QTextBlock_next_(_self_ : QTextBlock*) : QTextBlock*
     fun bg_QTextBlock_previous_(_self_ : QTextBlock*) : QTextBlock*
     fun bg_QTextBlock_fragmentIndex_(_self_ : QTextBlock*) : Int32
+    fun bg_QTextBlock__iterator__CONSTRUCT_() : QTextBlock_Iterator*
+    fun bg_QTextBlock__iterator_fragment_(_self_ : QTextBlock_Iterator*) : QTextFragment*
+    fun bg_QTextBlock__iterator_atEnd_(_self_ : QTextBlock_Iterator*) : Bool
+    fun bg_QTextBlock__iterator__OPERATOR_eq_const_QTextBlock__iterator_R(_self_ : QTextBlock_Iterator*, o : QTextBlock_Iterator*) : Bool
+    fun bg_QTextBlock__iterator__OPERATOR_ne_const_QTextBlock__iterator_R(_self_ : QTextBlock_Iterator*, o : QTextBlock_Iterator*) : Bool
+    fun bg_QTextBlock__iterator__OPERATOR_succ_(_self_ : QTextBlock_Iterator*) : QTextBlock_Iterator*
+    fun bg_QTextBlock__iterator__OPERATOR_post_succ_(_self_ : QTextBlock_Iterator*) : QTextBlock_Iterator*
+    fun bg_QTextBlock__iterator__OPERATOR_pred_(_self_ : QTextBlock_Iterator*) : QTextBlock_Iterator*
+    fun bg_QTextBlock__iterator__OPERATOR_post_pred_(_self_ : QTextBlock_Iterator*) : QTextBlock_Iterator*
+    fun bg_QTextBlock__iterator__COPY_const_QTextBlock__iterator_R(unnamed_arg_0 : QTextBlock_Iterator*) : QTextBlock_Iterator*
+    fun bg_QTextFragment__CONSTRUCT_() : QTextFragment*
+    fun bg_QTextFragment__COPY_const_QTextFragment_R(o : QTextFragment*) : QTextFragment*
+    fun bg_QTextFragment__OPERATOR_assign_const_QTextFragment_R(_self_ : QTextFragment*, o : QTextFragment*) : QTextFragment*
+    fun bg_QTextFragment_isValid_(_self_ : QTextFragment*) : Bool
+    fun bg_QTextFragment__OPERATOR_eq_const_QTextFragment_R(_self_ : QTextFragment*, o : QTextFragment*) : Bool
+    fun bg_QTextFragment__OPERATOR_ne_const_QTextFragment_R(_self_ : QTextFragment*, o : QTextFragment*) : Bool
+    fun bg_QTextFragment__OPERATOR_lt_const_QTextFragment_R(_self_ : QTextFragment*, o : QTextFragment*) : Bool
+    fun bg_QTextFragment_position_(_self_ : QTextFragment*) : Int32
+    fun bg_QTextFragment_length_(_self_ : QTextFragment*) : Int32
+    fun bg_QTextFragment_contains_int(_self_ : QTextFragment*, position : Int32) : Bool
+    fun bg_QTextFragment_charFormat_(_self_ : QTextFragment*) : QTextCharFormat*
+    fun bg_QTextFragment_charFormatIndex_(_self_ : QTextFragment*) : Int32
+    fun bg_QTextFragment_text_(_self_ : QTextFragment*) : CrystalString
+    fun bg_QTextFragment_glyphRuns_int_int(_self_ : QTextFragment*, from : Int32, length : Int32) : ContainerQListQGlyphRun*
     fun bg_QSyntaxHighlighter_metaObject_(_self_ : QSyntaxHighlighter*) : QMetaObject*
     fun bg_QSyntaxHighlighter_qt_metacast_const_char_X(_self_ : QSyntaxHighlighter*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QSyntaxHighlighter_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSyntaxHighlighter*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -17190,6 +17859,133 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSyntaxHighlighter*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSyntaxHighlighter*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QSyntaxHighlighter_JUMPTABLE_BgJumptable_QSyntaxHighlighter_R(_self_ : QSyntaxHighlighter*, table : BgJumptable_QSyntaxHighlighter*) : Void
+    fun bg_QTextDocumentFragment__CONSTRUCT_() : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment__CONSTRUCT_const_QTextDocument_X(document : QTextDocument*) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment__CONSTRUCT_const_QTextCursor_R(range : QTextCursor*) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment__COPY_const_QTextDocumentFragment_R(rhs : QTextDocumentFragment*) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment__OPERATOR_assign_const_QTextDocumentFragment_R(_self_ : QTextDocumentFragment*, rhs : QTextDocumentFragment*) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment_isEmpty_(_self_ : QTextDocumentFragment*) : Bool
+    fun bg_QTextDocumentFragment_toPlainText_(_self_ : QTextDocumentFragment*) : CrystalString
+    fun bg_QTextDocumentFragment_toRawText_(_self_ : QTextDocumentFragment*) : CrystalString
+    fun bg_QTextDocumentFragment_toHtml_(_self_ : QTextDocumentFragment*) : CrystalString
+    fun bg_QTextDocumentFragment_toMarkdown_(_self_ : QTextDocumentFragment*) : CrystalString
+    fun bg_QTextDocumentFragment_toMarkdown_QTextDocument__MarkdownFeatures(_self_ : QTextDocumentFragment*, features : TextDocument::MarkdownFeatures) : CrystalString
+    fun bg_QTextDocumentFragment_fromPlainText_STATIC_const_QString_R(plain_text : CrystalString) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment_fromHtml_STATIC_const_QString_R_const_QTextDocument_X(html : CrystalString, resource_provider : QTextDocument*) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R(markdown : CrystalString) : QTextDocumentFragment*
+    fun bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R_QTextDocument__MarkdownFeatures(markdown : CrystalString, features : TextDocument::MarkdownFeatures) : QTextDocumentFragment*
+    fun bg_QTextDocumentWriter__CONSTRUCT_() : QTextDocumentWriter*
+    fun bg_QTextDocumentWriter__CONSTRUCT_QIODevice_X_const_QByteArray_R(device : QIODevice*, format : CrystalString) : QTextDocumentWriter*
+    fun bg_QTextDocumentWriter__CONSTRUCT_const_QString_R(file_name : CrystalString) : QTextDocumentWriter*
+    fun bg_QTextDocumentWriter__CONSTRUCT_const_QString_R_const_QByteArray_R(file_name : CrystalString, format : CrystalString) : QTextDocumentWriter*
+    fun bg_QTextDocumentWriter_setFormat_const_QByteArray_R(_self_ : QTextDocumentWriter*, format : CrystalString) : Void
+    fun bg_QTextDocumentWriter_format_(_self_ : QTextDocumentWriter*) : CrystalString
+    fun bg_QTextDocumentWriter_setDevice_QIODevice_X(_self_ : QTextDocumentWriter*, device : QIODevice*) : Void
+    fun bg_QTextDocumentWriter_device_(_self_ : QTextDocumentWriter*) : QIODevice*
+    fun bg_QTextDocumentWriter_setFileName_const_QString_R(_self_ : QTextDocumentWriter*, file_name : CrystalString) : Void
+    fun bg_QTextDocumentWriter_fileName_(_self_ : QTextDocumentWriter*) : CrystalString
+    fun bg_QTextDocumentWriter_write_const_QTextDocument_X(_self_ : QTextDocumentWriter*, document : QTextDocument*) : Bool
+    fun bg_QTextDocumentWriter_write_const_QTextDocumentFragment_R(_self_ : QTextDocumentWriter*, fragment : QTextDocumentFragment*) : Bool
+    fun bg_QTextDocumentWriter_supportedDocumentFormats_STATIC_() : ContainerQListQByteArray*
+    fun bg_QTextList_metaObject_(_self_ : QTextList*) : QMetaObject*
+    fun bg_QTextList_qt_metacast_const_char_X(_self_ : QTextList*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextList*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTextList_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTextList_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTextList_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTextList__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QTextList*
+    fun bg_QTextList_count_(_self_ : QTextList*) : Int32
+    fun bg_QTextList_item_int(_self_ : QTextList*, i : Int32) : QTextBlock*
+    fun bg_QTextList_itemNumber_const_QTextBlock_R(_self_ : QTextList*, unnamed_arg_0 : QTextBlock*) : Int32
+    fun bg_QTextList_itemText_const_QTextBlock_R(_self_ : QTextList*, unnamed_arg_0 : QTextBlock*) : CrystalString
+    fun bg_QTextList_removeItem_int(_self_ : QTextList*, i : Int32) : Void
+    fun bg_QTextList_remove_const_QTextBlock_R(_self_ : QTextList*, unnamed_arg_0 : QTextBlock*) : Void
+    fun bg_QTextList_add_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QTextList_setFormat_const_QTextListFormat_R(_self_ : QTextList*, format : QTextListFormat*) : Void
+    fun bg_QTextList_format_(_self_ : QTextList*) : QTextListFormat*
+    fun bg_QTextList_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QObject_event_QEvent_X(_self_ : QTextList*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextList*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextList*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextList*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTextList*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextList*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextList*, signal : QMetaMethod*) : Void
+    fun bg_QTextBlockGroup_blockInserted_SUPER_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockRemoved_SUPER_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QTextBlockGroup_blockFormatChanged_SUPER_const_QTextBlock_R(_self_ : QTextList*, block : QTextBlock*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTextList*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTextList*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTextList*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextList*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTextList*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextList*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextList*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTextList_JUMPTABLE_BgJumptable_QTextList_R(_self_ : QTextList*, table : BgJumptable_QTextList*) : Void
+    fun bg_QTextTableCell__CONSTRUCT_() : QTextTableCell*
+    fun bg_QTextTableCell__COPY_const_QTextTableCell_R(o : QTextTableCell*) : QTextTableCell*
+    fun bg_QTextTableCell__OPERATOR_assign_const_QTextTableCell_R(_self_ : QTextTableCell*, o : QTextTableCell*) : QTextTableCell*
+    fun bg_QTextTableCell_setFormat_const_QTextCharFormat_R(_self_ : QTextTableCell*, format : QTextCharFormat*) : Void
+    fun bg_QTextTableCell_format_(_self_ : QTextTableCell*) : QTextCharFormat*
+    fun bg_QTextTableCell_row_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell_column_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell_rowSpan_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell_columnSpan_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell_isValid_(_self_ : QTextTableCell*) : Bool
+    fun bg_QTextTableCell_firstCursorPosition_(_self_ : QTextTableCell*) : QTextCursor*
+    fun bg_QTextTableCell_lastCursorPosition_(_self_ : QTextTableCell*) : QTextCursor*
+    fun bg_QTextTableCell_firstPosition_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell_lastPosition_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTableCell__OPERATOR_eq_const_QTextTableCell_R(_self_ : QTextTableCell*, other : QTextTableCell*) : Bool
+    fun bg_QTextTableCell__OPERATOR_ne_const_QTextTableCell_R(_self_ : QTextTableCell*, other : QTextTableCell*) : Bool
+    fun bg_QTextTableCell_begin_(_self_ : QTextTableCell*) : QTextFrame_Iterator*
+    fun bg_QTextTableCell_end_(_self_ : QTextTableCell*) : QTextFrame_Iterator*
+    fun bg_QTextTableCell_tableCellFormatIndex_(_self_ : QTextTableCell*) : Int32
+    fun bg_QTextTable_metaObject_(_self_ : QTextTable*) : QMetaObject*
+    fun bg_QTextTable_qt_metacast_const_char_X(_self_ : QTextTable*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTextTable*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTextTable_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTextTable_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTextTable_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTextTable__CONSTRUCT_QTextDocument_X(doc : QTextDocument*) : QTextTable*
+    fun bg_QTextTable_resize_int_int(_self_ : QTextTable*, rows : Int32, cols : Int32) : Void
+    fun bg_QTextTable_insertRows_int_int(_self_ : QTextTable*, pos : Int32, num : Int32) : Void
+    fun bg_QTextTable_insertColumns_int_int(_self_ : QTextTable*, pos : Int32, num : Int32) : Void
+    fun bg_QTextTable_appendRows_int(_self_ : QTextTable*, count : Int32) : Void
+    fun bg_QTextTable_appendColumns_int(_self_ : QTextTable*, count : Int32) : Void
+    fun bg_QTextTable_removeRows_int_int(_self_ : QTextTable*, pos : Int32, num : Int32) : Void
+    fun bg_QTextTable_removeColumns_int_int(_self_ : QTextTable*, pos : Int32, num : Int32) : Void
+    fun bg_QTextTable_mergeCells_int_int_int_int(_self_ : QTextTable*, row : Int32, col : Int32, num_rows : Int32, num_cols : Int32) : Void
+    fun bg_QTextTable_mergeCells_const_QTextCursor_R(_self_ : QTextTable*, cursor : QTextCursor*) : Void
+    fun bg_QTextTable_splitCell_int_int_int_int(_self_ : QTextTable*, row : Int32, col : Int32, num_rows : Int32, num_cols : Int32) : Void
+    fun bg_QTextTable_rows_(_self_ : QTextTable*) : Int32
+    fun bg_QTextTable_columns_(_self_ : QTextTable*) : Int32
+    fun bg_QTextTable_cellAt_int_int(_self_ : QTextTable*, row : Int32, col : Int32) : QTextTableCell*
+    fun bg_QTextTable_cellAt_int(_self_ : QTextTable*, position : Int32) : QTextTableCell*
+    fun bg_QTextTable_cellAt_const_QTextCursor_R(_self_ : QTextTable*, c : QTextCursor*) : QTextTableCell*
+    fun bg_QTextTable_rowStart_const_QTextCursor_R(_self_ : QTextTable*, c : QTextCursor*) : QTextCursor*
+    fun bg_QTextTable_rowEnd_const_QTextCursor_R(_self_ : QTextTable*, c : QTextCursor*) : QTextCursor*
+    fun bg_QTextTable_setFormat_const_QTextTableFormat_R(_self_ : QTextTable*, format : QTextTableFormat*) : Void
+    fun bg_QTextTable_format_(_self_ : QTextTable*) : QTextTableFormat*
+    fun bg_QTextTable_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTextTable*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextTable*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextTable*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextTable*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTextTable*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextTable*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextTable*, signal : QMetaMethod*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTextTable*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTextTable*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTextTable*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextTable*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTextTable*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextTable*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextTable*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTextTable_JUMPTABLE_BgJumptable_QTextTable_R(_self_ : QTextTable*, table : BgJumptable_QTextTable*) : Void
     fun bg_QUndoGroup_metaObject_(_self_ : QUndoGroup*) : QMetaObject*
     fun bg_QUndoGroup_qt_metacast_const_char_X(_self_ : QUndoGroup*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QUndoGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QUndoGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -29420,6 +30216,7 @@ module Qt
     fun bg_QPlainTextEdit_contentOffset_(_self_ : QPlainTextEdit*) : QPointF
     fun bg_QPlainTextEdit_blockBoundingRect_const_QTextBlock_R(_self_ : QPlainTextEdit*, block : QTextBlock*) : QRectF
     fun bg_QPlainTextEdit_blockBoundingGeometry_const_QTextBlock_R(_self_ : QPlainTextEdit*, block : QTextBlock*) : QRectF
+    fun bg_QPlainTextEdit_getPaintContext_(_self_ : QPlainTextEdit*) : QAbstractTextDocumentLayout_PaintContext*
     fun bg_QPlainTextEdit_zoomInF_float(_self_ : QPlainTextEdit*, range : Float32) : Void
     fun bg_QPlainTextEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_(_self_ : QPlainTextEdit*) : QSize
@@ -29522,6 +30319,7 @@ module Qt
     fun bg_QPlainTextDocumentLayout_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
     fun bg_QPlainTextDocumentLayout_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QPlainTextDocumentLayout__CONSTRUCT_QTextDocument_X(document : QTextDocument*) : QPlainTextDocumentLayout*
+    fun bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(_self_ : QPlainTextDocumentLayout*, painter : QPainter*, context : QAbstractTextDocumentLayout_PaintContext*) : Void
     fun bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(_self_ : QPlainTextDocumentLayout*, point : QPointF, accuracy : HitTestAccuracy) : Int32
     fun bg_QPlainTextDocumentLayout_pageCount_(_self_ : QPlainTextDocumentLayout*) : Int32
     fun bg_QPlainTextDocumentLayout_documentSize_(_self_ : QPlainTextDocumentLayout*) : QSizeF
@@ -29543,6 +30341,7 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QPlainTextDocumentLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QPlainTextDocumentLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QPlainTextDocumentLayout*, signal : QMetaMethod*) : Void
+    fun bg_QPlainTextDocumentLayout_draw_SUPER_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(_self_ : QPlainTextDocumentLayout*, painter : QPainter*, context : QAbstractTextDocumentLayout_PaintContext*) : Void
     fun bg_QPlainTextDocumentLayout_hitTest_SUPER_const_QPointF_R_Qt__HitTestAccuracy(_self_ : QPlainTextDocumentLayout*, point : QPointF, accuracy : HitTestAccuracy) : Int32
     fun bg_QPlainTextDocumentLayout_pageCount_SUPER_(_self_ : QPlainTextDocumentLayout*) : Int32
     fun bg_QPlainTextDocumentLayout_documentSize_SUPER_(_self_ : QPlainTextDocumentLayout*) : QSizeF
@@ -33753,6 +34552,18 @@ module Qt
     fun bg_Container_QList_QEventPoint__at_int(_self_ : ContainerQListQEventPoint*, index : Int32) : QEventPoint*
     fun bg_Container_QList_QEventPoint__push_back_QEventPoint(_self_ : ContainerQListQEventPoint*, value : QEventPoint*) : Void
     fun bg_Container_QList_QEventPoint__size_(_self_ : ContainerQListQEventPoint*) : Int32
+    fun bg_Container_QList_QFontDatabase__WritingSystem___CONSTRUCT_() : ContainerQListQFontDatabaseWritingSystem*
+    fun bg_Container_QList_QFontDatabase__WritingSystem__at_int(_self_ : ContainerQListQFontDatabaseWritingSystem*, index : Int32) : FontDatabase::WritingSystem
+    fun bg_Container_QList_QFontDatabase__WritingSystem__push_back_QFontDatabase__WritingSystem(_self_ : ContainerQListQFontDatabaseWritingSystem*, value : FontDatabase::WritingSystem) : Void
+    fun bg_Container_QList_QFontDatabase__WritingSystem__size_(_self_ : ContainerQListQFontDatabaseWritingSystem*) : Int32
+    fun bg_Container_QList_quint32___CONSTRUCT_() : ContainerQListQuint32*
+    fun bg_Container_QList_quint32__at_int(_self_ : ContainerQListQuint32*, index : Int32) : UInt32
+    fun bg_Container_QList_quint32__push_back_quint32(_self_ : ContainerQListQuint32*, value : UInt32) : Void
+    fun bg_Container_QList_quint32__size_(_self_ : ContainerQListQuint32*) : Int32
+    fun bg_Container_QList_qsizetype___CONSTRUCT_() : ContainerQListQsizetype*
+    fun bg_Container_QList_qsizetype__at_int(_self_ : ContainerQListQsizetype*, index : Int32) : Int64
+    fun bg_Container_QList_qsizetype__push_back_qsizetype(_self_ : ContainerQListQsizetype*, value : Int64) : Void
+    fun bg_Container_QList_qsizetype__size_(_self_ : ContainerQListQsizetype*) : Int32
     fun bg_Container_QList_QTextFormat___CONSTRUCT_() : ContainerQListQTextFormat*
     fun bg_Container_QList_QTextFormat__at_int(_self_ : ContainerQListQTextFormat*, index : Int32) : QTextFormat*
     fun bg_Container_QList_QTextFormat__push_back_QTextFormat(_self_ : ContainerQListQTextFormat*, value : QTextFormat*) : Void
@@ -33761,6 +34572,18 @@ module Qt
     fun bg_Container_QList_QTextLength__at_int(_self_ : ContainerQListQTextLength*, index : Int32) : QTextLength*
     fun bg_Container_QList_QTextLength__push_back_QTextLength(_self_ : ContainerQListQTextLength*, value : QTextLength*) : Void
     fun bg_Container_QList_QTextLength__size_(_self_ : ContainerQListQTextLength*) : Int32
+    fun bg_Container_QList_QTextLayout__FormatRange___CONSTRUCT_() : ContainerQListQTextLayoutFormatRange*
+    fun bg_Container_QList_QTextLayout__FormatRange__at_int(_self_ : ContainerQListQTextLayoutFormatRange*, index : Int32) : QTextLayout_FormatRange*
+    fun bg_Container_QList_QTextLayout__FormatRange__push_back_QTextLayout__FormatRange(_self_ : ContainerQListQTextLayoutFormatRange*, value : QTextLayout_FormatRange*) : Void
+    fun bg_Container_QList_QTextLayout__FormatRange__size_(_self_ : ContainerQListQTextLayoutFormatRange*) : Int32
+    fun bg_Container_QList_QGlyphRun___CONSTRUCT_() : ContainerQListQGlyphRun*
+    fun bg_Container_QList_QGlyphRun__at_int(_self_ : ContainerQListQGlyphRun*, index : Int32) : QGlyphRun*
+    fun bg_Container_QList_QGlyphRun__push_back_QGlyphRun(_self_ : ContainerQListQGlyphRun*, value : QGlyphRun*) : Void
+    fun bg_Container_QList_QGlyphRun__size_(_self_ : ContainerQListQGlyphRun*) : Int32
+    fun bg_Container_QList_QAbstractTextDocumentLayout__Selection___CONSTRUCT_() : ContainerQListQAbstractTextDocumentLayoutSelection*
+    fun bg_Container_QList_QAbstractTextDocumentLayout__Selection__at_int(_self_ : ContainerQListQAbstractTextDocumentLayoutSelection*, index : Int32) : QAbstractTextDocumentLayout_Selection*
+    fun bg_Container_QList_QAbstractTextDocumentLayout__Selection__push_back_QAbstractTextDocumentLayout__Selection(_self_ : ContainerQListQAbstractTextDocumentLayoutSelection*, value : QAbstractTextDocumentLayout_Selection*) : Void
+    fun bg_Container_QList_QAbstractTextDocumentLayout__Selection__size_(_self_ : ContainerQListQAbstractTextDocumentLayoutSelection*) : Int32
     fun bg_Container_QList_QObject_X___CONSTRUCT_() : ContainerQListQObjectX*
     fun bg_Container_QList_QObject_X__at_int(_self_ : ContainerQListQObjectX*, index : Int32) : QObject*
     fun bg_Container_QList_QObject_X__push_back_QObject_X(_self_ : ContainerQListQObjectX*, value : QObject*) : Void
@@ -33773,6 +34596,10 @@ module Qt
     fun bg_Container_QList_uint16_t__at_int(_self_ : ContainerQListUint16T*, index : Int32) : UInt16
     fun bg_Container_QList_uint16_t__push_back_uint16_t(_self_ : ContainerQListUint16T*, value : UInt16) : Void
     fun bg_Container_QList_uint16_t__size_(_self_ : ContainerQListUint16T*) : Int32
+    fun bg_Container_QList_QFontVariableAxis___CONSTRUCT_() : ContainerQListQFontVariableAxis*
+    fun bg_Container_QList_QFontVariableAxis__at_int(_self_ : ContainerQListQFontVariableAxis*, index : Int32) : QFontVariableAxis*
+    fun bg_Container_QList_QFontVariableAxis__push_back_QFontVariableAxis(_self_ : ContainerQListQFontVariableAxis*, value : QFontVariableAxis*) : Void
+    fun bg_Container_QList_QFontVariableAxis__size_(_self_ : ContainerQListQFontVariableAxis*) : Int32
     fun bg_Container_QList_QPageRanges__Range___CONSTRUCT_() : ContainerQListQPageRangesRange*
     fun bg_Container_QList_QPageRanges__Range__at_int(_self_ : ContainerQListQPageRangesRange*, index : Int32) : PageRange
     fun bg_Container_QList_QPageRanges__Range__push_back_QPageRanges__Range(_self_ : ContainerQListQPageRangesRange*, value : PageRange) : Void
@@ -33801,6 +34628,14 @@ module Qt
     fun bg_Container_QList_QStandardItem_X__at_int(_self_ : ContainerQListQStandardItemX*, index : Int32) : QStandardItem*
     fun bg_Container_QList_QStandardItem_X__push_back_QStandardItem_X(_self_ : ContainerQListQStandardItemX*, value : QStandardItem*) : Void
     fun bg_Container_QList_QStandardItem_X__size_(_self_ : ContainerQListQStandardItemX*) : Int32
+    fun bg_Container_QList_QTextBlock___CONSTRUCT_() : ContainerQListQTextBlock*
+    fun bg_Container_QList_QTextBlock__at_int(_self_ : ContainerQListQTextBlock*, index : Int32) : QTextBlock*
+    fun bg_Container_QList_QTextBlock__push_back_QTextBlock(_self_ : ContainerQListQTextBlock*, value : QTextBlock*) : Void
+    fun bg_Container_QList_QTextBlock__size_(_self_ : ContainerQListQTextBlock*) : Int32
+    fun bg_Container_QList_QTextFrame_X___CONSTRUCT_() : ContainerQListQTextFrameX*
+    fun bg_Container_QList_QTextFrame_X__at_int(_self_ : ContainerQListQTextFrameX*, index : Int32) : QTextFrame*
+    fun bg_Container_QList_QTextFrame_X__push_back_QTextFrame_X(_self_ : ContainerQListQTextFrameX*, value : QTextFrame*) : Void
+    fun bg_Container_QList_QTextFrame_X__size_(_self_ : ContainerQListQTextFrameX*) : Int32
     fun bg_Container_QList_QUndoStack_X___CONSTRUCT_() : ContainerQListQUndoStackX*
     fun bg_Container_QList_QUndoStack_X__at_int(_self_ : ContainerQListQUndoStackX*, index : Int32) : QUndoStack*
     fun bg_Container_QList_QUndoStack_X__push_back_QUndoStack_X(_self_ : ContainerQListQUndoStackX*, value : QUndoStack*) : Void
@@ -34430,8 +35265,18 @@ module Qt
         Binding.bg_QObject_CAST_StandardItemModel_(self).try {|ptr| StandardItemModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == StyleHints %}
         Binding.bg_QObject_CAST_StyleHints_(self).try {|ptr| StyleHints.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TextObject %}
+        Binding.bg_QObject_CAST_TextObject_(self).try {|ptr| TextObject.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TextBlockGroup %}
+        Binding.bg_QObject_CAST_TextBlockGroup_(self).try {|ptr| TextBlockGroup.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TextFrame %}
+        Binding.bg_QObject_CAST_TextFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SyntaxHighlighter %}
         Binding.bg_QObject_CAST_SyntaxHighlighter_(self).try {|ptr| SyntaxHighlighter.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TextList %}
+        Binding.bg_QObject_CAST_TextList_(self).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TextTable %}
+        Binding.bg_QObject_CAST_TextTable_(self).try {|ptr| TextTable.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == UndoGroup %}
         Binding.bg_QObject_CAST_UndoGroup_(self).try {|ptr| UndoGroup.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == UndoStack %}
@@ -58354,6 +59199,108 @@ module Qt
       Superclass.new(self)
     end
   end
+  class TextBoundaryFinder
+    @unwrap : Binding::QTextBoundaryFinder*
+    
+    def initialize()
+      result = Binding.bg_QTextBoundaryFinder__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(other : TextBoundaryFinder)
+      result = Binding.bg_QTextBoundaryFinder__COPY_const_QTextBoundaryFinder_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : TextBoundaryFinder) : TextBoundaryFinder
+      TextBoundaryFinder.new(unwrap: Binding.bg_QTextBoundaryFinder__OPERATOR_assign_const_QTextBoundaryFinder_R(self, other))
+    end
+    
+    def swap(other : TextBoundaryFinder) : Void
+      Binding.bg_QTextBoundaryFinder_swap_QTextBoundaryFinder_R(self, other)
+    end
+    
+    def initialize(type : TextBoundaryFinder::BoundaryType, string : String)
+      result = Binding.bg_QTextBoundaryFinder__CONSTRUCT_QTextBoundaryFinder__BoundaryType_const_QString_R(type, Qt::Converter::QString.wrap(string))
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextBoundaryFinder_isValid_(self)
+    end
+    
+    def type() : TextBoundaryFinder::BoundaryType
+      Binding.bg_QTextBoundaryFinder_type_(self)
+    end
+    
+    def string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextBoundaryFinder_string_(self))
+    end
+    
+    def to_start() : Void
+      Binding.bg_QTextBoundaryFinder_toStart_(self)
+    end
+    
+    def to_end() : Void
+      Binding.bg_QTextBoundaryFinder_toEnd_(self)
+    end
+    
+    def position() : Int64
+      Binding.bg_QTextBoundaryFinder_position_(self)
+    end
+    
+    def position=(position : Int64) : Void
+      Binding.bg_QTextBoundaryFinder_setPosition_qsizetype(self, position)
+    end
+    
+    def to_next_boundary() : Int64
+      Binding.bg_QTextBoundaryFinder_toNextBoundary_(self)
+    end
+    
+    def to_previous_boundary() : Int64
+      Binding.bg_QTextBoundaryFinder_toPreviousBoundary_(self)
+    end
+    
+    def at_boundary?() : Bool
+      Binding.bg_QTextBoundaryFinder_isAtBoundary_(self)
+    end
+    
+    def boundary_reasons() : TextBoundaryFinder::BoundaryReasons
+      Binding.bg_QTextBoundaryFinder_boundaryReasons_(self)
+    end
+    
+    enum BoundaryType : UInt32
+      Grapheme = 0
+      Word = 1
+      Sentence = 2
+      Line = 3
+    end
+    enum BoundaryReason : UInt32
+      NotAtBoundary = 0
+      BreakOpportunity = 31
+      StartOfItem = 32
+      EndOfItem = 64
+      MandatoryBreak = 128
+      SoftHyphen = 256
+    end
+    @[Flags]
+    enum BoundaryReasons : UInt32
+      NotAtBoundary = 0
+      BreakOpportunity = 31
+      StartOfItem = 32
+      EndOfItem = 64
+      MandatoryBreak = 128
+      SoftHyphen = 256
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextBoundaryFinder*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TimeLine < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QTimeLine_metaObject_(self)
@@ -69421,6 +70368,583 @@ module Qt
     end
     
   end
+  class FontDatabase
+    @unwrap : Binding::QFontDatabase*
+    
+    def self.standard_sizes() : Enumerable(Int32)
+      Container_QList_int_.new(unwrap: Binding.bg_QFontDatabase_standardSizes_STATIC_())
+    end
+    
+    def self.writing_systems() : Enumerable(FontDatabase::WritingSystem)
+      Container_QList_QFontDatabase__WritingSystem_.new(unwrap: Binding.bg_QFontDatabase_writingSystems_STATIC_())
+    end
+    
+    def self.writing_systems(family : String) : Enumerable(FontDatabase::WritingSystem)
+      Container_QList_QFontDatabase__WritingSystem_.new(unwrap: Binding.bg_QFontDatabase_writingSystems_STATIC_const_QString_R(Qt::Converter::QString.wrap(family)))
+    end
+    
+    def self.families(writing_system : FontDatabase::WritingSystem = FontDatabase::WritingSystem::Any) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFontDatabase_families_STATIC_QFontDatabase__WritingSystem(writing_system))
+    end
+    
+    def self.styles(family : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFontDatabase_styles_STATIC_const_QString_R(Qt::Converter::QString.wrap(family)))
+    end
+    
+    def self.point_sizes(family : String) : Enumerable(Int32)
+      Container_QList_int_.new(unwrap: Binding.bg_QFontDatabase_pointSizes_STATIC_const_QString_R(Qt::Converter::QString.wrap(family)))
+    end
+    
+    def self.point_sizes(family : String, style : String) : Enumerable(Int32)
+      Container_QList_int_.new(unwrap: Binding.bg_QFontDatabase_pointSizes_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style)))
+    end
+    
+    def self.smooth_sizes(family : String, style : String) : Enumerable(Int32)
+      Container_QList_int_.new(unwrap: Binding.bg_QFontDatabase_smoothSizes_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style)))
+    end
+    
+    def self.style_string(font : Font) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontDatabase_styleString_STATIC_const_QFont_R(font))
+    end
+    
+    def self.style_string(font_info : FontInfo) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontDatabase_styleString_STATIC_const_QFontInfo_R(font_info))
+    end
+    
+    def self.font(family : String, style : String, point_size : Int32) : Font
+      Font.new(unwrap: Binding.bg_QFontDatabase_font_STATIC_const_QString_R_const_QString_R_int(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style), point_size))
+    end
+    
+    def self.is_bitmap_scalable(family : String) : Bool
+      Binding.bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.is_bitmap_scalable(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_isBitmapScalable_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.is_smoothly_scalable(family : String) : Bool
+      Binding.bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.is_smoothly_scalable(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_isSmoothlyScalable_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.is_scalable(family : String) : Bool
+      Binding.bg_QFontDatabase_isScalable_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.is_scalable(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_isScalable_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.is_fixed_pitch(family : String) : Bool
+      Binding.bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.is_fixed_pitch(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_isFixedPitch_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.italic(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_italic_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.bold(family : String, style : String) : Bool
+      Binding.bg_QFontDatabase_bold_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.weight(family : String, style : String) : Int32
+      Binding.bg_QFontDatabase_weight_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(family), Qt::Converter::QString.wrap(style))
+    end
+    
+    def self.has_family(family : String) : Bool
+      Binding.bg_QFontDatabase_hasFamily_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.is_private_family(family : String) : Bool
+      Binding.bg_QFontDatabase_isPrivateFamily_STATIC_const_QString_R(Qt::Converter::QString.wrap(family))
+    end
+    
+    def self.writing_system_name(writing_system : FontDatabase::WritingSystem) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontDatabase_writingSystemName_STATIC_QFontDatabase__WritingSystem(writing_system))
+    end
+    
+    def self.writing_system_sample(writing_system : FontDatabase::WritingSystem) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontDatabase_writingSystemSample_STATIC_QFontDatabase__WritingSystem(writing_system))
+    end
+    
+    def self.add_application_font(file_name : String) : Int32
+      Binding.bg_QFontDatabase_addApplicationFont_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name))
+    end
+    
+    def self.add_application_font_from_data(font_data : Bytes) : Int32
+      Binding.bg_QFontDatabase_addApplicationFontFromData_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(font_data))
+    end
+    
+    def self.application_font_families(id : Int32) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFontDatabase_applicationFontFamilies_STATIC_int(id))
+    end
+    
+    def self.remove_application_font(id : Int32) : Bool
+      Binding.bg_QFontDatabase_removeApplicationFont_STATIC_int(id)
+    end
+    
+    def self.remove_all_application_fonts() : Bool
+      Binding.bg_QFontDatabase_removeAllApplicationFonts_STATIC_()
+    end
+    
+    def self.add_application_fallback_font_family(script : UnicodeScript, family_name : String) : Void
+      Binding.bg_QFontDatabase_addApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(script, Qt::Converter::QString.wrap(family_name))
+    end
+    
+    def self.remove_application_fallback_font_family(script : UnicodeScript, family_name : String) : Bool
+      Binding.bg_QFontDatabase_removeApplicationFallbackFontFamily_STATIC_QChar__Script_const_QString_R(script, Qt::Converter::QString.wrap(family_name))
+    end
+    
+    def self.set_application_fallback_font_families(unnamed_arg_0 : UnicodeScript, family_names : Enumerable(String)) : Void
+      Binding.bg_QFontDatabase_setApplicationFallbackFontFamilies_STATIC_QChar__Script_const_QStringList_R(unnamed_arg_0, BindgenHelper.wrap_container(StringList, family_names).to_unsafe)
+    end
+    
+    def self.application_fallback_font_families(script : UnicodeScript) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFontDatabase_applicationFallbackFontFamilies_STATIC_QChar__Script(script))
+    end
+    
+    def self.add_application_emoji_font_family(family_name : String) : Void
+      Binding.bg_QFontDatabase_addApplicationEmojiFontFamily_STATIC_const_QString_R(Qt::Converter::QString.wrap(family_name))
+    end
+    
+    def self.remove_application_emoji_font_family(family_name : String) : Bool
+      Binding.bg_QFontDatabase_removeApplicationEmojiFontFamily_STATIC_const_QString_R(Qt::Converter::QString.wrap(family_name))
+    end
+    
+    def self.application_emoji_font_families=(family_names : Enumerable(String)) : Void
+      Binding.bg_QFontDatabase_setApplicationEmojiFontFamilies_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, family_names).to_unsafe)
+    end
+    
+    def self.application_emoji_font_families() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFontDatabase_applicationEmojiFontFamilies_STATIC_())
+    end
+    
+    def self.system_font(type : FontDatabase::SystemFont) : Font
+      Font.new(unwrap: Binding.bg_QFontDatabase_systemFont_STATIC_QFontDatabase__SystemFont(type))
+    end
+    
+    def initialize(unnamed_arg_0 : FontDatabase)
+      result = Binding.bg_QFontDatabase__COPY_const_QFontDatabase_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFontDatabase_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum WritingSystem : UInt32
+      Any = 0
+      Latin = 1
+      Greek = 2
+      Cyrillic = 3
+      Armenian = 4
+      Hebrew = 5
+      Arabic = 6
+      Syriac = 7
+      Thaana = 8
+      Devanagari = 9
+      Bengali = 10
+      Gurmukhi = 11
+      Gujarati = 12
+      Oriya = 13
+      Tamil = 14
+      Telugu = 15
+      Kannada = 16
+      Malayalam = 17
+      Sinhala = 18
+      Thai = 19
+      Lao = 20
+      Tibetan = 21
+      Myanmar = 22
+      Georgian = 23
+      Khmer = 24
+      SimplifiedChinese = 25
+      TraditionalChinese = 26
+      Japanese = 27
+      Korean = 28
+      Vietnamese = 29
+      Symbol = 30
+      Other = 30
+      Ogham = 31
+      Runic = 32
+      Nko = 33
+      WritingSystemsCount = 34
+    end
+    enum SystemFont : UInt32
+      GeneralFont = 0
+      FixedFont = 1
+      TitleFont = 2
+      SmallestReadableFont = 3
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFontDatabase*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class RawFont
+    @unwrap : Binding::QRawFont*
+    
+    def initialize()
+      result = Binding.bg_QRawFont__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(file_name : String, pixel_size : Float64, hinting_preference : Font::HintingPreference = Font::HintingPreference::PreferDefaultHinting)
+      result = Binding.bg_QRawFont__CONSTRUCT_const_QString_R_qreal_QFont__HintingPreference(Qt::Converter::QString.wrap(file_name), pixel_size, hinting_preference)
+    @unwrap = result
+    end
+    
+    def initialize(font_data : Bytes, pixel_size : Float64, hinting_preference : Font::HintingPreference = Font::HintingPreference::PreferDefaultHinting)
+      result = Binding.bg_QRawFont__CONSTRUCT_const_QByteArray_R_qreal_QFont__HintingPreference(Qt::Converter::QByteArray.wrap(font_data), pixel_size, hinting_preference)
+    @unwrap = result
+    end
+    
+    def initialize(other : RawFont)
+      result = Binding.bg_QRawFont__COPY_const_QRawFont_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : RawFont) : RawFont
+      RawFont.new(unwrap: Binding.bg_QRawFont__OPERATOR_assign_const_QRawFont_R(self, other))
+    end
+    
+    def swap(other : RawFont) : Void
+      Binding.bg_QRawFont_swap_QRawFont_R(self, other)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QRawFont_isValid_(self)
+    end
+    
+    def ==(other : RawFont) : Bool
+      Binding.bg_QRawFont__OPERATOR_eq_const_QRawFont_R(self, other)
+    end
+    
+    def !=(other : RawFont) : Bool
+      Binding.bg_QRawFont__OPERATOR_ne_const_QRawFont_R(self, other)
+    end
+    
+    def glyph_count() : UInt32
+      Binding.bg_QRawFont_glyphCount_(self)
+    end
+    
+    def family_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QRawFont_familyName_(self))
+    end
+    
+    def style_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QRawFont_styleName_(self))
+    end
+    
+    def style() : Font::Style
+      Binding.bg_QRawFont_style_(self)
+    end
+    
+    def weight() : Int32
+      Binding.bg_QRawFont_weight_(self)
+    end
+    
+    def glyph_indexes_for_string(text : String) : Enumerable(UInt32)
+      Container_QList_quint32_.new(unwrap: Binding.bg_QRawFont_glyphIndexesForString_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    end
+    
+    def advances_for_glyph_indexes(glyph_indexes : Enumerable(UInt32)) : Enumerable(PointF)
+      Container_QList_QPointF_.new(unwrap: Binding.bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R(self, BindgenHelper.wrap_container(Container_QList_quint32_, glyph_indexes).to_unsafe))
+    end
+    
+    def advances_for_glyph_indexes(glyph_indexes : Enumerable(UInt32), layout_flags : RawFont::LayoutFlags) : Enumerable(PointF)
+      Container_QList_QPointF_.new(unwrap: Binding.bg_QRawFont_advancesForGlyphIndexes_const_QList_quint32__R_QRawFont__LayoutFlags(self, BindgenHelper.wrap_container(Container_QList_quint32_, glyph_indexes).to_unsafe, layout_flags))
+    end
+    
+    def alpha_map_for_glyph(glyph_index : UInt32, antialiasing_type : RawFont::AntialiasingType = RawFont::AntialiasingType::SubPixelAntialiasing) : Image
+      Image.new(unwrap: Binding.bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType(self, glyph_index, antialiasing_type))
+    end
+    
+    def alpha_map_for_glyph(glyph_index : UInt32, antialiasing_type : RawFont::AntialiasingType, transform : Transform) : Image
+      Image.new(unwrap: Binding.bg_QRawFont_alphaMapForGlyph_quint32_QRawFont__AntialiasingType_const_QTransform_R(self, glyph_index, antialiasing_type, transform))
+    end
+    
+    def path_for_glyph(glyph_index : UInt32) : PainterPath
+      PainterPath.new(unwrap: Binding.bg_QRawFont_pathForGlyph_quint32(self, glyph_index))
+    end
+    
+    def bounding_rect(glyph_index : UInt32) : RectF
+      RectF.new(unwrap: Binding.bg_QRawFont_boundingRect_quint32(self, glyph_index))
+    end
+    
+    def pixel_size=(pixel_size : Float64) : Void
+      Binding.bg_QRawFont_setPixelSize_qreal(self, pixel_size)
+    end
+    
+    def pixel_size() : Float64
+      Binding.bg_QRawFont_pixelSize_(self)
+    end
+    
+    def hinting_preference() : Font::HintingPreference
+      Binding.bg_QRawFont_hintingPreference_(self)
+    end
+    
+    def ascent() : Float64
+      Binding.bg_QRawFont_ascent_(self)
+    end
+    
+    def cap_height() : Float64
+      Binding.bg_QRawFont_capHeight_(self)
+    end
+    
+    def descent() : Float64
+      Binding.bg_QRawFont_descent_(self)
+    end
+    
+    def leading() : Float64
+      Binding.bg_QRawFont_leading_(self)
+    end
+    
+    def x_height() : Float64
+      Binding.bg_QRawFont_xHeight_(self)
+    end
+    
+    def average_char_width() : Float64
+      Binding.bg_QRawFont_averageCharWidth_(self)
+    end
+    
+    def max_char_width() : Float64
+      Binding.bg_QRawFont_maxCharWidth_(self)
+    end
+    
+    def line_thickness() : Float64
+      Binding.bg_QRawFont_lineThickness_(self)
+    end
+    
+    def underline_position() : Float64
+      Binding.bg_QRawFont_underlinePosition_(self)
+    end
+    
+    def units_per_em() : Float64
+      Binding.bg_QRawFont_unitsPerEm_(self)
+    end
+    
+    def glyph_name(glyph_index : UInt32) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QRawFont_glyphName_quint32(self, glyph_index))
+    end
+    
+    def load_from_file(file_name : String, pixel_size : Float64, hinting_preference : Font::HintingPreference) : Void
+      Binding.bg_QRawFont_loadFromFile_const_QString_R_qreal_QFont__HintingPreference(self, Qt::Converter::QString.wrap(file_name), pixel_size, hinting_preference)
+    end
+    
+    def load_from_data(font_data : Bytes, pixel_size : Float64, hinting_preference : Font::HintingPreference) : Void
+      Binding.bg_QRawFont_loadFromData_const_QByteArray_R_qreal_QFont__HintingPreference(self, Qt::Converter::QByteArray.wrap(font_data), pixel_size, hinting_preference)
+    end
+    
+    def supports_character(ucs4 : UInt32) : Bool
+      Binding.bg_QRawFont_supportsCharacter_uint(self, ucs4)
+    end
+    
+    def supports_character(character : Char) : Bool
+      Binding.bg_QRawFont_supportsCharacter_QChar(self, (character.ord))
+    end
+    
+    def supported_writing_systems() : Enumerable(FontDatabase::WritingSystem)
+      Container_QList_QFontDatabase__WritingSystem_.new(unwrap: Binding.bg_QRawFont_supportedWritingSystems_(self))
+    end
+    
+    def font_table(tag_name : UInt8*) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QRawFont_fontTable_const_char_X(self, tag_name))
+    end
+    
+    def self.from_font(font : Font, writing_system : FontDatabase::WritingSystem = FontDatabase::WritingSystem::Any) : RawFont
+      RawFont.new(unwrap: Binding.bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(font, writing_system))
+    end
+    
+    enum AntialiasingType : UInt32
+      PixelAntialiasing = 0
+      SubPixelAntialiasing = 1
+    end
+    enum LayoutFlag : UInt32
+      SeparateAdvances = 0
+      KernedAdvances = 1
+      UseDesignMetrics = 2
+    end
+    @[Flags]
+    enum LayoutFlags : UInt32
+      SeparateAdvances = 0
+      KernedAdvances = 1
+      UseDesignMetrics = 2
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QRawFont*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class GlyphRun
+    @unwrap : Binding::QGlyphRun*
+    
+    def initialize()
+      result = Binding.bg_QGlyphRun__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(other : GlyphRun)
+      result = Binding.bg_QGlyphRun__COPY_const_QGlyphRun_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : GlyphRun) : GlyphRun
+      GlyphRun.new(unwrap: Binding.bg_QGlyphRun__OPERATOR_assign_const_QGlyphRun_R(self, other))
+    end
+    
+    def swap(other : GlyphRun) : Void
+      Binding.bg_QGlyphRun_swap_QGlyphRun_R(self, other)
+    end
+    
+    def raw_font() : RawFont
+      RawFont.new(unwrap: Binding.bg_QGlyphRun_rawFont_(self))
+    end
+    
+    def raw_font=(raw_font : RawFont) : Void
+      Binding.bg_QGlyphRun_setRawFont_const_QRawFont_R(self, raw_font)
+    end
+    
+    def glyph_indexes() : Enumerable(UInt32)
+      Container_QList_quint32_.new(unwrap: Binding.bg_QGlyphRun_glyphIndexes_(self))
+    end
+    
+    def glyph_indexes=(glyph_indexes : Enumerable(UInt32)) : Void
+      Binding.bg_QGlyphRun_setGlyphIndexes_const_QList_quint32__R(self, BindgenHelper.wrap_container(Container_QList_quint32_, glyph_indexes).to_unsafe)
+    end
+    
+    def positions() : Enumerable(PointF)
+      Container_QList_QPointF_.new(unwrap: Binding.bg_QGlyphRun_positions_(self))
+    end
+    
+    def positions=(positions : Enumerable(PointF)) : Void
+      Binding.bg_QGlyphRun_setPositions_const_QList_QPointF__R(self, BindgenHelper.wrap_container(Container_QList_QPointF_, positions).to_unsafe)
+    end
+    
+    def clear() : Void
+      Binding.bg_QGlyphRun_clear_(self)
+    end
+    
+    def ==(other : GlyphRun) : Bool
+      Binding.bg_QGlyphRun__OPERATOR_eq_const_QGlyphRun_R(self, other)
+    end
+    
+    def !=(other : GlyphRun) : Bool
+      Binding.bg_QGlyphRun__OPERATOR_ne_const_QGlyphRun_R(self, other)
+    end
+    
+    def overline=(overline : Bool) : Void
+      Binding.bg_QGlyphRun_setOverline_bool(self, overline)
+    end
+    
+    def overline() : Bool
+      Binding.bg_QGlyphRun_overline_(self)
+    end
+    
+    def underline=(underline : Bool) : Void
+      Binding.bg_QGlyphRun_setUnderline_bool(self, underline)
+    end
+    
+    def underline() : Bool
+      Binding.bg_QGlyphRun_underline_(self)
+    end
+    
+    def strike_out=(strike_out : Bool) : Void
+      Binding.bg_QGlyphRun_setStrikeOut_bool(self, strike_out)
+    end
+    
+    def strike_out() : Bool
+      Binding.bg_QGlyphRun_strikeOut_(self)
+    end
+    
+    def right_to_left=(on : Bool) : Void
+      Binding.bg_QGlyphRun_setRightToLeft_bool(self, on)
+    end
+    
+    def right_to_left?() : Bool
+      Binding.bg_QGlyphRun_isRightToLeft_(self)
+    end
+    
+    def set_flag(flag : GlyphRun::GlyphRunFlag, enabled : Bool = true) : Void
+      Binding.bg_QGlyphRun_setFlag_QGlyphRun__GlyphRunFlag_bool(self, flag, enabled)
+    end
+    
+    def flags=(flags : GlyphRun::GlyphRunFlags) : Void
+      Binding.bg_QGlyphRun_setFlags_QGlyphRun__GlyphRunFlags(self, flags)
+    end
+    
+    def flags() : GlyphRun::GlyphRunFlags
+      Binding.bg_QGlyphRun_flags_(self)
+    end
+    
+    def bounding_rect=(bounding_rect : RectF) : Void
+      Binding.bg_QGlyphRun_setBoundingRect_const_QRectF_R(self, bounding_rect)
+    end
+    
+    def bounding_rect() : RectF
+      RectF.new(unwrap: Binding.bg_QGlyphRun_boundingRect_(self))
+    end
+    
+    def string_indexes() : Enumerable(Int64)
+      Container_QList_qsizetype_.new(unwrap: Binding.bg_QGlyphRun_stringIndexes_(self))
+    end
+    
+    def string_indexes=(string_indexes : Enumerable(Int64)) : Void
+      Binding.bg_QGlyphRun_setStringIndexes_const_QList_qsizetype__R(self, BindgenHelper.wrap_container(Container_QList_qsizetype_, string_indexes).to_unsafe)
+    end
+    
+    def source_string=(source_string : String) : Void
+      Binding.bg_QGlyphRun_setSourceString_const_QString_R(self, Qt::Converter::QString.wrap(source_string))
+    end
+    
+    def source_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QGlyphRun_sourceString_(self))
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QGlyphRun_isEmpty_(self)
+    end
+    
+    enum GlyphRunFlag : UInt32
+      Overline = 1
+      Underline = 2
+      StrikeOut = 4
+      RightToLeft = 8
+      SplitLigature = 16
+    end
+    @[Flags]
+    enum GlyphRunFlags : UInt32
+      Overline = 1
+      Underline = 2
+      StrikeOut = 4
+      RightToLeft = 8
+      SplitLigature = 16
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QGlyphRun*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TextDocument < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QTextDocument_metaObject_(self)
@@ -69489,7 +71013,7 @@ module Qt
       bg_QTextDocument_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTextDocument_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
-      bg_QTextDocument_createObject_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_createObject_const_QTextFormat_R") %} Proc(Binding::QTextFormat*, Binding::QTextObject*).new{|f| self.create_object(TextFormat.new(unwrap: f)) } {% else %} nil {% end %}),
+      bg_QTextDocument_createObject_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_createObject_const_QTextFormat_R") %} Proc(Binding::QTextFormat*, Binding::QTextObject*).new{|f| self.create_object(TextFormat.new(unwrap: f)).to_unsafe } {% else %} nil {% end %}),
       bg_QTextDocument_loadResource_int_const_QUrl_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_loadResource_int_const_QUrl_R") %} Proc(Int32, Binding::QUrl*, Binding::CrystalVariant).new{|type, name| (self.load_resource(type, Url.new(unwrap: name)).to_unsafe) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -69546,7 +71070,7 @@ module Qt
       bg_QTextDocument_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTextDocument_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
-      bg_QTextDocument_createObject_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_createObject_const_QTextFormat_R") %} Proc(Binding::QTextFormat*, Binding::QTextObject*).new{|f| self.create_object(TextFormat.new(unwrap: f)) } {% else %} nil {% end %}),
+      bg_QTextDocument_createObject_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_createObject_const_QTextFormat_R") %} Proc(Binding::QTextFormat*, Binding::QTextObject*).new{|f| self.create_object(TextFormat.new(unwrap: f)).to_unsafe } {% else %} nil {% end %}),
       bg_QTextDocument_loadResource_int_const_QUrl_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_loadResource_int_const_QUrl_R") %} Proc(Int32, Binding::QUrl*, Binding::CrystalVariant).new{|type, name| (self.load_resource(type, Url.new(unwrap: name)).to_unsafe) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -69688,20 +71212,20 @@ module Qt
       TextCursor.new(unwrap: Binding.bg_QTextDocument_find_const_QRegularExpression_R_const_QTextCursor_R_QTextDocument__FindFlags(self, expr, cursor, options))
     end
     
-    def frame_at(pos : Int32) : Binding::QTextFrame*
-      Binding.bg_QTextDocument_frameAt_int(self, pos)
+    def frame_at(pos : Int32) : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextDocument_frameAt_int(self, pos))
     end
     
-    def root_frame() : Binding::QTextFrame*
-      Binding.bg_QTextDocument_rootFrame_(self)
+    def root_frame() : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextDocument_rootFrame_(self))
     end
     
-    def object(object_index : Int32) : Binding::QTextObject*
-      Binding.bg_QTextDocument_object_int(self, object_index)
+    def object(object_index : Int32) : TextObject
+      TextObject.new(unwrap: Binding.bg_QTextDocument_object_int(self, object_index))
     end
     
-    def object_for_format(unnamed_arg_0 : TextFormat) : Binding::QTextObject*
-      Binding.bg_QTextDocument_objectForFormat_const_QTextFormat_R(self, unnamed_arg_0)
+    def object_for_format(unnamed_arg_0 : TextFormat) : TextObject
+      TextObject.new(unwrap: Binding.bg_QTextDocument_objectForFormat_const_QTextFormat_R(self, unnamed_arg_0))
     end
     
     def find_block(pos : Int32) : TextBlock
@@ -69980,69 +71504,12 @@ module Qt
       Binding.bg_QTextDocument_setModified_bool(self, m)
     end
     
-    protected def create_object(f : TextFormat) : Binding::QTextObject*
-      Binding.bg_QTextDocument_createObject_const_QTextFormat_R(self, f)
+    protected def create_object(f : TextFormat) : TextObject
+      TextObject.new(unwrap: Binding.bg_QTextDocument_createObject_const_QTextFormat_R(self, f))
     end
     
     protected def load_resource(type : Int32, name : Url) : Variant
       Qt::Variant.new(Binding.bg_QTextDocument_loadResource_int_const_QUrl_R(self, type, name))
-    end
-    
-    protected def initialize(dd : Binding::QTextDocumentPrivate*, parent : Object)
-      result = Binding.bg_QTextDocument__CONSTRUCT_QTextDocumentPrivate_R_QObject_X(dd, parent)
-    @unwrap = result
-    {% begin %}
-    {%
-      methods = [] of Def
-      ([@type] + @type.ancestors).select(&.<(TextDocument)).map{|x| methods = methods + x.methods}
-      forwarded = [] of String
-      [
-        {"bg_QTextDocument_metaObject_", "meta_object", [] of String},
-        {"bg_QTextDocument_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
-        {"bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
-        {"bg_QTextDocument_clear_", "clear", [] of String},
-        {"bg_QTextDocument_createObject_const_QTextFormat_R", "create_object", ["TextFormat"] of String},
-        {"bg_QTextDocument_loadResource_int_const_QUrl_R", "load_resource", ["Int32", "Url"] of String},
-        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
-        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
-        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
-        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
-        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
-        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
-        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
-      ].each do |sig|
-        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
-          args = m.splat_index ? m.args[0...m.splat_index] : m.args
-          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
-          sig[2].each_with_index do |name, i|
-            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
-            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
-              r = r.resolve?
-              t = parse_type(name).resolve?
-              ok = false if r && t && !(t <= r) && !(r <= t)
-            end
-          end
-          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
-        end
-      end
-    %}
-    jump_table = Binding::BgJumptable_QTextDocument.new(
-      bg_QTextDocument_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
-      bg_QTextDocument_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
-      bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
-      bg_QTextDocument_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
-      bg_QTextDocument_createObject_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_createObject_const_QTextFormat_R") %} Proc(Binding::QTextFormat*, Binding::QTextObject*).new{|f| self.create_object(TextFormat.new(unwrap: f)) } {% else %} nil {% end %}),
-      bg_QTextDocument_loadResource_int_const_QUrl_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextDocument_loadResource_int_const_QUrl_R") %} Proc(Int32, Binding::QUrl*, Binding::CrystalVariant).new{|type, name| (self.load_resource(type, Url.new(unwrap: name)).to_unsafe) } {% else %} nil {% end %}),
-      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
-      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
-      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
-    )
-    Binding.bg_BgInherit_QTextDocument_JUMPTABLE_BgJumptable_QTextDocument_R(result, pointerof(jump_table))
-    {% end %}
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -70128,8 +71595,8 @@ module Qt
         Binding.bg_QTextDocument_clear_SUPER_(@myself)
       end
       
-      protected def create_object(f : TextFormat) : Binding::QTextObject*
-        Binding.bg_QTextDocument_createObject_SUPER_const_QTextFormat_R(@myself, f)
+      protected def create_object(f : TextFormat) : TextObject
+        TextObject.new(unwrap: Binding.bg_QTextDocument_createObject_SUPER_const_QTextFormat_R(@myself, f))
       end
       
       protected def load_resource(type : Int32, name : Url) : Variant
@@ -71345,20 +72812,20 @@ module Qt
       TextListFormat.new(unwrap: Binding.bg_QTextFormat_toListFormat_(self))
     end
     
-    def to_table_format() : Binding::QTextTableFormat*
-      Binding.bg_QTextFormat_toTableFormat_(self)
+    def to_table_format() : TextTableFormat
+      TextTableFormat.new(unwrap: Binding.bg_QTextFormat_toTableFormat_(self))
     end
     
     def to_frame_format() : TextFrameFormat
       TextFrameFormat.new(unwrap: Binding.bg_QTextFormat_toFrameFormat_(self))
     end
     
-    def to_image_format() : Binding::QTextImageFormat*
-      Binding.bg_QTextFormat_toImageFormat_(self)
+    def to_image_format() : TextImageFormat
+      TextImageFormat.new(unwrap: Binding.bg_QTextFormat_toImageFormat_(self))
     end
     
-    def to_table_cell_format() : Binding::QTextTableCellFormat*
-      Binding.bg_QTextFormat_toTableCellFormat_(self)
+    def to_table_cell_format() : TextTableCellFormat
+      TextTableCellFormat.new(unwrap: Binding.bg_QTextFormat_toTableCellFormat_(self))
     end
     
     def ==(rhs : TextFormat) : Bool
@@ -72097,6 +73564,72 @@ module Qt
     end
     
   end
+  class TextImageFormat < TextCharFormat
+    def initialize()
+      result = Binding.bg_QTextImageFormat__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextImageFormat_isValid_(self)
+    end
+    
+    def name=(name : String) : Void
+      Binding.bg_QTextImageFormat_setName_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextImageFormat_name_(self))
+    end
+    
+    def width=(width : Float64) : Void
+      Binding.bg_QTextImageFormat_setWidth_qreal(self, width)
+    end
+    
+    def width() : Float64
+      Binding.bg_QTextImageFormat_width_(self)
+    end
+    
+    def maximum_width=(max_width : TextLength) : Void
+      Binding.bg_QTextImageFormat_setMaximumWidth_QTextLength(self, max_width)
+    end
+    
+    def maximum_width() : TextLength
+      TextLength.new(unwrap: Binding.bg_QTextImageFormat_maximumWidth_(self))
+    end
+    
+    def height=(height : Float64) : Void
+      Binding.bg_QTextImageFormat_setHeight_qreal(self, height)
+    end
+    
+    def height() : Float64
+      Binding.bg_QTextImageFormat_height_(self)
+    end
+    
+    def quality=(quality : Int32) : Void
+      Binding.bg_QTextImageFormat_setQuality_int(self, quality)
+    end
+    
+    def quality() : Int32
+      Binding.bg_QTextImageFormat_quality_(self)
+    end
+    
+    protected def initialize(format : TextFormat)
+      result = Binding.bg_QTextImageFormat__CONSTRUCT_const_QTextFormat_R(format)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : TextImageFormat)
+      result = Binding.bg_QTextImageFormat__COPY_const_QTextImageFormat_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unwrap : Binding::QTextImageFormat*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TextFrameFormat < TextFormat
     def initialize()
       result = Binding.bg_QTextFrameFormat__CONSTRUCT_()
@@ -72257,6 +73790,262 @@ module Qt
     end
     
   end
+  class TextTableFormat < TextFrameFormat
+    def initialize()
+      result = Binding.bg_QTextTableFormat__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextTableFormat_isValid_(self)
+    end
+    
+    def columns() : Int32
+      Binding.bg_QTextTableFormat_columns_(self)
+    end
+    
+    def columns=(columns : Int32) : Void
+      Binding.bg_QTextTableFormat_setColumns_int(self, columns)
+    end
+    
+    def column_width_constraints=(constraints : Enumerable(TextLength)) : Void
+      Binding.bg_QTextTableFormat_setColumnWidthConstraints_const_QList_QTextLength__R(self, BindgenHelper.wrap_container(Container_QList_QTextLength_, constraints).to_unsafe)
+    end
+    
+    def column_width_constraints() : Enumerable(TextLength)
+      Container_QList_QTextLength_.new(unwrap: Binding.bg_QTextTableFormat_columnWidthConstraints_(self))
+    end
+    
+    def clear_column_width_constraints() : Void
+      Binding.bg_QTextTableFormat_clearColumnWidthConstraints_(self)
+    end
+    
+    def cell_spacing() : Float64
+      Binding.bg_QTextTableFormat_cellSpacing_(self)
+    end
+    
+    def cell_spacing=(spacing : Float64) : Void
+      Binding.bg_QTextTableFormat_setCellSpacing_qreal(self, spacing)
+    end
+    
+    def cell_padding() : Float64
+      Binding.bg_QTextTableFormat_cellPadding_(self)
+    end
+    
+    def cell_padding=(padding : Float64) : Void
+      Binding.bg_QTextTableFormat_setCellPadding_qreal(self, padding)
+    end
+    
+    def alignment=(alignment : Alignment) : Void
+      Binding.bg_QTextTableFormat_setAlignment_Qt__Alignment(self, alignment)
+    end
+    
+    def alignment() : Alignment
+      Binding.bg_QTextTableFormat_alignment_(self)
+    end
+    
+    def header_row_count=(count : Int32) : Void
+      Binding.bg_QTextTableFormat_setHeaderRowCount_int(self, count)
+    end
+    
+    def header_row_count() : Int32
+      Binding.bg_QTextTableFormat_headerRowCount_(self)
+    end
+    
+    def border_collapse=(border_collapse : Bool) : Void
+      Binding.bg_QTextTableFormat_setBorderCollapse_bool(self, border_collapse)
+    end
+    
+    def border_collapse() : Bool
+      Binding.bg_QTextTableFormat_borderCollapse_(self)
+    end
+    
+    protected def initialize(fmt : TextFormat)
+      result = Binding.bg_QTextTableFormat__CONSTRUCT_const_QTextFormat_R(fmt)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : TextTableFormat)
+      result = Binding.bg_QTextTableFormat__COPY_const_QTextTableFormat_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unwrap : Binding::QTextTableFormat*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextTableCellFormat < TextCharFormat
+    def initialize()
+      result = Binding.bg_QTextTableCellFormat__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextTableCellFormat_isValid_(self)
+    end
+    
+    def top_padding=(padding : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setTopPadding_qreal(self, padding)
+    end
+    
+    def top_padding() : Float64
+      Binding.bg_QTextTableCellFormat_topPadding_(self)
+    end
+    
+    def bottom_padding=(padding : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setBottomPadding_qreal(self, padding)
+    end
+    
+    def bottom_padding() : Float64
+      Binding.bg_QTextTableCellFormat_bottomPadding_(self)
+    end
+    
+    def left_padding=(padding : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setLeftPadding_qreal(self, padding)
+    end
+    
+    def left_padding() : Float64
+      Binding.bg_QTextTableCellFormat_leftPadding_(self)
+    end
+    
+    def right_padding=(padding : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setRightPadding_qreal(self, padding)
+    end
+    
+    def right_padding() : Float64
+      Binding.bg_QTextTableCellFormat_rightPadding_(self)
+    end
+    
+    def padding=(padding : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setPadding_qreal(self, padding)
+    end
+    
+    def top_border=(width : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setTopBorder_qreal(self, width)
+    end
+    
+    def top_border() : Float64
+      Binding.bg_QTextTableCellFormat_topBorder_(self)
+    end
+    
+    def bottom_border=(width : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setBottomBorder_qreal(self, width)
+    end
+    
+    def bottom_border() : Float64
+      Binding.bg_QTextTableCellFormat_bottomBorder_(self)
+    end
+    
+    def left_border=(width : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setLeftBorder_qreal(self, width)
+    end
+    
+    def left_border() : Float64
+      Binding.bg_QTextTableCellFormat_leftBorder_(self)
+    end
+    
+    def right_border=(width : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setRightBorder_qreal(self, width)
+    end
+    
+    def right_border() : Float64
+      Binding.bg_QTextTableCellFormat_rightBorder_(self)
+    end
+    
+    def border=(width : Float64) : Void
+      Binding.bg_QTextTableCellFormat_setBorder_qreal(self, width)
+    end
+    
+    def top_border_style=(style : TextFrameFormat::BorderStyle) : Void
+      Binding.bg_QTextTableCellFormat_setTopBorderStyle_QTextFrameFormat__BorderStyle(self, style)
+    end
+    
+    def top_border_style() : TextFrameFormat::BorderStyle
+      Binding.bg_QTextTableCellFormat_topBorderStyle_(self)
+    end
+    
+    def bottom_border_style=(style : TextFrameFormat::BorderStyle) : Void
+      Binding.bg_QTextTableCellFormat_setBottomBorderStyle_QTextFrameFormat__BorderStyle(self, style)
+    end
+    
+    def bottom_border_style() : TextFrameFormat::BorderStyle
+      Binding.bg_QTextTableCellFormat_bottomBorderStyle_(self)
+    end
+    
+    def left_border_style=(style : TextFrameFormat::BorderStyle) : Void
+      Binding.bg_QTextTableCellFormat_setLeftBorderStyle_QTextFrameFormat__BorderStyle(self, style)
+    end
+    
+    def left_border_style() : TextFrameFormat::BorderStyle
+      Binding.bg_QTextTableCellFormat_leftBorderStyle_(self)
+    end
+    
+    def right_border_style=(style : TextFrameFormat::BorderStyle) : Void
+      Binding.bg_QTextTableCellFormat_setRightBorderStyle_QTextFrameFormat__BorderStyle(self, style)
+    end
+    
+    def right_border_style() : TextFrameFormat::BorderStyle
+      Binding.bg_QTextTableCellFormat_rightBorderStyle_(self)
+    end
+    
+    def border_style=(style : TextFrameFormat::BorderStyle) : Void
+      Binding.bg_QTextTableCellFormat_setBorderStyle_QTextFrameFormat__BorderStyle(self, style)
+    end
+    
+    def top_border_brush=(brush : Brush) : Void
+      Binding.bg_QTextTableCellFormat_setTopBorderBrush_const_QBrush_R(self, brush)
+    end
+    
+    def top_border_brush() : Brush
+      Brush.new(unwrap: Binding.bg_QTextTableCellFormat_topBorderBrush_(self))
+    end
+    
+    def bottom_border_brush=(brush : Brush) : Void
+      Binding.bg_QTextTableCellFormat_setBottomBorderBrush_const_QBrush_R(self, brush)
+    end
+    
+    def bottom_border_brush() : Brush
+      Brush.new(unwrap: Binding.bg_QTextTableCellFormat_bottomBorderBrush_(self))
+    end
+    
+    def left_border_brush=(brush : Brush) : Void
+      Binding.bg_QTextTableCellFormat_setLeftBorderBrush_const_QBrush_R(self, brush)
+    end
+    
+    def left_border_brush() : Brush
+      Brush.new(unwrap: Binding.bg_QTextTableCellFormat_leftBorderBrush_(self))
+    end
+    
+    def right_border_brush=(brush : Brush) : Void
+      Binding.bg_QTextTableCellFormat_setRightBorderBrush_const_QBrush_R(self, brush)
+    end
+    
+    def right_border_brush() : Brush
+      Brush.new(unwrap: Binding.bg_QTextTableCellFormat_rightBorderBrush_(self))
+    end
+    
+    def border_brush=(brush : Brush) : Void
+      Binding.bg_QTextTableCellFormat_setBorderBrush_const_QBrush_R(self, brush)
+    end
+    
+    protected def initialize(fmt : TextFormat)
+      result = Binding.bg_QTextTableCellFormat__CONSTRUCT_const_QTextFormat_R(fmt)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : TextTableCellFormat)
+      result = Binding.bg_QTextTableCellFormat__COPY_const_QTextTableCellFormat_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unwrap : Binding::QTextTableCellFormat*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TextCursor
     @unwrap : Binding::QTextCursor*
     
@@ -72270,17 +74059,12 @@ module Qt
     @unwrap = result
     end
     
-    def initialize(p : Binding::QTextDocumentPrivate*, pos : Int32)
-      result = Binding.bg_QTextCursor__CONSTRUCT_QTextDocumentPrivate_X_int(p, pos)
-    @unwrap = result
-    end
-    
     def initialize(d : Binding::QTextCursorPrivate*)
       result = Binding.bg_QTextCursor__CONSTRUCT_QTextCursorPrivate_X(d)
     @unwrap = result
     end
     
-    def initialize(frame : Binding::QTextFrame*)
+    def initialize(frame : TextFrame)
       result = Binding.bg_QTextCursor__CONSTRUCT_QTextFrame_X(frame)
     @unwrap = result
     end
@@ -72399,8 +74183,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QTextCursor_selectedText_(self))
     end
     
-    def selection() : Binding::QTextDocumentFragment*
-      Binding.bg_QTextCursor_selection_(self)
+    def selection() : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextCursor_selection_(self))
     end
     
     def selected_table_cells(first_row : Int32*, num_rows : Int32*, first_column : Int32*, num_columns : Int32*) : Void
@@ -72475,47 +74259,47 @@ module Qt
       Binding.bg_QTextCursor_insertBlock_const_QTextBlockFormat_R_const_QTextCharFormat_R(self, format, char_format)
     end
     
-    def insert_list(format : TextListFormat) : Binding::QTextList*
-      Binding.bg_QTextCursor_insertList_const_QTextListFormat_R(self, format)
+    def insert_list(format : TextListFormat) : TextList
+      TextList.new(unwrap: Binding.bg_QTextCursor_insertList_const_QTextListFormat_R(self, format))
     end
     
-    def insert_list(style : TextListFormat::Style) : Binding::QTextList*
-      Binding.bg_QTextCursor_insertList_QTextListFormat__Style(self, style)
+    def insert_list(style : TextListFormat::Style) : TextList
+      TextList.new(unwrap: Binding.bg_QTextCursor_insertList_QTextListFormat__Style(self, style))
     end
     
-    def create_list(format : TextListFormat) : Binding::QTextList*
-      Binding.bg_QTextCursor_createList_const_QTextListFormat_R(self, format)
+    def create_list(format : TextListFormat) : TextList
+      TextList.new(unwrap: Binding.bg_QTextCursor_createList_const_QTextListFormat_R(self, format))
     end
     
-    def create_list(style : TextListFormat::Style) : Binding::QTextList*
-      Binding.bg_QTextCursor_createList_QTextListFormat__Style(self, style)
+    def create_list(style : TextListFormat::Style) : TextList
+      TextList.new(unwrap: Binding.bg_QTextCursor_createList_QTextListFormat__Style(self, style))
     end
     
-    def current_list() : Binding::QTextList*
-      Binding.bg_QTextCursor_currentList_(self)
+    def current_list() : TextList
+      TextList.new(unwrap: Binding.bg_QTextCursor_currentList_(self))
     end
     
-    def insert_table(rows : Int32, cols : Int32, format : Binding::QTextTableFormat*) : Binding::QTextTable*
-      Binding.bg_QTextCursor_insertTable_int_int_const_QTextTableFormat_R(self, rows, cols, format)
+    def insert_table(rows : Int32, cols : Int32, format : TextTableFormat) : TextTable
+      TextTable.new(unwrap: Binding.bg_QTextCursor_insertTable_int_int_const_QTextTableFormat_R(self, rows, cols, format))
     end
     
-    def insert_table(rows : Int32, cols : Int32) : Binding::QTextTable*
-      Binding.bg_QTextCursor_insertTable_int_int(self, rows, cols)
+    def insert_table(rows : Int32, cols : Int32) : TextTable
+      TextTable.new(unwrap: Binding.bg_QTextCursor_insertTable_int_int(self, rows, cols))
     end
     
-    def current_table() : Binding::QTextTable*
-      Binding.bg_QTextCursor_currentTable_(self)
+    def current_table() : TextTable
+      TextTable.new(unwrap: Binding.bg_QTextCursor_currentTable_(self))
     end
     
-    def insert_frame(format : TextFrameFormat) : Binding::QTextFrame*
-      Binding.bg_QTextCursor_insertFrame_const_QTextFrameFormat_R(self, format)
+    def insert_frame(format : TextFrameFormat) : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextCursor_insertFrame_const_QTextFrameFormat_R(self, format))
     end
     
-    def current_frame() : Binding::QTextFrame*
-      Binding.bg_QTextCursor_currentFrame_(self)
+    def current_frame() : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextCursor_currentFrame_(self))
     end
     
-    def insert_fragment(fragment : Binding::QTextDocumentFragment*) : Void
+    def insert_fragment(fragment : TextDocumentFragment) : Void
       Binding.bg_QTextCursor_insertFragment_const_QTextDocumentFragment_R(self, fragment)
     end
     
@@ -72531,11 +74315,11 @@ module Qt
       Binding.bg_QTextCursor_insertMarkdown_const_QString_R_QTextDocument__MarkdownFeatures(self, Qt::Converter::QString.wrap(markdown), features)
     end
     
-    def insert_image(format : Binding::QTextImageFormat*, alignment : TextFrameFormat::Position) : Void
+    def insert_image(format : TextImageFormat, alignment : TextFrameFormat::Position) : Void
       Binding.bg_QTextCursor_insertImage_const_QTextImageFormat_R_QTextFrameFormat__Position(self, format, alignment)
     end
     
-    def insert_image(format : Binding::QTextImageFormat*) : Void
+    def insert_image(format : TextImageFormat) : Void
       Binding.bg_QTextCursor_insertImage_const_QTextImageFormat_R(self, format)
     end
     
@@ -72644,6 +74428,505 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QTextCursor*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextInlineObject
+    @unwrap : Binding::QTextInlineObject*
+    
+    def initialize()
+      result = Binding.bg_QTextInlineObject__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextInlineObject_isValid_(self)
+    end
+    
+    def rect() : RectF
+      RectF.new(unwrap: Binding.bg_QTextInlineObject_rect_(self))
+    end
+    
+    def width() : Float64
+      Binding.bg_QTextInlineObject_width_(self)
+    end
+    
+    def ascent() : Float64
+      Binding.bg_QTextInlineObject_ascent_(self)
+    end
+    
+    def descent() : Float64
+      Binding.bg_QTextInlineObject_descent_(self)
+    end
+    
+    def height() : Float64
+      Binding.bg_QTextInlineObject_height_(self)
+    end
+    
+    def text_direction() : LayoutDirection
+      Binding.bg_QTextInlineObject_textDirection_(self)
+    end
+    
+    def width=(w : Float64) : Void
+      Binding.bg_QTextInlineObject_setWidth_qreal(self, w)
+    end
+    
+    def ascent=(a : Float64) : Void
+      Binding.bg_QTextInlineObject_setAscent_qreal(self, a)
+    end
+    
+    def descent=(d : Float64) : Void
+      Binding.bg_QTextInlineObject_setDescent_qreal(self, d)
+    end
+    
+    def text_position() : Int32
+      Binding.bg_QTextInlineObject_textPosition_(self)
+    end
+    
+    def format_index() : Int32
+      Binding.bg_QTextInlineObject_formatIndex_(self)
+    end
+    
+    def format() : TextFormat
+      TextFormat.new(unwrap: Binding.bg_QTextInlineObject_format_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : TextInlineObject)
+      result = Binding.bg_QTextInlineObject__COPY_const_QTextInlineObject_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextInlineObject*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextLayout
+    @unwrap : Binding::QTextLayout*
+    
+    def initialize()
+      result = Binding.bg_QTextLayout__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(text : String)
+      result = Binding.bg_QTextLayout__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(text))
+    @unwrap = result
+    end
+    
+    def initialize(text : String, font : Font, paintdevice : PaintDevice? = nil)
+      result = Binding.bg_QTextLayout__CONSTRUCT_const_QString_R_const_QFont_R_const_QPaintDevice_X(Qt::Converter::QString.wrap(text), font, paintdevice)
+    @unwrap = result
+    end
+    
+    def initialize(b : TextBlock)
+      result = Binding.bg_QTextLayout__CONSTRUCT_const_QTextBlock_R(b)
+    @unwrap = result
+    end
+    
+    def font=(f : Font) : Void
+      Binding.bg_QTextLayout_setFont_const_QFont_R(self, f)
+    end
+    
+    def font() : Font
+      Font.new(unwrap: Binding.bg_QTextLayout_font_(self))
+    end
+    
+    def raw_font=(raw_font : RawFont) : Void
+      Binding.bg_QTextLayout_setRawFont_const_QRawFont_R(self, raw_font)
+    end
+    
+    def text=(string : String) : Void
+      Binding.bg_QTextLayout_setText_const_QString_R(self, Qt::Converter::QString.wrap(string))
+    end
+    
+    def text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextLayout_text_(self))
+    end
+    
+    def text_option=(option : TextOption) : Void
+      Binding.bg_QTextLayout_setTextOption_const_QTextOption_R(self, option)
+    end
+    
+    def text_option() : TextOption
+      TextOption.new(unwrap: Binding.bg_QTextLayout_textOption_(self))
+    end
+    
+    def set_preedit_area(position : Int32, text : String) : Void
+      Binding.bg_QTextLayout_setPreeditArea_int_const_QString_R(self, position, Qt::Converter::QString.wrap(text))
+    end
+    
+    def preedit_area_position() : Int32
+      Binding.bg_QTextLayout_preeditAreaPosition_(self)
+    end
+    
+    def preedit_area_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextLayout_preeditAreaText_(self))
+    end
+    
+    def formats=(overrides : Enumerable(TextLayoutFormatRange)) : Void
+      Binding.bg_QTextLayout_setFormats_const_QList_QTextLayout__FormatRange__R(self, BindgenHelper.wrap_container(Container_QList_QTextLayout__FormatRange_, overrides).to_unsafe)
+    end
+    
+    def formats() : Enumerable(TextLayoutFormatRange)
+      Container_QList_QTextLayout__FormatRange_.new(unwrap: Binding.bg_QTextLayout_formats_(self))
+    end
+    
+    def clear_formats() : Void
+      Binding.bg_QTextLayout_clearFormats_(self)
+    end
+    
+    def cache_enabled=(enable : Bool) : Void
+      Binding.bg_QTextLayout_setCacheEnabled_bool(self, enable)
+    end
+    
+    def cache_enabled() : Bool
+      Binding.bg_QTextLayout_cacheEnabled_(self)
+    end
+    
+    def cursor_move_style=(style : CursorMoveStyle) : Void
+      Binding.bg_QTextLayout_setCursorMoveStyle_Qt__CursorMoveStyle(self, style)
+    end
+    
+    def cursor_move_style() : CursorMoveStyle
+      Binding.bg_QTextLayout_cursorMoveStyle_(self)
+    end
+    
+    def begin_layout() : Void
+      Binding.bg_QTextLayout_beginLayout_(self)
+    end
+    
+    def end_layout() : Void
+      Binding.bg_QTextLayout_endLayout_(self)
+    end
+    
+    def clear_layout() : Void
+      Binding.bg_QTextLayout_clearLayout_(self)
+    end
+    
+    def create_line() : TextLine
+      TextLine.new(unwrap: Binding.bg_QTextLayout_createLine_(self))
+    end
+    
+    def line_count() : Int32
+      Binding.bg_QTextLayout_lineCount_(self)
+    end
+    
+    def line_at(i : Int32) : TextLine
+      TextLine.new(unwrap: Binding.bg_QTextLayout_lineAt_int(self, i))
+    end
+    
+    def line_for_text_position(pos : Int32) : TextLine
+      TextLine.new(unwrap: Binding.bg_QTextLayout_lineForTextPosition_int(self, pos))
+    end
+    
+    def is_valid_cursor_position(pos : Int32) : Bool
+      Binding.bg_QTextLayout_isValidCursorPosition_int(self, pos)
+    end
+    
+    def next_cursor_position(old_pos : Int32, mode : TextLayout::CursorMode = TextLayout::CursorMode::SkipCharacters) : Int32
+      Binding.bg_QTextLayout_nextCursorPosition_int_QTextLayout__CursorMode(self, old_pos, mode)
+    end
+    
+    def previous_cursor_position(old_pos : Int32, mode : TextLayout::CursorMode = TextLayout::CursorMode::SkipCharacters) : Int32
+      Binding.bg_QTextLayout_previousCursorPosition_int_QTextLayout__CursorMode(self, old_pos, mode)
+    end
+    
+    def left_cursor_position(old_pos : Int32) : Int32
+      Binding.bg_QTextLayout_leftCursorPosition_int(self, old_pos)
+    end
+    
+    def right_cursor_position(old_pos : Int32) : Int32
+      Binding.bg_QTextLayout_rightCursorPosition_int(self, old_pos)
+    end
+    
+    def draw(p : Painter, pos : PointF) : Void
+      Binding.bg_QTextLayout_draw_QPainter_X_const_QPointF_R(self, p, pos)
+    end
+    
+    def draw(p : Painter, pos : PointF, selections : Enumerable(TextLayoutFormatRange)) : Void
+      Binding.bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R(self, p, pos, BindgenHelper.wrap_container(Container_QList_QTextLayout__FormatRange_, selections).to_unsafe)
+    end
+    
+    def draw(p : Painter, pos : PointF, selections : Enumerable(TextLayoutFormatRange), clip : RectF) : Void
+      Binding.bg_QTextLayout_draw_QPainter_X_const_QPointF_R_const_QList_QTextLayout__FormatRange__R_const_QRectF_R(self, p, pos, BindgenHelper.wrap_container(Container_QList_QTextLayout__FormatRange_, selections).to_unsafe, clip)
+    end
+    
+    def draw_cursor(p : Painter, pos : PointF, cursor_position : Int32) : Void
+      Binding.bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int(self, p, pos, cursor_position)
+    end
+    
+    def draw_cursor(p : Painter, pos : PointF, cursor_position : Int32, width : Int32) : Void
+      Binding.bg_QTextLayout_drawCursor_QPainter_X_const_QPointF_R_int_int(self, p, pos, cursor_position, width)
+    end
+    
+    def position() : PointF
+      PointF.new(unwrap: Binding.bg_QTextLayout_position_(self))
+    end
+    
+    def position=(p : PointF) : Void
+      Binding.bg_QTextLayout_setPosition_const_QPointF_R(self, p)
+    end
+    
+    def bounding_rect() : RectF
+      RectF.new(unwrap: Binding.bg_QTextLayout_boundingRect_(self))
+    end
+    
+    def minimum_width() : Float64
+      Binding.bg_QTextLayout_minimumWidth_(self)
+    end
+    
+    def maximum_width() : Float64
+      Binding.bg_QTextLayout_maximumWidth_(self)
+    end
+    
+    def glyph_runs(from : Int32, length : Int32, flags : TextLayout::GlyphRunRetrievalFlags) : Enumerable(GlyphRun)
+      Container_QList_QGlyphRun_.new(unwrap: Binding.bg_QTextLayout_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(self, from, length, flags))
+    end
+    
+    def glyph_runs(from : Int32 = -1, length : Int32 = -1) : Enumerable(GlyphRun)
+      Container_QList_QGlyphRun_.new(unwrap: Binding.bg_QTextLayout_glyphRuns_int_int(self, from, length))
+    end
+    
+    def flags=(flags : Int32) : Void
+      Binding.bg_QTextLayout_setFlags_int(self, flags)
+    end
+    
+    enum GlyphRunRetrievalFlag : UInt16
+      RetrieveGlyphIndexes = 1
+      RetrieveGlyphPositions = 2
+      RetrieveStringIndexes = 4
+      RetrieveString = 8
+      DefaultRetrievalFlags = 3
+      RetrieveAll = 65535
+    end
+    enum GlyphRunRetrievalFlags : UInt16
+      RetrieveGlyphIndexes = 1
+      RetrieveGlyphPositions = 2
+      RetrieveStringIndexes = 4
+      RetrieveString = 8
+      DefaultRetrievalFlags = 3
+      RetrieveAll = 65535
+    end
+    enum CursorMode : UInt32
+      SkipCharacters = 0
+      SkipWords = 1
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextLayout*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextLayoutFormatRange
+    @unwrap : Binding::QTextLayout_FormatRange*
+    
+    def initialize()
+      result = Binding.bg_QTextLayout__FormatRange__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : TextLayoutFormatRange)
+      result = Binding.bg_QTextLayout__FormatRange__COPY_const_QTextLayout__FormatRange_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : TextLayoutFormatRange) : TextLayoutFormatRange
+      TextLayoutFormatRange.new(unwrap: Binding.bg_QTextLayout__FormatRange__OPERATOR_assign_const_QTextLayout__FormatRange_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : TextLayoutFormatRange) : Bool
+      Binding.bg_QTextLayout__FormatRange__OPERATOR_eq_const_QTextLayout__FormatRange_R(self, rhs)
+    end
+    
+    def !=(rhs : TextLayoutFormatRange) : Bool
+      Binding.bg_QTextLayout__FormatRange__OPERATOR_ne_const_QTextLayout__FormatRange_R(self, rhs)
+    end
+    
+    def initialize(*, start : Int32, length : Int32, format : TextCharFormat)
+      result = Binding.bg_QTextLayout__FormatRange__AGGREGATE_int_int_QTextCharFormat(start, length, format)
+    @unwrap = result
+    end
+    
+    def start() : Int32
+      Binding.bg_QTextLayout__FormatRange_start_GETTER_(self)
+    end
+    
+    def start=(start : Int32) : Void
+      Binding.bg_QTextLayout__FormatRange_start_SETTER_int(self, start)
+    end
+    
+    def length() : Int32
+      Binding.bg_QTextLayout__FormatRange_length_GETTER_(self)
+    end
+    
+    def length=(length : Int32) : Void
+      Binding.bg_QTextLayout__FormatRange_length_SETTER_int(self, length)
+    end
+    
+    def format() : TextCharFormat
+      TextCharFormat.new(unwrap: Binding.bg_QTextLayout__FormatRange_format_GETTER_(self))
+    end
+    
+    def format=(format : TextCharFormat) : Void
+      Binding.bg_QTextLayout__FormatRange_format_SETTER_QTextCharFormat(self, format)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextLayout_FormatRange*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextLine
+    @unwrap : Binding::QTextLine*
+    
+    def initialize()
+      result = Binding.bg_QTextLine__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextLine_isValid_(self)
+    end
+    
+    def rect() : RectF
+      RectF.new(unwrap: Binding.bg_QTextLine_rect_(self))
+    end
+    
+    def x() : Float64
+      Binding.bg_QTextLine_x_(self)
+    end
+    
+    def y() : Float64
+      Binding.bg_QTextLine_y_(self)
+    end
+    
+    def width() : Float64
+      Binding.bg_QTextLine_width_(self)
+    end
+    
+    def ascent() : Float64
+      Binding.bg_QTextLine_ascent_(self)
+    end
+    
+    def descent() : Float64
+      Binding.bg_QTextLine_descent_(self)
+    end
+    
+    def height() : Float64
+      Binding.bg_QTextLine_height_(self)
+    end
+    
+    def leading() : Float64
+      Binding.bg_QTextLine_leading_(self)
+    end
+    
+    def leading_included=(included : Bool) : Void
+      Binding.bg_QTextLine_setLeadingIncluded_bool(self, included)
+    end
+    
+    def leading_included() : Bool
+      Binding.bg_QTextLine_leadingIncluded_(self)
+    end
+    
+    def natural_text_width() : Float64
+      Binding.bg_QTextLine_naturalTextWidth_(self)
+    end
+    
+    def horizontal_advance() : Float64
+      Binding.bg_QTextLine_horizontalAdvance_(self)
+    end
+    
+    def natural_text_rect() : RectF
+      RectF.new(unwrap: Binding.bg_QTextLine_naturalTextRect_(self))
+    end
+    
+    def cursor_to_x(cursor_pos : Int32*, edge : TextLine::Edge = TextLine::Edge::Leading) : Float64
+      Binding.bg_QTextLine_cursorToX_int_X_QTextLine__Edge(self, cursor_pos, edge)
+    end
+    
+    def cursor_to_x(cursor_pos : Int32, edge : TextLine::Edge = TextLine::Edge::Leading) : Float64
+      Binding.bg_QTextLine_cursorToX_int_QTextLine__Edge(self, cursor_pos, edge)
+    end
+    
+    def x_to_cursor(x : Float64, unnamed_arg_1 : TextLine::CursorPosition = TextLine::CursorPosition::CursorBetweenCharacters) : Int32
+      Binding.bg_QTextLine_xToCursor_qreal_QTextLine__CursorPosition(self, x, unnamed_arg_1)
+    end
+    
+    def line_width=(width : Float64) : Void
+      Binding.bg_QTextLine_setLineWidth_qreal(self, width)
+    end
+    
+    def num_columns=(columns : Int32) : Void
+      Binding.bg_QTextLine_setNumColumns_int(self, columns)
+    end
+    
+    def set_num_columns(columns : Int32, alignment_width : Float64) : Void
+      Binding.bg_QTextLine_setNumColumns_int_qreal(self, columns, alignment_width)
+    end
+    
+    def position=(pos : PointF) : Void
+      Binding.bg_QTextLine_setPosition_const_QPointF_R(self, pos)
+    end
+    
+    def position() : PointF
+      PointF.new(unwrap: Binding.bg_QTextLine_position_(self))
+    end
+    
+    def text_start() : Int32
+      Binding.bg_QTextLine_textStart_(self)
+    end
+    
+    def text_length() : Int32
+      Binding.bg_QTextLine_textLength_(self)
+    end
+    
+    def line_number() : Int32
+      Binding.bg_QTextLine_lineNumber_(self)
+    end
+    
+    def draw(painter : Painter, position : PointF) : Void
+      Binding.bg_QTextLine_draw_QPainter_X_const_QPointF_R(self, painter, position)
+    end
+    
+    def glyph_runs(from : Int32, length : Int32, flags : TextLayout::GlyphRunRetrievalFlags) : Enumerable(GlyphRun)
+      Container_QList_QGlyphRun_.new(unwrap: Binding.bg_QTextLine_glyphRuns_int_int_QTextLayout__GlyphRunRetrievalFlags(self, from, length, flags))
+    end
+    
+    def glyph_runs(from : Int32 = -1, length : Int32 = -1) : Enumerable(GlyphRun)
+      Container_QList_QGlyphRun_.new(unwrap: Binding.bg_QTextLine_glyphRuns_int_int(self, from, length))
+    end
+    
+    def initialize(unnamed_arg_0 : TextLine)
+      result = Binding.bg_QTextLine__COPY_const_QTextLine_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    enum Edge : UInt32
+      Leading = 0
+      Trailing = 1
+    end
+    enum CursorPosition : UInt32
+      CursorBetweenCharacters = 0
+      CursorOnCharacter = 1
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextLine*)
       result = unwrap
     @unwrap = result
     end
@@ -72938,8 +75221,75 @@ module Qt
     def initialize(doc : TextDocument)
       result = Binding.bg_QAbstractTextDocumentLayout__CONSTRUCT_QTextDocument_X(doc)
     @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractTextDocumentLayout)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractTextDocumentLayout_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R", "draw", ["Painter", "TextDocumentLayoutPaintContext"] of String},
+        {"bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy", "hit_test", ["PointF", "HitTestAccuracy"] of String},
+        {"bg_QAbstractTextDocumentLayout_pageCount_", "page_count", [] of String},
+        {"bg_QAbstractTextDocumentLayout_documentSize_", "document_size", [] of String},
+        {"bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X", "frame_bounding_rect", ["TextFrame"] of String},
+        {"bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R", "block_bounding_rect", ["TextBlock"] of String},
+        {"bg_QAbstractTextDocumentLayout_documentChanged_int_int_int", "document_changed", ["Int32", "Int32", "Int32"] of String},
+        {"bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R", "resize_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R", "position_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R", "draw_inline_object", ["Painter", "RectF", "TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractTextDocumentLayout.new(
+      bg_QAbstractTextDocumentLayout_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R") %} Proc(Binding::QPainter*, Binding::QAbstractTextDocumentLayout_PaintContext*, Void).new{|painter, context| self.draw(Painter.new(unwrap: painter), TextDocumentLayoutPaintContext.new(unwrap: context)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy") %} Proc(Binding::QPointF, HitTestAccuracy, Int32).new{|point, accuracy| self.hit_test(PointF.new(unwrap: point), accuracy) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_pageCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_pageCount_") %} Proc(Int32).new{ self.page_count() } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_documentSize_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_documentSize_") %} Proc(Binding::QSizeF*).new{ Pointer(Binding::QSizeF).malloc(1, self.document_size().to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X") %} Proc(Binding::QTextFrame*, Binding::QRectF*).new{|frame| Pointer(Binding::QRectF).malloc(1, self.frame_bounding_rect(TextFrame.new(unwrap: frame)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Binding::QRectF*).new{|block| Pointer(Binding::QRectF).malloc(1, self.block_bounding_rect(TextBlock.new(unwrap: block)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_documentChanged_int_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_documentChanged_int_int_int") %} Proc(Int32, Int32, Int32, Void).new{|from, chars_removed, chars_added| self.document_changed(from, chars_removed, chars_added) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.resize_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.position_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QPainter*, Binding::QRectF, Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|painter, rect, object, pos_in_document, format| self.draw_inline_object(Painter.new(unwrap: painter), RectF.new(unwrap: rect), TextInlineObject.new(unwrap: object), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractTextDocumentLayout_JUMPTABLE_BgJumptable_QAbstractTextDocumentLayout_R(result, pointerof(jump_table))
+    {% end %}
     end
     
+    abstract def draw(painter : Painter, context : TextDocumentLayoutPaintContext) : Void
     abstract def hit_test(point : PointF, accuracy : HitTestAccuracy) : Int32
     def anchor_at(pos : PointF) : String
       Qt::Converter::QString.unwrap(Binding.bg_QAbstractTextDocumentLayout_anchorAt_const_QPointF_R(self, pos))
@@ -72959,7 +75309,7 @@ module Qt
     
     abstract def page_count() : Int32
     abstract def document_size() : SizeF
-    abstract def frame_bounding_rect(frame : Binding::QTextFrame*) : RectF
+    abstract def frame_bounding_rect(frame : TextFrame) : RectF
     abstract def block_bounding_rect(block : TextBlock) : RectF
     def paint_device=(device : PaintDevice) : Void
       BindgenHelper.keep_alive(device)
@@ -73010,18 +75360,84 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QAbstractTextDocumentLayoutPrivate*, unnamed_arg_1 : TextDocument)
       result = Binding.bg_QAbstractTextDocumentLayout__CONSTRUCT_QAbstractTextDocumentLayoutPrivate_R_QTextDocument_X(unnamed_arg_0, unnamed_arg_1)
     @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractTextDocumentLayout)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractTextDocumentLayout_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R", "draw", ["Painter", "TextDocumentLayoutPaintContext"] of String},
+        {"bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy", "hit_test", ["PointF", "HitTestAccuracy"] of String},
+        {"bg_QAbstractTextDocumentLayout_pageCount_", "page_count", [] of String},
+        {"bg_QAbstractTextDocumentLayout_documentSize_", "document_size", [] of String},
+        {"bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X", "frame_bounding_rect", ["TextFrame"] of String},
+        {"bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R", "block_bounding_rect", ["TextBlock"] of String},
+        {"bg_QAbstractTextDocumentLayout_documentChanged_int_int_int", "document_changed", ["Int32", "Int32", "Int32"] of String},
+        {"bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R", "resize_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R", "position_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R", "draw_inline_object", ["Painter", "RectF", "TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractTextDocumentLayout.new(
+      bg_QAbstractTextDocumentLayout_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R") %} Proc(Binding::QPainter*, Binding::QAbstractTextDocumentLayout_PaintContext*, Void).new{|painter, context| self.draw(Painter.new(unwrap: painter), TextDocumentLayoutPaintContext.new(unwrap: context)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy") %} Proc(Binding::QPointF, HitTestAccuracy, Int32).new{|point, accuracy| self.hit_test(PointF.new(unwrap: point), accuracy) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_pageCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_pageCount_") %} Proc(Int32).new{ self.page_count() } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_documentSize_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_documentSize_") %} Proc(Binding::QSizeF*).new{ Pointer(Binding::QSizeF).malloc(1, self.document_size().to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X") %} Proc(Binding::QTextFrame*, Binding::QRectF*).new{|frame| Pointer(Binding::QRectF).malloc(1, self.frame_bounding_rect(TextFrame.new(unwrap: frame)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_blockBoundingRect_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Binding::QRectF*).new{|block| Pointer(Binding::QRectF).malloc(1, self.block_bounding_rect(TextBlock.new(unwrap: block)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_documentChanged_int_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_documentChanged_int_int_int") %} Proc(Int32, Int32, Int32, Void).new{|from, chars_removed, chars_added| self.document_changed(from, chars_removed, chars_added) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.resize_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.position_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QPainter*, Binding::QRectF, Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|painter, rect, object, pos_in_document, format| self.draw_inline_object(Painter.new(unwrap: painter), RectF.new(unwrap: rect), TextInlineObject.new(unwrap: object), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractTextDocumentLayout_JUMPTABLE_BgJumptable_QAbstractTextDocumentLayout_R(result, pointerof(jump_table))
+    {% end %}
     end
     
     protected abstract def document_changed(from : Int32, chars_removed : Int32, chars_added : Int32) : Void
-    protected def resize_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def resize_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R(self, item, pos_in_document, format)
     end
     
-    protected def position_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def position_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R(self, item, pos_in_document, format)
     end
     
-    protected def draw_inline_object(painter : Painter, rect : RectF, object : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def draw_inline_object(painter : Painter, rect : RectF, object : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(self, painter, rect, object, pos_in_document, format)
     end
     
@@ -73078,6 +75494,53 @@ module Qt
     @unwrap = result
     end
     
+    private class Superclass
+      def initialize(@myself : AbstractTextDocumentLayout)
+      end
+      protected def resize_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
+        Binding.bg_QAbstractTextDocumentLayout_resizeInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(@myself, item, pos_in_document, format)
+      end
+      
+      protected def position_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
+        Binding.bg_QAbstractTextDocumentLayout_positionInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(@myself, item, pos_in_document, format)
+      end
+      
+      protected def draw_inline_object(painter : Painter, rect : RectF, object : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
+        Binding.bg_QAbstractTextDocumentLayout_drawInlineObject_SUPER_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(@myself, painter, rect, object, pos_in_document, format)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
     def on_update(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_CONNECT_update_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -73096,6 +75559,111 @@ module Qt
     
     def on_page_count_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_CONNECT_pageCountChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
+    end
+    
+  end
+  class TextDocumentLayoutSelection
+    @unwrap : Binding::QAbstractTextDocumentLayout_Selection*
+    
+    def initialize(unnamed_arg_0 : TextDocumentLayoutSelection)
+      result = Binding.bg_QAbstractTextDocumentLayout__Selection__COPY_const_QAbstractTextDocumentLayout__Selection_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : TextDocumentLayoutSelection) : TextDocumentLayoutSelection
+      TextDocumentLayoutSelection.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__Selection__OPERATOR_assign_const_QAbstractTextDocumentLayout__Selection_R(self, unnamed_arg_0))
+    end
+    
+    def initialize()
+      result = Binding.bg_QAbstractTextDocumentLayout__Selection__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(*, cursor : TextCursor, format : TextCharFormat)
+      result = Binding.bg_QAbstractTextDocumentLayout__Selection__AGGREGATE_QTextCursor_QTextCharFormat(cursor, format)
+    @unwrap = result
+    end
+    
+    def cursor() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__Selection_cursor_GETTER_(self))
+    end
+    
+    def cursor=(cursor : TextCursor) : Void
+      Binding.bg_QAbstractTextDocumentLayout__Selection_cursor_SETTER_QTextCursor(self, cursor)
+    end
+    
+    def format() : TextCharFormat
+      TextCharFormat.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__Selection_format_GETTER_(self))
+    end
+    
+    def format=(format : TextCharFormat) : Void
+      Binding.bg_QAbstractTextDocumentLayout__Selection_format_SETTER_QTextCharFormat(self, format)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QAbstractTextDocumentLayout_Selection*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextDocumentLayoutPaintContext
+    @unwrap : Binding::QAbstractTextDocumentLayout_PaintContext*
+    
+    def initialize()
+      result = Binding.bg_QAbstractTextDocumentLayout__PaintContext__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : TextDocumentLayoutPaintContext)
+      result = Binding.bg_QAbstractTextDocumentLayout__PaintContext__COPY_const_QAbstractTextDocumentLayout__PaintContext_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : TextDocumentLayoutPaintContext) : TextDocumentLayoutPaintContext
+      TextDocumentLayoutPaintContext.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__PaintContext__OPERATOR_assign_const_QAbstractTextDocumentLayout__PaintContext_R(self, unnamed_arg_0))
+    end
+    
+    def cursor_position() : Int32
+      Binding.bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_GETTER_(self)
+    end
+    
+    def cursor_position=(cursor_position : Int32) : Void
+      Binding.bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_SETTER_int(self, cursor_position)
+    end
+    
+    def palette() : Palette
+      Palette.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__PaintContext_palette_GETTER_(self))
+    end
+    
+    def palette=(palette : Palette) : Void
+      Binding.bg_QAbstractTextDocumentLayout__PaintContext_palette_SETTER_QPalette(self, palette)
+    end
+    
+    def clip() : RectF
+      RectF.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__PaintContext_clip_GETTER_(self))
+    end
+    
+    def clip=(clip : RectF) : Void
+      Binding.bg_QAbstractTextDocumentLayout__PaintContext_clip_SETTER_QRectF(self, clip)
+    end
+    
+    def selections() : Enumerable(TextDocumentLayoutSelection)
+      Container_QList_QAbstractTextDocumentLayout__Selection_.new(unwrap: Binding.bg_QAbstractTextDocumentLayout__PaintContext_selections_GETTER_(self))
+    end
+    
+    def selections=(selections : Enumerable(TextDocumentLayoutSelection)) : Void
+      Binding.bg_QAbstractTextDocumentLayout__PaintContext_selections_SETTER_QList_QAbstractTextDocumentLayout__Selection_(self, BindgenHelper.wrap_container(Container_QList_QAbstractTextDocumentLayout__Selection_, selections).to_unsafe)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QAbstractTextDocumentLayout_PaintContext*)
+      result = unwrap
+    @unwrap = result
     end
     
   end
@@ -77611,6 +80179,100 @@ module Qt
     end
     
   end
+  class FontInfo
+    @unwrap : Binding::QFontInfo*
+    
+    def initialize(unnamed_arg_0 : Font)
+      result = Binding.bg_QFontInfo__CONSTRUCT_const_QFont_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : FontInfo)
+      result = Binding.bg_QFontInfo__COPY_const_QFontInfo_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : FontInfo) : FontInfo
+      FontInfo.new(unwrap: Binding.bg_QFontInfo__OPERATOR_assign_const_QFontInfo_R(self, unnamed_arg_0))
+    end
+    
+    def swap(other : FontInfo) : Void
+      Binding.bg_QFontInfo_swap_QFontInfo_R(self, other)
+    end
+    
+    def family() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontInfo_family_(self))
+    end
+    
+    def style_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontInfo_styleName_(self))
+    end
+    
+    def pixel_size() : Int32
+      Binding.bg_QFontInfo_pixelSize_(self)
+    end
+    
+    def point_size() : Int32
+      Binding.bg_QFontInfo_pointSize_(self)
+    end
+    
+    def point_size_f() : Float64
+      Binding.bg_QFontInfo_pointSizeF_(self)
+    end
+    
+    def italic() : Bool
+      Binding.bg_QFontInfo_italic_(self)
+    end
+    
+    def style() : Font::Style
+      Binding.bg_QFontInfo_style_(self)
+    end
+    
+    def weight() : Int32
+      Binding.bg_QFontInfo_weight_(self)
+    end
+    
+    def bold() : Bool
+      Binding.bg_QFontInfo_bold_(self)
+    end
+    
+    def underline() : Bool
+      Binding.bg_QFontInfo_underline_(self)
+    end
+    
+    def overline() : Bool
+      Binding.bg_QFontInfo_overline_(self)
+    end
+    
+    def strike_out() : Bool
+      Binding.bg_QFontInfo_strikeOut_(self)
+    end
+    
+    def fixed_pitch() : Bool
+      Binding.bg_QFontInfo_fixedPitch_(self)
+    end
+    
+    def style_hint() : Font::StyleHint
+      Binding.bg_QFontInfo_styleHint_(self)
+    end
+    
+    def variable_axes() : Enumerable(Binding::QFontVariableAxis*)
+      Container_QList_QFontVariableAxis_.new(unwrap: Binding.bg_QFontInfo_variableAxes_(self))
+    end
+    
+    def exact_match() : Bool
+      Binding.bg_QFontInfo_exactMatch_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFontInfo*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class FontMetrics
     @unwrap : Binding::QFontMetrics*
     
@@ -77777,6 +80439,182 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QFontMetrics*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class FontMetricsF
+    @unwrap : Binding::QFontMetricsF*
+    
+    def initialize(font : Font)
+      result = Binding.bg_QFontMetricsF__CONSTRUCT_const_QFont_R(font)
+    @unwrap = result
+    end
+    
+    def initialize(font : Font, pd : PaintDevice)
+      result = Binding.bg_QFontMetricsF__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(font, pd)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : FontMetrics)
+      result = Binding.bg_QFontMetricsF__CONSTRUCT_const_QFontMetrics_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : FontMetricsF)
+      result = Binding.bg_QFontMetricsF__COPY_const_QFontMetricsF_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : FontMetricsF) : FontMetricsF
+      FontMetricsF.new(unwrap: Binding.bg_QFontMetricsF__OPERATOR_assign_const_QFontMetricsF_R(self, unnamed_arg_0))
+    end
+    
+    def assign!(unnamed_arg_0 : FontMetrics) : FontMetricsF
+      FontMetricsF.new(unwrap: Binding.bg_QFontMetricsF__OPERATOR_assign_const_QFontMetrics_R(self, unnamed_arg_0))
+    end
+    
+    def swap(other : FontMetricsF) : Void
+      Binding.bg_QFontMetricsF_swap_QFontMetricsF_R(self, other)
+    end
+    
+    def ascent() : Float64
+      Binding.bg_QFontMetricsF_ascent_(self)
+    end
+    
+    def cap_height() : Float64
+      Binding.bg_QFontMetricsF_capHeight_(self)
+    end
+    
+    def descent() : Float64
+      Binding.bg_QFontMetricsF_descent_(self)
+    end
+    
+    def height() : Float64
+      Binding.bg_QFontMetricsF_height_(self)
+    end
+    
+    def leading() : Float64
+      Binding.bg_QFontMetricsF_leading_(self)
+    end
+    
+    def line_spacing() : Float64
+      Binding.bg_QFontMetricsF_lineSpacing_(self)
+    end
+    
+    def min_left_bearing() : Float64
+      Binding.bg_QFontMetricsF_minLeftBearing_(self)
+    end
+    
+    def min_right_bearing() : Float64
+      Binding.bg_QFontMetricsF_minRightBearing_(self)
+    end
+    
+    def max_width() : Float64
+      Binding.bg_QFontMetricsF_maxWidth_(self)
+    end
+    
+    def x_height() : Float64
+      Binding.bg_QFontMetricsF_xHeight_(self)
+    end
+    
+    def average_char_width() : Float64
+      Binding.bg_QFontMetricsF_averageCharWidth_(self)
+    end
+    
+    def in_font(unnamed_arg_0 : Char) : Bool
+      Binding.bg_QFontMetricsF_inFont_QChar(self, (unnamed_arg_0.ord))
+    end
+    
+    def in_font_ucs4(ucs4 : UInt32) : Bool
+      Binding.bg_QFontMetricsF_inFontUcs4_uint(self, ucs4)
+    end
+    
+    def left_bearing(unnamed_arg_0 : Char) : Float64
+      Binding.bg_QFontMetricsF_leftBearing_QChar(self, (unnamed_arg_0.ord))
+    end
+    
+    def right_bearing(unnamed_arg_0 : Char) : Float64
+      Binding.bg_QFontMetricsF_rightBearing_QChar(self, (unnamed_arg_0.ord))
+    end
+    
+    def horizontal_advance(string : String, length : Int32 = -1) : Float64
+      Binding.bg_QFontMetricsF_horizontalAdvance_const_QString_R_int(self, Qt::Converter::QString.wrap(string), length)
+    end
+    
+    def horizontal_advance(unnamed_arg_0 : Char) : Float64
+      Binding.bg_QFontMetricsF_horizontalAdvance_QChar(self, (unnamed_arg_0.ord))
+    end
+    
+    def horizontal_advance(string : String, text_option : TextOption) : Float64
+      Binding.bg_QFontMetricsF_horizontalAdvance_const_QString_R_const_QTextOption_R(self, Qt::Converter::QString.wrap(string), text_option)
+    end
+    
+    def bounding_rect(string : String) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_boundingRect_const_QString_R(self, Qt::Converter::QString.wrap(string)))
+    end
+    
+    def bounding_rect(text : String, text_option : TextOption) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_boundingRect_const_QString_R_const_QTextOption_R(self, Qt::Converter::QString.wrap(text), text_option))
+    end
+    
+    def bounding_rect(unnamed_arg_0 : Char) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_boundingRect_QChar(self, (unnamed_arg_0.ord)))
+    end
+    
+    def bounding_rect(r : RectF, flags : Int32, string : String, tabstops : Int32 = 0, tabarray : Int32*? = nil) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_boundingRect_const_QRectF_R_int_const_QString_R_int_int_X(self, r, flags, Qt::Converter::QString.wrap(string), tabstops, tabarray))
+    end
+    
+    def size(flags : Int32, str : String, tabstops : Int32 = 0, tabarray : Int32*? = nil) : SizeF
+      SizeF.new(unwrap: Binding.bg_QFontMetricsF_size_int_const_QString_R_int_int_X(self, flags, Qt::Converter::QString.wrap(str), tabstops, tabarray))
+    end
+    
+    def tight_bounding_rect(text : String) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_tightBoundingRect_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    end
+    
+    def tight_bounding_rect(text : String, text_option : TextOption) : RectF
+      RectF.new(unwrap: Binding.bg_QFontMetricsF_tightBoundingRect_const_QString_R_const_QTextOption_R(self, Qt::Converter::QString.wrap(text), text_option))
+    end
+    
+    def elided_text(text : String, mode : TextElideMode, width : Float64, flags : Int32 = 0) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFontMetricsF_elidedText_const_QString_R_Qt__TextElideMode_qreal_int(self, Qt::Converter::QString.wrap(text), mode, width, flags))
+    end
+    
+    def underline_pos() : Float64
+      Binding.bg_QFontMetricsF_underlinePos_(self)
+    end
+    
+    def overline_pos() : Float64
+      Binding.bg_QFontMetricsF_overlinePos_(self)
+    end
+    
+    def strike_out_pos() : Float64
+      Binding.bg_QFontMetricsF_strikeOutPos_(self)
+    end
+    
+    def line_width() : Float64
+      Binding.bg_QFontMetricsF_lineWidth_(self)
+    end
+    
+    def font_dpi() : Float64
+      Binding.bg_QFontMetricsF_fontDpi_(self)
+    end
+    
+    def ==(other : FontMetricsF) : Bool
+      Binding.bg_QFontMetricsF__OPERATOR_eq_const_QFontMetricsF_R(self, other)
+    end
+    
+    def !=(other : FontMetricsF) : Bool
+      Binding.bg_QFontMetricsF__OPERATOR_ne_const_QFontMetricsF_R(self, other)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFontMetricsF*)
       result = unwrap
     @unwrap = result
     end
@@ -80783,8 +83621,8 @@ module Qt
       FontMetrics.new(unwrap: Binding.bg_QPainter_fontMetrics_(self))
     end
     
-    def font_info() : Binding::QFontInfo*
-      Binding.bg_QPainter_fontInfo_(self)
+    def font_info() : FontInfo
+      FontInfo.new(unwrap: Binding.bg_QPainter_fontInfo_(self))
     end
     
     def pen=(color : Color) : Void
@@ -81327,19 +84165,19 @@ module Qt
       Binding.bg_QPainter_layoutDirection_(self)
     end
     
-    def draw_glyph_run(position : PointF, glyph_run : Binding::QGlyphRun*) : Void
+    def draw_glyph_run(position : PointF, glyph_run : GlyphRun) : Void
       Binding.bg_QPainter_drawGlyphRun_const_QPointF_R_const_QGlyphRun_R(self, position, glyph_run)
     end
     
-    def draw_static_text(top_left_position : PointF, static_text : Binding::QStaticText*) : Void
+    def draw_static_text(top_left_position : PointF, static_text : StaticText) : Void
       Binding.bg_QPainter_drawStaticText_const_QPointF_R_const_QStaticText_R(self, top_left_position, static_text)
     end
     
-    def draw_static_text(top_left_position : Point, static_text : Binding::QStaticText*) : Void
+    def draw_static_text(top_left_position : Point, static_text : StaticText) : Void
       Binding.bg_QPainter_drawStaticText_const_QPoint_R_const_QStaticText_R(self, top_left_position, static_text)
     end
     
-    def draw_static_text(left : Int32, top : Int32, static_text : Binding::QStaticText*) : Void
+    def draw_static_text(left : Int32, top : Int32, static_text : StaticText) : Void
       Binding.bg_QPainter_drawStaticText_int_int_const_QStaticText_R(self, left, top, static_text)
     end
     
@@ -85932,6 +88770,109 @@ module Qt
     end
     
   end
+  class StaticText
+    @unwrap : Binding::QStaticText*
+    
+    def initialize()
+      result = Binding.bg_QStaticText__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(text : String)
+      result = Binding.bg_QStaticText__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(text))
+    @unwrap = result
+    end
+    
+    def initialize(other : StaticText)
+      result = Binding.bg_QStaticText__COPY_const_QStaticText_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : StaticText) : StaticText
+      StaticText.new(unwrap: Binding.bg_QStaticText__OPERATOR_assign_const_QStaticText_R(self, unnamed_arg_0))
+    end
+    
+    def swap(other : StaticText) : Void
+      Binding.bg_QStaticText_swap_QStaticText_R(self, other)
+    end
+    
+    def text=(text : String) : Void
+      Binding.bg_QStaticText_setText_const_QString_R(self, Qt::Converter::QString.wrap(text))
+    end
+    
+    def text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStaticText_text_(self))
+    end
+    
+    def text_format=(text_format : TextFormatEnum) : Void
+      Binding.bg_QStaticText_setTextFormat_Qt__TextFormat(self, text_format)
+    end
+    
+    def text_format() : TextFormatEnum
+      Binding.bg_QStaticText_textFormat_(self)
+    end
+    
+    def text_width=(text_width : Float64) : Void
+      Binding.bg_QStaticText_setTextWidth_qreal(self, text_width)
+    end
+    
+    def text_width() : Float64
+      Binding.bg_QStaticText_textWidth_(self)
+    end
+    
+    def text_option=(text_option : TextOption) : Void
+      Binding.bg_QStaticText_setTextOption_const_QTextOption_R(self, text_option)
+    end
+    
+    def text_option() : TextOption
+      TextOption.new(unwrap: Binding.bg_QStaticText_textOption_(self))
+    end
+    
+    def size() : SizeF
+      SizeF.new(unwrap: Binding.bg_QStaticText_size_(self))
+    end
+    
+    def prepare() : Void
+      Binding.bg_QStaticText_prepare_(self)
+    end
+    
+    def prepare(matrix : Transform) : Void
+      Binding.bg_QStaticText_prepare_const_QTransform_R(self, matrix)
+    end
+    
+    def prepare(matrix : Transform, font : Font) : Void
+      Binding.bg_QStaticText_prepare_const_QTransform_R_const_QFont_R(self, matrix, font)
+    end
+    
+    def performance_hint=(performance_hint : StaticText::PerformanceHint) : Void
+      Binding.bg_QStaticText_setPerformanceHint_QStaticText__PerformanceHint(self, performance_hint)
+    end
+    
+    def performance_hint() : StaticText::PerformanceHint
+      Binding.bg_QStaticText_performanceHint_(self)
+    end
+    
+    def ==(unnamed_arg_0 : StaticText) : Bool
+      Binding.bg_QStaticText__OPERATOR_eq_const_QStaticText_R(self, unnamed_arg_0)
+    end
+    
+    def !=(unnamed_arg_0 : StaticText) : Bool
+      Binding.bg_QStaticText__OPERATOR_ne_const_QStaticText_R(self, unnamed_arg_0)
+    end
+    
+    enum PerformanceHint : UInt32
+      ModerateCaching = 0
+      AggressiveCaching = 1
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QStaticText*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class StyleHints < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QStyleHints_metaObject_(self)
@@ -86306,6 +89247,792 @@ module Qt
     end
     
   end
+  class TextObject < Object
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextObject_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTextObject_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextObject_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextObject_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextObject_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    protected def initialize(doc : TextDocument)
+      result = Binding.bg_QTextObject__CONSTRUCT_QTextDocument_X(doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextObject)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextObject_metaObject_", "meta_object", [] of String},
+        {"bg_QTextObject_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextObject.new(
+      bg_QTextObject_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextObject_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextObject_JUMPTABLE_BgJumptable_QTextObject_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def format=(format : TextFormat) : Void
+      Binding.bg_QTextObject_setFormat_const_QTextFormat_R(self, format)
+    end
+    
+    def format() : TextFormat
+      TextFormat.new(unwrap: Binding.bg_QTextObject_format_(self))
+    end
+    
+    def format_index() : Int32
+      Binding.bg_QTextObject_formatIndex_(self)
+    end
+    
+    def document() : TextDocument
+      TextDocument.new(unwrap: Binding.bg_QTextObject_document_(self))
+    end
+    
+    def object_index() : Int32
+      Binding.bg_QTextObject_objectIndex_(self)
+    end
+    
+    protected def initialize(p : Binding::QTextObjectPrivate*, doc : TextDocument)
+      result = Binding.bg_QTextObject__CONSTRUCT_QTextObjectPrivate_R_QTextDocument_X(p, doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextObject)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextObject_metaObject_", "meta_object", [] of String},
+        {"bg_QTextObject_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextObject.new(
+      bg_QTextObject_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextObject_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextObject_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextObject_JUMPTABLE_BgJumptable_QTextObject_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextObject_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TextObject %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTextObject*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TextObject)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class TextBlockGroup < TextObject
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextBlockGroup_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTextBlockGroup_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextBlockGroup_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextBlockGroup_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    protected def initialize(doc : TextDocument)
+      result = Binding.bg_QTextBlockGroup__CONSTRUCT_QTextDocument_X(doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextBlockGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextBlockGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QTextBlockGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTextBlockGroup_blockInserted_const_QTextBlock_R", "block_inserted", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R", "block_removed", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R", "block_format_changed", ["TextBlock"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextBlockGroup.new(
+      bg_QTextBlockGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockInserted_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockInserted_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_inserted(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_removed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_format_changed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextBlockGroup_JUMPTABLE_BgJumptable_QTextBlockGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def block_inserted(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(self, block)
+    end
+    
+    protected def block_removed(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(self, block)
+    end
+    
+    protected def block_format_changed(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(self, block)
+    end
+    
+    protected def block_list() : Enumerable(TextBlock)
+      Container_QList_QTextBlock_.new(unwrap: Binding.bg_QTextBlockGroup_blockList_(self))
+    end
+    
+    protected def initialize(p : Binding::QTextBlockGroupPrivate*, doc : TextDocument)
+      result = Binding.bg_QTextBlockGroup__CONSTRUCT_QTextBlockGroupPrivate_R_QTextDocument_X(p, doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextBlockGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextBlockGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QTextBlockGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTextBlockGroup_blockInserted_const_QTextBlock_R", "block_inserted", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R", "block_removed", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R", "block_format_changed", ["TextBlock"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextBlockGroup.new(
+      bg_QTextBlockGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockInserted_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockInserted_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_inserted(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_removed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_format_changed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextBlockGroup_JUMPTABLE_BgJumptable_QTextBlockGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextBlockGroup_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TextBlockGroup %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTextBlockGroup*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TextBlockGroup)
+      end
+      protected def block_inserted(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockInserted_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      protected def block_removed(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockRemoved_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      protected def block_format_changed(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockFormatChanged_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class TextFrame < TextObject
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextFrame_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTextFrame_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextFrame_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextFrame_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextFrame_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(doc : TextDocument)
+      result = Binding.bg_QTextFrame__CONSTRUCT_QTextDocument_X(doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextFrame)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextFrame_metaObject_", "meta_object", [] of String},
+        {"bg_QTextFrame_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextFrame.new(
+      bg_QTextFrame_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextFrame_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextFrame_JUMPTABLE_BgJumptable_QTextFrame_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def frame_format=(format : TextFrameFormat) : Void
+      Binding.bg_QTextFrame_setFrameFormat_const_QTextFrameFormat_R(self, format)
+    end
+    
+    def frame_format() : TextFrameFormat
+      TextFrameFormat.new(unwrap: Binding.bg_QTextFrame_frameFormat_(self))
+    end
+    
+    def first_cursor_position() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextFrame_firstCursorPosition_(self))
+    end
+    
+    def last_cursor_position() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextFrame_lastCursorPosition_(self))
+    end
+    
+    def first_position() : Int32
+      Binding.bg_QTextFrame_firstPosition_(self)
+    end
+    
+    def last_position() : Int32
+      Binding.bg_QTextFrame_lastPosition_(self)
+    end
+    
+    def child_frames() : Enumerable(TextFrame)
+      Container_QList_QTextFrame_X_.new(unwrap: Binding.bg_QTextFrame_childFrames_(self))
+    end
+    
+    def parent_frame() : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextFrame_parentFrame_(self))
+    end
+    
+    def begin() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame_begin_(self))
+    end
+    
+    def end() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame_end_(self))
+    end
+    
+    protected def initialize(p : Binding::QTextFramePrivate*, doc : TextDocument)
+      result = Binding.bg_QTextFrame__CONSTRUCT_QTextFramePrivate_R_QTextDocument_X(p, doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextFrame)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextFrame_metaObject_", "meta_object", [] of String},
+        {"bg_QTextFrame_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextFrame.new(
+      bg_QTextFrame_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextFrame_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextFrame_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextFrame_JUMPTABLE_BgJumptable_QTextFrame_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextFrame_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TextFrame %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTextFrame*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TextFrame)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class TextFrameIterator
+    @unwrap : Binding::QTextFrame_Iterator*
+    
+    def initialize()
+      result = Binding.bg_QTextFrame__iterator__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def parent_frame() : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextFrame__iterator_parentFrame_(self))
+    end
+    
+    def current_frame() : TextFrame
+      TextFrame.new(unwrap: Binding.bg_QTextFrame__iterator_currentFrame_(self))
+    end
+    
+    def current_block() : TextBlock
+      TextBlock.new(unwrap: Binding.bg_QTextFrame__iterator_currentBlock_(self))
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QTextFrame__iterator_atEnd_(self)
+    end
+    
+    def ==(o : TextFrameIterator) : Bool
+      Binding.bg_QTextFrame__iterator__OPERATOR_eq_const_QTextFrame__iterator_R(self, o)
+    end
+    
+    def !=(o : TextFrameIterator) : Bool
+      Binding.bg_QTextFrame__iterator__OPERATOR_ne_const_QTextFrame__iterator_R(self, o)
+    end
+    
+    def succ!() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame__iterator__OPERATOR_succ_(self))
+    end
+    
+    def post_succ!() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame__iterator__OPERATOR_post_succ_(self))
+    end
+    
+    def pred!() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame__iterator__OPERATOR_pred_(self))
+    end
+    
+    def post_pred!() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextFrame__iterator__OPERATOR_post_pred_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : TextFrameIterator)
+      result = Binding.bg_QTextFrame__iterator__COPY_const_QTextFrame__iterator_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextFrame_Iterator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TextBlockUserData
     @unwrap : Binding::QTextBlockUserData*
     
@@ -86334,11 +90061,6 @@ module Qt
   end
   class TextBlock
     @unwrap : Binding::QTextBlock*
-    
-    def initialize(priv : Binding::QTextDocumentPrivate*, b : Int32)
-      result = Binding.bg_QTextBlock__CONSTRUCT_QTextDocumentPrivate_X_int(priv, b)
-    @unwrap = result
-    end
     
     def initialize()
       result = Binding.bg_QTextBlock__CONSTRUCT_()
@@ -86382,8 +90104,8 @@ module Qt
       Binding.bg_QTextBlock_contains_int(self, position)
     end
     
-    def layout() : Binding::QTextLayout*
-      Binding.bg_QTextBlock_layout_(self)
+    def layout() : TextLayout
+      TextLayout.new(unwrap: Binding.bg_QTextBlock_layout_(self))
     end
     
     def clear_layout() : Void
@@ -86414,12 +90136,16 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QTextBlock_text_(self))
     end
     
+    def text_formats() : Enumerable(TextLayoutFormatRange)
+      Container_QList_QTextLayout__FormatRange_.new(unwrap: Binding.bg_QTextBlock_textFormats_(self))
+    end
+    
     def document() : TextDocument
       TextDocument.new(unwrap: Binding.bg_QTextBlock_document_(self))
     end
     
-    def text_list() : Binding::QTextList*
-      Binding.bg_QTextBlock_textList_(self)
+    def text_list() : TextList
+      TextList.new(unwrap: Binding.bg_QTextBlock_textList_(self))
     end
     
     def user_data() : TextBlockUserData
@@ -86471,6 +90197,14 @@ module Qt
       Binding.bg_QTextBlock_lineCount_(self)
     end
     
+    def begin() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock_begin_(self))
+    end
+    
+    def end() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock_end_(self))
+    end
+    
     def next() : TextBlock
       TextBlock.new(unwrap: Binding.bg_QTextBlock_next_(self))
     end
@@ -86487,6 +90221,130 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QTextBlock*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextBlockIterator
+    @unwrap : Binding::QTextBlock_Iterator*
+    
+    def initialize()
+      result = Binding.bg_QTextBlock__iterator__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def fragment() : TextFragment
+      TextFragment.new(unwrap: Binding.bg_QTextBlock__iterator_fragment_(self))
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QTextBlock__iterator_atEnd_(self)
+    end
+    
+    def ==(o : TextBlockIterator) : Bool
+      Binding.bg_QTextBlock__iterator__OPERATOR_eq_const_QTextBlock__iterator_R(self, o)
+    end
+    
+    def !=(o : TextBlockIterator) : Bool
+      Binding.bg_QTextBlock__iterator__OPERATOR_ne_const_QTextBlock__iterator_R(self, o)
+    end
+    
+    def succ!() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock__iterator__OPERATOR_succ_(self))
+    end
+    
+    def post_succ!() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock__iterator__OPERATOR_post_succ_(self))
+    end
+    
+    def pred!() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock__iterator__OPERATOR_pred_(self))
+    end
+    
+    def post_pred!() : TextBlockIterator
+      TextBlockIterator.new(unwrap: Binding.bg_QTextBlock__iterator__OPERATOR_post_pred_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : TextBlockIterator)
+      result = Binding.bg_QTextBlock__iterator__COPY_const_QTextBlock__iterator_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextBlock_Iterator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextFragment
+    @unwrap : Binding::QTextFragment*
+    
+    def initialize()
+      result = Binding.bg_QTextFragment__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(o : TextFragment)
+      result = Binding.bg_QTextFragment__COPY_const_QTextFragment_R(o)
+    @unwrap = result
+    end
+    
+    def assign!(o : TextFragment) : TextFragment
+      TextFragment.new(unwrap: Binding.bg_QTextFragment__OPERATOR_assign_const_QTextFragment_R(self, o))
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextFragment_isValid_(self)
+    end
+    
+    def ==(o : TextFragment) : Bool
+      Binding.bg_QTextFragment__OPERATOR_eq_const_QTextFragment_R(self, o)
+    end
+    
+    def !=(o : TextFragment) : Bool
+      Binding.bg_QTextFragment__OPERATOR_ne_const_QTextFragment_R(self, o)
+    end
+    
+    def <(o : TextFragment) : Bool
+      Binding.bg_QTextFragment__OPERATOR_lt_const_QTextFragment_R(self, o)
+    end
+    
+    def position() : Int32
+      Binding.bg_QTextFragment_position_(self)
+    end
+    
+    def length() : Int32
+      Binding.bg_QTextFragment_length_(self)
+    end
+    
+    def contains(position : Int32) : Bool
+      Binding.bg_QTextFragment_contains_int(self, position)
+    end
+    
+    def char_format() : TextCharFormat
+      TextCharFormat.new(unwrap: Binding.bg_QTextFragment_charFormat_(self))
+    end
+    
+    def char_format_index() : Int32
+      Binding.bg_QTextFragment_charFormatIndex_(self)
+    end
+    
+    def text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextFragment_text_(self))
+    end
+    
+    def glyph_runs(from : Int32 = -1, length : Int32 = -1) : Enumerable(GlyphRun)
+      Container_QList_QGlyphRun_.new(unwrap: Binding.bg_QTextFragment_glyphRuns_int_int(self, from, length))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextFragment*)
       result = unwrap
     @unwrap = result
     end
@@ -86728,6 +90586,697 @@ module Qt
     
     private class Superclass
       def initialize(@myself : SyntaxHighlighter)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class TextDocumentFragment
+    @unwrap : Binding::QTextDocumentFragment*
+    
+    def initialize()
+      result = Binding.bg_QTextDocumentFragment__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(document : TextDocument)
+      result = Binding.bg_QTextDocumentFragment__CONSTRUCT_const_QTextDocument_X(document)
+    @unwrap = result
+    end
+    
+    def initialize(range : TextCursor)
+      result = Binding.bg_QTextDocumentFragment__CONSTRUCT_const_QTextCursor_R(range)
+    @unwrap = result
+    end
+    
+    def initialize(rhs : TextDocumentFragment)
+      result = Binding.bg_QTextDocumentFragment__COPY_const_QTextDocumentFragment_R(rhs)
+    @unwrap = result
+    end
+    
+    def assign!(rhs : TextDocumentFragment) : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextDocumentFragment__OPERATOR_assign_const_QTextDocumentFragment_R(self, rhs))
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QTextDocumentFragment_isEmpty_(self)
+    end
+    
+    def to_plain_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentFragment_toPlainText_(self))
+    end
+    
+    def to_raw_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentFragment_toRawText_(self))
+    end
+    
+    def to_html() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentFragment_toHtml_(self))
+    end
+    
+    def to_markdown() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentFragment_toMarkdown_(self))
+    end
+    
+    def to_markdown(features : TextDocument::MarkdownFeatures) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentFragment_toMarkdown_QTextDocument__MarkdownFeatures(self, features))
+    end
+    
+    def self.from_plain_text(plain_text : String) : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextDocumentFragment_fromPlainText_STATIC_const_QString_R(Qt::Converter::QString.wrap(plain_text)))
+    end
+    
+    def self.from_html(html : String, resource_provider : TextDocument? = nil) : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextDocumentFragment_fromHtml_STATIC_const_QString_R_const_QTextDocument_X(Qt::Converter::QString.wrap(html), resource_provider))
+    end
+    
+    def self.from_markdown(markdown : String) : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R(Qt::Converter::QString.wrap(markdown)))
+    end
+    
+    def self.from_markdown(markdown : String, features : TextDocument::MarkdownFeatures) : TextDocumentFragment
+      TextDocumentFragment.new(unwrap: Binding.bg_QTextDocumentFragment_fromMarkdown_STATIC_const_QString_R_QTextDocument__MarkdownFeatures(Qt::Converter::QString.wrap(markdown), features))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextDocumentFragment*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextDocumentWriter
+    @unwrap : Binding::QTextDocumentWriter*
+    
+    def initialize()
+      result = Binding.bg_QTextDocumentWriter__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(device : IODevice, format : Bytes)
+      result = Binding.bg_QTextDocumentWriter__CONSTRUCT_QIODevice_X_const_QByteArray_R(device, Qt::Converter::QByteArray.wrap(format))
+    @unwrap = result
+    end
+    
+    def initialize(file_name : String)
+      result = Binding.bg_QTextDocumentWriter__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(file_name))
+    @unwrap = result
+    end
+    
+    def initialize(file_name : String, format : Bytes)
+      result = Binding.bg_QTextDocumentWriter__CONSTRUCT_const_QString_R_const_QByteArray_R(Qt::Converter::QString.wrap(file_name), Qt::Converter::QByteArray.wrap(format))
+    @unwrap = result
+    end
+    
+    def format=(format : Bytes) : Void
+      Binding.bg_QTextDocumentWriter_setFormat_const_QByteArray_R(self, Qt::Converter::QByteArray.wrap(format))
+    end
+    
+    def format() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QTextDocumentWriter_format_(self))
+    end
+    
+    def device=(device : IODevice) : Void
+      BindgenHelper.keep_alive(device)
+    Binding.bg_QTextDocumentWriter_setDevice_QIODevice_X(self, device)
+    end
+    
+    def device() : IODevice
+      IODeviceImpl.new(unwrap: Binding.bg_QTextDocumentWriter_device_(self))
+    end
+    
+    def file_name=(file_name : String) : Void
+      Binding.bg_QTextDocumentWriter_setFileName_const_QString_R(self, Qt::Converter::QString.wrap(file_name))
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextDocumentWriter_fileName_(self))
+    end
+    
+    def write(document : TextDocument) : Bool
+      Binding.bg_QTextDocumentWriter_write_const_QTextDocument_X(self, document)
+    end
+    
+    def write(fragment : TextDocumentFragment) : Bool
+      Binding.bg_QTextDocumentWriter_write_const_QTextDocumentFragment_R(self, fragment)
+    end
+    
+    def self.supported_document_formats() : Enumerable(Bytes)
+      Container_QList_QByteArray_.new(unwrap: Binding.bg_QTextDocumentWriter_supportedDocumentFormats_STATIC_())
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextDocumentWriter*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextList < TextBlockGroup
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextList_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTextList_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextList_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextList_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextList_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(doc : TextDocument)
+      result = Binding.bg_QTextList__CONSTRUCT_QTextDocument_X(doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextList)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextList_metaObject_", "meta_object", [] of String},
+        {"bg_QTextList_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTextBlockGroup_blockInserted_const_QTextBlock_R", "block_inserted", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R", "block_removed", ["TextBlock"] of String},
+        {"bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R", "block_format_changed", ["TextBlock"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextList.new(
+      bg_QTextList_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextList_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextList_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextList_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextList_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockInserted_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockInserted_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_inserted(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_removed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Void).new{|block| self.block_format_changed(TextBlock.new(unwrap: block)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextList_JUMPTABLE_BgJumptable_QTextList_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def count() : Int32
+      Binding.bg_QTextList_count_(self)
+    end
+    
+    def item(i : Int32) : TextBlock
+      TextBlock.new(unwrap: Binding.bg_QTextList_item_int(self, i))
+    end
+    
+    def item_number(unnamed_arg_0 : TextBlock) : Int32
+      Binding.bg_QTextList_itemNumber_const_QTextBlock_R(self, unnamed_arg_0)
+    end
+    
+    def item_text(unnamed_arg_0 : TextBlock) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextList_itemText_const_QTextBlock_R(self, unnamed_arg_0))
+    end
+    
+    def remove_item(i : Int32) : Void
+      Binding.bg_QTextList_removeItem_int(self, i)
+    end
+    
+    def remove(unnamed_arg_0 : TextBlock) : Void
+      Binding.bg_QTextList_remove_const_QTextBlock_R(self, unnamed_arg_0)
+    end
+    
+    def add(block : TextBlock) : Void
+      Binding.bg_QTextList_add_const_QTextBlock_R(self, block)
+    end
+    
+    def format=(format : TextListFormat) : Void
+      Binding.bg_QTextList_setFormat_const_QTextListFormat_R(self, format)
+    end
+    
+    def format() : TextListFormat
+      TextListFormat.new(unwrap: Binding.bg_QTextList_format_(self))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextList_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    protected def block_inserted(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockInserted_const_QTextBlock_R(self, block)
+    end
+    
+    protected def block_removed(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockRemoved_const_QTextBlock_R(self, block)
+    end
+    
+    protected def block_format_changed(block : TextBlock) : Void
+      Binding.bg_QTextBlockGroup_blockFormatChanged_const_QTextBlock_R(self, block)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TextList %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTextList*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TextList)
+      end
+      protected def block_inserted(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockInserted_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      protected def block_removed(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockRemoved_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      protected def block_format_changed(block : TextBlock) : Void
+        Binding.bg_QTextBlockGroup_blockFormatChanged_SUPER_const_QTextBlock_R(@myself, block)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class TextTableCell
+    @unwrap : Binding::QTextTableCell*
+    
+    def initialize()
+      result = Binding.bg_QTextTableCell__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(o : TextTableCell)
+      result = Binding.bg_QTextTableCell__COPY_const_QTextTableCell_R(o)
+    @unwrap = result
+    end
+    
+    def assign!(o : TextTableCell) : TextTableCell
+      TextTableCell.new(unwrap: Binding.bg_QTextTableCell__OPERATOR_assign_const_QTextTableCell_R(self, o))
+    end
+    
+    def format=(format : TextCharFormat) : Void
+      Binding.bg_QTextTableCell_setFormat_const_QTextCharFormat_R(self, format)
+    end
+    
+    def format() : TextCharFormat
+      TextCharFormat.new(unwrap: Binding.bg_QTextTableCell_format_(self))
+    end
+    
+    def row() : Int32
+      Binding.bg_QTextTableCell_row_(self)
+    end
+    
+    def column() : Int32
+      Binding.bg_QTextTableCell_column_(self)
+    end
+    
+    def row_span() : Int32
+      Binding.bg_QTextTableCell_rowSpan_(self)
+    end
+    
+    def column_span() : Int32
+      Binding.bg_QTextTableCell_columnSpan_(self)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTextTableCell_isValid_(self)
+    end
+    
+    def first_cursor_position() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextTableCell_firstCursorPosition_(self))
+    end
+    
+    def last_cursor_position() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextTableCell_lastCursorPosition_(self))
+    end
+    
+    def first_position() : Int32
+      Binding.bg_QTextTableCell_firstPosition_(self)
+    end
+    
+    def last_position() : Int32
+      Binding.bg_QTextTableCell_lastPosition_(self)
+    end
+    
+    def ==(other : TextTableCell) : Bool
+      Binding.bg_QTextTableCell__OPERATOR_eq_const_QTextTableCell_R(self, other)
+    end
+    
+    def !=(other : TextTableCell) : Bool
+      Binding.bg_QTextTableCell__OPERATOR_ne_const_QTextTableCell_R(self, other)
+    end
+    
+    def begin() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextTableCell_begin_(self))
+    end
+    
+    def end() : TextFrameIterator
+      TextFrameIterator.new(unwrap: Binding.bg_QTextTableCell_end_(self))
+    end
+    
+    def table_cell_format_index() : Int32
+      Binding.bg_QTextTableCell_tableCellFormatIndex_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextTableCell*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextTable < TextFrame
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextTable_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTextTable_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextTable_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextTable_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextTable_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(doc : TextDocument)
+      result = Binding.bg_QTextTable__CONSTRUCT_QTextDocument_X(doc)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TextTable)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTextTable_metaObject_", "meta_object", [] of String},
+        {"bg_QTextTable_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTextTable.new(
+      bg_QTextTable_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextTable_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTextTable_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextTable_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTextTable_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTextTable_JUMPTABLE_BgJumptable_QTextTable_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def resize(rows : Int32, cols : Int32) : Void
+      Binding.bg_QTextTable_resize_int_int(self, rows, cols)
+    end
+    
+    def insert_rows(pos : Int32, num : Int32) : Void
+      Binding.bg_QTextTable_insertRows_int_int(self, pos, num)
+    end
+    
+    def insert_columns(pos : Int32, num : Int32) : Void
+      Binding.bg_QTextTable_insertColumns_int_int(self, pos, num)
+    end
+    
+    def append_rows(count : Int32) : Void
+      Binding.bg_QTextTable_appendRows_int(self, count)
+    end
+    
+    def append_columns(count : Int32) : Void
+      Binding.bg_QTextTable_appendColumns_int(self, count)
+    end
+    
+    def remove_rows(pos : Int32, num : Int32) : Void
+      Binding.bg_QTextTable_removeRows_int_int(self, pos, num)
+    end
+    
+    def remove_columns(pos : Int32, num : Int32) : Void
+      Binding.bg_QTextTable_removeColumns_int_int(self, pos, num)
+    end
+    
+    def merge_cells(row : Int32, col : Int32, num_rows : Int32, num_cols : Int32) : Void
+      Binding.bg_QTextTable_mergeCells_int_int_int_int(self, row, col, num_rows, num_cols)
+    end
+    
+    def merge_cells(cursor : TextCursor) : Void
+      Binding.bg_QTextTable_mergeCells_const_QTextCursor_R(self, cursor)
+    end
+    
+    def split_cell(row : Int32, col : Int32, num_rows : Int32, num_cols : Int32) : Void
+      Binding.bg_QTextTable_splitCell_int_int_int_int(self, row, col, num_rows, num_cols)
+    end
+    
+    def rows() : Int32
+      Binding.bg_QTextTable_rows_(self)
+    end
+    
+    def columns() : Int32
+      Binding.bg_QTextTable_columns_(self)
+    end
+    
+    def cell_at(row : Int32, col : Int32) : TextTableCell
+      TextTableCell.new(unwrap: Binding.bg_QTextTable_cellAt_int_int(self, row, col))
+    end
+    
+    def cell_at(position : Int32) : TextTableCell
+      TextTableCell.new(unwrap: Binding.bg_QTextTable_cellAt_int(self, position))
+    end
+    
+    def cell_at(c : TextCursor) : TextTableCell
+      TextTableCell.new(unwrap: Binding.bg_QTextTable_cellAt_const_QTextCursor_R(self, c))
+    end
+    
+    def row_start(c : TextCursor) : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextTable_rowStart_const_QTextCursor_R(self, c))
+    end
+    
+    def row_end(c : TextCursor) : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextTable_rowEnd_const_QTextCursor_R(self, c))
+    end
+    
+    def format=(format : TextTableFormat) : Void
+      Binding.bg_QTextTable_setFormat_const_QTextTableFormat_R(self, format)
+    end
+    
+    def format() : TextTableFormat
+      TextTableFormat.new(unwrap: Binding.bg_QTextTable_format_(self))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextTable_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TextTable %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTextTable*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TextTable)
       end
       def event(event : Event) : Bool
         Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
@@ -89130,8 +93679,8 @@ module Qt
       FontMetrics.new(unwrap: Binding.bg_QWidget_fontMetrics_(self))
     end
     
-    def font_info() : Binding::QFontInfo*
-      Binding.bg_QWidget_fontInfo_(self)
+    def font_info() : FontInfo
+      FontInfo.new(unwrap: Binding.bg_QWidget_fontInfo_(self))
     end
     
     def cursor() : Cursor
@@ -163554,6 +168103,10 @@ module Qt
       RectF.new(unwrap: Binding.bg_QPlainTextEdit_blockBoundingGeometry_const_QTextBlock_R(self, block))
     end
     
+    protected def paint_context() : TextDocumentLayoutPaintContext
+      TextDocumentLayoutPaintContext.new(unwrap: Binding.bg_QPlainTextEdit_getPaintContext_(self))
+    end
+    
     protected def zoom_in_f(range : Float32) : Void
       Binding.bg_QPlainTextEdit_zoomInF_float(self, range)
     end
@@ -163992,15 +168545,16 @@ module Qt
         {"bg_QPlainTextDocumentLayout_metaObject_", "meta_object", [] of String},
         {"bg_QPlainTextDocumentLayout_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R", "draw", ["Painter", "TextDocumentLayoutPaintContext"] of String},
         {"bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy", "hit_test", ["PointF", "HitTestAccuracy"] of String},
         {"bg_QPlainTextDocumentLayout_pageCount_", "page_count", [] of String},
         {"bg_QPlainTextDocumentLayout_documentSize_", "document_size", [] of String},
-        {"bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X", "frame_bounding_rect", ["Binding::QTextFrame*"] of String},
+        {"bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X", "frame_bounding_rect", ["TextFrame"] of String},
         {"bg_QPlainTextDocumentLayout_blockBoundingRect_const_QTextBlock_R", "block_bounding_rect", ["TextBlock"] of String},
         {"bg_QPlainTextDocumentLayout_documentChanged_int_int_int", "document_changed", ["Int32", "Int32", "Int32"] of String},
-        {"bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R", "resize_inline_object", ["Binding::QTextInlineObject*", "Int32", "TextFormat"] of String},
-        {"bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R", "position_inline_object", ["Binding::QTextInlineObject*", "Int32", "TextFormat"] of String},
-        {"bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R", "draw_inline_object", ["Painter", "RectF", "Binding::QTextInlineObject*", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R", "resize_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R", "position_inline_object", ["TextInlineObject", "Int32", "TextFormat"] of String},
+        {"bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R", "draw_inline_object", ["Painter", "RectF", "TextInlineObject", "Int32", "TextFormat"] of String},
         {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
         {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
         {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
@@ -164028,15 +168582,16 @@ module Qt
       bg_QPlainTextDocumentLayout_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R") %} Proc(Binding::QPainter*, Binding::QAbstractTextDocumentLayout_PaintContext*, Void).new{|painter, context| self.draw(Painter.new(unwrap: painter), TextDocumentLayoutPaintContext.new(unwrap: context)) } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy") %} Proc(Binding::QPointF, HitTestAccuracy, Int32).new{|point, accuracy| self.hit_test(PointF.new(unwrap: point), accuracy) } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_pageCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_pageCount_") %} Proc(Int32).new{ self.page_count() } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_documentSize_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_documentSize_") %} Proc(Binding::QSizeF*).new{ Pointer(Binding::QSizeF).malloc(1, self.document_size().to_unsafe) } {% else %} nil {% end %}),
-      bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X") %} Proc(Binding::QTextFrame*, Binding::QRectF*).new{|frame| Pointer(Binding::QRectF).malloc(1, self.frame_bounding_rect(frame).to_unsafe) } {% else %} nil {% end %}),
+      bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X") %} Proc(Binding::QTextFrame*, Binding::QRectF*).new{|frame| Pointer(Binding::QRectF).malloc(1, self.frame_bounding_rect(TextFrame.new(unwrap: frame)).to_unsafe) } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_blockBoundingRect_const_QTextBlock_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_blockBoundingRect_const_QTextBlock_R") %} Proc(Binding::QTextBlock*, Binding::QRectF*).new{|block| Pointer(Binding::QRectF).malloc(1, self.block_bounding_rect(TextBlock.new(unwrap: block)).to_unsafe) } {% else %} nil {% end %}),
       bg_QPlainTextDocumentLayout_documentChanged_int_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPlainTextDocumentLayout_documentChanged_int_int_int") %} Proc(Int32, Int32, Int32, Void).new{|from, chars_removed, chars_added| self.document_changed(from, chars_removed, chars_added) } {% else %} nil {% end %}),
-      bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.resize_inline_object(item, pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
-      bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.position_inline_object(item, pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
-      bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QPainter*, Binding::QRectF, Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|painter, rect, object, pos_in_document, format| self.draw_inline_object(Painter.new(unwrap: painter), RectF.new(unwrap: rect), object, pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.resize_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|item, pos_in_document, format| self.position_inline_object(TextInlineObject.new(unwrap: item), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
+      bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R") %} Proc(Binding::QPainter*, Binding::QRectF, Binding::QTextInlineObject*, Int32, Binding::QTextFormat*, Void).new{|painter, rect, object, pos_in_document, format| self.draw_inline_object(Painter.new(unwrap: painter), RectF.new(unwrap: rect), TextInlineObject.new(unwrap: object), pos_in_document, TextFormat.new(unwrap: format)) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -164047,6 +168602,10 @@ module Qt
     )
     Binding.bg_BgInherit_QPlainTextDocumentLayout_JUMPTABLE_BgJumptable_QPlainTextDocumentLayout_R(result, pointerof(jump_table))
     {% end %}
+    end
+    
+    def draw(painter : Painter, context : TextDocumentLayoutPaintContext) : Void
+      Binding.bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(self, painter, context)
     end
     
     def hit_test(point : PointF, accuracy : HitTestAccuracy) : Int32
@@ -164061,7 +168620,7 @@ module Qt
       SizeF.new(unwrap: Binding.bg_QPlainTextDocumentLayout_documentSize_(self))
     end
     
-    def frame_bounding_rect(frame : Binding::QTextFrame*) : RectF
+    def frame_bounding_rect(frame : TextFrame) : RectF
       RectF.new(unwrap: Binding.bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X(self, frame))
     end
     
@@ -164093,15 +168652,15 @@ module Qt
       Binding.bg_QPlainTextDocumentLayout_staticMetaObject_STATIC_GETTER_()
     end
     
-    protected def resize_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def resize_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R(self, item, pos_in_document, format)
     end
     
-    protected def position_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def position_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R(self, item, pos_in_document, format)
     end
     
-    protected def draw_inline_object(painter : Painter, rect : RectF, object : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+    protected def draw_inline_object(painter : Painter, rect : RectF, object : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
       Binding.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(self, painter, rect, object, pos_in_document, format)
     end
     
@@ -164149,6 +168708,10 @@ module Qt
     private class Superclass
       def initialize(@myself : PlainTextDocumentLayout)
       end
+      def draw(painter : Painter, context : TextDocumentLayoutPaintContext) : Void
+        Binding.bg_QPlainTextDocumentLayout_draw_SUPER_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(@myself, painter, context)
+      end
+      
       def hit_test(point : PointF, accuracy : HitTestAccuracy) : Int32
         Binding.bg_QPlainTextDocumentLayout_hitTest_SUPER_const_QPointF_R_Qt__HitTestAccuracy(@myself, point, accuracy)
       end
@@ -164161,7 +168724,7 @@ module Qt
         SizeF.new(unwrap: Binding.bg_QPlainTextDocumentLayout_documentSize_SUPER_(@myself))
       end
       
-      def frame_bounding_rect(frame : Binding::QTextFrame*) : RectF
+      def frame_bounding_rect(frame : TextFrame) : RectF
         RectF.new(unwrap: Binding.bg_QPlainTextDocumentLayout_frameBoundingRect_SUPER_QTextFrame_X(@myself, frame))
       end
       
@@ -164173,15 +168736,15 @@ module Qt
         Binding.bg_QPlainTextDocumentLayout_documentChanged_SUPER_int_int_int(@myself, from, chars_removed, chars_added)
       end
       
-      protected def resize_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+      protected def resize_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
         Binding.bg_QAbstractTextDocumentLayout_resizeInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(@myself, item, pos_in_document, format)
       end
       
-      protected def position_inline_object(item : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+      protected def position_inline_object(item : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
         Binding.bg_QAbstractTextDocumentLayout_positionInlineObject_SUPER_QTextInlineObject_int_const_QTextFormat_R(@myself, item, pos_in_document, format)
       end
       
-      protected def draw_inline_object(painter : Painter, rect : RectF, object : Binding::QTextInlineObject*, pos_in_document : Int32, format : TextFormat) : Void
+      protected def draw_inline_object(painter : Painter, rect : RectF, object : TextInlineObject, pos_in_document : Int32, format : TextFormat) : Void
         Binding.bg_QAbstractTextDocumentLayout_drawInlineObject_SUPER_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(@myself, painter, rect, object, pos_in_document, format)
       end
       
@@ -189419,6 +193982,10 @@ module Qt
     
   end
   class AbstractTextDocumentLayoutImpl < AbstractTextDocumentLayout
+    def draw(painter : Painter, context : TextDocumentLayoutPaintContext) : Void
+      Binding.bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R(self, painter, context)
+    end
+    
     def hit_test(point : PointF, accuracy : HitTestAccuracy) : Int32
       Binding.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(self, point, accuracy)
     end
@@ -189431,7 +193998,7 @@ module Qt
       SizeF.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_documentSize_(self))
     end
     
-    def frame_bounding_rect(frame : Binding::QTextFrame*) : RectF
+    def frame_bounding_rect(frame : TextFrame) : RectF
       RectF.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X(self, frame))
     end
     
@@ -191865,6 +196432,184 @@ module Qt
     CustomCall = 9
     ConstructInPlace = 10
   end
+  enum UnicodeScript : UInt32
+    Unknown = 0
+    Inherited = 1
+    Common = 2
+    Latin = 3
+    Greek = 4
+    Cyrillic = 5
+    Armenian = 6
+    Hebrew = 7
+    Arabic = 8
+    Syriac = 9
+    Thaana = 10
+    Devanagari = 11
+    Bengali = 12
+    Gurmukhi = 13
+    Gujarati = 14
+    Oriya = 15
+    Tamil = 16
+    Telugu = 17
+    Kannada = 18
+    Malayalam = 19
+    Sinhala = 20
+    Thai = 21
+    Lao = 22
+    Tibetan = 23
+    Myanmar = 24
+    Georgian = 25
+    Hangul = 26
+    Ethiopic = 27
+    Cherokee = 28
+    CanadianAboriginal = 29
+    Ogham = 30
+    Runic = 31
+    Khmer = 32
+    Mongolian = 33
+    Hiragana = 34
+    Katakana = 35
+    Bopomofo = 36
+    Han = 37
+    Yi = 38
+    OldItalic = 39
+    Gothic = 40
+    Deseret = 41
+    Tagalog = 42
+    Hanunoo = 43
+    Buhid = 44
+    Tagbanwa = 45
+    Coptic = 46
+    Limbu = 47
+    TaiLe = 48
+    LinearB = 49
+    Ugaritic = 50
+    Shavian = 51
+    Osmanya = 52
+    Cypriot = 53
+    Braille = 54
+    Buginese = 55
+    NewTaiLue = 56
+    Glagolitic = 57
+    Tifinagh = 58
+    SylotiNagri = 59
+    OldPersian = 60
+    Kharoshthi = 61
+    Balinese = 62
+    Cuneiform = 63
+    Phoenician = 64
+    PhagsPa = 65
+    Nko = 66
+    Sundanese = 67
+    Lepcha = 68
+    OlChiki = 69
+    Vai = 70
+    Saurashtra = 71
+    KayahLi = 72
+    Rejang = 73
+    Lycian = 74
+    Carian = 75
+    Lydian = 76
+    Cham = 77
+    TaiTham = 78
+    TaiViet = 79
+    Avestan = 80
+    EgyptianHieroglyphs = 81
+    Samaritan = 82
+    Lisu = 83
+    Bamum = 84
+    Javanese = 85
+    MeeteiMayek = 86
+    ImperialAramaic = 87
+    OldSouthArabian = 88
+    InscriptionalParthian = 89
+    InscriptionalPahlavi = 90
+    OldTurkic = 91
+    Kaithi = 92
+    Batak = 93
+    Brahmi = 94
+    Mandaic = 95
+    Chakma = 96
+    MeroiticCursive = 97
+    MeroiticHieroglyphs = 98
+    Miao = 99
+    Sharada = 100
+    SoraSompeng = 101
+    Takri = 102
+    CaucasianAlbanian = 103
+    BassaVah = 104
+    Duployan = 105
+    Elbasan = 106
+    Grantha = 107
+    PahawhHmong = 108
+    Khojki = 109
+    LinearA = 110
+    Mahajani = 111
+    Manichaean = 112
+    MendeKikakui = 113
+    Modi = 114
+    Mro = 115
+    OldNorthArabian = 116
+    Nabataean = 117
+    Palmyrene = 118
+    PauCinHau = 119
+    OldPermic = 120
+    PsalterPahlavi = 121
+    Siddham = 122
+    Khudawadi = 123
+    Tirhuta = 124
+    WarangCiti = 125
+    Ahom = 126
+    AnatolianHieroglyphs = 127
+    Hatran = 128
+    Multani = 129
+    OldHungarian = 130
+    SignWriting = 131
+    Adlam = 132
+    Bhaiksuki = 133
+    Marchen = 134
+    Newa = 135
+    Osage = 136
+    Tangut = 137
+    MasaramGondi = 138
+    Nushu = 139
+    Soyombo = 140
+    ZanabazarSquare = 141
+    Dogra = 142
+    GunjalaGondi = 143
+    HanifiRohingya = 144
+    Makasar = 145
+    Medefaidrin = 146
+    OldSogdian = 147
+    Sogdian = 148
+    Elymaic = 149
+    Nandinagari = 150
+    NyiakengPuachueHmong = 151
+    Wancho = 152
+    Chorasmian = 153
+    DivesAkuru = 154
+    KhitanSmallScript = 155
+    Yezidi = 156
+    CyproMinoan = 157
+    OldUyghur = 158
+    Tangsa = 159
+    Toto = 160
+    Vithkuqi = 161
+    Kawi = 162
+    NagMundari = 163
+    Garay = 164
+    GurungKhema = 165
+    KiratRai = 166
+    OlOnal = 167
+    Sunuwar = 168
+    Todhri = 169
+    TuluTigalari = 170
+    Sidetic = 171
+    TaiYo = 172
+    TolongSiki = 173
+    BeriaErfe = 174
+    ScriptCount = 175
+  end
   module StringConverter
     enum Encoding : UInt32
       Utf8 = 0
@@ -192011,46 +196756,6 @@ module Qt
       AllPointerTypes = 32767
     end
   end
-  module FontDatabase
-    enum WritingSystem : UInt32
-      Any = 0
-      Latin = 1
-      Greek = 2
-      Cyrillic = 3
-      Armenian = 4
-      Hebrew = 5
-      Arabic = 6
-      Syriac = 7
-      Thaana = 8
-      Devanagari = 9
-      Bengali = 10
-      Gurmukhi = 11
-      Gujarati = 12
-      Oriya = 13
-      Tamil = 14
-      Telugu = 15
-      Kannada = 16
-      Malayalam = 17
-      Sinhala = 18
-      Thai = 19
-      Lao = 20
-      Tibetan = 21
-      Myanmar = 22
-      Georgian = 23
-      Khmer = 24
-      SimplifiedChinese = 25
-      TraditionalChinese = 26
-      Japanese = 27
-      Korean = 28
-      Vietnamese = 29
-      Symbol = 30
-      Other = 30
-      Ogham = 31
-      Runic = 32
-      Nko = 33
-      WritingSystemsCount = 34
-    end
-  end
   module ImageIOHandler
     enum ImageOption : UInt32
       Size = 0
@@ -192127,11 +196832,17 @@ module Qt
       {% elsif types == {Screen} %} {{ Container_QList_QScreen_X_ }}
       {% elsif types == {KeySequence} %} {{ Container_QList_QKeySequence_ }}
       {% elsif types == {Pointer(Binding::QEventPoint)} %} {{ Container_QList_QEventPoint_ }}
+      {% elsif types == {FontDatabase::WritingSystem} %} {{ Container_QList_QFontDatabase__WritingSystem_ }}
+      {% elsif types == {Int64} %} {{ Container_QList_qsizetype_ }}
       {% elsif types == {TextFormat} %} {{ Container_QList_QTextFormat_ }}
       {% elsif types == {TextLength} %} {{ Container_QList_QTextLength_ }}
+      {% elsif types == {TextLayoutFormatRange} %} {{ Container_QList_QTextLayout__FormatRange_ }}
+      {% elsif types == {GlyphRun} %} {{ Container_QList_QGlyphRun_ }}
+      {% elsif types == {TextDocumentLayoutSelection} %} {{ Container_QList_QAbstractTextDocumentLayout__Selection_ }}
       {% elsif types == {Object} %} {{ Container_QList_QObject_X_ }}
       {% elsif types == {Action} %} {{ Container_QList_QAction_X_ }}
       {% elsif types == {UInt16} %} {{ Container_QList_uint16_t_ }}
+      {% elsif types == {Pointer(Binding::QFontVariableAxis)} %} {{ Container_QList_QFontVariableAxis_ }}
       {% elsif types == {PageRange} %} {{ Container_QList_QPageRanges__Range_ }}
       {% elsif types == {LineF} %} {{ Container_QList_QLineF_ }}
       {% elsif types == {Line} %} {{ Container_QList_QLine_ }}
@@ -192139,6 +196850,8 @@ module Qt
       {% elsif types == {Rect} %} {{ Container_QList_QRect_ }}
       {% elsif types == {PolygonF} %} {{ Container_QList_QPolygonF_ }}
       {% elsif types == {StandardItem} %} {{ Container_QList_QStandardItem_X_ }}
+      {% elsif types == {TextBlock} %} {{ Container_QList_QTextBlock_ }}
+      {% elsif types == {TextFrame} %} {{ Container_QList_QTextFrame_X_ }}
       {% elsif types == {UndoStack} %} {{ Container_QList_QUndoStack_X_ }}
       {% elsif types == {AbstractButton} %} {{ Container_QList_QAbstractButton_X_ }}
       {% elsif types == {Gesture} %} {{ Container_QList_QGesture_X_ }}
@@ -193391,6 +198104,102 @@ module Qt
     end
     
   end
+  class Container_QList_QFontDatabase__WritingSystem_
+    include BindgenHelper::SequentialContainer(FontDatabase::WritingSystem)
+    include QList(FontDatabase::WritingSystem)
+    
+    @unwrap : Binding::ContainerQListQFontDatabaseWritingSystem*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QFontDatabase__WritingSystem___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : FontDatabase::WritingSystem
+      Binding.bg_Container_QList_QFontDatabase__WritingSystem__at_int(self, index)
+    end
+    
+    def push(value : FontDatabase::WritingSystem) : Void
+      Binding.bg_Container_QList_QFontDatabase__WritingSystem__push_back_QFontDatabase__WritingSystem(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QFontDatabase__WritingSystem__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQFontDatabaseWritingSystem*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_quint32_
+    include BindgenHelper::SequentialContainer(UInt32)
+    include QList(UInt32)
+    
+    @unwrap : Binding::ContainerQListQuint32*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_quint32___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : UInt32
+      Binding.bg_Container_QList_quint32__at_int(self, index)
+    end
+    
+    def push(value : UInt32) : Void
+      Binding.bg_Container_QList_quint32__push_back_quint32(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_quint32__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQuint32*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_qsizetype_
+    include BindgenHelper::SequentialContainer(Int64)
+    include QList(Int64)
+    
+    @unwrap : Binding::ContainerQListQsizetype*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_qsizetype___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : Int64
+      Binding.bg_Container_QList_qsizetype__at_int(self, index)
+    end
+    
+    def push(value : Int64) : Void
+      Binding.bg_Container_QList_qsizetype__push_back_qsizetype(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_qsizetype__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQsizetype*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QTextFormat_
     include BindgenHelper::SequentialContainer(TextFormat)
     include QList(TextFormat)
@@ -193450,6 +198259,102 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQTextLength*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QTextLayout__FormatRange_
+    include BindgenHelper::SequentialContainer(TextLayoutFormatRange)
+    include QList(TextLayoutFormatRange)
+    
+    @unwrap : Binding::ContainerQListQTextLayoutFormatRange*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTextLayout__FormatRange___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextLayoutFormatRange
+      TextLayoutFormatRange.new(unwrap: Binding.bg_Container_QList_QTextLayout__FormatRange__at_int(self, index))
+    end
+    
+    def push(value : TextLayoutFormatRange) : Void
+      Binding.bg_Container_QList_QTextLayout__FormatRange__push_back_QTextLayout__FormatRange(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTextLayout__FormatRange__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTextLayoutFormatRange*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QGlyphRun_
+    include BindgenHelper::SequentialContainer(GlyphRun)
+    include QList(GlyphRun)
+    
+    @unwrap : Binding::ContainerQListQGlyphRun*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QGlyphRun___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : GlyphRun
+      GlyphRun.new(unwrap: Binding.bg_Container_QList_QGlyphRun__at_int(self, index))
+    end
+    
+    def push(value : GlyphRun) : Void
+      Binding.bg_Container_QList_QGlyphRun__push_back_QGlyphRun(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QGlyphRun__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQGlyphRun*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QAbstractTextDocumentLayout__Selection_
+    include BindgenHelper::SequentialContainer(TextDocumentLayoutSelection)
+    include QList(TextDocumentLayoutSelection)
+    
+    @unwrap : Binding::ContainerQListQAbstractTextDocumentLayoutSelection*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QAbstractTextDocumentLayout__Selection___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextDocumentLayoutSelection
+      TextDocumentLayoutSelection.new(unwrap: Binding.bg_Container_QList_QAbstractTextDocumentLayout__Selection__at_int(self, index))
+    end
+    
+    def push(value : TextDocumentLayoutSelection) : Void
+      Binding.bg_Container_QList_QAbstractTextDocumentLayout__Selection__push_back_QAbstractTextDocumentLayout__Selection(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QAbstractTextDocumentLayout__Selection__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQAbstractTextDocumentLayoutSelection*)
       result = unwrap
     @unwrap = result
     end
@@ -193546,6 +198451,38 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListUint16T*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QFontVariableAxis_
+    include BindgenHelper::SequentialContainer(Binding::QFontVariableAxis*)
+    include QList(Binding::QFontVariableAxis*)
+    
+    @unwrap : Binding::ContainerQListQFontVariableAxis*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QFontVariableAxis___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : Binding::QFontVariableAxis*
+      Binding.bg_Container_QList_QFontVariableAxis__at_int(self, index)
+    end
+    
+    def push(value : Binding::QFontVariableAxis*) : Void
+      Binding.bg_Container_QList_QFontVariableAxis__push_back_QFontVariableAxis(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QFontVariableAxis__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQFontVariableAxis*)
       result = unwrap
     @unwrap = result
     end
@@ -193770,6 +198707,70 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQStandardItemX*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QTextBlock_
+    include BindgenHelper::SequentialContainer(TextBlock)
+    include QList(TextBlock)
+    
+    @unwrap : Binding::ContainerQListQTextBlock*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTextBlock___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextBlock
+      TextBlock.new(unwrap: Binding.bg_Container_QList_QTextBlock__at_int(self, index))
+    end
+    
+    def push(value : TextBlock) : Void
+      Binding.bg_Container_QList_QTextBlock__push_back_QTextBlock(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTextBlock__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTextBlock*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QTextFrame_X_
+    include BindgenHelper::SequentialContainer(TextFrame)
+    include QList(TextFrame)
+    
+    @unwrap : Binding::ContainerQListQTextFrameX*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTextFrame_X___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextFrame
+      TextFrame.new(unwrap: Binding.bg_Container_QList_QTextFrame_X__at_int(self, index))
+    end
+    
+    def push(value : TextFrame) : Void
+      Binding.bg_Container_QList_QTextFrame_X__push_back_QTextFrame_X(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTextFrame_X__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTextFrameX*)
       result = unwrap
     @unwrap = result
     end
