@@ -5,3 +5,4 @@ containers:
     instantiations:
       - [ "qreal" ]
       - [ "QRgb" ]
+      - [ "QByteArray" ] # As Bytes, see types.yml

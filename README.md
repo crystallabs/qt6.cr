@@ -298,6 +298,9 @@ see the comments there:
   listed as classes, so the wrapper `Qt::StringList` has those methods.  The
   overloads taking `QStringView`, `QLatin1StringView` or a string matcher are
   dropped, as the Crystal `String` maps to `QString`.
+* `QByteArray` maps to `Bytes`, copied in both directions like `QString`:
+  `String.new(process.read_all_standard_output)`, `mime_data.set_data(type,
+  bytes)`.  `QList<QByteArray>` is an `Enumerable(Bytes)`.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

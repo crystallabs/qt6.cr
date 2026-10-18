@@ -37,6 +37,7 @@ typedef QList<int> Container_QList_int_;
 typedef QList<QVariant> Container_QList_QVariant_;
 typedef QList<QAbstractEventDispatcher::TimerInfo> Container_QList_QAbstractEventDispatcher__TimerInfo_;
 typedef QList<QString> Container_QList_QString_;
+typedef QList<QByteArray> Container_QList_QByteArray_;
 typedef QList<unsigned int> Container_QList_unsigned_int_;
 typedef QList<qreal> Container_QList_qreal_;
 extern "C" void bg_QListSpecialMethods_QString__sort_Qt__CaseSensitivity(QListSpecialMethods<QString> * _self_, Qt::CaseSensitivity cs) {
@@ -391,6 +392,10 @@ extern "C" bool bg_QObject_setProperty_const_char_X_const_QVariant_R(QObject * _
 
 extern "C" CrystalVariant bg_QObject_property_const_char_X(QObject * _self_, const char * name) {
   return qvariant_to_crystal(_self_->property(name));
+}
+
+extern "C" Container_QList_QByteArray_ * bg_QObject_dynamicPropertyNames_(QObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QByteArray_>()) Container_QList_QByteArray_ (_self_->dynamicPropertyNames());
 }
 
 extern "C" QBindingStorage * bg_QObject_bindingStorage_(QObject * _self_) {
@@ -1663,8 +1668,8 @@ extern "C" void bg_QAbstractEventDispatcher_removeNativeEventFilter_QAbstractNat
   _self_->removeNativeEventFilter(filterObj);
 }
 
-extern "C" bool bg_QAbstractEventDispatcher_filterNativeEvent_const_QByteArray_R_void_X_qintptr_X(QAbstractEventDispatcher * _self_, const QByteArray & eventType, void * message, qintptr * result) {
-  return _self_->filterNativeEvent(eventType, message, result);
+extern "C" bool bg_QAbstractEventDispatcher_filterNativeEvent_const_QByteArray_R_void_X_qintptr_X(QAbstractEventDispatcher * _self_, const CrystalString eventType, void * message, qintptr * result) {
+  return _self_->filterNativeEvent(([&]() { auto &&bg_value = (eventType); return QByteArray(bg_value.ptr, bg_value.size); }()), message, result);
 }
 
 extern "C" void bg_QAbstractEventDispatcher_aboutToBlock_(QAbstractEventDispatcher * _self_) {
@@ -3992,12 +3997,12 @@ extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent_clone_(Q
   return _self_->clone();
 }
 
-extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent__CONSTRUCT_const_QByteArray_R(const QByteArray & name) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QDynamicPropertyChangeEvent>(name);
+extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent__CONSTRUCT_const_QByteArray_R(const CrystalString name) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDynamicPropertyChangeEvent>(([&]() { auto &&bg_value = (name); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
-extern "C" QByteArray * bg_QDynamicPropertyChangeEvent_propertyName_(QDynamicPropertyChangeEvent * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->propertyName());
+extern "C" CrystalString bg_QDynamicPropertyChangeEvent_propertyName_(QDynamicPropertyChangeEvent * _self_) {
+  return qbytearray_to_crystal(_self_->propertyName());
 }
 
 extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent_clone_SUPER_(QDynamicPropertyChangeEvent * _self_) {
@@ -4808,24 +4813,20 @@ extern "C" qint64 bg_QIODevice_read_char_X_qint64(QIODevice * _self_, char * dat
   return _self_->read(data, maxlen);
 }
 
-extern "C" QByteArray * bg_QIODevice_read_qint64(QIODevice * _self_, qint64 maxlen) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->read(maxlen));
+extern "C" CrystalString bg_QIODevice_read_qint64(QIODevice * _self_, qint64 maxlen) {
+  return qbytearray_to_crystal(_self_->read(maxlen));
 }
 
-extern "C" QByteArray * bg_QIODevice_readAll_(QIODevice * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readAll());
+extern "C" CrystalString bg_QIODevice_readAll_(QIODevice * _self_) {
+  return qbytearray_to_crystal(_self_->readAll());
 }
 
 extern "C" qint64 bg_QIODevice_readLine_char_X_qint64(QIODevice * _self_, char * data, qint64 maxlen) {
   return _self_->readLine(data, maxlen);
 }
 
-extern "C" QByteArray * bg_QIODevice_readLine_qint64(QIODevice * _self_, qint64 maxlen) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readLine(maxlen));
-}
-
-extern "C" bool bg_QIODevice_readLineInto_QByteArray_X_qint64(QIODevice * _self_, QByteArray * result, qint64 maxlen) {
-  return _self_->readLineInto(result, maxlen);
+extern "C" CrystalString bg_QIODevice_readLine_qint64(QIODevice * _self_, qint64 maxlen) {
+  return qbytearray_to_crystal(_self_->readLine(maxlen));
 }
 
 extern "C" bool bg_QIODevice_canReadLine_(QIODevice * _self_) {
@@ -4856,16 +4857,16 @@ extern "C" qint64 bg_QIODevice_write_const_char_X(QIODevice * _self_, const char
   return _self_->write(data);
 }
 
-extern "C" qint64 bg_QIODevice_write_const_QByteArray_R(QIODevice * _self_, const QByteArray & data) {
-  return _self_->write(data);
+extern "C" qint64 bg_QIODevice_write_const_QByteArray_R(QIODevice * _self_, const CrystalString data) {
+  return _self_->write(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" qint64 bg_QIODevice_peek_char_X_qint64(QIODevice * _self_, char * data, qint64 maxlen) {
   return _self_->peek(data, maxlen);
 }
 
-extern "C" QByteArray * bg_QIODevice_peek_qint64(QIODevice * _self_, qint64 maxlen) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->peek(maxlen));
+extern "C" CrystalString bg_QIODevice_peek_qint64(QIODevice * _self_, qint64 maxlen) {
+  return qbytearray_to_crystal(_self_->peek(maxlen));
 }
 
 extern "C" qint64 bg_QIODevice_skip_qint64(QIODevice * _self_, qint64 maxSize) {
@@ -6376,12 +6377,12 @@ extern "C" QUrl * bg_QUrl_adjusted_QUrl__FormattingOptions(QUrl * _self_, QUrl::
   return new (UseGC, bindgen_gc_finalizer<QUrl>()) QUrl (_self_->adjusted(options));
 }
 
-extern "C" QByteArray * bg_QUrl_toEncoded_(QUrl * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->toEncoded());
+extern "C" CrystalString bg_QUrl_toEncoded_(QUrl * _self_) {
+  return qbytearray_to_crystal(_self_->toEncoded());
 }
 
-extern "C" QByteArray * bg_QUrl_toEncoded_QUrl__FormattingOptions(QUrl * _self_, QUrl::FormattingOptions options) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->toEncoded(options));
+extern "C" CrystalString bg_QUrl_toEncoded_QUrl__FormattingOptions(QUrl * _self_, QUrl::FormattingOptions options) {
+  return qbytearray_to_crystal(_self_->toEncoded(options));
 }
 
 extern "C" QUrl * bg_QUrl_fromEncoded_STATIC_QByteArrayView_QUrl__ParsingMode(QByteArrayView & input, QUrl::ParsingMode mode) {
@@ -6584,36 +6585,36 @@ extern "C" bool bg_QUrl_matches_const_QUrl_R_QUrl__FormattingOptions(QUrl * _sel
   return _self_->matches(url, options);
 }
 
-extern "C" CrystalString bg_QUrl_fromPercentEncoding_STATIC_const_QByteArray_R(const QByteArray & unnamed_arg_0) {
-  return qstring_to_crystal(QUrl::fromPercentEncoding(unnamed_arg_0));
+extern "C" CrystalString bg_QUrl_fromPercentEncoding_STATIC_const_QByteArray_R(const CrystalString unnamed_arg_0) {
+  return qstring_to_crystal(QUrl::fromPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QByteArray(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QByteArray * bg_QUrl_toPercentEncoding_STATIC_const_QString_R(const CrystalString unnamed_arg_0) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+extern "C" CrystalString bg_QUrl_toPercentEncoding_STATIC_const_QString_R(const CrystalString unnamed_arg_0) {
+  return qbytearray_to_crystal(QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QByteArray * bg_QUrl_toPercentEncoding_STATIC_const_QString_R_const_QByteArray_R(const CrystalString unnamed_arg_0, const QByteArray & exclude) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), exclude));
+extern "C" CrystalString bg_QUrl_toPercentEncoding_STATIC_const_QString_R_const_QByteArray_R(const CrystalString unnamed_arg_0, const CrystalString exclude) {
+  return qbytearray_to_crystal(QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (exclude); return QByteArray(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QByteArray * bg_QUrl_toPercentEncoding_STATIC_const_QString_R_const_QByteArray_R_const_QByteArray_R(const CrystalString unnamed_arg_0, const QByteArray & exclude, const QByteArray & include) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), exclude, include));
+extern "C" CrystalString bg_QUrl_toPercentEncoding_STATIC_const_QString_R_const_QByteArray_R_const_QByteArray_R(const CrystalString unnamed_arg_0, const CrystalString exclude, const CrystalString include) {
+  return qbytearray_to_crystal(QUrl::toPercentEncoding(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (exclude); return QByteArray(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (include); return QByteArray(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" CrystalString bg_QUrl_fromAce_STATIC_const_QByteArray_R(const QByteArray & domain) {
-  return qstring_to_crystal(QUrl::fromAce(domain));
+extern "C" CrystalString bg_QUrl_fromAce_STATIC_const_QByteArray_R(const CrystalString domain) {
+  return qstring_to_crystal(QUrl::fromAce(([&]() { auto &&bg_value = (domain); return QByteArray(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" CrystalString bg_QUrl_fromAce_STATIC_const_QByteArray_R_QUrl__AceProcessingOptions(const QByteArray & domain, QUrl::AceProcessingOptions options) {
-  return qstring_to_crystal(QUrl::fromAce(domain, options));
+extern "C" CrystalString bg_QUrl_fromAce_STATIC_const_QByteArray_R_QUrl__AceProcessingOptions(const CrystalString domain, QUrl::AceProcessingOptions options) {
+  return qstring_to_crystal(QUrl::fromAce(([&]() { auto &&bg_value = (domain); return QByteArray(bg_value.ptr, bg_value.size); }()), options));
 }
 
-extern "C" QByteArray * bg_QUrl_toAce_STATIC_const_QString_R(const CrystalString domain) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (QUrl::toAce(([&]() { auto &&bg_value = (domain); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+extern "C" CrystalString bg_QUrl_toAce_STATIC_const_QString_R(const CrystalString domain) {
+  return qbytearray_to_crystal(QUrl::toAce(([&]() { auto &&bg_value = (domain); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QByteArray * bg_QUrl_toAce_STATIC_const_QString_R_QUrl__AceProcessingOptions(const CrystalString domain, QUrl::AceProcessingOptions options) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (QUrl::toAce(([&]() { auto &&bg_value = (domain); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options));
+extern "C" CrystalString bg_QUrl_toAce_STATIC_const_QString_R_QUrl__AceProcessingOptions(const CrystalString domain, QUrl::AceProcessingOptions options) {
+  return qbytearray_to_crystal(QUrl::toAce(([&]() { auto &&bg_value = (domain); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options));
 }
 
 extern "C" QList<QString> * bg_QUrl_idnWhitelist_STATIC_() {
@@ -8122,12 +8123,12 @@ extern "C" bool bg_QMimeData_hasColor_(QMimeData * _self_) {
   return _self_->hasColor();
 }
 
-extern "C" QByteArray * bg_QMimeData_data_const_QString_R(QMimeData * _self_, const CrystalString mimetype) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->data(([&]() { auto &&bg_value = (mimetype); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+extern "C" CrystalString bg_QMimeData_data_const_QString_R(QMimeData * _self_, const CrystalString mimetype) {
+  return qbytearray_to_crystal(_self_->data(([&]() { auto &&bg_value = (mimetype); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" void bg_QMimeData_setData_const_QString_R_const_QByteArray_R(QMimeData * _self_, const CrystalString mimetype, const QByteArray & data) {
-  _self_->setData(([&]() { auto &&bg_value = (mimetype); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), data);
+extern "C" void bg_QMimeData_setData_const_QString_R_const_QByteArray_R(QMimeData * _self_, const CrystalString mimetype, const CrystalString data) {
+  _self_->setData(([&]() { auto &&bg_value = (mimetype); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" void bg_QMimeData_removeFormat_const_QString_R(QMimeData * _self_, const CrystalString mimetype) {
@@ -8647,12 +8648,12 @@ extern "C" bool bg_QProcess_waitForFinished_int(QProcess * _self_, int msecs) {
   return _self_->waitForFinished(msecs);
 }
 
-extern "C" QByteArray * bg_QProcess_readAllStandardOutput_(QProcess * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readAllStandardOutput());
+extern "C" CrystalString bg_QProcess_readAllStandardOutput_(QProcess * _self_) {
+  return qbytearray_to_crystal(_self_->readAllStandardOutput());
 }
 
-extern "C" QByteArray * bg_QProcess_readAllStandardError_(QProcess * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->readAllStandardError());
+extern "C" CrystalString bg_QProcess_readAllStandardError_(QProcess * _self_) {
+  return qbytearray_to_crystal(_self_->readAllStandardError());
 }
 
 extern "C" int bg_QProcess_exitCode_(QProcess * _self_) {
@@ -9295,8 +9296,8 @@ extern "C" QPropertyAnimation * bg_QPropertyAnimation__CONSTRUCT_QObject_X(QObje
   return new (UseGC) CrystalGCWrapper<BgInherit_QPropertyAnimation>(parent);
 }
 
-extern "C" QPropertyAnimation * bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X(QObject * target, const QByteArray & propertyName, QObject * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QPropertyAnimation>(target, propertyName, parent);
+extern "C" QPropertyAnimation * bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X(QObject * target, const CrystalString propertyName, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QPropertyAnimation>(target, ([&]() { auto &&bg_value = (propertyName); return QByteArray(bg_value.ptr, bg_value.size); }()), parent);
 }
 
 extern "C" QObject * bg_QPropertyAnimation_targetObject_(QPropertyAnimation * _self_) {
@@ -9307,12 +9308,12 @@ extern "C" void bg_QPropertyAnimation_setTargetObject_QObject_X(QPropertyAnimati
   _self_->setTargetObject(target);
 }
 
-extern "C" QByteArray * bg_QPropertyAnimation_propertyName_(QPropertyAnimation * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->propertyName());
+extern "C" CrystalString bg_QPropertyAnimation_propertyName_(QPropertyAnimation * _self_) {
+  return qbytearray_to_crystal(_self_->propertyName());
 }
 
-extern "C" void bg_QPropertyAnimation_setPropertyName_const_QByteArray_R(QPropertyAnimation * _self_, const QByteArray & propertyName) {
-  _self_->setPropertyName(propertyName);
+extern "C" void bg_QPropertyAnimation_setPropertyName_const_QByteArray_R(QPropertyAnimation * _self_, const CrystalString propertyName) {
+  _self_->setPropertyName(([&]() { auto &&bg_value = (propertyName); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" bool bg_QPropertyAnimation_event_QEvent_X(QPropertyAnimation * _self_, QEvent * event) {
@@ -13386,12 +13387,12 @@ extern "C" bool bg_QImage_loadFromData_const_uchar_X_int_const_char_X(QImage * _
   return _self_->loadFromData(buf, len, format);
 }
 
-extern "C" bool bg_QImage_loadFromData_const_QByteArray_R(QImage * _self_, const QByteArray & data) {
-  return _self_->loadFromData(data);
+extern "C" bool bg_QImage_loadFromData_const_QByteArray_R(QImage * _self_, const CrystalString data) {
+  return _self_->loadFromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
-extern "C" bool bg_QImage_loadFromData_const_QByteArray_R_const_char_X(QImage * _self_, const QByteArray & data, const char * format) {
-  return _self_->loadFromData(data, format);
+extern "C" bool bg_QImage_loadFromData_const_QByteArray_R_const_char_X(QImage * _self_, const CrystalString data, const char * format) {
+  return _self_->loadFromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()), format);
 }
 
 extern "C" bool bg_QImage_save_const_QString_R(QImage * _self_, const CrystalString fileName) {
@@ -13434,12 +13435,12 @@ extern "C" QImage * bg_QImage_fromData_STATIC_const_uchar_X_int_const_char_X(con
   return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (QImage::fromData(data, size, format));
 }
 
-extern "C" QImage * bg_QImage_fromData_STATIC_const_QByteArray_R(const QByteArray & data) {
-  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (QImage::fromData(data));
+extern "C" QImage * bg_QImage_fromData_STATIC_const_QByteArray_R(const CrystalString data) {
+  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (QImage::fromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QImage * bg_QImage_fromData_STATIC_const_QByteArray_R_const_char_X(const QByteArray & data, const char * format) {
-  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (QImage::fromData(data, format));
+extern "C" QImage * bg_QImage_fromData_STATIC_const_QByteArray_R_const_char_X(const CrystalString data, const char * format) {
+  return new (UseGC, bindgen_gc_finalizer<QImage>()) QImage (QImage::fromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()), format));
 }
 
 extern "C" qint64 bg_QImage_cacheKey_(QImage * _self_) {
@@ -13734,16 +13735,16 @@ extern "C" bool bg_QPixmap_loadFromData_const_uchar_X_uint_const_char_X_Qt__Imag
   return _self_->loadFromData(buf, len, format, flags);
 }
 
-extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R(QPixmap * _self_, const QByteArray & data) {
-  return _self_->loadFromData(data);
+extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R(QPixmap * _self_, const CrystalString data) {
+  return _self_->loadFromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
-extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R_const_char_X(QPixmap * _self_, const QByteArray & data, const char * format) {
-  return _self_->loadFromData(data, format);
+extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R_const_char_X(QPixmap * _self_, const CrystalString data, const char * format) {
+  return _self_->loadFromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()), format);
 }
 
-extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R_const_char_X_Qt__ImageConversionFlags(QPixmap * _self_, const QByteArray & data, const char * format, Qt::ImageConversionFlags flags) {
-  return _self_->loadFromData(data, format, flags);
+extern "C" bool bg_QPixmap_loadFromData_const_QByteArray_R_const_char_X_Qt__ImageConversionFlags(QPixmap * _self_, const CrystalString data, const char * format, Qt::ImageConversionFlags flags) {
+  return _self_->loadFromData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()), format, flags);
 }
 
 extern "C" bool bg_QPixmap_save_const_QString_R(QPixmap * _self_, const CrystalString fileName) {
@@ -21244,7 +21245,7 @@ struct BgJumptable_QWindow {
   CrystalProc<void, QWheelEvent *> bg_QWindow_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QTouchEvent *> bg_QWindow_touchEvent_QTouchEvent_X;
   CrystalProc<void, QTabletEvent *> bg_QWindow_tabletEvent_QTabletEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -21501,7 +21502,7 @@ struct BgInherit_QWindow : public QWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWindow *_self_ = this;
     if (_self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QWindow::nativeEvent(eventType, message, result);
     }
@@ -22210,8 +22211,8 @@ extern "C" void bg_QWindow_tabletEvent_QTabletEvent_X(QWindow * _self_, QTabletE
   _self_->tabletEvent(unnamed_arg_0);
 }
 
-extern "C" bool bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(QWindow * _self_, const QByteArray & eventType, void * message, qintptr * result) {
-  return _self_->nativeEvent(eventType, message, result);
+extern "C" bool bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(QWindow * _self_, const CrystalString eventType, void * message, qintptr * result) {
+  return _self_->nativeEvent(([&]() { auto &&bg_value = (eventType); return QByteArray(bg_value.ptr, bg_value.size); }()), message, result);
 }
 
 extern "C" QWindow * bg_QWindow__CONSTRUCT_QWindowPrivate_R_QWindow_X(QWindowPrivate & dd, QWindow * parent) {
@@ -22414,8 +22415,8 @@ extern "C" void bg_QWindow_tabletEvent_SUPER_QTabletEvent_X(QWindow * _self_, QT
   _self_->QWindow::tabletEvent(unnamed_arg_0);
 }
 
-extern "C" bool bg_QWindow_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(QWindow * _self_, const QByteArray & eventType, void * message, qintptr * result) {
-  return _self_->QWindow::nativeEvent(eventType, message, result);
+extern "C" bool bg_QWindow_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(QWindow * _self_, const CrystalString eventType, void * message, qintptr * result) {
+  return _self_->QWindow::nativeEvent(([&]() { auto &&bg_value = (eventType); return QByteArray(bg_value.ptr, bg_value.size); }()), message, result);
 }
 
 extern "C" void bg_BgInherit_QWindow_JUMPTABLE_BgJumptable_QWindow_R(BgInherit_QWindow * _self_, const BgJumptable_QWindow & table) {
@@ -24698,7 +24699,7 @@ struct BgJumptable_QWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
@@ -25034,7 +25035,7 @@ struct BgInherit_QWidget : public QWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QWidget::nativeEvent(eventType, message, result);
     }
@@ -25970,12 +25971,12 @@ extern "C" void bg_QWidget_setGeometry_const_QRect_R(QWidget * _self_, const QRe
   _self_->setGeometry(unnamed_arg_0);
 }
 
-extern "C" QByteArray * bg_QWidget_saveGeometry_(QWidget * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->saveGeometry());
+extern "C" CrystalString bg_QWidget_saveGeometry_(QWidget * _self_) {
+  return qbytearray_to_crystal(_self_->saveGeometry());
 }
 
-extern "C" bool bg_QWidget_restoreGeometry_const_QByteArray_R(QWidget * _self_, const QByteArray & geometry) {
-  return _self_->restoreGeometry(geometry);
+extern "C" bool bg_QWidget_restoreGeometry_const_QByteArray_R(QWidget * _self_, const CrystalString geometry) {
+  return _self_->restoreGeometry(([&]() { auto &&bg_value = (geometry); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" void bg_QWidget_adjustSize_(QWidget * _self_) {
@@ -26378,8 +26379,8 @@ extern "C" void bg_QWidget_hideEvent_QHideEvent_X(QWidget * _self_, QHideEvent *
   _self_->hideEvent(event);
 }
 
-extern "C" bool bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(QWidget * _self_, const QByteArray & eventType, void * message, qintptr * result) {
-  return _self_->nativeEvent(eventType, message, result);
+extern "C" bool bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(QWidget * _self_, const CrystalString eventType, void * message, qintptr * result) {
+  return _self_->nativeEvent(([&]() { auto &&bg_value = (eventType); return QByteArray(bg_value.ptr, bg_value.size); }()), message, result);
 }
 
 extern "C" void bg_QWidget_changeEvent_QEvent_X(QWidget * _self_, QEvent * unnamed_arg_0) {
@@ -26642,8 +26643,8 @@ extern "C" void bg_QWidget_hideEvent_SUPER_QHideEvent_X(QWidget * _self_, QHideE
   _self_->QWidget::hideEvent(event);
 }
 
-extern "C" bool bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(QWidget * _self_, const QByteArray & eventType, void * message, qintptr * result) {
-  return _self_->QWidget::nativeEvent(eventType, message, result);
+extern "C" bool bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(QWidget * _self_, const CrystalString eventType, void * message, qintptr * result) {
+  return _self_->QWidget::nativeEvent(([&]() { auto &&bg_value = (eventType); return QByteArray(bg_value.ptr, bg_value.size); }()), message, result);
 }
 
 extern "C" void bg_QWidget_changeEvent_SUPER_QEvent_X(QWidget * _self_, QEvent * unnamed_arg_0) {
@@ -26719,7 +26720,7 @@ struct BgJumptable_QAbstractButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -27098,7 +27099,7 @@ struct BgInherit_QAbstractButton : public QAbstractButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QAbstractButton::nativeEvent(eventType, message, result);
     }
@@ -27531,7 +27532,7 @@ struct BgJumptable_QAbstractSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -27927,7 +27928,7 @@ struct BgInherit_QAbstractSpinBox : public QAbstractSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QAbstractSpinBox::nativeEvent(eventType, message, result);
     }
@@ -28423,7 +28424,7 @@ struct BgJumptable_QAbstractSlider {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -28784,7 +28785,7 @@ struct BgInherit_QAbstractSlider : public QAbstractSlider {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QAbstractSlider::nativeEvent(eventType, message, result);
     }
@@ -29170,7 +29171,7 @@ struct BgJumptable_QSlider {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -29540,7 +29541,7 @@ struct BgInherit_QSlider : public QSlider {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QSlider::nativeEvent(eventType, message, result);
     }
@@ -29810,7 +29811,7 @@ struct BgJumptable_QTabBar {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -30216,7 +30217,7 @@ struct BgInherit_QTabBar : public QTabBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTabBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTabBar::nativeEvent(eventType, message, result);
     }
@@ -30826,7 +30827,7 @@ struct BgJumptable_QTabWidget {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -31197,7 +31198,7 @@ struct BgInherit_QTabWidget : public QTabWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTabWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTabWidget::nativeEvent(eventType, message, result);
     }
@@ -31710,7 +31711,7 @@ struct BgJumptable_QFrame {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -32063,7 +32064,7 @@ struct BgInherit_QFrame : public QFrame {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QFrame::nativeEvent(eventType, message, result);
     }
@@ -32735,7 +32736,7 @@ struct BgJumptable_QAbstractScrollArea {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -33132,7 +33133,7 @@ struct BgInherit_QAbstractScrollArea : public QAbstractScrollArea {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QAbstractScrollArea::nativeEvent(eventType, message, result);
     }
@@ -33613,7 +33614,7 @@ struct BgJumptable_QAbstractItemView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -34393,7 +34394,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractItemView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QAbstractItemView::nativeEvent(eventType, message, result);
     }
@@ -39383,7 +39384,7 @@ struct BgJumptable_QCheckBox {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -39771,7 +39772,7 @@ struct BgInherit_QCheckBox : public QCheckBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QCheckBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QCheckBox::nativeEvent(eventType, message, result);
     }
@@ -40055,7 +40056,7 @@ struct BgJumptable_QDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
@@ -40444,7 +40445,7 @@ struct BgInherit_QDialog : public QDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QDialog::nativeEvent(eventType, message, result);
     }
@@ -40810,7 +40811,7 @@ struct BgJumptable_QComboBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -41206,7 +41207,7 @@ struct BgInherit_QComboBox : public QComboBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QComboBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QComboBox::nativeEvent(eventType, message, result);
     }
@@ -41893,7 +41894,7 @@ struct BgJumptable_QPushButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -42281,7 +42282,7 @@ struct BgInherit_QPushButton : public QPushButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QPushButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QPushButton::nativeEvent(eventType, message, result);
     }
@@ -42959,7 +42960,7 @@ struct BgJumptable_QDateTimeEdit {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -43381,7 +43382,7 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QDateTimeEdit::nativeEvent(eventType, message, result);
     }
@@ -43881,7 +43882,7 @@ struct BgJumptable_QDial {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -44251,7 +44252,7 @@ struct BgInherit_QDial : public QDial {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDial *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QDial::nativeEvent(eventType, message, result);
     }
@@ -44539,7 +44540,7 @@ struct BgJumptable_QDockWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -44892,7 +44893,7 @@ struct BgInherit_QDockWidget : public QDockWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDockWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QDockWidget::nativeEvent(eventType, message, result);
     }
@@ -45234,7 +45235,7 @@ struct BgJumptable_QFileDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -45631,7 +45632,7 @@ struct BgInherit_QFileDialog : public QFileDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFileDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QFileDialog::nativeEvent(eventType, message, result);
     }
@@ -45893,12 +45894,12 @@ extern "C" Container_QList_QUrl_ * bg_QFileDialog_sidebarUrls_(QFileDialog * _se
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QUrl_>()) Container_QList_QUrl_ (_self_->sidebarUrls());
 }
 
-extern "C" QByteArray * bg_QFileDialog_saveState_(QFileDialog * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->saveState());
+extern "C" CrystalString bg_QFileDialog_saveState_(QFileDialog * _self_) {
+  return qbytearray_to_crystal(_self_->saveState());
 }
 
-extern "C" bool bg_QFileDialog_restoreState_const_QByteArray_R(QFileDialog * _self_, const QByteArray & state) {
-  return _self_->restoreState(state);
+extern "C" bool bg_QFileDialog_restoreState_const_QByteArray_R(QFileDialog * _self_, const CrystalString state) {
+  return _self_->restoreState(([&]() { auto &&bg_value = (state); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" void bg_QFileDialog_setDefaultSuffix_const_QString_R(QFileDialog * _self_, const CrystalString suffix) {
@@ -46149,8 +46150,8 @@ extern "C" Container_QList_QUrl_ * bg_QFileDialog_getOpenFileUrls_STATIC_QWidget
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QUrl_>()) Container_QList_QUrl_ (QFileDialog::getOpenFileUrls(parent, ([&]() { auto &&bg_value = (caption); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), dir, ([&]() { auto &&bg_value = (filter); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" void bg_QFileDialog_saveFileContent_STATIC_const_QByteArray_R_const_QString_R_QWidget_X(const QByteArray & fileContent, const CrystalString fileNameHint, QWidget * parent) {
-  QFileDialog::saveFileContent(fileContent, ([&]() { auto &&bg_value = (fileNameHint); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+extern "C" void bg_QFileDialog_saveFileContent_STATIC_const_QByteArray_R_const_QString_R_QWidget_X(const CrystalString fileContent, const CrystalString fileNameHint, QWidget * parent) {
+  QFileDialog::saveFileContent(([&]() { auto &&bg_value = (fileContent); return QByteArray(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (fileNameHint); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
 }
 
 extern "C" QFileDialog * bg_QFileDialog__CONSTRUCT_const_QFileDialogArgs_R(const QFileDialogArgs & args) {
@@ -56297,7 +56298,7 @@ struct BgJumptable_QScrollArea {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -56702,7 +56703,7 @@ struct BgInherit_QScrollArea : public QScrollArea {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QScrollArea::nativeEvent(eventType, message, result);
     }
@@ -56980,7 +56981,7 @@ struct BgJumptable_QGraphicsView {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -57428,7 +57429,7 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QGraphicsView::nativeEvent(eventType, message, result);
     }
@@ -58146,7 +58147,7 @@ struct BgJumptable_QGroupBox {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -58507,7 +58508,7 @@ struct BgInherit_QGroupBox : public QGroupBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QGroupBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QGroupBox::nativeEvent(eventType, message, result);
     }
@@ -58838,7 +58839,7 @@ struct BgJumptable_QLineEdit {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -59215,7 +59216,7 @@ struct BgInherit_QLineEdit : public QLineEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLineEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QLineEdit::nativeEvent(eventType, message, result);
     }
@@ -59841,7 +59842,7 @@ extern "C" void bg_BgInherit_QLineEdit_JUMPTABLE_BgJumptable_QLineEdit_R(BgInher
 
 struct BgJumptable_QItemEditorFactory {
   CrystalProc<QWidget *, int, QWidget *> bg_QItemEditorFactory_createEditor_int_QWidget_X;
-  CrystalProc<QByteArray &, int> bg_QItemEditorFactory_valuePropertyName_int;
+  CrystalProc<CrystalString, int> bg_QItemEditorFactory_valuePropertyName_int;
 };
 struct BgInherit_QItemEditorFactory : public QItemEditorFactory {
   using QItemEditorFactory::QItemEditorFactory;
@@ -59859,7 +59860,7 @@ struct BgInherit_QItemEditorFactory : public QItemEditorFactory {
   QByteArray valuePropertyName(int userType) const override {
     const BgInherit_QItemEditorFactory *_self_ = this;
     if (_self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int.isValid()) {
-      return _self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int(userType);
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int(userType)); return QByteArray(bg_value.ptr, bg_value.size); }());
     } else {
       return QItemEditorFactory::valuePropertyName(userType);
     }
@@ -59874,8 +59875,8 @@ extern "C" QWidget * bg_QItemEditorFactory_createEditor_int_QWidget_X(QItemEdito
   return _self_->createEditor(userType, parent);
 }
 
-extern "C" QByteArray * bg_QItemEditorFactory_valuePropertyName_int(QItemEditorFactory * _self_, int userType) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->valuePropertyName(userType));
+extern "C" CrystalString bg_QItemEditorFactory_valuePropertyName_int(QItemEditorFactory * _self_, int userType) {
+  return qbytearray_to_crystal(_self_->valuePropertyName(userType));
 }
 
 extern "C" void bg_QItemEditorFactory_registerEditor_int_QItemEditorCreatorBase_X(QItemEditorFactory * _self_, int userType, QItemEditorCreatorBase * creator) {
@@ -59902,8 +59903,8 @@ extern "C" QWidget * bg_QItemEditorFactory_createEditor_SUPER_int_QWidget_X(QIte
   return _self_->QItemEditorFactory::createEditor(userType, parent);
 }
 
-extern "C" QByteArray * bg_QItemEditorFactory_valuePropertyName_SUPER_int(QItemEditorFactory * _self_, int userType) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->QItemEditorFactory::valuePropertyName(userType));
+extern "C" CrystalString bg_QItemEditorFactory_valuePropertyName_SUPER_int(QItemEditorFactory * _self_, int userType) {
+  return qbytearray_to_crystal(_self_->QItemEditorFactory::valuePropertyName(userType));
 }
 
 extern "C" void bg_BgInherit_QItemEditorFactory_JUMPTABLE_BgJumptable_QItemEditorFactory_R(BgInherit_QItemEditorFactory * _self_, const BgJumptable_QItemEditorFactory & table) {
@@ -59949,7 +59950,7 @@ struct BgJumptable_QLabel {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -60310,7 +60311,7 @@ struct BgInherit_QLabel : public QLabel {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLabel *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QLabel::nativeEvent(eventType, message, result);
     }
@@ -60762,7 +60763,7 @@ struct BgJumptable_QLCDNumber {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -61115,7 +61116,7 @@ struct BgInherit_QLCDNumber : public QLCDNumber {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLCDNumber *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QLCDNumber::nativeEvent(eventType, message, result);
     }
@@ -61465,7 +61466,7 @@ struct BgJumptable_QListView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -62245,7 +62246,7 @@ struct BgInherit_QListView : public QListView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QListView::nativeEvent(eventType, message, result);
     }
@@ -63101,7 +63102,7 @@ struct BgJumptable_QListWidget {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -63908,7 +63909,7 @@ struct BgInherit_QListWidget : public QListWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QListWidget::nativeEvent(eventType, message, result);
     }
@@ -64339,7 +64340,7 @@ struct BgJumptable_QMainWindow {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
@@ -64684,7 +64685,7 @@ struct BgInherit_QMainWindow : public QMainWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMainWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QMainWindow::nativeEvent(eventType, message, result);
     }
@@ -65024,12 +65025,12 @@ extern "C" void bg_QMainWindow_resizeDocks_const_QList_QDockWidget_X__R_const_QL
   _self_->resizeDocks(*(docks), *(sizes), orientation);
 }
 
-extern "C" QByteArray * bg_QMainWindow_saveState_int(QMainWindow * _self_, int version) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->saveState(version));
+extern "C" CrystalString bg_QMainWindow_saveState_int(QMainWindow * _self_, int version) {
+  return qbytearray_to_crystal(_self_->saveState(version));
 }
 
-extern "C" bool bg_QMainWindow_restoreState_const_QByteArray_R_int(QMainWindow * _self_, const QByteArray & state, int version) {
-  return _self_->restoreState(state, version);
+extern "C" bool bg_QMainWindow_restoreState_const_QByteArray_R_int(QMainWindow * _self_, const CrystalString state, int version) {
+  return _self_->restoreState(([&]() { auto &&bg_value = (state); return QByteArray(bg_value.ptr, bg_value.size); }()), version);
 }
 
 extern "C" QMenu * bg_QMainWindow_createPopupMenu_(QMainWindow * _self_) {
@@ -65140,7 +65141,7 @@ struct BgJumptable_QMenu {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -65509,7 +65510,7 @@ struct BgInherit_QMenu : public QMenu {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMenu *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QMenu::nativeEvent(eventType, message, result);
     }
@@ -66022,7 +66023,7 @@ struct BgJumptable_QMenuBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -66391,7 +66392,7 @@ struct BgInherit_QMenuBar : public QMenuBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMenuBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QMenuBar::nativeEvent(eventType, message, result);
     }
@@ -66807,7 +66808,7 @@ struct BgJumptable_QMessageBox {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -67204,7 +67205,7 @@ struct BgInherit_QMessageBox : public QMessageBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMessageBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QMessageBox::nativeEvent(eventType, message, result);
     }
@@ -67698,7 +67699,7 @@ struct BgJumptable_QTextEdit {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -68172,7 +68173,7 @@ struct BgInherit_QTextEdit : public QTextEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTextEdit::nativeEvent(eventType, message, result);
     }
@@ -68972,7 +68973,7 @@ struct BgJumptable_QProgressBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
@@ -69326,7 +69327,7 @@ struct BgInherit_QProgressBar : public QProgressBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QProgressBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QProgressBar::nativeEvent(eventType, message, result);
     }
@@ -69668,7 +69669,7 @@ struct BgJumptable_QRadioButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -70056,7 +70057,7 @@ struct BgInherit_QRadioButton : public QRadioButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QRadioButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QRadioButton::nativeEvent(eventType, message, result);
     }
@@ -70298,7 +70299,7 @@ struct BgJumptable_QScrollBar {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -70668,7 +70669,7 @@ struct BgInherit_QScrollBar : public QScrollBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QScrollBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QScrollBar::nativeEvent(eventType, message, result);
     }
@@ -70951,7 +70952,7 @@ struct BgJumptable_QSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -71365,7 +71366,7 @@ struct BgInherit_QSpinBox : public QSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QSpinBox::nativeEvent(eventType, message, result);
     }
@@ -71655,7 +71656,7 @@ struct BgJumptable_QDoubleSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -72069,7 +72070,7 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QDoubleSpinBox::nativeEvent(eventType, message, result);
     }
@@ -72346,7 +72347,7 @@ struct BgJumptable_QSplitter {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -72716,7 +72717,7 @@ struct BgInherit_QSplitter : public QSplitter {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSplitter *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QSplitter::nativeEvent(eventType, message, result);
     }
@@ -72918,12 +72919,12 @@ extern "C" void bg_QSplitter_setSizes_const_QList_int__R(QSplitter * _self_, con
   _self_->setSizes(*(list));
 }
 
-extern "C" QByteArray * bg_QSplitter_saveState_(QSplitter * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QByteArray>()) QByteArray (_self_->saveState());
+extern "C" CrystalString bg_QSplitter_saveState_(QSplitter * _self_) {
+  return qbytearray_to_crystal(_self_->saveState());
 }
 
-extern "C" bool bg_QSplitter_restoreState_const_QByteArray_R(QSplitter * _self_, const QByteArray & state) {
-  return _self_->restoreState(state);
+extern "C" bool bg_QSplitter_restoreState_const_QByteArray_R(QSplitter * _self_, const CrystalString state) {
+  return _self_->restoreState(([&]() { auto &&bg_value = (state); return QByteArray(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" int bg_QSplitter_handleWidth_(QSplitter * _self_) {
@@ -73564,7 +73565,7 @@ struct BgJumptable_QStackedWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -73917,7 +73918,7 @@ struct BgInherit_QStackedWidget : public QStackedWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QStackedWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QStackedWidget::nativeEvent(eventType, message, result);
     }
@@ -74176,7 +74177,7 @@ struct BgJumptable_QStatusBar {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
@@ -74512,7 +74513,7 @@ struct BgInherit_QStatusBar : public QStatusBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QStatusBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QStatusBar::nativeEvent(eventType, message, result);
     }
@@ -75426,7 +75427,7 @@ struct BgJumptable_QTableView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -76206,7 +76207,7 @@ struct BgInherit_QTableView : public QTableView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTableView::nativeEvent(eventType, message, result);
     }
@@ -77050,7 +77051,7 @@ struct BgJumptable_QTableWidget {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -77857,7 +77858,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTableWidget::nativeEvent(eventType, message, result);
     }
@@ -78401,7 +78402,7 @@ struct BgJumptable_QToolBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -78754,7 +78755,7 @@ struct BgInherit_QToolBar : public QToolBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QToolBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QToolBar::nativeEvent(eventType, message, result);
     }
@@ -79151,7 +79152,7 @@ struct BgJumptable_QToolButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -79539,7 +79540,7 @@ struct BgInherit_QToolButton : public QToolButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QToolButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QToolButton::nativeEvent(eventType, message, result);
     }
@@ -79950,7 +79951,7 @@ struct BgJumptable_QTreeView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const QByteArray *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -80748,7 +80749,7 @@ struct BgInherit_QTreeView : public QTreeView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(&(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
     } else {
       return QTreeView::nativeEvent(eventType, message, result);
     }
@@ -81471,6 +81472,22 @@ extern "C" void bg_Container_QList_unsigned_int__push_back_unsigned_int(Containe
 }
 
 extern "C" int bg_Container_QList_unsigned_int__size_(Container_QList_unsigned_int_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QByteArray_ * bg_Container_QList_QByteArray___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QByteArray_>();
+}
+
+extern "C" CrystalString bg_Container_QList_QByteArray__at_int(Container_QList_QByteArray_ * _self_, int index) {
+  return qbytearray_to_crystal(_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QByteArray__push_back_QByteArray(Container_QList_QByteArray_ * _self_, CrystalString value) {
+  _self_->push_back(([&]() { auto &&bg_value = (value); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_Container_QList_QByteArray__size_(Container_QList_QByteArray_ * _self_) {
   return _self_->size();
 }
 
