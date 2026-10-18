@@ -12,3 +12,5 @@ functions:
     destination: "::"
   "^qt6cr_data_stream_\\w+$":
     destination: "::"
+  "^qt6cr_invoke_method$": # See ext/meta_helper.hpp
+    destination: "::"

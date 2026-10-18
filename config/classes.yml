@@ -474,3 +474,25 @@ classes:
   QLoggingCategory: LoggingCategory
   QMessageAuthenticationCode: MessageAuthenticationCode
   QRegularExpressionMatchIterator: RegularExpressionMatchIterator
+  # Meta-objects and CBOR
+  QMetaObject: MetaObject
+  QMetaMethod: MetaMethod
+  QMetaProperty: MetaProperty
+  QMetaEnum: MetaEnum
+  QMetaClassInfo: MetaClassInfo
+  QMetaType: MetaType
+  QCborValue: CborValue
+  QCborMap: CborMap
+  "QCborMap::Iterator": CborMapIterator # Returned by CborMap#insert
+  "QCborMap::ConstIterator": CborMapConstIterator
+  QCborArray: CborArray
+  QCborStreamReader: CborStreamReader
+  QCborStreamWriter: CborStreamWriter
+  QCborParserError: CborParserError
+  QCborError: CborError
+  QCborValueConstRef: CborValueConstRef
+  QCborValueRef: CborValueRef
+  QByteArrayMatcher: ByteArrayMatcher
+  QException: Exception
+  QObjectCleanupHandler: ObjectCleanupHandler
+  QAnimationDriver: AnimationDriver

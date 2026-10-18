@@ -64,6 +64,7 @@ parser: # Clang parser configuration
     - "validator_helper.hpp"
     - "matrix_helper.hpp"
     - "xml_helper.hpp"
+    - "meta_helper.hpp"
   includes:
     - "{QT_INCLUDE_DIR}/"
     - "{QT_INCLUDE_DIR}/QtCore/"

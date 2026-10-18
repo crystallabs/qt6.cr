@@ -21,6 +21,17 @@ types: # Type rewrite rules
     builtin: true
     pass_by: Value
     wrapper_pass_by: Value
+  QUtf8StringView: # A view of the UTF-8 bytes too; CborStreamWriter#append
+    converter: Qt::Converter::QString
+    crystal_type: String
+    cpp_type: CrystalString
+    binding_type: CrystalString
+    to_cpp: "QUtf8StringView(%.ptr, %.size)"
+    from_cpp: "qstring_to_crystal(%.toString())"
+    kind: Struct
+    builtin: true
+    pass_by: Value
+    wrapper_pass_by: Value
   QByteArray: # Map as Bytes, exchanged as a {pointer, size} pair like QString
     converter: Qt::Converter::QByteArray
     crystal_type: Bytes
@@ -445,10 +456,6 @@ types: # Type rewrite rules
   "QTransform::Affine": { ignore: true } # Private; drops the private asAffineMatrix
   "std::nullptr_t": { ignore: true } # QDataStream >> nullptr_t; emitted as invalid Crystal otherwise
   QTypeRevision: { ignore: true }
-  QCborValue: { ignore: true } # The CBOR classes aren't bound
-  QCborArray: { ignore: true }
-  QCborMap: { ignore: true }
-  QCborSimpleType: { ignore: true }
   QJsonObjectKeyValues: { ignore: true } # Private
   "QJsonObject::const_iterator": { ignore: true } # Use #keys and #value
   "QJsonObject::key_value_iterator": { ignore: true }
@@ -465,4 +472,59 @@ types: # Type rewrite rules
   "QLoggingCategory::AtomicBools": { ignore: true } # Private
   "QRegularExpressionMatchIteratorRangeBasedForIterator": { ignore: true } # Qt::RegularExpressionMatchIterator is an Iterator
   "QPixmapCache::KeyData": { ignore: true } # Private
+  # Meta-objects and CBOR
+  "QMetaObject::Data": { ignore: true } # The moc-generated tables
+  # Enum classes without enumerators, which a Crystal enum can't be: a tag
+  # number and a negative integer's absolute value, exchanged as UInt64.
+  QCborTag:
+    cpp_type: quint64
+    binding_type: UInt64
+    crystal_type: UInt64
+    builtin: true
+    to_cpp: "QCborTag(%)"
+    from_cpp: "quint64(%)"
+    kind: Struct
+    pass_by: Value
+    generate_binding: false
+    generate_wrapper: false
+  QCborNegativeInteger:
+    cpp_type: quint64
+    binding_type: UInt64
+    crystal_type: UInt64
+    builtin: true
+    to_cpp: "QCborNegativeInteger(%)"
+    from_cpp: "quint64(%)"
+    kind: Struct
+    pass_by: Value
+    generate_binding: false
+    generate_wrapper: false
+  # The invoke overloads take QGenericArgument/QGenericReturnArgument, type
+  # name and void pointer pairs Crystal can't fill; the typed ones are
+  # templates.  MetaObject.invoke_method(object, name) of
+  # ext/meta_helper.hpp invokes a method without arguments.
+  QMetaObject:
+    ignore_methods:
+      - invokeMethod
+  QMetaMethod:
+    ignore_methods:
+      - invoke
+      - invokeOnGadget
+  "QMetaMethod::Data": { ignore: true }
+  "QtPrivate::QMetaTypeInterface": { ignore: true } # Private
+  "QMetaType::ConverterFunction": { ignore: true } # std::function
+  "QMetaType::MutableViewFunction": { ignore: true }
+  # Qt's std::strong_ordering (Qt 6.7+), returned by the three-way comparison
+  # helpers of QCborValueConstRef; use #compare, which returns an int.
+  "Qt::strong_ordering": { ignore: true }
+  "QCborArray::Iterator": { ignore: true } # Use #at and #size
+  "QCborArray::ConstIterator": { ignore: true }
+  "QCborArray::iterator": { ignore: true }
+  "QCborArray::const_iterator": { ignore: true }
+  "QCborMap::key_value_iterator": { ignore: true } # Use #keys and #value
+  # The pairs of references the map iterators dereference to aren't default
+  # constructible, which the pair container wrapper needs; use
+  # CborMapIterator#key and #value.
+  "std::pair<QCborValueConstRef, QCborValueRef>": { ignore: true }
+  "std::pair<QCborValueConstRef, QCborValueConstRef>": { ignore: true }
+  "QCborMap::const_key_value_iterator": { ignore: true }
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above

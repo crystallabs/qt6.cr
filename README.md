@@ -434,7 +434,25 @@ see the comments there:
   an `Iterator(RegularExpressionMatch)`.
 * `QJsonObject#[]` returns a `JsonValue` copy; `QJsonArray#[]` a
   `JsonValueRef`, whose `#assign!` writes through.  `QJsonObject#insert`
-  returns a `JsonObjectIterator`.  The CBOR classes aren't bound.
+  returns a `JsonObjectIterator`.  Likewise `CborMap#insert` returns a
+  `CborMapIterator` with `#key` and `#value` (a `CborValueRef`); the pair
+  of references the iterator dereferences to isn't default constructible,
+  which a pair container needs, so it is ignored.  `QCborTag` and
+  `QCborNegativeInteger`, `enum class`es without enumerators, are `UInt64`:
+  `CborValue.new(Qt::CborKnownTags::Url, value).tag` is `32`.
+  `CborValue.new(Qt::CborValue::Type::Null)` replaces the `nullptr`
+  constructor.  `QUtf8StringView` maps to `String` like `QAnyStringView`.
+* The meta-object system exchanges names as `const char *`, an `UInt8*`:
+  `String.new(meta_object.class_name)`,
+  `meta_object.index_of_property("text".to_unsafe)`.  `Qt::Widget.
+  static_meta_object` is a copy of the class's `QMetaObject`, which the
+  pointer comparison of `MetaObject#inherits` doesn't match: pass an
+  instance's `meta_object`.  `QMetaObject::invokeMethod` and
+  `QMetaMethod::invoke` take `QGenericArgument`s (type name and `void *`
+  pairs) or are templates, so they are dropped;
+  `Qt::MetaObject.invoke_method(object, "click")` (`ext/meta_helper.hpp`)
+  invokes a method without arguments.  `MetaType::Type` keeps Qt's constant
+  names, `MetaType::Type::QString`.
 * Types without a mapping yet, like `QFont::Tag` or the `QEvent` constructor
   tags, are ignored, which drops the methods using them.  A `bool *ok =
   nullptr` argument is `ok : Bool*? = nil`: `bits.to_u_int32(endian)`, or
