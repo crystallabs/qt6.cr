@@ -28,4 +28,4 @@ generators:
       #include "converters.hpp"
     build: make
   crystal:
-    output: "src/qt5/binding/binding_{BINDING_PLATFORM}.cr"
+    output: "src/qt6/binding/binding_{BINDING_PLATFORM}.cr"

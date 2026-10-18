@@ -1,4 +1,4 @@
-# This file automatically requires the binding/*.cr as chosen in the "qt5.lock"
+# This file automatically requires the binding/*.cr as chosen in the "qt6.lock"
 # file.  This file is located in your projects root.
 #
 # If this file doesn't exist yet, it will be generated.

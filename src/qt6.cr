@@ -1,0 +1,6 @@
+require "./qt6/version"
+require "./qt6/glue"
+require "./qt6/point"
+require "./qt6/variant"
+require "./qt6/binding"
+require "./qt6/*"

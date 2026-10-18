@@ -1,4 +1,4 @@
-require "../src/qt5"
+require "../src/qt6"
 
 # This sample shows how to override C++ (virtual) methods from Crystal code.
 

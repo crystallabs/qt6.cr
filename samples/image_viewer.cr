@@ -1,4 +1,4 @@
-require "../src/qt5"
+require "../src/qt6"
 
 # Create the application first
 qApp = Qt::Application.new

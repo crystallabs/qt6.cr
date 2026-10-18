@@ -1,4 +1,4 @@
-require "../src/qt5"
+require "../src/qt6"
 
 # The draw area widget.  We need a custom Widget to display an area to draw in.
 class DrawArea < Qt::Widget

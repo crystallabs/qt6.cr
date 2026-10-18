@@ -1,4 +1,4 @@
-require "../src/qt5"
+require "../src/qt6"
 
 # On how to create a timer to do things periodically.  Note that this timer is
 # Qt native, it's not a Crystal `Fiber`.
