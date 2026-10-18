@@ -20278,6 +20278,15 @@ module Qt
     fun bg_BgInherit_QTreeView_JUMPTABLE_BgJumptable_QTreeView_R(_self_ : QTreeView*, table : BgJumptable_QTreeView*) : Void
     fun bg____qVersion_STATIC_() : UInt8*
     fun bg____qt6cr_reset_numeric_locale_STATIC_() : Void
+    fun bg____qt6cr_string_list_sort_STATIC_QList_QString__R_Qt__CaseSensitivity(list : ContainerQListQString*, cs : CaseSensitivity) : Void
+    fun bg____qt6cr_string_list_removeDuplicates_STATIC_QList_QString__R(list : ContainerQListQString*) : Int64
+    fun bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, str : CrystalString, cs : CaseSensitivity) : ContainerQListQString*
+    fun bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QRegularExpression_R(list : ContainerQListQString*, re : QRegularExpression*) : ContainerQListQString*
+    fun bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QString_R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, before : CrystalString, after : CrystalString, cs : CaseSensitivity) : Void
+    fun bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QRegularExpression_R_const_QString_R(list : ContainerQListQString*, re : QRegularExpression*, after : CrystalString) : Void
+    fun bg____qt6cr_string_list_contains_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, str : CrystalString, cs : CaseSensitivity) : Bool
+    fun bg____qt6cr_string_list_indexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(list : ContainerQListQString*, re : QRegularExpression*, from : Int64) : Int64
+    fun bg____qt6cr_string_list_lastIndexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(list : ContainerQListQString*, re : QRegularExpression*, from : Int64) : Int64
     fun bg_Container_QList_qreal___CONSTRUCT_() : ContainerQListQreal*
     fun bg_Container_QList_qreal__at_int(_self_ : ContainerQListQreal*, index : Int32) : Float64
     fun bg_Container_QList_qreal__push_back_qreal(_self_ : ContainerQListQreal*, value : Float64) : Void
@@ -114747,6 +114756,44 @@ module Qt
     Binding.bg____qt6cr_reset_numeric_locale_STATIC_()
   end
   
+  module StringListHelper
+    def self.sort(list : Enumerable(String), cs : CaseSensitivity) : Void
+      Binding.bg____qt6cr_string_list_sort_STATIC_QList_QString__R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, cs)
+    end
+    
+    def self.remove_duplicates(list : Enumerable(String)) : Int64
+      Binding.bg____qt6cr_string_list_removeDuplicates_STATIC_QList_QString__R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe)
+    end
+    
+    def self.filter(list : Enumerable(String), str : String, cs : CaseSensitivity) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(str), cs))
+    end
+    
+    def self.filter(list : Enumerable(String), re : RegularExpression) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QRegularExpression_R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re))
+    end
+    
+    def self.replace_in_strings(list : Enumerable(String), before : String, after : String, cs : CaseSensitivity) : Void
+      Binding.bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QString_R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(before), Qt::Converter::QString.wrap(after), cs)
+    end
+    
+    def self.replace_in_strings(list : Enumerable(String), re : RegularExpression, after : String) : Void
+      Binding.bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QRegularExpression_R_const_QString_R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, Qt::Converter::QString.wrap(after))
+    end
+    
+    def self.contains(list : Enumerable(String), str : String, cs : CaseSensitivity) : Bool
+      Binding.bg____qt6cr_string_list_contains_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(str), cs)
+    end
+    
+    def self.index_of(list : Enumerable(String), re : RegularExpression, from : Int64) : Int64
+      Binding.bg____qt6cr_string_list_indexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, from)
+    end
+    
+    def self.last_index_of(list : Enumerable(String), re : RegularExpression, from : Int64) : Int64
+      Binding.bg____qt6cr_string_list_lastIndexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, from)
+    end
+    
+  end
   enum GlobalColor : UInt32
     Color0 = 0
     Color1 = 1

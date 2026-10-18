@@ -13,6 +13,7 @@ This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
    * [User perspective](#user-perspective)
       * [Sample Crystal-Qt6 code](#sample-crystal-qt6-code)
       * [Locale](#locale)
+      * [String lists](#string-lists)
       * [Object lifetime](#object-lifetime)
       * [Differences to qt5.cr](#differences-to-qt5cr)
    * [Developer perspective](#developer-perspective)
@@ -131,6 +132,22 @@ Therefore, in contrast to the behaviour of the C++ classes of Qt,
 `qt6.cr` resets the numeric locale to "C" after creating an
 application class instance (this follows an [advice from Qt
 itself](https://doc.qt.io/qt-6/qcoreapplication.html#locale-settings)).
+
+## String lists
+
+`QStringList` is a `QList<QString>`: methods taking one accept any
+`Enumerable(String)`, and methods returning one return a `Qt::StringList`,
+which is an `Indexable(String)`:
+
+```crystal
+combo_box.add_items(["one", "two"])
+names = Qt::Dir.new(".").entry_list(["*.cr"], Qt::Dir::Filters::Files)
+names.sort!(Qt::CaseSensitivity::CaseInsensitive).to_a
+```
+
+Qt's own `QStringList` methods are `#sort!`, `#remove_duplicates!`, `#filter`,
+`#replace_in_strings!` and `#includes?(str, cs)`, and `#index`/`#rindex` taking a `Qt::RegularExpression`, next to
+`Enumerable`'s `#join`, `#select`, `#sort` and `#uniq`, which return arrays.
 
 ## Object lifetime
 

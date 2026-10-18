@@ -42,6 +42,28 @@ describe "QStringList" do
     list.join(", ").should eq("x, y, z")
   end
 
+  it "has the QStringList methods" do
+    list = Qt::StringList.from(["Banana", "apple", "cherry", "apple"])
+    list.remove_duplicates!.should eq(1)
+    list.to_a.should eq(["Banana", "apple", "cherry"])
+    list.sort!.to_a.should eq(["Banana", "apple", "cherry"])
+    list.sort!(Qt::CaseSensitivity::CaseInsensitive).to_a.should eq(["apple", "Banana", "cherry"])
+
+    list.filter("an").to_a.should eq(["Banana"])
+    list.filter("AN", Qt::CaseSensitivity::CaseInsensitive).to_a.should eq(["Banana"])
+    list.filter(Qt::RegularExpression.new("^.herry$")).to_a.should eq(["cherry"])
+    list.includes?("APPLE", Qt::CaseSensitivity::CaseInsensitive).should be_true
+    list.includes?("APPLE").should be_false
+    list.index(Qt::RegularExpression.new("B.*")).should eq(1) # Whole strings match
+    list.index(Qt::RegularExpression.new("B.*"), 2).should be_nil
+    list.rindex(Qt::RegularExpression.new(".*e.*")).should eq(2)
+    list.rindex(Qt::RegularExpression.new(".*e.*"), 1).should eq(0)
+
+    list.replace_in_strings!("a", "4").to_a.should eq(["4pple", "B4n4n4", "cherry"])
+    list.replace_in_strings!(Qt::RegularExpression.new("(\\d)"), "<\\1>").to_a.should eq(["<4>pple", "B<4>n<4>n<4>", "cherry"])
+    list.join("+").should eq("<4>pple+B<4>n<4>n<4>+cherry")
+  end
+
   it "passes program arguments to a process" do
     process = Qt::Process.new
     process.start("sh", ["-c", "exit 3"])

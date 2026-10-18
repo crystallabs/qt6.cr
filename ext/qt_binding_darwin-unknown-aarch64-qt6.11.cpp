@@ -4,6 +4,7 @@
 #include <QtGui/QtGui>
 #include <QtWidgets/QtWidgets>
 #include <locale_helper.hpp>
+#include <string_list_helper.hpp>
 
 typedef QList<QTableWidgetSelectionRange> Container_QList_QTableWidgetSelectionRange_;
 typedef QList<QTableWidgetItem *> Container_QList_QTableWidgetItem_X_;
@@ -81608,6 +81609,42 @@ extern "C" const char * bg____qVersion_STATIC_() {
 
 extern "C" void bg____qt6cr_reset_numeric_locale_STATIC_() {
   ::qt6cr_reset_numeric_locale();
+}
+
+extern "C" void bg____qt6cr_string_list_sort_STATIC_QList_QString__R_Qt__CaseSensitivity(Container_QList_QString_ * list, Qt::CaseSensitivity cs) {
+  ::qt6cr_string_list_sort(*(list), cs);
+}
+
+extern "C" qsizetype bg____qt6cr_string_list_removeDuplicates_STATIC_QList_QString__R(Container_QList_QString_ * list) {
+  return ::qt6cr_string_list_removeDuplicates(*(list));
+}
+
+extern "C" Container_QList_QString_ * bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(const Container_QList_QString_ * list, const CrystalString str, Qt::CaseSensitivity cs) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (::qt6cr_string_list_filter(*(list), ([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cs));
+}
+
+extern "C" Container_QList_QString_ * bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QRegularExpression_R(const Container_QList_QString_ * list, const QRegularExpression & re) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (::qt6cr_string_list_filter(*(list), re));
+}
+
+extern "C" void bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QString_R_const_QString_R_Qt__CaseSensitivity(Container_QList_QString_ * list, const CrystalString before, const CrystalString after, Qt::CaseSensitivity cs) {
+  ::qt6cr_string_list_replaceInStrings(*(list), ([&]() { auto &&bg_value = (before); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (after); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cs);
+}
+
+extern "C" void bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QRegularExpression_R_const_QString_R(Container_QList_QString_ * list, const QRegularExpression & re, const CrystalString after) {
+  ::qt6cr_string_list_replaceInStrings(*(list), re, ([&]() { auto &&bg_value = (after); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg____qt6cr_string_list_contains_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(const Container_QList_QString_ * list, const CrystalString str, Qt::CaseSensitivity cs) {
+  return ::qt6cr_string_list_contains(*(list), ([&]() { auto &&bg_value = (str); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), cs);
+}
+
+extern "C" qsizetype bg____qt6cr_string_list_indexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(const Container_QList_QString_ * list, const QRegularExpression & re, qsizetype from) {
+  return ::qt6cr_string_list_indexOf(*(list), re, from);
+}
+
+extern "C" qsizetype bg____qt6cr_string_list_lastIndexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(const Container_QList_QString_ * list, const QRegularExpression & re, qsizetype from) {
+  return ::qt6cr_string_list_lastIndexOf(*(list), re, from);
 }
 
 extern "C" Container_QList_qreal_ * bg_Container_QList_qreal___CONSTRUCT_() {
