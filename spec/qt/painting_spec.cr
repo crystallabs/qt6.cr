@@ -114,6 +114,10 @@ describe Qt::Gradient do
     gradient.type.should eq(Qt::Gradient::Type::LinearGradient)
     gradient.final_stop.should eq(Qt::PointF.new(16.0, 0.0))
     gradient.spread = Qt::Gradient::Spread::PadSpread
+    gradient.stops.map { |(position, color)| {position, color.name} }.should eq([{0.0, "#ff0000"}, {1.0, "#0000ff"}])
+    gradient.stops = [{0.0, Qt::Color.new(0, 255, 0)}, {1.0, Qt::Color.new(0, 0, 0)}]
+    gradient.stops.map(&.[1].green).should eq([255, 0])
+    gradient.stops = [{0.0, Qt::Color.new(255, 0, 0)}, {1.0, Qt::Color.new(0, 0, 255)}]
 
     image = white_image
     painter = Qt::Painter.new(image)

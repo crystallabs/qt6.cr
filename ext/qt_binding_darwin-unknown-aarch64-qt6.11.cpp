@@ -8,8 +8,12 @@
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 
+typedef QList<std::pair<qreal, qreal> > Container_QList_std__pair_qreal__qreal___;
+typedef QList<std::pair<qreal, QPointF> > Container_QList_std__pair_qreal__QPointF___;
+typedef QList<std::pair<double, QColor> > Container_QList_std__pair_double__QColor___;
+typedef QList<std::pair<QString, QString> > Container_QList_std__pair_QString__QString___;
+typedef QList<std::pair<double, QVariant> > Container_QList_std__pair_double__QVariant___;
 typedef QList<QWizard::WizardButton> Container_QList_QWizard__WizardButton_;
-typedef QList<QWidget *> Container_QList_QWidget_X_;
 typedef QList<QTreeWidgetItem *> Container_QList_QTreeWidgetItem_X_;
 typedef QList<QTableWidgetSelectionRange> Container_QList_QTableWidgetSelectionRange_;
 typedef QList<QTableWidgetItem *> Container_QList_QTableWidgetItem_X_;
@@ -23,6 +27,7 @@ typedef QList<QGraphicsTransform *> Container_QList_QGraphicsTransform_X_;
 typedef QList<QGraphicsItem *> Container_QList_QGraphicsItem_X_;
 typedef QList<QGesture *> Container_QList_QGesture_X_;
 typedef QList<QAbstractButton *> Container_QList_QAbstractButton_X_;
+typedef QList<QWidget *> Container_QList_QWidget_X_;
 typedef QList<QUndoStack *> Container_QList_QUndoStack_X_;
 typedef QList<QTextFrame *> Container_QList_QTextFrame_X_;
 typedef QList<QTextBlock> Container_QList_QTextBlock_;
@@ -36,7 +41,6 @@ typedef QList<QPageRanges::Range> Container_QList_QPageRanges__Range_;
 typedef QList<QFontVariableAxis> Container_QList_QFontVariableAxis_;
 typedef QList<uint16_t> Container_QList_uint16_t_;
 typedef QList<QAction *> Container_QList_QAction_X_;
-typedef QList<QObject *> Container_QList_QObject_X_;
 typedef QList<QAbstractTextDocumentLayout::Selection> Container_QList_QAbstractTextDocumentLayout__Selection_;
 typedef QList<QGlyphRun> Container_QList_QGlyphRun_;
 typedef QList<QTextLayout::FormatRange> Container_QList_QTextLayout__FormatRange_;
@@ -48,6 +52,7 @@ typedef QList<QFontDatabase::WritingSystem> Container_QList_QFontDatabase__Writi
 typedef QList<QEventPoint> Container_QList_QEventPoint_;
 typedef QList<QKeySequence> Container_QList_QKeySequence_;
 typedef QList<const QInputDevice *> Container_QList_const_QInputDevice_X_;
+typedef QList<QWindow *> Container_QList_QWindow_X_;
 typedef QList<QScreen *> Container_QList_QScreen_X_;
 typedef QList<QSize> Container_QList_QSize_;
 typedef QList<QPoint> Container_QList_QPoint_;
@@ -69,11 +74,18 @@ typedef QList<QPersistentModelIndex> Container_QList_QPersistentModelIndex_;
 typedef QList<QModelIndex> Container_QList_QModelIndex_;
 typedef QList<QVariant> Container_QList_QVariant_;
 typedef QList<QAbstractEventDispatcher::TimerInfo> Container_QList_QAbstractEventDispatcher__TimerInfo_;
+typedef QList<QObject *> Container_QList_QObject_X_;
 typedef QList<QString> Container_QList_QString_;
 typedef QList<int> Container_QList_int_;
 typedef QList<QByteArray> Container_QList_QByteArray_;
 typedef QList<unsigned int> Container_QList_unsigned_int_;
 typedef QList<qreal> Container_QList_qreal_;
+typedef std::pair<qreal, qreal> Container_std__pair_qreal__qreal_;
+typedef std::pair<qreal, QPointF> Container_std__pair_qreal__QPointF_;
+typedef std::pair<int, int> Container_std__pair_int__int_;
+typedef std::pair<double, QColor> Container_std__pair_double__QColor_;
+typedef std::pair<QString, QString> Container_std__pair_QString__QString_;
+typedef std::pair<double, QVariant> Container_std__pair_double__QVariant_;
 extern "C" void bg_QListSpecialMethods_QString__sort_Qt__CaseSensitivity(QListSpecialMethods<QString> * _self_, Qt::CaseSensitivity cs) {
   _self_->sort(cs);
 }
@@ -131,7 +143,7 @@ extern "C" QListSpecialMethods<QString> * bg_QListSpecialMethods_QString___COPY_
 }
 
 extern "C" QListSpecialMethods<QString> * bg_QListSpecialMethods_QString___OPERATOR_assign_const_QListSpecialMethods_QString__R(QListSpecialMethods<QString> * _self_, const QListSpecialMethods<QString> & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QListSpecialMethods<QString> * bg_QListSpecialMethods_QString___CONSTRUCT_() {
@@ -223,15 +235,15 @@ extern "C" QKeyCombination bg_QKeyCombination__COPY_const_QKeyCombination_R(cons
 }
 
 extern "C" QKeyCombination bg_QKeyCombination__OPERATOR_assign_const_QKeyCombination_R(QKeyCombination * _self_, const QKeyCombination unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QKeyCombination__OPERATOR_eq_const_QKeyCombination_R(QKeyCombination * _self_, const QKeyCombination rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QKeyCombination__OPERATOR_ne_const_QKeyCombination_R(QKeyCombination * _self_, const QKeyCombination rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QMetaObject::Connection * bg_QMetaObject__Connection__CONSTRUCT_() {
@@ -243,7 +255,7 @@ extern "C" QMetaObject::Connection * bg_QMetaObject__Connection__COPY_const_QMet
 }
 
 extern "C" QMetaObject::Connection * bg_QMetaObject__Connection__OPERATOR_assign_const_QMetaObject__Connection_R(QMetaObject::Connection * _self_, const QMetaObject::Connection & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QMetaObject__Connection_swap_QMetaObject__Connection_R(QMetaObject::Connection * _self_, QMetaObject::Connection & other) {
@@ -311,111 +323,111 @@ extern "C" void bg_QDataStream_setVersion_int(QDataStream * _self_, int unnamed_
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_char_R(QDataStream * _self_, char & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_qint8_R(QDataStream * _self_, qint8 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_quint8_R(QDataStream * _self_, quint8 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_qint16_R(QDataStream * _self_, qint16 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_quint16_R(QDataStream * _self_, quint16 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_qint32_R(QDataStream * _self_, qint32 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_quint32_R(QDataStream * _self_, quint32 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_qint64_R(QDataStream * _self_, qint64 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_quint64_R(QDataStream * _self_, quint64 & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_bool_R(QDataStream * _self_, bool & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_float_R(QDataStream * _self_, float & f) {
-  return &((*_self_) >> (f));
+  return &(((*_self_) >> (f)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_double_R(QDataStream * _self_, double & f) {
-  return &((*_self_) >> (f));
+  return &(((*_self_) >> (f)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_char_XR(QDataStream * _self_, char *& str) {
-  return &((*_self_) >> (str));
+  return &(((*_self_) >> (str)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_char(QDataStream * _self_, char i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_qint8(QDataStream * _self_, qint8 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_quint8(QDataStream * _self_, quint8 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_qint16(QDataStream * _self_, qint16 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_quint16(QDataStream * _self_, quint16 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_qint32(QDataStream * _self_, qint32 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_quint32(QDataStream * _self_, quint32 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_qint64(QDataStream * _self_, qint64 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_quint64(QDataStream * _self_, quint64 i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_float(QDataStream * _self_, float f) {
-  return &((*_self_) << (f));
+  return &(((*_self_) << (f)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_double(QDataStream * _self_, double f) {
-  return &((*_self_) << (f));
+  return &(((*_self_) << (f)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_char_X(QDataStream * _self_, const char * str) {
-  return &((*_self_) << (str));
+  return &(((*_self_) << (str)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_char16_t(QDataStream * _self_, char16_t c) {
-  return &((*_self_) << (c));
+  return &(((*_self_) << (c)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_char32_t(QDataStream * _self_, char32_t c) {
-  return &((*_self_) << (c));
+  return &(((*_self_) << (c)));
 }
 
 extern "C" bool bg_QDataStream__CONVERT_bool_(QDataStream * _self_) {
@@ -463,463 +475,455 @@ extern "C" bool bg_QDataStream_isDeviceTransactionStarted_(QDataStream * _self_)
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QByteArray_R(QDataStream * _self_, const CrystalString unnamed_arg_0) {
-  return &((*_self_) << (([&]() { auto &&bg_value = (unnamed_arg_0); return QByteArray(bg_value.ptr, bg_value.size); }())));
+  return &(((*_self_) << (([&]() { auto &&bg_value = (unnamed_arg_0); return QByteArray(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QString_R(QDataStream * _self_, const CrystalString unnamed_arg_0) {
-  return &((*_self_) << (([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
-}
-
-extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_Qt__CheckState_R(QDataStream * _self_, const Qt::CheckState & t) {
-  return &((*_self_) << (t));
-}
-
-extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_Qt__CheckState_R(QDataStream * _self_, Qt::CheckState & t) {
-  return &((*_self_) >> (t));
+  return &(((*_self_) << (([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QChar(QDataStream * _self_, int32_t chr) {
-  return &((*_self_) << (QChar(chr)));
+  return &(((*_self_) << (QChar(chr))));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QKeyCombination(QDataStream * _self_, QKeyCombination combination) {
-  return &((*_self_) << (combination));
+  return &(((*_self_) << (combination)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QVariant_R(QDataStream * _self_, const CrystalVariant p) {
-  return &((*_self_) << (crystal_to_qvariant(p)));
+  return &(((*_self_) << (crystal_to_qvariant(p))));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QBitArray_R(QDataStream * _self_, const QBitArray & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QBitArray_R(QDataStream * _self_, QBitArray & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QLocale_R(QDataStream * _self_, const QLocale & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QLocale_R(QDataStream * _self_, QLocale & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QDate(QDataStream * _self_, QDate & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QDate_R(QDataStream * _self_, QDate & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QTime(QDataStream * _self_, QTime & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTime_R(QDataStream * _self_, QTime & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QDateTime_R(QDataStream * _self_, const QDateTime & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QDateTime_R(QDataStream * _self_, QDateTime & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QRegularExpression_R(QDataStream * _self_, const QRegularExpression & re) {
-  return &((*_self_) << (re));
+  return &(((*_self_) << (re)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QRegularExpression_R(QDataStream * _self_, QRegularExpression & re) {
-  return &((*_self_) >> (re));
+  return &(((*_self_) >> (re)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QUrl_R(QDataStream * _self_, const QUrl & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QUrl_R(QDataStream * _self_, QUrl & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QUuid_R(QDataStream * _self_, const QUuid & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QUuid_R(QDataStream * _self_, QUuid & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTimeZone_R(QDataStream * _self_, const QTimeZone & tz) {
-  return &((*_self_) << (tz));
+  return &(((*_self_) << (tz)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTimeZone_R(QDataStream * _self_, QTimeZone & tz) {
-  return &((*_self_) >> (tz));
+  return &(((*_self_) >> (tz)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QEasingCurve_R(QDataStream * _self_, const QEasingCurve & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QEasingCurve_R(QDataStream * _self_, QEasingCurve & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QJsonDocument_R(QDataStream * _self_, const QJsonDocument & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QJsonDocument_R(QDataStream * _self_, QJsonDocument & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QJsonValue_R(QDataStream * _self_, const QJsonValue & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QJsonValue_R(QDataStream * _self_, QJsonValue & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QJsonArray_R(QDataStream * _self_, const QJsonArray & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QJsonArray_R(QDataStream * _self_, QJsonArray & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QJsonObject_R(QDataStream * _self_, const QJsonObject & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QJsonObject_R(QDataStream * _self_, QJsonObject & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QVersionNumber_R(QDataStream * _self_, const QVersionNumber & version) {
-  return &((*_self_) << (version));
+  return &(((*_self_) << (version)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QVersionNumber_R(QDataStream * _self_, QVersionNumber & version) {
-  return &((*_self_) >> (version));
+  return &(((*_self_) >> (version)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPoint_R(QDataStream * _self_, const QPoint unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPointF_R(QDataStream * _self_, const QPointF unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QLine_R(QDataStream * _self_, const QLine unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QLineF_R(QDataStream * _self_, const QLineF unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QMargins_R(QDataStream * _self_, const QMargins & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QMargins_R(QDataStream * _self_, QMargins & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QMarginsF_R(QDataStream * _self_, const QMarginsF & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QMarginsF_R(QDataStream * _self_, QMarginsF & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QSize_R(QDataStream * _self_, const QSize unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QSizeF_R(QDataStream * _self_, const QSizeF unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QRect_R(QDataStream * _self_, const QRect unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QRectF_R(QDataStream * _self_, const QRectF unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QColor_R(QDataStream * _self_, const QColor & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QColor_R(QDataStream * _self_, QColor & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPolygon_R(QDataStream * _self_, const QPolygon & polygon) {
-  return &((*_self_) << (polygon));
+  return &(((*_self_) << (polygon)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPolygon_R(QDataStream * _self_, QPolygon & polygon) {
-  return &((*_self_) >> (polygon));
+  return &(((*_self_) >> (polygon)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPolygonF_R(QDataStream * _self_, const QPolygonF & array) {
-  return &((*_self_) << (array));
+  return &(((*_self_) << (array)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPolygonF_R(QDataStream * _self_, QPolygonF & array) {
-  return &((*_self_) >> (array));
+  return &(((*_self_) >> (array)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QRegion_R(QDataStream * _self_, const QRegion & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QRegion_R(QDataStream * _self_, QRegion & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTransform_R(QDataStream * _self_, const QTransform & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTransform_R(QDataStream * _self_, QTransform & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QImage_R(QDataStream * _self_, const QImage & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QImage_R(QDataStream * _self_, QImage & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPixmap_R(QDataStream * _self_, QPixmap & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPixmap_R(QDataStream * _self_, const QPixmap & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QIcon_R(QDataStream * _self_, const QIcon & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QIcon_R(QDataStream * _self_, QIcon & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QVector2D(QDataStream * _self_, QVector2D unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QVector3D(QDataStream * _self_, QVector3D unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QVector4D(QDataStream * _self_, QVector4D unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QKeySequence_R(QDataStream * _self_, const QKeySequence & ks) {
-  return &((*_self_) << (ks));
+  return &(((*_self_) << (ks)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QKeySequence_R(QDataStream * _self_, QKeySequence & ks) {
-  return &((*_self_) >> (ks));
+  return &(((*_self_) >> (ks)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QFont_R(QDataStream * _self_, const QFont & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QFont_R(QDataStream * _self_, QFont & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QBrush_R(QDataStream * _self_, const QBrush & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QBrush_R(QDataStream * _self_, QBrush & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPen_R(QDataStream * _self_, const QPen & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPen_R(QDataStream * _self_, QPen & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextLength_R(QDataStream * _self_, const QTextLength & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextLength_R(QDataStream * _self_, QTextLength & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextFormat_R(QDataStream * _self_, const QTextFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextFormat_R(QDataStream * _self_, QTextFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextCharFormat_R(QDataStream * _self_, const QTextCharFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextCharFormat_R(QDataStream * _self_, QTextCharFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextBlockFormat_R(QDataStream * _self_, const QTextBlockFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextBlockFormat_R(QDataStream * _self_, QTextBlockFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextListFormat_R(QDataStream * _self_, const QTextListFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextListFormat_R(QDataStream * _self_, QTextListFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextFrameFormat_R(QDataStream * _self_, const QTextFrameFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextFrameFormat_R(QDataStream * _self_, QTextFrameFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTextTableCellFormat_R(QDataStream * _self_, const QTextTableCellFormat & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTextTableCellFormat_R(QDataStream * _self_, QTextTableCellFormat & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPalette_R(QDataStream * _self_, const QPalette & p) {
-  return &((*_self_) << (p));
+  return &(((*_self_) << (p)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPalette_R(QDataStream * _self_, QPalette & p) {
-  return &((*_self_) >> (p));
+  return &(((*_self_) >> (p)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QCursor_R(QDataStream * _self_, const QCursor & cursor) {
-  return &((*_self_) << (cursor));
+  return &(((*_self_) << (cursor)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QCursor_R(QDataStream * _self_, QCursor & cursor) {
-  return &((*_self_) >> (cursor));
+  return &(((*_self_) >> (cursor)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QColorSpace_R(QDataStream * _self_, const QColorSpace & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QColorSpace_R(QDataStream * _self_, QColorSpace & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QMatrix4x4_R(QDataStream * _self_, const QMatrix4x4 & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QMatrix4x4_R(QDataStream * _self_, QMatrix4x4 & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPageRanges_R(QDataStream * _self_, const QPageRanges & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPageRanges_R(QDataStream * _self_, QPageRanges & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPainterPath_R(QDataStream * _self_, const QPainterPath & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPainterPath_R(QDataStream * _self_, QPainterPath & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QPicture_R(QDataStream * _self_, const QPicture & p) {
-  return &((*_self_) << (p));
+  return &(((*_self_) << (p)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QPicture_R(QDataStream * _self_, QPicture & p) {
-  return &((*_self_) >> (p));
+  return &(((*_self_) >> (p)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QQuaternion_R(QDataStream * _self_, const QQuaternion unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QStandardItem_R(QDataStream * _self_, QStandardItem & item) {
-  return &((*_self_) >> (item));
+  return &(((*_self_) >> (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QStandardItem_R(QDataStream * _self_, const QStandardItem & item) {
-  return &((*_self_) << (item));
+  return &(((*_self_) << (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QSizePolicy_R(QDataStream * _self_, const QSizePolicy & unnamed_arg_0) {
-  return &((*_self_) << (unnamed_arg_0));
+  return &(((*_self_) << (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QSizePolicy_R(QDataStream * _self_, QSizePolicy & unnamed_arg_0) {
-  return &((*_self_) >> (unnamed_arg_0));
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QListWidgetItem_R(QDataStream * _self_, const QListWidgetItem & item) {
-  return &((*_self_) << (item));
+  return &(((*_self_) << (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QListWidgetItem_R(QDataStream * _self_, QListWidgetItem & item) {
-  return &((*_self_) >> (item));
+  return &(((*_self_) >> (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTableWidgetItem_R(QDataStream * _self_, QTableWidgetItem & item) {
-  return &((*_self_) >> (item));
+  return &(((*_self_) >> (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTableWidgetItem_R(QDataStream * _self_, const QTableWidgetItem & item) {
-  return &((*_self_) << (item));
+  return &(((*_self_) << (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QTreeWidgetItem_R(QDataStream * _self_, const QTreeWidgetItem & item) {
-  return &((*_self_) << (item));
+  return &(((*_self_) << (item)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QTreeWidgetItem_R(QDataStream * _self_, QTreeWidgetItem & item) {
-  return &((*_self_) >> (item));
+  return &(((*_self_) >> (item)));
 }
 
 extern "C" const QMetaObject * bg_QDataStream_staticMetaObject_STATIC_GETTER_() {
@@ -1124,8 +1128,8 @@ extern "C" void bg_QObject_killTimer_Qt__TimerId(QObject * _self_, Qt::TimerId i
   _self_->killTimer(id);
 }
 
-extern "C" const QObjectList * bg_QObject_children_(QObject * _self_) {
-  return &(_self_->children());
+extern "C" const Container_QList_QObject_X_ * bg_QObject_children_(QObject * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QObject_X_>()) Container_QList_QObject_X_ (_self_->children());
 }
 
 extern "C" void bg_QObject_setParent_QObject_X(QObject * _self_, QObject * parent) {
@@ -2008,8 +2012,8 @@ extern "C" QMetaObject::Connection * bg_QObject_CONNECT_destroyed_CrystalProc_vo
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QObject::*)(QObject *))&QObject::destroyed, [_proc_](QObject * unnamed_arg_0){ _proc_(unnamed_arg_0); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QObject_CONNECT_objectNameChanged_CrystalProc_void__const_QString_R_(QObject * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QObject::*)(const QString &))&QObject::objectNameChanged, [_proc_](const QString & objectName){ _proc_(qstring_to_crystal(objectName)); }));
+extern "C" QMetaObject::Connection * bg_QObject_CONNECT_objectNameChanged_CrystalProc_void__const_QString_R_(QObject * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QObject::*)(const QString &))&QObject::objectNameChanged, [_proc_](const QString & objectName){ _proc_(bindgen_address(qstring_to_crystal(objectName))); }));
 }
 
 extern "C" bool bg_QObject_event_SUPER_QEvent_X(QObject * _self_, QEvent * event) {
@@ -2431,11 +2435,11 @@ extern "C" QDeadlineTimer * bg_QDeadlineTimer_current_STATIC_Qt__TimerType(Qt::T
 }
 
 extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_add_assign_qint64(QDeadlineTimer * _self_, qint64 msecs) {
-  return &((*_self_) += (msecs));
+  return &(((*_self_) += (msecs)));
 }
 
 extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_sub_assign_qint64(QDeadlineTimer * _self_, qint64 msecs) {
-  return &((*_self_) -= (msecs));
+  return &(((*_self_) -= (msecs)));
 }
 
 extern "C" int64_t bg_QDeadlineTimer_remainingTimeAsDuration_(QDeadlineTimer * _self_) {
@@ -2447,31 +2451,31 @@ extern "C" QDeadlineTimer * bg_QDeadlineTimer__COPY_const_QDeadlineTimer_R(const
 }
 
 extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_ne_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_lt_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_gt_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_le_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QDeadlineTimer__OPERATOR_ge_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" const QDeadlineTimer::ForeverConstant bg_QDeadlineTimer_Forever_STATIC_GETTER_() {
@@ -3211,119 +3215,119 @@ extern "C" int bg_QTextStream_realNumberPrecision_(QTextStream * _self_) {
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_char_R(QTextStream * _self_, char & ch) {
-  return &((*_self_) >> (ch));
+  return &(((*_self_) >> (ch)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_short_R(QTextStream * _self_, short & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_short_R(QTextStream * _self_, unsigned short & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_int_R(QTextStream * _self_, int & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_int_R(QTextStream * _self_, unsigned int & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_long_R(QTextStream * _self_, long & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_long_R(QTextStream * _self_, unsigned long & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_qlonglong_R(QTextStream * _self_, qlonglong & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_qulonglong_R(QTextStream * _self_, qulonglong & i) {
-  return &((*_self_) >> (i));
+  return &(((*_self_) >> (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_float_R(QTextStream * _self_, float & f) {
-  return &((*_self_) >> (f));
+  return &(((*_self_) >> (f)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_double_R(QTextStream * _self_, double & f) {
-  return &((*_self_) >> (f));
+  return &(((*_self_) >> (f)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_char_X(QTextStream * _self_, char * c) {
-  return &((*_self_) >> (c));
+  return &(((*_self_) >> (c)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_QChar(QTextStream * _self_, int32_t ch) {
-  return &((*_self_) << (QChar(ch)));
+  return &(((*_self_) << (QChar(ch))));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_char(QTextStream * _self_, char ch) {
-  return &((*_self_) << (ch));
+  return &(((*_self_) << (ch)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_char16_t(QTextStream * _self_, char16_t ch) {
-  return &((*_self_) << (ch));
+  return &(((*_self_) << (ch)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_short(QTextStream * _self_, short i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_short(QTextStream * _self_, unsigned short i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_int(QTextStream * _self_, int i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_int(QTextStream * _self_, unsigned int i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_long(QTextStream * _self_, long i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_long(QTextStream * _self_, unsigned long i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_qlonglong(QTextStream * _self_, qlonglong i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_qulonglong(QTextStream * _self_, qulonglong i) {
-  return &((*_self_) << (i));
+  return &(((*_self_) << (i)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_float(QTextStream * _self_, float f) {
-  return &((*_self_) << (f));
+  return &(((*_self_) << (f)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_double(QTextStream * _self_, double f) {
-  return &((*_self_) << (f));
+  return &(((*_self_) << (f)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_QString_R(QTextStream * _self_, const CrystalString s) {
-  return &((*_self_) << (([&]() { auto &&bg_value = (s); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+  return &(((*_self_) << (([&]() { auto &&bg_value = (s); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_QByteArray_R(QTextStream * _self_, const CrystalString array) {
-  return &((*_self_) << (([&]() { auto &&bg_value = (array); return QByteArray(bg_value.ptr, bg_value.size); }())));
+  return &(((*_self_) << (([&]() { auto &&bg_value = (array); return QByteArray(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_char_X(QTextStream * _self_, const char * c) {
-  return &((*_self_) << (c));
+  return &(((*_self_) << (c)));
 }
 
 extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_void_X(QTextStream * _self_, const void * ptr) {
-  return &((*_self_) << (ptr));
+  return &(((*_self_) << (ptr)));
 }
 
 extern "C" bool bg_QTextStream__CONVERT_bool_(QTextStream * _self_) {
@@ -3395,55 +3399,55 @@ extern "C" QModelIndex * bg_QModelIndex__COPY_const_QModelIndex_R(const QModelIn
 }
 
 extern "C" QModelIndex * bg_QModelIndex__OPERATOR_assign_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_eq_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_ne_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_lt_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_gt_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_le_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_ge_const_QModelIndex_R(QModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(QModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__CONSTRUCT_() {
@@ -3459,7 +3463,7 @@ extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__COPY_const_QPersist
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__OPERATOR_assign_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPersistentModelIndex_swap_QPersistentModelIndex_R(QPersistentModelIndex * _self_, QPersistentModelIndex & other) {
@@ -3467,7 +3471,7 @@ extern "C" void bg_QPersistentModelIndex_swap_QPersistentModelIndex_R(QPersisten
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__OPERATOR_assign_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QModelIndex * bg_QPersistentModelIndex__CONVERT_QModelIndex_(QPersistentModelIndex * _self_) {
@@ -3523,51 +3527,51 @@ extern "C" bool bg_QPersistentModelIndex_isValid_(QPersistentModelIndex * _self_
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_eq_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_ne_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_lt_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_gt_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_le_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QPersistentModelIndex__OPERATOR_ge_const_QModelIndex_R(QPersistentModelIndex * _self_, const QModelIndex & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 struct BgJumptable_QAbstractItemModel {
@@ -3584,10 +3588,10 @@ struct BgJumptable_QAbstractItemModel {
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_columnCount_const_QModelIndex_R;
   CrystalProc<bool> bg_QAbstractItemModel_hasChildren_;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_hasChildren_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
@@ -3610,8 +3614,8 @@ struct BgJumptable_QAbstractItemModel {
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractItemModel_flags_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QAbstractItemModel_sort_int_Qt__SortOrder;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
@@ -3712,7 +3716,7 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QAbstractItemModel *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int.isValid())) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::data");
     }
@@ -3721,7 +3725,7 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QAbstractItemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractItemModel::setData(index, value, role);
     }
@@ -3730,7 +3734,7 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QAbstractItemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QAbstractItemModel::headerData(section, orientation, role);
     }
@@ -3739,7 +3743,7 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QAbstractItemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractItemModel::setHeaderData(section, orientation, value, role);
     }
@@ -3910,7 +3914,7 @@ struct BgInherit_QAbstractItemModel : public QAbstractItemModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QAbstractItemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QAbstractItemModel::match(start, role, value, hits, flags);
     }
@@ -4630,21 +4634,30 @@ struct BgJumptable_QAbstractTableModel {
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractTableModel_flags_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_parent_const_QModelIndex_R;
+  CrystalProc<int> bg_QAbstractItemModel_rowCount_;
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_rowCount_const_QModelIndex_R;
+  CrystalProc<int> bg_QAbstractItemModel_columnCount_;
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_columnCount_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool> bg_QAbstractItemModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDropActions_;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDragActions_;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
@@ -4652,7 +4665,8 @@ struct BgJumptable_QAbstractTableModel {
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QAbstractItemModel_sort_int_Qt__SortOrder;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
@@ -4753,7 +4767,7 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QAbstractTableModel *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int.isValid())) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::data");
     }
@@ -4762,7 +4776,7 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QAbstractTableModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractTableModel::setData(index, value, role);
     }
@@ -4771,7 +4785,7 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QAbstractTableModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QAbstractTableModel::headerData(section, orientation, role);
     }
@@ -4780,7 +4794,7 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QAbstractTableModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractTableModel::setHeaderData(section, orientation, value, role);
     }
@@ -4933,7 +4947,7 @@ struct BgInherit_QAbstractTableModel : public QAbstractTableModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QAbstractTableModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QAbstractTableModel::match(start, role, value, hits, flags);
     }
@@ -5133,20 +5147,30 @@ struct BgJumptable_QAbstractListModel {
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractListModel_flags_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_parent_const_QModelIndex_R;
+  CrystalProc<int> bg_QAbstractItemModel_rowCount_;
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_rowCount_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<int> bg_QAbstractItemModel_columnCount_;
+  CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_columnCount_const_QModelIndex_R;
+  CrystalProc<bool> bg_QAbstractItemModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractItemModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractItemModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QList<QString> *> bg_QAbstractItemModel_mimeTypes_;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractItemModel_mimeData_const_QModelIndexList_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDropActions_;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDragActions_;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
@@ -5154,7 +5178,8 @@ struct BgJumptable_QAbstractListModel {
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QAbstractItemModel_sort_int_Qt__SortOrder;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
@@ -5246,7 +5271,7 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QAbstractListModel *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int.isValid())) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractItemModel::data");
     }
@@ -5255,7 +5280,7 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QAbstractListModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractListModel::setData(index, value, role);
     }
@@ -5264,7 +5289,7 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QAbstractListModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QAbstractListModel::headerData(section, orientation, role);
     }
@@ -5273,7 +5298,7 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QAbstractListModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractListModel::setHeaderData(section, orientation, value, role);
     }
@@ -5426,7 +5451,7 @@ struct BgInherit_QAbstractListModel : public QAbstractListModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QAbstractListModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QAbstractListModel::match(start, role, value, hits, flags);
     }
@@ -5628,11 +5653,11 @@ struct BgJumptable_QAbstractProxyModel {
   CrystalProc<QItemSelection &, const QItemSelection *> bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R;
   CrystalProc<bool> bg_QAbstractProxyModel_submit_;
   CrystalProc<void> bg_QAbstractProxyModel_revert_;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R;
@@ -5648,17 +5673,25 @@ struct BgJumptable_QAbstractProxyModel {
   CrystalProc<QList<QString> *> bg_QAbstractProxyModel_mimeTypes_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
   CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDropActions_;
+  CrystalProc<QModelIndex &, int, int> bg_QAbstractItemModel_index_int_int;
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractItemModel_index_int_int_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_parent_const_QModelIndex_R;
+  CrystalProc<int> bg_QAbstractItemModel_rowCount_;
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_rowCount_const_QModelIndex_R;
+  CrystalProc<int> bg_QAbstractItemModel_columnCount_;
   CrystalProc<int, const QModelIndex *> bg_QAbstractItemModel_columnCount_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
@@ -5765,7 +5798,7 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       return QAbstractProxyModel::data(index, role);
     }
@@ -5774,7 +5807,7 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QAbstractProxyModel::headerData(section, orientation, role);
     }
@@ -5792,7 +5825,7 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractProxyModel::setData(index, value, role);
     }
@@ -5801,7 +5834,7 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QAbstractProxyModel::setHeaderData(section, orientation, value, role);
     }
@@ -6026,7 +6059,7 @@ struct BgInherit_QAbstractProxyModel : public QAbstractProxyModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QAbstractProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QAbstractProxyModel::match(start, role, value, hits, flags);
     }
@@ -6668,7 +6701,7 @@ extern "C" QEvent * bg_QEvent__COPY_const_QEvent_R(const QEvent & unnamed_arg_0)
 }
 
 extern "C" QEvent * bg_QEvent__OPERATOR_assign_const_QEvent_R(QEvent * _self_, const QEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QEvent * bg_QEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
@@ -6991,7 +7024,7 @@ extern "C" QTimerEvent * bg_QTimerEvent__COPY_const_QTimerEvent_R(const QTimerEv
 }
 
 extern "C" QTimerEvent * bg_QTimerEvent__OPERATOR_assign_const_QTimerEvent_R(QTimerEvent * _self_, const QTimerEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QTimerEvent * bg_QTimerEvent_clone_(QTimerEvent * _self_) {
@@ -7066,7 +7099,7 @@ extern "C" QChildEvent * bg_QChildEvent__COPY_const_QChildEvent_R(const QChildEv
 }
 
 extern "C" QChildEvent * bg_QChildEvent__OPERATOR_assign_const_QChildEvent_R(QChildEvent * _self_, const QChildEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QChildEvent * bg_QChildEvent_clone_(QChildEvent * _self_) {
@@ -7141,7 +7174,7 @@ extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent__COPY_co
 }
 
 extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent__OPERATOR_assign_const_QDynamicPropertyChangeEvent_R(QDynamicPropertyChangeEvent * _self_, const QDynamicPropertyChangeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QDynamicPropertyChangeEvent * bg_QDynamicPropertyChangeEvent_clone_(QDynamicPropertyChangeEvent * _self_) {
@@ -7577,7 +7610,7 @@ extern "C" QBitArray * bg_QBitArray__COPY_const_QBitArray_R(const QBitArray & ot
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_assign_const_QBitArray_R(QBitArray * _self_, const QBitArray & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QBitArray_swap_QBitArray_R(QBitArray * _self_, QBitArray & other) {
@@ -7645,15 +7678,15 @@ extern "C" bool bg_QBitArray_at_qsizetype(QBitArray * _self_, qsizetype i) {
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_and_assign_const_QBitArray_R(QBitArray * _self_, const QBitArray & unnamed_arg_0) {
-  return &((*_self_) &= (unnamed_arg_0));
+  return &(((*_self_) &= (unnamed_arg_0)));
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_or_assign_const_QBitArray_R(QBitArray * _self_, const QBitArray & unnamed_arg_0) {
-  return &((*_self_) |= (unnamed_arg_0));
+  return &(((*_self_) |= (unnamed_arg_0)));
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_xor_assign_const_QBitArray_R(QBitArray * _self_, const QBitArray & unnamed_arg_0) {
-  return &((*_self_) ^= (unnamed_arg_0));
+  return &(((*_self_) ^= (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QBitArray_fill_bool_qsizetype(QBitArray * _self_, bool aval, qsizetype asize) {
@@ -7681,23 +7714,23 @@ extern "C" quint32 bg_QBitArray_toUInt32_QSysInfo__Endian_bool_X(QBitArray * _se
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_and_const_QBitArray_R(QBitArray * _self_, const QBitArray & a2) {
-  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray ((*_self_) & (a2));
+  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray (((*_self_) & (a2)));
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_or_const_QBitArray_R(QBitArray * _self_, const QBitArray & a2) {
-  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray ((*_self_) | (a2));
+  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray (((*_self_) | (a2)));
 }
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_xor_const_QBitArray_R(QBitArray * _self_, const QBitArray & a2) {
-  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray ((*_self_) ^ (a2));
+  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray (((*_self_) ^ (a2)));
 }
 
 extern "C" bool bg_QBitArray__OPERATOR_eq_const_QBitArray_R(QBitArray * _self_, const QBitArray & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QBitArray__OPERATOR_ne_const_QBitArray_R(QBitArray * _self_, const QBitArray & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QIODevice {
@@ -8765,7 +8798,7 @@ extern "C" QLocale * bg_QLocale__COPY_const_QLocale_R(const QLocale & other) {
 }
 
 extern "C" QLocale * bg_QLocale__OPERATOR_assign_const_QLocale_R(QLocale * _self_, const QLocale & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QLocale_swap_QLocale_R(QLocale * _self_, QLocale & other) {
@@ -9237,19 +9270,19 @@ extern "C" CrystalString bg_QLocale_createSeparatedList_const_QStringList_R(QLoc
 }
 
 extern "C" bool bg_QLocale__OPERATOR_eq_const_QLocale_R(QLocale * _self_, const QLocale & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLocale__OPERATOR_ne_const_QLocale_R(QLocale * _self_, const QLocale & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QLocale__OPERATOR_eq_const_QLocale__Language_R(QLocale * _self_, const QLocale::Language & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLocale__OPERATOR_ne_const_QLocale__Language_R(QLocale * _self_, const QLocale::Language & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QLocale_staticMetaObject_STATIC_GETTER_() {
@@ -9398,6 +9431,30 @@ extern "C" bool bg_QCalendar__YearMonthDay_isValid_(QCalendar::YearMonthDay * _s
 
 extern "C" QCalendar::YearMonthDay bg_QCalendar__YearMonthDay__COPY_const_QCalendar__YearMonthDay_R(const QCalendar::YearMonthDay unnamed_arg_0) {
   return *(bg_deref<QCalendar::YearMonthDay>(unnamed_arg_0));
+}
+
+extern "C" int bg_QCalendar__YearMonthDay_year_GETTER_(QCalendar::YearMonthDay * _self_) {
+  return _self_->year;
+}
+
+extern "C" void bg_QCalendar__YearMonthDay_year_SETTER_int(QCalendar::YearMonthDay * _self_, int year) {
+  _self_->year = year;
+}
+
+extern "C" int bg_QCalendar__YearMonthDay_month_GETTER_(QCalendar::YearMonthDay * _self_) {
+  return _self_->month;
+}
+
+extern "C" void bg_QCalendar__YearMonthDay_month_SETTER_int(QCalendar::YearMonthDay * _self_, int month) {
+  _self_->month = month;
+}
+
+extern "C" int bg_QCalendar__YearMonthDay_day_GETTER_(QCalendar::YearMonthDay * _self_) {
+  return _self_->day;
+}
+
+extern "C" void bg_QCalendar__YearMonthDay_day_SETTER_int(QCalendar::YearMonthDay * _self_, int day) {
+  _self_->day = day;
 }
 
 extern "C" QCalendar::SystemId * bg_QCalendar__SystemId__CONSTRUCT_() {
@@ -9601,47 +9658,47 @@ extern "C" QDate * bg_QDate__COPY_const_QDate_R(const QDate & unnamed_arg_0) {
 }
 
 extern "C" QDate * bg_QDate__OPERATOR_assign_const_QDate_R(QDate * _self_, const QDate & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QDate__OPERATOR_eq_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QDate__OPERATOR_ne_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QDate__OPERATOR_lt_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QDate__OPERATOR_gt_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QDate__OPERATOR_le_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QDate__OPERATOR_ge_const_QDate_R(QDate * _self_, const QDate & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" QDate * bg_QDate__OPERATOR_succ_(QDate * _self_) {
-  return &(++(*_self_));
+  return &((++(*_self_)));
 }
 
 extern "C" QDate * bg_QDate__OPERATOR_pred_(QDate * _self_) {
-  return &(--(*_self_));
+  return &((--(*_self_)));
 }
 
 extern "C" QDate * bg_QDate__OPERATOR_post_succ_(QDate * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate ((*_self_)++);
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (((*_self_)++));
 }
 
 extern "C" QDate * bg_QDate__OPERATOR_post_pred_(QDate * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate ((*_self_)--);
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (((*_self_)--));
 }
 
 extern "C" QTime * bg_QTime__CONSTRUCT_() {
@@ -9733,27 +9790,27 @@ extern "C" QTime * bg_QTime__COPY_const_QTime_R(const QTime & unnamed_arg_0) {
 }
 
 extern "C" bool bg_QTime__OPERATOR_eq_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QTime__OPERATOR_ne_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QTime__OPERATOR_lt_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QTime__OPERATOR_gt_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QTime__OPERATOR_le_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QTime__OPERATOR_ge_const_QTime_R(QTime * _self_, const QTime & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" QDateTime * bg_QDateTime__CONSTRUCT_() {
@@ -9781,7 +9838,7 @@ extern "C" QDateTime * bg_QDateTime__COPY_const_QDateTime_R(const QDateTime & ot
 }
 
 extern "C" QDateTime * bg_QDateTime__OPERATOR_assign_const_QDateTime_R(QDateTime * _self_, const QDateTime & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QDateTime_swap_QDateTime_R(QDateTime * _self_, QDateTime & other) {
@@ -9985,39 +10042,39 @@ extern "C" qint64 bg_QDateTime_currentSecsSinceEpoch_STATIC_() {
 }
 
 extern "C" QDateTime * bg_QDateTime__OPERATOR_add_assign_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
-  return &((*_self_) += (std::chrono::milliseconds(duration)));
+  return &(((*_self_) += (std::chrono::milliseconds(duration))));
 }
 
 extern "C" QDateTime * bg_QDateTime__OPERATOR_sub_assign_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
-  return &((*_self_) -= (std::chrono::milliseconds(duration)));
+  return &(((*_self_) -= (std::chrono::milliseconds(duration))));
 }
 
 extern "C" QDateTime * bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
-  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime ((*_self_) + (std::chrono::milliseconds(duration)));
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (((*_self_) + (std::chrono::milliseconds(duration))));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_eq_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_ne_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_lt_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_gt_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_le_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_ge_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" QRegularExpression::PatternOptions bg_QRegularExpression_patternOptions_(QRegularExpression * _self_) {
@@ -10045,7 +10102,7 @@ extern "C" QRegularExpression * bg_QRegularExpression__COPY_const_QRegularExpres
 }
 
 extern "C" QRegularExpression * bg_QRegularExpression__OPERATOR_assign_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & re) {
-  return &((*_self_) = (re));
+  return &(((*_self_) = (re)));
 }
 
 extern "C" void bg_QRegularExpression_swap_QRegularExpression_R(QRegularExpression * _self_, QRegularExpression & other) {
@@ -10117,11 +10174,11 @@ extern "C" CrystalString bg_QRegularExpression_anchoredPattern_STATIC_const_QStr
 }
 
 extern "C" bool bg_QRegularExpression__OPERATOR_eq_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QRegularExpression__OPERATOR_ne_const_QRegularExpression_R(QRegularExpression * _self_, const QRegularExpression & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__CONSTRUCT_() {
@@ -10133,7 +10190,7 @@ extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__COPY_const_QReg
 }
 
 extern "C" QRegularExpressionMatch * bg_QRegularExpressionMatch__OPERATOR_assign_const_QRegularExpressionMatch_R(QRegularExpressionMatch * _self_, const QRegularExpressionMatch & match) {
-  return &((*_self_) = (match));
+  return &(((*_self_) = (match)));
 }
 
 extern "C" void bg_QRegularExpressionMatch_swap_QRegularExpressionMatch_R(QRegularExpressionMatch * _self_, QRegularExpressionMatch & other) {
@@ -10221,7 +10278,7 @@ extern "C" QRegularExpressionMatchIterator * bg_QRegularExpressionMatchIterator_
 }
 
 extern "C" QRegularExpressionMatchIterator * bg_QRegularExpressionMatchIterator__OPERATOR_assign_const_QRegularExpressionMatchIterator_R(QRegularExpressionMatchIterator * _self_, const QRegularExpressionMatchIterator & iterator) {
-  return &((*_self_) = (iterator));
+  return &(((*_self_) = (iterator)));
 }
 
 extern "C" void bg_QRegularExpressionMatchIterator_swap_QRegularExpressionMatchIterator_R(QRegularExpressionMatchIterator * _self_, QRegularExpressionMatchIterator & other) {
@@ -10265,7 +10322,7 @@ extern "C" QUrl * bg_QUrl__COPY_const_QUrl_R(const QUrl & copy) {
 }
 
 extern "C" QUrl * bg_QUrl__OPERATOR_assign_const_QUrl_R(QUrl * _self_, const QUrl & copy) {
-  return &((*_self_) = (copy));
+  return &(((*_self_) = (copy)));
 }
 
 extern "C" QUrl * bg_QUrl__CONSTRUCT_const_QString_R_QUrl__ParsingMode(const CrystalString url, QUrl::ParsingMode mode) {
@@ -10273,7 +10330,7 @@ extern "C" QUrl * bg_QUrl__CONSTRUCT_const_QString_R_QUrl__ParsingMode(const Cry
 }
 
 extern "C" QUrl * bg_QUrl__OPERATOR_assign_const_QString_R(QUrl * _self_, const CrystalString url) {
-  return &((*_self_) = (([&]() { auto &&bg_value = (url); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+  return &(((*_self_) = (([&]() { auto &&bg_value = (url); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" void bg_QUrl_swap_QUrl_R(QUrl * _self_, QUrl & other) {
@@ -10573,27 +10630,27 @@ extern "C" void bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(const QList<Q
 }
 
 extern "C" bool bg_QUrl__OPERATOR_eq_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QUrl__OPERATOR_ne_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QUrl__OPERATOR_lt_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QUrl__OPERATOR_gt_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QUrl__OPERATOR_le_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QUrl__OPERATOR_ge_const_QUrl_R(QUrl * _self_, const QUrl & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" QUuid * bg_QUuid__CONSTRUCT_() {
@@ -10665,27 +10722,27 @@ extern "C" QUuid * bg_QUuid__COPY_const_QUuid_R(const QUuid & unnamed_arg_0) {
 }
 
 extern "C" bool bg_QUuid__OPERATOR_eq_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QUuid__OPERATOR_ne_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QUuid__OPERATOR_lt_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QUuid__OPERATOR_gt_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QUuid__OPERATOR_le_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QUuid__OPERATOR_ge_const_QUuid_R(QUuid * _self_, const QUuid & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" uint bg_QUuid_data1_GETTER_(QUuid * _self_) {
@@ -11161,7 +11218,7 @@ extern "C" QCollatorSortKey * bg_QCollatorSortKey__COPY_const_QCollatorSortKey_R
 }
 
 extern "C" QCollatorSortKey * bg_QCollatorSortKey__OPERATOR_assign_const_QCollatorSortKey_R(QCollatorSortKey * _self_, const QCollatorSortKey & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QCollatorSortKey_swap_QCollatorSortKey_R(QCollatorSortKey * _self_, QCollatorSortKey & other) {
@@ -11177,7 +11234,7 @@ extern "C" QCollatorSortKey * bg_QCollatorSortKey__CONSTRUCT_QCollatorSortKeyPri
 }
 
 extern "C" bool bg_QCollatorSortKey__OPERATOR_lt_const_QCollatorSortKey_R(QCollatorSortKey * _self_, const QCollatorSortKey & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" QCollator * bg_QCollator__CONSTRUCT_() {
@@ -11193,7 +11250,7 @@ extern "C" QCollator * bg_QCollator__COPY_const_QCollator_R(const QCollator & un
 }
 
 extern "C" QCollator * bg_QCollator__OPERATOR_assign_const_QCollator_R(QCollator * _self_, const QCollator & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QCollator_swap_QCollator_R(QCollator * _self_, QCollator & other) {
@@ -11237,7 +11294,7 @@ extern "C" int bg_QCollator_compare_const_QString_R_const_QString_R(QCollator * 
 }
 
 extern "C" bool bg_QCollator__OPERATOR_call_const_QString_R_const_QString_R(QCollator * _self_, const CrystalString s1, const CrystalString s2) {
-  return (*_self_)(([&]() { auto &&bg_value = (s1); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (s2); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+  return ((*_self_)(([&]() { auto &&bg_value = (s1); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (s2); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
 extern "C" QCollatorSortKey * bg_QCollator_sortKey_const_QString_R(QCollator * _self_, const CrystalString string) {
@@ -11281,7 +11338,7 @@ extern "C" QCommandLineOption * bg_QCommandLineOption__COPY_const_QCommandLineOp
 }
 
 extern "C" QCommandLineOption * bg_QCommandLineOption__OPERATOR_assign_const_QCommandLineOption_R(QCommandLineOption * _self_, const QCommandLineOption & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QCommandLineOption_swap_QCommandLineOption_R(QCommandLineOption * _self_, QCommandLineOption & other) {
@@ -11510,7 +11567,7 @@ struct BgJumptable_QFileDevice {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void> bg_QFileDevice_close_;
   CrystalProc<bool> bg_QFileDevice_isSequential_;
-  CrystalProc<CrystalString> bg_QFileDevice_fileName_;
+  CrystalProc<CrystalString *> bg_QFileDevice_fileName_;
   CrystalProc<qint64> bg_QFileDevice_pos_;
   CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
   CrystalProc<bool> bg_QFileDevice_atEnd_;
@@ -11588,7 +11645,7 @@ struct BgInherit_QFileDevice : public QFileDevice {
   QString fileName() const override {
     const BgInherit_QFileDevice *_self_ = this;
     if (_self_->bgJump.bg_QFileDevice_fileName_.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QFileDevice_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QFileDevice_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QFileDevice::fileName();
     }
@@ -12008,7 +12065,7 @@ struct BgJumptable_QFile {
   CrystalProc<const QMetaObject *> bg_QFile_metaObject_;
   CrystalProc<void *, const char *> bg_QFile_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString> bg_QFile_fileName_;
+  CrystalProc<CrystalString *> bg_QFile_fileName_;
   CrystalProc<bool, QIODeviceBase::OpenMode> bg_QFile_open_QIODeviceBase__OpenMode;
   CrystalProc<qint64> bg_QFile_size_;
   CrystalProc<bool, qint64> bg_QFile_resize_qint64;
@@ -12070,7 +12127,7 @@ struct BgInherit_QFile : public QFile {
   QString fileName() const override {
     const BgInherit_QFile *_self_ = this;
     if (_self_->bgJump.bg_QFile_fileName_.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QFile::fileName();
     }
@@ -12553,7 +12610,7 @@ extern "C" QTimeZone * bg_QTimeZone__COPY_const_QTimeZone_R(const QTimeZone & ot
 }
 
 extern "C" QTimeZone * bg_QTimeZone__OPERATOR_assign_const_QTimeZone_R(QTimeZone * _self_, const QTimeZone & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QTimeZone_swap_QTimeZone_R(QTimeZone * _self_, QTimeZone & other) {
@@ -12717,11 +12774,11 @@ extern "C" Container_QList_QByteArray_ * bg_QTimeZone_windowsIdToIanaIds_STATIC_
 }
 
 extern "C" bool bg_QTimeZone__OPERATOR_eq_const_QTimeZone_R(QTimeZone * _self_, const QTimeZone & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QTimeZone__OPERATOR_ne_const_QTimeZone_R(QTimeZone * _self_, const QTimeZone & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QTimeZone::OffsetData * bg_QTimeZone__OffsetData__COPY_const_QTimeZone__OffsetData_R(const QTimeZone::OffsetData & unnamed_arg_0) {
@@ -12729,7 +12786,7 @@ extern "C" QTimeZone::OffsetData * bg_QTimeZone__OffsetData__COPY_const_QTimeZon
 }
 
 extern "C" QTimeZone::OffsetData * bg_QTimeZone__OffsetData__OPERATOR_assign_const_QTimeZone__OffsetData_R(QTimeZone::OffsetData * _self_, const QTimeZone::OffsetData & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTimeZone::OffsetData * bg_QTimeZone__OffsetData__CONSTRUCT_() {
@@ -12805,7 +12862,7 @@ extern "C" QFileInfo * bg_QFileInfo__COPY_const_QFileInfo_R(const QFileInfo & fi
 }
 
 extern "C" QFileInfo * bg_QFileInfo__OPERATOR_assign_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & fileinfo) {
-  return &((*_self_) = (fileinfo));
+  return &(((*_self_) = (fileinfo)));
 }
 
 extern "C" void bg_QFileInfo_swap_QFileInfo_R(QFileInfo * _self_, QFileInfo & other) {
@@ -13057,11 +13114,11 @@ extern "C" void bg_QFileInfo_stat_(QFileInfo * _self_) {
 }
 
 extern "C" bool bg_QFileInfo__OPERATOR_eq_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QFileInfo__OPERATOR_ne_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QDir * bg_QDir__COPY_const_QDir_R(const QDir & unnamed_arg_0) {
@@ -13089,7 +13146,7 @@ extern "C" QDir * bg_QDir__CONSTRUCT_const_QString_R_const_QString_R_QDir__SortF
 }
 
 extern "C" QDir * bg_QDir__OPERATOR_assign_const_QDir_R(QDir * _self_, const QDir & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QDir_swap_QDir_R(QDir * _self_, QDir & other) {
@@ -13193,7 +13250,7 @@ extern "C" bool bg_QDir_isEmpty_QDir__Filters(QDir * _self_, QDir::Filters filte
 }
 
 extern "C" CrystalString bg_QDir__OPERATOR_at_qsizetype(QDir * _self_, qsizetype unnamed_arg_0) {
-  return qstring_to_crystal((*_self_)[unnamed_arg_0]);
+  return qstring_to_crystal(((*_self_)[unnamed_arg_0]));
 }
 
 extern "C" QList<QString> * bg_QDir_nameFiltersFromString_STATIC_const_QString_R(const CrystalString nameFilter) {
@@ -13381,11 +13438,11 @@ extern "C" QDir * bg_QDir__CONSTRUCT_QDirPrivate_R(QDirPrivate & d) {
 }
 
 extern "C" bool bg_QDir__OPERATOR_eq_const_QDir_R(QDir * _self_, const QDir & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QDir__OPERATOR_ne_const_QDir_R(QDir * _self_, const QDir & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QDir_R(const QDir & dir) {
@@ -13461,7 +13518,7 @@ extern "C" QEasingCurve * bg_QEasingCurve__COPY_const_QEasingCurve_R(const QEasi
 }
 
 extern "C" QEasingCurve * bg_QEasingCurve__OPERATOR_assign_const_QEasingCurve_R(QEasingCurve * _self_, const QEasingCurve & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QEasingCurve_swap_QEasingCurve_R(QEasingCurve * _self_, QEasingCurve & other) {
@@ -13517,11 +13574,11 @@ extern "C" qreal bg_QEasingCurve_valueForProgress_qreal(QEasingCurve * _self_, q
 }
 
 extern "C" bool bg_QEasingCurve__OPERATOR_eq_const_QEasingCurve_R(QEasingCurve * _self_, const QEasingCurve & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QEasingCurve__OPERATOR_ne_const_QEasingCurve_R(QEasingCurve * _self_, const QEasingCurve & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QEasingCurve_staticMetaObject_STATIC_GETTER_() {
@@ -13593,27 +13650,27 @@ extern "C" QElapsedTimer * bg_QElapsedTimer__COPY_const_QElapsedTimer_R(const QE
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_lt_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_eq_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_ne_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_gt_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_le_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QElapsedTimer__OPERATOR_ge_const_QElapsedTimer_R(QElapsedTimer * _self_, const QElapsedTimer & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 struct BgJumptable_QFileSelector {
@@ -13944,12 +14001,12 @@ extern "C" const QMetaObject * bg_QFileSystemWatcher_staticMetaObject_STATIC_GET
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileSystemWatcher::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_fileChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::fileChanged, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_fileChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::fileChanged, [_proc_](const QString & path){ _proc_(bindgen_address(qstring_to_crystal(path))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::directoryChanged, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::directoryChanged, [_proc_](const QString & path){ _proc_(bindgen_address(qstring_to_crystal(path))); }));
 }
 
 extern "C" void bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(BgInherit_QFileSystemWatcher * _self_, const BgJumptable_QFileSystemWatcher & table) {
@@ -13969,13 +14026,13 @@ struct BgJumptable_QIdentityProxyModel {
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QIdentityProxyModel_parent_const_QModelIndex_R;
   CrystalProc<int> bg_QIdentityProxyModel_rowCount_;
   CrystalProc<int, const QModelIndex *> bg_QIdentityProxyModel_rowCount_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R;
   CrystalProc<QItemSelection &, const QItemSelection *> bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R;
   CrystalProc<QItemSelection &, const QItemSelection *> bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int> bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<void, QAbstractItemModel *> bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X;
   CrystalProc<bool, int, int> bg_QIdentityProxyModel_insertColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R;
@@ -13989,16 +14046,17 @@ struct BgJumptable_QIdentityProxyModel {
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool> bg_QAbstractProxyModel_submit_;
   CrystalProc<void> bg_QAbstractProxyModel_revert_;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *> bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QAbstractProxyModel_sort_int_Qt__SortOrder;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractProxyModel_span_const_QModelIndex_R;
+  CrystalProc<bool> bg_QAbstractProxyModel_hasChildren_;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
@@ -14102,7 +14160,7 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QIdentityProxyModel::headerData(section, orientation, role);
     }
@@ -14147,7 +14205,7 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QIdentityProxyModel::match(start, role, value, hits, flags);
     }
@@ -14237,7 +14295,7 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       return QIdentityProxyModel::data(index, role);
     }
@@ -14255,7 +14313,7 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QIdentityProxyModel::setData(index, value, role);
     }
@@ -14264,7 +14322,7 @@ struct BgInherit_QIdentityProxyModel : public QIdentityProxyModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QIdentityProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QIdentityProxyModel::setHeaderData(section, orientation, value, role);
     }
@@ -14789,15 +14847,15 @@ extern "C" QItemSelectionRange * bg_QItemSelectionRange__COPY_const_QItemSelecti
 }
 
 extern "C" QItemSelectionRange * bg_QItemSelectionRange__OPERATOR_assign_const_QItemSelectionRange_R(QItemSelectionRange * _self_, const QItemSelectionRange & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QItemSelectionRange__OPERATOR_eq_const_QItemSelectionRange_R(QItemSelectionRange * _self_, const QItemSelectionRange & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QItemSelectionRange__OPERATOR_ne_const_QItemSelectionRange_R(QItemSelectionRange * _self_, const QItemSelectionRange & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QItemSelectionModel {
@@ -15251,7 +15309,7 @@ extern "C" QJsonDocument * bg_QJsonDocument__COPY_const_QJsonDocument_R(const QJ
 }
 
 extern "C" QJsonDocument * bg_QJsonDocument__OPERATOR_assign_const_QJsonDocument_R(QJsonDocument * _self_, const QJsonDocument & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QJsonDocument_swap_QJsonDocument_R(QJsonDocument * _self_, QJsonDocument & other) {
@@ -15303,11 +15361,11 @@ extern "C" void bg_QJsonDocument_setArray_const_QJsonArray_R(QJsonDocument * _se
 }
 
 extern "C" const QJsonValue * bg_QJsonDocument__OPERATOR_at_const_QString_R(QJsonDocument * _self_, const CrystalString key) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]));
 }
 
 extern "C" const QJsonValue * bg_QJsonDocument__OPERATOR_at_qsizetype(QJsonDocument * _self_, qsizetype i) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[i]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[i]));
 }
 
 extern "C" bool bg_QJsonDocument_isNull_(QJsonDocument * _self_) {
@@ -15315,11 +15373,11 @@ extern "C" bool bg_QJsonDocument_isNull_(QJsonDocument * _self_) {
 }
 
 extern "C" bool bg_QJsonDocument__OPERATOR_eq_const_QJsonDocument_R(QJsonDocument * _self_, const QJsonDocument & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonDocument__OPERATOR_ne_const_QJsonDocument_R(QJsonDocument * _self_, const QJsonDocument & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonValue * bg_QJsonValue__CONSTRUCT_QJsonValue__Type(QJsonValue::Type unnamed_arg_0) {
@@ -15363,7 +15421,7 @@ extern "C" QJsonValue * bg_QJsonValue__COPY_const_QJsonValue_R(const QJsonValue 
 }
 
 extern "C" QJsonValue * bg_QJsonValue__OPERATOR_assign_const_QJsonValue_R(QJsonValue * _self_, const QJsonValue & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QJsonValue_swap_QJsonValue_R(QJsonValue * _self_, QJsonValue & other) {
@@ -15467,43 +15525,43 @@ extern "C" QJsonObject * bg_QJsonValue_toObject_const_QJsonObject_R(QJsonValue *
 }
 
 extern "C" const QJsonValue * bg_QJsonValue__OPERATOR_at_const_QString_R(QJsonValue * _self_, const CrystalString key) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]));
 }
 
 extern "C" const QJsonValue * bg_QJsonValue__OPERATOR_at_qsizetype(QJsonValue * _self_, qsizetype i) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[i]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[i]));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_eq_const_QJsonValue_R(QJsonValue * _self_, const QJsonValue & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_ne_const_QJsonValue_R(QJsonValue * _self_, const QJsonValue & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_eq_const_QJsonValueConstRef_R(QJsonValue * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_ne_const_QJsonValueConstRef_R(QJsonValue * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_eq_const_QJsonArray_R(QJsonValue * _self_, const QJsonArray & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_ne_const_QJsonArray_R(QJsonValue * _self_, const QJsonArray & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_eq_const_QJsonObject_R(QJsonValue * _self_, const QJsonObject & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValue__OPERATOR_ne_const_QJsonObject_R(QJsonValue * _self_, const QJsonObject & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonValueConstRef * bg_QJsonValueConstRef__COPY_const_QJsonValueConstRef_R(const QJsonValueConstRef & unnamed_arg_0) {
@@ -15591,7 +15649,7 @@ extern "C" QJsonObject * bg_QJsonValueConstRef_toObject_(QJsonValueConstRef * _s
 }
 
 extern "C" const QJsonValue * bg_QJsonValueConstRef__OPERATOR_at_qsizetype(QJsonValueConstRef * _self_, qsizetype i) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[i]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[i]));
 }
 
 extern "C" QJsonValueConstRef * bg_QJsonValueConstRef__CONSTRUCT_QJsonArray_X_qsizetype(QJsonArray * array, qsizetype idx) {
@@ -15607,35 +15665,35 @@ extern "C" void bg_QJsonValueConstRef_rebind_QJsonValueConstRef(QJsonValueConstR
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValueConstRef_R(QJsonValueConstRef * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonValueConstRef_R(QJsonValueConstRef * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValue_R(QJsonValueConstRef * _self_, const QJsonValue & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonValue_R(QJsonValueConstRef * _self_, const QJsonValue & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValueRef_R(QJsonValueConstRef * _self_, const QJsonValueRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonValueRef_R(QJsonValueConstRef * _self_, const QJsonValueRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonObject_R(QJsonValueConstRef * _self_, const QJsonObject & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonObject_R(QJsonValueConstRef * _self_, const QJsonObject & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonArray * bg_QJsonValueConstRef_a_GETTER_(QJsonValueConstRef * _self_) {
@@ -15683,11 +15741,11 @@ extern "C" QJsonValueRef * bg_QJsonValueRef__COPY_const_QJsonValueRef_R(const QJ
 }
 
 extern "C" QJsonValueRef * bg_QJsonValueRef__OPERATOR_assign_const_QJsonValue_R(QJsonValueRef * _self_, const QJsonValue & val) {
-  return &((*_self_) = (val));
+  return &(((*_self_) = (val)));
 }
 
 extern "C" QJsonValueRef * bg_QJsonValueRef__OPERATOR_assign_const_QJsonValueRef_R(QJsonValueRef * _self_, const QJsonValueRef & val) {
-  return &((*_self_) = (val));
+  return &(((*_self_) = (val)));
 }
 
 extern "C" QJsonValueRef * bg_QJsonValueRef__CONSTRUCT_QJsonArray_X_qsizetype(QJsonArray * array, qsizetype idx) {
@@ -15779,23 +15837,23 @@ extern "C" QJsonObject * bg_QJsonValueRef_toObject_(QJsonValueRef * _self_) {
 }
 
 extern "C" const QJsonValue * bg_QJsonValueRef__OPERATOR_at_qsizetype(QJsonValueRef * _self_, qsizetype i) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[i]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[i]));
 }
 
 extern "C" bool bg_QJsonValueRef__OPERATOR_eq_const_QJsonValueRef_R(QJsonValueRef * _self_, const QJsonValueRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueRef__OPERATOR_ne_const_QJsonValueRef_R(QJsonValueRef * _self_, const QJsonValueRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonValueRef__OPERATOR_eq_const_QJsonValueConstRef_R(QJsonValueRef * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonValueRef__OPERATOR_ne_const_QJsonValueConstRef_R(QJsonValueRef * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonArray * bg_QJsonArray__CONSTRUCT_() {
@@ -15807,7 +15865,7 @@ extern "C" QJsonArray * bg_QJsonArray__COPY_const_QJsonArray_R(const QJsonArray 
 }
 
 extern "C" QJsonArray * bg_QJsonArray__OPERATOR_assign_const_QJsonArray_R(QJsonArray * _self_, const QJsonArray & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QJsonArray * bg_QJsonArray_fromStringList_STATIC_const_QStringList_R(const QList<QString> * list) {
@@ -15883,7 +15941,7 @@ extern "C" bool bg_QJsonArray_contains_const_QJsonValue_R(QJsonArray * _self_, c
 }
 
 extern "C" QJsonValueRef * bg_QJsonArray__OPERATOR_at_qsizetype(QJsonArray * _self_, qsizetype i) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef ((*_self_)[i]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef (((*_self_)[i]));
 }
 
 extern "C" void bg_QJsonArray_swap_QJsonArray_R(QJsonArray * _self_, QJsonArray & other) {
@@ -15891,15 +15949,15 @@ extern "C" void bg_QJsonArray_swap_QJsonArray_R(QJsonArray * _self_, QJsonArray 
 }
 
 extern "C" QJsonArray * bg_QJsonArray__OPERATOR_add_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & v) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonArray>()) QJsonArray ((*_self_) + (v));
+  return new (UseGC, bindgen_gc_finalizer<QJsonArray>()) QJsonArray (((*_self_) + (v)));
 }
 
 extern "C" QJsonArray * bg_QJsonArray__OPERATOR_add_assign_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & v) {
-  return &((*_self_) += (v));
+  return &(((*_self_) += (v)));
 }
 
 extern "C" QJsonArray * bg_QJsonArray__OPERATOR_lshift_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & v) {
-  return &((*_self_) << (v));
+  return &(((*_self_) << (v)));
 }
 
 extern "C" void bg_QJsonArray_push_back_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & t) {
@@ -15923,19 +15981,19 @@ extern "C" bool bg_QJsonArray_empty_(QJsonArray * _self_) {
 }
 
 extern "C" bool bg_QJsonArray__OPERATOR_eq_const_QJsonArray_R(QJsonArray * _self_, const QJsonArray & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonArray__OPERATOR_ne_const_QJsonArray_R(QJsonArray * _self_, const QJsonArray & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonArray__OPERATOR_eq_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonArray__OPERATOR_ne_const_QJsonValue_R(QJsonArray * _self_, const QJsonValue & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonObject * bg_QJsonObject__CONSTRUCT_() {
@@ -15947,7 +16005,7 @@ extern "C" QJsonObject * bg_QJsonObject__COPY_const_QJsonObject_R(const QJsonObj
 }
 
 extern "C" QJsonObject * bg_QJsonObject__OPERATOR_assign_const_QJsonObject_R(QJsonObject * _self_, const QJsonObject & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QJsonObject_swap_QJsonObject_R(QJsonObject * _self_, QJsonObject & other) {
@@ -15979,7 +16037,7 @@ extern "C" QJsonValue * bg_QJsonObject_value_const_QString_R(QJsonObject * _self
 }
 
 extern "C" QJsonValue * bg_QJsonObject__OPERATOR_at_const_QString_R(QJsonObject * _self_, const CrystalString key) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue ((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())]));
 }
 
 extern "C" void bg_QJsonObject_remove_const_QString_R(QJsonObject * _self_, const CrystalString key) {
@@ -16019,27 +16077,27 @@ extern "C" bool bg_QJsonObject_empty_(QJsonObject * _self_) {
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_eq_const_QJsonObject_R(QJsonObject * _self_, const QJsonObject & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_ne_const_QJsonObject_R(QJsonObject * _self_, const QJsonObject & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_eq_const_QJsonValue_R(QJsonObject * _self_, const QJsonValue & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_ne_const_QJsonValue_R(QJsonObject * _self_, const QJsonValue & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_eq_const_QJsonValueConstRef_R(QJsonObject * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonObject__OPERATOR_ne_const_QJsonValueConstRef_R(QJsonObject * _self_, const QJsonValueConstRef & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__CONSTRUCT_() {
@@ -16055,7 +16113,7 @@ extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__COPY_const_QJsonObj
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_assign_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" CrystalString bg_QJsonObject__iterator_key_(QJsonObject::iterator * _self_) {
@@ -16071,71 +16129,71 @@ extern "C" QJsonValueRef * bg_QJsonObject__iterator_value_(QJsonObject::iterator
 }
 
 extern "C" QJsonValueRef * bg_QJsonObject__iterator__OPERATOR_deref_(QJsonObject::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef (*(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef ((*(*_self_)));
 }
 
 extern "C" QJsonValueRef * bg_QJsonObject__iterator__OPERATOR_at_qsizetype(QJsonObject::iterator * _self_, qsizetype j) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef ((*_self_)[j]);
+  return new (UseGC, bindgen_gc_finalizer<QJsonValueRef>()) QJsonValueRef (((*_self_)[j]));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_succ_(QJsonObject::iterator * _self_) {
-  return &(++(*_self_));
+  return &((++(*_self_)));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_post_succ_(QJsonObject::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator ((*_self_)++);
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator (((*_self_)++));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_pred_(QJsonObject::iterator * _self_) {
-  return &(--(*_self_));
+  return &((--(*_self_)));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_post_pred_(QJsonObject::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator ((*_self_)--);
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator (((*_self_)--));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_add_qsizetype(QJsonObject::iterator * _self_, qsizetype j) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator ((*_self_) + (j));
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator (((*_self_) + (j)));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_sub_qsizetype(QJsonObject::iterator * _self_, qsizetype j) {
-  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator ((*_self_) - (j));
+  return new (UseGC, bindgen_gc_finalizer<QJsonObject::iterator>()) QJsonObject::iterator (((*_self_) - (j)));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_add_assign_qsizetype(QJsonObject::iterator * _self_, qsizetype j) {
-  return &((*_self_) += (j));
+  return &(((*_self_) += (j)));
 }
 
 extern "C" QJsonObject::iterator * bg_QJsonObject__iterator__OPERATOR_sub_assign_qsizetype(QJsonObject::iterator * _self_, qsizetype j) {
-  return &((*_self_) -= (j));
+  return &(((*_self_) -= (j)));
 }
 
 extern "C" qsizetype bg_QJsonObject__iterator__OPERATOR_sub_QJsonObject__iterator(QJsonObject::iterator * _self_, QJsonObject::iterator & j) {
-  return (*_self_) - (j);
+  return ((*_self_) - (j));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_eq_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_ne_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_lt_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_gt_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_le_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QJsonObject__iterator__OPERATOR_ge_const_QJsonObject__iterator_R(QJsonObject::iterator * _self_, const QJsonObject::iterator & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 struct BgJumptable_QLibrary {
@@ -16413,31 +16471,31 @@ extern "C" QVersionNumber * bg_QVersionNumber__COPY_const_QVersionNumber_R(const
 }
 
 extern "C" QVersionNumber * bg_QVersionNumber__OPERATOR_assign_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_eq_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_ne_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_lt_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_gt_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_le_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QVersionNumber__OPERATOR_ge_const_QVersionNumber_R(QVersionNumber * _self_, const QVersionNumber & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" const char * bg_QLibraryInfo_build_STATIC_() {
@@ -16517,27 +16575,27 @@ extern "C" int * bg_QPoint_ry_(QPoint * _self_) {
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_add_assign_const_QPoint_R(QPoint * _self_, const QPoint p) {
-  return (*_self_) += (p);
+  return ((*_self_) += (p));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_sub_assign_const_QPoint_R(QPoint * _self_, const QPoint p) {
-  return (*_self_) -= (p);
+  return ((*_self_) -= (p));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_assign_float(QPoint * _self_, float factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_assign_double(QPoint * _self_, double factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_assign_int(QPoint * _self_, int factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_div_assign_qreal(QPoint * _self_, qreal divisor) {
-  return (*_self_) /= (divisor);
+  return ((*_self_) /= (divisor));
 }
 
 extern "C" int bg_QPoint_dotProduct_STATIC_const_QPoint_R_const_QPoint_R(const QPoint p1, const QPoint p2) {
@@ -16553,63 +16611,63 @@ extern "C" QPoint bg_QPoint__COPY_const_QPoint_R(const QPoint unnamed_arg_0) {
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_assign_const_QPoint_R(QPoint * _self_, const QPoint unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QPoint__OPERATOR_eq_const_QPoint_R(QPoint * _self_, const QPoint rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPoint__OPERATOR_ne_const_QPoint_R(QPoint * _self_, const QPoint rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_add_const_QPoint_R(QPoint * _self_, const QPoint p2) {
-  return (*_self_) + (p2);
+  return ((*_self_) + (p2));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_sub_const_QPoint_R(QPoint * _self_, const QPoint p2) {
-  return (*_self_) - (p2);
+  return ((*_self_) - (p2));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_float(QPoint * _self_, float factor) {
-  return (*_self_) * (factor);
+  return ((*_self_) * (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_double(QPoint * _self_, double factor) {
-  return (*_self_) * (factor);
+  return ((*_self_) * (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_int(QPoint * _self_, int factor) {
-  return (*_self_) * (factor);
+  return ((*_self_) * (factor));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_plus_(QPoint * _self_) {
-  return +(*_self_);
+  return (+(*_self_));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_neg_(QPoint * _self_) {
-  return -(*_self_);
+  return (-(*_self_));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_div_qreal(QPoint * _self_, qreal c) {
-  return (*_self_) / (c);
+  return ((*_self_) / (c));
 }
 
 extern "C" bool bg_QPoint__OPERATOR_eq_const_QPointF_R(QPoint * _self_, const QPointF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPoint__OPERATOR_ne_const_QPointF_R(QPoint * _self_, const QPointF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_const_QTransform_R(QPoint * _self_, const QTransform & m) {
-  return (*_self_) * (m);
+  return ((*_self_) * (m));
 }
 
 extern "C" QPoint bg_QPoint__OPERATOR_mul_const_QMatrix4x4_R(QPoint * _self_, const QMatrix4x4 & matrix) {
-  return (*_self_) * (matrix);
+  return ((*_self_) * (matrix));
 }
 
 extern "C" QPointF bg_QPointF__CONSTRUCT_() {
@@ -16661,19 +16719,19 @@ extern "C" qreal * bg_QPointF_ry_(QPointF * _self_) {
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_add_assign_const_QPointF_R(QPointF * _self_, const QPointF p) {
-  return (*_self_) += (p);
+  return ((*_self_) += (p));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_sub_assign_const_QPointF_R(QPointF * _self_, const QPointF p) {
-  return (*_self_) -= (p);
+  return ((*_self_) -= (p));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_mul_assign_qreal(QPointF * _self_, qreal c) {
-  return (*_self_) *= (c);
+  return ((*_self_) *= (c));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_div_assign_qreal(QPointF * _self_, qreal c) {
-  return (*_self_) /= (c);
+  return ((*_self_) /= (c));
 }
 
 extern "C" qreal bg_QPointF_dotProduct_STATIC_const_QPointF_R_const_QPointF_R(const QPointF p1, const QPointF p2) {
@@ -16689,55 +16747,55 @@ extern "C" QPointF bg_QPointF__COPY_const_QPointF_R(const QPointF unnamed_arg_0)
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_assign_const_QPointF_R(QPointF * _self_, const QPointF unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QPointF__OPERATOR_eq_const_QPointF_R(QPointF * _self_, const QPointF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPointF__OPERATOR_ne_const_QPointF_R(QPointF * _self_, const QPointF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QPointF__OPERATOR_eq_const_QPoint_R(QPointF * _self_, const QPoint rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPointF__OPERATOR_ne_const_QPoint_R(QPointF * _self_, const QPoint rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_add_const_QPointF_R(QPointF * _self_, const QPointF p2) {
-  return (*_self_) + (p2);
+  return ((*_self_) + (p2));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_sub_const_QPointF_R(QPointF * _self_, const QPointF p2) {
-  return (*_self_) - (p2);
+  return ((*_self_) - (p2));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_mul_qreal(QPointF * _self_, qreal c) {
-  return (*_self_) * (c);
+  return ((*_self_) * (c));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_plus_(QPointF * _self_) {
-  return +(*_self_);
+  return (+(*_self_));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_neg_(QPointF * _self_) {
-  return -(*_self_);
+  return (-(*_self_));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_div_qreal(QPointF * _self_, qreal divisor) {
-  return (*_self_) / (divisor);
+  return ((*_self_) / (divisor));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_mul_const_QTransform_R(QPointF * _self_, const QTransform & m) {
-  return (*_self_) * (m);
+  return ((*_self_) * (m));
 }
 
 extern "C" QPointF bg_QPointF__OPERATOR_mul_const_QMatrix4x4_R(QPointF * _self_, const QMatrix4x4 & matrix) {
-  return (*_self_) * (matrix);
+  return ((*_self_) * (matrix));
 }
 
 extern "C" QLine bg_QLine__CONSTRUCT_() {
@@ -16833,23 +16891,23 @@ extern "C" QLine bg_QLine__COPY_const_QLine_R(const QLine unnamed_arg_0) {
 }
 
 extern "C" bool bg_QLine__OPERATOR_eq_const_QLine_R(QLine * _self_, const QLine rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLine__OPERATOR_ne_const_QLine_R(QLine * _self_, const QLine rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QLine__OPERATOR_eq_const_QLineF_R(QLine * _self_, const QLineF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLine__OPERATOR_ne_const_QLineF_R(QLine * _self_, const QLineF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QLine bg_QLine__OPERATOR_mul_const_QTransform_R(QLine * _self_, const QTransform & m) {
-  return (*_self_) * (m);
+  return ((*_self_) * (m));
 }
 
 extern "C" QLineF bg_QLineF__CONSTRUCT_() {
@@ -16985,23 +17043,23 @@ extern "C" QLineF bg_QLineF__COPY_const_QLineF_R(const QLineF unnamed_arg_0) {
 }
 
 extern "C" bool bg_QLineF__OPERATOR_eq_const_QLineF_R(QLineF * _self_, const QLineF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLineF__OPERATOR_ne_const_QLineF_R(QLineF * _self_, const QLineF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QLineF__OPERATOR_eq_const_QLine_R(QLineF * _self_, const QLine rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QLineF__OPERATOR_ne_const_QLine_R(QLineF * _self_, const QLine rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QLineF bg_QLineF__OPERATOR_mul_const_QTransform_R(QLineF * _self_, const QTransform & m) {
-  return (*_self_) * (m);
+  return ((*_self_) * (m));
 }
 
 extern "C" QLockFile * bg_QLockFile__CONSTRUCT_const_QString_R(const CrystalString fileName) {
@@ -17093,7 +17151,7 @@ extern "C" const char * bg_QLoggingCategory_categoryName_(QLoggingCategory * _se
 }
 
 extern "C" QLoggingCategory * bg_QLoggingCategory__OPERATOR_call_(QLoggingCategory * _self_) {
-  return &((*_self_)());
+  return &(((*_self_)()));
 }
 
 extern "C" QLoggingCategory * bg_QLoggingCategory_defaultCategory_STATIC_() {
@@ -17149,35 +17207,35 @@ extern "C" void bg_QMargins_setBottom_int(QMargins * _self_, int bottom) {
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_add_assign_const_QMargins_R(QMargins * _self_, const QMargins & margins) {
-  return &((*_self_) += (margins));
+  return &(((*_self_) += (margins)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_sub_assign_const_QMargins_R(QMargins * _self_, const QMargins & margins) {
-  return &((*_self_) -= (margins));
+  return &(((*_self_) -= (margins)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_add_assign_int(QMargins * _self_, int unnamed_arg_0) {
-  return &((*_self_) += (unnamed_arg_0));
+  return &(((*_self_) += (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_sub_assign_int(QMargins * _self_, int unnamed_arg_0) {
-  return &((*_self_) -= (unnamed_arg_0));
+  return &(((*_self_) -= (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_mul_assign_int(QMargins * _self_, int unnamed_arg_0) {
-  return &((*_self_) *= (unnamed_arg_0));
+  return &(((*_self_) *= (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_div_assign_int(QMargins * _self_, int unnamed_arg_0) {
-  return &((*_self_) /= (unnamed_arg_0));
+  return &(((*_self_) /= (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_mul_assign_qreal(QMargins * _self_, qreal unnamed_arg_0) {
-  return &((*_self_) *= (unnamed_arg_0));
+  return &(((*_self_) *= (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_div_assign_qreal(QMargins * _self_, qreal unnamed_arg_0) {
-  return &((*_self_) /= (unnamed_arg_0));
+  return &(((*_self_) /= (unnamed_arg_0)));
 }
 
 extern "C" QMarginsF * bg_QMargins_toMarginsF_(QMargins * _self_) {
@@ -17189,71 +17247,71 @@ extern "C" QMargins * bg_QMargins__COPY_const_QMargins_R(const QMargins & unname
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_assign_const_QMargins_R(QMargins * _self_, const QMargins & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_add_const_QMargins_R(QMargins * _self_, const QMargins & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) + (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) + (m2)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_sub_const_QMargins_R(QMargins * _self_, const QMargins & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) - (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) - (m2)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_add_int(QMargins * _self_, int rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) + (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) + (rhs)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_sub_int(QMargins * _self_, int rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) - (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) - (rhs)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_mul_int(QMargins * _self_, int factor) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) * (factor));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) * (factor)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_mul_qreal(QMargins * _self_, qreal factor) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) * (factor));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) * (factor)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_div_int(QMargins * _self_, int divisor) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) / (divisor));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) / (divisor)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_div_qreal(QMargins * _self_, qreal divisor) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) / (divisor));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) / (divisor)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_bit_or_const_QMargins_R(QMargins * _self_, const QMargins & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((*_self_) | (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (((*_self_) | (m2)));
 }
 
 extern "C" bool bg_QMargins__OPERATOR_eq_const_QMargins_R(QMargins * _self_, const QMargins & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QMargins__OPERATOR_ne_const_QMargins_R(QMargins * _self_, const QMargins & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_plus_(QMargins * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (+(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((+(*_self_)));
 }
 
 extern "C" QMargins * bg_QMargins__OPERATOR_neg_(QMargins * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins (-(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QMargins>()) QMargins ((-(*_self_)));
 }
 
 extern "C" bool bg_QMargins__OPERATOR_eq_const_QMarginsF_R(QMargins * _self_, const QMarginsF & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QMargins__OPERATOR_ne_const_QMarginsF_R(QMargins * _self_, const QMarginsF & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QRect bg_QMargins__OPERATOR_add_const_QRect_R(QMargins * _self_, const QRect rectangle) {
-  return (*_self_) + (rectangle);
+  return ((*_self_) + (rectangle));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__CONSTRUCT_() {
@@ -17305,27 +17363,27 @@ extern "C" void bg_QMarginsF_setBottom_qreal(QMarginsF * _self_, qreal abottom) 
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_add_assign_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & margins) {
-  return &((*_self_) += (margins));
+  return &(((*_self_) += (margins)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_sub_assign_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & margins) {
-  return &((*_self_) -= (margins));
+  return &(((*_self_) -= (margins)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_add_assign_qreal(QMarginsF * _self_, qreal addend) {
-  return &((*_self_) += (addend));
+  return &(((*_self_) += (addend)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_sub_assign_qreal(QMarginsF * _self_, qreal subtrahend) {
-  return &((*_self_) -= (subtrahend));
+  return &(((*_self_) -= (subtrahend)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_mul_assign_qreal(QMarginsF * _self_, qreal factor) {
-  return &((*_self_) *= (factor));
+  return &(((*_self_) *= (factor)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_div_assign_qreal(QMarginsF * _self_, qreal divisor) {
-  return &((*_self_) /= (divisor));
+  return &(((*_self_) /= (divisor)));
 }
 
 extern "C" QMargins * bg_QMarginsF_toMargins_(QMarginsF * _self_) {
@@ -17337,63 +17395,63 @@ extern "C" QMarginsF * bg_QMarginsF__COPY_const_QMarginsF_R(const QMarginsF & un
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_assign_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QMarginsF__OPERATOR_eq_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QMarginsF__OPERATOR_ne_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QMarginsF__OPERATOR_eq_const_QMargins_R(QMarginsF * _self_, const QMargins & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QMarginsF__OPERATOR_ne_const_QMargins_R(QMarginsF * _self_, const QMargins & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_add_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) + (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) + (rhs)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_sub_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) - (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) - (rhs)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_add_qreal(QMarginsF * _self_, qreal rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) + (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) + (rhs)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_sub_qreal(QMarginsF * _self_, qreal rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) - (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) - (rhs)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_mul_qreal(QMarginsF * _self_, qreal rhs) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) * (rhs));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) * (rhs)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_div_qreal(QMarginsF * _self_, qreal divisor) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) / (divisor));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) / (divisor)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_bit_or_const_QMarginsF_R(QMarginsF * _self_, const QMarginsF & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((*_self_) | (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (((*_self_) | (m2)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_plus_(QMarginsF * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (+(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((+(*_self_)));
 }
 
 extern "C" QMarginsF * bg_QMarginsF__OPERATOR_neg_(QMarginsF * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF (-(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QMarginsF>()) QMarginsF ((-(*_self_)));
 }
 
 extern "C" QRectF bg_QMarginsF__OPERATOR_add_const_QRectF_R(QMarginsF * _self_, const QRectF rhs) {
-  return (*_self_) + (rhs);
+  return ((*_self_) + (rhs));
 }
 
 extern "C" QMessageAuthenticationCode * bg_QMessageAuthenticationCode__CONSTRUCT_QCryptographicHash__Algorithm(QCryptographicHash::Algorithm method) {
@@ -17444,9 +17502,9 @@ struct BgJumptable_QMimeData {
   CrystalProc<const QMetaObject *> bg_QMimeData_metaObject_;
   CrystalProc<void *, const char *> bg_QMimeData_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QMimeData_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<bool, const CrystalString> bg_QMimeData_hasFormat_const_QString_R;
+  CrystalProc<bool, const CrystalString *> bg_QMimeData_hasFormat_const_QString_R;
   CrystalProc<QList<QString> *> bg_QMimeData_formats_;
-  CrystalProc<CrystalVariant, const CrystalString, QMetaType *> bg_QMimeData_retrieveData_const_QString_R_QMetaType;
+  CrystalProc<CrystalVariant *, const CrystalString *, QMetaType *> bg_QMimeData_retrieveData_const_QString_R_QMetaType;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -17488,7 +17546,7 @@ struct BgInherit_QMimeData : public QMimeData {
   bool hasFormat(const QString & mimetype) const override {
     const BgInherit_QMimeData *_self_ = this;
     if (_self_->bgJump.bg_QMimeData_hasFormat_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QMimeData_hasFormat_const_QString_R(qstring_to_crystal(mimetype));
+      return _self_->bgJump.bg_QMimeData_hasFormat_const_QString_R(bindgen_address(qstring_to_crystal(mimetype)));
     } else {
       return QMimeData::hasFormat(mimetype);
     }
@@ -17506,7 +17564,7 @@ struct BgInherit_QMimeData : public QMimeData {
   QVariant retrieveData(const QString & mimetype, QMetaType preferredType) const override {
     const BgInherit_QMimeData *_self_ = this;
     if (_self_->bgJump.bg_QMimeData_retrieveData_const_QString_R_QMetaType.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QMimeData_retrieveData_const_QString_R_QMetaType(qstring_to_crystal(mimetype), new (UseGC, bindgen_gc_finalizer<QMetaType>()) QMetaType (preferredType)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QMimeData_retrieveData_const_QString_R_QMetaType(bindgen_address(qstring_to_crystal(mimetype)), new (UseGC, bindgen_gc_finalizer<QMetaType>()) QMetaType (preferredType)));
     } else {
       return QMimeData::retrieveData(mimetype, preferredType);
     }
@@ -17721,7 +17779,7 @@ extern "C" QMimeType * bg_QMimeType__COPY_const_QMimeType_R(const QMimeType & ot
 }
 
 extern "C" QMimeType * bg_QMimeType__OPERATOR_assign_const_QMimeType_R(QMimeType * _self_, const QMimeType & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QMimeType_swap_QMimeType_R(QMimeType * _self_, QMimeType & other) {
@@ -17789,11 +17847,11 @@ extern "C" CrystalString bg_QMimeType_filterString_(QMimeType * _self_) {
 }
 
 extern "C" bool bg_QMimeType__OPERATOR_eq_const_QMimeType_R(QMimeType * _self_, const QMimeType & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QMimeType__OPERATOR_ne_const_QMimeType_R(QMimeType * _self_, const QMimeType & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QMimeType_staticMetaObject_STATIC_GETTER_() {
@@ -18593,7 +18651,7 @@ extern "C" QProcessEnvironment * bg_QProcessEnvironment__COPY_const_QProcessEnvi
 }
 
 extern "C" QProcessEnvironment * bg_QProcessEnvironment__OPERATOR_assign_const_QProcessEnvironment_R(QProcessEnvironment * _self_, const QProcessEnvironment & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QProcessEnvironment_swap_QProcessEnvironment_R(QProcessEnvironment * _self_, QProcessEnvironment & other) {
@@ -18649,11 +18707,11 @@ extern "C" QProcessEnvironment * bg_QProcessEnvironment_systemEnvironment_STATIC
 }
 
 extern "C" bool bg_QProcessEnvironment__OPERATOR_eq_const_QProcessEnvironment_R(QProcessEnvironment * _self_, const QProcessEnvironment & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QProcessEnvironment__OPERATOR_ne_const_QProcessEnvironment_R(QProcessEnvironment * _self_, const QProcessEnvironment & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QProcess {
@@ -19293,8 +19351,8 @@ struct BgJumptable_QVariantAnimation {
   CrystalProc<bool, QEvent *> bg_QVariantAnimation_event_QEvent_X;
   CrystalProc<void, int> bg_QVariantAnimation_updateCurrentTime_int;
   CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State;
-  CrystalProc<void, const CrystalVariant> bg_QVariantAnimation_updateCurrentValue_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant, const CrystalVariant, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
+  CrystalProc<void, const CrystalVariant *> bg_QVariantAnimation_updateCurrentValue_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *, const CrystalVariant *, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
   CrystalProc<void, QAbstractAnimation::Direction> bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -19372,7 +19430,7 @@ struct BgInherit_QVariantAnimation : public QVariantAnimation {
   void updateCurrentValue(const QVariant & value) override {
     BgInherit_QVariantAnimation *_self_ = this;
     if (_self_->bgJump.bg_QVariantAnimation_updateCurrentValue_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QVariantAnimation_updateCurrentValue_const_QVariant_R(qvariant_to_crystal(value));
+      _self_->bgJump.bg_QVariantAnimation_updateCurrentValue_const_QVariant_R(bindgen_address(qvariant_to_crystal(value)));
     } else {
       QVariantAnimation::updateCurrentValue(value);
     }
@@ -19381,7 +19439,7 @@ struct BgInherit_QVariantAnimation : public QVariantAnimation {
   QVariant interpolated(const QVariant & from, const QVariant & to, qreal progress) const override {
     const BgInherit_QVariantAnimation *_self_ = this;
     if (_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(qvariant_to_crystal(from), qvariant_to_crystal(to), progress));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(bindgen_address(qvariant_to_crystal(from)), bindgen_address(qvariant_to_crystal(to)), progress));
     } else {
       return QVariantAnimation::interpolated(from, to, progress);
     }
@@ -19503,6 +19561,14 @@ extern "C" void bg_QVariantAnimation_setKeyValueAt_qreal_const_QVariant_R(QVaria
   _self_->setKeyValueAt(step, crystal_to_qvariant(value));
 }
 
+extern "C" Container_QList_std__pair_double__QVariant___ * bg_QVariantAnimation_keyValues_(QVariantAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_double__QVariant___>()) Container_QList_std__pair_double__QVariant___ (_self_->keyValues());
+}
+
+extern "C" void bg_QVariantAnimation_setKeyValues_const_QVariantAnimation__KeyValues_R(QVariantAnimation * _self_, const Container_QList_std__pair_double__QVariant___ * values) {
+  _self_->setKeyValues(*(values));
+}
+
 extern "C" CrystalVariant bg_QVariantAnimation_currentValue_(QVariantAnimation * _self_) {
   return qvariant_to_crystal(_self_->currentValue());
 }
@@ -19555,8 +19621,8 @@ extern "C" const QMetaObject * bg_QVariantAnimation_staticMetaObject_STATIC_GETT
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QVariantAnimation::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QVariantAnimation_CONNECT_valueChanged_CrystalProc_void__const_QVariant_R_(QVariantAnimation * _self_, CrystalProc<void, const CrystalVariant> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QVariantAnimation::*)(const QVariant &))&QVariantAnimation::valueChanged, [_proc_](const QVariant & value){ _proc_(qvariant_to_crystal(value)); }));
+extern "C" QMetaObject::Connection * bg_QVariantAnimation_CONNECT_valueChanged_CrystalProc_void__const_QVariant_R_(QVariantAnimation * _self_, CrystalProc<void, const CrystalVariant *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QVariantAnimation::*)(const QVariant &))&QVariantAnimation::valueChanged, [_proc_](const QVariant & value){ _proc_(bindgen_address(qvariant_to_crystal(value))); }));
 }
 
 extern "C" int bg_QVariantAnimation_duration_SUPER_(QVariantAnimation * _self_) {
@@ -19592,11 +19658,11 @@ struct BgJumptable_QPropertyAnimation {
   CrystalProc<void *, const char *> bg_QPropertyAnimation_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QPropertyAnimation_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<bool, QEvent *> bg_QPropertyAnimation_event_QEvent_X;
-  CrystalProc<void, const CrystalVariant> bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R;
+  CrystalProc<void, const CrystalVariant *> bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R;
   CrystalProc<void, QAbstractAnimation::State, QAbstractAnimation::State> bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State;
   CrystalProc<int> bg_QVariantAnimation_duration_;
   CrystalProc<void, int> bg_QVariantAnimation_updateCurrentTime_int;
-  CrystalProc<CrystalVariant, const CrystalVariant, const CrystalVariant, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
+  CrystalProc<CrystalVariant *, const CrystalVariant *, const CrystalVariant *, qreal> bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal;
   CrystalProc<void, QAbstractAnimation::Direction> bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -19647,7 +19713,7 @@ struct BgInherit_QPropertyAnimation : public QPropertyAnimation {
   void updateCurrentValue(const QVariant & value) override {
     BgInherit_QPropertyAnimation *_self_ = this;
     if (_self_->bgJump.bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R(qvariant_to_crystal(value));
+      _self_->bgJump.bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R(bindgen_address(qvariant_to_crystal(value)));
     } else {
       QPropertyAnimation::updateCurrentValue(value);
     }
@@ -19683,7 +19749,7 @@ struct BgInherit_QPropertyAnimation : public QPropertyAnimation {
   QVariant interpolated(const QVariant & from, const QVariant & to, qreal progress) const override {
     const BgInherit_QPropertyAnimation *_self_ = this;
     if (_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(qvariant_to_crystal(from), qvariant_to_crystal(to), progress));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(bindgen_address(qvariant_to_crystal(from)), bindgen_address(qvariant_to_crystal(to)), progress));
     } else {
       return QPropertyAnimation::interpolated(from, to, progress);
     }
@@ -19850,7 +19916,7 @@ extern "C" QRandomGenerator * bg_QRandomGenerator__COPY_const_QRandomGenerator_R
 }
 
 extern "C" QRandomGenerator * bg_QRandomGenerator__OPERATOR_assign_const_QRandomGenerator_R(QRandomGenerator * _self_, const QRandomGenerator & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" quint32 bg_QRandomGenerator_generate_(QRandomGenerator * _self_) {
@@ -19922,7 +19988,7 @@ extern "C" void bg_QRandomGenerator_generate_quint32_X_quint32_X(QRandomGenerato
 }
 
 extern "C" QRandomGenerator::result_type bg_QRandomGenerator__OPERATOR_call_(QRandomGenerator * _self_) {
-  return (*_self_)();
+  return ((*_self_)());
 }
 
 extern "C" void bg_QRandomGenerator_seed_quint32(QRandomGenerator * _self_, quint32 s) {
@@ -19954,11 +20020,11 @@ extern "C" QRandomGenerator * bg_QRandomGenerator_securelySeeded_STATIC_() {
 }
 
 extern "C" bool bg_QRandomGenerator__OPERATOR_eq_const_QRandomGenerator_R(QRandomGenerator * _self_, const QRandomGenerator & rng2) {
-  return (*_self_) == (rng2);
+  return ((*_self_) == (rng2));
 }
 
 extern "C" bool bg_QRandomGenerator__OPERATOR_ne_const_QRandomGenerator_R(QRandomGenerator * _self_, const QRandomGenerator & rng2) {
-  return (*_self_) != (rng2);
+  return ((*_self_) != (rng2));
 }
 
 extern "C" quint64 bg_QRandomGenerator64_generate_(QRandomGenerator64 * _self_) {
@@ -19966,7 +20032,7 @@ extern "C" quint64 bg_QRandomGenerator64_generate_(QRandomGenerator64 * _self_) 
 }
 
 extern "C" QRandomGenerator64::result_type bg_QRandomGenerator64__OPERATOR_call_(QRandomGenerator64 * _self_) {
-  return (*_self_)();
+  return ((*_self_)());
 }
 
 extern "C" QRandomGenerator64 * bg_QRandomGenerator64__CONSTRUCT_quint32(quint32 seedValue) {
@@ -20014,7 +20080,7 @@ extern "C" QRandomGenerator64 * bg_QRandomGenerator64__COPY_const_QRandomGenerat
 }
 
 extern "C" QRandomGenerator64 * bg_QRandomGenerator64__OPERATOR_assign_const_QRandomGenerator64_R(QRandomGenerator64 * _self_, const QRandomGenerator64 & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QSize bg_QSize__CONSTRUCT_() {
@@ -20102,19 +20168,19 @@ extern "C" int * bg_QSize_rheight_(QSize * _self_) {
 }
 
 extern "C" QSize bg_QSize__OPERATOR_add_assign_const_QSize_R(QSize * _self_, const QSize unnamed_arg_0) {
-  return (*_self_) += (unnamed_arg_0);
+  return ((*_self_) += (unnamed_arg_0));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_sub_assign_const_QSize_R(QSize * _self_, const QSize unnamed_arg_0) {
-  return (*_self_) -= (unnamed_arg_0);
+  return ((*_self_) -= (unnamed_arg_0));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_mul_assign_qreal(QSize * _self_, qreal c) {
-  return (*_self_) *= (c);
+  return ((*_self_) *= (c));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_div_assign_qreal(QSize * _self_, qreal c) {
-  return (*_self_) /= (c);
+  return ((*_self_) /= (c));
 }
 
 extern "C" QSizeF bg_QSize_toSizeF_(QSize * _self_) {
@@ -20126,39 +20192,39 @@ extern "C" QSize bg_QSize__COPY_const_QSize_R(const QSize unnamed_arg_0) {
 }
 
 extern "C" QSize bg_QSize__OPERATOR_assign_const_QSize_R(QSize * _self_, const QSize unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QSize__OPERATOR_eq_const_QSize_R(QSize * _self_, const QSize rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QSize__OPERATOR_ne_const_QSize_R(QSize * _self_, const QSize rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_add_const_QSize_R(QSize * _self_, const QSize s2) {
-  return (*_self_) + (s2);
+  return ((*_self_) + (s2));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_sub_const_QSize_R(QSize * _self_, const QSize s2) {
-  return (*_self_) - (s2);
+  return ((*_self_) - (s2));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_mul_qreal(QSize * _self_, qreal c) {
-  return (*_self_) * (c);
+  return ((*_self_) * (c));
 }
 
 extern "C" QSize bg_QSize__OPERATOR_div_qreal(QSize * _self_, qreal c) {
-  return (*_self_) / (c);
+  return ((*_self_) / (c));
 }
 
 extern "C" bool bg_QSize__OPERATOR_eq_const_QSizeF_R(QSize * _self_, const QSizeF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QSize__OPERATOR_ne_const_QSizeF_R(QSize * _self_, const QSizeF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QSizeF bg_QSizeF__CONSTRUCT_() {
@@ -20250,19 +20316,19 @@ extern "C" qreal * bg_QSizeF_rheight_(QSizeF * _self_) {
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_add_assign_const_QSizeF_R(QSizeF * _self_, const QSizeF unnamed_arg_0) {
-  return (*_self_) += (unnamed_arg_0);
+  return ((*_self_) += (unnamed_arg_0));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_sub_assign_const_QSizeF_R(QSizeF * _self_, const QSizeF unnamed_arg_0) {
-  return (*_self_) -= (unnamed_arg_0);
+  return ((*_self_) -= (unnamed_arg_0));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_mul_assign_qreal(QSizeF * _self_, qreal c) {
-  return (*_self_) *= (c);
+  return ((*_self_) *= (c));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_div_assign_qreal(QSizeF * _self_, qreal c) {
-  return (*_self_) /= (c);
+  return ((*_self_) /= (c));
 }
 
 extern "C" QSize bg_QSizeF_toSize_(QSizeF * _self_) {
@@ -20274,39 +20340,39 @@ extern "C" QSizeF bg_QSizeF__COPY_const_QSizeF_R(const QSizeF unnamed_arg_0) {
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_assign_const_QSizeF_R(QSizeF * _self_, const QSizeF unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QSizeF__OPERATOR_eq_const_QSizeF_R(QSizeF * _self_, const QSizeF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QSizeF__OPERATOR_ne_const_QSizeF_R(QSizeF * _self_, const QSizeF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QSizeF__OPERATOR_eq_const_QSize_R(QSizeF * _self_, const QSize rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QSizeF__OPERATOR_ne_const_QSize_R(QSizeF * _self_, const QSize rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_add_const_QSizeF_R(QSizeF * _self_, const QSizeF s2) {
-  return (*_self_) + (s2);
+  return ((*_self_) + (s2));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_sub_const_QSizeF_R(QSizeF * _self_, const QSizeF s2) {
-  return (*_self_) - (s2);
+  return ((*_self_) - (s2));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_mul_qreal(QSizeF * _self_, qreal c) {
-  return (*_self_) * (c);
+  return ((*_self_) * (c));
 }
 
 extern "C" QSizeF bg_QSizeF__OPERATOR_div_qreal(QSizeF * _self_, qreal c) {
-  return (*_self_) / (c);
+  return ((*_self_) / (c));
 }
 
 extern "C" QRect bg_QRect__CONSTRUCT_() {
@@ -20538,19 +20604,19 @@ extern "C" void bg_QRect_setSize_const_QSize_R(QRect * _self_, const QSize s) {
 }
 
 extern "C" QRect bg_QRect__OPERATOR_bit_or_const_QRect_R(QRect * _self_, const QRect r) {
-  return (*_self_) | (r);
+  return ((*_self_) | (r));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_bit_and_const_QRect_R(QRect * _self_, const QRect r) {
-  return (*_self_) & (r);
+  return ((*_self_) & (r));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_bit_or_assign_const_QRect_R(QRect * _self_, const QRect r) {
-  return (*_self_) |= (r);
+  return ((*_self_) |= (r));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_bit_and_assign_const_QRect_R(QRect * _self_, const QRect r) {
-  return (*_self_) &= (r);
+  return ((*_self_) &= (r));
 }
 
 extern "C" bool bg_QRect_contains_const_QRect_R_bool(QRect * _self_, const QRect r, bool proper) {
@@ -20590,11 +20656,11 @@ extern "C" QRect bg_QRect_marginsRemoved_const_QMargins_R(QRect * _self_, const 
 }
 
 extern "C" QRect bg_QRect__OPERATOR_add_assign_const_QMargins_R(QRect * _self_, const QMargins & margins) {
-  return (*_self_) += (margins);
+  return ((*_self_) += (margins));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_sub_assign_const_QMargins_R(QRect * _self_, const QMargins & margins) {
-  return (*_self_) -= (margins);
+  return ((*_self_) -= (margins));
 }
 
 extern "C" QRect bg_QRect_span_STATIC_const_QPoint_R_const_QPoint_R(const QPoint p1, const QPoint p2) {
@@ -20610,31 +20676,31 @@ extern "C" QRect bg_QRect__COPY_const_QRect_R(const QRect unnamed_arg_0) {
 }
 
 extern "C" QRect bg_QRect__OPERATOR_assign_const_QRect_R(QRect * _self_, const QRect unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QRect__OPERATOR_eq_const_QRect_R(QRect * _self_, const QRect rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QRect__OPERATOR_ne_const_QRect_R(QRect * _self_, const QRect rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_add_const_QMargins_R(QRect * _self_, const QMargins & margins) {
-  return (*_self_) + (margins);
+  return ((*_self_) + (margins));
 }
 
 extern "C" QRect bg_QRect__OPERATOR_sub_const_QMargins_R(QRect * _self_, const QMargins & rhs) {
-  return (*_self_) - (rhs);
+  return ((*_self_) - (rhs));
 }
 
 extern "C" bool bg_QRect__OPERATOR_eq_const_QRectF_R(QRect * _self_, const QRectF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QRect__OPERATOR_ne_const_QRectF_R(QRect * _self_, const QRectF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QRectF bg_QRectF__CONSTRUCT_() {
@@ -20870,19 +20936,19 @@ extern "C" void bg_QRectF_setSize_const_QSizeF_R(QRectF * _self_, const QSizeF s
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_bit_or_const_QRectF_R(QRectF * _self_, const QRectF r) {
-  return (*_self_) | (r);
+  return ((*_self_) | (r));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_bit_and_const_QRectF_R(QRectF * _self_, const QRectF r) {
-  return (*_self_) & (r);
+  return ((*_self_) & (r));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_bit_or_assign_const_QRectF_R(QRectF * _self_, const QRectF r) {
-  return (*_self_) |= (r);
+  return ((*_self_) |= (r));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_bit_and_assign_const_QRectF_R(QRectF * _self_, const QRectF r) {
-  return (*_self_) &= (r);
+  return ((*_self_) &= (r));
 }
 
 extern "C" bool bg_QRectF_contains_const_QRectF_R(QRectF * _self_, const QRectF r) {
@@ -20918,11 +20984,11 @@ extern "C" QRectF bg_QRectF_marginsRemoved_const_QMarginsF_R(QRectF * _self_, co
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_add_assign_const_QMarginsF_R(QRectF * _self_, const QMarginsF & margins) {
-  return (*_self_) += (margins);
+  return ((*_self_) += (margins));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_sub_assign_const_QMarginsF_R(QRectF * _self_, const QMarginsF & margins) {
-  return (*_self_) -= (margins);
+  return ((*_self_) -= (margins));
 }
 
 extern "C" QRect bg_QRectF_toRect_(QRectF * _self_) {
@@ -20938,31 +21004,31 @@ extern "C" QRectF bg_QRectF__COPY_const_QRectF_R(const QRectF unnamed_arg_0) {
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_assign_const_QRectF_R(QRectF * _self_, const QRectF unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QRectF__OPERATOR_eq_const_QRectF_R(QRectF * _self_, const QRectF rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QRectF__OPERATOR_ne_const_QRectF_R(QRectF * _self_, const QRectF rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QRectF__OPERATOR_eq_const_QRect_R(QRectF * _self_, const QRect rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QRectF__OPERATOR_ne_const_QRect_R(QRectF * _self_, const QRect rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_add_const_QMarginsF_R(QRectF * _self_, const QMarginsF & rhs) {
-  return (*_self_) + (rhs);
+  return ((*_self_) + (rhs));
 }
 
 extern "C" QRectF bg_QRectF__OPERATOR_sub_const_QMarginsF_R(QRectF * _self_, const QMarginsF & rhs) {
-  return (*_self_) - (rhs);
+  return ((*_self_) - (rhs));
 }
 
 extern "C" QResource * bg_QResource__CONSTRUCT_() {
@@ -21073,9 +21139,10 @@ struct BgJumptable_QSaveFile {
   CrystalProc<const QMetaObject *> bg_QSaveFile_metaObject_;
   CrystalProc<void *, const char *> bg_QSaveFile_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString> bg_QSaveFile_fileName_;
+  CrystalProc<CrystalString *> bg_QSaveFile_fileName_;
   CrystalProc<bool, QIODeviceBase::OpenMode> bg_QSaveFile_open_QIODeviceBase__OpenMode;
   CrystalProc<qint64, const char *, qint64> bg_QSaveFile_writeData_const_char_X_qint64;
+  CrystalProc<void> bg_QFileDevice_close_;
   CrystalProc<bool> bg_QFileDevice_isSequential_;
   CrystalProc<qint64> bg_QFileDevice_pos_;
   CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
@@ -21134,7 +21201,7 @@ struct BgInherit_QSaveFile : public QSaveFile {
   QString fileName() const override {
     const BgInherit_QSaveFile *_self_ = this;
     if (_self_->bgJump.bg_QSaveFile_fileName_.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QSaveFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QSaveFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QSaveFile::fileName();
     }
@@ -22213,8 +22280,8 @@ extern "C" QMetaObject::Connection * bg_QSignalMapper_CONNECT_mappedInt_CrystalP
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSignalMapper::*)(int))&QSignalMapper::mappedInt, [_proc_](int unnamed_arg_0){ _proc_(unnamed_arg_0); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QSignalMapper_CONNECT_mappedString_CrystalProc_void__const_QString_R_(QSignalMapper * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSignalMapper::*)(const QString &))&QSignalMapper::mappedString, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QSignalMapper_CONNECT_mappedString_CrystalProc_void__const_QString_R_(QSignalMapper * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSignalMapper::*)(const QString &))&QSignalMapper::mappedString, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QSignalMapper_CONNECT_mappedObject_CrystalProc_void__QObject_X_(QSignalMapper * _self_, CrystalProc<void, QObject *> _proc_) {
@@ -22429,10 +22496,10 @@ struct BgJumptable_QSortFilterProxyModel {
   CrystalProc<int, const QModelIndex *> bg_QSortFilterProxyModel_columnCount_const_QModelIndex_R;
   CrystalProc<bool> bg_QSortFilterProxyModel_hasChildren_;
   CrystalProc<bool, const QModelIndex *> bg_QSortFilterProxyModel_hasChildren_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QSortFilterProxyModel_data_const_QModelIndex_R_int;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QSortFilterProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<bool, int, int> bg_QSortFilterProxyModel_insertRows_int_int;
@@ -22447,8 +22514,8 @@ struct BgJumptable_QSortFilterProxyModel {
   CrystalProc<bool, const QModelIndex *> bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QSortFilterProxyModel_flags_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QSortFilterProxyModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QSortFilterProxyModel_span_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QSortFilterProxyModel_sort_int_Qt__SortOrder;
   CrystalProc<QList<QString> *> bg_QSortFilterProxyModel_mimeTypes_;
@@ -22629,7 +22696,7 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QSortFilterProxyModel_data_const_QModelIndex_R_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QSortFilterProxyModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QSortFilterProxyModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       return QSortFilterProxyModel::data(index, role);
     }
@@ -22638,7 +22705,7 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QSortFilterProxyModel::setData(index, value, role);
     }
@@ -22647,7 +22714,7 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QSortFilterProxyModel::headerData(section, orientation, role);
     }
@@ -22656,7 +22723,7 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QSortFilterProxyModel::setHeaderData(section, orientation, value, role);
     }
@@ -22755,7 +22822,7 @@ struct BgInherit_QSortFilterProxyModel : public QSortFilterProxyModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QSortFilterProxyModel *_self_ = this;
     if (_self_->bgJump.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QSortFilterProxyModel::match(start, role, value, hits, flags);
     }
@@ -23523,7 +23590,7 @@ extern "C" QStorageInfo * bg_QStorageInfo__COPY_const_QStorageInfo_R(const QStor
 }
 
 extern "C" QStorageInfo * bg_QStorageInfo__OPERATOR_assign_const_QStorageInfo_R(QStorageInfo * _self_, const QStorageInfo & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QStorageInfo_swap_QStorageInfo_R(QStorageInfo * _self_, QStorageInfo & other) {
@@ -23603,11 +23670,11 @@ extern "C" QStorageInfo * bg_QStorageInfo_root_STATIC_() {
 }
 
 extern "C" bool bg_QStorageInfo__OPERATOR_eq_const_QStorageInfo_R(QStorageInfo * _self_, const QStorageInfo & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QStorageInfo__OPERATOR_ne_const_QStorageInfo_R(QStorageInfo * _self_, const QStorageInfo & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QStringListModel_metaObject_(QStringListModel * _self_) {
@@ -23754,7 +23821,7 @@ struct BgJumptable_QTemporaryFile {
   CrystalProc<const QMetaObject *> bg_QTemporaryFile_metaObject_;
   CrystalProc<void *, const char *> bg_QTemporaryFile_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString> bg_QTemporaryFile_fileName_;
+  CrystalProc<CrystalString *> bg_QTemporaryFile_fileName_;
   CrystalProc<bool, QIODeviceBase::OpenMode> bg_QTemporaryFile_open_QIODeviceBase__OpenMode;
   CrystalProc<qint64> bg_QFile_size_;
   CrystalProc<bool, qint64> bg_QFile_resize_qint64;
@@ -23816,7 +23883,7 @@ struct BgInherit_QTemporaryFile : public QTemporaryFile {
   QString fileName() const override {
     const BgInherit_QTemporaryFile *_self_ = this;
     if (_self_->bgJump.bg_QTemporaryFile_fileName_.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QTemporaryFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QTemporaryFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QTemporaryFile::fileName();
     }
@@ -24175,7 +24242,7 @@ extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__COPY_const_QTextBoundar
 }
 
 extern "C" QTextBoundaryFinder * bg_QTextBoundaryFinder__OPERATOR_assign_const_QTextBoundaryFinder_R(QTextBoundaryFinder * _self_, const QTextBoundaryFinder & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QTextBoundaryFinder_swap_QTextBoundaryFinder_R(QTextBoundaryFinder * _self_, QTextBoundaryFinder & other) {
@@ -24522,9 +24589,9 @@ struct BgJumptable_QTranslator {
   CrystalProc<const QMetaObject *> bg_QTranslator_metaObject_;
   CrystalProc<void *, const char *> bg_QTranslator_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString, const char *, const char *> bg_QTranslator_translate_const_char_X_const_char_X;
-  CrystalProc<CrystalString, const char *, const char *, const char *> bg_QTranslator_translate_const_char_X_const_char_X_const_char_X;
-  CrystalProc<CrystalString, const char *, const char *, const char *, int> bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int;
+  CrystalProc<CrystalString *, const char *, const char *> bg_QTranslator_translate_const_char_X_const_char_X;
+  CrystalProc<CrystalString *, const char *, const char *, const char *> bg_QTranslator_translate_const_char_X_const_char_X_const_char_X;
+  CrystalProc<CrystalString *, const char *, const char *, const char *, int> bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int;
   CrystalProc<bool> bg_QTranslator_isEmpty_;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
@@ -24567,7 +24634,7 @@ struct BgInherit_QTranslator : public QTranslator {
   QString translate(const char * context, const char * sourceText, const char * disambiguation, int n) const override {
     const BgInherit_QTranslator *_self_ = this;
     if (_self_->bgJump.bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int(context, sourceText, disambiguation, n)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QTranslator_translate_const_char_X_const_char_X_const_char_X_int(context, sourceText, disambiguation, n)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QTranslator::translate(context, sourceText, disambiguation, n);
     }
@@ -24771,7 +24838,7 @@ extern "C" QUrlQuery * bg_QUrlQuery__COPY_const_QUrlQuery_R(const QUrlQuery & ot
 }
 
 extern "C" QUrlQuery * bg_QUrlQuery__OPERATOR_assign_const_QUrlQuery_R(QUrlQuery * _self_, const QUrlQuery & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QUrlQuery_swap_QUrlQuery_R(QUrlQuery * _self_, QUrlQuery & other) {
@@ -24822,6 +24889,18 @@ extern "C" int32_t bg_QUrlQuery_queryPairDelimiter_(QUrlQuery * _self_) {
   return static_cast<int32_t>(_self_->queryPairDelimiter().unicode());
 }
 
+extern "C" void bg_QUrlQuery_setQueryItems_const_QList_std__pair_QString__QString___R(QUrlQuery * _self_, const Container_QList_std__pair_QString__QString___ * query) {
+  _self_->setQueryItems(*(query));
+}
+
+extern "C" Container_QList_std__pair_QString__QString___ * bg_QUrlQuery_queryItems_(QUrlQuery * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_QString__QString___>()) Container_QList_std__pair_QString__QString___ (_self_->queryItems());
+}
+
+extern "C" Container_QList_std__pair_QString__QString___ * bg_QUrlQuery_queryItems_QUrl__ComponentFormattingOptions(QUrlQuery * _self_, QUrl::ComponentFormattingOptions encoding) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_QString__QString___>()) Container_QList_std__pair_QString__QString___ (_self_->queryItems(encoding));
+}
+
 extern "C" bool bg_QUrlQuery_hasQueryItem_const_QString_R(QUrlQuery * _self_, const CrystalString key) {
   return _self_->hasQueryItem(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
@@ -24863,11 +24942,11 @@ extern "C" char16_t bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_() {
 }
 
 extern "C" bool bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(QUrlQuery * _self_, const QUrlQuery & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(QUrlQuery * _self_, const QUrlQuery & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QXmlStreamAttribute * bg_QXmlStreamAttribute__CONSTRUCT_() {
@@ -24891,15 +24970,15 @@ extern "C" QXmlStreamAttribute * bg_QXmlStreamAttribute__COPY_const_QXmlStreamAt
 }
 
 extern "C" QXmlStreamAttribute * bg_QXmlStreamAttribute__OPERATOR_assign_const_QXmlStreamAttribute_R(QXmlStreamAttribute * _self_, const QXmlStreamAttribute & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QXmlStreamAttribute__OPERATOR_eq_const_QXmlStreamAttribute_R(QXmlStreamAttribute * _self_, const QXmlStreamAttribute & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QXmlStreamAttribute__OPERATOR_ne_const_QXmlStreamAttribute_R(QXmlStreamAttribute * _self_, const QXmlStreamAttribute & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QXmlStreamAttributes * bg_QXmlStreamAttributes__CONSTRUCT_() {
@@ -24939,11 +25018,11 @@ extern "C" QXmlStreamNamespaceDeclaration * bg_QXmlStreamNamespaceDeclaration__C
 }
 
 extern "C" bool bg_QXmlStreamNamespaceDeclaration__OPERATOR_eq_const_QXmlStreamNamespaceDeclaration_R(QXmlStreamNamespaceDeclaration * _self_, const QXmlStreamNamespaceDeclaration & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QXmlStreamNamespaceDeclaration__OPERATOR_ne_const_QXmlStreamNamespaceDeclaration_R(QXmlStreamNamespaceDeclaration * _self_, const QXmlStreamNamespaceDeclaration & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QXmlStreamNotationDeclaration * bg_QXmlStreamNotationDeclaration__CONSTRUCT_() {
@@ -24955,11 +25034,11 @@ extern "C" QXmlStreamNotationDeclaration * bg_QXmlStreamNotationDeclaration__COP
 }
 
 extern "C" bool bg_QXmlStreamNotationDeclaration__OPERATOR_eq_const_QXmlStreamNotationDeclaration_R(QXmlStreamNotationDeclaration * _self_, const QXmlStreamNotationDeclaration & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QXmlStreamNotationDeclaration__OPERATOR_ne_const_QXmlStreamNotationDeclaration_R(QXmlStreamNotationDeclaration * _self_, const QXmlStreamNotationDeclaration & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QXmlStreamEntityDeclaration * bg_QXmlStreamEntityDeclaration__CONSTRUCT_() {
@@ -24971,16 +25050,16 @@ extern "C" QXmlStreamEntityDeclaration * bg_QXmlStreamEntityDeclaration__COPY_co
 }
 
 extern "C" bool bg_QXmlStreamEntityDeclaration__OPERATOR_eq_const_QXmlStreamEntityDeclaration_R(QXmlStreamEntityDeclaration * _self_, const QXmlStreamEntityDeclaration & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QXmlStreamEntityDeclaration__OPERATOR_ne_const_QXmlStreamEntityDeclaration_R(QXmlStreamEntityDeclaration * _self_, const QXmlStreamEntityDeclaration & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QXmlStreamEntityResolver {
-  CrystalProc<CrystalString, const CrystalString, const CrystalString> bg_QXmlStreamEntityResolver_resolveEntity_const_QString_R_const_QString_R;
-  CrystalProc<CrystalString, const CrystalString> bg_QXmlStreamEntityResolver_resolveUndeclaredEntity_const_QString_R;
+  CrystalProc<CrystalString *, const CrystalString *, const CrystalString *> bg_QXmlStreamEntityResolver_resolveEntity_const_QString_R_const_QString_R;
+  CrystalProc<CrystalString *, const CrystalString *> bg_QXmlStreamEntityResolver_resolveUndeclaredEntity_const_QString_R;
 };
 struct BgInherit_QXmlStreamEntityResolver : public QXmlStreamEntityResolver {
   using QXmlStreamEntityResolver::QXmlStreamEntityResolver;
@@ -24988,7 +25067,7 @@ struct BgInherit_QXmlStreamEntityResolver : public QXmlStreamEntityResolver {
   QString resolveEntity(const QString & publicId, const QString & systemId) override {
     BgInherit_QXmlStreamEntityResolver *_self_ = this;
     if (_self_->bgJump.bg_QXmlStreamEntityResolver_resolveEntity_const_QString_R_const_QString_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QXmlStreamEntityResolver_resolveEntity_const_QString_R_const_QString_R(qstring_to_crystal(publicId), qstring_to_crystal(systemId))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QXmlStreamEntityResolver_resolveEntity_const_QString_R_const_QString_R(bindgen_address(qstring_to_crystal(publicId)), bindgen_address(qstring_to_crystal(systemId)))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QXmlStreamEntityResolver::resolveEntity(publicId, systemId);
     }
@@ -24997,7 +25076,7 @@ struct BgInherit_QXmlStreamEntityResolver : public QXmlStreamEntityResolver {
   QString resolveUndeclaredEntity(const QString & name) override {
     BgInherit_QXmlStreamEntityResolver *_self_ = this;
     if (_self_->bgJump.bg_QXmlStreamEntityResolver_resolveUndeclaredEntity_const_QString_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QXmlStreamEntityResolver_resolveUndeclaredEntity_const_QString_R(qstring_to_crystal(name))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QXmlStreamEntityResolver_resolveUndeclaredEntity_const_QString_R(bindgen_address(qstring_to_crystal(name)))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QXmlStreamEntityResolver::resolveUndeclaredEntity(name);
     }
@@ -25969,7 +26048,7 @@ extern "C" quint64 bg_QRgba64__CONVERT_quint64_(QRgba64 * _self_) {
 }
 
 extern "C" QRgba64 bg_QRgba64__OPERATOR_assign_quint64(QRgba64 * _self_, quint64 _rgba) {
-  return (*_self_) = (_rgba);
+  return ((*_self_) = (_rgba));
 }
 
 extern "C" QRgba64 bg_QRgba64__COPY_const_QRgba64_R(const QRgba64 unnamed_arg_0) {
@@ -26013,7 +26092,7 @@ extern "C" QColor * bg_QColor_fromString_STATIC_QAnyStringView(CrystalString nam
 }
 
 extern "C" QColor * bg_QColor__OPERATOR_assign_Qt__GlobalColor(QColor * _self_, Qt::GlobalColor color) {
-  return &((*_self_) = (color));
+  return &(((*_self_) = (color)));
 }
 
 extern "C" bool bg_QColor_isValid_(QColor * _self_) {
@@ -26361,11 +26440,11 @@ extern "C" QColor * bg_QColor_darker_int(QColor * _self_, int f) {
 }
 
 extern "C" bool bg_QColor__OPERATOR_eq_const_QColor_R(QColor * _self_, const QColor & c) {
-  return (*_self_) == (c);
+  return ((*_self_) == (c));
 }
 
 extern "C" bool bg_QColor__OPERATOR_ne_const_QColor_R(QColor * _self_, const QColor & c) {
-  return (*_self_) != (c);
+  return ((*_self_) != (c));
 }
 
 extern "C" CrystalVariant bg_QColor__CONVERT_QVariant_(QColor * _self_) {
@@ -26385,23 +26464,23 @@ extern "C" QColor * bg_QColor__COPY_const_QColor_R(const QColor & unnamed_arg_0)
 }
 
 extern "C" QColor * bg_QColor__OPERATOR_assign_const_QColor_R(QColor * _self_, const QColor & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QColor__OPERATOR_eq_const_QBrush_R(QColor * _self_, const QBrush & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QColor__OPERATOR_ne_const_QBrush_R(QColor * _self_, const QBrush & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QColor__OPERATOR_eq_const_QPen_R(QColor * _self_, const QPen & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QColor__OPERATOR_ne_const_QPen_R(QColor * _self_, const QPen & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPixelFormat * bg_QPixelFormat__CONSTRUCT_() {
@@ -26597,7 +26676,7 @@ extern "C" QPolygon * bg_QPolygon__COPY_const_QPolygon_R(const QPolygon & unname
 }
 
 extern "C" QPolygon * bg_QPolygon__OPERATOR_mul_const_QTransform_R(QPolygon * _self_, const QTransform & m) {
-  return new (UseGC, bindgen_gc_finalizer<QPolygon>()) QPolygon ((*_self_) * (m));
+  return new (UseGC, bindgen_gc_finalizer<QPolygon>()) QPolygon (((*_self_) * (m)));
 }
 
 extern "C" QPolygonF * bg_QPolygonF__CONSTRUCT_() {
@@ -26677,7 +26756,7 @@ extern "C" QPolygonF * bg_QPolygonF__COPY_const_QPolygonF_R(const QPolygonF & un
 }
 
 extern "C" QPolygonF * bg_QPolygonF__OPERATOR_mul_const_QTransform_R(QPolygonF * _self_, const QTransform & m) {
-  return new (UseGC, bindgen_gc_finalizer<QPolygonF>()) QPolygonF ((*_self_) * (m));
+  return new (UseGC, bindgen_gc_finalizer<QPolygonF>()) QPolygonF (((*_self_) * (m)));
 }
 
 extern "C" QRegion * bg_QRegion__CONSTRUCT_() {
@@ -26705,7 +26784,7 @@ extern "C" QRegion * bg_QRegion__CONSTRUCT_const_QBitmap_R(const QBitmap & bitma
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_assign_const_QRegion_R(QRegion * _self_, const QRegion & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QRegion_swap_QRegion_R(QRegion * _self_, QRegion & other) {
@@ -26785,67 +26864,67 @@ extern "C" int bg_QRegion_rectCount_(QRegion * _self_) {
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_or_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) | (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) | (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_add_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) + (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) + (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_add_const_QRect_R(QRegion * _self_, const QRect r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) + (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) + (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_and_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) & (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) & (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_and_const_QRect_R(QRegion * _self_, const QRect r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) & (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) & (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_sub_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) - (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) - (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_xor_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) ^ (r));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) ^ (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_or_assign_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return &((*_self_) |= (r));
+  return &(((*_self_) |= (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_add_assign_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return &((*_self_) += (r));
+  return &(((*_self_) += (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_add_assign_const_QRect_R(QRegion * _self_, const QRect r) {
-  return &((*_self_) += (r));
+  return &(((*_self_) += (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_and_assign_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return &((*_self_) &= (r));
+  return &(((*_self_) &= (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_and_assign_const_QRect_R(QRegion * _self_, const QRect r) {
-  return &((*_self_) &= (r));
+  return &(((*_self_) &= (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_sub_assign_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return &((*_self_) -= (r));
+  return &(((*_self_) -= (r)));
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_bit_xor_assign_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return &((*_self_) ^= (r));
+  return &(((*_self_) ^= (r)));
 }
 
 extern "C" bool bg_QRegion__OPERATOR_eq_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return (*_self_) == (r);
+  return ((*_self_) == (r));
 }
 
 extern "C" bool bg_QRegion__OPERATOR_ne_const_QRegion_R(QRegion * _self_, const QRegion & r) {
-  return (*_self_) != (r);
+  return ((*_self_) != (r));
 }
 
 extern "C" CrystalVariant bg_QRegion__CONVERT_QVariant_(QRegion * _self_) {
@@ -26853,7 +26932,7 @@ extern "C" CrystalVariant bg_QRegion__CONVERT_QVariant_(QRegion * _self_) {
 }
 
 extern "C" QRegion * bg_QRegion__OPERATOR_mul_const_QTransform_R(QRegion * _self_, const QTransform & m) {
-  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion ((*_self_) * (m));
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (((*_self_) * (m)));
 }
 
 extern "C" QTransform * bg_QTransform__CONSTRUCT_() {
@@ -26869,7 +26948,7 @@ extern "C" QTransform * bg_QTransform__CONSTRUCT_qreal_qreal_qreal_qreal_qreal_q
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_assign_const_QTransform_R(QTransform * _self_, const QTransform & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTransform * bg_QTransform__COPY_const_QTransform_R(const QTransform & other) {
@@ -27005,19 +27084,19 @@ extern "C" bool bg_QTransform_quadToQuad_STATIC_const_QPolygonF_R_const_QPolygon
 }
 
 extern "C" bool bg_QTransform__OPERATOR_eq_const_QTransform_R(QTransform * _self_, const QTransform & unnamed_arg_0) {
-  return (*_self_) == (unnamed_arg_0);
+  return ((*_self_) == (unnamed_arg_0));
 }
 
 extern "C" bool bg_QTransform__OPERATOR_ne_const_QTransform_R(QTransform * _self_, const QTransform & unnamed_arg_0) {
-  return (*_self_) != (unnamed_arg_0);
+  return ((*_self_) != (unnamed_arg_0));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_mul_assign_const_QTransform_R(QTransform * _self_, const QTransform & unnamed_arg_0) {
-  return &((*_self_) *= (unnamed_arg_0));
+  return &(((*_self_) *= (unnamed_arg_0)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_mul_const_QTransform_R(QTransform * _self_, const QTransform & o) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform ((*_self_) * (o));
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (((*_self_) * (o)));
 }
 
 extern "C" CrystalVariant bg_QTransform__CONVERT_QVariant_(QTransform * _self_) {
@@ -27081,19 +27160,19 @@ extern "C" void bg_QTransform_map_qreal_qreal_qreal_X_qreal_X(QTransform * _self
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_mul_assign_qreal(QTransform * _self_, qreal div) {
-  return &((*_self_) *= (div));
+  return &(((*_self_) *= (div)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_div_assign_qreal(QTransform * _self_, qreal div) {
-  return &((*_self_) /= (div));
+  return &(((*_self_) /= (div)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_add_assign_qreal(QTransform * _self_, qreal div) {
-  return &((*_self_) += (div));
+  return &(((*_self_) += (div)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_sub_assign_qreal(QTransform * _self_, qreal div) {
-  return &((*_self_) -= (div));
+  return &(((*_self_) -= (div)));
 }
 
 extern "C" QTransform * bg_QTransform_fromTranslate_STATIC_qreal_qreal(qreal dx, qreal dy) {
@@ -27105,19 +27184,19 @@ extern "C" QTransform * bg_QTransform_fromScale_STATIC_qreal_qreal(qreal dx, qre
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_mul_qreal(QTransform * _self_, qreal n) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform ((*_self_) * (n));
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (((*_self_) * (n)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_div_qreal(QTransform * _self_, qreal n) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform ((*_self_) / (n));
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (((*_self_) / (n)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_add_qreal(QTransform * _self_, qreal n) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform ((*_self_) + (n));
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (((*_self_) + (n)));
 }
 
 extern "C" QTransform * bg_QTransform__OPERATOR_sub_qreal(QTransform * _self_, qreal n) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform ((*_self_) - (n));
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (((*_self_) - (n)));
 }
 
 extern "C" QImage * bg_QImage__CONSTRUCT_() {
@@ -27149,7 +27228,7 @@ extern "C" QImage * bg_QImage__COPY_const_QImage_R(const QImage & unnamed_arg_0)
 }
 
 extern "C" QImage * bg_QImage__OPERATOR_assign_const_QImage_R(QImage * _self_, const QImage & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QImage_swap_QImage_R(QImage * _self_, QImage & other) {
@@ -27165,11 +27244,11 @@ extern "C" int bg_QImage_devType_(QImage * _self_) {
 }
 
 extern "C" bool bg_QImage__OPERATOR_eq_const_QImage_R(QImage * _self_, const QImage & unnamed_arg_0) {
-  return (*_self_) == (unnamed_arg_0);
+  return ((*_self_) == (unnamed_arg_0));
 }
 
 extern "C" bool bg_QImage__OPERATOR_ne_const_QImage_R(QImage * _self_, const QImage & unnamed_arg_0) {
-  return (*_self_) != (unnamed_arg_0);
+  return ((*_self_) != (unnamed_arg_0));
 }
 
 extern "C" CrystalVariant bg_QImage__CONVERT_QVariant_(QImage * _self_) {
@@ -27741,7 +27820,7 @@ extern "C" QPixmap * bg_QPixmap__COPY_const_QPixmap_R(const QPixmap & unnamed_ar
 }
 
 extern "C" QPixmap * bg_QPixmap__OPERATOR_assign_const_QPixmap_R(QPixmap * _self_, const QPixmap & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QPixmap_swap_QPixmap_R(QPixmap * _self_, QPixmap & other) {
@@ -27981,7 +28060,7 @@ extern "C" QPaintEngine * bg_QPixmap_paintEngine_(QPixmap * _self_) {
 }
 
 extern "C" bool bg_QPixmap__OPERATOR_not_(QPixmap * _self_) {
-  return !(*_self_);
+  return (!(*_self_));
 }
 
 extern "C" int bg_QPixmap_metric_QPaintDevice__PaintDeviceMetric(QPixmap * _self_, QPaintDevice::PaintDeviceMetric metric) {
@@ -28021,7 +28100,7 @@ extern "C" QIcon * bg_QIcon__CONSTRUCT_QIconEngine_X(QIconEngine * engine) {
 }
 
 extern "C" QIcon * bg_QIcon__OPERATOR_assign_const_QIcon_R(QIcon * _self_, const QIcon & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QIcon_swap_QIcon_R(QIcon * _self_, QIcon & other) {
@@ -28241,7 +28320,7 @@ extern "C" void bg_QVector2D_setY_float(QVector2D * _self_, float y) {
 }
 
 extern "C" float * bg_QVector2D__OPERATOR_at_int(QVector2D * _self_, int i) {
-  return &((*_self_)[i]);
+  return &(((*_self_)[i]));
 }
 
 extern "C" float bg_QVector2D_length_(QVector2D * _self_) {
@@ -28269,27 +28348,27 @@ extern "C" float bg_QVector2D_distanceToLine_QVector2D_QVector2D(QVector2D * _se
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_add_assign_QVector2D(QVector2D * _self_, QVector2D vector) {
-  return (*_self_) += (vector);
+  return ((*_self_) += (vector));
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_sub_assign_QVector2D(QVector2D * _self_, QVector2D vector) {
-  return (*_self_) -= (vector);
+  return ((*_self_) -= (vector));
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_mul_assign_float(QVector2D * _self_, float factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_mul_assign_QVector2D(QVector2D * _self_, QVector2D vector) {
-  return (*_self_) *= (vector);
+  return ((*_self_) *= (vector));
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_div_assign_float(QVector2D * _self_, float divisor) {
-  return (*_self_) /= (divisor);
+  return ((*_self_) /= (divisor));
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_div_assign_QVector2D(QVector2D * _self_, QVector2D vector) {
-  return (*_self_) /= (vector);
+  return ((*_self_) /= (vector));
 }
 
 extern "C" float bg_QVector2D_dotProduct_STATIC_QVector2D_QVector2D(QVector2D v1, QVector2D v2) {
@@ -28321,7 +28400,7 @@ extern "C" QVector2D bg_QVector2D__COPY_const_QVector2D_R(const QVector2D unname
 }
 
 extern "C" QVector2D bg_QVector2D__OPERATOR_assign_const_QVector2D_R(QVector2D * _self_, const QVector2D unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" QVector3D bg_QVector3D__CONSTRUCT_() {
@@ -28381,7 +28460,7 @@ extern "C" void bg_QVector3D_setZ_float(QVector3D * _self_, float z) {
 }
 
 extern "C" float * bg_QVector3D__OPERATOR_at_int(QVector3D * _self_, int i) {
-  return &((*_self_)[i]);
+  return &(((*_self_)[i]));
 }
 
 extern "C" float bg_QVector3D_length_(QVector3D * _self_) {
@@ -28401,27 +28480,27 @@ extern "C" void bg_QVector3D_normalize_(QVector3D * _self_) {
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_add_assign_QVector3D(QVector3D * _self_, QVector3D vector) {
-  return (*_self_) += (vector);
+  return ((*_self_) += (vector));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_sub_assign_QVector3D(QVector3D * _self_, QVector3D vector) {
-  return (*_self_) -= (vector);
+  return ((*_self_) -= (vector));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_mul_assign_float(QVector3D * _self_, float factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_mul_assign_QVector3D(QVector3D * _self_, QVector3D vector) {
-  return (*_self_) *= (vector);
+  return ((*_self_) *= (vector));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_div_assign_float(QVector3D * _self_, float divisor) {
-  return (*_self_) /= (divisor);
+  return ((*_self_) /= (divisor));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_div_assign_QVector3D(QVector3D * _self_, QVector3D vector) {
-  return (*_self_) /= (vector);
+  return ((*_self_) /= (vector));
 }
 
 extern "C" float bg_QVector3D_dotProduct_STATIC_QVector3D_QVector3D(QVector3D v1, QVector3D v2) {
@@ -28489,11 +28568,11 @@ extern "C" QVector3D bg_QVector3D__COPY_const_QVector3D_R(const QVector3D unname
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_assign_const_QVector3D_R(QVector3D * _self_, const QVector3D unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" QVector3D bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(QVector3D * _self_, const QMatrix4x4 & matrix) {
-  return (*_self_) * (matrix);
+  return ((*_self_) * (matrix));
 }
 
 extern "C" QVector4D bg_QVector4D__CONSTRUCT_() {
@@ -28565,7 +28644,7 @@ extern "C" void bg_QVector4D_setW_float(QVector4D * _self_, float w) {
 }
 
 extern "C" float * bg_QVector4D__OPERATOR_at_int(QVector4D * _self_, int i) {
-  return &((*_self_)[i]);
+  return &(((*_self_)[i]));
 }
 
 extern "C" float bg_QVector4D_length_(QVector4D * _self_) {
@@ -28585,27 +28664,27 @@ extern "C" void bg_QVector4D_normalize_(QVector4D * _self_) {
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_add_assign_QVector4D(QVector4D * _self_, QVector4D vector) {
-  return (*_self_) += (vector);
+  return ((*_self_) += (vector));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_sub_assign_QVector4D(QVector4D * _self_, QVector4D vector) {
-  return (*_self_) -= (vector);
+  return ((*_self_) -= (vector));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_mul_assign_float(QVector4D * _self_, float factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_mul_assign_QVector4D(QVector4D * _self_, QVector4D vector) {
-  return (*_self_) *= (vector);
+  return ((*_self_) *= (vector));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_div_assign_float(QVector4D * _self_, float divisor) {
-  return (*_self_) /= (divisor);
+  return ((*_self_) /= (divisor));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_div_assign_QVector4D(QVector4D * _self_, QVector4D vector) {
-  return (*_self_) /= (vector);
+  return ((*_self_) /= (vector));
 }
 
 extern "C" float bg_QVector4D_dotProduct_STATIC_QVector4D_QVector4D(QVector4D v1, QVector4D v2) {
@@ -28645,7 +28724,7 @@ extern "C" QVector4D bg_QVector4D__COPY_const_QVector4D_R(const QVector4D unname
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_mul_const_QMatrix4x4_R(QVector4D * _self_, const QMatrix4x4 & matrix) {
-  return (*_self_) * (matrix);
+  return ((*_self_) * (matrix));
 }
 
 struct BgJumptable_QScreen {
@@ -28958,16 +29037,16 @@ extern "C" const QMetaObject * bg_QScreen_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QScreen::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_geometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::geometryChanged, [_proc_](const QRect & geometry){ _proc_(geometry); }));
+extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_geometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::geometryChanged, [_proc_](const QRect & geometry){ _proc_(bindgen_address(geometry)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_availableGeometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::availableGeometryChanged, [_proc_](const QRect & geometry){ _proc_(geometry); }));
+extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_availableGeometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::availableGeometryChanged, [_proc_](const QRect & geometry){ _proc_(bindgen_address(geometry)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_physicalSizeChanged_CrystalProc_void__const_QSizeF_R_(QScreen * _self_, CrystalProc<void, const QSizeF> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QSizeF &))&QScreen::physicalSizeChanged, [_proc_](const QSizeF & size){ _proc_(size); }));
+extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_physicalSizeChanged_CrystalProc_void__const_QSizeF_R_(QScreen * _self_, CrystalProc<void, const QSizeF *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QSizeF &))&QScreen::physicalSizeChanged, [_proc_](const QSizeF & size){ _proc_(bindgen_address(size)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_physicalDotsPerInchChanged_CrystalProc_void__qreal_(QScreen * _self_, CrystalProc<void, qreal> _proc_) {
@@ -28978,8 +29057,8 @@ extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_logicalDotsPerInchChange
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(qreal))&QScreen::logicalDotsPerInchChanged, [_proc_](qreal dpi){ _proc_(dpi); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_virtualGeometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::virtualGeometryChanged, [_proc_](const QRect & rect){ _proc_(rect); }));
+extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_virtualGeometryChanged_CrystalProc_void__const_QRect_R_(QScreen * _self_, CrystalProc<void, const QRect *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScreen::*)(const QRect &))&QScreen::virtualGeometryChanged, [_proc_](const QRect & rect){ _proc_(bindgen_address(rect)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QScreen_CONNECT_primaryOrientationChanged_CrystalProc_void__Qt__ScreenOrientation_(QScreen * _self_, CrystalProc<void, Qt::ScreenOrientation> _proc_) {
@@ -29334,12 +29413,12 @@ extern "C" CrystalString bg_QGuiApplication_desktopFileName_STATIC_() {
   return qstring_to_crystal(QGuiApplication::desktopFileName());
 }
 
-extern "C" QWindowList * bg_QGuiApplication_allWindows_STATIC_() {
-  return new (UseGC, bindgen_gc_finalizer<QWindowList>()) QWindowList (QGuiApplication::allWindows());
+extern "C" Container_QList_QWindow_X_ * bg_QGuiApplication_allWindows_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWindow_X_>()) Container_QList_QWindow_X_ (QGuiApplication::allWindows());
 }
 
-extern "C" QWindowList * bg_QGuiApplication_topLevelWindows_STATIC_() {
-  return new (UseGC, bindgen_gc_finalizer<QWindowList>()) QWindowList (QGuiApplication::topLevelWindows());
+extern "C" Container_QList_QWindow_X_ * bg_QGuiApplication_topLevelWindows_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWindow_X_>()) Container_QList_QWindow_X_ (QGuiApplication::topLevelWindows());
 }
 
 extern "C" QWindow * bg_QGuiApplication_topLevelAt_STATIC_const_QPoint_R(const QPoint pos) {
@@ -29833,7 +29912,7 @@ extern "C" const QInputDevice * bg_QInputDevice_primaryKeyboard_STATIC_const_QSt
 }
 
 extern "C" bool bg_QInputDevice__OPERATOR_eq_const_QInputDevice_R(QInputDevice * _self_, const QInputDevice & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" void bg_QInputDevice_availableVirtualGeometryChanged_QRect(QInputDevice * _self_, QRect area) {
@@ -29853,7 +29932,7 @@ extern "C" const QMetaObject * bg_QInputDevice_staticMetaObject_STATIC_GETTER_()
 }
 
 extern "C" QMetaObject::Connection * bg_QInputDevice_CONNECT_availableVirtualGeometryChanged_CrystalProc_void__QRect_(QInputDevice * _self_, CrystalProc<void, QRect *> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDevice::*)(QRect))&QInputDevice::availableVirtualGeometryChanged, [_proc_](QRect area){ _proc_(&area); }));
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDevice::*)(QRect))&QInputDevice::availableVirtualGeometryChanged, [_proc_](QRect area){ _proc_(bindgen_address(area)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QInputDevice_CONNECT_capabilitiesChanged_CrystalProc_void__QInputDevice__Capabilities_(QInputDevice * _self_, CrystalProc<void, QInputDevice::Capabilities> _proc_) {
@@ -29882,6 +29961,10 @@ extern "C" qint64 bg_QPointingDeviceUniqueId_numericId_(QPointingDeviceUniqueId 
 
 extern "C" QPointingDeviceUniqueId bg_QPointingDeviceUniqueId__COPY_const_QPointingDeviceUniqueId_R(const QPointingDeviceUniqueId unnamed_arg_0) {
   return *(bg_deref<QPointingDeviceUniqueId>(unnamed_arg_0));
+}
+
+extern "C" const QMetaObject * bg_QPointingDeviceUniqueId_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPointingDeviceUniqueId::staticMetaObject);
 }
 
 struct BgJumptable_QPointingDevice {
@@ -30059,7 +30142,7 @@ extern "C" const QPointingDevice * bg_QPointingDevice_primaryPointingDevice_STAT
 }
 
 extern "C" bool bg_QPointingDevice__OPERATOR_eq_const_QPointingDevice_R(QPointingDevice * _self_, const QPointingDevice & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" void bg_QPointingDevice_grabChanged_QObject_X_QPointingDevice__GrabTransition_const_QPointerEvent_X_const_QEventPoint_R(QPointingDevice * _self_, QObject * grabber, QPointingDevice::GrabTransition transition, const QPointerEvent * event, const QEventPoint & point) {
@@ -30095,15 +30178,15 @@ extern "C" QEventPoint * bg_QEventPoint__COPY_const_QEventPoint_R(const QEventPo
 }
 
 extern "C" QEventPoint * bg_QEventPoint__OPERATOR_assign_const_QEventPoint_R(QEventPoint * _self_, const QEventPoint & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" bool bg_QEventPoint__OPERATOR_eq_const_QEventPoint_R(QEventPoint * _self_, const QEventPoint & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QEventPoint__OPERATOR_ne_const_QEventPoint_R(QEventPoint * _self_, const QEventPoint & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" void bg_QEventPoint_swap_QEventPoint_R(QEventPoint * _self_, QEventPoint & other) {
@@ -30299,11 +30382,11 @@ extern "C" CrystalVariant bg_QKeySequence__CONVERT_QVariant_(QKeySequence * _sel
 }
 
 extern "C" QKeyCombination bg_QKeySequence__OPERATOR_at_uint(QKeySequence * _self_, uint i) {
-  return (*_self_)[i];
+  return ((*_self_)[i]);
 }
 
 extern "C" QKeySequence * bg_QKeySequence__OPERATOR_assign_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QKeySequence_swap_QKeySequence_R(QKeySequence * _self_, QKeySequence & other) {
@@ -30311,27 +30394,27 @@ extern "C" void bg_QKeySequence_swap_QKeySequence_R(QKeySequence * _self_, QKeyS
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_eq_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_ne_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_lt_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & ks) {
-  return (*_self_) < (ks);
+  return ((*_self_) < (ks));
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_gt_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return (*_self_) > (other);
+  return ((*_self_) > (other));
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_le_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return (*_self_) <= (other);
+  return ((*_self_) <= (other));
 }
 
 extern "C" bool bg_QKeySequence__OPERATOR_ge_const_QKeySequence_R(QKeySequence * _self_, const QKeySequence & other) {
-  return (*_self_) >= (other);
+  return ((*_self_) >= (other));
 }
 
 extern "C" bool bg_QKeySequence_isDetached_(QKeySequence * _self_) {
@@ -30384,7 +30467,7 @@ extern "C" QInputEvent * bg_QInputEvent__COPY_const_QInputEvent_R(const QInputEv
 }
 
 extern "C" QInputEvent * bg_QInputEvent__OPERATOR_assign_const_QInputEvent_R(QInputEvent * _self_, const QInputEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QInputEvent * bg_QInputEvent_clone_(QInputEvent * _self_) {
@@ -30535,7 +30618,7 @@ extern "C" QPointerEvent * bg_QPointerEvent__COPY_const_QPointerEvent_R(const QP
 }
 
 extern "C" QPointerEvent * bg_QPointerEvent__OPERATOR_assign_const_QPointerEvent_R(QPointerEvent * _self_, const QPointerEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QPointerEvent * bg_QPointerEvent_clone_(QPointerEvent * _self_) {
@@ -30738,7 +30821,7 @@ extern "C" QSinglePointEvent * bg_QSinglePointEvent__COPY_const_QSinglePointEven
 }
 
 extern "C" QSinglePointEvent * bg_QSinglePointEvent__OPERATOR_assign_const_QSinglePointEvent_R(QSinglePointEvent * _self_, const QSinglePointEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QSinglePointEvent * bg_QSinglePointEvent_clone_(QSinglePointEvent * _self_) {
@@ -30953,7 +31036,7 @@ extern "C" QEnterEvent * bg_QEnterEvent__COPY_const_QEnterEvent_R(const QEnterEv
 }
 
 extern "C" QEnterEvent * bg_QEnterEvent__OPERATOR_assign_const_QEnterEvent_R(QEnterEvent * _self_, const QEnterEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QEnterEvent * bg_QEnterEvent_clone_(QEnterEvent * _self_) {
@@ -31048,7 +31131,7 @@ extern "C" QMouseEvent * bg_QMouseEvent__COPY_const_QMouseEvent_R(const QMouseEv
 }
 
 extern "C" QMouseEvent * bg_QMouseEvent__OPERATOR_assign_const_QMouseEvent_R(QMouseEvent * _self_, const QMouseEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QMouseEvent * bg_QMouseEvent_clone_(QMouseEvent * _self_) {
@@ -31171,7 +31254,7 @@ extern "C" QHoverEvent * bg_QHoverEvent__COPY_const_QHoverEvent_R(const QHoverEv
 }
 
 extern "C" QHoverEvent * bg_QHoverEvent__OPERATOR_assign_const_QHoverEvent_R(QHoverEvent * _self_, const QHoverEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QHoverEvent * bg_QHoverEvent_clone_(QHoverEvent * _self_) {
@@ -31294,7 +31377,7 @@ extern "C" QWheelEvent * bg_QWheelEvent__COPY_const_QWheelEvent_R(const QWheelEv
 }
 
 extern "C" QWheelEvent * bg_QWheelEvent__OPERATOR_assign_const_QWheelEvent_R(QWheelEvent * _self_, const QWheelEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QWheelEvent * bg_QWheelEvent_clone_(QWheelEvent * _self_) {
@@ -31461,7 +31544,7 @@ extern "C" QTabletEvent * bg_QTabletEvent__COPY_const_QTabletEvent_R(const QTabl
 }
 
 extern "C" QTabletEvent * bg_QTabletEvent__OPERATOR_assign_const_QTabletEvent_R(QTabletEvent * _self_, const QTabletEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QTabletEvent * bg_QTabletEvent_clone_(QTabletEvent * _self_) {
@@ -31608,7 +31691,7 @@ extern "C" QNativeGestureEvent * bg_QNativeGestureEvent__COPY_const_QNativeGestu
 }
 
 extern "C" QNativeGestureEvent * bg_QNativeGestureEvent__OPERATOR_assign_const_QNativeGestureEvent_R(QNativeGestureEvent * _self_, const QNativeGestureEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QNativeGestureEvent * bg_QNativeGestureEvent_clone_(QNativeGestureEvent * _self_) {
@@ -31733,7 +31816,7 @@ extern "C" QKeyEvent * bg_QKeyEvent__COPY_const_QKeyEvent_R(const QKeyEvent & un
 }
 
 extern "C" QKeyEvent * bg_QKeyEvent__OPERATOR_assign_const_QKeyEvent_R(QKeyEvent * _self_, const QKeyEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QKeyEvent * bg_QKeyEvent_clone_(QKeyEvent * _self_) {
@@ -31912,7 +31995,7 @@ extern "C" QFocusEvent * bg_QFocusEvent__COPY_const_QFocusEvent_R(const QFocusEv
 }
 
 extern "C" QFocusEvent * bg_QFocusEvent__OPERATOR_assign_const_QFocusEvent_R(QFocusEvent * _self_, const QFocusEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QFocusEvent * bg_QFocusEvent_clone_(QFocusEvent * _self_) {
@@ -31975,7 +32058,7 @@ extern "C" QPaintEvent * bg_QPaintEvent__COPY_const_QPaintEvent_R(const QPaintEv
 }
 
 extern "C" QPaintEvent * bg_QPaintEvent__OPERATOR_assign_const_QPaintEvent_R(QPaintEvent * _self_, const QPaintEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QPaintEvent * bg_QPaintEvent_clone_(QPaintEvent * _self_) {
@@ -32062,7 +32145,7 @@ extern "C" QMoveEvent * bg_QMoveEvent__COPY_const_QMoveEvent_R(const QMoveEvent 
 }
 
 extern "C" QMoveEvent * bg_QMoveEvent__OPERATOR_assign_const_QMoveEvent_R(QMoveEvent * _self_, const QMoveEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QMoveEvent * bg_QMoveEvent_clone_(QMoveEvent * _self_) {
@@ -32137,7 +32220,7 @@ extern "C" QExposeEvent * bg_QExposeEvent__COPY_const_QExposeEvent_R(const QExpo
 }
 
 extern "C" QExposeEvent * bg_QExposeEvent__OPERATOR_assign_const_QExposeEvent_R(QExposeEvent * _self_, const QExposeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QExposeEvent * bg_QExposeEvent_clone_(QExposeEvent * _self_) {
@@ -32196,7 +32279,7 @@ extern "C" QPlatformSurfaceEvent * bg_QPlatformSurfaceEvent__COPY_const_QPlatfor
 }
 
 extern "C" QPlatformSurfaceEvent * bg_QPlatformSurfaceEvent__OPERATOR_assign_const_QPlatformSurfaceEvent_R(QPlatformSurfaceEvent * _self_, const QPlatformSurfaceEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QPlatformSurfaceEvent * bg_QPlatformSurfaceEvent_clone_(QPlatformSurfaceEvent * _self_) {
@@ -32259,7 +32342,7 @@ extern "C" QResizeEvent * bg_QResizeEvent__COPY_const_QResizeEvent_R(const QResi
 }
 
 extern "C" QResizeEvent * bg_QResizeEvent__OPERATOR_assign_const_QResizeEvent_R(QResizeEvent * _self_, const QResizeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QResizeEvent * bg_QResizeEvent_clone_(QResizeEvent * _self_) {
@@ -32334,7 +32417,7 @@ extern "C" QCloseEvent * bg_QCloseEvent__COPY_const_QCloseEvent_R(const QCloseEv
 }
 
 extern "C" QCloseEvent * bg_QCloseEvent__OPERATOR_assign_const_QCloseEvent_R(QCloseEvent * _self_, const QCloseEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QCloseEvent * bg_QCloseEvent_clone_(QCloseEvent * _self_) {
@@ -32385,7 +32468,7 @@ extern "C" QIconDragEvent * bg_QIconDragEvent__COPY_const_QIconDragEvent_R(const
 }
 
 extern "C" QIconDragEvent * bg_QIconDragEvent__OPERATOR_assign_const_QIconDragEvent_R(QIconDragEvent * _self_, const QIconDragEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QIconDragEvent * bg_QIconDragEvent_clone_(QIconDragEvent * _self_) {
@@ -32436,7 +32519,7 @@ extern "C" QShowEvent * bg_QShowEvent__COPY_const_QShowEvent_R(const QShowEvent 
 }
 
 extern "C" QShowEvent * bg_QShowEvent__OPERATOR_assign_const_QShowEvent_R(QShowEvent * _self_, const QShowEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QShowEvent * bg_QShowEvent_clone_(QShowEvent * _self_) {
@@ -32487,7 +32570,7 @@ extern "C" QHideEvent * bg_QHideEvent__COPY_const_QHideEvent_R(const QHideEvent 
 }
 
 extern "C" QHideEvent * bg_QHideEvent__OPERATOR_assign_const_QHideEvent_R(QHideEvent * _self_, const QHideEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QHideEvent * bg_QHideEvent_clone_(QHideEvent * _self_) {
@@ -32548,7 +32631,7 @@ extern "C" QContextMenuEvent * bg_QContextMenuEvent__COPY_const_QContextMenuEven
 }
 
 extern "C" QContextMenuEvent * bg_QContextMenuEvent__OPERATOR_assign_const_QContextMenuEvent_R(QContextMenuEvent * _self_, const QContextMenuEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QContextMenuEvent * bg_QContextMenuEvent_clone_(QContextMenuEvent * _self_) {
@@ -32655,7 +32738,7 @@ extern "C" QInputMethodEvent * bg_QInputMethodEvent__COPY_const_QInputMethodEven
 }
 
 extern "C" QInputMethodEvent * bg_QInputMethodEvent__OPERATOR_assign_const_QInputMethodEvent_R(QInputMethodEvent * _self_, const QInputMethodEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QInputMethodEvent * bg_QInputMethodEvent_clone_(QInputMethodEvent * _self_) {
@@ -32726,7 +32809,7 @@ extern "C" QInputMethodQueryEvent * bg_QInputMethodQueryEvent__COPY_const_QInput
 }
 
 extern "C" QInputMethodQueryEvent * bg_QInputMethodQueryEvent__OPERATOR_assign_const_QInputMethodQueryEvent_R(QInputMethodQueryEvent * _self_, const QInputMethodQueryEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QInputMethodQueryEvent * bg_QInputMethodQueryEvent_clone_(QInputMethodQueryEvent * _self_) {
@@ -32789,7 +32872,7 @@ extern "C" QDropEvent * bg_QDropEvent__COPY_const_QDropEvent_R(const QDropEvent 
 }
 
 extern "C" QDropEvent * bg_QDropEvent__OPERATOR_assign_const_QDropEvent_R(QDropEvent * _self_, const QDropEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QDropEvent * bg_QDropEvent_clone_(QDropEvent * _self_) {
@@ -32932,7 +33015,7 @@ extern "C" QDragMoveEvent * bg_QDragMoveEvent__COPY_const_QDragMoveEvent_R(const
 }
 
 extern "C" QDragMoveEvent * bg_QDragMoveEvent__OPERATOR_assign_const_QDragMoveEvent_R(QDragMoveEvent * _self_, const QDragMoveEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QDragMoveEvent * bg_QDragMoveEvent_clone_(QDragMoveEvent * _self_) {
@@ -33011,7 +33094,7 @@ extern "C" QDragEnterEvent * bg_QDragEnterEvent__COPY_const_QDragEnterEvent_R(co
 }
 
 extern "C" QDragEnterEvent * bg_QDragEnterEvent__OPERATOR_assign_const_QDragEnterEvent_R(QDragEnterEvent * _self_, const QDragEnterEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QDragEnterEvent * bg_QDragEnterEvent_clone_(QDragEnterEvent * _self_) {
@@ -33062,7 +33145,7 @@ extern "C" QDragLeaveEvent * bg_QDragLeaveEvent__COPY_const_QDragLeaveEvent_R(co
 }
 
 extern "C" QDragLeaveEvent * bg_QDragLeaveEvent__OPERATOR_assign_const_QDragLeaveEvent_R(QDragLeaveEvent * _self_, const QDragLeaveEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QDragLeaveEvent * bg_QDragLeaveEvent_clone_(QDragLeaveEvent * _self_) {
@@ -33113,7 +33196,7 @@ extern "C" QHelpEvent * bg_QHelpEvent__COPY_const_QHelpEvent_R(const QHelpEvent 
 }
 
 extern "C" QHelpEvent * bg_QHelpEvent__OPERATOR_assign_const_QHelpEvent_R(QHelpEvent * _self_, const QHelpEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QHelpEvent * bg_QHelpEvent_clone_(QHelpEvent * _self_) {
@@ -33188,7 +33271,7 @@ extern "C" QStatusTipEvent * bg_QStatusTipEvent__COPY_const_QStatusTipEvent_R(co
 }
 
 extern "C" QStatusTipEvent * bg_QStatusTipEvent__OPERATOR_assign_const_QStatusTipEvent_R(QStatusTipEvent * _self_, const QStatusTipEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QStatusTipEvent * bg_QStatusTipEvent_clone_(QStatusTipEvent * _self_) {
@@ -33243,7 +33326,7 @@ extern "C" QWhatsThisClickedEvent * bg_QWhatsThisClickedEvent__COPY_const_QWhats
 }
 
 extern "C" QWhatsThisClickedEvent * bg_QWhatsThisClickedEvent__OPERATOR_assign_const_QWhatsThisClickedEvent_R(QWhatsThisClickedEvent * _self_, const QWhatsThisClickedEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QWhatsThisClickedEvent * bg_QWhatsThisClickedEvent_clone_(QWhatsThisClickedEvent * _self_) {
@@ -33298,7 +33381,7 @@ extern "C" QActionEvent * bg_QActionEvent__COPY_const_QActionEvent_R(const QActi
 }
 
 extern "C" QActionEvent * bg_QActionEvent__OPERATOR_assign_const_QActionEvent_R(QActionEvent * _self_, const QActionEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QActionEvent * bg_QActionEvent_clone_(QActionEvent * _self_) {
@@ -33357,7 +33440,7 @@ extern "C" QFileOpenEvent * bg_QFileOpenEvent__COPY_const_QFileOpenEvent_R(const
 }
 
 extern "C" QFileOpenEvent * bg_QFileOpenEvent__OPERATOR_assign_const_QFileOpenEvent_R(QFileOpenEvent * _self_, const QFileOpenEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QFileOpenEvent * bg_QFileOpenEvent_clone_(QFileOpenEvent * _self_) {
@@ -33420,7 +33503,7 @@ extern "C" QToolBarChangeEvent * bg_QToolBarChangeEvent__COPY_const_QToolBarChan
 }
 
 extern "C" QToolBarChangeEvent * bg_QToolBarChangeEvent__OPERATOR_assign_const_QToolBarChangeEvent_R(QToolBarChangeEvent * _self_, const QToolBarChangeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QToolBarChangeEvent * bg_QToolBarChangeEvent_clone_(QToolBarChangeEvent * _self_) {
@@ -33475,7 +33558,7 @@ extern "C" QShortcutEvent * bg_QShortcutEvent__COPY_const_QShortcutEvent_R(const
 }
 
 extern "C" QShortcutEvent * bg_QShortcutEvent__OPERATOR_assign_const_QShortcutEvent_R(QShortcutEvent * _self_, const QShortcutEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QShortcutEvent * bg_QShortcutEvent_clone_(QShortcutEvent * _self_) {
@@ -33566,7 +33649,7 @@ extern "C" QWindowStateChangeEvent * bg_QWindowStateChangeEvent__COPY_const_QWin
 }
 
 extern "C" QWindowStateChangeEvent * bg_QWindowStateChangeEvent__OPERATOR_assign_const_QWindowStateChangeEvent_R(QWindowStateChangeEvent * _self_, const QWindowStateChangeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QWindowStateChangeEvent * bg_QWindowStateChangeEvent_clone_(QWindowStateChangeEvent * _self_) {
@@ -33665,7 +33748,7 @@ extern "C" QTouchEvent * bg_QTouchEvent__COPY_const_QTouchEvent_R(const QTouchEv
 }
 
 extern "C" QTouchEvent * bg_QTouchEvent__OPERATOR_assign_const_QTouchEvent_R(QTouchEvent * _self_, const QTouchEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QTouchEvent * bg_QTouchEvent_clone_(QTouchEvent * _self_) {
@@ -33780,7 +33863,7 @@ extern "C" QScrollPrepareEvent * bg_QScrollPrepareEvent__COPY_const_QScrollPrepa
 }
 
 extern "C" QScrollPrepareEvent * bg_QScrollPrepareEvent__OPERATOR_assign_const_QScrollPrepareEvent_R(QScrollPrepareEvent * _self_, const QScrollPrepareEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QScrollPrepareEvent * bg_QScrollPrepareEvent_clone_(QScrollPrepareEvent * _self_) {
@@ -33859,7 +33942,7 @@ extern "C" QScrollEvent * bg_QScrollEvent__COPY_const_QScrollEvent_R(const QScro
 }
 
 extern "C" QScrollEvent * bg_QScrollEvent__OPERATOR_assign_const_QScrollEvent_R(QScrollEvent * _self_, const QScrollEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QScrollEvent * bg_QScrollEvent_clone_(QScrollEvent * _self_) {
@@ -33922,7 +34005,7 @@ extern "C" QScreenOrientationChangeEvent * bg_QScreenOrientationChangeEvent__COP
 }
 
 extern "C" QScreenOrientationChangeEvent * bg_QScreenOrientationChangeEvent__OPERATOR_assign_const_QScreenOrientationChangeEvent_R(QScreenOrientationChangeEvent * _self_, const QScreenOrientationChangeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QScreenOrientationChangeEvent * bg_QScreenOrientationChangeEvent_clone_(QScreenOrientationChangeEvent * _self_) {
@@ -33981,7 +34064,7 @@ extern "C" QApplicationStateChangeEvent * bg_QApplicationStateChangeEvent__COPY_
 }
 
 extern "C" QApplicationStateChangeEvent * bg_QApplicationStateChangeEvent__OPERATOR_assign_const_QApplicationStateChangeEvent_R(QApplicationStateChangeEvent * _self_, const QApplicationStateChangeEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QApplicationStateChangeEvent * bg_QApplicationStateChangeEvent_clone_(QApplicationStateChangeEvent * _self_) {
@@ -34036,7 +34119,7 @@ extern "C" QChildWindowEvent * bg_QChildWindowEvent__COPY_const_QChildWindowEven
 }
 
 extern "C" QChildWindowEvent * bg_QChildWindowEvent__OPERATOR_assign_const_QChildWindowEvent_R(QChildWindowEvent * _self_, const QChildWindowEvent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QChildWindowEvent * bg_QChildWindowEvent_clone_(QChildWindowEvent * _self_) {
@@ -34276,19 +34359,19 @@ extern "C" bool bg_QFont_exactMatch_(QFont * _self_) {
 }
 
 extern "C" QFont * bg_QFont__OPERATOR_assign_const_QFont_R(QFont * _self_, const QFont & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QFont__OPERATOR_eq_const_QFont_R(QFont * _self_, const QFont & unnamed_arg_0) {
-  return (*_self_) == (unnamed_arg_0);
+  return ((*_self_) == (unnamed_arg_0));
 }
 
 extern "C" bool bg_QFont__OPERATOR_ne_const_QFont_R(QFont * _self_, const QFont & unnamed_arg_0) {
-  return (*_self_) != (unnamed_arg_0);
+  return ((*_self_) != (unnamed_arg_0));
 }
 
 extern "C" bool bg_QFont__OPERATOR_lt_const_QFont_R(QFont * _self_, const QFont & unnamed_arg_0) {
-  return (*_self_) < (unnamed_arg_0);
+  return ((*_self_) < (unnamed_arg_0));
 }
 
 extern "C" CrystalVariant bg_QFont__CONVERT_QVariant_(QFont * _self_) {
@@ -34552,7 +34635,7 @@ extern "C" QRawFont * bg_QRawFont__COPY_const_QRawFont_R(const QRawFont & other)
 }
 
 extern "C" QRawFont * bg_QRawFont__OPERATOR_assign_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QRawFont_swap_QRawFont_R(QRawFont * _self_, QRawFont & other) {
@@ -34564,11 +34647,11 @@ extern "C" bool bg_QRawFont_isValid_(QRawFont * _self_) {
 }
 
 extern "C" bool bg_QRawFont__OPERATOR_eq_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QRawFont__OPERATOR_ne_const_QRawFont_R(QRawFont * _self_, const QRawFont & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" quint32 bg_QRawFont_glyphCount_(QRawFont * _self_) {
@@ -34712,7 +34795,7 @@ extern "C" QGlyphRun * bg_QGlyphRun__COPY_const_QGlyphRun_R(const QGlyphRun & ot
 }
 
 extern "C" QGlyphRun * bg_QGlyphRun__OPERATOR_assign_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QGlyphRun_swap_QGlyphRun_R(QGlyphRun * _self_, QGlyphRun & other) {
@@ -34748,11 +34831,11 @@ extern "C" void bg_QGlyphRun_clear_(QGlyphRun * _self_) {
 }
 
 extern "C" bool bg_QGlyphRun__OPERATOR_eq_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QGlyphRun__OPERATOR_ne_const_QGlyphRun_R(QGlyphRun * _self_, const QGlyphRun & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" void bg_QGlyphRun_setOverline_bool(QGlyphRun * _self_, bool overline) {
@@ -34833,7 +34916,7 @@ struct BgJumptable_QTextDocument {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextDocument_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void> bg_QTextDocument_clear_;
   CrystalProc<QTextObject *, const QTextFormat *> bg_QTextDocument_createObject_const_QTextFormat_R;
-  CrystalProc<CrystalVariant, int, const QUrl *> bg_QTextDocument_loadResource_int_const_QUrl_R;
+  CrystalProc<CrystalVariant *, int, const QUrl *> bg_QTextDocument_loadResource_int_const_QUrl_R;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -34893,7 +34976,7 @@ struct BgInherit_QTextDocument : public QTextDocument {
   QVariant loadResource(int type, const QUrl & name) override {
     BgInherit_QTextDocument *_self_ = this;
     if (_self_->bgJump.bg_QTextDocument_loadResource_int_const_QUrl_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTextDocument_loadResource_int_const_QUrl_R(type, &(name)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTextDocument_loadResource_int_const_QUrl_R(type, &(name)));
     } else {
       return QTextDocument::loadResource(type, name);
     }
@@ -35524,7 +35607,7 @@ extern "C" QBrush * bg_QBrush__CONSTRUCT_const_QGradient_R(const QGradient & gra
 }
 
 extern "C" QBrush * bg_QBrush__OPERATOR_assign_const_QBrush_R(QBrush * _self_, const QBrush & brush) {
-  return &((*_self_) = (brush));
+  return &(((*_self_) = (brush)));
 }
 
 extern "C" void bg_QBrush_swap_QBrush_R(QBrush * _self_, QBrush & other) {
@@ -35532,15 +35615,15 @@ extern "C" void bg_QBrush_swap_QBrush_R(QBrush * _self_, QBrush & other) {
 }
 
 extern "C" QBrush * bg_QBrush__OPERATOR_assign_Qt__BrushStyle(QBrush * _self_, Qt::BrushStyle style) {
-  return &((*_self_) = (style));
+  return &(((*_self_) = (style)));
 }
 
 extern "C" QBrush * bg_QBrush__OPERATOR_assign_QColor(QBrush * _self_, QColor & color) {
-  return &((*_self_) = (color));
+  return &(((*_self_) = (color)));
 }
 
 extern "C" QBrush * bg_QBrush__OPERATOR_assign_Qt__GlobalColor(QBrush * _self_, Qt::GlobalColor color) {
-  return &((*_self_) = (color));
+  return &(((*_self_) = (color)));
 }
 
 extern "C" CrystalVariant bg_QBrush__CONVERT_QVariant_(QBrush * _self_) {
@@ -35600,11 +35683,11 @@ extern "C" bool bg_QBrush_isOpaque_(QBrush * _self_) {
 }
 
 extern "C" bool bg_QBrush__OPERATOR_eq_const_QBrush_R(QBrush * _self_, const QBrush & b) {
-  return (*_self_) == (b);
+  return ((*_self_) == (b));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_ne_const_QBrush_R(QBrush * _self_, const QBrush & b) {
-  return (*_self_) != (b);
+  return ((*_self_) != (b));
 }
 
 extern "C" bool bg_QBrush_isDetached_(QBrush * _self_) {
@@ -35612,27 +35695,27 @@ extern "C" bool bg_QBrush_isDetached_(QBrush * _self_) {
 }
 
 extern "C" bool bg_QBrush__OPERATOR_eq_const_QColor_R(QBrush * _self_, const QColor & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_ne_const_QColor_R(QBrush * _self_, const QColor & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_eq_const_Qt__GlobalColor_R(QBrush * _self_, const Qt::GlobalColor & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_ne_const_Qt__GlobalColor_R(QBrush * _self_, const Qt::GlobalColor & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_eq_const_Qt__BrushStyle_R(QBrush * _self_, const Qt::BrushStyle & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QBrush__OPERATOR_ne_const_Qt__BrushStyle_R(QBrush * _self_, const Qt::BrushStyle & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QGradient * bg_QGradient__CONSTRUCT_() {
@@ -35659,6 +35742,14 @@ extern "C" void bg_QGradient_setColorAt_qreal_const_QColor_R(QGradient * _self_,
   _self_->setColorAt(pos, color);
 }
 
+extern "C" void bg_QGradient_setStops_const_QGradientStops_R(QGradient * _self_, const Container_QList_std__pair_double__QColor___ * stops) {
+  _self_->setStops(*(stops));
+}
+
+extern "C" Container_QList_std__pair_double__QColor___ * bg_QGradient_stops_(QGradient * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_double__QColor___>()) Container_QList_std__pair_double__QColor___ (_self_->stops());
+}
+
 extern "C" QGradient::CoordinateMode bg_QGradient_coordinateMode_(QGradient * _self_) {
   return _self_->coordinateMode();
 }
@@ -35676,11 +35767,11 @@ extern "C" void bg_QGradient_setInterpolationMode_QGradient__InterpolationMode(Q
 }
 
 extern "C" bool bg_QGradient__OPERATOR_eq_const_QGradient_R(QGradient * _self_, const QGradient & gradient) {
-  return (*_self_) == (gradient);
+  return ((*_self_) == (gradient));
 }
 
 extern "C" bool bg_QGradient__OPERATOR_ne_const_QGradient_R(QGradient * _self_, const QGradient & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" QGradient * bg_QGradient__COPY_const_QGradient_R(const QGradient & unnamed_arg_0) {
@@ -35868,7 +35959,7 @@ extern "C" QPen * bg_QPen__COPY_const_QPen_R(const QPen & pen) {
 }
 
 extern "C" QPen * bg_QPen__OPERATOR_assign_const_QPen_R(QPen * _self_, const QPen & pen) {
-  return &((*_self_) = (pen));
+  return &(((*_self_) = (pen)));
 }
 
 extern "C" void bg_QPen_swap_QPen_R(QPen * _self_, QPen & other) {
@@ -35876,11 +35967,11 @@ extern "C" void bg_QPen_swap_QPen_R(QPen * _self_, QPen & other) {
 }
 
 extern "C" QPen * bg_QPen__OPERATOR_assign_QColor(QPen * _self_, QColor & color) {
-  return &((*_self_) = (color));
+  return &(((*_self_) = (color)));
 }
 
 extern "C" QPen * bg_QPen__OPERATOR_assign_Qt__PenStyle(QPen * _self_, Qt::PenStyle style) {
-  return &((*_self_) = (style));
+  return &(((*_self_) = (style)));
 }
 
 extern "C" Qt::PenStyle bg_QPen_style_(QPen * _self_) {
@@ -35976,11 +36067,11 @@ extern "C" void bg_QPen_setCosmetic_bool(QPen * _self_, bool cosmetic) {
 }
 
 extern "C" bool bg_QPen__OPERATOR_eq_const_QPen_R(QPen * _self_, const QPen & p) {
-  return (*_self_) == (p);
+  return ((*_self_) == (p));
 }
 
 extern "C" bool bg_QPen__OPERATOR_ne_const_QPen_R(QPen * _self_, const QPen & p) {
-  return (*_self_) != (p);
+  return ((*_self_) != (p));
 }
 
 extern "C" CrystalVariant bg_QPen__CONVERT_QVariant_(QPen * _self_) {
@@ -35992,19 +36083,19 @@ extern "C" bool bg_QPen_isDetached_(QPen * _self_) {
 }
 
 extern "C" bool bg_QPen__OPERATOR_eq_const_QColor_R(QPen * _self_, const QColor & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPen__OPERATOR_ne_const_QColor_R(QPen * _self_, const QColor & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QPen__OPERATOR_eq_const_Qt__PenStyle_R(QPen * _self_, const Qt::PenStyle & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPen__OPERATOR_ne_const_Qt__PenStyle_R(QPen * _self_, const Qt::PenStyle & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QTextOption * bg_QTextOption__CONSTRUCT_() {
@@ -36020,7 +36111,7 @@ extern "C" QTextOption * bg_QTextOption__COPY_const_QTextOption_R(const QTextOpt
 }
 
 extern "C" QTextOption * bg_QTextOption__OPERATOR_assign_const_QTextOption_R(QTextOption * _self_, const QTextOption & o) {
-  return &((*_self_) = (o));
+  return &(((*_self_) = (o)));
 }
 
 extern "C" void bg_QTextOption_setAlignment_Qt__Alignment(QTextOption * _self_, Qt::Alignment alignment) {
@@ -36100,11 +36191,11 @@ extern "C" qreal bg_QTextLength_rawValue_(QTextLength * _self_) {
 }
 
 extern "C" bool bg_QTextLength__OPERATOR_eq_const_QTextLength_R(QTextLength * _self_, const QTextLength & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QTextLength__OPERATOR_ne_const_QTextLength_R(QTextLength * _self_, const QTextLength & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" CrystalVariant bg_QTextLength__CONVERT_QVariant_(QTextLength * _self_) {
@@ -36116,7 +36207,7 @@ extern "C" QTextLength * bg_QTextLength__COPY_const_QTextLength_R(const QTextLen
 }
 
 extern "C" QTextLength * bg_QTextLength__OPERATOR_assign_const_QTextLength_R(QTextLength * _self_, const QTextLength & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextFormat * bg_QTextFormat__CONSTRUCT_() {
@@ -36132,7 +36223,7 @@ extern "C" QTextFormat * bg_QTextFormat__COPY_const_QTextFormat_R(const QTextFor
 }
 
 extern "C" QTextFormat * bg_QTextFormat__OPERATOR_assign_const_QTextFormat_R(QTextFormat * _self_, const QTextFormat & rhs) {
-  return &((*_self_) = (rhs));
+  return &(((*_self_) = (rhs)));
 }
 
 extern "C" void bg_QTextFormat_swap_QTextFormat_R(QTextFormat * _self_, QTextFormat & other) {
@@ -36288,11 +36379,11 @@ extern "C" QTextTableCellFormat * bg_QTextFormat_toTableCellFormat_(QTextFormat 
 }
 
 extern "C" bool bg_QTextFormat__OPERATOR_eq_const_QTextFormat_R(QTextFormat * _self_, const QTextFormat & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QTextFormat__OPERATOR_ne_const_QTextFormat_R(QTextFormat * _self_, const QTextFormat & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" CrystalVariant bg_QTextFormat__CONVERT_QVariant_(QTextFormat * _self_) {
@@ -36608,7 +36699,7 @@ extern "C" QTextCharFormat * bg_QTextCharFormat__COPY_const_QTextCharFormat_R(co
 }
 
 extern "C" QTextCharFormat * bg_QTextCharFormat__OPERATOR_assign_const_QTextCharFormat_R(QTextCharFormat * _self_, const QTextCharFormat & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextBlockFormat * bg_QTextBlockFormat__CONSTRUCT_() {
@@ -36732,7 +36823,7 @@ extern "C" QTextBlockFormat * bg_QTextBlockFormat__COPY_const_QTextBlockFormat_R
 }
 
 extern "C" QTextBlockFormat * bg_QTextBlockFormat__OPERATOR_assign_const_QTextBlockFormat_R(QTextBlockFormat * _self_, const QTextBlockFormat & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextListFormat * bg_QTextListFormat__CONSTRUCT_() {
@@ -36792,7 +36883,7 @@ extern "C" QTextListFormat * bg_QTextListFormat__COPY_const_QTextListFormat_R(co
 }
 
 extern "C" QTextListFormat * bg_QTextListFormat__OPERATOR_assign_const_QTextListFormat_R(QTextListFormat * _self_, const QTextListFormat & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextImageFormat * bg_QTextImageFormat__CONSTRUCT_() {
@@ -36980,7 +37071,7 @@ extern "C" QTextFrameFormat * bg_QTextFrameFormat__COPY_const_QTextFrameFormat_R
 }
 
 extern "C" QTextFrameFormat * bg_QTextFrameFormat__OPERATOR_assign_const_QTextFrameFormat_R(QTextFrameFormat * _self_, const QTextFrameFormat & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextTableFormat * bg_QTextTableFormat__CONSTRUCT_() {
@@ -37244,7 +37335,7 @@ extern "C" QTextCursor * bg_QTextCursor__COPY_const_QTextCursor_R(const QTextCur
 }
 
 extern "C" QTextCursor * bg_QTextCursor__OPERATOR_assign_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QTextCursor_swap_QTextCursor_R(QTextCursor * _self_, QTextCursor & other) {
@@ -37512,27 +37603,27 @@ extern "C" void bg_QTextCursor_endEditBlock_(QTextCursor * _self_) {
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_ne_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_lt_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) < (rhs);
+  return ((*_self_) < (rhs));
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_le_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) <= (rhs);
+  return ((*_self_) <= (rhs));
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_eq_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_ge_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) >= (rhs);
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" bool bg_QTextCursor__OPERATOR_gt_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & rhs) {
-  return (*_self_) > (rhs);
+  return ((*_self_) > (rhs));
 }
 
 extern "C" bool bg_QTextCursor_isCopyOf_const_QTextCursor_R(QTextCursor * _self_, const QTextCursor & other) {
@@ -37804,15 +37895,15 @@ extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__COPY_const_QT
 }
 
 extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__OPERATOR_assign_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" bool bg_QTextLayout__FormatRange__OPERATOR_eq_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QTextLayout__FormatRange__OPERATOR_ne_const_QTextLayout__FormatRange_R(QTextLayout::FormatRange * _self_, const QTextLayout::FormatRange & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QTextLayout::FormatRange * bg_QTextLayout__FormatRange__AGGREGATE_int_int_QTextCharFormat(int start, int length, QTextCharFormat & format) {
@@ -37992,7 +38083,7 @@ extern "C" QPalette * bg_QPalette__COPY_const_QPalette_R(const QPalette & palett
 }
 
 extern "C" QPalette * bg_QPalette__OPERATOR_assign_const_QPalette_R(QPalette * _self_, const QPalette & palette) {
-  return &((*_self_) = (palette));
+  return &(((*_self_) = (palette)));
 }
 
 extern "C" void bg_QPalette_swap_QPalette_R(QPalette * _self_, QPalette & other) {
@@ -38140,11 +38231,11 @@ extern "C" const QBrush * bg_QPalette_accent_(QPalette * _self_) {
 }
 
 extern "C" bool bg_QPalette__OPERATOR_eq_const_QPalette_R(QPalette * _self_, const QPalette & p) {
-  return (*_self_) == (p);
+  return ((*_self_) == (p));
 }
 
 extern "C" bool bg_QPalette__OPERATOR_ne_const_QPalette_R(QPalette * _self_, const QPalette & p) {
-  return (*_self_) != (p);
+  return ((*_self_) != (p));
 }
 
 extern "C" bool bg_QPalette_isCopyOf_const_QPalette_R(QPalette * _self_, const QPalette & p) {
@@ -38176,7 +38267,7 @@ struct BgJumptable_QAbstractTextDocumentLayout {
   CrystalProc<void *, const char *> bg_QAbstractTextDocumentLayout_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QPainter *, const QAbstractTextDocumentLayout::PaintContext *> bg_QAbstractTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R;
-  CrystalProc<int, const QPointF, Qt::HitTestAccuracy> bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
+  CrystalProc<int, const QPointF *, Qt::HitTestAccuracy> bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
   CrystalProc<int> bg_QAbstractTextDocumentLayout_pageCount_;
   CrystalProc<QSizeF *> bg_QAbstractTextDocumentLayout_documentSize_;
   CrystalProc<QRectF *, QTextFrame *> bg_QAbstractTextDocumentLayout_frameBoundingRect_QTextFrame_X;
@@ -38184,7 +38275,7 @@ struct BgJumptable_QAbstractTextDocumentLayout {
   CrystalProc<void, int, int, int> bg_QAbstractTextDocumentLayout_documentChanged_int_int_int;
   CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R;
   CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R;
-  CrystalProc<void, QPainter *, const QRectF, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R;
+  CrystalProc<void, QPainter *, const QRectF *, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -38235,7 +38326,7 @@ struct BgInherit_QAbstractTextDocumentLayout : public QAbstractTextDocumentLayou
   int hitTest(const QPointF & point, Qt::HitTestAccuracy accuracy) const override {
     const BgInherit_QAbstractTextDocumentLayout *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy.isValid())) {
-      return _self_->bgJump.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(point, accuracy);
+      return _self_->bgJump.bg_QAbstractTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(bindgen_address(point), accuracy);
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractTextDocumentLayout::hitTest");
     }
@@ -38307,7 +38398,7 @@ struct BgInherit_QAbstractTextDocumentLayout : public QAbstractTextDocumentLayou
   void drawInlineObject(QPainter * painter, const QRectF & rect, QTextInlineObject object, int posInDocument, const QTextFormat & format) override {
     BgInherit_QAbstractTextDocumentLayout *_self_ = this;
     if (_self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R.isValid()) {
-      _self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(painter, rect, new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (object), posInDocument, &(format));
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(painter, bindgen_address(rect), new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (object), posInDocument, &(format));
     } else {
       QAbstractTextDocumentLayout::drawInlineObject(painter, rect, object, posInDocument, format);
     }
@@ -38525,16 +38616,16 @@ extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_upda
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)())&QAbstractTextDocumentLayout::update, [_proc_](){ _proc_(); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_update_CrystalProc_void__const_QRectF_R_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, const QRectF> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(const QRectF &))&QAbstractTextDocumentLayout::update, [_proc_](const QRectF & unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_update_CrystalProc_void__const_QRectF_R_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, const QRectF *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(const QRectF &))&QAbstractTextDocumentLayout::update, [_proc_](const QRectF & unnamed_arg_0){ _proc_(bindgen_address(unnamed_arg_0)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_updateBlock_CrystalProc_void__const_QTextBlock_R_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, const QTextBlock *> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(const QTextBlock &))&QAbstractTextDocumentLayout::updateBlock, [_proc_](const QTextBlock & block){ _proc_(&(block)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_documentSizeChanged_CrystalProc_void__const_QSizeF_R_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, const QSizeF> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(const QSizeF &))&QAbstractTextDocumentLayout::documentSizeChanged, [_proc_](const QSizeF & newSize){ _proc_(newSize); }));
+extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_documentSizeChanged_CrystalProc_void__const_QSizeF_R_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, const QSizeF *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractTextDocumentLayout::*)(const QSizeF &))&QAbstractTextDocumentLayout::documentSizeChanged, [_proc_](const QSizeF & newSize){ _proc_(bindgen_address(newSize)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QAbstractTextDocumentLayout_CONNECT_pageCountChanged_CrystalProc_void__int_(QAbstractTextDocumentLayout * _self_, CrystalProc<void, int> _proc_) {
@@ -38562,7 +38653,7 @@ extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayo
 }
 
 extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__OPERATOR_assign_const_QAbstractTextDocumentLayout__Selection_R(QAbstractTextDocumentLayout::Selection * _self_, const QAbstractTextDocumentLayout::Selection & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QAbstractTextDocumentLayout::Selection * bg_QAbstractTextDocumentLayout__Selection__CONSTRUCT_() {
@@ -38598,7 +38689,7 @@ extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QAbstractTextDocumentL
 }
 
 extern "C" QAbstractTextDocumentLayout::PaintContext * bg_QAbstractTextDocumentLayout__PaintContext__OPERATOR_assign_const_QAbstractTextDocumentLayout__PaintContext_R(QAbstractTextDocumentLayout::PaintContext * _self_, const QAbstractTextDocumentLayout::PaintContext & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" int bg_QAbstractTextDocumentLayout__PaintContext_cursorPosition_GETTER_(QAbstractTextDocumentLayout::PaintContext * _self_) {
@@ -39298,7 +39389,7 @@ extern "C" QSurfaceFormat * bg_QSurfaceFormat__COPY_const_QSurfaceFormat_R(const
 }
 
 extern "C" QSurfaceFormat * bg_QSurfaceFormat__OPERATOR_assign_const_QSurfaceFormat_R(QSurfaceFormat * _self_, const QSurfaceFormat & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QSurfaceFormat_setDepthBufferSize_int(QSurfaceFormat * _self_, int size) {
@@ -39401,6 +39492,10 @@ extern "C" int bg_QSurfaceFormat_minorVersion_(QSurfaceFormat * _self_) {
   return _self_->minorVersion();
 }
 
+extern "C" Container_std__pair_int__int_ * bg_QSurfaceFormat_version_(QSurfaceFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_int__int_>()) Container_std__pair_int__int_ (_self_->version());
+}
+
 extern "C" void bg_QSurfaceFormat_setVersion_int_int(QSurfaceFormat * _self_, int major, int minor) {
   _self_->setVersion(major, minor);
 }
@@ -39454,11 +39549,11 @@ extern "C" QSurfaceFormat * bg_QSurfaceFormat_defaultFormat_STATIC_() {
 }
 
 extern "C" bool bg_QSurfaceFormat__OPERATOR_eq_const_QSurfaceFormat_R(QSurfaceFormat * _self_, const QSurfaceFormat & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QSurfaceFormat__OPERATOR_ne_const_QSurfaceFormat_R(QSurfaceFormat * _self_, const QSurfaceFormat & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QSurfaceFormat_staticMetaObject_STATIC_GETTER_() {
@@ -39540,7 +39635,7 @@ extern "C" QSurface * bg_QSurface__CONSTRUCT_QSurface__SurfaceClass(QSurface::Su
 }
 
 extern "C" QSurface * bg_QSurface__OPERATOR_assign_const_QSurface_R(QSurface * _self_, const QSurface & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" const QMetaObject * bg_QSurface_staticMetaObject_STATIC_GETTER_() {
@@ -39697,7 +39792,7 @@ extern "C" QBitmap * bg_QBitmap__COPY_const_QBitmap_R(const QBitmap & unnamed_ar
 }
 
 extern "C" QBitmap * bg_QBitmap__OPERATOR_assign_const_QBitmap_R(QBitmap * _self_, const QBitmap & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" int bg_QPixmap_devType_SUPER_(QPixmap * _self_) {
@@ -39737,7 +39832,7 @@ extern "C" QCursor * bg_QCursor__COPY_const_QCursor_R(const QCursor & cursor) {
 }
 
 extern "C" QCursor * bg_QCursor__OPERATOR_assign_const_QCursor_R(QCursor * _self_, const QCursor & cursor) {
-  return &((*_self_) = (cursor));
+  return &(((*_self_) = (cursor)));
 }
 
 extern "C" void bg_QCursor_swap_QCursor_R(QCursor * _self_, QCursor & other) {
@@ -39797,11 +39892,11 @@ extern "C" void bg_QCursor_setPos_STATIC_QScreen_X_const_QPoint_R(QScreen * scre
 }
 
 extern "C" bool bg_QCursor__OPERATOR_eq_const_QCursor_R(QCursor * _self_, const QCursor & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QCursor__OPERATOR_ne_const_QCursor_R(QCursor * _self_, const QCursor & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QWindow {
@@ -39832,7 +39927,7 @@ struct BgJumptable_QWindow {
   CrystalProc<void, QWheelEvent *> bg_QWindow_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QTouchEvent *> bg_QWindow_touchEvent_QTouchEvent_X;
   CrystalProc<void, QTabletEvent *> bg_QWindow_tabletEvent_QTabletEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -40089,7 +40184,7 @@ struct BgInherit_QWindow : public QWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWindow *_self_ = this;
     if (_self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QWindow::nativeEvent(eventType, message, result);
     }
@@ -40838,8 +40933,8 @@ extern "C" QMetaObject::Connection * bg_QWindow_CONNECT_windowStateChanged_Cryst
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWindow::*)(Qt::WindowState))&QWindow::windowStateChanged, [_proc_](Qt::WindowState windowState){ _proc_(windowState); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QWindow_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(QWindow * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWindow::*)(const QString &))&QWindow::windowTitleChanged, [_proc_](const QString & title){ _proc_(qstring_to_crystal(title)); }));
+extern "C" QMetaObject::Connection * bg_QWindow_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(QWindow * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWindow::*)(const QString &))&QWindow::windowTitleChanged, [_proc_](const QString & title){ _proc_(bindgen_address(qstring_to_crystal(title))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QWindow_CONNECT_xChanged_CrystalProc_void__int_(QWindow * _self_, CrystalProc<void, int> _proc_) {
@@ -41231,7 +41326,7 @@ extern "C" QColorSpace * bg_QColorSpace__COPY_const_QColorSpace_R(const QColorSp
 }
 
 extern "C" QColorSpace * bg_QColorSpace__OPERATOR_assign_const_QColorSpace_R(QColorSpace * _self_, const QColorSpace & colorSpace) {
-  return &((*_self_) = (colorSpace));
+  return &(((*_self_) = (colorSpace)));
 }
 
 extern "C" void bg_QColorSpace_swap_QColorSpace_R(QColorSpace * _self_, QColorSpace & colorSpace) {
@@ -41343,11 +41438,11 @@ extern "C" CrystalVariant bg_QColorSpace__CONVERT_QVariant_(QColorSpace * _self_
 }
 
 extern "C" bool bg_QColorSpace__OPERATOR_eq_const_QColorSpace_R(QColorSpace * _self_, const QColorSpace & colorSpace2) {
-  return (*_self_) == (colorSpace2);
+  return ((*_self_) == (colorSpace2));
 }
 
 extern "C" bool bg_QColorSpace__OPERATOR_ne_const_QColorSpace_R(QColorSpace * _self_, const QColorSpace & colorSpace2) {
-  return (*_self_) != (colorSpace2);
+  return ((*_self_) != (colorSpace2));
 }
 
 extern "C" const QMetaObject * bg_QColorSpace_staticMetaObject_STATIC_GETTER_() {
@@ -41372,6 +41467,38 @@ extern "C" QColorSpace::PrimaryPoints bg_QColorSpace__PrimaryPoints__COPY_const_
 
 extern "C" QColorSpace::PrimaryPoints bg_QColorSpace__PrimaryPoints__AGGREGATE_QPointF_QPointF_QPointF_QPointF(QPointF whitePoint, QPointF redPoint, QPointF greenPoint, QPointF bluePoint) {
   return *(bg_deref<QColorSpace::PrimaryPoints>(QColorSpace::PrimaryPoints {whitePoint, redPoint, greenPoint, bluePoint}));
+}
+
+extern "C" QPointF bg_QColorSpace__PrimaryPoints_whitePoint_GETTER_(QColorSpace::PrimaryPoints * _self_) {
+  return _self_->whitePoint;
+}
+
+extern "C" void bg_QColorSpace__PrimaryPoints_whitePoint_SETTER_QPointF(QColorSpace::PrimaryPoints * _self_, QPointF whitePoint) {
+  _self_->whitePoint = whitePoint;
+}
+
+extern "C" QPointF bg_QColorSpace__PrimaryPoints_redPoint_GETTER_(QColorSpace::PrimaryPoints * _self_) {
+  return _self_->redPoint;
+}
+
+extern "C" void bg_QColorSpace__PrimaryPoints_redPoint_SETTER_QPointF(QColorSpace::PrimaryPoints * _self_, QPointF redPoint) {
+  _self_->redPoint = redPoint;
+}
+
+extern "C" QPointF bg_QColorSpace__PrimaryPoints_greenPoint_GETTER_(QColorSpace::PrimaryPoints * _self_) {
+  return _self_->greenPoint;
+}
+
+extern "C" void bg_QColorSpace__PrimaryPoints_greenPoint_SETTER_QPointF(QColorSpace::PrimaryPoints * _self_, QPointF greenPoint) {
+  _self_->greenPoint = greenPoint;
+}
+
+extern "C" QPointF bg_QColorSpace__PrimaryPoints_bluePoint_GETTER_(QColorSpace::PrimaryPoints * _self_) {
+  return _self_->bluePoint;
+}
+
+extern "C" void bg_QColorSpace__PrimaryPoints_bluePoint_SETTER_QPointF(QColorSpace::PrimaryPoints * _self_, QPointF bluePoint) {
+  _self_->bluePoint = bluePoint;
 }
 
 extern "C" bool bg_QDesktopServices_openUrl_STATIC_const_QUrl_R(const QUrl & url) {
@@ -41632,9 +41759,9 @@ struct BgJumptable_QFileSystemModel {
   CrystalProc<int, const QModelIndex *> bg_QFileSystemModel_rowCount_const_QModelIndex_R;
   CrystalProc<int> bg_QFileSystemModel_columnCount_;
   CrystalProc<int, const QModelIndex *> bg_QFileSystemModel_columnCount_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QFileSystemModel_data_const_QModelIndex_R_int;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QFileSystemModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QFileSystemModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QFileSystemModel_headerData_int_Qt__Orientation_int;
   CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QFileSystemModel_flags_const_QModelIndex_R;
   CrystalProc<void, int, Qt::SortOrder> bg_QFileSystemModel_sort_int_Qt__SortOrder;
   CrystalProc<QList<QString> *> bg_QFileSystemModel_mimeTypes_;
@@ -41643,18 +41770,23 @@ struct BgJumptable_QFileSystemModel {
   CrystalProc<Qt::DropActions> bg_QFileSystemModel_supportedDropActions_;
   CrystalProc<void, QTimerEvent *> bg_QFileSystemModel_timerEvent_QTimerEvent_X;
   CrystalProc<bool, QEvent *> bg_QFileSystemModel_event_QEvent_X;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
   CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
   CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDragActions_;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeColumns_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
@@ -41771,7 +41903,7 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QFileSystemModel_data_const_QModelIndex_R_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QFileSystemModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QFileSystemModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       return QFileSystemModel::data(index, role);
     }
@@ -41780,7 +41912,7 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QFileSystemModel::setData(index, value, role);
     }
@@ -41789,7 +41921,7 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QFileSystemModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QFileSystemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QFileSystemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QFileSystemModel::headerData(section, orientation, role);
     }
@@ -41870,7 +42002,7 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QFileSystemModel::setHeaderData(section, orientation, value, role);
     }
@@ -41969,7 +42101,7 @@ struct BgInherit_QFileSystemModel : public QFileSystemModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QFileSystemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QFileSystemModel::match(start, role, value, hits, flags);
     }
@@ -42342,16 +42474,16 @@ extern "C" const QMetaObject * bg_QFileSystemModel_staticMetaObject_STATIC_GETTE
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileSystemModel::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_rootPathChanged_CrystalProc_void__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &))&QFileSystemModel::rootPathChanged, [_proc_](const QString & newPath){ _proc_(qstring_to_crystal(newPath)); }));
+extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_rootPathChanged_CrystalProc_void__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &))&QFileSystemModel::rootPathChanged, [_proc_](const QString & newPath){ _proc_(bindgen_address(qstring_to_crystal(newPath))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_fileRenamed_CrystalProc_void__const_QString_R__const_QString_R__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString, const CrystalString, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &, const QString &, const QString &))&QFileSystemModel::fileRenamed, [_proc_](const QString & path, const QString & oldName, const QString & newName){ _proc_(qstring_to_crystal(path), qstring_to_crystal(oldName), qstring_to_crystal(newName)); }));
+extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_fileRenamed_CrystalProc_void__const_QString_R__const_QString_R__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString *, const CrystalString *, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &, const QString &, const QString &))&QFileSystemModel::fileRenamed, [_proc_](const QString & path, const QString & oldName, const QString & newName){ _proc_(bindgen_address(qstring_to_crystal(path)), bindgen_address(qstring_to_crystal(oldName)), bindgen_address(qstring_to_crystal(newName))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_directoryLoaded_CrystalProc_void__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &))&QFileSystemModel::directoryLoaded, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+extern "C" QMetaObject::Connection * bg_QFileSystemModel_CONNECT_directoryLoaded_CrystalProc_void__const_QString_R_(QFileSystemModel * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemModel::*)(const QString &))&QFileSystemModel::directoryLoaded, [_proc_](const QString & path){ _proc_(bindgen_address(qstring_to_crystal(path))); }));
 }
 
 extern "C" QModelIndex * bg_QFileSystemModel_index_SUPER_int_int_const_QModelIndex_R(QFileSystemModel * _self_, int row, int column, const QModelIndex & parent) {
@@ -42443,7 +42575,7 @@ extern "C" QFontInfo * bg_QFontInfo__COPY_const_QFontInfo_R(const QFontInfo & un
 }
 
 extern "C" QFontInfo * bg_QFontInfo__OPERATOR_assign_const_QFontInfo_R(QFontInfo * _self_, const QFontInfo & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QFontInfo_swap_QFontInfo_R(QFontInfo * _self_, QFontInfo & other) {
@@ -42527,7 +42659,7 @@ extern "C" QFontMetrics * bg_QFontMetrics__COPY_const_QFontMetrics_R(const QFont
 }
 
 extern "C" QFontMetrics * bg_QFontMetrics__OPERATOR_assign_const_QFontMetrics_R(QFontMetrics * _self_, const QFontMetrics & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QFontMetrics_swap_QFontMetrics_R(QFontMetrics * _self_, QFontMetrics & other) {
@@ -42663,11 +42795,11 @@ extern "C" qreal bg_QFontMetrics_fontDpi_(QFontMetrics * _self_) {
 }
 
 extern "C" bool bg_QFontMetrics__OPERATOR_eq_const_QFontMetrics_R(QFontMetrics * _self_, const QFontMetrics & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QFontMetrics__OPERATOR_ne_const_QFontMetrics_R(QFontMetrics * _self_, const QFontMetrics & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" QFontMetricsF * bg_QFontMetricsF__CONSTRUCT_const_QFont_R(const QFont & font) {
@@ -42687,11 +42819,11 @@ extern "C" QFontMetricsF * bg_QFontMetricsF__COPY_const_QFontMetricsF_R(const QF
 }
 
 extern "C" QFontMetricsF * bg_QFontMetricsF__OPERATOR_assign_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QFontMetricsF * bg_QFontMetricsF__OPERATOR_assign_const_QFontMetrics_R(QFontMetricsF * _self_, const QFontMetrics & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QFontMetricsF_swap_QFontMetricsF_R(QFontMetricsF * _self_, QFontMetricsF & other) {
@@ -42823,11 +42955,11 @@ extern "C" qreal bg_QFontMetricsF_fontDpi_(QFontMetricsF * _self_) {
 }
 
 extern "C" bool bg_QFontMetricsF__OPERATOR_eq_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QFontMetricsF__OPERATOR_ne_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" CrystalString bg_QImageReader_tr_STATIC_const_char_X(const char * sourceText) {
@@ -43223,7 +43355,7 @@ extern "C" QMatrix4x4 * bg_QMatrix4x4__CONSTRUCT_const_QTransform_R(const QTrans
 }
 
 extern "C" const float * bg_QMatrix4x4__OPERATOR_call_int_int(QMatrix4x4 * _self_, int row, int column) {
-  return &((*_self_)(row, column));
+  return &(((*_self_)(row, column)));
 }
 
 extern "C" QVector4D bg_QMatrix4x4_column_int(QMatrix4x4 * _self_, int index) {
@@ -43267,31 +43399,31 @@ extern "C" QMatrix4x4 * bg_QMatrix4x4_transposed_(QMatrix4x4 * _self_) {
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_add_assign_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & other) {
-  return &((*_self_) += (other));
+  return &(((*_self_) += (other)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_sub_assign_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & other) {
-  return &((*_self_) -= (other));
+  return &(((*_self_) -= (other)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_mul_assign_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & other) {
-  return &((*_self_) *= (other));
+  return &(((*_self_) *= (other)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_mul_assign_float(QMatrix4x4 * _self_, float factor) {
-  return &((*_self_) *= (factor));
+  return &(((*_self_) *= (factor)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_div_assign_float(QMatrix4x4 * _self_, float divisor) {
-  return &((*_self_) /= (divisor));
+  return &(((*_self_) /= (divisor)));
 }
 
 extern "C" bool bg_QMatrix4x4__OPERATOR_eq_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QMatrix4x4__OPERATOR_ne_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" void bg_QMatrix4x4_scale_const_QVector3D_R(QMatrix4x4 * _self_, const QVector3D vector) {
@@ -43443,35 +43575,35 @@ extern "C" QMatrix4x4 * bg_QMatrix4x4__COPY_const_QMatrix4x4_R(const QMatrix4x4 
 }
 
 extern "C" QVector3D bg_QMatrix4x4__OPERATOR_mul_const_QVector3D_R(QMatrix4x4 * _self_, const QVector3D vector) {
-  return (*_self_) * (vector);
+  return ((*_self_) * (vector));
 }
 
 extern "C" QVector4D bg_QMatrix4x4__OPERATOR_mul_const_QVector4D_R(QMatrix4x4 * _self_, const QVector4D vector) {
-  return (*_self_) * (vector);
+  return ((*_self_) * (vector));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_add_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((*_self_) + (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (((*_self_) + (m2)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_sub_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((*_self_) - (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (((*_self_) - (m2)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_mul_const_QMatrix4x4_R(QMatrix4x4 * _self_, const QMatrix4x4 & m2) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((*_self_) * (m2));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (((*_self_) * (m2)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_neg_(QMatrix4x4 * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (-(*_self_));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((-(*_self_)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_mul_float(QMatrix4x4 * _self_, float factor) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((*_self_) * (factor));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (((*_self_) * (factor)));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__OPERATOR_div_float(QMatrix4x4 * _self_, float divisor) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 ((*_self_) / (divisor));
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (((*_self_) / (divisor)));
 }
 
 struct BgJumptable_QMovie {
@@ -43792,12 +43924,12 @@ extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_started_CrystalProc_void_
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMovie::*)())&QMovie::started, [_proc_](){ _proc_(); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_resized_CrystalProc_void__const_QSize_R_(QMovie * _self_, CrystalProc<void, const QSize> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMovie::*)(const QSize &))&QMovie::resized, [_proc_](const QSize & size){ _proc_(size); }));
+extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_resized_CrystalProc_void__const_QSize_R_(QMovie * _self_, CrystalProc<void, const QSize *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMovie::*)(const QSize &))&QMovie::resized, [_proc_](const QSize & size){ _proc_(bindgen_address(size)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_updated_CrystalProc_void__const_QRect_R_(QMovie * _self_, CrystalProc<void, const QRect> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMovie::*)(const QRect &))&QMovie::updated, [_proc_](const QRect & rect){ _proc_(rect); }));
+extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_updated_CrystalProc_void__const_QRect_R_(QMovie * _self_, CrystalProc<void, const QRect *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMovie::*)(const QRect &))&QMovie::updated, [_proc_](const QRect & rect){ _proc_(bindgen_address(rect)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QMovie_CONNECT_stateChanged_CrystalProc_void__QMovie__MovieState_(QMovie * _self_, CrystalProc<void, QMovie::MovieState> _proc_) {
@@ -44109,7 +44241,7 @@ extern "C" QPageSize * bg_QPageSize__COPY_const_QPageSize_R(const QPageSize & ot
 }
 
 extern "C" QPageSize * bg_QPageSize__OPERATOR_assign_const_QPageSize_R(QPageSize * _self_, const QPageSize & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPageSize_swap_QPageSize_R(QPageSize * _self_, QPageSize & other) {
@@ -44217,11 +44349,11 @@ extern "C" QSize bg_QPageSize_sizePixels_STATIC_QPageSize__PageSizeId_int(QPageS
 }
 
 extern "C" bool bg_QPageSize__OPERATOR_eq_const_QPageSize_R(QPageSize * _self_, const QPageSize & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPageSize__OPERATOR_ne_const_QPageSize_R(QPageSize * _self_, const QPageSize & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPageLayout * bg_QPageLayout__CONSTRUCT_() {
@@ -44241,7 +44373,7 @@ extern "C" QPageLayout * bg_QPageLayout__COPY_const_QPageLayout_R(const QPageLay
 }
 
 extern "C" QPageLayout * bg_QPageLayout__OPERATOR_assign_const_QPageLayout_R(QPageLayout * _self_, const QPageLayout & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPageLayout_swap_QPageLayout_R(QPageLayout * _self_, QPageLayout & other) {
@@ -44393,11 +44525,11 @@ extern "C" QRect bg_QPageLayout_paintRectPixels_int(QPageLayout * _self_, int re
 }
 
 extern "C" bool bg_QPageLayout__OPERATOR_eq_const_QPageLayout_R(QPageLayout * _self_, const QPageLayout & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPageLayout__OPERATOR_ne_const_QPageLayout_R(QPageLayout * _self_, const QPageLayout & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" QPageRanges * bg_QPageRanges__CONSTRUCT_() {
@@ -44409,7 +44541,7 @@ extern "C" QPageRanges * bg_QPageRanges__COPY_const_QPageRanges_R(const QPageRan
 }
 
 extern "C" QPageRanges * bg_QPageRanges__OPERATOR_assign_const_QPageRanges_R(QPageRanges * _self_, const QPageRanges & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPageRanges_swap_QPageRanges_R(QPageRanges * _self_, QPageRanges & other) {
@@ -44461,11 +44593,11 @@ extern "C" void bg_QPageRanges_detach_(QPageRanges * _self_) {
 }
 
 extern "C" bool bg_QPageRanges__OPERATOR_eq_const_QPageRanges_R(QPageRanges * _self_, const QPageRanges & rhs) {
-  return (*_self_) == (rhs);
+  return ((*_self_) == (rhs));
 }
 
 extern "C" bool bg_QPageRanges__OPERATOR_ne_const_QPageRanges_R(QPageRanges * _self_, const QPageRanges & rhs) {
-  return (*_self_) != (rhs);
+  return ((*_self_) != (rhs));
 }
 
 extern "C" bool bg_QPageRanges__Range_contains_int(QPageRanges::Range * _self_, int pageNumber) {
@@ -44478,6 +44610,22 @@ extern "C" QPageRanges::Range bg_QPageRanges__Range__CONSTRUCT_() {
 
 extern "C" QPageRanges::Range bg_QPageRanges__Range__COPY_const_QPageRanges__Range_R(const QPageRanges::Range unnamed_arg_0) {
   return *(bg_deref<QPageRanges::Range>(unnamed_arg_0));
+}
+
+extern "C" int bg_QPageRanges__Range_from_GETTER_(QPageRanges::Range * _self_) {
+  return _self_->from;
+}
+
+extern "C" void bg_QPageRanges__Range_from_SETTER_int(QPageRanges::Range * _self_, int from) {
+  _self_->from = from;
+}
+
+extern "C" int bg_QPageRanges__Range_to_GETTER_(QPageRanges::Range * _self_) {
+  return _self_->to;
+}
+
+extern "C" void bg_QPageRanges__Range_to_SETTER_int(QPageRanges::Range * _self_, int to) {
+  _self_->to = to;
 }
 
 struct BgJumptable_QPagedPaintDevice {
@@ -44697,7 +44845,7 @@ struct BgJumptable_QPaintDeviceWindow {
   CrystalProc<void, QWheelEvent *> bg_QWindow_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QTouchEvent *> bg_QWindow_touchEvent_QTouchEvent_X;
   CrystalProc<void, QTabletEvent *> bg_QWindow_tabletEvent_QTabletEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -44966,7 +45114,7 @@ struct BgInherit_QPaintDeviceWindow : public QPaintDeviceWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QPaintDeviceWindow *_self_ = this;
     if (_self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QPaintDeviceWindow::nativeEvent(eventType, message, result);
     }
@@ -45995,7 +46143,7 @@ extern "C" QPainterPath * bg_QPainterPath__COPY_const_QPainterPath_R(const QPain
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_assign_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPainterPath_swap_QPainterPath_R(QPainterPath * _self_, QPainterPath & other) {
@@ -46267,47 +46415,47 @@ extern "C" QPainterPath * bg_QPainterPath_simplified_(QPainterPath * _self_) {
 }
 
 extern "C" bool bg_QPainterPath__OPERATOR_eq_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QPainterPath__OPERATOR_ne_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_bit_and_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath ((*_self_) & (other));
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (((*_self_) & (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_bit_or_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath ((*_self_) | (other));
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (((*_self_) | (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_add_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath ((*_self_) + (other));
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (((*_self_) + (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_sub_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath ((*_self_) - (other));
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (((*_self_) - (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_bit_and_assign_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return &((*_self_) &= (other));
+  return &(((*_self_) &= (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_bit_or_assign_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return &((*_self_) |= (other));
+  return &(((*_self_) |= (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_add_assign_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return &((*_self_) += (other));
+  return &(((*_self_) += (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_sub_assign_const_QPainterPath_R(QPainterPath * _self_, const QPainterPath & other) {
-  return &((*_self_) -= (other));
+  return &(((*_self_) -= (other)));
 }
 
 extern "C" QPainterPath * bg_QPainterPath__OPERATOR_mul_const_QTransform_R(QPainterPath * _self_, const QTransform & m) {
-  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath ((*_self_) * (m));
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (((*_self_) * (m)));
 }
 
 extern "C" bool bg_QPainterPath__Element_isMoveTo_(QPainterPath::Element * _self_) {
@@ -46327,11 +46475,11 @@ extern "C" QPointF bg_QPainterPath__Element__CONVERT_QPointF_(QPainterPath::Elem
 }
 
 extern "C" bool bg_QPainterPath__Element__OPERATOR_eq_const_QPainterPath__Element_R(QPainterPath::Element * _self_, const QPainterPath::Element e) {
-  return (*_self_) == (e);
+  return ((*_self_) == (e));
 }
 
 extern "C" bool bg_QPainterPath__Element__OPERATOR_ne_const_QPainterPath__Element_R(QPainterPath::Element * _self_, const QPainterPath::Element e) {
-  return (*_self_) != (e);
+  return ((*_self_) != (e));
 }
 
 extern "C" QPainterPath::Element bg_QPainterPath__Element__CONSTRUCT_() {
@@ -46344,6 +46492,30 @@ extern "C" QPainterPath::Element bg_QPainterPath__Element__COPY_const_QPainterPa
 
 extern "C" QPainterPath::Element bg_QPainterPath__Element__AGGREGATE_qreal_qreal_QPainterPath__ElementType(qreal x, qreal y, QPainterPath::ElementType type) {
   return *(bg_deref<QPainterPath::Element>(QPainterPath::Element {x, y, type}));
+}
+
+extern "C" qreal bg_QPainterPath__Element_x_GETTER_(QPainterPath::Element * _self_) {
+  return _self_->x;
+}
+
+extern "C" void bg_QPainterPath__Element_x_SETTER_qreal(QPainterPath::Element * _self_, qreal x) {
+  _self_->x = x;
+}
+
+extern "C" qreal bg_QPainterPath__Element_y_GETTER_(QPainterPath::Element * _self_) {
+  return _self_->y;
+}
+
+extern "C" void bg_QPainterPath__Element_y_SETTER_qreal(QPainterPath::Element * _self_, qreal y) {
+  _self_->y = y;
+}
+
+extern "C" QPainterPath::ElementType bg_QPainterPath__Element_type_GETTER_(QPainterPath::Element * _self_) {
+  return _self_->type;
+}
+
+extern "C" void bg_QPainterPath__Element_type_SETTER_QPainterPath__ElementType(QPainterPath::Element * _self_, QPainterPath::ElementType type) {
+  _self_->type = type;
 }
 
 extern "C" QPainterPathStroker * bg_QPainterPathStroker__CONSTRUCT_() {
@@ -46427,7 +46599,7 @@ extern "C" QPdfOutputIntent * bg_QPdfOutputIntent__COPY_const_QPdfOutputIntent_R
 }
 
 extern "C" QPdfOutputIntent * bg_QPdfOutputIntent__OPERATOR_assign_const_QPdfOutputIntent_R(QPdfOutputIntent * _self_, const QPdfOutputIntent & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPdfOutputIntent_swap_QPdfOutputIntent_R(QPdfOutputIntent * _self_, QPdfOutputIntent & other) {
@@ -47030,7 +47202,7 @@ extern "C" void bg_QPicture_setBoundingRect_const_QRect_R(QPicture * _self_, con
 }
 
 extern "C" QPicture * bg_QPicture__OPERATOR_assign_const_QPicture_R(QPicture * _self_, const QPicture & p) {
-  return &((*_self_) = (p));
+  return &(((*_self_) = (p)));
 }
 
 extern "C" void bg_QPicture_swap_QPicture_R(QPicture * _self_, QPicture & other) {
@@ -47130,15 +47302,15 @@ extern "C" QPixmapCache::Key * bg_QPixmapCache__Key__COPY_const_QPixmapCache__Ke
 }
 
 extern "C" bool bg_QPixmapCache__Key__OPERATOR_eq_const_QPixmapCache__Key_R(QPixmapCache::Key * _self_, const QPixmapCache::Key & key) {
-  return (*_self_) == (key);
+  return ((*_self_) == (key));
 }
 
 extern "C" bool bg_QPixmapCache__Key__OPERATOR_ne_const_QPixmapCache__Key_R(QPixmapCache::Key * _self_, const QPixmapCache::Key & key) {
-  return (*_self_) != (key);
+  return ((*_self_) != (key));
 }
 
 extern "C" QPixmapCache::Key * bg_QPixmapCache__Key__OPERATOR_assign_const_QPixmapCache__Key_R(QPixmapCache::Key * _self_, const QPixmapCache::Key & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QPixmapCache__Key_swap_QPixmapCache__Key_R(QPixmapCache::Key * _self_, QPixmapCache::Key & other) {
@@ -47250,23 +47422,23 @@ extern "C" QVector3D bg_QQuaternion_rotatedVector_const_QVector3D_R(QQuaternion 
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_add_assign_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion quaternion) {
-  return (*_self_) += (quaternion);
+  return ((*_self_) += (quaternion));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_sub_assign_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion quaternion) {
-  return (*_self_) -= (quaternion);
+  return ((*_self_) -= (quaternion));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_mul_assign_float(QQuaternion * _self_, float factor) {
-  return (*_self_) *= (factor);
+  return ((*_self_) *= (factor));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_mul_assign_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion quaternion) {
-  return (*_self_) *= (quaternion);
+  return ((*_self_) *= (quaternion));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_div_assign_float(QQuaternion * _self_, float divisor) {
-  return (*_self_) /= (divisor);
+  return ((*_self_) /= (divisor));
 }
 
 extern "C" QVector4D bg_QQuaternion_toVector4D_(QQuaternion * _self_) {
@@ -47334,43 +47506,43 @@ extern "C" QQuaternion bg_QQuaternion__COPY_const_QQuaternion_R(const QQuaternio
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_assign_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion unnamed_arg_0) {
-  return (*_self_) = (unnamed_arg_0);
+  return ((*_self_) = (unnamed_arg_0));
 }
 
 extern "C" bool bg_QQuaternion__OPERATOR_eq_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion q2) {
-  return (*_self_) == (q2);
+  return ((*_self_) == (q2));
 }
 
 extern "C" bool bg_QQuaternion__OPERATOR_ne_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion q2) {
-  return (*_self_) != (q2);
+  return ((*_self_) != (q2));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_add_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion q2) {
-  return (*_self_) + (q2);
+  return ((*_self_) + (q2));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_sub_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion q2) {
-  return (*_self_) - (q2);
+  return ((*_self_) - (q2));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_mul_float(QQuaternion * _self_, float factor) {
-  return (*_self_) * (factor);
+  return ((*_self_) * (factor));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_mul_const_QQuaternion_R(QQuaternion * _self_, const QQuaternion q2) {
-  return (*_self_) * (q2);
+  return ((*_self_) * (q2));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_neg_(QQuaternion * _self_) {
-  return -(*_self_);
+  return (-(*_self_));
 }
 
 extern "C" QQuaternion bg_QQuaternion__OPERATOR_div_float(QQuaternion * _self_, float divisor) {
-  return (*_self_) / (divisor);
+  return ((*_self_) / (divisor));
 }
 
 extern "C" QVector3D bg_QQuaternion__OPERATOR_mul_const_QVector3D_R(QQuaternion * _self_, const QVector3D vec) {
-  return (*_self_) * (vec);
+  return ((*_self_) * (vec));
 }
 
 extern "C" QQuaternion::Axis bg_QQuaternion__Axis_fromVector3D_STATIC_QVector3D(QVector3D v) {
@@ -47393,6 +47565,30 @@ extern "C" QQuaternion::Axis bg_QQuaternion__Axis__AGGREGATE_float_float_float(f
   return *(bg_deref<QQuaternion::Axis>(QQuaternion::Axis {x, y, z}));
 }
 
+extern "C" float bg_QQuaternion__Axis_x_GETTER_(QQuaternion::Axis * _self_) {
+  return _self_->x;
+}
+
+extern "C" void bg_QQuaternion__Axis_x_SETTER_float(QQuaternion::Axis * _self_, float x) {
+  _self_->x = x;
+}
+
+extern "C" float bg_QQuaternion__Axis_y_GETTER_(QQuaternion::Axis * _self_) {
+  return _self_->y;
+}
+
+extern "C" void bg_QQuaternion__Axis_y_SETTER_float(QQuaternion::Axis * _self_, float y) {
+  _self_->y = y;
+}
+
+extern "C" float bg_QQuaternion__Axis_z_GETTER_(QQuaternion::Axis * _self_) {
+  return _self_->z;
+}
+
+extern "C" void bg_QQuaternion__Axis_z_SETTER_float(QQuaternion::Axis * _self_, float z) {
+  _self_->z = z;
+}
+
 extern "C" QQuaternion::Axes bg_QQuaternion__Axes__CONSTRUCT_() {
   return *(bg_deref<QQuaternion::Axes>());
 }
@@ -47403,6 +47599,30 @@ extern "C" QQuaternion::Axes bg_QQuaternion__Axes__COPY_const_QQuaternion__Axes_
 
 extern "C" QQuaternion::Axes bg_QQuaternion__Axes__AGGREGATE_QQuaternion__Axis_QQuaternion__Axis_QQuaternion__Axis(QQuaternion::Axis x, QQuaternion::Axis y, QQuaternion::Axis z) {
   return *(bg_deref<QQuaternion::Axes>(QQuaternion::Axes {x, y, z}));
+}
+
+extern "C" QQuaternion::Axis bg_QQuaternion__Axes_x_GETTER_(QQuaternion::Axes * _self_) {
+  return _self_->x;
+}
+
+extern "C" void bg_QQuaternion__Axes_x_SETTER_QQuaternion__Axis(QQuaternion::Axes * _self_, QQuaternion::Axis x) {
+  _self_->x = x;
+}
+
+extern "C" QQuaternion::Axis bg_QQuaternion__Axes_y_GETTER_(QQuaternion::Axes * _self_) {
+  return _self_->y;
+}
+
+extern "C" void bg_QQuaternion__Axes_y_SETTER_QQuaternion__Axis(QQuaternion::Axes * _self_, QQuaternion::Axis y) {
+  _self_->y = y;
+}
+
+extern "C" QQuaternion::Axis bg_QQuaternion__Axes_z_GETTER_(QQuaternion::Axes * _self_) {
+  return _self_->z;
+}
+
+extern "C" void bg_QQuaternion__Axes_z_SETTER_QQuaternion__Axis(QQuaternion::Axes * _self_, QQuaternion::Axis z) {
+  _self_->z = z;
 }
 
 struct BgJumptable_QRasterWindow {
@@ -47434,7 +47654,7 @@ struct BgJumptable_QRasterWindow {
   CrystalProc<void, QWheelEvent *> bg_QWindow_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QTouchEvent *> bg_QWindow_touchEvent_QTouchEvent_X;
   CrystalProc<void, QTabletEvent *> bg_QWindow_tabletEvent_QTabletEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -47700,7 +47920,7 @@ struct BgInherit_QRasterWindow : public QRasterWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QRasterWindow *_self_ = this;
     if (_self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QRasterWindow::nativeEvent(eventType, message, result);
     }
@@ -48064,9 +48284,9 @@ extern "C" void bg_BgInherit_QShortcut_JUMPTABLE_BgJumptable_QShortcut_R(BgInher
 }
 
 struct BgJumptable_QStandardItem {
-  CrystalProc<CrystalVariant, int> bg_QStandardItem_data_int;
+  CrystalProc<CrystalVariant *, int> bg_QStandardItem_data_int;
   CrystalProc<void, QModelRoleDataSpan *> bg_QStandardItem_multiData_QModelRoleDataSpan;
-  CrystalProc<void, const CrystalVariant, int> bg_QStandardItem_setData_const_QVariant_R_int;
+  CrystalProc<void, const CrystalVariant *, int> bg_QStandardItem_setData_const_QVariant_R_int;
   CrystalProc<QStandardItem *> bg_QStandardItem_clone_;
   CrystalProc<int> bg_QStandardItem_type_;
   CrystalProc<void, QDataStream *> bg_QStandardItem_read_QDataStream_R;
@@ -48080,7 +48300,7 @@ struct BgInherit_QStandardItem : public QStandardItem {
   QVariant data(int role) const override {
     const BgInherit_QStandardItem *_self_ = this;
     if (_self_->bgJump.bg_QStandardItem_data_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QStandardItem_data_int(role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QStandardItem_data_int(role));
     } else {
       return QStandardItem::data(role);
     }
@@ -48098,7 +48318,7 @@ struct BgInherit_QStandardItem : public QStandardItem {
   void setData(const QVariant & value, int role) override {
     BgInherit_QStandardItem *_self_ = this;
     if (_self_->bgJump.bg_QStandardItem_setData_const_QVariant_R_int.isValid()) {
-      _self_->bgJump.bg_QStandardItem_setData_const_QVariant_R_int(qvariant_to_crystal(value), role);
+      _self_->bgJump.bg_QStandardItem_setData_const_QVariant_R_int(bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       QStandardItem::setData(value, role);
     }
@@ -48499,7 +48719,7 @@ extern "C" void bg_QStandardItem_write_QDataStream_R(QStandardItem * _self_, QDa
 }
 
 extern "C" bool bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R(QStandardItem * _self_, const QStandardItem & other) {
-  return (*_self_) < (other);
+  return ((*_self_) < (other));
 }
 
 extern "C" QStandardItem * bg_QStandardItem__COPY_const_QStandardItem_R(const QStandardItem & other) {
@@ -48511,7 +48731,7 @@ extern "C" QStandardItem * bg_QStandardItem__CONSTRUCT_QStandardItemPrivate_R(QS
 }
 
 extern "C" QStandardItem * bg_QStandardItem__OPERATOR_assign_const_QStandardItem_R(QStandardItem * _self_, const QStandardItem & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" void bg_QStandardItem_emitDataChanged_(QStandardItem * _self_) {
@@ -48563,12 +48783,12 @@ struct BgJumptable_QStandardItemModel {
   CrystalProc<int, const QModelIndex *> bg_QStandardItemModel_columnCount_const_QModelIndex_R;
   CrystalProc<bool> bg_QStandardItemModel_hasChildren_;
   CrystalProc<bool, const QModelIndex *> bg_QStandardItemModel_hasChildren_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, const QModelIndex *, int> bg_QStandardItemModel_data_const_QModelIndex_R_int;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QStandardItemModel_data_const_QModelIndex_R_int;
   CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QStandardItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
-  CrystalProc<bool, const QModelIndex *, const CrystalVariant, int> bg_QStandardItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QStandardItemModel_setData_const_QModelIndex_R_const_QVariant_R_int;
   CrystalProc<bool, const QModelIndex *> bg_QStandardItemModel_clearItemData_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, int, Qt::Orientation, int> bg_QStandardItemModel_headerData_int_Qt__Orientation_int;
-  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant, int> bg_QStandardItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QStandardItemModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QStandardItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
   CrystalProc<bool, int, int> bg_QStandardItemModel_insertRows_int_int;
   CrystalProc<bool, int, int, const QModelIndex *> bg_QStandardItemModel_insertRows_int_int_const_QModelIndex_R;
   CrystalProc<bool, int, int> bg_QStandardItemModel_insertColumns_int_int;
@@ -48591,7 +48811,8 @@ struct BgJumptable_QStandardItemModel {
   CrystalProc<void, const QModelIndex *> bg_QAbstractItemModel_fetchMore_const_QModelIndex_R;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R;
   CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
-  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
   CrystalProc<QSize *, const QModelIndex *> bg_QAbstractItemModel_span_const_QModelIndex_R;
   CrystalProc<bool> bg_QAbstractItemModel_submit_;
   CrystalProc<void> bg_QAbstractItemModel_revert_;
@@ -48682,7 +48903,7 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
   QVariant data(const QModelIndex & index, int role) const override {
     const BgInherit_QStandardItemModel *_self_ = this;
     if (_self_->bgJump.bg_QStandardItemModel_data_const_QModelIndex_R_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QStandardItemModel_data_const_QModelIndex_R_int(&(index), role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QStandardItemModel_data_const_QModelIndex_R_int(&(index), role));
     } else {
       return QStandardItemModel::data(index, role);
     }
@@ -48700,7 +48921,7 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
   bool setData(const QModelIndex & index, const QVariant & value, int role) override {
     BgInherit_QStandardItemModel *_self_ = this;
     if (_self_->bgJump.bg_QStandardItemModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QStandardItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QStandardItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QStandardItemModel::setData(index, value, role);
     }
@@ -48718,7 +48939,7 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
   QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
     const BgInherit_QStandardItemModel *_self_ = this;
     if (_self_->bgJump.bg_QStandardItemModel_headerData_int_Qt__Orientation_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QStandardItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QStandardItemModel_headerData_int_Qt__Orientation_int(section, orientation, role));
     } else {
       return QStandardItemModel::headerData(section, orientation, role);
     }
@@ -48727,7 +48948,7 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
   bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
     BgInherit_QStandardItemModel *_self_ = this;
     if (_self_->bgJump.bg_QStandardItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
-      return _self_->bgJump.bg_QStandardItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, qvariant_to_crystal(value), role);
+      return _self_->bgJump.bg_QStandardItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
     } else {
       return QStandardItemModel::setHeaderData(section, orientation, value, role);
     }
@@ -48898,7 +49119,7 @@ struct BgInherit_QStandardItemModel : public QStandardItemModel {
   QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
     const BgInherit_QStandardItemModel *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
-      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, qvariant_to_crystal(value), hits, flags));
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
     } else {
       return QStandardItemModel::match(start, role, value, hits, flags);
     }
@@ -49417,7 +49638,7 @@ extern "C" QStaticText * bg_QStaticText__COPY_const_QStaticText_R(const QStaticT
 }
 
 extern "C" QStaticText * bg_QStaticText__OPERATOR_assign_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_QStaticText_swap_QStaticText_R(QStaticText * _self_, QStaticText & other) {
@@ -49481,11 +49702,11 @@ extern "C" QStaticText::PerformanceHint bg_QStaticText_performanceHint_(QStaticT
 }
 
 extern "C" bool bg_QStaticText__OPERATOR_eq_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
-  return (*_self_) == (unnamed_arg_0);
+  return ((*_self_) == (unnamed_arg_0));
 }
 
 extern "C" bool bg_QStaticText__OPERATOR_ne_const_QStaticText_R(QStaticText * _self_, const QStaticText & unnamed_arg_0) {
-  return (*_self_) != (unnamed_arg_0);
+  return ((*_self_) != (unnamed_arg_0));
 }
 
 struct BgJumptable_QStyleHints {
@@ -50471,27 +50692,27 @@ extern "C" bool bg_QTextFrame__iterator_atEnd_(QTextFrame::iterator * _self_) {
 }
 
 extern "C" bool bg_QTextFrame__iterator__OPERATOR_eq_const_QTextFrame__iterator_R(QTextFrame::iterator * _self_, const QTextFrame::iterator & o) {
-  return (*_self_) == (o);
+  return ((*_self_) == (o));
 }
 
 extern "C" bool bg_QTextFrame__iterator__OPERATOR_ne_const_QTextFrame__iterator_R(QTextFrame::iterator * _self_, const QTextFrame::iterator & o) {
-  return (*_self_) != (o);
+  return ((*_self_) != (o));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_succ_(QTextFrame::iterator * _self_) {
-  return &(++(*_self_));
+  return &((++(*_self_)));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_post_succ_(QTextFrame::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator ((*_self_)++);
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (((*_self_)++));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_pred_(QTextFrame::iterator * _self_) {
-  return &(--(*_self_));
+  return &((--(*_self_)));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__OPERATOR_post_pred_(QTextFrame::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator ((*_self_)--);
+  return new (UseGC, bindgen_gc_finalizer<QTextFrame::iterator>()) QTextFrame::iterator (((*_self_)--));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__COPY_const_QTextFrame__iterator_R(const QTextFrame::iterator & unnamed_arg_0) {
@@ -50499,7 +50720,7 @@ extern "C" QTextFrame::iterator * bg_QTextFrame__iterator__COPY_const_QTextFrame
 }
 
 extern "C" QTextBlockUserData * bg_QTextBlockUserData__OPERATOR_assign_const_QTextBlockUserData_R(QTextBlockUserData * _self_, const QTextBlockUserData & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QTextBlockUserData * bg_QTextBlockUserData__CONSTRUCT_() {
@@ -50519,7 +50740,7 @@ extern "C" QTextBlock * bg_QTextBlock__COPY_const_QTextBlock_R(const QTextBlock 
 }
 
 extern "C" QTextBlock * bg_QTextBlock__OPERATOR_assign_const_QTextBlock_R(QTextBlock * _self_, const QTextBlock & o) {
-  return &((*_self_) = (o));
+  return &(((*_self_) = (o)));
 }
 
 extern "C" bool bg_QTextBlock_isValid_(QTextBlock * _self_) {
@@ -50527,15 +50748,15 @@ extern "C" bool bg_QTextBlock_isValid_(QTextBlock * _self_) {
 }
 
 extern "C" bool bg_QTextBlock__OPERATOR_eq_const_QTextBlock_R(QTextBlock * _self_, const QTextBlock & o) {
-  return (*_self_) == (o);
+  return ((*_self_) == (o));
 }
 
 extern "C" bool bg_QTextBlock__OPERATOR_ne_const_QTextBlock_R(QTextBlock * _self_, const QTextBlock & o) {
-  return (*_self_) != (o);
+  return ((*_self_) != (o));
 }
 
 extern "C" bool bg_QTextBlock__OPERATOR_lt_const_QTextBlock_R(QTextBlock * _self_, const QTextBlock & o) {
-  return (*_self_) < (o);
+  return ((*_self_) < (o));
 }
 
 extern "C" int bg_QTextBlock_position_(QTextBlock * _self_) {
@@ -50675,27 +50896,27 @@ extern "C" bool bg_QTextBlock__iterator_atEnd_(QTextBlock::iterator * _self_) {
 }
 
 extern "C" bool bg_QTextBlock__iterator__OPERATOR_eq_const_QTextBlock__iterator_R(QTextBlock::iterator * _self_, const QTextBlock::iterator & o) {
-  return (*_self_) == (o);
+  return ((*_self_) == (o));
 }
 
 extern "C" bool bg_QTextBlock__iterator__OPERATOR_ne_const_QTextBlock__iterator_R(QTextBlock::iterator * _self_, const QTextBlock::iterator & o) {
-  return (*_self_) != (o);
+  return ((*_self_) != (o));
 }
 
 extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_succ_(QTextBlock::iterator * _self_) {
-  return &(++(*_self_));
+  return &((++(*_self_)));
 }
 
 extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_post_succ_(QTextBlock::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator ((*_self_)++);
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator (((*_self_)++));
 }
 
 extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_pred_(QTextBlock::iterator * _self_) {
-  return &(--(*_self_));
+  return &((--(*_self_)));
 }
 
 extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__OPERATOR_post_pred_(QTextBlock::iterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator ((*_self_)--);
+  return new (UseGC, bindgen_gc_finalizer<QTextBlock::iterator>()) QTextBlock::iterator (((*_self_)--));
 }
 
 extern "C" QTextBlock::iterator * bg_QTextBlock__iterator__COPY_const_QTextBlock__iterator_R(const QTextBlock::iterator & unnamed_arg_0) {
@@ -50711,7 +50932,7 @@ extern "C" QTextFragment * bg_QTextFragment__COPY_const_QTextFragment_R(const QT
 }
 
 extern "C" QTextFragment * bg_QTextFragment__OPERATOR_assign_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
-  return &((*_self_) = (o));
+  return &(((*_self_) = (o)));
 }
 
 extern "C" bool bg_QTextFragment_isValid_(QTextFragment * _self_) {
@@ -50719,15 +50940,15 @@ extern "C" bool bg_QTextFragment_isValid_(QTextFragment * _self_) {
 }
 
 extern "C" bool bg_QTextFragment__OPERATOR_eq_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
-  return (*_self_) == (o);
+  return ((*_self_) == (o));
 }
 
 extern "C" bool bg_QTextFragment__OPERATOR_ne_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
-  return (*_self_) != (o);
+  return ((*_self_) != (o));
 }
 
 extern "C" bool bg_QTextFragment__OPERATOR_lt_const_QTextFragment_R(QTextFragment * _self_, const QTextFragment & o) {
-  return (*_self_) < (o);
+  return ((*_self_) < (o));
 }
 
 extern "C" int bg_QTextFragment_position_(QTextFragment * _self_) {
@@ -50762,7 +50983,7 @@ struct BgJumptable_QSyntaxHighlighter {
   CrystalProc<const QMetaObject *> bg_QSyntaxHighlighter_metaObject_;
   CrystalProc<void *, const char *> bg_QSyntaxHighlighter_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QSyntaxHighlighter_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<void, const CrystalString> bg_QSyntaxHighlighter_highlightBlock_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QSyntaxHighlighter_highlightBlock_const_QString_R;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -50804,7 +51025,7 @@ struct BgInherit_QSyntaxHighlighter : public QSyntaxHighlighter {
   void highlightBlock(const QString & text) override {
     BgInherit_QSyntaxHighlighter *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QSyntaxHighlighter_highlightBlock_const_QString_R.isValid())) {
-      _self_->bgJump.bg_QSyntaxHighlighter_highlightBlock_const_QString_R(qstring_to_crystal(text));
+      _self_->bgJump.bg_QSyntaxHighlighter_highlightBlock_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       bindgen_fatal_panic("No implementation for pure method QSyntaxHighlighter::highlightBlock");
     }
@@ -50991,7 +51212,7 @@ extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__COPY_const_QTextDoc
 }
 
 extern "C" QTextDocumentFragment * bg_QTextDocumentFragment__OPERATOR_assign_const_QTextDocumentFragment_R(QTextDocumentFragment * _self_, const QTextDocumentFragment & rhs) {
-  return &((*_self_) = (rhs));
+  return &(((*_self_) = (rhs)));
 }
 
 extern "C" bool bg_QTextDocumentFragment_isEmpty_(QTextDocumentFragment * _self_) {
@@ -51303,7 +51524,7 @@ extern "C" QTextTableCell * bg_QTextTableCell__COPY_const_QTextTableCell_R(const
 }
 
 extern "C" QTextTableCell * bg_QTextTableCell__OPERATOR_assign_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & o) {
-  return &((*_self_) = (o));
+  return &(((*_self_) = (o)));
 }
 
 extern "C" void bg_QTextTableCell_setFormat_const_QTextCharFormat_R(QTextTableCell * _self_, const QTextCharFormat & format) {
@@ -51351,11 +51572,11 @@ extern "C" int bg_QTextTableCell_lastPosition_(QTextTableCell * _self_) {
 }
 
 extern "C" bool bg_QTextTableCell__OPERATOR_eq_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & other) {
-  return (*_self_) == (other);
+  return ((*_self_) == (other));
 }
 
 extern "C" bool bg_QTextTableCell__OPERATOR_ne_const_QTextTableCell_R(QTextTableCell * _self_, const QTextTableCell & other) {
-  return (*_self_) != (other);
+  return ((*_self_) != (other));
 }
 
 extern "C" QTextFrame::iterator * bg_QTextTableCell_begin_(QTextTableCell * _self_) {
@@ -51838,12 +52059,12 @@ extern "C" QMetaObject::Connection * bg_QUndoGroup_CONNECT_canRedoChanged_Crysta
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoGroup::*)(bool))&QUndoGroup::canRedoChanged, [_proc_](bool canRedo){ _proc_(canRedo); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QUndoGroup_CONNECT_undoTextChanged_CrystalProc_void__const_QString_R_(QUndoGroup * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoGroup::*)(const QString &))&QUndoGroup::undoTextChanged, [_proc_](const QString & undoText){ _proc_(qstring_to_crystal(undoText)); }));
+extern "C" QMetaObject::Connection * bg_QUndoGroup_CONNECT_undoTextChanged_CrystalProc_void__const_QString_R_(QUndoGroup * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoGroup::*)(const QString &))&QUndoGroup::undoTextChanged, [_proc_](const QString & undoText){ _proc_(bindgen_address(qstring_to_crystal(undoText))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QUndoGroup_CONNECT_redoTextChanged_CrystalProc_void__const_QString_R_(QUndoGroup * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoGroup::*)(const QString &))&QUndoGroup::redoTextChanged, [_proc_](const QString & redoText){ _proc_(qstring_to_crystal(redoText)); }));
+extern "C" QMetaObject::Connection * bg_QUndoGroup_CONNECT_redoTextChanged_CrystalProc_void__const_QString_R_(QUndoGroup * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoGroup::*)(const QString &))&QUndoGroup::redoTextChanged, [_proc_](const QString & redoText){ _proc_(bindgen_address(qstring_to_crystal(redoText))); }));
 }
 
 extern "C" void bg_BgInherit_QUndoGroup_JUMPTABLE_BgJumptable_QUndoGroup_R(BgInherit_QUndoGroup * _self_, const BgJumptable_QUndoGroup & table) {
@@ -52254,12 +52475,12 @@ extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_canRedoChanged_Crysta
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoStack::*)(bool))&QUndoStack::canRedoChanged, [_proc_](bool canRedo){ _proc_(canRedo); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_undoTextChanged_CrystalProc_void__const_QString_R_(QUndoStack * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoStack::*)(const QString &))&QUndoStack::undoTextChanged, [_proc_](const QString & undoText){ _proc_(qstring_to_crystal(undoText)); }));
+extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_undoTextChanged_CrystalProc_void__const_QString_R_(QUndoStack * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoStack::*)(const QString &))&QUndoStack::undoTextChanged, [_proc_](const QString & undoText){ _proc_(bindgen_address(qstring_to_crystal(undoText))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_redoTextChanged_CrystalProc_void__const_QString_R_(QUndoStack * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoStack::*)(const QString &))&QUndoStack::redoTextChanged, [_proc_](const QString & redoText){ _proc_(qstring_to_crystal(redoText)); }));
+extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_redoTextChanged_CrystalProc_void__const_QString_R_(QUndoStack * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QUndoStack::*)(const QString &))&QUndoStack::redoTextChanged, [_proc_](const QString & redoText){ _proc_(bindgen_address(qstring_to_crystal(redoText))); }));
 }
 
 extern "C" void bg_BgInherit_QUndoStack_JUMPTABLE_BgJumptable_QUndoStack_R(BgInherit_QUndoStack * _self_, const BgJumptable_QUndoStack & table) {
@@ -52925,11 +53146,11 @@ extern "C" bool bg_QSizePolicy_hasWidthForHeight_(QSizePolicy * _self_) {
 }
 
 extern "C" bool bg_QSizePolicy__OPERATOR_eq_const_QSizePolicy_R(QSizePolicy * _self_, const QSizePolicy & s) {
-  return (*_self_) == (s);
+  return ((*_self_) == (s));
 }
 
 extern "C" bool bg_QSizePolicy__OPERATOR_ne_const_QSizePolicy_R(QSizePolicy * _self_, const QSizePolicy & s) {
-  return (*_self_) != (s);
+  return ((*_self_) != (s));
 }
 
 extern "C" CrystalVariant bg_QSizePolicy__CONVERT_QVariant_(QSizePolicy * _self_) {
@@ -52969,7 +53190,7 @@ extern "C" QSizePolicy * bg_QSizePolicy_transposed_(QSizePolicy * _self_) {
 }
 
 extern "C" QSizePolicy * bg_QSizePolicy__OPERATOR_assign_const_QSizePolicy_R(QSizePolicy * _self_, const QSizePolicy & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QSizePolicy * bg_QSizePolicy__COPY_const_QSizePolicy_R(const QSizePolicy & unnamed_arg_0) {
@@ -53016,13 +53237,13 @@ struct BgJumptable_QWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -53352,7 +53573,7 @@ struct BgInherit_QWidget : public QWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QWidget::nativeEvent(eventType, message, result);
     }
@@ -53406,7 +53627,7 @@ struct BgInherit_QWidget : public QWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -54816,20 +55037,20 @@ extern "C" double bg_QWidget_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_Q
   return _self_->getDecodedMetricF(metricA, metricB);
 }
 
-extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(QWidget * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QString &))&QWidget::windowTitleChanged, [_proc_](const QString & title){ _proc_(qstring_to_crystal(title)); }));
+extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(QWidget * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QString &))&QWidget::windowTitleChanged, [_proc_](const QString & title){ _proc_(bindgen_address(qstring_to_crystal(title))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_windowIconChanged_CrystalProc_void__const_QIcon_R_(QWidget * _self_, CrystalProc<void, const QIcon *> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QIcon &))&QWidget::windowIconChanged, [_proc_](const QIcon & icon){ _proc_(&(icon)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_windowIconTextChanged_CrystalProc_void__const_QString_R_(QWidget * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QString &))&QWidget::windowIconTextChanged, [_proc_](const QString & iconText){ _proc_(qstring_to_crystal(iconText)); }));
+extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_windowIconTextChanged_CrystalProc_void__const_QString_R_(QWidget * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QString &))&QWidget::windowIconTextChanged, [_proc_](const QString & iconText){ _proc_(bindgen_address(qstring_to_crystal(iconText))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_customContextMenuRequested_CrystalProc_void__const_QPoint_R_(QWidget * _self_, CrystalProc<void, const QPoint> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QPoint &))&QWidget::customContextMenuRequested, [_proc_](const QPoint & pos){ _proc_(pos); }));
+extern "C" QMetaObject::Connection * bg_QWidget_CONNECT_customContextMenuRequested_CrystalProc_void__const_QPoint_R_(QWidget * _self_, CrystalProc<void, const QPoint *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWidget::*)(const QPoint &))&QWidget::customContextMenuRequested, [_proc_](const QPoint & pos){ _proc_(bindgen_address(pos)); }));
 }
 
 extern "C" int bg_QWidget_devType_SUPER_(QWidget * _self_) {
@@ -55001,7 +55222,7 @@ struct BgJumptable_QAbstractButton {
   CrystalProc<void *, const char *> bg_QAbstractButton_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractButton_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QPaintEvent *> bg_QAbstractButton_paintEvent_QPaintEvent_X;
-  CrystalProc<bool, const QPoint> bg_QAbstractButton_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QAbstractButton_hitButton_const_QPoint_R;
   CrystalProc<void> bg_QAbstractButton_checkStateSet_;
   CrystalProc<void> bg_QAbstractButton_nextCheckState_;
   CrystalProc<bool, QEvent *> bg_QAbstractButton_event_QEvent_X;
@@ -55037,12 +55258,12 @@ struct BgJumptable_QAbstractButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -55092,7 +55313,7 @@ struct BgInherit_QAbstractButton : public QAbstractButton {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QAbstractButton *_self_ = this;
     if (_self_->bgJump.bg_QAbstractButton_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QAbstractButton_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QAbstractButton_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QAbstractButton::hitButton(pos);
     }
@@ -55416,7 +55637,7 @@ struct BgInherit_QAbstractButton : public QAbstractButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QAbstractButton::nativeEvent(eventType, message, result);
     }
@@ -55461,7 +55682,7 @@ struct BgInherit_QAbstractButton : public QAbstractButton {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QAbstractButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QAbstractButton::inputMethodQuery(unnamed_arg_0);
     }
@@ -55813,7 +56034,7 @@ struct BgJumptable_QAbstractSpinBox {
   CrystalProc<QSize *> bg_QAbstractSpinBox_sizeHint_;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
   CrystalProc<bool, QEvent *> bg_QAbstractSpinBox_event_QEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, int> bg_QAbstractSpinBox_stepBy_int;
   CrystalProc<void> bg_QAbstractSpinBox_clear_;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
@@ -55849,7 +56070,7 @@ struct BgJumptable_QAbstractSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -55921,7 +56142,7 @@ struct BgInherit_QAbstractSpinBox : public QAbstractSpinBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QAbstractSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QAbstractSpinBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -56245,7 +56466,7 @@ struct BgInherit_QAbstractSpinBox : public QAbstractSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QAbstractSpinBox::nativeEvent(eventType, message, result);
     }
@@ -56741,12 +56962,12 @@ struct BgJumptable_QAbstractSlider {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -57102,7 +57323,7 @@ struct BgInherit_QAbstractSlider : public QAbstractSlider {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QAbstractSlider::nativeEvent(eventType, message, result);
     }
@@ -57147,7 +57368,7 @@ struct BgInherit_QAbstractSlider : public QAbstractSlider {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QAbstractSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QAbstractSlider::inputMethodQuery(unnamed_arg_0);
     }
@@ -57488,12 +57709,12 @@ struct BgJumptable_QSlider {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -57858,7 +58079,7 @@ struct BgInherit_QSlider : public QSlider {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSlider::nativeEvent(eventType, message, result);
     }
@@ -57903,7 +58124,7 @@ struct BgInherit_QSlider : public QSlider {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSlider::inputMethodQuery(unnamed_arg_0);
     }
@@ -58093,19 +58314,19 @@ struct BgJumptable_QStyle {
   CrystalProc<void, QApplication *> bg_QStyle_polish_QApplication_X;
   CrystalProc<void, QApplication *> bg_QStyle_unpolish_QApplication_X;
   CrystalProc<void, QPalette *> bg_QStyle_polish_QPalette_R;
-  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
-  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
-  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
-  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect *, int, bool, const CrystalString *> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect *, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPalette *, bool, const CrystalString *, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
   CrystalProc<QPalette &> bg_QStyle_standardPalette_;
   CrystalProc<void, QStyle::PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *> bg_QStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
   CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
   CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
-  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint *, const QWidget *> bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
   CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
   CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
-  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize *, const QWidget *> bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
   CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
   CrystalProc<QPixmap &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<QIcon &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
@@ -58197,7 +58418,7 @@ struct BgInherit_QStyle : public QStyle {
   QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
     const BgInherit_QStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
-      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), bindgen_address(r), flags, enabled, bindgen_address(qstring_to_crystal(text)));
     } else {
       return QStyle::itemTextRect(fm, r, flags, enabled, text);
     }
@@ -58206,7 +58427,7 @@ struct BgInherit_QStyle : public QStyle {
   QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
     const BgInherit_QStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(bindgen_address(r), flags, &(pixmap));
     } else {
       return QStyle::itemPixmapRect(r, flags, pixmap);
     }
@@ -58215,7 +58436,7 @@ struct BgInherit_QStyle : public QStyle {
   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
     const BgInherit_QStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
-      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, bindgen_address(rect), flags, &(pal), enabled, bindgen_address(qstring_to_crystal(text)), textRole);
     } else {
       QStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
     }
@@ -58224,7 +58445,7 @@ struct BgInherit_QStyle : public QStyle {
   void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
     const BgInherit_QStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, bindgen_address(rect), alignment, &(pixmap));
     } else {
       QStyle::drawItemPixmap(painter, rect, alignment, pixmap);
     }
@@ -58278,7 +58499,7 @@ struct BgInherit_QStyle : public QStyle {
   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
     const BgInherit_QStyle *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid())) {
-      return _self_->bgJump.bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+      return _self_->bgJump.bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, bindgen_address(pt), widget);
     } else {
       bindgen_fatal_panic("No implementation for pure method QStyle::hitTestComplexControl");
     }
@@ -58305,7 +58526,7 @@ struct BgInherit_QStyle : public QStyle {
   QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
     const BgInherit_QStyle *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid())) {
-      return *_self_->bgJump.bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+      return *_self_->bgJump.bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, bindgen_address(contentsSize), w);
     } else {
       bindgen_fatal_panic("No implementation for pure method QStyle::sizeFromContents");
     }
@@ -58672,12 +58893,12 @@ struct BgJumptable_QTabBar {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -59078,7 +59299,7 @@ struct BgInherit_QTabBar : public QTabBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTabBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTabBar::nativeEvent(eventType, message, result);
     }
@@ -59123,7 +59344,7 @@ struct BgInherit_QTabBar : public QTabBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTabBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTabBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -59688,12 +59909,12 @@ struct BgJumptable_QTabWidget {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -60059,7 +60280,7 @@ struct BgInherit_QTabWidget : public QTabWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTabWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTabWidget::nativeEvent(eventType, message, result);
     }
@@ -60104,7 +60325,7 @@ struct BgInherit_QTabWidget : public QTabWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTabWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTabWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -60572,12 +60793,12 @@ struct BgJumptable_QRubberBand {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -60925,7 +61146,7 @@ struct BgInherit_QRubberBand : public QRubberBand {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QRubberBand *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QRubberBand::nativeEvent(eventType, message, result);
     }
@@ -60970,7 +61191,7 @@ struct BgInherit_QRubberBand : public QRubberBand {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QRubberBand *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QRubberBand::inputMethodQuery(unnamed_arg_0);
     }
@@ -61198,12 +61419,12 @@ struct BgJumptable_QFrame {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -61551,7 +61772,7 @@ struct BgInherit_QFrame : public QFrame {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QFrame::nativeEvent(eventType, message, result);
     }
@@ -61596,7 +61817,7 @@ struct BgInherit_QFrame : public QFrame {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QFrame::inputMethodQuery(unnamed_arg_0);
     }
@@ -61823,7 +62044,7 @@ extern "C" void bg_QStyleOption_initFrom_const_QWidget_X(QStyleOption * _self_, 
 }
 
 extern "C" QStyleOption * bg_QStyleOption__OPERATOR_assign_const_QStyleOption_R(QStyleOption * _self_, const QStyleOption & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" int bg_QStyleOption_version_GETTER_(QStyleOption * _self_) {
@@ -61899,7 +62120,7 @@ extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__COPY_const_QStyleOp
 }
 
 extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__OPERATOR_assign_const_QStyleOptionFocusRect_R(QStyleOptionFocusRect * _self_, const QStyleOptionFocusRect & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__CONSTRUCT_int(int version) {
@@ -61923,7 +62144,7 @@ extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__COPY_const_QStyleOptionFram
 }
 
 extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__OPERATOR_assign_const_QStyleOptionFrame_R(QStyleOptionFrame * _self_, const QStyleOptionFrame & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__CONSTRUCT_int(int version) {
@@ -61971,7 +62192,7 @@ extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__COPY_cons
 }
 
 extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__OPERATOR_assign_const_QStyleOptionTabWidgetFrame_R(QStyleOptionTabWidgetFrame * _self_, const QStyleOptionTabWidgetFrame & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__CONSTRUCT_int(int version) {
@@ -62051,7 +62272,7 @@ extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__COPY_const_QStyle
 }
 
 extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__OPERATOR_assign_const_QStyleOptionTabBarBase_R(QStyleOptionTabBarBase * _self_, const QStyleOptionTabBarBase & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__CONSTRUCT_int(int version) {
@@ -62099,7 +62320,7 @@ extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__COPY_const_QStyleOptionHe
 }
 
 extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__OPERATOR_assign_const_QStyleOptionHeader_R(QStyleOptionHeader * _self_, const QStyleOptionHeader & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__CONSTRUCT_int(int version) {
@@ -62187,7 +62408,7 @@ extern "C" QStyleOptionButton * bg_QStyleOptionButton__COPY_const_QStyleOptionBu
 }
 
 extern "C" QStyleOptionButton * bg_QStyleOptionButton__OPERATOR_assign_const_QStyleOptionButton_R(QStyleOptionButton * _self_, const QStyleOptionButton & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionButton * bg_QStyleOptionButton__CONSTRUCT_int(int version) {
@@ -62235,7 +62456,7 @@ extern "C" QStyleOptionTab * bg_QStyleOptionTab__COPY_const_QStyleOptionTab_R(co
 }
 
 extern "C" QStyleOptionTab * bg_QStyleOptionTab__OPERATOR_assign_const_QStyleOptionTab_R(QStyleOptionTab * _self_, const QStyleOptionTab & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionTab * bg_QStyleOptionTab__CONSTRUCT_int(int version) {
@@ -62355,7 +62576,7 @@ extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__COPY_const_QStyleOption
 }
 
 extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__OPERATOR_assign_const_QStyleOptionToolBar_R(QStyleOptionToolBar * _self_, const QStyleOptionToolBar & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__CONSTRUCT_int(int version) {
@@ -62419,7 +62640,7 @@ extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__COPY_const_QSty
 }
 
 extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__OPERATOR_assign_const_QStyleOptionProgressBar_R(QStyleOptionProgressBar * _self_, const QStyleOptionProgressBar & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__CONSTRUCT_int(int version) {
@@ -62499,7 +62720,7 @@ extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__OPERATOR_assign_const_QStyleOptionMenuItem_R(QStyleOptionMenuItem * _self_, const QStyleOptionMenuItem & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__CONSTRUCT_int(int version) {
@@ -62595,7 +62816,7 @@ extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__COPY_const_QStyle
 }
 
 extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__OPERATOR_assign_const_QStyleOptionDockWidget_R(QStyleOptionDockWidget * _self_, const QStyleOptionDockWidget & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__CONSTRUCT_int(int version) {
@@ -62651,7 +62872,7 @@ extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__OPERATOR_assign_const_QStyleOptionViewItem_R(QStyleOptionViewItem * _self_, const QStyleOptionViewItem & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__CONSTRUCT_int(int version) {
@@ -62791,7 +63012,7 @@ extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__COPY_const_QStyleOption
 }
 
 extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__OPERATOR_assign_const_QStyleOptionToolBox_R(QStyleOptionToolBox * _self_, const QStyleOptionToolBox & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__CONSTRUCT_int(int version) {
@@ -62839,7 +63060,7 @@ extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__COPY_const_QStyle
 }
 
 extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__OPERATOR_assign_const_QStyleOptionRubberBand_R(QStyleOptionRubberBand * _self_, const QStyleOptionRubberBand & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__CONSTRUCT_int(int version) {
@@ -62871,7 +63092,7 @@ extern "C" QStyleOptionComplex * bg_QStyleOptionComplex__COPY_const_QStyleOption
 }
 
 extern "C" QStyleOptionComplex * bg_QStyleOptionComplex__OPERATOR_assign_const_QStyleOptionComplex_R(QStyleOptionComplex * _self_, const QStyleOptionComplex & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyle::SubControls bg_QStyleOptionComplex_subControls_GETTER_(QStyleOptionComplex * _self_) {
@@ -62899,7 +63120,7 @@ extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__COPY_const_QStyleOptionSl
 }
 
 extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__OPERATOR_assign_const_QStyleOptionSlider_R(QStyleOptionSlider * _self_, const QStyleOptionSlider & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__CONSTRUCT_int(int version) {
@@ -63019,7 +63240,7 @@ extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__COPY_const_QStyleOption
 }
 
 extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__OPERATOR_assign_const_QStyleOptionSpinBox_R(QStyleOptionSpinBox * _self_, const QStyleOptionSpinBox & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__CONSTRUCT_int(int version) {
@@ -63059,7 +63280,7 @@ extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__COPY_const_QStyle
 }
 
 extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__OPERATOR_assign_const_QStyleOptionToolButton_R(QStyleOptionToolButton * _self_, const QStyleOptionToolButton & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__CONSTRUCT_int(int version) {
@@ -63139,7 +63360,7 @@ extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__OPERATOR_assign_const_QStyleOptionComboBox_R(QStyleOptionComboBox * _self_, const QStyleOptionComboBox & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__CONSTRUCT_int(int version) {
@@ -63211,7 +63432,7 @@ extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__OPERATOR_assign_const_QStyleOptionTitleBar_R(QStyleOptionTitleBar * _self_, const QStyleOptionTitleBar & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__CONSTRUCT_int(int version) {
@@ -63259,7 +63480,7 @@ extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__OPERATOR_assign_const_QStyleOptionGroupBox_R(QStyleOptionGroupBox * _self_, const QStyleOptionGroupBox & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__CONSTRUCT_int(int version) {
@@ -63323,7 +63544,7 @@ extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__COPY_const_QStyleOpti
 }
 
 extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__OPERATOR_assign_const_QStyleOptionSizeGrip_R(QStyleOptionSizeGrip * _self_, const QStyleOptionSizeGrip & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__CONSTRUCT_int(int version) {
@@ -63347,7 +63568,7 @@ extern "C" QStyleOptionGraphicsItem * bg_QStyleOptionGraphicsItem__COPY_const_QS
 }
 
 extern "C" QStyleOptionGraphicsItem * bg_QStyleOptionGraphicsItem__OPERATOR_assign_const_QStyleOptionGraphicsItem_R(QStyleOptionGraphicsItem * _self_, const QStyleOptionGraphicsItem & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" qreal bg_QStyleOptionGraphicsItem_levelOfDetailFromTransform_STATIC_const_QTransform_R(const QTransform & worldTransform) {
@@ -63375,7 +63596,7 @@ extern "C" QStyleHintReturn * bg_QStyleHintReturn__COPY_const_QStyleHintReturn_R
 }
 
 extern "C" QStyleHintReturn * bg_QStyleHintReturn__OPERATOR_assign_const_QStyleHintReturn_R(QStyleHintReturn * _self_, const QStyleHintReturn & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" int bg_QStyleHintReturn_version_GETTER_(QStyleHintReturn * _self_) {
@@ -63779,12 +64000,12 @@ struct BgJumptable_QAbstractScrollArea {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -64176,7 +64397,7 @@ struct BgInherit_QAbstractScrollArea : public QAbstractScrollArea {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QAbstractScrollArea::nativeEvent(eventType, message, result);
     }
@@ -64221,7 +64442,7 @@ struct BgInherit_QAbstractScrollArea : public QAbstractScrollArea {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QAbstractScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QAbstractScrollArea::inputMethodQuery(unnamed_arg_0);
     }
@@ -64354,8 +64575,8 @@ extern "C" void bg_QAbstractScrollArea_addScrollBarWidget_QWidget_X_Qt__Alignmen
   _self_->addScrollBarWidget(widget, alignment);
 }
 
-extern "C" QWidgetList * bg_QAbstractScrollArea_scrollBarWidgets_Qt__Alignment(QAbstractScrollArea * _self_, Qt::Alignment alignment) {
-  return new (UseGC, bindgen_gc_finalizer<QWidgetList>()) QWidgetList (_self_->scrollBarWidgets(alignment));
+extern "C" Container_QList_QWidget_X_ * bg_QAbstractScrollArea_scrollBarWidgets_Qt__Alignment(QAbstractScrollArea * _self_, Qt::Alignment alignment) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWidget_X_>()) Container_QList_QWidget_X_ (_self_->scrollBarWidgets(alignment));
 }
 
 extern "C" QWidget * bg_QAbstractScrollArea_viewport_(QAbstractScrollArea * _self_) {
@@ -64576,14 +64797,14 @@ struct BgJumptable_QAbstractItemView {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QAbstractItemModel *> bg_QAbstractItemView_setModel_QAbstractItemModel_X;
   CrystalProc<void, QItemSelectionModel *> bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<QRect *, const QModelIndex *> bg_QAbstractItemView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QAbstractItemView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QAbstractItemView_indexAt_const_QPoint_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_reset_;
   CrystalProc<void, const QModelIndex *> bg_QAbstractItemView_setRootIndex_const_QModelIndex_R;
   CrystalProc<void> bg_QAbstractItemView_doItemsLayout_;
@@ -64608,7 +64829,7 @@ struct BgJumptable_QAbstractItemView {
   CrystalProc<int> bg_QAbstractItemView_horizontalOffset_;
   CrystalProc<int> bg_QAbstractItemView_verticalOffset_;
   CrystalProc<bool, const QModelIndex *> bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QAbstractItemView_selectedIndexes_;
   CrystalProc<bool, const QModelIndex *, QAbstractItemView::EditTrigger, QEvent *> bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X;
@@ -64657,7 +64878,7 @@ struct BgJumptable_QAbstractItemView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -64717,7 +64938,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QAbstractItemView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QAbstractItemView::keyboardSearch(search);
     }
@@ -64744,7 +64965,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QAbstractItemView *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractItemView_indexAt_const_QPoint_R.isValid())) {
-      return _self_->bgJump.bg_QAbstractItemView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QAbstractItemView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractItemView::indexAt");
     }
@@ -64780,7 +65001,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QAbstractItemView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QAbstractItemView::inputMethodQuery(unnamed_arg_0);
     }
@@ -64996,7 +65217,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QAbstractItemView *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid())) {
-      _self_->bgJump.bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       bindgen_fatal_panic("No implementation for pure method QAbstractItemView::setSelection");
     }
@@ -65437,7 +65658,7 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QAbstractItemView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QAbstractItemView::nativeEvent(eventType, message, result);
     }
@@ -66119,8 +66340,8 @@ extern "C" QMetaObject::Connection * bg_QAbstractItemView_CONNECT_viewportEntere
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractItemView::*)())&QAbstractItemView::viewportEntered, [_proc_](){ _proc_(); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QAbstractItemView_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QAbstractItemView * _self_, CrystalProc<void, const QSize> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractItemView::*)(const QSize &))&QAbstractItemView::iconSizeChanged, [_proc_](const QSize & size){ _proc_(size); }));
+extern "C" QMetaObject::Connection * bg_QAbstractItemView_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QAbstractItemView * _self_, CrystalProc<void, const QSize *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QAbstractItemView::*)(const QSize &))&QAbstractItemView::iconSizeChanged, [_proc_](const QSize & size){ _proc_(bindgen_address(size)); }));
 }
 
 extern "C" void bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(QAbstractItemView * _self_, QAbstractItemModel * model) {
@@ -66519,12 +66740,12 @@ extern "C" void bg_QApplication_setFont_STATIC_const_QFont_R_const_char_X(const 
   QApplication::setFont(unnamed_arg_0, className);
 }
 
-extern "C" QWidgetList * bg_QApplication_allWidgets_STATIC_() {
-  return new (UseGC, bindgen_gc_finalizer<QWidgetList>()) QWidgetList (QApplication::allWidgets());
+extern "C" Container_QList_QWidget_X_ * bg_QApplication_allWidgets_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWidget_X_>()) Container_QList_QWidget_X_ (QApplication::allWidgets());
 }
 
-extern "C" QWidgetList * bg_QApplication_topLevelWidgets_STATIC_() {
-  return new (UseGC, bindgen_gc_finalizer<QWidgetList>()) QWidgetList (QApplication::topLevelWidgets());
+extern "C" Container_QList_QWidget_X_ * bg_QApplication_topLevelWidgets_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWidget_X_>()) Container_QList_QWidget_X_ (QApplication::topLevelWidgets());
 }
 
 extern "C" QWidget * bg_QApplication_activePopupWidget_STATIC_() {
@@ -66692,7 +66913,7 @@ struct BgJumptable_QLayoutItem {
   CrystalProc<QSize *> bg_QLayoutItem_minimumSize_;
   CrystalProc<QSize *> bg_QLayoutItem_maximumSize_;
   CrystalProc<Qt::Orientations> bg_QLayoutItem_expandingDirections_;
-  CrystalProc<void, const QRect> bg_QLayoutItem_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QLayoutItem_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QLayoutItem_geometry_;
   CrystalProc<bool> bg_QLayoutItem_isEmpty_;
   CrystalProc<bool> bg_QLayoutItem_hasHeightForWidth_;
@@ -66746,7 +66967,7 @@ struct BgInherit_QLayoutItem : public QLayoutItem {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QLayoutItem *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QLayoutItem_setGeometry_const_QRect_R.isValid())) {
-      _self_->bgJump.bg_QLayoutItem_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QLayoutItem_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       bindgen_fatal_panic("No implementation for pure method QLayoutItem::setGeometry");
     }
@@ -66920,7 +67141,7 @@ extern "C" QSizePolicy::ControlTypes bg_QLayoutItem_controlTypes_(QLayoutItem * 
 }
 
 extern "C" QLayoutItem * bg_QLayoutItem__OPERATOR_assign_const_QLayoutItem_R(QLayoutItem * _self_, const QLayoutItem & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" Qt::Alignment bg_QLayoutItem_align_GETTER_(QLayoutItem * _self_) {
@@ -67009,7 +67230,7 @@ struct BgJumptable_QSpacerItem {
   CrystalProc<QSize *> bg_QSpacerItem_maximumSize_;
   CrystalProc<Qt::Orientations> bg_QSpacerItem_expandingDirections_;
   CrystalProc<bool> bg_QSpacerItem_isEmpty_;
-  CrystalProc<void, const QRect> bg_QSpacerItem_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QSpacerItem_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QSpacerItem_geometry_;
   CrystalProc<QSpacerItem *> bg_QSpacerItem_spacerItem_;
   CrystalProc<bool> bg_QLayoutItem_hasHeightForWidth_;
@@ -67072,7 +67293,7 @@ struct BgInherit_QSpacerItem : public QSpacerItem {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QSpacerItem *_self_ = this;
     if (_self_->bgJump.bg_QSpacerItem_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QSpacerItem_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QSpacerItem_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QSpacerItem::setGeometry(unnamed_arg_0);
     }
@@ -67209,7 +67430,7 @@ extern "C" QSpacerItem * bg_QSpacerItem__COPY_const_QSpacerItem_R(const QSpacerI
 }
 
 extern "C" QSpacerItem * bg_QSpacerItem__OPERATOR_assign_const_QSpacerItem_R(QSpacerItem * _self_, const QSpacerItem & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QSize bg_QSpacerItem_sizeHint_SUPER_(QSpacerItem * _self_) {
@@ -67254,7 +67475,7 @@ struct BgJumptable_QWidgetItem {
   CrystalProc<QSize *> bg_QWidgetItem_maximumSize_;
   CrystalProc<Qt::Orientations> bg_QWidgetItem_expandingDirections_;
   CrystalProc<bool> bg_QWidgetItem_isEmpty_;
-  CrystalProc<void, const QRect> bg_QWidgetItem_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QWidgetItem_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QWidgetItem_geometry_;
   CrystalProc<QWidget *> bg_QWidgetItem_widget_;
   CrystalProc<bool> bg_QWidgetItem_hasHeightForWidth_;
@@ -67316,7 +67537,7 @@ struct BgInherit_QWidgetItem : public QWidgetItem {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QWidgetItem_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QWidgetItem_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QWidgetItem_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QWidgetItem::setGeometry(unnamed_arg_0);
     }
@@ -67528,7 +67749,7 @@ struct BgJumptable_QLayout {
   CrystalProc<Qt::Orientations> bg_QLayout_expandingDirections_;
   CrystalProc<QSize *> bg_QLayout_minimumSize_;
   CrystalProc<QSize *> bg_QLayout_maximumSize_;
-  CrystalProc<void, const QRect> bg_QLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QLayout_setGeometry_const_QRect_R;
   CrystalProc<QLayoutItem *, int> bg_QLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QLayout_takeAt_int;
   CrystalProc<int, const QWidget *> bg_QLayout_indexOf_const_QWidget_X;
@@ -67658,7 +67879,7 @@ struct BgInherit_QLayout : public QLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QLayout *_self_ = this;
     if (_self_->bgJump.bg_QLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QLayout::setGeometry(unnamed_arg_0);
     }
@@ -68256,13 +68477,14 @@ struct BgJumptable_QGridLayout {
   CrystalProc<QLayoutItem *, int> bg_QGridLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QGridLayout_takeAt_int;
   CrystalProc<int> bg_QGridLayout_count_;
-  CrystalProc<void, const QRect> bg_QGridLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QGridLayout_setGeometry_const_QRect_R;
   CrystalProc<void, QLayoutItem *> bg_QGridLayout_addItem_QLayoutItem_X;
   CrystalProc<QRect *> bg_QLayout_geometry_;
   CrystalProc<int, const QWidget *> bg_QLayout_indexOf_const_QWidget_X;
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -68423,7 +68645,7 @@ struct BgInherit_QGridLayout : public QGridLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QGridLayout *_self_ = this;
     if (_self_->bgJump.bg_QGridLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QGridLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QGridLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QGridLayout::setGeometry(unnamed_arg_0);
     }
@@ -68863,12 +69085,13 @@ struct BgJumptable_QBoxLayout {
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_takeAt_int;
   CrystalProc<int> bg_QBoxLayout_count_;
-  CrystalProc<void, const QRect> bg_QBoxLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QBoxLayout_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QLayout_geometry_;
   CrystalProc<int, const QWidget *> bg_QLayout_indexOf_const_QWidget_X;
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -69038,7 +69261,7 @@ struct BgInherit_QBoxLayout : public QBoxLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QBoxLayout *_self_ = this;
     if (_self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QBoxLayout::setGeometry(unnamed_arg_0);
     }
@@ -69425,12 +69648,13 @@ struct BgJumptable_QHBoxLayout {
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_takeAt_int;
   CrystalProc<int> bg_QBoxLayout_count_;
-  CrystalProc<void, const QRect> bg_QBoxLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QBoxLayout_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QLayout_geometry_;
   CrystalProc<int, const QWidget *> bg_QLayout_indexOf_const_QWidget_X;
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -69600,7 +69824,7 @@ struct BgInherit_QHBoxLayout : public QHBoxLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QHBoxLayout *_self_ = this;
     if (_self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QHBoxLayout::setGeometry(unnamed_arg_0);
     }
@@ -69791,12 +70015,13 @@ struct BgJumptable_QVBoxLayout {
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QBoxLayout_takeAt_int;
   CrystalProc<int> bg_QBoxLayout_count_;
-  CrystalProc<void, const QRect> bg_QBoxLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QBoxLayout_setGeometry_const_QRect_R;
   CrystalProc<QRect *> bg_QLayout_geometry_;
   CrystalProc<int, const QWidget *> bg_QLayout_indexOf_const_QWidget_X;
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -69966,7 +70191,7 @@ struct BgInherit_QVBoxLayout : public QVBoxLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QVBoxLayout *_self_ = this;
     if (_self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QBoxLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QVBoxLayout::setGeometry(unnamed_arg_0);
     }
@@ -70396,7 +70621,7 @@ struct BgJumptable_QCalendarWidget {
   CrystalProc<void, QMouseEvent *> bg_QCalendarWidget_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QResizeEvent *> bg_QCalendarWidget_resizeEvent_QResizeEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QCalendarWidget_keyPressEvent_QKeyEvent_X;
-  CrystalProc<void, QPainter *, const QRect, QDate *> bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate;
+  CrystalProc<void, QPainter *, const QRect *, QDate *> bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate;
   CrystalProc<int> bg_QWidget_devType_;
   CrystalProc<void, bool> bg_QWidget_setVisible_bool;
   CrystalProc<int, int> bg_QWidget_heightForWidth_int;
@@ -70423,13 +70648,13 @@ struct BgJumptable_QCalendarWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -70533,7 +70758,7 @@ struct BgInherit_QCalendarWidget : public QCalendarWidget {
   void paintCell(QPainter * painter, const QRect & rect, QDate date) const override {
     const BgInherit_QCalendarWidget *_self_ = this;
     if (_self_->bgJump.bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate.isValid()) {
-      _self_->bgJump.bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate(painter, rect, new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date));
+      _self_->bgJump.bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate(painter, bindgen_address(rect), new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date));
     } else {
       QCalendarWidget::paintCell(painter, rect, date);
     }
@@ -70776,7 +71001,7 @@ struct BgInherit_QCalendarWidget : public QCalendarWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QCalendarWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QCalendarWidget::nativeEvent(eventType, message, result);
     }
@@ -70830,7 +71055,7 @@ struct BgInherit_QCalendarWidget : public QCalendarWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QCalendarWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QCalendarWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -71206,7 +71431,7 @@ struct BgJumptable_QCheckBox {
   CrystalProc<QSize *> bg_QCheckBox_sizeHint_;
   CrystalProc<QSize *> bg_QCheckBox_minimumSizeHint_;
   CrystalProc<bool, QEvent *> bg_QCheckBox_event_QEvent_X;
-  CrystalProc<bool, const QPoint> bg_QCheckBox_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QCheckBox_hitButton_const_QPoint_R;
   CrystalProc<void> bg_QCheckBox_checkStateSet_;
   CrystalProc<void> bg_QCheckBox_nextCheckState_;
   CrystalProc<void, QPaintEvent *> bg_QCheckBox_paintEvent_QPaintEvent_X;
@@ -71241,12 +71466,12 @@ struct BgJumptable_QCheckBox {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -71314,7 +71539,7 @@ struct BgInherit_QCheckBox : public QCheckBox {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QCheckBox *_self_ = this;
     if (_self_->bgJump.bg_QCheckBox_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QCheckBox_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QCheckBox_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QCheckBox::hitButton(pos);
     }
@@ -71629,7 +71854,7 @@ struct BgInherit_QCheckBox : public QCheckBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QCheckBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QCheckBox::nativeEvent(eventType, message, result);
     }
@@ -71674,7 +71899,7 @@ struct BgInherit_QCheckBox : public QCheckBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QCheckBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QCheckBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -71913,13 +72138,13 @@ struct BgJumptable_QDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -72302,7 +72527,7 @@ struct BgInherit_QDialog : public QDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDialog::nativeEvent(eventType, message, result);
     }
@@ -72356,7 +72581,7 @@ struct BgInherit_QDialog : public QDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -72668,12 +72893,12 @@ struct BgJumptable_QColorDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -73065,7 +73290,7 @@ struct BgInherit_QColorDialog : public QColorDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QColorDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QColorDialog::nativeEvent(eventType, message, result);
     }
@@ -73110,7 +73335,7 @@ struct BgInherit_QColorDialog : public QColorDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QColorDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QColorDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -73327,7 +73552,7 @@ struct BgJumptable_QColumnView {
   CrystalProc<const QMetaObject *> bg_QColumnView_metaObject_;
   CrystalProc<void *, const char *> bg_QColumnView_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QColumnView_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<QModelIndex &, const QPoint> bg_QColumnView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QColumnView_indexAt_const_QPoint_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
   CrystalProc<QSize *> bg_QColumnView_sizeHint_;
   CrystalProc<QRect *, const QModelIndex *> bg_QColumnView_visualRect_const_QModelIndex_R;
@@ -73338,7 +73563,7 @@ struct BgJumptable_QColumnView {
   CrystalProc<bool, const QModelIndex *> bg_QColumnView_isIndexHidden_const_QModelIndex_R;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QColumnView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
   CrystalProc<void, QResizeEvent *> bg_QColumnView_resizeEvent_QResizeEvent_X;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QColumnView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QColumnView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QColumnView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<int> bg_QColumnView_horizontalOffset_;
   CrystalProc<int> bg_QColumnView_verticalOffset_;
@@ -73346,13 +73571,14 @@ struct BgJumptable_QColumnView {
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QColumnView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, int, int> bg_QColumnView_scrollContentsBy_int_int;
   CrystalProc<QAbstractItemView *, const QModelIndex *> bg_QColumnView_createColumn_const_QModelIndex_R;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_reset_;
   CrystalProc<void> bg_QAbstractItemView_doItemsLayout_;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
   CrystalProc<void, const QItemSelection *, const QItemSelection *> bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R;
@@ -73410,7 +73636,7 @@ struct BgJumptable_QColumnView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -73452,7 +73678,7 @@ struct BgInherit_QColumnView : public QColumnView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QColumnView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QColumnView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QColumnView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QColumnView::indexAt(point);
     }
@@ -73551,7 +73777,7 @@ struct BgInherit_QColumnView : public QColumnView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QColumnView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QColumnView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QColumnView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QColumnView::setSelection(rect, command);
     }
@@ -73623,7 +73849,7 @@ struct BgInherit_QColumnView : public QColumnView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QColumnView::keyboardSearch(search);
     }
@@ -73659,7 +73885,7 @@ struct BgInherit_QColumnView : public QColumnView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QColumnView::inputMethodQuery(unnamed_arg_0);
     }
@@ -74199,7 +74425,7 @@ struct BgInherit_QColumnView : public QColumnView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QColumnView::nativeEvent(eventType, message, result);
     }
@@ -74515,7 +74741,7 @@ struct BgJumptable_QComboBox {
   CrystalProc<void> bg_QComboBox_showPopup_;
   CrystalProc<void> bg_QComboBox_hidePopup_;
   CrystalProc<bool, QEvent *> bg_QComboBox_event_QEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QFocusEvent *> bg_QComboBox_focusInEvent_QFocusEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QComboBox_focusOutEvent_QFocusEvent_X;
   CrystalProc<void, QEvent *> bg_QComboBox_changeEvent_QEvent_X;
@@ -74548,7 +74774,7 @@ struct BgJumptable_QComboBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -74647,7 +74873,7 @@ struct BgInherit_QComboBox : public QComboBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QComboBox *_self_ = this;
     if (_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QComboBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -74944,7 +75170,7 @@ struct BgInherit_QComboBox : public QComboBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QComboBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QComboBox::nativeEvent(eventType, message, result);
     }
@@ -75469,32 +75695,32 @@ extern "C" const QMetaObject * bg_QComboBox_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QComboBox::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_editTextChanged_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::editTextChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_editTextChanged_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::editTextChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_activated_CrystalProc_void__int_(QComboBox * _self_, CrystalProc<void, int> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(int))&QComboBox::activated, [_proc_](int index){ _proc_(index); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_textActivated_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::textActivated, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_textActivated_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::textActivated, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_highlighted_CrystalProc_void__int_(QComboBox * _self_, CrystalProc<void, int> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(int))&QComboBox::highlighted, [_proc_](int index){ _proc_(index); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_textHighlighted_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::textHighlighted, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_textHighlighted_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::textHighlighted, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_currentIndexChanged_CrystalProc_void__int_(QComboBox * _self_, CrystalProc<void, int> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(int))&QComboBox::currentIndexChanged, [_proc_](int index){ _proc_(index); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_currentTextChanged_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::currentTextChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QComboBox_CONNECT_currentTextChanged_CrystalProc_void__const_QString_R_(QComboBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QComboBox::*)(const QString &))&QComboBox::currentTextChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" void bg_QComboBox_setModel_SUPER_QAbstractItemModel_X(QComboBox * _self_, QAbstractItemModel * model) {
@@ -75602,7 +75828,7 @@ struct BgJumptable_QPushButton {
   CrystalProc<void, QFocusEvent *> bg_QPushButton_focusOutEvent_QFocusEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QPushButton_mouseMoveEvent_QMouseEvent_X;
   CrystalProc<void, QStyleOptionButton *> bg_QPushButton_initStyleOption_QStyleOptionButton_X;
-  CrystalProc<bool, const QPoint> bg_QPushButton_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QPushButton_hitButton_const_QPoint_R;
   CrystalProc<void> bg_QAbstractButton_checkStateSet_;
   CrystalProc<void> bg_QAbstractButton_nextCheckState_;
   CrystalProc<void, QKeyEvent *> bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X;
@@ -75631,12 +75857,12 @@ struct BgJumptable_QPushButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -75758,7 +75984,7 @@ struct BgInherit_QPushButton : public QPushButton {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QPushButton *_self_ = this;
     if (_self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QPushButton::hitButton(pos);
     }
@@ -76019,7 +76245,7 @@ struct BgInherit_QPushButton : public QPushButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QPushButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QPushButton::nativeEvent(eventType, message, result);
     }
@@ -76064,7 +76290,7 @@ struct BgInherit_QPushButton : public QPushButton {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QPushButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QPushButton::inputMethodQuery(unnamed_arg_0);
     }
@@ -76303,7 +76529,7 @@ struct BgJumptable_QCommandLinkButton {
   CrystalProc<void, QFocusEvent *> bg_QPushButton_focusInEvent_QFocusEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QPushButton_focusOutEvent_QFocusEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QPushButton_mouseMoveEvent_QMouseEvent_X;
-  CrystalProc<bool, const QPoint> bg_QPushButton_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QPushButton_hitButton_const_QPoint_R;
   CrystalProc<void> bg_QAbstractButton_checkStateSet_;
   CrystalProc<void> bg_QAbstractButton_nextCheckState_;
   CrystalProc<void, QKeyEvent *> bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X;
@@ -76331,12 +76557,12 @@ struct BgJumptable_QCommandLinkButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -76467,7 +76693,7 @@ struct BgInherit_QCommandLinkButton : public QCommandLinkButton {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QCommandLinkButton *_self_ = this;
     if (_self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QCommandLinkButton::hitButton(pos);
     }
@@ -76719,7 +76945,7 @@ struct BgInherit_QCommandLinkButton : public QCommandLinkButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QCommandLinkButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QCommandLinkButton::nativeEvent(eventType, message, result);
     }
@@ -76764,7 +76990,7 @@ struct BgInherit_QCommandLinkButton : public QCommandLinkButton {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QCommandLinkButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QCommandLinkButton::inputMethodQuery(unnamed_arg_0);
     }
@@ -76933,9 +77159,9 @@ struct BgJumptable_QCommonStyle {
   CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QCommonStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
   CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QCommonStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QCommonStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
-  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint *, const QWidget *> bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
   CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QCommonStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
-  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize *, const QWidget *> bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
   CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QCommonStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QCommonStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
   CrystalProc<QIcon &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QCommonStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
@@ -76947,10 +77173,10 @@ struct BgJumptable_QCommonStyle {
   CrystalProc<void, QWidget *> bg_QCommonStyle_polish_QWidget_X;
   CrystalProc<void, QWidget *> bg_QCommonStyle_unpolish_QWidget_X;
   CrystalProc<void, QApplication *> bg_QCommonStyle_unpolish_QApplication_X;
-  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
-  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
-  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
-  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect *, int, bool, const CrystalString *> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect *, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPalette *, bool, const CrystalString *, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
   CrystalProc<QPalette &> bg_QStyle_standardPalette_;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
@@ -77029,7 +77255,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid()) {
-      return _self_->bgJump.bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+      return _self_->bgJump.bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, bindgen_address(pt), widget);
     } else {
       return QCommonStyle::hitTestComplexControl(cc, opt, pt, widget);
     }
@@ -77047,7 +77273,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid()) {
-      return *_self_->bgJump.bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+      return *_self_->bgJump.bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, bindgen_address(contentsSize), w);
     } else {
       return QCommonStyle::sizeFromContents(ct, opt, contentsSize, w);
     }
@@ -77155,7 +77381,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
-      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), bindgen_address(r), flags, enabled, bindgen_address(qstring_to_crystal(text)));
     } else {
       return QCommonStyle::itemTextRect(fm, r, flags, enabled, text);
     }
@@ -77164,7 +77390,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(bindgen_address(r), flags, &(pixmap));
     } else {
       return QCommonStyle::itemPixmapRect(r, flags, pixmap);
     }
@@ -77173,7 +77399,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
-      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, bindgen_address(rect), flags, &(pal), enabled, bindgen_address(qstring_to_crystal(text)), textRole);
     } else {
       QCommonStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
     }
@@ -77182,7 +77408,7 @@ struct BgInherit_QCommonStyle : public QCommonStyle {
   void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
     const BgInherit_QCommonStyle *_self_ = this;
     if (_self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, bindgen_address(rect), alignment, &(pixmap));
     } else {
       QCommonStyle::drawItemPixmap(painter, rect, alignment, pixmap);
     }
@@ -77449,8 +77675,8 @@ struct BgJumptable_QCompleter {
   CrystalProc<const QMetaObject *> bg_QCompleter_metaObject_;
   CrystalProc<void *, const char *> bg_QCompleter_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString, const QModelIndex *> bg_QCompleter_pathFromIndex_const_QModelIndex_R;
-  CrystalProc<QList<QString> *, const CrystalString> bg_QCompleter_splitPath_const_QString_R;
+  CrystalProc<CrystalString *, const QModelIndex *> bg_QCompleter_pathFromIndex_const_QModelIndex_R;
+  CrystalProc<QList<QString> *, const CrystalString *> bg_QCompleter_splitPath_const_QString_R;
   CrystalProc<bool, QObject *, QEvent *> bg_QCompleter_eventFilter_QObject_X_QEvent_X;
   CrystalProc<bool, QEvent *> bg_QCompleter_event_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -77492,7 +77718,7 @@ struct BgInherit_QCompleter : public QCompleter {
   QString pathFromIndex(const QModelIndex & index) const override {
     const BgInherit_QCompleter *_self_ = this;
     if (_self_->bgJump.bg_QCompleter_pathFromIndex_const_QModelIndex_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QCompleter_pathFromIndex_const_QModelIndex_R(&(index))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QCompleter_pathFromIndex_const_QModelIndex_R(&(index))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QCompleter::pathFromIndex(index);
     }
@@ -77501,7 +77727,7 @@ struct BgInherit_QCompleter : public QCompleter {
   QList<QString> splitPath(const QString & path) const override {
     const BgInherit_QCompleter *_self_ = this;
     if (_self_->bgJump.bg_QCompleter_splitPath_const_QString_R.isValid()) {
-      return *(_self_->bgJump.bg_QCompleter_splitPath_const_QString_R(qstring_to_crystal(path)));
+      return *(_self_->bgJump.bg_QCompleter_splitPath_const_QString_R(bindgen_address(qstring_to_crystal(path))));
     } else {
       return QCompleter::splitPath(path);
     }
@@ -77771,16 +77997,16 @@ extern "C" const QMetaObject * bg_QCompleter_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCompleter::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QString_R_(QCompleter * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCompleter::*)(const QString &))&QCompleter::activated, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QString_R_(QCompleter * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCompleter::*)(const QString &))&QCompleter::activated, [_proc_](const QString & text){ _proc_(bindgen_address(qstring_to_crystal(text))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QModelIndex_R_(QCompleter * _self_, CrystalProc<void, const QModelIndex *> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCompleter::*)(const QModelIndex &))&QCompleter::activated, [_proc_](const QModelIndex & index){ _proc_(&(index)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QString_R_(QCompleter * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCompleter::*)(const QString &))&QCompleter::highlighted, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QString_R_(QCompleter * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCompleter::*)(const QString &))&QCompleter::highlighted, [_proc_](const QString & text){ _proc_(bindgen_address(qstring_to_crystal(text))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QModelIndex_R_(QCompleter * _self_, CrystalProc<void, const QModelIndex *> _proc_) {
@@ -78087,14 +78313,14 @@ struct BgJumptable_QDateTimeEdit {
   CrystalProc<void, QWheelEvent *> bg_QDateTimeEdit_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QDateTimeEdit_focusInEvent_QFocusEvent_X;
   CrystalProc<bool, bool> bg_QDateTimeEdit_focusNextPrevChild_bool;
-  CrystalProc<QDateTime &, const CrystalString> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
-  CrystalProc<CrystalString, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
+  CrystalProc<QDateTime &, const CrystalString *> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
+  CrystalProc<CrystalString *, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
   CrystalProc<QAbstractSpinBox::StepEnabled> bg_QDateTimeEdit_stepEnabled_;
   CrystalProc<void, QMouseEvent *> bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QPaintEvent *> bg_QDateTimeEdit_paintEvent_QPaintEvent_X;
   CrystalProc<void, QStyleOptionSpinBox *> bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X;
@@ -78121,7 +78347,7 @@ struct BgJumptable_QDateTimeEdit {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -78237,7 +78463,7 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
   QDateTime dateTimeFromText(const QString & text) const override {
     const BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(qstring_to_crystal(text));
+      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       return QDateTimeEdit::dateTimeFromText(text);
     }
@@ -78246,7 +78472,7 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
   QString textFromDateTime(const QDateTime & dt) const override {
     const BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QDateTimeEdit::textFromDateTime(dt);
     }
@@ -78300,7 +78526,7 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDateTimeEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -78543,7 +78769,7 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDateTimeEdit::nativeEvent(eventType, message, result);
     }
@@ -79015,14 +79241,14 @@ struct BgJumptable_QTimeEdit {
   CrystalProc<void, QWheelEvent *> bg_QDateTimeEdit_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QDateTimeEdit_focusInEvent_QFocusEvent_X;
   CrystalProc<bool, bool> bg_QDateTimeEdit_focusNextPrevChild_bool;
-  CrystalProc<QDateTime &, const CrystalString> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
-  CrystalProc<CrystalString, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
+  CrystalProc<QDateTime &, const CrystalString *> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
+  CrystalProc<CrystalString *, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
   CrystalProc<QAbstractSpinBox::StepEnabled> bg_QDateTimeEdit_stepEnabled_;
   CrystalProc<void, QMouseEvent *> bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QPaintEvent *> bg_QDateTimeEdit_paintEvent_QPaintEvent_X;
   CrystalProc<void, QStyleOptionSpinBox *> bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X;
@@ -79049,7 +79275,7 @@ struct BgJumptable_QTimeEdit {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -79165,7 +79391,7 @@ struct BgInherit_QTimeEdit : public QTimeEdit {
   QDateTime dateTimeFromText(const QString & text) const override {
     const BgInherit_QTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(qstring_to_crystal(text));
+      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       return QTimeEdit::dateTimeFromText(text);
     }
@@ -79174,7 +79400,7 @@ struct BgInherit_QTimeEdit : public QTimeEdit {
   QString textFromDateTime(const QDateTime & dt) const override {
     const BgInherit_QTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QTimeEdit::textFromDateTime(dt);
     }
@@ -79228,7 +79454,7 @@ struct BgInherit_QTimeEdit : public QTimeEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTimeEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -79471,7 +79697,7 @@ struct BgInherit_QTimeEdit : public QTimeEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTimeEdit::nativeEvent(eventType, message, result);
     }
@@ -79619,14 +79845,14 @@ struct BgJumptable_QDateEdit {
   CrystalProc<void, QWheelEvent *> bg_QDateTimeEdit_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QDateTimeEdit_focusInEvent_QFocusEvent_X;
   CrystalProc<bool, bool> bg_QDateTimeEdit_focusNextPrevChild_bool;
-  CrystalProc<QDateTime &, const CrystalString> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
-  CrystalProc<CrystalString, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
+  CrystalProc<QDateTime &, const CrystalString *> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
+  CrystalProc<CrystalString *, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
   CrystalProc<QAbstractSpinBox::StepEnabled> bg_QDateTimeEdit_stepEnabled_;
   CrystalProc<void, QMouseEvent *> bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QPaintEvent *> bg_QDateTimeEdit_paintEvent_QPaintEvent_X;
   CrystalProc<void, QStyleOptionSpinBox *> bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X;
@@ -79653,7 +79879,7 @@ struct BgJumptable_QDateEdit {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -79769,7 +79995,7 @@ struct BgInherit_QDateEdit : public QDateEdit {
   QDateTime dateTimeFromText(const QString & text) const override {
     const BgInherit_QDateEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(qstring_to_crystal(text));
+      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       return QDateEdit::dateTimeFromText(text);
     }
@@ -79778,7 +80004,7 @@ struct BgInherit_QDateEdit : public QDateEdit {
   QString textFromDateTime(const QDateTime & dt) const override {
     const BgInherit_QDateEdit *_self_ = this;
     if (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QDateEdit::textFromDateTime(dt);
     }
@@ -79832,7 +80058,7 @@ struct BgInherit_QDateEdit : public QDateEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDateEdit *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDateEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -80075,7 +80301,7 @@ struct BgInherit_QDateEdit : public QDateEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDateEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDateEdit::nativeEvent(eventType, message, result);
     }
@@ -80251,12 +80477,12 @@ struct BgJumptable_QDial {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -80621,7 +80847,7 @@ struct BgInherit_QDial : public QDial {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDial *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDial::nativeEvent(eventType, message, result);
     }
@@ -80666,7 +80892,7 @@ struct BgInherit_QDial : public QDial {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDial *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDial::inputMethodQuery(unnamed_arg_0);
     }
@@ -80908,12 +81134,12 @@ struct BgJumptable_QDialogButtonBox {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -81252,7 +81478,7 @@ struct BgInherit_QDialogButtonBox : public QDialogButtonBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDialogButtonBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDialogButtonBox::nativeEvent(eventType, message, result);
     }
@@ -81297,7 +81523,7 @@ struct BgInherit_QDialogButtonBox : public QDialogButtonBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDialogButtonBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDialogButtonBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -81561,12 +81787,12 @@ struct BgJumptable_QDockWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -81914,7 +82140,7 @@ struct BgInherit_QDockWidget : public QDockWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDockWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDockWidget::nativeEvent(eventType, message, result);
     }
@@ -81959,7 +82185,7 @@ struct BgInherit_QDockWidget : public QDockWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDockWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDockWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -82256,12 +82482,12 @@ struct BgJumptable_QErrorMessage {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -82653,7 +82879,7 @@ struct BgInherit_QErrorMessage : public QErrorMessage {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QErrorMessage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QErrorMessage::nativeEvent(eventType, message, result);
     }
@@ -82698,7 +82924,7 @@ struct BgInherit_QErrorMessage : public QErrorMessage {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QErrorMessage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QErrorMessage::inputMethodQuery(unnamed_arg_0);
     }
@@ -82866,12 +83092,12 @@ struct BgJumptable_QFileDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -83263,7 +83489,7 @@ struct BgInherit_QFileDialog : public QFileDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFileDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QFileDialog::nativeEvent(eventType, message, result);
     }
@@ -83308,7 +83534,7 @@ struct BgInherit_QFileDialog : public QFileDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QFileDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QFileDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -83805,20 +84031,20 @@ extern "C" const QMetaObject * bg_QFileDialog_staticMetaObject_STATIC_GETTER_() 
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileDialog::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_fileSelected_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::fileSelected, [_proc_](const QString & file){ _proc_(qstring_to_crystal(file)); }));
+extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_fileSelected_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::fileSelected, [_proc_](const QString & file){ _proc_(bindgen_address(qstring_to_crystal(file))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(QFileDialog * _self_, CrystalProc<void, const QList<QString> *> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QList<QString> &))&QFileDialog::filesSelected, [_proc_](const QList<QString> & files){ _proc_(new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (files)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_currentChanged_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::currentChanged, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_currentChanged_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::currentChanged, [_proc_](const QString & path){ _proc_(bindgen_address(qstring_to_crystal(path))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_directoryEntered_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::directoryEntered, [_proc_](const QString & directory){ _proc_(qstring_to_crystal(directory)); }));
+extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_directoryEntered_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::directoryEntered, [_proc_](const QString & directory){ _proc_(bindgen_address(qstring_to_crystal(directory))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_urlSelected_CrystalProc_void__const_QUrl_R_(QFileDialog * _self_, CrystalProc<void, const QUrl *> _proc_) {
@@ -83837,8 +84063,8 @@ extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_directoryUrlEntered_
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QUrl &))&QFileDialog::directoryUrlEntered, [_proc_](const QUrl & directory){ _proc_(&(directory)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_filterSelected_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::filterSelected, [_proc_](const QString & filter){ _proc_(qstring_to_crystal(filter)); }));
+extern "C" QMetaObject::Connection * bg_QFileDialog_CONNECT_filterSelected_CrystalProc_void__const_QString_R_(QFileDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileDialog::*)(const QString &))&QFileDialog::filterSelected, [_proc_](const QString & filter){ _proc_(bindgen_address(qstring_to_crystal(filter))); }));
 }
 
 extern "C" void bg_QFileDialog_setVisible_SUPER_bool(QFileDialog * _self_, bool visible) {
@@ -83899,13 +84125,13 @@ struct BgJumptable_QFocusFrame {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -84252,7 +84478,7 @@ struct BgInherit_QFocusFrame : public QFocusFrame {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFocusFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QFocusFrame::nativeEvent(eventType, message, result);
     }
@@ -84306,7 +84532,7 @@ struct BgInherit_QFocusFrame : public QFocusFrame {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QFocusFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QFocusFrame::inputMethodQuery(unnamed_arg_0);
     }
@@ -84453,7 +84679,7 @@ struct BgJumptable_QFontComboBox {
   CrystalProc<QSize *> bg_QComboBox_minimumSizeHint_;
   CrystalProc<void> bg_QComboBox_showPopup_;
   CrystalProc<void> bg_QComboBox_hidePopup_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QFocusEvent *> bg_QComboBox_focusInEvent_QFocusEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QComboBox_focusOutEvent_QFocusEvent_X;
   CrystalProc<void, QEvent *> bg_QComboBox_changeEvent_QEvent_X;
@@ -84486,7 +84712,7 @@ struct BgJumptable_QFontComboBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -84585,7 +84811,7 @@ struct BgInherit_QFontComboBox : public QFontComboBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QFontComboBox *_self_ = this;
     if (_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QFontComboBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -84882,7 +85108,7 @@ struct BgInherit_QFontComboBox : public QFontComboBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFontComboBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QFontComboBox::nativeEvent(eventType, message, result);
     }
@@ -85126,12 +85352,12 @@ struct BgJumptable_QFontDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -85523,7 +85749,7 @@ struct BgInherit_QFontDialog : public QFontDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QFontDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QFontDialog::nativeEvent(eventType, message, result);
     }
@@ -85568,7 +85794,7 @@ struct BgInherit_QFontDialog : public QFontDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QFontDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QFontDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -85774,7 +86000,7 @@ struct BgJumptable_QFormLayout {
   CrystalProc<void, QLayoutItem *> bg_QFormLayout_addItem_QLayoutItem_X;
   CrystalProc<QLayoutItem *, int> bg_QFormLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QFormLayout_takeAt_int;
-  CrystalProc<void, const QRect> bg_QFormLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QFormLayout_setGeometry_const_QRect_R;
   CrystalProc<QSize *> bg_QFormLayout_minimumSize_;
   CrystalProc<QSize *> bg_QFormLayout_sizeHint_;
   CrystalProc<void> bg_QFormLayout_invalidate_;
@@ -85788,6 +86014,7 @@ struct BgJumptable_QFormLayout {
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -85876,7 +86103,7 @@ struct BgInherit_QFormLayout : public QFormLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QFormLayout *_self_ = this;
     if (_self_->bgJump.bg_QFormLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QFormLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QFormLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QFormLayout::setGeometry(unnamed_arg_0);
     }
@@ -87533,7 +87760,7 @@ extern "C" QGestureEvent * bg_QGestureEvent__COPY_const_QGestureEvent_R(const QG
 }
 
 extern "C" QGestureEvent * bg_QGestureEvent__OPERATOR_assign_const_QGestureEvent_R(QGestureEvent * _self_, const QGestureEvent & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" void bg_BgInherit_QGestureEvent_JUMPTABLE_BgJumptable_QGestureEvent_R(BgInherit_QGestureEvent * _self_, const BgJumptable_QGestureEvent & table) {
@@ -87601,7 +87828,7 @@ extern "C" void bg_QGestureRecognizer_unregisterRecognizer_STATIC_Qt__GestureTyp
 }
 
 extern "C" QGestureRecognizer * bg_QGestureRecognizer__OPERATOR_assign_const_QGestureRecognizer_R(QGestureRecognizer * _self_, const QGestureRecognizer & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QGesture * bg_QGestureRecognizer_create_SUPER_QObject_X(QGestureRecognizer * _self_, QObject * target) {
@@ -87620,7 +87847,7 @@ struct BgJumptable_QGraphicsItem {
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<QRectF *> bg_QGraphicsItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsItem_contains_const_QPointF_R;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsItem_isObscuredBy_const_QGraphicsItem_X;
@@ -87647,11 +87874,11 @@ struct BgJumptable_QGraphicsItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsItem_extension_const_QVariant_R;
 };
 struct BgInherit_QGraphicsItem : public QGraphicsItem {
   using QGraphicsItem::QGraphicsItem;
@@ -87686,7 +87913,7 @@ struct BgInherit_QGraphicsItem : public QGraphicsItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsItem::contains(point);
     }
@@ -87929,7 +88156,7 @@ struct BgInherit_QGraphicsItem : public QGraphicsItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsItem::inputMethodQuery(query);
     }
@@ -87938,7 +88165,7 @@ struct BgInherit_QGraphicsItem : public QGraphicsItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsItem::itemChange(change, value);
     }
@@ -87956,7 +88183,7 @@ struct BgInherit_QGraphicsItem : public QGraphicsItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsItem::setExtension(extension, variant);
     }
@@ -87965,7 +88192,7 @@ struct BgInherit_QGraphicsItem : public QGraphicsItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsItem::extension(variant);
     }
@@ -89038,7 +89265,7 @@ struct BgJumptable_QGraphicsObject {
   CrystalProc<void, int> bg_QGraphicsObject_advance_int;
   CrystalProc<QRectF *> bg_QGraphicsObject_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsObject_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsObject_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsObject_contains_const_QPointF_R;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsObject_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsObject_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsObject_isObscuredBy_const_QGraphicsItem_X;
@@ -89065,11 +89292,11 @@ struct BgJumptable_QGraphicsObject {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsObject_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsObject_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsObject_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsObject_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsObject_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsObject_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsObject_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsObject_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsObject_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsObject_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsObject_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsObject_extension_const_QVariant_R;
 };
 struct BgInherit_QGraphicsObject : public QGraphicsObject {
   using QGraphicsObject::QGraphicsObject;
@@ -89194,7 +89421,7 @@ struct BgInherit_QGraphicsObject : public QGraphicsObject {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsObject *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsObject_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsObject_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsObject_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsObject::contains(point);
     }
@@ -89437,7 +89664,7 @@ struct BgInherit_QGraphicsObject : public QGraphicsObject {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsObject *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsObject_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsObject_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsObject_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsObject::inputMethodQuery(query);
     }
@@ -89446,7 +89673,7 @@ struct BgInherit_QGraphicsObject : public QGraphicsObject {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsObject *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsObject_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsObject_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsObject_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsObject::itemChange(change, value);
     }
@@ -89464,7 +89691,7 @@ struct BgInherit_QGraphicsObject : public QGraphicsObject {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsObject *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsObject_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsObject_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsObject_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsObject::setExtension(extension, variant);
     }
@@ -89473,7 +89700,7 @@ struct BgInherit_QGraphicsObject : public QGraphicsObject {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsObject *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsObject_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsObject_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsObject_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsObject::extension(variant);
     }
@@ -89666,6 +89893,10 @@ extern "C" void bg_QGraphicsObject_setFlags_QGraphicsItem__GraphicsItemFlags(QGr
 
 extern "C" QGraphicsItem::CacheMode bg_QGraphicsObject_cacheMode_(QGraphicsObject * _self_) {
   return _self_->cacheMode();
+}
+
+extern "C" void bg_QGraphicsObject_setCacheMode_QGraphicsItem__CacheMode(QGraphicsObject * _self_, QGraphicsItem::CacheMode mode) {
+  _self_->setCacheMode(mode);
 }
 
 extern "C" void bg_QGraphicsObject_setCacheMode_QGraphicsItem__CacheMode_const_QSize_R(QGraphicsObject * _self_, QGraphicsItem::CacheMode mode, const QSize cacheSize) {
@@ -89900,6 +90131,18 @@ extern "C" void bg_QGraphicsObject_moveBy_qreal_qreal(QGraphicsObject * _self_, 
   _self_->moveBy(dx, dy);
 }
 
+extern "C" void bg_QGraphicsObject_ensureVisible_(QGraphicsObject * _self_) {
+  _self_->ensureVisible();
+}
+
+extern "C" void bg_QGraphicsObject_ensureVisible_const_QRectF_R(QGraphicsObject * _self_, const QRectF rect) {
+  _self_->ensureVisible(rect);
+}
+
+extern "C" void bg_QGraphicsObject_ensureVisible_const_QRectF_R_int(QGraphicsObject * _self_, const QRectF rect, int xmargin) {
+  _self_->ensureVisible(rect, xmargin);
+}
+
 extern "C" void bg_QGraphicsObject_ensureVisible_const_QRectF_R_int_int(QGraphicsObject * _self_, const QRectF rect, int xmargin, int ymargin) {
   _self_->ensureVisible(rect, xmargin, ymargin);
 }
@@ -90024,6 +90267,10 @@ extern "C" Container_QList_QGraphicsItem_X_ * bg_QGraphicsObject_collidingItems_
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QGraphicsItem_X_>()) Container_QList_QGraphicsItem_X_ (_self_->collidingItems(mode));
 }
 
+extern "C" bool bg_QGraphicsObject_isObscured_(QGraphicsObject * _self_) {
+  return _self_->isObscured();
+}
+
 extern "C" bool bg_QGraphicsObject_isObscured_const_QRectF_R(QGraphicsObject * _self_, const QRectF rect) {
   return _self_->isObscured(rect);
 }
@@ -90056,12 +90303,20 @@ extern "C" void bg_QGraphicsObject_paint_QPainter_X_const_QStyleOptionGraphicsIt
   _self_->paint(painter, option, widget);
 }
 
+extern "C" void bg_QGraphicsObject_update_(QGraphicsObject * _self_) {
+  _self_->update();
+}
+
 extern "C" void bg_QGraphicsObject_update_const_QRectF_R(QGraphicsObject * _self_, const QRectF rect) {
   _self_->update(rect);
 }
 
 extern "C" void bg_QGraphicsObject_update_qreal_qreal_qreal_qreal(QGraphicsObject * _self_, qreal x, qreal y, qreal width, qreal height) {
   _self_->update(x, y, width, height);
+}
+
+extern "C" void bg_QGraphicsObject_scroll_qreal_qreal(QGraphicsObject * _self_, qreal dx, qreal dy) {
+  _self_->scroll(dx, dy);
 }
 
 extern "C" void bg_QGraphicsObject_scroll_qreal_qreal_const_QRectF_R(QGraphicsObject * _self_, qreal dx, qreal dy, const QRectF rect) {
@@ -90606,7 +90861,7 @@ struct BgJumptable_QAbstractGraphicsShapeItem {
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<QRectF *> bg_QGraphicsItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsItem_contains_const_QPointF_R;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
@@ -90631,11 +90886,11 @@ struct BgJumptable_QAbstractGraphicsShapeItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsItem_extension_const_QVariant_R;
 };
 struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem {
   using QAbstractGraphicsShapeItem::QAbstractGraphicsShapeItem;
@@ -90688,7 +90943,7 @@ struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem 
   bool contains(const QPointF & point) const override {
     const BgInherit_QAbstractGraphicsShapeItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QAbstractGraphicsShapeItem::contains(point);
     }
@@ -90913,7 +91168,7 @@ struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem 
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QAbstractGraphicsShapeItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QAbstractGraphicsShapeItem::inputMethodQuery(query);
     }
@@ -90922,7 +91177,7 @@ struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem 
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QAbstractGraphicsShapeItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QAbstractGraphicsShapeItem::itemChange(change, value);
     }
@@ -90940,7 +91195,7 @@ struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem 
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QAbstractGraphicsShapeItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QAbstractGraphicsShapeItem::setExtension(extension, variant);
     }
@@ -90949,7 +91204,7 @@ struct BgInherit_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem 
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QAbstractGraphicsShapeItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QAbstractGraphicsShapeItem::extension(variant);
     }
@@ -91003,14 +91258,14 @@ extern "C" void bg_BgInherit_QAbstractGraphicsShapeItem_JUMPTABLE_BgJumptable_QA
 struct BgJumptable_QGraphicsPathItem {
   CrystalProc<QRectF *> bg_QGraphicsPathItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsPathItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsPathItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsPathItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsPathItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsPathItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsPathItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsPathItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsPathItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsPathItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsPathItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsPathItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsPathItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -91034,8 +91289,8 @@ struct BgJumptable_QGraphicsPathItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   using QGraphicsPathItem::QGraphicsPathItem;
@@ -91061,7 +91316,7 @@ struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsPathItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPathItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsPathItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsPathItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsPathItem::contains(point);
     }
@@ -91115,7 +91370,7 @@ struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsPathItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPathItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsPathItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsPathItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsPathItem::setExtension(extension, variant);
     }
@@ -91124,7 +91379,7 @@ struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsPathItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPathItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsPathItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsPathItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsPathItem::extension(variant);
     }
@@ -91340,7 +91595,7 @@ struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsPathItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsPathItem::inputMethodQuery(query);
     }
@@ -91349,7 +91604,7 @@ struct BgInherit_QGraphicsPathItem : public QGraphicsPathItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsPathItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsPathItem::itemChange(change, value);
     }
@@ -91459,14 +91714,14 @@ extern "C" void bg_BgInherit_QGraphicsPathItem_JUMPTABLE_BgJumptable_QGraphicsPa
 struct BgJumptable_QGraphicsRectItem {
   CrystalProc<QRectF *> bg_QGraphicsRectItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsRectItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsRectItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsRectItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsRectItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsRectItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsRectItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsRectItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsRectItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsRectItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsRectItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsRectItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsRectItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -91490,8 +91745,8 @@ struct BgJumptable_QGraphicsRectItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   using QGraphicsRectItem::QGraphicsRectItem;
@@ -91517,7 +91772,7 @@ struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsRectItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsRectItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsRectItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsRectItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsRectItem::contains(point);
     }
@@ -91571,7 +91826,7 @@ struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsRectItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsRectItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsRectItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsRectItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsRectItem::setExtension(extension, variant);
     }
@@ -91580,7 +91835,7 @@ struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsRectItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsRectItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsRectItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsRectItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsRectItem::extension(variant);
     }
@@ -91796,7 +92051,7 @@ struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsRectItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsRectItem::inputMethodQuery(query);
     }
@@ -91805,7 +92060,7 @@ struct BgInherit_QGraphicsRectItem : public QGraphicsRectItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsRectItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsRectItem::itemChange(change, value);
     }
@@ -91923,14 +92178,14 @@ extern "C" void bg_BgInherit_QGraphicsRectItem_JUMPTABLE_BgJumptable_QGraphicsRe
 struct BgJumptable_QGraphicsEllipseItem {
   CrystalProc<QRectF *> bg_QGraphicsEllipseItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsEllipseItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsEllipseItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsEllipseItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsEllipseItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsEllipseItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsEllipseItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsEllipseItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsEllipseItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsEllipseItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsEllipseItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsEllipseItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsEllipseItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -91954,8 +92209,8 @@ struct BgJumptable_QGraphicsEllipseItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   using QGraphicsEllipseItem::QGraphicsEllipseItem;
@@ -91981,7 +92236,7 @@ struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsEllipseItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEllipseItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsEllipseItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsEllipseItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsEllipseItem::contains(point);
     }
@@ -92035,7 +92290,7 @@ struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsEllipseItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEllipseItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsEllipseItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsEllipseItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsEllipseItem::setExtension(extension, variant);
     }
@@ -92044,7 +92299,7 @@ struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsEllipseItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEllipseItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsEllipseItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsEllipseItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsEllipseItem::extension(variant);
     }
@@ -92260,7 +92515,7 @@ struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsEllipseItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsEllipseItem::inputMethodQuery(query);
     }
@@ -92269,7 +92524,7 @@ struct BgInherit_QGraphicsEllipseItem : public QGraphicsEllipseItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsEllipseItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsEllipseItem::itemChange(change, value);
     }
@@ -92403,14 +92658,14 @@ extern "C" void bg_BgInherit_QGraphicsEllipseItem_JUMPTABLE_BgJumptable_QGraphic
 struct BgJumptable_QGraphicsPolygonItem {
   CrystalProc<QRectF *> bg_QGraphicsPolygonItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsPolygonItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsPolygonItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsPolygonItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsPolygonItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsPolygonItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsPolygonItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsPolygonItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsPolygonItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsPolygonItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsPolygonItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsPolygonItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsPolygonItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -92434,8 +92689,8 @@ struct BgJumptable_QGraphicsPolygonItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   using QGraphicsPolygonItem::QGraphicsPolygonItem;
@@ -92461,7 +92716,7 @@ struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsPolygonItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPolygonItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsPolygonItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsPolygonItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsPolygonItem::contains(point);
     }
@@ -92515,7 +92770,7 @@ struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsPolygonItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPolygonItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsPolygonItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsPolygonItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsPolygonItem::setExtension(extension, variant);
     }
@@ -92524,7 +92779,7 @@ struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsPolygonItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPolygonItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsPolygonItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsPolygonItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsPolygonItem::extension(variant);
     }
@@ -92740,7 +92995,7 @@ struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsPolygonItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsPolygonItem::inputMethodQuery(query);
     }
@@ -92749,7 +93004,7 @@ struct BgInherit_QGraphicsPolygonItem : public QGraphicsPolygonItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsPolygonItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsPolygonItem::itemChange(change, value);
     }
@@ -92867,14 +93122,14 @@ extern "C" void bg_BgInherit_QGraphicsPolygonItem_JUMPTABLE_BgJumptable_QGraphic
 struct BgJumptable_QGraphicsLineItem {
   CrystalProc<QRectF *> bg_QGraphicsLineItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsLineItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsLineItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsLineItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsLineItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsLineItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsLineItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsLineItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsLineItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsLineItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsLineItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -92898,8 +93153,8 @@ struct BgJumptable_QGraphicsLineItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   using QGraphicsLineItem::QGraphicsLineItem;
@@ -92925,7 +93180,7 @@ struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsLineItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLineItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsLineItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsLineItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsLineItem::contains(point);
     }
@@ -92979,7 +93234,7 @@ struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsLineItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsLineItem::setExtension(extension, variant);
     }
@@ -92988,7 +93243,7 @@ struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsLineItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLineItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsLineItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsLineItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsLineItem::extension(variant);
     }
@@ -93204,7 +93459,7 @@ struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsLineItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsLineItem::inputMethodQuery(query);
     }
@@ -93213,7 +93468,7 @@ struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsLineItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsLineItem::itemChange(change, value);
     }
@@ -93339,14 +93594,14 @@ extern "C" void bg_BgInherit_QGraphicsLineItem_JUMPTABLE_BgJumptable_QGraphicsLi
 struct BgJumptable_QGraphicsPixmapItem {
   CrystalProc<QRectF *> bg_QGraphicsPixmapItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsPixmapItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsPixmapItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsPixmapItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsPixmapItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsPixmapItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsPixmapItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsPixmapItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsPixmapItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsPixmapItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsPixmapItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsPixmapItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsPixmapItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -93370,8 +93625,8 @@ struct BgJumptable_QGraphicsPixmapItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   using QGraphicsPixmapItem::QGraphicsPixmapItem;
@@ -93397,7 +93652,7 @@ struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsPixmapItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPixmapItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsPixmapItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsPixmapItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsPixmapItem::contains(point);
     }
@@ -93451,7 +93706,7 @@ struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsPixmapItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPixmapItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsPixmapItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsPixmapItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsPixmapItem::setExtension(extension, variant);
     }
@@ -93460,7 +93715,7 @@ struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsPixmapItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsPixmapItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsPixmapItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsPixmapItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsPixmapItem::extension(variant);
     }
@@ -93676,7 +93931,7 @@ struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsPixmapItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsPixmapItem::inputMethodQuery(query);
     }
@@ -93685,7 +93940,7 @@ struct BgInherit_QGraphicsPixmapItem : public QGraphicsPixmapItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsPixmapItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsPixmapItem::itemChange(change, value);
     }
@@ -93826,7 +94081,7 @@ struct BgJumptable_QGraphicsTextItem {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsTextItem_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<QRectF *> bg_QGraphicsTextItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsTextItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsTextItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsTextItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsTextItem_opaqueArea_;
@@ -93849,10 +94104,10 @@ struct BgJumptable_QGraphicsTextItem {
   CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsTextItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X;
   CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsTextItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X;
   CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsTextItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsTextItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsTextItem_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsTextItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsTextItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsTextItem_extension_const_QVariant_R;
   CrystalProc<bool, QEvent *> bg_QGraphicsObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -93912,7 +94167,7 @@ struct BgInherit_QGraphicsTextItem : public QGraphicsTextItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsTextItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsTextItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsTextItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsTextItem::contains(point);
     }
@@ -94119,7 +94374,7 @@ struct BgInherit_QGraphicsTextItem : public QGraphicsTextItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsTextItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsTextItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsTextItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsTextItem::inputMethodQuery(query);
     }
@@ -94137,7 +94392,7 @@ struct BgInherit_QGraphicsTextItem : public QGraphicsTextItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsTextItem::setExtension(extension, variant);
     }
@@ -94146,7 +94401,7 @@ struct BgInherit_QGraphicsTextItem : public QGraphicsTextItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsTextItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsTextItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsTextItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsTextItem::extension(variant);
     }
@@ -94460,12 +94715,12 @@ extern "C" const QMetaObject * bg_QGraphicsTextItem_staticMetaObject_STATIC_GETT
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsTextItem::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QGraphicsTextItem_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(QGraphicsTextItem * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsTextItem::*)(const QString &))&QGraphicsTextItem::linkActivated, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QGraphicsTextItem_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(QGraphicsTextItem * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsTextItem::*)(const QString &))&QGraphicsTextItem::linkActivated, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QGraphicsTextItem_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(QGraphicsTextItem * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsTextItem::*)(const QString &))&QGraphicsTextItem::linkHovered, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QGraphicsTextItem_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(QGraphicsTextItem * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsTextItem::*)(const QString &))&QGraphicsTextItem::linkHovered, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QRectF bg_QGraphicsTextItem_boundingRect_SUPER_(QGraphicsTextItem * _self_) {
@@ -94591,14 +94846,14 @@ extern "C" void bg_BgInherit_QGraphicsTextItem_JUMPTABLE_BgJumptable_QGraphicsTe
 struct BgJumptable_QGraphicsSimpleTextItem {
   CrystalProc<QRectF *> bg_QGraphicsSimpleTextItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsSimpleTextItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsSimpleTextItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsSimpleTextItem_contains_const_QPointF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsSimpleTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsSimpleTextItem_isObscuredBy_const_QGraphicsItem_X;
   CrystalProc<QPainterPath &> bg_QGraphicsSimpleTextItem_opaqueArea_;
   CrystalProc<int> bg_QGraphicsSimpleTextItem_type_;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsSimpleTextItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsSimpleTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsSimpleTextItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsSimpleTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsSimpleTextItem_extension_const_QVariant_R;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
@@ -94622,8 +94877,8 @@ struct BgJumptable_QGraphicsSimpleTextItem {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
 };
 struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   using QGraphicsSimpleTextItem::QGraphicsSimpleTextItem;
@@ -94649,7 +94904,7 @@ struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsSimpleTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsSimpleTextItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsSimpleTextItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsSimpleTextItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsSimpleTextItem::contains(point);
     }
@@ -94703,7 +94958,7 @@ struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsSimpleTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsSimpleTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsSimpleTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsSimpleTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsSimpleTextItem::setExtension(extension, variant);
     }
@@ -94712,7 +94967,7 @@ struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsSimpleTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsSimpleTextItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsSimpleTextItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsSimpleTextItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsSimpleTextItem::extension(variant);
     }
@@ -94928,7 +95183,7 @@ struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsSimpleTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsSimpleTextItem::inputMethodQuery(query);
     }
@@ -94937,7 +95192,7 @@ struct BgInherit_QGraphicsSimpleTextItem : public QGraphicsSimpleTextItem {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsSimpleTextItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsSimpleTextItem::itemChange(change, value);
     }
@@ -95060,7 +95315,7 @@ struct BgJumptable_QGraphicsItemGroup {
   CrystalProc<int> bg_QGraphicsItemGroup_type_;
   CrystalProc<void, int> bg_QGraphicsItem_advance_int;
   CrystalProc<QPainterPath &> bg_QGraphicsItem_shape_;
-  CrystalProc<bool, const QPointF> bg_QGraphicsItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QPointF *> bg_QGraphicsItem_contains_const_QPointF_R;
   CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
   CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
   CrystalProc<bool, QGraphicsItem *, QEvent *> bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X;
@@ -95083,11 +95338,11 @@ struct BgJumptable_QGraphicsItemGroup {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
   CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension;
-  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsItem_extension_const_QVariant_R;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant *> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalVariant *> bg_QGraphicsItem_extension_const_QVariant_R;
 };
 struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   using QGraphicsItemGroup::QGraphicsItemGroup;
@@ -95158,7 +95413,7 @@ struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   bool contains(const QPointF & point) const override {
     const BgInherit_QGraphicsItemGroup *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(point);
+      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(bindgen_address(point));
     } else {
       return QGraphicsItemGroup::contains(point);
     }
@@ -95365,7 +95620,7 @@ struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsItemGroup *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsItemGroup::inputMethodQuery(query);
     }
@@ -95374,7 +95629,7 @@ struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsItemGroup *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsItemGroup::itemChange(change, value);
     }
@@ -95392,7 +95647,7 @@ struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
     BgInherit_QGraphicsItemGroup *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, bindgen_address(qvariant_to_crystal(variant)));
     } else {
       QGraphicsItemGroup::setExtension(extension, variant);
     }
@@ -95401,7 +95656,7 @@ struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
   QVariant extension(const QVariant & variant) const override {
     const BgInherit_QGraphicsItemGroup *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(bindgen_address(qvariant_to_crystal(variant))));
     } else {
       return QGraphicsItemGroup::extension(variant);
     }
@@ -95465,12 +95720,12 @@ extern "C" void bg_BgInherit_QGraphicsItemGroup_JUMPTABLE_BgJumptable_QGraphicsI
 }
 
 struct BgJumptable_QGraphicsLayoutItem {
-  CrystalProc<void, const QRectF> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayoutItem_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<void> bg_QGraphicsLayoutItem_updateGeometry_;
   CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
 };
 struct BgInherit_QGraphicsLayoutItem : public QGraphicsLayoutItem {
   using QGraphicsLayoutItem::QGraphicsLayoutItem;
@@ -95478,7 +95733,7 @@ struct BgInherit_QGraphicsLayoutItem : public QGraphicsLayoutItem {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsLayoutItem *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsLayoutItem::setGeometry(rect);
     }
@@ -95514,7 +95769,7 @@ struct BgInherit_QGraphicsLayoutItem : public QGraphicsLayoutItem {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsLayoutItem *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid())) {
-      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       bindgen_fatal_panic("No implementation for pure method QGraphicsLayoutItem::sizeHint");
     }
@@ -95745,9 +96000,10 @@ struct BgJumptable_QGraphicsLayout {
   CrystalProc<int> bg_QGraphicsLayout_count_;
   CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsLayout_itemAt_int;
   CrystalProc<void, int> bg_QGraphicsLayout_removeAt_int;
-  CrystalProc<void, const QRectF> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
   CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
 };
 struct BgInherit_QGraphicsLayout : public QGraphicsLayout {
   using QGraphicsLayout::QGraphicsLayout;
@@ -95818,7 +96074,7 @@ struct BgInherit_QGraphicsLayout : public QGraphicsLayout {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsLayout::setGeometry(rect);
     }
@@ -95836,7 +96092,7 @@ struct BgInherit_QGraphicsLayout : public QGraphicsLayout {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsLayout *_self_ = this;
     if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid())) {
-      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       bindgen_fatal_panic("No implementation for pure method QGraphicsLayoutItem::sizeHint");
     }
@@ -96083,12 +96339,12 @@ extern "C" void bg_BgInherit_QGraphicsAnchor_JUMPTABLE_BgJumptable_QGraphicsAnch
 
 struct BgJumptable_QGraphicsAnchorLayout {
   CrystalProc<void, int> bg_QGraphicsAnchorLayout_removeAt_int;
-  CrystalProc<void, const QRectF> bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R;
   CrystalProc<int> bg_QGraphicsAnchorLayout_count_;
   CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsAnchorLayout_itemAt_int;
   CrystalProc<void> bg_QGraphicsAnchorLayout_invalidate_;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
   CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
@@ -96109,7 +96365,7 @@ struct BgInherit_QGraphicsAnchorLayout : public QGraphicsAnchorLayout {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsAnchorLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsAnchorLayout::setGeometry(rect);
     }
@@ -96145,7 +96401,7 @@ struct BgInherit_QGraphicsAnchorLayout : public QGraphicsAnchorLayout {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsAnchorLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       return QGraphicsAnchorLayout::sizeHint(which, constraint);
     }
@@ -96292,7 +96548,7 @@ struct BgJumptable_QGraphicsEffect {
   CrystalProc<const QMetaObject *> bg_QGraphicsEffect_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsEffect_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsEffect_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<QRectF *, const QRectF *> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
   CrystalProc<void, QPainter *> bg_QGraphicsEffect_draw_QPainter_X;
   CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
@@ -96336,7 +96592,7 @@ struct BgInherit_QGraphicsEffect : public QGraphicsEffect {
   QRectF boundingRectFor(const QRectF & sourceRect) const override {
     const BgInherit_QGraphicsEffect *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(bindgen_address(sourceRect));
     } else {
       return QGraphicsEffect::boundingRectFor(sourceRect);
     }
@@ -96533,7 +96789,7 @@ struct BgJumptable_QGraphicsColorizeEffect {
   CrystalProc<void *, const char *> bg_QGraphicsColorizeEffect_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsColorizeEffect_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QPainter *> bg_QGraphicsColorizeEffect_draw_QPainter_X;
-  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<QRectF *, const QRectF *> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
   CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
@@ -96585,7 +96841,7 @@ struct BgInherit_QGraphicsColorizeEffect : public QGraphicsColorizeEffect {
   QRectF boundingRectFor(const QRectF & sourceRect) const override {
     const BgInherit_QGraphicsColorizeEffect *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(bindgen_address(sourceRect));
     } else {
       return QGraphicsColorizeEffect::boundingRectFor(sourceRect);
     }
@@ -96744,7 +97000,7 @@ struct BgJumptable_QGraphicsBlurEffect {
   CrystalProc<const QMetaObject *> bg_QGraphicsBlurEffect_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsBlurEffect_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsBlurEffect_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<QRectF *, const QRectF> bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<QRectF *, const QRectF *> bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R;
   CrystalProc<void, QPainter *> bg_QGraphicsBlurEffect_draw_QPainter_X;
   CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
@@ -96788,7 +97044,7 @@ struct BgInherit_QGraphicsBlurEffect : public QGraphicsBlurEffect {
   QRectF boundingRectFor(const QRectF & sourceRect) const override {
     const BgInherit_QGraphicsBlurEffect *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R(sourceRect);
+      return *_self_->bgJump.bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R(bindgen_address(sourceRect));
     } else {
       return QGraphicsBlurEffect::boundingRectFor(sourceRect);
     }
@@ -96964,7 +97220,7 @@ struct BgJumptable_QGraphicsDropShadowEffect {
   CrystalProc<const QMetaObject *> bg_QGraphicsDropShadowEffect_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsDropShadowEffect_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsDropShadowEffect_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<QRectF *, const QRectF> bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<QRectF *, const QRectF *> bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R;
   CrystalProc<void, QPainter *> bg_QGraphicsDropShadowEffect_draw_QPainter_X;
   CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
@@ -97008,7 +97264,7 @@ struct BgInherit_QGraphicsDropShadowEffect : public QGraphicsDropShadowEffect {
   QRectF boundingRectFor(const QRectF & sourceRect) const override {
     const BgInherit_QGraphicsDropShadowEffect *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R(sourceRect);
+      return *_self_->bgJump.bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R(bindgen_address(sourceRect));
     } else {
       return QGraphicsDropShadowEffect::boundingRectFor(sourceRect);
     }
@@ -97196,8 +97452,8 @@ extern "C" const QMetaObject * bg_QGraphicsDropShadowEffect_staticMetaObject_STA
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsDropShadowEffect::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_offsetChanged_CrystalProc_void__const_QPointF_R_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, const QPointF> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsDropShadowEffect::*)(const QPointF &))&QGraphicsDropShadowEffect::offsetChanged, [_proc_](const QPointF & offset){ _proc_(offset); }));
+extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_offsetChanged_CrystalProc_void__const_QPointF_R_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, const QPointF *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsDropShadowEffect::*)(const QPointF &))&QGraphicsDropShadowEffect::offsetChanged, [_proc_](const QPointF & offset){ _proc_(bindgen_address(offset)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_blurRadiusChanged_CrystalProc_void__qreal_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, qreal> _proc_) {
@@ -97225,7 +97481,7 @@ struct BgJumptable_QGraphicsOpacityEffect {
   CrystalProc<void *, const char *> bg_QGraphicsOpacityEffect_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsOpacityEffect_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QPainter *> bg_QGraphicsOpacityEffect_draw_QPainter_X;
-  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<QRectF *, const QRectF *> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
   CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
@@ -97277,7 +97533,7 @@ struct BgInherit_QGraphicsOpacityEffect : public QGraphicsOpacityEffect {
   QRectF boundingRectFor(const QRectF & sourceRect) const override {
     const BgInherit_QGraphicsOpacityEffect *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(bindgen_address(sourceRect));
     } else {
       return QGraphicsOpacityEffect::boundingRectFor(sourceRect);
     }
@@ -97437,9 +97693,9 @@ struct BgJumptable_QGraphicsGridLayout {
   CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsGridLayout_itemAt_int;
   CrystalProc<void, int> bg_QGraphicsGridLayout_removeAt_int;
   CrystalProc<void> bg_QGraphicsGridLayout_invalidate_;
-  CrystalProc<void, const QRectF> bg_QGraphicsGridLayout_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsGridLayout_setGeometry_const_QRectF_R;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
   CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
@@ -97487,7 +97743,7 @@ struct BgInherit_QGraphicsGridLayout : public QGraphicsGridLayout {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsGridLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsGridLayout_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsGridLayout_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsGridLayout_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsGridLayout::setGeometry(rect);
     }
@@ -97496,7 +97752,7 @@ struct BgInherit_QGraphicsGridLayout : public QGraphicsGridLayout {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsGridLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       return QGraphicsGridLayout::sizeHint(which, constraint);
     }
@@ -97937,6 +98193,10 @@ extern "C" QPointF bg_QGraphicsItemAnimation_posAt_qreal(QGraphicsItemAnimation 
   return _self_->posAt(step);
 }
 
+extern "C" Container_QList_std__pair_qreal__QPointF___ * bg_QGraphicsItemAnimation_posList_(QGraphicsItemAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_qreal__QPointF___>()) Container_QList_std__pair_qreal__QPointF___ (_self_->posList());
+}
+
 extern "C" void bg_QGraphicsItemAnimation_setPosAt_qreal_const_QPointF_R(QGraphicsItemAnimation * _self_, qreal step, const QPointF pos) {
   _self_->setPosAt(step, pos);
 }
@@ -97947,6 +98207,10 @@ extern "C" QTransform * bg_QGraphicsItemAnimation_transformAt_qreal(QGraphicsIte
 
 extern "C" qreal bg_QGraphicsItemAnimation_rotationAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
   return _self_->rotationAt(step);
+}
+
+extern "C" Container_QList_std__pair_qreal__qreal___ * bg_QGraphicsItemAnimation_rotationList_(QGraphicsItemAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_qreal__qreal___>()) Container_QList_std__pair_qreal__qreal___ (_self_->rotationList());
 }
 
 extern "C" void bg_QGraphicsItemAnimation_setRotationAt_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal angle) {
@@ -97961,6 +98225,10 @@ extern "C" qreal bg_QGraphicsItemAnimation_yTranslationAt_qreal(QGraphicsItemAni
   return _self_->yTranslationAt(step);
 }
 
+extern "C" Container_QList_std__pair_qreal__QPointF___ * bg_QGraphicsItemAnimation_translationList_(QGraphicsItemAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_qreal__QPointF___>()) Container_QList_std__pair_qreal__QPointF___ (_self_->translationList());
+}
+
 extern "C" void bg_QGraphicsItemAnimation_setTranslationAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal dx, qreal dy) {
   _self_->setTranslationAt(step, dx, dy);
 }
@@ -97973,6 +98241,10 @@ extern "C" qreal bg_QGraphicsItemAnimation_horizontalScaleAt_qreal(QGraphicsItem
   return _self_->horizontalScaleAt(step);
 }
 
+extern "C" Container_QList_std__pair_qreal__QPointF___ * bg_QGraphicsItemAnimation_scaleList_(QGraphicsItemAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_qreal__QPointF___>()) Container_QList_std__pair_qreal__QPointF___ (_self_->scaleList());
+}
+
 extern "C" void bg_QGraphicsItemAnimation_setScaleAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal sx, qreal sy) {
   _self_->setScaleAt(step, sx, sy);
 }
@@ -97983,6 +98255,10 @@ extern "C" qreal bg_QGraphicsItemAnimation_verticalShearAt_qreal(QGraphicsItemAn
 
 extern "C" qreal bg_QGraphicsItemAnimation_horizontalShearAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
   return _self_->horizontalShearAt(step);
+}
+
+extern "C" Container_QList_std__pair_qreal__QPointF___ * bg_QGraphicsItemAnimation_shearList_(QGraphicsItemAnimation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_std__pair_qreal__QPointF___>()) Container_QList_std__pair_qreal__QPointF___ (_self_->shearList());
 }
 
 extern "C" void bg_QGraphicsItemAnimation_setShearAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal sh, qreal sv) {
@@ -98023,12 +98299,12 @@ extern "C" void bg_BgInherit_QGraphicsItemAnimation_JUMPTABLE_BgJumptable_QGraph
 
 struct BgJumptable_QGraphicsLinearLayout {
   CrystalProc<void, int> bg_QGraphicsLinearLayout_removeAt_int;
-  CrystalProc<void, const QRectF> bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R;
   CrystalProc<int> bg_QGraphicsLinearLayout_count_;
   CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsLinearLayout_itemAt_int;
   CrystalProc<void> bg_QGraphicsLinearLayout_invalidate_;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
   CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
@@ -98049,7 +98325,7 @@ struct BgInherit_QGraphicsLinearLayout : public QGraphicsLinearLayout {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsLinearLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsLinearLayout::setGeometry(rect);
     }
@@ -98085,7 +98361,7 @@ struct BgInherit_QGraphicsLinearLayout : public QGraphicsLinearLayout {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsLinearLayout *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       return QGraphicsLinearLayout::sizeHint(which, constraint);
     }
@@ -98260,7 +98536,7 @@ struct BgJumptable_QGraphicsWidget {
   CrystalProc<const QMetaObject *> bg_QGraphicsWidget_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsWidget_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsWidget_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<void, const QRectF> bg_QGraphicsWidget_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsWidget_setGeometry_const_QRectF_R;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsWidget_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<int> bg_QGraphicsWidget_type_;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
@@ -98269,13 +98545,13 @@ struct BgJumptable_QGraphicsWidget {
   CrystalProc<QPainterPath &> bg_QGraphicsWidget_shape_;
   CrystalProc<void, QStyleOption *> bg_QGraphicsWidget_initStyleOption_QStyleOption_X;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsWidget_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsWidget_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsWidget_sizeHint_Qt__SizeHint_const_QSizeF_R;
   CrystalProc<void> bg_QGraphicsWidget_updateGeometry_;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
-  CrystalProc<CrystalVariant, const CrystalString, const CrystalVariant> bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalString *, const CrystalVariant *> bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R;
   CrystalProc<bool, QEvent *> bg_QGraphicsWidget_sceneEvent_QEvent_X;
   CrystalProc<bool, QEvent *> bg_QGraphicsWidget_windowFrameEvent_QEvent_X;
-  CrystalProc<Qt::WindowFrameSection, const QPointF> bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R;
+  CrystalProc<Qt::WindowFrameSection, const QPointF *> bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R;
   CrystalProc<bool, QEvent *> bg_QGraphicsWidget_event_QEvent_X;
   CrystalProc<void, QEvent *> bg_QGraphicsWidget_changeEvent_QEvent_X;
   CrystalProc<void, QCloseEvent *> bg_QGraphicsWidget_closeEvent_QCloseEvent_X;
@@ -98334,7 +98610,7 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsWidget_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsWidget_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsWidget::setGeometry(rect);
     }
@@ -98406,7 +98682,7 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       return QGraphicsWidget::sizeHint(which, constraint);
     }
@@ -98424,7 +98700,7 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsWidget::itemChange(change, value);
     }
@@ -98433,7 +98709,7 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   QVariant propertyChange(const QString & propertyName, const QVariant & value) override {
     BgInherit_QGraphicsWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R(qstring_to_crystal(propertyName), qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R(bindgen_address(qstring_to_crystal(propertyName)), bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsWidget::propertyChange(propertyName, value);
     }
@@ -98460,7 +98736,7 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   Qt::WindowFrameSection windowFrameSectionAt(const QPointF & pos) const override {
     const BgInherit_QGraphicsWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R(pos);
+      return _self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R(bindgen_address(pos));
     } else {
       return QGraphicsWidget::windowFrameSectionAt(pos);
     }
@@ -99175,6 +99451,10 @@ extern "C" QRectF bg_QGraphicsWidget_contentsRect_(QGraphicsWidget * _self_) {
   return _self_->contentsRect();
 }
 
+extern "C" QSizeF bg_QGraphicsWidget_effectiveSizeHint_Qt__SizeHint(QGraphicsWidget * _self_, Qt::SizeHint which) {
+  return _self_->effectiveSizeHint(which);
+}
+
 extern "C" QSizeF bg_QGraphicsWidget_effectiveSizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsWidget * _self_, Qt::SizeHint which, const QSizeF constraint) {
   return _self_->effectiveSizeHint(which, constraint);
 }
@@ -99359,10 +99639,10 @@ struct BgJumptable_QGraphicsProxyWidget {
   CrystalProc<const QMetaObject *> bg_QGraphicsProxyWidget_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsProxyWidget_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsProxyWidget_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<void, const QRectF> bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R;
+  CrystalProc<void, const QRectF *> bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsProxyWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<int> bg_QGraphicsProxyWidget_type_;
-  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<CrystalVariant *, QGraphicsItem::GraphicsItemChange, const CrystalVariant *> bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
   CrystalProc<bool, QEvent *> bg_QGraphicsProxyWidget_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QGraphicsProxyWidget_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QShowEvent *> bg_QGraphicsProxyWidget_showEvent_QShowEvent_X;
@@ -99387,10 +99667,10 @@ struct BgJumptable_QGraphicsProxyWidget {
   CrystalProc<void, QFocusEvent *> bg_QGraphicsProxyWidget_focusInEvent_QFocusEvent_X;
   CrystalProc<void, QFocusEvent *> bg_QGraphicsProxyWidget_focusOutEvent_QFocusEvent_X;
   CrystalProc<bool, bool> bg_QGraphicsProxyWidget_focusNextPrevChild_bool;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsProxyWidget_inputMethodEvent_QInputMethodEvent_X;
   CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint;
-  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF *> bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R;
   CrystalProc<void, QGraphicsSceneResizeEvent *> bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X;
   CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsWidget_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
   CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsWidget_paintWindowFrame_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
@@ -99398,10 +99678,10 @@ struct BgJumptable_QGraphicsProxyWidget {
   CrystalProc<QPainterPath &> bg_QGraphicsWidget_shape_;
   CrystalProc<void, QStyleOption *> bg_QGraphicsWidget_initStyleOption_QStyleOption_X;
   CrystalProc<void> bg_QGraphicsWidget_updateGeometry_;
-  CrystalProc<CrystalVariant, const CrystalString, const CrystalVariant> bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R;
+  CrystalProc<CrystalVariant *, const CrystalString *, const CrystalVariant *> bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R;
   CrystalProc<bool, QEvent *> bg_QGraphicsWidget_sceneEvent_QEvent_X;
   CrystalProc<bool, QEvent *> bg_QGraphicsWidget_windowFrameEvent_QEvent_X;
-  CrystalProc<Qt::WindowFrameSection, const QPointF> bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R;
+  CrystalProc<Qt::WindowFrameSection, const QPointF *> bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R;
   CrystalProc<void, QEvent *> bg_QGraphicsWidget_changeEvent_QEvent_X;
   CrystalProc<void, QCloseEvent *> bg_QGraphicsWidget_closeEvent_QCloseEvent_X;
   CrystalProc<void, QGraphicsSceneMoveEvent *> bg_QGraphicsWidget_moveEvent_QGraphicsSceneMoveEvent_X;
@@ -99447,7 +99727,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   void setGeometry(const QRectF & rect) override {
     BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R(rect);
+      _self_->bgJump.bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R(bindgen_address(rect));
     } else {
       QGraphicsProxyWidget::setGeometry(rect);
     }
@@ -99474,7 +99754,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
     BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsProxyWidget::itemChange(change, value);
     }
@@ -99699,7 +99979,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsProxyWidget::inputMethodQuery(query);
     }
@@ -99717,7 +99997,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
     const BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
-      return *_self_->bgJump.bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+      return *_self_->bgJump.bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(which, bindgen_address(constraint));
     } else {
       return QGraphicsProxyWidget::sizeHint(which, constraint);
     }
@@ -99789,7 +100069,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   QVariant propertyChange(const QString & propertyName, const QVariant & value) override {
     BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R(qstring_to_crystal(propertyName), qvariant_to_crystal(value)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R(bindgen_address(qstring_to_crystal(propertyName)), bindgen_address(qvariant_to_crystal(value))));
     } else {
       return QGraphicsProxyWidget::propertyChange(propertyName, value);
     }
@@ -99816,7 +100096,7 @@ struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
   Qt::WindowFrameSection windowFrameSectionAt(const QPointF & pos) const override {
     const BgInherit_QGraphicsProxyWidget *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R.isValid()) {
-      return _self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R(pos);
+      return _self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R(bindgen_address(pos));
     } else {
       return QGraphicsProxyWidget::windowFrameSectionAt(pos);
     }
@@ -100246,7 +100526,7 @@ struct BgJumptable_QGraphicsScene {
   CrystalProc<const QMetaObject *> bg_QGraphicsScene_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsScene_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsScene_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsScene_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsScene_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QEvent *> bg_QGraphicsScene_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QGraphicsScene_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QGraphicsSceneContextMenuEvent *> bg_QGraphicsScene_contextMenuEvent_QGraphicsSceneContextMenuEvent_X;
@@ -100265,8 +100545,8 @@ struct BgJumptable_QGraphicsScene {
   CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsScene_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
   CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsScene_wheelEvent_QGraphicsSceneWheelEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsScene_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<void, QPainter *, const QRectF> bg_QGraphicsScene_drawBackground_QPainter_X_const_QRectF_R;
-  CrystalProc<void, QPainter *, const QRectF> bg_QGraphicsScene_drawForeground_QPainter_X_const_QRectF_R;
+  CrystalProc<void, QPainter *, const QRectF *> bg_QGraphicsScene_drawBackground_QPainter_X_const_QRectF_R;
+  CrystalProc<void, QPainter *, const QRectF *> bg_QGraphicsScene_drawForeground_QPainter_X_const_QRectF_R;
   CrystalProc<void, QPainter *, int, QGraphicsItem **, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsScene_drawItems_QPainter_X_int_QGraphicsItem_XX_const_QStyleOptionGraphicsItem_X_QWidget_X;
   CrystalProc<bool, bool> bg_QGraphicsScene_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -100308,7 +100588,7 @@ struct BgInherit_QGraphicsScene : public QGraphicsScene {
   QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
     const BgInherit_QGraphicsScene *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsScene_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsScene_inputMethodQuery_Qt__InputMethodQuery(query));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsScene_inputMethodQuery_Qt__InputMethodQuery(query));
     } else {
       return QGraphicsScene::inputMethodQuery(query);
     }
@@ -100479,7 +100759,7 @@ struct BgInherit_QGraphicsScene : public QGraphicsScene {
   void drawBackground(QPainter * painter, const QRectF & rect) override {
     BgInherit_QGraphicsScene *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsScene_drawBackground_QPainter_X_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsScene_drawBackground_QPainter_X_const_QRectF_R(painter, rect);
+      _self_->bgJump.bg_QGraphicsScene_drawBackground_QPainter_X_const_QRectF_R(painter, bindgen_address(rect));
     } else {
       QGraphicsScene::drawBackground(painter, rect);
     }
@@ -100488,7 +100768,7 @@ struct BgInherit_QGraphicsScene : public QGraphicsScene {
   void drawForeground(QPainter * painter, const QRectF & rect) override {
     BgInherit_QGraphicsScene *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsScene_drawForeground_QPainter_X_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsScene_drawForeground_QPainter_X_const_QRectF_R(painter, rect);
+      _self_->bgJump.bg_QGraphicsScene_drawForeground_QPainter_X_const_QRectF_R(painter, bindgen_address(rect));
     } else {
       QGraphicsScene::drawForeground(painter, rect);
     }
@@ -101134,8 +101414,8 @@ extern "C" QMetaObject::Connection * bg_QGraphicsScene_CONNECT_changed_CrystalPr
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScene::*)(const QList<QRectF> &))&QGraphicsScene::changed, [_proc_](const QList<QRectF> & region){ _proc_(new (UseGC, bindgen_gc_finalizer<Container_QList_QRectF_>()) Container_QList_QRectF_ (region)); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QGraphicsScene_CONNECT_sceneRectChanged_CrystalProc_void__const_QRectF_R_(QGraphicsScene * _self_, CrystalProc<void, const QRectF> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScene::*)(const QRectF &))&QGraphicsScene::sceneRectChanged, [_proc_](const QRectF & rect){ _proc_(rect); }));
+extern "C" QMetaObject::Connection * bg_QGraphicsScene_CONNECT_sceneRectChanged_CrystalProc_void__const_QRectF_R_(QGraphicsScene * _self_, CrystalProc<void, const QRectF *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScene::*)(const QRectF &))&QGraphicsScene::sceneRectChanged, [_proc_](const QRectF & rect){ _proc_(bindgen_address(rect)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QGraphicsScene_CONNECT_selectionChanged_CrystalProc_void_(QGraphicsScene * _self_, CrystalProc<void> _proc_) {
@@ -102644,12 +102924,12 @@ struct BgJumptable_QScrollArea {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
@@ -103049,7 +103329,7 @@ struct BgInherit_QScrollArea : public QScrollArea {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QScrollArea::nativeEvent(eventType, message, result);
     }
@@ -103094,7 +103374,7 @@ struct BgInherit_QScrollArea : public QScrollArea {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QScrollArea::inputMethodQuery(unnamed_arg_0);
     }
@@ -103283,7 +103563,7 @@ struct BgJumptable_QGraphicsView {
   CrystalProc<void *, const char *> bg_QGraphicsView_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsView_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<QSize *> bg_QGraphicsView_sizeHint_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QGraphicsView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QWidget *> bg_QGraphicsView_setupViewport_QWidget_X;
   CrystalProc<bool, QEvent *> bg_QGraphicsView_event_QEvent_X;
   CrystalProc<bool, QEvent *> bg_QGraphicsView_viewportEvent_QEvent_X;
@@ -103307,8 +103587,8 @@ struct BgJumptable_QGraphicsView {
   CrystalProc<void, int, int> bg_QGraphicsView_scrollContentsBy_int_int;
   CrystalProc<void, QShowEvent *> bg_QGraphicsView_showEvent_QShowEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QGraphicsView_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<void, QPainter *, const QRectF> bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R;
-  CrystalProc<void, QPainter *, const QRectF> bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R;
+  CrystalProc<void, QPainter *, const QRectF *> bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R;
+  CrystalProc<void, QPainter *, const QRectF *> bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R;
   CrystalProc<void, QPainter *, int, QGraphicsItem **, const QStyleOptionGraphicsItem *> bg_QGraphicsView_drawItems_QPainter_X_int_QGraphicsItem_XX_const_QStyleOptionGraphicsItem_X;
   CrystalProc<QSize *> bg_QAbstractScrollArea_minimumSizeHint_;
   CrystalProc<bool, QObject *, QEvent *> bg_QAbstractScrollArea_eventFilter_QObject_X_QEvent_X;
@@ -103327,7 +103607,7 @@ struct BgJumptable_QGraphicsView {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -103379,7 +103659,7 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QGraphicsView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QGraphicsView::inputMethodQuery(unnamed_arg_0);
     }
@@ -103595,7 +103875,7 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
   void drawBackground(QPainter * painter, const QRectF & rect) override {
     BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R(painter, rect);
+      _self_->bgJump.bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R(painter, bindgen_address(rect));
     } else {
       QGraphicsView::drawBackground(painter, rect);
     }
@@ -103604,7 +103884,7 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
   void drawForeground(QPainter * painter, const QRectF & rect) override {
     BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R.isValid()) {
-      _self_->bgJump.bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R(painter, rect);
+      _self_->bgJump.bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R(painter, bindgen_address(rect));
     } else {
       QGraphicsView::drawForeground(painter, rect);
     }
@@ -103775,7 +104055,7 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QGraphicsView::nativeEvent(eventType, message, result);
     }
@@ -104335,7 +104615,7 @@ extern "C" const QMetaObject * bg_QGraphicsView_staticMetaObject_STATIC_GETTER_(
 }
 
 extern "C" QMetaObject::Connection * bg_QGraphicsView_CONNECT_rubberBandChanged_CrystalProc_void__QRect__QPointF__QPointF_(QGraphicsView * _self_, CrystalProc<void, QRect *, QPointF *, QPointF *> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsView::*)(QRect, QPointF, QPointF))&QGraphicsView::rubberBandChanged, [_proc_](QRect viewportRect, QPointF fromScenePoint, QPointF toScenePoint){ _proc_(&viewportRect, &fromScenePoint, &toScenePoint); }));
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsView::*)(QRect, QPointF, QPointF))&QGraphicsView::rubberBandChanged, [_proc_](QRect viewportRect, QPointF fromScenePoint, QPointF toScenePoint){ _proc_(bindgen_address(viewportRect), bindgen_address(fromScenePoint), bindgen_address(toScenePoint)); }));
 }
 
 extern "C" QSize bg_QGraphicsView_sizeHint_SUPER_(QGraphicsView * _self_) {
@@ -104493,12 +104773,12 @@ struct BgJumptable_QGroupBox {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -104854,7 +105134,7 @@ struct BgInherit_QGroupBox : public QGroupBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QGroupBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QGroupBox::nativeEvent(eventType, message, result);
     }
@@ -104899,7 +105179,7 @@ struct BgInherit_QGroupBox : public QGroupBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QGroupBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QGroupBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -105161,7 +105441,7 @@ struct BgJumptable_QHeaderView {
   CrystalProc<void, QMouseEvent *> bg_QHeaderView_mouseReleaseEvent_QMouseEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QHeaderView_mouseDoubleClickEvent_QMouseEvent_X;
   CrystalProc<bool, QEvent *> bg_QHeaderView_viewportEvent_QEvent_X;
-  CrystalProc<void, QPainter *, const QRect, int> bg_QHeaderView_paintSection_QPainter_X_const_QRect_R_int;
+  CrystalProc<void, QPainter *, const QRect *, int> bg_QHeaderView_paintSection_QPainter_X_const_QRect_R_int;
   CrystalProc<QSize *, int> bg_QHeaderView_sectionSizeFromContents_int;
   CrystalProc<int> bg_QHeaderView_horizontalOffset_;
   CrystalProc<int> bg_QHeaderView_verticalOffset_;
@@ -105172,19 +105452,19 @@ struct BgJumptable_QHeaderView {
   CrystalProc<void, const QModelIndex *, int, int> bg_QHeaderView_rowsInserted_const_QModelIndex_R_int_int;
   CrystalProc<QRect *, const QModelIndex *> bg_QHeaderView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QHeaderView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QHeaderView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QHeaderView_indexAt_const_QPoint_R;
   CrystalProc<bool, const QModelIndex *> bg_QHeaderView_isIndexHidden_const_QModelIndex_R;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QHeaderView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QHeaderView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QHeaderView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QHeaderView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<void, QStyleOptionHeader *, int> bg_QHeaderView_initStyleOptionForIndex_QStyleOptionHeader_X_int;
   CrystalProc<void, QStyleOptionHeader *> bg_QHeaderView_initStyleOption_QStyleOptionHeader_X;
   CrystalProc<void, QItemSelectionModel *> bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, const QModelIndex *> bg_QAbstractItemView_setRootIndex_const_QModelIndex_R;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
@@ -105221,6 +105501,7 @@ struct BgJumptable_QHeaderView {
   CrystalProc<void, QWheelEvent *> bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X;
   CrystalProc<void, QContextMenuEvent *> bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X;
   CrystalProc<void, QEvent *> bg_QFrame_changeEvent_QEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
   CrystalProc<int> bg_QWidget_devType_;
   CrystalProc<int, int> bg_QWidget_heightForWidth_int;
   CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
@@ -105234,7 +105515,7 @@ struct BgJumptable_QHeaderView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -105393,7 +105674,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   void paintSection(QPainter * painter, const QRect & rect, int logicalIndex) const override {
     const BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QHeaderView_paintSection_QPainter_X_const_QRect_R_int.isValid()) {
-      _self_->bgJump.bg_QHeaderView_paintSection_QPainter_X_const_QRect_R_int(painter, rect, logicalIndex);
+      _self_->bgJump.bg_QHeaderView_paintSection_QPainter_X_const_QRect_R_int(painter, bindgen_address(rect), logicalIndex);
     } else {
       QHeaderView::paintSection(painter, rect, logicalIndex);
     }
@@ -105483,7 +105764,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QHeaderView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QHeaderView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QHeaderView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QHeaderView::indexAt(point);
     }
@@ -105510,7 +105791,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QHeaderView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QHeaderView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QHeaderView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QHeaderView::setSelection(rect, command);
     }
@@ -105555,7 +105836,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QHeaderView::keyboardSearch(search);
     }
@@ -105591,7 +105872,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QHeaderView::inputMethodQuery(unnamed_arg_0);
     }
@@ -106041,7 +106322,7 @@ struct BgInherit_QHeaderView : public QHeaderView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QHeaderView::nativeEvent(eventType, message, result);
     }
@@ -106790,7 +107071,7 @@ struct BgJumptable_QLineEdit {
   CrystalProc<void, QContextMenuEvent *> bg_QLineEdit_contextMenuEvent_QContextMenuEvent_X;
   CrystalProc<void, QInputMethodEvent *> bg_QLineEdit_inputMethodEvent_QInputMethodEvent_X;
   CrystalProc<void, QStyleOptionFrame *> bg_QLineEdit_initStyleOption_QStyleOptionFrame_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QLineEdit_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QLineEdit_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QTimerEvent *> bg_QLineEdit_timerEvent_QTimerEvent_X;
   CrystalProc<bool, QEvent *> bg_QLineEdit_event_QEvent_X;
   CrystalProc<int> bg_QWidget_devType_;
@@ -106808,7 +107089,7 @@ struct BgJumptable_QLineEdit {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -107023,7 +107304,7 @@ struct BgInherit_QLineEdit : public QLineEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QLineEdit *_self_ = this;
     if (_self_->bgJump.bg_QLineEdit_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QLineEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QLineEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QLineEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -107185,7 +107466,7 @@ struct BgInherit_QLineEdit : public QLineEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLineEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QLineEdit::nativeEvent(eventType, message, result);
     }
@@ -107689,12 +107970,12 @@ extern "C" const QMetaObject * bg_QLineEdit_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QLineEdit::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QLineEdit_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QLineEdit * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLineEdit::*)(const QString &))&QLineEdit::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QLineEdit_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QLineEdit * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLineEdit::*)(const QString &))&QLineEdit::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QLineEdit_CONNECT_textEdited_CrystalProc_void__const_QString_R_(QLineEdit * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLineEdit::*)(const QString &))&QLineEdit::textEdited, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QLineEdit_CONNECT_textEdited_CrystalProc_void__const_QString_R_(QLineEdit * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLineEdit::*)(const QString &))&QLineEdit::textEdited, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QLineEdit_CONNECT_cursorPositionChanged_CrystalProc_void__int__int_(QLineEdit * _self_, CrystalProc<void, int, int> _proc_) {
@@ -107851,13 +108132,13 @@ struct BgJumptable_QInputDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -108240,7 +108521,7 @@ struct BgInherit_QInputDialog : public QInputDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QInputDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QInputDialog::nativeEvent(eventType, message, result);
     }
@@ -108294,7 +108575,7 @@ struct BgInherit_QInputDialog : public QInputDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QInputDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QInputDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -108667,12 +108948,12 @@ extern "C" const QMetaObject * bg_QInputDialog_staticMetaObject_STATIC_GETTER_()
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QInputDialog::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueChanged_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueChanged, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueChanged_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueChanged, [_proc_](const QString & text){ _proc_(bindgen_address(qstring_to_crystal(text))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueSelected_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueSelected, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueSelected_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueSelected, [_proc_](const QString & text){ _proc_(bindgen_address(qstring_to_crystal(text))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_intValueChanged_CrystalProc_void__int_(QInputDialog * _self_, CrystalProc<void, int> _proc_) {
@@ -108721,10 +109002,10 @@ struct BgJumptable_QItemDelegate {
   CrystalProc<void, QWidget *, const QModelIndex *> bg_QItemDelegate_setEditorData_QWidget_X_const_QModelIndex_R;
   CrystalProc<void, QWidget *, QAbstractItemModel *, const QModelIndex *> bg_QItemDelegate_setModelData_QWidget_X_QAbstractItemModel_X_const_QModelIndex_R;
   CrystalProc<void, QWidget *, const QStyleOptionViewItem *, const QModelIndex *> bg_QItemDelegate_updateEditorGeometry_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
-  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect, const CrystalString> bg_QItemDelegate_drawDisplay_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QString_R;
-  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect, const QPixmap *> bg_QItemDelegate_drawDecoration_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QPixmap_R;
-  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect> bg_QItemDelegate_drawFocus_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R;
-  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect, Qt::CheckState> bg_QItemDelegate_drawCheck_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_Qt__CheckState;
+  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect *, const CrystalString *> bg_QItemDelegate_drawDisplay_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QString_R;
+  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect *, const QPixmap *> bg_QItemDelegate_drawDecoration_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QPixmap_R;
+  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect *> bg_QItemDelegate_drawFocus_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R;
+  CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QRect *, Qt::CheckState> bg_QItemDelegate_drawCheck_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_Qt__CheckState;
   CrystalProc<bool, QObject *, QEvent *> bg_QItemDelegate_eventFilter_QObject_X_QEvent_X;
   CrystalProc<bool, QEvent *, QAbstractItemModel *, const QStyleOptionViewItem *, const QModelIndex *> bg_QItemDelegate_editorEvent_QEvent_X_QAbstractItemModel_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
   CrystalProc<void, QWidget *, const QModelIndex *> bg_QAbstractItemDelegate_destroyEditor_QWidget_X_const_QModelIndex_R;
@@ -108824,7 +109105,7 @@ struct BgInherit_QItemDelegate : public QItemDelegate {
   void drawDisplay(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, const QString & text) const override {
     const BgInherit_QItemDelegate *_self_ = this;
     if (_self_->bgJump.bg_QItemDelegate_drawDisplay_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QItemDelegate_drawDisplay_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QString_R(painter, &(option), rect, qstring_to_crystal(text));
+      _self_->bgJump.bg_QItemDelegate_drawDisplay_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QString_R(painter, &(option), bindgen_address(rect), bindgen_address(qstring_to_crystal(text)));
     } else {
       QItemDelegate::drawDisplay(painter, option, rect, text);
     }
@@ -108833,7 +109114,7 @@ struct BgInherit_QItemDelegate : public QItemDelegate {
   void drawDecoration(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, const QPixmap & pixmap) const override {
     const BgInherit_QItemDelegate *_self_ = this;
     if (_self_->bgJump.bg_QItemDelegate_drawDecoration_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QPixmap_R.isValid()) {
-      _self_->bgJump.bg_QItemDelegate_drawDecoration_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QPixmap_R(painter, &(option), rect, &(pixmap));
+      _self_->bgJump.bg_QItemDelegate_drawDecoration_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_const_QPixmap_R(painter, &(option), bindgen_address(rect), &(pixmap));
     } else {
       QItemDelegate::drawDecoration(painter, option, rect, pixmap);
     }
@@ -108842,7 +109123,7 @@ struct BgInherit_QItemDelegate : public QItemDelegate {
   void drawFocus(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect) const override {
     const BgInherit_QItemDelegate *_self_ = this;
     if (_self_->bgJump.bg_QItemDelegate_drawFocus_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QItemDelegate_drawFocus_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R(painter, &(option), rect);
+      _self_->bgJump.bg_QItemDelegate_drawFocus_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R(painter, &(option), bindgen_address(rect));
     } else {
       QItemDelegate::drawFocus(painter, option, rect);
     }
@@ -108851,7 +109132,7 @@ struct BgInherit_QItemDelegate : public QItemDelegate {
   void drawCheck(QPainter * painter, const QStyleOptionViewItem & option, const QRect & rect, Qt::CheckState state) const override {
     const BgInherit_QItemDelegate *_self_ = this;
     if (_self_->bgJump.bg_QItemDelegate_drawCheck_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_Qt__CheckState.isValid()) {
-      _self_->bgJump.bg_QItemDelegate_drawCheck_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_Qt__CheckState(painter, &(option), rect, state);
+      _self_->bgJump.bg_QItemDelegate_drawCheck_QPainter_X_const_QStyleOptionViewItem_R_const_QRect_R_Qt__CheckState(painter, &(option), bindgen_address(rect), state);
     } else {
       QItemDelegate::drawCheck(painter, option, rect, state);
     }
@@ -109135,7 +109416,7 @@ extern "C" void bg_BgInherit_QItemDelegate_JUMPTABLE_BgJumptable_QItemDelegate_R
 
 struct BgJumptable_QItemEditorFactory {
   CrystalProc<QWidget *, int, QWidget *> bg_QItemEditorFactory_createEditor_int_QWidget_X;
-  CrystalProc<CrystalString, int> bg_QItemEditorFactory_valuePropertyName_int;
+  CrystalProc<CrystalString *, int> bg_QItemEditorFactory_valuePropertyName_int;
 };
 struct BgInherit_QItemEditorFactory : public QItemEditorFactory {
   using QItemEditorFactory::QItemEditorFactory;
@@ -109153,7 +109434,7 @@ struct BgInherit_QItemEditorFactory : public QItemEditorFactory {
   QByteArray valuePropertyName(int userType) const override {
     const BgInherit_QItemEditorFactory *_self_ = this;
     if (_self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int(userType)); return QByteArray(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QItemEditorFactory_valuePropertyName_int(userType)); return QByteArray(bg_value.ptr, bg_value.size); }());
     } else {
       return QItemEditorFactory::valuePropertyName(userType);
     }
@@ -109189,7 +109470,7 @@ extern "C" QItemEditorFactory * bg_QItemEditorFactory__COPY_const_QItemEditorFac
 }
 
 extern "C" QItemEditorFactory * bg_QItemEditorFactory__OPERATOR_assign_const_QItemEditorFactory_R(QItemEditorFactory * _self_, const QItemEditorFactory & unnamed_arg_0) {
-  return &((*_self_) = (unnamed_arg_0));
+  return &(((*_self_) = (unnamed_arg_0)));
 }
 
 extern "C" QWidget * bg_QItemEditorFactory_createEditor_SUPER_int_QWidget_X(QItemEditorFactory * _self_, int userType, QWidget * parent) {
@@ -109241,13 +109522,13 @@ struct BgJumptable_QKeySequenceEdit {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -109585,7 +109866,7 @@ struct BgInherit_QKeySequenceEdit : public QKeySequenceEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QKeySequenceEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QKeySequenceEdit::nativeEvent(eventType, message, result);
     }
@@ -109639,7 +109920,7 @@ struct BgInherit_QKeySequenceEdit : public QKeySequenceEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QKeySequenceEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QKeySequenceEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -109875,12 +110156,12 @@ struct BgJumptable_QLabel {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -110236,7 +110517,7 @@ struct BgInherit_QLabel : public QLabel {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLabel *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QLabel::nativeEvent(eventType, message, result);
     }
@@ -110281,7 +110562,7 @@ struct BgInherit_QLabel : public QLabel {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QLabel *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QLabel::inputMethodQuery(unnamed_arg_0);
     }
@@ -110582,12 +110863,12 @@ extern "C" const QMetaObject * bg_QLabel_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QLabel::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QLabel_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(QLabel * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLabel::*)(const QString &))&QLabel::linkActivated, [_proc_](const QString & link){ _proc_(qstring_to_crystal(link)); }));
+extern "C" QMetaObject::Connection * bg_QLabel_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(QLabel * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLabel::*)(const QString &))&QLabel::linkActivated, [_proc_](const QString & link){ _proc_(bindgen_address(qstring_to_crystal(link))); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QLabel_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(QLabel * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLabel::*)(const QString &))&QLabel::linkHovered, [_proc_](const QString & link){ _proc_(qstring_to_crystal(link)); }));
+extern "C" QMetaObject::Connection * bg_QLabel_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(QLabel * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QLabel::*)(const QString &))&QLabel::linkHovered, [_proc_](const QString & link){ _proc_(bindgen_address(qstring_to_crystal(link))); }));
 }
 
 extern "C" QSize bg_QLabel_sizeHint_SUPER_(QLabel * _self_) {
@@ -110688,12 +110969,12 @@ struct BgJumptable_QLCDNumber {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -111041,7 +111322,7 @@ struct BgInherit_QLCDNumber : public QLCDNumber {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QLCDNumber *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QLCDNumber::nativeEvent(eventType, message, result);
     }
@@ -111086,7 +111367,7 @@ struct BgInherit_QLCDNumber : public QLCDNumber {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QLCDNumber *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QLCDNumber::inputMethodQuery(unnamed_arg_0);
     }
@@ -111310,7 +111591,7 @@ struct BgJumptable_QListView {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QListView_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<QRect *, const QModelIndex *> bg_QListView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QListView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QListView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QListView_indexAt_const_QPoint_R;
   CrystalProc<void> bg_QListView_doItemsLayout_;
   CrystalProc<void> bg_QListView_reset_;
   CrystalProc<void, const QModelIndex *> bg_QListView_setRootIndex_const_QModelIndex_R;
@@ -111334,7 +111615,7 @@ struct BgJumptable_QListView {
   CrystalProc<int> bg_QListView_horizontalOffset_;
   CrystalProc<int> bg_QListView_verticalOffset_;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QListView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QListView_selectedIndexes_;
   CrystalProc<void> bg_QListView_updateGeometries_;
@@ -111344,11 +111625,11 @@ struct BgJumptable_QListView {
   CrystalProc<QSize *> bg_QListView_viewportSizeHint_;
   CrystalProc<void, QAbstractItemModel *> bg_QAbstractItemView_setModel_QAbstractItemModel_X;
   CrystalProc<void, QItemSelectionModel *> bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
@@ -111391,7 +111672,7 @@ struct BgJumptable_QListView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -111451,7 +111732,7 @@ struct BgInherit_QListView : public QListView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QListView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QListView::indexAt(point);
     }
@@ -111658,7 +111939,7 @@ struct BgInherit_QListView : public QListView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QListView::setSelection(rect, command);
     }
@@ -111748,7 +112029,7 @@ struct BgInherit_QListView : public QListView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QListView::keyboardSearch(search);
     }
@@ -111784,7 +112065,7 @@ struct BgInherit_QListView : public QListView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QListView::inputMethodQuery(unnamed_arg_0);
     }
@@ -112171,7 +112452,7 @@ struct BgInherit_QListView : public QListView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QListView::nativeEvent(eventType, message, result);
     }
@@ -112699,8 +112980,8 @@ extern "C" void bg_BgInherit_QListView_JUMPTABLE_BgJumptable_QListView_R(BgInher
 
 struct BgJumptable_QListWidgetItem {
   CrystalProc<QListWidgetItem *> bg_QListWidgetItem_clone_;
-  CrystalProc<CrystalVariant, int> bg_QListWidgetItem_data_int;
-  CrystalProc<void, int, const CrystalVariant> bg_QListWidgetItem_setData_int_const_QVariant_R;
+  CrystalProc<CrystalVariant *, int> bg_QListWidgetItem_data_int;
+  CrystalProc<void, int, const CrystalVariant *> bg_QListWidgetItem_setData_int_const_QVariant_R;
   CrystalProc<bool, const QListWidgetItem *> bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R;
   CrystalProc<void, QDataStream *> bg_QListWidgetItem_read_QDataStream_R;
   CrystalProc<void, QDataStream *> bg_QListWidgetItem_write_QDataStream_R;
@@ -112721,7 +113002,7 @@ struct BgInherit_QListWidgetItem : public QListWidgetItem {
   QVariant data(int role) const override {
     const BgInherit_QListWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QListWidgetItem_data_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QListWidgetItem_data_int(role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QListWidgetItem_data_int(role));
     } else {
       return QListWidgetItem::data(role);
     }
@@ -112730,7 +113011,7 @@ struct BgInherit_QListWidgetItem : public QListWidgetItem {
   void setData(int role, const QVariant & value) override {
     BgInherit_QListWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QListWidgetItem_setData_int_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QListWidgetItem_setData_int_const_QVariant_R(role, qvariant_to_crystal(value));
+      _self_->bgJump.bg_QListWidgetItem_setData_int_const_QVariant_R(role, bindgen_address(qvariant_to_crystal(value)));
     } else {
       QListWidgetItem::setData(role, value);
     }
@@ -112909,7 +113190,7 @@ extern "C" void bg_QListWidgetItem_setData_int_const_QVariant_R(QListWidgetItem 
 }
 
 extern "C" bool bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R(QListWidgetItem * _self_, const QListWidgetItem & other) {
-  return (*_self_) < (other);
+  return ((*_self_) < (other));
 }
 
 extern "C" void bg_QListWidgetItem_read_QDataStream_R(QListWidgetItem * _self_, QDataStream & in) {
@@ -112921,7 +113202,7 @@ extern "C" void bg_QListWidgetItem_write_QDataStream_R(QListWidgetItem * _self_,
 }
 
 extern "C" QListWidgetItem * bg_QListWidgetItem__OPERATOR_assign_const_QListWidgetItem_R(QListWidgetItem * _self_, const QListWidgetItem & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" int bg_QListWidgetItem_type_(QListWidgetItem * _self_) {
@@ -112965,11 +113246,12 @@ struct BgJumptable_QListWidget {
   CrystalProc<Qt::DropActions> bg_QListWidget_supportedDropActions_;
   CrystalProc<QRect *, const QModelIndex *> bg_QListView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QListView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QListView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QListView_indexAt_const_QPoint_R;
   CrystalProc<void> bg_QListView_doItemsLayout_;
   CrystalProc<void> bg_QListView_reset_;
   CrystalProc<void, const QModelIndex *> bg_QListView_setRootIndex_const_QModelIndex_R;
   CrystalProc<void, int, int> bg_QListView_scrollContentsBy_int_int;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QListView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QListView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void, const QModelIndex *, int, int> bg_QListView_rowsInserted_const_QModelIndex_R_int_int;
   CrystalProc<void, const QModelIndex *, int, int> bg_QListView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
@@ -112986,7 +113268,7 @@ struct BgJumptable_QListWidget {
   CrystalProc<int> bg_QListView_horizontalOffset_;
   CrystalProc<int> bg_QListView_verticalOffset_;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QListView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QListView_selectedIndexes_;
   CrystalProc<void> bg_QListView_updateGeometries_;
@@ -112994,11 +113276,12 @@ struct BgJumptable_QListWidget {
   CrystalProc<void, const QItemSelection *, const QItemSelection *> bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<QSize *> bg_QListView_viewportSizeHint_;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, QAbstractItemModel *> bg_QAbstractItemView_setModel_QAbstractItemModel_X;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
@@ -113041,7 +113324,7 @@ struct BgJumptable_QListWidget {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -113164,7 +113447,7 @@ struct BgInherit_QListWidget : public QListWidget {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QListView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QListWidget::indexAt(point);
     }
@@ -113353,7 +113636,7 @@ struct BgInherit_QListWidget : public QListWidget {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QListWidget::setSelection(rect, command);
     }
@@ -113425,7 +113708,7 @@ struct BgInherit_QListWidget : public QListWidget {
   void keyboardSearch(const QString & search) override {
     BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QListWidget::keyboardSearch(search);
     }
@@ -113461,7 +113744,7 @@ struct BgInherit_QListWidget : public QListWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QListWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -113848,7 +114131,7 @@ struct BgInherit_QListWidget : public QListWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QListWidget::nativeEvent(eventType, message, result);
     }
@@ -114198,8 +114481,8 @@ extern "C" QMetaObject::Connection * bg_QListWidget_CONNECT_currentItemChanged_C
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QListWidget::*)(QListWidgetItem *, QListWidgetItem *))&QListWidget::currentItemChanged, [_proc_](QListWidgetItem * current, QListWidgetItem * previous){ _proc_(current, previous); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QListWidget_CONNECT_currentTextChanged_CrystalProc_void__const_QString_R_(QListWidget * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QListWidget::*)(const QString &))&QListWidget::currentTextChanged, [_proc_](const QString & currentText){ _proc_(qstring_to_crystal(currentText)); }));
+extern "C" QMetaObject::Connection * bg_QListWidget_CONNECT_currentTextChanged_CrystalProc_void__const_QString_R_(QListWidget * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QListWidget::*)(const QString &))&QListWidget::currentTextChanged, [_proc_](const QString & currentText){ _proc_(bindgen_address(qstring_to_crystal(currentText))); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QListWidget_CONNECT_currentRowChanged_CrystalProc_void__int_(QListWidget * _self_, CrystalProc<void, int> _proc_) {
@@ -114279,13 +114562,13 @@ struct BgJumptable_QMainWindow {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -114624,7 +114907,7 @@ struct BgInherit_QMainWindow : public QMainWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMainWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMainWindow::nativeEvent(eventType, message, result);
     }
@@ -114678,7 +114961,7 @@ struct BgInherit_QMainWindow : public QMainWindow {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMainWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMainWindow::inputMethodQuery(unnamed_arg_0);
     }
@@ -115012,8 +115295,8 @@ extern "C" const QMetaObject * bg_QMainWindow_staticMetaObject_STATIC_GETTER_() 
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QMainWindow::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QMainWindow_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QMainWindow * _self_, CrystalProc<void, const QSize> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMainWindow::*)(const QSize &))&QMainWindow::iconSizeChanged, [_proc_](const QSize & iconSize){ _proc_(iconSize); }));
+extern "C" QMetaObject::Connection * bg_QMainWindow_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QMainWindow * _self_, CrystalProc<void, const QSize *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMainWindow::*)(const QSize &))&QMainWindow::iconSizeChanged, [_proc_](const QSize & iconSize){ _proc_(bindgen_address(iconSize)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QMainWindow_CONNECT_toolButtonStyleChanged_CrystalProc_void__Qt__ToolButtonStyle_(QMainWindow * _self_, CrystalProc<void, Qt::ToolButtonStyle> _proc_) {
@@ -115085,12 +115368,12 @@ struct BgJumptable_QMdiArea {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
   CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
@@ -115498,7 +115781,7 @@ struct BgInherit_QMdiArea : public QMdiArea {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMdiArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMdiArea::nativeEvent(eventType, message, result);
     }
@@ -115543,7 +115826,7 @@ struct BgInherit_QMdiArea : public QMdiArea {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMdiArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMdiArea::inputMethodQuery(unnamed_arg_0);
     }
@@ -115890,12 +116173,12 @@ struct BgJumptable_QMdiSubWindow {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
   CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
@@ -116258,7 +116541,7 @@ struct BgInherit_QMdiSubWindow : public QMdiSubWindow {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMdiSubWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMdiSubWindow::nativeEvent(eventType, message, result);
     }
@@ -116303,7 +116586,7 @@ struct BgInherit_QMdiSubWindow : public QMdiSubWindow {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMdiSubWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMdiSubWindow::inputMethodQuery(unnamed_arg_0);
     }
@@ -116682,12 +116965,12 @@ struct BgJumptable_QMenu {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
@@ -117051,7 +117334,7 @@ struct BgInherit_QMenu : public QMenu {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMenu *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMenu::nativeEvent(eventType, message, result);
     }
@@ -117096,7 +117379,7 @@ struct BgInherit_QMenu : public QMenu {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMenu *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMenu::inputMethodQuery(unnamed_arg_0);
     }
@@ -117564,12 +117847,12 @@ struct BgJumptable_QMenuBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
@@ -117933,7 +118216,7 @@ struct BgInherit_QMenuBar : public QMenuBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMenuBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMenuBar::nativeEvent(eventType, message, result);
     }
@@ -117978,7 +118261,7 @@ struct BgInherit_QMenuBar : public QMenuBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMenuBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMenuBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -118349,12 +118632,12 @@ struct BgJumptable_QMessageBox {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -118746,7 +119029,7 @@ struct BgInherit_QMessageBox : public QMessageBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QMessageBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QMessageBox::nativeEvent(eventType, message, result);
     }
@@ -118791,7 +119074,7 @@ struct BgInherit_QMessageBox : public QMessageBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QMessageBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QMessageBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -119200,8 +119483,8 @@ struct BgJumptable_QTextEdit {
   CrystalProc<const QMetaObject *> bg_QTextEdit_metaObject_;
   CrystalProc<void *, const char *> bg_QTextEdit_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextEdit_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalVariant, int, const QUrl *> bg_QTextEdit_loadResource_int_const_QUrl_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, int, const QUrl *> bg_QTextEdit_loadResource_int_const_QUrl_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QEvent *> bg_QTextEdit_event_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QTextEdit_timerEvent_QTimerEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QTextEdit_keyPressEvent_QKeyEvent_X;
@@ -119248,7 +119531,7 @@ struct BgJumptable_QTextEdit {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -119290,7 +119573,7 @@ struct BgInherit_QTextEdit : public QTextEdit {
   QVariant loadResource(int type, const QUrl & name) override {
     BgInherit_QTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QTextEdit_loadResource_int_const_QUrl_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTextEdit_loadResource_int_const_QUrl_R(type, &(name)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTextEdit_loadResource_int_const_QUrl_R(type, &(name)));
     } else {
       return QTextEdit::loadResource(type, name);
     }
@@ -119299,7 +119582,7 @@ struct BgInherit_QTextEdit : public QTextEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTextEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -119722,7 +120005,7 @@ struct BgInherit_QTextEdit : public QTextEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTextEdit::nativeEvent(eventType, message, result);
     }
@@ -120488,8 +120771,8 @@ struct BgJumptable_QPlainTextEdit {
   CrystalProc<const QMetaObject *> bg_QPlainTextEdit_metaObject_;
   CrystalProc<void *, const char *> bg_QPlainTextEdit_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QPlainTextEdit_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalVariant, int, const QUrl *> bg_QPlainTextEdit_loadResource_int_const_QUrl_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QPlainTextEdit_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, int, const QUrl *> bg_QPlainTextEdit_loadResource_int_const_QUrl_R;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QPlainTextEdit_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, QEvent *> bg_QPlainTextEdit_event_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QPlainTextEdit_timerEvent_QTimerEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QPlainTextEdit_keyPressEvent_QKeyEvent_X;
@@ -120536,7 +120819,7 @@ struct BgJumptable_QPlainTextEdit {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -120578,7 +120861,7 @@ struct BgInherit_QPlainTextEdit : public QPlainTextEdit {
   QVariant loadResource(int type, const QUrl & name) override {
     BgInherit_QPlainTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QPlainTextEdit_loadResource_int_const_QUrl_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QPlainTextEdit_loadResource_int_const_QUrl_R(type, &(name)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QPlainTextEdit_loadResource_int_const_QUrl_R(type, &(name)));
     } else {
       return QPlainTextEdit::loadResource(type, name);
     }
@@ -120587,7 +120870,7 @@ struct BgInherit_QPlainTextEdit : public QPlainTextEdit {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QPlainTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QPlainTextEdit_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QPlainTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QPlainTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QPlainTextEdit::inputMethodQuery(unnamed_arg_0);
     }
@@ -121010,7 +121293,7 @@ struct BgInherit_QPlainTextEdit : public QPlainTextEdit {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QPlainTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QPlainTextEdit::nativeEvent(eventType, message, result);
     }
@@ -121584,8 +121867,8 @@ extern "C" QMetaObject::Connection * bg_QPlainTextEdit_CONNECT_cursorPositionCha
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QPlainTextEdit::*)())&QPlainTextEdit::cursorPositionChanged, [_proc_](){ _proc_(); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QPlainTextEdit_CONNECT_updateRequest_CrystalProc_void__const_QRect_R__int_(QPlainTextEdit * _self_, CrystalProc<void, const QRect, int> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QPlainTextEdit::*)(const QRect &, int))&QPlainTextEdit::updateRequest, [_proc_](const QRect & rect, int dy){ _proc_(rect, dy); }));
+extern "C" QMetaObject::Connection * bg_QPlainTextEdit_CONNECT_updateRequest_CrystalProc_void__const_QRect_R__int_(QPlainTextEdit * _self_, CrystalProc<void, const QRect *, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QPlainTextEdit::*)(const QRect &, int))&QPlainTextEdit::updateRequest, [_proc_](const QRect & rect, int dy){ _proc_(bindgen_address(rect), dy); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QPlainTextEdit_CONNECT_blockCountChanged_CrystalProc_void__int_(QPlainTextEdit * _self_, CrystalProc<void, int> _proc_) {
@@ -121721,7 +122004,7 @@ struct BgJumptable_QPlainTextDocumentLayout {
   CrystalProc<void *, const char *> bg_QPlainTextDocumentLayout_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QPlainTextDocumentLayout_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<void, QPainter *, const QAbstractTextDocumentLayout::PaintContext *> bg_QPlainTextDocumentLayout_draw_QPainter_X_const_QAbstractTextDocumentLayout__PaintContext_R;
-  CrystalProc<int, const QPointF, Qt::HitTestAccuracy> bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
+  CrystalProc<int, const QPointF *, Qt::HitTestAccuracy> bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy;
   CrystalProc<int> bg_QPlainTextDocumentLayout_pageCount_;
   CrystalProc<QSizeF *> bg_QPlainTextDocumentLayout_documentSize_;
   CrystalProc<QRectF *, QTextFrame *> bg_QPlainTextDocumentLayout_frameBoundingRect_QTextFrame_X;
@@ -121729,7 +122012,7 @@ struct BgJumptable_QPlainTextDocumentLayout {
   CrystalProc<void, int, int, int> bg_QPlainTextDocumentLayout_documentChanged_int_int_int;
   CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_resizeInlineObject_QTextInlineObject_int_const_QTextFormat_R;
   CrystalProc<void, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_positionInlineObject_QTextInlineObject_int_const_QTextFormat_R;
-  CrystalProc<void, QPainter *, const QRectF, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R;
+  CrystalProc<void, QPainter *, const QRectF *, QTextInlineObject *, int, const QTextFormat *> bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R;
   CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -121780,7 +122063,7 @@ struct BgInherit_QPlainTextDocumentLayout : public QPlainTextDocumentLayout {
   int hitTest(const QPointF & point, Qt::HitTestAccuracy accuracy) const override {
     const BgInherit_QPlainTextDocumentLayout *_self_ = this;
     if (_self_->bgJump.bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy.isValid()) {
-      return _self_->bgJump.bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(point, accuracy);
+      return _self_->bgJump.bg_QPlainTextDocumentLayout_hitTest_const_QPointF_R_Qt__HitTestAccuracy(bindgen_address(point), accuracy);
     } else {
       return QPlainTextDocumentLayout::hitTest(point, accuracy);
     }
@@ -121852,7 +122135,7 @@ struct BgInherit_QPlainTextDocumentLayout : public QPlainTextDocumentLayout {
   void drawInlineObject(QPainter * painter, const QRectF & rect, QTextInlineObject object, int posInDocument, const QTextFormat & format) override {
     BgInherit_QPlainTextDocumentLayout *_self_ = this;
     if (_self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R.isValid()) {
-      _self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(painter, rect, new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (object), posInDocument, &(format));
+      _self_->bgJump.bg_QAbstractTextDocumentLayout_drawInlineObject_QPainter_X_const_QRectF_R_QTextInlineObject_int_const_QTextFormat_R(painter, bindgen_address(rect), new (UseGC, bindgen_gc_finalizer<QTextInlineObject>()) QTextInlineObject (object), posInDocument, &(format));
     } else {
       QPlainTextDocumentLayout::drawInlineObject(painter, rect, object, posInDocument, format);
     }
@@ -122034,7 +122317,7 @@ struct BgJumptable_QProgressBar {
   CrystalProc<const QMetaObject *> bg_QProgressBar_metaObject_;
   CrystalProc<void *, const char *> bg_QProgressBar_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QProgressBar_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalString> bg_QProgressBar_text_;
+  CrystalProc<CrystalString *> bg_QProgressBar_text_;
   CrystalProc<QSize *> bg_QProgressBar_sizeHint_;
   CrystalProc<QSize *> bg_QProgressBar_minimumSizeHint_;
   CrystalProc<bool, QEvent *> bg_QProgressBar_event_QEvent_X;
@@ -122068,13 +122351,13 @@ struct BgJumptable_QProgressBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -122116,7 +122399,7 @@ struct BgInherit_QProgressBar : public QProgressBar {
   QString text() const override {
     const BgInherit_QProgressBar *_self_ = this;
     if (_self_->bgJump.bg_QProgressBar_text_.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QProgressBar_text_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QProgressBar_text_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QProgressBar::text();
     }
@@ -122422,7 +122705,7 @@ struct BgInherit_QProgressBar : public QProgressBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QProgressBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QProgressBar::nativeEvent(eventType, message, result);
     }
@@ -122476,7 +122759,7 @@ struct BgInherit_QProgressBar : public QProgressBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QProgressBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QProgressBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -122765,12 +123048,12 @@ struct BgJumptable_QProgressDialog {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -123162,7 +123445,7 @@ struct BgInherit_QProgressDialog : public QProgressDialog {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QProgressDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QProgressDialog::nativeEvent(eventType, message, result);
     }
@@ -123207,7 +123490,7 @@ struct BgInherit_QProgressDialog : public QProgressDialog {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QProgressDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QProgressDialog::inputMethodQuery(unnamed_arg_0);
     }
@@ -123467,14 +123750,14 @@ struct BgJumptable_QProxyStyle {
   CrystalProc<void, QStyle::PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *> bg_QProxyStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
   CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QProxyStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
   CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QProxyStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
-  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
-  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
-  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPalette *, bool, const CrystalString *, QPalette::ColorRole> bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect *, int, const QPixmap *> bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize *, const QWidget *> bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
   CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QProxyStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QProxyStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
-  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
-  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
-  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect *, int, bool, const CrystalString *> bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect *, int, const QPixmap *> bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint *, const QWidget *> bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
   CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QProxyStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
   CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QProxyStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
   CrystalProc<int, QSizePolicy::ControlType, QSizePolicy::ControlType, Qt::Orientation, const QStyleOption *, const QWidget *> bg_QProxyStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X;
@@ -123555,7 +123838,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
-      _self_->bgJump.bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+      _self_->bgJump.bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, bindgen_address(rect), flags, &(pal), enabled, bindgen_address(qstring_to_crystal(text)), textRole);
     } else {
       QProxyStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
     }
@@ -123564,7 +123847,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      _self_->bgJump.bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+      _self_->bgJump.bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, bindgen_address(rect), alignment, &(pixmap));
     } else {
       QProxyStyle::drawItemPixmap(painter, rect, alignment, pixmap);
     }
@@ -123573,7 +123856,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid()) {
-      return *_self_->bgJump.bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+      return *_self_->bgJump.bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, bindgen_address(contentsSize), w);
     } else {
       return QProxyStyle::sizeFromContents(ct, opt, contentsSize, w);
     }
@@ -123600,7 +123883,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
-      return *_self_->bgJump.bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+      return *_self_->bgJump.bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), bindgen_address(r), flags, enabled, bindgen_address(qstring_to_crystal(text)));
     } else {
       return QProxyStyle::itemTextRect(fm, r, flags, enabled, text);
     }
@@ -123609,7 +123892,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
-      return *_self_->bgJump.bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+      return *_self_->bgJump.bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(bindgen_address(r), flags, &(pixmap));
     } else {
       return QProxyStyle::itemPixmapRect(r, flags, pixmap);
     }
@@ -123618,7 +123901,7 @@ struct BgInherit_QProxyStyle : public QProxyStyle {
   QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
     const BgInherit_QProxyStyle *_self_ = this;
     if (_self_->bgJump.bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid()) {
-      return _self_->bgJump.bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+      return _self_->bgJump.bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, bindgen_address(pt), widget);
     } else {
       return QProxyStyle::hitTestComplexControl(cc, opt, pt, widget);
     }
@@ -124043,7 +124326,7 @@ struct BgJumptable_QRadioButton {
   CrystalProc<QSize *> bg_QRadioButton_sizeHint_;
   CrystalProc<QSize *> bg_QRadioButton_minimumSizeHint_;
   CrystalProc<bool, QEvent *> bg_QRadioButton_event_QEvent_X;
-  CrystalProc<bool, const QPoint> bg_QRadioButton_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QRadioButton_hitButton_const_QPoint_R;
   CrystalProc<void, QPaintEvent *> bg_QRadioButton_paintEvent_QPaintEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QRadioButton_mouseMoveEvent_QMouseEvent_X;
   CrystalProc<void, QStyleOptionButton *> bg_QRadioButton_initStyleOption_QStyleOptionButton_X;
@@ -124078,12 +124361,12 @@ struct BgJumptable_QRadioButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -124151,7 +124434,7 @@ struct BgInherit_QRadioButton : public QRadioButton {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QRadioButton *_self_ = this;
     if (_self_->bgJump.bg_QRadioButton_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QRadioButton_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QRadioButton_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QRadioButton::hitButton(pos);
     }
@@ -124466,7 +124749,7 @@ struct BgInherit_QRadioButton : public QRadioButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QRadioButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QRadioButton::nativeEvent(eventType, message, result);
     }
@@ -124511,7 +124794,7 @@ struct BgInherit_QRadioButton : public QRadioButton {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QRadioButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QRadioButton::inputMethodQuery(unnamed_arg_0);
     }
@@ -124708,12 +124991,12 @@ struct BgJumptable_QScrollBar {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -125078,7 +125361,7 @@ struct BgInherit_QScrollBar : public QScrollBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QScrollBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QScrollBar::nativeEvent(eventType, message, result);
     }
@@ -125123,7 +125406,7 @@ struct BgInherit_QScrollBar : public QScrollBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QScrollBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QScrollBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -125325,15 +125608,15 @@ extern "C" QScrollerProperties * bg_QScrollerProperties__COPY_const_QScrollerPro
 }
 
 extern "C" QScrollerProperties * bg_QScrollerProperties__OPERATOR_assign_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
-  return &((*_self_) = (sp));
+  return &(((*_self_) = (sp)));
 }
 
 extern "C" bool bg_QScrollerProperties__OPERATOR_eq_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
-  return (*_self_) == (sp);
+  return ((*_self_) == (sp));
 }
 
 extern "C" bool bg_QScrollerProperties__OPERATOR_ne_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
-  return (*_self_) != (sp);
+  return ((*_self_) != (sp));
 }
 
 extern "C" void bg_QScrollerProperties_setDefaultScrollerProperties_STATIC_const_QScrollerProperties_R(const QScrollerProperties & sp) {
@@ -125533,13 +125816,13 @@ struct BgJumptable_QSizeGrip {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -125877,7 +126160,7 @@ struct BgInherit_QSizeGrip : public QSizeGrip {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSizeGrip *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSizeGrip::nativeEvent(eventType, message, result);
     }
@@ -125931,7 +126214,7 @@ struct BgInherit_QSizeGrip : public QSizeGrip {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSizeGrip *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSizeGrip::inputMethodQuery(unnamed_arg_0);
     }
@@ -126121,11 +126404,11 @@ struct BgJumptable_QSpinBox {
   CrystalProc<void *, const char *> bg_QSpinBox_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QSpinBox_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<bool, QEvent *> bg_QSpinBox_event_QEvent_X;
-  CrystalProc<int, const CrystalString> bg_QSpinBox_valueFromText_const_QString_R;
-  CrystalProc<CrystalString, int> bg_QSpinBox_textFromValue_int;
+  CrystalProc<int, const CrystalString *> bg_QSpinBox_valueFromText_const_QString_R;
+  CrystalProc<CrystalString *, int> bg_QSpinBox_textFromValue_int;
   CrystalProc<QSize *> bg_QAbstractSpinBox_sizeHint_;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, int> bg_QAbstractSpinBox_stepBy_int;
   CrystalProc<void> bg_QAbstractSpinBox_clear_;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
@@ -126161,7 +126444,7 @@ struct BgJumptable_QSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -126215,7 +126498,7 @@ struct BgInherit_QSpinBox : public QSpinBox {
   int valueFromText(const QString & text) const override {
     const BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QSpinBox_valueFromText_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QSpinBox_valueFromText_const_QString_R(qstring_to_crystal(text));
+      return _self_->bgJump.bg_QSpinBox_valueFromText_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       return QSpinBox::valueFromText(text);
     }
@@ -126224,7 +126507,7 @@ struct BgInherit_QSpinBox : public QSpinBox {
   QString textFromValue(int val) const override {
     const BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QSpinBox_textFromValue_int.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QSpinBox_textFromValue_int(val)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QSpinBox_textFromValue_int(val)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QSpinBox::textFromValue(val);
     }
@@ -126251,7 +126534,7 @@ struct BgInherit_QSpinBox : public QSpinBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSpinBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -126575,7 +126858,7 @@ struct BgInherit_QSpinBox : public QSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSpinBox::nativeEvent(eventType, message, result);
     }
@@ -126800,8 +127083,8 @@ extern "C" QMetaObject::Connection * bg_QSpinBox_CONNECT_valueChanged_CrystalPro
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSpinBox::*)(int))&QSpinBox::valueChanged, [_proc_](int unnamed_arg_0){ _proc_(unnamed_arg_0); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QSpinBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSpinBox::*)(const QString &))&QSpinBox::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QSpinBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSpinBox::*)(const QString &))&QSpinBox::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" bool bg_QSpinBox_event_SUPER_QEvent_X(QSpinBox * _self_, QEvent * event) {
@@ -126824,12 +127107,12 @@ struct BgJumptable_QDoubleSpinBox {
   CrystalProc<const QMetaObject *> bg_QDoubleSpinBox_metaObject_;
   CrystalProc<void *, const char *> bg_QDoubleSpinBox_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QDoubleSpinBox_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<double, const CrystalString> bg_QDoubleSpinBox_valueFromText_const_QString_R;
-  CrystalProc<CrystalString, double> bg_QDoubleSpinBox_textFromValue_double;
+  CrystalProc<double, const CrystalString *> bg_QDoubleSpinBox_valueFromText_const_QString_R;
+  CrystalProc<CrystalString *, double> bg_QDoubleSpinBox_textFromValue_double;
   CrystalProc<QSize *> bg_QAbstractSpinBox_sizeHint_;
   CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
   CrystalProc<bool, QEvent *> bg_QAbstractSpinBox_event_QEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, int> bg_QAbstractSpinBox_stepBy_int;
   CrystalProc<void> bg_QAbstractSpinBox_clear_;
   CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
@@ -126865,7 +127148,7 @@ struct BgJumptable_QDoubleSpinBox {
   CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -126910,7 +127193,7 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
   double valueFromText(const QString & text) const override {
     const BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QDoubleSpinBox_valueFromText_const_QString_R.isValid()) {
-      return _self_->bgJump.bg_QDoubleSpinBox_valueFromText_const_QString_R(qstring_to_crystal(text));
+      return _self_->bgJump.bg_QDoubleSpinBox_valueFromText_const_QString_R(bindgen_address(qstring_to_crystal(text)));
     } else {
       return QDoubleSpinBox::valueFromText(text);
     }
@@ -126919,7 +127202,7 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
   QString textFromValue(double val) const override {
     const BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QDoubleSpinBox_textFromValue_double.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDoubleSpinBox_textFromValue_double(val)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QDoubleSpinBox_textFromValue_double(val)); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QDoubleSpinBox::textFromValue(val);
     }
@@ -126955,7 +127238,7 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QDoubleSpinBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -127279,7 +127562,7 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QDoubleSpinBox::nativeEvent(eventType, message, result);
     }
@@ -127500,8 +127783,8 @@ extern "C" QMetaObject::Connection * bg_QDoubleSpinBox_CONNECT_valueChanged_Crys
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleSpinBox::*)(double))&QDoubleSpinBox::valueChanged, [_proc_](double unnamed_arg_0){ _proc_(unnamed_arg_0); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QDoubleSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QDoubleSpinBox * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleSpinBox::*)(const QString &))&QDoubleSpinBox::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(qstring_to_crystal(unnamed_arg_0)); }));
+extern "C" QMetaObject::Connection * bg_QDoubleSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(QDoubleSpinBox * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleSpinBox::*)(const QString &))&QDoubleSpinBox::textChanged, [_proc_](const QString & unnamed_arg_0){ _proc_(bindgen_address(qstring_to_crystal(unnamed_arg_0))); }));
 }
 
 extern "C" double bg_QDoubleSpinBox_valueFromText_SUPER_const_QString_R(QDoubleSpinBox * _self_, const CrystalString text) {
@@ -127553,13 +127836,13 @@ struct BgJumptable_QSplashScreen {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -127898,7 +128181,7 @@ struct BgInherit_QSplashScreen : public QSplashScreen {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSplashScreen *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSplashScreen::nativeEvent(eventType, message, result);
     }
@@ -127952,7 +128235,7 @@ struct BgInherit_QSplashScreen : public QSplashScreen {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSplashScreen *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSplashScreen::inputMethodQuery(unnamed_arg_0);
     }
@@ -128122,8 +128405,8 @@ extern "C" const QMetaObject * bg_QSplashScreen_staticMetaObject_STATIC_GETTER_(
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSplashScreen::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QSplashScreen_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(QSplashScreen * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSplashScreen::*)(const QString &))&QSplashScreen::messageChanged, [_proc_](const QString & message){ _proc_(qstring_to_crystal(message)); }));
+extern "C" QMetaObject::Connection * bg_QSplashScreen_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(QSplashScreen * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSplashScreen::*)(const QString &))&QSplashScreen::messageChanged, [_proc_](const QString & message){ _proc_(bindgen_address(qstring_to_crystal(message))); }));
 }
 
 extern "C" bool bg_QSplashScreen_event_SUPER_QEvent_X(QSplashScreen * _self_, QEvent * event) {
@@ -128182,12 +128465,12 @@ struct BgJumptable_QSplitter {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -128552,7 +128835,7 @@ struct BgInherit_QSplitter : public QSplitter {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSplitter *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSplitter::nativeEvent(eventType, message, result);
     }
@@ -128597,7 +128880,7 @@ struct BgInherit_QSplitter : public QSplitter {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSplitter *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSplitter::inputMethodQuery(unnamed_arg_0);
     }
@@ -128906,13 +129189,13 @@ struct BgJumptable_QSplitterHandle {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -129242,7 +129525,7 @@ struct BgInherit_QSplitterHandle : public QSplitterHandle {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QSplitterHandle *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QSplitterHandle::nativeEvent(eventType, message, result);
     }
@@ -129296,7 +129579,7 @@ struct BgInherit_QSplitterHandle : public QSplitterHandle {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QSplitterHandle *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QSplitterHandle::inputMethodQuery(unnamed_arg_0);
     }
@@ -129492,7 +129775,7 @@ struct BgJumptable_QStackedLayout {
   CrystalProc<QSize *> bg_QStackedLayout_minimumSize_;
   CrystalProc<QLayoutItem *, int> bg_QStackedLayout_itemAt_int;
   CrystalProc<QLayoutItem *, int> bg_QStackedLayout_takeAt_int;
-  CrystalProc<void, const QRect> bg_QStackedLayout_setGeometry_const_QRect_R;
+  CrystalProc<void, const QRect *> bg_QStackedLayout_setGeometry_const_QRect_R;
   CrystalProc<bool> bg_QStackedLayout_hasHeightForWidth_;
   CrystalProc<int, int> bg_QStackedLayout_heightForWidth_int;
   CrystalProc<int> bg_QLayout_spacing_;
@@ -129505,6 +129788,7 @@ struct BgJumptable_QStackedLayout {
   CrystalProc<int, const QLayoutItem *> bg_QLayout_indexOf_const_QLayoutItem_X;
   CrystalProc<bool> bg_QLayout_isEmpty_;
   CrystalProc<QSizePolicy::ControlTypes> bg_QLayout_controlTypes_;
+  CrystalProc<QLayoutItem *, QWidget *, QWidget *> bg_QLayout_replaceWidget_QWidget_X_QWidget_X;
   CrystalProc<QLayoutItem *, QWidget *, QWidget *, Qt::FindChildOptions> bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions;
   CrystalProc<QLayout *> bg_QLayout_layout_;
   CrystalProc<void, QChildEvent *> bg_QLayout_childEvent_QChildEvent_X;
@@ -129602,7 +129886,7 @@ struct BgInherit_QStackedLayout : public QStackedLayout {
   void setGeometry(const QRect & unnamed_arg_0) override {
     BgInherit_QStackedLayout *_self_ = this;
     if (_self_->bgJump.bg_QStackedLayout_setGeometry_const_QRect_R.isValid()) {
-      _self_->bgJump.bg_QStackedLayout_setGeometry_const_QRect_R(unnamed_arg_0);
+      _self_->bgJump.bg_QStackedLayout_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
     } else {
       QStackedLayout::setGeometry(unnamed_arg_0);
     }
@@ -130012,12 +130296,12 @@ struct BgJumptable_QStackedWidget {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -130365,7 +130649,7 @@ struct BgInherit_QStackedWidget : public QStackedWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QStackedWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QStackedWidget::nativeEvent(eventType, message, result);
     }
@@ -130410,7 +130694,7 @@ struct BgInherit_QStackedWidget : public QStackedWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QStackedWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QStackedWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -130624,13 +130908,13 @@ struct BgJumptable_QStatusBar {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -130960,7 +131244,7 @@ struct BgInherit_QStatusBar : public QStatusBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QStatusBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QStatusBar::nativeEvent(eventType, message, result);
     }
@@ -131014,7 +131298,7 @@ struct BgInherit_QStatusBar : public QStatusBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QStatusBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QStatusBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -131184,8 +131468,8 @@ extern "C" const QMetaObject * bg_QStatusBar_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStatusBar::staticMetaObject);
 }
 
-extern "C" QMetaObject::Connection * bg_QStatusBar_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(QStatusBar * _self_, CrystalProc<void, const CrystalString> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStatusBar::*)(const QString &))&QStatusBar::messageChanged, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+extern "C" QMetaObject::Connection * bg_QStatusBar_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(QStatusBar * _self_, CrystalProc<void, const CrystalString *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStatusBar::*)(const QString &))&QStatusBar::messageChanged, [_proc_](const QString & text){ _proc_(bindgen_address(qstring_to_crystal(text))); }));
 }
 
 extern "C" void bg_QStatusBar_showEvent_SUPER_QShowEvent_X(QStatusBar * _self_, QShowEvent * event) {
@@ -131218,7 +131502,7 @@ struct BgJumptable_QStyledItemDelegate {
   CrystalProc<void, QWidget *, const QModelIndex *> bg_QStyledItemDelegate_setEditorData_QWidget_X_const_QModelIndex_R;
   CrystalProc<void, QWidget *, QAbstractItemModel *, const QModelIndex *> bg_QStyledItemDelegate_setModelData_QWidget_X_QAbstractItemModel_X_const_QModelIndex_R;
   CrystalProc<void, QWidget *, const QStyleOptionViewItem *, const QModelIndex *> bg_QStyledItemDelegate_updateEditorGeometry_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
-  CrystalProc<CrystalString, const CrystalVariant, const QLocale *> bg_QStyledItemDelegate_displayText_const_QVariant_R_const_QLocale_R;
+  CrystalProc<CrystalString *, const CrystalVariant *, const QLocale *> bg_QStyledItemDelegate_displayText_const_QVariant_R_const_QLocale_R;
   CrystalProc<void, QStyleOptionViewItem *, const QModelIndex *> bg_QStyledItemDelegate_initStyleOption_QStyleOptionViewItem_X_const_QModelIndex_R;
   CrystalProc<bool, QObject *, QEvent *> bg_QStyledItemDelegate_eventFilter_QObject_X_QEvent_X;
   CrystalProc<bool, QEvent *, QAbstractItemModel *, const QStyleOptionViewItem *, const QModelIndex *> bg_QStyledItemDelegate_editorEvent_QEvent_X_QAbstractItemModel_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
@@ -131319,7 +131603,7 @@ struct BgInherit_QStyledItemDelegate : public QStyledItemDelegate {
   QString displayText(const QVariant & value, const QLocale & locale) const override {
     const BgInherit_QStyledItemDelegate *_self_ = this;
     if (_self_->bgJump.bg_QStyledItemDelegate_displayText_const_QVariant_R_const_QLocale_R.isValid()) {
-      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QStyledItemDelegate_displayText_const_QVariant_R_const_QLocale_R(qvariant_to_crystal(value), &(locale))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QStyledItemDelegate_displayText_const_QVariant_R_const_QLocale_R(bindgen_address(qvariant_to_crystal(value)), &(locale))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
     } else {
       return QStyledItemDelegate::displayText(value, locale);
     }
@@ -131814,7 +132098,7 @@ struct BgJumptable_QTableView {
   CrystalProc<void> bg_QTableView_doItemsLayout_;
   CrystalProc<QRect *, const QModelIndex *> bg_QTableView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QTableView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QTableView_indexAt_const_QPoint_R;
   CrystalProc<void, int, int> bg_QTableView_scrollContentsBy_int_int;
   CrystalProc<void, QStyleOptionViewItem *> bg_QTableView_initViewItemOption_QStyleOptionViewItem_X;
   CrystalProc<void, QPaintEvent *> bg_QTableView_paintEvent_QPaintEvent_X;
@@ -131823,7 +132107,7 @@ struct BgJumptable_QTableView {
   CrystalProc<int> bg_QTableView_horizontalOffset_;
   CrystalProc<int> bg_QTableView_verticalOffset_;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QTableView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QTableView_selectedIndexes_;
   CrystalProc<void> bg_QTableView_updateGeometries_;
@@ -131835,11 +132119,12 @@ struct BgJumptable_QTableView {
   CrystalProc<bool, const QModelIndex *> bg_QTableView_isIndexHidden_const_QModelIndex_R;
   CrystalProc<void, const QItemSelection *, const QItemSelection *> bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_reset_;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
@@ -131890,7 +132175,7 @@ struct BgJumptable_QTableView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -131986,7 +132271,7 @@ struct BgInherit_QTableView : public QTableView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QTableView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QTableView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QTableView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QTableView::indexAt(point);
     }
@@ -132067,7 +132352,7 @@ struct BgInherit_QTableView : public QTableView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QTableView::setSelection(rect, command);
     }
@@ -132175,7 +132460,7 @@ struct BgInherit_QTableView : public QTableView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QTableView::keyboardSearch(search);
     }
@@ -132193,7 +132478,7 @@ struct BgInherit_QTableView : public QTableView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTableView::inputMethodQuery(unnamed_arg_0);
     }
@@ -132670,7 +132955,7 @@ struct BgInherit_QTableView : public QTableView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTableView::nativeEvent(eventType, message, result);
     }
@@ -133186,8 +133471,8 @@ extern "C" void bg_BgInherit_QTableView_JUMPTABLE_BgJumptable_QTableView_R(BgInh
 
 struct BgJumptable_QTableWidgetItem {
   CrystalProc<QTableWidgetItem *> bg_QTableWidgetItem_clone_;
-  CrystalProc<CrystalVariant, int> bg_QTableWidgetItem_data_int;
-  CrystalProc<void, int, const CrystalVariant> bg_QTableWidgetItem_setData_int_const_QVariant_R;
+  CrystalProc<CrystalVariant *, int> bg_QTableWidgetItem_data_int;
+  CrystalProc<void, int, const CrystalVariant *> bg_QTableWidgetItem_setData_int_const_QVariant_R;
   CrystalProc<bool, const QTableWidgetItem *> bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R;
   CrystalProc<void, QDataStream *> bg_QTableWidgetItem_read_QDataStream_R;
   CrystalProc<void, QDataStream *> bg_QTableWidgetItem_write_QDataStream_R;
@@ -133208,7 +133493,7 @@ struct BgInherit_QTableWidgetItem : public QTableWidgetItem {
   QVariant data(int role) const override {
     const BgInherit_QTableWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QTableWidgetItem_data_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTableWidgetItem_data_int(role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTableWidgetItem_data_int(role));
     } else {
       return QTableWidgetItem::data(role);
     }
@@ -133217,7 +133502,7 @@ struct BgInherit_QTableWidgetItem : public QTableWidgetItem {
   void setData(int role, const QVariant & value) override {
     BgInherit_QTableWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QTableWidgetItem_setData_int_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QTableWidgetItem_setData_int_const_QVariant_R(role, qvariant_to_crystal(value));
+      _self_->bgJump.bg_QTableWidgetItem_setData_int_const_QVariant_R(role, bindgen_address(qvariant_to_crystal(value)));
     } else {
       QTableWidgetItem::setData(role, value);
     }
@@ -133396,7 +133681,7 @@ extern "C" void bg_QTableWidgetItem_setData_int_const_QVariant_R(QTableWidgetIte
 }
 
 extern "C" bool bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R(QTableWidgetItem * _self_, const QTableWidgetItem & other) {
-  return (*_self_) < (other);
+  return ((*_self_) < (other));
 }
 
 extern "C" void bg_QTableWidgetItem_read_QDataStream_R(QTableWidgetItem * _self_, QDataStream & in) {
@@ -133408,7 +133693,7 @@ extern "C" void bg_QTableWidgetItem_write_QDataStream_R(QTableWidgetItem * _self
 }
 
 extern "C" QTableWidgetItem * bg_QTableWidgetItem__OPERATOR_assign_const_QTableWidgetItem_R(QTableWidgetItem * _self_, const QTableWidgetItem & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" int bg_QTableWidgetItem_type_(QTableWidgetItem * _self_) {
@@ -133449,12 +133734,13 @@ struct BgJumptable_QTableWidget {
   CrystalProc<bool, int, int, const QMimeData *, Qt::DropAction> bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction;
   CrystalProc<Qt::DropActions> bg_QTableWidget_supportedDropActions_;
   CrystalProc<void, QDropEvent *> bg_QTableWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QAbstractItemModel *> bg_QTableView_setModel_QAbstractItemModel_X;
   CrystalProc<void, const QModelIndex *> bg_QTableView_setRootIndex_const_QModelIndex_R;
   CrystalProc<void, QItemSelectionModel *> bg_QTableView_setSelectionModel_QItemSelectionModel_X;
   CrystalProc<void> bg_QTableView_doItemsLayout_;
   CrystalProc<QRect *, const QModelIndex *> bg_QTableView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QTableView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QTableView_indexAt_const_QPoint_R;
   CrystalProc<void, int, int> bg_QTableView_scrollContentsBy_int_int;
   CrystalProc<void, QStyleOptionViewItem *> bg_QTableView_initViewItemOption_QStyleOptionViewItem_X;
   CrystalProc<void, QPaintEvent *> bg_QTableView_paintEvent_QPaintEvent_X;
@@ -133462,7 +133748,7 @@ struct BgJumptable_QTableWidget {
   CrystalProc<int> bg_QTableView_horizontalOffset_;
   CrystalProc<int> bg_QTableView_verticalOffset_;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QTableView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QTableView_selectedIndexes_;
   CrystalProc<void> bg_QTableView_updateGeometries_;
@@ -133474,11 +133760,12 @@ struct BgJumptable_QTableWidget {
   CrystalProc<bool, const QModelIndex *> bg_QTableView_isIndexHidden_const_QModelIndex_R;
   CrystalProc<void, const QItemSelection *, const QItemSelection *> bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_reset_;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int;
   CrystalProc<void, const QModelIndex *, int, int> bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
@@ -133528,7 +133815,7 @@ struct BgJumptable_QTableWidget {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -133669,7 +133956,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QTableView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QTableView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QTableView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QTableWidget::indexAt(point);
     }
@@ -133741,7 +134028,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QTableWidget::setSelection(rect, command);
     }
@@ -133849,7 +134136,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   void keyboardSearch(const QString & search) override {
     BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QTableWidget::keyboardSearch(search);
     }
@@ -133867,7 +134154,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTableWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -134335,7 +134622,7 @@ struct BgInherit_QTableWidget : public QTableWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTableWidget::nativeEvent(eventType, message, result);
     }
@@ -134845,7 +135132,7 @@ struct BgJumptable_QTextBrowser {
   CrystalProc<const QMetaObject *> bg_QTextBrowser_metaObject_;
   CrystalProc<void *, const char *> bg_QTextBrowser_qt_metacast_const_char_X;
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QTextBrowser_qt_metacall_QMetaObject__Call_int_void_XX;
-  CrystalProc<CrystalVariant, int, const QUrl *> bg_QTextBrowser_loadResource_int_const_QUrl_R;
+  CrystalProc<CrystalVariant *, int, const QUrl *> bg_QTextBrowser_loadResource_int_const_QUrl_R;
   CrystalProc<void> bg_QTextBrowser_backward_;
   CrystalProc<void> bg_QTextBrowser_forward_;
   CrystalProc<void> bg_QTextBrowser_home_;
@@ -134859,7 +135146,7 @@ struct BgJumptable_QTextBrowser {
   CrystalProc<bool, bool> bg_QTextBrowser_focusNextPrevChild_bool;
   CrystalProc<void, QPaintEvent *> bg_QTextBrowser_paintEvent_QPaintEvent_X;
   CrystalProc<void, const QUrl *, QTextDocument::ResourceType> bg_QTextBrowser_doSetSource_const_QUrl_R_QTextDocument__ResourceType;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void, QTimerEvent *> bg_QTextEdit_timerEvent_QTimerEvent_X;
   CrystalProc<void, QKeyEvent *> bg_QTextEdit_keyReleaseEvent_QKeyEvent_X;
   CrystalProc<void, QResizeEvent *> bg_QTextEdit_resizeEvent_QResizeEvent_X;
@@ -134898,7 +135185,7 @@ struct BgJumptable_QTextBrowser {
   CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -134940,7 +135227,7 @@ struct BgInherit_QTextBrowser : public QTextBrowser {
   QVariant loadResource(int type, const QUrl & name) override {
     BgInherit_QTextBrowser *_self_ = this;
     if (_self_->bgJump.bg_QTextBrowser_loadResource_int_const_QUrl_R.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTextBrowser_loadResource_int_const_QUrl_R(type, &(name)));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTextBrowser_loadResource_int_const_QUrl_R(type, &(name)));
     } else {
       return QTextBrowser::loadResource(type, name);
     }
@@ -135066,7 +135353,7 @@ struct BgInherit_QTextBrowser : public QTextBrowser {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTextBrowser *_self_ = this;
     if (_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTextEdit_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTextBrowser::inputMethodQuery(unnamed_arg_0);
     }
@@ -135417,7 +135704,7 @@ struct BgInherit_QTextBrowser : public QTextBrowser {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTextBrowser *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTextBrowser::nativeEvent(eventType, message, result);
     }
@@ -135785,12 +136072,12 @@ struct BgJumptable_QToolBar {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -136138,7 +136425,7 @@ struct BgInherit_QToolBar : public QToolBar {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QToolBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QToolBar::nativeEvent(eventType, message, result);
     }
@@ -136183,7 +136470,7 @@ struct BgInherit_QToolBar : public QToolBar {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QToolBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QToolBar::inputMethodQuery(unnamed_arg_0);
     }
@@ -136453,8 +136740,8 @@ extern "C" QMetaObject::Connection * bg_QToolBar_CONNECT_orientationChanged_Crys
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QToolBar::*)(Qt::Orientation))&QToolBar::orientationChanged, [_proc_](Qt::Orientation orientation){ _proc_(orientation); }));
 }
 
-extern "C" QMetaObject::Connection * bg_QToolBar_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QToolBar * _self_, CrystalProc<void, const QSize> _proc_) {
-  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QToolBar::*)(const QSize &))&QToolBar::iconSizeChanged, [_proc_](const QSize & iconSize){ _proc_(iconSize); }));
+extern "C" QMetaObject::Connection * bg_QToolBar_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(QToolBar * _self_, CrystalProc<void, const QSize *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QToolBar::*)(const QSize &))&QToolBar::iconSizeChanged, [_proc_](const QSize & iconSize){ _proc_(bindgen_address(iconSize)); }));
 }
 
 extern "C" QMetaObject::Connection * bg_QToolBar_CONNECT_toolButtonStyleChanged_CrystalProc_void__Qt__ToolButtonStyle_(QToolBar * _self_, CrystalProc<void, Qt::ToolButtonStyle> _proc_) {
@@ -136533,12 +136820,12 @@ struct BgJumptable_QToolBox {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -136904,7 +137191,7 @@ struct BgInherit_QToolBox : public QToolBox {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QToolBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QToolBox::nativeEvent(eventType, message, result);
     }
@@ -136949,7 +137236,7 @@ struct BgInherit_QToolBox : public QToolBox {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QToolBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QToolBox::inputMethodQuery(unnamed_arg_0);
     }
@@ -137202,7 +137489,7 @@ struct BgJumptable_QToolButton {
   CrystalProc<void, QEvent *> bg_QToolButton_leaveEvent_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QToolButton_timerEvent_QTimerEvent_X;
   CrystalProc<void, QEvent *> bg_QToolButton_changeEvent_QEvent_X;
-  CrystalProc<bool, const QPoint> bg_QToolButton_hitButton_const_QPoint_R;
+  CrystalProc<bool, const QPoint *> bg_QToolButton_hitButton_const_QPoint_R;
   CrystalProc<void> bg_QToolButton_checkStateSet_;
   CrystalProc<void> bg_QToolButton_nextCheckState_;
   CrystalProc<void, QStyleOptionToolButton *> bg_QToolButton_initStyleOption_QStyleOptionToolButton_X;
@@ -137229,12 +137516,12 @@ struct BgJumptable_QToolButton {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -137374,7 +137661,7 @@ struct BgInherit_QToolButton : public QToolButton {
   bool hitButton(const QPoint & pos) const override {
     const BgInherit_QToolButton *_self_ = this;
     if (_self_->bgJump.bg_QToolButton_hitButton_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QToolButton_hitButton_const_QPoint_R(pos);
+      return _self_->bgJump.bg_QToolButton_hitButton_const_QPoint_R(bindgen_address(pos));
     } else {
       return QToolButton::hitButton(pos);
     }
@@ -137617,7 +137904,7 @@ struct BgInherit_QToolButton : public QToolButton {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QToolButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QToolButton::nativeEvent(eventType, message, result);
     }
@@ -137662,7 +137949,7 @@ struct BgInherit_QToolButton : public QToolButton {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QToolButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QToolButton::inputMethodQuery(unnamed_arg_0);
     }
@@ -137990,10 +138277,10 @@ struct BgJumptable_QTreeView {
   CrystalProc<void, QAbstractItemModel *> bg_QTreeView_setModel_QAbstractItemModel_X;
   CrystalProc<void, const QModelIndex *> bg_QTreeView_setRootIndex_const_QModelIndex_R;
   CrystalProc<void, QItemSelectionModel *> bg_QTreeView_setSelectionModel_QItemSelectionModel_X;
-  CrystalProc<void, const CrystalString> bg_QTreeView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QTreeView_keyboardSearch_const_QString_R;
   CrystalProc<QRect *, const QModelIndex *> bg_QTreeView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QTreeView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QTreeView_indexAt_const_QPoint_R;
   CrystalProc<void> bg_QTreeView_doItemsLayout_;
   CrystalProc<void> bg_QTreeView_reset_;
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
@@ -138006,14 +138293,14 @@ struct BgJumptable_QTreeView {
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
   CrystalProc<int> bg_QTreeView_horizontalOffset_;
   CrystalProc<int> bg_QTreeView_verticalOffset_;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QTreeView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QTreeView_selectedIndexes_;
   CrystalProc<void, QEvent *> bg_QTreeView_changeEvent_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QTreeView_timerEvent_QTimerEvent_X;
   CrystalProc<void, QPaintEvent *> bg_QTreeView_paintEvent_QPaintEvent_X;
   CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QModelIndex *> bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
-  CrystalProc<void, QPainter *, const QRect, const QModelIndex *> bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R;
+  CrystalProc<void, QPainter *, const QRect *, const QModelIndex *> bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseReleaseEvent_QMouseEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X;
@@ -138030,7 +138317,7 @@ struct BgJumptable_QTreeView {
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
   CrystalProc<void, int> bg_QAbstractItemView_verticalScrollbarAction_int;
@@ -138072,7 +138359,7 @@ struct BgJumptable_QTreeView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -138141,7 +138428,7 @@ struct BgInherit_QTreeView : public QTreeView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QTreeView::keyboardSearch(search);
     }
@@ -138168,7 +138455,7 @@ struct BgInherit_QTreeView : public QTreeView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QTreeView::indexAt(point);
     }
@@ -138276,7 +138563,7 @@ struct BgInherit_QTreeView : public QTreeView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QTreeView::setSelection(rect, command);
     }
@@ -138339,7 +138626,7 @@ struct BgInherit_QTreeView : public QTreeView {
   void drawBranches(QPainter * painter, const QRect & rect, const QModelIndex & index) const override {
     const BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R.isValid()) {
-      _self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(painter, rect, &(index));
+      _self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(painter, bindgen_address(rect), &(index));
     } else {
       QTreeView::drawBranches(painter, rect, index);
     }
@@ -138492,7 +138779,7 @@ struct BgInherit_QTreeView : public QTreeView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTreeView::inputMethodQuery(unnamed_arg_0);
     }
@@ -138870,7 +139157,7 @@ struct BgInherit_QTreeView : public QTreeView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTreeView::nativeEvent(eventType, message, result);
     }
@@ -139577,41 +139864,41 @@ extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__CONSTRUCT_QTree
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_assign_const_QTreeWidgetItemIterator_R(QTreeWidgetItemIterator * _self_, const QTreeWidgetItemIterator & it) {
-  return &((*_self_) = (it));
+  return &(((*_self_) = (it)));
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_succ_(QTreeWidgetItemIterator * _self_) {
-  return &(++(*_self_));
+  return &((++(*_self_)));
 }
 
 extern "C" const QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_post_succ_(QTreeWidgetItemIterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator ((*_self_)++);
+  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator (((*_self_)++));
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_add_assign_int(QTreeWidgetItemIterator * _self_, int n) {
-  return &((*_self_) += (n));
+  return &(((*_self_) += (n)));
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_pred_(QTreeWidgetItemIterator * _self_) {
-  return &(--(*_self_));
+  return &((--(*_self_)));
 }
 
 extern "C" const QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_post_pred_(QTreeWidgetItemIterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator ((*_self_)--);
+  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator (((*_self_)--));
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_sub_assign_int(QTreeWidgetItemIterator * _self_, int n) {
-  return &((*_self_) -= (n));
+  return &(((*_self_) -= (n)));
 }
 
 extern "C" QTreeWidgetItem * bg_QTreeWidgetItemIterator__OPERATOR_deref_(QTreeWidgetItemIterator * _self_) {
-  return *(*_self_);
+  return (*(*_self_));
 }
 
 struct BgJumptable_QTreeWidgetItem {
   CrystalProc<QTreeWidgetItem *> bg_QTreeWidgetItem_clone_;
-  CrystalProc<CrystalVariant, int, int> bg_QTreeWidgetItem_data_int_int;
-  CrystalProc<void, int, int, const CrystalVariant> bg_QTreeWidgetItem_setData_int_int_const_QVariant_R;
+  CrystalProc<CrystalVariant *, int, int> bg_QTreeWidgetItem_data_int_int;
+  CrystalProc<void, int, int, const CrystalVariant *> bg_QTreeWidgetItem_setData_int_int_const_QVariant_R;
   CrystalProc<bool, const QTreeWidgetItem *> bg_QTreeWidgetItem__OPERATOR_lt_const_QTreeWidgetItem_R;
   CrystalProc<void, QDataStream *> bg_QTreeWidgetItem_read_QDataStream_R;
   CrystalProc<void, QDataStream *> bg_QTreeWidgetItem_write_QDataStream_R;
@@ -139632,7 +139919,7 @@ struct BgInherit_QTreeWidgetItem : public QTreeWidgetItem {
   QVariant data(int column, int role) const override {
     const BgInherit_QTreeWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QTreeWidgetItem_data_int_int.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QTreeWidgetItem_data_int_int(column, role));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTreeWidgetItem_data_int_int(column, role));
     } else {
       return QTreeWidgetItem::data(column, role);
     }
@@ -139641,7 +139928,7 @@ struct BgInherit_QTreeWidgetItem : public QTreeWidgetItem {
   void setData(int column, int role, const QVariant & value) override {
     BgInherit_QTreeWidgetItem *_self_ = this;
     if (_self_->bgJump.bg_QTreeWidgetItem_setData_int_int_const_QVariant_R.isValid()) {
-      _self_->bgJump.bg_QTreeWidgetItem_setData_int_int_const_QVariant_R(column, role, qvariant_to_crystal(value));
+      _self_->bgJump.bg_QTreeWidgetItem_setData_int_int_const_QVariant_R(column, role, bindgen_address(qvariant_to_crystal(value)));
     } else {
       QTreeWidgetItem::setData(column, role, value);
     }
@@ -139872,7 +140159,7 @@ extern "C" void bg_QTreeWidgetItem_setData_int_int_const_QVariant_R(QTreeWidgetI
 }
 
 extern "C" bool bg_QTreeWidgetItem__OPERATOR_lt_const_QTreeWidgetItem_R(QTreeWidgetItem * _self_, const QTreeWidgetItem & other) {
-  return (*_self_) < (other);
+  return ((*_self_) < (other));
 }
 
 extern "C" void bg_QTreeWidgetItem_read_QDataStream_R(QTreeWidgetItem * _self_, QDataStream & in) {
@@ -139884,7 +140171,7 @@ extern "C" void bg_QTreeWidgetItem_write_QDataStream_R(QTreeWidgetItem * _self_,
 }
 
 extern "C" QTreeWidgetItem * bg_QTreeWidgetItem__OPERATOR_assign_const_QTreeWidgetItem_R(QTreeWidgetItem * _self_, const QTreeWidgetItem & other) {
-  return &((*_self_) = (other));
+  return &(((*_self_) = (other)));
 }
 
 extern "C" QTreeWidgetItem * bg_QTreeWidgetItem_parent_(QTreeWidgetItem * _self_) {
@@ -139982,13 +140269,15 @@ struct BgJumptable_QTreeWidget {
   CrystalProc<bool, QTreeWidgetItem *, int, const QMimeData *, Qt::DropAction> bg_QTreeWidget_dropMimeData_QTreeWidgetItem_X_int_const_QMimeData_X_Qt__DropAction;
   CrystalProc<Qt::DropActions> bg_QTreeWidget_supportedDropActions_;
   CrystalProc<void, QDropEvent *> bg_QTreeWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QAbstractItemModel *> bg_QTreeView_setModel_QAbstractItemModel_X;
   CrystalProc<void, const QModelIndex *> bg_QTreeView_setRootIndex_const_QModelIndex_R;
-  CrystalProc<void, const CrystalString> bg_QTreeView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QTreeView_keyboardSearch_const_QString_R;
   CrystalProc<QRect *, const QModelIndex *> bg_QTreeView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QTreeView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QTreeView_indexAt_const_QPoint_R;
   CrystalProc<void> bg_QTreeView_doItemsLayout_;
   CrystalProc<void> bg_QTreeView_reset_;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QTreeView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void> bg_QTreeView_selectAll_;
   CrystalProc<void, int> bg_QTreeView_verticalScrollbarValueChanged_int;
@@ -139998,14 +140287,14 @@ struct BgJumptable_QTreeWidget {
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QTreeView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
   CrystalProc<int> bg_QTreeView_horizontalOffset_;
   CrystalProc<int> bg_QTreeView_verticalOffset_;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QTreeView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QTreeView_selectedIndexes_;
   CrystalProc<void, QEvent *> bg_QTreeView_changeEvent_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QTreeView_timerEvent_QTimerEvent_X;
   CrystalProc<void, QPaintEvent *> bg_QTreeView_paintEvent_QPaintEvent_X;
   CrystalProc<void, QPainter *, const QStyleOptionViewItem *, const QModelIndex *> bg_QTreeView_drawRow_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R;
-  CrystalProc<void, QPainter *, const QRect, const QModelIndex *> bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R;
+  CrystalProc<void, QPainter *, const QRect *, const QModelIndex *> bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mousePressEvent_QMouseEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseReleaseEvent_QMouseEvent_X;
   CrystalProc<void, QMouseEvent *> bg_QTreeView_mouseDoubleClickEvent_QMouseEvent_X;
@@ -140022,7 +140311,7 @@ struct BgJumptable_QTreeWidget {
   CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
   CrystalProc<void, int> bg_QAbstractItemView_verticalScrollbarAction_int;
@@ -140062,7 +140351,7 @@ struct BgJumptable_QTreeWidget {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -140176,7 +140465,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   void keyboardSearch(const QString & search) override {
     BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QTreeView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QTreeWidget::keyboardSearch(search);
     }
@@ -140203,7 +140492,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QTreeView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QTreeWidget::indexAt(point);
     }
@@ -140311,7 +140600,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QTreeWidget::setSelection(rect, command);
     }
@@ -140374,7 +140663,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   void drawBranches(QPainter * painter, const QRect & rect, const QModelIndex & index) const override {
     const BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R.isValid()) {
-      _self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(painter, rect, &(index));
+      _self_->bgJump.bg_QTreeView_drawBranches_QPainter_X_const_QRect_R_const_QModelIndex_R(painter, bindgen_address(rect), &(index));
     } else {
       QTreeWidget::drawBranches(painter, rect, index);
     }
@@ -140527,7 +140816,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QTreeWidget::inputMethodQuery(unnamed_arg_0);
     }
@@ -140887,7 +141176,7 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QTreeWidget::nativeEvent(eventType, message, result);
     }
@@ -141311,12 +141600,13 @@ struct BgJumptable_QUndoView {
   CrystalProc<int, QMetaObject::Call, int, void **> bg_QUndoView_qt_metacall_QMetaObject__Call_int_void_XX;
   CrystalProc<QRect *, const QModelIndex *> bg_QListView_visualRect_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, QAbstractItemView::ScrollHint> bg_QListView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint;
-  CrystalProc<QModelIndex &, const QPoint> bg_QListView_indexAt_const_QPoint_R;
+  CrystalProc<QModelIndex &, const QPoint *> bg_QListView_indexAt_const_QPoint_R;
   CrystalProc<void> bg_QListView_doItemsLayout_;
   CrystalProc<void> bg_QListView_reset_;
   CrystalProc<void, const QModelIndex *> bg_QListView_setRootIndex_const_QModelIndex_R;
   CrystalProc<bool, QEvent *> bg_QListView_event_QEvent_X;
   CrystalProc<void, int, int> bg_QListView_scrollContentsBy_int_int;
+  CrystalProc<void, const QModelIndex *, const QModelIndex *> bg_QListView_dataChanged_const_QModelIndex_R_const_QModelIndex_R;
   CrystalProc<void, const QModelIndex *, const QModelIndex *, const Container_QList_int_ *> bg_QListView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R;
   CrystalProc<void, const QModelIndex *, int, int> bg_QListView_rowsInserted_const_QModelIndex_R_int_int;
   CrystalProc<void, const QModelIndex *, int, int> bg_QListView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int;
@@ -141334,7 +141624,7 @@ struct BgJumptable_QUndoView {
   CrystalProc<int> bg_QListView_horizontalOffset_;
   CrystalProc<int> bg_QListView_verticalOffset_;
   CrystalProc<QModelIndex &, QAbstractItemView::CursorAction, Qt::KeyboardModifiers> bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers;
-  CrystalProc<void, const QRect, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
+  CrystalProc<void, const QRect *, QItemSelectionModel::SelectionFlags> bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags;
   CrystalProc<QRegion &, const QItemSelection *> bg_QListView_visualRegionForSelection_const_QItemSelection_R;
   CrystalProc<Container_QList_QModelIndex_ *> bg_QListView_selectedIndexes_;
   CrystalProc<void> bg_QListView_updateGeometries_;
@@ -141344,11 +141634,11 @@ struct BgJumptable_QUndoView {
   CrystalProc<QSize *> bg_QListView_viewportSizeHint_;
   CrystalProc<void, QAbstractItemModel *> bg_QAbstractItemView_setModel_QAbstractItemModel_X;
   CrystalProc<void, QItemSelectionModel *> bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X;
-  CrystalProc<void, const CrystalString> bg_QAbstractItemView_keyboardSearch_const_QString_R;
+  CrystalProc<void, const CrystalString *> bg_QAbstractItemView_keyboardSearch_const_QString_R;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForRow_int;
   CrystalProc<int, int> bg_QAbstractItemView_sizeHintForColumn_int;
   CrystalProc<QAbstractItemDelegate *, const QModelIndex *> bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<void> bg_QAbstractItemView_selectAll_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorData_;
   CrystalProc<void> bg_QAbstractItemView_updateEditorGeometries_;
@@ -141391,7 +141681,7 @@ struct BgJumptable_QUndoView {
   CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
@@ -141451,7 +141741,7 @@ struct BgInherit_QUndoView : public QUndoView {
   QModelIndex indexAt(const QPoint & point) const override {
     const BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QListView_indexAt_const_QPoint_R.isValid()) {
-      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(point);
+      return _self_->bgJump.bg_QListView_indexAt_const_QPoint_R(bindgen_address(point));
     } else {
       return QUndoView::indexAt(point);
     }
@@ -141658,7 +141948,7 @@ struct BgInherit_QUndoView : public QUndoView {
   void setSelection(const QRect & rect, QItemSelectionModel::SelectionFlags command) override {
     BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags.isValid()) {
-      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(rect, command);
+      _self_->bgJump.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(bindgen_address(rect), command);
     } else {
       QUndoView::setSelection(rect, command);
     }
@@ -141748,7 +142038,7 @@ struct BgInherit_QUndoView : public QUndoView {
   void keyboardSearch(const QString & search) override {
     BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R.isValid()) {
-      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(qstring_to_crystal(search));
+      _self_->bgJump.bg_QAbstractItemView_keyboardSearch_const_QString_R(bindgen_address(qstring_to_crystal(search)));
     } else {
       QUndoView::keyboardSearch(search);
     }
@@ -141784,7 +142074,7 @@ struct BgInherit_QUndoView : public QUndoView {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QUndoView::inputMethodQuery(unnamed_arg_0);
     }
@@ -142171,7 +142461,7 @@ struct BgInherit_QUndoView : public QUndoView {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QUndoView::nativeEvent(eventType, message, result);
     }
@@ -142605,13 +142895,13 @@ struct BgJumptable_QWizard {
   CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
   CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
@@ -143030,7 +143320,7 @@ struct BgInherit_QWizard : public QWizard {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWizard *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QWizard::nativeEvent(eventType, message, result);
     }
@@ -143084,7 +143374,7 @@ struct BgInherit_QWizard : public QWizard {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QWizard *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QWizard::inputMethodQuery(unnamed_arg_0);
     }
@@ -143494,13 +143784,13 @@ struct BgJumptable_QWizardPage {
   CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
   CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
   CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
-  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<bool, const CrystalString *, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
   CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
   CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
   CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
   CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
   CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
-  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant *, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
   CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
   CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
   CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
@@ -143875,7 +144165,7 @@ struct BgInherit_QWizardPage : public QWizardPage {
   bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
     BgInherit_QWizardPage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
-      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(bindgen_address(qbytearray_to_crystal(eventType)), message, result);
     } else {
       return QWizardPage::nativeEvent(eventType, message, result);
     }
@@ -143929,7 +144219,7 @@ struct BgInherit_QWizardPage : public QWizardPage {
   QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
     const BgInherit_QWizardPage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
-      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+      return crystal_to_qvariant(*_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
     } else {
       return QWizardPage::inputMethodQuery(unnamed_arg_0);
     }
@@ -144311,6 +144601,102 @@ extern "C" CrystalString bg____qt6cr_data_stream_read_bytes_STATIC_QDataStream_X
   return qbytearray_to_crystal(::qt6cr_data_stream_read_bytes(stream));
 }
 
+extern "C" Container_std__pair_double__QVariant_ * bg_Container_std__pair_double__QVariant___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_double__QVariant_>();
+}
+
+extern "C" double bg____Container_std__pair_double__QVariant__first_Container_std__pair_double__QVariant__R(Container_std__pair_double__QVariant_ & pair) {
+  return ::bindgen_pair_first(pair);
+}
+
+extern "C" CrystalVariant bg____Container_std__pair_double__QVariant__second_Container_std__pair_double__QVariant__R(Container_std__pair_double__QVariant_ & pair) {
+  return qvariant_to_crystal(::bindgen_pair_second(pair));
+}
+
+extern "C" void bg____Container_std__pair_double__QVariant__set_Container_std__pair_double__QVariant__R_double_QVariant(Container_std__pair_double__QVariant_ & pair, double first, CrystalVariant second) {
+  ::bindgen_pair_set(pair, first, crystal_to_qvariant(second));
+}
+
+extern "C" Container_std__pair_QString__QString_ * bg_Container_std__pair_QString__QString___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_QString__QString_>();
+}
+
+extern "C" CrystalString bg____Container_std__pair_QString__QString__first_Container_std__pair_QString__QString__R(Container_std__pair_QString__QString_ & pair) {
+  return qstring_to_crystal(::bindgen_pair_first(pair));
+}
+
+extern "C" CrystalString bg____Container_std__pair_QString__QString__second_Container_std__pair_QString__QString__R(Container_std__pair_QString__QString_ & pair) {
+  return qstring_to_crystal(::bindgen_pair_second(pair));
+}
+
+extern "C" void bg____Container_std__pair_QString__QString__set_Container_std__pair_QString__QString__R_QString_QString(Container_std__pair_QString__QString_ & pair, CrystalString first, CrystalString second) {
+  ::bindgen_pair_set(pair, ([&]() { auto &&bg_value = (first); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (second); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" Container_std__pair_double__QColor_ * bg_Container_std__pair_double__QColor___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_double__QColor_>();
+}
+
+extern "C" double bg____Container_std__pair_double__QColor__first_Container_std__pair_double__QColor__R(Container_std__pair_double__QColor_ & pair) {
+  return ::bindgen_pair_first(pair);
+}
+
+extern "C" QColor * bg____Container_std__pair_double__QColor__second_Container_std__pair_double__QColor__R(Container_std__pair_double__QColor_ & pair) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (::bindgen_pair_second(pair));
+}
+
+extern "C" void bg____Container_std__pair_double__QColor__set_Container_std__pair_double__QColor__R_double_QColor(Container_std__pair_double__QColor_ & pair, double first, QColor & second) {
+  ::bindgen_pair_set(pair, first, second);
+}
+
+extern "C" Container_std__pair_int__int_ * bg_Container_std__pair_int__int___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_int__int_>();
+}
+
+extern "C" int bg____Container_std__pair_int__int__first_Container_std__pair_int__int__R(Container_std__pair_int__int_ & pair) {
+  return ::bindgen_pair_first(pair);
+}
+
+extern "C" int bg____Container_std__pair_int__int__second_Container_std__pair_int__int__R(Container_std__pair_int__int_ & pair) {
+  return ::bindgen_pair_second(pair);
+}
+
+extern "C" void bg____Container_std__pair_int__int__set_Container_std__pair_int__int__R_int_int(Container_std__pair_int__int_ & pair, int first, int second) {
+  ::bindgen_pair_set(pair, first, second);
+}
+
+extern "C" Container_std__pair_qreal__QPointF_ * bg_Container_std__pair_qreal__QPointF___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_qreal__QPointF_>();
+}
+
+extern "C" qreal bg____Container_std__pair_qreal__QPointF__first_Container_std__pair_qreal__QPointF__R(Container_std__pair_qreal__QPointF_ & pair) {
+  return ::bindgen_pair_first(pair);
+}
+
+extern "C" QPointF bg____Container_std__pair_qreal__QPointF__second_Container_std__pair_qreal__QPointF__R(Container_std__pair_qreal__QPointF_ & pair) {
+  return ::bindgen_pair_second(pair);
+}
+
+extern "C" void bg____Container_std__pair_qreal__QPointF__set_Container_std__pair_qreal__QPointF__R_qreal_QPointF(Container_std__pair_qreal__QPointF_ & pair, qreal first, QPointF second) {
+  ::bindgen_pair_set(pair, first, second);
+}
+
+extern "C" Container_std__pair_qreal__qreal_ * bg_Container_std__pair_qreal__qreal___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__pair_qreal__qreal_>();
+}
+
+extern "C" qreal bg____Container_std__pair_qreal__qreal__first_Container_std__pair_qreal__qreal__R(Container_std__pair_qreal__qreal_ & pair) {
+  return ::bindgen_pair_first(pair);
+}
+
+extern "C" qreal bg____Container_std__pair_qreal__qreal__second_Container_std__pair_qreal__qreal__R(Container_std__pair_qreal__qreal_ & pair) {
+  return ::bindgen_pair_second(pair);
+}
+
+extern "C" void bg____Container_std__pair_qreal__qreal__set_Container_std__pair_qreal__qreal__R_qreal_qreal(Container_std__pair_qreal__qreal_ & pair, qreal first, qreal second) {
+  ::bindgen_pair_set(pair, first, second);
+}
+
 extern "C" Container_QList_qreal_ * bg_Container_QList_qreal___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_qreal_>();
 }
@@ -144592,23 +144978,23 @@ extern "C" qsizetype bg_QList_QString__max_size_(QList<QString> * _self_) {
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_assign_const_QList_QString__R(QList<QString> * _self_, const QList<QString> * l) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) += (*(l)));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) += (*(l))));
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_const_QList_QString__R(QList<QString> * _self_, const QList<QString> * l) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) + (*(l)));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) + (*(l))));
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_assign_const_QString_R(QList<QString> * _self_, const CrystalString t) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) += (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) += (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_lshift_const_QString_R(QList<QString> * _self_, const CrystalString t) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) << (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) << (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()))));
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_lshift_const_QList_QString__R(QList<QString> * _self_, const QList<QString> * l) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) << (*(l)));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) << (*(l))));
 }
 
 extern "C" QList<QString> * bg_QList_QString__fromList_STATIC_const_QList_QString__R(const QList<QString> * list) {
@@ -144628,7 +145014,7 @@ extern "C" QList<QString> * bg_QList_QString__toVector_(QList<QString> * _self_)
 }
 
 extern "C" QList<QString> * bg_QList_QString___OPERATOR_assign_const_QList_QString__R(QList<QString> * _self_, const QList<QString> * unnamed_arg_0) {
-  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) = (*(unnamed_arg_0)));
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (((*_self_) = (*(unnamed_arg_0))));
 }
 
 extern "C" Container_QList_QString_ * bg_Container_QList_QString___CONSTRUCT_() {
@@ -144644,6 +145030,22 @@ extern "C" void bg_QList_QString__push_back_QString(QList<QString> * _self_, Cry
 }
 
 extern "C" int bg_QList_QString__size_(QList<QString> * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QObject_X_ * bg_Container_QList_QObject_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QObject_X_>();
+}
+
+extern "C" QObject * bg_Container_QList_QObject_X__at_int(Container_QList_QObject_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QObject_X__push_back_QObject_X(Container_QList_QObject_X_ * _self_, QObject * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QObject_X__size_(Container_QList_QObject_X_ * _self_) {
   return _self_->size();
 }
 
@@ -144983,6 +145385,22 @@ extern "C" int bg_Container_QList_QScreen_X__size_(Container_QList_QScreen_X_ * 
   return _self_->size();
 }
 
+extern "C" Container_QList_QWindow_X_ * bg_Container_QList_QWindow_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QWindow_X_>();
+}
+
+extern "C" QWindow * bg_Container_QList_QWindow_X__at_int(Container_QList_QWindow_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QWindow_X__push_back_QWindow_X(Container_QList_QWindow_X_ * _self_, QWindow * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QWindow_X__size_(Container_QList_QWindow_X_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_const_QInputDevice_X_ * bg_Container_QList_const_QInputDevice_X___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_const_QInputDevice_X_>();
 }
@@ -145156,22 +145574,6 @@ extern "C" void bg_Container_QList_QAbstractTextDocumentLayout__Selection__push_
 }
 
 extern "C" int bg_Container_QList_QAbstractTextDocumentLayout__Selection__size_(Container_QList_QAbstractTextDocumentLayout__Selection_ * _self_) {
-  return _self_->size();
-}
-
-extern "C" Container_QList_QObject_X_ * bg_Container_QList_QObject_X___CONSTRUCT_() {
-  return new (UseGC) CrystalGCWrapper<Container_QList_QObject_X_>();
-}
-
-extern "C" QObject * bg_Container_QList_QObject_X__at_int(Container_QList_QObject_X_ * _self_, int index) {
-  return _self_->at(index);
-}
-
-extern "C" void bg_Container_QList_QObject_X__push_back_QObject_X(Container_QList_QObject_X_ * _self_, QObject * value) {
-  _self_->push_back(value);
-}
-
-extern "C" int bg_Container_QList_QObject_X__size_(Container_QList_QObject_X_ * _self_) {
   return _self_->size();
 }
 
@@ -145383,6 +145785,22 @@ extern "C" int bg_Container_QList_QUndoStack_X__size_(Container_QList_QUndoStack
   return _self_->size();
 }
 
+extern "C" Container_QList_QWidget_X_ * bg_Container_QList_QWidget_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QWidget_X_>();
+}
+
+extern "C" QWidget * bg_Container_QList_QWidget_X__at_int(Container_QList_QWidget_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QWidget_X__push_back_QWidget_X(Container_QList_QWidget_X_ * _self_, QWidget * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QWidget_X__size_(Container_QList_QWidget_X_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_QAbstractButton_X_ * bg_Container_QList_QAbstractButton_X___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QAbstractButton_X_>();
 }
@@ -145591,22 +146009,6 @@ extern "C" int bg_Container_QList_QTreeWidgetItem_X__size_(Container_QList_QTree
   return _self_->size();
 }
 
-extern "C" Container_QList_QWidget_X_ * bg_Container_QList_QWidget_X___CONSTRUCT_() {
-  return new (UseGC) CrystalGCWrapper<Container_QList_QWidget_X_>();
-}
-
-extern "C" QWidget * bg_Container_QList_QWidget_X__at_int(Container_QList_QWidget_X_ * _self_, int index) {
-  return _self_->at(index);
-}
-
-extern "C" void bg_Container_QList_QWidget_X__push_back_QWidget_X(Container_QList_QWidget_X_ * _self_, QWidget * value) {
-  _self_->push_back(value);
-}
-
-extern "C" int bg_Container_QList_QWidget_X__size_(Container_QList_QWidget_X_ * _self_) {
-  return _self_->size();
-}
-
 extern "C" Container_QList_QWizard__WizardButton_ * bg_Container_QList_QWizard__WizardButton___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QWizard__WizardButton_>();
 }
@@ -145620,6 +146022,86 @@ extern "C" void bg_Container_QList_QWizard__WizardButton__push_back_QWizard__Wiz
 }
 
 extern "C" int bg_Container_QList_QWizard__WizardButton__size_(Container_QList_QWizard__WizardButton_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_std__pair_double__QVariant___ * bg_Container_QList_std__pair_double__QVariant_____CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_std__pair_double__QVariant___>();
+}
+
+extern "C" Container_std__pair_double__QVariant_ * bg_Container_QList_std__pair_double__QVariant____at_int(Container_QList_std__pair_double__QVariant___ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_double__QVariant_>()) Container_std__pair_double__QVariant_ (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_std__pair_double__QVariant____push_back_std__pair_double__QVariant_(Container_QList_std__pair_double__QVariant___ * _self_, Container_std__pair_double__QVariant_ * value) {
+  _self_->push_back(*(value));
+}
+
+extern "C" int bg_Container_QList_std__pair_double__QVariant____size_(Container_QList_std__pair_double__QVariant___ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_std__pair_QString__QString___ * bg_Container_QList_std__pair_QString__QString_____CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_std__pair_QString__QString___>();
+}
+
+extern "C" Container_std__pair_QString__QString_ * bg_Container_QList_std__pair_QString__QString____at_int(Container_QList_std__pair_QString__QString___ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_QString__QString_>()) Container_std__pair_QString__QString_ (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_std__pair_QString__QString____push_back_std__pair_QString__QString_(Container_QList_std__pair_QString__QString___ * _self_, Container_std__pair_QString__QString_ * value) {
+  _self_->push_back(*(value));
+}
+
+extern "C" int bg_Container_QList_std__pair_QString__QString____size_(Container_QList_std__pair_QString__QString___ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_std__pair_double__QColor___ * bg_Container_QList_std__pair_double__QColor_____CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_std__pair_double__QColor___>();
+}
+
+extern "C" Container_std__pair_double__QColor_ * bg_Container_QList_std__pair_double__QColor____at_int(Container_QList_std__pair_double__QColor___ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_double__QColor_>()) Container_std__pair_double__QColor_ (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_std__pair_double__QColor____push_back_std__pair_double__QColor_(Container_QList_std__pair_double__QColor___ * _self_, Container_std__pair_double__QColor_ * value) {
+  _self_->push_back(*(value));
+}
+
+extern "C" int bg_Container_QList_std__pair_double__QColor____size_(Container_QList_std__pair_double__QColor___ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_std__pair_qreal__QPointF___ * bg_Container_QList_std__pair_qreal__QPointF_____CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_std__pair_qreal__QPointF___>();
+}
+
+extern "C" Container_std__pair_qreal__QPointF_ * bg_Container_QList_std__pair_qreal__QPointF____at_int(Container_QList_std__pair_qreal__QPointF___ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_qreal__QPointF_>()) Container_std__pair_qreal__QPointF_ (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_std__pair_qreal__QPointF____push_back_std__pair_qreal__QPointF_(Container_QList_std__pair_qreal__QPointF___ * _self_, Container_std__pair_qreal__QPointF_ * value) {
+  _self_->push_back(*(value));
+}
+
+extern "C" int bg_Container_QList_std__pair_qreal__QPointF____size_(Container_QList_std__pair_qreal__QPointF___ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_std__pair_qreal__qreal___ * bg_Container_QList_std__pair_qreal__qreal_____CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_std__pair_qreal__qreal___>();
+}
+
+extern "C" Container_std__pair_qreal__qreal_ * bg_Container_QList_std__pair_qreal__qreal____at_int(Container_QList_std__pair_qreal__qreal___ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__pair_qreal__qreal_>()) Container_std__pair_qreal__qreal_ (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_std__pair_qreal__qreal____push_back_std__pair_qreal__qreal_(Container_QList_std__pair_qreal__qreal___ * _self_, Container_std__pair_qreal__qreal_ * value) {
+  _self_->push_back(*(value));
+}
+
+extern "C" int bg_Container_QList_std__pair_qreal__qreal____size_(Container_QList_std__pair_qreal__qreal___ * _self_) {
   return _self_->size();
 }
 

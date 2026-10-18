@@ -193,12 +193,10 @@ types: # Type rewrite rules
   "QRect::Representation": { alias_for: "int" }
   "QPalette::ResolveMask": { alias_for: "quint64" }
   WId: { alias_for: "unsigned int" }
-  QVariantList: { alias_for: "QList<QVariant>" }
+  # bindgen looks through a typedef without rules of its own, like
+  # QFileInfoList, QModelIndexList or QVariantList, to the type it names.
+  # QStringList is listed as a class (below), so it needs the alias.
   QStringList: { alias_for: "QList<QString>" } # Qt 6 declares it so
-  # bindgen instantiates the containers the methods use, resolving the aliases
-  # it knows: Qt's typedefs of other lists go here.
-  QFileInfoList: { alias_for: "QList<QFileInfo>" }
-  QModelIndexList: { alias_for: "QList<QModelIndex>" }
   # The methods of QList<QString> itself (wrapped as Qt::StringList) name these.
   "QList<QString>::DataPointer": { ignore: true } # Private storage, data_ptr
   "QList<QString>::iterator": { ignore: true } # Indexes replace the iterators
@@ -222,19 +220,6 @@ types: # Type rewrite rules
 
   # Bare struct holding QProcess::UnixProcessFlags and an int (Qt 6.6+).
   "QProcess::UnixProcessParameters": { ignore: true }
-
-  # QList<QPair<double, QVariant>>, no mapping for QPair yet
-  "QVariantAnimation::KeyValues": { ignore: true }
-  "QVariantAnimation::KeyValue": { ignore: true }
-  "QList<QVariantAnimation::KeyValue>": { ignore: true }
-
-  # QList<std::pair<...>> of QGraphicsItemAnimation, no mapping for std::pair
-  # yet; use #pos_at, #rotation_at and the setters.
-  "QList<std::pair<qreal, QPointF>>": { ignore: true }
-  "QList<std::pair<qreal, qreal>>": { ignore: true }
-  # QList<QPair<QString, QString>>, no mapping for std::pair yet; use
-  # UrlQuery#query_item_value and #add_query_item.
-  "QList<std::pair<QString, QString>>": { ignore: true }
 
   # No support for associative containers yet
   "QMap<int, QVariant>": { ignore: true }
@@ -260,19 +245,19 @@ types: # Type rewrite rules
   # Qt 6 types without a mapping yet
   "Qt::Disambiguated_t": { ignore: true } # Overload tag
   "Qt::Initialization": { ignore: true } # Qt::Uninitialized constructor tag
-  # std::chrono::nanoseconds maps to ::Time::Span below; Qt's typedefs of it:
+  # std::chrono::nanoseconds maps to ::Time::Span below.  Qt's typedefs of it
+  # aren't looked through like a list typedef: the canonical type the parser
+  # reports is the std::chrono::duration<...> instantiation, which the
+  # nanoseconds rule doesn't name.
   "QElapsedTimer::Duration": { alias_for: "std::chrono::nanoseconds" }
   "QBasicTimer::Duration": { alias_for: "std::chrono::nanoseconds" }
+  "QAbstractEventDispatcher::Duration": { alias_for: "std::chrono::nanoseconds" }
   "QVersionNumber::const_iterator": { ignore: true } # Use #segments
   "QVersionNumber::const_reverse_iterator": { ignore: true }
   "QUuid::Id128Bytes": { ignore: true } # A union; use #to_rfc4122 (Bytes)
   quint128: { ignore: true } # unsigned __int128, which the C ABI can't pass
-  "QRandomGenerator::result_type": { alias_for: "quint32" }
-  "QRandomGenerator64::result_type": { alias_for: "quint64" }
   "std::seed_seq": { ignore: true }
   "QRandomGenerator::System": { ignore: true } # Tag of a protected constructor
-  "QTimeZone::OffsetDataList": { alias_for: "QList<QTimeZone::OffsetData>" }
-  "QAbstractEventDispatcher::Duration": { alias_for: "std::chrono::nanoseconds" }
   "QAbstractEventDispatcher::TimerInfoV2": { ignore: true }
   "QList<QAbstractEventDispatcher::TimerInfoV2>": { ignore: true }
   "QEvent::InputEventTag": { ignore: true } # Tags of protected constructors
@@ -455,11 +440,6 @@ types: # Type rewrite rules
   # A typedef of QGenericMatrix<3, 3, float>, a template bindgen can't
   # instantiate; drops Matrix4x4#normal_matrix and Quaternion#to_rotation_matrix.
   QMatrix3x3: { ignore: true }
-  # QGradientStops is a QList<std::pair<qreal, QColor>>, no mapping for
-  # std::pair yet; use Gradient#set_color_at.
-  QGradientStop: { ignore: true }
-  QGradientStops: { ignore: true }
-  "QList<std::pair<qreal, QColor>>": { ignore: true }
   "QGradient::QGradientData": { ignore: true } # Private union
   "QRegion::QRegionData": { ignore: true } # Private
   "QRegion::const_iterator": { ignore: true } # Use #rect_count and #bounding_rect
@@ -488,7 +468,6 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QJsonValue::JsonFormat": { alias_for: "QJsonDocument::JsonFormat" } # Qt 6 declares it so
   "QtPrivate::QKeyValueRange<QJsonObject &>": { ignore: true } # Use #keys and #value
   # QDataStream's friend operators name these, which have no mapping.
   "QTransform::Affine": { ignore: true } # Private
@@ -527,9 +506,6 @@ types: # Type rewrite rules
   "std::initializer_list<std::pair<QString, QJsonValue>>": { ignore: true }
   "std::initializer_list<QJsonValue>": { ignore: true }
   "QXmlStreamReader::PrivateConstructorTag": { ignore: true }
-  QXmlStreamNamespaceDeclarations: { alias_for: "QList<QXmlStreamNamespaceDeclaration>" }
-  QXmlStreamNotationDeclarations: { alias_for: "QList<QXmlStreamNotationDeclaration>" }
-  QXmlStreamEntityDeclarations: { alias_for: "QList<QXmlStreamEntityDeclaration>" }
   QBitRef: { ignore: true } # Returned by the non-const operator[]; use #set_bit
   "QBitArray::DataPtr": { ignore: true }
   QFunctionPointer: { ignore: true } # QLibrary#resolve

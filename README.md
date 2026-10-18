@@ -307,12 +307,16 @@ see the comments there:
   bytes)`.  `QList<QByteArray>` is an `Enumerable(Bytes)`.  `QByteArrayView`
   maps to `Bytes` as well, like `QAnyStringView` to `String`:
   `CryptographicHash.hash(bytes, algorithm)`.
-* bindgen instantiates the `QList`s the wrapped methods use, resolving the
-  aliases it knows, so Qt's other list typedefs get `alias_for` rules too:
-  `QFileInfoList` is an `Enumerable(FileInfo)`, `QModelIndexList` an
-  `Enumerable(ModelIndex)`.  `QItemSelection` derives from
-  `QList<QItemSelectionRange>`, so `Qt::ItemSelection` is that list with the
-  selection methods on top.
+* bindgen instantiates the `QList`s the wrapped methods use, looking through
+  Qt's typedefs of them: `QFileInfoList` is an `Enumerable(FileInfo)`,
+  `QModelIndexList` an `Enumerable(ModelIndex)`.  `QItemSelection` derives
+  from `QList<QItemSelectionRange>`, so `Qt::ItemSelection` is that list with
+  the selection methods on top.
+* Qt 6's `QPair` is `std::pair`, a container of `type: Pair`, exchanged as a
+  `Tuple`: `UrlQuery#query_items` is an `Enumerable({String, String})`,
+  `Gradient#stops` (`QGradientStops`) an `Enumerable({Float64, Color})`,
+  `VariantAnimation#key_values` an `Enumerable({Float64, Variant})`, and the
+  setters take an array of tuples: `gradient.stops = [{0.0, red}, {1.0, blue}]`.
 * `QAbstractListModel` and `QAbstractTableModel` override `parent`,
   `columnCount` and `hasChildren` privately; `src/qt6/abstract_list_model.cr`
   and `abstract_table_model.cr` give their `Impl` classes those, as Qt does.
@@ -360,8 +364,7 @@ see the comments there:
   helper also defines `Vector3D * Matrix4x4` and its mirror, which Qt declares
   as friends but whose definitions are deprecated and hidden by the cutoff.
 * `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
-  `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`;
-  `QGradientStops` (a list of `std::pair`) too, use `Gradient#set_color_at`.
+  `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`.
 * The QXmlStream classes return names, values and text as `QStringView`, which
   has no mapping (a view of a temporary `QString` would dangle in
   `RegularExpression#match`), so `src/qt6/xml_stream.cr` wraps the helpers of

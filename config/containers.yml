@@ -7,3 +7,10 @@ containers:
       - [ "QRgb" ]
       - [ "QByteArray" ] # As Bytes, see types.yml
       - [ "int" ] # QVersionNumber#segments
+  # Qt 6's QPair is an alias of std::pair, which the parser reports.  A pair
+  # is converted to and from a Tuple: UrlQuery#query_items is an
+  # Enumerable({String, String}), Gradient#stops an Enumerable({Float64,
+  # Color}).  The pairs nested in the lists the methods use are instantiated
+  # automatically.
+  - class: std::pair
+    type: Pair

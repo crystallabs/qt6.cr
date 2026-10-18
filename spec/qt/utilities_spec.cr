@@ -34,6 +34,10 @@ describe Qt::UrlQuery do
     query.has_query_item("a").should be_false
     query.remove_query_item("b")
     query.query.should eq("c=three four")
+    query.add_query_item("a", "2")
+    query.query_items.to_a.should eq([{"c", "three four"}, {"a", "2"}])
+    query.query_items = [{"k", "v"}]
+    query.query.should eq("k=v")
 
     url = Qt::Url.new("http://example.org/path?x=1")
     Qt::UrlQuery.new(url).query_item_value("x").should eq("1")

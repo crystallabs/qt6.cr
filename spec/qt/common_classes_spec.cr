@@ -163,6 +163,17 @@ describe Qt::VariantAnimation do
     animation.state.should eq(Qt::AbstractAnimation::State::Stopped)
     states.should eq([Qt::AbstractAnimation::State::Running, Qt::AbstractAnimation::State::Stopped])
   end
+
+  it "holds key values as tuples" do
+    animation = Qt::VariantAnimation.new
+    animation.start_value = Qt.variant(0.0)
+    animation.end_value = Qt.variant(10.0)
+    animation.set_key_value_at(0.5, Qt.variant(2.0))
+    animation.key_values.map(&.[0]).should eq([0.0, 0.5, 1.0])
+    animation.key_values.map(&.[1].to(Float64)).should eq([0.0, 2.0, 10.0])
+    animation.key_values = [{0.0, Qt.variant(1.0)}, {1.0, Qt.variant(3.0)}]
+    animation.key_value_at(1.0).to(Float64).should eq(3.0)
+  end
 end
 
 describe Qt::Process do

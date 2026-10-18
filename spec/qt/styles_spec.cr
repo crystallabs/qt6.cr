@@ -223,6 +223,8 @@ describe Qt::GraphicsLinearLayout do
     animation.rotation_at(0.5).should eq(45.0)
     animation.step = 1.0
     rect.pos.x.should eq(100.0)
+    animation.pos_list.to_a.should eq([{1.0, Qt::PointF.new(100.0, 50.0)}])
+    animation.rotation_list.to_a.should eq([{1.0, 90.0}])
 
     rotation = Qt::GraphicsRotation.new
     rotation.angle = 30.0
