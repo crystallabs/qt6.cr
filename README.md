@@ -1,6 +1,7 @@
-# Qt5 bindings for Crystal
+# Qt6 bindings for Crystal
 
-Bindings for the Qt5 Framework using [bindgen](https://github.com/crystallabs/bindgen).
+Bindings for the Qt6 Framework using [bindgen](https://github.com/crystallabs/bindgen).
+This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
 
 # Table of Contents
 
@@ -8,25 +9,25 @@ Bindings for the Qt5 Framework using [bindgen](https://github.com/crystallabs/bi
    * [Project Goals](#project-goals)
    * [Installation](#installation)
       * [Additional development dependencies](#additional-development-dependencies)
+      * [macOS](#macos)
    * [User perspective](#user-perspective)
-      * [Sample Crystal-Qt5 code](#sample-crystal-qt5-code)
+      * [Sample Crystal-Qt6 code](#sample-crystal-qt6-code)
+      * [Locale](#locale)
       * [Object lifetime](#object-lifetime)
+      * [Differences to qt5.cr](#differences-to-qt5cr)
    * [Developer perspective](#developer-perspective)
       * [Generating the bindings](#generating-the-bindings)
       * [Deprecated Qt API](#deprecated-qt-api)
       * [Naming scheme](#naming-scheme)
-      * [(Re)generating all Qt5 binding versions](#regenerating-all-qt5-binding-versions)
-      * [(Re)generating the binding for the system's Qt5](#regenerating-the-binding-for-the-systems-qt5)
-      * [(Re)generating a specific Qt5 binding version](#regenerating-a-specific-qt5-binding-version)
+      * [(Re)generating the binding for the system's Qt6](#regenerating-the-binding-for-the-systems-qt6)
+      * [(Re)generating a specific Qt6 binding version](#regenerating-a-specific-qt6-binding-version)
+      * [Type rules for Qt 6](#type-rules-for-qt-6)
       * [Future things to do](#future-things-to-do)
    * [Platform Support](#platform-support)
    * [Contributing](#contributing)
       * [Contributors](#contributors)
    * [License](#license)
       * [A note on Qt's license](#a-note-on-qts-license)
-
-<!-- Added by: docelic, at: Fri 29 May 2020 12:21:22 AM CEST -->
-
 <!--te-->
 
 # Project Goals
@@ -37,44 +38,30 @@ Bindings for the Qt5 Framework using [bindgen](https://github.com/crystallabs/bi
 
 # Installation
 
-If you just want to develop a Crystal app which uses Qt5, use the `master-ready-to-use`
-branch. It contains pre-built/pre-generated bindings for certain platform and Qt
-combinations. If that branch contains the pre-generated bindings for your platform,
-which you can verify in the
-[subdirectory `ext/`](https://github.com/Papierkorb/qt5.cr/tree/master-ready-to-use/ext),
-you won't need bindgen at all.
+Add the shard to your `shard.yml`.  The binding for your system's Qt is
+generated on first use, so bindgen's dependencies below are needed:
 
 ```yaml
 dependencies:
-  qt5:
-    github: Papierkorb/qt5.cr
-    branch: master-ready-to-use
+  qt6:
+    github: crystallabs/qt6.cr
 ```
 
-If you want the bindings to be generated for the current system, or if you want
-to generate bindings for new platform and Qt combinations, use the master
-branch:
-
-```yaml
-dependencies:
-  qt5:
-    github: Papierkorb/qt5.cr
-    branch: master
-```
-
-In any case, your users will be required to have the Qt5 libraries on their system
-because this project defaults to binding to Qt libraries dynamically. (See more
-on this under License below.)
+Your users will be required to have the Qt6 libraries on their system because
+this project defaults to binding to Qt libraries dynamically.  (See more on this
+under License below.)
 
 ## Additional development dependencies
 
 Using your system's package manager:
 
-* **ArchLinux** `pacman -S qt5-base gc cmake llvm clang pcre2`
-* **Debian/Ubuntu/Devuan** `apt-get install qtbase5-dev libgc-dev cmake llvm-dev clang libclang-dev libpcre2-dev libz-dev libstdc++-dev`
+* **ArchLinux** `pacman -S qt6-base gc cmake llvm clang pcre2`
+* **Debian/Ubuntu/Devuan** `apt-get install qt6-base-dev qt6-base-dev-tools libgc-dev cmake llvm-dev clang libclang-dev libpcre2-dev libz-dev libstdc++-dev`
+* **macOS** `brew install qt bdw-gc llvm cmake`
 
-Bindgen needs LLVM and Clang 14 or newer, CMake 3.12 or newer and Crystal 1.8
-or newer.
+The bindings need bindgen 0.11.1 or newer, which needs LLVM and Clang 14 or
+newer, CMake 3.12 or newer and Crystal 1.8 or newer.  Qt 6.4 or newer is
+supported.
 
 If linking Crystal programs fails with undefined references like
 `__isoc23_strtol` from `libgc.a`, your Crystal package bundles a `libgc` built
@@ -85,16 +72,39 @@ Link against the system's `libgc` instead:
 export CRYSTAL_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 ```
 
+## macOS
+
+Homebrew's Qt is built as frameworks: its headers live in
+`/opt/homebrew/lib/Qt*.framework/Headers`, which the bindings find through
+`qmake6` and `pkg-config`.  Building the bindings needs the SDK and Homebrew's
+include and library directories:
+
+```sh
+export SDKROOT="$(xcrun --show-sdk-path)"
+export CPPFLAGS=-I/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
+export PKG_CONFIG_PATH=/opt/homebrew/opt/qt/lib/pkgconfig
+```
+
+Build bindgen's clang tool with Homebrew's LLVM:
+
+```sh
+cd lib/bindgen/clang && cmake -DLLVM_DIR=/opt/homebrew/opt/llvm/lib/cmake/llvm . && make
+```
+
+If Homebrew's `qt@5` is installed as well, make sure `qmake6` (not `qt@5`'s
+`qmake`) is found, or set `QMAKE=/opt/homebrew/opt/qt/bin/qmake6`.
+
 # User perspective
 
-## Sample Crystal-Qt5 code
+## Sample Crystal-Qt6 code
 
-Have a look in [samples/](https://github.com/Papierkorb/qt5.cr/tree/master/samples)!
+Have a look in [samples/](samples/)!
 
 A short **Hello World** snippet looks like this:
 
 ```crystal
-require "qt5"
+require "qt6"
 
 qApp = Qt::Application.new
 
@@ -104,7 +114,7 @@ label.show
 Qt::Application.exec
 ```
 
-![hello-qt](https://raw.githubusercontent.com/Papierkorb/qt5.cr/master/images/hello-qt.png)
+![hello-qt](images/hello-qt.png)
 
 ## Locale
 
@@ -114,9 +124,9 @@ stdlib Crystal functions like `to_f` to behave unexpectedly, e.g.,
 using a different character as decimal separator (also see the discussion
 of this [PR](https://github.com/Papierkorb/qt5.cr/pull/51)).
 Therefore, in contrast to the behaviour of the C++ classes of Qt,
-`qt5.cr` resets the numeric locale to "C" after creating an
+`qt6.cr` resets the numeric locale to "C" after creating an
 application class instance (this follows an [advice from Qt
-itself](https://doc.qt.io/qt-5/qcoreapplication.html#locale-settings)).
+itself](https://doc.qt.io/qt-6/qcoreapplication.html#locale-settings)).
 
 ## Object lifetime
 
@@ -145,28 +155,42 @@ The methods are configured in `config/keep_alive.yml`.  Giving an object a
 parent by its constructor or `#parent=` doesn't keep it alive: keep a
 reference to it, or add it by one of these methods.
 
+## Differences to qt5.cr
+
+The Crystal API follows Qt 6's C++ API, so code written for qt5.cr may need
+these changes:
+
+* Sizes and indices are `qsizetype`, which is `Int64` on 64-bit platforms, where
+  Qt 5 had `Int32`: e.g. `Qt::Dir#count` or `Qt::ListWidget#count` of a
+  `QList`-backed widget.
+* `QVector` is an alias of `QList`, so there's only one container type.
+* `Qt::DesktopWidget` and `Qt::DeferredDeleteEvent` are gone, like in Qt 6.
+* `Qt::MouseEvent` inherits `Qt::SinglePointEvent` and `Qt::PointerEvent`, which
+  Qt 6 added.  `Qt::MouseEvent#pos` and `#buttons` work like before.
+* Signal overloads Qt 6 removed, like `QComboBox::currentIndexChanged(QString)`,
+  are gone with it.
+* `Qt::Locale::Territory` replaces `Qt::Locale::Country`.
+
 # Developer perspective
 
 ## Generating the bindings
 
-If you want to work on `qt5.cr` itself or you want to generate bindings for new
-versions, then as mentioned you need to use branch `master` and run the
-generation yourself.
-
-These steps can be followed from a project using `qt5.cr`, or from within
-`qt5.cr` itself.  For the latter, you can just go to `lib/bindgen` and do `git
-checkout master` instead of modifying `shard.yml`.
+If you want to work on `qt6.cr` itself or you want to generate bindings for new
+versions, run the generation yourself as described below.
 
 **Important**: For this you'll also have to meet the dependencies of bindgen.
 See `lib/bindgen/README.md` and `lib/bindgen/clang/README.md`.
 
 ## Deprecated Qt API
 
-The bindings don't wrap API that Qt deprecated up to Qt 5.15.  The headers are
+The bindings don't wrap API that Qt deprecated up to Qt 6.8.  The headers are
 parsed and the C++ wrappers built as C++17 with
-`QT_DISABLE_DEPRECATED_BEFORE=0x050F00` (see `qt.yml` and `ext/Makefile`),
-which hides most deprecated declarations.  Those Qt keeps visible, like virtual
-functions, are ignored in `config/deprecated.yml` or `config/types.yml`.
+`QT_DISABLE_DEPRECATED_BEFORE=0x060800` (see `qt.yml` and `ext/Makefile`),
+which hides most deprecated declarations.  Qt 6.5 and later call this macro
+`QT_DISABLE_DEPRECATED_UP_TO`, but still read the old name, which Qt 6.0 to 6.4
+only know.  Those declarations Qt keeps visible, like virtual functions and API
+deprecated after 6.8, are ignored in `config/deprecated.yml` or
+`config/types.yml`.
 
 Building the bindings should thus print no `-Wdeprecated-declarations`
 warnings, and CI fails if it does.  To regenerate `config/deprecated.yml` from
@@ -180,101 +204,93 @@ overload like `QSpinBox::valueChanged(int)` goes missing.
 
 ## Naming scheme
 
-As `qt5.cr` supports many different versions of Qt on different platforms,
+As `qt6.cr` supports different versions of Qt on different platforms,
 generated bindings follow a naming scheme.  The scheme contains 4 components
 as follows:
 
-`KERNEL - LIB_C - ARCH - qtVERSION`, e.g. `linux-gnu-x86_64-qt5.13`
+`KERNEL - LIB_C - ARCH - qtVERSION`, e.g. `linux-gnu-x86_64-qt6.8`
 
 Where:
 
 * `KERNEL` is the OS kernel, e.g. `linux`, `darwin`, `windows`
-* `LIB_C` is the lib C name, e.g. `gnu`, `musl`, `win32`
-* `ARCH` is the architecture, e.g. `i686`, `x86_64`, `arm`
-* `VERSION` is the Qt version, e.g. `5.9`, `5.12`, `5.15`
+* `LIB_C` is the lib C name, e.g. `gnu`, `musl`, `win32`, or `unknown` on macOS
+* `ARCH` is the architecture, e.g. `x86_64`, `aarch64`
+* `VERSION` is the Qt version, e.g. `6.4`, `6.8`, `6.11`
 
 The naming scheme is not strictly enforced.  However, it should always end with
 `-qtVERSION`!
 
-## (Re)generating all Qt5 binding versions
+## (Re)generating the binding for the system's Qt6
 
-The `master-ready-to-use` branch contains a number of prebuilt bindings.
-The following process was used to build them:
-
-1. Cd into the `qt5.cr` directory, switch to the master branch
-2. Edit `support/generate_bindings.cr` and enable all versions for which you want
-to generate the bindings
-3. Run `crystal support/generate_bindings.cr`
-4. Commit the files in `ext/` to the `master-ready-to-use` branch
-
-The build process will automatically download, unpack, build, and generate all
-configured versions of Qt5.  It'll store the downloaded and unpacked Qt5 versions
-to directory called `download_cache/`.
-Subsequent invocations of that script will use these cached assets.
-
-**The first run may take a long time, and each version of Qt5 will take up about
-4GB of disk space**.
-
-## (Re)generating the binding for the system's Qt5
-
-To generate the binding for the Qt5 installed on your system, without
-downloading Qt sources, run from the `qt5.cr` directory:
+To generate the binding for the Qt6 installed on your system, run from the
+`qt6.cr` directory:
 
 ```sh
 crystal support/generate_bindings.cr -- --system
 ```
 
-It asks `qmake` (`qmake-qt5` or `qmake`, or `$QMAKE` if set) where Qt is
-installed and which version it is, and names the binding after the host, e.g.
-`linux-gnu-x86_64-qt5.15`.
+It asks `qmake` (`qmake6`, `qmake-qt6` or `qmake`, or `$QMAKE` if set) where Qt
+is installed and which version it is, and names the binding after the host, e.g.
+`linux-gnu-x86_64-qt6.8` or `darwin-unknown-aarch64-qt6.11`.
 
-## (Re)generating a specific Qt5 binding version
+Then verify with `crystal spec`, and build the samples.
 
-1. Use the `master` branch of `qt5.cr` in your `shard.yml`
-3. Decide which version of Qt to use, and build the scheme (See above)
-4. Export the binding scheme: `export BINDING_PLATFORM=linux-gnu-x86_64-qt5.15`
-5. If you're not using your system's Qt: `export QMAKE=/path/to/qmake`
-6. Run bindgen as usual: `lib/bindgen/tool.sh qt.yml --stats`
-7. Verify with `crystal spec`
+`support/generate_bindings.cr` without `--system` downloads and configures Qt
+sources to build bindings for other versions, like qt5.cr's ready-to-use
+branches were built.  This mode is untested with Qt 6.
+
+## (Re)generating a specific Qt6 binding version
+
+1. Decide which version of Qt to use, and build the scheme (See above)
+2. Export the binding scheme: `export BINDING_PLATFORM=linux-gnu-x86_64-qt6.8`
+3. If you're not using your system's Qt: `export QMAKE=/path/to/qmake6`
+4. Run bindgen as usual: `lib/bindgen/tool.sh qt.yml --stats`
+5. Verify with `crystal spec`
+
+## Type rules for Qt 6
+
+`config/types.yml` holds the rules Qt 6 needs beyond bindgen's built-in types,
+see the comments there:
+
+* Class-local typedefs like `QPoint::Representation` (Qt 6.10+, a
+  `QCheckedInt<int>`) or `QPalette::ResolveMask` get `alias_for` rules, so the
+  structures can be copied and the methods wrapped.
+* `char32_t`, which the `QLocale::toString` overloads take, maps to `Char` like
+  `QChar`.
+* Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
+  the `QEvent` constructor tags, are ignored, which drops the methods using them.
 
 ## Future things to do
 
 * Forwarding `qHash()` of wrapped types (to `Object#hash`)
 * Integration with **LibEvent**: Right now, Qt blocks the whole thread.
 * The rest of the billion Qt classes of interest
-* Everything in the **to be done** category
 * Integration for the `Qt Designer` UI designer
 * Integration for `Qt Linguist`
   * Localization/Translation for your applications!
 * UI test library, with adapter for `spec`
-  * Also, actual tests - Let's catch whacko bugs right in the CI!
 * Automated copy (and adaption) of the Qt documentation, for easy Crystal-specific docs
   * The Qt Docs license should allow this if done correctly
 
 # Platform Support
 
-| System            | Status           | Qt version | OOTB?   |
-| ----------------- | ---------------- | ---------- | ------- |
-| ArchLinux         | **Works always** | 5.12       | **YES** |
-| Ubuntu 17.04      | **Works**        | 5.9        | **YES** |
-| Ubuntu 16.04      | **Works**        | 5.5        | **YES** |
-| MacOS             | Help wanted      | ?          | ?       |
-| Windows           | Help wanted      | ?          | ?       |
-| Other systems     | Help wanted      | ?          | ?       |
-
-**Ready-to-use Qt versions:** 5.5 to 5.12
-
-(This list needs updating)
+| System                   | Status           | Qt version | Notes                       |
+| ------------------------ | ---------------- | ---------- | --------------------------- |
+| macOS (Homebrew, arm64)  | **Works**        | 6.11       | Specs and samples pass      |
+| Ubuntu 24.04             | CI               | 6.4        | LLVM 14 and 18              |
+| ArchLinux                | Should work      | 6.x        | Help wanted                 |
+| Windows                  | Help wanted      | ?          |                             |
 
 # Contributing
 
 1. Open a new issue on the project to discuss what you're going to do and possibly receive comments
-3. Read bindgen's `STYLEGUIDE.md` for some tips
-4. Then do the rest, PR and all.  You know the drill :)
+2. Read bindgen's `STYLEGUIDE.md` for some tips
+3. Then do the rest, PR and all.  You know the drill :)
 
 ## Contributors
 
-- [Papierkorb](https://github.com/Papierkorb) Stefan Merettig - creator
+- [Papierkorb](https://github.com/Papierkorb) Stefan Merettig - creator of qt5.cr
+- [docelic](https://github.com/docelic) Davor Ocelic - qt6.cr
 
 # License
 
@@ -297,5 +313,5 @@ under the terms of the **LGPL**.
 You can build closed-source applications using Crystal, this shard, and Qt
 **for free**.
 
-**Note**: This section is to combat this misconception, the authors of `qt5.cr`
+**Note**: This section is to combat this misconception, the authors of `qt6.cr`
 are in no way responsible to check if the same terms apply **in your jurisdiction**.
