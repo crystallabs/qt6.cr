@@ -209,6 +209,7 @@ enums:
   "Qt::DropAction": DropAction
   "QIODeviceBase::OpenMode": IODevice::OpenMode
   "QIODeviceBase::OpenModeFlag": IODevice::OpenModeFlag
+  "QFileDevice::Permissions": FileDevice::Permissions # QDir#mkdir on Qt < 6.10
   "QScrollEvent::ScrollState": ScrollEvent::ScrollState
   "Qt::ScreenOrientation": ScreenOrientation
   "Qt::GestureState": GestureState
