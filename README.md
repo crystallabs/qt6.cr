@@ -328,6 +328,10 @@ see the comments there:
   combine with `|`.  `Qt::TreeWidgetItemIterator` is an `Iterator`.
 * `QHeaderView`'s protected `initialize()` is dropped, as Crystal reserves the
   name for constructors.
+* `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`),
+  `std::optional<QFont>` (`FontComboBox#display_font`) and
+  `QList<QKeyCombination>` (`KeySequenceEdit#finishing_key_combinations`) have
+  no mapping yet and are ignored.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

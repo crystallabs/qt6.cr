@@ -5,9 +5,12 @@
 #include <QtWidgets/QtWidgets>
 #include <locale_helper.hpp>
 
+typedef QList<QWizard::WizardButton> Container_QList_QWizard__WizardButton_;
+typedef QList<QWidget *> Container_QList_QWidget_X_;
 typedef QList<QTreeWidgetItem *> Container_QList_QTreeWidgetItem_X_;
 typedef QList<QTableWidgetSelectionRange> Container_QList_QTableWidgetSelectionRange_;
 typedef QList<QTableWidgetItem *> Container_QList_QTableWidgetItem_X_;
+typedef QList<QMdiSubWindow *> Container_QList_QMdiSubWindow_X_;
 typedef QList<QDockWidget *> Container_QList_QDockWidget_X_;
 typedef QList<QListWidgetItem *> Container_QList_QListWidgetItem_X_;
 typedef QList<QGraphicsView *> Container_QList_QGraphicsView_X_;
@@ -15,13 +18,13 @@ typedef QList<QGraphicsTransform *> Container_QList_QGraphicsTransform_X_;
 typedef QList<QGraphicsItem *> Container_QList_QGraphicsItem_X_;
 typedef QList<QGesture *> Container_QList_QGesture_X_;
 typedef QList<QAbstractButton *> Container_QList_QAbstractButton_X_;
-typedef QList<QAction *> Container_QList_QAction_X_;
 typedef QList<QUndoStack *> Container_QList_QUndoStack_X_;
 typedef QList<QStandardItem *> Container_QList_QStandardItem_X_;
 typedef QList<QRect> Container_QList_QRect_;
 typedef QList<QRectF> Container_QList_QRectF_;
 typedef QList<QLine> Container_QList_QLine_;
 typedef QList<QLineF> Container_QList_QLineF_;
+typedef QList<QAction *> Container_QList_QAction_X_;
 typedef QList<QObject *> Container_QList_QObject_X_;
 typedef QList<QTextLength> Container_QList_QTextLength_;
 typedef QList<QTextFormat> Container_QList_QTextFormat_;
@@ -666,6 +669,10 @@ extern "C" QAction * bg_QObject_CAST_Action_(QObject * _self_) {
   return bindgen_dynamic_cast<QAction *>(_self_);
 }
 
+extern "C" QActionGroup * bg_QObject_CAST_ActionGroup_(QObject * _self_) {
+  return bindgen_dynamic_cast<QActionGroup *>(_self_);
+}
+
 extern "C" QWindow * bg_QObject_CAST_Window_(QObject * _self_) {
   return bindgen_dynamic_cast<QWindow *>(_self_);
 }
@@ -680,6 +687,10 @@ extern "C" QDrag * bg_QObject_CAST_Drag_(QObject * _self_) {
 
 extern "C" QFileSystemModel * bg_QObject_CAST_FileSystemModel_(QObject * _self_) {
   return bindgen_dynamic_cast<QFileSystemModel *>(_self_);
+}
+
+extern "C" QShortcut * bg_QObject_CAST_Shortcut_(QObject * _self_) {
+  return bindgen_dynamic_cast<QShortcut *>(_self_);
 }
 
 extern "C" QStandardItemModel * bg_QObject_CAST_StandardItemModel_(QObject * _self_) {
@@ -726,6 +737,10 @@ extern "C" QTabWidget * bg_QObject_CAST_TabWidget_(QObject * _self_) {
   return bindgen_dynamic_cast<QTabWidget *>(_self_);
 }
 
+extern "C" QRubberBand * bg_QObject_CAST_RubberBand_(QObject * _self_) {
+  return bindgen_dynamic_cast<QRubberBand *>(_self_);
+}
+
 extern "C" QFrame * bg_QObject_CAST_Frame_(QObject * _self_) {
   return bindgen_dynamic_cast<QFrame *>(_self_);
 }
@@ -770,12 +785,20 @@ extern "C" QButtonGroup * bg_QObject_CAST_ButtonGroup_(QObject * _self_) {
   return bindgen_dynamic_cast<QButtonGroup *>(_self_);
 }
 
+extern "C" QCalendarWidget * bg_QObject_CAST_CalendarWidget_(QObject * _self_) {
+  return bindgen_dynamic_cast<QCalendarWidget *>(_self_);
+}
+
 extern "C" QCheckBox * bg_QObject_CAST_CheckBox_(QObject * _self_) {
   return bindgen_dynamic_cast<QCheckBox *>(_self_);
 }
 
 extern "C" QDialog * bg_QObject_CAST_Dialog_(QObject * _self_) {
   return bindgen_dynamic_cast<QDialog *>(_self_);
+}
+
+extern "C" QColorDialog * bg_QObject_CAST_ColorDialog_(QObject * _self_) {
+  return bindgen_dynamic_cast<QColorDialog *>(_self_);
 }
 
 extern "C" QColumnView * bg_QObject_CAST_ColumnView_(QObject * _self_) {
@@ -790,6 +813,10 @@ extern "C" QPushButton * bg_QObject_CAST_PushButton_(QObject * _self_) {
   return bindgen_dynamic_cast<QPushButton *>(_self_);
 }
 
+extern "C" QCommandLinkButton * bg_QObject_CAST_CommandLinkButton_(QObject * _self_) {
+  return bindgen_dynamic_cast<QCommandLinkButton *>(_self_);
+}
+
 extern "C" QCompleter * bg_QObject_CAST_Completer_(QObject * _self_) {
   return bindgen_dynamic_cast<QCompleter *>(_self_);
 }
@@ -802,16 +829,44 @@ extern "C" QDateTimeEdit * bg_QObject_CAST_DateTimeEdit_(QObject * _self_) {
   return bindgen_dynamic_cast<QDateTimeEdit *>(_self_);
 }
 
+extern "C" QTimeEdit * bg_QObject_CAST_TimeEdit_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTimeEdit *>(_self_);
+}
+
+extern "C" QDateEdit * bg_QObject_CAST_DateEdit_(QObject * _self_) {
+  return bindgen_dynamic_cast<QDateEdit *>(_self_);
+}
+
 extern "C" QDial * bg_QObject_CAST_Dial_(QObject * _self_) {
   return bindgen_dynamic_cast<QDial *>(_self_);
+}
+
+extern "C" QDialogButtonBox * bg_QObject_CAST_DialogButtonBox_(QObject * _self_) {
+  return bindgen_dynamic_cast<QDialogButtonBox *>(_self_);
 }
 
 extern "C" QDockWidget * bg_QObject_CAST_DockWidget_(QObject * _self_) {
   return bindgen_dynamic_cast<QDockWidget *>(_self_);
 }
 
+extern "C" QErrorMessage * bg_QObject_CAST_ErrorMessage_(QObject * _self_) {
+  return bindgen_dynamic_cast<QErrorMessage *>(_self_);
+}
+
 extern "C" QFileDialog * bg_QObject_CAST_FileDialog_(QObject * _self_) {
   return bindgen_dynamic_cast<QFileDialog *>(_self_);
+}
+
+extern "C" QFocusFrame * bg_QObject_CAST_FocusFrame_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFocusFrame *>(_self_);
+}
+
+extern "C" QFontComboBox * bg_QObject_CAST_FontComboBox_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFontComboBox *>(_self_);
+}
+
+extern "C" QFontDialog * bg_QObject_CAST_FontDialog_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFontDialog *>(_self_);
 }
 
 extern "C" QFormLayout * bg_QObject_CAST_FormLayout_(QObject * _self_) {
@@ -862,8 +917,16 @@ extern "C" QLineEdit * bg_QObject_CAST_LineEdit_(QObject * _self_) {
   return bindgen_dynamic_cast<QLineEdit *>(_self_);
 }
 
+extern "C" QInputDialog * bg_QObject_CAST_InputDialog_(QObject * _self_) {
+  return bindgen_dynamic_cast<QInputDialog *>(_self_);
+}
+
 extern "C" QItemDelegate * bg_QObject_CAST_ItemDelegate_(QObject * _self_) {
   return bindgen_dynamic_cast<QItemDelegate *>(_self_);
+}
+
+extern "C" QKeySequenceEdit * bg_QObject_CAST_KeySequenceEdit_(QObject * _self_) {
+  return bindgen_dynamic_cast<QKeySequenceEdit *>(_self_);
 }
 
 extern "C" QLabel * bg_QObject_CAST_Label_(QObject * _self_) {
@@ -884,6 +947,14 @@ extern "C" QListWidget * bg_QObject_CAST_ListWidget_(QObject * _self_) {
 
 extern "C" QMainWindow * bg_QObject_CAST_MainWindow_(QObject * _self_) {
   return bindgen_dynamic_cast<QMainWindow *>(_self_);
+}
+
+extern "C" QMdiArea * bg_QObject_CAST_MdiArea_(QObject * _self_) {
+  return bindgen_dynamic_cast<QMdiArea *>(_self_);
+}
+
+extern "C" QMdiSubWindow * bg_QObject_CAST_MdiSubWindow_(QObject * _self_) {
+  return bindgen_dynamic_cast<QMdiSubWindow *>(_self_);
 }
 
 extern "C" QMenu * bg_QObject_CAST_Menu_(QObject * _self_) {
@@ -914,12 +985,20 @@ extern "C" QProgressBar * bg_QObject_CAST_ProgressBar_(QObject * _self_) {
   return bindgen_dynamic_cast<QProgressBar *>(_self_);
 }
 
+extern "C" QProgressDialog * bg_QObject_CAST_ProgressDialog_(QObject * _self_) {
+  return bindgen_dynamic_cast<QProgressDialog *>(_self_);
+}
+
 extern "C" QRadioButton * bg_QObject_CAST_RadioButton_(QObject * _self_) {
   return bindgen_dynamic_cast<QRadioButton *>(_self_);
 }
 
 extern "C" QScrollBar * bg_QObject_CAST_ScrollBar_(QObject * _self_) {
   return bindgen_dynamic_cast<QScrollBar *>(_self_);
+}
+
+extern "C" QSizeGrip * bg_QObject_CAST_SizeGrip_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSizeGrip *>(_self_);
 }
 
 extern "C" QSpinBox * bg_QObject_CAST_SpinBox_(QObject * _self_) {
@@ -930,8 +1009,16 @@ extern "C" QDoubleSpinBox * bg_QObject_CAST_DoubleSpinBox_(QObject * _self_) {
   return bindgen_dynamic_cast<QDoubleSpinBox *>(_self_);
 }
 
+extern "C" QSplashScreen * bg_QObject_CAST_SplashScreen_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSplashScreen *>(_self_);
+}
+
 extern "C" QSplitter * bg_QObject_CAST_Splitter_(QObject * _self_) {
   return bindgen_dynamic_cast<QSplitter *>(_self_);
+}
+
+extern "C" QSplitterHandle * bg_QObject_CAST_SplitterHandle_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSplitterHandle *>(_self_);
 }
 
 extern "C" QStackedLayout * bg_QObject_CAST_StackedLayout_(QObject * _self_) {
@@ -970,6 +1057,10 @@ extern "C" QToolBar * bg_QObject_CAST_ToolBar_(QObject * _self_) {
   return bindgen_dynamic_cast<QToolBar *>(_self_);
 }
 
+extern "C" QToolBox * bg_QObject_CAST_ToolBox_(QObject * _self_) {
+  return bindgen_dynamic_cast<QToolBox *>(_self_);
+}
+
 extern "C" QToolButton * bg_QObject_CAST_ToolButton_(QObject * _self_) {
   return bindgen_dynamic_cast<QToolButton *>(_self_);
 }
@@ -984,6 +1075,18 @@ extern "C" QTreeWidget * bg_QObject_CAST_TreeWidget_(QObject * _self_) {
 
 extern "C" QUndoView * bg_QObject_CAST_UndoView_(QObject * _self_) {
   return bindgen_dynamic_cast<QUndoView *>(_self_);
+}
+
+extern "C" QWidgetAction * bg_QObject_CAST_WidgetAction_(QObject * _self_) {
+  return bindgen_dynamic_cast<QWidgetAction *>(_self_);
+}
+
+extern "C" QWizard * bg_QObject_CAST_Wizard_(QObject * _self_) {
+  return bindgen_dynamic_cast<QWizard *>(_self_);
+}
+
+extern "C" QWizardPage * bg_QObject_CAST_WizardPage_(QObject * _self_) {
+  return bindgen_dynamic_cast<QWizardPage *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QObject_JUMPTABLE_BgJumptable_QObject_R(BgInherit_QObject * _self_, const BgJumptable_QObject & table) {
@@ -21221,6 +21324,10 @@ extern "C" QTabWidget * bg_QPaintDevice_CAST_TabWidget_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QTabWidget *>(_self_);
 }
 
+extern "C" QRubberBand * bg_QPaintDevice_CAST_RubberBand_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QRubberBand *>(_self_);
+}
+
 extern "C" QFrame * bg_QPaintDevice_CAST_Frame_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QFrame *>(_self_);
 }
@@ -21233,12 +21340,20 @@ extern "C" QAbstractItemView * bg_QPaintDevice_CAST_AbstractItemView_(QPaintDevi
   return bindgen_dynamic_cast<QAbstractItemView *>(_self_);
 }
 
+extern "C" QCalendarWidget * bg_QPaintDevice_CAST_CalendarWidget_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QCalendarWidget *>(_self_);
+}
+
 extern "C" QCheckBox * bg_QPaintDevice_CAST_CheckBox_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QCheckBox *>(_self_);
 }
 
 extern "C" QDialog * bg_QPaintDevice_CAST_Dialog_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QDialog *>(_self_);
+}
+
+extern "C" QColorDialog * bg_QPaintDevice_CAST_ColorDialog_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QColorDialog *>(_self_);
 }
 
 extern "C" QColumnView * bg_QPaintDevice_CAST_ColumnView_(QPaintDevice * _self_) {
@@ -21253,20 +21368,52 @@ extern "C" QPushButton * bg_QPaintDevice_CAST_PushButton_(QPaintDevice * _self_)
   return bindgen_dynamic_cast<QPushButton *>(_self_);
 }
 
+extern "C" QCommandLinkButton * bg_QPaintDevice_CAST_CommandLinkButton_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QCommandLinkButton *>(_self_);
+}
+
 extern "C" QDateTimeEdit * bg_QPaintDevice_CAST_DateTimeEdit_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QDateTimeEdit *>(_self_);
+}
+
+extern "C" QTimeEdit * bg_QPaintDevice_CAST_TimeEdit_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QTimeEdit *>(_self_);
+}
+
+extern "C" QDateEdit * bg_QPaintDevice_CAST_DateEdit_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QDateEdit *>(_self_);
 }
 
 extern "C" QDial * bg_QPaintDevice_CAST_Dial_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QDial *>(_self_);
 }
 
+extern "C" QDialogButtonBox * bg_QPaintDevice_CAST_DialogButtonBox_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QDialogButtonBox *>(_self_);
+}
+
 extern "C" QDockWidget * bg_QPaintDevice_CAST_DockWidget_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QDockWidget *>(_self_);
 }
 
+extern "C" QErrorMessage * bg_QPaintDevice_CAST_ErrorMessage_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QErrorMessage *>(_self_);
+}
+
 extern "C" QFileDialog * bg_QPaintDevice_CAST_FileDialog_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QFileDialog *>(_self_);
+}
+
+extern "C" QFocusFrame * bg_QPaintDevice_CAST_FocusFrame_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QFocusFrame *>(_self_);
+}
+
+extern "C" QFontComboBox * bg_QPaintDevice_CAST_FontComboBox_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QFontComboBox *>(_self_);
+}
+
+extern "C" QFontDialog * bg_QPaintDevice_CAST_FontDialog_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QFontDialog *>(_self_);
 }
 
 extern "C" QScrollArea * bg_QPaintDevice_CAST_ScrollArea_(QPaintDevice * _self_) {
@@ -21289,6 +21436,14 @@ extern "C" QLineEdit * bg_QPaintDevice_CAST_LineEdit_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QLineEdit *>(_self_);
 }
 
+extern "C" QInputDialog * bg_QPaintDevice_CAST_InputDialog_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QInputDialog *>(_self_);
+}
+
+extern "C" QKeySequenceEdit * bg_QPaintDevice_CAST_KeySequenceEdit_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QKeySequenceEdit *>(_self_);
+}
+
 extern "C" QLabel * bg_QPaintDevice_CAST_Label_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QLabel *>(_self_);
 }
@@ -21307,6 +21462,14 @@ extern "C" QListWidget * bg_QPaintDevice_CAST_ListWidget_(QPaintDevice * _self_)
 
 extern "C" QMainWindow * bg_QPaintDevice_CAST_MainWindow_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QMainWindow *>(_self_);
+}
+
+extern "C" QMdiArea * bg_QPaintDevice_CAST_MdiArea_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QMdiArea *>(_self_);
+}
+
+extern "C" QMdiSubWindow * bg_QPaintDevice_CAST_MdiSubWindow_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QMdiSubWindow *>(_self_);
 }
 
 extern "C" QMenu * bg_QPaintDevice_CAST_Menu_(QPaintDevice * _self_) {
@@ -21333,12 +21496,20 @@ extern "C" QProgressBar * bg_QPaintDevice_CAST_ProgressBar_(QPaintDevice * _self
   return bindgen_dynamic_cast<QProgressBar *>(_self_);
 }
 
+extern "C" QProgressDialog * bg_QPaintDevice_CAST_ProgressDialog_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QProgressDialog *>(_self_);
+}
+
 extern "C" QRadioButton * bg_QPaintDevice_CAST_RadioButton_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QRadioButton *>(_self_);
 }
 
 extern "C" QScrollBar * bg_QPaintDevice_CAST_ScrollBar_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QScrollBar *>(_self_);
+}
+
+extern "C" QSizeGrip * bg_QPaintDevice_CAST_SizeGrip_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QSizeGrip *>(_self_);
 }
 
 extern "C" QSpinBox * bg_QPaintDevice_CAST_SpinBox_(QPaintDevice * _self_) {
@@ -21349,8 +21520,16 @@ extern "C" QDoubleSpinBox * bg_QPaintDevice_CAST_DoubleSpinBox_(QPaintDevice * _
   return bindgen_dynamic_cast<QDoubleSpinBox *>(_self_);
 }
 
+extern "C" QSplashScreen * bg_QPaintDevice_CAST_SplashScreen_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QSplashScreen *>(_self_);
+}
+
 extern "C" QSplitter * bg_QPaintDevice_CAST_Splitter_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QSplitter *>(_self_);
+}
+
+extern "C" QSplitterHandle * bg_QPaintDevice_CAST_SplitterHandle_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QSplitterHandle *>(_self_);
 }
 
 extern "C" QStackedWidget * bg_QPaintDevice_CAST_StackedWidget_(QPaintDevice * _self_) {
@@ -21377,6 +21556,10 @@ extern "C" QToolBar * bg_QPaintDevice_CAST_ToolBar_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QToolBar *>(_self_);
 }
 
+extern "C" QToolBox * bg_QPaintDevice_CAST_ToolBox_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QToolBox *>(_self_);
+}
+
 extern "C" QToolButton * bg_QPaintDevice_CAST_ToolButton_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QToolButton *>(_self_);
 }
@@ -21391,6 +21574,14 @@ extern "C" QTreeWidget * bg_QPaintDevice_CAST_TreeWidget_(QPaintDevice * _self_)
 
 extern "C" QUndoView * bg_QPaintDevice_CAST_UndoView_(QPaintDevice * _self_) {
   return bindgen_dynamic_cast<QUndoView *>(_self_);
+}
+
+extern "C" QWizard * bg_QPaintDevice_CAST_Wizard_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QWizard *>(_self_);
+}
+
+extern "C" QWizardPage * bg_QPaintDevice_CAST_WizardPage_(QPaintDevice * _self_) {
+  return bindgen_dynamic_cast<QWizardPage *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QPaintDevice_JUMPTABLE_BgJumptable_QPaintDevice_R(BgInherit_QPaintDevice * _self_, const BgJumptable_QPaintDevice & table) {
@@ -30200,6 +30391,228 @@ extern "C" void bg_BgInherit_QAction_JUMPTABLE_BgJumptable_QAction_R(BgInherit_Q
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QActionGroup {
+  CrystalProc<const QMetaObject *> bg_QActionGroup_metaObject_;
+  CrystalProc<void *, const char *> bg_QActionGroup_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QActionGroup_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QActionGroup : public QActionGroup {
+  using QActionGroup::QActionGroup;
+  BgJumptable_QActionGroup bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QActionGroup_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QActionGroup_metaObject_();
+    } else {
+      return QActionGroup::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QActionGroup_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QActionGroup_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QActionGroup::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QActionGroup_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QActionGroup_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QActionGroup::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QActionGroup::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QActionGroup::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QActionGroup::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QActionGroup::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QActionGroup::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QActionGroup::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QActionGroup *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QActionGroup::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QActionGroup_metaObject_(QActionGroup * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QActionGroup_qt_metacast_const_char_X(QActionGroup * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QActionGroup_qt_metacall_QMetaObject__Call_int_void_XX(QActionGroup * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QActionGroup_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QActionGroup::tr(s));
+}
+
+extern "C" CrystalString bg_QActionGroup_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QActionGroup::tr(s, c));
+}
+
+extern "C" CrystalString bg_QActionGroup_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QActionGroup::tr(s, c, n));
+}
+
+extern "C" QActionGroup * bg_QActionGroup__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QActionGroup>(parent);
+}
+
+extern "C" QAction * bg_QActionGroup_addAction_QAction_X(QActionGroup * _self_, QAction * a) {
+  return _self_->addAction(a);
+}
+
+extern "C" QAction * bg_QActionGroup_addAction_const_QString_R(QActionGroup * _self_, const CrystalString text) {
+  return _self_->addAction(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QAction * bg_QActionGroup_addAction_const_QIcon_R_const_QString_R(QActionGroup * _self_, const QIcon & icon, const CrystalString text) {
+  return _self_->addAction(icon, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QActionGroup_removeAction_QAction_X(QActionGroup * _self_, QAction * a) {
+  _self_->removeAction(a);
+}
+
+extern "C" Container_QList_QAction_X_ * bg_QActionGroup_actions_(QActionGroup * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QAction_X_>()) Container_QList_QAction_X_ (_self_->actions());
+}
+
+extern "C" QAction * bg_QActionGroup_checkedAction_(QActionGroup * _self_) {
+  return _self_->checkedAction();
+}
+
+extern "C" bool bg_QActionGroup_isExclusive_(QActionGroup * _self_) {
+  return _self_->isExclusive();
+}
+
+extern "C" bool bg_QActionGroup_isEnabled_(QActionGroup * _self_) {
+  return _self_->isEnabled();
+}
+
+extern "C" bool bg_QActionGroup_isVisible_(QActionGroup * _self_) {
+  return _self_->isVisible();
+}
+
+extern "C" QActionGroup::ExclusionPolicy bg_QActionGroup_exclusionPolicy_(QActionGroup * _self_) {
+  return _self_->exclusionPolicy();
+}
+
+extern "C" void bg_QActionGroup_setEnabled_bool(QActionGroup * _self_, bool unnamed_arg_0) {
+  _self_->setEnabled(unnamed_arg_0);
+}
+
+extern "C" void bg_QActionGroup_setDisabled_bool(QActionGroup * _self_, bool b) {
+  _self_->setDisabled(b);
+}
+
+extern "C" void bg_QActionGroup_setVisible_bool(QActionGroup * _self_, bool unnamed_arg_0) {
+  _self_->setVisible(unnamed_arg_0);
+}
+
+extern "C" void bg_QActionGroup_setExclusive_bool(QActionGroup * _self_, bool unnamed_arg_0) {
+  _self_->setExclusive(unnamed_arg_0);
+}
+
+extern "C" void bg_QActionGroup_setExclusionPolicy_QActionGroup__ExclusionPolicy(QActionGroup * _self_, QActionGroup::ExclusionPolicy policy) {
+  _self_->setExclusionPolicy(policy);
+}
+
+extern "C" void bg_QActionGroup_triggered_QAction_X(QActionGroup * _self_, QAction * unnamed_arg_0) {
+  _self_->triggered(unnamed_arg_0);
+}
+
+extern "C" void bg_QActionGroup_hovered_QAction_X(QActionGroup * _self_, QAction * unnamed_arg_0) {
+  _self_->hovered(unnamed_arg_0);
+}
+
+extern "C" QActionGroup * bg_QActionGroup__CONSTRUCT_QActionGroupPrivate_R_QObject_X(QActionGroupPrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QActionGroup>(dd, parent);
+}
+
+extern "C" const QMetaObject * bg_QActionGroup_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QActionGroup::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QActionGroup_CONNECT_triggered_CrystalProc_void__QAction_X_(QActionGroup * _self_, CrystalProc<void, QAction *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QActionGroup::*)(QAction *))&QActionGroup::triggered, [_proc_](QAction * unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QActionGroup_CONNECT_hovered_CrystalProc_void__QAction_X_(QActionGroup * _self_, CrystalProc<void, QAction *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QActionGroup::*)(QAction *))&QActionGroup::hovered, [_proc_](QAction * unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" void bg_BgInherit_QActionGroup_JUMPTABLE_BgJumptable_QActionGroup_R(BgInherit_QActionGroup * _self_, const BgJumptable_QActionGroup & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QSurface {
   CrystalProc<QSurfaceFormat &> bg_QSurface_format_;
   CrystalProc<QPlatformSurface *> bg_QSurface_surfaceHandle_;
@@ -33827,6 +34240,256 @@ extern "C" void bg_QPainter_endNativePainting_(QPainter * _self_) {
 
 extern "C" const QMetaObject * bg_QPainter_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPainter::staticMetaObject);
+}
+
+struct BgJumptable_QShortcut {
+  CrystalProc<const QMetaObject *> bg_QShortcut_metaObject_;
+  CrystalProc<void *, const char *> bg_QShortcut_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QShortcut_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QShortcut_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QShortcut : public QShortcut {
+  using QShortcut::QShortcut;
+  BgJumptable_QShortcut bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QShortcut_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QShortcut_metaObject_();
+    } else {
+      return QShortcut::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QShortcut_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QShortcut_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QShortcut::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QShortcut_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QShortcut_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QShortcut::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QShortcut_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QShortcut_event_QEvent_X(event);
+    } else {
+      return QShortcut::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QShortcut::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QShortcut::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QShortcut::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QShortcut::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QShortcut::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QShortcut *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QShortcut::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QShortcut_metaObject_(QShortcut * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QShortcut_qt_metacast_const_char_X(QShortcut * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QShortcut_qt_metacall_QMetaObject__Call_int_void_XX(QShortcut * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QShortcut_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QShortcut::tr(s));
+}
+
+extern "C" CrystalString bg_QShortcut_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QShortcut::tr(s, c));
+}
+
+extern "C" CrystalString bg_QShortcut_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QShortcut::tr(s, c, n));
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(parent);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X(const QKeySequence & key, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X(const QKeySequence & key, QObject * parent, const char * member) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X_const_char_X(const QKeySequence & key, QObject * parent, const char * member, const char * ambiguousMember) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member, ambiguousMember);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X_const_char_X_Qt__ShortcutContext(const QKeySequence & key, QObject * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member, ambiguousMember, context);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X(QKeySequence::StandardKey key, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X(QKeySequence::StandardKey key, QObject * parent, const char * member) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X_const_char_X(QKeySequence::StandardKey key, QObject * parent, const char * member, const char * ambiguousMember) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member, ambiguousMember);
+}
+
+extern "C" QShortcut * bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X_const_char_X_Qt__ShortcutContext(QKeySequence::StandardKey key, QObject * parent, const char * member, const char * ambiguousMember, Qt::ShortcutContext context) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QShortcut>(key, parent, member, ambiguousMember, context);
+}
+
+extern "C" void bg_QShortcut_setKey_const_QKeySequence_R(QShortcut * _self_, const QKeySequence & key) {
+  _self_->setKey(key);
+}
+
+extern "C" QKeySequence * bg_QShortcut_key_(QShortcut * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QKeySequence>()) QKeySequence (_self_->key());
+}
+
+extern "C" void bg_QShortcut_setKeys_QKeySequence__StandardKey(QShortcut * _self_, QKeySequence::StandardKey key) {
+  _self_->setKeys(key);
+}
+
+extern "C" void bg_QShortcut_setKeys_const_QList_QKeySequence__R(QShortcut * _self_, const Container_QList_QKeySequence_ * keys) {
+  _self_->setKeys(*(keys));
+}
+
+extern "C" Container_QList_QKeySequence_ * bg_QShortcut_keys_(QShortcut * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QKeySequence_>()) Container_QList_QKeySequence_ (_self_->keys());
+}
+
+extern "C" void bg_QShortcut_setEnabled_bool(QShortcut * _self_, bool enable) {
+  _self_->setEnabled(enable);
+}
+
+extern "C" bool bg_QShortcut_isEnabled_(QShortcut * _self_) {
+  return _self_->isEnabled();
+}
+
+extern "C" void bg_QShortcut_setContext_Qt__ShortcutContext(QShortcut * _self_, Qt::ShortcutContext context) {
+  _self_->setContext(context);
+}
+
+extern "C" Qt::ShortcutContext bg_QShortcut_context_(QShortcut * _self_) {
+  return _self_->context();
+}
+
+extern "C" void bg_QShortcut_setAutoRepeat_bool(QShortcut * _self_, bool on) {
+  _self_->setAutoRepeat(on);
+}
+
+extern "C" bool bg_QShortcut_autoRepeat_(QShortcut * _self_) {
+  return _self_->autoRepeat();
+}
+
+extern "C" void bg_QShortcut_setWhatsThis_const_QString_R(QShortcut * _self_, const CrystalString text) {
+  _self_->setWhatsThis(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QShortcut_whatsThis_(QShortcut * _self_) {
+  return qstring_to_crystal(_self_->whatsThis());
+}
+
+extern "C" void bg_QShortcut_activated_(QShortcut * _self_) {
+  _self_->activated();
+}
+
+extern "C" void bg_QShortcut_activatedAmbiguously_(QShortcut * _self_) {
+  _self_->activatedAmbiguously();
+}
+
+extern "C" bool bg_QShortcut_event_QEvent_X(QShortcut * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QShortcut_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QShortcut::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QShortcut_CONNECT_activated_CrystalProc_void_(QShortcut * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QShortcut::*)())&QShortcut::activated, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QShortcut_CONNECT_activatedAmbiguously_CrystalProc_void_(QShortcut * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QShortcut::*)())&QShortcut::activatedAmbiguously, [_proc_](){ _proc_(); }));
+}
+
+extern "C" bool bg_QShortcut_event_SUPER_QEvent_X(QShortcut * _self_, QEvent * event) {
+  return _self_->QShortcut::event(event);
+}
+
+extern "C" void bg_BgInherit_QShortcut_JUMPTABLE_BgJumptable_QShortcut_R(BgInherit_QShortcut * _self_, const BgJumptable_QShortcut & table) {
+  _self_->bgJump = (table);
 }
 
 struct BgJumptable_QStandardItem {
@@ -43338,6 +44001,632 @@ extern "C" void bg_BgInherit_QTabWidget_JUMPTABLE_BgJumptable_QTabWidget_R(BgInh
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QRubberBand {
+  CrystalProc<const QMetaObject *> bg_QRubberBand_metaObject_;
+  CrystalProc<void *, const char *> bg_QRubberBand_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QRubberBand_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QRubberBand_event_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QRubberBand_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QEvent *> bg_QRubberBand_changeEvent_QEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QRubberBand_showEvent_QShowEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QRubberBand_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QRubberBand_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QStyleOptionRubberBand *> bg_QRubberBand_initStyleOption_QStyleOptionRubberBand_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QRubberBand : public QRubberBand {
+  using QRubberBand::QRubberBand;
+  BgJumptable_QRubberBand bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QRubberBand_metaObject_();
+    } else {
+      return QRubberBand::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QRubberBand_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QRubberBand::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QRubberBand_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QRubberBand::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QRubberBand_event_QEvent_X(event);
+    } else {
+      return QRubberBand::event(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_paintEvent_QPaintEvent_X(event);
+    } else {
+      QRubberBand::paintEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QRubberBand::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_showEvent_QShowEvent_X(event);
+    } else {
+      QRubberBand::showEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QRubberBand::resizeEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_moveEvent_QMoveEvent_X(event);
+    } else {
+      QRubberBand::moveEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionRubberBand * option) const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QRubberBand_initStyleOption_QStyleOptionRubberBand_X.isValid()) {
+      _self_->bgJump.bg_QRubberBand_initStyleOption_QStyleOptionRubberBand_X(option);
+    } else {
+      QRubberBand::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QRubberBand::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QRubberBand::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QRubberBand::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QRubberBand::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QRubberBand::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QRubberBand::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QRubberBand::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QRubberBand::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QRubberBand::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QRubberBand::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QRubberBand::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QRubberBand::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QRubberBand::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QRubberBand::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QRubberBand::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QRubberBand::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QRubberBand::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QRubberBand::leaveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QRubberBand::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QRubberBand::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QRubberBand::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QRubberBand::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QRubberBand::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QRubberBand::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QRubberBand::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QRubberBand::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QRubberBand::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QRubberBand::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QRubberBand::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QRubberBand::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QRubberBand::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QRubberBand::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QRubberBand::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QRubberBand::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QRubberBand::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QRubberBand::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QRubberBand::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QRubberBand::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QRubberBand::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QRubberBand *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QRubberBand::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QRubberBand_metaObject_(QRubberBand * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QRubberBand_qt_metacast_const_char_X(QRubberBand * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QRubberBand_qt_metacall_QMetaObject__Call_int_void_XX(QRubberBand * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QRubberBand_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QRubberBand::tr(s));
+}
+
+extern "C" CrystalString bg_QRubberBand_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QRubberBand::tr(s, c));
+}
+
+extern "C" CrystalString bg_QRubberBand_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QRubberBand::tr(s, c, n));
+}
+
+extern "C" QRubberBand * bg_QRubberBand__CONSTRUCT_QRubberBand__Shape_QWidget_X(QRubberBand::Shape unnamed_arg_0, QWidget * unnamed_arg_1) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QRubberBand>(unnamed_arg_0, unnamed_arg_1);
+}
+
+extern "C" QRubberBand::Shape bg_QRubberBand_shape_(QRubberBand * _self_) {
+  return _self_->shape();
+}
+
+extern "C" void bg_QRubberBand_setGeometry_const_QRect_R(QRubberBand * _self_, const QRect r) {
+  _self_->setGeometry(r);
+}
+
+extern "C" void bg_QRubberBand_setGeometry_int_int_int_int(QRubberBand * _self_, int x, int y, int w, int h) {
+  _self_->setGeometry(x, y, w, h);
+}
+
+extern "C" void bg_QRubberBand_move_int_int(QRubberBand * _self_, int x, int y) {
+  _self_->move(x, y);
+}
+
+extern "C" void bg_QRubberBand_move_const_QPoint_R(QRubberBand * _self_, const QPoint p) {
+  _self_->move(p);
+}
+
+extern "C" void bg_QRubberBand_resize_int_int(QRubberBand * _self_, int w, int h) {
+  _self_->resize(w, h);
+}
+
+extern "C" void bg_QRubberBand_resize_const_QSize_R(QRubberBand * _self_, const QSize s) {
+  _self_->resize(s);
+}
+
+extern "C" bool bg_QRubberBand_event_QEvent_X(QRubberBand * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QRubberBand_paintEvent_QPaintEvent_X(QRubberBand * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QRubberBand_changeEvent_QEvent_X(QRubberBand * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QRubberBand_showEvent_QShowEvent_X(QRubberBand * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QRubberBand_resizeEvent_QResizeEvent_X(QRubberBand * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QRubberBand_moveEvent_QMoveEvent_X(QRubberBand * _self_, QMoveEvent * event) {
+  _self_->moveEvent(event);
+}
+
+extern "C" void bg_QRubberBand_initStyleOption_QStyleOptionRubberBand_X(QRubberBand * _self_, QStyleOptionRubberBand * option) {
+  _self_->initStyleOption(option);
+}
+
+extern "C" const QMetaObject * bg_QRubberBand_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QRubberBand::staticMetaObject);
+}
+
+extern "C" bool bg_QRubberBand_event_SUPER_QEvent_X(QRubberBand * _self_, QEvent * event) {
+  return _self_->QRubberBand::event(event);
+}
+
+extern "C" void bg_QRubberBand_paintEvent_SUPER_QPaintEvent_X(QRubberBand * _self_, QPaintEvent * event) {
+  _self_->QRubberBand::paintEvent(event);
+}
+
+extern "C" void bg_QRubberBand_changeEvent_SUPER_QEvent_X(QRubberBand * _self_, QEvent * unnamed_arg_0) {
+  _self_->QRubberBand::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QRubberBand_showEvent_SUPER_QShowEvent_X(QRubberBand * _self_, QShowEvent * event) {
+  _self_->QRubberBand::showEvent(event);
+}
+
+extern "C" void bg_QRubberBand_resizeEvent_SUPER_QResizeEvent_X(QRubberBand * _self_, QResizeEvent * event) {
+  _self_->QRubberBand::resizeEvent(event);
+}
+
+extern "C" void bg_QRubberBand_moveEvent_SUPER_QMoveEvent_X(QRubberBand * _self_, QMoveEvent * event) {
+  _self_->QRubberBand::moveEvent(event);
+}
+
+extern "C" void bg_QRubberBand_initStyleOption_SUPER_QStyleOptionRubberBand_X(QRubberBand * _self_, QStyleOptionRubberBand * option) {
+  _self_->QRubberBand::initStyleOption(option);
+}
+
+extern "C" void bg_BgInherit_QRubberBand_JUMPTABLE_BgJumptable_QRubberBand_R(BgInherit_QRubberBand * _self_, const BgJumptable_QRubberBand & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QFrame {
   CrystalProc<const QMetaObject *> bg_QFrame_metaObject_;
   CrystalProc<void *, const char *> bg_QFrame_qt_metacast_const_char_X;
@@ -51007,6 +52296,820 @@ extern "C" void bg_BgInherit_QButtonGroup_JUMPTABLE_BgJumptable_QButtonGroup_R(B
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QCalendarWidget {
+  CrystalProc<const QMetaObject *> bg_QCalendarWidget_metaObject_;
+  CrystalProc<void *, const char *> bg_QCalendarWidget_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QCalendarWidget_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QCalendarWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QCalendarWidget_minimumSizeHint_;
+  CrystalProc<bool, QEvent *> bg_QCalendarWidget_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QCalendarWidget_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QCalendarWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QCalendarWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QCalendarWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QPainter *, const QRect, QDate *> bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QCalendarWidget : public QCalendarWidget {
+  using QCalendarWidget::QCalendarWidget;
+  BgJumptable_QCalendarWidget bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QCalendarWidget_metaObject_();
+    } else {
+      return QCalendarWidget::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QCalendarWidget_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QCalendarWidget::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QCalendarWidget_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QCalendarWidget::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QCalendarWidget_sizeHint_();
+    } else {
+      return QCalendarWidget::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QCalendarWidget_minimumSizeHint_();
+    } else {
+      return QCalendarWidget::minimumSizeHint();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QCalendarWidget_event_QEvent_X(event);
+    } else {
+      return QCalendarWidget::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QCalendarWidget_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QCalendarWidget::eventFilter(watched, event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QCalendarWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QCalendarWidget::mousePressEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QCalendarWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QCalendarWidget::resizeEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QCalendarWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QCalendarWidget::keyPressEvent(event);
+    }
+  }
+  
+  void paintCell(QPainter * painter, const QRect & rect, QDate date) const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate.isValid()) {
+      _self_->bgJump.bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate(painter, rect, new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date));
+    } else {
+      QCalendarWidget::paintCell(painter, rect, date);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QCalendarWidget::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QCalendarWidget::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QCalendarWidget::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QCalendarWidget::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QCalendarWidget::paintEngine();
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QCalendarWidget::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QCalendarWidget::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QCalendarWidget::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QCalendarWidget::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QCalendarWidget::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QCalendarWidget::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QCalendarWidget::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QCalendarWidget::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QCalendarWidget::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QCalendarWidget::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QCalendarWidget::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QCalendarWidget::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QCalendarWidget::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QCalendarWidget::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QCalendarWidget::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QCalendarWidget::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QCalendarWidget::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QCalendarWidget::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QCalendarWidget::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QCalendarWidget::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QCalendarWidget::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QCalendarWidget::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QCalendarWidget::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QCalendarWidget::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QCalendarWidget::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QCalendarWidget::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QCalendarWidget::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QCalendarWidget::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QCalendarWidget::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QCalendarWidget::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QCalendarWidget::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QCalendarWidget::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCalendarWidget::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCalendarWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCalendarWidget::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QCalendarWidget_metaObject_(QCalendarWidget * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QCalendarWidget_qt_metacast_const_char_X(QCalendarWidget * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QCalendarWidget_qt_metacall_QMetaObject__Call_int_void_XX(QCalendarWidget * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QCalendarWidget_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QCalendarWidget::tr(s));
+}
+
+extern "C" CrystalString bg_QCalendarWidget_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QCalendarWidget::tr(s, c));
+}
+
+extern "C" CrystalString bg_QCalendarWidget_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QCalendarWidget::tr(s, c, n));
+}
+
+extern "C" QCalendarWidget * bg_QCalendarWidget__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCalendarWidget>(parent);
+}
+
+extern "C" QSize bg_QCalendarWidget_sizeHint_(QCalendarWidget * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" QSize bg_QCalendarWidget_minimumSizeHint_(QCalendarWidget * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" QDate * bg_QCalendarWidget_selectedDate_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->selectedDate());
+}
+
+extern "C" int bg_QCalendarWidget_yearShown_(QCalendarWidget * _self_) {
+  return _self_->yearShown();
+}
+
+extern "C" int bg_QCalendarWidget_monthShown_(QCalendarWidget * _self_) {
+  return _self_->monthShown();
+}
+
+extern "C" QDate * bg_QCalendarWidget_minimumDate_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->minimumDate());
+}
+
+extern "C" void bg_QCalendarWidget_setMinimumDate_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->setMinimumDate(date);
+}
+
+extern "C" void bg_QCalendarWidget_clearMinimumDate_(QCalendarWidget * _self_) {
+  _self_->clearMinimumDate();
+}
+
+extern "C" QDate * bg_QCalendarWidget_maximumDate_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (_self_->maximumDate());
+}
+
+extern "C" void bg_QCalendarWidget_setMaximumDate_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->setMaximumDate(date);
+}
+
+extern "C" void bg_QCalendarWidget_clearMaximumDate_(QCalendarWidget * _self_) {
+  _self_->clearMaximumDate();
+}
+
+extern "C" Qt::DayOfWeek bg_QCalendarWidget_firstDayOfWeek_(QCalendarWidget * _self_) {
+  return _self_->firstDayOfWeek();
+}
+
+extern "C" void bg_QCalendarWidget_setFirstDayOfWeek_Qt__DayOfWeek(QCalendarWidget * _self_, Qt::DayOfWeek dayOfWeek) {
+  _self_->setFirstDayOfWeek(dayOfWeek);
+}
+
+extern "C" bool bg_QCalendarWidget_isNavigationBarVisible_(QCalendarWidget * _self_) {
+  return _self_->isNavigationBarVisible();
+}
+
+extern "C" bool bg_QCalendarWidget_isGridVisible_(QCalendarWidget * _self_) {
+  return _self_->isGridVisible();
+}
+
+extern "C" QCalendar * bg_QCalendarWidget_calendar_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QCalendar>()) QCalendar (_self_->calendar());
+}
+
+extern "C" void bg_QCalendarWidget_setCalendar_QCalendar(QCalendarWidget * _self_, QCalendar & calendar) {
+  _self_->setCalendar(calendar);
+}
+
+extern "C" QCalendarWidget::SelectionMode bg_QCalendarWidget_selectionMode_(QCalendarWidget * _self_) {
+  return _self_->selectionMode();
+}
+
+extern "C" void bg_QCalendarWidget_setSelectionMode_QCalendarWidget__SelectionMode(QCalendarWidget * _self_, QCalendarWidget::SelectionMode mode) {
+  _self_->setSelectionMode(mode);
+}
+
+extern "C" QCalendarWidget::HorizontalHeaderFormat bg_QCalendarWidget_horizontalHeaderFormat_(QCalendarWidget * _self_) {
+  return _self_->horizontalHeaderFormat();
+}
+
+extern "C" void bg_QCalendarWidget_setHorizontalHeaderFormat_QCalendarWidget__HorizontalHeaderFormat(QCalendarWidget * _self_, QCalendarWidget::HorizontalHeaderFormat format) {
+  _self_->setHorizontalHeaderFormat(format);
+}
+
+extern "C" QCalendarWidget::VerticalHeaderFormat bg_QCalendarWidget_verticalHeaderFormat_(QCalendarWidget * _self_) {
+  return _self_->verticalHeaderFormat();
+}
+
+extern "C" void bg_QCalendarWidget_setVerticalHeaderFormat_QCalendarWidget__VerticalHeaderFormat(QCalendarWidget * _self_, QCalendarWidget::VerticalHeaderFormat format) {
+  _self_->setVerticalHeaderFormat(format);
+}
+
+extern "C" QTextCharFormat * bg_QCalendarWidget_headerTextFormat_(QCalendarWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->headerTextFormat());
+}
+
+extern "C" void bg_QCalendarWidget_setHeaderTextFormat_const_QTextCharFormat_R(QCalendarWidget * _self_, const QTextCharFormat & format) {
+  _self_->setHeaderTextFormat(format);
+}
+
+extern "C" QTextCharFormat * bg_QCalendarWidget_weekdayTextFormat_Qt__DayOfWeek(QCalendarWidget * _self_, Qt::DayOfWeek dayOfWeek) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->weekdayTextFormat(dayOfWeek));
+}
+
+extern "C" void bg_QCalendarWidget_setWeekdayTextFormat_Qt__DayOfWeek_const_QTextCharFormat_R(QCalendarWidget * _self_, Qt::DayOfWeek dayOfWeek, const QTextCharFormat & format) {
+  _self_->setWeekdayTextFormat(dayOfWeek, format);
+}
+
+extern "C" QTextCharFormat * bg_QCalendarWidget_dateTextFormat_QDate(QCalendarWidget * _self_, QDate & date) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->dateTextFormat(date));
+}
+
+extern "C" void bg_QCalendarWidget_setDateTextFormat_QDate_const_QTextCharFormat_R(QCalendarWidget * _self_, QDate & date, const QTextCharFormat & format) {
+  _self_->setDateTextFormat(date, format);
+}
+
+extern "C" bool bg_QCalendarWidget_isDateEditEnabled_(QCalendarWidget * _self_) {
+  return _self_->isDateEditEnabled();
+}
+
+extern "C" void bg_QCalendarWidget_setDateEditEnabled_bool(QCalendarWidget * _self_, bool enable) {
+  _self_->setDateEditEnabled(enable);
+}
+
+extern "C" int bg_QCalendarWidget_dateEditAcceptDelay_(QCalendarWidget * _self_) {
+  return _self_->dateEditAcceptDelay();
+}
+
+extern "C" void bg_QCalendarWidget_setDateEditAcceptDelay_int(QCalendarWidget * _self_, int delay) {
+  _self_->setDateEditAcceptDelay(delay);
+}
+
+extern "C" bool bg_QCalendarWidget_event_QEvent_X(QCalendarWidget * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" bool bg_QCalendarWidget_eventFilter_QObject_X_QEvent_X(QCalendarWidget * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" void bg_QCalendarWidget_mousePressEvent_QMouseEvent_X(QCalendarWidget * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_resizeEvent_QResizeEvent_X(QCalendarWidget * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_keyPressEvent_QKeyEvent_X(QCalendarWidget * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_paintCell_QPainter_X_const_QRect_R_QDate(QCalendarWidget * _self_, QPainter * painter, const QRect rect, QDate & date) {
+  _self_->paintCell(painter, rect, date);
+}
+
+extern "C" void bg_QCalendarWidget_updateCell_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->updateCell(date);
+}
+
+extern "C" void bg_QCalendarWidget_updateCells_(QCalendarWidget * _self_) {
+  _self_->updateCells();
+}
+
+extern "C" void bg_QCalendarWidget_setSelectedDate_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->setSelectedDate(date);
+}
+
+extern "C" void bg_QCalendarWidget_setDateRange_QDate_QDate(QCalendarWidget * _self_, QDate & min, QDate & max) {
+  _self_->setDateRange(min, max);
+}
+
+extern "C" void bg_QCalendarWidget_setCurrentPage_int_int(QCalendarWidget * _self_, int year, int month) {
+  _self_->setCurrentPage(year, month);
+}
+
+extern "C" void bg_QCalendarWidget_setGridVisible_bool(QCalendarWidget * _self_, bool show) {
+  _self_->setGridVisible(show);
+}
+
+extern "C" void bg_QCalendarWidget_setNavigationBarVisible_bool(QCalendarWidget * _self_, bool visible) {
+  _self_->setNavigationBarVisible(visible);
+}
+
+extern "C" void bg_QCalendarWidget_showNextMonth_(QCalendarWidget * _self_) {
+  _self_->showNextMonth();
+}
+
+extern "C" void bg_QCalendarWidget_showPreviousMonth_(QCalendarWidget * _self_) {
+  _self_->showPreviousMonth();
+}
+
+extern "C" void bg_QCalendarWidget_showNextYear_(QCalendarWidget * _self_) {
+  _self_->showNextYear();
+}
+
+extern "C" void bg_QCalendarWidget_showPreviousYear_(QCalendarWidget * _self_) {
+  _self_->showPreviousYear();
+}
+
+extern "C" void bg_QCalendarWidget_showSelectedDate_(QCalendarWidget * _self_) {
+  _self_->showSelectedDate();
+}
+
+extern "C" void bg_QCalendarWidget_showToday_(QCalendarWidget * _self_) {
+  _self_->showToday();
+}
+
+extern "C" void bg_QCalendarWidget_selectionChanged_(QCalendarWidget * _self_) {
+  _self_->selectionChanged();
+}
+
+extern "C" void bg_QCalendarWidget_clicked_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->clicked(date);
+}
+
+extern "C" void bg_QCalendarWidget_activated_QDate(QCalendarWidget * _self_, QDate & date) {
+  _self_->activated(date);
+}
+
+extern "C" void bg_QCalendarWidget_currentPageChanged_int_int(QCalendarWidget * _self_, int year, int month) {
+  _self_->currentPageChanged(year, month);
+}
+
+extern "C" const QMetaObject * bg_QCalendarWidget_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCalendarWidget::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QCalendarWidget_CONNECT_selectionChanged_CrystalProc_void_(QCalendarWidget * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCalendarWidget::*)())&QCalendarWidget::selectionChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QCalendarWidget_CONNECT_clicked_CrystalProc_void__QDate_(QCalendarWidget * _self_, CrystalProc<void, QDate *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCalendarWidget::*)(QDate))&QCalendarWidget::clicked, [_proc_](QDate date){ _proc_(new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QCalendarWidget_CONNECT_activated_CrystalProc_void__QDate_(QCalendarWidget * _self_, CrystalProc<void, QDate *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCalendarWidget::*)(QDate))&QCalendarWidget::activated, [_proc_](QDate date){ _proc_(new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QCalendarWidget_CONNECT_currentPageChanged_CrystalProc_void__int__int_(QCalendarWidget * _self_, CrystalProc<void, int, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QCalendarWidget::*)(int, int))&QCalendarWidget::currentPageChanged, [_proc_](int year, int month){ _proc_(year, month); }));
+}
+
+extern "C" QSize bg_QCalendarWidget_sizeHint_SUPER_(QCalendarWidget * _self_) {
+  return _self_->QCalendarWidget::sizeHint();
+}
+
+extern "C" QSize bg_QCalendarWidget_minimumSizeHint_SUPER_(QCalendarWidget * _self_) {
+  return _self_->QCalendarWidget::minimumSizeHint();
+}
+
+extern "C" bool bg_QCalendarWidget_event_SUPER_QEvent_X(QCalendarWidget * _self_, QEvent * event) {
+  return _self_->QCalendarWidget::event(event);
+}
+
+extern "C" bool bg_QCalendarWidget_eventFilter_SUPER_QObject_X_QEvent_X(QCalendarWidget * _self_, QObject * watched, QEvent * event) {
+  return _self_->QCalendarWidget::eventFilter(watched, event);
+}
+
+extern "C" void bg_QCalendarWidget_mousePressEvent_SUPER_QMouseEvent_X(QCalendarWidget * _self_, QMouseEvent * event) {
+  _self_->QCalendarWidget::mousePressEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_resizeEvent_SUPER_QResizeEvent_X(QCalendarWidget * _self_, QResizeEvent * event) {
+  _self_->QCalendarWidget::resizeEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_keyPressEvent_SUPER_QKeyEvent_X(QCalendarWidget * _self_, QKeyEvent * event) {
+  _self_->QCalendarWidget::keyPressEvent(event);
+}
+
+extern "C" void bg_QCalendarWidget_paintCell_SUPER_QPainter_X_const_QRect_R_QDate(QCalendarWidget * _self_, QPainter * painter, const QRect rect, QDate & date) {
+  _self_->QCalendarWidget::paintCell(painter, rect, date);
+}
+
+extern "C" void bg_BgInherit_QCalendarWidget_JUMPTABLE_BgJumptable_QCalendarWidget_R(BgInherit_QCalendarWidget * _self_, const BgJumptable_QCalendarWidget & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QCheckBox {
   CrystalProc<const QMetaObject *> bg_QCheckBox_metaObject_;
   CrystalProc<void *, const char *> bg_QCheckBox_qt_metacast_const_char_X;
@@ -52430,6 +54533,704 @@ extern "C" bool bg_QDialog_eventFilter_SUPER_QObject_X_QEvent_X(QDialog * _self_
 }
 
 extern "C" void bg_BgInherit_QDialog_JUMPTABLE_BgJumptable_QDialog_R(BgInherit_QDialog * _self_, const BgJumptable_QDialog & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QColorDialog {
+  CrystalProc<const QMetaObject *> bg_QColorDialog_metaObject_;
+  CrystalProc<void *, const char *> bg_QColorDialog_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QColorDialog_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, bool> bg_QColorDialog_setVisible_bool;
+  CrystalProc<void, QEvent *> bg_QColorDialog_changeEvent_QEvent_X;
+  CrystalProc<void, int> bg_QColorDialog_done_int;
+  CrystalProc<QSize *> bg_QDialog_sizeHint_;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QDialog_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QColorDialog : public QColorDialog {
+  using QColorDialog::QColorDialog;
+  BgJumptable_QColorDialog bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QColorDialog_metaObject_();
+    } else {
+      return QColorDialog::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QColorDialog_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QColorDialog::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QColorDialog_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QColorDialog::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QColorDialog_setVisible_bool(visible);
+    } else {
+      QColorDialog::setVisible(visible);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QColorDialog_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QColorDialog::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QColorDialog_done_int.isValid()) {
+      _self_->bgJump.bg_QColorDialog_done_int(unnamed_arg_0);
+    } else {
+      QColorDialog::done(unnamed_arg_0);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_sizeHint_();
+    } else {
+      return QColorDialog::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QColorDialog::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QColorDialog::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QColorDialog::exec();
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QColorDialog::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QColorDialog::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QColorDialog::keyPressEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QColorDialog::closeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QColorDialog::showEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QColorDialog::resizeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QColorDialog::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QColorDialog::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QColorDialog::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QColorDialog::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QColorDialog::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QColorDialog::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QColorDialog::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QColorDialog::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QColorDialog::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QColorDialog::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QColorDialog::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QColorDialog::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QColorDialog::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QColorDialog::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QColorDialog::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QColorDialog::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QColorDialog::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QColorDialog::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QColorDialog::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QColorDialog::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QColorDialog::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QColorDialog::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QColorDialog::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QColorDialog::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QColorDialog::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QColorDialog::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QColorDialog::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QColorDialog::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QColorDialog::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QColorDialog::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QColorDialog::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QColorDialog::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QColorDialog::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QColorDialog::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QColorDialog::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QColorDialog::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QColorDialog::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QColorDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QColorDialog::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QColorDialog_metaObject_(QColorDialog * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QColorDialog_qt_metacast_const_char_X(QColorDialog * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QColorDialog_qt_metacall_QMetaObject__Call_int_void_XX(QColorDialog * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QColorDialog_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QColorDialog::tr(s));
+}
+
+extern "C" CrystalString bg_QColorDialog_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QColorDialog::tr(s, c));
+}
+
+extern "C" CrystalString bg_QColorDialog_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QColorDialog::tr(s, c, n));
+}
+
+extern "C" QColorDialog * bg_QColorDialog__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QColorDialog>(parent);
+}
+
+extern "C" QColorDialog * bg_QColorDialog__CONSTRUCT_const_QColor_R_QWidget_X(const QColor & initial, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QColorDialog>(initial, parent);
+}
+
+extern "C" void bg_QColorDialog_setCurrentColor_const_QColor_R(QColorDialog * _self_, const QColor & color) {
+  _self_->setCurrentColor(color);
+}
+
+extern "C" QColor * bg_QColorDialog_currentColor_(QColorDialog * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->currentColor());
+}
+
+extern "C" QColor * bg_QColorDialog_selectedColor_(QColorDialog * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->selectedColor());
+}
+
+extern "C" void bg_QColorDialog_setOption_QColorDialog__ColorDialogOption_bool(QColorDialog * _self_, QColorDialog::ColorDialogOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QColorDialog_testOption_QColorDialog__ColorDialogOption(QColorDialog * _self_, QColorDialog::ColorDialogOption option) {
+  return _self_->testOption(option);
+}
+
+extern "C" void bg_QColorDialog_setOptions_QColorDialog__ColorDialogOptions(QColorDialog * _self_, QColorDialog::ColorDialogOptions options) {
+  _self_->setOptions(options);
+}
+
+extern "C" QColorDialog::ColorDialogOptions bg_QColorDialog_options_(QColorDialog * _self_) {
+  return _self_->options();
+}
+
+extern "C" void bg_QColorDialog_open_QObject_X_const_char_X(QColorDialog * _self_, QObject * receiver, const char * member) {
+  _self_->open(receiver, member);
+}
+
+extern "C" void bg_QColorDialog_setVisible_bool(QColorDialog * _self_, bool visible) {
+  _self_->setVisible(visible);
+}
+
+extern "C" QColor * bg_QColorDialog_getColor_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::getColor());
+}
+
+extern "C" QColor * bg_QColorDialog_getColor_STATIC_const_QColor_R(const QColor & initial) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::getColor(initial));
+}
+
+extern "C" QColor * bg_QColorDialog_getColor_STATIC_const_QColor_R_QWidget_X(const QColor & initial, QWidget * parent) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::getColor(initial, parent));
+}
+
+extern "C" QColor * bg_QColorDialog_getColor_STATIC_const_QColor_R_QWidget_X_const_QString_R(const QColor & initial, QWidget * parent, const CrystalString title) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::getColor(initial, parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QColor * bg_QColorDialog_getColor_STATIC_const_QColor_R_QWidget_X_const_QString_R_QColorDialog__ColorDialogOptions(const QColor & initial, QWidget * parent, const CrystalString title, QColorDialog::ColorDialogOptions options) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::getColor(initial, parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options));
+}
+
+extern "C" int bg_QColorDialog_customCount_STATIC_() {
+  return QColorDialog::customCount();
+}
+
+extern "C" QColor * bg_QColorDialog_customColor_STATIC_int(int index) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::customColor(index));
+}
+
+extern "C" void bg_QColorDialog_setCustomColor_STATIC_int_QColor(int index, QColor & color) {
+  QColorDialog::setCustomColor(index, color);
+}
+
+extern "C" QColor * bg_QColorDialog_standardColor_STATIC_int(int index) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (QColorDialog::standardColor(index));
+}
+
+extern "C" void bg_QColorDialog_setStandardColor_STATIC_int_QColor(int index, QColor & color) {
+  QColorDialog::setStandardColor(index, color);
+}
+
+extern "C" void bg_QColorDialog_currentColorChanged_const_QColor_R(QColorDialog * _self_, const QColor & color) {
+  _self_->currentColorChanged(color);
+}
+
+extern "C" void bg_QColorDialog_colorSelected_const_QColor_R(QColorDialog * _self_, const QColor & color) {
+  _self_->colorSelected(color);
+}
+
+extern "C" void bg_QColorDialog_changeEvent_QEvent_X(QColorDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QColorDialog_done_int(QColorDialog * _self_, int unnamed_arg_0) {
+  _self_->done(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QColorDialog_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QColorDialog::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QColorDialog_CONNECT_currentColorChanged_CrystalProc_void__const_QColor_R_(QColorDialog * _self_, CrystalProc<void, const QColor *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QColorDialog::*)(const QColor &))&QColorDialog::currentColorChanged, [_proc_](const QColor & color){ _proc_(&(color)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QColorDialog_CONNECT_colorSelected_CrystalProc_void__const_QColor_R_(QColorDialog * _self_, CrystalProc<void, const QColor *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QColorDialog::*)(const QColor &))&QColorDialog::colorSelected, [_proc_](const QColor & color){ _proc_(&(color)); }));
+}
+
+extern "C" void bg_QColorDialog_setVisible_SUPER_bool(QColorDialog * _self_, bool visible) {
+  _self_->QColorDialog::setVisible(visible);
+}
+
+extern "C" void bg_QColorDialog_changeEvent_SUPER_QEvent_X(QColorDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->QColorDialog::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QColorDialog_done_SUPER_int(QColorDialog * _self_, int unnamed_arg_0) {
+  _self_->QColorDialog::done(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QColorDialog_JUMPTABLE_BgJumptable_QColorDialog_R(BgInherit_QColorDialog * _self_, const BgJumptable_QColorDialog & table) {
   _self_->bgJump = (table);
 }
 
@@ -55399,6 +58200,642 @@ extern "C" void bg_BgInherit_QPushButton_JUMPTABLE_BgJumptable_QPushButton_R(BgI
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QCommandLinkButton {
+  CrystalProc<const QMetaObject *> bg_QCommandLinkButton_metaObject_;
+  CrystalProc<void *, const char *> bg_QCommandLinkButton_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QCommandLinkButton_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QCommandLinkButton_sizeHint_;
+  CrystalProc<int, int> bg_QCommandLinkButton_heightForWidth_int;
+  CrystalProc<QSize *> bg_QCommandLinkButton_minimumSizeHint_;
+  CrystalProc<void, QStyleOptionButton *> bg_QCommandLinkButton_initStyleOption_QStyleOptionButton_X;
+  CrystalProc<bool, QEvent *> bg_QCommandLinkButton_event_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QCommandLinkButton_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QPushButton_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QPushButton_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QPushButton_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QPushButton_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<bool, const QPoint> bg_QPushButton_hitButton_const_QPoint_R;
+  CrystalProc<void> bg_QAbstractButton_checkStateSet_;
+  CrystalProc<void> bg_QAbstractButton_nextCheckState_;
+  CrystalProc<void, QKeyEvent *> bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractButton_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractButton_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QEvent *> bg_QAbstractButton_changeEvent_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QAbstractButton_timerEvent_QTimerEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QCommandLinkButton : public QCommandLinkButton {
+  using QCommandLinkButton::QCommandLinkButton;
+  BgJumptable_QCommandLinkButton bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QCommandLinkButton_metaObject_();
+    } else {
+      return QCommandLinkButton::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QCommandLinkButton_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QCommandLinkButton::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QCommandLinkButton_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QCommandLinkButton::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QCommandLinkButton_sizeHint_();
+    } else {
+      return QCommandLinkButton::sizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QCommandLinkButton_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QCommandLinkButton::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QCommandLinkButton_minimumSizeHint_();
+    } else {
+      return QCommandLinkButton::minimumSizeHint();
+    }
+  }
+  
+  void initStyleOption(QStyleOptionButton * option) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_initStyleOption_QStyleOptionButton_X.isValid()) {
+      _self_->bgJump.bg_QCommandLinkButton_initStyleOption_QStyleOptionButton_X(option);
+    } else {
+      QCommandLinkButton::initStyleOption(option);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QCommandLinkButton_event_QEvent_X(event);
+    } else {
+      return QCommandLinkButton::event(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QCommandLinkButton_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QCommandLinkButton_paintEvent_QPaintEvent_X(event);
+    } else {
+      QCommandLinkButton::paintEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QPushButton_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QPushButton_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QCommandLinkButton::keyPressEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QPushButton_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QPushButton_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QCommandLinkButton::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QPushButton_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QPushButton_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QCommandLinkButton::focusOutEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QPushButton_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QPushButton_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QCommandLinkButton::mouseMoveEvent(event);
+    }
+  }
+  
+  bool hitButton(const QPoint & pos) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R.isValid()) {
+      return _self_->bgJump.bg_QPushButton_hitButton_const_QPoint_R(pos);
+    } else {
+      return QCommandLinkButton::hitButton(pos);
+    }
+  }
+  
+  void checkStateSet() override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_checkStateSet_.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_checkStateSet_();
+    } else {
+      QCommandLinkButton::checkStateSet();
+    }
+  }
+  
+  void nextCheckState() override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_nextCheckState_.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_nextCheckState_();
+    } else {
+      QCommandLinkButton::nextCheckState();
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QCommandLinkButton::keyReleaseEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QCommandLinkButton::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QCommandLinkButton::mouseReleaseEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QCommandLinkButton::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractButton_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractButton_timerEvent_QTimerEvent_X(event);
+    } else {
+      QCommandLinkButton::timerEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QCommandLinkButton::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QCommandLinkButton::setVisible(visible);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QCommandLinkButton::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QCommandLinkButton::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QCommandLinkButton::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QCommandLinkButton::wheelEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QCommandLinkButton::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QCommandLinkButton::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QCommandLinkButton::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QCommandLinkButton::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QCommandLinkButton::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QCommandLinkButton::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QCommandLinkButton::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QCommandLinkButton::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QCommandLinkButton::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QCommandLinkButton::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QCommandLinkButton::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QCommandLinkButton::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QCommandLinkButton::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QCommandLinkButton::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QCommandLinkButton::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QCommandLinkButton::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QCommandLinkButton::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QCommandLinkButton::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QCommandLinkButton::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QCommandLinkButton::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QCommandLinkButton::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QCommandLinkButton::eventFilter(watched, event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QCommandLinkButton::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QCommandLinkButton::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCommandLinkButton::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCommandLinkButton *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCommandLinkButton::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QCommandLinkButton_metaObject_(QCommandLinkButton * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QCommandLinkButton_qt_metacast_const_char_X(QCommandLinkButton * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QCommandLinkButton_qt_metacall_QMetaObject__Call_int_void_XX(QCommandLinkButton * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QCommandLinkButton_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QCommandLinkButton::tr(s));
+}
+
+extern "C" CrystalString bg_QCommandLinkButton_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QCommandLinkButton::tr(s, c));
+}
+
+extern "C" CrystalString bg_QCommandLinkButton_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QCommandLinkButton::tr(s, c, n));
+}
+
+extern "C" QCommandLinkButton * bg_QCommandLinkButton__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCommandLinkButton>(parent);
+}
+
+extern "C" QCommandLinkButton * bg_QCommandLinkButton__CONSTRUCT_const_QString_R_QWidget_X(const CrystalString text, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCommandLinkButton>(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" QCommandLinkButton * bg_QCommandLinkButton__CONSTRUCT_const_QString_R_const_QString_R_QWidget_X(const CrystalString text, const CrystalString description, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCommandLinkButton>(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (description); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" CrystalString bg_QCommandLinkButton_description_(QCommandLinkButton * _self_) {
+  return qstring_to_crystal(_self_->description());
+}
+
+extern "C" void bg_QCommandLinkButton_setDescription_const_QString_R(QCommandLinkButton * _self_, const CrystalString description) {
+  _self_->setDescription(([&]() { auto &&bg_value = (description); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QSize bg_QCommandLinkButton_sizeHint_(QCommandLinkButton * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" int bg_QCommandLinkButton_heightForWidth_int(QCommandLinkButton * _self_, int unnamed_arg_0) {
+  return _self_->heightForWidth(unnamed_arg_0);
+}
+
+extern "C" QSize bg_QCommandLinkButton_minimumSizeHint_(QCommandLinkButton * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" void bg_QCommandLinkButton_initStyleOption_QStyleOptionButton_X(QCommandLinkButton * _self_, QStyleOptionButton * option) {
+  _self_->initStyleOption(option);
+}
+
+extern "C" bool bg_QCommandLinkButton_event_QEvent_X(QCommandLinkButton * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QCommandLinkButton_paintEvent_QPaintEvent_X(QCommandLinkButton * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" const QMetaObject * bg_QCommandLinkButton_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCommandLinkButton::staticMetaObject);
+}
+
+extern "C" QSize bg_QCommandLinkButton_sizeHint_SUPER_(QCommandLinkButton * _self_) {
+  return _self_->QCommandLinkButton::sizeHint();
+}
+
+extern "C" int bg_QCommandLinkButton_heightForWidth_SUPER_int(QCommandLinkButton * _self_, int unnamed_arg_0) {
+  return _self_->QCommandLinkButton::heightForWidth(unnamed_arg_0);
+}
+
+extern "C" QSize bg_QCommandLinkButton_minimumSizeHint_SUPER_(QCommandLinkButton * _self_) {
+  return _self_->QCommandLinkButton::minimumSizeHint();
+}
+
+extern "C" void bg_QCommandLinkButton_initStyleOption_SUPER_QStyleOptionButton_X(QCommandLinkButton * _self_, QStyleOptionButton * option) {
+  _self_->QCommandLinkButton::initStyleOption(option);
+}
+
+extern "C" bool bg_QCommandLinkButton_event_SUPER_QEvent_X(QCommandLinkButton * _self_, QEvent * event) {
+  return _self_->QCommandLinkButton::event(event);
+}
+
+extern "C" void bg_QCommandLinkButton_paintEvent_SUPER_QPaintEvent_X(QCommandLinkButton * _self_, QPaintEvent * event) {
+  _self_->QCommandLinkButton::paintEvent(event);
+}
+
+extern "C" void bg_BgInherit_QCommandLinkButton_JUMPTABLE_BgJumptable_QCommandLinkButton_R(BgInherit_QCommandLinkButton * _self_, const BgJumptable_QCommandLinkButton & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QCompleter {
   CrystalProc<const QMetaObject *> bg_QCompleter_metaObject_;
   CrystalProc<void *, const char *> bg_QCompleter_qt_metacast_const_char_X;
@@ -56957,6 +60394,1214 @@ extern "C" void bg_BgInherit_QDateTimeEdit_JUMPTABLE_BgJumptable_QDateTimeEdit_R
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QTimeEdit {
+  CrystalProc<const QMetaObject *> bg_QTimeEdit_metaObject_;
+  CrystalProc<void *, const char *> bg_QTimeEdit_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTimeEdit_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QDateTimeEdit_sizeHint_;
+  CrystalProc<void> bg_QDateTimeEdit_clear_;
+  CrystalProc<void, int> bg_QDateTimeEdit_stepBy_int;
+  CrystalProc<bool, QEvent *> bg_QDateTimeEdit_event_QEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QDateTimeEdit_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QDateTimeEdit_focusInEvent_QFocusEvent_X;
+  CrystalProc<bool, bool> bg_QDateTimeEdit_focusNextPrevChild_bool;
+  CrystalProc<QDateTime &, const CrystalString> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
+  CrystalProc<CrystalString, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
+  CrystalProc<QAbstractSpinBox::StepEnabled> bg_QDateTimeEdit_stepEnabled_;
+  CrystalProc<void, QMouseEvent *> bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QDateTimeEdit_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QStyleOptionSpinBox *> bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X;
+  CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QEvent *> bg_QAbstractSpinBox_changeEvent_QEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QAbstractSpinBox_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QAbstractSpinBox_hideEvent_QHideEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QAbstractSpinBox_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QAbstractSpinBox_showEvent_QShowEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTimeEdit : public QTimeEdit {
+  using QTimeEdit::QTimeEdit;
+  BgJumptable_QTimeEdit bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QTimeEdit_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTimeEdit_metaObject_();
+    } else {
+      return QTimeEdit::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QTimeEdit_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTimeEdit_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTimeEdit::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QTimeEdit_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTimeEdit_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTimeEdit::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDateTimeEdit_sizeHint_();
+    } else {
+      return QTimeEdit::sizeHint();
+    }
+  }
+  
+  void clear() override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_clear_.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_clear_();
+    } else {
+      QTimeEdit::clear();
+    }
+  }
+  
+  void stepBy(int steps) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_stepBy_int.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_stepBy_int(steps);
+    } else {
+      QTimeEdit::stepBy(steps);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_event_QEvent_X(event);
+    } else {
+      return QTimeEdit::event(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QTimeEdit::keyPressEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QTimeEdit::wheelEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QTimeEdit::focusInEvent(event);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_focusNextPrevChild_bool(next);
+    } else {
+      return QTimeEdit::focusNextPrevChild(next);
+    }
+  }
+  
+  QDateTime dateTimeFromText(const QString & text) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(qstring_to_crystal(text));
+    } else {
+      return QTimeEdit::dateTimeFromText(text);
+    }
+  }
+  
+  QString textFromDateTime(const QDateTime & dt) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QTimeEdit::textFromDateTime(dt);
+    }
+  }
+  
+  QAbstractSpinBox::StepEnabled stepEnabled() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_stepEnabled_.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_stepEnabled_();
+    } else {
+      return QTimeEdit::stepEnabled();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QTimeEdit::mousePressEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_paintEvent_QPaintEvent_X(event);
+    } else {
+      QTimeEdit::paintEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionSpinBox * option) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X(option);
+    } else {
+      QTimeEdit::initStyleOption(option);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QAbstractSpinBox_minimumSizeHint_();
+    } else {
+      return QTimeEdit::minimumSizeHint();
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QTimeEdit::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QTimeEdit::resizeEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QTimeEdit::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QTimeEdit::focusOutEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QTimeEdit::contextMenuEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QTimeEdit::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_closeEvent_QCloseEvent_X(event);
+    } else {
+      QTimeEdit::closeEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_hideEvent_QHideEvent_X(event);
+    } else {
+      QTimeEdit::hideEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QTimeEdit::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QTimeEdit::mouseMoveEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTimeEdit::timerEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_showEvent_QShowEvent_X(event);
+    } else {
+      QTimeEdit::showEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QTimeEdit::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QTimeEdit::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QTimeEdit::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QTimeEdit::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QTimeEdit::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QTimeEdit::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QTimeEdit::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QTimeEdit::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QTimeEdit::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QTimeEdit::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QTimeEdit::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QTimeEdit::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QTimeEdit::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QTimeEdit::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QTimeEdit::dropEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QTimeEdit::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QTimeEdit::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QTimeEdit::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QTimeEdit::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QTimeEdit::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTimeEdit::eventFilter(watched, event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTimeEdit::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTimeEdit::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTimeEdit::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTimeEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTimeEdit::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTimeEdit_metaObject_(QTimeEdit * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTimeEdit_qt_metacast_const_char_X(QTimeEdit * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTimeEdit_qt_metacall_QMetaObject__Call_int_void_XX(QTimeEdit * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTimeEdit_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTimeEdit::tr(s));
+}
+
+extern "C" CrystalString bg_QTimeEdit_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTimeEdit::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTimeEdit_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTimeEdit::tr(s, c, n));
+}
+
+extern "C" QTimeEdit * bg_QTimeEdit__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTimeEdit>(parent);
+}
+
+extern "C" QTimeEdit * bg_QTimeEdit__CONSTRUCT_QTime_QWidget_X(QTime & time, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTimeEdit>(time, parent);
+}
+
+extern "C" void bg_QTimeEdit_userTimeChanged_QTime(QTimeEdit * _self_, QTime & time) {
+  _self_->userTimeChanged(time);
+}
+
+extern "C" const QMetaObject * bg_QTimeEdit_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTimeEdit::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QTimeEdit_CONNECT_userTimeChanged_CrystalProc_void__QTime_(QTimeEdit * _self_, CrystalProc<void, QTime *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QTimeEdit::*)(QTime))&QTimeEdit::userTimeChanged, [_proc_](QTime time){ _proc_(new (UseGC, bindgen_gc_finalizer<QTime>()) QTime (time)); }));
+}
+
+extern "C" void bg_BgInherit_QTimeEdit_JUMPTABLE_BgJumptable_QTimeEdit_R(BgInherit_QTimeEdit * _self_, const BgJumptable_QTimeEdit & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QDateEdit {
+  CrystalProc<const QMetaObject *> bg_QDateEdit_metaObject_;
+  CrystalProc<void *, const char *> bg_QDateEdit_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QDateEdit_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QDateTimeEdit_sizeHint_;
+  CrystalProc<void> bg_QDateTimeEdit_clear_;
+  CrystalProc<void, int> bg_QDateTimeEdit_stepBy_int;
+  CrystalProc<bool, QEvent *> bg_QDateTimeEdit_event_QEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QDateTimeEdit_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QDateTimeEdit_focusInEvent_QFocusEvent_X;
+  CrystalProc<bool, bool> bg_QDateTimeEdit_focusNextPrevChild_bool;
+  CrystalProc<QDateTime &, const CrystalString> bg_QDateTimeEdit_dateTimeFromText_const_QString_R;
+  CrystalProc<CrystalString, const QDateTime *> bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R;
+  CrystalProc<QAbstractSpinBox::StepEnabled> bg_QDateTimeEdit_stepEnabled_;
+  CrystalProc<void, QMouseEvent *> bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QDateTimeEdit_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QStyleOptionSpinBox *> bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X;
+  CrystalProc<QSize *> bg_QAbstractSpinBox_minimumSizeHint_;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<void, QResizeEvent *> bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QEvent *> bg_QAbstractSpinBox_changeEvent_QEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QAbstractSpinBox_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QAbstractSpinBox_hideEvent_QHideEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QAbstractSpinBox_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QAbstractSpinBox_showEvent_QShowEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QDateEdit : public QDateEdit {
+  using QDateEdit::QDateEdit;
+  BgJumptable_QDateEdit bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateEdit_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QDateEdit_metaObject_();
+    } else {
+      return QDateEdit::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateEdit_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QDateEdit_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QDateEdit::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateEdit_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QDateEdit_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QDateEdit::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDateTimeEdit_sizeHint_();
+    } else {
+      return QDateEdit::sizeHint();
+    }
+  }
+  
+  void clear() override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_clear_.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_clear_();
+    } else {
+      QDateEdit::clear();
+    }
+  }
+  
+  void stepBy(int steps) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_stepBy_int.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_stepBy_int(steps);
+    } else {
+      QDateEdit::stepBy(steps);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_event_QEvent_X(event);
+    } else {
+      return QDateEdit::event(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QDateEdit::keyPressEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QDateEdit::wheelEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QDateEdit::focusInEvent(event);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_focusNextPrevChild_bool(next);
+    } else {
+      return QDateEdit::focusNextPrevChild(next);
+    }
+  }
+  
+  QDateTime dateTimeFromText(const QString & text) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_dateTimeFromText_const_QString_R(qstring_to_crystal(text));
+    } else {
+      return QDateEdit::dateTimeFromText(text);
+    }
+  }
+  
+  QString textFromDateTime(const QDateTime & dt) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QDateTimeEdit_textFromDateTime_const_QDateTime_R(&(dt))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QDateEdit::textFromDateTime(dt);
+    }
+  }
+  
+  QAbstractSpinBox::StepEnabled stepEnabled() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_stepEnabled_.isValid()) {
+      return _self_->bgJump.bg_QDateTimeEdit_stepEnabled_();
+    } else {
+      return QDateEdit::stepEnabled();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QDateEdit::mousePressEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_paintEvent_QPaintEvent_X(event);
+    } else {
+      QDateEdit::paintEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionSpinBox * option) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X.isValid()) {
+      _self_->bgJump.bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X(option);
+    } else {
+      QDateEdit::initStyleOption(option);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QAbstractSpinBox_minimumSizeHint_();
+    } else {
+      return QDateEdit::minimumSizeHint();
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QDateEdit::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QDateEdit::resizeEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QDateEdit::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QDateEdit::focusOutEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QDateEdit::contextMenuEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QDateEdit::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_closeEvent_QCloseEvent_X(event);
+    } else {
+      QDateEdit::closeEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_hideEvent_QHideEvent_X(event);
+    } else {
+      QDateEdit::hideEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QDateEdit::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QDateEdit::mouseMoveEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_timerEvent_QTimerEvent_X(event);
+    } else {
+      QDateEdit::timerEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractSpinBox_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractSpinBox_showEvent_QShowEvent_X(event);
+    } else {
+      QDateEdit::showEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QDateEdit::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QDateEdit::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QDateEdit::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QDateEdit::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QDateEdit::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QDateEdit::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QDateEdit::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QDateEdit::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QDateEdit::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QDateEdit::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QDateEdit::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QDateEdit::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QDateEdit::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QDateEdit::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QDateEdit::dropEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QDateEdit::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QDateEdit::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QDateEdit::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QDateEdit::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QDateEdit::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QDateEdit::eventFilter(watched, event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QDateEdit::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QDateEdit::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDateEdit::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDateEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDateEdit::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QDateEdit_metaObject_(QDateEdit * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QDateEdit_qt_metacast_const_char_X(QDateEdit * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QDateEdit_qt_metacall_QMetaObject__Call_int_void_XX(QDateEdit * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QDateEdit_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QDateEdit::tr(s));
+}
+
+extern "C" CrystalString bg_QDateEdit_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QDateEdit::tr(s, c));
+}
+
+extern "C" CrystalString bg_QDateEdit_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QDateEdit::tr(s, c, n));
+}
+
+extern "C" QDateEdit * bg_QDateEdit__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDateEdit>(parent);
+}
+
+extern "C" QDateEdit * bg_QDateEdit__CONSTRUCT_QDate_QWidget_X(QDate & date, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDateEdit>(date, parent);
+}
+
+extern "C" void bg_QDateEdit_userDateChanged_QDate(QDateEdit * _self_, QDate & date) {
+  _self_->userDateChanged(date);
+}
+
+extern "C" const QMetaObject * bg_QDateEdit_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QDateEdit::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QDateEdit_CONNECT_userDateChanged_CrystalProc_void__QDate_(QDateEdit * _self_, CrystalProc<void, QDate *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDateEdit::*)(QDate))&QDateEdit::userDateChanged, [_proc_](QDate date){ _proc_(new (UseGC, bindgen_gc_finalizer<QDate>()) QDate (date)); }));
+}
+
+extern "C" void bg_BgInherit_QDateEdit_JUMPTABLE_BgJumptable_QDateEdit_R(BgInherit_QDateEdit * _self_, const BgJumptable_QDateEdit & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QDial {
   CrystalProc<const QMetaObject *> bg_QDial_metaObject_;
   CrystalProc<void *, const char *> bg_QDial_qt_metacast_const_char_X;
@@ -57614,6 +62259,658 @@ extern "C" void bg_QDial_initStyleOption_SUPER_QStyleOptionSlider_X(QDial * _sel
 }
 
 extern "C" void bg_BgInherit_QDial_JUMPTABLE_BgJumptable_QDial_R(BgInherit_QDial * _self_, const BgJumptable_QDial & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QDialogButtonBox {
+  CrystalProc<const QMetaObject *> bg_QDialogButtonBox_metaObject_;
+  CrystalProc<void *, const char *> bg_QDialogButtonBox_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QDialogButtonBox_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QEvent *> bg_QDialogButtonBox_changeEvent_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QDialogButtonBox_event_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QDialogButtonBox : public QDialogButtonBox {
+  using QDialogButtonBox::QDialogButtonBox;
+  BgJumptable_QDialogButtonBox bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialogButtonBox_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QDialogButtonBox_metaObject_();
+    } else {
+      return QDialogButtonBox::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialogButtonBox_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QDialogButtonBox_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QDialogButtonBox::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialogButtonBox_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QDialogButtonBox_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QDialogButtonBox::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialogButtonBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialogButtonBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QDialogButtonBox::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QDialogButtonBox_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialogButtonBox_event_QEvent_X(event);
+    } else {
+      return QDialogButtonBox::event(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QDialogButtonBox::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QDialogButtonBox::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QDialogButtonBox::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QDialogButtonBox::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QDialogButtonBox::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QDialogButtonBox::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QDialogButtonBox::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QDialogButtonBox::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QDialogButtonBox::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QDialogButtonBox::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QDialogButtonBox::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QDialogButtonBox::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QDialogButtonBox::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QDialogButtonBox::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QDialogButtonBox::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QDialogButtonBox::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QDialogButtonBox::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QDialogButtonBox::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QDialogButtonBox::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QDialogButtonBox::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QDialogButtonBox::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QDialogButtonBox::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QDialogButtonBox::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QDialogButtonBox::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QDialogButtonBox::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QDialogButtonBox::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QDialogButtonBox::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QDialogButtonBox::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QDialogButtonBox::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QDialogButtonBox::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QDialogButtonBox::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QDialogButtonBox::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QDialogButtonBox::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QDialogButtonBox::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QDialogButtonBox::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QDialogButtonBox::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QDialogButtonBox::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QDialogButtonBox::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QDialogButtonBox::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QDialogButtonBox::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QDialogButtonBox::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QDialogButtonBox::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDialogButtonBox::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDialogButtonBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDialogButtonBox::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QDialogButtonBox_metaObject_(QDialogButtonBox * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QDialogButtonBox_qt_metacast_const_char_X(QDialogButtonBox * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QDialogButtonBox_qt_metacall_QMetaObject__Call_int_void_XX(QDialogButtonBox * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QDialogButtonBox_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QDialogButtonBox::tr(s));
+}
+
+extern "C" CrystalString bg_QDialogButtonBox_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QDialogButtonBox::tr(s, c));
+}
+
+extern "C" CrystalString bg_QDialogButtonBox_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QDialogButtonBox::tr(s, c, n));
+}
+
+extern "C" QDialogButtonBox * bg_QDialogButtonBox__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDialogButtonBox>(parent);
+}
+
+extern "C" QDialogButtonBox * bg_QDialogButtonBox__CONSTRUCT_Qt__Orientation_QWidget_X(Qt::Orientation orientation, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDialogButtonBox>(orientation, parent);
+}
+
+extern "C" QDialogButtonBox * bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_QWidget_X(QDialogButtonBox::StandardButtons buttons, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDialogButtonBox>(buttons, parent);
+}
+
+extern "C" QDialogButtonBox * bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_Qt__Orientation_QWidget_X(QDialogButtonBox::StandardButtons buttons, Qt::Orientation orientation, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDialogButtonBox>(buttons, orientation, parent);
+}
+
+extern "C" void bg_QDialogButtonBox_setOrientation_Qt__Orientation(QDialogButtonBox * _self_, Qt::Orientation orientation) {
+  _self_->setOrientation(orientation);
+}
+
+extern "C" Qt::Orientation bg_QDialogButtonBox_orientation_(QDialogButtonBox * _self_) {
+  return _self_->orientation();
+}
+
+extern "C" void bg_QDialogButtonBox_addButton_QAbstractButton_X_QDialogButtonBox__ButtonRole(QDialogButtonBox * _self_, QAbstractButton * button, QDialogButtonBox::ButtonRole role) {
+  _self_->addButton(button, role);
+}
+
+extern "C" QPushButton * bg_QDialogButtonBox_addButton_const_QString_R_QDialogButtonBox__ButtonRole(QDialogButtonBox * _self_, const CrystalString text, QDialogButtonBox::ButtonRole role) {
+  return _self_->addButton(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), role);
+}
+
+extern "C" QPushButton * bg_QDialogButtonBox_addButton_QDialogButtonBox__StandardButton(QDialogButtonBox * _self_, QDialogButtonBox::StandardButton button) {
+  return _self_->addButton(button);
+}
+
+extern "C" void bg_QDialogButtonBox_removeButton_QAbstractButton_X(QDialogButtonBox * _self_, QAbstractButton * button) {
+  _self_->removeButton(button);
+}
+
+extern "C" void bg_QDialogButtonBox_clear_(QDialogButtonBox * _self_) {
+  _self_->clear();
+}
+
+extern "C" Container_QList_QAbstractButton_X_ * bg_QDialogButtonBox_buttons_(QDialogButtonBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QAbstractButton_X_>()) Container_QList_QAbstractButton_X_ (_self_->buttons());
+}
+
+extern "C" QDialogButtonBox::ButtonRole bg_QDialogButtonBox_buttonRole_QAbstractButton_X(QDialogButtonBox * _self_, QAbstractButton * button) {
+  return _self_->buttonRole(button);
+}
+
+extern "C" void bg_QDialogButtonBox_setStandardButtons_QDialogButtonBox__StandardButtons(QDialogButtonBox * _self_, QDialogButtonBox::StandardButtons buttons) {
+  _self_->setStandardButtons(buttons);
+}
+
+extern "C" QDialogButtonBox::StandardButtons bg_QDialogButtonBox_standardButtons_(QDialogButtonBox * _self_) {
+  return _self_->standardButtons();
+}
+
+extern "C" QDialogButtonBox::StandardButton bg_QDialogButtonBox_standardButton_QAbstractButton_X(QDialogButtonBox * _self_, QAbstractButton * button) {
+  return _self_->standardButton(button);
+}
+
+extern "C" QPushButton * bg_QDialogButtonBox_button_QDialogButtonBox__StandardButton(QDialogButtonBox * _self_, QDialogButtonBox::StandardButton which) {
+  return _self_->button(which);
+}
+
+extern "C" void bg_QDialogButtonBox_setCenterButtons_bool(QDialogButtonBox * _self_, bool center) {
+  _self_->setCenterButtons(center);
+}
+
+extern "C" bool bg_QDialogButtonBox_centerButtons_(QDialogButtonBox * _self_) {
+  return _self_->centerButtons();
+}
+
+extern "C" void bg_QDialogButtonBox_clicked_QAbstractButton_X(QDialogButtonBox * _self_, QAbstractButton * button) {
+  _self_->clicked(button);
+}
+
+extern "C" void bg_QDialogButtonBox_accepted_(QDialogButtonBox * _self_) {
+  _self_->accepted();
+}
+
+extern "C" void bg_QDialogButtonBox_helpRequested_(QDialogButtonBox * _self_) {
+  _self_->helpRequested();
+}
+
+extern "C" void bg_QDialogButtonBox_rejected_(QDialogButtonBox * _self_) {
+  _self_->rejected();
+}
+
+extern "C" void bg_QDialogButtonBox_changeEvent_QEvent_X(QDialogButtonBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" bool bg_QDialogButtonBox_event_QEvent_X(QDialogButtonBox * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QDialogButtonBox_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QDialogButtonBox::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QDialogButtonBox_CONNECT_clicked_CrystalProc_void__QAbstractButton_X_(QDialogButtonBox * _self_, CrystalProc<void, QAbstractButton *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDialogButtonBox::*)(QAbstractButton *))&QDialogButtonBox::clicked, [_proc_](QAbstractButton * button){ _proc_(button); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDialogButtonBox_CONNECT_accepted_CrystalProc_void_(QDialogButtonBox * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDialogButtonBox::*)())&QDialogButtonBox::accepted, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDialogButtonBox_CONNECT_helpRequested_CrystalProc_void_(QDialogButtonBox * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDialogButtonBox::*)())&QDialogButtonBox::helpRequested, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDialogButtonBox_CONNECT_rejected_CrystalProc_void_(QDialogButtonBox * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDialogButtonBox::*)())&QDialogButtonBox::rejected, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QDialogButtonBox_changeEvent_SUPER_QEvent_X(QDialogButtonBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->QDialogButtonBox::changeEvent(unnamed_arg_0);
+}
+
+extern "C" bool bg_QDialogButtonBox_event_SUPER_QEvent_X(QDialogButtonBox * _self_, QEvent * event) {
+  return _self_->QDialogButtonBox::event(event);
+}
+
+extern "C" void bg_BgInherit_QDialogButtonBox_JUMPTABLE_BgJumptable_QDialogButtonBox_R(BgInherit_QDialogButtonBox * _self_, const BgJumptable_QDialogButtonBox & table) {
   _self_->bgJump = (table);
 }
 
@@ -58304,6 +63601,616 @@ extern "C" void bg_QDockWidget_initStyleOption_SUPER_QStyleOptionDockWidget_X(QD
 }
 
 extern "C" void bg_BgInherit_QDockWidget_JUMPTABLE_BgJumptable_QDockWidget_R(BgInherit_QDockWidget * _self_, const BgJumptable_QDockWidget & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QErrorMessage {
+  CrystalProc<const QMetaObject *> bg_QErrorMessage_metaObject_;
+  CrystalProc<void *, const char *> bg_QErrorMessage_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QErrorMessage_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, int> bg_QErrorMessage_done_int;
+  CrystalProc<void, QEvent *> bg_QErrorMessage_changeEvent_QEvent_X;
+  CrystalProc<void, bool> bg_QDialog_setVisible_bool;
+  CrystalProc<QSize *> bg_QDialog_sizeHint_;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QDialog_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QErrorMessage : public QErrorMessage {
+  using QErrorMessage::QErrorMessage;
+  BgJumptable_QErrorMessage bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QErrorMessage_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QErrorMessage_metaObject_();
+    } else {
+      return QErrorMessage::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QErrorMessage_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QErrorMessage_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QErrorMessage::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QErrorMessage_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QErrorMessage_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QErrorMessage::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QErrorMessage_done_int.isValid()) {
+      _self_->bgJump.bg_QErrorMessage_done_int(unnamed_arg_0);
+    } else {
+      QErrorMessage::done(unnamed_arg_0);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QErrorMessage_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QErrorMessage_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QErrorMessage::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QDialog_setVisible_bool(visible);
+    } else {
+      QErrorMessage::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_sizeHint_();
+    } else {
+      return QErrorMessage::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QErrorMessage::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QErrorMessage::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QErrorMessage::exec();
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QErrorMessage::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QErrorMessage::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QErrorMessage::keyPressEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QErrorMessage::closeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QErrorMessage::showEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QErrorMessage::resizeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QErrorMessage::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QErrorMessage::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QErrorMessage::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QErrorMessage::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QErrorMessage::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QErrorMessage::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QErrorMessage::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QErrorMessage::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QErrorMessage::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QErrorMessage::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QErrorMessage::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QErrorMessage::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QErrorMessage::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QErrorMessage::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QErrorMessage::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QErrorMessage::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QErrorMessage::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QErrorMessage::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QErrorMessage::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QErrorMessage::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QErrorMessage::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QErrorMessage::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QErrorMessage::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QErrorMessage::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QErrorMessage::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QErrorMessage::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QErrorMessage::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QErrorMessage::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QErrorMessage::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QErrorMessage::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QErrorMessage::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QErrorMessage::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QErrorMessage::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QErrorMessage::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QErrorMessage::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QErrorMessage::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QErrorMessage::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QErrorMessage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QErrorMessage::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QErrorMessage_metaObject_(QErrorMessage * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QErrorMessage_qt_metacast_const_char_X(QErrorMessage * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QErrorMessage_qt_metacall_QMetaObject__Call_int_void_XX(QErrorMessage * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QErrorMessage_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QErrorMessage::tr(s));
+}
+
+extern "C" CrystalString bg_QErrorMessage_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QErrorMessage::tr(s, c));
+}
+
+extern "C" CrystalString bg_QErrorMessage_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QErrorMessage::tr(s, c, n));
+}
+
+extern "C" QErrorMessage * bg_QErrorMessage__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QErrorMessage>(parent);
+}
+
+extern "C" QErrorMessage * bg_QErrorMessage_qtHandler_STATIC_() {
+  return QErrorMessage::qtHandler();
+}
+
+extern "C" void bg_QErrorMessage_showMessage_const_QString_R(QErrorMessage * _self_, const CrystalString message) {
+  _self_->showMessage(([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QErrorMessage_showMessage_const_QString_R_const_QString_R(QErrorMessage * _self_, const CrystalString message, const CrystalString type) {
+  _self_->showMessage(([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (type); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QErrorMessage_done_int(QErrorMessage * _self_, int unnamed_arg_0) {
+  _self_->done(unnamed_arg_0);
+}
+
+extern "C" void bg_QErrorMessage_changeEvent_QEvent_X(QErrorMessage * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QErrorMessage_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QErrorMessage::staticMetaObject);
+}
+
+extern "C" void bg_QErrorMessage_done_SUPER_int(QErrorMessage * _self_, int unnamed_arg_0) {
+  _self_->QErrorMessage::done(unnamed_arg_0);
+}
+
+extern "C" void bg_QErrorMessage_changeEvent_SUPER_QEvent_X(QErrorMessage * _self_, QEvent * unnamed_arg_0) {
+  _self_->QErrorMessage::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QErrorMessage_JUMPTABLE_BgJumptable_QErrorMessage_R(BgInherit_QErrorMessage * _self_, const BgJumptable_QErrorMessage & table) {
   _self_->bgJump = (table);
 }
 
@@ -59342,6 +65249,1910 @@ extern "C" void bg_QFileDialog_changeEvent_SUPER_QEvent_X(QFileDialog * _self_, 
 }
 
 extern "C" void bg_BgInherit_QFileDialog_JUMPTABLE_BgJumptable_QFileDialog_R(BgInherit_QFileDialog * _self_, const BgJumptable_QFileDialog & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QFocusFrame {
+  CrystalProc<const QMetaObject *> bg_QFocusFrame_metaObject_;
+  CrystalProc<void *, const char *> bg_QFocusFrame_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFocusFrame_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QFocusFrame_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QFocusFrame_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QFocusFrame_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QStyleOption *> bg_QFocusFrame_initStyleOption_QStyleOption_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFocusFrame : public QFocusFrame {
+  using QFocusFrame::QFocusFrame;
+  BgJumptable_QFocusFrame bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFocusFrame_metaObject_();
+    } else {
+      return QFocusFrame::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFocusFrame_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFocusFrame::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFocusFrame_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFocusFrame::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QFocusFrame_event_QEvent_X(event);
+    } else {
+      return QFocusFrame::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QFocusFrame_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFocusFrame::eventFilter(watched, event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QFocusFrame_paintEvent_QPaintEvent_X(event);
+    } else {
+      QFocusFrame::paintEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOption * option) const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QFocusFrame_initStyleOption_QStyleOption_X.isValid()) {
+      _self_->bgJump.bg_QFocusFrame_initStyleOption_QStyleOption_X(option);
+    } else {
+      QFocusFrame::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QFocusFrame::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QFocusFrame::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QFocusFrame::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QFocusFrame::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QFocusFrame::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QFocusFrame::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QFocusFrame::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QFocusFrame::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QFocusFrame::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QFocusFrame::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QFocusFrame::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QFocusFrame::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QFocusFrame::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QFocusFrame::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QFocusFrame::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QFocusFrame::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QFocusFrame::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QFocusFrame::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QFocusFrame::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QFocusFrame::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QFocusFrame::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QFocusFrame::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QFocusFrame::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QFocusFrame::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QFocusFrame::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QFocusFrame::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QFocusFrame::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QFocusFrame::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QFocusFrame::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QFocusFrame::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QFocusFrame::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QFocusFrame::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QFocusFrame::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QFocusFrame::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QFocusFrame::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QFocusFrame::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QFocusFrame::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QFocusFrame::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFocusFrame::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFocusFrame::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFocusFrame::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFocusFrame::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFocusFrame *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFocusFrame::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFocusFrame_metaObject_(QFocusFrame * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFocusFrame_qt_metacast_const_char_X(QFocusFrame * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFocusFrame_qt_metacall_QMetaObject__Call_int_void_XX(QFocusFrame * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFocusFrame_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFocusFrame::tr(s));
+}
+
+extern "C" CrystalString bg_QFocusFrame_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFocusFrame::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFocusFrame_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFocusFrame::tr(s, c, n));
+}
+
+extern "C" QFocusFrame * bg_QFocusFrame__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFocusFrame>(parent);
+}
+
+extern "C" void bg_QFocusFrame_setWidget_QWidget_X(QFocusFrame * _self_, QWidget * widget) {
+  _self_->setWidget(widget);
+}
+
+extern "C" QWidget * bg_QFocusFrame_widget_(QFocusFrame * _self_) {
+  return _self_->widget();
+}
+
+extern "C" bool bg_QFocusFrame_event_QEvent_X(QFocusFrame * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" bool bg_QFocusFrame_eventFilter_QObject_X_QEvent_X(QFocusFrame * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" void bg_QFocusFrame_paintEvent_QPaintEvent_X(QFocusFrame * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QFocusFrame_initStyleOption_QStyleOption_X(QFocusFrame * _self_, QStyleOption * option) {
+  _self_->initStyleOption(option);
+}
+
+extern "C" const QMetaObject * bg_QFocusFrame_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFocusFrame::staticMetaObject);
+}
+
+extern "C" bool bg_QFocusFrame_event_SUPER_QEvent_X(QFocusFrame * _self_, QEvent * event) {
+  return _self_->QFocusFrame::event(event);
+}
+
+extern "C" bool bg_QFocusFrame_eventFilter_SUPER_QObject_X_QEvent_X(QFocusFrame * _self_, QObject * watched, QEvent * event) {
+  return _self_->QFocusFrame::eventFilter(watched, event);
+}
+
+extern "C" void bg_QFocusFrame_paintEvent_SUPER_QPaintEvent_X(QFocusFrame * _self_, QPaintEvent * event) {
+  _self_->QFocusFrame::paintEvent(event);
+}
+
+extern "C" void bg_QFocusFrame_initStyleOption_SUPER_QStyleOption_X(QFocusFrame * _self_, QStyleOption * option) {
+  _self_->QFocusFrame::initStyleOption(option);
+}
+
+extern "C" void bg_BgInherit_QFocusFrame_JUMPTABLE_BgJumptable_QFocusFrame_R(BgInherit_QFocusFrame * _self_, const BgJumptable_QFocusFrame & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QFontComboBox {
+  CrystalProc<const QMetaObject *> bg_QFontComboBox_metaObject_;
+  CrystalProc<void *, const char *> bg_QFontComboBox_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFontComboBox_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QFontComboBox_sizeHint_;
+  CrystalProc<bool, QEvent *> bg_QFontComboBox_event_QEvent_X;
+  CrystalProc<void, QAbstractItemModel *> bg_QComboBox_setModel_QAbstractItemModel_X;
+  CrystalProc<QSize *> bg_QComboBox_minimumSizeHint_;
+  CrystalProc<void> bg_QComboBox_showPopup_;
+  CrystalProc<void> bg_QComboBox_hidePopup_;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<void, QFocusEvent *> bg_QComboBox_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QComboBox_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEvent *> bg_QComboBox_changeEvent_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QComboBox_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QComboBox_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QComboBox_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QComboBox_hideEvent_QHideEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QComboBox_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QComboBox_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QComboBox_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QComboBox_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QComboBox_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QComboBox_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QInputMethodEvent *> bg_QComboBox_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<void, QStyleOptionComboBox *> bg_QComboBox_initStyleOption_QStyleOptionComboBox_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFontComboBox : public QFontComboBox {
+  using QFontComboBox::QFontComboBox;
+  BgJumptable_QFontComboBox bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QFontComboBox_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFontComboBox_metaObject_();
+    } else {
+      return QFontComboBox::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QFontComboBox_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFontComboBox_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFontComboBox::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QFontComboBox_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFontComboBox_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFontComboBox::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QFontComboBox_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QFontComboBox_sizeHint_();
+    } else {
+      return QFontComboBox::sizeHint();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QFontComboBox_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QFontComboBox_event_QEvent_X(event);
+    } else {
+      return QFontComboBox::event(event);
+    }
+  }
+  
+  void setModel(QAbstractItemModel * model) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_setModel_QAbstractItemModel_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_setModel_QAbstractItemModel_X(model);
+    } else {
+      QFontComboBox::setModel(model);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QComboBox_minimumSizeHint_();
+    } else {
+      return QFontComboBox::minimumSizeHint();
+    }
+  }
+  
+  void showPopup() override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_showPopup_.isValid()) {
+      _self_->bgJump.bg_QComboBox_showPopup_();
+    } else {
+      QFontComboBox::showPopup();
+    }
+  }
+  
+  void hidePopup() override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_hidePopup_.isValid()) {
+      _self_->bgJump.bg_QComboBox_hidePopup_();
+    } else {
+      QFontComboBox::hidePopup();
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QComboBox_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QFontComboBox::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QFontComboBox::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QFontComboBox::focusOutEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QFontComboBox::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QFontComboBox::resizeEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_paintEvent_QPaintEvent_X(event);
+    } else {
+      QFontComboBox::paintEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_showEvent_QShowEvent_X(event);
+    } else {
+      QFontComboBox::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_hideEvent_QHideEvent_X(event);
+    } else {
+      QFontComboBox::hideEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QFontComboBox::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QFontComboBox::mouseReleaseEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QFontComboBox::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QFontComboBox::keyReleaseEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QFontComboBox::wheelEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QFontComboBox::contextMenuEvent(event);
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QFontComboBox::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionComboBox * option) const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QComboBox_initStyleOption_QStyleOptionComboBox_X.isValid()) {
+      _self_->bgJump.bg_QComboBox_initStyleOption_QStyleOptionComboBox_X(option);
+    } else {
+      QFontComboBox::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QFontComboBox::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QFontComboBox::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QFontComboBox::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QFontComboBox::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QFontComboBox::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QFontComboBox::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QFontComboBox::mouseMoveEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QFontComboBox::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QFontComboBox::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QFontComboBox::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QFontComboBox::closeEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QFontComboBox::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QFontComboBox::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QFontComboBox::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QFontComboBox::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QFontComboBox::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QFontComboBox::dropEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QFontComboBox::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QFontComboBox::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QFontComboBox::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QFontComboBox::sharedPainter();
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QFontComboBox::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFontComboBox::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFontComboBox::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFontComboBox::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFontComboBox::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFontComboBox::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFontComboBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFontComboBox::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFontComboBox_metaObject_(QFontComboBox * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFontComboBox_qt_metacast_const_char_X(QFontComboBox * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFontComboBox_qt_metacall_QMetaObject__Call_int_void_XX(QFontComboBox * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFontComboBox_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFontComboBox::tr(s));
+}
+
+extern "C" CrystalString bg_QFontComboBox_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFontComboBox::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFontComboBox_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFontComboBox::tr(s, c, n));
+}
+
+extern "C" QFontComboBox * bg_QFontComboBox__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFontComboBox>(parent);
+}
+
+extern "C" void bg_QFontComboBox_setWritingSystem_QFontDatabase__WritingSystem(QFontComboBox * _self_, QFontDatabase::WritingSystem unnamed_arg_0) {
+  _self_->setWritingSystem(unnamed_arg_0);
+}
+
+extern "C" QFontDatabase::WritingSystem bg_QFontComboBox_writingSystem_(QFontComboBox * _self_) {
+  return _self_->writingSystem();
+}
+
+extern "C" void bg_QFontComboBox_setFontFilters_QFontComboBox__FontFilters(QFontComboBox * _self_, QFontComboBox::FontFilters filters) {
+  _self_->setFontFilters(filters);
+}
+
+extern "C" QFontComboBox::FontFilters bg_QFontComboBox_fontFilters_(QFontComboBox * _self_) {
+  return _self_->fontFilters();
+}
+
+extern "C" QFont * bg_QFontComboBox_currentFont_(QFontComboBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->currentFont());
+}
+
+extern "C" QSize bg_QFontComboBox_sizeHint_(QFontComboBox * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" void bg_QFontComboBox_setSampleTextForSystem_QFontDatabase__WritingSystem_const_QString_R(QFontComboBox * _self_, QFontDatabase::WritingSystem writingSystem, const CrystalString sampleText) {
+  _self_->setSampleTextForSystem(writingSystem, ([&]() { auto &&bg_value = (sampleText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QFontComboBox_sampleTextForSystem_QFontDatabase__WritingSystem(QFontComboBox * _self_, QFontDatabase::WritingSystem writingSystem) {
+  return qstring_to_crystal(_self_->sampleTextForSystem(writingSystem));
+}
+
+extern "C" void bg_QFontComboBox_setSampleTextForFont_const_QString_R_const_QString_R(QFontComboBox * _self_, const CrystalString fontFamily, const CrystalString sampleText) {
+  _self_->setSampleTextForFont(([&]() { auto &&bg_value = (fontFamily); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (sampleText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QFontComboBox_sampleTextForFont_const_QString_R(QFontComboBox * _self_, const CrystalString fontFamily) {
+  return qstring_to_crystal(_self_->sampleTextForFont(([&]() { auto &&bg_value = (fontFamily); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_QFontComboBox_setDisplayFont_const_QString_R_const_QFont_R(QFontComboBox * _self_, const CrystalString fontFamily, const QFont & font) {
+  _self_->setDisplayFont(([&]() { auto &&bg_value = (fontFamily); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), font);
+}
+
+extern "C" void bg_QFontComboBox_setCurrentFont_const_QFont_R(QFontComboBox * _self_, const QFont & f) {
+  _self_->setCurrentFont(f);
+}
+
+extern "C" void bg_QFontComboBox_currentFontChanged_const_QFont_R(QFontComboBox * _self_, const QFont & f) {
+  _self_->currentFontChanged(f);
+}
+
+extern "C" bool bg_QFontComboBox_event_QEvent_X(QFontComboBox * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QFontComboBox_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFontComboBox::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QFontComboBox_CONNECT_currentFontChanged_CrystalProc_void__const_QFont_R_(QFontComboBox * _self_, CrystalProc<void, const QFont *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFontComboBox::*)(const QFont &))&QFontComboBox::currentFontChanged, [_proc_](const QFont & f){ _proc_(&(f)); }));
+}
+
+extern "C" QSize bg_QFontComboBox_sizeHint_SUPER_(QFontComboBox * _self_) {
+  return _self_->QFontComboBox::sizeHint();
+}
+
+extern "C" bool bg_QFontComboBox_event_SUPER_QEvent_X(QFontComboBox * _self_, QEvent * event) {
+  return _self_->QFontComboBox::event(event);
+}
+
+extern "C" void bg_BgInherit_QFontComboBox_JUMPTABLE_BgJumptable_QFontComboBox_R(BgInherit_QFontComboBox * _self_, const BgJumptable_QFontComboBox & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QFontDialog {
+  CrystalProc<const QMetaObject *> bg_QFontDialog_metaObject_;
+  CrystalProc<void *, const char *> bg_QFontDialog_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFontDialog_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, bool> bg_QFontDialog_setVisible_bool;
+  CrystalProc<void, QEvent *> bg_QFontDialog_changeEvent_QEvent_X;
+  CrystalProc<void, int> bg_QFontDialog_done_int;
+  CrystalProc<bool, QObject *, QEvent *> bg_QFontDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<QSize *> bg_QDialog_sizeHint_;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QDialog_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFontDialog : public QFontDialog {
+  using QFontDialog::QFontDialog;
+  BgJumptable_QFontDialog bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFontDialog_metaObject_();
+    } else {
+      return QFontDialog::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFontDialog_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFontDialog::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFontDialog_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFontDialog::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QFontDialog_setVisible_bool(visible);
+    } else {
+      QFontDialog::setVisible(visible);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QFontDialog_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QFontDialog::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_done_int.isValid()) {
+      _self_->bgJump.bg_QFontDialog_done_int(unnamed_arg_0);
+    } else {
+      QFontDialog::done(unnamed_arg_0);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QFontDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QFontDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFontDialog::eventFilter(watched, event);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_sizeHint_();
+    } else {
+      return QFontDialog::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QFontDialog::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QFontDialog::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QFontDialog::exec();
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QFontDialog::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QFontDialog::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QFontDialog::keyPressEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QFontDialog::closeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QFontDialog::showEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QFontDialog::resizeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QFontDialog::contextMenuEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QFontDialog::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QFontDialog::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QFontDialog::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QFontDialog::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QFontDialog::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QFontDialog::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QFontDialog::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QFontDialog::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QFontDialog::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QFontDialog::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QFontDialog::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QFontDialog::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QFontDialog::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QFontDialog::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QFontDialog::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QFontDialog::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QFontDialog::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QFontDialog::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QFontDialog::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QFontDialog::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QFontDialog::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QFontDialog::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QFontDialog::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QFontDialog::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QFontDialog::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QFontDialog::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QFontDialog::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QFontDialog::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QFontDialog::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QFontDialog::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QFontDialog::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFontDialog::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFontDialog::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFontDialog::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFontDialog::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFontDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFontDialog::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFontDialog_metaObject_(QFontDialog * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFontDialog_qt_metacast_const_char_X(QFontDialog * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFontDialog_qt_metacall_QMetaObject__Call_int_void_XX(QFontDialog * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFontDialog_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFontDialog::tr(s));
+}
+
+extern "C" CrystalString bg_QFontDialog_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFontDialog::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFontDialog_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFontDialog::tr(s, c, n));
+}
+
+extern "C" QFontDialog * bg_QFontDialog__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFontDialog>(parent);
+}
+
+extern "C" QFontDialog * bg_QFontDialog__CONSTRUCT_const_QFont_R_QWidget_X(const QFont & initial, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFontDialog>(initial, parent);
+}
+
+extern "C" void bg_QFontDialog_setCurrentFont_const_QFont_R(QFontDialog * _self_, const QFont & font) {
+  _self_->setCurrentFont(font);
+}
+
+extern "C" QFont * bg_QFontDialog_currentFont_(QFontDialog * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->currentFont());
+}
+
+extern "C" QFont * bg_QFontDialog_selectedFont_(QFontDialog * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->selectedFont());
+}
+
+extern "C" void bg_QFontDialog_setOption_QFontDialog__FontDialogOption_bool(QFontDialog * _self_, QFontDialog::FontDialogOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QFontDialog_testOption_QFontDialog__FontDialogOption(QFontDialog * _self_, QFontDialog::FontDialogOption option) {
+  return _self_->testOption(option);
+}
+
+extern "C" void bg_QFontDialog_setOptions_QFontDialog__FontDialogOptions(QFontDialog * _self_, QFontDialog::FontDialogOptions options) {
+  _self_->setOptions(options);
+}
+
+extern "C" QFontDialog::FontDialogOptions bg_QFontDialog_options_(QFontDialog * _self_) {
+  return _self_->options();
+}
+
+extern "C" void bg_QFontDialog_open_QObject_X_const_char_X(QFontDialog * _self_, QObject * receiver, const char * member) {
+  _self_->open(receiver, member);
+}
+
+extern "C" void bg_QFontDialog_setVisible_bool(QFontDialog * _self_, bool visible) {
+  _self_->setVisible(visible);
+}
+
+extern "C" QFont * bg_QFontDialog_getFont_STATIC_bool_X_QWidget_X(bool * ok, QWidget * parent) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDialog::getFont(ok, parent));
+}
+
+extern "C" QFont * bg_QFontDialog_getFont_STATIC_bool_X_const_QFont_R_QWidget_X(bool * ok, const QFont & initial, QWidget * parent) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDialog::getFont(ok, initial, parent));
+}
+
+extern "C" QFont * bg_QFontDialog_getFont_STATIC_bool_X_const_QFont_R_QWidget_X_const_QString_R(bool * ok, const QFont & initial, QWidget * parent, const CrystalString title) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDialog::getFont(ok, initial, parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QFont * bg_QFontDialog_getFont_STATIC_bool_X_const_QFont_R_QWidget_X_const_QString_R_QFontDialog__FontDialogOptions(bool * ok, const QFont & initial, QWidget * parent, const CrystalString title, QFontDialog::FontDialogOptions options) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QFontDialog::getFont(ok, initial, parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), options));
+}
+
+extern "C" void bg_QFontDialog_currentFontChanged_const_QFont_R(QFontDialog * _self_, const QFont & font) {
+  _self_->currentFontChanged(font);
+}
+
+extern "C" void bg_QFontDialog_fontSelected_const_QFont_R(QFontDialog * _self_, const QFont & font) {
+  _self_->fontSelected(font);
+}
+
+extern "C" void bg_QFontDialog_changeEvent_QEvent_X(QFontDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QFontDialog_done_int(QFontDialog * _self_, int unnamed_arg_0) {
+  _self_->done(unnamed_arg_0);
+}
+
+extern "C" bool bg_QFontDialog_eventFilter_QObject_X_QEvent_X(QFontDialog * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" const QMetaObject * bg_QFontDialog_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFontDialog::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QFontDialog_CONNECT_currentFontChanged_CrystalProc_void__const_QFont_R_(QFontDialog * _self_, CrystalProc<void, const QFont *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFontDialog::*)(const QFont &))&QFontDialog::currentFontChanged, [_proc_](const QFont & font){ _proc_(&(font)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QFontDialog_CONNECT_fontSelected_CrystalProc_void__const_QFont_R_(QFontDialog * _self_, CrystalProc<void, const QFont *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFontDialog::*)(const QFont &))&QFontDialog::fontSelected, [_proc_](const QFont & font){ _proc_(&(font)); }));
+}
+
+extern "C" void bg_QFontDialog_setVisible_SUPER_bool(QFontDialog * _self_, bool visible) {
+  _self_->QFontDialog::setVisible(visible);
+}
+
+extern "C" void bg_QFontDialog_changeEvent_SUPER_QEvent_X(QFontDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->QFontDialog::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QFontDialog_done_SUPER_int(QFontDialog * _self_, int unnamed_arg_0) {
+  _self_->QFontDialog::done(unnamed_arg_0);
+}
+
+extern "C" bool bg_QFontDialog_eventFilter_SUPER_QObject_X_QEvent_X(QFontDialog * _self_, QObject * watched, QEvent * event) {
+  return _self_->QFontDialog::eventFilter(watched, event);
+}
+
+extern "C" void bg_BgInherit_QFontDialog_JUMPTABLE_BgJumptable_QFontDialog_R(BgInherit_QFontDialog * _self_, const BgJumptable_QFontDialog & table) {
   _self_->bgJump = (table);
 }
 
@@ -74578,6 +82389,908 @@ extern "C" void bg_BgInherit_QLineEdit_JUMPTABLE_BgJumptable_QLineEdit_R(BgInher
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QInputDialog {
+  CrystalProc<const QMetaObject *> bg_QInputDialog_metaObject_;
+  CrystalProc<void *, const char *> bg_QInputDialog_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QInputDialog_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QInputDialog_minimumSizeHint_;
+  CrystalProc<QSize *> bg_QInputDialog_sizeHint_;
+  CrystalProc<void, bool> bg_QInputDialog_setVisible_bool;
+  CrystalProc<void, int> bg_QInputDialog_done_int;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QDialog_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QInputDialog : public QInputDialog {
+  using QInputDialog::QInputDialog;
+  BgJumptable_QInputDialog bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QInputDialog_metaObject_();
+    } else {
+      return QInputDialog::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QInputDialog_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QInputDialog::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QInputDialog_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QInputDialog::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QInputDialog_minimumSizeHint_();
+    } else {
+      return QInputDialog::minimumSizeHint();
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QInputDialog_sizeHint_();
+    } else {
+      return QInputDialog::sizeHint();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QInputDialog_setVisible_bool(visible);
+    } else {
+      QInputDialog::setVisible(visible);
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QInputDialog_done_int.isValid()) {
+      _self_->bgJump.bg_QInputDialog_done_int(unnamed_arg_0);
+    } else {
+      QInputDialog::done(unnamed_arg_0);
+    }
+  }
+  
+  void open() override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QInputDialog::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QInputDialog::exec();
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QInputDialog::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QInputDialog::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QInputDialog::keyPressEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QInputDialog::closeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QInputDialog::showEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QInputDialog::resizeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QInputDialog::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QInputDialog::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QInputDialog::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QInputDialog::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QInputDialog::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QInputDialog::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QInputDialog::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QInputDialog::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QInputDialog::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QInputDialog::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QInputDialog::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QInputDialog::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QInputDialog::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QInputDialog::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QInputDialog::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QInputDialog::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QInputDialog::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QInputDialog::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QInputDialog::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QInputDialog::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QInputDialog::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QInputDialog::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QInputDialog::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QInputDialog::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QInputDialog::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QInputDialog::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QInputDialog::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QInputDialog::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QInputDialog::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QInputDialog::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QInputDialog::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QInputDialog::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QInputDialog::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QInputDialog::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QInputDialog::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QInputDialog::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QInputDialog::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QInputDialog::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QInputDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QInputDialog::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QInputDialog_metaObject_(QInputDialog * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QInputDialog_qt_metacast_const_char_X(QInputDialog * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QInputDialog_qt_metacall_QMetaObject__Call_int_void_XX(QInputDialog * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QInputDialog_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QInputDialog::tr(s));
+}
+
+extern "C" CrystalString bg_QInputDialog_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QInputDialog::tr(s, c));
+}
+
+extern "C" CrystalString bg_QInputDialog_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QInputDialog::tr(s, c, n));
+}
+
+extern "C" QInputDialog * bg_QInputDialog__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QInputDialog>(parent);
+}
+
+extern "C" QInputDialog * bg_QInputDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags(QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QInputDialog>(parent, flags);
+}
+
+extern "C" void bg_QInputDialog_setInputMode_QInputDialog__InputMode(QInputDialog * _self_, QInputDialog::InputMode mode) {
+  _self_->setInputMode(mode);
+}
+
+extern "C" QInputDialog::InputMode bg_QInputDialog_inputMode_(QInputDialog * _self_) {
+  return _self_->inputMode();
+}
+
+extern "C" void bg_QInputDialog_setLabelText_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->setLabelText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QInputDialog_labelText_(QInputDialog * _self_) {
+  return qstring_to_crystal(_self_->labelText());
+}
+
+extern "C" void bg_QInputDialog_setOption_QInputDialog__InputDialogOption_bool(QInputDialog * _self_, QInputDialog::InputDialogOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QInputDialog_testOption_QInputDialog__InputDialogOption(QInputDialog * _self_, QInputDialog::InputDialogOption option) {
+  return _self_->testOption(option);
+}
+
+extern "C" void bg_QInputDialog_setOptions_QInputDialog__InputDialogOptions(QInputDialog * _self_, QInputDialog::InputDialogOptions options) {
+  _self_->setOptions(options);
+}
+
+extern "C" QInputDialog::InputDialogOptions bg_QInputDialog_options_(QInputDialog * _self_) {
+  return _self_->options();
+}
+
+extern "C" void bg_QInputDialog_setTextValue_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->setTextValue(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QInputDialog_textValue_(QInputDialog * _self_) {
+  return qstring_to_crystal(_self_->textValue());
+}
+
+extern "C" void bg_QInputDialog_setTextEchoMode_QLineEdit__EchoMode(QInputDialog * _self_, QLineEdit::EchoMode mode) {
+  _self_->setTextEchoMode(mode);
+}
+
+extern "C" QLineEdit::EchoMode bg_QInputDialog_textEchoMode_(QInputDialog * _self_) {
+  return _self_->textEchoMode();
+}
+
+extern "C" void bg_QInputDialog_setComboBoxEditable_bool(QInputDialog * _self_, bool editable) {
+  _self_->setComboBoxEditable(editable);
+}
+
+extern "C" bool bg_QInputDialog_isComboBoxEditable_(QInputDialog * _self_) {
+  return _self_->isComboBoxEditable();
+}
+
+extern "C" void bg_QInputDialog_setComboBoxItems_const_QStringList_R(QInputDialog * _self_, const QList<QString> * items) {
+  _self_->setComboBoxItems(*(items));
+}
+
+extern "C" QList<QString> * bg_QInputDialog_comboBoxItems_(QInputDialog * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->comboBoxItems());
+}
+
+extern "C" void bg_QInputDialog_setIntValue_int(QInputDialog * _self_, int value) {
+  _self_->setIntValue(value);
+}
+
+extern "C" int bg_QInputDialog_intValue_(QInputDialog * _self_) {
+  return _self_->intValue();
+}
+
+extern "C" void bg_QInputDialog_setIntMinimum_int(QInputDialog * _self_, int min) {
+  _self_->setIntMinimum(min);
+}
+
+extern "C" int bg_QInputDialog_intMinimum_(QInputDialog * _self_) {
+  return _self_->intMinimum();
+}
+
+extern "C" void bg_QInputDialog_setIntMaximum_int(QInputDialog * _self_, int max) {
+  _self_->setIntMaximum(max);
+}
+
+extern "C" int bg_QInputDialog_intMaximum_(QInputDialog * _self_) {
+  return _self_->intMaximum();
+}
+
+extern "C" void bg_QInputDialog_setIntRange_int_int(QInputDialog * _self_, int min, int max) {
+  _self_->setIntRange(min, max);
+}
+
+extern "C" void bg_QInputDialog_setIntStep_int(QInputDialog * _self_, int step) {
+  _self_->setIntStep(step);
+}
+
+extern "C" int bg_QInputDialog_intStep_(QInputDialog * _self_) {
+  return _self_->intStep();
+}
+
+extern "C" void bg_QInputDialog_setDoubleValue_double(QInputDialog * _self_, double value) {
+  _self_->setDoubleValue(value);
+}
+
+extern "C" double bg_QInputDialog_doubleValue_(QInputDialog * _self_) {
+  return _self_->doubleValue();
+}
+
+extern "C" void bg_QInputDialog_setDoubleMinimum_double(QInputDialog * _self_, double min) {
+  _self_->setDoubleMinimum(min);
+}
+
+extern "C" double bg_QInputDialog_doubleMinimum_(QInputDialog * _self_) {
+  return _self_->doubleMinimum();
+}
+
+extern "C" void bg_QInputDialog_setDoubleMaximum_double(QInputDialog * _self_, double max) {
+  _self_->setDoubleMaximum(max);
+}
+
+extern "C" double bg_QInputDialog_doubleMaximum_(QInputDialog * _self_) {
+  return _self_->doubleMaximum();
+}
+
+extern "C" void bg_QInputDialog_setDoubleRange_double_double(QInputDialog * _self_, double min, double max) {
+  _self_->setDoubleRange(min, max);
+}
+
+extern "C" void bg_QInputDialog_setDoubleDecimals_int(QInputDialog * _self_, int decimals) {
+  _self_->setDoubleDecimals(decimals);
+}
+
+extern "C" int bg_QInputDialog_doubleDecimals_(QInputDialog * _self_) {
+  return _self_->doubleDecimals();
+}
+
+extern "C" void bg_QInputDialog_setOkButtonText_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->setOkButtonText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QInputDialog_okButtonText_(QInputDialog * _self_) {
+  return qstring_to_crystal(_self_->okButtonText());
+}
+
+extern "C" void bg_QInputDialog_setCancelButtonText_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->setCancelButtonText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QInputDialog_cancelButtonText_(QInputDialog * _self_) {
+  return qstring_to_crystal(_self_->cancelButtonText());
+}
+
+extern "C" void bg_QInputDialog_open_QObject_X_const_char_X(QInputDialog * _self_, QObject * receiver, const char * member) {
+  _self_->open(receiver, member);
+}
+
+extern "C" QSize bg_QInputDialog_minimumSizeHint_(QInputDialog * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" QSize bg_QInputDialog_sizeHint_(QInputDialog * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" void bg_QInputDialog_setVisible_bool(QInputDialog * _self_, bool visible) {
+  _self_->setVisible(visible);
+}
+
+extern "C" CrystalString bg_QInputDialog_getText_STATIC_QWidget_X_const_QString_R_const_QString_R_QLineEdit__EchoMode(QWidget * parent, const CrystalString title, const CrystalString label, QLineEdit::EchoMode echo) {
+  return qstring_to_crystal(QInputDialog::getText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), echo));
+}
+
+extern "C" CrystalString bg_QInputDialog_getText_STATIC_QWidget_X_const_QString_R_const_QString_R_QLineEdit__EchoMode_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString label, QLineEdit::EchoMode echo, const CrystalString text) {
+  return qstring_to_crystal(QInputDialog::getText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), echo, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QInputDialog_getText_STATIC_QWidget_X_const_QString_R_const_QString_R_QLineEdit__EchoMode_const_QString_R_bool_X(QWidget * parent, const CrystalString title, const CrystalString label, QLineEdit::EchoMode echo, const CrystalString text, bool * ok) {
+  return qstring_to_crystal(QInputDialog::getText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), echo, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok));
+}
+
+extern "C" CrystalString bg_QInputDialog_getText_STATIC_QWidget_X_const_QString_R_const_QString_R_QLineEdit__EchoMode_const_QString_R_bool_X_Qt__WindowFlags(QWidget * parent, const CrystalString title, const CrystalString label, QLineEdit::EchoMode echo, const CrystalString text, bool * ok, Qt::WindowFlags flags) {
+  return qstring_to_crystal(QInputDialog::getText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), echo, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok, flags));
+}
+
+extern "C" CrystalString bg_QInputDialog_getText_STATIC_QWidget_X_const_QString_R_const_QString_R_QLineEdit__EchoMode_const_QString_R_bool_X_Qt__WindowFlags_Qt__InputMethodHints(QWidget * parent, const CrystalString title, const CrystalString label, QLineEdit::EchoMode echo, const CrystalString text, bool * ok, Qt::WindowFlags flags, Qt::InputMethodHints inputMethodHints) {
+  return qstring_to_crystal(QInputDialog::getText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), echo, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok, flags, inputMethodHints));
+}
+
+extern "C" CrystalString bg_QInputDialog_getMultiLineText_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString label) {
+  return qstring_to_crystal(QInputDialog::getMultiLineText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QInputDialog_getMultiLineText_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString label, const CrystalString text) {
+  return qstring_to_crystal(QInputDialog::getMultiLineText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QInputDialog_getMultiLineText_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R_bool_X(QWidget * parent, const CrystalString title, const CrystalString label, const CrystalString text, bool * ok) {
+  return qstring_to_crystal(QInputDialog::getMultiLineText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok));
+}
+
+extern "C" CrystalString bg_QInputDialog_getMultiLineText_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R_bool_X_Qt__WindowFlags(QWidget * parent, const CrystalString title, const CrystalString label, const CrystalString text, bool * ok, Qt::WindowFlags flags) {
+  return qstring_to_crystal(QInputDialog::getMultiLineText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok, flags));
+}
+
+extern "C" CrystalString bg_QInputDialog_getMultiLineText_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R_bool_X_Qt__WindowFlags_Qt__InputMethodHints(QWidget * parent, const CrystalString title, const CrystalString label, const CrystalString text, bool * ok, Qt::WindowFlags flags, Qt::InputMethodHints inputMethodHints) {
+  return qstring_to_crystal(QInputDialog::getMultiLineText(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ok, flags, inputMethodHints));
+}
+
+extern "C" CrystalString bg_QInputDialog_getItem_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QStringList_R_int_bool_bool_X(QWidget * parent, const CrystalString title, const CrystalString label, const QList<QString> * items, int current, bool editable, bool * ok) {
+  return qstring_to_crystal(QInputDialog::getItem(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(items), current, editable, ok));
+}
+
+extern "C" CrystalString bg_QInputDialog_getItem_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QStringList_R_int_bool_bool_X_Qt__WindowFlags(QWidget * parent, const CrystalString title, const CrystalString label, const QList<QString> * items, int current, bool editable, bool * ok, Qt::WindowFlags flags) {
+  return qstring_to_crystal(QInputDialog::getItem(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(items), current, editable, ok, flags));
+}
+
+extern "C" CrystalString bg_QInputDialog_getItem_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QStringList_R_int_bool_bool_X_Qt__WindowFlags_Qt__InputMethodHints(QWidget * parent, const CrystalString title, const CrystalString label, const QList<QString> * items, int current, bool editable, bool * ok, Qt::WindowFlags flags, Qt::InputMethodHints inputMethodHints) {
+  return qstring_to_crystal(QInputDialog::getItem(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(items), current, editable, ok, flags, inputMethodHints));
+}
+
+extern "C" int bg_QInputDialog_getInt_STATIC_QWidget_X_const_QString_R_const_QString_R_int_int_int_int_bool_X(QWidget * parent, const CrystalString title, const CrystalString label, int value, int minValue, int maxValue, int step, bool * ok) {
+  return QInputDialog::getInt(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), value, minValue, maxValue, step, ok);
+}
+
+extern "C" int bg_QInputDialog_getInt_STATIC_QWidget_X_const_QString_R_const_QString_R_int_int_int_int_bool_X_Qt__WindowFlags(QWidget * parent, const CrystalString title, const CrystalString label, int value, int minValue, int maxValue, int step, bool * ok, Qt::WindowFlags flags) {
+  return QInputDialog::getInt(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), value, minValue, maxValue, step, ok, flags);
+}
+
+extern "C" double bg_QInputDialog_getDouble_STATIC_QWidget_X_const_QString_R_const_QString_R_double_double_double_int_bool_X(QWidget * parent, const CrystalString title, const CrystalString label, double value, double minValue, double maxValue, int decimals, bool * ok) {
+  return QInputDialog::getDouble(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), value, minValue, maxValue, decimals, ok);
+}
+
+extern "C" double bg_QInputDialog_getDouble_STATIC_QWidget_X_const_QString_R_const_QString_R_double_double_double_int_bool_X_Qt__WindowFlags(QWidget * parent, const CrystalString title, const CrystalString label, double value, double minValue, double maxValue, int decimals, bool * ok, Qt::WindowFlags flags) {
+  return QInputDialog::getDouble(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), value, minValue, maxValue, decimals, ok, flags);
+}
+
+extern "C" double bg_QInputDialog_getDouble_STATIC_QWidget_X_const_QString_R_const_QString_R_double_double_double_int_bool_X_Qt__WindowFlags_double(QWidget * parent, const CrystalString title, const CrystalString label, double value, double minValue, double maxValue, int decimals, bool * ok, Qt::WindowFlags flags, double step) {
+  return QInputDialog::getDouble(parent, ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (label); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), value, minValue, maxValue, decimals, ok, flags, step);
+}
+
+extern "C" void bg_QInputDialog_setDoubleStep_double(QInputDialog * _self_, double step) {
+  _self_->setDoubleStep(step);
+}
+
+extern "C" double bg_QInputDialog_doubleStep_(QInputDialog * _self_) {
+  return _self_->doubleStep();
+}
+
+extern "C" void bg_QInputDialog_textValueChanged_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->textValueChanged(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QInputDialog_textValueSelected_const_QString_R(QInputDialog * _self_, const CrystalString text) {
+  _self_->textValueSelected(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QInputDialog_intValueChanged_int(QInputDialog * _self_, int value) {
+  _self_->intValueChanged(value);
+}
+
+extern "C" void bg_QInputDialog_intValueSelected_int(QInputDialog * _self_, int value) {
+  _self_->intValueSelected(value);
+}
+
+extern "C" void bg_QInputDialog_doubleValueChanged_double(QInputDialog * _self_, double value) {
+  _self_->doubleValueChanged(value);
+}
+
+extern "C" void bg_QInputDialog_doubleValueSelected_double(QInputDialog * _self_, double value) {
+  _self_->doubleValueSelected(value);
+}
+
+extern "C" void bg_QInputDialog_done_int(QInputDialog * _self_, int unnamed_arg_0) {
+  _self_->done(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QInputDialog_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QInputDialog::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueChanged_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueChanged, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_textValueSelected_CrystalProc_void__const_QString_R_(QInputDialog * _self_, CrystalProc<void, const CrystalString> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(const QString &))&QInputDialog::textValueSelected, [_proc_](const QString & text){ _proc_(qstring_to_crystal(text)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_intValueChanged_CrystalProc_void__int_(QInputDialog * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(int))&QInputDialog::intValueChanged, [_proc_](int value){ _proc_(value); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_intValueSelected_CrystalProc_void__int_(QInputDialog * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(int))&QInputDialog::intValueSelected, [_proc_](int value){ _proc_(value); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_doubleValueChanged_CrystalProc_void__double_(QInputDialog * _self_, CrystalProc<void, double> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(double))&QInputDialog::doubleValueChanged, [_proc_](double value){ _proc_(value); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QInputDialog_CONNECT_doubleValueSelected_CrystalProc_void__double_(QInputDialog * _self_, CrystalProc<void, double> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QInputDialog::*)(double))&QInputDialog::doubleValueSelected, [_proc_](double value){ _proc_(value); }));
+}
+
+extern "C" QSize bg_QInputDialog_minimumSizeHint_SUPER_(QInputDialog * _self_) {
+  return _self_->QInputDialog::minimumSizeHint();
+}
+
+extern "C" QSize bg_QInputDialog_sizeHint_SUPER_(QInputDialog * _self_) {
+  return _self_->QInputDialog::sizeHint();
+}
+
+extern "C" void bg_QInputDialog_setVisible_SUPER_bool(QInputDialog * _self_, bool visible) {
+  _self_->QInputDialog::setVisible(visible);
+}
+
+extern "C" void bg_QInputDialog_done_SUPER_int(QInputDialog * _self_, int unnamed_arg_0) {
+  _self_->QInputDialog::done(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QInputDialog_JUMPTABLE_BgJumptable_QInputDialog_R(BgInherit_QInputDialog * _self_, const BgJumptable_QInputDialog & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QItemDelegate {
   CrystalProc<const QMetaObject *> bg_QItemDelegate_metaObject_;
   CrystalProc<void *, const char *> bg_QItemDelegate_qt_metacast_const_char_X;
@@ -75068,6 +83781,630 @@ extern "C" CrystalString bg_QItemEditorFactory_valuePropertyName_SUPER_int(QItem
 }
 
 extern "C" void bg_BgInherit_QItemEditorFactory_JUMPTABLE_BgJumptable_QItemEditorFactory_R(BgInherit_QItemEditorFactory * _self_, const BgJumptable_QItemEditorFactory & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QKeySequenceEdit {
+  CrystalProc<const QMetaObject *> bg_QKeySequenceEdit_metaObject_;
+  CrystalProc<void *, const char *> bg_QKeySequenceEdit_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QKeySequenceEdit_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QKeySequenceEdit_event_QEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QKeySequenceEdit_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QKeySequenceEdit_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QKeySequenceEdit_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QKeySequenceEdit_focusOutEvent_QFocusEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QKeySequenceEdit : public QKeySequenceEdit {
+  using QKeySequenceEdit::QKeySequenceEdit;
+  BgJumptable_QKeySequenceEdit bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QKeySequenceEdit_metaObject_();
+    } else {
+      return QKeySequenceEdit::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QKeySequenceEdit_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QKeySequenceEdit::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QKeySequenceEdit_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QKeySequenceEdit::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QKeySequenceEdit_event_QEvent_X(event);
+    } else {
+      return QKeySequenceEdit::event(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QKeySequenceEdit_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QKeySequenceEdit::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QKeySequenceEdit_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QKeySequenceEdit::keyReleaseEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QKeySequenceEdit_timerEvent_QTimerEvent_X(event);
+    } else {
+      QKeySequenceEdit::timerEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QKeySequenceEdit_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QKeySequenceEdit_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QKeySequenceEdit::focusOutEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QKeySequenceEdit::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QKeySequenceEdit::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QKeySequenceEdit::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QKeySequenceEdit::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QKeySequenceEdit::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QKeySequenceEdit::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QKeySequenceEdit::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QKeySequenceEdit::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QKeySequenceEdit::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QKeySequenceEdit::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QKeySequenceEdit::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QKeySequenceEdit::wheelEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QKeySequenceEdit::focusInEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QKeySequenceEdit::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QKeySequenceEdit::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QKeySequenceEdit::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QKeySequenceEdit::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QKeySequenceEdit::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QKeySequenceEdit::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QKeySequenceEdit::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QKeySequenceEdit::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QKeySequenceEdit::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QKeySequenceEdit::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QKeySequenceEdit::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QKeySequenceEdit::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QKeySequenceEdit::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QKeySequenceEdit::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QKeySequenceEdit::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QKeySequenceEdit::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QKeySequenceEdit::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QKeySequenceEdit::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QKeySequenceEdit::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QKeySequenceEdit::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QKeySequenceEdit::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QKeySequenceEdit::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QKeySequenceEdit::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QKeySequenceEdit::eventFilter(watched, event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QKeySequenceEdit::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QKeySequenceEdit::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QKeySequenceEdit::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QKeySequenceEdit *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QKeySequenceEdit::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QKeySequenceEdit_metaObject_(QKeySequenceEdit * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QKeySequenceEdit_qt_metacast_const_char_X(QKeySequenceEdit * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QKeySequenceEdit_qt_metacall_QMetaObject__Call_int_void_XX(QKeySequenceEdit * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QKeySequenceEdit_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QKeySequenceEdit::tr(s));
+}
+
+extern "C" CrystalString bg_QKeySequenceEdit_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QKeySequenceEdit::tr(s, c));
+}
+
+extern "C" CrystalString bg_QKeySequenceEdit_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QKeySequenceEdit::tr(s, c, n));
+}
+
+extern "C" QKeySequenceEdit * bg_QKeySequenceEdit__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QKeySequenceEdit>(parent);
+}
+
+extern "C" QKeySequenceEdit * bg_QKeySequenceEdit__CONSTRUCT_const_QKeySequence_R_QWidget_X(const QKeySequence & keySequence, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QKeySequenceEdit>(keySequence, parent);
+}
+
+extern "C" QKeySequence * bg_QKeySequenceEdit_keySequence_(QKeySequenceEdit * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QKeySequence>()) QKeySequence (_self_->keySequence());
+}
+
+extern "C" qsizetype bg_QKeySequenceEdit_maximumSequenceLength_(QKeySequenceEdit * _self_) {
+  return _self_->maximumSequenceLength();
+}
+
+extern "C" void bg_QKeySequenceEdit_setClearButtonEnabled_bool(QKeySequenceEdit * _self_, bool enable) {
+  _self_->setClearButtonEnabled(enable);
+}
+
+extern "C" bool bg_QKeySequenceEdit_isClearButtonEnabled_(QKeySequenceEdit * _self_) {
+  return _self_->isClearButtonEnabled();
+}
+
+extern "C" void bg_QKeySequenceEdit_setKeySequence_const_QKeySequence_R(QKeySequenceEdit * _self_, const QKeySequence & keySequence) {
+  _self_->setKeySequence(keySequence);
+}
+
+extern "C" void bg_QKeySequenceEdit_clear_(QKeySequenceEdit * _self_) {
+  _self_->clear();
+}
+
+extern "C" void bg_QKeySequenceEdit_setMaximumSequenceLength_qsizetype(QKeySequenceEdit * _self_, qsizetype count) {
+  _self_->setMaximumSequenceLength(count);
+}
+
+extern "C" void bg_QKeySequenceEdit_editingFinished_(QKeySequenceEdit * _self_) {
+  _self_->editingFinished();
+}
+
+extern "C" void bg_QKeySequenceEdit_keySequenceChanged_const_QKeySequence_R(QKeySequenceEdit * _self_, const QKeySequence & keySequence) {
+  _self_->keySequenceChanged(keySequence);
+}
+
+extern "C" QKeySequenceEdit * bg_QKeySequenceEdit__CONSTRUCT_QKeySequenceEditPrivate_R_QWidget_X_Qt__WindowFlags(QKeySequenceEditPrivate & d, QWidget * parent, Qt::WindowFlags f) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QKeySequenceEdit>(d, parent, f);
+}
+
+extern "C" bool bg_QKeySequenceEdit_event_QEvent_X(QKeySequenceEdit * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_keyPressEvent_QKeyEvent_X(QKeySequenceEdit * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_keyReleaseEvent_QKeyEvent_X(QKeySequenceEdit * _self_, QKeyEvent * event) {
+  _self_->keyReleaseEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_timerEvent_QTimerEvent_X(QKeySequenceEdit * _self_, QTimerEvent * event) {
+  _self_->timerEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_focusOutEvent_QFocusEvent_X(QKeySequenceEdit * _self_, QFocusEvent * event) {
+  _self_->focusOutEvent(event);
+}
+
+extern "C" const QMetaObject * bg_QKeySequenceEdit_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QKeySequenceEdit::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QKeySequenceEdit_CONNECT_editingFinished_CrystalProc_void_(QKeySequenceEdit * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QKeySequenceEdit::*)())&QKeySequenceEdit::editingFinished, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QKeySequenceEdit_CONNECT_keySequenceChanged_CrystalProc_void__const_QKeySequence_R_(QKeySequenceEdit * _self_, CrystalProc<void, const QKeySequence *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QKeySequenceEdit::*)(const QKeySequence &))&QKeySequenceEdit::keySequenceChanged, [_proc_](const QKeySequence & keySequence){ _proc_(&(keySequence)); }));
+}
+
+extern "C" bool bg_QKeySequenceEdit_event_SUPER_QEvent_X(QKeySequenceEdit * _self_, QEvent * event) {
+  return _self_->QKeySequenceEdit::event(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_keyPressEvent_SUPER_QKeyEvent_X(QKeySequenceEdit * _self_, QKeyEvent * event) {
+  _self_->QKeySequenceEdit::keyPressEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_keyReleaseEvent_SUPER_QKeyEvent_X(QKeySequenceEdit * _self_, QKeyEvent * event) {
+  _self_->QKeySequenceEdit::keyReleaseEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_timerEvent_SUPER_QTimerEvent_X(QKeySequenceEdit * _self_, QTimerEvent * event) {
+  _self_->QKeySequenceEdit::timerEvent(event);
+}
+
+extern "C" void bg_QKeySequenceEdit_focusOutEvent_SUPER_QFocusEvent_X(QKeySequenceEdit * _self_, QFocusEvent * event) {
+  _self_->QKeySequenceEdit::focusOutEvent(event);
+}
+
+extern "C" void bg_BgInherit_QKeySequenceEdit_JUMPTABLE_BgJumptable_QKeySequenceEdit_R(BgInherit_QKeySequenceEdit * _self_, const BgJumptable_QKeySequenceEdit & table) {
   _self_->bgJump = (table);
 }
 
@@ -80272,6 +89609,1608 @@ extern "C" bool bg_QMainWindow_event_SUPER_QEvent_X(QMainWindow * _self_, QEvent
 }
 
 extern "C" void bg_BgInherit_QMainWindow_JUMPTABLE_BgJumptable_QMainWindow_R(BgInherit_QMainWindow * _self_, const BgJumptable_QMainWindow & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QMdiArea {
+  CrystalProc<const QMetaObject *> bg_QMdiArea_metaObject_;
+  CrystalProc<void *, const char *> bg_QMdiArea_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QMdiArea_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QMdiArea_sizeHint_;
+  CrystalProc<QSize *> bg_QMdiArea_minimumSizeHint_;
+  CrystalProc<void, QWidget *> bg_QMdiArea_setupViewport_QWidget_X;
+  CrystalProc<bool, QEvent *> bg_QMdiArea_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QMdiArea_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QMdiArea_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QMdiArea_childEvent_QChildEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QMdiArea_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QMdiArea_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QMdiArea_showEvent_QShowEvent_X;
+  CrystalProc<bool, QEvent *> bg_QMdiArea_viewportEvent_QEvent_X;
+  CrystalProc<void, int, int> bg_QMdiArea_scrollContentsBy_int_int;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractScrollArea_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractScrollArea_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractScrollArea_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QAbstractScrollArea_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QAbstractScrollArea_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QAbstractScrollArea_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QAbstractScrollArea_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QAbstractScrollArea_dropEvent_QDropEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QAbstractScrollArea_keyPressEvent_QKeyEvent_X;
+  CrystalProc<QSize *> bg_QAbstractScrollArea_viewportSizeHint_;
+  CrystalProc<void, QEvent *> bg_QFrame_changeEvent_QEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QMdiArea : public QMdiArea {
+  using QMdiArea::QMdiArea;
+  BgJumptable_QMdiArea bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_metaObject_();
+    } else {
+      return QMdiArea::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QMdiArea::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QMdiArea::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QMdiArea_sizeHint_();
+    } else {
+      return QMdiArea::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QMdiArea_minimumSizeHint_();
+    } else {
+      return QMdiArea::minimumSizeHint();
+    }
+  }
+  
+  void setupViewport(QWidget * viewport) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_setupViewport_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_setupViewport_QWidget_X(viewport);
+    } else {
+      QMdiArea::setupViewport(viewport);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_event_QEvent_X(event);
+    } else {
+      return QMdiArea::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QMdiArea::eventFilter(watched, event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_paintEvent_QPaintEvent_X(event);
+    } else {
+      QMdiArea::paintEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_childEvent_QChildEvent_X(event);
+    } else {
+      QMdiArea::childEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QMdiArea::resizeEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_timerEvent_QTimerEvent_X(event);
+    } else {
+      QMdiArea::timerEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiArea_showEvent_QShowEvent_X(event);
+    } else {
+      QMdiArea::showEvent(event);
+    }
+  }
+  
+  bool viewportEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_viewportEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMdiArea_viewportEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      return QMdiArea::viewportEvent(unnamed_arg_0);
+    }
+  }
+  
+  void scrollContentsBy(int dx, int dy) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QMdiArea_scrollContentsBy_int_int.isValid()) {
+      _self_->bgJump.bg_QMdiArea_scrollContentsBy_int_int(dx, dy);
+    } else {
+      QMdiArea::scrollContentsBy(dx, dy);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QMdiArea::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QMdiArea::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QMdiArea::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QMdiArea::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QMdiArea::wheelEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QMdiArea::contextMenuEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QMdiArea::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QMdiArea::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QMdiArea::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_dropEvent_QDropEvent_X(event);
+    } else {
+      QMdiArea::dropEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QAbstractScrollArea_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QMdiArea::keyPressEvent(event);
+    }
+  }
+  
+  QSize viewportSizeHint() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractScrollArea_viewportSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QAbstractScrollArea_viewportSizeHint_();
+    } else {
+      return QMdiArea::viewportSizeHint();
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QFrame_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QMdiArea::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionFrame * option) const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X.isValid()) {
+      _self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X(option);
+    } else {
+      QMdiArea::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QMdiArea::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QMdiArea::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QMdiArea::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QMdiArea::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QMdiArea::paintEngine();
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QMdiArea::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QMdiArea::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QMdiArea::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QMdiArea::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QMdiArea::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QMdiArea::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QMdiArea::closeEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QMdiArea::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QMdiArea::actionEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QMdiArea::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QMdiArea::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QMdiArea::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QMdiArea::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QMdiArea::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QMdiArea::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QMdiArea::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QMdiArea::focusNextPrevChild(next);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QMdiArea::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMdiArea::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMdiArea *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMdiArea::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QMdiArea_metaObject_(QMdiArea * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QMdiArea_qt_metacast_const_char_X(QMdiArea * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QMdiArea_qt_metacall_QMetaObject__Call_int_void_XX(QMdiArea * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QMdiArea_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QMdiArea::tr(s));
+}
+
+extern "C" CrystalString bg_QMdiArea_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QMdiArea::tr(s, c));
+}
+
+extern "C" CrystalString bg_QMdiArea_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QMdiArea::tr(s, c, n));
+}
+
+extern "C" QMdiArea * bg_QMdiArea__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMdiArea>(parent);
+}
+
+extern "C" QSize bg_QMdiArea_sizeHint_(QMdiArea * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" QSize bg_QMdiArea_minimumSizeHint_(QMdiArea * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" QMdiSubWindow * bg_QMdiArea_currentSubWindow_(QMdiArea * _self_) {
+  return _self_->currentSubWindow();
+}
+
+extern "C" QMdiSubWindow * bg_QMdiArea_activeSubWindow_(QMdiArea * _self_) {
+  return _self_->activeSubWindow();
+}
+
+extern "C" Container_QList_QMdiSubWindow_X_ * bg_QMdiArea_subWindowList_QMdiArea__WindowOrder(QMdiArea * _self_, QMdiArea::WindowOrder order) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QMdiSubWindow_X_>()) Container_QList_QMdiSubWindow_X_ (_self_->subWindowList(order));
+}
+
+extern "C" QMdiSubWindow * bg_QMdiArea_addSubWindow_QWidget_X(QMdiArea * _self_, QWidget * widget) {
+  return _self_->addSubWindow(widget);
+}
+
+extern "C" QMdiSubWindow * bg_QMdiArea_addSubWindow_QWidget_X_Qt__WindowFlags(QMdiArea * _self_, QWidget * widget, Qt::WindowFlags flags) {
+  return _self_->addSubWindow(widget, flags);
+}
+
+extern "C" void bg_QMdiArea_removeSubWindow_QWidget_X(QMdiArea * _self_, QWidget * widget) {
+  _self_->removeSubWindow(widget);
+}
+
+extern "C" QBrush * bg_QMdiArea_background_(QMdiArea * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->background());
+}
+
+extern "C" void bg_QMdiArea_setBackground_const_QBrush_R(QMdiArea * _self_, const QBrush & background) {
+  _self_->setBackground(background);
+}
+
+extern "C" QMdiArea::WindowOrder bg_QMdiArea_activationOrder_(QMdiArea * _self_) {
+  return _self_->activationOrder();
+}
+
+extern "C" void bg_QMdiArea_setActivationOrder_QMdiArea__WindowOrder(QMdiArea * _self_, QMdiArea::WindowOrder order) {
+  _self_->setActivationOrder(order);
+}
+
+extern "C" void bg_QMdiArea_setOption_QMdiArea__AreaOption_bool(QMdiArea * _self_, QMdiArea::AreaOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QMdiArea_testOption_QMdiArea__AreaOption(QMdiArea * _self_, QMdiArea::AreaOption opton) {
+  return _self_->testOption(opton);
+}
+
+extern "C" void bg_QMdiArea_setViewMode_QMdiArea__ViewMode(QMdiArea * _self_, QMdiArea::ViewMode mode) {
+  _self_->setViewMode(mode);
+}
+
+extern "C" QMdiArea::ViewMode bg_QMdiArea_viewMode_(QMdiArea * _self_) {
+  return _self_->viewMode();
+}
+
+extern "C" bool bg_QMdiArea_documentMode_(QMdiArea * _self_) {
+  return _self_->documentMode();
+}
+
+extern "C" void bg_QMdiArea_setDocumentMode_bool(QMdiArea * _self_, bool enabled) {
+  _self_->setDocumentMode(enabled);
+}
+
+extern "C" void bg_QMdiArea_setTabsClosable_bool(QMdiArea * _self_, bool closable) {
+  _self_->setTabsClosable(closable);
+}
+
+extern "C" bool bg_QMdiArea_tabsClosable_(QMdiArea * _self_) {
+  return _self_->tabsClosable();
+}
+
+extern "C" void bg_QMdiArea_setTabsMovable_bool(QMdiArea * _self_, bool movable) {
+  _self_->setTabsMovable(movable);
+}
+
+extern "C" bool bg_QMdiArea_tabsMovable_(QMdiArea * _self_) {
+  return _self_->tabsMovable();
+}
+
+extern "C" void bg_QMdiArea_setTabShape_QTabWidget__TabShape(QMdiArea * _self_, QTabWidget::TabShape shape) {
+  _self_->setTabShape(shape);
+}
+
+extern "C" QTabWidget::TabShape bg_QMdiArea_tabShape_(QMdiArea * _self_) {
+  return _self_->tabShape();
+}
+
+extern "C" void bg_QMdiArea_setTabPosition_QTabWidget__TabPosition(QMdiArea * _self_, QTabWidget::TabPosition position) {
+  _self_->setTabPosition(position);
+}
+
+extern "C" QTabWidget::TabPosition bg_QMdiArea_tabPosition_(QMdiArea * _self_) {
+  return _self_->tabPosition();
+}
+
+extern "C" void bg_QMdiArea_subWindowActivated_QMdiSubWindow_X(QMdiArea * _self_, QMdiSubWindow * unnamed_arg_0) {
+  _self_->subWindowActivated(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiArea_setActiveSubWindow_QMdiSubWindow_X(QMdiArea * _self_, QMdiSubWindow * window) {
+  _self_->setActiveSubWindow(window);
+}
+
+extern "C" void bg_QMdiArea_tileSubWindows_(QMdiArea * _self_) {
+  _self_->tileSubWindows();
+}
+
+extern "C" void bg_QMdiArea_cascadeSubWindows_(QMdiArea * _self_) {
+  _self_->cascadeSubWindows();
+}
+
+extern "C" void bg_QMdiArea_closeActiveSubWindow_(QMdiArea * _self_) {
+  _self_->closeActiveSubWindow();
+}
+
+extern "C" void bg_QMdiArea_closeAllSubWindows_(QMdiArea * _self_) {
+  _self_->closeAllSubWindows();
+}
+
+extern "C" void bg_QMdiArea_activateNextSubWindow_(QMdiArea * _self_) {
+  _self_->activateNextSubWindow();
+}
+
+extern "C" void bg_QMdiArea_activatePreviousSubWindow_(QMdiArea * _self_) {
+  _self_->activatePreviousSubWindow();
+}
+
+extern "C" void bg_QMdiArea_setupViewport_QWidget_X(QMdiArea * _self_, QWidget * viewport) {
+  _self_->setupViewport(viewport);
+}
+
+extern "C" bool bg_QMdiArea_event_QEvent_X(QMdiArea * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" bool bg_QMdiArea_eventFilter_QObject_X_QEvent_X(QMdiArea * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" void bg_QMdiArea_paintEvent_QPaintEvent_X(QMdiArea * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QMdiArea_childEvent_QChildEvent_X(QMdiArea * _self_, QChildEvent * event) {
+  _self_->childEvent(event);
+}
+
+extern "C" void bg_QMdiArea_resizeEvent_QResizeEvent_X(QMdiArea * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QMdiArea_timerEvent_QTimerEvent_X(QMdiArea * _self_, QTimerEvent * event) {
+  _self_->timerEvent(event);
+}
+
+extern "C" void bg_QMdiArea_showEvent_QShowEvent_X(QMdiArea * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" bool bg_QMdiArea_viewportEvent_QEvent_X(QMdiArea * _self_, QEvent * unnamed_arg_0) {
+  return _self_->viewportEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiArea_scrollContentsBy_int_int(QMdiArea * _self_, int dx, int dy) {
+  _self_->scrollContentsBy(dx, dy);
+}
+
+extern "C" const QMetaObject * bg_QMdiArea_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QMdiArea::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QMdiArea_CONNECT_subWindowActivated_CrystalProc_void__QMdiSubWindow_X_(QMdiArea * _self_, CrystalProc<void, QMdiSubWindow *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMdiArea::*)(QMdiSubWindow *))&QMdiArea::subWindowActivated, [_proc_](QMdiSubWindow * unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" QSize bg_QMdiArea_sizeHint_SUPER_(QMdiArea * _self_) {
+  return _self_->QMdiArea::sizeHint();
+}
+
+extern "C" QSize bg_QMdiArea_minimumSizeHint_SUPER_(QMdiArea * _self_) {
+  return _self_->QMdiArea::minimumSizeHint();
+}
+
+extern "C" void bg_QMdiArea_setupViewport_SUPER_QWidget_X(QMdiArea * _self_, QWidget * viewport) {
+  _self_->QMdiArea::setupViewport(viewport);
+}
+
+extern "C" bool bg_QMdiArea_event_SUPER_QEvent_X(QMdiArea * _self_, QEvent * event) {
+  return _self_->QMdiArea::event(event);
+}
+
+extern "C" bool bg_QMdiArea_eventFilter_SUPER_QObject_X_QEvent_X(QMdiArea * _self_, QObject * watched, QEvent * event) {
+  return _self_->QMdiArea::eventFilter(watched, event);
+}
+
+extern "C" void bg_QMdiArea_paintEvent_SUPER_QPaintEvent_X(QMdiArea * _self_, QPaintEvent * event) {
+  _self_->QMdiArea::paintEvent(event);
+}
+
+extern "C" void bg_QMdiArea_childEvent_SUPER_QChildEvent_X(QMdiArea * _self_, QChildEvent * event) {
+  _self_->QMdiArea::childEvent(event);
+}
+
+extern "C" void bg_QMdiArea_resizeEvent_SUPER_QResizeEvent_X(QMdiArea * _self_, QResizeEvent * event) {
+  _self_->QMdiArea::resizeEvent(event);
+}
+
+extern "C" void bg_QMdiArea_timerEvent_SUPER_QTimerEvent_X(QMdiArea * _self_, QTimerEvent * event) {
+  _self_->QMdiArea::timerEvent(event);
+}
+
+extern "C" void bg_QMdiArea_showEvent_SUPER_QShowEvent_X(QMdiArea * _self_, QShowEvent * event) {
+  _self_->QMdiArea::showEvent(event);
+}
+
+extern "C" bool bg_QMdiArea_viewportEvent_SUPER_QEvent_X(QMdiArea * _self_, QEvent * unnamed_arg_0) {
+  return _self_->QMdiArea::viewportEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiArea_scrollContentsBy_SUPER_int_int(QMdiArea * _self_, int dx, int dy) {
+  _self_->QMdiArea::scrollContentsBy(dx, dy);
+}
+
+extern "C" void bg_BgInherit_QMdiArea_JUMPTABLE_BgJumptable_QMdiArea_R(BgInherit_QMdiArea * _self_, const BgJumptable_QMdiArea & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QMdiSubWindow {
+  CrystalProc<const QMetaObject *> bg_QMdiSubWindow_metaObject_;
+  CrystalProc<void *, const char *> bg_QMdiSubWindow_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QMdiSubWindow_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QMdiSubWindow_sizeHint_;
+  CrystalProc<QSize *> bg_QMdiSubWindow_minimumSizeHint_;
+  CrystalProc<bool, QObject *, QEvent *> bg_QMdiSubWindow_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QMdiSubWindow_event_QEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QMdiSubWindow_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QMdiSubWindow_hideEvent_QHideEvent_X;
+  CrystalProc<void, QEvent *> bg_QMdiSubWindow_changeEvent_QEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QMdiSubWindow_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QEvent *> bg_QMdiSubWindow_leaveEvent_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QMdiSubWindow_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QMdiSubWindow_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QMdiSubWindow_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QMdiSubWindow_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QMdiSubWindow_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QMdiSubWindow_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QMdiSubWindow_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QMdiSubWindow_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QMdiSubWindow_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QMdiSubWindow_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QMdiSubWindow_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QMdiSubWindow_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QMdiSubWindow_childEvent_QChildEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QMdiSubWindow : public QMdiSubWindow {
+  using QMdiSubWindow::QMdiSubWindow;
+  BgJumptable_QMdiSubWindow bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QMdiSubWindow_metaObject_();
+    } else {
+      return QMdiSubWindow::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QMdiSubWindow_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QMdiSubWindow::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QMdiSubWindow_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QMdiSubWindow::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QMdiSubWindow_sizeHint_();
+    } else {
+      return QMdiSubWindow::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QMdiSubWindow_minimumSizeHint_();
+    } else {
+      return QMdiSubWindow::minimumSizeHint();
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMdiSubWindow_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QMdiSubWindow::eventFilter(watched, event);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QMdiSubWindow_event_QEvent_X(event);
+    } else {
+      return QMdiSubWindow::event(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_showEvent_QShowEvent_X(event);
+    } else {
+      QMdiSubWindow::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_hideEvent_QHideEvent_X(event);
+    } else {
+      QMdiSubWindow::hideEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QMdiSubWindow::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_closeEvent_QCloseEvent_X(event);
+    } else {
+      QMdiSubWindow::closeEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_leaveEvent_QEvent_X(event);
+    } else {
+      QMdiSubWindow::leaveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QMdiSubWindow::resizeEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_timerEvent_QTimerEvent_X(event);
+    } else {
+      QMdiSubWindow::timerEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_moveEvent_QMoveEvent_X(event);
+    } else {
+      QMdiSubWindow::moveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_paintEvent_QPaintEvent_X(event);
+    } else {
+      QMdiSubWindow::paintEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QMdiSubWindow::mousePressEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QMdiSubWindow::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QMdiSubWindow::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QMdiSubWindow::mouseMoveEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QMdiSubWindow::keyPressEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QMdiSubWindow::contextMenuEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QMdiSubWindow::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QMdiSubWindow::focusOutEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QMdiSubWindow_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QMdiSubWindow_childEvent_QChildEvent_X(event);
+    } else {
+      QMdiSubWindow::childEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QMdiSubWindow::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QMdiSubWindow::setVisible(visible);
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QMdiSubWindow::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QMdiSubWindow::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QMdiSubWindow::paintEngine();
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QMdiSubWindow::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QMdiSubWindow::keyReleaseEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QMdiSubWindow::enterEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QMdiSubWindow::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QMdiSubWindow::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QMdiSubWindow::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QMdiSubWindow::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QMdiSubWindow::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QMdiSubWindow::dropEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QMdiSubWindow::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QMdiSubWindow::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QMdiSubWindow::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QMdiSubWindow::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QMdiSubWindow::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QMdiSubWindow::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QMdiSubWindow::focusNextPrevChild(next);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QMdiSubWindow::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMdiSubWindow::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QMdiSubWindow *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QMdiSubWindow::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QMdiSubWindow_metaObject_(QMdiSubWindow * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QMdiSubWindow_qt_metacast_const_char_X(QMdiSubWindow * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QMdiSubWindow_qt_metacall_QMetaObject__Call_int_void_XX(QMdiSubWindow * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QMdiSubWindow_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QMdiSubWindow::tr(s));
+}
+
+extern "C" CrystalString bg_QMdiSubWindow_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QMdiSubWindow::tr(s, c));
+}
+
+extern "C" CrystalString bg_QMdiSubWindow_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QMdiSubWindow::tr(s, c, n));
+}
+
+extern "C" QMdiSubWindow * bg_QMdiSubWindow__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMdiSubWindow>(parent);
+}
+
+extern "C" QMdiSubWindow * bg_QMdiSubWindow__CONSTRUCT_QWidget_X_Qt__WindowFlags(QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QMdiSubWindow>(parent, flags);
+}
+
+extern "C" QSize bg_QMdiSubWindow_sizeHint_(QMdiSubWindow * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" QSize bg_QMdiSubWindow_minimumSizeHint_(QMdiSubWindow * _self_) {
+  return _self_->minimumSizeHint();
+}
+
+extern "C" void bg_QMdiSubWindow_setWidget_QWidget_X(QMdiSubWindow * _self_, QWidget * widget) {
+  _self_->setWidget(widget);
+}
+
+extern "C" QWidget * bg_QMdiSubWindow_widget_(QMdiSubWindow * _self_) {
+  return _self_->widget();
+}
+
+extern "C" QWidget * bg_QMdiSubWindow_maximizedButtonsWidget_(QMdiSubWindow * _self_) {
+  return _self_->maximizedButtonsWidget();
+}
+
+extern "C" QWidget * bg_QMdiSubWindow_maximizedSystemMenuIconWidget_(QMdiSubWindow * _self_) {
+  return _self_->maximizedSystemMenuIconWidget();
+}
+
+extern "C" bool bg_QMdiSubWindow_isShaded_(QMdiSubWindow * _self_) {
+  return _self_->isShaded();
+}
+
+extern "C" void bg_QMdiSubWindow_setOption_QMdiSubWindow__SubWindowOption_bool(QMdiSubWindow * _self_, QMdiSubWindow::SubWindowOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QMdiSubWindow_testOption_QMdiSubWindow__SubWindowOption(QMdiSubWindow * _self_, QMdiSubWindow::SubWindowOption unnamed_arg_0) {
+  return _self_->testOption(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiSubWindow_setKeyboardSingleStep_int(QMdiSubWindow * _self_, int step) {
+  _self_->setKeyboardSingleStep(step);
+}
+
+extern "C" int bg_QMdiSubWindow_keyboardSingleStep_(QMdiSubWindow * _self_) {
+  return _self_->keyboardSingleStep();
+}
+
+extern "C" void bg_QMdiSubWindow_setKeyboardPageStep_int(QMdiSubWindow * _self_, int step) {
+  _self_->setKeyboardPageStep(step);
+}
+
+extern "C" int bg_QMdiSubWindow_keyboardPageStep_(QMdiSubWindow * _self_) {
+  return _self_->keyboardPageStep();
+}
+
+extern "C" void bg_QMdiSubWindow_setSystemMenu_QMenu_X(QMdiSubWindow * _self_, QMenu * systemMenu) {
+  _self_->setSystemMenu(systemMenu);
+}
+
+extern "C" QMenu * bg_QMdiSubWindow_systemMenu_(QMdiSubWindow * _self_) {
+  return _self_->systemMenu();
+}
+
+extern "C" QMdiArea * bg_QMdiSubWindow_mdiArea_(QMdiSubWindow * _self_) {
+  return _self_->mdiArea();
+}
+
+extern "C" void bg_QMdiSubWindow_windowStateChanged_Qt__WindowStates_Qt__WindowStates(QMdiSubWindow * _self_, Qt::WindowStates oldState, Qt::WindowStates newState) {
+  _self_->windowStateChanged(oldState, newState);
+}
+
+extern "C" void bg_QMdiSubWindow_aboutToActivate_(QMdiSubWindow * _self_) {
+  _self_->aboutToActivate();
+}
+
+extern "C" void bg_QMdiSubWindow_showSystemMenu_(QMdiSubWindow * _self_) {
+  _self_->showSystemMenu();
+}
+
+extern "C" void bg_QMdiSubWindow_showShaded_(QMdiSubWindow * _self_) {
+  _self_->showShaded();
+}
+
+extern "C" bool bg_QMdiSubWindow_eventFilter_QObject_X_QEvent_X(QMdiSubWindow * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" bool bg_QMdiSubWindow_event_QEvent_X(QMdiSubWindow * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QMdiSubWindow_showEvent_QShowEvent_X(QMdiSubWindow * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_hideEvent_QHideEvent_X(QMdiSubWindow * _self_, QHideEvent * event) {
+  _self_->hideEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_changeEvent_QEvent_X(QMdiSubWindow * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiSubWindow_closeEvent_QCloseEvent_X(QMdiSubWindow * _self_, QCloseEvent * event) {
+  _self_->closeEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_leaveEvent_QEvent_X(QMdiSubWindow * _self_, QEvent * event) {
+  _self_->leaveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_resizeEvent_QResizeEvent_X(QMdiSubWindow * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_timerEvent_QTimerEvent_X(QMdiSubWindow * _self_, QTimerEvent * event) {
+  _self_->timerEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_moveEvent_QMoveEvent_X(QMdiSubWindow * _self_, QMoveEvent * event) {
+  _self_->moveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_paintEvent_QPaintEvent_X(QMdiSubWindow * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mousePressEvent_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseDoubleClickEvent_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseReleaseEvent_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseMoveEvent_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->mouseMoveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_keyPressEvent_QKeyEvent_X(QMdiSubWindow * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_contextMenuEvent_QContextMenuEvent_X(QMdiSubWindow * _self_, QContextMenuEvent * event) {
+  _self_->contextMenuEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_focusInEvent_QFocusEvent_X(QMdiSubWindow * _self_, QFocusEvent * event) {
+  _self_->focusInEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_focusOutEvent_QFocusEvent_X(QMdiSubWindow * _self_, QFocusEvent * event) {
+  _self_->focusOutEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_childEvent_QChildEvent_X(QMdiSubWindow * _self_, QChildEvent * event) {
+  _self_->childEvent(event);
+}
+
+extern "C" const QMetaObject * bg_QMdiSubWindow_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QMdiSubWindow::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QMdiSubWindow_CONNECT_windowStateChanged_CrystalProc_void__Qt__WindowStates__Qt__WindowStates_(QMdiSubWindow * _self_, CrystalProc<void, Qt::WindowStates, Qt::WindowStates> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMdiSubWindow::*)(Qt::WindowStates, Qt::WindowStates))&QMdiSubWindow::windowStateChanged, [_proc_](Qt::WindowStates oldState, Qt::WindowStates newState){ _proc_(oldState, newState); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QMdiSubWindow_CONNECT_aboutToActivate_CrystalProc_void_(QMdiSubWindow * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QMdiSubWindow::*)())&QMdiSubWindow::aboutToActivate, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QSize bg_QMdiSubWindow_sizeHint_SUPER_(QMdiSubWindow * _self_) {
+  return _self_->QMdiSubWindow::sizeHint();
+}
+
+extern "C" QSize bg_QMdiSubWindow_minimumSizeHint_SUPER_(QMdiSubWindow * _self_) {
+  return _self_->QMdiSubWindow::minimumSizeHint();
+}
+
+extern "C" bool bg_QMdiSubWindow_eventFilter_SUPER_QObject_X_QEvent_X(QMdiSubWindow * _self_, QObject * watched, QEvent * event) {
+  return _self_->QMdiSubWindow::eventFilter(watched, event);
+}
+
+extern "C" bool bg_QMdiSubWindow_event_SUPER_QEvent_X(QMdiSubWindow * _self_, QEvent * event) {
+  return _self_->QMdiSubWindow::event(event);
+}
+
+extern "C" void bg_QMdiSubWindow_showEvent_SUPER_QShowEvent_X(QMdiSubWindow * _self_, QShowEvent * event) {
+  _self_->QMdiSubWindow::showEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_hideEvent_SUPER_QHideEvent_X(QMdiSubWindow * _self_, QHideEvent * event) {
+  _self_->QMdiSubWindow::hideEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_changeEvent_SUPER_QEvent_X(QMdiSubWindow * _self_, QEvent * unnamed_arg_0) {
+  _self_->QMdiSubWindow::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QMdiSubWindow_closeEvent_SUPER_QCloseEvent_X(QMdiSubWindow * _self_, QCloseEvent * event) {
+  _self_->QMdiSubWindow::closeEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_leaveEvent_SUPER_QEvent_X(QMdiSubWindow * _self_, QEvent * event) {
+  _self_->QMdiSubWindow::leaveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_resizeEvent_SUPER_QResizeEvent_X(QMdiSubWindow * _self_, QResizeEvent * event) {
+  _self_->QMdiSubWindow::resizeEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_timerEvent_SUPER_QTimerEvent_X(QMdiSubWindow * _self_, QTimerEvent * event) {
+  _self_->QMdiSubWindow::timerEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_moveEvent_SUPER_QMoveEvent_X(QMdiSubWindow * _self_, QMoveEvent * event) {
+  _self_->QMdiSubWindow::moveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_paintEvent_SUPER_QPaintEvent_X(QMdiSubWindow * _self_, QPaintEvent * event) {
+  _self_->QMdiSubWindow::paintEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mousePressEvent_SUPER_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->QMdiSubWindow::mousePressEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseDoubleClickEvent_SUPER_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->QMdiSubWindow::mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseReleaseEvent_SUPER_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->QMdiSubWindow::mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_mouseMoveEvent_SUPER_QMouseEvent_X(QMdiSubWindow * _self_, QMouseEvent * event) {
+  _self_->QMdiSubWindow::mouseMoveEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_keyPressEvent_SUPER_QKeyEvent_X(QMdiSubWindow * _self_, QKeyEvent * event) {
+  _self_->QMdiSubWindow::keyPressEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_contextMenuEvent_SUPER_QContextMenuEvent_X(QMdiSubWindow * _self_, QContextMenuEvent * event) {
+  _self_->QMdiSubWindow::contextMenuEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_focusInEvent_SUPER_QFocusEvent_X(QMdiSubWindow * _self_, QFocusEvent * event) {
+  _self_->QMdiSubWindow::focusInEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_focusOutEvent_SUPER_QFocusEvent_X(QMdiSubWindow * _self_, QFocusEvent * event) {
+  _self_->QMdiSubWindow::focusOutEvent(event);
+}
+
+extern "C" void bg_QMdiSubWindow_childEvent_SUPER_QChildEvent_X(QMdiSubWindow * _self_, QChildEvent * event) {
+  _self_->QMdiSubWindow::childEvent(event);
+}
+
+extern "C" void bg_BgInherit_QMdiSubWindow_JUMPTABLE_BgJumptable_QMdiSubWindow_R(BgInherit_QMdiSubWindow * _self_, const BgJumptable_QMdiSubWindow & table) {
   _self_->bgJump = (table);
 }
 
@@ -86345,6 +97284,744 @@ extern "C" void bg_BgInherit_QProgressBar_JUMPTABLE_BgJumptable_QProgressBar_R(B
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QProgressDialog {
+  CrystalProc<const QMetaObject *> bg_QProgressDialog_metaObject_;
+  CrystalProc<void *, const char *> bg_QProgressDialog_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QProgressDialog_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QProgressDialog_sizeHint_;
+  CrystalProc<void, QResizeEvent *> bg_QProgressDialog_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QProgressDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QEvent *> bg_QProgressDialog_changeEvent_QEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QProgressDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, bool> bg_QDialog_setVisible_bool;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void, int> bg_QDialog_done_int;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QProgressDialog : public QProgressDialog {
+  using QProgressDialog::QProgressDialog;
+  BgJumptable_QProgressDialog bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QProgressDialog_metaObject_();
+    } else {
+      return QProgressDialog::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QProgressDialog_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QProgressDialog::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QProgressDialog_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QProgressDialog::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QProgressDialog_sizeHint_();
+    } else {
+      return QProgressDialog::sizeHint();
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QProgressDialog_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QProgressDialog::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QProgressDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QProgressDialog::closeEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QProgressDialog_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QProgressDialog::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QProgressDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QProgressDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QProgressDialog::showEvent(event);
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QDialog_setVisible_bool(visible);
+    } else {
+      QProgressDialog::setVisible(visible);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QProgressDialog::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QProgressDialog::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QProgressDialog::exec();
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_done_int.isValid()) {
+      _self_->bgJump.bg_QDialog_done_int(unnamed_arg_0);
+    } else {
+      QProgressDialog::done(unnamed_arg_0);
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QProgressDialog::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QProgressDialog::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QProgressDialog::keyPressEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QProgressDialog::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QProgressDialog::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QProgressDialog::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QProgressDialog::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QProgressDialog::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QProgressDialog::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QProgressDialog::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QProgressDialog::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QProgressDialog::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QProgressDialog::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QProgressDialog::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QProgressDialog::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QProgressDialog::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QProgressDialog::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QProgressDialog::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QProgressDialog::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QProgressDialog::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QProgressDialog::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QProgressDialog::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QProgressDialog::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QProgressDialog::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QProgressDialog::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QProgressDialog::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QProgressDialog::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QProgressDialog::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QProgressDialog::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QProgressDialog::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QProgressDialog::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QProgressDialog::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QProgressDialog::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QProgressDialog::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QProgressDialog::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QProgressDialog::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QProgressDialog::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QProgressDialog::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QProgressDialog::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProgressDialog::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProgressDialog *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProgressDialog::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QProgressDialog_metaObject_(QProgressDialog * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QProgressDialog_qt_metacast_const_char_X(QProgressDialog * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QProgressDialog_qt_metacall_QMetaObject__Call_int_void_XX(QProgressDialog * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QProgressDialog_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QProgressDialog::tr(s));
+}
+
+extern "C" CrystalString bg_QProgressDialog_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QProgressDialog::tr(s, c));
+}
+
+extern "C" CrystalString bg_QProgressDialog_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QProgressDialog::tr(s, c, n));
+}
+
+extern "C" QProgressDialog * bg_QProgressDialog__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProgressDialog>(parent);
+}
+
+extern "C" QProgressDialog * bg_QProgressDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags(QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProgressDialog>(parent, flags);
+}
+
+extern "C" QProgressDialog * bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X(const CrystalString labelText, const CrystalString cancelButtonText, int minimum, int maximum, QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProgressDialog>(([&]() { auto &&bg_value = (labelText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (cancelButtonText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), minimum, maximum, parent);
+}
+
+extern "C" QProgressDialog * bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X_Qt__WindowFlags(const CrystalString labelText, const CrystalString cancelButtonText, int minimum, int maximum, QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProgressDialog>(([&]() { auto &&bg_value = (labelText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (cancelButtonText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), minimum, maximum, parent, flags);
+}
+
+extern "C" void bg_QProgressDialog_setLabel_QLabel_X(QProgressDialog * _self_, QLabel * label) {
+  _self_->setLabel(label);
+}
+
+extern "C" void bg_QProgressDialog_setCancelButton_QPushButton_X(QProgressDialog * _self_, QPushButton * button) {
+  _self_->setCancelButton(button);
+}
+
+extern "C" void bg_QProgressDialog_setBar_QProgressBar_X(QProgressDialog * _self_, QProgressBar * bar) {
+  _self_->setBar(bar);
+}
+
+extern "C" bool bg_QProgressDialog_wasCanceled_(QProgressDialog * _self_) {
+  return _self_->wasCanceled();
+}
+
+extern "C" int bg_QProgressDialog_minimum_(QProgressDialog * _self_) {
+  return _self_->minimum();
+}
+
+extern "C" int bg_QProgressDialog_maximum_(QProgressDialog * _self_) {
+  return _self_->maximum();
+}
+
+extern "C" int bg_QProgressDialog_value_(QProgressDialog * _self_) {
+  return _self_->value();
+}
+
+extern "C" QSize bg_QProgressDialog_sizeHint_(QProgressDialog * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" CrystalString bg_QProgressDialog_labelText_(QProgressDialog * _self_) {
+  return qstring_to_crystal(_self_->labelText());
+}
+
+extern "C" int bg_QProgressDialog_minimumDuration_(QProgressDialog * _self_) {
+  return _self_->minimumDuration();
+}
+
+extern "C" void bg_QProgressDialog_setAutoReset_bool(QProgressDialog * _self_, bool reset) {
+  _self_->setAutoReset(reset);
+}
+
+extern "C" bool bg_QProgressDialog_autoReset_(QProgressDialog * _self_) {
+  return _self_->autoReset();
+}
+
+extern "C" void bg_QProgressDialog_setAutoClose_bool(QProgressDialog * _self_, bool close) {
+  _self_->setAutoClose(close);
+}
+
+extern "C" bool bg_QProgressDialog_autoClose_(QProgressDialog * _self_) {
+  return _self_->autoClose();
+}
+
+extern "C" void bg_QProgressDialog_open_QObject_X_const_char_X(QProgressDialog * _self_, QObject * receiver, const char * member) {
+  _self_->open(receiver, member);
+}
+
+extern "C" void bg_QProgressDialog_cancel_(QProgressDialog * _self_) {
+  _self_->cancel();
+}
+
+extern "C" void bg_QProgressDialog_reset_(QProgressDialog * _self_) {
+  _self_->reset();
+}
+
+extern "C" void bg_QProgressDialog_setMaximum_int(QProgressDialog * _self_, int maximum) {
+  _self_->setMaximum(maximum);
+}
+
+extern "C" void bg_QProgressDialog_setMinimum_int(QProgressDialog * _self_, int minimum) {
+  _self_->setMinimum(minimum);
+}
+
+extern "C" void bg_QProgressDialog_setRange_int_int(QProgressDialog * _self_, int minimum, int maximum) {
+  _self_->setRange(minimum, maximum);
+}
+
+extern "C" void bg_QProgressDialog_setValue_int(QProgressDialog * _self_, int progress) {
+  _self_->setValue(progress);
+}
+
+extern "C" void bg_QProgressDialog_setLabelText_const_QString_R(QProgressDialog * _self_, const CrystalString text) {
+  _self_->setLabelText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProgressDialog_setCancelButtonText_const_QString_R(QProgressDialog * _self_, const CrystalString text) {
+  _self_->setCancelButtonText(([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QProgressDialog_setMinimumDuration_int(QProgressDialog * _self_, int ms) {
+  _self_->setMinimumDuration(ms);
+}
+
+extern "C" void bg_QProgressDialog_canceled_(QProgressDialog * _self_) {
+  _self_->canceled();
+}
+
+extern "C" void bg_QProgressDialog_resizeEvent_QResizeEvent_X(QProgressDialog * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QProgressDialog_closeEvent_QCloseEvent_X(QProgressDialog * _self_, QCloseEvent * event) {
+  _self_->closeEvent(event);
+}
+
+extern "C" void bg_QProgressDialog_changeEvent_QEvent_X(QProgressDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QProgressDialog_showEvent_QShowEvent_X(QProgressDialog * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QProgressDialog_forceShow_(QProgressDialog * _self_) {
+  _self_->forceShow();
+}
+
+extern "C" const QMetaObject * bg_QProgressDialog_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QProgressDialog::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QProgressDialog_CONNECT_canceled_CrystalProc_void_(QProgressDialog * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QProgressDialog::*)())&QProgressDialog::canceled, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QSize bg_QProgressDialog_sizeHint_SUPER_(QProgressDialog * _self_) {
+  return _self_->QProgressDialog::sizeHint();
+}
+
+extern "C" void bg_QProgressDialog_resizeEvent_SUPER_QResizeEvent_X(QProgressDialog * _self_, QResizeEvent * event) {
+  _self_->QProgressDialog::resizeEvent(event);
+}
+
+extern "C" void bg_QProgressDialog_closeEvent_SUPER_QCloseEvent_X(QProgressDialog * _self_, QCloseEvent * event) {
+  _self_->QProgressDialog::closeEvent(event);
+}
+
+extern "C" void bg_QProgressDialog_changeEvent_SUPER_QEvent_X(QProgressDialog * _self_, QEvent * unnamed_arg_0) {
+  _self_->QProgressDialog::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_QProgressDialog_showEvent_SUPER_QShowEvent_X(QProgressDialog * _self_, QShowEvent * event) {
+  _self_->QProgressDialog::showEvent(event);
+}
+
+extern "C" void bg_BgInherit_QProgressDialog_JUMPTABLE_BgJumptable_QProgressDialog_R(BgInherit_QProgressDialog * _self_, const BgJumptable_QProgressDialog & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QRadioButton {
   CrystalProc<const QMetaObject *> bg_QRadioButton_metaObject_;
   CrystalProc<void *, const char *> bg_QRadioButton_qt_metacast_const_char_X;
@@ -87622,6 +99299,626 @@ extern "C" void bg_QScrollBar_initStyleOption_SUPER_QStyleOptionSlider_X(QScroll
 }
 
 extern "C" void bg_BgInherit_QScrollBar_JUMPTABLE_BgJumptable_QScrollBar_R(BgInherit_QScrollBar * _self_, const BgJumptable_QScrollBar & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QSizeGrip {
+  CrystalProc<const QMetaObject *> bg_QSizeGrip_metaObject_;
+  CrystalProc<void *, const char *> bg_QSizeGrip_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSizeGrip_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QSizeGrip_sizeHint_;
+  CrystalProc<void, bool> bg_QSizeGrip_setVisible_bool;
+  CrystalProc<void, QPaintEvent *> bg_QSizeGrip_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSizeGrip_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSizeGrip_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSizeGrip_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QSizeGrip_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QSizeGrip_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QSizeGrip_hideEvent_QHideEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QSizeGrip_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QSizeGrip_event_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSizeGrip : public QSizeGrip {
+  using QSizeGrip::QSizeGrip;
+  BgJumptable_QSizeGrip bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSizeGrip_metaObject_();
+    } else {
+      return QSizeGrip::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSizeGrip_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSizeGrip::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSizeGrip_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSizeGrip::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QSizeGrip_sizeHint_();
+    } else {
+      return QSizeGrip::sizeHint();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_setVisible_bool(visible);
+    } else {
+      QSizeGrip::setVisible(visible);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_paintEvent_QPaintEvent_X(event);
+    } else {
+      QSizeGrip::paintEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QSizeGrip::mousePressEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QSizeGrip::mouseMoveEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QSizeGrip::mouseReleaseEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_moveEvent_QMoveEvent_X(event);
+    } else {
+      QSizeGrip::moveEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_showEvent_QShowEvent_X(event);
+    } else {
+      QSizeGrip::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QSizeGrip_hideEvent_QHideEvent_X(event);
+    } else {
+      QSizeGrip::hideEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSizeGrip_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSizeGrip::eventFilter(watched, event);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QSizeGrip_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSizeGrip_event_QEvent_X(event);
+    } else {
+      return QSizeGrip::event(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QSizeGrip::devType();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QSizeGrip::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QSizeGrip::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QSizeGrip::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QSizeGrip::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QSizeGrip::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QSizeGrip::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QSizeGrip::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QSizeGrip::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QSizeGrip::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QSizeGrip::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QSizeGrip::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QSizeGrip::leaveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QSizeGrip::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QSizeGrip::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QSizeGrip::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QSizeGrip::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QSizeGrip::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QSizeGrip::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QSizeGrip::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QSizeGrip::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QSizeGrip::dropEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QSizeGrip::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QSizeGrip::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QSizeGrip::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QSizeGrip::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QSizeGrip::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QSizeGrip::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QSizeGrip::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QSizeGrip::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSizeGrip::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSizeGrip::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSizeGrip::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSizeGrip::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSizeGrip *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSizeGrip::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSizeGrip_metaObject_(QSizeGrip * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSizeGrip_qt_metacast_const_char_X(QSizeGrip * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSizeGrip_qt_metacall_QMetaObject__Call_int_void_XX(QSizeGrip * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSizeGrip_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSizeGrip::tr(s));
+}
+
+extern "C" CrystalString bg_QSizeGrip_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSizeGrip::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSizeGrip_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSizeGrip::tr(s, c, n));
+}
+
+extern "C" QSizeGrip * bg_QSizeGrip__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSizeGrip>(parent);
+}
+
+extern "C" QSize bg_QSizeGrip_sizeHint_(QSizeGrip * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" void bg_QSizeGrip_setVisible_bool(QSizeGrip * _self_, bool visible) {
+  _self_->setVisible(visible);
+}
+
+extern "C" void bg_QSizeGrip_paintEvent_QPaintEvent_X(QSizeGrip * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mousePressEvent_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mouseMoveEvent_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->mouseMoveEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mouseReleaseEvent_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_moveEvent_QMoveEvent_X(QSizeGrip * _self_, QMoveEvent * event) {
+  _self_->moveEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_showEvent_QShowEvent_X(QSizeGrip * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_hideEvent_QHideEvent_X(QSizeGrip * _self_, QHideEvent * event) {
+  _self_->hideEvent(event);
+}
+
+extern "C" bool bg_QSizeGrip_eventFilter_QObject_X_QEvent_X(QSizeGrip * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" bool bg_QSizeGrip_event_QEvent_X(QSizeGrip * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QSizeGrip_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSizeGrip::staticMetaObject);
+}
+
+extern "C" QSize bg_QSizeGrip_sizeHint_SUPER_(QSizeGrip * _self_) {
+  return _self_->QSizeGrip::sizeHint();
+}
+
+extern "C" void bg_QSizeGrip_setVisible_SUPER_bool(QSizeGrip * _self_, bool visible) {
+  _self_->QSizeGrip::setVisible(visible);
+}
+
+extern "C" void bg_QSizeGrip_paintEvent_SUPER_QPaintEvent_X(QSizeGrip * _self_, QPaintEvent * event) {
+  _self_->QSizeGrip::paintEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mousePressEvent_SUPER_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->QSizeGrip::mousePressEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mouseMoveEvent_SUPER_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->QSizeGrip::mouseMoveEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_mouseReleaseEvent_SUPER_QMouseEvent_X(QSizeGrip * _self_, QMouseEvent * event) {
+  _self_->QSizeGrip::mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_moveEvent_SUPER_QMoveEvent_X(QSizeGrip * _self_, QMoveEvent * event) {
+  _self_->QSizeGrip::moveEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_showEvent_SUPER_QShowEvent_X(QSizeGrip * _self_, QShowEvent * event) {
+  _self_->QSizeGrip::showEvent(event);
+}
+
+extern "C" void bg_QSizeGrip_hideEvent_SUPER_QHideEvent_X(QSizeGrip * _self_, QHideEvent * event) {
+  _self_->QSizeGrip::hideEvent(event);
+}
+
+extern "C" bool bg_QSizeGrip_eventFilter_SUPER_QObject_X_QEvent_X(QSizeGrip * _self_, QObject * watched, QEvent * event) {
+  return _self_->QSizeGrip::eventFilter(watched, event);
+}
+
+extern "C" bool bg_QSizeGrip_event_SUPER_QEvent_X(QSizeGrip * _self_, QEvent * event) {
+  return _self_->QSizeGrip::event(event);
+}
+
+extern "C" void bg_BgInherit_QSizeGrip_JUMPTABLE_BgJumptable_QSizeGrip_R(BgInherit_QSizeGrip * _self_, const BgJumptable_QSizeGrip & table) {
   _self_->bgJump = (table);
 }
 
@@ -89025,6 +101322,632 @@ extern "C" void bg_BgInherit_QDoubleSpinBox_JUMPTABLE_BgJumptable_QDoubleSpinBox
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QSplashScreen {
+  CrystalProc<const QMetaObject *> bg_QSplashScreen_metaObject_;
+  CrystalProc<void *, const char *> bg_QSplashScreen_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSplashScreen_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QSplashScreen_event_QEvent_X;
+  CrystalProc<void, QPainter *> bg_QSplashScreen_drawContents_QPainter_X;
+  CrystalProc<void, QMouseEvent *> bg_QSplashScreen_mousePressEvent_QMouseEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSplashScreen : public QSplashScreen {
+  using QSplashScreen::QSplashScreen;
+  BgJumptable_QSplashScreen bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSplashScreen_metaObject_();
+    } else {
+      return QSplashScreen::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSplashScreen_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSplashScreen::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSplashScreen_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSplashScreen::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSplashScreen_event_QEvent_X(event);
+    } else {
+      return QSplashScreen::event(event);
+    }
+  }
+  
+  void drawContents(QPainter * painter) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_drawContents_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QSplashScreen_drawContents_QPainter_X(painter);
+    } else {
+      QSplashScreen::drawContents(painter);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QSplashScreen_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplashScreen_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QSplashScreen::mousePressEvent(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QSplashScreen::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QSplashScreen::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QSplashScreen::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QSplashScreen::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QSplashScreen::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QSplashScreen::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QSplashScreen::paintEngine();
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QSplashScreen::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QSplashScreen::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QSplashScreen::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QSplashScreen::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QSplashScreen::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QSplashScreen::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QSplashScreen::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QSplashScreen::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QSplashScreen::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QSplashScreen::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QSplashScreen::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QSplashScreen::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QSplashScreen::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QSplashScreen::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QSplashScreen::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QSplashScreen::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QSplashScreen::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QSplashScreen::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QSplashScreen::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QSplashScreen::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QSplashScreen::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QSplashScreen::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QSplashScreen::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QSplashScreen::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QSplashScreen::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QSplashScreen::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QSplashScreen::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QSplashScreen::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QSplashScreen::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QSplashScreen::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QSplashScreen::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSplashScreen::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSplashScreen::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSplashScreen::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSplashScreen::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplashScreen::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplashScreen *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplashScreen::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSplashScreen_metaObject_(QSplashScreen * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSplashScreen_qt_metacast_const_char_X(QSplashScreen * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSplashScreen_qt_metacall_QMetaObject__Call_int_void_XX(QSplashScreen * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSplashScreen_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSplashScreen::tr(s));
+}
+
+extern "C" CrystalString bg_QSplashScreen_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSplashScreen::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSplashScreen_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSplashScreen::tr(s, c, n));
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>();
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_const_QPixmap_R(const QPixmap & pixmap) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>(pixmap);
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_const_QPixmap_R_Qt__WindowFlags(const QPixmap & pixmap, Qt::WindowFlags f) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>(pixmap, f);
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_QScreen_X(QScreen * screen) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>(screen);
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_QScreen_X_const_QPixmap_R(QScreen * screen, const QPixmap & pixmap) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>(screen, pixmap);
+}
+
+extern "C" QSplashScreen * bg_QSplashScreen__CONSTRUCT_QScreen_X_const_QPixmap_R_Qt__WindowFlags(QScreen * screen, const QPixmap & pixmap, Qt::WindowFlags f) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplashScreen>(screen, pixmap, f);
+}
+
+extern "C" void bg_QSplashScreen_setPixmap_const_QPixmap_R(QSplashScreen * _self_, const QPixmap & pixmap) {
+  _self_->setPixmap(pixmap);
+}
+
+extern "C" const QPixmap * bg_QSplashScreen_pixmap_(QSplashScreen * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap());
+}
+
+extern "C" void bg_QSplashScreen_finish_QWidget_X(QSplashScreen * _self_, QWidget * w) {
+  _self_->finish(w);
+}
+
+extern "C" void bg_QSplashScreen_repaint_(QSplashScreen * _self_) {
+  _self_->repaint();
+}
+
+extern "C" CrystalString bg_QSplashScreen_message_(QSplashScreen * _self_) {
+  return qstring_to_crystal(_self_->message());
+}
+
+extern "C" void bg_QSplashScreen_showMessage_const_QString_R_int(QSplashScreen * _self_, const CrystalString message, int alignment) {
+  _self_->showMessage(([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), alignment);
+}
+
+extern "C" void bg_QSplashScreen_showMessage_const_QString_R_int_const_QColor_R(QSplashScreen * _self_, const CrystalString message, int alignment, const QColor & color) {
+  _self_->showMessage(([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), alignment, color);
+}
+
+extern "C" void bg_QSplashScreen_clearMessage_(QSplashScreen * _self_) {
+  _self_->clearMessage();
+}
+
+extern "C" void bg_QSplashScreen_messageChanged_const_QString_R(QSplashScreen * _self_, const CrystalString message) {
+  _self_->messageChanged(([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QSplashScreen_event_QEvent_X(QSplashScreen * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QSplashScreen_drawContents_QPainter_X(QSplashScreen * _self_, QPainter * painter) {
+  _self_->drawContents(painter);
+}
+
+extern "C" void bg_QSplashScreen_mousePressEvent_QMouseEvent_X(QSplashScreen * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" const QMetaObject * bg_QSplashScreen_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSplashScreen::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QSplashScreen_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(QSplashScreen * _self_, CrystalProc<void, const CrystalString> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QSplashScreen::*)(const QString &))&QSplashScreen::messageChanged, [_proc_](const QString & message){ _proc_(qstring_to_crystal(message)); }));
+}
+
+extern "C" bool bg_QSplashScreen_event_SUPER_QEvent_X(QSplashScreen * _self_, QEvent * event) {
+  return _self_->QSplashScreen::event(event);
+}
+
+extern "C" void bg_QSplashScreen_drawContents_SUPER_QPainter_X(QSplashScreen * _self_, QPainter * painter) {
+  _self_->QSplashScreen::drawContents(painter);
+}
+
+extern "C" void bg_QSplashScreen_mousePressEvent_SUPER_QMouseEvent_X(QSplashScreen * _self_, QMouseEvent * event) {
+  _self_->QSplashScreen::mousePressEvent(event);
+}
+
+extern "C" void bg_BgInherit_QSplashScreen_JUMPTABLE_BgJumptable_QSplashScreen_R(BgInherit_QSplashScreen * _self_, const BgJumptable_QSplashScreen & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QSplitter {
   CrystalProc<const QMetaObject *> bg_QSplitter_metaObject_;
   CrystalProc<void *, const char *> bg_QSplitter_qt_metacast_const_char_X;
@@ -89750,6 +102673,618 @@ extern "C" void bg_QSplitter_changeEvent_SUPER_QEvent_X(QSplitter * _self_, QEve
 }
 
 extern "C" void bg_BgInherit_QSplitter_JUMPTABLE_BgJumptable_QSplitter_R(BgInherit_QSplitter * _self_, const BgJumptable_QSplitter & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QSplitterHandle {
+  CrystalProc<const QMetaObject *> bg_QSplitterHandle_metaObject_;
+  CrystalProc<void *, const char *> bg_QSplitterHandle_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSplitterHandle_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QSize *> bg_QSplitterHandle_sizeHint_;
+  CrystalProc<void, QPaintEvent *> bg_QSplitterHandle_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSplitterHandle_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSplitterHandle_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QSplitterHandle_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QSplitterHandle_resizeEvent_QResizeEvent_X;
+  CrystalProc<bool, QEvent *> bg_QSplitterHandle_event_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSplitterHandle : public QSplitterHandle {
+  using QSplitterHandle::QSplitterHandle;
+  BgJumptable_QSplitterHandle bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSplitterHandle_metaObject_();
+    } else {
+      return QSplitterHandle::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSplitterHandle_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSplitterHandle::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSplitterHandle_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSplitterHandle::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QSplitterHandle_sizeHint_();
+    } else {
+      return QSplitterHandle::sizeHint();
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitterHandle_paintEvent_QPaintEvent_X(event);
+    } else {
+      QSplitterHandle::paintEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitterHandle_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QSplitterHandle::mouseMoveEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitterHandle_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QSplitterHandle::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitterHandle_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QSplitterHandle::mouseReleaseEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QSplitterHandle_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QSplitterHandle::resizeEvent(event);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QSplitterHandle_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QSplitterHandle_event_QEvent_X(event);
+    } else {
+      return QSplitterHandle::event(event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QSplitterHandle::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QSplitterHandle::setVisible(visible);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QSplitterHandle::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QSplitterHandle::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QSplitterHandle::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QSplitterHandle::paintEngine();
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QSplitterHandle::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QSplitterHandle::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QSplitterHandle::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QSplitterHandle::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QSplitterHandle::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QSplitterHandle::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QSplitterHandle::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QSplitterHandle::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QSplitterHandle::moveEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QSplitterHandle::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QSplitterHandle::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QSplitterHandle::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QSplitterHandle::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QSplitterHandle::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QSplitterHandle::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QSplitterHandle::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QSplitterHandle::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QSplitterHandle::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QSplitterHandle::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QSplitterHandle::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QSplitterHandle::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QSplitterHandle::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QSplitterHandle::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QSplitterHandle::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QSplitterHandle::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QSplitterHandle::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QSplitterHandle::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSplitterHandle::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSplitterHandle::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSplitterHandle::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSplitterHandle::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplitterHandle::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSplitterHandle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSplitterHandle::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSplitterHandle_metaObject_(QSplitterHandle * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSplitterHandle_qt_metacast_const_char_X(QSplitterHandle * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSplitterHandle_qt_metacall_QMetaObject__Call_int_void_XX(QSplitterHandle * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSplitterHandle_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSplitterHandle::tr(s));
+}
+
+extern "C" CrystalString bg_QSplitterHandle_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSplitterHandle::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSplitterHandle_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSplitterHandle::tr(s, c, n));
+}
+
+extern "C" QSplitterHandle * bg_QSplitterHandle__CONSTRUCT_Qt__Orientation_QSplitter_X(Qt::Orientation o, QSplitter * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSplitterHandle>(o, parent);
+}
+
+extern "C" void bg_QSplitterHandle_setOrientation_Qt__Orientation(QSplitterHandle * _self_, Qt::Orientation o) {
+  _self_->setOrientation(o);
+}
+
+extern "C" Qt::Orientation bg_QSplitterHandle_orientation_(QSplitterHandle * _self_) {
+  return _self_->orientation();
+}
+
+extern "C" bool bg_QSplitterHandle_opaqueResize_(QSplitterHandle * _self_) {
+  return _self_->opaqueResize();
+}
+
+extern "C" QSplitter * bg_QSplitterHandle_splitter_(QSplitterHandle * _self_) {
+  return _self_->splitter();
+}
+
+extern "C" QSize bg_QSplitterHandle_sizeHint_(QSplitterHandle * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" void bg_QSplitterHandle_paintEvent_QPaintEvent_X(QSplitterHandle * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mouseMoveEvent_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->mouseMoveEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mousePressEvent_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mouseReleaseEvent_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_resizeEvent_QResizeEvent_X(QSplitterHandle * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" bool bg_QSplitterHandle_event_QEvent_X(QSplitterHandle * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QSplitterHandle_moveSplitter_int(QSplitterHandle * _self_, int p) {
+  _self_->moveSplitter(p);
+}
+
+extern "C" int bg_QSplitterHandle_closestLegalPosition_int(QSplitterHandle * _self_, int p) {
+  return _self_->closestLegalPosition(p);
+}
+
+extern "C" const QMetaObject * bg_QSplitterHandle_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSplitterHandle::staticMetaObject);
+}
+
+extern "C" QSize bg_QSplitterHandle_sizeHint_SUPER_(QSplitterHandle * _self_) {
+  return _self_->QSplitterHandle::sizeHint();
+}
+
+extern "C" void bg_QSplitterHandle_paintEvent_SUPER_QPaintEvent_X(QSplitterHandle * _self_, QPaintEvent * event) {
+  _self_->QSplitterHandle::paintEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mouseMoveEvent_SUPER_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->QSplitterHandle::mouseMoveEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mousePressEvent_SUPER_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->QSplitterHandle::mousePressEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_mouseReleaseEvent_SUPER_QMouseEvent_X(QSplitterHandle * _self_, QMouseEvent * event) {
+  _self_->QSplitterHandle::mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QSplitterHandle_resizeEvent_SUPER_QResizeEvent_X(QSplitterHandle * _self_, QResizeEvent * event) {
+  _self_->QSplitterHandle::resizeEvent(event);
+}
+
+extern "C" bool bg_QSplitterHandle_event_SUPER_QEvent_X(QSplitterHandle * _self_, QEvent * event) {
+  return _self_->QSplitterHandle::event(event);
+}
+
+extern "C" void bg_BgInherit_QSplitterHandle_JUMPTABLE_BgJumptable_QSplitterHandle_R(BgInherit_QSplitterHandle * _self_, const BgJumptable_QSplitterHandle & table) {
   _self_->bgJump = (table);
 }
 
@@ -96748,6 +110283,700 @@ extern "C" void bg_BgInherit_QToolBar_JUMPTABLE_BgJumptable_QToolBar_R(BgInherit
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QToolBox {
+  CrystalProc<const QMetaObject *> bg_QToolBox_metaObject_;
+  CrystalProc<void *, const char *> bg_QToolBox_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QToolBox_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QToolBox_event_QEvent_X;
+  CrystalProc<void, int> bg_QToolBox_itemInserted_int;
+  CrystalProc<void, int> bg_QToolBox_itemRemoved_int;
+  CrystalProc<void, QShowEvent *> bg_QToolBox_showEvent_QShowEvent_X;
+  CrystalProc<void, QEvent *> bg_QToolBox_changeEvent_QEvent_X;
+  CrystalProc<QSize *> bg_QFrame_sizeHint_;
+  CrystalProc<void, QPaintEvent *> bg_QFrame_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QStyleOptionFrame *> bg_QFrame_initStyleOption_QStyleOptionFrame_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QToolBox : public QToolBox {
+  using QToolBox::QToolBox;
+  BgJumptable_QToolBox bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QToolBox_metaObject_();
+    } else {
+      return QToolBox::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QToolBox_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QToolBox::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QToolBox_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QToolBox::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QToolBox_event_QEvent_X(event);
+    } else {
+      return QToolBox::event(event);
+    }
+  }
+  
+  void itemInserted(int index) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_itemInserted_int.isValid()) {
+      _self_->bgJump.bg_QToolBox_itemInserted_int(index);
+    } else {
+      QToolBox::itemInserted(index);
+    }
+  }
+  
+  void itemRemoved(int index) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_itemRemoved_int.isValid()) {
+      _self_->bgJump.bg_QToolBox_itemRemoved_int(index);
+    } else {
+      QToolBox::itemRemoved(index);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QToolBox_showEvent_QShowEvent_X(event);
+    } else {
+      QToolBox::showEvent(event);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QToolBox_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QToolBox_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QToolBox::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QFrame_sizeHint_();
+    } else {
+      return QToolBox::sizeHint();
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QFrame_paintEvent_QPaintEvent_X(event);
+    } else {
+      QToolBox::paintEvent(event);
+    }
+  }
+  
+  void initStyleOption(QStyleOptionFrame * option) const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X.isValid()) {
+      _self_->bgJump.bg_QFrame_initStyleOption_QStyleOptionFrame_X(option);
+    } else {
+      QToolBox::initStyleOption(option);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QToolBox::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QToolBox::setVisible(visible);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QToolBox::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QToolBox::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QToolBox::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QToolBox::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QToolBox::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QToolBox::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QToolBox::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QToolBox::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QToolBox::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QToolBox::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QToolBox::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QToolBox::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QToolBox::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QToolBox::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QToolBox::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QToolBox::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QToolBox::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QToolBox::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QToolBox::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QToolBox::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QToolBox::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QToolBox::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QToolBox::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QToolBox::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QToolBox::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QToolBox::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QToolBox::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QToolBox::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QToolBox::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QToolBox::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QToolBox::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QToolBox::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QToolBox::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QToolBox::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QToolBox::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QToolBox::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QToolBox::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QToolBox::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QToolBox *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QToolBox::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QToolBox_metaObject_(QToolBox * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QToolBox_qt_metacast_const_char_X(QToolBox * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QToolBox_qt_metacall_QMetaObject__Call_int_void_XX(QToolBox * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QToolBox_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QToolBox::tr(s));
+}
+
+extern "C" CrystalString bg_QToolBox_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QToolBox::tr(s, c));
+}
+
+extern "C" CrystalString bg_QToolBox_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QToolBox::tr(s, c, n));
+}
+
+extern "C" QToolBox * bg_QToolBox__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QToolBox>(parent);
+}
+
+extern "C" QToolBox * bg_QToolBox__CONSTRUCT_QWidget_X_Qt__WindowFlags(QWidget * parent, Qt::WindowFlags f) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QToolBox>(parent, f);
+}
+
+extern "C" int bg_QToolBox_addItem_QWidget_X_const_QString_R(QToolBox * _self_, QWidget * widget, const CrystalString text) {
+  return _self_->addItem(widget, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QToolBox_addItem_QWidget_X_const_QIcon_R_const_QString_R(QToolBox * _self_, QWidget * widget, const QIcon & icon, const CrystalString text) {
+  return _self_->addItem(widget, icon, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QToolBox_insertItem_int_QWidget_X_const_QString_R(QToolBox * _self_, int index, QWidget * widget, const CrystalString text) {
+  return _self_->insertItem(index, widget, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" int bg_QToolBox_insertItem_int_QWidget_X_const_QIcon_R_const_QString_R(QToolBox * _self_, int index, QWidget * widget, const QIcon & icon, const CrystalString text) {
+  return _self_->insertItem(index, widget, icon, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QToolBox_removeItem_int(QToolBox * _self_, int index) {
+  _self_->removeItem(index);
+}
+
+extern "C" void bg_QToolBox_setItemEnabled_int_bool(QToolBox * _self_, int index, bool enabled) {
+  _self_->setItemEnabled(index, enabled);
+}
+
+extern "C" bool bg_QToolBox_isItemEnabled_int(QToolBox * _self_, int index) {
+  return _self_->isItemEnabled(index);
+}
+
+extern "C" void bg_QToolBox_setItemText_int_const_QString_R(QToolBox * _self_, int index, const CrystalString text) {
+  _self_->setItemText(index, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QToolBox_itemText_int(QToolBox * _self_, int index) {
+  return qstring_to_crystal(_self_->itemText(index));
+}
+
+extern "C" void bg_QToolBox_setItemIcon_int_const_QIcon_R(QToolBox * _self_, int index, const QIcon & icon) {
+  _self_->setItemIcon(index, icon);
+}
+
+extern "C" QIcon * bg_QToolBox_itemIcon_int(QToolBox * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->itemIcon(index));
+}
+
+extern "C" void bg_QToolBox_setItemToolTip_int_const_QString_R(QToolBox * _self_, int index, const CrystalString toolTip) {
+  _self_->setItemToolTip(index, ([&]() { auto &&bg_value = (toolTip); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QToolBox_itemToolTip_int(QToolBox * _self_, int index) {
+  return qstring_to_crystal(_self_->itemToolTip(index));
+}
+
+extern "C" int bg_QToolBox_currentIndex_(QToolBox * _self_) {
+  return _self_->currentIndex();
+}
+
+extern "C" QWidget * bg_QToolBox_currentWidget_(QToolBox * _self_) {
+  return _self_->currentWidget();
+}
+
+extern "C" QWidget * bg_QToolBox_widget_int(QToolBox * _self_, int index) {
+  return _self_->widget(index);
+}
+
+extern "C" int bg_QToolBox_indexOf_const_QWidget_X(QToolBox * _self_, const QWidget * widget) {
+  return _self_->indexOf(widget);
+}
+
+extern "C" int bg_QToolBox_count_(QToolBox * _self_) {
+  return _self_->count();
+}
+
+extern "C" void bg_QToolBox_setCurrentIndex_int(QToolBox * _self_, int index) {
+  _self_->setCurrentIndex(index);
+}
+
+extern "C" void bg_QToolBox_setCurrentWidget_QWidget_X(QToolBox * _self_, QWidget * widget) {
+  _self_->setCurrentWidget(widget);
+}
+
+extern "C" void bg_QToolBox_currentChanged_int(QToolBox * _self_, int index) {
+  _self_->currentChanged(index);
+}
+
+extern "C" bool bg_QToolBox_event_QEvent_X(QToolBox * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QToolBox_itemInserted_int(QToolBox * _self_, int index) {
+  _self_->itemInserted(index);
+}
+
+extern "C" void bg_QToolBox_itemRemoved_int(QToolBox * _self_, int index) {
+  _self_->itemRemoved(index);
+}
+
+extern "C" void bg_QToolBox_showEvent_QShowEvent_X(QToolBox * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QToolBox_changeEvent_QEvent_X(QToolBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->changeEvent(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QToolBox_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QToolBox::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QToolBox_CONNECT_currentChanged_CrystalProc_void__int_(QToolBox * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QToolBox::*)(int))&QToolBox::currentChanged, [_proc_](int index){ _proc_(index); }));
+}
+
+extern "C" bool bg_QToolBox_event_SUPER_QEvent_X(QToolBox * _self_, QEvent * event) {
+  return _self_->QToolBox::event(event);
+}
+
+extern "C" void bg_QToolBox_itemInserted_SUPER_int(QToolBox * _self_, int index) {
+  _self_->QToolBox::itemInserted(index);
+}
+
+extern "C" void bg_QToolBox_itemRemoved_SUPER_int(QToolBox * _self_, int index) {
+  _self_->QToolBox::itemRemoved(index);
+}
+
+extern "C" void bg_QToolBox_showEvent_SUPER_QShowEvent_X(QToolBox * _self_, QShowEvent * event) {
+  _self_->QToolBox::showEvent(event);
+}
+
+extern "C" void bg_QToolBox_changeEvent_SUPER_QEvent_X(QToolBox * _self_, QEvent * unnamed_arg_0) {
+  _self_->QToolBox::changeEvent(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QToolBox_JUMPTABLE_BgJumptable_QToolBox_R(BgInherit_QToolBox * _self_, const BgJumptable_QToolBox & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QToolButton {
   CrystalProc<const QMetaObject *> bg_QToolButton_metaObject_;
   CrystalProc<void *, const char *> bg_QToolButton_qt_metacast_const_char_X;
@@ -97498,6 +111727,50 @@ extern "C" void bg_QToolButton_initStyleOption_SUPER_QStyleOptionToolButton_X(QT
 
 extern "C" void bg_BgInherit_QToolButton_JUMPTABLE_BgJumptable_QToolButton_R(BgInherit_QToolButton * _self_, const BgJumptable_QToolButton & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" void bg_QToolTip_showText_STATIC_const_QPoint_R_const_QString_R_QWidget_X(const QPoint pos, const CrystalString text, QWidget * w) {
+  QToolTip::showText(pos, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), w);
+}
+
+extern "C" void bg_QToolTip_showText_STATIC_const_QPoint_R_const_QString_R_QWidget_X_const_QRect_R(const QPoint pos, const CrystalString text, QWidget * w, const QRect rect) {
+  QToolTip::showText(pos, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), w, rect);
+}
+
+extern "C" void bg_QToolTip_showText_STATIC_const_QPoint_R_const_QString_R_QWidget_X_const_QRect_R_int(const QPoint pos, const CrystalString text, QWidget * w, const QRect rect, int msecShowTime) {
+  QToolTip::showText(pos, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), w, rect, msecShowTime);
+}
+
+extern "C" void bg_QToolTip_hideText_STATIC_() {
+  QToolTip::hideText();
+}
+
+extern "C" bool bg_QToolTip_isVisible_STATIC_() {
+  return QToolTip::isVisible();
+}
+
+extern "C" CrystalString bg_QToolTip_text_STATIC_() {
+  return qstring_to_crystal(QToolTip::text());
+}
+
+extern "C" QPalette * bg_QToolTip_palette_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (QToolTip::palette());
+}
+
+extern "C" void bg_QToolTip_setPalette_STATIC_const_QPalette_R(const QPalette & unnamed_arg_0) {
+  QToolTip::setPalette(unnamed_arg_0);
+}
+
+extern "C" QFont * bg_QToolTip_font_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (QToolTip::font());
+}
+
+extern "C" void bg_QToolTip_setFont_STATIC_const_QFont_R(const QFont & unnamed_arg_0) {
+  QToolTip::setFont(unnamed_arg_0);
+}
+
+extern "C" QToolTip * bg_QToolTip__COPY_const_QToolTip_R(const QToolTip & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QToolTip>(unnamed_arg_0);
 }
 
 struct BgJumptable_QTreeView {
@@ -101834,6 +116107,1844 @@ extern "C" void bg_BgInherit_QUndoView_JUMPTABLE_BgJumptable_QUndoView_R(BgInher
   _self_->bgJump = (table);
 }
 
+extern "C" void bg_QWhatsThis_enterWhatsThisMode_STATIC_() {
+  QWhatsThis::enterWhatsThisMode();
+}
+
+extern "C" bool bg_QWhatsThis_inWhatsThisMode_STATIC_() {
+  return QWhatsThis::inWhatsThisMode();
+}
+
+extern "C" void bg_QWhatsThis_leaveWhatsThisMode_STATIC_() {
+  QWhatsThis::leaveWhatsThisMode();
+}
+
+extern "C" void bg_QWhatsThis_showText_STATIC_const_QPoint_R_const_QString_R_QWidget_X(const QPoint pos, const CrystalString text, QWidget * w) {
+  QWhatsThis::showText(pos, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), w);
+}
+
+extern "C" void bg_QWhatsThis_hideText_STATIC_() {
+  QWhatsThis::hideText();
+}
+
+extern "C" QAction * bg_QWhatsThis_createAction_STATIC_QObject_X(QObject * parent) {
+  return QWhatsThis::createAction(parent);
+}
+
+extern "C" QWhatsThis * bg_QWhatsThis__COPY_const_QWhatsThis_R(const QWhatsThis & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QWhatsThis>(unnamed_arg_0);
+}
+
+struct BgJumptable_QWidgetAction {
+  CrystalProc<const QMetaObject *> bg_QWidgetAction_metaObject_;
+  CrystalProc<void *, const char *> bg_QWidgetAction_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QWidgetAction_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QWidgetAction_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QWidgetAction_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<QWidget *, QWidget *> bg_QWidgetAction_createWidget_QWidget_X;
+  CrystalProc<void, QWidget *> bg_QWidgetAction_deleteWidget_QWidget_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QWidgetAction : public QWidgetAction {
+  using QWidgetAction::QWidgetAction;
+  BgJumptable_QWidgetAction bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_metaObject_();
+    } else {
+      return QWidgetAction::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QWidgetAction::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QWidgetAction::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_event_QEvent_X(event);
+    } else {
+      return QWidgetAction::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QWidgetAction::eventFilter(watched, event);
+    }
+  }
+  
+  QWidget * createWidget(QWidget * parent) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_createWidget_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QWidgetAction_createWidget_QWidget_X(parent);
+    } else {
+      return QWidgetAction::createWidget(parent);
+    }
+  }
+  
+  void deleteWidget(QWidget * widget) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetAction_deleteWidget_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QWidgetAction_deleteWidget_QWidget_X(widget);
+    } else {
+      QWidgetAction::deleteWidget(widget);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QWidgetAction::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QWidgetAction::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QWidgetAction::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWidgetAction::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWidgetAction *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWidgetAction::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QWidgetAction_metaObject_(QWidgetAction * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QWidgetAction_qt_metacast_const_char_X(QWidgetAction * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QWidgetAction_qt_metacall_QMetaObject__Call_int_void_XX(QWidgetAction * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QWidgetAction_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QWidgetAction::tr(s));
+}
+
+extern "C" CrystalString bg_QWidgetAction_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QWidgetAction::tr(s, c));
+}
+
+extern "C" CrystalString bg_QWidgetAction_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QWidgetAction::tr(s, c, n));
+}
+
+extern "C" QWidgetAction * bg_QWidgetAction__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QWidgetAction>(parent);
+}
+
+extern "C" void bg_QWidgetAction_setDefaultWidget_QWidget_X(QWidgetAction * _self_, QWidget * w) {
+  _self_->setDefaultWidget(w);
+}
+
+extern "C" QWidget * bg_QWidgetAction_defaultWidget_(QWidgetAction * _self_) {
+  return _self_->defaultWidget();
+}
+
+extern "C" QWidget * bg_QWidgetAction_requestWidget_QWidget_X(QWidgetAction * _self_, QWidget * parent) {
+  return _self_->requestWidget(parent);
+}
+
+extern "C" void bg_QWidgetAction_releaseWidget_QWidget_X(QWidgetAction * _self_, QWidget * widget) {
+  _self_->releaseWidget(widget);
+}
+
+extern "C" bool bg_QWidgetAction_event_QEvent_X(QWidgetAction * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" bool bg_QWidgetAction_eventFilter_QObject_X_QEvent_X(QWidgetAction * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" QWidget * bg_QWidgetAction_createWidget_QWidget_X(QWidgetAction * _self_, QWidget * parent) {
+  return _self_->createWidget(parent);
+}
+
+extern "C" void bg_QWidgetAction_deleteWidget_QWidget_X(QWidgetAction * _self_, QWidget * widget) {
+  _self_->deleteWidget(widget);
+}
+
+extern "C" Container_QList_QWidget_X_ * bg_QWidgetAction_createdWidgets_(QWidgetAction * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QWidget_X_>()) Container_QList_QWidget_X_ (_self_->createdWidgets());
+}
+
+extern "C" const QMetaObject * bg_QWidgetAction_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QWidgetAction::staticMetaObject);
+}
+
+extern "C" bool bg_QWidgetAction_event_SUPER_QEvent_X(QWidgetAction * _self_, QEvent * event) {
+  return _self_->QWidgetAction::event(event);
+}
+
+extern "C" bool bg_QWidgetAction_eventFilter_SUPER_QObject_X_QEvent_X(QWidgetAction * _self_, QObject * watched, QEvent * event) {
+  return _self_->QWidgetAction::eventFilter(watched, event);
+}
+
+extern "C" QWidget * bg_QWidgetAction_createWidget_SUPER_QWidget_X(QWidgetAction * _self_, QWidget * parent) {
+  return _self_->QWidgetAction::createWidget(parent);
+}
+
+extern "C" void bg_QWidgetAction_deleteWidget_SUPER_QWidget_X(QWidgetAction * _self_, QWidget * widget) {
+  _self_->QWidgetAction::deleteWidget(widget);
+}
+
+extern "C" void bg_BgInherit_QWidgetAction_JUMPTABLE_BgJumptable_QWidgetAction_R(BgInherit_QWidgetAction * _self_, const BgJumptable_QWidgetAction & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QWizard {
+  CrystalProc<const QMetaObject *> bg_QWizard_metaObject_;
+  CrystalProc<void *, const char *> bg_QWizard_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QWizard_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool> bg_QWizard_validateCurrentPage_;
+  CrystalProc<int> bg_QWizard_nextId_;
+  CrystalProc<void, bool> bg_QWizard_setVisible_bool;
+  CrystalProc<QSize *> bg_QWizard_sizeHint_;
+  CrystalProc<bool, QEvent *> bg_QWizard_event_QEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWizard_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWizard_paintEvent_QPaintEvent_X;
+  CrystalProc<void, int> bg_QWizard_done_int;
+  CrystalProc<void, int> bg_QWizard_initializePage_int;
+  CrystalProc<void, int> bg_QWizard_cleanupPage_int;
+  CrystalProc<QSize *> bg_QDialog_minimumSizeHint_;
+  CrystalProc<void> bg_QDialog_open_;
+  CrystalProc<int> bg_QDialog_exec_;
+  CrystalProc<void> bg_QDialog_accept_;
+  CrystalProc<void> bg_QDialog_reject_;
+  CrystalProc<void, QKeyEvent *> bg_QDialog_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QDialog_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QDialog_showEvent_QShowEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QDialog_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QDialog_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QWizard : public QWizard {
+  using QWizard::QWizard;
+  BgJumptable_QWizard bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QWizard_metaObject_();
+    } else {
+      return QWizard::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QWizard_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QWizard::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QWizard_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QWizard::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool validateCurrentPage() override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_validateCurrentPage_.isValid()) {
+      return _self_->bgJump.bg_QWizard_validateCurrentPage_();
+    } else {
+      return QWizard::validateCurrentPage();
+    }
+  }
+  
+  int nextId() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_nextId_.isValid()) {
+      return _self_->bgJump.bg_QWizard_nextId_();
+    } else {
+      return QWizard::nextId();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWizard_setVisible_bool(visible);
+    } else {
+      QWizard::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWizard_sizeHint_();
+    } else {
+      return QWizard::sizeHint();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWizard_event_QEvent_X(event);
+    } else {
+      return QWizard::event(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWizard_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QWizard::resizeEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWizard_paintEvent_QPaintEvent_X(event);
+    } else {
+      QWizard::paintEvent(event);
+    }
+  }
+  
+  void done(int unnamed_arg_0) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_done_int.isValid()) {
+      _self_->bgJump.bg_QWizard_done_int(unnamed_arg_0);
+    } else {
+      QWizard::done(unnamed_arg_0);
+    }
+  }
+  
+  void initializePage(int id) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_initializePage_int.isValid()) {
+      _self_->bgJump.bg_QWizard_initializePage_int(id);
+    } else {
+      QWizard::initializePage(id);
+    }
+  }
+  
+  void cleanupPage(int id) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWizard_cleanupPage_int.isValid()) {
+      _self_->bgJump.bg_QWizard_cleanupPage_int(id);
+    } else {
+      QWizard::cleanupPage(id);
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QDialog_minimumSizeHint_();
+    } else {
+      return QWizard::minimumSizeHint();
+    }
+  }
+  
+  void open() override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_open_.isValid()) {
+      _self_->bgJump.bg_QDialog_open_();
+    } else {
+      QWizard::open();
+    }
+  }
+  
+  int exec() override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_exec_.isValid()) {
+      return _self_->bgJump.bg_QDialog_exec_();
+    } else {
+      return QWizard::exec();
+    }
+  }
+  
+  void accept() override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_accept_.isValid()) {
+      _self_->bgJump.bg_QDialog_accept_();
+    } else {
+      QWizard::accept();
+    }
+  }
+  
+  void reject() override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_reject_.isValid()) {
+      _self_->bgJump.bg_QDialog_reject_();
+    } else {
+      QWizard::reject();
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QWizard::keyPressEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_closeEvent_QCloseEvent_X(event);
+    } else {
+      QWizard::closeEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_showEvent_QShowEvent_X(event);
+    } else {
+      QWizard::showEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QDialog_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QWizard::contextMenuEvent(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QDialog_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QWizard::eventFilter(watched, event);
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QWizard::devType();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QWizard::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QWizard::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QWizard::paintEngine();
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QWizard::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QWizard::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QWizard::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QWizard::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QWizard::wheelEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QWizard::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QWizard::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QWizard::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QWizard::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QWizard::leaveEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QWizard::moveEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QWizard::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QWizard::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QWizard::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QWizard::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QWizard::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QWizard::dropEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QWizard::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QWizard::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QWizard::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QWizard::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QWizard::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QWizard::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QWizard::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QWizard::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QWizard::focusNextPrevChild(next);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QWizard::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QWizard::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QWizard::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWizard::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWizard *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWizard::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QWizard_metaObject_(QWizard * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QWizard_qt_metacast_const_char_X(QWizard * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QWizard_qt_metacall_QMetaObject__Call_int_void_XX(QWizard * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QWizard_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QWizard::tr(s));
+}
+
+extern "C" CrystalString bg_QWizard_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QWizard::tr(s, c));
+}
+
+extern "C" CrystalString bg_QWizard_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QWizard::tr(s, c, n));
+}
+
+extern "C" QWizard * bg_QWizard__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QWizard>(parent);
+}
+
+extern "C" QWizard * bg_QWizard__CONSTRUCT_QWidget_X_Qt__WindowFlags(QWidget * parent, Qt::WindowFlags flags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QWizard>(parent, flags);
+}
+
+extern "C" int bg_QWizard_addPage_QWizardPage_X(QWizard * _self_, QWizardPage * page) {
+  return _self_->addPage(page);
+}
+
+extern "C" void bg_QWizard_setPage_int_QWizardPage_X(QWizard * _self_, int id, QWizardPage * page) {
+  _self_->setPage(id, page);
+}
+
+extern "C" void bg_QWizard_removePage_int(QWizard * _self_, int id) {
+  _self_->removePage(id);
+}
+
+extern "C" QWizardPage * bg_QWizard_page_int(QWizard * _self_, int id) {
+  return _self_->page(id);
+}
+
+extern "C" bool bg_QWizard_hasVisitedPage_int(QWizard * _self_, int id) {
+  return _self_->hasVisitedPage(id);
+}
+
+extern "C" Container_QList_int_ * bg_QWizard_visitedIds_(QWizard * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (_self_->visitedIds());
+}
+
+extern "C" Container_QList_int_ * bg_QWizard_pageIds_(QWizard * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_int_>()) Container_QList_int_ (_self_->pageIds());
+}
+
+extern "C" void bg_QWizard_setStartId_int(QWizard * _self_, int id) {
+  _self_->setStartId(id);
+}
+
+extern "C" int bg_QWizard_startId_(QWizard * _self_) {
+  return _self_->startId();
+}
+
+extern "C" QWizardPage * bg_QWizard_currentPage_(QWizard * _self_) {
+  return _self_->currentPage();
+}
+
+extern "C" int bg_QWizard_currentId_(QWizard * _self_) {
+  return _self_->currentId();
+}
+
+extern "C" bool bg_QWizard_validateCurrentPage_(QWizard * _self_) {
+  return _self_->validateCurrentPage();
+}
+
+extern "C" int bg_QWizard_nextId_(QWizard * _self_) {
+  return _self_->nextId();
+}
+
+extern "C" void bg_QWizard_setField_const_QString_R_const_QVariant_R(QWizard * _self_, const CrystalString name, const CrystalVariant value) {
+  _self_->setField(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QWizard_field_const_QString_R(QWizard * _self_, const CrystalString name) {
+  return qvariant_to_crystal(_self_->field(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_QWizard_setWizardStyle_QWizard__WizardStyle(QWizard * _self_, QWizard::WizardStyle style) {
+  _self_->setWizardStyle(style);
+}
+
+extern "C" QWizard::WizardStyle bg_QWizard_wizardStyle_(QWizard * _self_) {
+  return _self_->wizardStyle();
+}
+
+extern "C" void bg_QWizard_setOption_QWizard__WizardOption_bool(QWizard * _self_, QWizard::WizardOption option, bool on) {
+  _self_->setOption(option, on);
+}
+
+extern "C" bool bg_QWizard_testOption_QWizard__WizardOption(QWizard * _self_, QWizard::WizardOption option) {
+  return _self_->testOption(option);
+}
+
+extern "C" void bg_QWizard_setOptions_QWizard__WizardOptions(QWizard * _self_, QWizard::WizardOptions options) {
+  _self_->setOptions(options);
+}
+
+extern "C" QWizard::WizardOptions bg_QWizard_options_(QWizard * _self_) {
+  return _self_->options();
+}
+
+extern "C" void bg_QWizard_setButtonText_QWizard__WizardButton_const_QString_R(QWizard * _self_, QWizard::WizardButton which, const CrystalString text) {
+  _self_->setButtonText(which, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QWizard_buttonText_QWizard__WizardButton(QWizard * _self_, QWizard::WizardButton which) {
+  return qstring_to_crystal(_self_->buttonText(which));
+}
+
+extern "C" void bg_QWizard_setButtonLayout_const_QList_QWizard__WizardButton__R(QWizard * _self_, const Container_QList_QWizard__WizardButton_ * layout) {
+  _self_->setButtonLayout(*(layout));
+}
+
+extern "C" void bg_QWizard_setButton_QWizard__WizardButton_QAbstractButton_X(QWizard * _self_, QWizard::WizardButton which, QAbstractButton * button) {
+  _self_->setButton(which, button);
+}
+
+extern "C" QAbstractButton * bg_QWizard_button_QWizard__WizardButton(QWizard * _self_, QWizard::WizardButton which) {
+  return _self_->button(which);
+}
+
+extern "C" void bg_QWizard_setTitleFormat_Qt__TextFormat(QWizard * _self_, Qt::TextFormat format) {
+  _self_->setTitleFormat(format);
+}
+
+extern "C" Qt::TextFormat bg_QWizard_titleFormat_(QWizard * _self_) {
+  return _self_->titleFormat();
+}
+
+extern "C" void bg_QWizard_setSubTitleFormat_Qt__TextFormat(QWizard * _self_, Qt::TextFormat format) {
+  _self_->setSubTitleFormat(format);
+}
+
+extern "C" Qt::TextFormat bg_QWizard_subTitleFormat_(QWizard * _self_) {
+  return _self_->subTitleFormat();
+}
+
+extern "C" void bg_QWizard_setPixmap_QWizard__WizardPixmap_const_QPixmap_R(QWizard * _self_, QWizard::WizardPixmap which, const QPixmap & pixmap) {
+  _self_->setPixmap(which, pixmap);
+}
+
+extern "C" QPixmap * bg_QWizard_pixmap_QWizard__WizardPixmap(QWizard * _self_, QWizard::WizardPixmap which) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap(which));
+}
+
+extern "C" void bg_QWizard_setSideWidget_QWidget_X(QWizard * _self_, QWidget * widget) {
+  _self_->setSideWidget(widget);
+}
+
+extern "C" QWidget * bg_QWizard_sideWidget_(QWizard * _self_) {
+  return _self_->sideWidget();
+}
+
+extern "C" void bg_QWizard_setDefaultProperty_const_char_X_const_char_X_const_char_X(QWizard * _self_, const char * className, const char * property, const char * changedSignal) {
+  _self_->setDefaultProperty(className, property, changedSignal);
+}
+
+extern "C" void bg_QWizard_setVisible_bool(QWizard * _self_, bool visible) {
+  _self_->setVisible(visible);
+}
+
+extern "C" QSize bg_QWizard_sizeHint_(QWizard * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" void bg_QWizard_currentIdChanged_int(QWizard * _self_, int id) {
+  _self_->currentIdChanged(id);
+}
+
+extern "C" void bg_QWizard_helpRequested_(QWizard * _self_) {
+  _self_->helpRequested();
+}
+
+extern "C" void bg_QWizard_customButtonClicked_int(QWizard * _self_, int which) {
+  _self_->customButtonClicked(which);
+}
+
+extern "C" void bg_QWizard_pageAdded_int(QWizard * _self_, int id) {
+  _self_->pageAdded(id);
+}
+
+extern "C" void bg_QWizard_pageRemoved_int(QWizard * _self_, int id) {
+  _self_->pageRemoved(id);
+}
+
+extern "C" void bg_QWizard_back_(QWizard * _self_) {
+  _self_->back();
+}
+
+extern "C" void bg_QWizard_next_(QWizard * _self_) {
+  _self_->next();
+}
+
+extern "C" void bg_QWizard_setCurrentId_int(QWizard * _self_, int id) {
+  _self_->setCurrentId(id);
+}
+
+extern "C" void bg_QWizard_restart_(QWizard * _self_) {
+  _self_->restart();
+}
+
+extern "C" bool bg_QWizard_event_QEvent_X(QWizard * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" void bg_QWizard_resizeEvent_QResizeEvent_X(QWizard * _self_, QResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" void bg_QWizard_paintEvent_QPaintEvent_X(QWizard * _self_, QPaintEvent * event) {
+  _self_->paintEvent(event);
+}
+
+extern "C" void bg_QWizard_done_int(QWizard * _self_, int unnamed_arg_0) {
+  _self_->done(unnamed_arg_0);
+}
+
+extern "C" void bg_QWizard_initializePage_int(QWizard * _self_, int id) {
+  _self_->initializePage(id);
+}
+
+extern "C" void bg_QWizard_cleanupPage_int(QWizard * _self_, int id) {
+  _self_->cleanupPage(id);
+}
+
+extern "C" const QMetaObject * bg_QWizard_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QWizard::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QWizard_CONNECT_currentIdChanged_CrystalProc_void__int_(QWizard * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizard::*)(int))&QWizard::currentIdChanged, [_proc_](int id){ _proc_(id); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QWizard_CONNECT_helpRequested_CrystalProc_void_(QWizard * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizard::*)())&QWizard::helpRequested, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QWizard_CONNECT_customButtonClicked_CrystalProc_void__int_(QWizard * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizard::*)(int))&QWizard::customButtonClicked, [_proc_](int which){ _proc_(which); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QWizard_CONNECT_pageAdded_CrystalProc_void__int_(QWizard * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizard::*)(int))&QWizard::pageAdded, [_proc_](int id){ _proc_(id); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QWizard_CONNECT_pageRemoved_CrystalProc_void__int_(QWizard * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizard::*)(int))&QWizard::pageRemoved, [_proc_](int id){ _proc_(id); }));
+}
+
+extern "C" bool bg_QWizard_validateCurrentPage_SUPER_(QWizard * _self_) {
+  return _self_->QWizard::validateCurrentPage();
+}
+
+extern "C" int bg_QWizard_nextId_SUPER_(QWizard * _self_) {
+  return _self_->QWizard::nextId();
+}
+
+extern "C" void bg_QWizard_setVisible_SUPER_bool(QWizard * _self_, bool visible) {
+  _self_->QWizard::setVisible(visible);
+}
+
+extern "C" QSize bg_QWizard_sizeHint_SUPER_(QWizard * _self_) {
+  return _self_->QWizard::sizeHint();
+}
+
+extern "C" bool bg_QWizard_event_SUPER_QEvent_X(QWizard * _self_, QEvent * event) {
+  return _self_->QWizard::event(event);
+}
+
+extern "C" void bg_QWizard_resizeEvent_SUPER_QResizeEvent_X(QWizard * _self_, QResizeEvent * event) {
+  _self_->QWizard::resizeEvent(event);
+}
+
+extern "C" void bg_QWizard_paintEvent_SUPER_QPaintEvent_X(QWizard * _self_, QPaintEvent * event) {
+  _self_->QWizard::paintEvent(event);
+}
+
+extern "C" void bg_QWizard_done_SUPER_int(QWizard * _self_, int unnamed_arg_0) {
+  _self_->QWizard::done(unnamed_arg_0);
+}
+
+extern "C" void bg_QWizard_initializePage_SUPER_int(QWizard * _self_, int id) {
+  _self_->QWizard::initializePage(id);
+}
+
+extern "C" void bg_QWizard_cleanupPage_SUPER_int(QWizard * _self_, int id) {
+  _self_->QWizard::cleanupPage(id);
+}
+
+extern "C" void bg_BgInherit_QWizard_JUMPTABLE_BgJumptable_QWizard_R(BgInherit_QWizard * _self_, const BgJumptable_QWizard & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QWizardPage {
+  CrystalProc<const QMetaObject *> bg_QWizardPage_metaObject_;
+  CrystalProc<void *, const char *> bg_QWizardPage_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QWizardPage_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void> bg_QWizardPage_initializePage_;
+  CrystalProc<void> bg_QWizardPage_cleanupPage_;
+  CrystalProc<bool> bg_QWizardPage_validatePage_;
+  CrystalProc<bool> bg_QWizardPage_isComplete_;
+  CrystalProc<int> bg_QWizardPage_nextId_;
+  CrystalProc<int> bg_QWidget_devType_;
+  CrystalProc<void, bool> bg_QWidget_setVisible_bool;
+  CrystalProc<QSize *> bg_QWidget_sizeHint_;
+  CrystalProc<QSize *> bg_QWidget_minimumSizeHint_;
+  CrystalProc<int, int> bg_QWidget_heightForWidth_int;
+  CrystalProc<bool> bg_QWidget_hasHeightForWidth_;
+  CrystalProc<QPaintEngine *> bg_QWidget_paintEngine_;
+  CrystalProc<bool, QEvent *> bg_QWidget_event_QEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mousePressEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseReleaseEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X;
+  CrystalProc<void, QMouseEvent *> bg_QWidget_mouseMoveEvent_QMouseEvent_X;
+  CrystalProc<void, QWheelEvent *> bg_QWidget_wheelEvent_QWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QEnterEvent *> bg_QWidget_enterEvent_QEnterEvent_X;
+  CrystalProc<void, QEvent *> bg_QWidget_leaveEvent_QEvent_X;
+  CrystalProc<void, QPaintEvent *> bg_QWidget_paintEvent_QPaintEvent_X;
+  CrystalProc<void, QMoveEvent *> bg_QWidget_moveEvent_QMoveEvent_X;
+  CrystalProc<void, QResizeEvent *> bg_QWidget_resizeEvent_QResizeEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QContextMenuEvent *> bg_QWidget_contextMenuEvent_QContextMenuEvent_X;
+  CrystalProc<void, QTabletEvent *> bg_QWidget_tabletEvent_QTabletEvent_X;
+  CrystalProc<void, QActionEvent *> bg_QWidget_actionEvent_QActionEvent_X;
+  CrystalProc<void, QDragEnterEvent *> bg_QWidget_dragEnterEvent_QDragEnterEvent_X;
+  CrystalProc<void, QDragMoveEvent *> bg_QWidget_dragMoveEvent_QDragMoveEvent_X;
+  CrystalProc<void, QDragLeaveEvent *> bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X;
+  CrystalProc<void, QDropEvent *> bg_QWidget_dropEvent_QDropEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QWidget_hideEvent_QHideEvent_X;
+  CrystalProc<bool, const CrystalString, void *, qintptr *> bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X;
+  CrystalProc<void, QEvent *> bg_QWidget_changeEvent_QEvent_X;
+  CrystalProc<int, QPaintDevice::PaintDeviceMetric> bg_QWidget_metric_QPaintDevice__PaintDeviceMetric;
+  CrystalProc<void, QPainter *> bg_QWidget_initPainter_QPainter_X;
+  CrystalProc<QPainter *> bg_QWidget_sharedPainter_;
+  CrystalProc<void, QInputMethodEvent *> bg_QWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<bool, bool> bg_QWidget_focusNextPrevChild_bool;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QWizardPage : public QWizardPage {
+  using QWizardPage::QWizardPage;
+  BgJumptable_QWizardPage bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_metaObject_();
+    } else {
+      return QWizardPage::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QWizardPage::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QWizardPage::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void initializePage() override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_initializePage_.isValid()) {
+      _self_->bgJump.bg_QWizardPage_initializePage_();
+    } else {
+      QWizardPage::initializePage();
+    }
+  }
+  
+  void cleanupPage() override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_cleanupPage_.isValid()) {
+      _self_->bgJump.bg_QWizardPage_cleanupPage_();
+    } else {
+      QWizardPage::cleanupPage();
+    }
+  }
+  
+  bool validatePage() override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_validatePage_.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_validatePage_();
+    } else {
+      return QWizardPage::validatePage();
+    }
+  }
+  
+  bool isComplete() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_isComplete_.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_isComplete_();
+    } else {
+      return QWizardPage::isComplete();
+    }
+  }
+  
+  int nextId() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWizardPage_nextId_.isValid()) {
+      return _self_->bgJump.bg_QWizardPage_nextId_();
+    } else {
+      return QWizardPage::nextId();
+    }
+  }
+  
+  int devType() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_devType_.isValid()) {
+      return _self_->bgJump.bg_QWidget_devType_();
+    } else {
+      return QWizardPage::devType();
+    }
+  }
+  
+  void setVisible(bool visible) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_setVisible_bool.isValid()) {
+      _self_->bgJump.bg_QWidget_setVisible_bool(visible);
+    } else {
+      QWizardPage::setVisible(visible);
+    }
+  }
+  
+  QSize sizeHint() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_sizeHint_();
+    } else {
+      return QWizardPage::sizeHint();
+    }
+  }
+  
+  QSize minimumSizeHint() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_minimumSizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidget_minimumSizeHint_();
+    } else {
+      return QWizardPage::minimumSizeHint();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidget_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QWizardPage::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidget_hasHeightForWidth_();
+    } else {
+      return QWizardPage::hasHeightForWidth();
+    }
+  }
+  
+  QPaintEngine * paintEngine() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEngine_.isValid()) {
+      return _self_->bgJump.bg_QWidget_paintEngine_();
+    } else {
+      return QWizardPage::paintEngine();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_event_QEvent_X(event);
+    } else {
+      return QWizardPage::event(event);
+    }
+  }
+  
+  void mousePressEvent(QMouseEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mousePressEvent_QMouseEvent_X(event);
+    } else {
+      QWizardPage::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QMouseEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseReleaseEvent_QMouseEvent_X(event);
+    } else {
+      QWizardPage::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QMouseEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseDoubleClickEvent_QMouseEvent_X(event);
+    } else {
+      QWizardPage::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QMouseEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_mouseMoveEvent_QMouseEvent_X(event);
+    } else {
+      QWizardPage::mouseMoveEvent(event);
+    }
+  }
+  
+  void wheelEvent(QWheelEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_wheelEvent_QWheelEvent_X(event);
+    } else {
+      QWizardPage::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QWizardPage::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QWizardPage::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QWizardPage::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QWizardPage::focusOutEvent(event);
+    }
+  }
+  
+  void enterEvent(QEnterEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_enterEvent_QEnterEvent_X(event);
+    } else {
+      QWizardPage::enterEvent(event);
+    }
+  }
+  
+  void leaveEvent(QEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_leaveEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_leaveEvent_QEvent_X(event);
+    } else {
+      QWizardPage::leaveEvent(event);
+    }
+  }
+  
+  void paintEvent(QPaintEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_paintEvent_QPaintEvent_X(event);
+    } else {
+      QWizardPage::paintEvent(event);
+    }
+  }
+  
+  void moveEvent(QMoveEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_moveEvent_QMoveEvent_X(event);
+    } else {
+      QWizardPage::moveEvent(event);
+    }
+  }
+  
+  void resizeEvent(QResizeEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_resizeEvent_QResizeEvent_X(event);
+    } else {
+      QWizardPage::resizeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QWizardPage::closeEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QContextMenuEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_contextMenuEvent_QContextMenuEvent_X(event);
+    } else {
+      QWizardPage::contextMenuEvent(event);
+    }
+  }
+  
+  void tabletEvent(QTabletEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_tabletEvent_QTabletEvent_X(event);
+    } else {
+      QWizardPage::tabletEvent(event);
+    }
+  }
+  
+  void actionEvent(QActionEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_actionEvent_QActionEvent_X(event);
+    } else {
+      QWizardPage::actionEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QDragEnterEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragEnterEvent_QDragEnterEvent_X(event);
+    } else {
+      QWizardPage::dragEnterEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QDragMoveEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragMoveEvent_QDragMoveEvent_X(event);
+    } else {
+      QWizardPage::dragMoveEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QDragLeaveEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(event);
+    } else {
+      QWizardPage::dragLeaveEvent(event);
+    }
+  }
+  
+  void dropEvent(QDropEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_dropEvent_QDropEvent_X(event);
+    } else {
+      QWizardPage::dropEvent(event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QWizardPage::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QWizardPage::hideEvent(event);
+    }
+  }
+  
+  bool nativeEvent(const QByteArray & eventType, void * message, qintptr * result) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X.isValid()) {
+      return _self_->bgJump.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(qbytearray_to_crystal(eventType), message, result);
+    } else {
+      return QWizardPage::nativeEvent(eventType, message, result);
+    }
+  }
+  
+  void changeEvent(QEvent * unnamed_arg_0) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_changeEvent_QEvent_X(unnamed_arg_0);
+    } else {
+      QWizardPage::changeEvent(unnamed_arg_0);
+    }
+  }
+  
+  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+    } else {
+      return QWizardPage::metric(unnamed_arg_0);
+    }
+  }
+  
+  void initPainter(QPainter * painter) const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_initPainter_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QWidget_initPainter_QPainter_X(painter);
+    } else {
+      QWizardPage::initPainter(painter);
+    }
+  }
+  
+  QPainter * sharedPainter() const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_sharedPainter_.isValid()) {
+      return _self_->bgJump.bg_QWidget_sharedPainter_();
+    } else {
+      return QWizardPage::sharedPainter();
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * unnamed_arg_0) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QWidget_inputMethodEvent_QInputMethodEvent_X(unnamed_arg_0);
+    } else {
+      QWizardPage::inputMethodEvent(unnamed_arg_0);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery unnamed_arg_0) const override {
+    const BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QWidget_inputMethodQuery_Qt__InputMethodQuery(unnamed_arg_0));
+    } else {
+      return QWizardPage::inputMethodQuery(unnamed_arg_0);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QWizardPage::focusNextPrevChild(next);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QWizardPage::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QWizardPage::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QWizardPage::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QWizardPage::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWizardPage::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QWizardPage *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QWizardPage::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QWizardPage_metaObject_(QWizardPage * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QWizardPage_qt_metacast_const_char_X(QWizardPage * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QWizardPage_qt_metacall_QMetaObject__Call_int_void_XX(QWizardPage * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QWizardPage_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QWizardPage::tr(s));
+}
+
+extern "C" CrystalString bg_QWizardPage_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QWizardPage::tr(s, c));
+}
+
+extern "C" CrystalString bg_QWizardPage_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QWizardPage::tr(s, c, n));
+}
+
+extern "C" QWizardPage * bg_QWizardPage__CONSTRUCT_QWidget_X(QWidget * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QWizardPage>(parent);
+}
+
+extern "C" void bg_QWizardPage_setTitle_const_QString_R(QWizardPage * _self_, const CrystalString title) {
+  _self_->setTitle(([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QWizardPage_title_(QWizardPage * _self_) {
+  return qstring_to_crystal(_self_->title());
+}
+
+extern "C" void bg_QWizardPage_setSubTitle_const_QString_R(QWizardPage * _self_, const CrystalString subTitle) {
+  _self_->setSubTitle(([&]() { auto &&bg_value = (subTitle); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QWizardPage_subTitle_(QWizardPage * _self_) {
+  return qstring_to_crystal(_self_->subTitle());
+}
+
+extern "C" void bg_QWizardPage_setPixmap_QWizard__WizardPixmap_const_QPixmap_R(QWizardPage * _self_, QWizard::WizardPixmap which, const QPixmap & pixmap) {
+  _self_->setPixmap(which, pixmap);
+}
+
+extern "C" QPixmap * bg_QWizardPage_pixmap_QWizard__WizardPixmap(QWizardPage * _self_, QWizard::WizardPixmap which) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap(which));
+}
+
+extern "C" void bg_QWizardPage_setFinalPage_bool(QWizardPage * _self_, bool finalPage) {
+  _self_->setFinalPage(finalPage);
+}
+
+extern "C" bool bg_QWizardPage_isFinalPage_(QWizardPage * _self_) {
+  return _self_->isFinalPage();
+}
+
+extern "C" void bg_QWizardPage_setCommitPage_bool(QWizardPage * _self_, bool commitPage) {
+  _self_->setCommitPage(commitPage);
+}
+
+extern "C" bool bg_QWizardPage_isCommitPage_(QWizardPage * _self_) {
+  return _self_->isCommitPage();
+}
+
+extern "C" void bg_QWizardPage_setButtonText_QWizard__WizardButton_const_QString_R(QWizardPage * _self_, QWizard::WizardButton which, const CrystalString text) {
+  _self_->setButtonText(which, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QWizardPage_buttonText_QWizard__WizardButton(QWizardPage * _self_, QWizard::WizardButton which) {
+  return qstring_to_crystal(_self_->buttonText(which));
+}
+
+extern "C" void bg_QWizardPage_initializePage_(QWizardPage * _self_) {
+  _self_->initializePage();
+}
+
+extern "C" void bg_QWizardPage_cleanupPage_(QWizardPage * _self_) {
+  _self_->cleanupPage();
+}
+
+extern "C" bool bg_QWizardPage_validatePage_(QWizardPage * _self_) {
+  return _self_->validatePage();
+}
+
+extern "C" bool bg_QWizardPage_isComplete_(QWizardPage * _self_) {
+  return _self_->isComplete();
+}
+
+extern "C" int bg_QWizardPage_nextId_(QWizardPage * _self_) {
+  return _self_->nextId();
+}
+
+extern "C" void bg_QWizardPage_completeChanged_(QWizardPage * _self_) {
+  _self_->completeChanged();
+}
+
+extern "C" void bg_QWizardPage_setField_const_QString_R_const_QVariant_R(QWizardPage * _self_, const CrystalString name, const CrystalVariant value) {
+  _self_->setField(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), crystal_to_qvariant(value));
+}
+
+extern "C" CrystalVariant bg_QWizardPage_field_const_QString_R(QWizardPage * _self_, const CrystalString name) {
+  return qvariant_to_crystal(_self_->field(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" void bg_QWizardPage_registerField_const_QString_R_QWidget_X(QWizardPage * _self_, const CrystalString name, QWidget * widget) {
+  _self_->registerField(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), widget);
+}
+
+extern "C" void bg_QWizardPage_registerField_const_QString_R_QWidget_X_const_char_X(QWizardPage * _self_, const CrystalString name, QWidget * widget, const char * property) {
+  _self_->registerField(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), widget, property);
+}
+
+extern "C" void bg_QWizardPage_registerField_const_QString_R_QWidget_X_const_char_X_const_char_X(QWizardPage * _self_, const CrystalString name, QWidget * widget, const char * property, const char * changedSignal) {
+  _self_->registerField(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), widget, property, changedSignal);
+}
+
+extern "C" QWizard * bg_QWizardPage_wizard_(QWizardPage * _self_) {
+  return _self_->wizard();
+}
+
+extern "C" const QMetaObject * bg_QWizardPage_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QWizardPage::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QWizardPage_CONNECT_completeChanged_CrystalProc_void_(QWizardPage * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QWizardPage::*)())&QWizardPage::completeChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QWizardPage_initializePage_SUPER_(QWizardPage * _self_) {
+  _self_->QWizardPage::initializePage();
+}
+
+extern "C" void bg_QWizardPage_cleanupPage_SUPER_(QWizardPage * _self_) {
+  _self_->QWizardPage::cleanupPage();
+}
+
+extern "C" bool bg_QWizardPage_validatePage_SUPER_(QWizardPage * _self_) {
+  return _self_->QWizardPage::validatePage();
+}
+
+extern "C" bool bg_QWizardPage_isComplete_SUPER_(QWizardPage * _self_) {
+  return _self_->QWizardPage::isComplete();
+}
+
+extern "C" int bg_QWizardPage_nextId_SUPER_(QWizardPage * _self_) {
+  return _self_->QWizardPage::nextId();
+}
+
+extern "C" void bg_BgInherit_QWizardPage_JUMPTABLE_BgJumptable_QWizardPage_R(BgInherit_QWizardPage * _self_, const BgJumptable_QWizardPage & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" const char * bg____qVersion_STATIC_() {
   return ::qVersion();
 }
@@ -102514,6 +118625,22 @@ extern "C" int bg_Container_QList_QObject_X__size_(Container_QList_QObject_X_ * 
   return _self_->size();
 }
 
+extern "C" Container_QList_QAction_X_ * bg_Container_QList_QAction_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QAction_X_>();
+}
+
+extern "C" QAction * bg_Container_QList_QAction_X__at_int(Container_QList_QAction_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QAction_X__push_back_QAction_X(Container_QList_QAction_X_ * _self_, QAction * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QAction_X__size_(Container_QList_QAction_X_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_QLineF_ * bg_Container_QList_QLineF___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QLineF_>();
 }
@@ -102607,22 +118734,6 @@ extern "C" void bg_Container_QList_QUndoStack_X__push_back_QUndoStack_X(Containe
 }
 
 extern "C" int bg_Container_QList_QUndoStack_X__size_(Container_QList_QUndoStack_X_ * _self_) {
-  return _self_->size();
-}
-
-extern "C" Container_QList_QAction_X_ * bg_Container_QList_QAction_X___CONSTRUCT_() {
-  return new (UseGC) CrystalGCWrapper<Container_QList_QAction_X_>();
-}
-
-extern "C" QAction * bg_Container_QList_QAction_X__at_int(Container_QList_QAction_X_ * _self_, int index) {
-  return _self_->at(index);
-}
-
-extern "C" void bg_Container_QList_QAction_X__push_back_QAction_X(Container_QList_QAction_X_ * _self_, QAction * value) {
-  _self_->push_back(value);
-}
-
-extern "C" int bg_Container_QList_QAction_X__size_(Container_QList_QAction_X_ * _self_) {
   return _self_->size();
 }
 
@@ -102738,6 +118849,22 @@ extern "C" int bg_Container_QList_QDockWidget_X__size_(Container_QList_QDockWidg
   return _self_->size();
 }
 
+extern "C" Container_QList_QMdiSubWindow_X_ * bg_Container_QList_QMdiSubWindow_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QMdiSubWindow_X_>();
+}
+
+extern "C" QMdiSubWindow * bg_Container_QList_QMdiSubWindow_X__at_int(Container_QList_QMdiSubWindow_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QMdiSubWindow_X__push_back_QMdiSubWindow_X(Container_QList_QMdiSubWindow_X_ * _self_, QMdiSubWindow * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QMdiSubWindow_X__size_(Container_QList_QMdiSubWindow_X_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_QTableWidgetItem_X_ * bg_Container_QList_QTableWidgetItem_X___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QTableWidgetItem_X_>();
 }
@@ -102783,6 +118910,38 @@ extern "C" void bg_Container_QList_QTreeWidgetItem_X__push_back_QTreeWidgetItem_
 }
 
 extern "C" int bg_Container_QList_QTreeWidgetItem_X__size_(Container_QList_QTreeWidgetItem_X_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QWidget_X_ * bg_Container_QList_QWidget_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QWidget_X_>();
+}
+
+extern "C" QWidget * bg_Container_QList_QWidget_X__at_int(Container_QList_QWidget_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QWidget_X__push_back_QWidget_X(Container_QList_QWidget_X_ * _self_, QWidget * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QWidget_X__size_(Container_QList_QWidget_X_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QWizard__WizardButton_ * bg_Container_QList_QWizard__WizardButton___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QWizard__WizardButton_>();
+}
+
+extern "C" QWizard::WizardButton bg_Container_QList_QWizard__WizardButton__at_int(Container_QList_QWizard__WizardButton_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QWizard__WizardButton__push_back_QWizard__WizardButton(Container_QList_QWizard__WizardButton_ * _self_, QWizard::WizardButton value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QWizard__WizardButton__size_(Container_QList_QWizard__WizardButton_ * _self_) {
   return _self_->size();
 }
 

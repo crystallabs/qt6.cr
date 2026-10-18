@@ -247,6 +247,10 @@ types: # Type rewrite rules
 
   # No support for associative containers yet
   "QMap<int, QVariant>": { ignore: true }
+  "QMap<QDate, QTextCharFormat>": { ignore: true } # Use CalendarWidget#date_text_format(date)
+  "std::optional<QFont>": { ignore: true } # QFontComboBox#displayFont
+  # QKeyCombination isn't bound; drops QKeySequenceEdit#finishing_key_combinations
+  "QList<QKeyCombination>": { ignore: true }
   "QHash<int, QByteArray>": { ignore: true }
 
   # Ignore private data structures
