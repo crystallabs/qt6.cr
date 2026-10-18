@@ -135,19 +135,27 @@ itself](https://doc.qt.io/qt-6/qcoreapplication.html#locale-settings)).
 
 ## String lists
 
-`QStringList` is a `QList<QString>`: methods taking one accept any
-`Enumerable(String)`, and methods returning one return a `Qt::StringList`,
-which is an `Indexable(String)`:
+`QStringList` is a `QList<QString>`, wrapped as `Qt::StringList`: methods
+taking one accept any `Enumerable(String)`, and methods returning one return a
+`Qt::StringList`, which is an `Indexable(String)`:
 
 ```crystal
 combo_box.add_items(["one", "two"])
 names = Qt::Dir.new(".").entry_list(["*.cr"], Qt::Dir::Filters::Files)
-names.sort!(Qt::CaseSensitivity::CaseInsensitive).to_a
+names.sort(Qt::CaseSensitivity::CaseInsensitive) # In place
+names.filter(".cr").join(", ")
 ```
 
-Qt's own `QStringList` methods are `#sort!`, `#remove_duplicates!`, `#filter`,
-`#replace_in_strings!` and `#includes?(str, cs)`, and `#index`/`#rindex` taking a `Qt::RegularExpression`, next to
-`Enumerable`'s `#join`, `#select`, `#sort` and `#uniq`, which return arrays.
+Qt's own `QStringList` methods are bound: `#sort(cs = CaseSensitive)`,
+`#remove_duplicates`, `#filter`, `#replace_in_strings`, `#contains(str, cs)`,
+`#index_of` and `#last_index_of` (also taking a `Qt::RegularExpression`), and
+`#join`.  `Enumerable`'s methods come before Qt's in Crystal's lookup, so
+`#join` is `Enumerable#join` (with the same result), while `#sort` is Qt's
+in-place one, as `Enumerable` has no `#sort`: use `#to_a.sort` for a sorted
+`Array`.
+
+`Qt::Polygon` and `Qt::PolygonF` are lists of `Qt::Point` and `Qt::PointF`
+the same way: `polygon << Qt::Point.new(1, 2)`, `polygon.to_a`.
 
 ## Object lifetime
 
@@ -284,9 +292,12 @@ see the comments there:
 * `char32_t`, which the `QLocale::toString` overloads take, maps to `Char` like
   `QChar`.
 * `QStringList` and `QVariantList` are aliases of `QList<QString>` and
-  `QList<QVariant>`, so methods take any `Enumerable(String)` and return a
-  `Qt::QList` wrapper that is one: `combo_box.add_items(["a", "b"])`,
-  `dir.entry_list.to_a`.
+  `QList<QVariant>`, so methods take any `Enumerable(String)`:
+  `combo_box.add_items(["a", "b"])`.  `QList<QString>` and
+  `QListSpecialMethods<QString>`, which holds the `QStringList` methods, are
+  listed as classes, so the wrapper `Qt::StringList` has those methods.  The
+  overloads taking `QStringView`, `QLatin1StringView` or a string matcher are
+  dropped, as the Crystal `String` maps to `QString`.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

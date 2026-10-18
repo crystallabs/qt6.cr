@@ -1,6 +1,5 @@
 processors:
   # Graph-refining processors:
-  - inheritance
   - default_constructor # Create default constructors where possible
   - copy_structs # Copy structures as marked
   - macros # Support for macro mapping
@@ -9,8 +8,15 @@ processors:
   - instance_properties # Add property methods for public instance members
   - filter_methods # Throw out filtered methods
   - auto_container_instantiation
+  # Before the containers: a `QList<Qt::DayOfWeek>` wrapper includes
+  # `SequentialContainer(DayOfWeek)`, so the enum must be declared before it,
+  # or the generated binding doesn't compile.
   - enums # Add enums
   - instantiate_containers # Actually instantiate containers
+  - inheritance # After the containers, so QPolygon inherits QList<QPoint>
+  # Again: the methods of the container instantiations listed in `classes:`
+  # (like QList<QString>) and those inherited from them are only known now.
+  - filter_methods
   - qt # Qt specifics
   # Preliminary generation processors:
   - crystal_wrapper # Create Crystal wrappers

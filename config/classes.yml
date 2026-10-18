@@ -192,3 +192,8 @@ classes:
   QAbstractAnimation: AbstractAnimation
   QVariantAnimation: VariantAnimation
   QPropertyAnimation: PropertyAnimation
+  # QStringList is a QList<QString>; Qt keeps its methods in the template
+  # specialization QListSpecialMethods<QString>, which QList<QString> derives
+  # from, so StringList inherits StringListMethods.
+  "QList<QString>": StringList
+  "QListSpecialMethods<QString>": StringListMethods # The QStringList methods

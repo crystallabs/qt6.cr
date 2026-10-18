@@ -164,7 +164,19 @@ types: # Type rewrite rules
   "QPalette::ResolveMask": { alias_for: "quint64" }
   WId: { alias_for: "unsigned int" }
   QVariantList: { alias_for: "QList<QVariant>" }
-  QStringList: { alias_for: "QList<QString>" } # A subclass of it, convertible both ways
+  QStringList: { alias_for: "QList<QString>" } # Qt 6 declares it so
+  # The methods of QList<QString> itself (wrapped as Qt::StringList) name these.
+  "QList<QString>::value_type": { alias_for: QString } # takeFirst, takeLast
+  "QList<QString>::DataPointer": { ignore: true } # Private storage, data_ptr
+  "QList<QString>::iterator": { ignore: true } # Indexes replace the iterators
+  "QList<QString>::const_iterator": { ignore: true }
+  "QList<QString>::reverse_iterator": { ignore: true }
+  "QList<QString>::const_reverse_iterator": { ignore: true }
+  "QList<QString>":
+    ignore_methods:
+      # Qt's operator[] is unchecked (Q_ASSERT only); as a method of the class
+      # itself it would shadow Indexable#[], which raises IndexError.
+      - "operator[]"
 
   # Structures with QVariant: Ignore for now.
   "QInputMethodEvent::Attribute": { ignore: true }
@@ -217,6 +229,13 @@ types: # Type rewrite rules
   "QPen::DataPtr": { ignore: true }
   "QPointer<QObject>": { ignore: true }
   "QList<QPointer<QObject>>": { ignore: true }
+
+  # String views and matchers: the Crystal String maps to QString, so the
+  # overloads taking these would only duplicate the QString ones.
+  QStringView: { ignore: true }
+  QLatin1StringView: { ignore: true }
+  QStringMatcher: { ignore: true }
+  QLatin1StringMatcher: { ignore: true }
 
   # Ignore pure template types
   "QList<T>": { ignore: true }

@@ -455,6 +455,9 @@ module Qt
   
   @[Link(ldflags: "#{__DIR__}/../../../ext/binding_darwin-unknown-aarch64-qt6.11.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp")]
   lib Binding
+    alias QListSpecialMethodsQString = Void
+    alias ContainerQListQString = Void
+    alias QRegularExpression = Void
     alias QMetaObjectConnection = Void
     alias QObject = Void
     alias QMetaObject = Void
@@ -561,7 +564,6 @@ module Qt
     alias QModelIndex = Void
     alias QModelRoleDataSpan = Void
     alias QPersistentModelIndex = Void
-    alias ContainerQListQString = Void
     alias QModelIndexList = Void
     alias ContainerQListInt = Void
     alias ContainerQListQPersistentModelIndex = Void
@@ -611,7 +613,6 @@ module Qt
     alias QCoreApplicationPrivate = Void
     alias QIODevicePrivate = Void
     alias QLocale = Void
-    alias QStringView = Void
     alias QDate = Void
     alias QTime = Void
     alias QDateTime = Void
@@ -619,7 +620,6 @@ module Qt
     alias ContainerQListQtDayOfWeek = Void
     alias ContainerQListQLocale = Void
     alias QTimeZone = Void
-    alias QRegularExpression = Void
     alias QRegularExpressionMatch = Void
     alias QRegularExpressionMatchIterator = Void
     alias QUrl = Void
@@ -646,7 +646,6 @@ module Qt
     alias QBitmap = Void
     alias QColor = Void
     alias QRgba64 = Void
-    alias QLatin1StringView = Void
     alias QBrush = Void
     alias QPen = Void
     alias QPixelFormat = Void
@@ -5139,6 +5138,22 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    fun bg_QListSpecialMethods_QString__sort_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, cs : CaseSensitivity) : Void
+    fun bg_QListSpecialMethods_QString__removeDuplicates_(_self_ : QListSpecialMethodsQString*) : Int64
+    fun bg_QListSpecialMethods_QString__join_QChar(_self_ : QListSpecialMethodsQString*, sep : Int32) : CrystalString
+    fun bg_QListSpecialMethods_QString__join_const_QString_R(_self_ : QListSpecialMethodsQString*, sep : CrystalString) : CrystalString
+    fun bg_QListSpecialMethods_QString__filter_const_QString_R_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, str : CrystalString, cs : CaseSensitivity) : ContainerQListQString*
+    fun bg_QListSpecialMethods_QString__replaceInStrings_const_QString_R_const_QString_R_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, before : CrystalString, after : CrystalString, cs : CaseSensitivity) : ContainerQListQString*
+    fun bg_QListSpecialMethods_QString__contains_const_QString_R_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, str : CrystalString, cs : CaseSensitivity) : Bool
+    fun bg_QListSpecialMethods_QString__indexOf_const_QString_R_qsizetype_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, str : CrystalString, from : Int64, cs : CaseSensitivity) : Int64
+    fun bg_QListSpecialMethods_QString__lastIndexOf_const_QString_R_qsizetype_Qt__CaseSensitivity(_self_ : QListSpecialMethodsQString*, str : CrystalString, from : Int64, cs : CaseSensitivity) : Int64
+    fun bg_QListSpecialMethods_QString__filter_const_QRegularExpression_R(_self_ : QListSpecialMethodsQString*, re : QRegularExpression*) : ContainerQListQString*
+    fun bg_QListSpecialMethods_QString__replaceInStrings_const_QRegularExpression_R_const_QString_R(_self_ : QListSpecialMethodsQString*, re : QRegularExpression*, after : CrystalString) : ContainerQListQString*
+    fun bg_QListSpecialMethods_QString__indexOf_const_QRegularExpression_R_qsizetype(_self_ : QListSpecialMethodsQString*, re : QRegularExpression*, from : Int64) : Int64
+    fun bg_QListSpecialMethods_QString__lastIndexOf_const_QRegularExpression_R_qsizetype(_self_ : QListSpecialMethodsQString*, re : QRegularExpression*, from : Int64) : Int64
+    fun bg_QListSpecialMethods_QString___COPY_const_QListSpecialMethods_QString__R(unnamed_arg_0 : QListSpecialMethodsQString*) : QListSpecialMethodsQString*
+    fun bg_QListSpecialMethods_QString___OPERATOR_assign_const_QListSpecialMethods_QString__R(_self_ : QListSpecialMethodsQString*, unnamed_arg_0 : QListSpecialMethodsQString*) : QListSpecialMethodsQString*
+    fun bg_QListSpecialMethods_QString___CONSTRUCT_() : QListSpecialMethodsQString*
     fun bg_QMetaObject__Connection__CONSTRUCT_() : QMetaObjectConnection*
     fun bg_QMetaObject__Connection__COPY_const_QMetaObject__Connection_R(other : QMetaObjectConnection*) : QMetaObjectConnection*
     fun bg_QMetaObject__Connection__OPERATOR_assign_const_QMetaObject__Connection_R(_self_ : QMetaObjectConnection*, other : QMetaObjectConnection*) : QMetaObjectConnection*
@@ -5199,6 +5214,7 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QObject*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QObject*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QObject*, signal : QMetaMethod*) : Void
+    fun bg_QObject_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_CAST_AbstractAnimation_(_self_ : QObject*) : QAbstractAnimation*
     fun bg_QObject_CAST_EventLoop_(_self_ : QObject*) : QEventLoop*
     fun bg_QObject_CAST_AbstractEventDispatcher_(_self_ : QObject*) : QAbstractEventDispatcher*
@@ -5286,7 +5302,6 @@ module Qt
     fun bg_QObject_CAST_ToolButton_(_self_ : QObject*) : QToolButton*
     fun bg_QObject_CAST_TreeView_(_self_ : QObject*) : QTreeView*
     fun bg_BgInherit_QObject_JUMPTABLE_BgJumptable_QObject_R(_self_ : QObject*, table : BgJumptable_QObject*) : Void
-    fun bg_QObject_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_CONNECT_destroyed_CrystalProc_void__QObject_X_(_self_ : QObject*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QObject_CONNECT_objectNameChanged_CrystalProc_void__const_QString_R_(_self_ : QObject*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QObject*, event : QEvent*) : Bool
@@ -5329,13 +5344,13 @@ module Qt
     fun bg_QAbstractAnimation_updateCurrentTime_int(_self_ : QAbstractAnimation*, current_time : Int32) : Void
     fun bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QAbstractAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
     fun bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(_self_ : QAbstractAnimation*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QAbstractAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractAnimation*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractAnimation*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAbstractAnimation*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractAnimation*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractAnimation*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractAnimation*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractAnimation_CONNECT_finished_CrystalProc_void_(_self_ : QAbstractAnimation*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractAnimation_CONNECT_stateChanged_CrystalProc_void__QAbstractAnimation__State__QAbstractAnimation__State_(_self_ : QAbstractAnimation*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractAnimation_CONNECT_currentLoopChanged_CrystalProc_void__int_(_self_ : QAbstractAnimation*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -5368,13 +5383,13 @@ module Qt
     fun bg_QEventLoop_event_QEvent_X(_self_ : QEventLoop*, event : QEvent*) : Bool
     fun bg_QEventLoop_exit_int(_self_ : QEventLoop*, return_code : Int32) : Void
     fun bg_QEventLoop_quit_(_self_ : QEventLoop*) : Void
+    fun bg_QEventLoop_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QEventLoop*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QEventLoop*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QEventLoop*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QEventLoop*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QEventLoop*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QEventLoop*, signal : QMetaMethod*) : Void
-    fun bg_QEventLoop_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QEventLoop_event_SUPER_QEvent_X(_self_ : QEventLoop*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QEventLoop*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QEventLoop*, event : QTimerEvent*) : Void
@@ -5411,6 +5426,7 @@ module Qt
     fun bg_QAbstractEventDispatcher_aboutToBlock_(_self_ : QAbstractEventDispatcher*) : Void
     fun bg_QAbstractEventDispatcher_awake_(_self_ : QAbstractEventDispatcher*) : Void
     fun bg_QAbstractEventDispatcher__CONSTRUCT_QAbstractEventDispatcherPrivate_R_QObject_X(unnamed_arg_0 : QAbstractEventDispatcherPrivate*, parent : QObject*) : QAbstractEventDispatcher*
+    fun bg_QAbstractEventDispatcher_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QAbstractEventDispatcher*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractEventDispatcher*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractEventDispatcher*, event : QTimerEvent*) : Void
@@ -5418,7 +5434,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractEventDispatcher*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractEventDispatcher_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractEventDispatcher_CONNECT_aboutToBlock_CrystalProc_void_(_self_ : QAbstractEventDispatcher*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractEventDispatcher_CONNECT_awake_CrystalProc_void_(_self_ : QAbstractEventDispatcher*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractEventDispatcher_startingUp_SUPER_(_self_ : QAbstractEventDispatcher*) : Void
@@ -5555,6 +5570,7 @@ module Qt
     fun bg_QAbstractItemModel_changePersistentIndex_const_QModelIndex_R_const_QModelIndex_R(_self_ : QAbstractItemModel*, from : QModelIndex*, to : QModelIndex*) : Void
     fun bg_QAbstractItemModel_changePersistentIndexList_const_QModelIndexList_R_const_QModelIndexList_R(_self_ : QAbstractItemModel*, from : QModelIndexList*, to : QModelIndexList*) : Void
     fun bg_QAbstractItemModel_persistentIndexList_(_self_ : QAbstractItemModel*) : QModelIndexList*
+    fun bg_QAbstractItemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QAbstractItemModel*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractItemModel*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractItemModel*, event : QTimerEvent*) : Void
@@ -5562,7 +5578,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractItemModel*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractItemModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractItemModel*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractItemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemModel_CONNECT_dataChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(_self_ : QAbstractItemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemModel_CONNECT_dataChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R__const_QList_int__R_(_self_ : QAbstractItemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemModel_CONNECT_headerDataChanged_CrystalProc_void__Qt__Orientation__int__int_(_self_ : QAbstractItemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -5660,6 +5675,7 @@ module Qt
     fun bg_QAbstractProxyModel_supportedDropActions_(_self_ : QAbstractProxyModel*) : DropActions
     fun bg_QAbstractProxyModel_createSourceIndex_int_int_void_X(_self_ : QAbstractProxyModel*, row : Int32, col : Int32, internal_ptr : Void*) : QModelIndex*
     fun bg_QAbstractProxyModel__CONSTRUCT_QAbstractProxyModelPrivate_R_QObject_X(unnamed_arg_0 : QAbstractProxyModelPrivate*, parent : QObject*) : QAbstractProxyModel*
+    fun bg_QAbstractProxyModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemModel_index_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
     fun bg_QAbstractItemModel_parent_const_QModelIndex_R(_self_ : QAbstractProxyModel*, child : QModelIndex*) : QModelIndex*
     fun bg_QAbstractItemModel_rowCount_const_QModelIndex_R(_self_ : QAbstractProxyModel*, parent : QModelIndex*) : Int32
@@ -5680,7 +5696,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractProxyModel*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractProxyModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractProxyModel*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractProxyModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractProxyModel_CONNECT_sourceModelChanged_CrystalProc_void_(_self_ : QAbstractProxyModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(_self_ : QAbstractProxyModel*, source_model : QAbstractItemModel*) : Void
     fun bg_QAbstractProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(_self_ : QAbstractProxyModel*, selection : QItemSelection*) : QItemSelection*
@@ -5737,6 +5752,9 @@ module Qt
     fun bg_QEvent_isSinglePointEvent_(_self_ : QEvent*) : Bool
     fun bg_QEvent_registerEventType_STATIC_int(hint : Int32) : Int32
     fun bg_QEvent_clone_(_self_ : QEvent*) : QEvent*
+    fun bg_QEvent_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QEvent_t_GETTER_(_self_ : QEvent*) : UInt16
+    fun bg_QEvent_t_SETTER_quint16(_self_ : QEvent*, t : UInt16) : Void
     fun bg_QEvent_CAST_TimerEvent_(_self_ : QEvent*) : QTimerEvent*
     fun bg_QEvent_CAST_DynamicPropertyChangeEvent_(_self_ : QEvent*) : QDynamicPropertyChangeEvent*
     fun bg_QEvent_CAST_InputEvent_(_self_ : QEvent*) : QInputEvent*
@@ -5775,9 +5793,6 @@ module Qt
     fun bg_QEvent_CAST_GestureEvent_(_self_ : QEvent*) : QGestureEvent*
     fun bg_QEvent_CAST_GraphicsSceneEvent_(_self_ : QEvent*) : QGraphicsSceneEvent*
     fun bg_BgInherit_QEvent_JUMPTABLE_BgJumptable_QEvent_R(_self_ : QEvent*, table : BgJumptable_QEvent*) : Void
-    fun bg_QEvent_staticMetaObject_STATIC_GETTER_() : QMetaObject*
-    fun bg_QEvent_t_GETTER_(_self_ : QEvent*) : UInt16
-    fun bg_QEvent_t_SETTER_quint16(_self_ : QEvent*, t : UInt16) : Void
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QEvent*, accepted : Bool) : Void
     fun bg_QEvent_clone_SUPER_(_self_ : QEvent*) : QEvent*
     fun bg_QTimerEvent__COPY_const_QTimerEvent_R(unnamed_arg_0 : QTimerEvent*) : QTimerEvent*
@@ -5788,9 +5803,9 @@ module Qt
     fun bg_QTimerEvent_timerId_(_self_ : QTimerEvent*) : Int32
     fun bg_QTimerEvent_id_(_self_ : QTimerEvent*) : TimerId
     fun bg_QTimerEvent_matches_const_QBasicTimer_R(_self_ : QTimerEvent*, timer : QBasicTimer*) : Bool
-    fun bg_QEvent_setAccepted_bool(_self_ : QTimerEvent*, accepted : Bool) : Void
     fun bg_QTimerEvent_m_id_GETTER_(_self_ : QTimerEvent*) : TimerId
     fun bg_QTimerEvent_m_id_SETTER_Qt__TimerId(_self_ : QTimerEvent*, m_id : TimerId) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QTimerEvent*, accepted : Bool) : Void
     fun bg_QTimerEvent_clone_SUPER_(_self_ : QTimerEvent*) : QTimerEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QTimerEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QTimerEvent_JUMPTABLE_BgJumptable_QTimerEvent_R(_self_ : QTimerEvent*, table : BgJumptable_QTimerEvent*) : Void
@@ -5865,13 +5880,13 @@ module Qt
     fun bg_QCoreApplication_applicationVersionChanged_(_self_ : QCoreApplication*) : Void
     fun bg_QCoreApplication_event_QEvent_X(_self_ : QCoreApplication*, event : QEvent*) : Bool
     fun bg_QCoreApplication__CONSTRUCT_QCoreApplicationPrivate_R(p : QCoreApplicationPrivate*) : QCoreApplication*
+    fun bg_QCoreApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QCoreApplication*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QCoreApplication*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QCoreApplication*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QCoreApplication*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QCoreApplication*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QCoreApplication*, signal : QMetaMethod*) : Void
-    fun bg_QCoreApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QCoreApplication_CONNECT_aboutToQuit_CrystalProc_void_(_self_ : QCoreApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCoreApplication_CONNECT_organizationNameChanged_CrystalProc_void_(_self_ : QCoreApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCoreApplication_CONNECT_organizationDomainChanged_CrystalProc_void_(_self_ : QCoreApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -5952,6 +5967,7 @@ module Qt
     fun bg_QIODevice_writeData_const_char_X_qint64(_self_ : QIODevice*, data : UInt8*, len : Int64) : Int64
     fun bg_QIODevice_setOpenMode_QIODeviceBase__OpenMode(_self_ : QIODevice*, open_mode : IODevice::OpenMode) : Void
     fun bg_QIODevice_setErrorString_const_QString_R(_self_ : QIODevice*, error_string : CrystalString) : Void
+    fun bg_QIODevice_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QIODevice*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QIODevice*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QIODevice*, event : QTimerEvent*) : Void
@@ -5959,7 +5975,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QIODevice*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QIODevice*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QIODevice*, signal : QMetaMethod*) : Void
-    fun bg_QIODevice_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QIODevice_CONNECT_readyRead_CrystalProc_void_(_self_ : QIODevice*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QIODevice_CONNECT_channelReadyRead_CrystalProc_void__int_(_self_ : QIODevice*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QIODevice_CONNECT_bytesWritten_CrystalProc_void__qint64_(_self_ : QIODevice*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -5991,7 +6006,6 @@ module Qt
     fun bg_BgInherit_QIODevice_JUMPTABLE_BgJumptable_QIODevice_R(_self_ : QIODevice*, table : BgJumptable_QIODevice*) : Void
     fun bg_QLocale__CONSTRUCT_() : QLocale*
     fun bg_QLocale__CONSTRUCT_const_QString_R(name : CrystalString) : QLocale*
-    fun bg_QLocale__CONSTRUCT_QStringView(name : QStringView*) : QLocale*
     fun bg_QLocale__CONSTRUCT_QLocale__Language_QLocale__Territory(language : Locale::Language, territory : Locale::Territory) : QLocale*
     fun bg_QLocale__CONSTRUCT_QLocale__Language_QLocale__Script_QLocale__Territory(language : Locale::Language, script : Locale::Script, territory : Locale::Territory) : QLocale*
     fun bg_QLocale__COPY_const_QLocale_R(other : QLocale*) : QLocale*
@@ -6016,16 +6030,6 @@ module Qt
     fun bg_QLocale_toULongLong_const_QString_R_bool_X(_self_ : QLocale*, s : CrystalString, ok : Bool*) : UInt64
     fun bg_QLocale_toFloat_const_QString_R_bool_X(_self_ : QLocale*, s : CrystalString, ok : Bool*) : Float32
     fun bg_QLocale_toDouble_const_QString_R_bool_X(_self_ : QLocale*, s : CrystalString, ok : Bool*) : Float64
-    fun bg_QLocale_toShort_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : Int16
-    fun bg_QLocale_toUShort_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : UInt16
-    fun bg_QLocale_toInt_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : Int32
-    fun bg_QLocale_toUInt_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : UInt32
-    fun bg_QLocale_toLong_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : LibC::Long
-    fun bg_QLocale_toULong_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : UInt64
-    fun bg_QLocale_toLongLong_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : Int64
-    fun bg_QLocale_toULongLong_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : UInt64
-    fun bg_QLocale_toFloat_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : Float32
-    fun bg_QLocale_toDouble_QStringView_bool_X(_self_ : QLocale*, s : QStringView*, ok : Bool*) : Float64
     fun bg_QLocale_toString_qlonglong(_self_ : QLocale*, i : Int64) : CrystalString
     fun bg_QLocale_toString_qulonglong(_self_ : QLocale*, i : UInt64) : CrystalString
     fun bg_QLocale_toString_long(_self_ : QLocale*, i : LibC::Long) : CrystalString
@@ -6047,16 +6051,11 @@ module Qt
     fun bg_QLocale_toString_QDate_const_QString_R(_self_ : QLocale*, date : QDate*, format : CrystalString) : CrystalString
     fun bg_QLocale_toString_QTime_const_QString_R(_self_ : QLocale*, time : QTime*, format : CrystalString) : CrystalString
     fun bg_QLocale_toString_const_QDateTime_R_const_QString_R(_self_ : QLocale*, date_time : QDateTime*, format : CrystalString) : CrystalString
-    fun bg_QLocale_toString_QDate_QStringView(_self_ : QLocale*, date : QDate*, format : QStringView*) : CrystalString
-    fun bg_QLocale_toString_QTime_QStringView(_self_ : QLocale*, time : QTime*, format : QStringView*) : CrystalString
-    fun bg_QLocale_toString_const_QDateTime_R_QStringView(_self_ : QLocale*, date_time : QDateTime*, format : QStringView*) : CrystalString
     fun bg_QLocale_toString_QDate_QLocale__FormatType(_self_ : QLocale*, date : QDate*, format : Locale::FormatType) : CrystalString
     fun bg_QLocale_toString_QTime_QLocale__FormatType(_self_ : QLocale*, time : QTime*, format : Locale::FormatType) : CrystalString
     fun bg_QLocale_toString_const_QDateTime_R_QLocale__FormatType(_self_ : QLocale*, date_time : QDateTime*, format : Locale::FormatType) : CrystalString
-    fun bg_QLocale_toString_QDate_QStringView_QCalendar(_self_ : QLocale*, date : QDate*, format : QStringView*, cal : QCalendar*) : CrystalString
     fun bg_QLocale_toString_QDate_QLocale__FormatType_QCalendar(_self_ : QLocale*, date : QDate*, format : Locale::FormatType, cal : QCalendar*) : CrystalString
     fun bg_QLocale_toString_const_QDateTime_R_QLocale__FormatType_QCalendar(_self_ : QLocale*, date_time : QDateTime*, format : Locale::FormatType, cal : QCalendar*) : CrystalString
-    fun bg_QLocale_toString_const_QDateTime_R_QStringView_QCalendar(_self_ : QLocale*, date_time : QDateTime*, format : QStringView*, cal : QCalendar*) : CrystalString
     fun bg_QLocale_dateFormat_QLocale__FormatType(_self_ : QLocale*, format : Locale::FormatType) : CrystalString
     fun bg_QLocale_timeFormat_QLocale__FormatType(_self_ : QLocale*, format : Locale::FormatType) : CrystalString
     fun bg_QLocale_dateTimeFormat_QLocale__FormatType(_self_ : QLocale*, format : Locale::FormatType) : CrystalString
@@ -6115,12 +6114,8 @@ module Qt
     fun bg_QLocale_uiLanguages_QLocale__TagSeparator(_self_ : QLocale*, separator : Locale::TagSeparator) : ContainerQListQString*
     fun bg_QLocale_languageToCode_STATIC_QLocale__Language(language : Locale::Language) : CrystalString
     fun bg_QLocale_languageToCode_STATIC_QLocale__Language_QLocale__LanguageCodeTypes(language : Locale::Language, code_types : Locale::LanguageCodeTypes) : CrystalString
-    fun bg_QLocale_codeToLanguage_STATIC_QStringView(language_code : QStringView*) : Locale::Language
-    fun bg_QLocale_codeToLanguage_STATIC_QStringView_QLocale__LanguageCodeTypes(language_code : QStringView*, code_types : Locale::LanguageCodeTypes) : Locale::Language
     fun bg_QLocale_territoryToCode_STATIC_QLocale__Territory(territory : Locale::Territory) : CrystalString
-    fun bg_QLocale_codeToTerritory_STATIC_QStringView(territory_code : QStringView*) : Locale::Territory
     fun bg_QLocale_scriptToCode_STATIC_QLocale__Script(script : Locale::Script) : CrystalString
-    fun bg_QLocale_codeToScript_STATIC_QStringView(script_code : QStringView*) : Locale::Script
     fun bg_QLocale_languageToString_STATIC_QLocale__Language(language : Locale::Language) : CrystalString
     fun bg_QLocale_territoryToString_STATIC_QLocale__Territory(territory : Locale::Territory) : CrystalString
     fun bg_QLocale_scriptToString_STATIC_QLocale__Script(script : Locale::Script) : CrystalString
@@ -6131,7 +6126,6 @@ module Qt
     fun bg_QLocale_setNumberOptions_QLocale__NumberOptions(_self_ : QLocale*, options : Locale::NumberOptions) : Void
     fun bg_QLocale_numberOptions_(_self_ : QLocale*) : Locale::NumberOptions
     fun bg_QLocale_quoteString_const_QString_R_QLocale__QuotationStyle(_self_ : QLocale*, str : CrystalString, style : Locale::QuotationStyle) : CrystalString
-    fun bg_QLocale_quoteString_QStringView_QLocale__QuotationStyle(_self_ : QLocale*, str : QStringView*, style : Locale::QuotationStyle) : CrystalString
     fun bg_QLocale_createSeparatedList_const_QStringList_R(_self_ : QLocale*, strl : ContainerQListQString*) : CrystalString
     fun bg_QLocale__OPERATOR_eq_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
     fun bg_QLocale__OPERATOR_ne_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
@@ -6161,8 +6155,6 @@ module Qt
     fun bg_QDate_toString_Qt__DateFormat(_self_ : QDate*, format : DateFormat) : CrystalString
     fun bg_QDate_toString_const_QString_R(_self_ : QDate*, format : CrystalString) : CrystalString
     fun bg_QDate_toString_const_QString_R_QCalendar(_self_ : QDate*, format : CrystalString, cal : QCalendar*) : CrystalString
-    fun bg_QDate_toString_QStringView(_self_ : QDate*, format : QStringView*) : CrystalString
-    fun bg_QDate_toString_QStringView_QCalendar(_self_ : QDate*, format : QStringView*, cal : QCalendar*) : CrystalString
     fun bg_QDate_setDate_int_int_int(_self_ : QDate*, year : Int32, month : Int32, day : Int32) : Bool
     fun bg_QDate_setDate_int_int_int_QCalendar(_self_ : QDate*, year : Int32, month : Int32, day : Int32, cal : QCalendar*) : Bool
     fun bg_QDate_getDate_int_X_int_X_int_X(_self_ : QDate*, year : Int32*, month : Int32*, day : Int32*) : Void
@@ -6173,15 +6165,8 @@ module Qt
     fun bg_QDate_addYears_int_QCalendar(_self_ : QDate*, years : Int32, cal : QCalendar*) : QDate*
     fun bg_QDate_daysTo_QDate(_self_ : QDate*, d : QDate*) : Int64
     fun bg_QDate_currentDate_STATIC_() : QDate*
-    fun bg_QDate_fromString_STATIC_QStringView_Qt__DateFormat(string : QStringView*, format : DateFormat) : QDate*
     fun bg_QDate_fromString_STATIC_const_QString_R_Qt__DateFormat(string : CrystalString, format : DateFormat) : QDate*
-    fun bg_QDate_fromString_STATIC_QStringView_QStringView_QCalendar(string : QStringView*, format : QStringView*, cal : QCalendar*) : QDate*
-    fun bg_QDate_fromString_STATIC_const_QString_R_QStringView_QCalendar(string : CrystalString, format : QStringView*, cal : QCalendar*) : QDate*
     fun bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(string : CrystalString, format : CrystalString, cal : QCalendar*) : QDate*
-    fun bg_QDate_fromString_STATIC_QStringView_QStringView_int(string : QStringView*, format : QStringView*, base_year : Int32) : QDate*
-    fun bg_QDate_fromString_STATIC_QStringView_QStringView_int_QCalendar(string : QStringView*, format : QStringView*, base_year : Int32, cal : QCalendar*) : QDate*
-    fun bg_QDate_fromString_STATIC_const_QString_R_QStringView_int(string : CrystalString, format : QStringView*, base_year : Int32) : QDate*
-    fun bg_QDate_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(string : CrystalString, format : QStringView*, base_year : Int32, cal : QCalendar*) : QDate*
     fun bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_int(string : CrystalString, format : CrystalString, base_year : Int32) : QDate*
     fun bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(string : CrystalString, format : CrystalString, base_year : Int32, cal : QCalendar*) : QDate*
     fun bg_QDate_isValid_STATIC_int_int_int(y : Int32, m : Int32, d : Int32) : Bool
@@ -6210,7 +6195,6 @@ module Qt
     fun bg_QTime_msec_(_self_ : QTime*) : Int32
     fun bg_QTime_toString_Qt__DateFormat(_self_ : QTime*, f : DateFormat) : CrystalString
     fun bg_QTime_toString_const_QString_R(_self_ : QTime*, format : CrystalString) : CrystalString
-    fun bg_QTime_toString_QStringView(_self_ : QTime*, format : QStringView*) : CrystalString
     fun bg_QTime_setHMS_int_int_int_int(_self_ : QTime*, h : Int32, m : Int32, s : Int32, ms : Int32) : Bool
     fun bg_QTime_addSecs_int(_self_ : QTime*, secs : Int32) : QTime*
     fun bg_QTime_secsTo_QTime(_self_ : QTime*, t : QTime*) : Int32
@@ -6219,9 +6203,6 @@ module Qt
     fun bg_QTime_fromMSecsSinceStartOfDay_STATIC_int(msecs : Int32) : QTime*
     fun bg_QTime_msecsSinceStartOfDay_(_self_ : QTime*) : Int32
     fun bg_QTime_currentTime_STATIC_() : QTime*
-    fun bg_QTime_fromString_STATIC_QStringView_Qt__DateFormat(string : QStringView*, format : DateFormat) : QTime*
-    fun bg_QTime_fromString_STATIC_QStringView_QStringView(string : QStringView*, format : QStringView*) : QTime*
-    fun bg_QTime_fromString_STATIC_const_QString_R_QStringView(string : CrystalString, format : QStringView*) : QTime*
     fun bg_QTime_fromString_STATIC_const_QString_R_Qt__DateFormat(string : CrystalString, format : DateFormat) : QTime*
     fun bg_QTime_fromString_STATIC_const_QString_R_const_QString_R(string : CrystalString, format : CrystalString) : QTime*
     fun bg_QTime_isValid_STATIC_int_int_int_int(h : Int32, m : Int32, s : Int32, ms : Int32) : Bool
@@ -6264,8 +6245,6 @@ module Qt
     fun bg_QDateTime_toString_Qt__DateFormat(_self_ : QDateTime*, format : DateFormat) : CrystalString
     fun bg_QDateTime_toString_const_QString_R(_self_ : QDateTime*, format : CrystalString) : CrystalString
     fun bg_QDateTime_toString_const_QString_R_QCalendar(_self_ : QDateTime*, format : CrystalString, cal : QCalendar*) : CrystalString
-    fun bg_QDateTime_toString_QStringView(_self_ : QDateTime*, format : QStringView*) : CrystalString
-    fun bg_QDateTime_toString_QStringView_QCalendar(_self_ : QDateTime*, format : QStringView*, cal : QCalendar*) : CrystalString
     fun bg_QDateTime_addDays_qint64(_self_ : QDateTime*, days : Int64) : QDateTime*
     fun bg_QDateTime_addMonths_int(_self_ : QDateTime*, months : Int32) : QDateTime*
     fun bg_QDateTime_addYears_int(_self_ : QDateTime*, years : Int32) : QDateTime*
@@ -6282,15 +6261,8 @@ module Qt
     fun bg_QDateTime_currentDateTime_STATIC_const_QTimeZone_R(zone : QTimeZone*) : QDateTime*
     fun bg_QDateTime_currentDateTime_STATIC_() : QDateTime*
     fun bg_QDateTime_currentDateTimeUtc_STATIC_() : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_QStringView_Qt__DateFormat(string : QStringView*, format : DateFormat) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_Qt__DateFormat(string : CrystalString, format : DateFormat) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_QStringView_QStringView_QCalendar(string : QStringView*, format : QStringView*, cal : QCalendar*) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_QCalendar(string : CrystalString, format : QStringView*, cal : QCalendar*) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(string : CrystalString, format : CrystalString, cal : QCalendar*) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_QStringView_QStringView_int(string : QStringView*, format : QStringView*, base_year : Int32) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_QStringView_QStringView_int_QCalendar(string : QStringView*, format : QStringView*, base_year : Int32, cal : QCalendar*) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int(string : CrystalString, format : QStringView*, base_year : Int32) : QDateTime*
-    fun bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(string : CrystalString, format : QStringView*, base_year : Int32, cal : QCalendar*) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int(string : CrystalString, format : CrystalString, base_year : Int32) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(string : CrystalString, format : CrystalString, base_year : Int32, cal : QCalendar*) : QDateTime*
     fun bg_QDateTime_currentMSecsSinceEpoch_STATIC_() : Int64
@@ -6321,23 +6293,13 @@ module Qt
     fun bg_QRegularExpression_namedCaptureGroups_(_self_ : QRegularExpression*) : ContainerQListQString*
     fun bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatch*
     fun bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : QRegularExpressionMatch*
-    fun bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject_view : QStringView*, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatch*
-    fun bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(_self_ : QRegularExpression*, subject_view : QStringView*, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : QRegularExpressionMatch*
     fun bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatchIterator*
     fun bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : QRegularExpressionMatchIterator*
-    fun bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject_view : QStringView*, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatchIterator*
-    fun bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(_self_ : QRegularExpression*, subject_view : QStringView*, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : QRegularExpressionMatchIterator*
     fun bg_QRegularExpression_optimize_(_self_ : QRegularExpression*) : Void
     fun bg_QRegularExpression_escape_STATIC_const_QString_R(str : CrystalString) : CrystalString
     fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R(str : CrystalString) : CrystalString
     fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R_QRegularExpression__WildcardConversionOptions(str : CrystalString, options : RegularExpression::WildcardConversionOptions) : CrystalString
     fun bg_QRegularExpression_anchoredPattern_STATIC_const_QString_R(expression : CrystalString) : CrystalString
-    fun bg_QRegularExpression_escape_STATIC_QStringView(str : QStringView*) : CrystalString
-    fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView(str : QStringView*) : CrystalString
-    fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView_QRegularExpression__WildcardConversionOptions(str : QStringView*, options : RegularExpression::WildcardConversionOptions) : CrystalString
-    fun bg_QRegularExpression_anchoredPattern_STATIC_QStringView(expression : QStringView*) : CrystalString
-    fun bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity(pattern : QStringView*, cs : CaseSensitivity) : QRegularExpression*
-    fun bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity_QRegularExpression__WildcardConversionOptions(pattern : QStringView*, cs : CaseSensitivity, options : RegularExpression::WildcardConversionOptions) : QRegularExpression*
     fun bg_QRegularExpression__OPERATOR_eq_const_QRegularExpression_R(_self_ : QRegularExpression*, rhs : QRegularExpression*) : Bool
     fun bg_QRegularExpression__OPERATOR_ne_const_QRegularExpression_R(_self_ : QRegularExpression*, rhs : QRegularExpression*) : Bool
     fun bg_QRegularExpressionMatch__CONSTRUCT_() : QRegularExpressionMatch*
@@ -6354,9 +6316,7 @@ module Qt
     fun bg_QRegularExpressionMatch_hasCaptured_QAnyStringView(_self_ : QRegularExpressionMatch*, name : CrystalString) : Bool
     fun bg_QRegularExpressionMatch_hasCaptured_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Bool
     fun bg_QRegularExpressionMatch_captured_int(_self_ : QRegularExpressionMatch*, nth : Int32) : CrystalString
-    fun bg_QRegularExpressionMatch_capturedView_int(_self_ : QRegularExpressionMatch*, nth : Int32) : QStringView*
     fun bg_QRegularExpressionMatch_captured_QAnyStringView(_self_ : QRegularExpressionMatch*, name : CrystalString) : CrystalString
-    fun bg_QRegularExpressionMatch_capturedView_QAnyStringView(_self_ : QRegularExpressionMatch*, name : CrystalString) : QStringView*
     fun bg_QRegularExpressionMatch_capturedTexts_(_self_ : QRegularExpressionMatch*) : ContainerQListQString*
     fun bg_QRegularExpressionMatch_capturedStart_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Int64
     fun bg_QRegularExpressionMatch_capturedLength_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Int64
@@ -6476,13 +6436,13 @@ module Qt
     fun bg_QTimer_remainingTimeAsDuration_(_self_ : QTimer*) : Int64
     fun bg_QTimer_start_std__chrono__milliseconds(_self_ : QTimer*, value : Int64) : Void
     fun bg_QTimer_timerEvent_QTimerEvent_X(_self_ : QTimer*, event : QTimerEvent*) : Void
+    fun bg_QTimer_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QTimer*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTimer*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTimer*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTimer*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
-    fun bg_QTimer_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTimer_CONNECT_timeout_CrystalProc_void_(_self_ : QTimer*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTimer_timerEvent_SUPER_QTimerEvent_X(_self_ : QTimer*, event : QTimerEvent*) : Void
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTimer*, event : QEvent*) : Bool
@@ -6773,6 +6733,7 @@ module Qt
     fun bg_QMimeData_formats_(_self_ : QMimeData*) : ContainerQListQString*
     fun bg_QMimeData_clear_(_self_ : QMimeData*) : Void
     fun bg_QMimeData_retrieveData_const_QString_R_QMetaType(_self_ : QMimeData*, mimetype : CrystalString, preferred_type : QMetaType*) : CrystalVariant
+    fun bg_QMimeData_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QMimeData*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QMimeData*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QMimeData*, event : QTimerEvent*) : Void
@@ -6780,7 +6741,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QMimeData*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QMimeData*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMimeData*, signal : QMetaMethod*) : Void
-    fun bg_QMimeData_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMimeData_hasFormat_SUPER_const_QString_R(_self_ : QMimeData*, mimetype : CrystalString) : Bool
     fun bg_QMimeData_formats_SUPER_(_self_ : QMimeData*) : ContainerQListQString*
     fun bg_QMimeData_retrieveData_SUPER_const_QString_R_QMetaType(_self_ : QMimeData*, mimetype : CrystalString, preferred_type : QMetaType*) : CrystalVariant
@@ -6857,7 +6817,6 @@ module Qt
     fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(program : CrystalString, arguments : ContainerQListQString*, working_directory : CrystalString, pid : Int64*) : Bool
     fun bg_QProcess_systemEnvironment_STATIC_() : ContainerQListQString*
     fun bg_QProcess_nullDevice_STATIC_() : CrystalString
-    fun bg_QProcess_splitCommand_STATIC_QStringView(command : QStringView*) : ContainerQListQString*
     fun bg_QProcess_terminate_(_self_ : QProcess*) : Void
     fun bg_QProcess_kill_(_self_ : QProcess*) : Void
     fun bg_QProcess_finished_int_QProcess__ExitStatus(_self_ : QProcess*, exit_code : Int32, exit_status : Process::ExitStatus) : Void
@@ -6865,6 +6824,7 @@ module Qt
     fun bg_QProcess_setProcessState_QProcess__ProcessState(_self_ : QProcess*, state : Process::ProcessState) : Void
     fun bg_QProcess_readData_char_X_qint64(_self_ : QProcess*, data : UInt8*, maxlen : Int64) : Int64
     fun bg_QProcess_writeData_const_char_X_qint64(_self_ : QProcess*, data : UInt8*, len : Int64) : Int64
+    fun bg_QProcess_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QIODevice_pos_(_self_ : QProcess*) : Int64
     fun bg_QIODevice_size_(_self_ : QProcess*) : Int64
     fun bg_QIODevice_seek_qint64(_self_ : QProcess*, pos : Int64) : Bool
@@ -6881,7 +6841,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QProcess*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QProcess*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QProcess*, signal : QMetaMethod*) : Void
-    fun bg_QProcess_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QProcess_CONNECT_started_CrystalProc_void_(_self_ : QProcess*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QProcess_CONNECT_finished_CrystalProc_void__int__QProcess__ExitStatus_(_self_ : QProcess*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QProcess_CONNECT_errorOccurred_CrystalProc_void__QProcess__ProcessError_(_self_ : QProcess*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -6938,6 +6897,7 @@ module Qt
     fun bg_QVariantAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QVariantAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
     fun bg_QVariantAnimation_updateCurrentValue_const_QVariant_R(_self_ : QVariantAnimation*, value : CrystalVariant) : Void
     fun bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(_self_ : QVariantAnimation*, from : CrystalVariant, to : CrystalVariant, progress : Float64) : CrystalVariant
+    fun bg_QVariantAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(_self_ : QVariantAnimation*, direction : AbstractAnimation::Direction) : Void
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QVariantAnimation*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QVariantAnimation*, event : QTimerEvent*) : Void
@@ -6945,7 +6905,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QVariantAnimation*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QVariantAnimation*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QVariantAnimation*, signal : QMetaMethod*) : Void
-    fun bg_QVariantAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QVariantAnimation_CONNECT_valueChanged_CrystalProc_void__const_QVariant_R_(_self_ : QVariantAnimation*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QVariantAnimation_duration_SUPER_(_self_ : QVariantAnimation*) : Int32
     fun bg_QVariantAnimation_event_SUPER_QEvent_X(_self_ : QVariantAnimation*, event : QEvent*) : Bool
@@ -6976,6 +6935,7 @@ module Qt
     fun bg_QPropertyAnimation_event_QEvent_X(_self_ : QPropertyAnimation*, event : QEvent*) : Bool
     fun bg_QPropertyAnimation_updateCurrentValue_const_QVariant_R(_self_ : QPropertyAnimation*, value : CrystalVariant) : Void
     fun bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QPropertyAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QPropertyAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QVariantAnimation_duration_(_self_ : QPropertyAnimation*) : Int32
     fun bg_QVariantAnimation_updateCurrentTime_int(_self_ : QPropertyAnimation*, current_time : Int32) : Void
     fun bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(_self_ : QPropertyAnimation*, from : CrystalVariant, to : CrystalVariant, progress : Float64) : CrystalVariant
@@ -6986,7 +6946,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QPropertyAnimation*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QPropertyAnimation*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QPropertyAnimation*, signal : QMetaMethod*) : Void
-    fun bg_QPropertyAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPropertyAnimation_event_SUPER_QEvent_X(_self_ : QPropertyAnimation*, event : QEvent*) : Bool
     fun bg_QPropertyAnimation_updateCurrentValue_SUPER_const_QVariant_R(_self_ : QPropertyAnimation*, value : CrystalVariant) : Void
     fun bg_QPropertyAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QPropertyAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
@@ -7288,13 +7247,13 @@ module Qt
     fun bg_QSettings_defaultFormat_STATIC_() : Settings::Format
     fun bg_QSettings_setPath_STATIC_QSettings__Format_QSettings__Scope_const_QString_R(format : Settings::Format, scope : Settings::Scope, path : CrystalString) : Void
     fun bg_QSettings_event_QEvent_X(_self_ : QSettings*, event : QEvent*) : Bool
+    fun bg_QSettings_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSettings*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSettings*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSettings*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSettings*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSettings*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSettings*, signal : QMetaMethod*) : Void
-    fun bg_QSettings_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSettings_event_SUPER_QEvent_X(_self_ : QSettings*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QSettings*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QSettings*, event : QTimerEvent*) : Void
@@ -7318,13 +7277,13 @@ module Qt
     fun bg_QSocketNotifier_isEnabled_(_self_ : QSocketNotifier*) : Bool
     fun bg_QSocketNotifier_setEnabled_bool(_self_ : QSocketNotifier*, unnamed_arg_0 : Bool) : Void
     fun bg_QSocketNotifier_event_QEvent_X(_self_ : QSocketNotifier*, event : QEvent*) : Bool
+    fun bg_QSocketNotifier_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSocketNotifier*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSocketNotifier*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSocketNotifier*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSocketNotifier*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSocketNotifier*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSocketNotifier*, signal : QMetaMethod*) : Void
-    fun bg_QSocketNotifier_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSocketNotifier_CONNECT_activated_CrystalProc_void__QSocketDescriptor__QSocketNotifier__Type_(_self_ : QSocketNotifier*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSocketNotifier_event_SUPER_QEvent_X(_self_ : QSocketNotifier*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QSocketNotifier*, watched : QObject*, event : QEvent*) : Bool
@@ -7420,6 +7379,7 @@ module Qt
     fun bg_QSortFilterProxyModel_filterRoleChanged_int(_self_ : QSortFilterProxyModel*, filter_role : Int32) : Void
     fun bg_QSortFilterProxyModel_recursiveFilteringEnabledChanged_bool(_self_ : QSortFilterProxyModel*, recursive_filtering_enabled : Bool) : Void
     fun bg_QSortFilterProxyModel_autoAcceptChildRowsChanged_bool(_self_ : QSortFilterProxyModel*, auto_accept_child_rows : Bool) : Void
+    fun bg_QSortFilterProxyModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractProxyModel_submit_(_self_ : QSortFilterProxyModel*) : Bool
     fun bg_QAbstractProxyModel_revert_(_self_ : QSortFilterProxyModel*) : Void
     fun bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : Bool
@@ -7436,7 +7396,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSortFilterProxyModel*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSortFilterProxyModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSortFilterProxyModel*, signal : QMetaMethod*) : Void
-    fun bg_QSortFilterProxyModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSortFilterProxyModel_CONNECT_dynamicSortFilterChanged_CrystalProc_void__bool_(_self_ : QSortFilterProxyModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSortFilterProxyModel_CONNECT_filterCaseSensitivityChanged_CrystalProc_void__Qt__CaseSensitivity_(_self_ : QSortFilterProxyModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSortFilterProxyModel_CONNECT_sortCaseSensitivityChanged_CrystalProc_void__Qt__CaseSensitivity_(_self_ : QSortFilterProxyModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -7529,6 +7488,8 @@ module Qt
     fun bg_QPaintDevice_initPainter_QPainter_X(_self_ : QPaintDevice*, painter : QPainter*) : Void
     fun bg_QPaintDevice_sharedPainter_(_self_ : QPaintDevice*) : QPainter*
     fun bg_QPaintDevice_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_QPaintDevice__PaintDeviceMetric(_self_ : QPaintDevice*, metric_a : PaintDevice::PaintDeviceMetric, metric_b : PaintDevice::PaintDeviceMetric) : Float64
+    fun bg_QPaintDevice_painters_GETTER_(_self_ : QPaintDevice*) : UInt16
+    fun bg_QPaintDevice_painters_SETTER_ushort(_self_ : QPaintDevice*, painters : UInt16) : Void
     fun bg_QPaintDevice_CAST_Image_(_self_ : QPaintDevice*) : QImage*
     fun bg_QPaintDevice_CAST_Pixmap_(_self_ : QPaintDevice*) : QPixmap*
     fun bg_QPaintDevice_CAST_Bitmap_(_self_ : QPaintDevice*) : QBitmap*
@@ -7577,8 +7538,6 @@ module Qt
     fun bg_QPaintDevice_CAST_ToolButton_(_self_ : QPaintDevice*) : QToolButton*
     fun bg_QPaintDevice_CAST_TreeView_(_self_ : QPaintDevice*) : QTreeView*
     fun bg_BgInherit_QPaintDevice_JUMPTABLE_BgJumptable_QPaintDevice_R(_self_ : QPaintDevice*, table : BgJumptable_QPaintDevice*) : Void
-    fun bg_QPaintDevice_painters_GETTER_(_self_ : QPaintDevice*) : UInt16
-    fun bg_QPaintDevice_painters_SETTER_ushort(_self_ : QPaintDevice*, painters : UInt16) : Void
     fun bg_QPaintDevice_devType_SUPER_(_self_ : QPaintDevice*) : Int32
     fun bg_QPaintDevice_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPaintDevice*, metric : PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QPaintDevice_initPainter_SUPER_QPainter_X(_self_ : QPaintDevice*, painter : QPainter*) : Void
@@ -7589,9 +7548,7 @@ module Qt
     fun bg_QColor__CONSTRUCT_QRgb(rgb : UInt32) : QColor*
     fun bg_QColor__CONSTRUCT_QRgba64(rgba64 : QRgba64*) : QColor*
     fun bg_QColor__CONSTRUCT_const_QString_R(name : CrystalString) : QColor*
-    fun bg_QColor__CONSTRUCT_QStringView(name : QStringView*) : QColor*
     fun bg_QColor__CONSTRUCT_const_char_X(aname : UInt8*) : QColor*
-    fun bg_QColor__CONSTRUCT_QLatin1StringView(name : QLatin1StringView*) : QColor*
     fun bg_QColor__CONSTRUCT_QColor__Spec(spec : Color::Spec) : QColor*
     fun bg_QColor_fromString_STATIC_QAnyStringView(name : CrystalString) : QColor*
     fun bg_QColor__OPERATOR_assign_Qt__GlobalColor(_self_ : QColor*, color : GlobalColor) : QColor*
@@ -7906,9 +7863,9 @@ module Qt
     fun bg_QImage_convertToFormat_inplace_QImage__Format_Qt__ImageConversionFlags(_self_ : QImage*, format : Image::Format, flags : ImageConversionFlags) : Bool
     fun bg_QImage_smoothScaled_int_int(_self_ : QImage*, w : Int32, h : Int32) : QImage*
     fun bg_QImage_detachMetadata_bool(_self_ : QImage*, invalidate_cache : Bool) : Void
+    fun bg_QImage_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPaintDevice_initPainter_QPainter_X(_self_ : QImage*, painter : QPainter*) : Void
     fun bg_QPaintDevice_sharedPainter_(_self_ : QImage*) : QPainter*
-    fun bg_QImage_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPixmap__CONSTRUCT_() : QPixmap*
     fun bg_QPixmap__CONSTRUCT_QPlatformPixmap_X(data : QPlatformPixmap*) : QPixmap*
     fun bg_QPixmap__CONSTRUCT_int_int(w : Int32, h : Int32) : QPixmap*
@@ -8084,6 +8041,7 @@ module Qt
     fun bg_QScreen_primaryOrientationChanged_Qt__ScreenOrientation(_self_ : QScreen*, orientation : ScreenOrientation) : Void
     fun bg_QScreen_orientationChanged_Qt__ScreenOrientation(_self_ : QScreen*, orientation : ScreenOrientation) : Void
     fun bg_QScreen_refreshRateChanged_qreal(_self_ : QScreen*, refresh_rate : Float64) : Void
+    fun bg_QScreen_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QScreen*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QScreen*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QScreen*, event : QTimerEvent*) : Void
@@ -8091,7 +8049,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QScreen*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QScreen*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QScreen*, signal : QMetaMethod*) : Void
-    fun bg_QScreen_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QScreen_CONNECT_geometryChanged_CrystalProc_void__const_QRect_R_(_self_ : QScreen*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QScreen_CONNECT_availableGeometryChanged_CrystalProc_void__const_QRect_R_(_self_ : QScreen*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QScreen_CONNECT_physicalSizeChanged_CrystalProc_void__const_QSizeF_R_(_self_ : QScreen*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -8182,13 +8139,13 @@ module Qt
     fun bg_QGuiApplication_applicationDisplayNameChanged_(_self_ : QGuiApplication*) : Void
     fun bg_QGuiApplication_event_QEvent_X(_self_ : QGuiApplication*, event : QEvent*) : Bool
     fun bg_QGuiApplication__CONSTRUCT_QGuiApplicationPrivate_R(p : QGuiApplicationPrivate*) : QGuiApplication*
+    fun bg_QGuiApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGuiApplication*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGuiApplication*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QGuiApplication*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGuiApplication*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGuiApplication*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGuiApplication*, signal : QMetaMethod*) : Void
-    fun bg_QGuiApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGuiApplication_CONNECT_fontDatabaseChanged_CrystalProc_void_(_self_ : QGuiApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGuiApplication_CONNECT_screenAdded_CrystalProc_void__QScreen_X_(_self_ : QGuiApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGuiApplication_CONNECT_screenRemoved_CrystalProc_void__QScreen_X_(_self_ : QGuiApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -8251,7 +8208,6 @@ module Qt
     fun bg_QInputEvent_setModifiers_Qt__KeyboardModifiers(_self_ : QInputEvent*, modifiers : KeyboardModifiers) : Void
     fun bg_QInputEvent_timestamp_(_self_ : QInputEvent*) : UInt64
     fun bg_QInputEvent_setTimestamp_quint64(_self_ : QInputEvent*, timestamp : UInt64) : Void
-    fun bg_QEvent_setAccepted_bool(_self_ : QInputEvent*, accepted : Bool) : Void
     fun bg_QInputEvent_m_dev_GETTER_(_self_ : QInputEvent*) : QInputDevice*
     fun bg_QInputEvent_m_timeStamp_GETTER_(_self_ : QInputEvent*) : UInt64
     fun bg_QInputEvent_m_timeStamp_SETTER_quint64(_self_ : QInputEvent*, m_time_stamp : UInt64) : Void
@@ -8259,6 +8215,7 @@ module Qt
     fun bg_QInputEvent_m_modState_SETTER_Qt__KeyboardModifiers(_self_ : QInputEvent*, m_mod_state : KeyboardModifiers) : Void
     fun bg_QInputEvent_m_reserved_GETTER_(_self_ : QInputEvent*) : UInt32
     fun bg_QInputEvent_m_reserved_SETTER_quint32(_self_ : QInputEvent*, m_reserved : UInt32) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QInputEvent*, accepted : Bool) : Void
     fun bg_QInputEvent_clone_SUPER_(_self_ : QInputEvent*) : QInputEvent*
     fun bg_QInputEvent_setTimestamp_SUPER_quint64(_self_ : QInputEvent*, timestamp : UInt64) : Void
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QInputEvent*, accepted : Bool) : Void
@@ -8312,8 +8269,6 @@ module Qt
     fun bg_QSinglePointEvent_setExclusivePointGrabber_QObject_X(_self_ : QSinglePointEvent*, exclusive_grabber : QObject*) : Void
     fun bg_QSinglePointEvent__CONSTRUCT_QEvent__Type_const_QPointingDevice_X_const_QEventPoint_R_Qt__MouseButton_Qt__MouseButtons_Qt__KeyboardModifiers_Qt__MouseEventSource(type : Event::Type, dev : QPointingDevice*, point : QEventPoint*, button : MouseButton, buttons : MouseButtons, modifiers : KeyboardModifiers, source : MouseEventSource) : QSinglePointEvent*
     fun bg_QSinglePointEvent__CONSTRUCT_QEvent__Type_const_QPointingDevice_X_const_QPointF_R_const_QPointF_R_const_QPointF_R_Qt__MouseButton_Qt__MouseButtons_Qt__KeyboardModifiers_Qt__MouseEventSource(type : Event::Type, dev : QPointingDevice*, local_pos : QPointF, scene_pos : QPointF, global_pos : QPointF, button : MouseButton, buttons : MouseButtons, modifiers : KeyboardModifiers, source : MouseEventSource) : QSinglePointEvent*
-    fun bg_QPointerEvent_setTimestamp_quint64(_self_ : QSinglePointEvent*, timestamp : UInt64) : Void
-    fun bg_QPointerEvent_setAccepted_bool(_self_ : QSinglePointEvent*, accepted : Bool) : Void
     fun bg_QSinglePointEvent_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSinglePointEvent_m_button_GETTER_(_self_ : QSinglePointEvent*) : MouseButton
     fun bg_QSinglePointEvent_m_button_SETTER_Qt__MouseButton(_self_ : QSinglePointEvent*, m_button : MouseButton) : Void
@@ -8331,6 +8286,8 @@ module Qt
     fun bg_QSinglePointEvent_m_phase_SETTER_quint16(_self_ : QSinglePointEvent*, m_phase : UInt16) : Void
     fun bg_QSinglePointEvent_m_invertedScrolling_GETTER_(_self_ : QSinglePointEvent*) : UInt16
     fun bg_QSinglePointEvent_m_invertedScrolling_SETTER_quint16(_self_ : QSinglePointEvent*, m_inverted_scrolling : UInt16) : Void
+    fun bg_QPointerEvent_setTimestamp_quint64(_self_ : QSinglePointEvent*, timestamp : UInt64) : Void
+    fun bg_QPointerEvent_setAccepted_bool(_self_ : QSinglePointEvent*, accepted : Bool) : Void
     fun bg_QSinglePointEvent_clone_SUPER_(_self_ : QSinglePointEvent*) : QSinglePointEvent*
     fun bg_QSinglePointEvent_isBeginEvent_SUPER_(_self_ : QSinglePointEvent*) : Bool
     fun bg_QSinglePointEvent_isUpdateEvent_SUPER_(_self_ : QSinglePointEvent*) : Bool
@@ -8401,8 +8358,6 @@ module Qt
     fun bg_QKeyEvent_nativeScanCode_(_self_ : QKeyEvent*) : UInt32
     fun bg_QKeyEvent_nativeVirtualKey_(_self_ : QKeyEvent*) : UInt32
     fun bg_QKeyEvent_nativeModifiers_(_self_ : QKeyEvent*) : UInt32
-    fun bg_QInputEvent_setTimestamp_quint64(_self_ : QKeyEvent*, timestamp : UInt64) : Void
-    fun bg_QEvent_setAccepted_bool(_self_ : QKeyEvent*, accepted : Bool) : Void
     fun bg_QKeyEvent_m_text_GETTER_(_self_ : QKeyEvent*) : CrystalString
     fun bg_QKeyEvent_m_text_SETTER_QString(_self_ : QKeyEvent*, m_text : CrystalString) : Void
     fun bg_QKeyEvent_m_key_GETTER_(_self_ : QKeyEvent*) : Int32
@@ -8417,6 +8372,8 @@ module Qt
     fun bg_QKeyEvent_m_count_SETTER_quint16(_self_ : QKeyEvent*, m_count : UInt16) : Void
     fun bg_QKeyEvent_m_autoRepeat_GETTER_(_self_ : QKeyEvent*) : UInt16
     fun bg_QKeyEvent_m_autoRepeat_SETTER_quint16(_self_ : QKeyEvent*, m_auto_repeat : UInt16) : Void
+    fun bg_QInputEvent_setTimestamp_quint64(_self_ : QKeyEvent*, timestamp : UInt64) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QKeyEvent*, accepted : Bool) : Void
     fun bg_QKeyEvent_clone_SUPER_(_self_ : QKeyEvent*) : QKeyEvent*
     fun bg_QInputEvent_setTimestamp_SUPER_quint64(_self_ : QKeyEvent*, timestamp : UInt64) : Void
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QKeyEvent*, accepted : Bool) : Void
@@ -8439,13 +8396,13 @@ module Qt
     fun bg_QPaintEvent__CONSTRUCT_const_QRect_R(paint_rect : QRect) : QPaintEvent*
     fun bg_QPaintEvent_rect_(_self_ : QPaintEvent*) : QRect
     fun bg_QPaintEvent_region_(_self_ : QPaintEvent*) : QRegion*
-    fun bg_QEvent_setAccepted_bool(_self_ : QPaintEvent*, accepted : Bool) : Void
     fun bg_QPaintEvent_m_rect_GETTER_(_self_ : QPaintEvent*) : QRect
     fun bg_QPaintEvent_m_rect_SETTER_QRect(_self_ : QPaintEvent*, m_rect : QRect) : Void
     fun bg_QPaintEvent_m_region_GETTER_(_self_ : QPaintEvent*) : QRegion*
     fun bg_QPaintEvent_m_region_SETTER_QRegion(_self_ : QPaintEvent*, m_region : QRegion*) : Void
     fun bg_QPaintEvent_m_erased_GETTER_(_self_ : QPaintEvent*) : Bool
     fun bg_QPaintEvent_m_erased_SETTER_bool(_self_ : QPaintEvent*, m_erased : Bool) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QPaintEvent*, accepted : Bool) : Void
     fun bg_QPaintEvent_clone_SUPER_(_self_ : QPaintEvent*) : QPaintEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QPaintEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QPaintEvent_JUMPTABLE_BgJumptable_QPaintEvent_R(_self_ : QPaintEvent*, table : BgJumptable_QPaintEvent*) : Void
@@ -8455,11 +8412,11 @@ module Qt
     fun bg_QMoveEvent__CONSTRUCT_const_QPoint_R_const_QPoint_R(pos : QPoint, old_pos : QPoint) : QMoveEvent*
     fun bg_QMoveEvent_pos_(_self_ : QMoveEvent*) : QPoint
     fun bg_QMoveEvent_oldPos_(_self_ : QMoveEvent*) : QPoint
-    fun bg_QEvent_setAccepted_bool(_self_ : QMoveEvent*, accepted : Bool) : Void
     fun bg_QMoveEvent_m_pos_GETTER_(_self_ : QMoveEvent*) : QPoint
     fun bg_QMoveEvent_m_pos_SETTER_QPoint(_self_ : QMoveEvent*, m_pos : QPoint) : Void
     fun bg_QMoveEvent_m_oldPos_GETTER_(_self_ : QMoveEvent*) : QPoint
     fun bg_QMoveEvent_m_oldPos_SETTER_QPoint(_self_ : QMoveEvent*, m_old_pos : QPoint) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QMoveEvent*, accepted : Bool) : Void
     fun bg_QMoveEvent_clone_SUPER_(_self_ : QMoveEvent*) : QMoveEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QMoveEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QMoveEvent_JUMPTABLE_BgJumptable_QMoveEvent_R(_self_ : QMoveEvent*, table : BgJumptable_QMoveEvent*) : Void
@@ -8467,9 +8424,9 @@ module Qt
     fun bg_QExposeEvent__OPERATOR_assign_const_QExposeEvent_R(_self_ : QExposeEvent*, other : QExposeEvent*) : QExposeEvent*
     fun bg_QExposeEvent_clone_(_self_ : QExposeEvent*) : QExposeEvent*
     fun bg_QExposeEvent__CONSTRUCT_const_QRegion_R(m_region : QRegion*) : QExposeEvent*
-    fun bg_QEvent_setAccepted_bool(_self_ : QExposeEvent*, accepted : Bool) : Void
     fun bg_QExposeEvent_m_region_GETTER_(_self_ : QExposeEvent*) : QRegion*
     fun bg_QExposeEvent_m_region_SETTER_QRegion(_self_ : QExposeEvent*, m_region : QRegion*) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QExposeEvent*, accepted : Bool) : Void
     fun bg_QExposeEvent_clone_SUPER_(_self_ : QExposeEvent*) : QExposeEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QExposeEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QExposeEvent_JUMPTABLE_BgJumptable_QExposeEvent_R(_self_ : QExposeEvent*, table : BgJumptable_QExposeEvent*) : Void
@@ -8478,9 +8435,9 @@ module Qt
     fun bg_QPlatformSurfaceEvent_clone_(_self_ : QPlatformSurfaceEvent*) : QPlatformSurfaceEvent*
     fun bg_QPlatformSurfaceEvent__CONSTRUCT_QPlatformSurfaceEvent__SurfaceEventType(surface_event_type : PlatformSurfaceEvent::SurfaceEventType) : QPlatformSurfaceEvent*
     fun bg_QPlatformSurfaceEvent_surfaceEventType_(_self_ : QPlatformSurfaceEvent*) : PlatformSurfaceEvent::SurfaceEventType
-    fun bg_QEvent_setAccepted_bool(_self_ : QPlatformSurfaceEvent*, accepted : Bool) : Void
     fun bg_QPlatformSurfaceEvent_m_surfaceEventType_GETTER_(_self_ : QPlatformSurfaceEvent*) : PlatformSurfaceEvent::SurfaceEventType
     fun bg_QPlatformSurfaceEvent_m_surfaceEventType_SETTER_QPlatformSurfaceEvent__SurfaceEventType(_self_ : QPlatformSurfaceEvent*, m_surface_event_type : PlatformSurfaceEvent::SurfaceEventType) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QPlatformSurfaceEvent*, accepted : Bool) : Void
     fun bg_QPlatformSurfaceEvent_clone_SUPER_(_self_ : QPlatformSurfaceEvent*) : QPlatformSurfaceEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QPlatformSurfaceEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QPlatformSurfaceEvent_JUMPTABLE_BgJumptable_QPlatformSurfaceEvent_R(_self_ : QPlatformSurfaceEvent*, table : BgJumptable_QPlatformSurfaceEvent*) : Void
@@ -8490,11 +8447,11 @@ module Qt
     fun bg_QResizeEvent__CONSTRUCT_const_QSize_R_const_QSize_R(size : QSize, old_size : QSize) : QResizeEvent*
     fun bg_QResizeEvent_size_(_self_ : QResizeEvent*) : QSize
     fun bg_QResizeEvent_oldSize_(_self_ : QResizeEvent*) : QSize
-    fun bg_QEvent_setAccepted_bool(_self_ : QResizeEvent*, accepted : Bool) : Void
     fun bg_QResizeEvent_m_size_GETTER_(_self_ : QResizeEvent*) : QSize
     fun bg_QResizeEvent_m_size_SETTER_QSize(_self_ : QResizeEvent*, m_size : QSize) : Void
     fun bg_QResizeEvent_m_oldSize_GETTER_(_self_ : QResizeEvent*) : QSize
     fun bg_QResizeEvent_m_oldSize_SETTER_QSize(_self_ : QResizeEvent*, m_old_size : QSize) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QResizeEvent*, accepted : Bool) : Void
     fun bg_QResizeEvent_clone_SUPER_(_self_ : QResizeEvent*) : QResizeEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QResizeEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QResizeEvent_JUMPTABLE_BgJumptable_QResizeEvent_R(_self_ : QResizeEvent*, table : BgJumptable_QResizeEvent*) : Void
@@ -8568,7 +8525,6 @@ module Qt
     fun bg_QDropEvent_setDropAction_Qt__DropAction(_self_ : QDropEvent*, action : DropAction) : Void
     fun bg_QDropEvent_source_(_self_ : QDropEvent*) : QObject*
     fun bg_QDropEvent_mimeData_(_self_ : QDropEvent*) : QMimeData*
-    fun bg_QEvent_setAccepted_bool(_self_ : QDropEvent*, accepted : Bool) : Void
     fun bg_QDropEvent_m_pos_GETTER_(_self_ : QDropEvent*) : QPointF
     fun bg_QDropEvent_m_pos_SETTER_QPointF(_self_ : QDropEvent*, m_pos : QPointF) : Void
     fun bg_QDropEvent_m_mouseState_GETTER_(_self_ : QDropEvent*) : MouseButtons
@@ -8582,6 +8538,7 @@ module Qt
     fun bg_QDropEvent_m_defaultAction_GETTER_(_self_ : QDropEvent*) : DropAction
     fun bg_QDropEvent_m_defaultAction_SETTER_Qt__DropAction(_self_ : QDropEvent*, m_default_action : DropAction) : Void
     fun bg_QDropEvent_m_data_GETTER_(_self_ : QDropEvent*) : QMimeData*
+    fun bg_QEvent_setAccepted_bool(_self_ : QDropEvent*, accepted : Bool) : Void
     fun bg_QDropEvent_clone_SUPER_(_self_ : QDropEvent*) : QDropEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QDropEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QDropEvent_JUMPTABLE_BgJumptable_QDropEvent_R(_self_ : QDropEvent*, table : BgJumptable_QDropEvent*) : Void
@@ -8594,9 +8551,9 @@ module Qt
     fun bg_QDragMoveEvent_ignore_(_self_ : QDragMoveEvent*) : Void
     fun bg_QDragMoveEvent_accept_const_QRect_R(_self_ : QDragMoveEvent*, r : QRect) : Void
     fun bg_QDragMoveEvent_ignore_const_QRect_R(_self_ : QDragMoveEvent*, r : QRect) : Void
-    fun bg_QEvent_setAccepted_bool(_self_ : QDragMoveEvent*, accepted : Bool) : Void
     fun bg_QDragMoveEvent_m_rect_GETTER_(_self_ : QDragMoveEvent*) : QRect
     fun bg_QDragMoveEvent_m_rect_SETTER_QRect(_self_ : QDragMoveEvent*, m_rect : QRect) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QDragMoveEvent*, accepted : Bool) : Void
     fun bg_QDragMoveEvent_clone_SUPER_(_self_ : QDragMoveEvent*) : QDragMoveEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QDragMoveEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QDragMoveEvent_JUMPTABLE_BgJumptable_QDragMoveEvent_R(_self_ : QDragMoveEvent*, table : BgJumptable_QDragMoveEvent*) : Void
@@ -8686,13 +8643,13 @@ module Qt
     fun bg_QShortcutEvent_key_(_self_ : QShortcutEvent*) : QKeySequence*
     fun bg_QShortcutEvent_shortcutId_(_self_ : QShortcutEvent*) : Int32
     fun bg_QShortcutEvent_isAmbiguous_(_self_ : QShortcutEvent*) : Bool
-    fun bg_QEvent_setAccepted_bool(_self_ : QShortcutEvent*, accepted : Bool) : Void
     fun bg_QShortcutEvent_m_sequence_GETTER_(_self_ : QShortcutEvent*) : QKeySequence*
     fun bg_QShortcutEvent_m_sequence_SETTER_QKeySequence(_self_ : QShortcutEvent*, m_sequence : QKeySequence*) : Void
     fun bg_QShortcutEvent_m_shortcutId_GETTER_(_self_ : QShortcutEvent*) : Int32
     fun bg_QShortcutEvent_m_shortcutId_SETTER_int(_self_ : QShortcutEvent*, m_shortcut_id : Int32) : Void
     fun bg_QShortcutEvent_m_ambiguous_GETTER_(_self_ : QShortcutEvent*) : Bool
     fun bg_QShortcutEvent_m_ambiguous_SETTER_bool(_self_ : QShortcutEvent*, m_ambiguous : Bool) : Void
+    fun bg_QEvent_setAccepted_bool(_self_ : QShortcutEvent*, accepted : Bool) : Void
     fun bg_QShortcutEvent_clone_SUPER_(_self_ : QShortcutEvent*) : QShortcutEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QShortcutEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QShortcutEvent_JUMPTABLE_BgJumptable_QShortcutEvent_R(_self_ : QShortcutEvent*, table : BgJumptable_QShortcutEvent*) : Void
@@ -8934,6 +8891,7 @@ module Qt
     fun bg_QTextDocument_createObject_const_QTextFormat_R(_self_ : QTextDocument*, f : QTextFormat*) : QTextObject*
     fun bg_QTextDocument_loadResource_int_const_QUrl_R(_self_ : QTextDocument*, type : Int32, name : QUrl*) : CrystalVariant
     fun bg_QTextDocument__CONSTRUCT_QTextDocumentPrivate_R_QObject_X(dd : QTextDocumentPrivate*, parent : QObject*) : QTextDocument*
+    fun bg_QTextDocument_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QTextDocument*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTextDocument*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTextDocument*, event : QTimerEvent*) : Void
@@ -8941,7 +8899,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTextDocument*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextDocument*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextDocument*, signal : QMetaMethod*) : Void
-    fun bg_QTextDocument_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTextDocument_CONNECT_contentsChange_CrystalProc_void__int__int__int_(_self_ : QTextDocument*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTextDocument_CONNECT_contentsChanged_CrystalProc_void_(_self_ : QTextDocument*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTextDocument_CONNECT_undoAvailable_CrystalProc_void__bool_(_self_ : QTextDocument*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -9478,13 +9435,13 @@ module Qt
     fun bg_QAction_triggered_bool(_self_ : QAction*, checked : Bool) : Void
     fun bg_QAction_hovered_(_self_ : QAction*) : Void
     fun bg_QAction_toggled_bool(_self_ : QAction*, unnamed_arg_0 : Bool) : Void
+    fun bg_QAction_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAction*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAction*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAction*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAction*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAction*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAction*, signal : QMetaMethod*) : Void
-    fun bg_QAction_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAction_CONNECT_changed_CrystalProc_void_(_self_ : QAction*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAction_CONNECT_enabledChanged_CrystalProc_void__bool_(_self_ : QAction*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAction_CONNECT_checkableChanged_CrystalProc_void__bool_(_self_ : QAction*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -9508,13 +9465,13 @@ module Qt
     fun bg_QSurface_size_(_self_ : QSurface*) : QSize
     fun bg_QSurface__CONSTRUCT_QSurface__SurfaceClass(type : Surface::SurfaceClass) : QSurface*
     fun bg_QSurface__OPERATOR_assign_const_QSurface_R(_self_ : QSurface*, unnamed_arg_0 : QSurface*) : QSurface*
-    fun bg_QSurface_CAST_Window_(_self_ : QSurface*) : QWindow*
-    fun bg_BgInherit_QSurface_JUMPTABLE_BgJumptable_QSurface_R(_self_ : QSurface*, table : BgJumptable_QSurface*) : Void
     fun bg_QSurface_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSurface_m_type_GETTER_(_self_ : QSurface*) : Surface::SurfaceClass
     fun bg_QSurface_m_type_SETTER_QSurface__SurfaceClass(_self_ : QSurface*, m_type : Surface::SurfaceClass) : Void
     fun bg_QSurface_m_reserved_GETTER_(_self_ : QSurface*) : QSurfacePrivate*
     fun bg_QSurface_m_reserved_SETTER_QSurfacePrivate_X(_self_ : QSurface*, m_reserved : QSurfacePrivate*) : Void
+    fun bg_QSurface_CAST_Window_(_self_ : QSurface*) : QWindow*
+    fun bg_BgInherit_QSurface_JUMPTABLE_BgJumptable_QSurface_R(_self_ : QSurface*, table : BgJumptable_QSurface*) : Void
     fun bg_QBitmap__CONSTRUCT_() : QBitmap*
     fun bg_QBitmap__CONSTRUCT_int_int(w : Int32, h : Int32) : QBitmap*
     fun bg_QBitmap__CONSTRUCT_const_QSize_R(unnamed_arg_0 : QSize) : QBitmap*
@@ -9727,6 +9684,7 @@ module Qt
     fun bg_QWindow_tabletEvent_QTabletEvent_X(_self_ : QWindow*, unnamed_arg_0 : QTabletEvent*) : Void
     fun bg_QWindow_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QWindow*, event_type : QByteArray*, message : Void*, result : Int64*) : Bool
     fun bg_QWindow__CONSTRUCT_QWindowPrivate_R_QWindow_X(dd : QWindowPrivate*, parent : QWindow*) : QWindow*
+    fun bg_QWindow_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWindow_AS_Surface_(_self_ : QWindow*) : QSurface*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QWindow*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QWindow*, event : QTimerEvent*) : Void
@@ -9736,7 +9694,6 @@ module Qt
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QWindow*, signal : QMetaMethod*) : Void
     fun bg_QWindow_surfaceClass_(_self_ : QWindow*) : Surface::SurfaceClass
     fun bg_QWindow_supportsOpenGL_(_self_ : QWindow*) : Bool
-    fun bg_QWindow_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWindow_CONNECT_screenChanged_CrystalProc_void__QScreen_X_(_self_ : QWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QWindow_CONNECT_modalityChanged_CrystalProc_void__Qt__WindowModality_(_self_ : QWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QWindow_CONNECT_flagsChanged_CrystalProc_void__Qt__WindowFlags_(_self_ : QWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -9814,6 +9771,7 @@ module Qt
     fun bg_QClipboard_selectionChanged_(_self_ : QClipboard*) : Void
     fun bg_QClipboard_findBufferChanged_(_self_ : QClipboard*) : Void
     fun bg_QClipboard_dataChanged_(_self_ : QClipboard*) : Void
+    fun bg_QClipboard_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QClipboard*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QClipboard*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QClipboard*, event : QTimerEvent*) : Void
@@ -9821,7 +9779,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QClipboard*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QClipboard*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QClipboard*, signal : QMetaMethod*) : Void
-    fun bg_QClipboard_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QClipboard_CONNECT_changed_CrystalProc_void__QClipboard__Mode_(_self_ : QClipboard*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QClipboard_CONNECT_selectionChanged_CrystalProc_void_(_self_ : QClipboard*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QClipboard_CONNECT_findBufferChanged_CrystalProc_void_(_self_ : QClipboard*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -9856,6 +9813,7 @@ module Qt
     fun bg_QDrag_cancel_STATIC_() : Void
     fun bg_QDrag_actionChanged_Qt__DropAction(_self_ : QDrag*, action : DropAction) : Void
     fun bg_QDrag_targetChanged_QObject_X(_self_ : QDrag*, new_target : QObject*) : Void
+    fun bg_QDrag_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QDrag*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QDrag*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QDrag*, event : QTimerEvent*) : Void
@@ -9863,7 +9821,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDrag*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDrag*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDrag*, signal : QMetaMethod*) : Void
-    fun bg_QDrag_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDrag_CONNECT_actionChanged_CrystalProc_void__Qt__DropAction_(_self_ : QDrag*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDrag_CONNECT_targetChanged_CrystalProc_void__QObject_X_(_self_ : QDrag*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QDrag*, event : QEvent*) : Bool
@@ -10180,6 +10137,7 @@ module Qt
     fun bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QStandardItemModel_itemChanged_QStandardItem_X(_self_ : QStandardItemModel*, item : QStandardItem*) : Void
     fun bg_QStandardItemModel__CONSTRUCT_QStandardItemModelPrivate_R_QObject_X(dd : QStandardItemModelPrivate*, parent : QObject*) : QStandardItemModel*
+    fun bg_QStandardItemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
     fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_supportedDragActions_(_self_ : QStandardItemModel*) : DropActions
@@ -10200,7 +10158,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QStandardItemModel*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStandardItemModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStandardItemModel*, signal : QMetaMethod*) : Void
-    fun bg_QStandardItemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QStandardItemModel_CONNECT_itemChanged_CrystalProc_void__QStandardItem_X_(_self_ : QStandardItemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStandardItemModel_index_SUPER_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
     fun bg_QStandardItemModel_parent_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, child : QModelIndex*) : QModelIndex*
@@ -10592,6 +10549,7 @@ module Qt
     fun bg_QWidget_focusNextChild_(_self_ : QWidget*) : Bool
     fun bg_QWidget_focusPreviousChild_(_self_ : QWidget*) : Bool
     fun bg_QWidget__CONSTRUCT_QWidgetPrivate_R_QWidget_X_Qt__WindowFlags(d : QWidgetPrivate*, parent : QWidget*, f : WindowFlags) : QWidget*
+    fun bg_QWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_AS_PaintDevice_(_self_ : QWidget*) : QPaintDevice*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QWidget*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QWidget*, event : QTimerEvent*) : Void
@@ -10611,7 +10569,6 @@ module Qt
     fun bg_QWidget_colorCount_(_self_ : QWidget*) : Int32
     fun bg_QWidget_depth_(_self_ : QWidget*) : Int32
     fun bg_QWidget_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_QPaintDevice__PaintDeviceMetric(_self_ : QWidget*, metric_a : PaintDevice::PaintDeviceMetric, metric_b : PaintDevice::PaintDeviceMetric) : Float64
-    fun bg_QWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(_self_ : QWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QWidget_CONNECT_windowIconChanged_CrystalProc_void__const_QIcon_R_(_self_ : QWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QWidget_CONNECT_windowIconTextChanged_CrystalProc_void__const_QString_R_(_self_ : QWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -10715,6 +10672,7 @@ module Qt
     fun bg_QAbstractButton_changeEvent_QEvent_X(_self_ : QAbstractButton*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QAbstractButton_timerEvent_QTimerEvent_X(_self_ : QAbstractButton*, event : QTimerEvent*) : Void
     fun bg_QAbstractButton__CONSTRUCT_QAbstractButtonPrivate_R_QWidget_X(dd : QAbstractButtonPrivate*, parent : QWidget*) : QAbstractButton*
+    fun bg_QAbstractButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QAbstractButton*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QAbstractButton*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QAbstractButton*) : QSize
@@ -10750,7 +10708,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractButton*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractButton*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractButton*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractButton_CONNECT_pressed_CrystalProc_void_(_self_ : QAbstractButton*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractButton_CONNECT_released_CrystalProc_void_(_self_ : QAbstractButton*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractButton_CONNECT_clicked_CrystalProc_void__bool_(_self_ : QAbstractButton*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -10866,6 +10823,7 @@ module Qt
     fun bg_QAbstractSpinBox_editingFinished_(_self_ : QAbstractSpinBox*) : Void
     fun bg_QAbstractSpinBox_returnPressed_(_self_ : QAbstractSpinBox*) : Void
     fun bg_QAbstractSpinBox__CONSTRUCT_QAbstractSpinBoxPrivate_R_QWidget_X(dd : QAbstractSpinBoxPrivate*, parent : QWidget*) : QAbstractSpinBox*
+    fun bg_QAbstractSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QAbstractSpinBox*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QAbstractSpinBox*, visible : Bool) : Void
     fun bg_QWidget_heightForWidth_int(_self_ : QAbstractSpinBox*, unnamed_arg_0 : Int32) : Int32
@@ -10892,7 +10850,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractSpinBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractSpinBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractSpinBox*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSpinBox_CONNECT_editingFinished_CrystalProc_void_(_self_ : QAbstractSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractSpinBox_CONNECT_returnPressed_CrystalProc_void_(_self_ : QAbstractSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractSpinBox_sizeHint_SUPER_(_self_ : QAbstractSpinBox*) : QSize
@@ -10992,6 +10949,7 @@ module Qt
     fun bg_QAbstractSlider_wheelEvent_QWheelEvent_X(_self_ : QAbstractSlider*, event : QWheelEvent*) : Void
     fun bg_QAbstractSlider_changeEvent_QEvent_X(_self_ : QAbstractSlider*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QAbstractSlider__CONSTRUCT_QAbstractSliderPrivate_R_QWidget_X(dd : QAbstractSliderPrivate*, parent : QWidget*) : QAbstractSlider*
+    fun bg_QAbstractSlider_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QAbstractSlider*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QAbstractSlider*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QAbstractSlider*) : QSize
@@ -11033,7 +10991,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractSlider*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractSlider*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractSlider*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractSlider_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSlider_CONNECT_valueChanged_CrystalProc_void__int_(_self_ : QAbstractSlider*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractSlider_CONNECT_sliderPressed_CrystalProc_void_(_self_ : QAbstractSlider*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractSlider_CONNECT_sliderMoved_CrystalProc_void__int_(_self_ : QAbstractSlider*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -11108,6 +11065,7 @@ module Qt
     fun bg_QSlider_mouseReleaseEvent_QMouseEvent_X(_self_ : QSlider*, event : QMouseEvent*) : Void
     fun bg_QSlider_mouseMoveEvent_QMouseEvent_X(_self_ : QSlider*, event : QMouseEvent*) : Void
     fun bg_QSlider_initStyleOption_QStyleOptionSlider_X(_self_ : QSlider*, option : QStyleOptionSlider*) : Void
+    fun bg_QSlider_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSlider_sliderChange_QAbstractSlider__SliderChange(_self_ : QSlider*, change : AbstractSlider::SliderChange) : Void
     fun bg_QAbstractSlider_keyPressEvent_QKeyEvent_X(_self_ : QSlider*, event : QKeyEvent*) : Void
     fun bg_QAbstractSlider_timerEvent_QTimerEvent_X(_self_ : QSlider*, event : QTimerEvent*) : Void
@@ -11148,7 +11106,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSlider*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSlider*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSlider*, signal : QMetaMethod*) : Void
-    fun bg_QSlider_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSlider_sizeHint_SUPER_(_self_ : QSlider*) : QSize
     fun bg_QSlider_minimumSizeHint_SUPER_(_self_ : QSlider*) : QSize
     fun bg_QSlider_event_SUPER_QEvent_X(_self_ : QSlider*, event : QEvent*) : Bool
@@ -11286,6 +11243,7 @@ module Qt
     fun bg_QTabBar_changeEvent_QEvent_X(_self_ : QTabBar*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QTabBar_timerEvent_QTimerEvent_X(_self_ : QTabBar*, event : QTimerEvent*) : Void
     fun bg_QTabBar_initStyleOption_QStyleOptionTab_X_int(_self_ : QTabBar*, option : QStyleOptionTab*, tab_index : Int32) : Void
+    fun bg_QTabBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QTabBar*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QTabBar*, visible : Bool) : Void
     fun bg_QWidget_heightForWidth_int(_self_ : QTabBar*, unnamed_arg_0 : Int32) : Int32
@@ -11317,7 +11275,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTabBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTabBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTabBar*, signal : QMetaMethod*) : Void
-    fun bg_QTabBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTabBar_CONNECT_currentChanged_CrystalProc_void__int_(_self_ : QTabBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTabBar_CONNECT_tabCloseRequested_CrystalProc_void__int_(_self_ : QTabBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTabBar_CONNECT_tabMoved_CrystalProc_void__int__int_(_self_ : QTabBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -11447,6 +11404,7 @@ module Qt
     fun bg_QTabWidget_changeEvent_QEvent_X(_self_ : QTabWidget*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QTabWidget_event_QEvent_X(_self_ : QTabWidget*, event : QEvent*) : Bool
     fun bg_QTabWidget_initStyleOption_QStyleOptionTabWidgetFrame_X(_self_ : QTabWidget*, option : QStyleOptionTabWidgetFrame*) : Void
+    fun bg_QTabWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QTabWidget*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QTabWidget*, visible : Bool) : Void
     fun bg_QWidget_paintEngine_(_self_ : QTabWidget*) : QPaintEngine*
@@ -11483,7 +11441,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTabWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTabWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTabWidget*, signal : QMetaMethod*) : Void
-    fun bg_QTabWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTabWidget_CONNECT_currentChanged_CrystalProc_void__int_(_self_ : QTabWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTabWidget_CONNECT_tabCloseRequested_CrystalProc_void__int_(_self_ : QTabWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTabWidget_CONNECT_tabBarClicked_CrystalProc_void__int_(_self_ : QTabWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -11567,6 +11524,7 @@ module Qt
     fun bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X(dd : QFramePrivate*, parent : QWidget*) : QFrame*
     fun bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X_Qt__WindowFlags(dd : QFramePrivate*, parent : QWidget*, f : WindowFlags) : QFrame*
     fun bg_QFrame_initStyleOption_QStyleOptionFrame_X(_self_ : QFrame*, option : QStyleOptionFrame*) : Void
+    fun bg_QFrame_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QFrame*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QFrame*, visible : Bool) : Void
     fun bg_QWidget_minimumSizeHint_(_self_ : QFrame*) : QSize
@@ -11609,7 +11567,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QFrame*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFrame*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFrame*, signal : QMetaMethod*) : Void
-    fun bg_QFrame_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_sizeHint_SUPER_(_self_ : QFrame*) : QSize
     fun bg_QFrame_event_SUPER_QEvent_X(_self_ : QFrame*, event : QEvent*) : Bool
     fun bg_QFrame_paintEvent_SUPER_QPaintEvent_X(_self_ : QFrame*, event : QPaintEvent*) : Void
@@ -11686,6 +11643,7 @@ module Qt
     fun bg_QAbstractItemDelegate_commitData_QWidget_X(_self_ : QAbstractItemDelegate*, editor : QWidget*) : Void
     fun bg_QAbstractItemDelegate_closeEditor_QWidget_X_QAbstractItemDelegate__EndEditHint(_self_ : QAbstractItemDelegate*, editor : QWidget*, hint : AbstractItemDelegate::EndEditHint) : Void
     fun bg_QAbstractItemDelegate_sizeHintChanged_const_QModelIndex_R(_self_ : QAbstractItemDelegate*, unnamed_arg_0 : QModelIndex*) : Void
+    fun bg_QAbstractItemDelegate_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QAbstractItemDelegate*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractItemDelegate*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractItemDelegate*, event : QTimerEvent*) : Void
@@ -11693,7 +11651,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractItemDelegate*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractItemDelegate*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractItemDelegate*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractItemDelegate_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemDelegate_CONNECT_commitData_CrystalProc_void__QWidget_X_(_self_ : QAbstractItemDelegate*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemDelegate_CONNECT_closeEditor_CrystalProc_void__QWidget_X__QAbstractItemDelegate__EndEditHint_(_self_ : QAbstractItemDelegate*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemDelegate_CONNECT_sizeHintChanged_CrystalProc_void__const_QModelIndex_R_(_self_ : QAbstractItemDelegate*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -11762,6 +11719,7 @@ module Qt
     fun bg_QAbstractScrollArea_keyPressEvent_QKeyEvent_X(_self_ : QAbstractScrollArea*, event : QKeyEvent*) : Void
     fun bg_QAbstractScrollArea_scrollContentsBy_int_int(_self_ : QAbstractScrollArea*, dx : Int32, dy : Int32) : Void
     fun bg_QAbstractScrollArea_viewportSizeHint_(_self_ : QAbstractScrollArea*) : QSize
+    fun bg_QAbstractScrollArea_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_changeEvent_QEvent_X(_self_ : QAbstractScrollArea*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QFrame_initStyleOption_QStyleOptionFrame_X(_self_ : QAbstractScrollArea*, option : QStyleOptionFrame*) : Void
     fun bg_QWidget_devType_(_self_ : QAbstractScrollArea*) : Int32
@@ -11792,7 +11750,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractScrollArea*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractScrollArea*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractScrollArea*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractScrollArea_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_SUPER_(_self_ : QAbstractScrollArea*) : QSize
     fun bg_QAbstractScrollArea_sizeHint_SUPER_(_self_ : QAbstractScrollArea*) : QSize
     fun bg_QAbstractScrollArea_setupViewport_SUPER_QWidget_X(_self_ : QAbstractScrollArea*, viewport : QWidget*) : Void
@@ -11991,6 +11948,7 @@ module Qt
     fun bg_QAbstractItemView_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractItemView*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QAbstractItemView_dropIndicatorPosition_(_self_ : QAbstractItemView*) : AbstractItemDelegate::DropIndicatorPosition
     fun bg_QAbstractItemView_viewportSizeHint_(_self_ : QAbstractItemView*) : QSize
+    fun bg_QAbstractItemView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_(_self_ : QAbstractItemView*) : QSize
     fun bg_QAbstractScrollArea_sizeHint_(_self_ : QAbstractItemView*) : QSize
     fun bg_QAbstractScrollArea_setupViewport_QWidget_X(_self_ : QAbstractItemView*, viewport : QWidget*) : Void
@@ -12022,7 +11980,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractItemView*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractItemView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractItemView*, signal : QMetaMethod*) : Void
-    fun bg_QAbstractItemView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemView_CONNECT_pressed_CrystalProc_void__const_QModelIndex_R_(_self_ : QAbstractItemView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemView_CONNECT_clicked_CrystalProc_void__const_QModelIndex_R_(_self_ : QAbstractItemView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QAbstractItemView_CONNECT_doubleClicked_CrystalProc_void__const_QModelIndex_R_(_self_ : QAbstractItemView*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -12168,13 +12125,13 @@ module Qt
     fun bg_QApplication_closeAllWindows_STATIC_() : Void
     fun bg_QApplication_aboutQt_STATIC_() : Void
     fun bg_QApplication_event_QEvent_X(_self_ : QApplication*, event : QEvent*) : Bool
+    fun bg_QApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QApplication*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QApplication*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QApplication*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QApplication*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QApplication*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QApplication*, signal : QMetaMethod*) : Void
-    fun bg_QApplication_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QApplication_CONNECT_focusChanged_CrystalProc_void__QWidget_X__QWidget_X_(_self_ : QApplication*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QApplication_notify_SUPER_QObject_X_QEvent_X(_self_ : QApplication*, unnamed_arg_0 : QObject*, unnamed_arg_1 : QEvent*) : Bool
     fun bg_QApplication_event_SUPER_QEvent_X(_self_ : QApplication*, event : QEvent*) : Bool
@@ -12205,6 +12162,8 @@ module Qt
     fun bg_QLayoutItem_setAlignment_Qt__Alignment(_self_ : QLayoutItem*, a : Alignment) : Void
     fun bg_QLayoutItem_controlTypes_(_self_ : QLayoutItem*) : SizePolicy::ControlTypes
     fun bg_QLayoutItem__OPERATOR_assign_const_QLayoutItem_R(_self_ : QLayoutItem*, unnamed_arg_0 : QLayoutItem*) : QLayoutItem*
+    fun bg_QLayoutItem_align_GETTER_(_self_ : QLayoutItem*) : Alignment
+    fun bg_QLayoutItem_align_SETTER_Qt__Alignment(_self_ : QLayoutItem*, align : Alignment) : Void
     fun bg_QLayoutItem_CAST_SpacerItem_(_self_ : QLayoutItem*) : QSpacerItem*
     fun bg_QLayoutItem_CAST_WidgetItem_(_self_ : QLayoutItem*) : QWidgetItem*
     fun bg_QLayoutItem_CAST_Layout_(_self_ : QLayoutItem*) : QLayout*
@@ -12215,8 +12174,6 @@ module Qt
     fun bg_QLayoutItem_CAST_FormLayout_(_self_ : QLayoutItem*) : QFormLayout*
     fun bg_QLayoutItem_CAST_StackedLayout_(_self_ : QLayoutItem*) : QStackedLayout*
     fun bg_BgInherit_QLayoutItem_JUMPTABLE_BgJumptable_QLayoutItem_R(_self_ : QLayoutItem*, table : BgJumptable_QLayoutItem*) : Void
-    fun bg_QLayoutItem_align_GETTER_(_self_ : QLayoutItem*) : Alignment
-    fun bg_QLayoutItem_align_SETTER_Qt__Alignment(_self_ : QLayoutItem*, align : Alignment) : Void
     fun bg_QLayoutItem_hasHeightForWidth_SUPER_(_self_ : QLayoutItem*) : Bool
     fun bg_QLayoutItem_heightForWidth_SUPER_int(_self_ : QLayoutItem*, unnamed_arg_0 : Int32) : Int32
     fun bg_QLayoutItem_minimumHeightForWidth_SUPER_int(_self_ : QLayoutItem*, unnamed_arg_0 : Int32) : Int32
@@ -12274,11 +12231,11 @@ module Qt
     fun bg_QWidgetItem_heightForWidth_int(_self_ : QWidgetItem*, unnamed_arg_0 : Int32) : Int32
     fun bg_QWidgetItem_minimumHeightForWidth_int(_self_ : QWidgetItem*, unnamed_arg_0 : Int32) : Int32
     fun bg_QWidgetItem_controlTypes_(_self_ : QWidgetItem*) : SizePolicy::ControlTypes
+    fun bg_QWidgetItem_wid_GETTER_(_self_ : QWidgetItem*) : QWidget*
+    fun bg_QWidgetItem_wid_SETTER_QWidget_X(_self_ : QWidgetItem*, wid : QWidget*) : Void
     fun bg_QLayoutItem_invalidate_(_self_ : QWidgetItem*) : Void
     fun bg_QLayoutItem_layout_(_self_ : QWidgetItem*) : QLayout*
     fun bg_QLayoutItem_spacerItem_(_self_ : QWidgetItem*) : QSpacerItem*
-    fun bg_QWidgetItem_wid_GETTER_(_self_ : QWidgetItem*) : QWidget*
-    fun bg_QWidgetItem_wid_SETTER_QWidget_X(_self_ : QWidgetItem*, wid : QWidget*) : Void
     fun bg_QWidgetItem_sizeHint_SUPER_(_self_ : QWidgetItem*) : QSize
     fun bg_QWidgetItem_minimumSize_SUPER_(_self_ : QWidgetItem*) : QSize
     fun bg_QWidgetItem_maximumSize_SUPER_(_self_ : QWidgetItem*) : QSize
@@ -12359,6 +12316,7 @@ module Qt
     fun bg_QLayout_adoptLayout_QLayout_X(_self_ : QLayout*, layout : QLayout*) : Bool
     fun bg_QLayout_alignmentRect_const_QRect_R(_self_ : QLayout*, unnamed_arg_0 : QRect) : QRect
     fun bg_QLayout__CONSTRUCT_QLayoutPrivate_R_QLayout_X_QWidget_X(d : QLayoutPrivate*, unnamed_arg_1 : QLayout*, unnamed_arg_2 : QWidget*) : QLayout*
+    fun bg_QLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_AS_LayoutItem_(_self_ : QLayout*) : QLayoutItem*
     fun bg_QObject_event_QEvent_X(_self_ : QLayout*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QLayout*, watched : QObject*, event : QEvent*) : Bool
@@ -12373,7 +12331,6 @@ module Qt
     fun bg_QLayout_widget_(_self_ : QLayout*) : QWidget*
     fun bg_QLayout_spacerItem_(_self_ : QLayout*) : QSpacerItem*
     fun bg_QLayout_alignment_(_self_ : QLayout*) : Alignment
-    fun bg_QLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_spacing_SUPER_(_self_ : QLayout*) : Int32
     fun bg_QLayout_setSpacing_SUPER_int(_self_ : QLayout*, unnamed_arg_0 : Int32) : Void
     fun bg_QLayout_invalidate_SUPER_(_self_ : QLayout*) : Void
@@ -12454,6 +12411,7 @@ module Qt
     fun bg_QGridLayout_setDefaultPositioning_int_Qt__Orientation(_self_ : QGridLayout*, n : Int32, orient : Orientation) : Void
     fun bg_QGridLayout_getItemPosition_int_int_X_int_X_int_X_int_X(_self_ : QGridLayout*, idx : Int32, row : Int32*, column : Int32*, row_span : Int32*, column_span : Int32*) : Void
     fun bg_QGridLayout_addItem_QLayoutItem_X(_self_ : QGridLayout*, unnamed_arg_0 : QLayoutItem*) : Void
+    fun bg_QGridLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_geometry_(_self_ : QGridLayout*) : QRect
     fun bg_QLayout_indexOf_const_QWidget_X(_self_ : QGridLayout*, unnamed_arg_0 : QWidget*) : Int32
     fun bg_QLayout_indexOf_const_QLayoutItem_X(_self_ : QGridLayout*, unnamed_arg_0 : QLayoutItem*) : Int32
@@ -12468,7 +12426,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGridLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGridLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGridLayout*, signal : QMetaMethod*) : Void
-    fun bg_QGridLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGridLayout_sizeHint_SUPER_(_self_ : QGridLayout*) : QSize
     fun bg_QGridLayout_minimumSize_SUPER_(_self_ : QGridLayout*) : QSize
     fun bg_QGridLayout_maximumSize_SUPER_(_self_ : QGridLayout*) : QSize
@@ -12541,6 +12498,7 @@ module Qt
     fun bg_QBoxLayout_takeAt_int(_self_ : QBoxLayout*, index : Int32) : QLayoutItem*
     fun bg_QBoxLayout_count_(_self_ : QBoxLayout*) : Int32
     fun bg_QBoxLayout_setGeometry_const_QRect_R(_self_ : QBoxLayout*, unnamed_arg_0 : QRect) : Void
+    fun bg_QBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_geometry_(_self_ : QBoxLayout*) : QRect
     fun bg_QLayout_indexOf_const_QWidget_X(_self_ : QBoxLayout*, unnamed_arg_0 : QWidget*) : Int32
     fun bg_QLayout_indexOf_const_QLayoutItem_X(_self_ : QBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Int32
@@ -12555,7 +12513,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QBoxLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QBoxLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QBoxLayout*, signal : QMetaMethod*) : Void
-    fun bg_QBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QBoxLayout_addItem_SUPER_QLayoutItem_X(_self_ : QBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Void
     fun bg_QBoxLayout_spacing_SUPER_(_self_ : QBoxLayout*) : Int32
     fun bg_QBoxLayout_setSpacing_SUPER_int(_self_ : QBoxLayout*, unnamed_arg_0 : Int32) : Void
@@ -12594,6 +12551,7 @@ module Qt
     fun bg_QHBoxLayout_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QHBoxLayout__CONSTRUCT_() : QHBoxLayout*
     fun bg_QHBoxLayout__CONSTRUCT_QWidget_X(parent : QWidget*) : QHBoxLayout*
+    fun bg_QHBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QBoxLayout_addItem_QLayoutItem_X(_self_ : QHBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Void
     fun bg_QBoxLayout_spacing_(_self_ : QHBoxLayout*) : Int32
     fun bg_QBoxLayout_setSpacing_int(_self_ : QHBoxLayout*, unnamed_arg_0 : Int32) : Void
@@ -12623,7 +12581,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QHBoxLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QHBoxLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QHBoxLayout*, signal : QMetaMethod*) : Void
-    fun bg_QHBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QBoxLayout_addItem_SUPER_QLayoutItem_X(_self_ : QHBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Void
     fun bg_QBoxLayout_spacing_SUPER_(_self_ : QHBoxLayout*) : Int32
     fun bg_QBoxLayout_setSpacing_SUPER_int(_self_ : QHBoxLayout*, unnamed_arg_0 : Int32) : Void
@@ -12662,6 +12619,7 @@ module Qt
     fun bg_QVBoxLayout_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QVBoxLayout__CONSTRUCT_() : QVBoxLayout*
     fun bg_QVBoxLayout__CONSTRUCT_QWidget_X(parent : QWidget*) : QVBoxLayout*
+    fun bg_QVBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QBoxLayout_addItem_QLayoutItem_X(_self_ : QVBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Void
     fun bg_QBoxLayout_spacing_(_self_ : QVBoxLayout*) : Int32
     fun bg_QBoxLayout_setSpacing_int(_self_ : QVBoxLayout*, unnamed_arg_0 : Int32) : Void
@@ -12691,7 +12649,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QVBoxLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QVBoxLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QVBoxLayout*, signal : QMetaMethod*) : Void
-    fun bg_QVBoxLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QBoxLayout_addItem_SUPER_QLayoutItem_X(_self_ : QVBoxLayout*, unnamed_arg_0 : QLayoutItem*) : Void
     fun bg_QBoxLayout_spacing_SUPER_(_self_ : QVBoxLayout*) : Int32
     fun bg_QBoxLayout_setSpacing_SUPER_int(_self_ : QVBoxLayout*, unnamed_arg_0 : Int32) : Void
@@ -12747,6 +12704,7 @@ module Qt
     fun bg_QButtonGroup_idPressed_int(_self_ : QButtonGroup*, unnamed_arg_0 : Int32) : Void
     fun bg_QButtonGroup_idReleased_int(_self_ : QButtonGroup*, unnamed_arg_0 : Int32) : Void
     fun bg_QButtonGroup_idToggled_int_bool(_self_ : QButtonGroup*, unnamed_arg_0 : Int32, unnamed_arg_1 : Bool) : Void
+    fun bg_QButtonGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QButtonGroup*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QButtonGroup*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QButtonGroup*, event : QTimerEvent*) : Void
@@ -12754,7 +12712,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QButtonGroup*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QButtonGroup*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QButtonGroup*, signal : QMetaMethod*) : Void
-    fun bg_QButtonGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QButtonGroup_CONNECT_buttonClicked_CrystalProc_void__QAbstractButton_X_(_self_ : QButtonGroup*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QButtonGroup_CONNECT_buttonPressed_CrystalProc_void__QAbstractButton_X_(_self_ : QButtonGroup*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QButtonGroup_CONNECT_buttonReleased_CrystalProc_void__QAbstractButton_X_(_self_ : QButtonGroup*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -12793,6 +12750,7 @@ module Qt
     fun bg_QCheckBox_paintEvent_QPaintEvent_X(_self_ : QCheckBox*, event : QPaintEvent*) : Void
     fun bg_QCheckBox_mouseMoveEvent_QMouseEvent_X(_self_ : QCheckBox*, event : QMouseEvent*) : Void
     fun bg_QCheckBox_initStyleOption_QStyleOptionButton_X(_self_ : QCheckBox*, option : QStyleOptionButton*) : Void
+    fun bg_QCheckBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractButton_keyPressEvent_QKeyEvent_X(_self_ : QCheckBox*, event : QKeyEvent*) : Void
     fun bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X(_self_ : QCheckBox*, event : QKeyEvent*) : Void
     fun bg_QAbstractButton_mousePressEvent_QMouseEvent_X(_self_ : QCheckBox*, event : QMouseEvent*) : Void
@@ -12834,7 +12792,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QCheckBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QCheckBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QCheckBox*, signal : QMetaMethod*) : Void
-    fun bg_QCheckBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QCheckBox_CONNECT_checkStateChanged_CrystalProc_void__Qt__CheckState_(_self_ : QCheckBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCheckBox_sizeHint_SUPER_(_self_ : QCheckBox*) : QSize
     fun bg_QCheckBox_minimumSizeHint_SUPER_(_self_ : QCheckBox*) : QSize
@@ -12920,6 +12877,7 @@ module Qt
     fun bg_QDialog_contextMenuEvent_QContextMenuEvent_X(_self_ : QDialog*, event : QContextMenuEvent*) : Void
     fun bg_QDialog_eventFilter_QObject_X_QEvent_X(_self_ : QDialog*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QDialog_adjustPosition_QWidget_X(_self_ : QDialog*, unnamed_arg_0 : QWidget*) : Void
+    fun bg_QDialog_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QDialog*) : Int32
     fun bg_QWidget_heightForWidth_int(_self_ : QDialog*, unnamed_arg_0 : Int32) : Int32
     fun bg_QWidget_hasHeightForWidth_(_self_ : QDialog*) : Bool
@@ -12957,7 +12915,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDialog*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDialog*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDialog*, signal : QMetaMethod*) : Void
-    fun bg_QDialog_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDialog_CONNECT_finished_CrystalProc_void__int_(_self_ : QDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDialog_CONNECT_accepted_CrystalProc_void_(_self_ : QDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDialog_CONNECT_rejected_CrystalProc_void_(_self_ : QDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -13119,6 +13076,7 @@ module Qt
     fun bg_QComboBox_inputMethodEvent_QInputMethodEvent_X(_self_ : QComboBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
     fun bg_QComboBox_initStyleOption_QStyleOptionComboBox_X(_self_ : QComboBox*, option : QStyleOptionComboBox*) : Void
     fun bg_QComboBox__CONSTRUCT_QComboBoxPrivate_R_QWidget_X(unnamed_arg_0 : QComboBoxPrivate*, unnamed_arg_1 : QWidget*) : QComboBox*
+    fun bg_QComboBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QComboBox*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QComboBox*, visible : Bool) : Void
     fun bg_QWidget_heightForWidth_int(_self_ : QComboBox*, unnamed_arg_0 : Int32) : Int32
@@ -13147,7 +13105,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QComboBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QComboBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QComboBox*, signal : QMetaMethod*) : Void
-    fun bg_QComboBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QComboBox_CONNECT_editTextChanged_CrystalProc_void__const_QString_R_(_self_ : QComboBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QComboBox_CONNECT_activated_CrystalProc_void__int_(_self_ : QComboBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QComboBox_CONNECT_textActivated_CrystalProc_void__const_QString_R_(_self_ : QComboBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -13235,6 +13192,7 @@ module Qt
     fun bg_QPushButton_initStyleOption_QStyleOptionButton_X(_self_ : QPushButton*, option : QStyleOptionButton*) : Void
     fun bg_QPushButton_hitButton_const_QPoint_R(_self_ : QPushButton*, pos : QPoint) : Bool
     fun bg_QPushButton__CONSTRUCT_QPushButtonPrivate_R_QWidget_X(dd : QPushButtonPrivate*, parent : QWidget*) : QPushButton*
+    fun bg_QPushButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractButton_checkStateSet_(_self_ : QPushButton*) : Void
     fun bg_QAbstractButton_nextCheckState_(_self_ : QPushButton*) : Void
     fun bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X(_self_ : QPushButton*, event : QKeyEvent*) : Void
@@ -13275,7 +13233,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QPushButton*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QPushButton*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QPushButton*, signal : QMetaMethod*) : Void
-    fun bg_QPushButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPushButton_sizeHint_SUPER_(_self_ : QPushButton*) : QSize
     fun bg_QPushButton_minimumSizeHint_SUPER_(_self_ : QPushButton*) : QSize
     fun bg_QPushButton_event_SUPER_QEvent_X(_self_ : QPushButton*, event : QEvent*) : Bool
@@ -13376,12 +13333,12 @@ module Qt
     fun bg_QCompleter_activated_const_QModelIndex_R(_self_ : QCompleter*, index : QModelIndex*) : Void
     fun bg_QCompleter_highlighted_const_QString_R(_self_ : QCompleter*, text : CrystalString) : Void
     fun bg_QCompleter_highlighted_const_QModelIndex_R(_self_ : QCompleter*, index : QModelIndex*) : Void
+    fun bg_QCompleter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QCompleter*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QCompleter*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QCompleter*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QCompleter*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QCompleter*, signal : QMetaMethod*) : Void
-    fun bg_QCompleter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QString_R_(_self_ : QCompleter*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QModelIndex_R_(_self_ : QCompleter*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QString_R_(_self_ : QCompleter*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -13470,6 +13427,7 @@ module Qt
     fun bg_QDateTimeEdit_paintEvent_QPaintEvent_X(_self_ : QDateTimeEdit*, event : QPaintEvent*) : Void
     fun bg_QDateTimeEdit_initStyleOption_QStyleOptionSpinBox_X(_self_ : QDateTimeEdit*, option : QStyleOptionSpinBox*) : Void
     fun bg_QDateTimeEdit__CONSTRUCT_const_QVariant_R_QMetaType__Type_QWidget_X(val : CrystalVariant, parser_type : MetaType::Type, parent : QWidget*) : QDateTimeEdit*
+    fun bg_QDateTimeEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSpinBox_minimumSizeHint_(_self_ : QDateTimeEdit*) : QSize
     fun bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(_self_ : QDateTimeEdit*, unnamed_arg_0 : InputMethodQuery) : CrystalVariant
     fun bg_QAbstractSpinBox_resizeEvent_QResizeEvent_X(_self_ : QDateTimeEdit*, event : QResizeEvent*) : Void
@@ -13508,7 +13466,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDateTimeEdit*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDateTimeEdit*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDateTimeEdit*, signal : QMetaMethod*) : Void
-    fun bg_QDateTimeEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDateTimeEdit_CONNECT_dateTimeChanged_CrystalProc_void__const_QDateTime_R_(_self_ : QDateTimeEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDateTimeEdit_CONNECT_timeChanged_CrystalProc_void__QTime_(_self_ : QDateTimeEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDateTimeEdit_CONNECT_dateChanged_CrystalProc_void__QDate_(_self_ : QDateTimeEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -13589,6 +13546,7 @@ module Qt
     fun bg_QDial_mouseMoveEvent_QMouseEvent_X(_self_ : QDial*, event : QMouseEvent*) : Void
     fun bg_QDial_sliderChange_QAbstractSlider__SliderChange(_self_ : QDial*, change : AbstractSlider::SliderChange) : Void
     fun bg_QDial_initStyleOption_QStyleOptionSlider_X(_self_ : QDial*, option : QStyleOptionSlider*) : Void
+    fun bg_QDial_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSlider_keyPressEvent_QKeyEvent_X(_self_ : QDial*, event : QKeyEvent*) : Void
     fun bg_QAbstractSlider_timerEvent_QTimerEvent_X(_self_ : QDial*, event : QTimerEvent*) : Void
     fun bg_QAbstractSlider_wheelEvent_QWheelEvent_X(_self_ : QDial*, event : QWheelEvent*) : Void
@@ -13627,7 +13585,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDial*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDial*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDial*, signal : QMetaMethod*) : Void
-    fun bg_QDial_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDial_sizeHint_SUPER_(_self_ : QDial*) : QSize
     fun bg_QDial_minimumSizeHint_SUPER_(_self_ : QDial*) : QSize
     fun bg_QDial_event_SUPER_QEvent_X(_self_ : QDial*, event : QEvent*) : Bool
@@ -13711,6 +13668,7 @@ module Qt
     fun bg_QDockWidget_paintEvent_QPaintEvent_X(_self_ : QDockWidget*, event : QPaintEvent*) : Void
     fun bg_QDockWidget_event_QEvent_X(_self_ : QDockWidget*, event : QEvent*) : Bool
     fun bg_QDockWidget_initStyleOption_QStyleOptionDockWidget_X(_self_ : QDockWidget*, option : QStyleOptionDockWidget*) : Void
+    fun bg_QDockWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QDockWidget*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QDockWidget*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QDockWidget*) : QSize
@@ -13753,7 +13711,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDockWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDockWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDockWidget*, signal : QMetaMethod*) : Void
-    fun bg_QDockWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDockWidget_CONNECT_featuresChanged_CrystalProc_void__QDockWidget__DockWidgetFeatures_(_self_ : QDockWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDockWidget_CONNECT_topLevelChanged_CrystalProc_void__bool_(_self_ : QDockWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDockWidget_CONNECT_allowedAreasChanged_CrystalProc_void__Qt__DockWidgetAreas_(_self_ : QDockWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -13915,6 +13872,7 @@ module Qt
     fun bg_QFileDialog_done_int(_self_ : QFileDialog*, unnamed_arg_0 : Int32) : Void
     fun bg_QFileDialog_accept_(_self_ : QFileDialog*) : Void
     fun bg_QFileDialog_changeEvent_QEvent_X(_self_ : QFileDialog*, unnamed_arg_0 : QEvent*) : Void
+    fun bg_QFileDialog_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDialog_sizeHint_(_self_ : QFileDialog*) : QSize
     fun bg_QDialog_minimumSizeHint_(_self_ : QFileDialog*) : QSize
     fun bg_QDialog_open_(_self_ : QFileDialog*) : Void
@@ -13962,7 +13920,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QFileDialog*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFileDialog*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFileDialog*, signal : QMetaMethod*) : Void
-    fun bg_QFileDialog_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFileDialog_CONNECT_fileSelected_CrystalProc_void__const_QString_R_(_self_ : QFileDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(_self_ : QFileDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QFileDialog_CONNECT_currentChanged_CrystalProc_void__const_QString_R_(_self_ : QFileDialog*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -14087,6 +14044,7 @@ module Qt
     fun bg_QFormLayout_expandingDirections_(_self_ : QFormLayout*) : Orientations
     fun bg_QFormLayout_count_(_self_ : QFormLayout*) : Int32
     fun bg_QFormLayout_rowCount_(_self_ : QFormLayout*) : Int32
+    fun bg_QFormLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_geometry_(_self_ : QFormLayout*) : QRect
     fun bg_QLayout_maximumSize_(_self_ : QFormLayout*) : QSize
     fun bg_QLayout_indexOf_const_QWidget_X(_self_ : QFormLayout*, unnamed_arg_0 : QWidget*) : Int32
@@ -14102,7 +14060,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QFormLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFormLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFormLayout*, signal : QMetaMethod*) : Void
-    fun bg_QFormLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFormLayout_spacing_SUPER_(_self_ : QFormLayout*) : Int32
     fun bg_QFormLayout_setSpacing_SUPER_int(_self_ : QFormLayout*, unnamed_arg_0 : Int32) : Void
     fun bg_QFormLayout_addItem_SUPER_QLayoutItem_X(_self_ : QFormLayout*, unnamed_arg_0 : QLayoutItem*) : Void
@@ -14148,6 +14105,7 @@ module Qt
     fun bg_QGesture_setGestureCancelPolicy_QGesture__GestureCancelPolicy(_self_ : QGesture*, policy : Gesture::GestureCancelPolicy) : Void
     fun bg_QGesture_gestureCancelPolicy_(_self_ : QGesture*) : Gesture::GestureCancelPolicy
     fun bg_QGesture__CONSTRUCT_QGesturePrivate_R_QObject_X(dd : QGesturePrivate*, parent : QObject*) : QGesture*
+    fun bg_QGesture_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QGesture*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGesture*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGesture*, event : QTimerEvent*) : Void
@@ -14155,7 +14113,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGesture*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGesture*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGesture*, signal : QMetaMethod*) : Void
-    fun bg_QGesture_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QGesture*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QGesture*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QGesture*, event : QTimerEvent*) : Void
@@ -14472,6 +14429,7 @@ module Qt
     fun bg_QGraphicsObject_heightChanged_(_self_ : QGraphicsObject*) : Void
     fun bg_QGraphicsObject__CONSTRUCT_QGraphicsItemPrivate_R_QGraphicsItem_X(dd : QGraphicsItemPrivate*, parent : QGraphicsItem*) : QGraphicsObject*
     fun bg_QGraphicsObject_event_QEvent_X(_self_ : QGraphicsObject*, event : QEvent*) : Bool
+    fun bg_QGraphicsObject_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsObject_AS_GraphicsItem_(_self_ : QGraphicsObject*) : QGraphicsItem*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGraphicsObject*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsObject*, event : QTimerEvent*) : Void
@@ -14685,7 +14643,6 @@ module Qt
     fun bg_QGraphicsObject_addToIndex_(_self_ : QGraphicsObject*) : Void
     fun bg_QGraphicsObject_removeFromIndex_(_self_ : QGraphicsObject*) : Void
     fun bg_QGraphicsObject_prepareGeometryChange_(_self_ : QGraphicsObject*) : Void
-    fun bg_QGraphicsObject_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsObject_CONNECT_parentChanged_CrystalProc_void_(_self_ : QGraphicsObject*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsObject_CONNECT_opacityChanged_CrystalProc_void_(_self_ : QGraphicsObject*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsObject_CONNECT_visibleChanged_CrystalProc_void_(_self_ : QGraphicsObject*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -15266,6 +15223,7 @@ module Qt
     fun bg_QGraphicsTextItem_supportsExtension_QGraphicsItem__Extension(_self_ : QGraphicsTextItem*, extension : GraphicsItem::Extension) : Bool
     fun bg_QGraphicsTextItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(_self_ : QGraphicsTextItem*, extension : GraphicsItem::Extension, variant : CrystalVariant) : Void
     fun bg_QGraphicsTextItem_extension_const_QVariant_R(_self_ : QGraphicsTextItem*, variant : CrystalVariant) : CrystalVariant
+    fun bg_QGraphicsTextItem_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsObject_event_QEvent_X(_self_ : QGraphicsTextItem*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGraphicsTextItem*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsTextItem*, event : QTimerEvent*) : Void
@@ -15273,7 +15231,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGraphicsTextItem*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGraphicsTextItem*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGraphicsTextItem*, signal : QMetaMethod*) : Void
-    fun bg_QGraphicsTextItem_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsTextItem_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(_self_ : QGraphicsTextItem*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsTextItem_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(_self_ : QGraphicsTextItem*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsTextItem_boundingRect_SUPER_(_self_ : QGraphicsTextItem*) : QRectF
@@ -15485,13 +15442,13 @@ module Qt
     fun bg_QGraphicsWidget_ungrabKeyboardEvent_QEvent_X(_self_ : QGraphicsWidget*, event : QEvent*) : Void
     fun bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X(unnamed_arg_0 : QGraphicsWidgetPrivate*, parent : QGraphicsItem*) : QGraphicsWidget*
     fun bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X_Qt__WindowFlags(unnamed_arg_0 : QGraphicsWidgetPrivate*, parent : QGraphicsItem*, w_flags : WindowFlags) : QGraphicsWidget*
+    fun bg_QGraphicsWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGraphicsWidget*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsWidget*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QGraphicsWidget*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGraphicsWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGraphicsWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGraphicsWidget*, signal : QMetaMethod*) : Void
-    fun bg_QGraphicsWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsWidget_CONNECT_geometryChanged_CrystalProc_void_(_self_ : QGraphicsWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsWidget_CONNECT_layoutChanged_CrystalProc_void_(_self_ : QGraphicsWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsWidget_setGeometry_SUPER_const_QRectF_R(_self_ : QGraphicsWidget*, rect : QRectF) : Void
@@ -15675,12 +15632,12 @@ module Qt
     fun bg_QGraphicsScene_sceneRectChanged_const_QRectF_R(_self_ : QGraphicsScene*, rect : QRectF) : Void
     fun bg_QGraphicsScene_selectionChanged_(_self_ : QGraphicsScene*) : Void
     fun bg_QGraphicsScene_focusItemChanged_QGraphicsItem_X_QGraphicsItem_X_Qt__FocusReason(_self_ : QGraphicsScene*, new_focus : QGraphicsItem*, old_focus : QGraphicsItem*, reason : FocusReason) : Void
+    fun bg_QGraphicsScene_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsScene*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QGraphicsScene*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGraphicsScene*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGraphicsScene*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGraphicsScene*, signal : QMetaMethod*) : Void
-    fun bg_QGraphicsScene_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsScene_CONNECT_changed_CrystalProc_void__const_QList_QRectF__R_(_self_ : QGraphicsScene*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsScene_CONNECT_sceneRectChanged_CrystalProc_void__const_QRectF_R_(_self_ : QGraphicsScene*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsScene_CONNECT_selectionChanged_CrystalProc_void_(_self_ : QGraphicsScene*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -15736,6 +15693,7 @@ module Qt
     fun bg_QGraphicsTransform_applyTo_QMatrix4x4_X(_self_ : QGraphicsTransform*, matrix : QMatrix4x4*) : Void
     fun bg_QGraphicsTransform_update_(_self_ : QGraphicsTransform*) : Void
     fun bg_QGraphicsTransform__CONSTRUCT_QGraphicsTransformPrivate_R_QObject_X(p : QGraphicsTransformPrivate*, parent : QObject*) : QGraphicsTransform*
+    fun bg_QGraphicsTransform_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QGraphicsTransform*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QGraphicsTransform*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsTransform*, event : QTimerEvent*) : Void
@@ -15743,7 +15701,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGraphicsTransform*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGraphicsTransform*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGraphicsTransform*, signal : QMetaMethod*) : Void
-    fun bg_QGraphicsTransform_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QGraphicsTransform*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QGraphicsTransform*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QGraphicsTransform*, event : QTimerEvent*) : Void
@@ -15776,6 +15733,7 @@ module Qt
     fun bg_QScrollArea_resizeEvent_QResizeEvent_X(_self_ : QScrollArea*, event : QResizeEvent*) : Void
     fun bg_QScrollArea_scrollContentsBy_int_int(_self_ : QScrollArea*, dx : Int32, dy : Int32) : Void
     fun bg_QScrollArea_viewportSizeHint_(_self_ : QScrollArea*) : QSize
+    fun bg_QScrollArea_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_(_self_ : QScrollArea*) : QSize
     fun bg_QAbstractScrollArea_setupViewport_QWidget_X(_self_ : QScrollArea*, viewport : QWidget*) : Void
     fun bg_QAbstractScrollArea_viewportEvent_QEvent_X(_self_ : QScrollArea*, unnamed_arg_0 : QEvent*) : Bool
@@ -15820,7 +15778,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QScrollArea*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QScrollArea*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QScrollArea*, signal : QMetaMethod*) : Void
-    fun bg_QScrollArea_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QScrollArea_sizeHint_SUPER_(_self_ : QScrollArea*) : QSize
     fun bg_QScrollArea_focusNextPrevChild_SUPER_bool(_self_ : QScrollArea*, next_ : Bool) : Bool
     fun bg_QScrollArea_event_SUPER_QEvent_X(_self_ : QScrollArea*, event : QEvent*) : Bool
@@ -15992,6 +15949,7 @@ module Qt
     fun bg_QGraphicsView_drawBackground_QPainter_X_const_QRectF_R(_self_ : QGraphicsView*, painter : QPainter*, rect : QRectF) : Void
     fun bg_QGraphicsView_drawForeground_QPainter_X_const_QRectF_R(_self_ : QGraphicsView*, painter : QPainter*, rect : QRectF) : Void
     fun bg_QGraphicsView_drawItems_QPainter_X_int_QGraphicsItem_XX_const_QStyleOptionGraphicsItem_X(_self_ : QGraphicsView*, painter : QPainter*, num_items : Int32, items : QGraphicsItem**, options : QStyleOptionGraphicsItem*) : Void
+    fun bg_QGraphicsView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_(_self_ : QGraphicsView*) : QSize
     fun bg_QAbstractScrollArea_eventFilter_QObject_X_QEvent_X(_self_ : QGraphicsView*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QAbstractScrollArea_viewportSizeHint_(_self_ : QGraphicsView*) : QSize
@@ -16018,7 +15976,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGraphicsView*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGraphicsView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGraphicsView*, signal : QMetaMethod*) : Void
-    fun bg_QGraphicsView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGraphicsView_CONNECT_rubberBandChanged_CrystalProc_void__QRect__QPointF__QPointF_(_self_ : QGraphicsView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGraphicsView_sizeHint_SUPER_(_self_ : QGraphicsView*) : QSize
     fun bg_QGraphicsView_inputMethodQuery_SUPER_Qt__InputMethodQuery(_self_ : QGraphicsView*, unnamed_arg_0 : InputMethodQuery) : CrystalVariant
@@ -16106,6 +16063,7 @@ module Qt
     fun bg_QGroupBox_mouseMoveEvent_QMouseEvent_X(_self_ : QGroupBox*, event : QMouseEvent*) : Void
     fun bg_QGroupBox_mouseReleaseEvent_QMouseEvent_X(_self_ : QGroupBox*, event : QMouseEvent*) : Void
     fun bg_QGroupBox_initStyleOption_QStyleOptionGroupBox_X(_self_ : QGroupBox*, option : QStyleOptionGroupBox*) : Void
+    fun bg_QGroupBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QGroupBox*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QGroupBox*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QGroupBox*) : QSize
@@ -16142,7 +16100,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QGroupBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QGroupBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QGroupBox*, signal : QMetaMethod*) : Void
-    fun bg_QGroupBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QGroupBox_CONNECT_clicked_CrystalProc_void__bool_(_self_ : QGroupBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGroupBox_CONNECT_toggled_CrystalProc_void__bool_(_self_ : QGroupBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QGroupBox_minimumSizeHint_SUPER_(_self_ : QGroupBox*) : QSize
@@ -16296,6 +16253,7 @@ module Qt
     fun bg_QLineEdit_timerEvent_QTimerEvent_X(_self_ : QLineEdit*, event : QTimerEvent*) : Void
     fun bg_QLineEdit_event_QEvent_X(_self_ : QLineEdit*, event : QEvent*) : Bool
     fun bg_QLineEdit_cursorRect_(_self_ : QLineEdit*) : QRect
+    fun bg_QLineEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QLineEdit*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QLineEdit*, visible : Bool) : Void
     fun bg_QWidget_heightForWidth_int(_self_ : QLineEdit*, unnamed_arg_0 : Int32) : Int32
@@ -16321,7 +16279,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QLineEdit*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QLineEdit*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QLineEdit*, signal : QMetaMethod*) : Void
-    fun bg_QLineEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLineEdit_CONNECT_textChanged_CrystalProc_void__const_QString_R_(_self_ : QLineEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QLineEdit_CONNECT_textEdited_CrystalProc_void__const_QString_R_(_self_ : QLineEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QLineEdit_CONNECT_cursorPositionChanged_CrystalProc_void__int__int_(_self_ : QLineEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -16447,6 +16404,7 @@ module Qt
     fun bg_QLabel_focusInEvent_QFocusEvent_X(_self_ : QLabel*, event : QFocusEvent*) : Void
     fun bg_QLabel_focusOutEvent_QFocusEvent_X(_self_ : QLabel*, event : QFocusEvent*) : Void
     fun bg_QLabel_focusNextPrevChild_bool(_self_ : QLabel*, next_ : Bool) : Bool
+    fun bg_QLabel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_initStyleOption_QStyleOptionFrame_X(_self_ : QLabel*, option : QStyleOptionFrame*) : Void
     fun bg_QWidget_devType_(_self_ : QLabel*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QLabel*, visible : Bool) : Void
@@ -16480,7 +16438,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QLabel*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QLabel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QLabel*, signal : QMetaMethod*) : Void
-    fun bg_QLabel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLabel_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(_self_ : QLabel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QLabel_CONNECT_linkHovered_CrystalProc_void__const_QString_R_(_self_ : QLabel*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QLabel_sizeHint_SUPER_(_self_ : QLabel*) : QSize
@@ -16562,6 +16519,7 @@ module Qt
     fun bg_QLCDNumber_overflow_(_self_ : QLCDNumber*) : Void
     fun bg_QLCDNumber_event_QEvent_X(_self_ : QLCDNumber*, event : QEvent*) : Bool
     fun bg_QLCDNumber_paintEvent_QPaintEvent_X(_self_ : QLCDNumber*, event : QPaintEvent*) : Void
+    fun bg_QLCDNumber_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_changeEvent_QEvent_X(_self_ : QLCDNumber*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QFrame_initStyleOption_QStyleOptionFrame_X(_self_ : QLCDNumber*, option : QStyleOptionFrame*) : Void
     fun bg_QWidget_devType_(_self_ : QLCDNumber*) : Int32
@@ -16606,7 +16564,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QLCDNumber*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QLCDNumber*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QLCDNumber*, signal : QMetaMethod*) : Void
-    fun bg_QLCDNumber_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLCDNumber_CONNECT_overflow_CrystalProc_void_(_self_ : QLCDNumber*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QLCDNumber_sizeHint_SUPER_(_self_ : QLCDNumber*) : QSize
     fun bg_QLCDNumber_event_SUPER_QEvent_X(_self_ : QLCDNumber*, event : QEvent*) : Bool
@@ -16734,6 +16691,7 @@ module Qt
     fun bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QListView*, selected : QItemSelection*, deselected : QItemSelection*) : Void
     fun bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QListView*, current : QModelIndex*, previous : QModelIndex*) : Void
     fun bg_QListView_viewportSizeHint_(_self_ : QListView*) : QSize
+    fun bg_QListView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemView_setModel_QAbstractItemModel_X(_self_ : QListView*, model : QAbstractItemModel*) : Void
     fun bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(_self_ : QListView*, selection_model : QItemSelectionModel*) : Void
     fun bg_QAbstractItemView_keyboardSearch_const_QString_R(_self_ : QListView*, search : CrystalString) : Void
@@ -16791,7 +16749,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QListView*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QListView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QListView*, signal : QMetaMethod*) : Void
-    fun bg_QListView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QListView_CONNECT_indexesMoved_CrystalProc_void__const_QModelIndexList_R_(_self_ : QListView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QListView_visualRect_SUPER_const_QModelIndex_R(_self_ : QListView*, index : QModelIndex*) : QRect
     fun bg_QListView_scrollTo_SUPER_const_QModelIndex_R_QAbstractItemView__ScrollHint(_self_ : QListView*, index : QModelIndex*, hint : AbstractItemDelegate::ScrollHint) : Void
@@ -16992,6 +16949,7 @@ module Qt
     fun bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R(_self_ : QListWidget*, items : ContainerQListQListWidgetItemX*) : QMimeData*
     fun bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction(_self_ : QListWidget*, index : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QListWidget_supportedDropActions_(_self_ : QListWidget*) : DropActions
+    fun bg_QListWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QListView_visualRect_const_QModelIndex_R(_self_ : QListWidget*, index : QModelIndex*) : QRect
     fun bg_QListView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint(_self_ : QListWidget*, index : QModelIndex*, hint : AbstractItemDelegate::ScrollHint) : Void
     fun bg_QListView_indexAt_const_QPoint_R(_self_ : QListWidget*, point : QPoint) : QModelIndex*
@@ -17078,7 +17036,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QListWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QListWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QListWidget*, signal : QMetaMethod*) : Void
-    fun bg_QListWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QListWidget_CONNECT_itemPressed_CrystalProc_void__QListWidgetItem_X_(_self_ : QListWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QListWidget_CONNECT_itemClicked_CrystalProc_void__QListWidgetItem_X_(_self_ : QListWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QListWidget_CONNECT_itemDoubleClicked_CrystalProc_void__QListWidgetItem_X_(_self_ : QListWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -17248,6 +17205,7 @@ module Qt
     fun bg_QMainWindow_tabifiedDockWidgetActivated_QDockWidget_X(_self_ : QMainWindow*, dock_widget : QDockWidget*) : Void
     fun bg_QMainWindow_contextMenuEvent_QContextMenuEvent_X(_self_ : QMainWindow*, event : QContextMenuEvent*) : Void
     fun bg_QMainWindow_event_QEvent_X(_self_ : QMainWindow*, event : QEvent*) : Bool
+    fun bg_QMainWindow_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QMainWindow*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QMainWindow*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QMainWindow*) : QSize
@@ -17292,7 +17250,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QMainWindow*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QMainWindow*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMainWindow*, signal : QMetaMethod*) : Void
-    fun bg_QMainWindow_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMainWindow_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(_self_ : QMainWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMainWindow_CONNECT_toolButtonStyleChanged_CrystalProc_void__Qt__ToolButtonStyle_(_self_ : QMainWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMainWindow_CONNECT_tabifiedDockWidgetActivated_CrystalProc_void__QDockWidget_X_(_self_ : QMainWindow*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -17416,6 +17373,7 @@ module Qt
     fun bg_QMenu_focusNextPrevChild_bool(_self_ : QMenu*, next_ : Bool) : Bool
     fun bg_QMenu_initStyleOption_QStyleOptionMenuItem_X_const_QAction_X(_self_ : QMenu*, option : QStyleOptionMenuItem*, action : QAction*) : Void
     fun bg_QMenu__CONSTRUCT_QMenuPrivate_R_QWidget_X(dd : QMenuPrivate*, parent : QWidget*) : QMenu*
+    fun bg_QMenu_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QMenu*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QMenu*, visible : Bool) : Void
     fun bg_QWidget_minimumSizeHint_(_self_ : QMenu*) : QSize
@@ -17447,7 +17405,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QMenu*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QMenu*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMenu*, signal : QMetaMethod*) : Void
-    fun bg_QMenu_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMenu_CONNECT_aboutToShow_CrystalProc_void_(_self_ : QMenu*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMenu_CONNECT_aboutToHide_CrystalProc_void_(_self_ : QMenu*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMenu_CONNECT_triggered_CrystalProc_void__QAction_X_(_self_ : QMenu*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -17546,6 +17503,7 @@ module Qt
     fun bg_QMenuBar_eventFilter_QObject_X_QEvent_X(_self_ : QMenuBar*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QMenuBar_event_QEvent_X(_self_ : QMenuBar*, event : QEvent*) : Bool
     fun bg_QMenuBar_initStyleOption_QStyleOptionMenuItem_X_const_QAction_X(_self_ : QMenuBar*, option : QStyleOptionMenuItem*, action : QAction*) : Void
+    fun bg_QMenuBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QMenuBar*) : Int32
     fun bg_QWidget_hasHeightForWidth_(_self_ : QMenuBar*) : Bool
     fun bg_QWidget_paintEngine_(_self_ : QMenuBar*) : QPaintEngine*
@@ -17574,7 +17532,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QMenuBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QMenuBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMenuBar*, signal : QMetaMethod*) : Void
-    fun bg_QMenuBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMenuBar_CONNECT_triggered_CrystalProc_void__QAction_X_(_self_ : QMenuBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMenuBar_CONNECT_hovered_CrystalProc_void__QAction_X_(_self_ : QMenuBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMenuBar_sizeHint_SUPER_(_self_ : QMenuBar*) : QSize
@@ -17700,6 +17657,7 @@ module Qt
     fun bg_QMessageBox_closeEvent_QCloseEvent_X(_self_ : QMessageBox*, event : QCloseEvent*) : Void
     fun bg_QMessageBox_keyPressEvent_QKeyEvent_X(_self_ : QMessageBox*, event : QKeyEvent*) : Void
     fun bg_QMessageBox_changeEvent_QEvent_X(_self_ : QMessageBox*, unnamed_arg_0 : QEvent*) : Void
+    fun bg_QMessageBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDialog_setVisible_bool(_self_ : QMessageBox*, visible : Bool) : Void
     fun bg_QDialog_sizeHint_(_self_ : QMessageBox*) : QSize
     fun bg_QDialog_minimumSizeHint_(_self_ : QMessageBox*) : QSize
@@ -17745,7 +17703,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QMessageBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QMessageBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMessageBox*, signal : QMetaMethod*) : Void
-    fun bg_QMessageBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMessageBox_CONNECT_buttonClicked_CrystalProc_void__QAbstractButton_X_(_self_ : QMessageBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QMessageBox_event_SUPER_QEvent_X(_self_ : QMessageBox*, event : QEvent*) : Bool
     fun bg_QMessageBox_resizeEvent_SUPER_QResizeEvent_X(_self_ : QMessageBox*, event : QResizeEvent*) : Void
@@ -17934,6 +17891,7 @@ module Qt
     fun bg_QTextEdit_scrollContentsBy_int_int(_self_ : QTextEdit*, dx : Int32, dy : Int32) : Void
     fun bg_QTextEdit_doSetTextCursor_const_QTextCursor_R(_self_ : QTextEdit*, cursor : QTextCursor*) : Void
     fun bg_QTextEdit_zoomInF_float(_self_ : QTextEdit*, range : Float32) : Void
+    fun bg_QTextEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractScrollArea_minimumSizeHint_(_self_ : QTextEdit*) : QSize
     fun bg_QAbstractScrollArea_sizeHint_(_self_ : QTextEdit*) : QSize
     fun bg_QAbstractScrollArea_setupViewport_QWidget_X(_self_ : QTextEdit*, viewport : QWidget*) : Void
@@ -17961,7 +17919,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTextEdit*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTextEdit*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTextEdit*, signal : QMetaMethod*) : Void
-    fun bg_QTextEdit_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTextEdit_CONNECT_textChanged_CrystalProc_void_(_self_ : QTextEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTextEdit_CONNECT_undoAvailable_CrystalProc_void__bool_(_self_ : QTextEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTextEdit_CONNECT_redoAvailable_CrystalProc_void__bool_(_self_ : QTextEdit*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -18061,6 +18018,7 @@ module Qt
     fun bg_QProgressBar_event_QEvent_X(_self_ : QProgressBar*, event : QEvent*) : Bool
     fun bg_QProgressBar_paintEvent_QPaintEvent_X(_self_ : QProgressBar*, event : QPaintEvent*) : Void
     fun bg_QProgressBar_initStyleOption_QStyleOptionProgressBar_X(_self_ : QProgressBar*, option : QStyleOptionProgressBar*) : Void
+    fun bg_QProgressBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QProgressBar*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QProgressBar*, visible : Bool) : Void
     fun bg_QWidget_heightForWidth_int(_self_ : QProgressBar*, unnamed_arg_0 : Int32) : Int32
@@ -18103,7 +18061,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QProgressBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QProgressBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QProgressBar*, signal : QMetaMethod*) : Void
-    fun bg_QProgressBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QProgressBar_CONNECT_valueChanged_CrystalProc_void__int_(_self_ : QProgressBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QProgressBar_text_SUPER_(_self_ : QProgressBar*) : CrystalString
     fun bg_QProgressBar_sizeHint_SUPER_(_self_ : QProgressBar*) : QSize
@@ -18169,6 +18126,7 @@ module Qt
     fun bg_QRadioButton_paintEvent_QPaintEvent_X(_self_ : QRadioButton*, event : QPaintEvent*) : Void
     fun bg_QRadioButton_mouseMoveEvent_QMouseEvent_X(_self_ : QRadioButton*, event : QMouseEvent*) : Void
     fun bg_QRadioButton_initStyleOption_QStyleOptionButton_X(_self_ : QRadioButton*, button : QStyleOptionButton*) : Void
+    fun bg_QRadioButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractButton_checkStateSet_(_self_ : QRadioButton*) : Void
     fun bg_QAbstractButton_nextCheckState_(_self_ : QRadioButton*) : Void
     fun bg_QAbstractButton_keyPressEvent_QKeyEvent_X(_self_ : QRadioButton*, event : QKeyEvent*) : Void
@@ -18212,7 +18170,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QRadioButton*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QRadioButton*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QRadioButton*, signal : QMetaMethod*) : Void
-    fun bg_QRadioButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QRadioButton_sizeHint_SUPER_(_self_ : QRadioButton*) : QSize
     fun bg_QRadioButton_minimumSizeHint_SUPER_(_self_ : QRadioButton*) : QSize
     fun bg_QRadioButton_event_SUPER_QEvent_X(_self_ : QRadioButton*, event : QEvent*) : Bool
@@ -18284,6 +18241,7 @@ module Qt
     fun bg_QScrollBar_sliderChange_QAbstractSlider__SliderChange(_self_ : QScrollBar*, change : AbstractSlider::SliderChange) : Void
     fun bg_QScrollBar_contextMenuEvent_QContextMenuEvent_X(_self_ : QScrollBar*, event : QContextMenuEvent*) : Void
     fun bg_QScrollBar_initStyleOption_QStyleOptionSlider_X(_self_ : QScrollBar*, option : QStyleOptionSlider*) : Void
+    fun bg_QScrollBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSlider_keyPressEvent_QKeyEvent_X(_self_ : QScrollBar*, event : QKeyEvent*) : Void
     fun bg_QAbstractSlider_timerEvent_QTimerEvent_X(_self_ : QScrollBar*, event : QTimerEvent*) : Void
     fun bg_QAbstractSlider_changeEvent_QEvent_X(_self_ : QScrollBar*, unnamed_arg_0 : QEvent*) : Void
@@ -18321,7 +18279,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QScrollBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QScrollBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QScrollBar*, signal : QMetaMethod*) : Void
-    fun bg_QScrollBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QScrollBar_sizeHint_SUPER_(_self_ : QScrollBar*) : QSize
     fun bg_QScrollBar_event_SUPER_QEvent_X(_self_ : QScrollBar*, event : QEvent*) : Bool
     fun bg_QScrollBar_wheelEvent_SUPER_QWheelEvent_X(_self_ : QScrollBar*, event : QWheelEvent*) : Void
@@ -18401,6 +18358,7 @@ module Qt
     fun bg_QSpinBox_setValue_int(_self_ : QSpinBox*, val : Int32) : Void
     fun bg_QSpinBox_valueChanged_int(_self_ : QSpinBox*, unnamed_arg_0 : Int32) : Void
     fun bg_QSpinBox_textChanged_const_QString_R(_self_ : QSpinBox*, unnamed_arg_0 : CrystalString) : Void
+    fun bg_QSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSpinBox_sizeHint_(_self_ : QSpinBox*) : QSize
     fun bg_QAbstractSpinBox_minimumSizeHint_(_self_ : QSpinBox*) : QSize
     fun bg_QAbstractSpinBox_inputMethodQuery_Qt__InputMethodQuery(_self_ : QSpinBox*, unnamed_arg_0 : InputMethodQuery) : CrystalVariant
@@ -18450,7 +18408,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSpinBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSpinBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSpinBox*, signal : QMetaMethod*) : Void
-    fun bg_QSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSpinBox_CONNECT_valueChanged_CrystalProc_void__int_(_self_ : QSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(_self_ : QSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSpinBox_event_SUPER_QEvent_X(_self_ : QSpinBox*, event : QEvent*) : Bool
@@ -18535,6 +18492,7 @@ module Qt
     fun bg_QDoubleSpinBox_setValue_double(_self_ : QDoubleSpinBox*, val : Float64) : Void
     fun bg_QDoubleSpinBox_valueChanged_double(_self_ : QDoubleSpinBox*, unnamed_arg_0 : Float64) : Void
     fun bg_QDoubleSpinBox_textChanged_const_QString_R(_self_ : QDoubleSpinBox*, unnamed_arg_0 : CrystalString) : Void
+    fun bg_QDoubleSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractSpinBox_sizeHint_(_self_ : QDoubleSpinBox*) : QSize
     fun bg_QAbstractSpinBox_minimumSizeHint_(_self_ : QDoubleSpinBox*) : QSize
     fun bg_QAbstractSpinBox_event_QEvent_X(_self_ : QDoubleSpinBox*, event : QEvent*) : Bool
@@ -18585,7 +18543,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QDoubleSpinBox*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QDoubleSpinBox*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QDoubleSpinBox*, signal : QMetaMethod*) : Void
-    fun bg_QDoubleSpinBox_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QDoubleSpinBox_CONNECT_valueChanged_CrystalProc_void__double_(_self_ : QDoubleSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDoubleSpinBox_CONNECT_textChanged_CrystalProc_void__const_QString_R_(_self_ : QDoubleSpinBox*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QDoubleSpinBox_valueFromText_SUPER_const_QString_R(_self_ : QDoubleSpinBox*, text : CrystalString) : Float64
@@ -18684,6 +18641,7 @@ module Qt
     fun bg_QSplitter_moveSplitter_int_int(_self_ : QSplitter*, pos : Int32, index : Int32) : Void
     fun bg_QSplitter_setRubberBand_int(_self_ : QSplitter*, position : Int32) : Void
     fun bg_QSplitter_closestLegalPosition_int_int(_self_ : QSplitter*, unnamed_arg_0 : Int32, unnamed_arg_1 : Int32) : Int32
+    fun bg_QSplitter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_paintEvent_QPaintEvent_X(_self_ : QSplitter*, event : QPaintEvent*) : Void
     fun bg_QFrame_initStyleOption_QStyleOptionFrame_X(_self_ : QSplitter*, option : QStyleOptionFrame*) : Void
     fun bg_QWidget_devType_(_self_ : QSplitter*) : Int32
@@ -18725,7 +18683,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSplitter*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSplitter*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSplitter*, signal : QMetaMethod*) : Void
-    fun bg_QSplitter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSplitter_CONNECT_splitterMoved_CrystalProc_void__int__int_(_self_ : QSplitter*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSplitter_sizeHint_SUPER_(_self_ : QSplitter*) : QSize
     fun bg_QSplitter_minimumSizeHint_SUPER_(_self_ : QSplitter*) : QSize
@@ -18806,6 +18763,7 @@ module Qt
     fun bg_QStackedLayout_widgetAdded_int(_self_ : QStackedLayout*, index : Int32) : Void
     fun bg_QStackedLayout_setCurrentIndex_int(_self_ : QStackedLayout*, index : Int32) : Void
     fun bg_QStackedLayout_setCurrentWidget_QWidget_X(_self_ : QStackedLayout*, w : QWidget*) : Void
+    fun bg_QStackedLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QLayout_spacing_(_self_ : QStackedLayout*) : Int32
     fun bg_QLayout_setSpacing_int(_self_ : QStackedLayout*, unnamed_arg_0 : Int32) : Void
     fun bg_QLayout_invalidate_(_self_ : QStackedLayout*) : Void
@@ -18825,7 +18783,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QStackedLayout*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStackedLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStackedLayout*, signal : QMetaMethod*) : Void
-    fun bg_QStackedLayout_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QStackedLayout_CONNECT_widgetRemoved_CrystalProc_void__int_(_self_ : QStackedLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStackedLayout_CONNECT_currentChanged_CrystalProc_void__int_(_self_ : QStackedLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStackedLayout_CONNECT_widgetAdded_CrystalProc_void__int_(_self_ : QStackedLayout*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -18879,6 +18836,7 @@ module Qt
     fun bg_QStackedWidget_widgetRemoved_int(_self_ : QStackedWidget*, index : Int32) : Void
     fun bg_QStackedWidget_widgetAdded_int(_self_ : QStackedWidget*, index : Int32) : Void
     fun bg_QStackedWidget_event_QEvent_X(_self_ : QStackedWidget*, event : QEvent*) : Bool
+    fun bg_QStackedWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFrame_sizeHint_(_self_ : QStackedWidget*) : QSize
     fun bg_QFrame_paintEvent_QPaintEvent_X(_self_ : QStackedWidget*, event : QPaintEvent*) : Void
     fun bg_QFrame_changeEvent_QEvent_X(_self_ : QStackedWidget*, unnamed_arg_0 : QEvent*) : Void
@@ -18925,7 +18883,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QStackedWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStackedWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStackedWidget*, signal : QMetaMethod*) : Void
-    fun bg_QStackedWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QStackedWidget_CONNECT_currentChanged_CrystalProc_void__int_(_self_ : QStackedWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStackedWidget_CONNECT_widgetRemoved_CrystalProc_void__int_(_self_ : QStackedWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStackedWidget_CONNECT_widgetAdded_CrystalProc_void__int_(_self_ : QStackedWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -19001,6 +18958,7 @@ module Qt
     fun bg_QStatusBar_reformat_(_self_ : QStatusBar*) : Void
     fun bg_QStatusBar_hideOrShow_(_self_ : QStatusBar*) : Void
     fun bg_QStatusBar_event_QEvent_X(_self_ : QStatusBar*, event : QEvent*) : Bool
+    fun bg_QStatusBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QStatusBar*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QStatusBar*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QStatusBar*) : QSize
@@ -19043,7 +19001,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QStatusBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStatusBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStatusBar*, signal : QMetaMethod*) : Void
-    fun bg_QStatusBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QStatusBar_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(_self_ : QStatusBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QStatusBar_showEvent_SUPER_QShowEvent_X(_self_ : QStatusBar*, event : QShowEvent*) : Void
     fun bg_QStatusBar_paintEvent_SUPER_QPaintEvent_X(_self_ : QStatusBar*, event : QPaintEvent*) : Void
@@ -19111,6 +19068,7 @@ module Qt
     fun bg_QStyledItemDelegate_initStyleOption_QStyleOptionViewItem_X_const_QModelIndex_R(_self_ : QStyledItemDelegate*, option : QStyleOptionViewItem*, index : QModelIndex*) : Void
     fun bg_QStyledItemDelegate_eventFilter_QObject_X_QEvent_X(_self_ : QStyledItemDelegate*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QStyledItemDelegate_editorEvent_QEvent_X_QAbstractItemModel_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(_self_ : QStyledItemDelegate*, event : QEvent*, model : QAbstractItemModel*, option : QStyleOptionViewItem*, index : QModelIndex*) : Bool
+    fun bg_QStyledItemDelegate_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemDelegate_destroyEditor_QWidget_X_const_QModelIndex_R(_self_ : QStyledItemDelegate*, editor : QWidget*, index : QModelIndex*) : Void
     fun bg_QAbstractItemDelegate_helpEvent_QHelpEvent_X_QAbstractItemView_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(_self_ : QStyledItemDelegate*, event : QHelpEvent*, view : QAbstractItemView*, option : QStyleOptionViewItem*, index : QModelIndex*) : Bool
     fun bg_QAbstractItemDelegate_paintingRoles_(_self_ : QStyledItemDelegate*) : ContainerQListInt*
@@ -19120,7 +19078,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QStyledItemDelegate*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStyledItemDelegate*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStyledItemDelegate*, signal : QMetaMethod*) : Void
-    fun bg_QStyledItemDelegate_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QStyledItemDelegate_paint_SUPER_QPainter_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(_self_ : QStyledItemDelegate*, painter : QPainter*, option : QStyleOptionViewItem*, index : QModelIndex*) : Void
     fun bg_QStyledItemDelegate_sizeHint_SUPER_const_QStyleOptionViewItem_R_const_QModelIndex_R(_self_ : QStyledItemDelegate*, option : QStyleOptionViewItem*, index : QModelIndex*) : QSize
     fun bg_QStyledItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(_self_ : QStyledItemDelegate*, parent : QWidget*, option : QStyleOptionViewItem*, index : QModelIndex*) : QWidget*
@@ -19167,13 +19124,13 @@ module Qt
     fun bg_QSystemTrayIcon_activated_QSystemTrayIcon__ActivationReason(_self_ : QSystemTrayIcon*, reason : SystemTrayIcon::ActivationReason) : Void
     fun bg_QSystemTrayIcon_messageClicked_(_self_ : QSystemTrayIcon*) : Void
     fun bg_QSystemTrayIcon_event_QEvent_X(_self_ : QSystemTrayIcon*, event : QEvent*) : Bool
+    fun bg_QSystemTrayIcon_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSystemTrayIcon*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSystemTrayIcon*, event : QTimerEvent*) : Void
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSystemTrayIcon*, event : QChildEvent*) : Void
     fun bg_QObject_customEvent_QEvent_X(_self_ : QSystemTrayIcon*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSystemTrayIcon*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSystemTrayIcon*, signal : QMetaMethod*) : Void
-    fun bg_QSystemTrayIcon_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QSystemTrayIcon_CONNECT_activated_CrystalProc_void__QSystemTrayIcon__ActivationReason_(_self_ : QSystemTrayIcon*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSystemTrayIcon_CONNECT_messageClicked_CrystalProc_void_(_self_ : QSystemTrayIcon*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QSystemTrayIcon_event_SUPER_QEvent_X(_self_ : QSystemTrayIcon*, event : QEvent*) : Bool
@@ -19266,6 +19223,7 @@ module Qt
     fun bg_QTableView_isIndexHidden_const_QModelIndex_R(_self_ : QTableView*, index : QModelIndex*) : Bool
     fun bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QTableView*, selected : QItemSelection*, deselected : QItemSelection*) : Void
     fun bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QTableView*, current : QModelIndex*, previous : QModelIndex*) : Void
+    fun bg_QTableView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemView_keyboardSearch_const_QString_R(_self_ : QTableView*, search : CrystalString) : Void
     fun bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(_self_ : QTableView*, index : QModelIndex*) : QAbstractItemDelegate*
     fun bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(_self_ : QTableView*, unnamed_arg_0 : InputMethodQuery) : CrystalVariant
@@ -19329,7 +19287,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTableView*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTableView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTableView*, signal : QMetaMethod*) : Void
-    fun bg_QTableView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTableView_setModel_SUPER_QAbstractItemModel_X(_self_ : QTableView*, model : QAbstractItemModel*) : Void
     fun bg_QTableView_setRootIndex_SUPER_const_QModelIndex_R(_self_ : QTableView*, index : QModelIndex*) : Void
     fun bg_QTableView_setSelectionModel_SUPER_QItemSelectionModel_X(_self_ : QTableView*, selection_model : QItemSelectionModel*) : Void
@@ -19553,6 +19510,7 @@ module Qt
     fun bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction(_self_ : QTableWidget*, row : Int32, column : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QTableWidget_supportedDropActions_(_self_ : QTableWidget*) : DropActions
     fun bg_QTableWidget_dropEvent_QDropEvent_X(_self_ : QTableWidget*, event : QDropEvent*) : Void
+    fun bg_QTableWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTableView_setRootIndex_const_QModelIndex_R(_self_ : QTableWidget*, index : QModelIndex*) : Void
     fun bg_QTableView_setSelectionModel_QItemSelectionModel_X(_self_ : QTableWidget*, selection_model : QItemSelectionModel*) : Void
     fun bg_QTableView_doItemsLayout_(_self_ : QTableWidget*) : Void
@@ -19640,7 +19598,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTableWidget*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTableWidget*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTableWidget*, signal : QMetaMethod*) : Void
-    fun bg_QTableWidget_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTableWidget_CONNECT_itemPressed_CrystalProc_void__QTableWidgetItem_X_(_self_ : QTableWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTableWidget_CONNECT_itemClicked_CrystalProc_void__QTableWidgetItem_X_(_self_ : QTableWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTableWidget_CONNECT_itemDoubleClicked_CrystalProc_void__QTableWidgetItem_X_(_self_ : QTableWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -19795,6 +19752,7 @@ module Qt
     fun bg_QToolBar_paintEvent_QPaintEvent_X(_self_ : QToolBar*, event : QPaintEvent*) : Void
     fun bg_QToolBar_event_QEvent_X(_self_ : QToolBar*, event : QEvent*) : Bool
     fun bg_QToolBar_initStyleOption_QStyleOptionToolBar_X(_self_ : QToolBar*, option : QStyleOptionToolBar*) : Void
+    fun bg_QToolBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_devType_(_self_ : QToolBar*) : Int32
     fun bg_QWidget_setVisible_bool(_self_ : QToolBar*, visible : Bool) : Void
     fun bg_QWidget_sizeHint_(_self_ : QToolBar*) : QSize
@@ -19837,7 +19795,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QToolBar*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QToolBar*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QToolBar*, signal : QMetaMethod*) : Void
-    fun bg_QToolBar_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QToolBar_CONNECT_actionTriggered_CrystalProc_void__QAction_X_(_self_ : QToolBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QToolBar_CONNECT_movableChanged_CrystalProc_void__bool_(_self_ : QToolBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QToolBar_CONNECT_allowedAreasChanged_CrystalProc_void__Qt__ToolBarAreas_(_self_ : QToolBar*, _proc_ : CrystalProc) : QMetaObjectConnection*
@@ -19930,6 +19887,7 @@ module Qt
     fun bg_QToolButton_checkStateSet_(_self_ : QToolButton*) : Void
     fun bg_QToolButton_nextCheckState_(_self_ : QToolButton*) : Void
     fun bg_QToolButton_initStyleOption_QStyleOptionToolButton_X(_self_ : QToolButton*, option : QStyleOptionToolButton*) : Void
+    fun bg_QToolButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractButton_keyPressEvent_QKeyEvent_X(_self_ : QToolButton*, event : QKeyEvent*) : Void
     fun bg_QAbstractButton_keyReleaseEvent_QKeyEvent_X(_self_ : QToolButton*, event : QKeyEvent*) : Void
     fun bg_QAbstractButton_mouseMoveEvent_QMouseEvent_X(_self_ : QToolButton*, event : QMouseEvent*) : Void
@@ -19965,7 +19923,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QToolButton*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QToolButton*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QToolButton*, signal : QMetaMethod*) : Void
-    fun bg_QToolButton_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QToolButton_CONNECT_triggered_CrystalProc_void__QAction_X_(_self_ : QToolButton*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QToolButton_sizeHint_SUPER_(_self_ : QToolButton*) : QSize
     fun bg_QToolButton_minimumSizeHint_SUPER_(_self_ : QToolButton*) : QSize
@@ -20128,6 +20085,7 @@ module Qt
     fun bg_QTreeView_isIndexHidden_const_QModelIndex_R(_self_ : QTreeView*, index : QModelIndex*) : Bool
     fun bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QTreeView*, selected : QItemSelection*, deselected : QItemSelection*) : Void
     fun bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QTreeView*, current : QModelIndex*, previous : QModelIndex*) : Void
+    fun bg_QTreeView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QAbstractItemView_sizeHintForRow_int(_self_ : QTreeView*, row : Int32) : Int32
     fun bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(_self_ : QTreeView*, index : QModelIndex*) : QAbstractItemDelegate*
     fun bg_QAbstractItemView_inputMethodQuery_Qt__InputMethodQuery(_self_ : QTreeView*, unnamed_arg_0 : InputMethodQuery) : CrystalVariant
@@ -20180,7 +20138,6 @@ module Qt
     fun bg_QObject_customEvent_QEvent_X(_self_ : QTreeView*, event : QEvent*) : Void
     fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTreeView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTreeView*, signal : QMetaMethod*) : Void
-    fun bg_QTreeView_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTreeView_CONNECT_expanded_CrystalProc_void__const_QModelIndex_R_(_self_ : QTreeView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTreeView_CONNECT_collapsed_CrystalProc_void__const_QModelIndex_R_(_self_ : QTreeView*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTreeView_setModel_SUPER_QAbstractItemModel_X(_self_ : QTreeView*, model : QAbstractItemModel*) : Void
@@ -20278,15 +20235,6 @@ module Qt
     fun bg_BgInherit_QTreeView_JUMPTABLE_BgJumptable_QTreeView_R(_self_ : QTreeView*, table : BgJumptable_QTreeView*) : Void
     fun bg____qVersion_STATIC_() : UInt8*
     fun bg____qt6cr_reset_numeric_locale_STATIC_() : Void
-    fun bg____qt6cr_string_list_sort_STATIC_QList_QString__R_Qt__CaseSensitivity(list : ContainerQListQString*, cs : CaseSensitivity) : Void
-    fun bg____qt6cr_string_list_removeDuplicates_STATIC_QList_QString__R(list : ContainerQListQString*) : Int64
-    fun bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, str : CrystalString, cs : CaseSensitivity) : ContainerQListQString*
-    fun bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QRegularExpression_R(list : ContainerQListQString*, re : QRegularExpression*) : ContainerQListQString*
-    fun bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QString_R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, before : CrystalString, after : CrystalString, cs : CaseSensitivity) : Void
-    fun bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QRegularExpression_R_const_QString_R(list : ContainerQListQString*, re : QRegularExpression*, after : CrystalString) : Void
-    fun bg____qt6cr_string_list_contains_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(list : ContainerQListQString*, str : CrystalString, cs : CaseSensitivity) : Bool
-    fun bg____qt6cr_string_list_indexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(list : ContainerQListQString*, re : QRegularExpression*, from : Int64) : Int64
-    fun bg____qt6cr_string_list_lastIndexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(list : ContainerQListQString*, re : QRegularExpression*, from : Int64) : Int64
     fun bg_Container_QList_qreal___CONSTRUCT_() : ContainerQListQreal*
     fun bg_Container_QList_qreal__at_int(_self_ : ContainerQListQreal*, index : Int32) : Float64
     fun bg_Container_QList_qreal__push_back_qreal(_self_ : ContainerQListQreal*, value : Float64) : Void
@@ -20295,6 +20243,74 @@ module Qt
     fun bg_Container_QList_unsigned_int__at_int(_self_ : ContainerQListUnsignedInt*, index : Int32) : UInt32
     fun bg_Container_QList_unsigned_int__push_back_unsigned_int(_self_ : ContainerQListUnsignedInt*, value : UInt32) : Void
     fun bg_Container_QList_unsigned_int__size_(_self_ : ContainerQListUnsignedInt*) : Int32
+    fun bg_QList_QString__swap_QList_QString__R(_self_ : ContainerQListQString*, other : ContainerQListQString*) : Void
+    fun bg_QList_QString__maxSize_STATIC_() : Int64
+    fun bg_QList_QString__count_(_self_ : ContainerQListQString*) : Int64
+    fun bg_QList_QString__length_(_self_ : ContainerQListQString*) : Int64
+    fun bg_QList_QString__isEmpty_(_self_ : ContainerQListQString*) : Bool
+    fun bg_QList_QString__resize_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
+    fun bg_QList_QString__resize_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, size : Int64, c : CrystalString) : Void
+    fun bg_QList_QString__resizeForOverwrite_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
+    fun bg_QList_QString__capacity_(_self_ : ContainerQListQString*) : Int64
+    fun bg_QList_QString__reserve_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
+    fun bg_QList_QString__squeeze_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__detach_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__isDetached_(_self_ : ContainerQListQString*) : Bool
+    fun bg_QList_QString__isSharedWith_const_QList_QString__R(_self_ : ContainerQListQString*, other : ContainerQListQString*) : Bool
+    fun bg_QList_QString__clear_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__append_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__append_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : Void
+    fun bg_QList_QString__prepend_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__assign_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, n : Int64, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString__replace_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, i : Int64, t : CrystalString) : Void
+    fun bg_QList_QString__remove_qsizetype(_self_ : ContainerQListQString*, i : Int64) : Void
+    fun bg_QList_QString__remove_qsizetype_qsizetype(_self_ : ContainerQListQString*, i : Int64, n : Int64) : Void
+    fun bg_QList_QString__removeFirst_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__removeLast_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__takeFirst_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__takeLast_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__fill_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString__fill_QList_QString___parameter_type_qsizetype(_self_ : ContainerQListQString*, t : CrystalString, size : Int64) : ContainerQListQString*
+    fun bg_QList_QString__removeAt_qsizetype(_self_ : ContainerQListQString*, i : Int64) : Void
+    fun bg_QList_QString__takeAt_qsizetype(_self_ : ContainerQListQString*, i : Int64) : CrystalString
+    fun bg_QList_QString__move_qsizetype_qsizetype(_self_ : ContainerQListQString*, from : Int64, to : Int64) : Void
+    fun bg_QList_QString__first_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__constFirst_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__last_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__constLast_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__startsWith_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Bool
+    fun bg_QList_QString__endsWith_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Bool
+    fun bg_QList_QString__mid_qsizetype(_self_ : ContainerQListQString*, pos : Int64) : ContainerQListQString*
+    fun bg_QList_QString__mid_qsizetype_qsizetype(_self_ : ContainerQListQString*, pos : Int64, len : Int64) : ContainerQListQString*
+    fun bg_QList_QString__first_qsizetype(_self_ : ContainerQListQString*, n : Int64) : ContainerQListQString*
+    fun bg_QList_QString__last_qsizetype(_self_ : ContainerQListQString*, n : Int64) : ContainerQListQString*
+    fun bg_QList_QString__sliced_qsizetype(_self_ : ContainerQListQString*, pos : Int64) : ContainerQListQString*
+    fun bg_QList_QString__sliced_qsizetype_qsizetype(_self_ : ContainerQListQString*, pos : Int64, n : Int64) : ContainerQListQString*
+    fun bg_QList_QString__value_qsizetype(_self_ : ContainerQListQString*, i : Int64) : CrystalString
+    fun bg_QList_QString__value_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, i : Int64, default_value : CrystalString) : CrystalString
+    fun bg_QList_QString__swapItemsAt_qsizetype_qsizetype(_self_ : ContainerQListQString*, i : Int64, j : Int64) : Void
+    fun bg_QList_QString__push_front_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__pop_back_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__pop_front_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__empty_(_self_ : ContainerQListQString*) : Bool
+    fun bg_QList_QString__front_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__back_(_self_ : ContainerQListQString*) : CrystalString
+    fun bg_QList_QString__shrink_to_fit_(_self_ : ContainerQListQString*) : Void
+    fun bg_QList_QString__max_size_(_self_ : ContainerQListQString*) : Int64
+    fun bg_QList_QString___OPERATOR_add_assign_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_add_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_add_assign_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_lshift_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_lshift_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString__fromList_STATIC_const_QList_QString__R(list : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString__toList_(_self_ : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString__fromVector_STATIC_const_QList_QString__R(vector : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString__toVector_(_self_ : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_assign_const_QList_QString__R(_self_ : ContainerQListQString*, unnamed_arg_0 : ContainerQListQString*) : ContainerQListQString*
+    fun bg_Container_QList_QString___CONSTRUCT_() : ContainerQListQString*
+    fun bg_QList_QString__at_int(_self_ : ContainerQListQString*, index : Int32) : CrystalString
+    fun bg_QList_QString__push_back_QString(_self_ : ContainerQListQString*, value : CrystalString) : Void
+    fun bg_QList_QString__size_(_self_ : ContainerQListQString*) : Int32
     fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo___CONSTRUCT_() : ContainerQListQAbstractEventDispatcherTimerInfo*
     fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, index : Int32) : EventDispatcherTimerInfo
     fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, value : EventDispatcherTimerInfo) : Void
@@ -20303,10 +20319,6 @@ module Qt
     fun bg_Container_QList_QVariant__at_int(_self_ : ContainerQListQVariant*, index : Int32) : CrystalVariant
     fun bg_Container_QList_QVariant__push_back_QVariant(_self_ : ContainerQListQVariant*, value : CrystalVariant) : Void
     fun bg_Container_QList_QVariant__size_(_self_ : ContainerQListQVariant*) : Int32
-    fun bg_Container_QList_QString___CONSTRUCT_() : ContainerQListQString*
-    fun bg_Container_QList_QString__at_int(_self_ : ContainerQListQString*, index : Int32) : CrystalString
-    fun bg_Container_QList_QString__push_back_QString(_self_ : ContainerQListQString*, value : CrystalString) : Void
-    fun bg_Container_QList_QString__size_(_self_ : ContainerQListQString*) : Int32
     fun bg_Container_QList_int___CONSTRUCT_() : ContainerQListInt*
     fun bg_Container_QList_int__at_int(_self_ : ContainerQListInt*, index : Int32) : Int32
     fun bg_Container_QList_int__push_back_int(_self_ : ContainerQListInt*, value : Int32) : Void
@@ -20423,6 +20435,84 @@ module Qt
     fun bg_Container_QList_QTableWidgetSelectionRange__at_int(_self_ : ContainerQListQTableWidgetSelectionRange*, index : Int32) : QTableWidgetSelectionRange*
     fun bg_Container_QList_QTableWidgetSelectionRange__push_back_QTableWidgetSelectionRange(_self_ : ContainerQListQTableWidgetSelectionRange*, value : QTableWidgetSelectionRange*) : Void
     fun bg_Container_QList_QTableWidgetSelectionRange__size_(_self_ : ContainerQListQTableWidgetSelectionRange*) : Int32
+  end
+  class StringListMethods
+    @unwrap : Binding::QListSpecialMethodsQString*
+    
+    def sort(cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Void
+      Binding.bg_QListSpecialMethods_QString__sort_Qt__CaseSensitivity(self, cs)
+    end
+    
+    def remove_duplicates() : Int64
+      Binding.bg_QListSpecialMethods_QString__removeDuplicates_(self)
+    end
+    
+    def join(sep : Char) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QListSpecialMethods_QString__join_QChar(self, (sep.ord)))
+    end
+    
+    def join(sep : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QListSpecialMethods_QString__join_const_QString_R(self, Qt::Converter::QString.wrap(sep)))
+    end
+    
+    def filter(str : String, cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QListSpecialMethods_QString__filter_const_QString_R_Qt__CaseSensitivity(self, Qt::Converter::QString.wrap(str), cs))
+    end
+    
+    def replace_in_strings(before : String, after : String, cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QListSpecialMethods_QString__replaceInStrings_const_QString_R_const_QString_R_Qt__CaseSensitivity(self, Qt::Converter::QString.wrap(before), Qt::Converter::QString.wrap(after), cs))
+    end
+    
+    def contains(str : String, cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Bool
+      Binding.bg_QListSpecialMethods_QString__contains_const_QString_R_Qt__CaseSensitivity(self, Qt::Converter::QString.wrap(str), cs)
+    end
+    
+    def index_of(str : String, from : Int64 = 0i64, cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Int64
+      Binding.bg_QListSpecialMethods_QString__indexOf_const_QString_R_qsizetype_Qt__CaseSensitivity(self, Qt::Converter::QString.wrap(str), from, cs)
+    end
+    
+    def last_index_of(str : String, from : Int64 = -1i64, cs : CaseSensitivity = CaseSensitivity::CaseSensitive) : Int64
+      Binding.bg_QListSpecialMethods_QString__lastIndexOf_const_QString_R_qsizetype_Qt__CaseSensitivity(self, Qt::Converter::QString.wrap(str), from, cs)
+    end
+    
+    def filter(re : RegularExpression) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QListSpecialMethods_QString__filter_const_QRegularExpression_R(self, re))
+    end
+    
+    def replace_in_strings(re : RegularExpression, after : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QListSpecialMethods_QString__replaceInStrings_const_QRegularExpression_R_const_QString_R(self, re, Qt::Converter::QString.wrap(after)))
+    end
+    
+    def index_of(re : RegularExpression, from : Int64 = 0i64) : Int64
+      Binding.bg_QListSpecialMethods_QString__indexOf_const_QRegularExpression_R_qsizetype(self, re, from)
+    end
+    
+    def last_index_of(re : RegularExpression, from : Int64 = -1i64) : Int64
+      Binding.bg_QListSpecialMethods_QString__lastIndexOf_const_QRegularExpression_R_qsizetype(self, re, from)
+    end
+    
+    def initialize(unnamed_arg_0 : StringListMethods)
+      result = Binding.bg_QListSpecialMethods_QString___COPY_const_QListSpecialMethods_QString__R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : StringListMethods) : StringListMethods
+      StringListMethods.new(unwrap: Binding.bg_QListSpecialMethods_QString___OPERATOR_assign_const_QListSpecialMethods_QString__R(self, unnamed_arg_0))
+    end
+    
+    def initialize()
+      result = Binding.bg_QListSpecialMethods_QString___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QListSpecialMethodsQString*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class SignalConnection
     @unwrap : Binding::QMetaObjectConnection*
@@ -20729,6 +20819,10 @@ module Qt
       Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QObject_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def to?(_type_ : T.class) forall T
       {% if T == Object %}
         self
@@ -20952,10 +21046,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QObject_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_destroyed(&_proc_ : Proc(Object, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QObject_CONNECT_destroyed_CrystalProc_void__QObject_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QObject*, Void).new do |arg0| _proc_.call(arg0.try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}) end)))
     end
@@ -21202,6 +21292,23 @@ module Qt
       Binding.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(self, direction)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractAnimation_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Direction : UInt32
+      Forward = 0
+      Backward = 1
+    end
+    enum State : UInt32
+      Stopped = 0
+      Paused = 1
+      Running = 2
+    end
+    enum DeletionPolicy : UInt32
+      KeepWhenStopped = 0
+      DeleteWhenStopped = 1
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -21281,23 +21388,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractAnimation_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Direction : UInt32
-      Forward = 0
-      Backward = 1
-    end
-    enum State : UInt32
-      Stopped = 0
-      Paused = 1
-      Running = 2
-    end
-    enum DeletionPolicy : UInt32
-      KeepWhenStopped = 0
-      DeleteWhenStopped = 1
     end
     def on_finished(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractAnimation_CONNECT_finished_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
@@ -21436,6 +21526,21 @@ module Qt
       Binding.bg_QEventLoop_quit_(self)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QEventLoop_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    @[Flags]
+    enum ProcessEventsFlags : UInt32
+      AllEvents = 0
+      ExcludeUserInputEvents = 1
+      ExcludeSocketNotifiers = 2
+      WaitForMoreEvents = 4
+      X11excludetimers = 8
+      EventLoopExec = 32
+      DialogExec = 64
+      ApplicationExec = 128
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -21507,21 +21612,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QEventLoop_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    @[Flags]
-    enum ProcessEventsFlags : UInt32
-      AllEvents = 0
-      ExcludeUserInputEvents = 1
-      ExcludeSocketNotifiers = 2
-      WaitForMoreEvents = 4
-      X11excludetimers = 8
-      EventLoopExec = 32
-      DialogExec = 64
-      ApplicationExec = 128
     end
   end
   abstract class AbstractEventDispatcher < Object
@@ -21749,6 +21839,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractEventDispatcher_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -21833,10 +21927,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractEventDispatcher_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_about_to_block(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractEventDispatcher_CONNECT_aboutToBlock_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -22100,7 +22190,7 @@ module Qt
       bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -22185,7 +22275,7 @@ module Qt
     end
     
     def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
     def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -22477,7 +22567,7 @@ module Qt
       bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -22601,6 +22691,28 @@ module Qt
       Binding.bg_QAbstractItemModel_persistentIndexList_(self)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractItemModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum LayoutChangeHint : UInt32
+      NoLayoutChangeHint = 0
+      VerticalSortHint = 1
+      HorizontalSortHint = 2
+    end
+    enum CheckIndexOption : Int32
+      NoOption = 0
+      IndexIsValid = 1
+      DoNotUseParent = 2
+      ParentIsInvalid = 4
+    end
+    @[Flags]
+    enum CheckIndexOptions : Int32
+      NoOption = 0
+      IndexIsValid = 1
+      DoNotUseParent = 2
+      ParentIsInvalid = 4
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -22670,7 +22782,7 @@ module Qt
       end
       
       def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
       def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -22792,28 +22904,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractItemModel_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum LayoutChangeHint : UInt32
-      NoLayoutChangeHint = 0
-      VerticalSortHint = 1
-      HorizontalSortHint = 2
-    end
-    enum CheckIndexOption : Int32
-      NoOption = 0
-      IndexIsValid = 1
-      DoNotUseParent = 2
-      ParentIsInvalid = 4
-    end
-    @[Flags]
-    enum CheckIndexOptions : Int32
-      NoOption = 0
-      IndexIsValid = 1
-      DoNotUseParent = 2
-      ParentIsInvalid = 4
     end
     def on_data_changed(_type1_ : ModelIndex.class, _type2_ : ModelIndex.class, &_proc_ : Proc(ModelIndex, ModelIndex, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_dataChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new do |arg0, arg1| _proc_.call(ModelIndex.new(unwrap: arg0), ModelIndex.new(unwrap: arg1)) end)))
@@ -23036,7 +23126,7 @@ module Qt
       bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
@@ -23159,7 +23249,7 @@ module Qt
     end
     
     def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_(self))
     end
     
     def supported_drag_actions() : DropActions
@@ -23277,7 +23367,7 @@ module Qt
       bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
@@ -23303,6 +23393,10 @@ module Qt
     )
     Binding.bg_BgInherit_QAbstractProxyModel_JUMPTABLE_BgJumptable_QAbstractProxyModel_R(result, pointerof(jump_table))
     {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractProxyModel_staticMetaObject_STATIC_GETTER_()
     end
     
     abstract def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
@@ -23474,7 +23568,7 @@ module Qt
       end
       
       def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_SUPER_(@myself))
       end
       
       def supported_drag_actions() : DropActions
@@ -23553,10 +23647,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractProxyModel_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_source_model_changed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractProxyModel_CONNECT_sourceModelChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -23683,111 +23773,6 @@ module Qt
       Event.new(unwrap: Binding.bg_QEvent_clone_(self))
     end
     
-    def to?(_type_ : T.class) forall T
-      {% if T == Event %}
-        self
-      {% elsif T == TimerEvent %}
-        Binding.bg_QEvent_CAST_TimerEvent_(self).try {|ptr| TimerEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == DynamicPropertyChangeEvent %}
-        Binding.bg_QEvent_CAST_DynamicPropertyChangeEvent_(self).try {|ptr| DynamicPropertyChangeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == InputEvent %}
-        Binding.bg_QEvent_CAST_InputEvent_(self).try {|ptr| InputEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == PointerEvent %}
-        Binding.bg_QEvent_CAST_PointerEvent_(self).try {|ptr| PointerEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == SinglePointEvent %}
-        Binding.bg_QEvent_CAST_SinglePointEvent_(self).try {|ptr| SinglePointEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == EnterEvent %}
-        Binding.bg_QEvent_CAST_EnterEvent_(self).try {|ptr| EnterEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == MouseEvent %}
-        Binding.bg_QEvent_CAST_MouseEvent_(self).try {|ptr| MouseEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == KeyEvent %}
-        Binding.bg_QEvent_CAST_KeyEvent_(self).try {|ptr| KeyEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == FocusEvent %}
-        Binding.bg_QEvent_CAST_FocusEvent_(self).try {|ptr| FocusEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == PaintEvent %}
-        Binding.bg_QEvent_CAST_PaintEvent_(self).try {|ptr| PaintEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == MoveEvent %}
-        Binding.bg_QEvent_CAST_MoveEvent_(self).try {|ptr| MoveEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ExposeEvent %}
-        Binding.bg_QEvent_CAST_ExposeEvent_(self).try {|ptr| ExposeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == PlatformSurfaceEvent %}
-        Binding.bg_QEvent_CAST_PlatformSurfaceEvent_(self).try {|ptr| PlatformSurfaceEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ResizeEvent %}
-        Binding.bg_QEvent_CAST_ResizeEvent_(self).try {|ptr| ResizeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == CloseEvent %}
-        Binding.bg_QEvent_CAST_CloseEvent_(self).try {|ptr| CloseEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == IconDragEvent %}
-        Binding.bg_QEvent_CAST_IconDragEvent_(self).try {|ptr| IconDragEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ShowEvent %}
-        Binding.bg_QEvent_CAST_ShowEvent_(self).try {|ptr| ShowEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == HideEvent %}
-        Binding.bg_QEvent_CAST_HideEvent_(self).try {|ptr| HideEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == InputMethodEvent %}
-        Binding.bg_QEvent_CAST_InputMethodEvent_(self).try {|ptr| InputMethodEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == InputMethodQueryEvent %}
-        Binding.bg_QEvent_CAST_InputMethodQueryEvent_(self).try {|ptr| InputMethodQueryEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == DropEvent %}
-        Binding.bg_QEvent_CAST_DropEvent_(self).try {|ptr| DropEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == DragMoveEvent %}
-        Binding.bg_QEvent_CAST_DragMoveEvent_(self).try {|ptr| DragMoveEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == DragEnterEvent %}
-        Binding.bg_QEvent_CAST_DragEnterEvent_(self).try {|ptr| DragEnterEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == DragLeaveEvent %}
-        Binding.bg_QEvent_CAST_DragLeaveEvent_(self).try {|ptr| DragLeaveEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == HelpEvent %}
-        Binding.bg_QEvent_CAST_HelpEvent_(self).try {|ptr| HelpEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == StatusTipEvent %}
-        Binding.bg_QEvent_CAST_StatusTipEvent_(self).try {|ptr| StatusTipEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == WhatsThisClickedEvent %}
-        Binding.bg_QEvent_CAST_WhatsThisClickedEvent_(self).try {|ptr| WhatsThisClickedEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ActionEvent %}
-        Binding.bg_QEvent_CAST_ActionEvent_(self).try {|ptr| ActionEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == FileOpenEvent %}
-        Binding.bg_QEvent_CAST_FileOpenEvent_(self).try {|ptr| FileOpenEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ToolBarChangeEvent %}
-        Binding.bg_QEvent_CAST_ToolBarChangeEvent_(self).try {|ptr| ToolBarChangeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ShortcutEvent %}
-        Binding.bg_QEvent_CAST_ShortcutEvent_(self).try {|ptr| ShortcutEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ScrollPrepareEvent %}
-        Binding.bg_QEvent_CAST_ScrollPrepareEvent_(self).try {|ptr| ScrollPrepareEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ScrollEvent %}
-        Binding.bg_QEvent_CAST_ScrollEvent_(self).try {|ptr| ScrollEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ScreenOrientationChangeEvent %}
-        Binding.bg_QEvent_CAST_ScreenOrientationChangeEvent_(self).try {|ptr| ScreenOrientationChangeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == ApplicationStateChangeEvent %}
-        Binding.bg_QEvent_CAST_ApplicationStateChangeEvent_(self).try {|ptr| ApplicationStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == GestureEvent %}
-        Binding.bg_QEvent_CAST_GestureEvent_(self).try {|ptr| GestureEvent.new(unwrap: ptr) unless ptr.null?}
-      {% elsif T == GraphicsSceneEvent %}
-        Binding.bg_QEvent_CAST_GraphicsSceneEvent_(self).try {|ptr| GraphicsSceneEvent.new(unwrap: ptr) unless ptr.null?}
-      {% else %}
-        {% raise "Can't cast #{@type} to #{T}" %}
-      {% end %}
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::QEvent*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : Event)
-      end
-      def accepted=(accepted : Bool) : Void
-        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
-      end
-      
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
-      end
-      
-    end
-    private def superclass
-      Superclass.new(self)
-    end
     def self.static_meta_object() : Binding::QMetaObject*
       Binding.bg_QEvent_staticMetaObject_STATIC_GETTER_()
     end
@@ -23981,6 +23966,111 @@ module Qt
       User = 1000
       MaxUser = 65535
     end
+    def to?(_type_ : T.class) forall T
+      {% if T == Event %}
+        self
+      {% elsif T == TimerEvent %}
+        Binding.bg_QEvent_CAST_TimerEvent_(self).try {|ptr| TimerEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == DynamicPropertyChangeEvent %}
+        Binding.bg_QEvent_CAST_DynamicPropertyChangeEvent_(self).try {|ptr| DynamicPropertyChangeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == InputEvent %}
+        Binding.bg_QEvent_CAST_InputEvent_(self).try {|ptr| InputEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == PointerEvent %}
+        Binding.bg_QEvent_CAST_PointerEvent_(self).try {|ptr| PointerEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == SinglePointEvent %}
+        Binding.bg_QEvent_CAST_SinglePointEvent_(self).try {|ptr| SinglePointEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == EnterEvent %}
+        Binding.bg_QEvent_CAST_EnterEvent_(self).try {|ptr| EnterEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == MouseEvent %}
+        Binding.bg_QEvent_CAST_MouseEvent_(self).try {|ptr| MouseEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == KeyEvent %}
+        Binding.bg_QEvent_CAST_KeyEvent_(self).try {|ptr| KeyEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == FocusEvent %}
+        Binding.bg_QEvent_CAST_FocusEvent_(self).try {|ptr| FocusEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == PaintEvent %}
+        Binding.bg_QEvent_CAST_PaintEvent_(self).try {|ptr| PaintEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == MoveEvent %}
+        Binding.bg_QEvent_CAST_MoveEvent_(self).try {|ptr| MoveEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ExposeEvent %}
+        Binding.bg_QEvent_CAST_ExposeEvent_(self).try {|ptr| ExposeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == PlatformSurfaceEvent %}
+        Binding.bg_QEvent_CAST_PlatformSurfaceEvent_(self).try {|ptr| PlatformSurfaceEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ResizeEvent %}
+        Binding.bg_QEvent_CAST_ResizeEvent_(self).try {|ptr| ResizeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == CloseEvent %}
+        Binding.bg_QEvent_CAST_CloseEvent_(self).try {|ptr| CloseEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == IconDragEvent %}
+        Binding.bg_QEvent_CAST_IconDragEvent_(self).try {|ptr| IconDragEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ShowEvent %}
+        Binding.bg_QEvent_CAST_ShowEvent_(self).try {|ptr| ShowEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == HideEvent %}
+        Binding.bg_QEvent_CAST_HideEvent_(self).try {|ptr| HideEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == InputMethodEvent %}
+        Binding.bg_QEvent_CAST_InputMethodEvent_(self).try {|ptr| InputMethodEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == InputMethodQueryEvent %}
+        Binding.bg_QEvent_CAST_InputMethodQueryEvent_(self).try {|ptr| InputMethodQueryEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == DropEvent %}
+        Binding.bg_QEvent_CAST_DropEvent_(self).try {|ptr| DropEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == DragMoveEvent %}
+        Binding.bg_QEvent_CAST_DragMoveEvent_(self).try {|ptr| DragMoveEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == DragEnterEvent %}
+        Binding.bg_QEvent_CAST_DragEnterEvent_(self).try {|ptr| DragEnterEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == DragLeaveEvent %}
+        Binding.bg_QEvent_CAST_DragLeaveEvent_(self).try {|ptr| DragLeaveEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == HelpEvent %}
+        Binding.bg_QEvent_CAST_HelpEvent_(self).try {|ptr| HelpEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == StatusTipEvent %}
+        Binding.bg_QEvent_CAST_StatusTipEvent_(self).try {|ptr| StatusTipEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == WhatsThisClickedEvent %}
+        Binding.bg_QEvent_CAST_WhatsThisClickedEvent_(self).try {|ptr| WhatsThisClickedEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ActionEvent %}
+        Binding.bg_QEvent_CAST_ActionEvent_(self).try {|ptr| ActionEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == FileOpenEvent %}
+        Binding.bg_QEvent_CAST_FileOpenEvent_(self).try {|ptr| FileOpenEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ToolBarChangeEvent %}
+        Binding.bg_QEvent_CAST_ToolBarChangeEvent_(self).try {|ptr| ToolBarChangeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ShortcutEvent %}
+        Binding.bg_QEvent_CAST_ShortcutEvent_(self).try {|ptr| ShortcutEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ScrollPrepareEvent %}
+        Binding.bg_QEvent_CAST_ScrollPrepareEvent_(self).try {|ptr| ScrollPrepareEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ScrollEvent %}
+        Binding.bg_QEvent_CAST_ScrollEvent_(self).try {|ptr| ScrollEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ScreenOrientationChangeEvent %}
+        Binding.bg_QEvent_CAST_ScreenOrientationChangeEvent_(self).try {|ptr| ScreenOrientationChangeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ApplicationStateChangeEvent %}
+        Binding.bg_QEvent_CAST_ApplicationStateChangeEvent_(self).try {|ptr| ApplicationStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == GestureEvent %}
+        Binding.bg_QEvent_CAST_GestureEvent_(self).try {|ptr| GestureEvent.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == GraphicsSceneEvent %}
+        Binding.bg_QEvent_CAST_GraphicsSceneEvent_(self).try {|ptr| GraphicsSceneEvent.new(unwrap: ptr) unless ptr.null?}
+      {% else %}
+        {% raise "Can't cast #{@type} to #{T}" %}
+      {% end %}
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QEvent*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : Event)
+      end
+      def accepted=(accepted : Bool) : Void
+        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
+      end
+      
+      def clone() : Event
+        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class TimerEvent < Event
     protected def initialize(unnamed_arg_0 : TimerEvent)
@@ -24108,6 +24198,14 @@ module Qt
       Binding.bg_QTimerEvent_matches_const_QBasicTimer_R(self, timer)
     end
     
+    private def m_id() : TimerId
+      Binding.bg_QTimerEvent_m_id_GETTER_(self)
+    end
+    
+    private def m_id=(m_id : TimerId) : Void
+      Binding.bg_QTimerEvent_m_id_SETTER_Qt__TimerId(self, m_id)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -24140,14 +24238,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_id() : TimerId
-      Binding.bg_QTimerEvent_m_id_GETTER_(self)
-    end
-    
-    private def m_id=(m_id : TimerId) : Void
-      Binding.bg_QTimerEvent_m_id_SETTER_Qt__TimerId(self, m_id)
-    end
-    
   end
   class DynamicPropertyChangeEvent < Event
     protected def initialize(unnamed_arg_0 : DynamicPropertyChangeEvent)
@@ -24344,7 +24434,7 @@ module Qt
     end
     
     def self.arguments() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QCoreApplication_arguments_STATIC_())
+      StringList.new(unwrap: Binding.bg_QCoreApplication_arguments_STATIC_())
     end
     
     def self.set_attribute(attribute : ApplicationAttribute, on : Bool = true) : Void
@@ -24477,11 +24567,11 @@ module Qt
     end
     
     def self.library_paths=(unnamed_arg_0 : Enumerable(String)) : Void
-      Binding.bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
+      Binding.bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, unnamed_arg_0).to_unsafe)
     end
     
     def self.library_paths() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QCoreApplication_libraryPaths_STATIC_())
+      StringList.new(unwrap: Binding.bg_QCoreApplication_libraryPaths_STATIC_())
     end
     
     def self.add_library_path(unnamed_arg_0 : String) : Void
@@ -24613,30 +24703,11 @@ module Qt
     {% end %}
     end
     
-    def event_filter(watched : Object, event : Event) : Bool
-      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QCoreApplication_staticMetaObject_STATIC_GETTER_()
     end
     
-    protected def timer_event(event : TimerEvent) : Void
-      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
-    end
-    
-    protected def child_event(event : Binding::QChildEvent*) : Void
-      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
-    end
-    
-    protected def custom_event(event : Event) : Void
-      Binding.bg_QObject_customEvent_QEvent_X(self, event)
-    end
-    
-    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
-    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
+    APPLICATION_FLAGS = 396033u32
     def to?(_type_ : T.class) forall T
       {% if T == CoreApplication %}
         self
@@ -24645,7 +24716,6 @@ module Qt
       {% end %}
     end
     
-    APPLICATION_FLAGS = 396033u32
     def initialize(unwrap : Binding::QCoreApplication*)
       result = unwrap
     @unwrap = result
@@ -24690,8 +24760,28 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QCoreApplication_staticMetaObject_STATIC_GETTER_()
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
     end
     
     def on_about_to_quit(&_proc_ : Proc(Void)) : SignalConnection
@@ -25217,6 +25307,35 @@ module Qt
       Binding.bg_QIODevice_setErrorString_const_QString_R(self, Qt::Converter::QString.wrap(error_string))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QIODevice_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum OpenModeFlag : UInt32
+      NotOpen = 0
+      ReadOnly = 1
+      WriteOnly = 2
+      ReadWrite = 3
+      Append = 4
+      Truncate = 8
+      Text = 16
+      Unbuffered = 32
+      NewOnly = 64
+      ExistingOnly = 128
+    end
+    @[Flags]
+    enum OpenMode : UInt32
+      NotOpen = 0
+      ReadOnly = 1
+      WriteOnly = 2
+      ReadWrite = 3
+      Append = 4
+      Truncate = 8
+      Text = 16
+      Unbuffered = 32
+      NewOnly = 64
+      ExistingOnly = 128
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -25353,35 +25472,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QIODevice_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum OpenModeFlag : UInt32
-      NotOpen = 0
-      ReadOnly = 1
-      WriteOnly = 2
-      ReadWrite = 3
-      Append = 4
-      Truncate = 8
-      Text = 16
-      Unbuffered = 32
-      NewOnly = 64
-      ExistingOnly = 128
-    end
-    @[Flags]
-    enum OpenMode : UInt32
-      NotOpen = 0
-      ReadOnly = 1
-      WriteOnly = 2
-      ReadWrite = 3
-      Append = 4
-      Truncate = 8
-      Text = 16
-      Unbuffered = 32
-      NewOnly = 64
-      ExistingOnly = 128
-    end
     def on_ready_read(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QIODevice_CONNECT_readyRead_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -25417,11 +25507,6 @@ module Qt
     
     def initialize(name : String)
       result = Binding.bg_QLocale__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(name))
-    @unwrap = result
-    end
-    
-    def initialize(name : Binding::QStringView*)
-      result = Binding.bg_QLocale__CONSTRUCT_QStringView(name)
     @unwrap = result
     end
     
@@ -25524,46 +25609,6 @@ module Qt
       Binding.bg_QLocale_toDouble_const_QString_R_bool_X(self, Qt::Converter::QString.wrap(s), ok)
     end
     
-    def to_short(s : Binding::QStringView*, ok : Bool*? = true) : Int16
-      Binding.bg_QLocale_toShort_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_u_short(s : Binding::QStringView*, ok : Bool*? = true) : UInt16
-      Binding.bg_QLocale_toUShort_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_int(s : Binding::QStringView*, ok : Bool*? = true) : Int32
-      Binding.bg_QLocale_toInt_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_u_int(s : Binding::QStringView*, ok : Bool*? = true) : UInt32
-      Binding.bg_QLocale_toUInt_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_long(s : Binding::QStringView*, ok : Bool*? = true) : LibC::Long
-      Binding.bg_QLocale_toLong_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_u_long(s : Binding::QStringView*, ok : Bool*? = true) : UInt64
-      Binding.bg_QLocale_toULong_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_long_long(s : Binding::QStringView*, ok : Bool*? = true) : Int64
-      Binding.bg_QLocale_toLongLong_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_u_long_long(s : Binding::QStringView*, ok : Bool*? = true) : UInt64
-      Binding.bg_QLocale_toULongLong_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_float(s : Binding::QStringView*, ok : Bool*? = true) : Float32
-      Binding.bg_QLocale_toFloat_QStringView_bool_X(self, s, ok)
-    end
-    
-    def to_double(s : Binding::QStringView*, ok : Bool*? = true) : Float64
-      Binding.bg_QLocale_toDouble_QStringView_bool_X(self, s, ok)
-    end
-    
     def to_string(i : Int64) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_qlonglong(self, i))
     end
@@ -25648,18 +25693,6 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_const_QDateTime_R_const_QString_R(self, date_time, Qt::Converter::QString.wrap(format)))
     end
     
-    def to_string(date : Date, format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_QDate_QStringView(self, date, format))
-    end
-    
-    def to_string(time : Time, format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_QTime_QStringView(self, time, format))
-    end
-    
-    def to_string(date_time : DateTime, format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_const_QDateTime_R_QStringView(self, date_time, format))
-    end
-    
     def to_string(date : Date, format : Locale::FormatType = Locale::FormatType::LongFormat) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_QDate_QLocale__FormatType(self, date, format))
     end
@@ -25672,20 +25705,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_const_QDateTime_R_QLocale__FormatType(self, date_time, format))
     end
     
-    def to_string(date : Date, format : Binding::QStringView*, cal : Binding::QCalendar*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_QDate_QStringView_QCalendar(self, date, format, cal))
-    end
-    
     def to_string(date : Date, format : Locale::FormatType, cal : Binding::QCalendar*) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_QDate_QLocale__FormatType_QCalendar(self, date, format, cal))
     end
     
     def to_string(date_time : DateTime, format : Locale::FormatType, cal : Binding::QCalendar*) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_const_QDateTime_R_QLocale__FormatType_QCalendar(self, date_time, format, cal))
-    end
-    
-    def to_string(date_time : DateTime, format : Binding::QStringView*, cal : Binding::QCalendar*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_toString_const_QDateTime_R_QStringView_QCalendar(self, date_time, format, cal))
     end
     
     def date_format(format : Locale::FormatType = Locale::FormatType::LongFormat) : String
@@ -25905,11 +25930,11 @@ module Qt
     end
     
     def ui_languages() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QLocale_uiLanguages_(self))
+      StringList.new(unwrap: Binding.bg_QLocale_uiLanguages_(self))
     end
     
     def ui_languages(separator : Locale::TagSeparator) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QLocale_uiLanguages_QLocale__TagSeparator(self, separator))
+      StringList.new(unwrap: Binding.bg_QLocale_uiLanguages_QLocale__TagSeparator(self, separator))
     end
     
     def self.language_to_code(language : Locale::Language) : String
@@ -25920,28 +25945,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_languageToCode_STATIC_QLocale__Language_QLocale__LanguageCodeTypes(language, code_types))
     end
     
-    def self.code_to_language(language_code : Binding::QStringView*) : Locale::Language
-      Binding.bg_QLocale_codeToLanguage_STATIC_QStringView(language_code)
-    end
-    
-    def self.code_to_language(language_code : Binding::QStringView*, code_types : Locale::LanguageCodeTypes) : Locale::Language
-      Binding.bg_QLocale_codeToLanguage_STATIC_QStringView_QLocale__LanguageCodeTypes(language_code, code_types)
-    end
-    
     def self.territory_to_code(territory : Locale::Territory) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_territoryToCode_STATIC_QLocale__Territory(territory))
     end
     
-    def self.code_to_territory(territory_code : Binding::QStringView*) : Locale::Territory
-      Binding.bg_QLocale_codeToTerritory_STATIC_QStringView(territory_code)
-    end
-    
     def self.script_to_code(script : Locale::Script) : String
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_scriptToCode_STATIC_QLocale__Script(script))
-    end
-    
-    def self.code_to_script(script_code : Binding::QStringView*) : Locale::Script
-      Binding.bg_QLocale_codeToScript_STATIC_QStringView(script_code)
     end
     
     def self.language_to_string(language : Locale::Language) : String
@@ -25984,12 +25993,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_quoteString_const_QString_R_QLocale__QuotationStyle(self, Qt::Converter::QString.wrap(str), style))
     end
     
-    def quote_string(str : Binding::QStringView*, style : Locale::QuotationStyle = Locale::QuotationStyle::StandardQuotation) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_quoteString_QStringView_QLocale__QuotationStyle(self, str, style))
-    end
-    
     def create_separated_list(strl : Enumerable(String)) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_createSeparatedList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, strl).to_unsafe))
+      Qt::Converter::QString.unwrap(Binding.bg_QLocale_createSeparatedList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, strl).to_unsafe))
     end
     
     def ==(rhs : Locale) : Bool
@@ -27018,14 +27023,6 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QDate_toString_const_QString_R_QCalendar(self, Qt::Converter::QString.wrap(format), cal))
     end
     
-    def to_string(format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QDate_toString_QStringView(self, format))
-    end
-    
-    def to_string(format : Binding::QStringView*, cal : Binding::QCalendar*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QDate_toString_QStringView_QCalendar(self, format, cal))
-    end
-    
     def set_date(year : Int32, month : Int32, day : Int32) : Bool
       Binding.bg_QDate_setDate_int_int_int(self, year, month, day)
     end
@@ -27066,40 +27063,12 @@ module Qt
       Date.new(unwrap: Binding.bg_QDate_currentDate_STATIC_())
     end
     
-    def self.from_string(string : Binding::QStringView*, format : DateFormat = DateFormat::TextDate) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_QStringView_Qt__DateFormat(string, format))
-    end
-    
     def self.from_string(string : String, format : DateFormat = DateFormat::TextDate) : Date
       Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_const_QString_R_Qt__DateFormat(Qt::Converter::QString.wrap(string), format))
     end
     
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, cal : Binding::QCalendar*) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_QStringView_QStringView_QCalendar(string, format, cal))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, cal : Binding::QCalendar*) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_const_QString_R_QStringView_QCalendar(Qt::Converter::QString.wrap(string), format, cal))
-    end
-    
     def self.from_string(string : String, format : String, cal : Binding::QCalendar*) : Date
       Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(Qt::Converter::QString.wrap(string), Qt::Converter::QString.wrap(format), cal))
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, base_year : Int32 = 1900) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_QStringView_QStringView_int(string, format, base_year))
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, base_year : Int32, cal : Binding::QCalendar*) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_QStringView_QStringView_int_QCalendar(string, format, base_year, cal))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, base_year : Int32 = 1900) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_const_QString_R_QStringView_int(Qt::Converter::QString.wrap(string), format, base_year))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, base_year : Int32, cal : Binding::QCalendar*) : Date
-      Date.new(unwrap: Binding.bg_QDate_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(Qt::Converter::QString.wrap(string), format, base_year, cal))
     end
     
     def self.from_string(string : String, format : String, base_year : Int32 = 1900) : Date
@@ -27229,10 +27198,6 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QTime_toString_const_QString_R(self, Qt::Converter::QString.wrap(format)))
     end
     
-    def to_string(format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QTime_toString_QStringView(self, format))
-    end
-    
     def set_hms(h : Int32, m : Int32, s : Int32, ms : Int32 = 0) : Bool
       Binding.bg_QTime_setHMS_int_int_int_int(self, h, m, s, ms)
     end
@@ -27263,18 +27228,6 @@ module Qt
     
     def self.current_time() : Time
       Time.new(unwrap: Binding.bg_QTime_currentTime_STATIC_())
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : DateFormat = DateFormat::TextDate) : Time
-      Time.new(unwrap: Binding.bg_QTime_fromString_STATIC_QStringView_Qt__DateFormat(string, format))
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*) : Time
-      Time.new(unwrap: Binding.bg_QTime_fromString_STATIC_QStringView_QStringView(string, format))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*) : Time
-      Time.new(unwrap: Binding.bg_QTime_fromString_STATIC_const_QString_R_QStringView(Qt::Converter::QString.wrap(string), format))
     end
     
     def self.from_string(string : String, format : DateFormat = DateFormat::TextDate) : Time
@@ -27465,14 +27418,6 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QDateTime_toString_const_QString_R_QCalendar(self, Qt::Converter::QString.wrap(format), cal))
     end
     
-    def to_string(format : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QDateTime_toString_QStringView(self, format))
-    end
-    
-    def to_string(format : Binding::QStringView*, cal : Binding::QCalendar*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QDateTime_toString_QStringView_QCalendar(self, format, cal))
-    end
-    
     def add_days(days : Int64) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_addDays_qint64(self, days))
     end
@@ -27537,40 +27482,12 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QDateTime_currentDateTimeUtc_STATIC_())
     end
     
-    def self.from_string(string : Binding::QStringView*, format : DateFormat = DateFormat::TextDate) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_QStringView_Qt__DateFormat(string, format))
-    end
-    
     def self.from_string(string : String, format : DateFormat = DateFormat::TextDate) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_Qt__DateFormat(Qt::Converter::QString.wrap(string), format))
     end
     
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, cal : Binding::QCalendar*) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_QStringView_QStringView_QCalendar(string, format, cal))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, cal : Binding::QCalendar*) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_QCalendar(Qt::Converter::QString.wrap(string), format, cal))
-    end
-    
     def self.from_string(string : String, format : String, cal : Binding::QCalendar*) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(Qt::Converter::QString.wrap(string), Qt::Converter::QString.wrap(format), cal))
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, base_year : Int32 = 1900) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_QStringView_QStringView_int(string, format, base_year))
-    end
-    
-    def self.from_string(string : Binding::QStringView*, format : Binding::QStringView*, base_year : Int32, cal : Binding::QCalendar*) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_QStringView_QStringView_int_QCalendar(string, format, base_year, cal))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, base_year : Int32 = 1900) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int(Qt::Converter::QString.wrap(string), format, base_year))
-    end
-    
-    def self.from_string(string : String, format : Binding::QStringView*, base_year : Int32, cal : Binding::QCalendar*) : DateTime
-      DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_QStringView_int_QCalendar(Qt::Converter::QString.wrap(string), format, base_year, cal))
     end
     
     def self.from_string(string : String, format : String, base_year : Int32 = 1900) : DateTime
@@ -27708,7 +27625,7 @@ module Qt
     end
     
     def named_capture_groups() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QRegularExpression_namedCaptureGroups_(self))
+      StringList.new(unwrap: Binding.bg_QRegularExpression_namedCaptureGroups_(self))
     end
     
     def match(subject : String, offset : Int64 = 0i64, match_type : RegularExpression::MatchType = RegularExpression::MatchType::NormalMatch) : RegularExpressionMatch
@@ -27719,28 +27636,12 @@ module Qt
       RegularExpressionMatch.new(unwrap: Binding.bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(self, Qt::Converter::QString.wrap(subject), offset, match_type, match_options))
     end
     
-    def match_view(subject_view : Binding::QStringView*, offset : Int64 = 0i64, match_type : RegularExpression::MatchType = RegularExpression::MatchType::NormalMatch) : RegularExpressionMatch
-      RegularExpressionMatch.new(unwrap: Binding.bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType(self, subject_view, offset, match_type))
-    end
-    
-    def match_view(subject_view : Binding::QStringView*, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : RegularExpressionMatch
-      RegularExpressionMatch.new(unwrap: Binding.bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(self, subject_view, offset, match_type, match_options))
-    end
-    
     def global_match(subject : String, offset : Int64 = 0i64, match_type : RegularExpression::MatchType = RegularExpression::MatchType::NormalMatch) : Binding::QRegularExpressionMatchIterator*
       Binding.bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType(self, Qt::Converter::QString.wrap(subject), offset, match_type)
     end
     
     def global_match(subject : String, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : Binding::QRegularExpressionMatchIterator*
       Binding.bg_QRegularExpression_globalMatch_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(self, Qt::Converter::QString.wrap(subject), offset, match_type, match_options)
-    end
-    
-    def global_match_view(subject_view : Binding::QStringView*, offset : Int64 = 0i64, match_type : RegularExpression::MatchType = RegularExpression::MatchType::NormalMatch) : Binding::QRegularExpressionMatchIterator*
-      Binding.bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType(self, subject_view, offset, match_type)
-    end
-    
-    def global_match_view(subject_view : Binding::QStringView*, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : Binding::QRegularExpressionMatchIterator*
-      Binding.bg_QRegularExpression_globalMatchView_QStringView_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(self, subject_view, offset, match_type, match_options)
     end
     
     def optimize() : Void
@@ -27761,30 +27662,6 @@ module Qt
     
     def self.anchored_pattern(expression : String) : String
       Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_anchoredPattern_STATIC_const_QString_R(Qt::Converter::QString.wrap(expression)))
-    end
-    
-    def self.escape(str : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_escape_STATIC_QStringView(str))
-    end
-    
-    def self.wildcard_to_regular_expression(str : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView(str))
-    end
-    
-    def self.wildcard_to_regular_expression(str : Binding::QStringView*, options : RegularExpression::WildcardConversionOptions) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_wildcardToRegularExpression_STATIC_QStringView_QRegularExpression__WildcardConversionOptions(str, options))
-    end
-    
-    def self.anchored_pattern(expression : Binding::QStringView*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_anchoredPattern_STATIC_QStringView(expression))
-    end
-    
-    def self.from_wildcard(pattern : Binding::QStringView*, cs : CaseSensitivity = CaseSensitivity::CaseInsensitive) : RegularExpression
-      RegularExpression.new(unwrap: Binding.bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity(pattern, cs))
-    end
-    
-    def self.from_wildcard(pattern : Binding::QStringView*, cs : CaseSensitivity, options : RegularExpression::WildcardConversionOptions) : RegularExpression
-      RegularExpression.new(unwrap: Binding.bg_QRegularExpression_fromWildcard_STATIC_QStringView_Qt__CaseSensitivity_QRegularExpression__WildcardConversionOptions(pattern, cs, options))
     end
     
     def ==(rhs : RegularExpression) : Bool
@@ -27895,20 +27772,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QRegularExpressionMatch_captured_int(self, nth))
     end
     
-    def captured_view(nth : Int32 = 0) : Binding::QStringView*
-      Binding.bg_QRegularExpressionMatch_capturedView_int(self, nth)
-    end
-    
     def captured(name : String) : String
       Qt::Converter::QString.unwrap(Binding.bg_QRegularExpressionMatch_captured_QAnyStringView(self, Qt::Converter::QString.wrap(name)))
     end
     
-    def captured_view(name : String) : Binding::QStringView*
-      Binding.bg_QRegularExpressionMatch_capturedView_QAnyStringView(self, Qt::Converter::QString.wrap(name))
-    end
-    
     def captured_texts() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QRegularExpressionMatch_capturedTexts_(self))
+      StringList.new(unwrap: Binding.bg_QRegularExpressionMatch_capturedTexts_(self))
     end
     
     def captured_start(nth : Int32 = 0) : Int64
@@ -28247,23 +28116,23 @@ module Qt
     end
     
     def self.idn_whitelist() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_idnWhitelist_STATIC_())
+      StringList.new(unwrap: Binding.bg_QUrl_idnWhitelist_STATIC_())
     end
     
     def self.to_string_list(uris : Enumerable(Url)) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe))
+      StringList.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe))
     end
     
     def self.to_string_list(uris : Enumerable(Url), options : Url::FormattingOptions) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe, options))
+      StringList.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe, options))
     end
     
     def self.from_string_list(uris : Enumerable(String), mode : Url::ParsingMode = Url::ParsingMode::TolerantMode) : Enumerable(Url)
-      Container_QList_QUrl_.new(unwrap: Binding.bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(BindgenHelper.wrap_container(Container_QList_QString_, uris).to_unsafe, mode))
+      Container_QList_QUrl_.new(unwrap: Binding.bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(BindgenHelper.wrap_container(StringList, uris).to_unsafe, mode))
     end
     
     def self.idn_whitelist=(unnamed_arg_0 : Enumerable(String)) : Void
-      Binding.bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
+      Binding.bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, unnamed_arg_0).to_unsafe)
     end
     
     def ==(rhs : Url) : Bool
@@ -28514,6 +28383,10 @@ module Qt
       Binding.bg_QTimer_timerEvent_QTimerEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTimer_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -28586,10 +28459,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTimer_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_timeout(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTimer_CONNECT_timeout_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -28653,7 +28522,7 @@ module Qt
     end
     
     def self.set_search_paths(prefix : String, search_paths : Enumerable(String)) : Void
-      Binding.bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(prefix), BindgenHelper.wrap_container(Container_QList_QString_, search_paths).to_unsafe)
+      Binding.bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(prefix), BindgenHelper.wrap_container(StringList, search_paths).to_unsafe)
     end
     
     def self.add_search_path(prefix : String, path : String) : Void
@@ -28661,7 +28530,7 @@ module Qt
     end
     
     def self.search_paths(prefix : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_searchPaths_STATIC_const_QString_R(Qt::Converter::QString.wrap(prefix)))
+      StringList.new(unwrap: Binding.bg_QDir_searchPaths_STATIC_const_QString_R(Qt::Converter::QString.wrap(prefix)))
     end
     
     def dir_name() : String
@@ -28697,11 +28566,11 @@ module Qt
     end
     
     def name_filters() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_nameFilters_(self))
+      StringList.new(unwrap: Binding.bg_QDir_nameFilters_(self))
     end
     
     def name_filters=(name_filters : Enumerable(String)) : Void
-      Binding.bg_QDir_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe)
+      Binding.bg_QDir_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe)
     end
     
     def filter() : Dir::Filters
@@ -28737,31 +28606,31 @@ module Qt
     end
     
     def self.name_filters_from_string(name_filter : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_nameFiltersFromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(name_filter)))
+      StringList.new(unwrap: Binding.bg_QDir_nameFiltersFromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(name_filter)))
     end
     
     def entry_list() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_(self))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_(self))
     end
     
     def entry_list(filters : Dir::Filters) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters(self, filters))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters(self, filters))
     end
     
     def entry_list(filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters_QDir__SortFlags(self, filters, sort))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters_QDir__SortFlags(self, filters, sort))
     end
     
     def entry_list(name_filters : Enumerable(String)) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe))
     end
     
     def entry_list(name_filters : Enumerable(String), filters : Dir::Filters) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters))
     end
     
     def entry_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters, sort))
+      StringList.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, sort))
     end
     
     def entry_info_list() : Binding::QFileInfoList*
@@ -28777,15 +28646,15 @@ module Qt
     end
     
     def entry_info_list(name_filters : Enumerable(String)) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe)
+      Binding.bg_QDir_entryInfoList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe)
     end
     
     def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters)
+      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters)
     end
     
     def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters, sort)
+      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, sort)
     end
     
     def mkdir(dir_name : String) : Bool
@@ -28901,7 +28770,7 @@ module Qt
     end
     
     def self.match(filters : Enumerable(String), file_name : String) : Bool
-      Binding.bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe, Qt::Converter::QString.wrap(file_name))
+      Binding.bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(BindgenHelper.wrap_container(StringList, filters).to_unsafe, Qt::Converter::QString.wrap(file_name))
     end
     
     def self.match(filter : String, file_name : String) : Bool
@@ -29832,7 +29701,7 @@ module Qt
       bg_QMimeData_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QMimeData_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QMimeData_hasFormat_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_hasFormat_const_QString_R") %} Proc(Binding::CrystalString, Bool).new{|mimetype| self.has_format(Qt::Converter::QString.unwrap(mimetype)) } {% else %} nil {% end %}),
-      bg_QMimeData_formats_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_formats_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.formats()).to_unsafe } {% else %} nil {% end %}),
+      bg_QMimeData_formats_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_formats_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.formats()).to_unsafe } {% else %} nil {% end %}),
       bg_QMimeData_retrieveData_const_QString_R_QMetaType: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_retrieveData_const_QString_R_QMetaType") %} Proc(Binding::CrystalString, Binding::QMetaType*, Binding::CrystalVariant).new{|mimetype, preferred_type| (self.retrieve_data(Qt::Converter::QString.unwrap(mimetype), preferred_type).to_unsafe) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -29923,7 +29792,7 @@ module Qt
     end
     
     def formats() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QMimeData_formats_(self))
+      StringList.new(unwrap: Binding.bg_QMimeData_formats_(self))
     end
     
     def clear() : Void
@@ -29932,6 +29801,10 @@ module Qt
     
     protected def retrieve_data(mimetype : String, preferred_type : Binding::QMetaType*) : Variant
       Qt::Variant.new(Binding.bg_QMimeData_retrieveData_const_QString_R_QMetaType(self, Qt::Converter::QString.wrap(mimetype), preferred_type))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMimeData_staticMetaObject_STATIC_GETTER_()
     end
     
     def event(event : Event) : Bool
@@ -29983,7 +29856,7 @@ module Qt
       end
       
       def formats() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QMimeData_formats_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QMimeData_formats_SUPER_(@myself))
       end
       
       protected def retrieve_data(mimetype : String, preferred_type : Binding::QMetaType*) : Variant
@@ -30022,10 +29895,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QMimeData_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class Process < IODevice
     def meta_object() : Binding::QMetaObject*
@@ -30144,11 +30013,11 @@ module Qt
     end
     
     def start(program : String, arguments : Enumerable(String)) : Void
-      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
+      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
     end
     
     def start(program : String, arguments : Enumerable(String), mode : IODevice::OpenMode) : Void
-      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, mode)
+      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe, mode)
     end
     
     def start() : Void
@@ -30188,11 +30057,11 @@ module Qt
     end
     
     def arguments() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_arguments_(self))
+      StringList.new(unwrap: Binding.bg_QProcess_arguments_(self))
     end
     
     def arguments=(arguments : Enumerable(String)) : Void
-      Binding.bg_QProcess_setArguments_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
+      Binding.bg_QProcess_setArguments_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
     end
     
     def process_channel_mode() : Process::ProcessChannelMode
@@ -30268,11 +30137,11 @@ module Qt
     end
     
     def environment=(environment : Enumerable(String)) : Void
-      Binding.bg_QProcess_setEnvironment_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, environment).to_unsafe)
+      Binding.bg_QProcess_setEnvironment_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, environment).to_unsafe)
     end
     
     def environment() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_environment_(self))
+      StringList.new(unwrap: Binding.bg_QProcess_environment_(self))
     end
     
     def process_environment=(environment : Binding::QProcessEnvironment*) : Void
@@ -30344,7 +30213,7 @@ module Qt
     end
     
     def self.execute(program : String, arguments : Enumerable(String)) : Int32
-      Binding.bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
+      Binding.bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
     end
     
     def self.start_detached(program : String) : Bool
@@ -30352,27 +30221,23 @@ module Qt
     end
     
     def self.start_detached(program : String, arguments : Enumerable(String)) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe)
     end
     
     def self.start_detached(program : String, arguments : Enumerable(String), working_directory : String) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory))
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory))
     end
     
     def self.start_detached(program : String, arguments : Enumerable(String), working_directory : String, pid : Int64*? = nil) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory), pid)
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(StringList, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory), pid)
     end
     
     def self.system_environment() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_systemEnvironment_STATIC_())
+      StringList.new(unwrap: Binding.bg_QProcess_systemEnvironment_STATIC_())
     end
     
     def self.null_device() : String
       Qt::Converter::QString.unwrap(Binding.bg_QProcess_nullDevice_STATIC_())
-    end
-    
-    def self.split_command(command : Binding::QStringView*) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_splitCommand_STATIC_QStringView(command))
     end
     
     def terminate() : Void
@@ -30403,6 +30268,53 @@ module Qt
       Binding.bg_QProcess_writeData_const_char_X_qint64(self, data, len)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QProcess_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ProcessError : UInt32
+      FailedToStart = 0
+      Crashed = 1
+      Timedout = 2
+      ReadError = 3
+      WriteError = 4
+      UnknownError = 5
+    end
+    enum ProcessState : UInt32
+      NotRunning = 0
+      Starting = 1
+      Running = 2
+    end
+    enum ProcessChannel : UInt32
+      StandardOutput = 0
+      StandardError = 1
+    end
+    enum ProcessChannelMode : UInt32
+      SeparateChannels = 0
+      MergedChannels = 1
+      ForwardedChannels = 2
+      ForwardedOutputChannel = 3
+      ForwardedErrorChannel = 4
+    end
+    enum InputChannelMode : UInt32
+      ManagedInputChannel = 0
+      ForwardedInputChannel = 1
+    end
+    enum ExitStatus : UInt32
+      NormalExit = 0
+      CrashExit = 1
+    end
+    @[Flags]
+    enum UnixProcessFlags : UInt32
+      ResetSignalHandlers = 1
+      IgnoreSigPipe = 2
+      CloseFileDescriptors = 16
+      UseVFork = 32
+      CreateNewSession = 64
+      DisconnectControllingTerminal = 128
+      ResetIds = 256
+      DisableCoreDumps = 512
+    end
     def pos() : Int64
       Binding.bg_QIODevice_pos_(self)
     end
@@ -30582,53 +30494,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QProcess_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ProcessError : UInt32
-      FailedToStart = 0
-      Crashed = 1
-      Timedout = 2
-      ReadError = 3
-      WriteError = 4
-      UnknownError = 5
-    end
-    enum ProcessState : UInt32
-      NotRunning = 0
-      Starting = 1
-      Running = 2
-    end
-    enum ProcessChannel : UInt32
-      StandardOutput = 0
-      StandardError = 1
-    end
-    enum ProcessChannelMode : UInt32
-      SeparateChannels = 0
-      MergedChannels = 1
-      ForwardedChannels = 2
-      ForwardedOutputChannel = 3
-      ForwardedErrorChannel = 4
-    end
-    enum InputChannelMode : UInt32
-      ManagedInputChannel = 0
-      ForwardedInputChannel = 1
-    end
-    enum ExitStatus : UInt32
-      NormalExit = 0
-      CrashExit = 1
-    end
-    @[Flags]
-    enum UnixProcessFlags : UInt32
-      ResetSignalHandlers = 1
-      IgnoreSigPipe = 2
-      CloseFileDescriptors = 16
-      UseVFork = 32
-      CreateNewSession = 64
-      DisconnectControllingTerminal = 128
-      ResetIds = 256
-      DisableCoreDumps = 512
     end
     def on_started(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QProcess_CONNECT_started_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
@@ -30874,6 +30739,10 @@ module Qt
       Qt::Variant.new(Binding.bg_QVariantAnimation_interpolated_const_QVariant_R_const_QVariant_R_qreal(self, (from.to_unsafe), (to.to_unsafe), progress))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QVariantAnimation_staticMetaObject_STATIC_GETTER_()
+    end
+    
     protected def update_direction(direction : AbstractAnimation::Direction) : Void
       Binding.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(self, direction)
     end
@@ -30974,10 +30843,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QVariantAnimation_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_value_changed(&_proc_ : Proc(Variant, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QVariantAnimation_CONNECT_valueChanged_CrystalProc_void__const_QVariant_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalVariant, Void).new do |arg0| _proc_.call(Qt::Variant.new(arg0)) end)))
     end
@@ -31162,6 +31027,10 @@ module Qt
       Binding.bg_QPropertyAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QPropertyAnimation_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def duration() : Int32
       Binding.bg_QVariantAnimation_duration_(self)
     end
@@ -31274,10 +31143,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QPropertyAnimation_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   struct Size
     @unwrap : Binding::QSize
@@ -32991,15 +32856,15 @@ module Qt
     end
     
     def all_keys() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_allKeys_(self))
+      StringList.new(unwrap: Binding.bg_QSettings_allKeys_(self))
     end
     
     def child_keys() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_childKeys_(self))
+      StringList.new(unwrap: Binding.bg_QSettings_childKeys_(self))
     end
     
     def child_groups() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_childGroups_(self))
+      StringList.new(unwrap: Binding.bg_QSettings_childGroups_(self))
     end
     
     def writable?() : Bool
@@ -33070,6 +32935,40 @@ module Qt
       Binding.bg_QSettings_event_QEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSettings_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Status : UInt32
+      NoError = 0
+      AccessError = 1
+      FormatError = 2
+    end
+    enum Format : UInt32
+      NativeFormat = 0
+      IniFormat = 1
+      InvalidFormat = 16
+      CustomFormat1 = 17
+      CustomFormat2 = 18
+      CustomFormat3 = 19
+      CustomFormat4 = 20
+      CustomFormat5 = 21
+      CustomFormat6 = 22
+      CustomFormat7 = 23
+      CustomFormat8 = 24
+      CustomFormat9 = 25
+      CustomFormat10 = 26
+      CustomFormat11 = 27
+      CustomFormat12 = 28
+      CustomFormat13 = 29
+      CustomFormat14 = 30
+      CustomFormat15 = 31
+      CustomFormat16 = 32
+    end
+    enum Scope : UInt32
+      UserScope = 0
+      SystemScope = 1
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -33141,40 +33040,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSettings_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Status : UInt32
-      NoError = 0
-      AccessError = 1
-      FormatError = 2
-    end
-    enum Format : UInt32
-      NativeFormat = 0
-      IniFormat = 1
-      InvalidFormat = 16
-      CustomFormat1 = 17
-      CustomFormat2 = 18
-      CustomFormat3 = 19
-      CustomFormat4 = 20
-      CustomFormat5 = 21
-      CustomFormat6 = 22
-      CustomFormat7 = 23
-      CustomFormat8 = 24
-      CustomFormat9 = 25
-      CustomFormat10 = 26
-      CustomFormat11 = 27
-      CustomFormat12 = 28
-      CustomFormat13 = 29
-      CustomFormat14 = 30
-      CustomFormat15 = 31
-      CustomFormat16 = 32
-    end
-    enum Scope : UInt32
-      UserScope = 0
-      SystemScope = 1
     end
   end
   class SocketNotifier < Object
@@ -33332,6 +33197,15 @@ module Qt
       Binding.bg_QSocketNotifier_event_QEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSocketNotifier_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Type : UInt32
+      Read = 0
+      Write = 1
+      Exception = 2
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -33403,15 +33277,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSocketNotifier_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Type : UInt32
-      Read = 0
-      Write = 1
-      Exception = 2
     end
     def on_activated(&_proc_ : Proc(Binding::QSocketDescriptor, SocketNotifier::Type, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QSocketNotifier_CONNECT_activated_CrystalProc_void__QSocketDescriptor__QSocketNotifier__Type_(self, BindgenHelper.wrap_proc(Proc(Binding::QSocketDescriptor*, SocketNotifier::Type, Void).new do |arg0, arg1| _proc_.call(arg0, arg1) end)))
@@ -33573,7 +33438,7 @@ module Qt
       bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
@@ -33873,7 +33738,7 @@ module Qt
     end
     
     def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_(self))
     end
     
     def supported_drop_actions() : DropActions
@@ -33912,6 +33777,16 @@ module Qt
       Binding.bg_QSortFilterProxyModel_autoAcceptChildRowsChanged_bool(self, auto_accept_child_rows)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSortFilterProxyModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    @[Flags]
+    enum Directions : Int32
+      Rows = 1
+      Columns = 2
+      Both = 3
+    end
     def submit() : Bool
       Binding.bg_QAbstractProxyModel_submit_(self)
     end
@@ -34117,7 +33992,7 @@ module Qt
       end
       
       def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_SUPER_(@myself))
       end
       
       def supported_drop_actions() : DropActions
@@ -34192,16 +34067,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSortFilterProxyModel_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    @[Flags]
-    enum Directions : Int32
-      Rows = 1
-      Columns = 2
-      Both = 3
-    end
     def on_dynamic_sort_filter_changed(&_proc_ : Proc(Bool, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QSortFilterProxyModel_CONNECT_dynamicSortFilterChanged_CrystalProc_void__bool_(self, BindgenHelper.wrap_proc(Proc(Bool, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -34243,7 +34108,7 @@ module Qt
     end
     
     def self.standard_locations(type : StandardPaths::StandardLocation) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type))
+      StringList.new(unwrap: Binding.bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type))
     end
     
     def self.locate(type : StandardPaths::StandardLocation, file_name : String) : String
@@ -34255,11 +34120,11 @@ module Qt
     end
     
     def self.locate_all(type : StandardPaths::StandardLocation, file_name : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type, Qt::Converter::QString.wrap(file_name)))
+      StringList.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type, Qt::Converter::QString.wrap(file_name)))
     end
     
     def self.locate_all(type : StandardPaths::StandardLocation, file_name : String, options : StandardPaths::LocateOptions) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type, Qt::Converter::QString.wrap(file_name), options))
+      StringList.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type, Qt::Converter::QString.wrap(file_name), options))
     end
     
     def self.display_name(type : StandardPaths::StandardLocation) : String
@@ -34271,7 +34136,7 @@ module Qt
     end
     
     def self.find_executable(executable_name : String, paths : Enumerable(String)) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(executable_name), BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe))
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(executable_name), BindgenHelper.wrap_container(StringList, paths).to_unsafe))
     end
     
     def self.test_mode_enabled=(test_mode : Bool) : Void
@@ -34457,6 +34322,30 @@ module Qt
       Binding.bg_QPaintDevice_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_QPaintDevice__PaintDeviceMetric(self, metric_a, metric_b)
     end
     
+    private def painters() : UInt16
+      Binding.bg_QPaintDevice_painters_GETTER_(self)
+    end
+    
+    private def painters=(painters : UInt16) : Void
+      Binding.bg_QPaintDevice_painters_SETTER_ushort(self, painters)
+    end
+    
+    enum PaintDeviceMetric : UInt32
+      PdmWidth = 1
+      PdmHeight = 2
+      PdmWidthMM = 3
+      PdmHeightMM = 4
+      PdmNumColors = 5
+      PdmDepth = 6
+      PdmDpiX = 7
+      PdmDpiY = 8
+      PdmPhysicalDpiX = 9
+      PdmPhysicalDpiY = 10
+      PdmDevicePixelRatio = 11
+      PdmDevicePixelRatioScaled = 12
+      PdmDevicePixelRatioF_EncodedA = 13
+      PdmDevicePixelRatioF_EncodedB = 14
+    end
     def to?(_type_ : T.class) forall T
       {% if T == PaintDevice %}
         self
@@ -34593,30 +34482,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def painters() : UInt16
-      Binding.bg_QPaintDevice_painters_GETTER_(self)
-    end
-    
-    private def painters=(painters : UInt16) : Void
-      Binding.bg_QPaintDevice_painters_SETTER_ushort(self, painters)
-    end
-    
-    enum PaintDeviceMetric : UInt32
-      PdmWidth = 1
-      PdmHeight = 2
-      PdmWidthMM = 3
-      PdmHeightMM = 4
-      PdmNumColors = 5
-      PdmDepth = 6
-      PdmDpiX = 7
-      PdmDpiY = 8
-      PdmPhysicalDpiX = 9
-      PdmPhysicalDpiY = 10
-      PdmDevicePixelRatio = 11
-      PdmDevicePixelRatioScaled = 12
-      PdmDevicePixelRatioF_EncodedA = 13
-      PdmDevicePixelRatioF_EncodedB = 14
-    end
   end
   class Color
     @unwrap : Binding::QColor*
@@ -34651,18 +34516,8 @@ module Qt
     @unwrap = result
     end
     
-    def initialize(name : Binding::QStringView*)
-      result = Binding.bg_QColor__CONSTRUCT_QStringView(name)
-    @unwrap = result
-    end
-    
     def initialize(aname : UInt8*)
       result = Binding.bg_QColor__CONSTRUCT_const_char_X(aname)
-    @unwrap = result
-    end
-    
-    def initialize(name : Binding::QLatin1StringView*)
-      result = Binding.bg_QColor__CONSTRUCT_QLatin1StringView(name)
     @unwrap = result
     end
     
@@ -34688,7 +34543,7 @@ module Qt
     end
     
     def self.color_names() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QColor_colorNames_STATIC_())
+      StringList.new(unwrap: Binding.bg_QColor_colorNames_STATIC_())
     end
     
     def spec() : Color::Spec
@@ -35261,215 +35116,6 @@ module Qt
     end
     
   end
-  class Polygon
-    @unwrap : Binding::QPolygon*
-    
-    def initialize()
-      result = Binding.bg_QPolygon__CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def initialize(v : Enumerable(Point))
-      result = Binding.bg_QPolygon__CONSTRUCT_const_QList_QPoint__R(BindgenHelper.wrap_container(Container_QList_QPoint_, v).to_unsafe)
-    @unwrap = result
-    end
-    
-    def initialize(r : Rect, closed : Bool = false)
-      result = Binding.bg_QPolygon__CONSTRUCT_const_QRect_R_bool(r, closed)
-    @unwrap = result
-    end
-    
-    def initialize(n_points : Int32, points : Int32*)
-      result = Binding.bg_QPolygon__CONSTRUCT_int_const_int_X(n_points, points)
-    @unwrap = result
-    end
-    
-    def swap(other : Polygon) : Void
-      Binding.bg_QPolygon_swap_QPolygon_R(self, other)
-    end
-    
-    def to_q_variant() : Variant
-      Qt::Variant.new(Binding.bg_QPolygon__CONVERT_QVariant_(self))
-    end
-    
-    def translate(dx : Int32, dy : Int32) : Void
-      Binding.bg_QPolygon_translate_int_int(self, dx, dy)
-    end
-    
-    def translate(offset : Point) : Void
-      Binding.bg_QPolygon_translate_const_QPoint_R(self, offset)
-    end
-    
-    def translated(dx : Int32, dy : Int32) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon_translated_int_int(self, dx, dy))
-    end
-    
-    def translated(offset : Point) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon_translated_const_QPoint_R(self, offset))
-    end
-    
-    def bounding_rect() : Rect
-      Rect.new(unwrap: Binding.bg_QPolygon_boundingRect_(self))
-    end
-    
-    def point(i : Int32, x : Int32*, y : Int32*) : Void
-      Binding.bg_QPolygon_point_int_int_X_int_X(self, i, x, y)
-    end
-    
-    def point(i : Int32) : Point
-      Point.new(unwrap: Binding.bg_QPolygon_point_int(self, i))
-    end
-    
-    def set_point(index : Int32, x : Int32, y : Int32) : Void
-      Binding.bg_QPolygon_setPoint_int_int_int(self, index, x, y)
-    end
-    
-    # ***************************************************************************
-    # Misc. QPolygon functions
-    # ***************************************************************************
-    def set_point(index : Int32, p : Point) : Void
-      Binding.bg_QPolygon_setPoint_int_const_QPoint_R(self, index, p)
-    end
-    
-    def contains_point(pt : Point, fill_rule : FillRule) : Bool
-      Binding.bg_QPolygon_containsPoint_const_QPoint_R_Qt__FillRule(self, pt, fill_rule)
-    end
-    
-    def united(r : Polygon) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon_united_const_QPolygon_R(self, r))
-    end
-    
-    def intersected(r : Polygon) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon_intersected_const_QPolygon_R(self, r))
-    end
-    
-    def subtracted(r : Polygon) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon_subtracted_const_QPolygon_R(self, r))
-    end
-    
-    def intersects(r : Polygon) : Bool
-      Binding.bg_QPolygon_intersects_const_QPolygon_R(self, r)
-    end
-    
-    def to_polygon_f() : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygon_toPolygonF_(self))
-    end
-    
-    def initialize(unnamed_arg_0 : Polygon)
-      result = Binding.bg_QPolygon__COPY_const_QPolygon_R(unnamed_arg_0)
-    @unwrap = result
-    end
-    
-    def *(m : Binding::QTransform*) : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygon__OPERATOR_mul_const_QTransform_R(self, m))
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::QPolygon*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
-  class PolygonF
-    @unwrap : Binding::QPolygonF*
-    
-    def initialize()
-      result = Binding.bg_QPolygonF__CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def initialize(v : Enumerable(PointF))
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QList_QPointF__R(BindgenHelper.wrap_container(Container_QList_QPointF_, v).to_unsafe)
-    @unwrap = result
-    end
-    
-    def initialize(r : RectF)
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QRectF_R(r)
-    @unwrap = result
-    end
-    
-    def initialize(a : Polygon)
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QPolygon_R(a)
-    @unwrap = result
-    end
-    
-    def swap(other : PolygonF) : Void
-      Binding.bg_QPolygonF_swap_QPolygonF_R(self, other)
-    end
-    
-    def to_q_variant() : Variant
-      Qt::Variant.new(Binding.bg_QPolygonF__CONVERT_QVariant_(self))
-    end
-    
-    def translate(dx : Float64, dy : Float64) : Void
-      Binding.bg_QPolygonF_translate_qreal_qreal(self, dx, dy)
-    end
-    
-    def translate(offset : PointF) : Void
-      Binding.bg_QPolygonF_translate_const_QPointF_R(self, offset)
-    end
-    
-    def translated(dx : Float64, dy : Float64) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_qreal_qreal(self, dx, dy))
-    end
-    
-    def translated(offset : PointF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_const_QPointF_R(self, offset))
-    end
-    
-    def to_polygon() : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygonF_toPolygon_(self))
-    end
-    
-    def closed?() : Bool
-      Binding.bg_QPolygonF_isClosed_(self)
-    end
-    
-    def bounding_rect() : RectF
-      RectF.new(unwrap: Binding.bg_QPolygonF_boundingRect_(self))
-    end
-    
-    def contains_point(pt : PointF, fill_rule : FillRule) : Bool
-      Binding.bg_QPolygonF_containsPoint_const_QPointF_R_Qt__FillRule(self, pt, fill_rule)
-    end
-    
-    def united(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_united_const_QPolygonF_R(self, r))
-    end
-    
-    def intersected(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_intersected_const_QPolygonF_R(self, r))
-    end
-    
-    def subtracted(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_subtracted_const_QPolygonF_R(self, r))
-    end
-    
-    def intersects(r : PolygonF) : Bool
-      Binding.bg_QPolygonF_intersects_const_QPolygonF_R(self, r)
-    end
-    
-    def initialize(unnamed_arg_0 : PolygonF)
-      result = Binding.bg_QPolygonF__COPY_const_QPolygonF_R(unnamed_arg_0)
-    @unwrap = result
-    end
-    
-    def *(m : Binding::QTransform*) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF__OPERATOR_mul_const_QTransform_R(self, m))
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::QPolygonF*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
   class Image < PaintDevice
     def initialize()
       result = Binding.bg_QImage__CONSTRUCT_()
@@ -35995,7 +35641,7 @@ module Qt
     end
     
     def text_keys() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QImage_textKeys_(self))
+      StringList.new(unwrap: Binding.bg_QImage_textKeys_(self))
     end
     
     def text() : String
@@ -36058,27 +35704,6 @@ module Qt
       Binding.bg_QImage_detachMetadata_bool(self, invalidate_cache)
     end
     
-    protected def init_painter(painter : Painter) : Void
-      Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
-    end
-    
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
-    end
-    
-    def to?(_type_ : T.class) forall T
-      {% if T == Image %}
-        self
-      {% else %}
-        super
-      {% end %}
-    end
-    
-    def initialize(unwrap : Binding::QImage*)
-      result = unwrap
-    @unwrap = result
-    end
-    
     def self.static_meta_object() : Binding::QMetaObject*
       Binding.bg_QImage_staticMetaObject_STATIC_GETTER_()
     end
@@ -36127,6 +35752,27 @@ module Qt
       Cmyk8888 = 36
       Nimageformats = 37
     end
+    protected def init_painter(painter : Painter) : Void
+      Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
+    end
+    
+    protected def shared_painter() : Painter
+      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == Image %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QImage*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class Pixmap < PaintDevice
     def initialize()
@@ -36625,19 +36271,19 @@ module Qt
     end
     
     def self.theme_search_paths() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QIcon_themeSearchPaths_STATIC_())
+      StringList.new(unwrap: Binding.bg_QIcon_themeSearchPaths_STATIC_())
     end
     
     def self.theme_search_paths=(searchpath : Enumerable(String)) : Void
-      Binding.bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, searchpath).to_unsafe)
+      Binding.bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, searchpath).to_unsafe)
     end
     
     def self.fallback_search_paths() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QIcon_fallbackSearchPaths_STATIC_())
+      StringList.new(unwrap: Binding.bg_QIcon_fallbackSearchPaths_STATIC_())
     end
     
     def self.fallback_search_paths=(paths : Enumerable(String)) : Void
-      Binding.bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe)
+      Binding.bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, paths).to_unsafe)
     end
     
     def self.theme_name() : String
@@ -37033,6 +36679,10 @@ module Qt
       Binding.bg_QScreen_refreshRateChanged_qreal(self, refresh_rate)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QScreen_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -37109,10 +36759,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QScreen_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_geometry_changed(&_proc_ : Proc(Rect, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QScreen_CONNECT_geometryChanged_CrystalProc_void__const_QRect_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QRect, Void).new do |arg0| _proc_.call(Rect.new(unwrap: arg0)) end)))
     end
@@ -37541,6 +37187,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGuiApplication_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -37617,10 +37267,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGuiApplication_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_font_database_changed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QGuiApplication_CONNECT_fontDatabaseChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -38037,6 +37683,34 @@ module Qt
       Binding.bg_QInputEvent_setTimestamp_quint64(self, timestamp)
     end
     
+    private def m_dev() : Binding::QInputDevice*
+      Binding.bg_QInputEvent_m_dev_GETTER_(self)
+    end
+    
+    private def m_time_stamp() : UInt64
+      Binding.bg_QInputEvent_m_timeStamp_GETTER_(self)
+    end
+    
+    private def m_time_stamp=(m_time_stamp : UInt64) : Void
+      Binding.bg_QInputEvent_m_timeStamp_SETTER_quint64(self, m_time_stamp)
+    end
+    
+    private def m_mod_state() : KeyboardModifiers
+      Binding.bg_QInputEvent_m_modState_GETTER_(self)
+    end
+    
+    private def m_mod_state=(m_mod_state : KeyboardModifiers) : Void
+      Binding.bg_QInputEvent_m_modState_SETTER_Qt__KeyboardModifiers(self, m_mod_state)
+    end
+    
+    private def m_reserved() : UInt32
+      Binding.bg_QInputEvent_m_reserved_GETTER_(self)
+    end
+    
+    private def m_reserved=(m_reserved : UInt32) : Void
+      Binding.bg_QInputEvent_m_reserved_SETTER_quint32(self, m_reserved)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -38073,34 +37747,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_dev() : Binding::QInputDevice*
-      Binding.bg_QInputEvent_m_dev_GETTER_(self)
-    end
-    
-    private def m_time_stamp() : UInt64
-      Binding.bg_QInputEvent_m_timeStamp_GETTER_(self)
-    end
-    
-    private def m_time_stamp=(m_time_stamp : UInt64) : Void
-      Binding.bg_QInputEvent_m_timeStamp_SETTER_quint64(self, m_time_stamp)
-    end
-    
-    private def m_mod_state() : KeyboardModifiers
-      Binding.bg_QInputEvent_m_modState_GETTER_(self)
-    end
-    
-    private def m_mod_state=(m_mod_state : KeyboardModifiers) : Void
-      Binding.bg_QInputEvent_m_modState_SETTER_Qt__KeyboardModifiers(self, m_mod_state)
-    end
-    
-    private def m_reserved() : UInt32
-      Binding.bg_QInputEvent_m_reserved_GETTER_(self)
-    end
-    
-    private def m_reserved=(m_reserved : UInt32) : Void
-      Binding.bg_QInputEvent_m_reserved_SETTER_quint32(self, m_reserved)
-    end
-    
   end
   class PointerEvent < InputEvent
     protected def initialize(unnamed_arg_0 : PointerEvent)
@@ -38355,6 +38001,18 @@ module Qt
       Binding.bg_QPointerEvent_removePassiveGrabber_const_QEventPoint_R_QObject_X(self, point, grabber)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QPointerEvent_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    private def m_points() : Enumerable(Binding::QEventPoint*)
+      Container_QList_QEventPoint_.new(unwrap: Binding.bg_QPointerEvent_m_points_GETTER_(self))
+    end
+    
+    private def m_points=(m_points : Enumerable(Binding::QEventPoint*)) : Void
+      Binding.bg_QPointerEvent_m_points_SETTER_QList_QEventPoint_(self, BindgenHelper.wrap_container(Container_QList_QEventPoint_, m_points).to_unsafe)
+    end
+    
     def to?(_type_ : T.class) forall T
       {% if T == PointerEvent %}
         self
@@ -38399,18 +38057,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QPointerEvent_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    private def m_points() : Enumerable(Binding::QEventPoint*)
-      Container_QList_QEventPoint_.new(unwrap: Binding.bg_QPointerEvent_m_points_GETTER_(self))
-    end
-    
-    private def m_points=(m_points : Enumerable(Binding::QEventPoint*)) : Void
-      Binding.bg_QPointerEvent_m_points_SETTER_QList_QEventPoint_(self, BindgenHelper.wrap_container(Container_QList_QEventPoint_, m_points).to_unsafe)
-    end
-    
   end
   class SinglePointEvent < PointerEvent
     protected def initialize(unnamed_arg_0 : SinglePointEvent)
@@ -38590,58 +38236,6 @@ module Qt
     {% end %}
     end
     
-    def timestamp=(timestamp : UInt64) : Void
-      Binding.bg_QPointerEvent_setTimestamp_quint64(self, timestamp)
-    end
-    
-    def accepted=(accepted : Bool) : Void
-      Binding.bg_QPointerEvent_setAccepted_bool(self, accepted)
-    end
-    
-    def to?(_type_ : T.class) forall T
-      {% if T == SinglePointEvent %}
-        self
-      {% else %}
-        super
-      {% end %}
-    end
-    
-    def initialize(unwrap : Binding::QSinglePointEvent*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : SinglePointEvent)
-      end
-      def clone() : SinglePointEvent
-        SinglePointEvent.new(unwrap: Binding.bg_QSinglePointEvent_clone_SUPER_(@myself))
-      end
-      
-      def begin_event?() : Bool
-        Binding.bg_QSinglePointEvent_isBeginEvent_SUPER_(@myself)
-      end
-      
-      def update_event?() : Bool
-        Binding.bg_QSinglePointEvent_isUpdateEvent_SUPER_(@myself)
-      end
-      
-      def end_event?() : Bool
-        Binding.bg_QSinglePointEvent_isEndEvent_SUPER_(@myself)
-      end
-      
-      def timestamp=(timestamp : UInt64) : Void
-        Binding.bg_QPointerEvent_setTimestamp_SUPER_quint64(@myself, timestamp)
-      end
-      
-      def accepted=(accepted : Bool) : Void
-        Binding.bg_QPointerEvent_setAccepted_SUPER_bool(@myself, accepted)
-      end
-      
-    end
-    private def superclass
-      Superclass.new(self)
-    end
     def self.static_meta_object() : Binding::QMetaObject*
       Binding.bg_QSinglePointEvent_staticMetaObject_STATIC_GETTER_()
     end
@@ -38710,6 +38304,58 @@ module Qt
       Binding.bg_QSinglePointEvent_m_invertedScrolling_SETTER_quint16(self, m_inverted_scrolling)
     end
     
+    def timestamp=(timestamp : UInt64) : Void
+      Binding.bg_QPointerEvent_setTimestamp_quint64(self, timestamp)
+    end
+    
+    def accepted=(accepted : Bool) : Void
+      Binding.bg_QPointerEvent_setAccepted_bool(self, accepted)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == SinglePointEvent %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QSinglePointEvent*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : SinglePointEvent)
+      end
+      def clone() : SinglePointEvent
+        SinglePointEvent.new(unwrap: Binding.bg_QSinglePointEvent_clone_SUPER_(@myself))
+      end
+      
+      def begin_event?() : Bool
+        Binding.bg_QSinglePointEvent_isBeginEvent_SUPER_(@myself)
+      end
+      
+      def update_event?() : Bool
+        Binding.bg_QSinglePointEvent_isUpdateEvent_SUPER_(@myself)
+      end
+      
+      def end_event?() : Bool
+        Binding.bg_QSinglePointEvent_isEndEvent_SUPER_(@myself)
+      end
+      
+      def timestamp=(timestamp : UInt64) : Void
+        Binding.bg_QPointerEvent_setTimestamp_SUPER_quint64(@myself, timestamp)
+      end
+      
+      def accepted=(accepted : Bool) : Void
+        Binding.bg_QPointerEvent_setAccepted_SUPER_bool(@myself, accepted)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class EnterEvent < SinglePointEvent
     protected def initialize(unnamed_arg_0 : EnterEvent)
@@ -39720,46 +39366,6 @@ module Qt
       Binding.bg_QKeyEvent_nativeModifiers_(self)
     end
     
-    def timestamp=(timestamp : UInt64) : Void
-      Binding.bg_QInputEvent_setTimestamp_quint64(self, timestamp)
-    end
-    
-    def accepted=(accepted : Bool) : Void
-      Binding.bg_QEvent_setAccepted_bool(self, accepted)
-    end
-    
-    def to?(_type_ : T.class) forall T
-      {% if T == KeyEvent %}
-        self
-      {% else %}
-        super
-      {% end %}
-    end
-    
-    def initialize(unwrap : Binding::QKeyEvent*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : KeyEvent)
-      end
-      def clone() : KeyEvent
-        KeyEvent.new(unwrap: Binding.bg_QKeyEvent_clone_SUPER_(@myself))
-      end
-      
-      def timestamp=(timestamp : UInt64) : Void
-        Binding.bg_QInputEvent_setTimestamp_SUPER_quint64(@myself, timestamp)
-      end
-      
-      def accepted=(accepted : Bool) : Void
-        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
-      end
-      
-    end
-    private def superclass
-      Superclass.new(self)
-    end
     private def m_text() : String
       Qt::Converter::QString.unwrap(Binding.bg_QKeyEvent_m_text_GETTER_(self))
     end
@@ -39816,6 +39422,46 @@ module Qt
       Binding.bg_QKeyEvent_m_autoRepeat_SETTER_quint16(self, m_auto_repeat)
     end
     
+    def timestamp=(timestamp : UInt64) : Void
+      Binding.bg_QInputEvent_setTimestamp_quint64(self, timestamp)
+    end
+    
+    def accepted=(accepted : Bool) : Void
+      Binding.bg_QEvent_setAccepted_bool(self, accepted)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == KeyEvent %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QKeyEvent*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : KeyEvent)
+      end
+      def clone() : KeyEvent
+        KeyEvent.new(unwrap: Binding.bg_QKeyEvent_clone_SUPER_(@myself))
+      end
+      
+      def timestamp=(timestamp : UInt64) : Void
+        Binding.bg_QInputEvent_setTimestamp_SUPER_quint64(@myself, timestamp)
+      end
+      
+      def accepted=(accepted : Bool) : Void
+        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class FocusEvent < Event
     protected def initialize(unnamed_arg_0 : FocusEvent)
@@ -40063,6 +39709,30 @@ module Qt
       Binding.bg_QPaintEvent_region_(self)
     end
     
+    private def m_rect() : Rect
+      Rect.new(unwrap: Binding.bg_QPaintEvent_m_rect_GETTER_(self))
+    end
+    
+    private def m_rect=(m_rect : Rect) : Void
+      Binding.bg_QPaintEvent_m_rect_SETTER_QRect(self, m_rect)
+    end
+    
+    private def m_region() : Binding::QRegion*
+      Binding.bg_QPaintEvent_m_region_GETTER_(self)
+    end
+    
+    private def m_region=(m_region : Binding::QRegion*) : Void
+      Binding.bg_QPaintEvent_m_region_SETTER_QRegion(self, m_region)
+    end
+    
+    private def m_erased() : Bool
+      Binding.bg_QPaintEvent_m_erased_GETTER_(self)
+    end
+    
+    private def m_erased=(m_erased : Bool) : Void
+      Binding.bg_QPaintEvent_m_erased_SETTER_bool(self, m_erased)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -40095,30 +39765,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_rect() : Rect
-      Rect.new(unwrap: Binding.bg_QPaintEvent_m_rect_GETTER_(self))
-    end
-    
-    private def m_rect=(m_rect : Rect) : Void
-      Binding.bg_QPaintEvent_m_rect_SETTER_QRect(self, m_rect)
-    end
-    
-    private def m_region() : Binding::QRegion*
-      Binding.bg_QPaintEvent_m_region_GETTER_(self)
-    end
-    
-    private def m_region=(m_region : Binding::QRegion*) : Void
-      Binding.bg_QPaintEvent_m_region_SETTER_QRegion(self, m_region)
-    end
-    
-    private def m_erased() : Bool
-      Binding.bg_QPaintEvent_m_erased_GETTER_(self)
-    end
-    
-    private def m_erased=(m_erased : Bool) : Void
-      Binding.bg_QPaintEvent_m_erased_SETTER_bool(self, m_erased)
-    end
-    
   end
   class MoveEvent < Event
     protected def initialize(unnamed_arg_0 : MoveEvent)
@@ -40207,6 +39853,22 @@ module Qt
       Point.new(unwrap: Binding.bg_QMoveEvent_oldPos_(self))
     end
     
+    private def m_pos() : Point
+      Point.new(unwrap: Binding.bg_QMoveEvent_m_pos_GETTER_(self))
+    end
+    
+    private def m_pos=(m_pos : Point) : Void
+      Binding.bg_QMoveEvent_m_pos_SETTER_QPoint(self, m_pos)
+    end
+    
+    private def m_old_pos() : Point
+      Point.new(unwrap: Binding.bg_QMoveEvent_m_oldPos_GETTER_(self))
+    end
+    
+    private def m_old_pos=(m_old_pos : Point) : Void
+      Binding.bg_QMoveEvent_m_oldPos_SETTER_QPoint(self, m_old_pos)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -40239,22 +39901,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_pos() : Point
-      Point.new(unwrap: Binding.bg_QMoveEvent_m_pos_GETTER_(self))
-    end
-    
-    private def m_pos=(m_pos : Point) : Void
-      Binding.bg_QMoveEvent_m_pos_SETTER_QPoint(self, m_pos)
-    end
-    
-    private def m_old_pos() : Point
-      Point.new(unwrap: Binding.bg_QMoveEvent_m_oldPos_GETTER_(self))
-    end
-    
-    private def m_old_pos=(m_old_pos : Point) : Void
-      Binding.bg_QMoveEvent_m_oldPos_SETTER_QPoint(self, m_old_pos)
-    end
-    
   end
   class ExposeEvent < Event
     protected def initialize(unnamed_arg_0 : ExposeEvent)
@@ -40335,6 +39981,14 @@ module Qt
     {% end %}
     end
     
+    private def m_region() : Binding::QRegion*
+      Binding.bg_QExposeEvent_m_region_GETTER_(self)
+    end
+    
+    private def m_region=(m_region : Binding::QRegion*) : Void
+      Binding.bg_QExposeEvent_m_region_SETTER_QRegion(self, m_region)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -40367,14 +40021,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_region() : Binding::QRegion*
-      Binding.bg_QExposeEvent_m_region_GETTER_(self)
-    end
-    
-    private def m_region=(m_region : Binding::QRegion*) : Void
-      Binding.bg_QExposeEvent_m_region_SETTER_QRegion(self, m_region)
-    end
-    
   end
   class PlatformSurfaceEvent < Event
     protected def initialize(unnamed_arg_0 : PlatformSurfaceEvent)
@@ -40459,6 +40105,18 @@ module Qt
       Binding.bg_QPlatformSurfaceEvent_surfaceEventType_(self)
     end
     
+    private def m_surface_event_type() : PlatformSurfaceEvent::SurfaceEventType
+      Binding.bg_QPlatformSurfaceEvent_m_surfaceEventType_GETTER_(self)
+    end
+    
+    private def m_surface_event_type=(m_surface_event_type : PlatformSurfaceEvent::SurfaceEventType) : Void
+      Binding.bg_QPlatformSurfaceEvent_m_surfaceEventType_SETTER_QPlatformSurfaceEvent__SurfaceEventType(self, m_surface_event_type)
+    end
+    
+    enum SurfaceEventType : UInt32
+      SurfaceCreated = 0
+      SurfaceAboutToBeDestroyed = 1
+    end
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -40490,18 +40148,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    private def m_surface_event_type() : PlatformSurfaceEvent::SurfaceEventType
-      Binding.bg_QPlatformSurfaceEvent_m_surfaceEventType_GETTER_(self)
-    end
-    
-    private def m_surface_event_type=(m_surface_event_type : PlatformSurfaceEvent::SurfaceEventType) : Void
-      Binding.bg_QPlatformSurfaceEvent_m_surfaceEventType_SETTER_QPlatformSurfaceEvent__SurfaceEventType(self, m_surface_event_type)
-    end
-    
-    enum SurfaceEventType : UInt32
-      SurfaceCreated = 0
-      SurfaceAboutToBeDestroyed = 1
     end
   end
   class ResizeEvent < Event
@@ -40591,6 +40237,22 @@ module Qt
       Size.new(unwrap: Binding.bg_QResizeEvent_oldSize_(self))
     end
     
+    private def m_size() : Size
+      Size.new(unwrap: Binding.bg_QResizeEvent_m_size_GETTER_(self))
+    end
+    
+    private def m_size=(m_size : Size) : Void
+      Binding.bg_QResizeEvent_m_size_SETTER_QSize(self, m_size)
+    end
+    
+    private def m_old_size() : Size
+      Size.new(unwrap: Binding.bg_QResizeEvent_m_oldSize_GETTER_(self))
+    end
+    
+    private def m_old_size=(m_old_size : Size) : Void
+      Binding.bg_QResizeEvent_m_oldSize_SETTER_QSize(self, m_old_size)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -40623,22 +40285,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_size() : Size
-      Size.new(unwrap: Binding.bg_QResizeEvent_m_size_GETTER_(self))
-    end
-    
-    private def m_size=(m_size : Size) : Void
-      Binding.bg_QResizeEvent_m_size_SETTER_QSize(self, m_size)
-    end
-    
-    private def m_old_size() : Size
-      Size.new(unwrap: Binding.bg_QResizeEvent_m_oldSize_GETTER_(self))
-    end
-    
-    private def m_old_size=(m_old_size : Size) : Void
-      Binding.bg_QResizeEvent_m_oldSize_SETTER_QSize(self, m_old_size)
-    end
-    
   end
   class CloseEvent < Event
     protected def initialize(unnamed_arg_0 : CloseEvent)
@@ -41187,6 +40833,14 @@ module Qt
       Binding.bg_QInputMethodEvent_replacementLength_(self)
     end
     
+    enum AttributeType : UInt32
+      TextFormat = 0
+      Cursor = 1
+      Language = 2
+      Ruby = 3
+      Selection = 4
+      MimeData = 5
+    end
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -41218,14 +40872,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    enum AttributeType : UInt32
-      TextFormat = 0
-      Cursor = 1
-      Language = 2
-      Ruby = 3
-      Selection = 4
-      MimeData = 5
     end
   end
   class InputMethodQueryEvent < Event
@@ -41471,38 +41117,6 @@ module Qt
       MimeData.new(unwrap: Binding.bg_QDropEvent_mimeData_(self))
     end
     
-    def accepted=(accepted : Bool) : Void
-      Binding.bg_QEvent_setAccepted_bool(self, accepted)
-    end
-    
-    def to?(_type_ : T.class) forall T
-      {% if T == DropEvent %}
-        self
-      {% else %}
-        super
-      {% end %}
-    end
-    
-    def initialize(unwrap : Binding::QDropEvent*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : DropEvent)
-      end
-      def clone() : DropEvent
-        DropEvent.new(unwrap: Binding.bg_QDropEvent_clone_SUPER_(@myself))
-      end
-      
-      def accepted=(accepted : Bool) : Void
-        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
-      end
-      
-    end
-    private def superclass
-      Superclass.new(self)
-    end
     private def m_pos() : PointF
       PointF.new(unwrap: Binding.bg_QDropEvent_m_pos_GETTER_(self))
     end
@@ -41555,6 +41169,38 @@ module Qt
       MimeData.new(unwrap: Binding.bg_QDropEvent_m_data_GETTER_(self))
     end
     
+    def accepted=(accepted : Bool) : Void
+      Binding.bg_QEvent_setAccepted_bool(self, accepted)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == DropEvent %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QDropEvent*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : DropEvent)
+      end
+      def clone() : DropEvent
+        DropEvent.new(unwrap: Binding.bg_QDropEvent_clone_SUPER_(@myself))
+      end
+      
+      def accepted=(accepted : Bool) : Void
+        Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class DragMoveEvent < DropEvent
     protected def initialize(unnamed_arg_0 : DragMoveEvent)
@@ -41655,6 +41301,14 @@ module Qt
       Binding.bg_QDragMoveEvent_ignore_const_QRect_R(self, r)
     end
     
+    private def m_rect() : Rect
+      Rect.new(unwrap: Binding.bg_QDragMoveEvent_m_rect_GETTER_(self))
+    end
+    
+    private def m_rect=(m_rect : Rect) : Void
+      Binding.bg_QDragMoveEvent_m_rect_SETTER_QRect(self, m_rect)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -41687,14 +41341,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_rect() : Rect
-      Rect.new(unwrap: Binding.bg_QDragMoveEvent_m_rect_GETTER_(self))
-    end
-    
-    private def m_rect=(m_rect : Rect) : Void
-      Binding.bg_QDragMoveEvent_m_rect_SETTER_QRect(self, m_rect)
-    end
-    
   end
   class DragEnterEvent < DragMoveEvent
     protected def initialize(unnamed_arg_0 : DragEnterEvent)
@@ -42805,6 +42451,30 @@ module Qt
       Binding.bg_QShortcutEvent_isAmbiguous_(self)
     end
     
+    private def m_sequence() : KeySequence
+      KeySequence.new(unwrap: Binding.bg_QShortcutEvent_m_sequence_GETTER_(self))
+    end
+    
+    private def m_sequence=(m_sequence : KeySequence) : Void
+      Binding.bg_QShortcutEvent_m_sequence_SETTER_QKeySequence(self, m_sequence)
+    end
+    
+    private def m_shortcut_id() : Int32
+      Binding.bg_QShortcutEvent_m_shortcutId_GETTER_(self)
+    end
+    
+    private def m_shortcut_id=(m_shortcut_id : Int32) : Void
+      Binding.bg_QShortcutEvent_m_shortcutId_SETTER_int(self, m_shortcut_id)
+    end
+    
+    private def m_ambiguous() : Bool
+      Binding.bg_QShortcutEvent_m_ambiguous_GETTER_(self)
+    end
+    
+    private def m_ambiguous=(m_ambiguous : Bool) : Void
+      Binding.bg_QShortcutEvent_m_ambiguous_SETTER_bool(self, m_ambiguous)
+    end
+    
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -42837,30 +42507,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def m_sequence() : KeySequence
-      KeySequence.new(unwrap: Binding.bg_QShortcutEvent_m_sequence_GETTER_(self))
-    end
-    
-    private def m_sequence=(m_sequence : KeySequence) : Void
-      Binding.bg_QShortcutEvent_m_sequence_SETTER_QKeySequence(self, m_sequence)
-    end
-    
-    private def m_shortcut_id() : Int32
-      Binding.bg_QShortcutEvent_m_shortcutId_GETTER_(self)
-    end
-    
-    private def m_shortcut_id=(m_shortcut_id : Int32) : Void
-      Binding.bg_QShortcutEvent_m_shortcutId_SETTER_int(self, m_shortcut_id)
-    end
-    
-    private def m_ambiguous() : Bool
-      Binding.bg_QShortcutEvent_m_ambiguous_GETTER_(self)
-    end
-    
-    private def m_ambiguous=(m_ambiguous : Bool) : Void
-      Binding.bg_QShortcutEvent_m_ambiguous_SETTER_bool(self, m_ambiguous)
-    end
-    
   end
   class ScrollPrepareEvent < Event
     protected def initialize(unnamed_arg_0 : ScrollPrepareEvent)
@@ -43093,6 +42739,11 @@ module Qt
       Binding.bg_QScrollEvent_scrollState_(self)
     end
     
+    enum ScrollState : UInt32
+      ScrollStarted = 0
+      ScrollUpdated = 1
+      ScrollFinished = 2
+    end
     def accepted=(accepted : Bool) : Void
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
@@ -43124,11 +42775,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    enum ScrollState : UInt32
-      ScrollStarted = 0
-      ScrollUpdated = 1
-      ScrollFinished = 2
     end
   end
   class ScreenOrientationChangeEvent < Event
@@ -43381,7 +43027,7 @@ module Qt
     end
     
     def initialize(families : Enumerable(String), point_size : Int32 = -1, weight : Int32 = -1, italic : Bool = false)
-      result = Binding.bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(BindgenHelper.wrap_container(Container_QList_QString_, families).to_unsafe, point_size, weight, italic)
+      result = Binding.bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(BindgenHelper.wrap_container(StringList, families).to_unsafe, point_size, weight, italic)
     @unwrap = result
     end
     
@@ -43408,11 +43054,11 @@ module Qt
     end
     
     def families() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFont_families_(self))
+      StringList.new(unwrap: Binding.bg_QFont_families_(self))
     end
     
     def families=(unnamed_arg_0 : Enumerable(String)) : Void
-      Binding.bg_QFont_setFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
+      Binding.bg_QFont_setFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, unnamed_arg_0).to_unsafe)
     end
     
     def style_name() : String
@@ -43632,11 +43278,11 @@ module Qt
     end
     
     def self.substitutes(unnamed_arg_0 : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFont_substitutes_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
+      StringList.new(unwrap: Binding.bg_QFont_substitutes_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
     end
     
     def self.substitutions() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFont_substitutions_STATIC_())
+      StringList.new(unwrap: Binding.bg_QFont_substitutions_STATIC_())
     end
     
     def self.insert_substitution(unnamed_arg_0 : String, unnamed_arg_1 : String) : Void
@@ -43644,7 +43290,7 @@ module Qt
     end
     
     def self.insert_substitutions(unnamed_arg_0 : String, unnamed_arg_1 : Enumerable(String)) : Void
-      Binding.bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(unnamed_arg_0), BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_1).to_unsafe)
+      Binding.bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(unnamed_arg_0), BindgenHelper.wrap_container(StringList, unnamed_arg_1).to_unsafe)
     end
     
     def self.remove_substitutions(unnamed_arg_0 : String) : Void
@@ -44392,6 +44038,33 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextDocument_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum MetaInformation : UInt32
+      DocumentTitle = 0
+      DocumentUrl = 1
+      CssMedia = 2
+      FrontMatter = 3
+    end
+    @[Flags]
+    enum MarkdownFeatures : UInt32
+      MarkdownNoHTML = 96
+      MarkdownDialectCommonMark = 0
+      MarkdownDialectGitHub = 1068812
+    end
+    @[Flags]
+    enum FindFlags : UInt32
+      FindBackward = 1
+      FindCaseSensitively = 2
+      FindWholeWords = 4
+    end
+    enum Stacks : UInt32
+      UndoStack = 1
+      RedoStack = 2
+      UndoAndRedoStacks = 3
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -44479,33 +44152,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTextDocument_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum MetaInformation : UInt32
-      DocumentTitle = 0
-      DocumentUrl = 1
-      CssMedia = 2
-      FrontMatter = 3
-    end
-    @[Flags]
-    enum MarkdownFeatures : UInt32
-      MarkdownNoHTML = 96
-      MarkdownDialectCommonMark = 0
-      MarkdownDialectGitHub = 1068812
-    end
-    @[Flags]
-    enum FindFlags : UInt32
-      FindBackward = 1
-      FindCaseSensitively = 2
-      FindWholeWords = 4
-    end
-    enum Stacks : UInt32
-      UndoStack = 1
-      RedoStack = 2
-      UndoAndRedoStacks = 3
     end
     def on_contents_change(&_proc_ : Proc(Int32, Int32, Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTextDocument_CONNECT_contentsChange_CrystalProc_void__int__int__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Int32, Int32, Void).new do |arg0, arg1, arg2| _proc_.call(arg0, arg1, arg2) end)))
@@ -45463,7 +45109,7 @@ module Qt
     end
     
     def font_families=(families : Enumerable(String)) : Void
-      Binding.bg_QTextCharFormat_setFontFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, families).to_unsafe)
+      Binding.bg_QTextCharFormat_setFontFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, families).to_unsafe)
     end
     
     def font_families() : Variant
@@ -45687,11 +45333,11 @@ module Qt
     end
     
     def anchor_names=(names : Enumerable(String)) : Void
-      Binding.bg_QTextCharFormat_setAnchorNames_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, names).to_unsafe)
+      Binding.bg_QTextCharFormat_setAnchorNames_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, names).to_unsafe)
     end
     
     def anchor_names() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QTextCharFormat_anchorNames_(self))
+      StringList.new(unwrap: Binding.bg_QTextCharFormat_anchorNames_(self))
     end
     
     def table_cell_row_span=(table_cell_row_span : Int32) : Void
@@ -47266,6 +46912,28 @@ module Qt
       Binding.bg_QAction_toggled_bool(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAction_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum MenuRole : UInt32
+      NoRole = 0
+      TextHeuristicRole = 1
+      ApplicationSpecificRole = 2
+      AboutQtRole = 3
+      AboutRole = 4
+      PreferencesRole = 5
+      QuitRole = 6
+    end
+    enum Priority : UInt32
+      LowPriority = 0
+      NormalPriority = 128
+      HighPriority = 256
+    end
+    enum Event : UInt32
+      Trigger = 0
+      Hover = 1
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -47337,28 +47005,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAction_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum MenuRole : UInt32
-      NoRole = 0
-      TextHeuristicRole = 1
-      ApplicationSpecificRole = 2
-      AboutQtRole = 3
-      AboutRole = 4
-      PreferencesRole = 5
-      QuitRole = 6
-    end
-    enum Priority : UInt32
-      LowPriority = 0
-      NormalPriority = 128
-      HighPriority = 256
-    end
-    enum Event : UInt32
-      Trigger = 0
-      Hover = 1
     end
     def on_changed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAction_CONNECT_changed_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
@@ -47447,31 +47093,6 @@ module Qt
       SurfaceImpl.new(unwrap: Binding.bg_QSurface__OPERATOR_assign_const_QSurface_R(self, unnamed_arg_0))
     end
     
-    def to?(_type_ : T.class) forall T
-      {% if T == Surface %}
-        self
-      {% elsif T == Window %}
-        Binding.bg_QSurface_CAST_Window_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
-      {% else %}
-        {% raise "Can't cast #{@type} to #{T}" %}
-      {% end %}
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::QSurface*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : Surface)
-      end
-    end
-    private def superclass
-      Superclass.new(self)
-    end
     def self.static_meta_object() : Binding::QMetaObject*
       Binding.bg_QSurface_staticMetaObject_STATIC_GETTER_()
     end
@@ -47504,6 +47125,31 @@ module Qt
       VulkanSurface = 4
       MetalSurface = 5
       Direct3DSurface = 6
+    end
+    def to?(_type_ : T.class) forall T
+      {% if T == Surface %}
+        self
+      {% elsif T == Window %}
+        Binding.bg_QSurface_CAST_Window_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
+      {% else %}
+        {% raise "Can't cast #{@type} to #{T}" %}
+      {% end %}
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QSurface*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : Surface)
+      end
+    end
+    private def superclass
+      Superclass.new(self)
     end
   end
   class Bitmap < Pixmap
@@ -48897,6 +48543,22 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QWindow_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Visibility : UInt32
+      Hidden = 0
+      AutomaticVisibility = 1
+      Windowed = 2
+      Minimized = 3
+      Maximized = 4
+      FullScreen = 5
+    end
+    enum AncestorMode : UInt32
+      ExcludeTransients = 0
+      IncludeTransients = 1
+    end
     def as_surface() : Surface
       SurfaceImpl.new(unwrap: Binding.bg_QWindow_AS_Surface_(self))
     end
@@ -49079,22 +48741,6 @@ module Qt
       Binding.bg_QWindow_supportsOpenGL_(self)
     end
     
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QWindow_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Visibility : UInt32
-      Hidden = 0
-      AutomaticVisibility = 1
-      Windowed = 2
-      Minimized = 3
-      Maximized = 4
-      FullScreen = 5
-    end
-    enum AncestorMode : UInt32
-      ExcludeTransients = 0
-      IncludeTransients = 1
-    end
     def on_screen_changed(&_proc_ : Proc(Screen, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QWindow_CONNECT_screenChanged_CrystalProc_void__QScreen_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QScreen*, Void).new do |arg0| _proc_.call(Screen.new(unwrap: arg0)) end)))
     end
@@ -49277,6 +48923,16 @@ module Qt
       Binding.bg_QClipboard_dataChanged_(self)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QClipboard_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Mode : UInt32
+      Clipboard = 0
+      Selection = 1
+      FindBuffer = 2
+      LastMode = 2
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -49318,16 +48974,6 @@ module Qt
     @unwrap = result
     end
     
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QClipboard_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Mode : UInt32
-      Clipboard = 0
-      Selection = 1
-      FindBuffer = 2
-      LastMode = 2
-    end
     def on_changed(&_proc_ : Proc(Clipboard::Mode, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QClipboard_CONNECT_changed_CrystalProc_void__QClipboard__Mode_(self, BindgenHelper.wrap_proc(Proc(Clipboard::Mode, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -49528,6 +49174,10 @@ module Qt
       Binding.bg_QDrag_targetChanged_QObject_X(self, new_target)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDrag_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -49604,10 +49254,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDrag_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_action_changed(&_proc_ : Proc(DropAction, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QDrag_CONNECT_actionChanged_CrystalProc_void__Qt__DropAction_(self, BindgenHelper.wrap_proc(Proc(DropAction, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -50763,7 +50409,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -50898,7 +50544,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -51075,11 +50721,11 @@ module Qt
     end
     
     def horizontal_header_labels=(labels : Enumerable(String)) : Void
-      Binding.bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def vertical_header_labels=(labels : Enumerable(String)) : Void
-      Binding.bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def row_count=(rows : Int32) : Void
@@ -51091,7 +50737,8 @@ module Qt
     end
     
     def append_row(items : Enumerable(Binding::QStandardItem*)) : Void
-      Binding.bg_QStandardItemModel_appendRow_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItemModel_appendRow_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
     end
     
     def append_column(items : Enumerable(Binding::QStandardItem*)) : Void
@@ -51179,7 +50826,7 @@ module Qt
     end
     
     def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_(self))
     end
     
     def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -51301,7 +50948,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -51327,6 +50974,10 @@ module Qt
     )
     Binding.bg_BgInherit_QStandardItemModel_JUMPTABLE_BgJumptable_QStandardItemModel_R(result, pointerof(jump_table))
     {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStandardItemModel_staticMetaObject_STATIC_GETTER_()
     end
     
     def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
@@ -51498,7 +51149,7 @@ module Qt
       end
       
       def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself))
       end
       
       def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -51593,10 +51244,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QStandardItemModel_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_item_changed(&_proc_ : Proc(Binding::QStandardItem, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QStandardItemModel_CONNECT_itemChanged_CrystalProc_void__QStandardItem_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QStandardItem*, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -53450,6 +53097,121 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QWidget_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Attribute : UInt32
+      Disabled = 0
+      UnderMouse = 1
+      MouseTracking = 2
+      OpaquePaintEvent = 4
+      StaticContents = 5
+      LaidOut = 7
+      PaintOnScreen = 8
+      NoSystemBackground = 9
+      UpdatesDisabled = 10
+      Mapped = 11
+      InputMethodEnabled = 14
+      WstateVisible = 15
+      WstateHidden = 16
+      ForceDisabled = 32
+      KeyCompression = 33
+      PendingMoveEvent = 34
+      PendingResizeEvent = 35
+      SetPalette = 36
+      SetFont = 37
+      SetCursor = 38
+      NoChildEventsFromChildren = 39
+      WindowModified = 41
+      Resized = 42
+      Moved = 43
+      PendingUpdate = 44
+      InvalidSize = 45
+      CustomWhatsThis = 47
+      LayoutOnEntireRect = 48
+      OutsideWSRange = 49
+      GrabbedShortcut = 50
+      TransparentForMouseEvents = 51
+      PaintUnclipped = 52
+      SetWindowIcon = 53
+      NoMouseReplay = 54
+      DeleteOnClose = 55
+      RightToLeft = 56
+      SetLayoutDirection = 57
+      NoChildEventsForParent = 58
+      ForceUpdatesDisabled = 59
+      WstateCreated = 60
+      WstateCompresskeys = 61
+      WstateInpaintevent = 62
+      WstateReparented = 63
+      WstateConfigpending = 64
+      WstatePolished = 66
+      WstateOwnsizepolicy = 68
+      WstateExplicitshowhide = 69
+      ShowModal = 70
+      MouseNoMask = 71
+      NoMousePropagation = 73
+      Hover = 74
+      InputMethodTransparent = 75
+      QuitOnClose = 76
+      KeyboardFocusChange = 77
+      AcceptDrops = 78
+      DropSiteRegistered = 79
+      WindowPropagation = 80
+      NoX11EventCompression = 81
+      TintedBackground = 82
+      X11opengloverlay = 83
+      AlwaysShowToolTips = 84
+      MacOpaqueSizeGrip = 85
+      SetStyle = 86
+      SetLocale = 87
+      MacShowFocusRect = 88
+      MacNormalSize = 89
+      MacSmallSize = 90
+      MacMiniSize = 91
+      LayoutUsesWidgetRect = 92
+      StyledBackground = 93
+      CanHostQMdiSubWindowTitleBar = 95
+      MacAlwaysShowToolWindow = 96
+      StyleSheet = 97
+      ShowWithoutActivating = 98
+      X11bypasstransientforhint = 99
+      NativeWindow = 100
+      DontCreateNativeAncestors = 101
+      DontShowOnScreen = 103
+      X11netwmwindowtypedesktop = 104
+      X11netwmwindowtypedock = 105
+      X11netwmwindowtypetoolbar = 106
+      X11netwmwindowtypemenu = 107
+      X11netwmwindowtypeutility = 108
+      X11netwmwindowtypesplash = 109
+      X11netwmwindowtypedialog = 110
+      X11netwmwindowtypedropdownmenu = 111
+      X11netwmwindowtypepopupmenu = 112
+      X11netwmwindowtypetooltip = 113
+      X11netwmwindowtypenotification = 114
+      X11netwmwindowtypecombo = 115
+      X11netwmwindowtypednd = 116
+      SetWindowModality = 118
+      WstateWindowopacityset = 119
+      TranslucentBackground = 120
+      AcceptTouchEvents = 121
+      WstateAcceptedtouchbeginevent = 122
+      TouchPadAcceptSingleTouchEvents = 123
+      X11donotacceptfocus = 126
+      AlwaysStackOnTop = 128
+      TabletTracking = 129
+      ContentsMarginsRespectsSafeArea = 130
+      StyleSheetTarget = 131
+      AttributeCount = 132
+    end
+    @[Flags]
+    enum RenderFlags : UInt32
+      DrawWindowBackground = 1
+      DrawChildren = 2
+      IgnoreMask = 4
+    end
     def as_paint_device() : PaintDevice
       PaintDeviceImpl.new(unwrap: Binding.bg_QWidget_AS_PaintDevice_(self))
     end
@@ -53732,121 +53494,6 @@ module Qt
       Binding.bg_QWidget_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_QPaintDevice__PaintDeviceMetric(self, metric_a, metric_b)
     end
     
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Attribute : UInt32
-      Disabled = 0
-      UnderMouse = 1
-      MouseTracking = 2
-      OpaquePaintEvent = 4
-      StaticContents = 5
-      LaidOut = 7
-      PaintOnScreen = 8
-      NoSystemBackground = 9
-      UpdatesDisabled = 10
-      Mapped = 11
-      InputMethodEnabled = 14
-      WstateVisible = 15
-      WstateHidden = 16
-      ForceDisabled = 32
-      KeyCompression = 33
-      PendingMoveEvent = 34
-      PendingResizeEvent = 35
-      SetPalette = 36
-      SetFont = 37
-      SetCursor = 38
-      NoChildEventsFromChildren = 39
-      WindowModified = 41
-      Resized = 42
-      Moved = 43
-      PendingUpdate = 44
-      InvalidSize = 45
-      CustomWhatsThis = 47
-      LayoutOnEntireRect = 48
-      OutsideWSRange = 49
-      GrabbedShortcut = 50
-      TransparentForMouseEvents = 51
-      PaintUnclipped = 52
-      SetWindowIcon = 53
-      NoMouseReplay = 54
-      DeleteOnClose = 55
-      RightToLeft = 56
-      SetLayoutDirection = 57
-      NoChildEventsForParent = 58
-      ForceUpdatesDisabled = 59
-      WstateCreated = 60
-      WstateCompresskeys = 61
-      WstateInpaintevent = 62
-      WstateReparented = 63
-      WstateConfigpending = 64
-      WstatePolished = 66
-      WstateOwnsizepolicy = 68
-      WstateExplicitshowhide = 69
-      ShowModal = 70
-      MouseNoMask = 71
-      NoMousePropagation = 73
-      Hover = 74
-      InputMethodTransparent = 75
-      QuitOnClose = 76
-      KeyboardFocusChange = 77
-      AcceptDrops = 78
-      DropSiteRegistered = 79
-      WindowPropagation = 80
-      NoX11EventCompression = 81
-      TintedBackground = 82
-      X11opengloverlay = 83
-      AlwaysShowToolTips = 84
-      MacOpaqueSizeGrip = 85
-      SetStyle = 86
-      SetLocale = 87
-      MacShowFocusRect = 88
-      MacNormalSize = 89
-      MacSmallSize = 90
-      MacMiniSize = 91
-      LayoutUsesWidgetRect = 92
-      StyledBackground = 93
-      CanHostQMdiSubWindowTitleBar = 95
-      MacAlwaysShowToolWindow = 96
-      StyleSheet = 97
-      ShowWithoutActivating = 98
-      X11bypasstransientforhint = 99
-      NativeWindow = 100
-      DontCreateNativeAncestors = 101
-      DontShowOnScreen = 103
-      X11netwmwindowtypedesktop = 104
-      X11netwmwindowtypedock = 105
-      X11netwmwindowtypetoolbar = 106
-      X11netwmwindowtypemenu = 107
-      X11netwmwindowtypeutility = 108
-      X11netwmwindowtypesplash = 109
-      X11netwmwindowtypedialog = 110
-      X11netwmwindowtypedropdownmenu = 111
-      X11netwmwindowtypepopupmenu = 112
-      X11netwmwindowtypetooltip = 113
-      X11netwmwindowtypenotification = 114
-      X11netwmwindowtypecombo = 115
-      X11netwmwindowtypednd = 116
-      SetWindowModality = 118
-      WstateWindowopacityset = 119
-      TranslucentBackground = 120
-      AcceptTouchEvents = 121
-      WstateAcceptedtouchbeginevent = 122
-      TouchPadAcceptSingleTouchEvents = 123
-      X11donotacceptfocus = 126
-      AlwaysStackOnTop = 128
-      TabletTracking = 129
-      ContentsMarginsRespectsSafeArea = 130
-      StyleSheetTarget = 131
-      AttributeCount = 132
-    end
-    @[Flags]
-    enum RenderFlags : UInt32
-      DrawWindowBackground = 1
-      DrawChildren = 2
-      IgnoreMask = 4
-    end
     def on_window_title_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QWidget_CONNECT_windowTitleChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
@@ -54332,6 +53979,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractButton_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -54684,10 +54335,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractButton_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_pressed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractButton_CONNECT_pressed_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -55220,6 +54867,34 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractSpinBox_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum StepEnabledFlag : UInt32
+      StepNone = 0
+      StepUpEnabled = 1
+      StepDownEnabled = 2
+    end
+    @[Flags]
+    enum StepEnabled : UInt32
+      StepNone = 0
+      StepUpEnabled = 1
+      StepDownEnabled = 2
+    end
+    enum ButtonSymbols : UInt32
+      UpDownArrows = 0
+      PlusMinus = 1
+      NoButtons = 2
+    end
+    enum CorrectionMode : UInt32
+      CorrectToPreviousValue = 0
+      CorrectToNearestValue = 1
+    end
+    enum StepType : UInt32
+      DefaultStepType = 0
+      AdaptiveDecimalStepType = 1
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -55543,34 +55218,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractSpinBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum StepEnabledFlag : UInt32
-      StepNone = 0
-      StepUpEnabled = 1
-      StepDownEnabled = 2
-    end
-    @[Flags]
-    enum StepEnabled : UInt32
-      StepNone = 0
-      StepUpEnabled = 1
-      StepDownEnabled = 2
-    end
-    enum ButtonSymbols : UInt32
-      UpDownArrows = 0
-      PlusMinus = 1
-      NoButtons = 2
-    end
-    enum CorrectionMode : UInt32
-      CorrectToPreviousValue = 0
-      CorrectToNearestValue = 1
-    end
-    enum StepType : UInt32
-      DefaultStepType = 0
-      AdaptiveDecimalStepType = 1
     end
     def on_editing_finished(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractSpinBox_CONNECT_editingFinished_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
@@ -56020,6 +55667,26 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractSlider_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum SliderAction : UInt32
+      SliderNoAction = 0
+      SliderSingleStepAdd = 1
+      SliderSingleStepSub = 2
+      SliderPageStepAdd = 3
+      SliderPageStepSub = 4
+      SliderToMinimum = 5
+      SliderToMaximum = 6
+      SliderMove = 7
+    end
+    enum SliderChange : UInt32
+      SliderRangeChange = 0
+      SliderOrientationChange = 1
+      SliderStepsChange = 2
+      SliderValueChange = 3
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -56392,26 +56059,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractSlider_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum SliderAction : UInt32
-      SliderNoAction = 0
-      SliderSingleStepAdd = 1
-      SliderSingleStepSub = 2
-      SliderPageStepAdd = 3
-      SliderPageStepSub = 4
-      SliderToMinimum = 5
-      SliderToMaximum = 6
-      SliderMove = 7
-    end
-    enum SliderChange : UInt32
-      SliderRangeChange = 0
-      SliderOrientationChange = 1
-      SliderStepsChange = 2
-      SliderValueChange = 3
-    end
     def on_value_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractSlider_CONNECT_valueChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -56776,6 +56423,18 @@ module Qt
       Binding.bg_QSlider_initStyleOption_QStyleOptionSlider_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSlider_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum TickPosition : UInt32
+      NoTicks = 0
+      TicksAbove = 1
+      TicksLeft = 1
+      TicksBelow = 2
+      TicksRight = 2
+      TicksBothSides = 3
+    end
     protected def slider_change(change : AbstractSlider::SliderChange) : Void
       Binding.bg_QAbstractSlider_sliderChange_QAbstractSlider__SliderChange(self, change)
     end
@@ -57147,18 +56806,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSlider_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum TickPosition : UInt32
-      NoTicks = 0
-      TicksAbove = 1
-      TicksLeft = 1
-      TicksBelow = 2
-      TicksRight = 2
-      TicksBothSides = 3
     end
   end
   class TabBar < Widget
@@ -57652,6 +57299,29 @@ module Qt
       Binding.bg_QTabBar_initStyleOption_QStyleOptionTab_X_int(self, option, tab_index)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTabBar_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Shape : UInt32
+      RoundedNorth = 0
+      RoundedSouth = 1
+      RoundedWest = 2
+      RoundedEast = 3
+      TriangularNorth = 4
+      TriangularSouth = 5
+      TriangularWest = 6
+      TriangularEast = 7
+    end
+    enum ButtonPosition : UInt32
+      LeftSide = 0
+      RightSide = 1
+    end
+    enum SelectionBehavior : UInt32
+      SelectLeftTab = 0
+      SelectRightTab = 1
+      SelectPreviousTab = 2
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -58003,29 +57673,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTabBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Shape : UInt32
-      RoundedNorth = 0
-      RoundedSouth = 1
-      RoundedWest = 2
-      RoundedEast = 3
-      TriangularNorth = 4
-      TriangularSouth = 5
-      TriangularWest = 6
-      TriangularEast = 7
-    end
-    enum ButtonPosition : UInt32
-      LeftSide = 0
-      RightSide = 1
-    end
-    enum SelectionBehavior : UInt32
-      SelectLeftTab = 0
-      SelectRightTab = 1
-      SelectPreviousTab = 2
     end
     def on_current_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTabBar_CONNECT_currentChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -58469,6 +58116,20 @@ module Qt
       Binding.bg_QTabWidget_initStyleOption_QStyleOptionTabWidgetFrame_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTabWidget_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum TabPosition : UInt32
+      North = 0
+      South = 1
+      West = 2
+      East = 3
+    end
+    enum TabShape : UInt32
+      Rounded = 0
+      Triangular = 1
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -58828,20 +58489,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTabWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum TabPosition : UInt32
-      North = 0
-      South = 1
-      West = 2
-      East = 3
-    end
-    enum TabShape : UInt32
-      Rounded = 0
-      Triangular = 1
     end
     def on_current_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTabWidget_CONNECT_currentChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -59485,6 +59132,24 @@ module Qt
       Binding.bg_QFrame_initStyleOption_QStyleOptionFrame_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFrame_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Shape : UInt32
+      NoFrame = 0
+      Box = 1
+      Panel = 2
+      WinPanel = 3
+      Hline = 4
+      Vline = 5
+      StyledPanel = 6
+    end
+    enum Shadow : UInt32
+      Plain = 16
+      Raised = 32
+      Sunken = 48
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -59861,24 +59526,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QFrame_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Shape : UInt32
-      NoFrame = 0
-      Box = 1
-      Panel = 2
-      WinPanel = 3
-      Hline = 4
-      Vline = 5
-      StyledPanel = 6
-    end
-    enum Shadow : UInt32
-      Plain = 16
-      Raised = 32
-      Sunken = 48
-    end
   end
   class StyleOptionGraphicsItem
     @unwrap : Binding::QStyleOptionGraphicsItem*
@@ -60069,6 +59716,92 @@ module Qt
       Binding.bg_QAbstractItemDelegate_sizeHintChanged_const_QModelIndex_R(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractItemDelegate_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum EndEditHint : UInt32
+      NoHint = 0
+      EditNextItem = 1
+      EditPreviousItem = 2
+      SubmitModelCache = 3
+      RevertModelCache = 4
+    end
+    enum SelectionMode : UInt32
+      NoSelection = 0
+      SingleSelection = 1
+      MultiSelection = 2
+      ExtendedSelection = 3
+      ContiguousSelection = 4
+    end
+    enum SelectionBehavior : UInt32
+      SelectItems = 0
+      SelectRows = 1
+      SelectColumns = 2
+    end
+    enum ScrollHint : UInt32
+      EnsureVisible = 0
+      PositionAtTop = 1
+      PositionAtBottom = 2
+      PositionAtCenter = 3
+    end
+    enum EditTrigger : UInt32
+      NoEditTriggers = 0
+      CurrentChanged = 1
+      DoubleClicked = 2
+      SelectedClicked = 4
+      EditKeyPressed = 8
+      AnyKeyPressed = 16
+      AllEditTriggers = 31
+    end
+    @[Flags]
+    enum EditTriggers : UInt32
+      NoEditTriggers = 0
+      CurrentChanged = 1
+      DoubleClicked = 2
+      SelectedClicked = 4
+      EditKeyPressed = 8
+      AnyKeyPressed = 16
+      AllEditTriggers = 31
+    end
+    enum ScrollMode : UInt32
+      ScrollPerItem = 0
+      ScrollPerPixel = 1
+    end
+    enum DragDropMode : UInt32
+      NoDragDrop = 0
+      DragOnly = 1
+      DropOnly = 2
+      DragDrop = 3
+      InternalMove = 4
+    end
+    enum CursorAction : UInt32
+      MoveUp = 0
+      MoveDown = 1
+      MoveLeft = 2
+      MoveRight = 3
+      MoveHome = 4
+      MoveEnd = 5
+      MovePageUp = 6
+      MovePageDown = 7
+      MoveNext = 8
+      MovePrevious = 9
+    end
+    enum State : UInt32
+      NoState = 0
+      DraggingState = 1
+      DragSelectingState = 2
+      EditingState = 3
+      ExpandingState = 4
+      CollapsingState = 5
+      AnimatingState = 6
+    end
+    enum DropIndicatorPosition : UInt32
+      OnItem = 0
+      AboveItem = 1
+      BelowItem = 2
+      OnViewport = 3
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -60176,92 +59909,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractItemDelegate_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum EndEditHint : UInt32
-      NoHint = 0
-      EditNextItem = 1
-      EditPreviousItem = 2
-      SubmitModelCache = 3
-      RevertModelCache = 4
-    end
-    enum SelectionMode : UInt32
-      NoSelection = 0
-      SingleSelection = 1
-      MultiSelection = 2
-      ExtendedSelection = 3
-      ContiguousSelection = 4
-    end
-    enum SelectionBehavior : UInt32
-      SelectItems = 0
-      SelectRows = 1
-      SelectColumns = 2
-    end
-    enum ScrollHint : UInt32
-      EnsureVisible = 0
-      PositionAtTop = 1
-      PositionAtBottom = 2
-      PositionAtCenter = 3
-    end
-    enum EditTrigger : UInt32
-      NoEditTriggers = 0
-      CurrentChanged = 1
-      DoubleClicked = 2
-      SelectedClicked = 4
-      EditKeyPressed = 8
-      AnyKeyPressed = 16
-      AllEditTriggers = 31
-    end
-    @[Flags]
-    enum EditTriggers : UInt32
-      NoEditTriggers = 0
-      CurrentChanged = 1
-      DoubleClicked = 2
-      SelectedClicked = 4
-      EditKeyPressed = 8
-      AnyKeyPressed = 16
-      AllEditTriggers = 31
-    end
-    enum ScrollMode : UInt32
-      ScrollPerItem = 0
-      ScrollPerPixel = 1
-    end
-    enum DragDropMode : UInt32
-      NoDragDrop = 0
-      DragOnly = 1
-      DropOnly = 2
-      DragDrop = 3
-      InternalMove = 4
-    end
-    enum CursorAction : UInt32
-      MoveUp = 0
-      MoveDown = 1
-      MoveLeft = 2
-      MoveRight = 3
-      MoveHome = 4
-      MoveEnd = 5
-      MovePageUp = 6
-      MovePageDown = 7
-      MoveNext = 8
-      MovePrevious = 9
-    end
-    enum State : UInt32
-      NoState = 0
-      DraggingState = 1
-      DragSelectingState = 2
-      EditingState = 3
-      ExpandingState = 4
-      CollapsingState = 5
-      AnimatingState = 6
-    end
-    enum DropIndicatorPosition : UInt32
-      OnItem = 0
-      AboveItem = 1
-      BelowItem = 2
-      OnViewport = 3
     end
     def on_commit_data(&_proc_ : Proc(Widget, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemDelegate_CONNECT_commitData_CrystalProc_void__QWidget_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QWidget*, Void).new do |arg0| _proc_.call(Widget.new(unwrap: arg0)) end)))
@@ -60748,6 +60395,15 @@ module Qt
       Size.new(unwrap: Binding.bg_QAbstractScrollArea_viewportSizeHint_(self))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractScrollArea_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum SizeAdjust : UInt32
+      AdjustIgnored = 0
+      AdjustToContentsOnFirstShow = 1
+      AdjustToContents = 2
+    end
     protected def change_event(unnamed_arg_0 : Event) : Void
       Binding.bg_QFrame_changeEvent_QEvent_X(self, unnamed_arg_0)
     end
@@ -61091,15 +60747,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractScrollArea_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum SizeAdjust : UInt32
-      AdjustIgnored = 0
-      AdjustToContentsOnFirstShow = 1
-      AdjustToContents = 2
     end
   end
   abstract class AbstractItemView < AbstractScrollArea
@@ -62095,6 +61742,10 @@ module Qt
       Size.new(unwrap: Binding.bg_QAbstractItemView_viewportSizeHint_(self))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractItemView_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def minimum_size_hint() : Size
       Size.new(unwrap: Binding.bg_QAbstractScrollArea_minimumSizeHint_(self))
     end
@@ -62563,10 +62214,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QAbstractItemView_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_pressed(&_proc_ : Proc(ModelIndex, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemView_CONNECT_pressed_CrystalProc_void__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Void).new do |arg0| _proc_.call(ModelIndex.new(unwrap: arg0)) end)))
     end
@@ -62870,6 +62517,10 @@ module Qt
       Binding.bg_QApplication_event_QEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QApplication_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -62946,10 +62597,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QApplication_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_focus_changed(&_proc_ : Proc(Widget, Widget, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QApplication_CONNECT_focusChanged_CrystalProc_void__QWidget_X__QWidget_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QWidget*, Binding::QWidget*, Void).new do |arg0, arg1| _proc_.call(Widget.new(unwrap: arg0), Widget.new(unwrap: arg1)) end)))
     end
@@ -63131,6 +62778,14 @@ module Qt
       LayoutItemImpl.new(unwrap: Binding.bg_QLayoutItem__OPERATOR_assign_const_QLayoutItem_R(self, unnamed_arg_0))
     end
     
+    private def align() : Alignment
+      Binding.bg_QLayoutItem_align_GETTER_(self)
+    end
+    
+    private def align=(align : Alignment) : Void
+      Binding.bg_QLayoutItem_align_SETTER_Qt__Alignment(self, align)
+    end
+    
     def to?(_type_ : T.class) forall T
       {% if T == LayoutItem %}
         self
@@ -63204,14 +62859,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def align() : Alignment
-      Binding.bg_QLayoutItem_align_GETTER_(self)
-    end
-    
-    private def align=(align : Alignment) : Void
-      Binding.bg_QLayoutItem_align_SETTER_Qt__Alignment(self, align)
-    end
-    
   end
   class SpacerItem < LayoutItem
     def initialize(w : Int32, h : Int32, h_data : SizePolicy::Policy = SizePolicy::Policy::Minimum, v_data : SizePolicy::Policy = SizePolicy::Policy::Minimum)
@@ -63599,6 +63246,14 @@ module Qt
       Binding.bg_QWidgetItem_controlTypes_(self)
     end
     
+    private def wid() : Widget
+      Widget.new(unwrap: Binding.bg_QWidgetItem_wid_GETTER_(self))
+    end
+    
+    private def wid=(wid : Widget) : Void
+      Binding.bg_QWidgetItem_wid_SETTER_QWidget_X(self, wid)
+    end
+    
     def invalidate() : Void
       Binding.bg_QLayoutItem_invalidate_(self)
     end
@@ -63691,14 +63346,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    private def wid() : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetItem_wid_GETTER_(self))
-    end
-    
-    private def wid=(wid : Widget) : Void
-      Binding.bg_QWidgetItem_wid_SETTER_QWidget_X(self, wid)
-    end
-    
   end
   abstract class Layout < Object
     def meta_object() : Binding::QMetaObject*
@@ -64143,6 +63790,18 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QLayout_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum SizeConstraint : UInt32
+      SetDefaultConstraint = 0
+      SetNoConstraint = 1
+      SetMinimumSize = 2
+      SetFixedSize = 3
+      SetMaximumSize = 4
+      SetMinAndMaxSize = 5
+    end
     def as_layout_item() : LayoutItem
       LayoutItemImpl.new(unwrap: Binding.bg_QLayout_AS_LayoutItem_(self))
     end
@@ -64322,18 +63981,6 @@ module Qt
       Binding.bg_QLayout_alignment_(self)
     end
     
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum SizeConstraint : UInt32
-      SetDefaultConstraint = 0
-      SetNoConstraint = 1
-      SetMinimumSize = 2
-      SetFixedSize = 3
-      SetMaximumSize = 4
-      SetMinAndMaxSize = 5
-    end
   end
   class GridLayout < Layout
     def meta_object() : Binding::QMetaObject*
@@ -64651,6 +64298,10 @@ module Qt
     Binding.bg_QGridLayout_addItem_QLayoutItem_X(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGridLayout_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def geometry() : Rect
       Rect.new(unwrap: Binding.bg_QLayout_geometry_(self))
     end
@@ -64844,10 +64495,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGridLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class BoxLayout < Layout
     def meta_object() : Binding::QMetaObject*
@@ -65119,6 +64766,18 @@ module Qt
       Binding.bg_QBoxLayout_setGeometry_const_QRect_R(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QBoxLayout_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Direction : UInt32
+      LeftToRight = 0
+      RightToLeft = 1
+      TopToBottom = 2
+      BottomToTop = 3
+      Down = 2
+      Up = 3
+    end
     def geometry() : Rect
       Rect.new(unwrap: Binding.bg_QLayout_geometry_(self))
     end
@@ -65311,18 +64970,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QBoxLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Direction : UInt32
-      LeftToRight = 0
-      RightToLeft = 1
-      TopToBottom = 2
-      BottomToTop = 3
-      Down = 2
-      Up = 3
     end
   end
   class HBoxLayout < BoxLayout
@@ -65538,6 +65185,10 @@ module Qt
     )
     Binding.bg_BgInherit_QHBoxLayout_JUMPTABLE_BgJumptable_QHBoxLayout_R(result, pointerof(jump_table))
     {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QHBoxLayout_staticMetaObject_STATIC_GETTER_()
     end
     
     def add_item(unnamed_arg_0 : LayoutItem) : Void
@@ -65794,10 +65445,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QHBoxLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class VBoxLayout < BoxLayout
     def meta_object() : Binding::QMetaObject*
@@ -66012,6 +65659,10 @@ module Qt
     )
     Binding.bg_BgInherit_QVBoxLayout_JUMPTABLE_BgJumptable_QVBoxLayout_R(result, pointerof(jump_table))
     {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QVBoxLayout_staticMetaObject_STATIC_GETTER_()
     end
     
     def add_item(unnamed_arg_0 : LayoutItem) : Void
@@ -66268,10 +65919,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QVBoxLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class ButtonGroup < Object
     def meta_object() : Binding::QMetaObject*
@@ -66422,6 +66069,10 @@ module Qt
       Binding.bg_QButtonGroup_idToggled_int_bool(self, unnamed_arg_0, unnamed_arg_1)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QButtonGroup_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -66498,10 +66149,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QButtonGroup_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_button_clicked(&_proc_ : Proc(AbstractButton, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QButtonGroup_CONNECT_buttonClicked_CrystalProc_void__QAbstractButton_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAbstractButton*, Void).new do |arg0| _proc_.call(AbstractButtonImpl.new(unwrap: arg0)) end)))
     end
@@ -66890,6 +66537,10 @@ module Qt
       Binding.bg_QCheckBox_initStyleOption_QStyleOptionButton_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QCheckBox_staticMetaObject_STATIC_GETTER_()
+    end
+    
     protected def key_press_event(event : KeyEvent) : Void
       Binding.bg_QAbstractButton_keyPressEvent_QKeyEvent_X(self, event)
     end
@@ -67274,10 +66925,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QCheckBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_check_state_changed(&_proc_ : Proc(CheckState, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QCheckBox_CONNECT_checkStateChanged_CrystalProc_void__Qt__CheckState_(self, BindgenHelper.wrap_proc(Proc(CheckState, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -67956,6 +67603,14 @@ module Qt
       Binding.bg_QDialog_adjustPosition_QWidget_X(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDialog_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum DialogCode : UInt32
+      Rejected = 0
+      Accepted = 1
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -68327,14 +67982,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDialog_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum DialogCode : UInt32
-      Rejected = 0
-      Accepted = 1
     end
     def on_finished(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QDialog_CONNECT_finished_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -68720,7 +68367,7 @@ module Qt
     end
     
     def add_items(texts : Enumerable(String)) : Void
-      Binding.bg_QComboBox_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, texts).to_unsafe)
+      Binding.bg_QComboBox_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, texts).to_unsafe)
     end
     
     def insert_item(index : Int32, text : String) : Void
@@ -68740,7 +68387,7 @@ module Qt
     end
     
     def insert_items(index : Int32, texts : Enumerable(String)) : Void
-      Binding.bg_QComboBox_insertItems_int_const_QStringList_R(self, index, BindgenHelper.wrap_container(Container_QList_QString_, texts).to_unsafe)
+      Binding.bg_QComboBox_insertItems_int_const_QStringList_R(self, index, BindgenHelper.wrap_container(StringList, texts).to_unsafe)
     end
     
     def insert_separator(index : Int32) : Void
@@ -69045,6 +68692,28 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QComboBox_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum InsertPolicy : UInt32
+      NoInsert = 0
+      InsertAtTop = 1
+      InsertAtCurrent = 2
+      InsertAtBottom = 3
+      InsertAfterCurrent = 4
+      InsertBeforeCurrent = 5
+      InsertAlphabetically = 6
+    end
+    enum SizeAdjustPolicy : UInt32
+      AdjustToContents = 0
+      AdjustToContentsOnFirstShow = 1
+      AdjustToMinimumContentsLengthWithIcon = 2
+    end
+    enum LabelDrawingMode : Int32
+      UseStyle = 0
+      UseDelegate = 1
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -69376,28 +69045,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QComboBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum InsertPolicy : UInt32
-      NoInsert = 0
-      InsertAtTop = 1
-      InsertAtCurrent = 2
-      InsertAtBottom = 3
-      InsertAfterCurrent = 4
-      InsertBeforeCurrent = 5
-      InsertAlphabetically = 6
-    end
-    enum SizeAdjustPolicy : UInt32
-      AdjustToContents = 0
-      AdjustToContentsOnFirstShow = 1
-      AdjustToMinimumContentsLengthWithIcon = 2
-    end
-    enum LabelDrawingMode : Int32
-      UseStyle = 0
-      UseDelegate = 1
     end
     def on_edit_text_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QComboBox_CONNECT_editTextChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
@@ -70078,6 +69725,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QPushButton_staticMetaObject_STATIC_GETTER_()
+    end
+    
     protected def check_state_set() : Void
       Binding.bg_QAbstractButton_checkStateSet_(self)
     end
@@ -70458,10 +70109,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QPushButton_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class Completer < Object
     def meta_object() : Binding::QMetaObject*
@@ -70530,7 +70177,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(StringList, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70585,7 +70232,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(StringList, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70599,7 +70246,7 @@ module Qt
     end
     
     def initialize(completions : Enumerable(String), parent : Object? = nil)
-      result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(Container_QList_QString_, completions).to_unsafe, parent)
+      result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, completions).to_unsafe, parent)
     @unwrap = result
     {% begin %}
     {%
@@ -70640,7 +70287,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(StringList, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70789,7 +70436,7 @@ module Qt
     end
     
     def split_path(path : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QCompleter_splitPath_const_QString_R(self, Qt::Converter::QString.wrap(path)))
+      StringList.new(unwrap: Binding.bg_QCompleter_splitPath_const_QString_R(self, Qt::Converter::QString.wrap(path)))
     end
     
     protected def event_filter(watched : Object, event : Event) : Bool
@@ -70816,6 +70463,20 @@ module Qt
       Binding.bg_QCompleter_highlighted_const_QModelIndex_R(self, index)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QCompleter_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum CompletionMode : UInt32
+      PopupCompletion = 0
+      UnfilteredPopupCompletion = 1
+      InlineCompletion = 2
+    end
+    enum ModelSorting : UInt32
+      UnsortedModel = 0
+      CaseSensitivelySortedModel = 1
+      CaseInsensitivelySortedModel = 2
+    end
     protected def timer_event(event : TimerEvent) : Void
       Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
     end
@@ -70857,7 +70518,7 @@ module Qt
       end
       
       def split_path(path : String) : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QCompleter_splitPath_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(path)))
+        StringList.new(unwrap: Binding.bg_QCompleter_splitPath_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(path)))
       end
       
       protected def event_filter(watched : Object, event : Event) : Bool
@@ -70891,20 +70552,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QCompleter_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum CompletionMode : UInt32
-      PopupCompletion = 0
-      UnfilteredPopupCompletion = 1
-      InlineCompletion = 2
-    end
-    enum ModelSorting : UInt32
-      UnsortedModel = 0
-      CaseSensitivelySortedModel = 1
-      CaseInsensitivelySortedModel = 2
     end
     def on_activated(_type1_ : String.class, &_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QCompleter_CONNECT_activated_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
@@ -71905,6 +71552,37 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDateTimeEdit_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Section : UInt32
+      NoSection = 0
+      AmPmSection = 1
+      Msecsection = 2
+      SecondSection = 4
+      MinuteSection = 8
+      HourSection = 16
+      DaySection = 256
+      MonthSection = 512
+      YearSection = 1024
+      TimeSections_Mask = 31
+      DateSections_Mask = 1792
+    end
+    @[Flags]
+    enum Sections : UInt32
+      NoSection = 0
+      AmPmSection = 1
+      Msecsection = 2
+      SecondSection = 4
+      MinuteSection = 8
+      HourSection = 16
+      DaySection = 256
+      MonthSection = 512
+      YearSection = 1024
+      TimeSections_Mask = 31
+      DateSections_Mask = 1792
+    end
     def minimum_size_hint() : Size
       Size.new(unwrap: Binding.bg_QAbstractSpinBox_minimumSizeHint_(self))
     end
@@ -72285,37 +71963,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDateTimeEdit_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Section : UInt32
-      NoSection = 0
-      AmPmSection = 1
-      Msecsection = 2
-      SecondSection = 4
-      MinuteSection = 8
-      HourSection = 16
-      DaySection = 256
-      MonthSection = 512
-      YearSection = 1024
-      TimeSections_Mask = 31
-      DateSections_Mask = 1792
-    end
-    @[Flags]
-    enum Sections : UInt32
-      NoSection = 0
-      AmPmSection = 1
-      Msecsection = 2
-      SecondSection = 4
-      MinuteSection = 8
-      HourSection = 16
-      DaySection = 256
-      MonthSection = 512
-      YearSection = 1024
-      TimeSections_Mask = 31
-      DateSections_Mask = 1792
-    end
     def on_date_time_changed(&_proc_ : Proc(DateTime, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QDateTimeEdit_CONNECT_dateTimeChanged_CrystalProc_void__const_QDateTime_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QDateTime*, Void).new do |arg0| _proc_.call(DateTime.new(unwrap: arg0)) end)))
     end
@@ -72553,6 +72200,10 @@ module Qt
     
     protected def init_style_option(option : Binding::QStyleOptionSlider*) : Void
       Binding.bg_QDial_initStyleOption_QStyleOptionSlider_X(self, option)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDial_staticMetaObject_STATIC_GETTER_()
     end
     
     protected def key_press_event(event : KeyEvent) : Void
@@ -72919,10 +72570,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDial_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class DockWidget < Widget
     def meta_object() : Binding::QMetaObject*
@@ -73571,6 +73218,29 @@ module Qt
       Binding.bg_QDockWidget_initStyleOption_QStyleOptionDockWidget_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDockWidget_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Feature : UInt32
+      DockWidgetClosable = 1
+      DockWidgetMovable = 2
+      DockWidgetFloatable = 4
+      DockWidgetVerticalTitleBar = 8
+      DockWidgetFeatureMask = 15
+      NoDockWidgetFeatures = 0
+      Reserved = 255
+    end
+    @[Flags]
+    enum Features : UInt32
+      DockWidgetClosable = 1
+      DockWidgetMovable = 2
+      DockWidgetFloatable = 4
+      DockWidgetVerticalTitleBar = 8
+      DockWidgetFeatureMask = 15
+      NoDockWidgetFeatures = 0
+      Reserved = 255
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -73946,29 +73616,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDockWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Feature : UInt32
-      DockWidgetClosable = 1
-      DockWidgetMovable = 2
-      DockWidgetFloatable = 4
-      DockWidgetVerticalTitleBar = 8
-      DockWidgetFeatureMask = 15
-      NoDockWidgetFeatures = 0
-      Reserved = 255
-    end
-    @[Flags]
-    enum Features : UInt32
-      DockWidgetClosable = 1
-      DockWidgetMovable = 2
-      DockWidgetFloatable = 4
-      DockWidgetVerticalTitleBar = 8
-      DockWidgetFeatureMask = 15
-      NoDockWidgetFeatures = 0
-      Reserved = 255
     end
     def on_features_changed(&_proc_ : Proc(DockWidget::Features, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QDockWidget_CONNECT_featuresChanged_CrystalProc_void__QDockWidget__DockWidgetFeatures_(self, BindgenHelper.wrap_proc(Proc(DockWidget::Features, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -74736,7 +74383,7 @@ module Qt
     end
     
     def selected_files() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_selectedFiles_(self))
+      StringList.new(unwrap: Binding.bg_QFileDialog_selectedFiles_(self))
     end
     
     def select_url(url : Url) : Void
@@ -74752,11 +74399,11 @@ module Qt
     end
     
     def name_filters=(filters : Enumerable(String)) : Void
-      Binding.bg_QFileDialog_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe)
+      Binding.bg_QFileDialog_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, filters).to_unsafe)
     end
     
     def name_filters() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_nameFilters_(self))
+      StringList.new(unwrap: Binding.bg_QFileDialog_nameFilters_(self))
     end
     
     def select_name_filter(filter : String) : Void
@@ -74772,11 +74419,11 @@ module Qt
     end
     
     def mime_type_filters=(filters : Enumerable(String)) : Void
-      Binding.bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe)
+      Binding.bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, filters).to_unsafe)
     end
     
     def mime_type_filters() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_mimeTypeFilters_(self))
+      StringList.new(unwrap: Binding.bg_QFileDialog_mimeTypeFilters_(self))
     end
     
     def select_mime_type_filter(filter : String) : Void
@@ -74840,11 +74487,11 @@ module Qt
     end
     
     def history=(paths : Enumerable(String)) : Void
-      Binding.bg_QFileDialog_setHistory_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe)
+      Binding.bg_QFileDialog_setHistory_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, paths).to_unsafe)
     end
     
     def history() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_history_(self))
+      StringList.new(unwrap: Binding.bg_QFileDialog_history_(self))
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -74873,11 +74520,11 @@ module Qt
     end
     
     def supported_schemes=(schemes : Enumerable(String)) : Void
-      Binding.bg_QFileDialog_setSupportedSchemes_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, schemes).to_unsafe)
+      Binding.bg_QFileDialog_setSupportedSchemes_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, schemes).to_unsafe)
     end
     
     def supported_schemes() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_supportedSchemes_(self))
+      StringList.new(unwrap: Binding.bg_QFileDialog_supportedSchemes_(self))
     end
     
     def proxy_model=(model : AbstractProxyModel) : Void
@@ -74917,7 +74564,7 @@ module Qt
     end
     
     def files_selected(files : Enumerable(String)) : Void
-      Binding.bg_QFileDialog_filesSelected_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, files).to_unsafe)
+      Binding.bg_QFileDialog_filesSelected_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, files).to_unsafe)
     end
     
     def current_changed(path : String) : Void
@@ -75045,23 +74692,23 @@ module Qt
     end
     
     def self.get_existing_directory_url(parent : Widget?, caption : String, dir : Url, options : FileDialog::Options, supported_schemes : Enumerable(String)) : Url
-      Url.new(unwrap: Binding.bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent, Qt::Converter::QString.wrap(caption), dir, options, BindgenHelper.wrap_container(Container_QList_QString_, supported_schemes).to_unsafe))
+      Url.new(unwrap: Binding.bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent, Qt::Converter::QString.wrap(caption), dir, options, BindgenHelper.wrap_container(StringList, supported_schemes).to_unsafe))
     end
     
     def self.get_open_file_names(parent : Widget? = nil) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent))
+      StringList.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent))
     end
     
     def self.get_open_file_names(parent : Widget?, caption : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent, Qt::Converter::QString.wrap(caption)))
+      StringList.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent, Qt::Converter::QString.wrap(caption)))
     end
     
     def self.get_open_file_names(parent : Widget?, caption : String, dir : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir)))
+      StringList.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir)))
     end
     
     def self.get_open_file_names(parent : Widget?, caption : String, dir : String, filter : String) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir), Qt::Converter::QString.wrap(filter)))
+      StringList.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir), Qt::Converter::QString.wrap(filter)))
     end
     
     def self.get_open_file_urls(parent : Widget? = nil) : Enumerable(Url)
@@ -75235,6 +74882,50 @@ module Qt
       Binding.bg_QFileDialog_changeEvent_QEvent_X(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileDialog_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ViewMode : UInt32
+      Detail = 0
+      List = 1
+    end
+    enum FileMode : UInt32
+      AnyFile = 0
+      ExistingFile = 1
+      Directory = 2
+      ExistingFiles = 3
+    end
+    enum AcceptMode : UInt32
+      AcceptOpen = 0
+      AcceptSave = 1
+    end
+    enum DialogLabel : UInt32
+      LookIn = 0
+      FileName = 1
+      FileType = 2
+      Accept = 3
+      Reject = 4
+    end
+    enum Option : UInt32
+      ShowDirsOnly = 1
+      DontResolveSymlinks = 2
+      DontConfirmOverwrite = 4
+      DontUseNativeDialog = 8
+      ReadOnly = 16
+      HideNameFilterDetails = 32
+      DontUseCustomDirectoryIcons = 64
+    end
+    @[Flags]
+    enum Options : UInt32
+      ShowDirsOnly = 1
+      DontResolveSymlinks = 2
+      DontConfirmOverwrite = 4
+      DontUseNativeDialog = 8
+      ReadOnly = 16
+      HideNameFilterDetails = 32
+      DontUseCustomDirectoryIcons = 64
+    end
     def size_hint() : Size
       Size.new(unwrap: Binding.bg_QDialog_sizeHint_(self))
     end
@@ -75647,56 +75338,12 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QFileDialog_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ViewMode : UInt32
-      Detail = 0
-      List = 1
-    end
-    enum FileMode : UInt32
-      AnyFile = 0
-      ExistingFile = 1
-      Directory = 2
-      ExistingFiles = 3
-    end
-    enum AcceptMode : UInt32
-      AcceptOpen = 0
-      AcceptSave = 1
-    end
-    enum DialogLabel : UInt32
-      LookIn = 0
-      FileName = 1
-      FileType = 2
-      Accept = 3
-      Reject = 4
-    end
-    enum Option : UInt32
-      ShowDirsOnly = 1
-      DontResolveSymlinks = 2
-      DontConfirmOverwrite = 4
-      DontUseNativeDialog = 8
-      ReadOnly = 16
-      HideNameFilterDetails = 32
-      DontUseCustomDirectoryIcons = 64
-    end
-    @[Flags]
-    enum Options : UInt32
-      ShowDirsOnly = 1
-      DontResolveSymlinks = 2
-      DontConfirmOverwrite = 4
-      DontUseNativeDialog = 8
-      ReadOnly = 16
-      HideNameFilterDetails = 32
-      DontUseCustomDirectoryIcons = 64
-    end
     def on_file_selected(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_fileSelected_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
     
     def on_files_selected(&_proc_ : Proc(Enumerable(String), Void)) : SignalConnection
-      SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQString*, Void).new do |arg0| _proc_.call(Container_QList_QString_.new(unwrap: arg0)) end)))
+      SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQString*, Void).new do |arg0| _proc_.call(StringList.new(unwrap: arg0)) end)))
     end
     
     def on_current_changed(&_proc_ : Proc(String, Void)) : SignalConnection
@@ -76090,6 +75737,25 @@ module Qt
       Binding.bg_QFormLayout_rowCount_(self)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFormLayout_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum FieldGrowthPolicy : UInt32
+      FieldsStayAtSizeHint = 0
+      ExpandingFieldsGrow = 1
+      AllNonFixedFieldsGrow = 2
+    end
+    enum RowWrapPolicy : UInt32
+      DontWrapRows = 0
+      WrapLongRows = 1
+      WrapAllRows = 2
+    end
+    enum ItemRole : UInt32
+      LabelRole = 0
+      FieldRole = 1
+      SpanningRole = 2
+    end
     def geometry() : Rect
       Rect.new(unwrap: Binding.bg_QLayout_geometry_(self))
     end
@@ -76283,25 +75949,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QFormLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum FieldGrowthPolicy : UInt32
-      FieldsStayAtSizeHint = 0
-      ExpandingFieldsGrow = 1
-      AllNonFixedFieldsGrow = 2
-    end
-    enum RowWrapPolicy : UInt32
-      DontWrapRows = 0
-      WrapLongRows = 1
-      WrapAllRows = 2
-    end
-    enum ItemRole : UInt32
-      LabelRole = 0
-      FieldRole = 1
-      SpanningRole = 2
-    end
   end
   class Gesture < Object
     def meta_object() : Binding::QMetaObject*
@@ -76462,6 +76109,14 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGesture_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum GestureCancelPolicy : UInt32
+      CancelNone = 0
+      CancelAllInContext = 1
+    end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -76537,14 +76192,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGesture_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum GestureCancelPolicy : UInt32
-      CancelNone = 0
-      CancelAllInContext = 1
     end
   end
   class GestureEvent < Event
@@ -77775,6 +77422,8 @@ module Qt
       Binding.bg_QGraphicsItem_prepareGeometryChange_(self)
     end
     
+    TYPE = 1u32
+    USER_TYPE = 65536u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsItem %}
         self
@@ -77803,8 +77452,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 1u32
-    USER_TYPE = 65536u32
     def to_unsafe
       @unwrap
     end
@@ -78379,6 +78026,10 @@ module Qt
     
     protected def event(event : Event) : Bool
       Binding.bg_QGraphicsObject_event_QEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsObject_staticMetaObject_STATIC_GETTER_()
     end
     
     def as_graphics_item() : GraphicsItem
@@ -79409,10 +79060,6 @@ module Qt
       Binding.bg_QGraphicsObject_prepareGeometryChange_(self)
     end
     
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsObject_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_parent_changed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QGraphicsObject_CONNECT_parentChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -80219,106 +79866,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsPathItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 2u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsPathItem %}
         self
@@ -80327,7 +79875,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 2u32
     def initialize(unwrap : Binding::QGraphicsPathItem*)
       result = unwrap
     @unwrap = result
@@ -80480,6 +80027,106 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsRectItem < AbstractGraphicsShapeItem
     def initialize(parent : GraphicsItem? = nil)
@@ -80837,106 +80484,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsRectItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 3u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsRectItem %}
         self
@@ -80945,7 +80493,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 3u32
     def initialize(unwrap : Binding::QGraphicsRectItem*)
       result = unwrap
     @unwrap = result
@@ -81098,6 +80645,106 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsEllipseItem < AbstractGraphicsShapeItem
     def initialize(parent : GraphicsItem? = nil)
@@ -81471,106 +81118,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsEllipseItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 4u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsEllipseItem %}
         self
@@ -81579,7 +81127,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 4u32
     def initialize(unwrap : Binding::QGraphicsEllipseItem*)
       result = unwrap
     @unwrap = result
@@ -81732,6 +81279,106 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsPolygonItem < AbstractGraphicsShapeItem
     def initialize(parent : GraphicsItem? = nil)
@@ -81992,106 +81639,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsPolygonItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 5u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsPolygonItem %}
         self
@@ -82100,7 +81648,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 5u32
     def initialize(unwrap : Binding::QGraphicsPolygonItem*)
       result = unwrap
     @unwrap = result
@@ -82253,6 +81800,106 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsPixmapItem < GraphicsItem
     def initialize(parent : GraphicsItem? = nil)
@@ -82533,106 +82180,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsPixmapItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 7u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsPixmapItem %}
         self
@@ -82641,7 +82189,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 7u32
     def initialize(unwrap : Binding::QGraphicsPixmapItem*)
       result = unwrap
     @unwrap = result
@@ -82799,6 +82346,106 @@ module Qt
       BoundingRectShape = 1
       HeuristicMaskShape = 2
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsTextItem < GraphicsObject
     def meta_object() : Binding::QMetaObject*
@@ -83252,34 +82899,11 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsTextItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    protected def event(event : Event) : Bool
-      Binding.bg_QGraphicsObject_event_QEvent_X(self, event)
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsTextItem_staticMetaObject_STATIC_GETTER_()
     end
     
-    def event_filter(watched : Object, event : Event) : Bool
-      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def timer_event(event : TimerEvent) : Void
-      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
-    end
-    
-    protected def child_event(event : Binding::QChildEvent*) : Void
-      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
-    end
-    
-    protected def custom_event(event : Event) : Void
-      Binding.bg_QObject_customEvent_QEvent_X(self, event)
-    end
-    
-    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
-    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
+    TYPE = 8u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsTextItem %}
         self
@@ -83288,7 +82912,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 8u32
     def initialize(unwrap : Binding::QGraphicsTextItem*)
       result = unwrap
     @unwrap = result
@@ -83445,8 +83068,32 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsTextItem_staticMetaObject_STATIC_GETTER_()
+    protected def event(event : Event) : Bool
+      Binding.bg_QGraphicsObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
     end
     
     def on_link_activated(&_proc_ : Proc(String, Void)) : SignalConnection
@@ -83717,106 +83364,7 @@ module Qt
       Qt::Variant.new(Binding.bg_QGraphicsSimpleTextItem_extension_const_QVariant_R(self, (variant.to_unsafe)))
     end
     
-    def advance(phase : Int32) : Void
-      Binding.bg_QGraphicsItem_advance_int(self, phase)
-    end
-    
-    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
-    end
-    
-    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
-      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
-    end
-    
-    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
-    end
-    
-    protected def scene_event(event : Event) : Bool
-      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
-    end
-    
-    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
-      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
-    end
-    
-    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
-      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
-    end
-    
-    protected def focus_in_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def focus_out_event(event : FocusEvent) : Void
-      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
-    end
-    
-    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
-      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
-    end
-    
-    protected def key_press_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def key_release_event(event : KeyEvent) : Void
-      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
-    end
-    
-    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
-      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
-    end
-    
-    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
-      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
-    end
-    
-    protected def input_method_event(event : InputMethodEvent) : Void
-      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
-    end
-    
-    protected def input_method_query(query : InputMethodQuery) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
-    end
-    
-    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
-      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
-    end
-    
+    TYPE = 9u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsSimpleTextItem %}
         self
@@ -83825,7 +83373,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 9u32
     def initialize(unwrap : Binding::QGraphicsSimpleTextItem*)
       result = unwrap
     @unwrap = result
@@ -83978,6 +83525,106 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+    def advance(phase : Int32) : Void
+      Binding.bg_QGraphicsItem_advance_int(self, phase)
+    end
+    
+    def collides_with_item(other : GraphicsItem, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, other, mode)
+    end
+    
+    def collides_with_path(path : Binding::QPainterPath*, mode : ItemSelectionMode = ItemSelectionMode::IntersectsItemShape) : Bool
+      Binding.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode)
+    end
+    
+    protected def scene_event_filter(watched : GraphicsItem, event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def scene_event(event : Event) : Bool
+      Binding.bg_QGraphicsItem_sceneEvent_QEvent_X(self, event)
+    end
+    
+    protected def context_menu_event(event : Binding::QGraphicsSceneContextMenuEvent*) : Void
+      Binding.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(self, event)
+    end
+    
+    protected def drag_enter_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_leave_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drag_move_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def drop_event(event : Binding::QGraphicsSceneDragDropEvent*) : Void
+      Binding.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(self, event)
+    end
+    
+    protected def focus_in_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def focus_out_event(event : FocusEvent) : Void
+      Binding.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(self, event)
+    end
+    
+    protected def hover_enter_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_move_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def hover_leave_event(event : Binding::QGraphicsSceneHoverEvent*) : Void
+      Binding.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(self, event)
+    end
+    
+    protected def key_press_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def key_release_event(event : KeyEvent) : Void
+      Binding.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(self, event)
+    end
+    
+    protected def mouse_press_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_move_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_release_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def mouse_double_click_event(event : Binding::QGraphicsSceneMouseEvent*) : Void
+      Binding.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(self, event)
+    end
+    
+    protected def wheel_event(event : Binding::QGraphicsSceneWheelEvent*) : Void
+      Binding.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(self, event)
+    end
+    
+    protected def input_method_event(event : InputMethodEvent) : Void
+      Binding.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(self, event)
+    end
+    
+    protected def input_method_query(query : InputMethodQuery) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(self, query))
+    end
+    
+    protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
+      Qt::Variant.new(Binding.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(self, change, (value.to_unsafe)))
+    end
+    
   end
   class GraphicsWidget < GraphicsObject
     def meta_object() : Binding::QMetaObject*
@@ -84806,30 +84453,11 @@ module Qt
     {% end %}
     end
     
-    def event_filter(watched : Object, event : Event) : Bool
-      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsWidget_staticMetaObject_STATIC_GETTER_()
     end
     
-    protected def timer_event(event : TimerEvent) : Void
-      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
-    end
-    
-    protected def child_event(event : Binding::QChildEvent*) : Void
-      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
-    end
-    
-    protected def custom_event(event : Event) : Void
-      Binding.bg_QObject_customEvent_QEvent_X(self, event)
-    end
-    
-    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
-    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
-      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
-    end
-    
+    TYPE = 11u32
     def to?(_type_ : T.class) forall T
       {% if T == GraphicsWidget %}
         self
@@ -84838,7 +84466,6 @@ module Qt
       {% end %}
     end
     
-    TYPE = 11u32
     def initialize(unwrap : Binding::QGraphicsWidget*)
       result = unwrap
     @unwrap = result
@@ -85003,8 +84630,28 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsWidget_staticMetaObject_STATIC_GETTER_()
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
     end
     
     def on_geometry_changed(&_proc_ : Proc(Void)) : SignalConnection
@@ -85855,6 +85502,27 @@ module Qt
       Binding.bg_QGraphicsScene_focusItemChanged_QGraphicsItem_X_QGraphicsItem_X_Qt__FocusReason(self, new_focus, old_focus, reason)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsScene_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ItemIndexMethod : Int32
+      BspTreeIndex = 0
+      NoIndex = -1
+    end
+    enum SceneLayer : UInt32
+      ItemLayer = 1
+      BackgroundLayer = 2
+      ForegroundLayer = 4
+      AllLayers = 65535
+    end
+    @[Flags]
+    enum SceneLayers : UInt32
+      ItemLayer = 1
+      BackgroundLayer = 2
+      ForegroundLayer = 4
+      AllLayers = 65535
+    end
     protected def timer_event(event : TimerEvent) : Void
       Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
     end
@@ -86006,27 +85674,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsScene_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ItemIndexMethod : Int32
-      BspTreeIndex = 0
-      NoIndex = -1
-    end
-    enum SceneLayer : UInt32
-      ItemLayer = 1
-      BackgroundLayer = 2
-      ForegroundLayer = 4
-      AllLayers = 65535
-    end
-    @[Flags]
-    enum SceneLayers : UInt32
-      ItemLayer = 1
-      BackgroundLayer = 2
-      ForegroundLayer = 4
-      AllLayers = 65535
     end
     def on_changed(&_proc_ : Proc(Enumerable(RectF), Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QGraphicsScene_CONNECT_changed_CrystalProc_void__const_QList_QRectF__R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQRectF*, Void).new do |arg0| _proc_.call(Container_QList_QRectF_.new(unwrap: arg0)) end)))
@@ -86309,6 +85956,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsTransform_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
     end
@@ -86385,10 +86036,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsTransform_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class ScrollArea < AbstractScrollArea
     def meta_object() : Binding::QMetaObject*
@@ -86756,6 +86403,10 @@ module Qt
     
     protected def viewport_size_hint() : Size
       Size.new(unwrap: Binding.bg_QScrollArea_viewportSizeHint_(self))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QScrollArea_staticMetaObject_STATIC_GETTER_()
     end
     
     def minimum_size_hint() : Size
@@ -87158,10 +86809,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QScrollArea_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class GraphicsView < AbstractScrollArea
     def meta_object() : Binding::QMetaObject*
@@ -88064,6 +87711,43 @@ module Qt
       Binding.bg_QGraphicsView_drawItems_QPainter_X_int_QGraphicsItem_XX_const_QStyleOptionGraphicsItem_X(self, painter, num_items, items, options)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGraphicsView_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ViewportAnchor : UInt32
+      NoAnchor = 0
+      AnchorViewCenter = 1
+      AnchorUnderMouse = 2
+    end
+    @[Flags]
+    enum CacheMode : UInt32
+      CacheNone = 0
+      CacheBackground = 1
+    end
+    enum DragMode : UInt32
+      NoDrag = 0
+      ScrollHandDrag = 1
+      RubberBandDrag = 2
+    end
+    enum ViewportUpdateMode : UInt32
+      FullViewportUpdate = 0
+      MinimalViewportUpdate = 1
+      SmartViewportUpdate = 2
+      NoViewportUpdate = 3
+      BoundingRectViewportUpdate = 4
+    end
+    enum OptimizationFlag : UInt32
+      DontSavePainterState = 1
+      DontAdjustForAntialiasing = 2
+      IndirectPainting = 4
+    end
+    @[Flags]
+    enum OptimizationFlags : UInt32
+      DontSavePainterState = 1
+      DontAdjustForAntialiasing = 2
+      IndirectPainting = 4
+    end
     def minimum_size_hint() : Size
       Size.new(unwrap: Binding.bg_QAbstractScrollArea_minimumSizeHint_(self))
     end
@@ -88403,43 +88087,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGraphicsView_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ViewportAnchor : UInt32
-      NoAnchor = 0
-      AnchorViewCenter = 1
-      AnchorUnderMouse = 2
-    end
-    @[Flags]
-    enum CacheMode : UInt32
-      CacheNone = 0
-      CacheBackground = 1
-    end
-    enum DragMode : UInt32
-      NoDrag = 0
-      ScrollHandDrag = 1
-      RubberBandDrag = 2
-    end
-    enum ViewportUpdateMode : UInt32
-      FullViewportUpdate = 0
-      MinimalViewportUpdate = 1
-      SmartViewportUpdate = 2
-      NoViewportUpdate = 3
-      BoundingRectViewportUpdate = 4
-    end
-    enum OptimizationFlag : UInt32
-      DontSavePainterState = 1
-      DontAdjustForAntialiasing = 2
-      IndirectPainting = 4
-    end
-    @[Flags]
-    enum OptimizationFlags : UInt32
-      DontSavePainterState = 1
-      DontAdjustForAntialiasing = 2
-      IndirectPainting = 4
     end
     def on_rubber_band_changed(&_proc_ : Proc(Rect, PointF, PointF, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QGraphicsView_CONNECT_rubberBandChanged_CrystalProc_void__QRect__QPointF__QPointF_(self, BindgenHelper.wrap_proc(Proc(Binding::QRect*, Binding::QPointF*, Binding::QPointF*, Void).new do |arg0, arg1, arg2| _proc_.call(Rect.new(unwrap: arg0.value), PointF.new(unwrap: arg1.value), PointF.new(unwrap: arg2.value)) end)))
@@ -88825,6 +88472,10 @@ module Qt
       Binding.bg_QGroupBox_initStyleOption_QStyleOptionGroupBox_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QGroupBox_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -89177,10 +88828,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QGroupBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_clicked(&_proc_ : Proc(Bool, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QGroupBox_CONNECT_clicked_CrystalProc_void__bool_(self, BindgenHelper.wrap_proc(Proc(Bool, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -89860,6 +89507,20 @@ module Qt
       Rect.new(unwrap: Binding.bg_QLineEdit_cursorRect_(self))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QLineEdit_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ActionPosition : UInt32
+      LeadingPosition = 0
+      TrailingPosition = 1
+    end
+    enum EchoMode : UInt32
+      Normal = 0
+      NoEcho = 1
+      Password = 2
+      PasswordEchoOnEdit = 3
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -90167,20 +89828,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QLineEdit_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ActionPosition : UInt32
-      LeadingPosition = 0
-      TrailingPosition = 1
-    end
-    enum EchoMode : UInt32
-      Normal = 0
-      NoEcho = 1
-      Password = 2
-      PasswordEchoOnEdit = 3
     end
     def on_text_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QLineEdit_CONNECT_textChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
@@ -91078,6 +90725,10 @@ module Qt
       Binding.bg_QLabel_focusNextPrevChild_bool(self, next_)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QLabel_staticMetaObject_STATIC_GETTER_()
+    end
+    
     protected def init_style_option(option : Binding::QStyleOptionFrame*) : Void
       Binding.bg_QFrame_initStyleOption_QStyleOptionFrame_X(self, option)
     end
@@ -91418,10 +91069,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QLabel_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_link_activated(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QLabel_CONNECT_linkActivated_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
@@ -91810,6 +91457,21 @@ module Qt
       Binding.bg_QLCDNumber_paintEvent_QPaintEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QLCDNumber_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Mode : UInt32
+      Hex = 0
+      Dec = 1
+      Oct = 2
+      Bin = 3
+    end
+    enum SegmentStyle : UInt32
+      Outline = 0
+      Filled = 1
+      Flat = 2
+    end
     protected def change_event(unnamed_arg_0 : Event) : Void
       Binding.bg_QFrame_changeEvent_QEvent_X(self, unnamed_arg_0)
     end
@@ -92193,21 +91855,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QLCDNumber_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Mode : UInt32
-      Hex = 0
-      Dec = 1
-      Oct = 2
-      Bin = 3
-    end
-    enum SegmentStyle : UInt32
-      Outline = 0
-      Filled = 1
-      Flat = 2
     end
     def on_overflow(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QLCDNumber_CONNECT_overflow_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
@@ -92957,6 +92604,31 @@ module Qt
       Size.new(unwrap: Binding.bg_QListView_viewportSizeHint_(self))
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QListView_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Movement : UInt32
+      Static = 0
+      Free = 1
+      Snap = 2
+    end
+    enum Flow : UInt32
+      LeftToRight = 0
+      TopToBottom = 1
+    end
+    enum ResizeMode : UInt32
+      Fixed = 0
+      Adjust = 1
+    end
+    enum LayoutMode : UInt32
+      SinglePass = 0
+      Batched = 1
+    end
+    enum ViewMode : UInt32
+      ListMode = 0
+      IconMode = 1
+    end
     def model=(model : AbstractItemModel) : Void
       BindgenHelper.keep_alive(model)
     Binding.bg_QAbstractItemView_setModel_QAbstractItemModel_X(self, model)
@@ -93566,31 +93238,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QListView_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Movement : UInt32
-      Static = 0
-      Free = 1
-      Snap = 2
-    end
-    enum Flow : UInt32
-      LeftToRight = 0
-      TopToBottom = 1
-    end
-    enum ResizeMode : UInt32
-      Fixed = 0
-      Adjust = 1
-    end
-    enum LayoutMode : UInt32
-      SinglePass = 0
-      Batched = 1
-    end
-    enum ViewMode : UInt32
-      ListMode = 0
-      IconMode = 1
-    end
     def on_indexes_moved(&_proc_ : Proc(Binding::QModelIndexList, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QListView_CONNECT_indexesMoved_CrystalProc_void__const_QModelIndexList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndexList*, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -94096,7 +93743,7 @@ module Qt
       bg_QListWidget_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
       bg_QListWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QListWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QListWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QListWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R") %} Proc(Binding::ContainerQListQListWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QListWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Binding::QMimeData*, DropAction, Bool).new{|index, data, action| self.drop_mime_data(index, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QListWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -94213,7 +93860,7 @@ module Qt
     end
     
     def insert_items(row : Int32, labels : Enumerable(String)) : Void
-      Binding.bg_QListWidget_insertItems_int_const_QStringList_R(self, row, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QListWidget_insertItems_int_const_QStringList_R(self, row, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def add_item(label : String) : Void
@@ -94226,7 +93873,7 @@ module Qt
     end
     
     def add_items(labels : Enumerable(String)) : Void
-      Binding.bg_QListWidget_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QListWidget_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def take_item(row : Int32) : ListWidgetItem
@@ -94399,7 +94046,7 @@ module Qt
     end
     
     protected def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QListWidget_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QListWidget_mimeTypes_(self))
     end
     
     protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
@@ -94412,6 +94059,10 @@ module Qt
     
     protected def supported_drop_actions() : DropActions
       Binding.bg_QListWidget_supportedDropActions_(self)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QListWidget_staticMetaObject_STATIC_GETTER_()
     end
     
     def visual_rect(index : ModelIndex) : Rect
@@ -94787,7 +94438,7 @@ module Qt
       end
       
       protected def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QListWidget_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QListWidget_mimeTypes_SUPER_(@myself))
       end
       
       protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
@@ -95150,10 +94801,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QListWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_item_pressed(&_proc_ : Proc(ListWidgetItem, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QListWidget_CONNECT_itemPressed_CrystalProc_void__QListWidgetItem_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QListWidgetItem*, Void).new do |arg0| _proc_.call(ListWidgetItem.new(unwrap: arg0)) end)))
     end
@@ -95719,6 +95366,19 @@ module Qt
       Binding.bg_QMainWindow_event_QEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMainWindow_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    @[Flags]
+    enum DockOptions : UInt32
+      AnimatedDocks = 1
+      AllowNestedDocks = 2
+      AllowTabbedDocks = 4
+      ForceTabbedDocks = 8
+      VerticalTabs = 16
+      GroupedDragging = 32
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -96102,19 +95762,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QMainWindow_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    @[Flags]
-    enum DockOptions : UInt32
-      AnimatedDocks = 1
-      AllowNestedDocks = 2
-      AllowTabbedDocks = 4
-      ForceTabbedDocks = 8
-      VerticalTabs = 16
-      GroupedDragging = 32
     end
     def on_icon_size_changed(&_proc_ : Proc(Size, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QMainWindow_CONNECT_iconSizeChanged_CrystalProc_void__const_QSize_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QSize, Void).new do |arg0| _proc_.call(Size.new(unwrap: arg0)) end)))
@@ -96803,6 +96450,10 @@ module Qt
     {% end %}
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMenu_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -97135,10 +96786,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QMenu_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_about_to_show(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QMenu_CONNECT_aboutToShow_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -97472,6 +97119,10 @@ module Qt
       Binding.bg_QMenuBar_initStyleOption_QStyleOptionMenuItem_X_const_QAction_X(self, option, action)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMenuBar_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -97792,10 +97443,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QMenuBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_triggered(&_proc_ : Proc(Action, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QMenuBar_CONNECT_triggered_CrystalProc_void__QAction_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAction*, Void).new do |arg0| _proc_.call(Action.new(unwrap: arg0)) end)))
     end
@@ -98781,6 +98428,92 @@ module Qt
       Binding.bg_QMessageBox_changeEvent_QEvent_X(self, unnamed_arg_0)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QMessageBox_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Option : Int32
+      DontUseNativeDialog = 1
+    end
+    enum Icon : UInt32
+      NoIcon = 0
+      Information = 1
+      Warning = 2
+      Critical = 3
+      Question = 4
+    end
+    enum ButtonRole : Int32
+      InvalidRole = -1
+      AcceptRole = 0
+      RejectRole = 1
+      DestructiveRole = 2
+      ActionRole = 3
+      HelpRole = 4
+      YesRole = 5
+      NoRole = 6
+      ResetRole = 7
+      ApplyRole = 8
+      Nroles = 9
+    end
+    enum StandardButton : Int32
+      NoButton = 0
+      Ok = 1024
+      Save = 2048
+      SaveAll = 4096
+      Open = 8192
+      Yes = 16384
+      YesToAll = 32768
+      No = 65536
+      NoToAll = 131072
+      Abort = 262144
+      Retry = 524288
+      Ignore = 1048576
+      Close = 2097152
+      Cancel = 4194304
+      Discard = 8388608
+      Help = 16777216
+      Apply = 33554432
+      Reset = 67108864
+      RestoreDefaults = 134217728
+      FirstButton = 1024
+      LastButton = 134217728
+      YesAll = 32768
+      NoAll = 131072
+      Default = 256
+      Escape = 512
+      FlagMask = 768
+      ButtonMask = -769
+    end
+    @[Flags]
+    enum StandardButtons : Int32
+      NoButton = 0
+      Ok = 1024
+      Save = 2048
+      SaveAll = 4096
+      Open = 8192
+      Yes = 16384
+      YesToAll = 32768
+      No = 65536
+      NoToAll = 131072
+      Abort = 262144
+      Retry = 524288
+      Ignore = 1048576
+      Close = 2097152
+      Cancel = 4194304
+      Discard = 8388608
+      Help = 16777216
+      Apply = 33554432
+      Reset = 67108864
+      RestoreDefaults = 134217728
+      FirstButton = 1024
+      LastButton = 134217728
+      YesAll = 32768
+      NoAll = 131072
+      Default = 256
+      Escape = 512
+      FlagMask = 768
+      ButtonMask = -769
+    end
     def visible=(visible : Bool) : Void
       Binding.bg_QDialog_setVisible_bool(self, visible)
     end
@@ -99184,92 +98917,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QMessageBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Option : Int32
-      DontUseNativeDialog = 1
-    end
-    enum Icon : UInt32
-      NoIcon = 0
-      Information = 1
-      Warning = 2
-      Critical = 3
-      Question = 4
-    end
-    enum ButtonRole : Int32
-      InvalidRole = -1
-      AcceptRole = 0
-      RejectRole = 1
-      DestructiveRole = 2
-      ActionRole = 3
-      HelpRole = 4
-      YesRole = 5
-      NoRole = 6
-      ResetRole = 7
-      ApplyRole = 8
-      Nroles = 9
-    end
-    enum StandardButton : Int32
-      NoButton = 0
-      Ok = 1024
-      Save = 2048
-      SaveAll = 4096
-      Open = 8192
-      Yes = 16384
-      YesToAll = 32768
-      No = 65536
-      NoToAll = 131072
-      Abort = 262144
-      Retry = 524288
-      Ignore = 1048576
-      Close = 2097152
-      Cancel = 4194304
-      Discard = 8388608
-      Help = 16777216
-      Apply = 33554432
-      Reset = 67108864
-      RestoreDefaults = 134217728
-      FirstButton = 1024
-      LastButton = 134217728
-      YesAll = 32768
-      NoAll = 131072
-      Default = 256
-      Escape = 512
-      FlagMask = 768
-      ButtonMask = -769
-    end
-    @[Flags]
-    enum StandardButtons : Int32
-      NoButton = 0
-      Ok = 1024
-      Save = 2048
-      SaveAll = 4096
-      Open = 8192
-      Yes = 16384
-      YesToAll = 32768
-      No = 65536
-      NoToAll = 131072
-      Abort = 262144
-      Retry = 524288
-      Ignore = 1048576
-      Close = 2097152
-      Cancel = 4194304
-      Discard = 8388608
-      Help = 16777216
-      Apply = 33554432
-      Reset = 67108864
-      RestoreDefaults = 134217728
-      FirstButton = 1024
-      LastButton = 134217728
-      YesAll = 32768
-      NoAll = 131072
-      Default = 256
-      Escape = 512
-      FlagMask = 768
-      ButtonMask = -769
     end
     def on_button_clicked(&_proc_ : Proc(AbstractButton, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QMessageBox_CONNECT_buttonClicked_CrystalProc_void__QAbstractButton_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAbstractButton*, Void).new do |arg0| _proc_.call(AbstractButtonImpl.new(unwrap: arg0)) end)))
@@ -100253,6 +99900,27 @@ module Qt
       Binding.bg_QTextEdit_zoomInF_float(self, range)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTextEdit_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum LineWrapMode : UInt32
+      NoWrap = 0
+      WidgetWidth = 1
+      FixedPixelWidth = 2
+      FixedColumnWidth = 3
+    end
+    enum AutoFormattingFlag : UInt32
+      AutoNone = 0
+      AutoBulletList = 1
+      AutoAll = 4294967295
+    end
+    @[Flags]
+    enum AutoFormatting : UInt32
+      AutoNone = 0
+      AutoBulletList = 1
+      AutoAll = 4294967295
+    end
     def minimum_size_hint() : Size
       Size.new(unwrap: Binding.bg_QAbstractScrollArea_minimumSizeHint_(self))
     end
@@ -100605,27 +100273,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTextEdit_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum LineWrapMode : UInt32
-      NoWrap = 0
-      WidgetWidth = 1
-      FixedPixelWidth = 2
-      FixedColumnWidth = 3
-    end
-    enum AutoFormattingFlag : UInt32
-      AutoNone = 0
-      AutoBulletList = 1
-      AutoAll = 4294967295
-    end
-    @[Flags]
-    enum AutoFormatting : UInt32
-      AutoNone = 0
-      AutoBulletList = 1
-      AutoAll = 4294967295
-    end
     def on_text_changed(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTextEdit_CONNECT_textChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
@@ -100925,6 +100572,14 @@ module Qt
       Binding.bg_QProgressBar_initStyleOption_QStyleOptionProgressBar_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QProgressBar_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Direction : UInt32
+      TopToBottom = 0
+      BottomToTop = 1
+    end
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -101305,14 +100960,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QProgressBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum Direction : UInt32
-      TopToBottom = 0
-      BottomToTop = 1
-    end
     def on_value_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QProgressBar_CONNECT_valueChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -101643,6 +101290,10 @@ module Qt
     
     protected def init_style_option(button : Binding::QStyleOptionButton*) : Void
       Binding.bg_QRadioButton_initStyleOption_QStyleOptionButton_X(self, button)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QRadioButton_staticMetaObject_STATIC_GETTER_()
     end
     
     protected def check_state_set() : Void
@@ -102037,10 +101688,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QRadioButton_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class ScrollBar < AbstractSlider
     def meta_object() : Binding::QMetaObject*
@@ -102379,6 +102026,10 @@ module Qt
     
     protected def init_style_option(option : Binding::QStyleOptionSlider*) : Void
       Binding.bg_QScrollBar_initStyleOption_QStyleOptionSlider_X(self, option)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QScrollBar_staticMetaObject_STATIC_GETTER_()
     end
     
     protected def key_press_event(event : KeyEvent) : Void
@@ -102741,10 +102392,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QScrollBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class SpinBox < AbstractSpinBox
     def meta_object() : Binding::QMetaObject*
@@ -103002,6 +102649,10 @@ module Qt
     
     def text_changed(unnamed_arg_0 : String) : Void
       Binding.bg_QSpinBox_textChanged_const_QString_R(self, Qt::Converter::QString.wrap(unnamed_arg_0))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSpinBox_staticMetaObject_STATIC_GETTER_()
     end
     
     def size_hint() : Size
@@ -103428,10 +103079,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSpinBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_value_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QSpinBox_CONNECT_valueChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -103693,6 +103340,10 @@ module Qt
     
     def text_changed(unnamed_arg_0 : String) : Void
       Binding.bg_QDoubleSpinBox_textChanged_const_QString_R(self, Qt::Converter::QString.wrap(unnamed_arg_0))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QDoubleSpinBox_staticMetaObject_STATIC_GETTER_()
     end
     
     def size_hint() : Size
@@ -104123,10 +103774,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QDoubleSpinBox_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_value_changed(&_proc_ : Proc(Float64, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QDoubleSpinBox_CONNECT_valueChanged_CrystalProc_void__double_(self, BindgenHelper.wrap_proc(Proc(Float64, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -104567,6 +104214,10 @@ module Qt
       Binding.bg_QSplitter_closestLegalPosition_int_int(self, unnamed_arg_0, unnamed_arg_1)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSplitter_staticMetaObject_STATIC_GETTER_()
+    end
+    
     protected def paint_event(event : PaintEvent) : Void
       Binding.bg_QFrame_paintEvent_QPaintEvent_X(self, event)
     end
@@ -104943,10 +104594,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSplitter_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_splitter_moved(&_proc_ : Proc(Int32, Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QSplitter_CONNECT_splitterMoved_CrystalProc_void__int__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Int32, Void).new do |arg0, arg1| _proc_.call(arg0, arg1) end)))
     end
@@ -105343,6 +104990,14 @@ module Qt
       Binding.bg_QStackedLayout_setCurrentWidget_QWidget_X(self, w)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStackedLayout_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum StackingMode : UInt32
+      StackOne = 0
+      StackAll = 1
+    end
     def spacing() : Int32
       Binding.bg_QLayout_spacing_(self)
     end
@@ -105551,14 +105206,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QStackedLayout_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum StackingMode : UInt32
-      StackOne = 0
-      StackAll = 1
     end
     def on_widget_removed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QStackedLayout_CONNECT_widgetRemoved_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -105783,6 +105430,10 @@ module Qt
     
     protected def event(event : Event) : Bool
       Binding.bg_QStackedWidget_event_QEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStackedWidget_staticMetaObject_STATIC_GETTER_()
     end
     
     def size_hint() : Size
@@ -106177,10 +105828,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QStackedWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_current_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QStackedWidget_CONNECT_currentChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
     end
@@ -106418,6 +106065,10 @@ module Qt
     
     protected def event(event : Event) : Bool
       Binding.bg_QStatusBar_event_QEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStatusBar_staticMetaObject_STATIC_GETTER_()
     end
     
     def dev_type() : Int32
@@ -106792,10 +106443,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QStatusBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_message_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QStatusBar_CONNECT_messageChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
@@ -106950,6 +106597,10 @@ module Qt
       Binding.bg_QStyledItemDelegate_editorEvent_QEvent_X_QAbstractItemModel_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, event, model, option, index)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStyledItemDelegate_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def destroy_editor(editor : Widget, index : ModelIndex) : Void
       Binding.bg_QAbstractItemDelegate_destroyEditor_QWidget_X_const_QModelIndex_R(self, editor, index)
     end
@@ -107082,10 +106733,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QStyledItemDelegate_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class SystemTrayIcon < Object
     def meta_object() : Binding::QMetaObject*
@@ -107287,6 +106934,23 @@ module Qt
       Binding.bg_QSystemTrayIcon_event_QEvent_X(self, event)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSystemTrayIcon_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ActivationReason : UInt32
+      Unknown = 0
+      Context = 1
+      DoubleClick = 2
+      Trigger = 3
+      MiddleClick = 4
+    end
+    enum MessageIcon : UInt32
+      NoIcon = 0
+      Information = 1
+      Warning = 2
+      Critical = 3
+    end
     def event_filter(watched : Object, event : Event) : Bool
       Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
@@ -107358,23 +107022,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QSystemTrayIcon_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ActivationReason : UInt32
-      Unknown = 0
-      Context = 1
-      DoubleClick = 2
-      Trigger = 3
-      MiddleClick = 4
-    end
-    enum MessageIcon : UInt32
-      NoIcon = 0
-      Information = 1
-      Warning = 2
-      Critical = 3
     end
     def on_activated(&_proc_ : Proc(SystemTrayIcon::ActivationReason, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QSystemTrayIcon_CONNECT_activated_CrystalProc_void__QSystemTrayIcon__ActivationReason_(self, BindgenHelper.wrap_proc(Proc(SystemTrayIcon::ActivationReason, Void).new do |arg0| _proc_.call(arg0) end)))
@@ -108141,6 +107788,10 @@ module Qt
       Binding.bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(self, current, previous)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTableView_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def keyboard_search(search : String) : Void
       Binding.bg_QAbstractItemView_keyboardSearch_const_QString_R(self, Qt::Converter::QString.wrap(search))
     end
@@ -108773,10 +108424,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTableView_staticMetaObject_STATIC_GETTER_()
-    end
-    
   end
   class TableWidgetItem
     @unwrap : Binding::QTableWidgetItem*
@@ -109276,7 +108923,7 @@ module Qt
       bg_QTableWidget_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R") %} Proc(Binding::ContainerQListQTableWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QTableWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, DropAction, Bool).new{|row, column, data, action| self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -109499,7 +109146,7 @@ module Qt
       bg_QTableWidget_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R") %} Proc(Binding::ContainerQListQTableWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QTableWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, DropAction, Bool).new{|row, column, data, action| self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -109672,11 +109319,11 @@ module Qt
     end
     
     def vertical_header_labels=(labels : Enumerable(String)) : Void
-      Binding.bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def horizontal_header_labels=(labels : Enumerable(String)) : Void
-      Binding.bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
+      Binding.bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
     def current_row() : Int32
@@ -109894,7 +109541,7 @@ module Qt
     end
     
     protected def mime_types() : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg_QTableWidget_mimeTypes_(self))
+      StringList.new(unwrap: Binding.bg_QTableWidget_mimeTypes_(self))
     end
     
     protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
@@ -109911,6 +109558,10 @@ module Qt
     
     protected def drop_event(event : DropEvent) : Void
       Binding.bg_QTableWidget_dropEvent_QDropEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTableWidget_staticMetaObject_STATIC_GETTER_()
     end
     
     def root_index=(index : ModelIndex) : Void
@@ -110282,7 +109933,7 @@ module Qt
       end
       
       protected def mime_types() : Enumerable(String)
-        Container_QList_QString_.new(unwrap: Binding.bg_QTableWidget_mimeTypes_SUPER_(@myself))
+        StringList.new(unwrap: Binding.bg_QTableWidget_mimeTypes_SUPER_(@myself))
       end
       
       protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
@@ -110653,10 +110304,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTableWidget_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_item_pressed(&_proc_ : Proc(TableWidgetItem, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTableWidget_CONNECT_itemPressed_CrystalProc_void__QTableWidgetItem_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QTableWidgetItem*, Void).new do |arg0| _proc_.call(TableWidgetItem.new(unwrap: arg0)) end)))
     end
@@ -111155,6 +110802,10 @@ module Qt
       Binding.bg_QToolBar_initStyleOption_QStyleOptionToolBar_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QToolBar_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def dev_type() : Int32
       Binding.bg_QWidget_devType_(self)
     end
@@ -111531,10 +111182,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QToolBar_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_action_triggered(&_proc_ : Proc(Action, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QToolBar_CONNECT_actionTriggered_CrystalProc_void__QAction_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAction*, Void).new do |arg0| _proc_.call(Action.new(unwrap: arg0)) end)))
     end
@@ -111848,6 +111495,15 @@ module Qt
       Binding.bg_QToolButton_initStyleOption_QStyleOptionToolButton_X(self, option)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QToolButton_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum ToolButtonPopupMode : UInt32
+      DelayedPopup = 0
+      MenuButtonPopup = 1
+      InstantPopup = 2
+    end
     protected def key_press_event(event : KeyEvent) : Void
       Binding.bg_QAbstractButton_keyPressEvent_QKeyEvent_X(self, event)
     end
@@ -112207,15 +111863,6 @@ module Qt
     end
     private def superclass
       Superclass.new(self)
-    end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QToolButton_staticMetaObject_STATIC_GETTER_()
-    end
-    
-    enum ToolButtonPopupMode : UInt32
-      DelayedPopup = 0
-      MenuButtonPopup = 1
-      InstantPopup = 2
     end
     def on_triggered(&_proc_ : Proc(Action, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QToolButton_CONNECT_triggered_CrystalProc_void__QAction_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAction*, Void).new do |arg0| _proc_.call(Action.new(unwrap: arg0)) end)))
@@ -113101,6 +112748,10 @@ module Qt
       Binding.bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(self, current, previous)
     end
     
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTreeView_staticMetaObject_STATIC_GETTER_()
+    end
+    
     def size_hint_for_row(row : Int32) : Int32
       Binding.bg_QAbstractItemView_sizeHintForRow_int(self, row)
     end
@@ -113697,10 +113348,6 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def self.static_meta_object() : Binding::QMetaObject*
-      Binding.bg_QTreeView_staticMetaObject_STATIC_GETTER_()
-    end
-    
     def on_expanded(&_proc_ : Proc(ModelIndex, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTreeView_CONNECT_expanded_CrystalProc_void__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Void).new do |arg0| _proc_.call(ModelIndex.new(unwrap: arg0)) end)))
     end
@@ -113710,6 +113357,11 @@ module Qt
     end
     
   end
+  QT_VERSION_STR = "6.11.1"
+  QT_VERSION_MAJOR = 6
+  QT_VERSION_MINOR = 11
+  QT_VERSION_PATCH = 1
+  QT_VERSION = 396033
   class AbstractAnimationImpl < AbstractAnimation
     def duration() : Int32
       Binding.bg_QAbstractAnimation_duration_(self)
@@ -114743,11 +114395,6 @@ module Qt
     end
     
   end
-  QT_VERSION_STR = "6.11.1"
-  QT_VERSION_MAJOR = 6
-  QT_VERSION_MINOR = 11
-  QT_VERSION_PATCH = 1
-  QT_VERSION = 396033
   def self.q_version() : UInt8*
     Binding.bg____qVersion_STATIC_()
   end
@@ -114756,44 +114403,6 @@ module Qt
     Binding.bg____qt6cr_reset_numeric_locale_STATIC_()
   end
   
-  module StringListHelper
-    def self.sort(list : Enumerable(String), cs : CaseSensitivity) : Void
-      Binding.bg____qt6cr_string_list_sort_STATIC_QList_QString__R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, cs)
-    end
-    
-    def self.remove_duplicates(list : Enumerable(String)) : Int64
-      Binding.bg____qt6cr_string_list_removeDuplicates_STATIC_QList_QString__R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe)
-    end
-    
-    def self.filter(list : Enumerable(String), str : String, cs : CaseSensitivity) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(str), cs))
-    end
-    
-    def self.filter(list : Enumerable(String), re : RegularExpression) : Enumerable(String)
-      Container_QList_QString_.new(unwrap: Binding.bg____qt6cr_string_list_filter_STATIC_const_QList_QString__R_const_QRegularExpression_R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re))
-    end
-    
-    def self.replace_in_strings(list : Enumerable(String), before : String, after : String, cs : CaseSensitivity) : Void
-      Binding.bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QString_R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(before), Qt::Converter::QString.wrap(after), cs)
-    end
-    
-    def self.replace_in_strings(list : Enumerable(String), re : RegularExpression, after : String) : Void
-      Binding.bg____qt6cr_string_list_replaceInStrings_STATIC_QList_QString__R_const_QRegularExpression_R_const_QString_R(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, Qt::Converter::QString.wrap(after))
-    end
-    
-    def self.contains(list : Enumerable(String), str : String, cs : CaseSensitivity) : Bool
-      Binding.bg____qt6cr_string_list_contains_STATIC_const_QList_QString__R_const_QString_R_Qt__CaseSensitivity(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, Qt::Converter::QString.wrap(str), cs)
-    end
-    
-    def self.index_of(list : Enumerable(String), re : RegularExpression, from : Int64) : Int64
-      Binding.bg____qt6cr_string_list_indexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, from)
-    end
-    
-    def self.last_index_of(list : Enumerable(String), re : RegularExpression, from : Int64) : Int64
-      Binding.bg____qt6cr_string_list_lastIndexOf_STATIC_const_QList_QString__R_const_QRegularExpression_R_qsizetype(BindgenHelper.wrap_container(Container_QList_QString_, list).to_unsafe, re, from)
-    end
-    
-  end
   enum GlobalColor : UInt32
     Color0 = 0
     Color1 = 1
@@ -116466,9 +116075,9 @@ module Qt
       {% types = type_args.map(&.resolve) %}
       {% if types == {Float64} %} {{ Container_QList_qreal_ }}
       {% elsif types == {UInt32} %} {{ Container_QList_unsigned_int_ }}
+      {% elsif types == {String} %} {{ StringList }}
       {% elsif types == {Binding::EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
       {% elsif types == {Variant} %} {{ Container_QList_QVariant_ }}
-      {% elsif types == {String} %} {{ Container_QList_QString_ }}
       {% elsif types == {Int32} %} {{ Container_QList_int_ }}
       {% elsif types == {Pointer(Binding::QPersistentModelIndex)} %} {{ Container_QList_QPersistentModelIndex_ }}
       {% elsif types == {DayOfWeek} %} {{ Container_QList_Qt__DayOfWeek_ }}
@@ -116566,6 +116175,294 @@ module Qt
     end
     
   end
+  class StringList < StringListMethods
+    include BindgenHelper::SequentialContainer(String)
+    include QList(String)
+    
+    @unwrap : Binding::ContainerQListQString*
+    
+    def swap(other : Enumerable(String)) : Void
+      Binding.bg_QList_QString__swap_QList_QString__R(self, BindgenHelper.wrap_container(StringList, other).to_unsafe)
+    end
+    
+    def self.max_size() : Int64
+      Binding.bg_QList_QString__maxSize_STATIC_()
+    end
+    
+    def count() : Int64
+      Binding.bg_QList_QString__count_(self)
+    end
+    
+    def length() : Int64
+      Binding.bg_QList_QString__length_(self)
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QList_QString__isEmpty_(self)
+    end
+    
+    def resize(size : Int64) : Void
+      Binding.bg_QList_QString__resize_qsizetype(self, size)
+    end
+    
+    def resize(size : Int64, c : String) : Void
+      Binding.bg_QList_QString__resize_qsizetype_QList_QString___parameter_type(self, size, Qt::Converter::QString.wrap(c))
+    end
+    
+    def resize_for_overwrite(size : Int64) : Void
+      Binding.bg_QList_QString__resizeForOverwrite_qsizetype(self, size)
+    end
+    
+    def capacity() : Int64
+      Binding.bg_QList_QString__capacity_(self)
+    end
+    
+    def reserve(size : Int64) : Void
+      Binding.bg_QList_QString__reserve_qsizetype(self, size)
+    end
+    
+    def squeeze() : Void
+      Binding.bg_QList_QString__squeeze_(self)
+    end
+    
+    def detach() : Void
+      Binding.bg_QList_QString__detach_(self)
+    end
+    
+    def detached?() : Bool
+      Binding.bg_QList_QString__isDetached_(self)
+    end
+    
+    def is_shared_with(other : Enumerable(String)) : Bool
+      Binding.bg_QList_QString__isSharedWith_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, other).to_unsafe)
+    end
+    
+    def clear() : Void
+      Binding.bg_QList_QString__clear_(self)
+    end
+    
+    def append(t : String) : Void
+      Binding.bg_QList_QString__append_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+    end
+    
+    def append(l : Enumerable(String)) : Void
+      Binding.bg_QList_QString__append_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, l).to_unsafe)
+    end
+    
+    def prepend(t : String) : Void
+      Binding.bg_QList_QString__prepend_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+    end
+    
+    def assign(n : Int64, t : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__assign_qsizetype_QList_QString___parameter_type(self, n, Qt::Converter::QString.wrap(t)))
+    end
+    
+    def replace(i : Int64, t : String) : Void
+      Binding.bg_QList_QString__replace_qsizetype_QList_QString___parameter_type(self, i, Qt::Converter::QString.wrap(t))
+    end
+    
+    def remove(i : Int64) : Void
+      Binding.bg_QList_QString__remove_qsizetype(self, i)
+    end
+    
+    def remove(i : Int64, n : Int64) : Void
+      Binding.bg_QList_QString__remove_qsizetype_qsizetype(self, i, n)
+    end
+    
+    def remove_first() : Void
+      Binding.bg_QList_QString__removeFirst_(self)
+    end
+    
+    def remove_last() : Void
+      Binding.bg_QList_QString__removeLast_(self)
+    end
+    
+    def take_first() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__takeFirst_(self))
+    end
+    
+    def take_last() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__takeLast_(self))
+    end
+    
+    def fill(t : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__fill_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+    end
+    
+    def fill(t : String, size : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__fill_QList_QString___parameter_type_qsizetype(self, Qt::Converter::QString.wrap(t), size))
+    end
+    
+    def remove_at(i : Int64) : Void
+      Binding.bg_QList_QString__removeAt_qsizetype(self, i)
+    end
+    
+    def take_at(i : Int64) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__takeAt_qsizetype(self, i))
+    end
+    
+    def move(from : Int64, to : Int64) : Void
+      Binding.bg_QList_QString__move_qsizetype_qsizetype(self, from, to)
+    end
+    
+    def first() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__first_(self))
+    end
+    
+    def const_first() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__constFirst_(self))
+    end
+    
+    def last() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__last_(self))
+    end
+    
+    def const_last() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__constLast_(self))
+    end
+    
+    def starts_with(t : String) : Bool
+      Binding.bg_QList_QString__startsWith_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+    end
+    
+    def ends_with(t : String) : Bool
+      Binding.bg_QList_QString__endsWith_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+    end
+    
+    def mid(pos : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__mid_qsizetype(self, pos))
+    end
+    
+    def mid(pos : Int64, len : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__mid_qsizetype_qsizetype(self, pos, len))
+    end
+    
+    def first(n : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__first_qsizetype(self, n))
+    end
+    
+    def last(n : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__last_qsizetype(self, n))
+    end
+    
+    def sliced(pos : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__sliced_qsizetype(self, pos))
+    end
+    
+    def sliced(pos : Int64, n : Int64) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__sliced_qsizetype_qsizetype(self, pos, n))
+    end
+    
+    def value(i : Int64) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__value_qsizetype(self, i))
+    end
+    
+    def value(i : Int64, default_value : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__value_qsizetype_QList_QString___parameter_type(self, i, Qt::Converter::QString.wrap(default_value)))
+    end
+    
+    def swap_items_at(i : Int64, j : Int64) : Void
+      Binding.bg_QList_QString__swapItemsAt_qsizetype_qsizetype(self, i, j)
+    end
+    
+    def push_front(t : String) : Void
+      Binding.bg_QList_QString__push_front_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+    end
+    
+    def pop_back() : Void
+      Binding.bg_QList_QString__pop_back_(self)
+    end
+    
+    def pop_front() : Void
+      Binding.bg_QList_QString__pop_front_(self)
+    end
+    
+    def empty() : Bool
+      Binding.bg_QList_QString__empty_(self)
+    end
+    
+    def front() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__front_(self))
+    end
+    
+    def back() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__back_(self))
+    end
+    
+    def shrink_to_fit() : Void
+      Binding.bg_QList_QString__shrink_to_fit_(self)
+    end
+    
+    def max_size() : Int64
+      Binding.bg_QList_QString__max_size_(self)
+    end
+    
+    def add!(l : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_add_assign_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, l).to_unsafe))
+    end
+    
+    def +(l : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_add_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, l).to_unsafe))
+    end
+    
+    def add!(t : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_add_assign_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+    end
+    
+    def <<(t : String) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_lshift_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+    end
+    
+    def <<(l : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_lshift_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, l).to_unsafe))
+    end
+    
+    def self.from_list(list : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__fromList_STATIC_const_QList_QString__R(BindgenHelper.wrap_container(StringList, list).to_unsafe))
+    end
+    
+    def to_list() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__toList_(self))
+    end
+    
+    def self.from_vector(vector : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__fromVector_STATIC_const_QList_QString__R(BindgenHelper.wrap_container(StringList, vector).to_unsafe))
+    end
+    
+    def to_vector() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString__toVector_(self))
+    end
+    
+    def assign!(unnamed_arg_0 : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_assign_const_QList_QString__R(self, BindgenHelper.wrap_container(StringList, unnamed_arg_0).to_unsafe))
+    end
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QString___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__at_int(self, index))
+    end
+    
+    def push(value : String) : Void
+      Binding.bg_QList_QString__push_back_QString(self, Qt::Converter::QString.wrap(value))
+    end
+    
+    def size() : Int32
+      Binding.bg_QList_QString__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQString*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QAbstractEventDispatcher__TimerInfo_
     include BindgenHelper::SequentialContainer(Binding::EventDispatcherTimerInfo)
     include QList(Binding::EventDispatcherTimerInfo)
@@ -116625,38 +116522,6 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQVariant*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
-  class Container_QList_QString_
-    include BindgenHelper::SequentialContainer(String)
-    include QList(String)
-    
-    @unwrap : Binding::ContainerQListQString*
-    
-    def initialize()
-      result = Binding.bg_Container_QList_QString___CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def unsafe_at(index : Int32) : String
-      Qt::Converter::QString.unwrap(Binding.bg_Container_QList_QString__at_int(self, index))
-    end
-    
-    def push(value : String) : Void
-      Binding.bg_Container_QList_QString__push_back_QString(self, Qt::Converter::QString.wrap(value))
-    end
-    
-    def size() : Int32
-      Binding.bg_Container_QList_QString__size_(self)
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::ContainerQListQString*)
       result = unwrap
     @unwrap = result
     end
@@ -116854,6 +116719,113 @@ module Qt
     end
     
   end
+  class Polygon < Container_QList_QPoint_
+    def initialize()
+      result = Binding.bg_QPolygon__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(v : Enumerable(Point))
+      result = Binding.bg_QPolygon__CONSTRUCT_const_QList_QPoint__R(BindgenHelper.wrap_container(Container_QList_QPoint_, v).to_unsafe)
+    @unwrap = result
+    end
+    
+    def initialize(r : Rect, closed : Bool = false)
+      result = Binding.bg_QPolygon__CONSTRUCT_const_QRect_R_bool(r, closed)
+    @unwrap = result
+    end
+    
+    def initialize(n_points : Int32, points : Int32*)
+      result = Binding.bg_QPolygon__CONSTRUCT_int_const_int_X(n_points, points)
+    @unwrap = result
+    end
+    
+    def swap(other : Polygon) : Void
+      Binding.bg_QPolygon_swap_QPolygon_R(self, other)
+    end
+    
+    def to_q_variant() : Variant
+      Qt::Variant.new(Binding.bg_QPolygon__CONVERT_QVariant_(self))
+    end
+    
+    def translate(dx : Int32, dy : Int32) : Void
+      Binding.bg_QPolygon_translate_int_int(self, dx, dy)
+    end
+    
+    def translate(offset : Point) : Void
+      Binding.bg_QPolygon_translate_const_QPoint_R(self, offset)
+    end
+    
+    def translated(dx : Int32, dy : Int32) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon_translated_int_int(self, dx, dy))
+    end
+    
+    def translated(offset : Point) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon_translated_const_QPoint_R(self, offset))
+    end
+    
+    def bounding_rect() : Rect
+      Rect.new(unwrap: Binding.bg_QPolygon_boundingRect_(self))
+    end
+    
+    def point(i : Int32, x : Int32*, y : Int32*) : Void
+      Binding.bg_QPolygon_point_int_int_X_int_X(self, i, x, y)
+    end
+    
+    def point(i : Int32) : Point
+      Point.new(unwrap: Binding.bg_QPolygon_point_int(self, i))
+    end
+    
+    def set_point(index : Int32, x : Int32, y : Int32) : Void
+      Binding.bg_QPolygon_setPoint_int_int_int(self, index, x, y)
+    end
+    
+    # ***************************************************************************
+    # Misc. QPolygon functions
+    # ***************************************************************************
+    def set_point(index : Int32, p : Point) : Void
+      Binding.bg_QPolygon_setPoint_int_const_QPoint_R(self, index, p)
+    end
+    
+    def contains_point(pt : Point, fill_rule : FillRule) : Bool
+      Binding.bg_QPolygon_containsPoint_const_QPoint_R_Qt__FillRule(self, pt, fill_rule)
+    end
+    
+    def united(r : Polygon) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon_united_const_QPolygon_R(self, r))
+    end
+    
+    def intersected(r : Polygon) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon_intersected_const_QPolygon_R(self, r))
+    end
+    
+    def subtracted(r : Polygon) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon_subtracted_const_QPolygon_R(self, r))
+    end
+    
+    def intersects(r : Polygon) : Bool
+      Binding.bg_QPolygon_intersects_const_QPolygon_R(self, r)
+    end
+    
+    def to_polygon_f() : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygon_toPolygonF_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : Polygon)
+      result = Binding.bg_QPolygon__COPY_const_QPolygon_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def *(m : Binding::QTransform*) : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygon__OPERATOR_mul_const_QTransform_R(self, m))
+    end
+    
+    def initialize(unwrap : Binding::QPolygon*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QPointF_
     include BindgenHelper::SequentialContainer(PointF)
     include QList(PointF)
@@ -116881,6 +116853,98 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQPointF*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class PolygonF < Container_QList_QPointF_
+    def initialize()
+      result = Binding.bg_QPolygonF__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(v : Enumerable(PointF))
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QList_QPointF__R(BindgenHelper.wrap_container(Container_QList_QPointF_, v).to_unsafe)
+    @unwrap = result
+    end
+    
+    def initialize(r : RectF)
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QRectF_R(r)
+    @unwrap = result
+    end
+    
+    def initialize(a : Polygon)
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QPolygon_R(a)
+    @unwrap = result
+    end
+    
+    def swap(other : PolygonF) : Void
+      Binding.bg_QPolygonF_swap_QPolygonF_R(self, other)
+    end
+    
+    def to_q_variant() : Variant
+      Qt::Variant.new(Binding.bg_QPolygonF__CONVERT_QVariant_(self))
+    end
+    
+    def translate(dx : Float64, dy : Float64) : Void
+      Binding.bg_QPolygonF_translate_qreal_qreal(self, dx, dy)
+    end
+    
+    def translate(offset : PointF) : Void
+      Binding.bg_QPolygonF_translate_const_QPointF_R(self, offset)
+    end
+    
+    def translated(dx : Float64, dy : Float64) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_qreal_qreal(self, dx, dy))
+    end
+    
+    def translated(offset : PointF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_const_QPointF_R(self, offset))
+    end
+    
+    def to_polygon() : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygonF_toPolygon_(self))
+    end
+    
+    def closed?() : Bool
+      Binding.bg_QPolygonF_isClosed_(self)
+    end
+    
+    def bounding_rect() : RectF
+      RectF.new(unwrap: Binding.bg_QPolygonF_boundingRect_(self))
+    end
+    
+    def contains_point(pt : PointF, fill_rule : FillRule) : Bool
+      Binding.bg_QPolygonF_containsPoint_const_QPointF_R_Qt__FillRule(self, pt, fill_rule)
+    end
+    
+    def united(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_united_const_QPolygonF_R(self, r))
+    end
+    
+    def intersected(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_intersected_const_QPolygonF_R(self, r))
+    end
+    
+    def subtracted(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_subtracted_const_QPolygonF_R(self, r))
+    end
+    
+    def intersects(r : PolygonF) : Bool
+      Binding.bg_QPolygonF_intersects_const_QPolygonF_R(self, r)
+    end
+    
+    def initialize(unnamed_arg_0 : PolygonF)
+      result = Binding.bg_QPolygonF__COPY_const_QPolygonF_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def *(m : Binding::QTransform*) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF__OPERATOR_mul_const_QTransform_R(self, m))
+    end
+    
+    def initialize(unwrap : Binding::QPolygonF*)
       result = unwrap
     @unwrap = result
     end
