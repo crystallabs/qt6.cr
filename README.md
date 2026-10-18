@@ -307,6 +307,18 @@ see the comments there:
   bytes)`.  `QList<QByteArray>` is an `Enumerable(Bytes)`.  `QByteArrayView`
   maps to `Bytes` as well, like `QAnyStringView` to `String`:
   `CryptographicHash.hash(bytes, algorithm)`.
+* bindgen instantiates the `QList`s the wrapped methods use, resolving the
+  aliases it knows, so Qt's other list typedefs get `alias_for` rules too:
+  `QFileInfoList` is an `Enumerable(FileInfo)`, `QModelIndexList` an
+  `Enumerable(ModelIndex)`.  `QItemSelection` derives from
+  `QList<QItemSelectionRange>`, so `Qt::ItemSelection` is that list with the
+  selection methods on top.
+* `QAbstractListModel` and `QAbstractTableModel` override `parent`,
+  `columnCount` and `hasChildren` privately; `src/qt6/abstract_list_model.cr`
+  and `abstract_table_model.cr` give their `Impl` classes those, as Qt does.
+  `StringListModel` can't be subclassed from Crystal (`sub_class: false`),
+  as bindgen would forward those private overrides; subclass
+  `AbstractListModel` instead.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

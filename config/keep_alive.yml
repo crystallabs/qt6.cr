@@ -154,3 +154,14 @@ QStandardItemModel:
   keep_alive:
     "^appendRow$": true
     "^set(Item|HorizontalHeaderItem|VerticalHeaderItem|ItemPrototype)$": true
+QStandardItem:
+  keep_alive:
+    "^(append|insert)(Row|Rows|Column)$": true
+    "^setChild$": true
+QAnimationGroup:
+  keep_alive:
+    "^addAnimation$": true
+    "^insertAnimation$": [1]
+QItemSelectionModel:
+  keep_alive:
+    "^setModel$": true

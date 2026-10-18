@@ -357,3 +357,10 @@ enums:
   "QMessageBox::Options": MessageBox::Options
   "QProcess::UnixProcessFlags": Process::UnixProcessFlags
   "QSortFilterProxyModel::Directions": SortFilterProxyModel::Directions
+  "QStandardItem::ItemType": StandardItem::ItemType
+  "QFileSystemModel::Roles": FileSystemModel::Roles
+  "QFileSystemModel::Option": FileSystemModel::Option
+  "QFileSystemModel::Options": FileSystemModel::Options
+  "QEasingCurve::Type": EasingCurve::Type
+  "QTimeLine::State": TimeLine::State
+  "QTimeLine::Direction": TimeLine::Direction

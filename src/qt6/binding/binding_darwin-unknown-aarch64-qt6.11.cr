@@ -474,7 +474,10 @@ module Qt
     alias QEventLoop = Void
     alias QAbstractEventDispatcher = Void
     alias QAbstractItemModel = Void
+    alias QAbstractTableModel = Void
+    alias QAbstractListModel = Void
     alias QAbstractProxyModel = Void
+    alias QAnimationGroup = Void
     alias QCoreApplication = Void
     alias QIODevice = Void
     alias QBuffer = Void
@@ -482,15 +485,22 @@ module Qt
     alias QFileDevice = Void
     alias QFile = Void
     alias QFileSystemWatcher = Void
+    alias QIdentityProxyModel = Void
+    alias QItemSelectionModel = Void
     alias QMimeData = Void
+    alias QParallelAnimationGroup = Void
+    alias QPauseAnimation = Void
     alias QProcess = Void
     alias QVariantAnimation = Void
     alias QPropertyAnimation = Void
     alias QSaveFile = Void
+    alias QSequentialAnimationGroup = Void
     alias QSettings = Void
     alias QSocketNotifier = Void
     alias QSortFilterProxyModel = Void
+    alias QStringListModel = Void
     alias QTemporaryFile = Void
+    alias QTimeLine = Void
     alias QTranslator = Void
     alias QScreen = Void
     alias QGuiApplication = Void
@@ -499,6 +509,7 @@ module Qt
     alias QWindow = Void
     alias QClipboard = Void
     alias QDrag = Void
+    alias QFileSystemModel = Void
     alias QStandardItemModel = Void
     alias QWidget = Void
     alias QAbstractButton = Void
@@ -563,7 +574,6 @@ module Qt
     alias QToolBar = Void
     alias QToolButton = Void
     alias QTreeView = Void
-    alias QAnimationGroup = Void
     alias QAbstractAnimationPrivate = Void
     alias QDeadlineTimer = Void
     alias ContainerQListQAbstractEventDispatcherTimerInfo = Void
@@ -575,13 +585,14 @@ module Qt
     alias QModelIndex = Void
     alias QModelRoleDataSpan = Void
     alias QPersistentModelIndex = Void
-    alias QModelIndexList = Void
+    alias ContainerQListQModelIndex = Void
     alias ContainerQListInt = Void
     alias ContainerQListQPersistentModelIndex = Void
     alias QAbstractItemModelPrivate = Void
     alias QDataStream = Void
     alias QItemSelection = Void
     alias QAbstractProxyModelPrivate = Void
+    alias QAnimationGroupPrivate = Void
     alias QDynamicPropertyChangeEvent = Void
     alias QInputEvent = Void
     alias QPointerEvent = Void
@@ -649,10 +660,15 @@ module Qt
     alias QFileInfo = Void
     alias QFileInfoPrivate = Void
     alias QDir = Void
-    alias QFileInfoList = Void
+    alias ContainerQListQFileInfo = Void
     alias QDirPrivate = Void
     alias QDirIterator = Void
+    alias QEasingCurve = Void
+    alias ContainerQListQPointF = Void
     alias QElapsedTimer = Void
+    alias QIdentityProxyModelPrivate = Void
+    alias QItemSelectionRange = Void
+    alias QItemSelectionModelPrivate = Void
     alias QVersionNumber = Void
     alias QLibraryInfo = Void
     alias QTransform = Void
@@ -668,11 +684,12 @@ module Qt
     alias QOperatingSystemVersionBase = Void
     alias QOperatingSystemVersionUnexported = Void
     alias QOperatingSystemVersion = Void
+    alias QParallelAnimationGroupPrivate = Void
     alias QProcessEnvironment = Void
-    alias QEasingCurve = Void
     alias QVariantAnimationPrivate = Void
     alias QRandomGenerator = Void
     alias QRandomGenerator64 = Void
+    alias QSequentialAnimationGroupPrivate = Void
     alias QStandardPaths = Void
     alias QTemporaryDir = Void
     alias QPaintDevice = Void
@@ -689,7 +706,6 @@ module Qt
     alias QPolygon = Void
     alias ContainerQListQPoint = Void
     alias QPolygonF = Void
-    alias ContainerQListQPointF = Void
     alias ContainerQListUnsignedInt = Void
     alias QColorSpace = Void
     alias QColorTransform = Void
@@ -759,6 +775,8 @@ module Qt
     alias QTabletEvent = Void
     alias QWindowPrivate = Void
     alias QDesktopServices = Void
+    alias QAbstractFileIconProvider = Void
+    alias QFileSystemModelPrivate = Void
     alias QFontMetrics = Void
     alias QFontInfo = Void
     alias QPainterPath = Void
@@ -772,6 +790,7 @@ module Qt
     alias QTextItem = Void
     alias QStandardItem = Void
     alias ContainerQListQStandardItemX = Void
+    alias QStandardItemPrivate = Void
     alias QStandardItemModelPrivate = Void
     alias QSizePolicy = Void
     alias QStyle = Void
@@ -794,7 +813,6 @@ module Qt
     alias QStyleOptionViewItem = Void
     alias QWidgetList = Void
     alias QAbstractScrollAreaPrivate = Void
-    alias QItemSelectionModel = Void
     alias QAbstractItemViewPrivate = Void
     alias QLayoutItem = Void
     alias QSpacerItem = Void
@@ -809,7 +827,6 @@ module Qt
     alias QPushButtonPrivate = Void
     alias QCalendarWidget = Void
     alias QStyleOptionDockWidget = Void
-    alias QAbstractFileIconProvider = Void
     alias QFileDialogArgs = Void
     alias QGesturePrivate = Void
     alias ContainerQListQGestureX = Void
@@ -868,6 +885,7 @@ module Qt
     alias QStyleOptionToolButton = Void
     alias QTreeViewPrivate = Void
     alias ContainerQListQVariant = Void
+    alias ContainerQListQItemSelectionRange = Void
     struct QPoint
       xp : Int32
       yp : Int32
@@ -1028,6 +1046,95 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QAbstractTableModel
+      bg_QAbstractTableModel_metaObject_ : CrystalProc
+      bg_QAbstractTableModel_qt_metacast_const_char_X : CrystalProc
+      bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QAbstractTableModel_index_int_int : CrystalProc
+      bg_QAbstractTableModel_index_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractTableModel_flags_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_columnCount_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int : CrystalProc
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int : CrystalProc
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int : CrystalProc
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_mimeTypes_ : CrystalProc
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R : CrystalProc
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_supportedDropActions_ : CrystalProc
+      bg_QAbstractItemModel_supportedDragActions_ : CrystalProc
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder : CrystalProc
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags : CrystalProc
+      bg_QAbstractItemModel_span_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
+      bg_QAbstractItemModel_submit_ : CrystalProc
+      bg_QAbstractItemModel_revert_ : CrystalProc
+      bg_QAbstractItemModel_resetInternalData_ : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QAbstractListModel
+      bg_QAbstractListModel_metaObject_ : CrystalProc
+      bg_QAbstractListModel_qt_metacast_const_char_X : CrystalProc
+      bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QAbstractListModel_index_int_int : CrystalProc
+      bg_QAbstractListModel_index_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractListModel_flags_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int : CrystalProc
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int : CrystalProc
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int : CrystalProc
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_mimeTypes_ : CrystalProc
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R : CrystalProc
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_supportedDropActions_ : CrystalProc
+      bg_QAbstractItemModel_supportedDragActions_ : CrystalProc
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder : CrystalProc
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags : CrystalProc
+      bg_QAbstractItemModel_span_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
+      bg_QAbstractItemModel_submit_ : CrystalProc
+      bg_QAbstractItemModel_revert_ : CrystalProc
+      bg_QAbstractItemModel_resetInternalData_ : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
     struct BgJumptable_QAbstractProxyModel
       bg_QAbstractProxyModel_metaObject_ : CrystalProc
       bg_QAbstractProxyModel_qt_metacast_const_char_X : CrystalProc
@@ -1073,6 +1180,22 @@ module Qt
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
       bg_QAbstractItemModel_resetInternalData_ : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QAnimationGroup
+      bg_QAnimationGroup_metaObject_ : CrystalProc
+      bg_QAnimationGroup_qt_metacast_const_char_X : CrystalProc
+      bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QAnimationGroup_event_QEvent_X : CrystalProc
+      bg_QAbstractAnimation_duration_ : CrystalProc
+      bg_QAbstractAnimation_updateCurrentTime_int : CrystalProc
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State : CrystalProc
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
@@ -1253,6 +1376,83 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QIdentityProxyModel
+      bg_QIdentityProxyModel_metaObject_ : CrystalProc
+      bg_QIdentityProxyModel_qt_metacast_const_char_X : CrystalProc
+      bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QIdentityProxyModel_columnCount_ : CrystalProc
+      bg_QIdentityProxyModel_columnCount_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_index_int_int : CrystalProc
+      bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_parent_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_rowCount_ : CrystalProc
+      bg_QIdentityProxyModel_rowCount_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int : CrystalProc
+      bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R : CrystalProc
+      bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R : CrystalProc
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int : CrystalProc
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags : CrystalProc
+      bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X : CrystalProc
+      bg_QIdentityProxyModel_insertColumns_int_int : CrystalProc
+      bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_insertRows_int_int : CrystalProc
+      bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_removeColumns_int_int : CrystalProc
+      bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_removeRows_int_int : CrystalProc
+      bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractProxyModel_submit_ : CrystalProc
+      bg_QAbstractProxyModel_revert_ : CrystalProc
+      bg_QAbstractProxyModel_data_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractProxyModel_flags_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int : CrystalProc
+      bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int : CrystalProc
+      bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_buddy_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_sort_int_Qt__SortOrder : CrystalProc
+      bg_QAbstractProxyModel_span_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R : CrystalProc
+      bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractProxyModel_mimeTypes_ : CrystalProc
+      bg_QAbstractProxyModel_supportedDragActions_ : CrystalProc
+      bg_QAbstractProxyModel_supportedDropActions_ : CrystalProc
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
+      bg_QAbstractItemModel_resetInternalData_ : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QItemSelectionModel
+      bg_QItemSelectionModel_metaObject_ : CrystalProc
+      bg_QItemSelectionModel_qt_metacast_const_char_X : CrystalProc
+      bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags : CrystalProc
+      bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags : CrystalProc
+      bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags : CrystalProc
+      bg_QItemSelectionModel_clear_ : CrystalProc
+      bg_QItemSelectionModel_reset_ : CrystalProc
+      bg_QItemSelectionModel_clearCurrentIndex_ : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
     struct BgJumptable_QMimeData
       bg_QMimeData_metaObject_ : CrystalProc
       bg_QMimeData_qt_metacast_const_char_X : CrystalProc
@@ -1261,6 +1461,38 @@ module Qt
       bg_QMimeData_formats_ : CrystalProc
       bg_QMimeData_retrieveData_const_QString_R_QMetaType : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QParallelAnimationGroup
+      bg_QParallelAnimationGroup_metaObject_ : CrystalProc
+      bg_QParallelAnimationGroup_qt_metacast_const_char_X : CrystalProc
+      bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QParallelAnimationGroup_duration_ : CrystalProc
+      bg_QParallelAnimationGroup_event_QEvent_X : CrystalProc
+      bg_QParallelAnimationGroup_updateCurrentTime_int : CrystalProc
+      bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State : CrystalProc
+      bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QPauseAnimation
+      bg_QPauseAnimation_metaObject_ : CrystalProc
+      bg_QPauseAnimation_qt_metacast_const_char_X : CrystalProc
+      bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QPauseAnimation_duration_ : CrystalProc
+      bg_QPauseAnimation_event_QEvent_X : CrystalProc
+      bg_QPauseAnimation_updateCurrentTime_int : CrystalProc
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State : CrystalProc
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
@@ -1359,6 +1591,22 @@ module Qt
       bg_QIODevice_waitForBytesWritten_int : CrystalProc
       bg_QIODevice_skipData_qint64 : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QSequentialAnimationGroup
+      bg_QSequentialAnimationGroup_metaObject_ : CrystalProc
+      bg_QSequentialAnimationGroup_qt_metacast_const_char_X : CrystalProc
+      bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QSequentialAnimationGroup_duration_ : CrystalProc
+      bg_QSequentialAnimationGroup_event_QEvent_X : CrystalProc
+      bg_QSequentialAnimationGroup_updateCurrentTime_int : CrystalProc
+      bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State : CrystalProc
+      bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
@@ -1481,6 +1729,19 @@ module Qt
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTimeLine
+      bg_QTimeLine_metaObject_ : CrystalProc
+      bg_QTimeLine_qt_metacast_const_char_X : CrystalProc
+      bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QTimeLine_valueForTime_int : CrystalProc
+      bg_QTimeLine_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
       bg_QObject_customEvent_QEvent_X : CrystalProc
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
@@ -1771,6 +2032,66 @@ module Qt
       bg_QObject_customEvent_QEvent_X : CrystalProc
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QFileSystemModel
+      bg_QFileSystemModel_metaObject_ : CrystalProc
+      bg_QFileSystemModel_qt_metacast_const_char_X : CrystalProc
+      bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QFileSystemModel_index_int_int : CrystalProc
+      bg_QFileSystemModel_index_int_int_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_parent_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_hasChildren_ : CrystalProc
+      bg_QFileSystemModel_hasChildren_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_canFetchMore_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_fetchMore_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_rowCount_ : CrystalProc
+      bg_QFileSystemModel_rowCount_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_columnCount_ : CrystalProc
+      bg_QFileSystemModel_columnCount_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_data_const_QModelIndex_R_int : CrystalProc
+      bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int : CrystalProc
+      bg_QFileSystemModel_headerData_int_Qt__Orientation_int : CrystalProc
+      bg_QFileSystemModel_flags_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_sort_int_Qt__SortOrder : CrystalProc
+      bg_QFileSystemModel_mimeTypes_ : CrystalProc
+      bg_QFileSystemModel_mimeData_const_QModelIndexList_R : CrystalProc
+      bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QFileSystemModel_supportedDropActions_ : CrystalProc
+      bg_QFileSystemModel_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QFileSystemModel_event_QEvent_X : CrystalProc
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int : CrystalProc
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_supportedDragActions_ : CrystalProc
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags : CrystalProc
+      bg_QAbstractItemModel_span_const_QModelIndex_R : CrystalProc
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
+      bg_QAbstractItemModel_submit_ : CrystalProc
+      bg_QAbstractItemModel_revert_ : CrystalProc
+      bg_QAbstractItemModel_resetInternalData_ : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QStandardItem
+      bg_QStandardItem_data_int : CrystalProc
+      bg_QStandardItem_multiData_QModelRoleDataSpan : CrystalProc
+      bg_QStandardItem_setData_const_QVariant_R_int : CrystalProc
+      bg_QStandardItem_clone_ : CrystalProc
+      bg_QStandardItem_type_ : CrystalProc
+      bg_QStandardItem_read_QDataStream_R : CrystalProc
+      bg_QStandardItem_write_QDataStream_R : CrystalProc
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R : CrystalProc
     end
     struct BgJumptable_QStandardItemModel
       bg_QStandardItemModel_metaObject_ : CrystalProc
@@ -5460,7 +5781,10 @@ module Qt
     fun bg_QObject_CAST_EventLoop_(_self_ : QObject*) : QEventLoop*
     fun bg_QObject_CAST_AbstractEventDispatcher_(_self_ : QObject*) : QAbstractEventDispatcher*
     fun bg_QObject_CAST_AbstractItemModel_(_self_ : QObject*) : QAbstractItemModel*
+    fun bg_QObject_CAST_AbstractTableModel_(_self_ : QObject*) : QAbstractTableModel*
+    fun bg_QObject_CAST_AbstractListModel_(_self_ : QObject*) : QAbstractListModel*
     fun bg_QObject_CAST_AbstractProxyModel_(_self_ : QObject*) : QAbstractProxyModel*
+    fun bg_QObject_CAST_AnimationGroup_(_self_ : QObject*) : QAnimationGroup*
     fun bg_QObject_CAST_CoreApplication_(_self_ : QObject*) : QCoreApplication*
     fun bg_QObject_CAST_IODevice_(_self_ : QObject*) : QIODevice*
     fun bg_QObject_CAST_Buffer_(_self_ : QObject*) : QBuffer*
@@ -5468,15 +5792,22 @@ module Qt
     fun bg_QObject_CAST_FileDevice_(_self_ : QObject*) : QFileDevice*
     fun bg_QObject_CAST_File_(_self_ : QObject*) : QFile*
     fun bg_QObject_CAST_FileSystemWatcher_(_self_ : QObject*) : QFileSystemWatcher*
+    fun bg_QObject_CAST_IdentityProxyModel_(_self_ : QObject*) : QIdentityProxyModel*
+    fun bg_QObject_CAST_ItemSelectionModel_(_self_ : QObject*) : QItemSelectionModel*
     fun bg_QObject_CAST_MimeData_(_self_ : QObject*) : QMimeData*
+    fun bg_QObject_CAST_ParallelAnimationGroup_(_self_ : QObject*) : QParallelAnimationGroup*
+    fun bg_QObject_CAST_PauseAnimation_(_self_ : QObject*) : QPauseAnimation*
     fun bg_QObject_CAST_Process_(_self_ : QObject*) : QProcess*
     fun bg_QObject_CAST_VariantAnimation_(_self_ : QObject*) : QVariantAnimation*
     fun bg_QObject_CAST_PropertyAnimation_(_self_ : QObject*) : QPropertyAnimation*
     fun bg_QObject_CAST_SaveFile_(_self_ : QObject*) : QSaveFile*
+    fun bg_QObject_CAST_SequentialAnimationGroup_(_self_ : QObject*) : QSequentialAnimationGroup*
     fun bg_QObject_CAST_Settings_(_self_ : QObject*) : QSettings*
     fun bg_QObject_CAST_SocketNotifier_(_self_ : QObject*) : QSocketNotifier*
     fun bg_QObject_CAST_SortFilterProxyModel_(_self_ : QObject*) : QSortFilterProxyModel*
+    fun bg_QObject_CAST_StringListModel_(_self_ : QObject*) : QStringListModel*
     fun bg_QObject_CAST_TemporaryFile_(_self_ : QObject*) : QTemporaryFile*
+    fun bg_QObject_CAST_TimeLine_(_self_ : QObject*) : QTimeLine*
     fun bg_QObject_CAST_Translator_(_self_ : QObject*) : QTranslator*
     fun bg_QObject_CAST_Screen_(_self_ : QObject*) : QScreen*
     fun bg_QObject_CAST_GuiApplication_(_self_ : QObject*) : QGuiApplication*
@@ -5485,6 +5816,7 @@ module Qt
     fun bg_QObject_CAST_Window_(_self_ : QObject*) : QWindow*
     fun bg_QObject_CAST_Clipboard_(_self_ : QObject*) : QClipboard*
     fun bg_QObject_CAST_Drag_(_self_ : QObject*) : QDrag*
+    fun bg_QObject_CAST_FileSystemModel_(_self_ : QObject*) : QFileSystemModel*
     fun bg_QObject_CAST_StandardItemModel_(_self_ : QObject*) : QStandardItemModel*
     fun bg_QObject_CAST_Widget_(_self_ : QObject*) : QWidget*
     fun bg_QObject_CAST_AbstractButton_(_self_ : QObject*) : QAbstractButton*
@@ -5825,6 +6157,37 @@ module Qt
     fun bg_QModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__CONSTRUCT_() : QPersistentModelIndex*
+    fun bg_QPersistentModelIndex__CONSTRUCT_const_QModelIndex_R(index : QModelIndex*) : QPersistentModelIndex*
+    fun bg_QPersistentModelIndex__COPY_const_QPersistentModelIndex_R(other : QPersistentModelIndex*) : QPersistentModelIndex*
+    fun bg_QPersistentModelIndex__OPERATOR_assign_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, other : QPersistentModelIndex*) : QPersistentModelIndex*
+    fun bg_QPersistentModelIndex_swap_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, other : QPersistentModelIndex*) : Void
+    fun bg_QPersistentModelIndex__OPERATOR_assign_const_QModelIndex_R(_self_ : QPersistentModelIndex*, other : QModelIndex*) : QPersistentModelIndex*
+    fun bg_QPersistentModelIndex__CONVERT_QModelIndex_(_self_ : QPersistentModelIndex*) : QModelIndex*
+    fun bg_QPersistentModelIndex_row_(_self_ : QPersistentModelIndex*) : Int32
+    fun bg_QPersistentModelIndex_column_(_self_ : QPersistentModelIndex*) : Int32
+    fun bg_QPersistentModelIndex_internalPointer_(_self_ : QPersistentModelIndex*) : Void*
+    fun bg_QPersistentModelIndex_constInternalPointer_(_self_ : QPersistentModelIndex*) : Void*
+    fun bg_QPersistentModelIndex_internalId_(_self_ : QPersistentModelIndex*) : UInt64
+    fun bg_QPersistentModelIndex_parent_(_self_ : QPersistentModelIndex*) : QModelIndex*
+    fun bg_QPersistentModelIndex_sibling_int_int(_self_ : QPersistentModelIndex*, row : Int32, column : Int32) : QModelIndex*
+    fun bg_QPersistentModelIndex_data_int(_self_ : QPersistentModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QPersistentModelIndex_multiData_QModelRoleDataSpan(_self_ : QPersistentModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QPersistentModelIndex_flags_(_self_ : QPersistentModelIndex*) : ItemFlags
+    fun bg_QPersistentModelIndex_model_(_self_ : QPersistentModelIndex*) : QAbstractItemModel*
+    fun bg_QPersistentModelIndex_isValid_(_self_ : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_eq_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_ne_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_lt_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_gt_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_le_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
+    fun bg_QPersistentModelIndex__OPERATOR_ge_const_QModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_metaObject_(_self_ : QAbstractItemModel*) : QMetaObject*
     fun bg_QAbstractItemModel_qt_metacast_const_char_X(_self_ : QAbstractItemModel*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QAbstractItemModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAbstractItemModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -5850,7 +6213,7 @@ module Qt
     fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
     fun bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_mimeTypes_(_self_ : QAbstractItemModel*) : ContainerQListQString*
-    fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_supportedDropActions_(_self_ : QAbstractItemModel*) : DropActions
@@ -5880,8 +6243,8 @@ module Qt
     fun bg_QAbstractItemModel_flags_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : ItemFlags
     fun bg_QAbstractItemModel_sort_int_Qt__SortOrder(_self_ : QAbstractItemModel*, column : Int32, order : SortOrder) : Void
     fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32) : QModelIndexList*
-    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : QSize
     fun bg_QAbstractItemModel_checkIndex_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_checkIndex_const_QModelIndex_R_QAbstractItemModel__CheckIndexOptions(_self_ : QAbstractItemModel*, index : QModelIndex*, options : AbstractItemModel::CheckIndexOptions) : Bool
@@ -5901,7 +6264,7 @@ module Qt
     fun bg_QAbstractItemModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd : QAbstractItemModelPrivate*, parent : QObject*) : QAbstractItemModel*
     fun bg_QAbstractItemModel_createIndex_int_int_const_void_X(_self_ : QAbstractItemModel*, row : Int32, column : Int32, data : Void*) : QModelIndex*
     fun bg_QAbstractItemModel_createIndex_int_int_quintptr(_self_ : QAbstractItemModel*, row : Int32, column : Int32, id : UInt64) : QModelIndex*
-    fun bg_QAbstractItemModel_encodeData_const_QModelIndexList_R_QDataStream_R(_self_ : QAbstractItemModel*, indexes : QModelIndexList*, stream : QDataStream*) : Void
+    fun bg_QAbstractItemModel_encodeData_const_QModelIndexList_R_QDataStream_R(_self_ : QAbstractItemModel*, indexes : ContainerQListQModelIndex*, stream : QDataStream*) : Void
     fun bg_QAbstractItemModel_decodeData_int_int_const_QModelIndex_R_QDataStream_R(_self_ : QAbstractItemModel*, row : Int32, column : Int32, parent : QModelIndex*, stream : QDataStream*) : Bool
     fun bg_QAbstractItemModel_beginInsertRows_const_QModelIndex_R_int_int(_self_ : QAbstractItemModel*, parent : QModelIndex*, first : Int32, last : Int32) : Void
     fun bg_QAbstractItemModel_endInsertRows_(_self_ : QAbstractItemModel*) : Void
@@ -5918,8 +6281,8 @@ module Qt
     fun bg_QAbstractItemModel_beginResetModel_(_self_ : QAbstractItemModel*) : Void
     fun bg_QAbstractItemModel_endResetModel_(_self_ : QAbstractItemModel*) : Void
     fun bg_QAbstractItemModel_changePersistentIndex_const_QModelIndex_R_const_QModelIndex_R(_self_ : QAbstractItemModel*, from : QModelIndex*, to : QModelIndex*) : Void
-    fun bg_QAbstractItemModel_changePersistentIndexList_const_QModelIndexList_R_const_QModelIndexList_R(_self_ : QAbstractItemModel*, from : QModelIndexList*, to : QModelIndexList*) : Void
-    fun bg_QAbstractItemModel_persistentIndexList_(_self_ : QAbstractItemModel*) : QModelIndexList*
+    fun bg_QAbstractItemModel_changePersistentIndexList_const_QModelIndexList_R_const_QModelIndexList_R(_self_ : QAbstractItemModel*, from : ContainerQListQModelIndex*, to : ContainerQListQModelIndex*) : Void
+    fun bg_QAbstractItemModel_persistentIndexList_(_self_ : QAbstractItemModel*) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_event_QEvent_X(_self_ : QAbstractItemModel*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractItemModel*, watched : QObject*, event : QEvent*) : Bool
@@ -5958,7 +6321,7 @@ module Qt
     fun bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
     fun bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_mimeTypes_SUPER_(_self_ : QAbstractItemModel*) : ContainerQListQString*
-    fun bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_supportedDropActions_SUPER_(_self_ : QAbstractItemModel*) : DropActions
@@ -5974,7 +6337,7 @@ module Qt
     fun bg_QAbstractItemModel_flags_SUPER_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : ItemFlags
     fun bg_QAbstractItemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QAbstractItemModel*, column : Int32, order : SortOrder) : Void
     fun bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : QSize
     fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractItemModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
     fun bg_QAbstractItemModel_submit_SUPER_(_self_ : QAbstractItemModel*) : Bool
@@ -5988,6 +6351,177 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractItemModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractItemModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAbstractItemModel_JUMPTABLE_BgJumptable_QAbstractItemModel_R(_self_ : QAbstractItemModel*, table : BgJumptable_QAbstractItemModel*) : Void
+    fun bg_QAbstractTableModel_metaObject_(_self_ : QAbstractTableModel*) : QMetaObject*
+    fun bg_QAbstractTableModel_qt_metacast_const_char_X(_self_ : QAbstractTableModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAbstractTableModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QAbstractTableModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QAbstractTableModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QAbstractTableModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QAbstractTableModel__CONSTRUCT_QObject_X(parent : QObject*) : QAbstractTableModel*
+    fun bg_QAbstractTableModel_index_int_int(_self_ : QAbstractTableModel*, row : Int32, column : Int32) : QModelIndex*
+    fun bg_QAbstractTableModel_index_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractTableModel_flags_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractTableModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd : QAbstractItemModelPrivate*, parent : QObject*) : QAbstractTableModel*
+    fun bg_QAbstractTableModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractItemModel_rowCount_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Int32
+    fun bg_QAbstractItemModel_columnCount_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Int32
+    fun bg_QAbstractItemModel_data_const_QModelIndex_R_int(_self_ : QAbstractTableModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QAbstractTableModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(_self_ : QAbstractTableModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractTableModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_mimeTypes_(_self_ : QAbstractTableModel*) : ContainerQListQString*
+    fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractTableModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDropActions_(_self_ : QAbstractTableModel*) : DropActions
+    fun bg_QAbstractItemModel_supportedDragActions_(_self_ : QAbstractTableModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractTableModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractTableModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_sort_int_Qt__SortOrder(_self_ : QAbstractTableModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractTableModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractTableModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_(_self_ : QAbstractTableModel*) : Bool
+    fun bg_QAbstractItemModel_revert_(_self_ : QAbstractTableModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_(_self_ : QAbstractTableModel*) : Void
+    fun bg_QObject_event_QEvent_X(_self_ : QAbstractTableModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractTableModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractTableModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAbstractTableModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractTableModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractTableModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractTableModel*, signal : QMetaMethod*) : Void
+    fun bg_QAbstractTableModel_index_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractTableModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractTableModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractTableModel_flags_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractItemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(_self_ : QAbstractTableModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QAbstractTableModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractTableModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_mimeTypes_SUPER_(_self_ : QAbstractTableModel*) : ContainerQListQString*
+    fun bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractTableModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDropActions_SUPER_(_self_ : QAbstractTableModel*) : DropActions
+    fun bg_QAbstractItemModel_supportedDragActions_SUPER_(_self_ : QAbstractTableModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractTableModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractTableModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractTableModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_fetchMore_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractItemModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QAbstractTableModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractTableModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(_self_ : QAbstractTableModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractTableModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_SUPER_(_self_ : QAbstractTableModel*) : Bool
+    fun bg_QAbstractItemModel_revert_SUPER_(_self_ : QAbstractTableModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_SUPER_(_self_ : QAbstractTableModel*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QAbstractTableModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QAbstractTableModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QAbstractTableModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QAbstractTableModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QAbstractTableModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractTableModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractTableModel*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QAbstractTableModel_JUMPTABLE_BgJumptable_QAbstractTableModel_R(_self_ : QAbstractTableModel*, table : BgJumptable_QAbstractTableModel*) : Void
+    fun bg_QAbstractListModel_metaObject_(_self_ : QAbstractListModel*) : QMetaObject*
+    fun bg_QAbstractListModel_qt_metacast_const_char_X(_self_ : QAbstractListModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAbstractListModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QAbstractListModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QAbstractListModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QAbstractListModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QAbstractListModel__CONSTRUCT_QObject_X(parent : QObject*) : QAbstractListModel*
+    fun bg_QAbstractListModel_index_int_int(_self_ : QAbstractListModel*, row : Int32, column : Int32) : QModelIndex*
+    fun bg_QAbstractListModel_index_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractListModel_flags_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractListModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd : QAbstractItemModelPrivate*, parent : QObject*) : QAbstractListModel*
+    fun bg_QAbstractListModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractItemModel_rowCount_const_QModelIndex_R(_self_ : QAbstractListModel*, parent : QModelIndex*) : Int32
+    fun bg_QAbstractItemModel_data_const_QModelIndex_R_int(_self_ : QAbstractListModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QAbstractListModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(_self_ : QAbstractListModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractListModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_mimeTypes_(_self_ : QAbstractListModel*) : ContainerQListQString*
+    fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractListModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDropActions_(_self_ : QAbstractListModel*) : DropActions
+    fun bg_QAbstractItemModel_supportedDragActions_(_self_ : QAbstractListModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractListModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractListModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(_self_ : QAbstractListModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(_self_ : QAbstractListModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_sort_int_Qt__SortOrder(_self_ : QAbstractListModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractListModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractListModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_(_self_ : QAbstractListModel*) : Bool
+    fun bg_QAbstractItemModel_revert_(_self_ : QAbstractListModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_(_self_ : QAbstractListModel*) : Void
+    fun bg_QObject_event_QEvent_X(_self_ : QAbstractListModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAbstractListModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAbstractListModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAbstractListModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QAbstractListModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAbstractListModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAbstractListModel*, signal : QMetaMethod*) : Void
+    fun bg_QAbstractListModel_index_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractListModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractListModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractListModel_flags_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractItemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(_self_ : QAbstractListModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QAbstractListModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractListModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_mimeTypes_SUPER_(_self_ : QAbstractListModel*) : ContainerQListQString*
+    fun bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractListModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDropActions_SUPER_(_self_ : QAbstractListModel*) : DropActions
+    fun bg_QAbstractItemModel_supportedDragActions_SUPER_(_self_ : QAbstractListModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractListModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractListModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_fetchMore_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractItemModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QAbstractListModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractListModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(_self_ : QAbstractListModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractListModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_SUPER_(_self_ : QAbstractListModel*) : Bool
+    fun bg_QAbstractItemModel_revert_SUPER_(_self_ : QAbstractListModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_SUPER_(_self_ : QAbstractListModel*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QAbstractListModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QAbstractListModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QAbstractListModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QAbstractListModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QAbstractListModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractListModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractListModel*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QAbstractListModel_JUMPTABLE_BgJumptable_QAbstractListModel_R(_self_ : QAbstractListModel*, table : BgJumptable_QAbstractListModel*) : Void
     fun bg_QAbstractProxyModel_metaObject_(_self_ : QAbstractProxyModel*) : QMetaObject*
     fun bg_QAbstractProxyModel_qt_metacast_const_char_X(_self_ : QAbstractProxyModel*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QAbstractProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAbstractProxyModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -6017,7 +6551,7 @@ module Qt
     fun bg_QAbstractProxyModel_hasChildren_(_self_ : QAbstractProxyModel*) : Bool
     fun bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(_self_ : QAbstractProxyModel*, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_mimeTypes_(_self_ : QAbstractProxyModel*) : ContainerQListQString*
@@ -6036,7 +6570,7 @@ module Qt
     fun bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractProxyModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
     fun bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractProxyModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
-    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractProxyModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
     fun bg_QAbstractItemModel_resetInternalData_(_self_ : QAbstractProxyModel*) : Void
     fun bg_QObject_event_QEvent_X(_self_ : QAbstractProxyModel*, event : QEvent*) : Bool
@@ -6065,7 +6599,7 @@ module Qt
     fun bg_QAbstractProxyModel_span_SUPER_const_QModelIndex_R(_self_ : QAbstractProxyModel*, index : QModelIndex*) : QSize
     fun bg_QAbstractProxyModel_hasChildren_SUPER_const_QModelIndex_R(_self_ : QAbstractProxyModel*, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QAbstractProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_mimeTypes_SUPER_(_self_ : QAbstractProxyModel*) : ContainerQListQString*
@@ -6077,7 +6611,7 @@ module Qt
     fun bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractProxyModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
     fun bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QAbstractProxyModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
-    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QAbstractProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QAbstractProxyModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
     fun bg_QAbstractItemModel_resetInternalData_SUPER_(_self_ : QAbstractProxyModel*) : Void
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QAbstractProxyModel*, event : QEvent*) : Bool
@@ -6088,6 +6622,44 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractProxyModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractProxyModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAbstractProxyModel_JUMPTABLE_BgJumptable_QAbstractProxyModel_R(_self_ : QAbstractProxyModel*, table : BgJumptable_QAbstractProxyModel*) : Void
+    fun bg_QAnimationGroup_metaObject_(_self_ : QAnimationGroup*) : QMetaObject*
+    fun bg_QAnimationGroup_qt_metacast_const_char_X(_self_ : QAnimationGroup*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QAnimationGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QAnimationGroup_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QAnimationGroup_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QAnimationGroup__CONSTRUCT_QObject_X(parent : QObject*) : QAnimationGroup*
+    fun bg_QAnimationGroup_animationAt_int(_self_ : QAnimationGroup*, index : Int32) : QAbstractAnimation*
+    fun bg_QAnimationGroup_animationCount_(_self_ : QAnimationGroup*) : Int32
+    fun bg_QAnimationGroup_indexOfAnimation_QAbstractAnimation_X(_self_ : QAnimationGroup*, animation : QAbstractAnimation*) : Int32
+    fun bg_QAnimationGroup_addAnimation_QAbstractAnimation_X(_self_ : QAnimationGroup*, animation : QAbstractAnimation*) : Void
+    fun bg_QAnimationGroup_insertAnimation_int_QAbstractAnimation_X(_self_ : QAnimationGroup*, index : Int32, animation : QAbstractAnimation*) : Void
+    fun bg_QAnimationGroup_removeAnimation_QAbstractAnimation_X(_self_ : QAnimationGroup*, animation : QAbstractAnimation*) : Void
+    fun bg_QAnimationGroup_takeAnimation_int(_self_ : QAnimationGroup*, index : Int32) : QAbstractAnimation*
+    fun bg_QAnimationGroup_clear_(_self_ : QAnimationGroup*) : Void
+    fun bg_QAnimationGroup__CONSTRUCT_QAnimationGroupPrivate_R_QObject_X(dd : QAnimationGroupPrivate*, parent : QObject*) : QAnimationGroup*
+    fun bg_QAnimationGroup_event_QEvent_X(_self_ : QAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QAnimationGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractAnimation_duration_(_self_ : QAnimationGroup*) : Int32
+    fun bg_QAbstractAnimation_updateCurrentTime_int(_self_ : QAnimationGroup*, current_time : Int32) : Void
+    fun bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(_self_ : QAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QAnimationGroup_event_SUPER_QEvent_X(_self_ : QAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QAbstractAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QAbstractAnimation_updateDirection_SUPER_QAbstractAnimation__Direction(_self_ : QAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(_self_ : QAnimationGroup*, table : BgJumptable_QAnimationGroup*) : Void
     fun bg_QEvent__COPY_const_QEvent_R(unnamed_arg_0 : QEvent*) : QEvent*
     fun bg_QEvent__OPERATOR_assign_const_QEvent_R(_self_ : QEvent*, other : QEvent*) : QEvent*
     fun bg_QEvent__CONSTRUCT_QEvent__Type(type : Event::Type) : QEvent*
@@ -7332,12 +7904,12 @@ module Qt
     fun bg_QDir_entryList_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : ContainerQListQString*
     fun bg_QDir_entryList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters) : ContainerQListQString*
     fun bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters, sort : Dir::SortFlags) : ContainerQListQString*
-    fun bg_QDir_entryInfoList_(_self_ : QDir*) : QFileInfoList*
-    fun bg_QDir_entryInfoList_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : QFileInfoList*
-    fun bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(_self_ : QDir*, filters : Dir::Filters, sort : Dir::SortFlags) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters, sort : Dir::SortFlags) : QFileInfoList*
+    fun bg_QDir_entryInfoList_(_self_ : QDir*) : ContainerQListQFileInfo*
+    fun bg_QDir_entryInfoList_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : ContainerQListQFileInfo*
+    fun bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(_self_ : QDir*, filters : Dir::Filters, sort : Dir::SortFlags) : ContainerQListQFileInfo*
+    fun bg_QDir_entryInfoList_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : ContainerQListQFileInfo*
+    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters) : ContainerQListQFileInfo*
+    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters, sort : Dir::SortFlags) : ContainerQListQFileInfo*
     fun bg_QDir_mkdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_rmdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_mkpath_const_QString_R(_self_ : QDir*, dir_path : CrystalString) : Bool
@@ -7354,7 +7926,7 @@ module Qt
     fun bg_QDir_remove_const_QString_R(_self_ : QDir*, file_name : CrystalString) : Bool
     fun bg_QDir_rename_const_QString_R_const_QString_R(_self_ : QDir*, old_name : CrystalString, new_name : CrystalString) : Bool
     fun bg_QDir_exists_const_QString_R(_self_ : QDir*, name : CrystalString) : Bool
-    fun bg_QDir_drives_STATIC_() : QFileInfoList*
+    fun bg_QDir_drives_STATIC_() : ContainerQListQFileInfo*
     fun bg_QDir_listSeparator_STATIC_() : Int32
     fun bg_QDir_separator_STATIC_() : Int32
     fun bg_QDir_setCurrent_STATIC_const_QString_R(path : CrystalString) : Bool
@@ -7389,6 +7961,25 @@ module Qt
     fun bg_QDirIterator_filePath_(_self_ : QDirIterator*) : CrystalString
     fun bg_QDirIterator_fileInfo_(_self_ : QDirIterator*) : QFileInfo*
     fun bg_QDirIterator_path_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QEasingCurve__CONSTRUCT_QEasingCurve__Type(type : EasingCurve::Type) : QEasingCurve*
+    fun bg_QEasingCurve__COPY_const_QEasingCurve_R(other : QEasingCurve*) : QEasingCurve*
+    fun bg_QEasingCurve__OPERATOR_assign_const_QEasingCurve_R(_self_ : QEasingCurve*, other : QEasingCurve*) : QEasingCurve*
+    fun bg_QEasingCurve_swap_QEasingCurve_R(_self_ : QEasingCurve*, other : QEasingCurve*) : Void
+    fun bg_QEasingCurve_amplitude_(_self_ : QEasingCurve*) : Float64
+    fun bg_QEasingCurve_setAmplitude_qreal(_self_ : QEasingCurve*, amplitude : Float64) : Void
+    fun bg_QEasingCurve_period_(_self_ : QEasingCurve*) : Float64
+    fun bg_QEasingCurve_setPeriod_qreal(_self_ : QEasingCurve*, period : Float64) : Void
+    fun bg_QEasingCurve_overshoot_(_self_ : QEasingCurve*) : Float64
+    fun bg_QEasingCurve_setOvershoot_qreal(_self_ : QEasingCurve*, overshoot : Float64) : Void
+    fun bg_QEasingCurve_addCubicBezierSegment_const_QPointF_R_const_QPointF_R_const_QPointF_R(_self_ : QEasingCurve*, c1 : QPointF, c2 : QPointF, end_point : QPointF) : Void
+    fun bg_QEasingCurve_addTCBSegment_const_QPointF_R_qreal_qreal_qreal(_self_ : QEasingCurve*, next_point : QPointF, t : Float64, c : Float64, b : Float64) : Void
+    fun bg_QEasingCurve_toCubicSpline_(_self_ : QEasingCurve*) : ContainerQListQPointF*
+    fun bg_QEasingCurve_type_(_self_ : QEasingCurve*) : EasingCurve::Type
+    fun bg_QEasingCurve_setType_QEasingCurve__Type(_self_ : QEasingCurve*, type : EasingCurve::Type) : Void
+    fun bg_QEasingCurve_valueForProgress_qreal(_self_ : QEasingCurve*, progress : Float64) : Float64
+    fun bg_QEasingCurve__OPERATOR_eq_const_QEasingCurve_R(_self_ : QEasingCurve*, rhs : QEasingCurve*) : Bool
+    fun bg_QEasingCurve__OPERATOR_ne_const_QEasingCurve_R(_self_ : QEasingCurve*, rhs : QEasingCurve*) : Bool
+    fun bg_QEasingCurve_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QElapsedTimer__CONSTRUCT_() : QElapsedTimer*
     fun bg_QElapsedTimer_clockType_STATIC_() : ElapsedTimer::ClockType
     fun bg_QElapsedTimer_isMonotonic_STATIC_() : Bool
@@ -7441,6 +8032,219 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(_self_ : QFileSystemWatcher*, table : BgJumptable_QFileSystemWatcher*) : Void
+    fun bg_QIdentityProxyModel_metaObject_(_self_ : QIdentityProxyModel*) : QMetaObject*
+    fun bg_QIdentityProxyModel_qt_metacast_const_char_X(_self_ : QIdentityProxyModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QIdentityProxyModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QIdentityProxyModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QIdentityProxyModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QIdentityProxyModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QIdentityProxyModel__CONSTRUCT_QObject_X(parent : QObject*) : QIdentityProxyModel*
+    fun bg_QIdentityProxyModel_columnCount_(_self_ : QIdentityProxyModel*) : Int32
+    fun bg_QIdentityProxyModel_columnCount_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Int32
+    fun bg_QIdentityProxyModel_index_int_int(_self_ : QIdentityProxyModel*, row : Int32, column : Int32) : QModelIndex*
+    fun bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R(_self_ : QIdentityProxyModel*, source_index : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R(_self_ : QIdentityProxyModel*, proxy_index : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_parent_const_QModelIndex_R(_self_ : QIdentityProxyModel*, child : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_rowCount_(_self_ : QIdentityProxyModel*) : Int32
+    fun bg_QIdentityProxyModel_rowCount_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Int32
+    fun bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int(_self_ : QIdentityProxyModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R(_self_ : QIdentityProxyModel*, selection : QItemSelection*) : QItemSelection*
+    fun bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R(_self_ : QIdentityProxyModel*, selection : QItemSelection*) : QItemSelection*
+    fun bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(_self_ : QIdentityProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32) : ContainerQListQModelIndex*
+    fun bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QIdentityProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X(_self_ : QIdentityProxyModel*, source_model : QAbstractItemModel*) : Void
+    fun bg_QIdentityProxyModel_insertColumns_int_int(_self_ : QIdentityProxyModel*, column : Int32, count : Int32) : Bool
+    fun bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_insertRows_int_int(_self_ : QIdentityProxyModel*, row : Int32, count : Int32) : Bool
+    fun bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_removeColumns_int_int(_self_ : QIdentityProxyModel*, column : Int32, count : Int32) : Bool
+    fun bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_removeRows_int_int(_self_ : QIdentityProxyModel*, row : Int32, count : Int32) : Bool
+    fun bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QIdentityProxyModel_handleSourceLayoutChanges_(_self_ : QIdentityProxyModel*) : Bool
+    fun bg_QIdentityProxyModel_handleSourceDataChanges_(_self_ : QIdentityProxyModel*) : Bool
+    fun bg_QIdentityProxyModel__CONSTRUCT_QIdentityProxyModelPrivate_R_QObject_X(dd : QIdentityProxyModelPrivate*, parent : QObject*) : QIdentityProxyModel*
+    fun bg_QIdentityProxyModel_setHandleSourceLayoutChanges_bool(_self_ : QIdentityProxyModel*, unnamed_arg_0 : Bool) : Void
+    fun bg_QIdentityProxyModel_setHandleSourceDataChanges_bool(_self_ : QIdentityProxyModel*, unnamed_arg_0 : Bool) : Void
+    fun bg_QIdentityProxyModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractProxyModel_submit_(_self_ : QIdentityProxyModel*) : Bool
+    fun bg_QAbstractProxyModel_revert_(_self_ : QIdentityProxyModel*) : Void
+    fun bg_QAbstractProxyModel_data_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QAbstractProxyModel_flags_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QIdentityProxyModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QIdentityProxyModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_buddy_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractProxyModel_sort_int_Qt__SortOrder(_self_ : QIdentityProxyModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractProxyModel_span_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(_self_ : QIdentityProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_mimeTypes_(_self_ : QIdentityProxyModel*) : ContainerQListQString*
+    fun bg_QAbstractProxyModel_supportedDragActions_(_self_ : QIdentityProxyModel*) : DropActions
+    fun bg_QAbstractProxyModel_supportedDropActions_(_self_ : QIdentityProxyModel*) : DropActions
+    fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QIdentityProxyModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_(_self_ : QIdentityProxyModel*) : Void
+    fun bg_QObject_event_QEvent_X(_self_ : QIdentityProxyModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QIdentityProxyModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QIdentityProxyModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QIdentityProxyModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QIdentityProxyModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QIdentityProxyModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QIdentityProxyModel*, signal : QMetaMethod*) : Void
+    fun bg_QIdentityProxyModel_columnCount_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Int32
+    fun bg_QIdentityProxyModel_index_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapFromSource_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, source_index : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapToSource_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, proxy_index : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_parent_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, child : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_rowCount_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Int32
+    fun bg_QIdentityProxyModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QIdentityProxyModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QIdentityProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QIdentityProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(_self_ : QIdentityProxyModel*, selection : QItemSelection*) : QItemSelection*
+    fun bg_QIdentityProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(_self_ : QIdentityProxyModel*, selection : QItemSelection*) : QItemSelection*
+    fun bg_QIdentityProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QIdentityProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QIdentityProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(_self_ : QIdentityProxyModel*, source_model : QAbstractItemModel*) : Void
+    fun bg_QIdentityProxyModel_insertColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_removeColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_removeRows_SUPER_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QIdentityProxyModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QIdentityProxyModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractProxyModel_submit_SUPER_(_self_ : QIdentityProxyModel*) : Bool
+    fun bg_QAbstractProxyModel_revert_SUPER_(_self_ : QIdentityProxyModel*) : Void
+    fun bg_QAbstractProxyModel_data_SUPER_const_QModelIndex_R_int(_self_ : QIdentityProxyModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QAbstractProxyModel_flags_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QAbstractProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(_self_ : QIdentityProxyModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QIdentityProxyModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractProxyModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_buddy_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractProxyModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_fetchMore_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractProxyModel_sort_SUPER_int_Qt__SortOrder(_self_ : QIdentityProxyModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QAbstractProxyModel_span_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractProxyModel_hasChildren_SUPER_const_QModelIndex_R(_self_ : QIdentityProxyModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QIdentityProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QIdentityProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractProxyModel_mimeTypes_SUPER_(_self_ : QIdentityProxyModel*) : ContainerQListQString*
+    fun bg_QAbstractProxyModel_supportedDragActions_SUPER_(_self_ : QIdentityProxyModel*) : DropActions
+    fun bg_QAbstractProxyModel_supportedDropActions_SUPER_(_self_ : QIdentityProxyModel*) : DropActions
+    fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QIdentityProxyModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_SUPER_(_self_ : QIdentityProxyModel*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QIdentityProxyModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QIdentityProxyModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QIdentityProxyModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QIdentityProxyModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QIdentityProxyModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QIdentityProxyModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QIdentityProxyModel*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QIdentityProxyModel_JUMPTABLE_BgJumptable_QIdentityProxyModel_R(_self_ : QIdentityProxyModel*, table : BgJumptable_QIdentityProxyModel*) : Void
+    fun bg_QItemSelectionRange__CONSTRUCT_() : QItemSelectionRange*
+    fun bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(top_l : QModelIndex*, bottom_r : QModelIndex*) : QItemSelectionRange*
+    fun bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R(index : QModelIndex*) : QItemSelectionRange*
+    fun bg_QItemSelectionRange_swap_QItemSelectionRange_R(_self_ : QItemSelectionRange*, other : QItemSelectionRange*) : Void
+    fun bg_QItemSelectionRange_top_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_left_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_bottom_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_right_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_width_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_height_(_self_ : QItemSelectionRange*) : Int32
+    fun bg_QItemSelectionRange_topLeft_(_self_ : QItemSelectionRange*) : QPersistentModelIndex*
+    fun bg_QItemSelectionRange_bottomRight_(_self_ : QItemSelectionRange*) : QPersistentModelIndex*
+    fun bg_QItemSelectionRange_parent_(_self_ : QItemSelectionRange*) : QModelIndex*
+    fun bg_QItemSelectionRange_model_(_self_ : QItemSelectionRange*) : QAbstractItemModel*
+    fun bg_QItemSelectionRange_contains_const_QModelIndex_R(_self_ : QItemSelectionRange*, index : QModelIndex*) : Bool
+    fun bg_QItemSelectionRange_contains_int_int_const_QModelIndex_R(_self_ : QItemSelectionRange*, row : Int32, column : Int32, parent_index : QModelIndex*) : Bool
+    fun bg_QItemSelectionRange_intersects_const_QItemSelectionRange_R(_self_ : QItemSelectionRange*, other : QItemSelectionRange*) : Bool
+    fun bg_QItemSelectionRange_intersected_const_QItemSelectionRange_R(_self_ : QItemSelectionRange*, other : QItemSelectionRange*) : QItemSelectionRange*
+    fun bg_QItemSelectionRange_isValid_(_self_ : QItemSelectionRange*) : Bool
+    fun bg_QItemSelectionRange_isEmpty_(_self_ : QItemSelectionRange*) : Bool
+    fun bg_QItemSelectionRange_indexes_(_self_ : QItemSelectionRange*) : ContainerQListQModelIndex*
+    fun bg_QItemSelectionRange__COPY_const_QItemSelectionRange_R(unnamed_arg_0 : QItemSelectionRange*) : QItemSelectionRange*
+    fun bg_QItemSelectionRange__OPERATOR_assign_const_QItemSelectionRange_R(_self_ : QItemSelectionRange*, unnamed_arg_0 : QItemSelectionRange*) : QItemSelectionRange*
+    fun bg_QItemSelectionRange__OPERATOR_eq_const_QItemSelectionRange_R(_self_ : QItemSelectionRange*, rhs : QItemSelectionRange*) : Bool
+    fun bg_QItemSelectionRange__OPERATOR_ne_const_QItemSelectionRange_R(_self_ : QItemSelectionRange*, rhs : QItemSelectionRange*) : Bool
+    fun bg_QItemSelectionModel_metaObject_(_self_ : QItemSelectionModel*) : QMetaObject*
+    fun bg_QItemSelectionModel_qt_metacast_const_char_X(_self_ : QItemSelectionModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QItemSelectionModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QItemSelectionModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QItemSelectionModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QItemSelectionModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X(model : QAbstractItemModel*) : QItemSelectionModel*
+    fun bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X_QObject_X(model : QAbstractItemModel*, parent : QObject*) : QItemSelectionModel*
+    fun bg_QItemSelectionModel_currentIndex_(_self_ : QItemSelectionModel*) : QModelIndex*
+    fun bg_QItemSelectionModel_isSelected_const_QModelIndex_R(_self_ : QItemSelectionModel*, index : QModelIndex*) : Bool
+    fun bg_QItemSelectionModel_isRowSelected_int(_self_ : QItemSelectionModel*, row : Int32) : Bool
+    fun bg_QItemSelectionModel_isRowSelected_int_const_QModelIndex_R(_self_ : QItemSelectionModel*, row : Int32, parent : QModelIndex*) : Bool
+    fun bg_QItemSelectionModel_isColumnSelected_int(_self_ : QItemSelectionModel*, column : Int32) : Bool
+    fun bg_QItemSelectionModel_isColumnSelected_int_const_QModelIndex_R(_self_ : QItemSelectionModel*, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QItemSelectionModel_rowIntersectsSelection_int(_self_ : QItemSelectionModel*, row : Int32) : Bool
+    fun bg_QItemSelectionModel_rowIntersectsSelection_int_const_QModelIndex_R(_self_ : QItemSelectionModel*, row : Int32, parent : QModelIndex*) : Bool
+    fun bg_QItemSelectionModel_columnIntersectsSelection_int(_self_ : QItemSelectionModel*, column : Int32) : Bool
+    fun bg_QItemSelectionModel_columnIntersectsSelection_int_const_QModelIndex_R(_self_ : QItemSelectionModel*, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QItemSelectionModel_hasSelection_(_self_ : QItemSelectionModel*) : Bool
+    fun bg_QItemSelectionModel_selectedIndexes_(_self_ : QItemSelectionModel*) : ContainerQListQModelIndex*
+    fun bg_QItemSelectionModel_selectedRows_int(_self_ : QItemSelectionModel*, column : Int32) : ContainerQListQModelIndex*
+    fun bg_QItemSelectionModel_selectedColumns_int(_self_ : QItemSelectionModel*, row : Int32) : ContainerQListQModelIndex*
+    fun bg_QItemSelectionModel_selection_(_self_ : QItemSelectionModel*) : QItemSelection*
+    fun bg_QItemSelectionModel_model_(_self_ : QItemSelectionModel*) : QAbstractItemModel*
+    fun bg_QItemSelectionModel_setModel_QAbstractItemModel_X(_self_ : QItemSelectionModel*, model : QAbstractItemModel*) : Void
+    fun bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, index : QModelIndex*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, index : QModelIndex*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, selection : QItemSelection*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_clear_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_reset_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_clearSelection_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_clearCurrentIndex_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QItemSelectionModel*, selected : QItemSelection*, deselected : QItemSelection*) : Void
+    fun bg_QItemSelectionModel_currentChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QItemSelectionModel*, current : QModelIndex*, previous : QModelIndex*) : Void
+    fun bg_QItemSelectionModel_currentRowChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QItemSelectionModel*, current : QModelIndex*, previous : QModelIndex*) : Void
+    fun bg_QItemSelectionModel_currentColumnChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QItemSelectionModel*, current : QModelIndex*, previous : QModelIndex*) : Void
+    fun bg_QItemSelectionModel_modelChanged_QAbstractItemModel_X(_self_ : QItemSelectionModel*, model : QAbstractItemModel*) : Void
+    fun bg_QItemSelectionModel__CONSTRUCT_QItemSelectionModelPrivate_R_QAbstractItemModel_X(dd : QItemSelectionModelPrivate*, model : QAbstractItemModel*) : QItemSelectionModel*
+    fun bg_QItemSelectionModel_emitSelectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QItemSelectionModel*, new_selection : QItemSelection*, old_selection : QItemSelection*) : Void
+    fun bg_QItemSelectionModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QItemSelectionModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QItemSelectionModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QItemSelectionModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QItemSelectionModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QItemSelectionModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QItemSelectionModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QItemSelectionModel*, signal : QMetaMethod*) : Void
+    fun bg_QItemSelectionModel_CONNECT_selectionChanged_CrystalProc_void__const_QItemSelection_R__const_QItemSelection_R_(_self_ : QItemSelectionModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QItemSelectionModel_CONNECT_currentChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(_self_ : QItemSelectionModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QItemSelectionModel_CONNECT_currentRowChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(_self_ : QItemSelectionModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QItemSelectionModel_CONNECT_currentColumnChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(_self_ : QItemSelectionModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QItemSelectionModel_CONNECT_modelChanged_CrystalProc_void__QAbstractItemModel_X_(_self_ : QItemSelectionModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QItemSelectionModel_setCurrentIndex_SUPER_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, index : QModelIndex*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_select_SUPER_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, index : QModelIndex*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_select_SUPER_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelectionModel*, selection : QItemSelection*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelectionModel_clear_SUPER_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_reset_SUPER_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QItemSelectionModel_clearCurrentIndex_SUPER_(_self_ : QItemSelectionModel*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QItemSelectionModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QItemSelectionModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QItemSelectionModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QItemSelectionModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QItemSelectionModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QItemSelectionModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QItemSelectionModel*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QItemSelectionModel_JUMPTABLE_BgJumptable_QItemSelectionModel_R(_self_ : QItemSelectionModel*, table : BgJumptable_QItemSelectionModel*) : Void
+    fun bg_QItemSelection__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(top_left : QModelIndex*, bottom_right : QModelIndex*) : QItemSelection*
+    fun bg_QItemSelection_select_const_QModelIndex_R_const_QModelIndex_R(_self_ : QItemSelection*, top_left : QModelIndex*, bottom_right : QModelIndex*) : Void
+    fun bg_QItemSelection_contains_const_QModelIndex_R(_self_ : QItemSelection*, index : QModelIndex*) : Bool
+    fun bg_QItemSelection_indexes_(_self_ : QItemSelection*) : ContainerQListQModelIndex*
+    fun bg_QItemSelection_merge_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(_self_ : QItemSelection*, other : QItemSelection*, command : ItemSelectionModel::SelectionFlags) : Void
+    fun bg_QItemSelection_split_STATIC_const_QItemSelectionRange_R_const_QItemSelectionRange_R_QItemSelection_X(range : QItemSelectionRange*, other : QItemSelectionRange*, result : QItemSelection*) : Void
+    fun bg_QItemSelection__CONSTRUCT_() : QItemSelection*
+    fun bg_QItemSelection__COPY_const_QItemSelection_R(unnamed_arg_0 : QItemSelection*) : QItemSelection*
     fun bg_QVersionNumber__CONSTRUCT_() : QVersionNumber*
     fun bg_QVersionNumber__CONSTRUCT_int(maj : Int32) : QVersionNumber*
     fun bg_QVersionNumber__CONSTRUCT_int_int(maj : Int32, min : Int32) : QVersionNumber*
@@ -7815,6 +8619,71 @@ module Qt
     fun bg_QOperatingSystemVersion_Android12L_STATIC_GETTER_() : QOperatingSystemVersionBase*
     fun bg_QOperatingSystemVersion_Android13_STATIC_GETTER_() : QOperatingSystemVersionBase*
     fun bg_QOperatingSystemVersion_MacOSVentura_STATIC_GETTER_() : QOperatingSystemVersionBase*
+    fun bg_QParallelAnimationGroup_metaObject_(_self_ : QParallelAnimationGroup*) : QMetaObject*
+    fun bg_QParallelAnimationGroup_qt_metacast_const_char_X(_self_ : QParallelAnimationGroup*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QParallelAnimationGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QParallelAnimationGroup_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QParallelAnimationGroup_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QParallelAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QParallelAnimationGroup__CONSTRUCT_QObject_X(parent : QObject*) : QParallelAnimationGroup*
+    fun bg_QParallelAnimationGroup_duration_(_self_ : QParallelAnimationGroup*) : Int32
+    fun bg_QParallelAnimationGroup__CONSTRUCT_QParallelAnimationGroupPrivate_R_QObject_X(dd : QParallelAnimationGroupPrivate*, parent : QObject*) : QParallelAnimationGroup*
+    fun bg_QParallelAnimationGroup_event_QEvent_X(_self_ : QParallelAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QParallelAnimationGroup_updateCurrentTime_int(_self_ : QParallelAnimationGroup*, current_time : Int32) : Void
+    fun bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QParallelAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction(_self_ : QParallelAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QParallelAnimationGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QParallelAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QParallelAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QParallelAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QParallelAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QParallelAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QParallelAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QParallelAnimationGroup_duration_SUPER_(_self_ : QParallelAnimationGroup*) : Int32
+    fun bg_QParallelAnimationGroup_event_SUPER_QEvent_X(_self_ : QParallelAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QParallelAnimationGroup_updateCurrentTime_SUPER_int(_self_ : QParallelAnimationGroup*, current_time : Int32) : Void
+    fun bg_QParallelAnimationGroup_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QParallelAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QParallelAnimationGroup_updateDirection_SUPER_QAbstractAnimation__Direction(_self_ : QParallelAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QParallelAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QParallelAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QParallelAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QParallelAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QParallelAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QParallelAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QParallelAnimationGroup_JUMPTABLE_BgJumptable_QParallelAnimationGroup_R(_self_ : QParallelAnimationGroup*, table : BgJumptable_QParallelAnimationGroup*) : Void
+    fun bg_QPauseAnimation_metaObject_(_self_ : QPauseAnimation*) : QMetaObject*
+    fun bg_QPauseAnimation_qt_metacast_const_char_X(_self_ : QPauseAnimation*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QPauseAnimation*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QPauseAnimation_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QPauseAnimation_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QPauseAnimation_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QPauseAnimation__CONSTRUCT_QObject_X(parent : QObject*) : QPauseAnimation*
+    fun bg_QPauseAnimation__CONSTRUCT_int_QObject_X(msecs : Int32, parent : QObject*) : QPauseAnimation*
+    fun bg_QPauseAnimation_duration_(_self_ : QPauseAnimation*) : Int32
+    fun bg_QPauseAnimation_setDuration_int(_self_ : QPauseAnimation*, msecs : Int32) : Void
+    fun bg_QPauseAnimation_event_QEvent_X(_self_ : QPauseAnimation*, event : QEvent*) : Bool
+    fun bg_QPauseAnimation_updateCurrentTime_int(_self_ : QPauseAnimation*, current_time : Int32) : Void
+    fun bg_QPauseAnimation_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QPauseAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(_self_ : QPauseAnimation*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QPauseAnimation*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QPauseAnimation*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QPauseAnimation*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QPauseAnimation*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QPauseAnimation*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QPauseAnimation*, signal : QMetaMethod*) : Void
+    fun bg_QPauseAnimation_duration_SUPER_(_self_ : QPauseAnimation*) : Int32
+    fun bg_QPauseAnimation_event_SUPER_QEvent_X(_self_ : QPauseAnimation*, event : QEvent*) : Bool
+    fun bg_QPauseAnimation_updateCurrentTime_SUPER_int(_self_ : QPauseAnimation*, current_time : Int32) : Void
+    fun bg_QAbstractAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QPauseAnimation*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QAbstractAnimation_updateDirection_SUPER_QAbstractAnimation__Direction(_self_ : QPauseAnimation*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QPauseAnimation*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QPauseAnimation*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QPauseAnimation*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QPauseAnimation*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QPauseAnimation*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QPauseAnimation*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QPauseAnimation_JUMPTABLE_BgJumptable_QPauseAnimation_R(_self_ : QPauseAnimation*, table : BgJumptable_QPauseAnimation*) : Void
     fun bg_QProcess_metaObject_(_self_ : QProcess*) : QMetaObject*
     fun bg_QProcess_qt_metacast_const_char_X(_self_ : QProcess*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QProcess_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QProcess*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -8375,6 +9244,43 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(_self_ : QSaveFile*, table : BgJumptable_QSaveFile*) : Void
+    fun bg_QSequentialAnimationGroup_metaObject_(_self_ : QSequentialAnimationGroup*) : QMetaObject*
+    fun bg_QSequentialAnimationGroup_qt_metacast_const_char_X(_self_ : QSequentialAnimationGroup*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSequentialAnimationGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QSequentialAnimationGroup_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QSequentialAnimationGroup_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QSequentialAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QSequentialAnimationGroup__CONSTRUCT_QObject_X(parent : QObject*) : QSequentialAnimationGroup*
+    fun bg_QSequentialAnimationGroup_addPause_int(_self_ : QSequentialAnimationGroup*, msecs : Int32) : QPauseAnimation*
+    fun bg_QSequentialAnimationGroup_insertPause_int_int(_self_ : QSequentialAnimationGroup*, index : Int32, msecs : Int32) : QPauseAnimation*
+    fun bg_QSequentialAnimationGroup_currentAnimation_(_self_ : QSequentialAnimationGroup*) : QAbstractAnimation*
+    fun bg_QSequentialAnimationGroup_duration_(_self_ : QSequentialAnimationGroup*) : Int32
+    fun bg_QSequentialAnimationGroup_currentAnimationChanged_QAbstractAnimation_X(_self_ : QSequentialAnimationGroup*, current : QAbstractAnimation*) : Void
+    fun bg_QSequentialAnimationGroup__CONSTRUCT_QSequentialAnimationGroupPrivate_R_QObject_X(dd : QSequentialAnimationGroupPrivate*, parent : QObject*) : QSequentialAnimationGroup*
+    fun bg_QSequentialAnimationGroup_event_QEvent_X(_self_ : QSequentialAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QSequentialAnimationGroup_updateCurrentTime_int(_self_ : QSequentialAnimationGroup*, current_time : Int32) : Void
+    fun bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QSequentialAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction(_self_ : QSequentialAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QSequentialAnimationGroup_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSequentialAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSequentialAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSequentialAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QSequentialAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSequentialAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSequentialAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QSequentialAnimationGroup_CONNECT_currentAnimationChanged_CrystalProc_void__QAbstractAnimation_X_(_self_ : QSequentialAnimationGroup*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QSequentialAnimationGroup_duration_SUPER_(_self_ : QSequentialAnimationGroup*) : Int32
+    fun bg_QSequentialAnimationGroup_event_SUPER_QEvent_X(_self_ : QSequentialAnimationGroup*, event : QEvent*) : Bool
+    fun bg_QSequentialAnimationGroup_updateCurrentTime_SUPER_int(_self_ : QSequentialAnimationGroup*, current_time : Int32) : Void
+    fun bg_QSequentialAnimationGroup_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(_self_ : QSequentialAnimationGroup*, new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+    fun bg_QSequentialAnimationGroup_updateDirection_SUPER_QAbstractAnimation__Direction(_self_ : QSequentialAnimationGroup*, direction : AbstractAnimation::Direction) : Void
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QSequentialAnimationGroup*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QSequentialAnimationGroup*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QSequentialAnimationGroup*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QSequentialAnimationGroup*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSequentialAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSequentialAnimationGroup*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QSequentialAnimationGroup_JUMPTABLE_BgJumptable_QSequentialAnimationGroup_R(_self_ : QSequentialAnimationGroup*, table : BgJumptable_QSequentialAnimationGroup*) : Void
     fun bg_QSettings_metaObject_(_self_ : QSettings*) : QMetaObject*
     fun bg_QSettings_qt_metacast_const_char_X(_self_ : QSettings*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSettings*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -8529,7 +9435,7 @@ module Qt
     fun bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
     fun bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int(_self_ : QSortFilterProxyModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
     fun bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
-    fun bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(_self_ : QSortFilterProxyModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(_self_ : QSortFilterProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QSortFilterProxyModel_insertRows_int_int(_self_ : QSortFilterProxyModel*, row : Int32, count : Int32) : Bool
     fun bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
@@ -8543,8 +9449,8 @@ module Qt
     fun bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, parent : QModelIndex*) : Bool
     fun bg_QSortFilterProxyModel_flags_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : ItemFlags
     fun bg_QSortFilterProxyModel_buddy_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32) : QModelIndexList*
-    fun bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32) : ContainerQListQModelIndex*
+    fun bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QSortFilterProxyModel_span_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QSize
     fun bg_QSortFilterProxyModel_sort_int_Qt__SortOrder(_self_ : QSortFilterProxyModel*, column : Int32, order : SortOrder) : Void
     fun bg_QSortFilterProxyModel_mimeTypes_(_self_ : QSortFilterProxyModel*) : ContainerQListQString*
@@ -8600,7 +9506,7 @@ module Qt
     fun bg_QSortFilterProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
     fun bg_QSortFilterProxyModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QSortFilterProxyModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
     fun bg_QSortFilterProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QSortFilterProxyModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
-    fun bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QSortFilterProxyModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QSortFilterProxyModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QSortFilterProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QSortFilterProxyModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
     fun bg_QSortFilterProxyModel_insertColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
@@ -8610,7 +9516,7 @@ module Qt
     fun bg_QSortFilterProxyModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, parent : QModelIndex*) : Bool
     fun bg_QSortFilterProxyModel_flags_SUPER_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : ItemFlags
     fun bg_QSortFilterProxyModel_buddy_SUPER_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QSortFilterProxyModel_span_SUPER_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QSize
     fun bg_QSortFilterProxyModel_sort_SUPER_int_Qt__SortOrder(_self_ : QSortFilterProxyModel*, column : Int32, order : SortOrder) : Void
     fun bg_QSortFilterProxyModel_mimeTypes_SUPER_(_self_ : QSortFilterProxyModel*) : ContainerQListQString*
@@ -8644,6 +9550,61 @@ module Qt
     fun bg_QStandardPaths_setTestModeEnabled_STATIC_bool(test_mode : Bool) : Void
     fun bg_QStandardPaths_isTestModeEnabled_STATIC_() : Bool
     fun bg_QStandardPaths_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QStringListModel_metaObject_(_self_ : QStringListModel*) : QMetaObject*
+    fun bg_QStringListModel_qt_metacast_const_char_X(_self_ : QStringListModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QStringListModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QStringListModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QStringListModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QStringListModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QStringListModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QStringListModel__CONSTRUCT_QObject_X(parent : QObject*) : QStringListModel*
+    fun bg_QStringListModel__CONSTRUCT_const_QStringList_R_QObject_X(strings : ContainerQListQString*, parent : QObject*) : QStringListModel*
+    fun bg_QStringListModel_rowCount_(_self_ : QStringListModel*) : Int32
+    fun bg_QStringListModel_rowCount_const_QModelIndex_R(_self_ : QStringListModel*, parent : QModelIndex*) : Int32
+    fun bg_QStringListModel_sibling_int_int_const_QModelIndex_R(_self_ : QStringListModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QStringListModel_data_const_QModelIndex_R_int(_self_ : QStringListModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QStringListModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QStringListModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QStringListModel_clearItemData_const_QModelIndex_R(_self_ : QStringListModel*, index : QModelIndex*) : Bool
+    fun bg_QStringListModel_flags_const_QModelIndex_R(_self_ : QStringListModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QStringListModel_insertRows_int_int(_self_ : QStringListModel*, row : Int32, count : Int32) : Bool
+    fun bg_QStringListModel_insertRows_int_int_const_QModelIndex_R(_self_ : QStringListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QStringListModel_removeRows_int_int(_self_ : QStringListModel*, row : Int32, count : Int32) : Bool
+    fun bg_QStringListModel_removeRows_int_int_const_QModelIndex_R(_self_ : QStringListModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QStringListModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QStringListModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QStringListModel_sort_int_Qt__SortOrder(_self_ : QStringListModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QStringListModel_stringList_(_self_ : QStringListModel*) : ContainerQListQString*
+    fun bg_QStringListModel_setStringList_const_QStringList_R(_self_ : QStringListModel*, strings : ContainerQListQString*) : Void
+    fun bg_QStringListModel_supportedDropActions_(_self_ : QStringListModel*) : DropActions
+    fun bg_QStringListModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractListModel_index_int_int_const_QModelIndex_R(_self_ : QStringListModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStringListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_parent_const_QModelIndex_R(_self_ : QStringListModel*, child : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_columnCount_const_QModelIndex_R(_self_ : QStringListModel*, parent : QModelIndex*) : Int32
+    fun bg_QAbstractItemModel_hasChildren_const_QModelIndex_R(_self_ : QStringListModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(_self_ : QStringListModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QStringListModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_mimeTypes_(_self_ : QStringListModel*) : ContainerQListQString*
+    fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QStringListModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStringListModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDragActions_(_self_ : QStringListModel*) : DropActions
+    fun bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(_self_ : QStringListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QStringListModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QStringListModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(_self_ : QStringListModel*, parent : QModelIndex*) : Void
+    fun bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(_self_ : QStringListModel*, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QStringListModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QStringListModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QStringListModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QStringListModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_(_self_ : QStringListModel*) : Bool
+    fun bg_QAbstractItemModel_revert_(_self_ : QStringListModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_(_self_ : QStringListModel*) : Void
+    fun bg_QObject_event_QEvent_X(_self_ : QStringListModel*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QStringListModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QStringListModel*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QStringListModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QStringListModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QStringListModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QStringListModel*, signal : QMetaMethod*) : Void
     fun bg_QTemporaryDir__CONSTRUCT_() : QTemporaryDir*
     fun bg_QTemporaryDir__CONSTRUCT_const_QString_R(template_name : CrystalString) : QTemporaryDir*
     fun bg_QTemporaryDir_swap_QTemporaryDir_R(_self_ : QTemporaryDir*, other : QTemporaryDir*) : Void
@@ -8731,6 +9692,61 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(_self_ : QTemporaryFile*, table : BgJumptable_QTemporaryFile*) : Void
+    fun bg_QTimeLine_metaObject_(_self_ : QTimeLine*) : QMetaObject*
+    fun bg_QTimeLine_qt_metacast_const_char_X(_self_ : QTimeLine*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTimeLine*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTimeLine_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTimeLine_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTimeLine_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTimeLine__CONSTRUCT_int_QObject_X(duration : Int32, parent : QObject*) : QTimeLine*
+    fun bg_QTimeLine_state_(_self_ : QTimeLine*) : TimeLine::State
+    fun bg_QTimeLine_loopCount_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_setLoopCount_int(_self_ : QTimeLine*, count : Int32) : Void
+    fun bg_QTimeLine_direction_(_self_ : QTimeLine*) : TimeLine::Direction
+    fun bg_QTimeLine_setDirection_QTimeLine__Direction(_self_ : QTimeLine*, direction : TimeLine::Direction) : Void
+    fun bg_QTimeLine_duration_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_setDuration_int(_self_ : QTimeLine*, duration : Int32) : Void
+    fun bg_QTimeLine_startFrame_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_setStartFrame_int(_self_ : QTimeLine*, frame : Int32) : Void
+    fun bg_QTimeLine_endFrame_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_setEndFrame_int(_self_ : QTimeLine*, frame : Int32) : Void
+    fun bg_QTimeLine_setFrameRange_int_int(_self_ : QTimeLine*, start_frame : Int32, end_frame : Int32) : Void
+    fun bg_QTimeLine_updateInterval_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_setUpdateInterval_int(_self_ : QTimeLine*, interval : Int32) : Void
+    fun bg_QTimeLine_easingCurve_(_self_ : QTimeLine*) : QEasingCurve*
+    fun bg_QTimeLine_setEasingCurve_const_QEasingCurve_R(_self_ : QTimeLine*, curve : QEasingCurve*) : Void
+    fun bg_QTimeLine_currentTime_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_currentFrame_(_self_ : QTimeLine*) : Int32
+    fun bg_QTimeLine_currentValue_(_self_ : QTimeLine*) : Float64
+    fun bg_QTimeLine_frameForTime_int(_self_ : QTimeLine*, msec : Int32) : Int32
+    fun bg_QTimeLine_valueForTime_int(_self_ : QTimeLine*, msec : Int32) : Float64
+    fun bg_QTimeLine_start_(_self_ : QTimeLine*) : Void
+    fun bg_QTimeLine_resume_(_self_ : QTimeLine*) : Void
+    fun bg_QTimeLine_stop_(_self_ : QTimeLine*) : Void
+    fun bg_QTimeLine_setPaused_bool(_self_ : QTimeLine*, paused : Bool) : Void
+    fun bg_QTimeLine_setCurrentTime_int(_self_ : QTimeLine*, msec : Int32) : Void
+    fun bg_QTimeLine_toggleDirection_(_self_ : QTimeLine*) : Void
+    fun bg_QTimeLine_timerEvent_QTimerEvent_X(_self_ : QTimeLine*, event : QTimerEvent*) : Void
+    fun bg_QTimeLine_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QTimeLine*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTimeLine*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTimeLine*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTimeLine*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTimeLine*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTimeLine*, signal : QMetaMethod*) : Void
+    fun bg_QTimeLine_CONNECT_valueChanged_CrystalProc_void__qreal_(_self_ : QTimeLine*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QTimeLine_CONNECT_frameChanged_CrystalProc_void__int_(_self_ : QTimeLine*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QTimeLine_CONNECT_stateChanged_CrystalProc_void__QTimeLine__State_(_self_ : QTimeLine*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QTimeLine_CONNECT_finished_CrystalProc_void_(_self_ : QTimeLine*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QTimeLine_valueForTime_SUPER_int(_self_ : QTimeLine*, msec : Int32) : Float64
+    fun bg_QTimeLine_timerEvent_SUPER_QTimerEvent_X(_self_ : QTimeLine*, event : QTimerEvent*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTimeLine*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTimeLine*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTimeLine*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTimeLine*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimeLine*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimeLine*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTimeLine_JUMPTABLE_BgJumptable_QTimeLine_R(_self_ : QTimeLine*, table : BgJumptable_QTimeLine*) : Void
     fun bg_QTranslator_metaObject_(_self_ : QTranslator*) : QMetaObject*
     fun bg_QTranslator_qt_metacast_const_char_X(_self_ : QTranslator*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QTranslator_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTranslator*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -11166,6 +12182,142 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QDrag*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QDrag*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QDrag_JUMPTABLE_BgJumptable_QDrag_R(_self_ : QDrag*, table : BgJumptable_QDrag*) : Void
+    fun bg_QFileSystemModel_metaObject_(_self_ : QFileSystemModel*) : QMetaObject*
+    fun bg_QFileSystemModel_qt_metacast_const_char_X(_self_ : QFileSystemModel*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileSystemModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QFileSystemModel_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QFileSystemModel_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QFileSystemModel_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QFileSystemModel_rootPathChanged_const_QString_R(_self_ : QFileSystemModel*, new_path : CrystalString) : Void
+    fun bg_QFileSystemModel_fileRenamed_const_QString_R_const_QString_R_const_QString_R(_self_ : QFileSystemModel*, path : CrystalString, old_name : CrystalString, new_name : CrystalString) : Void
+    fun bg_QFileSystemModel_directoryLoaded_const_QString_R(_self_ : QFileSystemModel*, path : CrystalString) : Void
+    fun bg_QFileSystemModel__CONSTRUCT_QObject_X(parent : QObject*) : QFileSystemModel*
+    fun bg_QFileSystemModel_index_int_int(_self_ : QFileSystemModel*, row : Int32, column : Int32) : QModelIndex*
+    fun bg_QFileSystemModel_index_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_index_const_QString_R_int(_self_ : QFileSystemModel*, path : CrystalString, column : Int32) : QModelIndex*
+    fun bg_QFileSystemModel_parent_const_QModelIndex_R(_self_ : QFileSystemModel*, child : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_hasChildren_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QFileSystemModel_hasChildren_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_canFetchMore_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_fetchMore_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Void
+    fun bg_QFileSystemModel_rowCount_(_self_ : QFileSystemModel*) : Int32
+    fun bg_QFileSystemModel_rowCount_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Int32
+    fun bg_QFileSystemModel_columnCount_(_self_ : QFileSystemModel*) : Int32
+    fun bg_QFileSystemModel_columnCount_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Int32
+    fun bg_QFileSystemModel_myComputer_int(_self_ : QFileSystemModel*, role : Int32) : CrystalVariant
+    fun bg_QFileSystemModel_data_const_QModelIndex_R_int(_self_ : QFileSystemModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int(_self_ : QFileSystemModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QFileSystemModel_headerData_int_Qt__Orientation_int(_self_ : QFileSystemModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QFileSystemModel_flags_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QFileSystemModel_sort_int_Qt__SortOrder(_self_ : QFileSystemModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QFileSystemModel_mimeTypes_(_self_ : QFileSystemModel*) : ContainerQListQString*
+    fun bg_QFileSystemModel_mimeData_const_QModelIndexList_R(_self_ : QFileSystemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_supportedDropActions_(_self_ : QFileSystemModel*) : DropActions
+    fun bg_QFileSystemModel_setRootPath_const_QString_R(_self_ : QFileSystemModel*, path : CrystalString) : QModelIndex*
+    fun bg_QFileSystemModel_rootPath_(_self_ : QFileSystemModel*) : CrystalString
+    fun bg_QFileSystemModel_rootDirectory_(_self_ : QFileSystemModel*) : QDir*
+    fun bg_QFileSystemModel_setIconProvider_QAbstractFileIconProvider_X(_self_ : QFileSystemModel*, provider : QAbstractFileIconProvider*) : Void
+    fun bg_QFileSystemModel_iconProvider_(_self_ : QFileSystemModel*) : QAbstractFileIconProvider*
+    fun bg_QFileSystemModel_setFilter_QDir__Filters(_self_ : QFileSystemModel*, filters : Dir::Filters) : Void
+    fun bg_QFileSystemModel_filter_(_self_ : QFileSystemModel*) : Dir::Filters
+    fun bg_QFileSystemModel_setResolveSymlinks_bool(_self_ : QFileSystemModel*, enable : Bool) : Void
+    fun bg_QFileSystemModel_resolveSymlinks_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QFileSystemModel_setReadOnly_bool(_self_ : QFileSystemModel*, enable : Bool) : Void
+    fun bg_QFileSystemModel_isReadOnly_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QFileSystemModel_setNameFilterDisables_bool(_self_ : QFileSystemModel*, enable : Bool) : Void
+    fun bg_QFileSystemModel_nameFilterDisables_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QFileSystemModel_setNameFilters_const_QStringList_R(_self_ : QFileSystemModel*, filters : ContainerQListQString*) : Void
+    fun bg_QFileSystemModel_nameFilters_(_self_ : QFileSystemModel*) : ContainerQListQString*
+    fun bg_QFileSystemModel_setOption_QFileSystemModel__Option_bool(_self_ : QFileSystemModel*, option : FileSystemModel::Option, on : Bool) : Void
+    fun bg_QFileSystemModel_testOption_QFileSystemModel__Option(_self_ : QFileSystemModel*, option : FileSystemModel::Option) : Bool
+    fun bg_QFileSystemModel_setOptions_QFileSystemModel__Options(_self_ : QFileSystemModel*, options : FileSystemModel::Options) : Void
+    fun bg_QFileSystemModel_options_(_self_ : QFileSystemModel*) : FileSystemModel::Options
+    fun bg_QFileSystemModel_filePath_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : CrystalString
+    fun bg_QFileSystemModel_isDir_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_size_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Int64
+    fun bg_QFileSystemModel_type_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : CrystalString
+    fun bg_QFileSystemModel_lastModified_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QDateTime*
+    fun bg_QFileSystemModel_lastModified_const_QModelIndex_R_const_QTimeZone_R(_self_ : QFileSystemModel*, index : QModelIndex*, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileSystemModel_mkdir_const_QModelIndex_R_const_QString_R(_self_ : QFileSystemModel*, parent : QModelIndex*, name : CrystalString) : QModelIndex*
+    fun bg_QFileSystemModel_rmdir_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_fileName_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : CrystalString
+    fun bg_QFileSystemModel_fileIcon_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QIcon*
+    fun bg_QFileSystemModel_permissions_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : FileDevice::Permissions
+    fun bg_QFileSystemModel_fileInfo_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QFileInfo*
+    fun bg_QFileSystemModel_remove_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Bool
+    fun bg_QFileSystemModel__CONSTRUCT_QFileSystemModelPrivate_R_QObject_X(unnamed_arg_0 : QFileSystemModelPrivate*, parent : QObject*) : QFileSystemModel*
+    fun bg_QFileSystemModel_timerEvent_QTimerEvent_X(_self_ : QFileSystemModel*, event : QTimerEvent*) : Void
+    fun bg_QFileSystemModel_event_QEvent_X(_self_ : QFileSystemModel*, event : QEvent*) : Bool
+    fun bg_QFileSystemModel_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QFileSystemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDragActions_(_self_ : QFileSystemModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QFileSystemModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QFileSystemModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QFileSystemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QFileSystemModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QAbstractItemModel_revert_(_self_ : QFileSystemModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_(_self_ : QFileSystemModel*) : Void
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QFileSystemModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QFileSystemModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QFileSystemModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
+    fun bg_QFileSystemModel_CONNECT_rootPathChanged_CrystalProc_void__const_QString_R_(_self_ : QFileSystemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QFileSystemModel_CONNECT_fileRenamed_CrystalProc_void__const_QString_R__const_QString_R__const_QString_R_(_self_ : QFileSystemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QFileSystemModel_CONNECT_directoryLoaded_CrystalProc_void__const_QString_R_(_self_ : QFileSystemModel*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QFileSystemModel_index_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, column : Int32, parent : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_parent_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, child : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
+    fun bg_QFileSystemModel_hasChildren_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_fetchMore_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Void
+    fun bg_QFileSystemModel_rowCount_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Int32
+    fun bg_QFileSystemModel_columnCount_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, parent : QModelIndex*) : Int32
+    fun bg_QFileSystemModel_data_SUPER_const_QModelIndex_R_int(_self_ : QFileSystemModel*, index : QModelIndex*, role : Int32) : CrystalVariant
+    fun bg_QFileSystemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(_self_ : QFileSystemModel*, index : QModelIndex*, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QFileSystemModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QFileSystemModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
+    fun bg_QFileSystemModel_flags_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : ItemFlags
+    fun bg_QFileSystemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QFileSystemModel*, column : Int32, order : SortOrder) : Void
+    fun bg_QFileSystemModel_mimeTypes_SUPER_(_self_ : QFileSystemModel*) : ContainerQListQString*
+    fun bg_QFileSystemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QFileSystemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
+    fun bg_QFileSystemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QFileSystemModel_supportedDropActions_SUPER_(_self_ : QFileSystemModel*) : DropActions
+    fun bg_QFileSystemModel_timerEvent_SUPER_QTimerEvent_X(_self_ : QFileSystemModel*, event : QTimerEvent*) : Void
+    fun bg_QFileSystemModel_event_SUPER_QEvent_X(_self_ : QFileSystemModel*, event : QEvent*) : Bool
+    fun bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QFileSystemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
+    fun bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_supportedDragActions_SUPER_(_self_ : QFileSystemModel*) : DropActions
+    fun bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(_self_ : QFileSystemModel*, column : Int32, count : Int32, parent : QModelIndex*) : Bool
+    fun bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QFileSystemModel*, source_parent : QModelIndex*, source_row : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(_self_ : QFileSystemModel*, source_parent : QModelIndex*, source_column : Int32, count : Int32, destination_parent : QModelIndex*, destination_child : Int32) : Bool
+    fun bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QModelIndex*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QFileSystemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
+    fun bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(_self_ : QFileSystemModel*, index : QModelIndex*) : QSize
+    fun bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(_self_ : QFileSystemModel*, index : QModelIndex*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QAbstractItemModel_submit_SUPER_(_self_ : QFileSystemModel*) : Bool
+    fun bg_QAbstractItemModel_revert_SUPER_(_self_ : QFileSystemModel*) : Void
+    fun bg_QAbstractItemModel_resetInternalData_SUPER_(_self_ : QFileSystemModel*) : Void
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QFileSystemModel*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QFileSystemModel*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QFileSystemModel*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemModel*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QFileSystemModel_JUMPTABLE_BgJumptable_QFileSystemModel_R(_self_ : QFileSystemModel*, table : BgJumptable_QFileSystemModel*) : Void
     fun bg_QFontMetrics__CONSTRUCT_const_QFont_R(unnamed_arg_0 : QFont*) : QFontMetrics*
     fun bg_QFontMetrics__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(font : QFont*, pd : QPaintDevice*) : QFontMetrics*
     fun bg_QFontMetrics__COPY_const_QFontMetrics_R(unnamed_arg_0 : QFontMetrics*) : QFontMetrics*
@@ -11396,6 +12548,106 @@ module Qt
     fun bg_QPainter_beginNativePainting_(_self_ : QPainter*) : Void
     fun bg_QPainter_endNativePainting_(_self_ : QPainter*) : Void
     fun bg_QPainter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QStandardItem__CONSTRUCT_() : QStandardItem*
+    fun bg_QStandardItem__CONSTRUCT_const_QString_R(text : CrystalString) : QStandardItem*
+    fun bg_QStandardItem__CONSTRUCT_const_QIcon_R_const_QString_R(icon : QIcon*, text : CrystalString) : QStandardItem*
+    fun bg_QStandardItem__CONSTRUCT_int_int(rows : Int32, columns : Int32) : QStandardItem*
+    fun bg_QStandardItem_data_int(_self_ : QStandardItem*, role : Int32) : CrystalVariant
+    fun bg_QStandardItem_multiData_QModelRoleDataSpan(_self_ : QStandardItem*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QStandardItem_setData_const_QVariant_R_int(_self_ : QStandardItem*, value : CrystalVariant, role : Int32) : Void
+    fun bg_QStandardItem_clearData_(_self_ : QStandardItem*) : Void
+    fun bg_QStandardItem_text_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setText_const_QString_R(_self_ : QStandardItem*, text : CrystalString) : Void
+    fun bg_QStandardItem_icon_(_self_ : QStandardItem*) : QIcon*
+    fun bg_QStandardItem_setIcon_const_QIcon_R(_self_ : QStandardItem*, icon : QIcon*) : Void
+    fun bg_QStandardItem_toolTip_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setToolTip_const_QString_R(_self_ : QStandardItem*, tool_tip : CrystalString) : Void
+    fun bg_QStandardItem_statusTip_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setStatusTip_const_QString_R(_self_ : QStandardItem*, status_tip : CrystalString) : Void
+    fun bg_QStandardItem_whatsThis_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setWhatsThis_const_QString_R(_self_ : QStandardItem*, whats_this : CrystalString) : Void
+    fun bg_QStandardItem_sizeHint_(_self_ : QStandardItem*) : QSize
+    fun bg_QStandardItem_setSizeHint_const_QSize_R(_self_ : QStandardItem*, size_hint : QSize) : Void
+    fun bg_QStandardItem_font_(_self_ : QStandardItem*) : QFont*
+    fun bg_QStandardItem_setFont_const_QFont_R(_self_ : QStandardItem*, font : QFont*) : Void
+    fun bg_QStandardItem_textAlignment_(_self_ : QStandardItem*) : Alignment
+    fun bg_QStandardItem_setTextAlignment_Qt__Alignment(_self_ : QStandardItem*, text_alignment : Alignment) : Void
+    fun bg_QStandardItem_background_(_self_ : QStandardItem*) : QBrush*
+    fun bg_QStandardItem_setBackground_const_QBrush_R(_self_ : QStandardItem*, brush : QBrush*) : Void
+    fun bg_QStandardItem_foreground_(_self_ : QStandardItem*) : QBrush*
+    fun bg_QStandardItem_setForeground_const_QBrush_R(_self_ : QStandardItem*, brush : QBrush*) : Void
+    fun bg_QStandardItem_checkState_(_self_ : QStandardItem*) : CheckState
+    fun bg_QStandardItem_setCheckState_Qt__CheckState(_self_ : QStandardItem*, check_state : CheckState) : Void
+    fun bg_QStandardItem_accessibleText_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setAccessibleText_const_QString_R(_self_ : QStandardItem*, accessible_text : CrystalString) : Void
+    fun bg_QStandardItem_accessibleDescription_(_self_ : QStandardItem*) : CrystalString
+    fun bg_QStandardItem_setAccessibleDescription_const_QString_R(_self_ : QStandardItem*, accessible_description : CrystalString) : Void
+    fun bg_QStandardItem_flags_(_self_ : QStandardItem*) : ItemFlags
+    fun bg_QStandardItem_setFlags_Qt__ItemFlags(_self_ : QStandardItem*, flags : ItemFlags) : Void
+    fun bg_QStandardItem_isEnabled_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setEnabled_bool(_self_ : QStandardItem*, enabled : Bool) : Void
+    fun bg_QStandardItem_isEditable_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setEditable_bool(_self_ : QStandardItem*, editable : Bool) : Void
+    fun bg_QStandardItem_isSelectable_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setSelectable_bool(_self_ : QStandardItem*, selectable : Bool) : Void
+    fun bg_QStandardItem_isCheckable_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setCheckable_bool(_self_ : QStandardItem*, checkable : Bool) : Void
+    fun bg_QStandardItem_isAutoTristate_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setAutoTristate_bool(_self_ : QStandardItem*, tristate : Bool) : Void
+    fun bg_QStandardItem_isUserTristate_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setUserTristate_bool(_self_ : QStandardItem*, tristate : Bool) : Void
+    fun bg_QStandardItem_isDragEnabled_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setDragEnabled_bool(_self_ : QStandardItem*, drag_enabled : Bool) : Void
+    fun bg_QStandardItem_isDropEnabled_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_setDropEnabled_bool(_self_ : QStandardItem*, drop_enabled : Bool) : Void
+    fun bg_QStandardItem_parent_(_self_ : QStandardItem*) : QStandardItem*
+    fun bg_QStandardItem_row_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_column_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_index_(_self_ : QStandardItem*) : QModelIndex*
+    fun bg_QStandardItem_model_(_self_ : QStandardItem*) : QStandardItemModel*
+    fun bg_QStandardItem_rowCount_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_setRowCount_int(_self_ : QStandardItem*, rows : Int32) : Void
+    fun bg_QStandardItem_columnCount_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_setColumnCount_int(_self_ : QStandardItem*, columns : Int32) : Void
+    fun bg_QStandardItem_hasChildren_(_self_ : QStandardItem*) : Bool
+    fun bg_QStandardItem_child_int_int(_self_ : QStandardItem*, row : Int32, column : Int32) : QStandardItem*
+    fun bg_QStandardItem_setChild_int_int_QStandardItem_X(_self_ : QStandardItem*, row : Int32, column : Int32, item : QStandardItem*) : Void
+    fun bg_QStandardItem_setChild_int_QStandardItem_X(_self_ : QStandardItem*, row : Int32, item : QStandardItem*) : Void
+    fun bg_QStandardItem_insertRow_int_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, row : Int32, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_insertColumn_int_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, column : Int32, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_insertRows_int_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, row : Int32, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_insertRows_int_int(_self_ : QStandardItem*, row : Int32, count : Int32) : Void
+    fun bg_QStandardItem_insertColumns_int_int(_self_ : QStandardItem*, column : Int32, count : Int32) : Void
+    fun bg_QStandardItem_removeRow_int(_self_ : QStandardItem*, row : Int32) : Void
+    fun bg_QStandardItem_removeColumn_int(_self_ : QStandardItem*, column : Int32) : Void
+    fun bg_QStandardItem_removeRows_int_int(_self_ : QStandardItem*, row : Int32, count : Int32) : Void
+    fun bg_QStandardItem_removeColumns_int_int(_self_ : QStandardItem*, column : Int32, count : Int32) : Void
+    fun bg_QStandardItem_appendRow_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_appendRows_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_appendColumn_const_QList_QStandardItem_X__R(_self_ : QStandardItem*, items : ContainerQListQStandardItemX*) : Void
+    fun bg_QStandardItem_insertRow_int_QStandardItem_X(_self_ : QStandardItem*, row : Int32, item : QStandardItem*) : Void
+    fun bg_QStandardItem_appendRow_QStandardItem_X(_self_ : QStandardItem*, item : QStandardItem*) : Void
+    fun bg_QStandardItem_takeChild_int_int(_self_ : QStandardItem*, row : Int32, column : Int32) : QStandardItem*
+    fun bg_QStandardItem_takeRow_int(_self_ : QStandardItem*, row : Int32) : ContainerQListQStandardItemX*
+    fun bg_QStandardItem_takeColumn_int(_self_ : QStandardItem*, column : Int32) : ContainerQListQStandardItemX*
+    fun bg_QStandardItem_sortChildren_int_Qt__SortOrder(_self_ : QStandardItem*, column : Int32, order : SortOrder) : Void
+    fun bg_QStandardItem_clone_(_self_ : QStandardItem*) : QStandardItem*
+    fun bg_QStandardItem_type_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_read_QDataStream_R(_self_ : QStandardItem*, in_ : QDataStream*) : Void
+    fun bg_QStandardItem_write_QDataStream_R(_self_ : QStandardItem*, out_ : QDataStream*) : Void
+    fun bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R(_self_ : QStandardItem*, other : QStandardItem*) : Bool
+    fun bg_QStandardItem__COPY_const_QStandardItem_R(other : QStandardItem*) : QStandardItem*
+    fun bg_QStandardItem__CONSTRUCT_QStandardItemPrivate_R(dd : QStandardItemPrivate*) : QStandardItem*
+    fun bg_QStandardItem__OPERATOR_assign_const_QStandardItem_R(_self_ : QStandardItem*, other : QStandardItem*) : QStandardItem*
+    fun bg_QStandardItem_emitDataChanged_(_self_ : QStandardItem*) : Void
+    fun bg_QStandardItem_data_SUPER_int(_self_ : QStandardItem*, role : Int32) : CrystalVariant
+    fun bg_QStandardItem_multiData_SUPER_QModelRoleDataSpan(_self_ : QStandardItem*, role_data_span : QModelRoleDataSpan*) : Void
+    fun bg_QStandardItem_setData_SUPER_const_QVariant_R_int(_self_ : QStandardItem*, value : CrystalVariant, role : Int32) : Void
+    fun bg_QStandardItem_clone_SUPER_(_self_ : QStandardItem*) : QStandardItem*
+    fun bg_QStandardItem_type_SUPER_(_self_ : QStandardItem*) : Int32
+    fun bg_QStandardItem_read_SUPER_QDataStream_R(_self_ : QStandardItem*, in_ : QDataStream*) : Void
+    fun bg_QStandardItem_write_SUPER_QDataStream_R(_self_ : QStandardItem*, out_ : QDataStream*) : Void
+    fun bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(_self_ : QStandardItem*, table : BgJumptable_QStandardItem*) : Void
     fun bg_QStandardItemModel_metaObject_(_self_ : QStandardItemModel*) : QMetaObject*
     fun bg_QStandardItemModel_qt_metacast_const_char_X(_self_ : QStandardItemModel*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QStandardItemModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QStandardItemModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -11468,7 +12720,7 @@ module Qt
     fun bg_QStandardItemModel_sortRole_(_self_ : QStandardItemModel*) : Int32
     fun bg_QStandardItemModel_setSortRole_int(_self_ : QStandardItemModel*, role : Int32) : Void
     fun bg_QStandardItemModel_mimeTypes_(_self_ : QStandardItemModel*) : ContainerQListQString*
-    fun bg_QStandardItemModel_mimeData_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QStandardItemModel_mimeData_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QStandardItemModel_itemChanged_QStandardItem_X(_self_ : QStandardItemModel*, item : QStandardItem*) : Void
     fun bg_QStandardItemModel__CONSTRUCT_QStandardItemModelPrivate_R_QObject_X(dd : QStandardItemModelPrivate*, parent : QObject*) : QStandardItemModel*
@@ -11481,7 +12733,7 @@ module Qt
     fun bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(_self_ : QStandardItemModel*, parent : QModelIndex*) : Void
     fun bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(_self_ : QStandardItemModel*, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_buddy_const_QModelIndex_R(_self_ : QStandardItemModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QStandardItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QStandardItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_span_const_QModelIndex_R(_self_ : QStandardItemModel*, index : QModelIndex*) : QSize
     fun bg_QAbstractItemModel_submit_(_self_ : QStandardItemModel*) : Bool
     fun bg_QAbstractItemModel_revert_(_self_ : QStandardItemModel*) : Void
@@ -11513,7 +12765,7 @@ module Qt
     fun bg_QStandardItemModel_supportedDropActions_SUPER_(_self_ : QStandardItemModel*) : DropActions
     fun bg_QStandardItemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QStandardItemModel*, column : Int32, order : SortOrder) : Void
     fun bg_QStandardItemModel_mimeTypes_SUPER_(_self_ : QStandardItemModel*) : ContainerQListQString*
-    fun bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : QModelIndexList*) : QMimeData*
+    fun bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : ContainerQListQModelIndex*) : QMimeData*
     fun bg_QStandardItemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
     fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
@@ -11523,7 +12775,7 @@ module Qt
     fun bg_QAbstractItemModel_fetchMore_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, parent : QModelIndex*) : Void
     fun bg_QAbstractItemModel_canFetchMore_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, index : QModelIndex*) : QModelIndex*
-    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QStandardItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
+    fun bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QStandardItemModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : ContainerQListQModelIndex*
     fun bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, index : QModelIndex*) : QSize
     fun bg_QAbstractItemModel_submit_SUPER_(_self_ : QStandardItemModel*) : Bool
     fun bg_QAbstractItemModel_revert_SUPER_(_self_ : QStandardItemModel*) : Void
@@ -13248,7 +14500,7 @@ module Qt
     fun bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R(_self_ : QAbstractItemView*, index : QModelIndex*) : Bool
     fun bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QAbstractItemView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R(_self_ : QAbstractItemView*, selection : QItemSelection*) : QRegion*
-    fun bg_QAbstractItemView_selectedIndexes_(_self_ : QAbstractItemView*) : QModelIndexList*
+    fun bg_QAbstractItemView_selectedIndexes_(_self_ : QAbstractItemView*) : ContainerQListQModelIndex*
     fun bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X(_self_ : QAbstractItemView*, index : QModelIndex*, trigger : AbstractItemDelegate::EditTrigger, event : QEvent*) : Bool
     fun bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X(_self_ : QAbstractItemView*, index : QModelIndex*, event : QEvent*) : ItemSelectionModel::SelectionFlags
     fun bg_QAbstractItemView_startDrag_Qt__DropActions(_self_ : QAbstractItemView*, supported_actions : DropActions) : Void
@@ -13348,7 +14600,7 @@ module Qt
     fun bg_QAbstractItemView_closeEditor_SUPER_QWidget_X_QAbstractItemDelegate__EndEditHint(_self_ : QAbstractItemView*, editor : QWidget*, hint : AbstractItemDelegate::EndEditHint) : Void
     fun bg_QAbstractItemView_commitData_SUPER_QWidget_X(_self_ : QAbstractItemView*, editor : QWidget*) : Void
     fun bg_QAbstractItemView_editorDestroyed_SUPER_QObject_X(_self_ : QAbstractItemView*, editor : QObject*) : Void
-    fun bg_QAbstractItemView_selectedIndexes_SUPER_(_self_ : QAbstractItemView*) : QModelIndexList*
+    fun bg_QAbstractItemView_selectedIndexes_SUPER_(_self_ : QAbstractItemView*) : ContainerQListQModelIndex*
     fun bg_QAbstractItemView_edit_SUPER_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X(_self_ : QAbstractItemView*, index : QModelIndex*, trigger : AbstractItemDelegate::EditTrigger, event : QEvent*) : Bool
     fun bg_QAbstractItemView_selectionCommand_SUPER_const_QModelIndex_R_const_QEvent_X(_self_ : QAbstractItemView*, index : QModelIndex*, event : QEvent*) : ItemSelectionModel::SelectionFlags
     fun bg_QAbstractItemView_startDrag_SUPER_Qt__DropActions(_self_ : QAbstractItemView*, supported_actions : DropActions) : Void
@@ -17992,7 +19244,7 @@ module Qt
     fun bg_QListView_doItemsLayout_(_self_ : QListView*) : Void
     fun bg_QListView_reset_(_self_ : QListView*) : Void
     fun bg_QListView_setRootIndex_const_QModelIndex_R(_self_ : QListView*, index : QModelIndex*) : Void
-    fun bg_QListView_indexesMoved_const_QModelIndexList_R(_self_ : QListView*, indexes : QModelIndexList*) : Void
+    fun bg_QListView_indexesMoved_const_QModelIndexList_R(_self_ : QListView*, indexes : ContainerQListQModelIndex*) : Void
     fun bg_QListView__CONSTRUCT_QListViewPrivate_R_QWidget_X(unnamed_arg_0 : QListViewPrivate*, parent : QWidget*) : QListView*
     fun bg_QListView_event_QEvent_X(_self_ : QListView*, event : QEvent*) : Bool
     fun bg_QListView_scrollContentsBy_int_int(_self_ : QListView*, dx : Int32, dy : Int32) : Void
@@ -18020,7 +19272,7 @@ module Qt
     fun bg_QListView_setPositionForIndex_const_QPoint_R_const_QModelIndex_R(_self_ : QListView*, position : QPoint, index : QModelIndex*) : Void
     fun bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QListView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QListView_visualRegionForSelection_const_QItemSelection_R(_self_ : QListView*, selection : QItemSelection*) : QRegion*
-    fun bg_QListView_selectedIndexes_(_self_ : QListView*) : QModelIndexList*
+    fun bg_QListView_selectedIndexes_(_self_ : QListView*) : ContainerQListQModelIndex*
     fun bg_QListView_updateGeometries_(_self_ : QListView*) : Void
     fun bg_QListView_isIndexHidden_const_QModelIndex_R(_self_ : QListView*, index : QModelIndex*) : Bool
     fun bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QListView*, selected : QItemSelection*, deselected : QItemSelection*) : Void
@@ -18112,7 +19364,7 @@ module Qt
     fun bg_QListView_moveCursor_SUPER_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QListView*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QListView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QListView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QListView_visualRegionForSelection_SUPER_const_QItemSelection_R(_self_ : QListView*, selection : QItemSelection*) : QRegion*
-    fun bg_QListView_selectedIndexes_SUPER_(_self_ : QListView*) : QModelIndexList*
+    fun bg_QListView_selectedIndexes_SUPER_(_self_ : QListView*) : ContainerQListQModelIndex*
     fun bg_QListView_updateGeometries_SUPER_(_self_ : QListView*) : Void
     fun bg_QListView_isIndexHidden_SUPER_const_QModelIndex_R(_self_ : QListView*, index : QModelIndex*) : Bool
     fun bg_QListView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(_self_ : QListView*, selected : QItemSelection*, deselected : QItemSelection*) : Void
@@ -18311,7 +19563,7 @@ module Qt
     fun bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QListWidget*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QListWidget*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QListView_visualRegionForSelection_const_QItemSelection_R(_self_ : QListWidget*, selection : QItemSelection*) : QRegion*
-    fun bg_QListView_selectedIndexes_(_self_ : QListWidget*) : QModelIndexList*
+    fun bg_QListView_selectedIndexes_(_self_ : QListWidget*) : ContainerQListQModelIndex*
     fun bg_QListView_updateGeometries_(_self_ : QListWidget*) : Void
     fun bg_QListView_isIndexHidden_const_QModelIndex_R(_self_ : QListWidget*, index : QModelIndex*) : Bool
     fun bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(_self_ : QListWidget*, selected : QItemSelection*, deselected : QItemSelection*) : Void
@@ -18414,7 +19666,7 @@ module Qt
     fun bg_QListView_moveCursor_SUPER_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QListWidget*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QListView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QListWidget*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QListView_visualRegionForSelection_SUPER_const_QItemSelection_R(_self_ : QListWidget*, selection : QItemSelection*) : QRegion*
-    fun bg_QListView_selectedIndexes_SUPER_(_self_ : QListWidget*) : QModelIndexList*
+    fun bg_QListView_selectedIndexes_SUPER_(_self_ : QListWidget*) : ContainerQListQModelIndex*
     fun bg_QListView_updateGeometries_SUPER_(_self_ : QListWidget*) : Void
     fun bg_QListView_isIndexHidden_SUPER_const_QModelIndex_R(_self_ : QListWidget*, index : QModelIndex*) : Bool
     fun bg_QListView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(_self_ : QListWidget*, selected : QItemSelection*, deselected : QItemSelection*) : Void
@@ -20551,7 +21803,7 @@ module Qt
     fun bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QTableView*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTableView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTableView_visualRegionForSelection_const_QItemSelection_R(_self_ : QTableView*, selection : QItemSelection*) : QRegion*
-    fun bg_QTableView_selectedIndexes_(_self_ : QTableView*) : QModelIndexList*
+    fun bg_QTableView_selectedIndexes_(_self_ : QTableView*) : ContainerQListQModelIndex*
     fun bg_QTableView_updateGeometries_(_self_ : QTableView*) : Void
     fun bg_QTableView_viewportSizeHint_(_self_ : QTableView*) : QSize
     fun bg_QTableView_sizeHintForRow_int(_self_ : QTableView*, row : Int32) : Int32
@@ -20642,7 +21894,7 @@ module Qt
     fun bg_QTableView_moveCursor_SUPER_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QTableView*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QTableView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTableView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTableView_visualRegionForSelection_SUPER_const_QItemSelection_R(_self_ : QTableView*, selection : QItemSelection*) : QRegion*
-    fun bg_QTableView_selectedIndexes_SUPER_(_self_ : QTableView*) : QModelIndexList*
+    fun bg_QTableView_selectedIndexes_SUPER_(_self_ : QTableView*) : ContainerQListQModelIndex*
     fun bg_QTableView_updateGeometries_SUPER_(_self_ : QTableView*) : Void
     fun bg_QTableView_viewportSizeHint_SUPER_(_self_ : QTableView*) : QSize
     fun bg_QTableView_sizeHintForRow_SUPER_int(_self_ : QTableView*, row : Int32) : Int32
@@ -20865,7 +22117,7 @@ module Qt
     fun bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QTableWidget*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTableWidget*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTableView_visualRegionForSelection_const_QItemSelection_R(_self_ : QTableWidget*, selection : QItemSelection*) : QRegion*
-    fun bg_QTableView_selectedIndexes_(_self_ : QTableWidget*) : QModelIndexList*
+    fun bg_QTableView_selectedIndexes_(_self_ : QTableWidget*) : ContainerQListQModelIndex*
     fun bg_QTableView_updateGeometries_(_self_ : QTableWidget*) : Void
     fun bg_QTableView_viewportSizeHint_(_self_ : QTableWidget*) : QSize
     fun bg_QTableView_sizeHintForRow_int(_self_ : QTableWidget*, row : Int32) : Int32
@@ -20973,7 +22225,7 @@ module Qt
     fun bg_QTableView_moveCursor_SUPER_QAbstractItemView__CursorAction_Qt__KeyboardModifiers(_self_ : QTableWidget*, cursor_action : AbstractItemDelegate::CursorAction, modifiers : KeyboardModifiers) : QModelIndex*
     fun bg_QTableView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTableWidget*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTableView_visualRegionForSelection_SUPER_const_QItemSelection_R(_self_ : QTableWidget*, selection : QItemSelection*) : QRegion*
-    fun bg_QTableView_selectedIndexes_SUPER_(_self_ : QTableWidget*) : QModelIndexList*
+    fun bg_QTableView_selectedIndexes_SUPER_(_self_ : QTableWidget*) : ContainerQListQModelIndex*
     fun bg_QTableView_updateGeometries_SUPER_(_self_ : QTableWidget*) : Void
     fun bg_QTableView_viewportSizeHint_SUPER_(_self_ : QTableWidget*) : QSize
     fun bg_QTableView_sizeHintForRow_SUPER_int(_self_ : QTableWidget*, row : Int32) : Int32
@@ -21401,7 +22653,7 @@ module Qt
     fun bg_QTreeView_verticalOffset_(_self_ : QTreeView*) : Int32
     fun bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTreeView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTreeView_visualRegionForSelection_const_QItemSelection_R(_self_ : QTreeView*, selection : QItemSelection*) : QRegion*
-    fun bg_QTreeView_selectedIndexes_(_self_ : QTreeView*) : QModelIndexList*
+    fun bg_QTreeView_selectedIndexes_(_self_ : QTreeView*) : ContainerQListQModelIndex*
     fun bg_QTreeView_changeEvent_QEvent_X(_self_ : QTreeView*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QTreeView_timerEvent_QTimerEvent_X(_self_ : QTreeView*, event : QTimerEvent*) : Void
     fun bg_QTreeView_paintEvent_QPaintEvent_X(_self_ : QTreeView*, event : QPaintEvent*) : Void
@@ -21499,7 +22751,7 @@ module Qt
     fun bg_QTreeView_verticalOffset_SUPER_(_self_ : QTreeView*) : Int32
     fun bg_QTreeView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(_self_ : QTreeView*, rect : QRect, command : ItemSelectionModel::SelectionFlags) : Void
     fun bg_QTreeView_visualRegionForSelection_SUPER_const_QItemSelection_R(_self_ : QTreeView*, selection : QItemSelection*) : QRegion*
-    fun bg_QTreeView_selectedIndexes_SUPER_(_self_ : QTreeView*) : QModelIndexList*
+    fun bg_QTreeView_selectedIndexes_SUPER_(_self_ : QTreeView*) : ContainerQListQModelIndex*
     fun bg_QTreeView_changeEvent_SUPER_QEvent_X(_self_ : QTreeView*, unnamed_arg_0 : QEvent*) : Void
     fun bg_QTreeView_timerEvent_SUPER_QTimerEvent_X(_self_ : QTreeView*, event : QTimerEvent*) : Void
     fun bg_QTreeView_paintEvent_SUPER_QPaintEvent_X(_self_ : QTreeView*, event : QPaintEvent*) : Void
@@ -21666,6 +22918,10 @@ module Qt
     fun bg_Container_QList_QVariant__at_int(_self_ : ContainerQListQVariant*, index : Int32) : CrystalVariant
     fun bg_Container_QList_QVariant__push_back_QVariant(_self_ : ContainerQListQVariant*, value : CrystalVariant) : Void
     fun bg_Container_QList_QVariant__size_(_self_ : ContainerQListQVariant*) : Int32
+    fun bg_Container_QList_QModelIndex___CONSTRUCT_() : ContainerQListQModelIndex*
+    fun bg_Container_QList_QModelIndex__at_int(_self_ : ContainerQListQModelIndex*, index : Int32) : QModelIndex*
+    fun bg_Container_QList_QModelIndex__push_back_QModelIndex(_self_ : ContainerQListQModelIndex*, value : QModelIndex*) : Void
+    fun bg_Container_QList_QModelIndex__size_(_self_ : ContainerQListQModelIndex*) : Int32
     fun bg_Container_QList_QPersistentModelIndex___CONSTRUCT_() : ContainerQListQPersistentModelIndex*
     fun bg_Container_QList_QPersistentModelIndex__at_int(_self_ : ContainerQListQPersistentModelIndex*, index : Int32) : QPersistentModelIndex*
     fun bg_Container_QList_QPersistentModelIndex__push_back_QPersistentModelIndex(_self_ : ContainerQListQPersistentModelIndex*, value : QPersistentModelIndex*) : Void
@@ -21690,6 +22946,18 @@ module Qt
     fun bg_Container_QList_QTimeZone__OffsetData__at_int(_self_ : ContainerQListQTimeZoneOffsetData*, index : Int32) : QTimeZone_OffsetData*
     fun bg_Container_QList_QTimeZone__OffsetData__push_back_QTimeZone__OffsetData(_self_ : ContainerQListQTimeZoneOffsetData*, value : QTimeZone_OffsetData*) : Void
     fun bg_Container_QList_QTimeZone__OffsetData__size_(_self_ : ContainerQListQTimeZoneOffsetData*) : Int32
+    fun bg_Container_QList_QFileInfo___CONSTRUCT_() : ContainerQListQFileInfo*
+    fun bg_Container_QList_QFileInfo__at_int(_self_ : ContainerQListQFileInfo*, index : Int32) : QFileInfo*
+    fun bg_Container_QList_QFileInfo__push_back_QFileInfo(_self_ : ContainerQListQFileInfo*, value : QFileInfo*) : Void
+    fun bg_Container_QList_QFileInfo__size_(_self_ : ContainerQListQFileInfo*) : Int32
+    fun bg_Container_QList_QPointF___CONSTRUCT_() : ContainerQListQPointF*
+    fun bg_Container_QList_QPointF__at_int(_self_ : ContainerQListQPointF*, index : Int32) : QPointF
+    fun bg_Container_QList_QPointF__push_back_QPointF(_self_ : ContainerQListQPointF*, value : QPointF) : Void
+    fun bg_Container_QList_QPointF__size_(_self_ : ContainerQListQPointF*) : Int32
+    fun bg_Container_QList_QItemSelectionRange___CONSTRUCT_() : ContainerQListQItemSelectionRange*
+    fun bg_Container_QList_QItemSelectionRange__at_int(_self_ : ContainerQListQItemSelectionRange*, index : Int32) : QItemSelectionRange*
+    fun bg_Container_QList_QItemSelectionRange__push_back_QItemSelectionRange(_self_ : ContainerQListQItemSelectionRange*, value : QItemSelectionRange*) : Void
+    fun bg_Container_QList_QItemSelectionRange__size_(_self_ : ContainerQListQItemSelectionRange*) : Int32
     fun bg_Container_QList_QMimeType___CONSTRUCT_() : ContainerQListQMimeType*
     fun bg_Container_QList_QMimeType__at_int(_self_ : ContainerQListQMimeType*, index : Int32) : QMimeType*
     fun bg_Container_QList_QMimeType__push_back_QMimeType(_self_ : ContainerQListQMimeType*, value : QMimeType*) : Void
@@ -21698,10 +22966,6 @@ module Qt
     fun bg_Container_QList_QPoint__at_int(_self_ : ContainerQListQPoint*, index : Int32) : QPoint
     fun bg_Container_QList_QPoint__push_back_QPoint(_self_ : ContainerQListQPoint*, value : QPoint) : Void
     fun bg_Container_QList_QPoint__size_(_self_ : ContainerQListQPoint*) : Int32
-    fun bg_Container_QList_QPointF___CONSTRUCT_() : ContainerQListQPointF*
-    fun bg_Container_QList_QPointF__at_int(_self_ : ContainerQListQPointF*, index : Int32) : QPointF
-    fun bg_Container_QList_QPointF__push_back_QPointF(_self_ : ContainerQListQPointF*, value : QPointF) : Void
-    fun bg_Container_QList_QPointF__size_(_self_ : ContainerQListQPointF*) : Int32
     fun bg_Container_QList_QSize___CONSTRUCT_() : ContainerQListQSize*
     fun bg_Container_QList_QSize__at_int(_self_ : ContainerQListQSize*, index : Int32) : QSize
     fun bg_Container_QList_QSize__push_back_QSize(_self_ : ContainerQListQSize*, value : QSize) : Void
@@ -22267,8 +23531,14 @@ module Qt
         Binding.bg_QObject_CAST_AbstractEventDispatcher_(self).try {|ptr| AbstractEventDispatcher.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractItemModel %}
         Binding.bg_QObject_CAST_AbstractItemModel_(self).try {|ptr| AbstractItemModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == AbstractTableModel %}
+        Binding.bg_QObject_CAST_AbstractTableModel_(self).try {|ptr| AbstractTableModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == AbstractListModel %}
+        Binding.bg_QObject_CAST_AbstractListModel_(self).try {|ptr| AbstractListModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractProxyModel %}
         Binding.bg_QObject_CAST_AbstractProxyModel_(self).try {|ptr| AbstractProxyModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == AnimationGroup %}
+        Binding.bg_QObject_CAST_AnimationGroup_(self).try {|ptr| AnimationGroup.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == CoreApplication %}
         Binding.bg_QObject_CAST_CoreApplication_(self).try {|ptr| CoreApplication.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == IODevice %}
@@ -22283,8 +23553,16 @@ module Qt
         Binding.bg_QObject_CAST_File_(self).try {|ptr| File.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == FileSystemWatcher %}
         Binding.bg_QObject_CAST_FileSystemWatcher_(self).try {|ptr| FileSystemWatcher.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == IdentityProxyModel %}
+        Binding.bg_QObject_CAST_IdentityProxyModel_(self).try {|ptr| IdentityProxyModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ItemSelectionModel %}
+        Binding.bg_QObject_CAST_ItemSelectionModel_(self).try {|ptr| ItemSelectionModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == MimeData %}
         Binding.bg_QObject_CAST_MimeData_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ParallelAnimationGroup %}
+        Binding.bg_QObject_CAST_ParallelAnimationGroup_(self).try {|ptr| ParallelAnimationGroup.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == PauseAnimation %}
+        Binding.bg_QObject_CAST_PauseAnimation_(self).try {|ptr| PauseAnimation.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Process %}
         Binding.bg_QObject_CAST_Process_(self).try {|ptr| Process.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == VariantAnimation %}
@@ -22293,14 +23571,20 @@ module Qt
         Binding.bg_QObject_CAST_PropertyAnimation_(self).try {|ptr| PropertyAnimation.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SaveFile %}
         Binding.bg_QObject_CAST_SaveFile_(self).try {|ptr| SaveFile.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == SequentialAnimationGroup %}
+        Binding.bg_QObject_CAST_SequentialAnimationGroup_(self).try {|ptr| SequentialAnimationGroup.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Settings %}
         Binding.bg_QObject_CAST_Settings_(self).try {|ptr| Settings.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SocketNotifier %}
         Binding.bg_QObject_CAST_SocketNotifier_(self).try {|ptr| SocketNotifier.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SortFilterProxyModel %}
         Binding.bg_QObject_CAST_SortFilterProxyModel_(self).try {|ptr| SortFilterProxyModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == StringListModel %}
+        Binding.bg_QObject_CAST_StringListModel_(self).try {|ptr| StringListModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TemporaryFile %}
         Binding.bg_QObject_CAST_TemporaryFile_(self).try {|ptr| TemporaryFile.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TimeLine %}
+        Binding.bg_QObject_CAST_TimeLine_(self).try {|ptr| TimeLine.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Translator %}
         Binding.bg_QObject_CAST_Translator_(self).try {|ptr| Translator.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Screen %}
@@ -22317,6 +23601,8 @@ module Qt
         Binding.bg_QObject_CAST_Clipboard_(self).try {|ptr| Clipboard.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Drag %}
         Binding.bg_QObject_CAST_Drag_(self).try {|ptr| Drag.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == FileSystemModel %}
+        Binding.bg_QObject_CAST_FileSystemModel_(self).try {|ptr| FileSystemModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == StandardItemModel %}
         Binding.bg_QObject_CAST_StandardItemModel_(self).try {|ptr| StandardItemModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Widget %}
@@ -22590,8 +23876,8 @@ module Qt
       Binding.bg_QAbstractAnimation_state_(self)
     end
     
-    def group() : Binding::QAnimationGroup*
-      Binding.bg_QAbstractAnimation_group_(self)
+    def group() : AnimationGroup
+      AnimationGroupImpl.new(unwrap: Binding.bg_QAbstractAnimation_group_(self))
     end
     
     def direction() : AbstractAnimation::Direction
@@ -23960,27 +25246,27 @@ module Qt
       Binding.bg_QModelIndex__OPERATOR_ge_const_QModelIndex_R(self, rhs)
     end
     
-    def ==(rhs : Binding::QPersistentModelIndex*) : Bool
+    def ==(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(self, rhs)
     end
     
-    def !=(rhs : Binding::QPersistentModelIndex*) : Bool
+    def !=(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(self, rhs)
     end
     
-    def <(rhs : Binding::QPersistentModelIndex*) : Bool
+    def <(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(self, rhs)
     end
     
-    def >(rhs : Binding::QPersistentModelIndex*) : Bool
+    def >(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(self, rhs)
     end
     
-    def <=(rhs : Binding::QPersistentModelIndex*) : Bool
+    def <=(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(self, rhs)
     end
     
-    def >=(rhs : Binding::QPersistentModelIndex*) : Bool
+    def >=(rhs : PersistentModelIndex) : Bool
       Binding.bg_QModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(self, rhs)
     end
     
@@ -23988,6 +25274,145 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QModelIndex*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class PersistentModelIndex
+    @unwrap : Binding::QPersistentModelIndex*
+    
+    def initialize()
+      result = Binding.bg_QPersistentModelIndex__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(index : ModelIndex)
+      result = Binding.bg_QPersistentModelIndex__CONSTRUCT_const_QModelIndex_R(index)
+    @unwrap = result
+    end
+    
+    def initialize(other : PersistentModelIndex)
+      result = Binding.bg_QPersistentModelIndex__COPY_const_QPersistentModelIndex_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : PersistentModelIndex) : PersistentModelIndex
+      PersistentModelIndex.new(unwrap: Binding.bg_QPersistentModelIndex__OPERATOR_assign_const_QPersistentModelIndex_R(self, other))
+    end
+    
+    def swap(other : PersistentModelIndex) : Void
+      Binding.bg_QPersistentModelIndex_swap_QPersistentModelIndex_R(self, other)
+    end
+    
+    def assign!(other : ModelIndex) : PersistentModelIndex
+      PersistentModelIndex.new(unwrap: Binding.bg_QPersistentModelIndex__OPERATOR_assign_const_QModelIndex_R(self, other))
+    end
+    
+    def to_q_model_index() : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QPersistentModelIndex__CONVERT_QModelIndex_(self))
+    end
+    
+    def row() : Int32
+      Binding.bg_QPersistentModelIndex_row_(self)
+    end
+    
+    def column() : Int32
+      Binding.bg_QPersistentModelIndex_column_(self)
+    end
+    
+    def internal_pointer() : Void*
+      Binding.bg_QPersistentModelIndex_internalPointer_(self)
+    end
+    
+    def const_internal_pointer() : Void**
+      Binding.bg_QPersistentModelIndex_constInternalPointer_(self)
+    end
+    
+    def internal_id() : UInt64
+      Binding.bg_QPersistentModelIndex_internalId_(self)
+    end
+    
+    def parent() : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QPersistentModelIndex_parent_(self))
+    end
+    
+    def sibling(row : Int32, column : Int32) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QPersistentModelIndex_sibling_int_int(self, row, column))
+    end
+    
+    def data(role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QPersistentModelIndex_data_int(self, role))
+    end
+    
+    def multi_data(role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QPersistentModelIndex_multiData_QModelRoleDataSpan(self, role_data_span)
+    end
+    
+    def flags() : ItemFlags
+      Binding.bg_QPersistentModelIndex_flags_(self)
+    end
+    
+    def model() : AbstractItemModel
+      AbstractItemModelImpl.new(unwrap: Binding.bg_QPersistentModelIndex_model_(self))
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QPersistentModelIndex_isValid_(self)
+    end
+    
+    def ==(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def !=(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def <(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def >(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def <=(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def >=(rhs : PersistentModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(self, rhs)
+    end
+    
+    def ==(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_eq_const_QModelIndex_R(self, rhs)
+    end
+    
+    def !=(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_ne_const_QModelIndex_R(self, rhs)
+    end
+    
+    def <(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_lt_const_QModelIndex_R(self, rhs)
+    end
+    
+    def >(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_gt_const_QModelIndex_R(self, rhs)
+    end
+    
+    def <=(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_le_const_QModelIndex_R(self, rhs)
+    end
+    
+    def >=(rhs : ModelIndex) : Bool
+      Binding.bg_QPersistentModelIndex__OPERATOR_ge_const_QModelIndex_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QPersistentModelIndex*)
       result = unwrap
     @unwrap = result
     end
@@ -24046,7 +25471,7 @@ module Qt
         {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
         {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
         {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
-        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
@@ -24116,7 +25541,7 @@ module Qt
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -24136,8 +25561,8 @@ module Qt
       bg_QAbstractItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::QModelIndexList*).new{|start, role, value, hits| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
@@ -24203,8 +25628,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, indexes))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -24323,12 +25748,12 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32 = 1) : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int(self, start, role, (value.to_unsafe), hits)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32 = 1) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int(self, start, role, (value.to_unsafe), hits))
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
     end
     
     def span(index : ModelIndex) : Size
@@ -24363,11 +25788,11 @@ module Qt
       Binding.bg_QAbstractItemModel_layoutChanged_(self)
     end
     
-    def layout_changed(parents : Enumerable(Binding::QPersistentModelIndex*)) : Void
+    def layout_changed(parents : Enumerable(PersistentModelIndex)) : Void
       Binding.bg_QAbstractItemModel_layoutChanged_const_QList_QPersistentModelIndex__R(self, BindgenHelper.wrap_container(Container_QList_QPersistentModelIndex_, parents).to_unsafe)
     end
     
-    def layout_changed(parents : Enumerable(Binding::QPersistentModelIndex*), hint : AbstractItemModel::LayoutChangeHint = AbstractItemModel::LayoutChangeHint::NoLayoutChangeHint) : Void
+    def layout_changed(parents : Enumerable(PersistentModelIndex), hint : AbstractItemModel::LayoutChangeHint = AbstractItemModel::LayoutChangeHint::NoLayoutChangeHint) : Void
       Binding.bg_QAbstractItemModel_layoutChanged_const_QList_QPersistentModelIndex__R_QAbstractItemModel__LayoutChangeHint(self, BindgenHelper.wrap_container(Container_QList_QPersistentModelIndex_, parents).to_unsafe, hint)
     end
     
@@ -24375,11 +25800,11 @@ module Qt
       Binding.bg_QAbstractItemModel_layoutAboutToBeChanged_(self)
     end
     
-    def layout_about_to_be_changed(parents : Enumerable(Binding::QPersistentModelIndex*)) : Void
+    def layout_about_to_be_changed(parents : Enumerable(PersistentModelIndex)) : Void
       Binding.bg_QAbstractItemModel_layoutAboutToBeChanged_const_QList_QPersistentModelIndex__R(self, BindgenHelper.wrap_container(Container_QList_QPersistentModelIndex_, parents).to_unsafe)
     end
     
-    def layout_about_to_be_changed(parents : Enumerable(Binding::QPersistentModelIndex*), hint : AbstractItemModel::LayoutChangeHint = AbstractItemModel::LayoutChangeHint::NoLayoutChangeHint) : Void
+    def layout_about_to_be_changed(parents : Enumerable(PersistentModelIndex), hint : AbstractItemModel::LayoutChangeHint = AbstractItemModel::LayoutChangeHint::NoLayoutChangeHint) : Void
       Binding.bg_QAbstractItemModel_layoutAboutToBeChanged_const_QList_QPersistentModelIndex__R_QAbstractItemModel__LayoutChangeHint(self, BindgenHelper.wrap_container(Container_QList_QPersistentModelIndex_, parents).to_unsafe, hint)
     end
     
@@ -24423,7 +25848,7 @@ module Qt
         {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
         {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
         {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
-        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
@@ -24493,7 +25918,7 @@ module Qt
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -24513,8 +25938,8 @@ module Qt
       bg_QAbstractItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::QModelIndexList*).new{|start, role, value, hits| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
@@ -24540,8 +25965,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_createIndex_int_int_quintptr(self, row, column, id))
     end
     
-    protected def encode_data(indexes : Binding::QModelIndexList*, stream : Binding::QDataStream*) : Void
-      Binding.bg_QAbstractItemModel_encodeData_const_QModelIndexList_R_QDataStream_R(self, indexes, stream)
+    protected def encode_data(indexes : Enumerable(ModelIndex), stream : Binding::QDataStream*) : Void
+      Binding.bg_QAbstractItemModel_encodeData_const_QModelIndexList_R_QDataStream_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe, stream)
     end
     
     protected def decode_data(row : Int32, column : Int32, parent : ModelIndex, stream : Binding::QDataStream*) : Bool
@@ -24608,12 +26033,12 @@ module Qt
       Binding.bg_QAbstractItemModel_changePersistentIndex_const_QModelIndex_R_const_QModelIndex_R(self, from, to)
     end
     
-    protected def change_persistent_index_list(from : Binding::QModelIndexList*, to : Binding::QModelIndexList*) : Void
-      Binding.bg_QAbstractItemModel_changePersistentIndexList_const_QModelIndexList_R_const_QModelIndexList_R(self, from, to)
+    protected def change_persistent_index_list(from : Enumerable(ModelIndex), to : Enumerable(ModelIndex)) : Void
+      Binding.bg_QAbstractItemModel_changePersistentIndexList_const_QModelIndexList_R_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, from).to_unsafe, BindgenHelper.wrap_container(Container_QList_QModelIndex_, to).to_unsafe)
     end
     
-    protected def persistent_index_list() : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_persistentIndexList_(self)
+    protected def persistent_index_list() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_persistentIndexList_(self))
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -24710,8 +26135,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, indexes))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -24774,8 +26199,8 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
       end
       
-      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-        Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags)
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
       end
       
       def span(index : ModelIndex) : Size
@@ -24846,11 +26271,11 @@ module Qt
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
     
-    def on_layout_changed(_type1_ : Enumerable(Binding::QPersistentModelIndex*).class, &_proc_ : Proc(Enumerable(Binding::QPersistentModelIndex*), Void)) : SignalConnection
+    def on_layout_changed(_type1_ : Enumerable(PersistentModelIndex).class, &_proc_ : Proc(Enumerable(PersistentModelIndex), Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutChanged_CrystalProc_void__const_QList_QPersistentModelIndex__R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQPersistentModelIndex*, Void).new do |arg0| _proc_.call(Container_QList_QPersistentModelIndex_.new(unwrap: arg0)) end)))
     end
     
-    def on_layout_changed(_type1_ : Enumerable(Binding::QPersistentModelIndex*).class, _type2_ : AbstractItemModel::LayoutChangeHint.class, &_proc_ : Proc(Enumerable(Binding::QPersistentModelIndex*), AbstractItemModel::LayoutChangeHint, Void)) : SignalConnection
+    def on_layout_changed(_type1_ : Enumerable(PersistentModelIndex).class, _type2_ : AbstractItemModel::LayoutChangeHint.class, &_proc_ : Proc(Enumerable(PersistentModelIndex), AbstractItemModel::LayoutChangeHint, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutChanged_CrystalProc_void__const_QList_QPersistentModelIndex__R__QAbstractItemModel__LayoutChangeHint_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQPersistentModelIndex*, AbstractItemModel::LayoutChangeHint, Void).new do |arg0, arg1| _proc_.call(Container_QList_QPersistentModelIndex_.new(unwrap: arg0), arg1) end)))
     end
     
@@ -24858,11 +26283,11 @@ module Qt
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutAboutToBeChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
     
-    def on_layout_about_to_be_changed(_type1_ : Enumerable(Binding::QPersistentModelIndex*).class, &_proc_ : Proc(Enumerable(Binding::QPersistentModelIndex*), Void)) : SignalConnection
+    def on_layout_about_to_be_changed(_type1_ : Enumerable(PersistentModelIndex).class, &_proc_ : Proc(Enumerable(PersistentModelIndex), Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutAboutToBeChanged_CrystalProc_void__const_QList_QPersistentModelIndex__R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQPersistentModelIndex*, Void).new do |arg0| _proc_.call(Container_QList_QPersistentModelIndex_.new(unwrap: arg0)) end)))
     end
     
-    def on_layout_about_to_be_changed(_type1_ : Enumerable(Binding::QPersistentModelIndex*).class, _type2_ : AbstractItemModel::LayoutChangeHint.class, &_proc_ : Proc(Enumerable(Binding::QPersistentModelIndex*), AbstractItemModel::LayoutChangeHint, Void)) : SignalConnection
+    def on_layout_about_to_be_changed(_type1_ : Enumerable(PersistentModelIndex).class, _type2_ : AbstractItemModel::LayoutChangeHint.class, &_proc_ : Proc(Enumerable(PersistentModelIndex), AbstractItemModel::LayoutChangeHint, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QAbstractItemModel_CONNECT_layoutAboutToBeChanged_CrystalProc_void__const_QList_QPersistentModelIndex__R__QAbstractItemModel__LayoutChangeHint_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQPersistentModelIndex*, AbstractItemModel::LayoutChangeHint, Void).new do |arg0, arg1| _proc_.call(Container_QList_QPersistentModelIndex_.new(unwrap: arg0), arg1) end)))
     end
     
@@ -24923,6 +26348,1159 @@ module Qt
     end
     
   end
+  abstract class AbstractTableModel < AbstractItemModel
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractTableModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QAbstractTableModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractTableModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractTableModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractTableModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QAbstractTableModel__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractTableModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractTableModel_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractTableModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractTableModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QAbstractTableModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractTableModel.new(
+      bg_QAbstractTableModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractTableModel_JUMPTABLE_BgJumptable_QAbstractTableModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def index(row : Int32, column : Int32) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractTableModel_index_int_int(self, row, column))
+    end
+    
+    def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractTableModel_index_int_int_const_QModelIndex_R(self, row, column, parent))
+    end
+    
+    def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
+    end
+    
+    def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def flags(index : ModelIndex) : ItemFlags
+      Binding.bg_QAbstractTableModel_flags_const_QModelIndex_R(self, index)
+    end
+    
+    protected def initialize(dd : Binding::QAbstractItemModelPrivate*, parent : Object)
+      result = Binding.bg_QAbstractTableModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractTableModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractTableModel_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractTableModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractTableModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QAbstractTableModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractTableModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractTableModel.new(
+      bg_QAbstractTableModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractTableModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractTableModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractTableModel_JUMPTABLE_BgJumptable_QAbstractTableModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractTableModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    abstract def row_count(parent : ModelIndex) : Int32
+    abstract def column_count(parent : ModelIndex) : Int32
+    abstract def data(index : ModelIndex, role : Int32 = 0) : Variant
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDropActions_(self)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QAbstractItemModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == AbstractTableModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QAbstractTableModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : AbstractTableModel)
+      end
+      def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractTableModel_index_SUPER_int_int_const_QModelIndex_R(@myself, row, column, parent))
+      end
+      
+      def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractTableModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
+      end
+      
+      def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractTableModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def flags(index : ModelIndex) : ItemFlags
+        Binding.bg_QAbstractTableModel_flags_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractItemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(@myself, index, (value.to_unsafe), role)
+      end
+      
+      def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_SUPER_int_Qt__Orientation_int(@myself, section, orientation, role))
+      end
+      
+      def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
+      end
+      
+      def clear_item_data(index : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def mime_types() : Enumerable(String)
+        StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
+      end
+      
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      end
+      
+      def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def supported_drop_actions() : DropActions
+        Binding.bg_QAbstractItemModel_supportedDropActions_SUPER_(@myself)
+      end
+      
+      def supported_drag_actions() : DropActions
+        Binding.bg_QAbstractItemModel_supportedDragActions_SUPER_(@myself)
+      end
+      
+      def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_row, count, destination_parent, destination_child)
+      end
+      
+      def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_column, count, destination_parent, destination_child)
+      end
+      
+      def fetch_more(parent : ModelIndex) : Void
+        Binding.bg_QAbstractItemModel_fetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def can_fetch_more(parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_canFetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+        Binding.bg_QAbstractItemModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
+      end
+      
+      def buddy(index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
+      end
+      
+      def span(index : ModelIndex) : Size
+        Size.new(unwrap: Binding.bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+        Binding.bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(@myself, index, role_data_span)
+      end
+      
+      def submit() : Bool
+        Binding.bg_QAbstractItemModel_submit_SUPER_(@myself)
+      end
+      
+      def revert() : Void
+        Binding.bg_QAbstractItemModel_revert_SUPER_(@myself)
+      end
+      
+      protected def reset_internal_data() : Void
+        Binding.bg_QAbstractItemModel_resetInternalData_SUPER_(@myself)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  abstract class AbstractListModel < AbstractItemModel
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractListModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QAbstractListModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractListModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractListModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAbstractListModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QAbstractListModel__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractListModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractListModel_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractListModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractListModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QAbstractListModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractListModel.new(
+      bg_QAbstractListModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractListModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractListModel_JUMPTABLE_BgJumptable_QAbstractListModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def index(row : Int32, column : Int32 = 0) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_index_int_int(self, row, column))
+    end
+    
+    def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_index_int_int_const_QModelIndex_R(self, row, column, parent))
+    end
+    
+    def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
+    end
+    
+    def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def flags(index : ModelIndex) : ItemFlags
+      Binding.bg_QAbstractListModel_flags_const_QModelIndex_R(self, index)
+    end
+    
+    protected def initialize(dd : Binding::QAbstractItemModelPrivate*, parent : Object)
+      result = Binding.bg_QAbstractListModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AbstractListModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAbstractListModel_metaObject_", "meta_object", [] of String},
+        {"bg_QAbstractListModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAbstractListModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QAbstractListModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractListModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAbstractListModel.new(
+      bg_QAbstractListModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAbstractListModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractListModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractListModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAbstractListModel_JUMPTABLE_BgJumptable_QAbstractListModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAbstractListModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    abstract def row_count(parent : ModelIndex) : Int32
+    abstract def data(index : ModelIndex, role : Int32 = 0) : Variant
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDropActions_(self)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QAbstractItemModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == AbstractListModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QAbstractListModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : AbstractListModel)
+      end
+      def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_index_SUPER_int_int_const_QModelIndex_R(@myself, row, column, parent))
+      end
+      
+      def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
+      end
+      
+      def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractListModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def flags(index : ModelIndex) : ItemFlags
+        Binding.bg_QAbstractListModel_flags_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractItemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(@myself, index, (value.to_unsafe), role)
+      end
+      
+      def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_SUPER_int_Qt__Orientation_int(@myself, section, orientation, role))
+      end
+      
+      def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
+      end
+      
+      def clear_item_data(index : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def mime_types() : Enumerable(String)
+        StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
+      end
+      
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      end
+      
+      def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def supported_drop_actions() : DropActions
+        Binding.bg_QAbstractItemModel_supportedDropActions_SUPER_(@myself)
+      end
+      
+      def supported_drag_actions() : DropActions
+        Binding.bg_QAbstractItemModel_supportedDragActions_SUPER_(@myself)
+      end
+      
+      def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_row, count, destination_parent, destination_child)
+      end
+      
+      def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_column, count, destination_parent, destination_child)
+      end
+      
+      def fetch_more(parent : ModelIndex) : Void
+        Binding.bg_QAbstractItemModel_fetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def can_fetch_more(parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_canFetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+        Binding.bg_QAbstractItemModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
+      end
+      
+      def buddy(index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
+      end
+      
+      def span(index : ModelIndex) : Size
+        Size.new(unwrap: Binding.bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+        Binding.bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(@myself, index, role_data_span)
+      end
+      
+      def submit() : Bool
+        Binding.bg_QAbstractItemModel_submit_SUPER_(@myself)
+      end
+      
+      def revert() : Void
+        Binding.bg_QAbstractItemModel_revert_SUPER_(@myself)
+      end
+      
+      protected def reset_internal_data() : Void
+        Binding.bg_QAbstractItemModel_resetInternalData_SUPER_(@myself)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
   abstract class AbstractProxyModel < AbstractItemModel
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QAbstractProxyModel_metaObject_(self)
@@ -24963,8 +27541,8 @@ module Qt
         {"bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X", "source_model=", ["AbstractItemModel"] of String},
         {"bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R", "map_to_source", ["ModelIndex"] of String},
         {"bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R", "map_from_source", ["ModelIndex"] of String},
-        {"bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["Binding::QItemSelection*"] of String},
-        {"bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["Binding::QItemSelection*"] of String},
+        {"bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["ItemSelection"] of String},
+        {"bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["ItemSelection"] of String},
         {"bg_QAbstractProxyModel_submit_", "submit", [] of String},
         {"bg_QAbstractProxyModel_revert_", "revert", [] of String},
         {"bg_QAbstractProxyModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
@@ -24981,7 +27559,7 @@ module Qt
         {"bg_QAbstractProxyModel_hasChildren_", "has_children?", [] of String},
         {"bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
         {"bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
-        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractProxyModel_mimeTypes_", "mime_types", [] of String},
@@ -25030,8 +27608,8 @@ module Qt
       bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|source_model| self.source_model=(AbstractItemModelImpl.new(unwrap: source_model)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|proxy_index| self.map_to_source(ModelIndex.new(unwrap: proxy_index)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|source_index| self.map_from_source(ModelIndex.new(unwrap: source_index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(selection) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(selection) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
@@ -25048,7 +27626,7 @@ module Qt
       bg_QAbstractProxyModel_hasChildren_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_") %} Proc(Bool).new{ self.has_children?() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
@@ -25064,7 +27642,7 @@ module Qt
       bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -25089,12 +27667,12 @@ module Qt
     
     abstract def map_to_source(proxy_index : ModelIndex) : ModelIndex
     abstract def map_from_source(source_index : ModelIndex) : ModelIndex
-    def map_selection_to_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-      Binding.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R(self, selection)
+    def map_selection_to_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R(self, selection))
     end
     
-    def map_selection_from_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-      Binding.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R(self, selection)
+    def map_selection_from_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R(self, selection))
     end
     
     def submit() : Bool
@@ -25161,8 +27739,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
     end
     
-    def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, indexes))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -25204,8 +27782,8 @@ module Qt
         {"bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X", "source_model=", ["AbstractItemModel"] of String},
         {"bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R", "map_to_source", ["ModelIndex"] of String},
         {"bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R", "map_from_source", ["ModelIndex"] of String},
-        {"bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["Binding::QItemSelection*"] of String},
-        {"bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["Binding::QItemSelection*"] of String},
+        {"bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["ItemSelection"] of String},
+        {"bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["ItemSelection"] of String},
         {"bg_QAbstractProxyModel_submit_", "submit", [] of String},
         {"bg_QAbstractProxyModel_revert_", "revert", [] of String},
         {"bg_QAbstractProxyModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
@@ -25222,7 +27800,7 @@ module Qt
         {"bg_QAbstractProxyModel_hasChildren_", "has_children?", [] of String},
         {"bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
         {"bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
-        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractProxyModel_mimeTypes_", "mime_types", [] of String},
@@ -25271,8 +27849,8 @@ module Qt
       bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|source_model| self.source_model=(AbstractItemModelImpl.new(unwrap: source_model)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|proxy_index| self.map_to_source(ModelIndex.new(unwrap: proxy_index)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapFromSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|source_index| self.map_from_source(ModelIndex.new(unwrap: source_index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(selection) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(selection) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
@@ -25289,7 +27867,7 @@ module Qt
       bg_QAbstractProxyModel_hasChildren_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_") %} Proc(Bool).new{ self.has_children?() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
@@ -25305,7 +27883,7 @@ module Qt
       bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -25352,8 +27930,8 @@ module Qt
       Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
     end
     
     def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
@@ -25412,12 +27990,12 @@ module Qt
         Binding.bg_QAbstractProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(@myself, source_model)
       end
       
-      def map_selection_to_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-        Binding.bg_QAbstractProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(@myself, selection)
+      def map_selection_to_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QAbstractProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(@myself, selection))
       end
       
-      def map_selection_from_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-        Binding.bg_QAbstractProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(@myself, selection)
+      def map_selection_from_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QAbstractProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(@myself, selection))
       end
       
       def submit() : Bool
@@ -25480,8 +28058,8 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
       end
       
-      def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, indexes))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -25528,8 +28106,8 @@ module Qt
         Binding.bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_column, count, destination_parent, destination_child)
       end
       
-      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-        Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags)
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
       end
       
       def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
@@ -25576,6 +28154,282 @@ module Qt
       SignalConnection.new(unwrap: Binding.bg_QAbstractProxyModel_CONNECT_sourceModelChanged_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
     end
     
+  end
+  abstract class AnimationGroup < AbstractAnimation
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QAnimationGroup_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QAnimationGroup_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAnimationGroup_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAnimationGroup_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QAnimationGroup__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QAbstractAnimation_duration_", "duration", [] of String},
+        {"bg_QAbstractAnimation_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAnimationGroup.new(
+      bg_QAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def animation_at(index : Int32) : AbstractAnimation
+      AbstractAnimationImpl.new(unwrap: Binding.bg_QAnimationGroup_animationAt_int(self, index))
+    end
+    
+    def animation_count() : Int32
+      Binding.bg_QAnimationGroup_animationCount_(self)
+    end
+    
+    def index_of_animation(animation : AbstractAnimation) : Int32
+      Binding.bg_QAnimationGroup_indexOfAnimation_QAbstractAnimation_X(self, animation)
+    end
+    
+    def add_animation(animation : AbstractAnimation) : Void
+      BindgenHelper.keep_alive(animation)
+    Binding.bg_QAnimationGroup_addAnimation_QAbstractAnimation_X(self, animation)
+    end
+    
+    def insert_animation(index : Int32, animation : AbstractAnimation) : Void
+      BindgenHelper.keep_alive(animation)
+    Binding.bg_QAnimationGroup_insertAnimation_int_QAbstractAnimation_X(self, index, animation)
+    end
+    
+    def remove_animation(animation : AbstractAnimation) : Void
+      Binding.bg_QAnimationGroup_removeAnimation_QAbstractAnimation_X(self, animation)
+    end
+    
+    def take_animation(index : Int32) : AbstractAnimation
+      AbstractAnimationImpl.new(unwrap: Binding.bg_QAnimationGroup_takeAnimation_int(self, index))
+    end
+    
+    def clear() : Void
+      Binding.bg_QAnimationGroup_clear_(self)
+    end
+    
+    protected def initialize(dd : Binding::QAnimationGroupPrivate*, parent : Object)
+      result = Binding.bg_QAnimationGroup__CONSTRUCT_QAnimationGroupPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(AnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QAbstractAnimation_duration_", "duration", [] of String},
+        {"bg_QAbstractAnimation_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QAnimationGroup.new(
+      bg_QAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def event(event : Event) : Bool
+      Binding.bg_QAnimationGroup_event_QEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QAnimationGroup_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    abstract def duration() : Int32
+    protected abstract def update_current_time(current_time : Int32) : Void
+    protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+      Binding.bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
+    end
+    
+    protected def update_direction(direction : AbstractAnimation::Direction) : Void
+      Binding.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(self, direction)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == AnimationGroup %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QAnimationGroup*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : AnimationGroup)
+      end
+      protected def event(event : Event) : Bool
+        Binding.bg_QAnimationGroup_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+        Binding.bg_QAbstractAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(@myself, new_state, old_state)
+      end
+      
+      protected def update_direction(direction : AbstractAnimation::Direction) : Void
+        Binding.bg_QAbstractAnimation_updateDirection_SUPER_QAbstractAnimation__Direction(@myself, direction)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class Event
     @unwrap : Binding::QEvent*
@@ -33670,28 +36524,28 @@ module Qt
       StringList.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, sort))
     end
     
-    def entry_info_list() : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_(self)
+    def entry_info_list() : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_(self))
     end
     
-    def entry_info_list(filters : Dir::Filters) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_QDir__Filters(self, filters)
+    def entry_info_list(filters : Dir::Filters) : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_QDir__Filters(self, filters))
     end
     
-    def entry_info_list(filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(self, filters, sort)
+    def entry_info_list(filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(self, filters, sort))
     end
     
-    def entry_info_list(name_filters : Enumerable(String)) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe)
+    def entry_info_list(name_filters : Enumerable(String)) : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe))
     end
     
-    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters)
+    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters) : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters))
     end
     
-    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, sort)
+    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, sort))
     end
     
     def mkdir(dir_name : String) : Bool
@@ -33758,8 +36612,8 @@ module Qt
       Binding.bg_QDir_exists_const_QString_R(self, Qt::Converter::QString.wrap(name))
     end
     
-    def self.drives() : Binding::QFileInfoList*
-      Binding.bg_QDir_drives_STATIC_()
+    def self.drives() : Enumerable(FileInfo)
+      Container_QList_QFileInfo_.new(unwrap: Binding.bg_QDir_drives_STATIC_())
     end
     
     def self.list_separator() : Char
@@ -33973,6 +36827,147 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QDirIterator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class EasingCurve
+    @unwrap : Binding::QEasingCurve*
+    
+    def initialize(type : EasingCurve::Type = EasingCurve::Type::Linear)
+      result = Binding.bg_QEasingCurve__CONSTRUCT_QEasingCurve__Type(type)
+    @unwrap = result
+    end
+    
+    def initialize(other : EasingCurve)
+      result = Binding.bg_QEasingCurve__COPY_const_QEasingCurve_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : EasingCurve) : EasingCurve
+      EasingCurve.new(unwrap: Binding.bg_QEasingCurve__OPERATOR_assign_const_QEasingCurve_R(self, other))
+    end
+    
+    def swap(other : EasingCurve) : Void
+      Binding.bg_QEasingCurve_swap_QEasingCurve_R(self, other)
+    end
+    
+    def amplitude() : Float64
+      Binding.bg_QEasingCurve_amplitude_(self)
+    end
+    
+    def amplitude=(amplitude : Float64) : Void
+      Binding.bg_QEasingCurve_setAmplitude_qreal(self, amplitude)
+    end
+    
+    def period() : Float64
+      Binding.bg_QEasingCurve_period_(self)
+    end
+    
+    def period=(period : Float64) : Void
+      Binding.bg_QEasingCurve_setPeriod_qreal(self, period)
+    end
+    
+    def overshoot() : Float64
+      Binding.bg_QEasingCurve_overshoot_(self)
+    end
+    
+    def overshoot=(overshoot : Float64) : Void
+      Binding.bg_QEasingCurve_setOvershoot_qreal(self, overshoot)
+    end
+    
+    def add_cubic_bezier_segment(c1 : PointF, c2 : PointF, end_point : PointF) : Void
+      Binding.bg_QEasingCurve_addCubicBezierSegment_const_QPointF_R_const_QPointF_R_const_QPointF_R(self, c1, c2, end_point)
+    end
+    
+    def add_tcb_segment(next_point : PointF, t : Float64, c : Float64, b : Float64) : Void
+      Binding.bg_QEasingCurve_addTCBSegment_const_QPointF_R_qreal_qreal_qreal(self, next_point, t, c, b)
+    end
+    
+    def to_cubic_spline() : Enumerable(PointF)
+      Container_QList_QPointF_.new(unwrap: Binding.bg_QEasingCurve_toCubicSpline_(self))
+    end
+    
+    def type() : EasingCurve::Type
+      Binding.bg_QEasingCurve_type_(self)
+    end
+    
+    def type=(type : EasingCurve::Type) : Void
+      Binding.bg_QEasingCurve_setType_QEasingCurve__Type(self, type)
+    end
+    
+    def value_for_progress(progress : Float64) : Float64
+      Binding.bg_QEasingCurve_valueForProgress_qreal(self, progress)
+    end
+    
+    def ==(rhs : EasingCurve) : Bool
+      Binding.bg_QEasingCurve__OPERATOR_eq_const_QEasingCurve_R(self, rhs)
+    end
+    
+    def !=(rhs : EasingCurve) : Bool
+      Binding.bg_QEasingCurve__OPERATOR_ne_const_QEasingCurve_R(self, rhs)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QEasingCurve_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Type : UInt32
+      Linear = 0
+      InQuad = 1
+      OutQuad = 2
+      InOutQuad = 3
+      OutInQuad = 4
+      InCubic = 5
+      OutCubic = 6
+      InOutCubic = 7
+      OutInCubic = 8
+      InQuart = 9
+      OutQuart = 10
+      InOutQuart = 11
+      OutInQuart = 12
+      InQuint = 13
+      OutQuint = 14
+      InOutQuint = 15
+      OutInQuint = 16
+      InSine = 17
+      OutSine = 18
+      InOutSine = 19
+      OutInSine = 20
+      InExpo = 21
+      OutExpo = 22
+      InOutExpo = 23
+      OutInExpo = 24
+      InCirc = 25
+      OutCirc = 26
+      InOutCirc = 27
+      OutInCirc = 28
+      InElastic = 29
+      OutElastic = 30
+      InOutElastic = 31
+      OutInElastic = 32
+      InBack = 33
+      OutBack = 34
+      InOutBack = 35
+      OutInBack = 36
+      InBounce = 37
+      OutBounce = 38
+      InOutBounce = 39
+      OutInBounce = 40
+      InCurve = 41
+      OutCurve = 42
+      SineCurve = 43
+      CosineCurve = 44
+      BezierSpline = 45
+      Tcbspline = 46
+      Custom = 47
+      Ncurvetypes = 48
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QEasingCurve*)
       result = unwrap
     @unwrap = result
     end
@@ -34316,6 +37311,1365 @@ module Qt
     
     def on_directory_changed(&_proc_ : Proc(String, Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
+    end
+    
+  end
+  class IdentityProxyModel < AbstractProxyModel
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QIdentityProxyModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QIdentityProxyModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QIdentityProxyModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QIdentityProxyModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QIdentityProxyModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(IdentityProxyModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QIdentityProxyModel_metaObject_", "meta_object", [] of String},
+        {"bg_QIdentityProxyModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QIdentityProxyModel_columnCount_", "column_count", [] of String},
+        {"bg_QIdentityProxyModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R", "map_from_source", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R", "map_to_source", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_parent_const_QModelIndex_R", "parent", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_rowCount_", "row_count", [] of String},
+        {"bg_QIdentityProxyModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["ItemSelection"] of String},
+        {"bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["ItemSelection"] of String},
+        {"bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int", "match", ["ModelIndex", "Int32", "Variant", "Int32"] of String},
+        {"bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X", "source_model=", ["AbstractItemModel"] of String},
+        {"bg_QIdentityProxyModel_insertColumns_int_int", "insert_columns", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_insertRows_int_int", "insert_rows", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_removeColumns_int_int", "remove_columns", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_removeRows_int_int", "remove_rows", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractProxyModel_submit_", "submit", [] of String},
+        {"bg_QAbstractProxyModel_revert_", "revert", [] of String},
+        {"bg_QAbstractProxyModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractProxyModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractProxyModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractProxyModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractProxyModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QIdentityProxyModel.new(
+      bg_QIdentityProxyModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_columnCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_columnCount_") %} Proc(Int32).new{ self.column_count() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|source_index| self.map_from_source(ModelIndex.new(unwrap: source_index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|proxy_index| self.map_to_source(ModelIndex.new(unwrap: proxy_index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_parent_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_parent_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|child| self.parent(ModelIndex.new(unwrap: child)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_rowCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_rowCount_") %} Proc(Int32).new{ self.row_count() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|source_model| self.source_model=(AbstractItemModelImpl.new(unwrap: source_model)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertColumns_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertColumns_int_int") %} Proc(Int32, Int32, Bool).new{|column, count| self.insert_columns(column, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertRows_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertRows_int_int") %} Proc(Int32, Int32, Bool).new{|row, count| self.insert_rows(row, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeColumns_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeColumns_int_int") %} Proc(Int32, Int32, Bool).new{|column, count| self.remove_columns(column, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeRows_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeRows_int_int") %} Proc(Int32, Int32, Bool).new{|row, count| self.remove_rows(row, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QIdentityProxyModel_JUMPTABLE_BgJumptable_QIdentityProxyModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def column_count() : Int32
+      Binding.bg_QIdentityProxyModel_columnCount_(self)
+    end
+    
+    def column_count(parent : ModelIndex) : Int32
+      Binding.bg_QIdentityProxyModel_columnCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def index(row : Int32, column : Int32) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_index_int_int(self, row, column))
+    end
+    
+    def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R(self, row, column, parent))
+    end
+    
+    def map_from_source(source_index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R(self, source_index))
+    end
+    
+    def map_to_source(proxy_index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R(self, proxy_index))
+    end
+    
+    def parent(child : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_parent_const_QModelIndex_R(self, child))
+    end
+    
+    def row_count() : Int32
+      Binding.bg_QIdentityProxyModel_rowCount_(self)
+    end
+    
+    def row_count(parent : ModelIndex) : Int32
+      Binding.bg_QIdentityProxyModel_rowCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
+    end
+    
+    def map_selection_from_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R(self, selection))
+    end
+    
+    def map_selection_to_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R(self, selection))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32 = 1) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(self, start, role, (value.to_unsafe), hits))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def source_model=(source_model : AbstractItemModel) : Void
+      Binding.bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X(self, source_model)
+    end
+    
+    def insert_columns(column : Int32, count : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_insertColumns_int_int(self, column, count)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def insert_rows(row : Int32, count : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_insertRows_int_int(self, row, count)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_removeColumns_int_int(self, column, count)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_removeRows_int_int(self, row, count)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def handle_source_layout_changes() : Bool
+      Binding.bg_QIdentityProxyModel_handleSourceLayoutChanges_(self)
+    end
+    
+    def handle_source_data_changes() : Bool
+      Binding.bg_QIdentityProxyModel_handleSourceDataChanges_(self)
+    end
+    
+    protected def initialize(dd : Binding::QIdentityProxyModelPrivate*, parent : Object)
+      result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QIdentityProxyModelPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(IdentityProxyModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QIdentityProxyModel_metaObject_", "meta_object", [] of String},
+        {"bg_QIdentityProxyModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QIdentityProxyModel_columnCount_", "column_count", [] of String},
+        {"bg_QIdentityProxyModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R", "map_from_source", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R", "map_to_source", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_parent_const_QModelIndex_R", "parent", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_rowCount_", "row_count", [] of String},
+        {"bg_QIdentityProxyModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["ItemSelection"] of String},
+        {"bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["ItemSelection"] of String},
+        {"bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int", "match", ["ModelIndex", "Int32", "Variant", "Int32"] of String},
+        {"bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X", "source_model=", ["AbstractItemModel"] of String},
+        {"bg_QIdentityProxyModel_insertColumns_int_int", "insert_columns", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_insertRows_int_int", "insert_rows", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_removeColumns_int_int", "remove_columns", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_removeRows_int_int", "remove_rows", ["Int32", "Int32"] of String},
+        {"bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractProxyModel_submit_", "submit", [] of String},
+        {"bg_QAbstractProxyModel_revert_", "revert", [] of String},
+        {"bg_QAbstractProxyModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QAbstractProxyModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QAbstractProxyModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractProxyModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QAbstractProxyModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractProxyModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QIdentityProxyModel.new(
+      bg_QIdentityProxyModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_columnCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_columnCount_") %} Proc(Int32).new{ self.column_count() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapFromSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|source_index| self.map_from_source(ModelIndex.new(unwrap: source_index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapToSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|proxy_index| self.map_to_source(ModelIndex.new(unwrap: proxy_index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_parent_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_parent_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|child| self.parent(ModelIndex.new(unwrap: child)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_rowCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_rowCount_") %} Proc(Int32).new{ self.row_count() } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|source_model| self.source_model=(AbstractItemModelImpl.new(unwrap: source_model)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertColumns_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertColumns_int_int") %} Proc(Int32, Int32, Bool).new{|column, count| self.insert_columns(column, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertRows_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertRows_int_int") %} Proc(Int32, Int32, Bool).new{|row, count| self.insert_rows(row, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeColumns_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeColumns_int_int") %} Proc(Int32, Int32, Bool).new{|column, count| self.remove_columns(column, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeRows_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeRows_int_int") %} Proc(Int32, Int32, Bool).new{|row, count| self.remove_rows(row, count) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIdentityProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QIdentityProxyModel_JUMPTABLE_BgJumptable_QIdentityProxyModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def handle_source_layout_changes=(unnamed_arg_0 : Bool) : Void
+      Binding.bg_QIdentityProxyModel_setHandleSourceLayoutChanges_bool(self, unnamed_arg_0)
+    end
+    
+    protected def handle_source_data_changes=(unnamed_arg_0 : Bool) : Void
+      Binding.bg_QIdentityProxyModel_setHandleSourceDataChanges_bool(self, unnamed_arg_0)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QIdentityProxyModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractProxyModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractProxyModel_revert_(self)
+    end
+    
+    def data(index : ModelIndex, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(self, index, role))
+    end
+    
+    def flags(index : ModelIndex) : ItemFlags
+      Binding.bg_QAbstractProxyModel_flags_const_QModelIndex_R(self, index)
+    end
+    
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QAbstractProxyModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractProxyModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def has_children(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(self, parent)
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_(self))
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractProxyModel_supportedDragActions_(self)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QAbstractProxyModel_supportedDropActions_(self)
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == IdentityProxyModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QIdentityProxyModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : IdentityProxyModel)
+      end
+      def column_count(parent : ModelIndex) : Int32
+        Binding.bg_QIdentityProxyModel_columnCount_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_index_SUPER_int_int_const_QModelIndex_R(@myself, row, column, parent))
+      end
+      
+      def map_from_source(source_index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_mapFromSource_SUPER_const_QModelIndex_R(@myself, source_index))
+      end
+      
+      def map_to_source(proxy_index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_mapToSource_SUPER_const_QModelIndex_R(@myself, proxy_index))
+      end
+      
+      def parent(child : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_parent_SUPER_const_QModelIndex_R(@myself, child))
+      end
+      
+      def row_count(parent : ModelIndex) : Int32
+        Binding.bg_QIdentityProxyModel_rowCount_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QIdentityProxyModel_headerData_SUPER_int_Qt__Orientation_int(@myself, section, orientation, role))
+      end
+      
+      def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QIdentityProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QIdentityProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
+      end
+      
+      def map_selection_from_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QIdentityProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(@myself, selection))
+      end
+      
+      def map_selection_to_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QIdentityProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(@myself, selection))
+      end
+      
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QIdentityProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
+      end
+      
+      def source_model=(source_model : AbstractItemModel) : Void
+        Binding.bg_QIdentityProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(@myself, source_model)
+      end
+      
+      def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QIdentityProxyModel_insertColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QIdentityProxyModel_insertRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QIdentityProxyModel_removeColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QIdentityProxyModel_removeRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QIdentityProxyModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_row, count, destination_parent, destination_child)
+      end
+      
+      def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QIdentityProxyModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_column, count, destination_parent, destination_child)
+      end
+      
+      def submit() : Bool
+        Binding.bg_QAbstractProxyModel_submit_SUPER_(@myself)
+      end
+      
+      def revert() : Void
+        Binding.bg_QAbstractProxyModel_revert_SUPER_(@myself)
+      end
+      
+      def data(index : ModelIndex, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QAbstractProxyModel_data_SUPER_const_QModelIndex_R_int(@myself, index, role))
+      end
+      
+      def flags(index : ModelIndex) : ItemFlags
+        Binding.bg_QAbstractProxyModel_flags_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(@myself, index, (value.to_unsafe), role)
+      end
+      
+      def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
+      end
+      
+      def clear_item_data(index : ModelIndex) : Bool
+        Binding.bg_QAbstractProxyModel_clearItemData_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def buddy(index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def can_fetch_more(parent : ModelIndex) : Bool
+        Binding.bg_QAbstractProxyModel_canFetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def fetch_more(parent : ModelIndex) : Void
+        Binding.bg_QAbstractProxyModel_fetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+        Binding.bg_QAbstractProxyModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
+      end
+      
+      def span(index : ModelIndex) : Size
+        Size.new(unwrap: Binding.bg_QAbstractProxyModel_span_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def has_children(parent : ModelIndex) : Bool
+        Binding.bg_QAbstractProxyModel_hasChildren_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      end
+      
+      def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def mime_types() : Enumerable(String)
+        StringList.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_SUPER_(@myself))
+      end
+      
+      def supported_drag_actions() : DropActions
+        Binding.bg_QAbstractProxyModel_supportedDragActions_SUPER_(@myself)
+      end
+      
+      def supported_drop_actions() : DropActions
+        Binding.bg_QAbstractProxyModel_supportedDropActions_SUPER_(@myself)
+      end
+      
+      def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+        Binding.bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(@myself, index, role_data_span)
+      end
+      
+      protected def reset_internal_data() : Void
+        Binding.bg_QAbstractItemModel_resetInternalData_SUPER_(@myself)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class ItemSelectionRange
+    @unwrap : Binding::QItemSelectionRange*
+    
+    def initialize()
+      result = Binding.bg_QItemSelectionRange__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(top_l : ModelIndex, bottom_r : ModelIndex)
+      result = Binding.bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(top_l, bottom_r)
+    @unwrap = result
+    end
+    
+    def initialize(index : ModelIndex)
+      result = Binding.bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R(index)
+    @unwrap = result
+    end
+    
+    def swap(other : ItemSelectionRange) : Void
+      Binding.bg_QItemSelectionRange_swap_QItemSelectionRange_R(self, other)
+    end
+    
+    def top() : Int32
+      Binding.bg_QItemSelectionRange_top_(self)
+    end
+    
+    def left() : Int32
+      Binding.bg_QItemSelectionRange_left_(self)
+    end
+    
+    def bottom() : Int32
+      Binding.bg_QItemSelectionRange_bottom_(self)
+    end
+    
+    def right() : Int32
+      Binding.bg_QItemSelectionRange_right_(self)
+    end
+    
+    def width() : Int32
+      Binding.bg_QItemSelectionRange_width_(self)
+    end
+    
+    def height() : Int32
+      Binding.bg_QItemSelectionRange_height_(self)
+    end
+    
+    def top_left() : PersistentModelIndex
+      PersistentModelIndex.new(unwrap: Binding.bg_QItemSelectionRange_topLeft_(self))
+    end
+    
+    def bottom_right() : PersistentModelIndex
+      PersistentModelIndex.new(unwrap: Binding.bg_QItemSelectionRange_bottomRight_(self))
+    end
+    
+    def parent() : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QItemSelectionRange_parent_(self))
+    end
+    
+    def model() : AbstractItemModel
+      AbstractItemModelImpl.new(unwrap: Binding.bg_QItemSelectionRange_model_(self))
+    end
+    
+    def contains(index : ModelIndex) : Bool
+      Binding.bg_QItemSelectionRange_contains_const_QModelIndex_R(self, index)
+    end
+    
+    def contains(row : Int32, column : Int32, parent_index : ModelIndex) : Bool
+      Binding.bg_QItemSelectionRange_contains_int_int_const_QModelIndex_R(self, row, column, parent_index)
+    end
+    
+    def intersects(other : ItemSelectionRange) : Bool
+      Binding.bg_QItemSelectionRange_intersects_const_QItemSelectionRange_R(self, other)
+    end
+    
+    def intersected(other : ItemSelectionRange) : ItemSelectionRange
+      ItemSelectionRange.new(unwrap: Binding.bg_QItemSelectionRange_intersected_const_QItemSelectionRange_R(self, other))
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QItemSelectionRange_isValid_(self)
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QItemSelectionRange_isEmpty_(self)
+    end
+    
+    def indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QItemSelectionRange_indexes_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : ItemSelectionRange)
+      result = Binding.bg_QItemSelectionRange__COPY_const_QItemSelectionRange_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : ItemSelectionRange) : ItemSelectionRange
+      ItemSelectionRange.new(unwrap: Binding.bg_QItemSelectionRange__OPERATOR_assign_const_QItemSelectionRange_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : ItemSelectionRange) : Bool
+      Binding.bg_QItemSelectionRange__OPERATOR_eq_const_QItemSelectionRange_R(self, rhs)
+    end
+    
+    def !=(rhs : ItemSelectionRange) : Bool
+      Binding.bg_QItemSelectionRange__OPERATOR_ne_const_QItemSelectionRange_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QItemSelectionRange*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class ItemSelectionModel < Object
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QItemSelectionModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QItemSelectionModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QItemSelectionModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QItemSelectionModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QItemSelectionModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(model : AbstractItemModel? = nil)
+      result = Binding.bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X(model)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ItemSelectionModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QItemSelectionModel_metaObject_", "meta_object", [] of String},
+        {"bg_QItemSelectionModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "set_current_index", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "select", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags", "select", ["ItemSelection", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_clear_", "clear", [] of String},
+        {"bg_QItemSelectionModel_reset_", "reset", [] of String},
+        {"bg_QItemSelectionModel_clearCurrentIndex_", "clear_current_index", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QItemSelectionModel.new(
+      bg_QItemSelectionModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.set_current_index(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.select(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QItemSelection*, ItemSelectionModel::SelectionFlags, Void).new{|selection, command| self.select(ItemSelection.new(unwrap: selection), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_reset_") %} Proc(Void).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clearCurrentIndex_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clearCurrentIndex_") %} Proc(Void).new{ self.clear_current_index() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QItemSelectionModel_JUMPTABLE_BgJumptable_QItemSelectionModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(model : AbstractItemModel, parent : Object)
+      result = Binding.bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X_QObject_X(model, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ItemSelectionModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QItemSelectionModel_metaObject_", "meta_object", [] of String},
+        {"bg_QItemSelectionModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "set_current_index", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "select", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags", "select", ["ItemSelection", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_clear_", "clear", [] of String},
+        {"bg_QItemSelectionModel_reset_", "reset", [] of String},
+        {"bg_QItemSelectionModel_clearCurrentIndex_", "clear_current_index", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QItemSelectionModel.new(
+      bg_QItemSelectionModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.set_current_index(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.select(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QItemSelection*, ItemSelectionModel::SelectionFlags, Void).new{|selection, command| self.select(ItemSelection.new(unwrap: selection), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_reset_") %} Proc(Void).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clearCurrentIndex_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clearCurrentIndex_") %} Proc(Void).new{ self.clear_current_index() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QItemSelectionModel_JUMPTABLE_BgJumptable_QItemSelectionModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def current_index() : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QItemSelectionModel_currentIndex_(self))
+    end
+    
+    def is_selected(index : ModelIndex) : Bool
+      Binding.bg_QItemSelectionModel_isSelected_const_QModelIndex_R(self, index)
+    end
+    
+    def is_row_selected(row : Int32) : Bool
+      Binding.bg_QItemSelectionModel_isRowSelected_int(self, row)
+    end
+    
+    def is_row_selected(row : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QItemSelectionModel_isRowSelected_int_const_QModelIndex_R(self, row, parent)
+    end
+    
+    def is_column_selected(column : Int32) : Bool
+      Binding.bg_QItemSelectionModel_isColumnSelected_int(self, column)
+    end
+    
+    def is_column_selected(column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QItemSelectionModel_isColumnSelected_int_const_QModelIndex_R(self, column, parent)
+    end
+    
+    def row_intersects_selection(row : Int32) : Bool
+      Binding.bg_QItemSelectionModel_rowIntersectsSelection_int(self, row)
+    end
+    
+    def row_intersects_selection(row : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QItemSelectionModel_rowIntersectsSelection_int_const_QModelIndex_R(self, row, parent)
+    end
+    
+    def column_intersects_selection(column : Int32) : Bool
+      Binding.bg_QItemSelectionModel_columnIntersectsSelection_int(self, column)
+    end
+    
+    def column_intersects_selection(column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QItemSelectionModel_columnIntersectsSelection_int_const_QModelIndex_R(self, column, parent)
+    end
+    
+    def has_selection?() : Bool
+      Binding.bg_QItemSelectionModel_hasSelection_(self)
+    end
+    
+    def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QItemSelectionModel_selectedIndexes_(self))
+    end
+    
+    def selected_rows(column : Int32 = 0) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QItemSelectionModel_selectedRows_int(self, column))
+    end
+    
+    def selected_columns(row : Int32 = 0) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QItemSelectionModel_selectedColumns_int(self, row))
+    end
+    
+    def selection() : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QItemSelectionModel_selection_(self))
+    end
+    
+    def model() : AbstractItemModel
+      AbstractItemModelImpl.new(unwrap: Binding.bg_QItemSelectionModel_model_(self))
+    end
+    
+    def model=(model : AbstractItemModel) : Void
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QItemSelectionModel_setModel_QAbstractItemModel_X(self, model)
+    end
+    
+    def set_current_index(index : ModelIndex, command : ItemSelectionModel::SelectionFlags) : Void
+      Binding.bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(self, index, command)
+    end
+    
+    def select(index : ModelIndex, command : ItemSelectionModel::SelectionFlags) : Void
+      Binding.bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(self, index, command)
+    end
+    
+    def select(selection : ItemSelection, command : ItemSelectionModel::SelectionFlags) : Void
+      Binding.bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(self, selection, command)
+    end
+    
+    def clear() : Void
+      Binding.bg_QItemSelectionModel_clear_(self)
+    end
+    
+    def reset() : Void
+      Binding.bg_QItemSelectionModel_reset_(self)
+    end
+    
+    def clear_selection() : Void
+      Binding.bg_QItemSelectionModel_clearSelection_(self)
+    end
+    
+    def clear_current_index() : Void
+      Binding.bg_QItemSelectionModel_clearCurrentIndex_(self)
+    end
+    
+    def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
+      Binding.bg_QItemSelectionModel_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
+    end
+    
+    def current_changed(current : ModelIndex, previous : ModelIndex) : Void
+      Binding.bg_QItemSelectionModel_currentChanged_const_QModelIndex_R_const_QModelIndex_R(self, current, previous)
+    end
+    
+    def current_row_changed(current : ModelIndex, previous : ModelIndex) : Void
+      Binding.bg_QItemSelectionModel_currentRowChanged_const_QModelIndex_R_const_QModelIndex_R(self, current, previous)
+    end
+    
+    def current_column_changed(current : ModelIndex, previous : ModelIndex) : Void
+      Binding.bg_QItemSelectionModel_currentColumnChanged_const_QModelIndex_R_const_QModelIndex_R(self, current, previous)
+    end
+    
+    def model_changed(model : AbstractItemModel) : Void
+      Binding.bg_QItemSelectionModel_modelChanged_QAbstractItemModel_X(self, model)
+    end
+    
+    protected def initialize(dd : Binding::QItemSelectionModelPrivate*, model : AbstractItemModel)
+      result = Binding.bg_QItemSelectionModel__CONSTRUCT_QItemSelectionModelPrivate_R_QAbstractItemModel_X(dd, model)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ItemSelectionModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QItemSelectionModel_metaObject_", "meta_object", [] of String},
+        {"bg_QItemSelectionModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "set_current_index", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags", "select", ["ModelIndex", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags", "select", ["ItemSelection", "ItemSelectionModel::SelectionFlags"] of String},
+        {"bg_QItemSelectionModel_clear_", "clear", [] of String},
+        {"bg_QItemSelectionModel_reset_", "reset", [] of String},
+        {"bg_QItemSelectionModel_clearCurrentIndex_", "clear_current_index", [] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QItemSelectionModel.new(
+      bg_QItemSelectionModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_setCurrentIndex_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.set_current_index(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QModelIndex_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QModelIndex*, ItemSelectionModel::SelectionFlags, Void).new{|index, command| self.select(ModelIndex.new(unwrap: index), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_select_const_QItemSelection_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QItemSelection*, ItemSelectionModel::SelectionFlags, Void).new{|selection, command| self.select(ItemSelection.new(unwrap: selection), command) } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clear_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clear_") %} Proc(Void).new{ self.clear() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_reset_") %} Proc(Void).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QItemSelectionModel_clearCurrentIndex_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QItemSelectionModel_clearCurrentIndex_") %} Proc(Void).new{ self.clear_current_index() } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QItemSelectionModel_JUMPTABLE_BgJumptable_QItemSelectionModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def emit_selection_changed(new_selection : ItemSelection, old_selection : ItemSelection) : Void
+      Binding.bg_QItemSelectionModel_emitSelectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, new_selection, old_selection)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QItemSelectionModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum SelectionFlag : UInt32
+      NoUpdate = 0
+      Clear = 1
+      Select = 2
+      Deselect = 4
+      Toggle = 8
+      Current = 16
+      Rows = 32
+      Columns = 64
+      SelectCurrent = 18
+      ToggleCurrent = 24
+      ClearAndSelect = 3
+    end
+    @[Flags]
+    enum SelectionFlags : UInt32
+      NoUpdate = 0
+      Clear = 1
+      Select = 2
+      Deselect = 4
+      Toggle = 8
+      Current = 16
+      Rows = 32
+      Columns = 64
+      SelectCurrent = 18
+      ToggleCurrent = 24
+      ClearAndSelect = 3
+    end
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == ItemSelectionModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QItemSelectionModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : ItemSelectionModel)
+      end
+      def set_current_index(index : ModelIndex, command : ItemSelectionModel::SelectionFlags) : Void
+        Binding.bg_QItemSelectionModel_setCurrentIndex_SUPER_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(@myself, index, command)
+      end
+      
+      def select(index : ModelIndex, command : ItemSelectionModel::SelectionFlags) : Void
+        Binding.bg_QItemSelectionModel_select_SUPER_const_QModelIndex_R_QItemSelectionModel__SelectionFlags(@myself, index, command)
+      end
+      
+      def select(selection : ItemSelection, command : ItemSelectionModel::SelectionFlags) : Void
+        Binding.bg_QItemSelectionModel_select_SUPER_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(@myself, selection, command)
+      end
+      
+      def clear() : Void
+        Binding.bg_QItemSelectionModel_clear_SUPER_(@myself)
+      end
+      
+      def reset() : Void
+        Binding.bg_QItemSelectionModel_reset_SUPER_(@myself)
+      end
+      
+      def clear_current_index() : Void
+        Binding.bg_QItemSelectionModel_clearCurrentIndex_SUPER_(@myself)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+    def on_selection_changed(&_proc_ : Proc(ItemSelection, ItemSelection, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QItemSelectionModel_CONNECT_selectionChanged_CrystalProc_void__const_QItemSelection_R__const_QItemSelection_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new do |arg0, arg1| _proc_.call(ItemSelection.new(unwrap: arg0), ItemSelection.new(unwrap: arg1)) end)))
+    end
+    
+    def on_current_changed(&_proc_ : Proc(ModelIndex, ModelIndex, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QItemSelectionModel_CONNECT_currentChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new do |arg0, arg1| _proc_.call(ModelIndex.new(unwrap: arg0), ModelIndex.new(unwrap: arg1)) end)))
+    end
+    
+    def on_current_row_changed(&_proc_ : Proc(ModelIndex, ModelIndex, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QItemSelectionModel_CONNECT_currentRowChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new do |arg0, arg1| _proc_.call(ModelIndex.new(unwrap: arg0), ModelIndex.new(unwrap: arg1)) end)))
+    end
+    
+    def on_current_column_changed(&_proc_ : Proc(ModelIndex, ModelIndex, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QItemSelectionModel_CONNECT_currentColumnChanged_CrystalProc_void__const_QModelIndex_R__const_QModelIndex_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new do |arg0, arg1| _proc_.call(ModelIndex.new(unwrap: arg0), ModelIndex.new(unwrap: arg1)) end)))
+    end
+    
+    def on_model_changed(&_proc_ : Proc(AbstractItemModel, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QItemSelectionModel_CONNECT_modelChanged_CrystalProc_void__QAbstractItemModel_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAbstractItemModel*, Void).new do |arg0| _proc_.call(AbstractItemModelImpl.new(unwrap: arg0)) end)))
     end
     
   end
@@ -36148,6 +40502,522 @@ module Qt
     end
     
   end
+  class ParallelAnimationGroup < AnimationGroup
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QParallelAnimationGroup_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QParallelAnimationGroup_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QParallelAnimationGroup_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QParallelAnimationGroup_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QParallelAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ParallelAnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QParallelAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QParallelAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QParallelAnimationGroup_duration_", "duration", [] of String},
+        {"bg_QParallelAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QParallelAnimationGroup_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QParallelAnimationGroup.new(
+      bg_QParallelAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QParallelAnimationGroup_JUMPTABLE_BgJumptable_QParallelAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def duration() : Int32
+      Binding.bg_QParallelAnimationGroup_duration_(self)
+    end
+    
+    protected def initialize(dd : Binding::QParallelAnimationGroupPrivate*, parent : Object)
+      result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QParallelAnimationGroupPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ParallelAnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QParallelAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QParallelAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QParallelAnimationGroup_duration_", "duration", [] of String},
+        {"bg_QParallelAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QParallelAnimationGroup_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QParallelAnimationGroup.new(
+      bg_QParallelAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QParallelAnimationGroup_JUMPTABLE_BgJumptable_QParallelAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def event(event : Event) : Bool
+      Binding.bg_QParallelAnimationGroup_event_QEvent_X(self, event)
+    end
+    
+    protected def update_current_time(current_time : Int32) : Void
+      Binding.bg_QParallelAnimationGroup_updateCurrentTime_int(self, current_time)
+    end
+    
+    protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+      Binding.bg_QParallelAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
+    end
+    
+    protected def update_direction(direction : AbstractAnimation::Direction) : Void
+      Binding.bg_QParallelAnimationGroup_updateDirection_QAbstractAnimation__Direction(self, direction)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QParallelAnimationGroup_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == ParallelAnimationGroup %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QParallelAnimationGroup*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : ParallelAnimationGroup)
+      end
+      def duration() : Int32
+        Binding.bg_QParallelAnimationGroup_duration_SUPER_(@myself)
+      end
+      
+      protected def event(event : Event) : Bool
+        Binding.bg_QParallelAnimationGroup_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def update_current_time(current_time : Int32) : Void
+        Binding.bg_QParallelAnimationGroup_updateCurrentTime_SUPER_int(@myself, current_time)
+      end
+      
+      protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+        Binding.bg_QParallelAnimationGroup_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(@myself, new_state, old_state)
+      end
+      
+      protected def update_direction(direction : AbstractAnimation::Direction) : Void
+        Binding.bg_QParallelAnimationGroup_updateDirection_SUPER_QAbstractAnimation__Direction(@myself, direction)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class PauseAnimation < AbstractAnimation
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QPauseAnimation_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QPauseAnimation_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QPauseAnimation_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QPauseAnimation_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QPauseAnimation_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QPauseAnimation__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(PauseAnimation)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QPauseAnimation_metaObject_", "meta_object", [] of String},
+        {"bg_QPauseAnimation_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QPauseAnimation_duration_", "duration", [] of String},
+        {"bg_QPauseAnimation_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QPauseAnimation_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QPauseAnimation.new(
+      bg_QPauseAnimation_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QPauseAnimation_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QPauseAnimation_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QPauseAnimation_JUMPTABLE_BgJumptable_QPauseAnimation_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(msecs : Int32, parent : Object? = nil)
+      result = Binding.bg_QPauseAnimation__CONSTRUCT_int_QObject_X(msecs, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(PauseAnimation)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QPauseAnimation_metaObject_", "meta_object", [] of String},
+        {"bg_QPauseAnimation_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QPauseAnimation_duration_", "duration", [] of String},
+        {"bg_QPauseAnimation_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QPauseAnimation_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QPauseAnimation.new(
+      bg_QPauseAnimation_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QPauseAnimation_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QPauseAnimation_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QPauseAnimation_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPauseAnimation_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QPauseAnimation_JUMPTABLE_BgJumptable_QPauseAnimation_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def duration() : Int32
+      Binding.bg_QPauseAnimation_duration_(self)
+    end
+    
+    def duration=(msecs : Int32) : Void
+      Binding.bg_QPauseAnimation_setDuration_int(self, msecs)
+    end
+    
+    protected def event(event : Event) : Bool
+      Binding.bg_QPauseAnimation_event_QEvent_X(self, event)
+    end
+    
+    protected def update_current_time(current_time : Int32) : Void
+      Binding.bg_QPauseAnimation_updateCurrentTime_int(self, current_time)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QPauseAnimation_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+      Binding.bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
+    end
+    
+    protected def update_direction(direction : AbstractAnimation::Direction) : Void
+      Binding.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(self, direction)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == PauseAnimation %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QPauseAnimation*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : PauseAnimation)
+      end
+      def duration() : Int32
+        Binding.bg_QPauseAnimation_duration_SUPER_(@myself)
+      end
+      
+      protected def event(event : Event) : Bool
+        Binding.bg_QPauseAnimation_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def update_current_time(current_time : Int32) : Void
+        Binding.bg_QPauseAnimation_updateCurrentTime_SUPER_int(@myself, current_time)
+      end
+      
+      protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+        Binding.bg_QAbstractAnimation_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(@myself, new_state, old_state)
+      end
+      
+      protected def update_direction(direction : AbstractAnimation::Direction) : Void
+        Binding.bg_QAbstractAnimation_updateDirection_SUPER_QAbstractAnimation__Direction(@myself, direction)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
   class Process < IODevice
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QProcess_metaObject_(self)
@@ -36896,11 +41766,11 @@ module Qt
       Binding.bg_QVariantAnimation_setDuration_int(self, msecs)
     end
     
-    def easing_curve() : Binding::QEasingCurve*
-      Binding.bg_QVariantAnimation_easingCurve_(self)
+    def easing_curve() : EasingCurve
+      EasingCurve.new(unwrap: Binding.bg_QVariantAnimation_easingCurve_(self))
     end
     
-    def easing_curve=(easing : Binding::QEasingCurve*) : Void
+    def easing_curve=(easing : EasingCurve) : Void
       Binding.bg_QVariantAnimation_setEasingCurve_const_QEasingCurve_R(self, easing)
     end
     
@@ -39102,6 +43972,282 @@ module Qt
       Superclass.new(self)
     end
   end
+  class SequentialAnimationGroup < AnimationGroup
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QSequentialAnimationGroup_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QSequentialAnimationGroup_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSequentialAnimationGroup_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSequentialAnimationGroup_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSequentialAnimationGroup_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SequentialAnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSequentialAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QSequentialAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QSequentialAnimationGroup_duration_", "duration", [] of String},
+        {"bg_QSequentialAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QSequentialAnimationGroup_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSequentialAnimationGroup.new(
+      bg_QSequentialAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSequentialAnimationGroup_JUMPTABLE_BgJumptable_QSequentialAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def add_pause(msecs : Int32) : PauseAnimation
+      PauseAnimation.new(unwrap: Binding.bg_QSequentialAnimationGroup_addPause_int(self, msecs))
+    end
+    
+    def insert_pause(index : Int32, msecs : Int32) : PauseAnimation
+      PauseAnimation.new(unwrap: Binding.bg_QSequentialAnimationGroup_insertPause_int_int(self, index, msecs))
+    end
+    
+    def current_animation() : AbstractAnimation
+      AbstractAnimationImpl.new(unwrap: Binding.bg_QSequentialAnimationGroup_currentAnimation_(self))
+    end
+    
+    def duration() : Int32
+      Binding.bg_QSequentialAnimationGroup_duration_(self)
+    end
+    
+    def current_animation_changed(current : AbstractAnimation) : Void
+      Binding.bg_QSequentialAnimationGroup_currentAnimationChanged_QAbstractAnimation_X(self, current)
+    end
+    
+    protected def initialize(dd : Binding::QSequentialAnimationGroupPrivate*, parent : Object)
+      result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QSequentialAnimationGroupPrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SequentialAnimationGroup)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSequentialAnimationGroup_metaObject_", "meta_object", [] of String},
+        {"bg_QSequentialAnimationGroup_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QSequentialAnimationGroup_duration_", "duration", [] of String},
+        {"bg_QSequentialAnimationGroup_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QSequentialAnimationGroup_updateCurrentTime_int", "update_current_time", ["Int32"] of String},
+        {"bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State", "update_state", ["AbstractAnimation::State", "AbstractAnimation::State"] of String},
+        {"bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction", "update_direction", ["AbstractAnimation::Direction"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSequentialAnimationGroup.new(
+      bg_QSequentialAnimationGroup_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_duration_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_duration_") %} Proc(Int32).new{ self.duration() } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateCurrentTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateCurrentTime_int") %} Proc(Int32, Void).new{|current_time| self.update_current_time(current_time) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State") %} Proc(AbstractAnimation::State, AbstractAnimation::State, Void).new{|new_state, old_state| self.update_state(new_state, old_state) } {% else %} nil {% end %}),
+      bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction") %} Proc(AbstractAnimation::Direction, Void).new{|direction| self.update_direction(direction) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSequentialAnimationGroup_JUMPTABLE_BgJumptable_QSequentialAnimationGroup_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def event(event : Event) : Bool
+      Binding.bg_QSequentialAnimationGroup_event_QEvent_X(self, event)
+    end
+    
+    protected def update_current_time(current_time : Int32) : Void
+      Binding.bg_QSequentialAnimationGroup_updateCurrentTime_int(self, current_time)
+    end
+    
+    protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+      Binding.bg_QSequentialAnimationGroup_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
+    end
+    
+    protected def update_direction(direction : AbstractAnimation::Direction) : Void
+      Binding.bg_QSequentialAnimationGroup_updateDirection_QAbstractAnimation__Direction(self, direction)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSequentialAnimationGroup_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == SequentialAnimationGroup %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QSequentialAnimationGroup*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : SequentialAnimationGroup)
+      end
+      def duration() : Int32
+        Binding.bg_QSequentialAnimationGroup_duration_SUPER_(@myself)
+      end
+      
+      protected def event(event : Event) : Bool
+        Binding.bg_QSequentialAnimationGroup_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def update_current_time(current_time : Int32) : Void
+        Binding.bg_QSequentialAnimationGroup_updateCurrentTime_SUPER_int(@myself, current_time)
+      end
+      
+      protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+        Binding.bg_QSequentialAnimationGroup_updateState_SUPER_QAbstractAnimation__State_QAbstractAnimation__State(@myself, new_state, old_state)
+      end
+      
+      protected def update_direction(direction : AbstractAnimation::Direction) : Void
+        Binding.bg_QSequentialAnimationGroup_updateDirection_SUPER_QAbstractAnimation__Direction(@myself, direction)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+    def on_current_animation_changed(&_proc_ : Proc(AbstractAnimation, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QSequentialAnimationGroup_CONNECT_currentAnimationChanged_CrystalProc_void__QAbstractAnimation_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QAbstractAnimation*, Void).new do |arg0| _proc_.call(AbstractAnimationImpl.new(unwrap: arg0)) end)))
+    end
+    
+  end
   class Settings < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QSettings_metaObject_(self)
@@ -40255,8 +45401,8 @@ module Qt
         {"bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X", "source_model=", ["AbstractItemModel"] of String},
         {"bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R", "map_to_source", ["ModelIndex"] of String},
         {"bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R", "map_from_source", ["ModelIndex"] of String},
-        {"bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["Binding::QItemSelection*"] of String},
-        {"bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["Binding::QItemSelection*"] of String},
+        {"bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R", "map_selection_to_source", ["ItemSelection"] of String},
+        {"bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R", "map_selection_from_source", ["ItemSelection"] of String},
         {"bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R", "filter_accepts_row", ["Int32", "ModelIndex"] of String},
         {"bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R", "filter_accepts_column", ["Int32", "ModelIndex"] of String},
         {"bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R", "less_than", ["ModelIndex", "ModelIndex"] of String},
@@ -40274,7 +45420,7 @@ module Qt
         {"bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
         {"bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
         {"bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
-        {"bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QSortFilterProxyModel_insertRows_int_int", "insert_rows", ["Int32", "Int32"] of String},
         {"bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
@@ -40333,8 +45479,8 @@ module Qt
       bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|source_model| self.source_model=(AbstractItemModelImpl.new(unwrap: source_model)) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapToSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|proxy_index| self.map_to_source(ModelIndex.new(unwrap: proxy_index)).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|source_index| self.map_from_source(ModelIndex.new(unwrap: source_index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(selection) } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(selection) } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_to_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*).new{|selection| self.map_selection_from_source(ItemSelection.new(unwrap: selection)).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_filterAcceptsRow_int_const_QModelIndex_R") %} Proc(Int32, Binding::QModelIndex*, Bool).new{|source_row, source_parent| self.filter_accepts_row(source_row, ModelIndex.new(unwrap: source_parent)) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_filterAcceptsColumn_int_const_QModelIndex_R") %} Proc(Int32, Binding::QModelIndex*, Bool).new{|source_column, source_parent| self.filter_accepts_column(source_column, ModelIndex.new(unwrap: source_parent)) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_lessThan_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Bool).new{|source_left, source_right| self.less_than(ModelIndex.new(unwrap: source_left), ModelIndex.new(unwrap: source_right)) } {% else %} nil {% end %}),
@@ -40352,7 +45498,7 @@ module Qt
       bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_insertRows_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_insertRows_int_int") %} Proc(Int32, Int32, Bool).new{|row, count| self.insert_rows(row, count) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -40366,8 +45512,8 @@ module Qt
       bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::QModelIndexList*).new{|start, role, value, hits| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits) } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits)).to_unsafe } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
@@ -40405,12 +45551,12 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QSortFilterProxyModel_mapFromSource_const_QModelIndex_R(self, source_index))
     end
     
-    def map_selection_to_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-      Binding.bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R(self, selection)
+    def map_selection_to_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QSortFilterProxyModel_mapSelectionToSource_const_QItemSelection_R(self, selection))
     end
     
-    def map_selection_from_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-      Binding.bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R(self, selection)
+    def map_selection_from_source(selection : ItemSelection) : ItemSelection
+      ItemSelection.new(unwrap: Binding.bg_QSortFilterProxyModel_mapSelectionFromSource_const_QItemSelection_R(self, selection))
     end
     
     def filter_regular_expression() : RegularExpression
@@ -40597,8 +45743,8 @@ module Qt
       Binding.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
     end
     
-    def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-      MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(self, indexes))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
     end
     
     def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -40653,12 +45799,12 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QSortFilterProxyModel_buddy_const_QModelIndex_R(self, index))
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32 = 1) : Binding::QModelIndexList*
-      Binding.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(self, start, role, (value.to_unsafe), hits)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32 = 1) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int(self, start, role, (value.to_unsafe), hits))
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-      Binding.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
     end
     
     def span(index : ModelIndex) : Size
@@ -40811,12 +45957,12 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QSortFilterProxyModel_mapFromSource_SUPER_const_QModelIndex_R(@myself, source_index))
       end
       
-      def map_selection_to_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-        Binding.bg_QSortFilterProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(@myself, selection)
+      def map_selection_to_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QSortFilterProxyModel_mapSelectionToSource_SUPER_const_QItemSelection_R(@myself, selection))
       end
       
-      def map_selection_from_source(selection : Binding::QItemSelection*) : Binding::QItemSelection*
-        Binding.bg_QSortFilterProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(@myself, selection)
+      def map_selection_from_source(selection : ItemSelection) : ItemSelection
+        ItemSelection.new(unwrap: Binding.bg_QSortFilterProxyModel_mapSelectionFromSource_SUPER_const_QItemSelection_R(@myself, selection))
       end
       
       protected def filter_accepts_row(source_row : Int32, source_parent : ModelIndex) : Bool
@@ -40871,8 +46017,8 @@ module Qt
         Binding.bg_QSortFilterProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
       end
       
-      def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-        MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, indexes))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
       end
       
       def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -40911,8 +46057,8 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QSortFilterProxyModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
       end
       
-      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-        Binding.bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags)
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
       end
       
       def span(index : ModelIndex) : Size
@@ -41121,6 +46267,243 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QStandardPaths*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class StringListModel < AbstractListModel
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QStringListModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QStringListModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QStringListModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStringListModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStringListModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStringListModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QStringListModel__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    end
+    
+    def initialize(strings : Enumerable(String), parent : Object? = nil)
+      result = Binding.bg_QStringListModel__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, strings).to_unsafe, parent)
+    @unwrap = result
+    end
+    
+    def row_count() : Int32
+      Binding.bg_QStringListModel_rowCount_(self)
+    end
+    
+    def row_count(parent : ModelIndex) : Int32
+      Binding.bg_QStringListModel_rowCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QStringListModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
+    end
+    
+    def data(index : ModelIndex, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QStringListModel_data_const_QModelIndex_R_int(self, index, role))
+    end
+    
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QStringListModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QStringListModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def flags(index : ModelIndex) : ItemFlags
+      Binding.bg_QStringListModel_flags_const_QModelIndex_R(self, index)
+    end
+    
+    def insert_rows(row : Int32, count : Int32) : Bool
+      Binding.bg_QStringListModel_insertRows_int_int(self, row, count)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QStringListModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32) : Bool
+      Binding.bg_QStringListModel_removeRows_int_int(self, row, count)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QStringListModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QStringListModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QStringListModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def string_list() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QStringListModel_stringList_(self))
+    end
+    
+    def string_list=(strings : Enumerable(String)) : Void
+      Binding.bg_QStringListModel_setStringList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, strings).to_unsafe)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QStringListModel_supportedDropActions_(self)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QStringListModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractListModel_index_int_int_const_QModelIndex_R(self, row, column, parent))
+    end
+    
+    def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractListModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def parent(child : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_parent_const_QModelIndex_R(self, child))
+    end
+    
+    def column_count(parent : ModelIndex) : Int32
+      Binding.bg_QAbstractItemModel_columnCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def has_children(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_hasChildren_const_QModelIndex_R(self, parent)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == StringListModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QStringListModel*)
       result = unwrap
     @unwrap = result
     end
@@ -41861,6 +47244,302 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class TimeLine < Object
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTimeLine_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTimeLine_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeLine_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeLine_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTimeLine_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(duration : Int32 = 1000, parent : Object? = nil)
+      result = Binding.bg_QTimeLine__CONSTRUCT_int_QObject_X(duration, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TimeLine)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTimeLine_metaObject_", "meta_object", [] of String},
+        {"bg_QTimeLine_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTimeLine_valueForTime_int", "value_for_time", ["Int32"] of String},
+        {"bg_QTimeLine_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTimeLine.new(
+      bg_QTimeLine_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTimeLine_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTimeLine_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTimeLine_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTimeLine_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTimeLine_valueForTime_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTimeLine_valueForTime_int") %} Proc(Int32, Float64).new{|msec| self.value_for_time(msec) } {% else %} nil {% end %}),
+      bg_QTimeLine_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTimeLine_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTimeLine_JUMPTABLE_BgJumptable_QTimeLine_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def state() : TimeLine::State
+      Binding.bg_QTimeLine_state_(self)
+    end
+    
+    def loop_count() : Int32
+      Binding.bg_QTimeLine_loopCount_(self)
+    end
+    
+    def loop_count=(count : Int32) : Void
+      Binding.bg_QTimeLine_setLoopCount_int(self, count)
+    end
+    
+    def direction() : TimeLine::Direction
+      Binding.bg_QTimeLine_direction_(self)
+    end
+    
+    def direction=(direction : TimeLine::Direction) : Void
+      Binding.bg_QTimeLine_setDirection_QTimeLine__Direction(self, direction)
+    end
+    
+    def duration() : Int32
+      Binding.bg_QTimeLine_duration_(self)
+    end
+    
+    def duration=(duration : Int32) : Void
+      Binding.bg_QTimeLine_setDuration_int(self, duration)
+    end
+    
+    def start_frame() : Int32
+      Binding.bg_QTimeLine_startFrame_(self)
+    end
+    
+    def start_frame=(frame : Int32) : Void
+      Binding.bg_QTimeLine_setStartFrame_int(self, frame)
+    end
+    
+    def end_frame() : Int32
+      Binding.bg_QTimeLine_endFrame_(self)
+    end
+    
+    def end_frame=(frame : Int32) : Void
+      Binding.bg_QTimeLine_setEndFrame_int(self, frame)
+    end
+    
+    def set_frame_range(start_frame : Int32, end_frame : Int32) : Void
+      Binding.bg_QTimeLine_setFrameRange_int_int(self, start_frame, end_frame)
+    end
+    
+    def update_interval() : Int32
+      Binding.bg_QTimeLine_updateInterval_(self)
+    end
+    
+    def update_interval=(interval : Int32) : Void
+      Binding.bg_QTimeLine_setUpdateInterval_int(self, interval)
+    end
+    
+    def easing_curve() : EasingCurve
+      EasingCurve.new(unwrap: Binding.bg_QTimeLine_easingCurve_(self))
+    end
+    
+    def easing_curve=(curve : EasingCurve) : Void
+      Binding.bg_QTimeLine_setEasingCurve_const_QEasingCurve_R(self, curve)
+    end
+    
+    def current_time() : Int32
+      Binding.bg_QTimeLine_currentTime_(self)
+    end
+    
+    def current_frame() : Int32
+      Binding.bg_QTimeLine_currentFrame_(self)
+    end
+    
+    def current_value() : Float64
+      Binding.bg_QTimeLine_currentValue_(self)
+    end
+    
+    def frame_for_time(msec : Int32) : Int32
+      Binding.bg_QTimeLine_frameForTime_int(self, msec)
+    end
+    
+    def value_for_time(msec : Int32) : Float64
+      Binding.bg_QTimeLine_valueForTime_int(self, msec)
+    end
+    
+    def start() : Void
+      Binding.bg_QTimeLine_start_(self)
+    end
+    
+    def resume() : Void
+      Binding.bg_QTimeLine_resume_(self)
+    end
+    
+    def stop() : Void
+      Binding.bg_QTimeLine_stop_(self)
+    end
+    
+    def paused=(paused : Bool) : Void
+      Binding.bg_QTimeLine_setPaused_bool(self, paused)
+    end
+    
+    def current_time=(msec : Int32) : Void
+      Binding.bg_QTimeLine_setCurrentTime_int(self, msec)
+    end
+    
+    def toggle_direction() : Void
+      Binding.bg_QTimeLine_toggleDirection_(self)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QTimeLine_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTimeLine_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum State : UInt32
+      NotRunning = 0
+      Paused = 1
+      Running = 2
+    end
+    enum Direction : UInt32
+      Forward = 0
+      Backward = 1
+    end
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TimeLine %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTimeLine*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TimeLine)
+      end
+      def value_for_time(msec : Int32) : Float64
+        Binding.bg_QTimeLine_valueForTime_SUPER_int(@myself, msec)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QTimeLine_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+    def on_value_changed(&_proc_ : Proc(Float64, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QTimeLine_CONNECT_valueChanged_CrystalProc_void__qreal_(self, BindgenHelper.wrap_proc(Proc(Float64, Void).new do |arg0| _proc_.call(arg0) end)))
+    end
+    
+    def on_frame_changed(&_proc_ : Proc(Int32, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QTimeLine_CONNECT_frameChanged_CrystalProc_void__int_(self, BindgenHelper.wrap_proc(Proc(Int32, Void).new do |arg0| _proc_.call(arg0) end)))
+    end
+    
+    def on_state_changed(&_proc_ : Proc(TimeLine::State, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QTimeLine_CONNECT_stateChanged_CrystalProc_void__QTimeLine__State_(self, BindgenHelper.wrap_proc(Proc(TimeLine::State, Void).new do |arg0| _proc_.call(arg0) end)))
+    end
+    
+    def on_finished(&_proc_ : Proc(Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QTimeLine_CONNECT_finished_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
   end
   class Translator < Object
     def meta_object() : Binding::QMetaObject*
@@ -57300,6 +62979,832 @@ module Qt
     end
     
   end
+  class FileSystemModel < AbstractItemModel
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileSystemModel_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QFileSystemModel_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def root_path_changed(new_path : String) : Void
+      Binding.bg_QFileSystemModel_rootPathChanged_const_QString_R(self, Qt::Converter::QString.wrap(new_path))
+    end
+    
+    def file_renamed(path : String, old_name : String, new_name : String) : Void
+      Binding.bg_QFileSystemModel_fileRenamed_const_QString_R_const_QString_R_const_QString_R(self, Qt::Converter::QString.wrap(path), Qt::Converter::QString.wrap(old_name), Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def directory_loaded(path : String) : Void
+      Binding.bg_QFileSystemModel_directoryLoaded_const_QString_R(self, Qt::Converter::QString.wrap(path))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QFileSystemModel__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileSystemModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileSystemModel_metaObject_", "meta_object", [] of String},
+        {"bg_QFileSystemModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFileSystemModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QFileSystemModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_parent_const_QModelIndex_R", "parent", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_hasChildren_", "has_children?", [] of String},
+        {"bg_QFileSystemModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_rowCount_", "row_count", [] of String},
+        {"bg_QFileSystemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_columnCount_", "column_count", [] of String},
+        {"bg_QFileSystemModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QFileSystemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QFileSystemModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QFileSystemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QFileSystemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QFileSystemModel_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QFileSystemModel_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileSystemModel.new(
+      bg_QFileSystemModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_parent_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_parent_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|child| self.parent(ModelIndex.new(unwrap: child)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_hasChildren_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_hasChildren_") %} Proc(Bool).new{ self.has_children?() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_rowCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_rowCount_") %} Proc(Int32).new{ self.row_count() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_columnCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_columnCount_") %} Proc(Int32).new{ self.column_count() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileSystemModel_JUMPTABLE_BgJumptable_QFileSystemModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def index(row : Int32, column : Int32) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_index_int_int(self, row, column))
+    end
+    
+    def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_index_int_int_const_QModelIndex_R(self, row, column, parent))
+    end
+    
+    def index(path : String, column : Int32 = 0) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_index_const_QString_R_int(self, Qt::Converter::QString.wrap(path), column))
+    end
+    
+    def parent(child : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_parent_const_QModelIndex_R(self, child))
+    end
+    
+    def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
+    end
+    
+    def has_children?() : Bool
+      Binding.bg_QFileSystemModel_hasChildren_(self)
+    end
+    
+    def has_children(parent : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_hasChildren_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QFileSystemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def row_count() : Int32
+      Binding.bg_QFileSystemModel_rowCount_(self)
+    end
+    
+    def row_count(parent : ModelIndex) : Int32
+      Binding.bg_QFileSystemModel_rowCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def column_count() : Int32
+      Binding.bg_QFileSystemModel_columnCount_(self)
+    end
+    
+    def column_count(parent : ModelIndex) : Int32
+      Binding.bg_QFileSystemModel_columnCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def my_computer(role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QFileSystemModel_myComputer_int(self, role))
+    end
+    
+    def data(index : ModelIndex, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QFileSystemModel_data_const_QModelIndex_R_int(self, index, role))
+    end
+    
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QFileSystemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def flags(index : ModelIndex) : ItemFlags
+      Binding.bg_QFileSystemModel_flags_const_QModelIndex_R(self, index)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QFileSystemModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QFileSystemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QFileSystemModel_supportedDropActions_(self)
+    end
+    
+    def set_root_path(path : String) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_setRootPath_const_QString_R(self, Qt::Converter::QString.wrap(path)))
+    end
+    
+    def root_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_rootPath_(self))
+    end
+    
+    def root_directory() : Dir
+      Dir.new(unwrap: Binding.bg_QFileSystemModel_rootDirectory_(self))
+    end
+    
+    def icon_provider=(provider : Binding::QAbstractFileIconProvider*) : Void
+      Binding.bg_QFileSystemModel_setIconProvider_QAbstractFileIconProvider_X(self, provider)
+    end
+    
+    def icon_provider() : Binding::QAbstractFileIconProvider*
+      Binding.bg_QFileSystemModel_iconProvider_(self)
+    end
+    
+    def filter=(filters : Dir::Filters) : Void
+      Binding.bg_QFileSystemModel_setFilter_QDir__Filters(self, filters)
+    end
+    
+    def filter() : Dir::Filters
+      Binding.bg_QFileSystemModel_filter_(self)
+    end
+    
+    def resolve_symlinks=(enable : Bool) : Void
+      Binding.bg_QFileSystemModel_setResolveSymlinks_bool(self, enable)
+    end
+    
+    def resolve_symlinks() : Bool
+      Binding.bg_QFileSystemModel_resolveSymlinks_(self)
+    end
+    
+    def read_only=(enable : Bool) : Void
+      Binding.bg_QFileSystemModel_setReadOnly_bool(self, enable)
+    end
+    
+    def read_only?() : Bool
+      Binding.bg_QFileSystemModel_isReadOnly_(self)
+    end
+    
+    def name_filter_disables=(enable : Bool) : Void
+      Binding.bg_QFileSystemModel_setNameFilterDisables_bool(self, enable)
+    end
+    
+    def name_filter_disables() : Bool
+      Binding.bg_QFileSystemModel_nameFilterDisables_(self)
+    end
+    
+    def name_filters=(filters : Enumerable(String)) : Void
+      Binding.bg_QFileSystemModel_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, filters).to_unsafe)
+    end
+    
+    def name_filters() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemModel_nameFilters_(self))
+    end
+    
+    def set_option(option : FileSystemModel::Option, on : Bool = true) : Void
+      Binding.bg_QFileSystemModel_setOption_QFileSystemModel__Option_bool(self, option, on)
+    end
+    
+    def test_option(option : FileSystemModel::Option) : Bool
+      Binding.bg_QFileSystemModel_testOption_QFileSystemModel__Option(self, option)
+    end
+    
+    def options=(options : FileSystemModel::Options) : Void
+      Binding.bg_QFileSystemModel_setOptions_QFileSystemModel__Options(self, options)
+    end
+    
+    def options() : FileSystemModel::Options
+      Binding.bg_QFileSystemModel_options_(self)
+    end
+    
+    def file_path(index : ModelIndex) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_filePath_const_QModelIndex_R(self, index))
+    end
+    
+    def is_dir(index : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_isDir_const_QModelIndex_R(self, index)
+    end
+    
+    def size(index : ModelIndex) : Int64
+      Binding.bg_QFileSystemModel_size_const_QModelIndex_R(self, index)
+    end
+    
+    def type(index : ModelIndex) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_type_const_QModelIndex_R(self, index))
+    end
+    
+    def last_modified(index : ModelIndex) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileSystemModel_lastModified_const_QModelIndex_R(self, index))
+    end
+    
+    def last_modified(index : ModelIndex, tz : TimeZone) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileSystemModel_lastModified_const_QModelIndex_R_const_QTimeZone_R(self, index, tz))
+    end
+    
+    def mkdir(parent : ModelIndex, name : String) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_mkdir_const_QModelIndex_R_const_QString_R(self, parent, Qt::Converter::QString.wrap(name)))
+    end
+    
+    def rmdir(index : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_rmdir_const_QModelIndex_R(self, index)
+    end
+    
+    def file_name(index : ModelIndex) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemModel_fileName_const_QModelIndex_R(self, index))
+    end
+    
+    def file_icon(index : ModelIndex) : Icon
+      Icon.new(unwrap: Binding.bg_QFileSystemModel_fileIcon_const_QModelIndex_R(self, index))
+    end
+    
+    def permissions(index : ModelIndex) : FileDevice::Permissions
+      Binding.bg_QFileSystemModel_permissions_const_QModelIndex_R(self, index)
+    end
+    
+    def file_info(index : ModelIndex) : FileInfo
+      FileInfo.new(unwrap: Binding.bg_QFileSystemModel_fileInfo_const_QModelIndex_R(self, index))
+    end
+    
+    def remove(index : ModelIndex) : Bool
+      Binding.bg_QFileSystemModel_remove_const_QModelIndex_R(self, index)
+    end
+    
+    protected def initialize(unnamed_arg_0 : Binding::QFileSystemModelPrivate*, parent : Object? = nil)
+      result = Binding.bg_QFileSystemModel__CONSTRUCT_QFileSystemModelPrivate_R_QObject_X(unnamed_arg_0, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileSystemModel)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileSystemModel_metaObject_", "meta_object", [] of String},
+        {"bg_QFileSystemModel_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFileSystemModel_index_int_int", "index", ["Int32", "Int32"] of String},
+        {"bg_QFileSystemModel_index_int_int_const_QModelIndex_R", "index", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_parent_const_QModelIndex_R", "parent", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_hasChildren_", "has_children?", [] of String},
+        {"bg_QFileSystemModel_hasChildren_const_QModelIndex_R", "has_children", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_canFetchMore_const_QModelIndex_R", "can_fetch_more", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_fetchMore_const_QModelIndex_R", "fetch_more", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_rowCount_", "row_count", [] of String},
+        {"bg_QFileSystemModel_rowCount_const_QModelIndex_R", "row_count", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_columnCount_", "column_count", [] of String},
+        {"bg_QFileSystemModel_columnCount_const_QModelIndex_R", "column_count", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_data_const_QModelIndex_R_int", "data", ["ModelIndex", "Int32"] of String},
+        {"bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int", "set_data", ["ModelIndex", "Variant", "Int32"] of String},
+        {"bg_QFileSystemModel_headerData_int_Qt__Orientation_int", "header_data", ["Int32", "Orientation", "Int32"] of String},
+        {"bg_QFileSystemModel_flags_const_QModelIndex_R", "flags", ["ModelIndex"] of String},
+        {"bg_QFileSystemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
+        {"bg_QFileSystemModel_mimeTypes_", "mime_types", [] of String},
+        {"bg_QFileSystemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
+        {"bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QFileSystemModel_supportedDropActions_", "supported_drop_actions", [] of String},
+        {"bg_QFileSystemModel_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QFileSystemModel_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int", "set_header_data", ["Int32", "Orientation", "Variant", "Int32"] of String},
+        {"bg_QAbstractItemModel_clearItemData_const_QModelIndex_R", "clear_item_data", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_supportedDragActions_", "supported_drag_actions", [] of String},
+        {"bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R", "insert_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R", "insert_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R", "remove_rows", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R", "remove_columns", ["Int32", "Int32", "ModelIndex"] of String},
+        {"bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_rows", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int", "move_columns", ["ModelIndex", "Int32", "Int32", "ModelIndex", "Int32"] of String},
+        {"bg_QAbstractItemModel_buddy_const_QModelIndex_R", "buddy", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags", "match", ["ModelIndex", "Int32", "Variant", "Int32", "MatchFlags"] of String},
+        {"bg_QAbstractItemModel_span_const_QModelIndex_R", "span", ["ModelIndex"] of String},
+        {"bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan", "multi_data", ["ModelIndex", "Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QAbstractItemModel_submit_", "submit", [] of String},
+        {"bg_QAbstractItemModel_revert_", "revert", [] of String},
+        {"bg_QAbstractItemModel_resetInternalData_", "reset_internal_data", [] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileSystemModel.new(
+      bg_QFileSystemModel_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_index_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_index_int_int") %} Proc(Int32, Int32, Binding::QModelIndex*).new{|row, column| self.index(row, column).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_parent_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_parent_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|child| self.parent(ModelIndex.new(unwrap: child)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_hasChildren_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_hasChildren_") %} Proc(Bool).new{ self.has_children?() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_hasChildren_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_hasChildren_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.has_children(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_rowCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_rowCount_") %} Proc(Int32).new{ self.row_count() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_rowCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_rowCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.row_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_columnCount_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_columnCount_") %} Proc(Int32).new{ self.column_count() } {% else %} nil {% end %}),
+      bg_QFileSystemModel_columnCount_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_columnCount_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Int32).new{|parent| self.column_count(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_data_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_data_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant).new{|index, role| (self.data(ModelIndex.new(unwrap: index), role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_setData_const_QModelIndex_R_const_QVariant_R_int") %} Proc(Binding::QModelIndex*, Binding::CrystalVariant, Int32, Bool).new{|index, value, role| self.set_data(ModelIndex.new(unwrap: index), Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileSystemModel_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QFileSystemModel_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemModel_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.insert_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.insert_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|row, count, parent| self.remove_rows(row, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Bool).new{|column, count, parent| self.remove_columns(column, count, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_row, count, destination_parent, destination_child| self.move_rows(ModelIndex.new(unwrap: source_parent), source_row, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Binding::QModelIndex*, Int32, Bool).new{|source_parent, source_column, count, destination_parent, destination_child| self.move_columns(ModelIndex.new(unwrap: source_parent), source_column, count, ModelIndex.new(unwrap: destination_parent), destination_child) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan") %} Proc(Binding::QModelIndex*, Binding::QModelRoleDataSpan*, Void).new{|index, role_data_span| self.multi_data(ModelIndex.new(unwrap: index), role_data_span) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_resetInternalData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_resetInternalData_") %} Proc(Void).new{ self.reset_internal_data() } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileSystemModel_JUMPTABLE_BgJumptable_QFileSystemModel_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QFileSystemModel_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def event(event : Event) : Bool
+      Binding.bg_QFileSystemModel_event_QEvent_X(self, event)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileSystemModel_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum Roles : UInt32
+      FileIconRole = 1
+      FileInfoRole = 252
+      FilePathRole = 257
+      FileNameRole = 258
+      FilePermissions = 259
+    end
+    enum Option : UInt32
+      DontWatchForChanges = 1
+      DontResolveSymlinks = 2
+      DontUseCustomDirectoryIcons = 4
+    end
+    @[Flags]
+    enum Options : UInt32
+      DontWatchForChanges = 1
+      DontResolveSymlinks = 2
+      DontUseCustomDirectoryIcons = 4
+    end
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == FileSystemModel %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QFileSystemModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : FileSystemModel)
+      end
+      def index(row : Int32, column : Int32, parent : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_index_SUPER_int_int_const_QModelIndex_R(@myself, row, column, parent))
+      end
+      
+      def parent(child : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_parent_SUPER_const_QModelIndex_R(@myself, child))
+      end
+      
+      def sibling(row : Int32, column : Int32, idx : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QFileSystemModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
+      end
+      
+      def has_children(parent : ModelIndex) : Bool
+        Binding.bg_QFileSystemModel_hasChildren_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def can_fetch_more(parent : ModelIndex) : Bool
+        Binding.bg_QFileSystemModel_canFetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def fetch_more(parent : ModelIndex) : Void
+        Binding.bg_QFileSystemModel_fetchMore_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def row_count(parent : ModelIndex) : Int32
+        Binding.bg_QFileSystemModel_rowCount_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def column_count(parent : ModelIndex) : Int32
+        Binding.bg_QFileSystemModel_columnCount_SUPER_const_QModelIndex_R(@myself, parent)
+      end
+      
+      def data(index : ModelIndex, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QFileSystemModel_data_SUPER_const_QModelIndex_R_int(@myself, index, role))
+      end
+      
+      def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QFileSystemModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(@myself, index, (value.to_unsafe), role)
+      end
+      
+      def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+        Qt::Variant.new(Binding.bg_QFileSystemModel_headerData_SUPER_int_Qt__Orientation_int(@myself, section, orientation, role))
+      end
+      
+      def flags(index : ModelIndex) : ItemFlags
+        Binding.bg_QFileSystemModel_flags_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+        Binding.bg_QFileSystemModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
+      end
+      
+      def mime_types() : Enumerable(String)
+        StringList.new(unwrap: Binding.bg_QFileSystemModel_mimeTypes_SUPER_(@myself))
+      end
+      
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QFileSystemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      end
+      
+      def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QFileSystemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def supported_drop_actions() : DropActions
+        Binding.bg_QFileSystemModel_supportedDropActions_SUPER_(@myself)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QFileSystemModel_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def event(event : Event) : Bool
+        Binding.bg_QFileSystemModel_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+        Binding.bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
+      end
+      
+      def clear_item_data(index : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(@myself, index)
+      end
+      
+      def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
+      end
+      
+      def supported_drag_actions() : DropActions
+        Binding.bg_QAbstractItemModel_supportedDragActions_SUPER_(@myself)
+      end
+      
+      def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_insertColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeRows_SUPER_int_int_const_QModelIndex_R(@myself, row, count, parent)
+      end
+      
+      def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+        Binding.bg_QAbstractItemModel_removeColumns_SUPER_int_int_const_QModelIndex_R(@myself, column, count, parent)
+      end
+      
+      def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_row, count, destination_parent, destination_child)
+      end
+      
+      def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+        Binding.bg_QAbstractItemModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(@myself, source_parent, source_column, count, destination_parent, destination_child)
+      end
+      
+      def buddy(index : ModelIndex) : ModelIndex
+        ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
+      end
+      
+      def span(index : ModelIndex) : Size
+        Size.new(unwrap: Binding.bg_QAbstractItemModel_span_SUPER_const_QModelIndex_R(@myself, index))
+      end
+      
+      def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+        Binding.bg_QAbstractItemModel_multiData_SUPER_const_QModelIndex_R_QModelRoleDataSpan(@myself, index, role_data_span)
+      end
+      
+      def submit() : Bool
+        Binding.bg_QAbstractItemModel_submit_SUPER_(@myself)
+      end
+      
+      def revert() : Void
+        Binding.bg_QAbstractItemModel_revert_SUPER_(@myself)
+      end
+      
+      protected def reset_internal_data() : Void
+        Binding.bg_QAbstractItemModel_resetInternalData_SUPER_(@myself)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+    def on_root_path_changed(&_proc_ : Proc(String, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileSystemModel_CONNECT_rootPathChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
+    end
+    
+    def on_file_renamed(&_proc_ : Proc(String, String, String, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileSystemModel_CONNECT_fileRenamed_CrystalProc_void__const_QString_R__const_QString_R__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Binding::CrystalString, Binding::CrystalString, Void).new do |arg0, arg1, arg2| _proc_.call(Qt::Converter::QString.unwrap(arg0), Qt::Converter::QString.unwrap(arg1), Qt::Converter::QString.unwrap(arg2)) end)))
+    end
+    
+    def on_directory_loaded(&_proc_ : Proc(String, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileSystemModel_CONNECT_directoryLoaded_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
+    end
+    
+  end
   class FontMetrics
     @unwrap : Binding::QFontMetrics*
     
@@ -58314,6 +64819,693 @@ module Qt
     end
     
   end
+  class StandardItem
+    @unwrap : Binding::QStandardItem*
+    
+    def initialize()
+      result = Binding.bg_QStandardItem__CONSTRUCT_()
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(text : String)
+      result = Binding.bg_QStandardItem__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(text))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(icon : Icon, text : String)
+      result = Binding.bg_QStandardItem__CONSTRUCT_const_QIcon_R_const_QString_R(icon, Qt::Converter::QString.wrap(text))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(rows : Int32, columns : Int32 = 1)
+      result = Binding.bg_QStandardItem__CONSTRUCT_int_int(rows, columns)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def data(role : Int32 = 257) : Variant
+      Qt::Variant.new(Binding.bg_QStandardItem_data_int(self, role))
+    end
+    
+    def multi_data(role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QStandardItem_multiData_QModelRoleDataSpan(self, role_data_span)
+    end
+    
+    def set_data(value : Variant, role : Int32 = 257) : Void
+      Binding.bg_QStandardItem_setData_const_QVariant_R_int(self, (value.to_unsafe), role)
+    end
+    
+    def clear_data() : Void
+      Binding.bg_QStandardItem_clearData_(self)
+    end
+    
+    def text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_text_(self))
+    end
+    
+    def text=(text : String) : Void
+      Binding.bg_QStandardItem_setText_const_QString_R(self, Qt::Converter::QString.wrap(text))
+    end
+    
+    def icon() : Icon
+      Icon.new(unwrap: Binding.bg_QStandardItem_icon_(self))
+    end
+    
+    def icon=(icon : Icon) : Void
+      Binding.bg_QStandardItem_setIcon_const_QIcon_R(self, icon)
+    end
+    
+    def tool_tip() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_toolTip_(self))
+    end
+    
+    def tool_tip=(tool_tip : String) : Void
+      Binding.bg_QStandardItem_setToolTip_const_QString_R(self, Qt::Converter::QString.wrap(tool_tip))
+    end
+    
+    def status_tip() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_statusTip_(self))
+    end
+    
+    def status_tip=(status_tip : String) : Void
+      Binding.bg_QStandardItem_setStatusTip_const_QString_R(self, Qt::Converter::QString.wrap(status_tip))
+    end
+    
+    def whats_this() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_whatsThis_(self))
+    end
+    
+    def whats_this=(whats_this : String) : Void
+      Binding.bg_QStandardItem_setWhatsThis_const_QString_R(self, Qt::Converter::QString.wrap(whats_this))
+    end
+    
+    def size_hint() : Size
+      Size.new(unwrap: Binding.bg_QStandardItem_sizeHint_(self))
+    end
+    
+    def size_hint=(size_hint : Size) : Void
+      Binding.bg_QStandardItem_setSizeHint_const_QSize_R(self, size_hint)
+    end
+    
+    def font() : Font
+      Font.new(unwrap: Binding.bg_QStandardItem_font_(self))
+    end
+    
+    def font=(font : Font) : Void
+      Binding.bg_QStandardItem_setFont_const_QFont_R(self, font)
+    end
+    
+    def text_alignment() : Alignment
+      Binding.bg_QStandardItem_textAlignment_(self)
+    end
+    
+    def text_alignment=(text_alignment : Alignment) : Void
+      Binding.bg_QStandardItem_setTextAlignment_Qt__Alignment(self, text_alignment)
+    end
+    
+    def background() : Brush
+      Brush.new(unwrap: Binding.bg_QStandardItem_background_(self))
+    end
+    
+    def background=(brush : Brush) : Void
+      Binding.bg_QStandardItem_setBackground_const_QBrush_R(self, brush)
+    end
+    
+    def foreground() : Brush
+      Brush.new(unwrap: Binding.bg_QStandardItem_foreground_(self))
+    end
+    
+    def foreground=(brush : Brush) : Void
+      Binding.bg_QStandardItem_setForeground_const_QBrush_R(self, brush)
+    end
+    
+    def check_state() : CheckState
+      Binding.bg_QStandardItem_checkState_(self)
+    end
+    
+    def check_state=(check_state : CheckState) : Void
+      Binding.bg_QStandardItem_setCheckState_Qt__CheckState(self, check_state)
+    end
+    
+    def accessible_text() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_accessibleText_(self))
+    end
+    
+    def accessible_text=(accessible_text : String) : Void
+      Binding.bg_QStandardItem_setAccessibleText_const_QString_R(self, Qt::Converter::QString.wrap(accessible_text))
+    end
+    
+    def accessible_description() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardItem_accessibleDescription_(self))
+    end
+    
+    def accessible_description=(accessible_description : String) : Void
+      Binding.bg_QStandardItem_setAccessibleDescription_const_QString_R(self, Qt::Converter::QString.wrap(accessible_description))
+    end
+    
+    def flags() : ItemFlags
+      Binding.bg_QStandardItem_flags_(self)
+    end
+    
+    def flags=(flags : ItemFlags) : Void
+      Binding.bg_QStandardItem_setFlags_Qt__ItemFlags(self, flags)
+    end
+    
+    def enabled?() : Bool
+      Binding.bg_QStandardItem_isEnabled_(self)
+    end
+    
+    def enabled=(enabled : Bool) : Void
+      Binding.bg_QStandardItem_setEnabled_bool(self, enabled)
+    end
+    
+    def editable?() : Bool
+      Binding.bg_QStandardItem_isEditable_(self)
+    end
+    
+    def editable=(editable : Bool) : Void
+      Binding.bg_QStandardItem_setEditable_bool(self, editable)
+    end
+    
+    def selectable?() : Bool
+      Binding.bg_QStandardItem_isSelectable_(self)
+    end
+    
+    def selectable=(selectable : Bool) : Void
+      Binding.bg_QStandardItem_setSelectable_bool(self, selectable)
+    end
+    
+    def checkable?() : Bool
+      Binding.bg_QStandardItem_isCheckable_(self)
+    end
+    
+    def checkable=(checkable : Bool) : Void
+      Binding.bg_QStandardItem_setCheckable_bool(self, checkable)
+    end
+    
+    def auto_tristate?() : Bool
+      Binding.bg_QStandardItem_isAutoTristate_(self)
+    end
+    
+    def auto_tristate=(tristate : Bool) : Void
+      Binding.bg_QStandardItem_setAutoTristate_bool(self, tristate)
+    end
+    
+    def user_tristate?() : Bool
+      Binding.bg_QStandardItem_isUserTristate_(self)
+    end
+    
+    def user_tristate=(tristate : Bool) : Void
+      Binding.bg_QStandardItem_setUserTristate_bool(self, tristate)
+    end
+    
+    def drag_enabled?() : Bool
+      Binding.bg_QStandardItem_isDragEnabled_(self)
+    end
+    
+    def drag_enabled=(drag_enabled : Bool) : Void
+      Binding.bg_QStandardItem_setDragEnabled_bool(self, drag_enabled)
+    end
+    
+    def drop_enabled?() : Bool
+      Binding.bg_QStandardItem_isDropEnabled_(self)
+    end
+    
+    def drop_enabled=(drop_enabled : Bool) : Void
+      Binding.bg_QStandardItem_setDropEnabled_bool(self, drop_enabled)
+    end
+    
+    def parent() : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItem_parent_(self))
+    end
+    
+    def row() : Int32
+      Binding.bg_QStandardItem_row_(self)
+    end
+    
+    def column() : Int32
+      Binding.bg_QStandardItem_column_(self)
+    end
+    
+    def index() : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QStandardItem_index_(self))
+    end
+    
+    def model() : StandardItemModel
+      StandardItemModel.new(unwrap: Binding.bg_QStandardItem_model_(self))
+    end
+    
+    def row_count() : Int32
+      Binding.bg_QStandardItem_rowCount_(self)
+    end
+    
+    def row_count=(rows : Int32) : Void
+      Binding.bg_QStandardItem_setRowCount_int(self, rows)
+    end
+    
+    def column_count() : Int32
+      Binding.bg_QStandardItem_columnCount_(self)
+    end
+    
+    def column_count=(columns : Int32) : Void
+      Binding.bg_QStandardItem_setColumnCount_int(self, columns)
+    end
+    
+    def has_children?() : Bool
+      Binding.bg_QStandardItem_hasChildren_(self)
+    end
+    
+    def child(row : Int32, column : Int32 = 0) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItem_child_int_int(self, row, column))
+    end
+    
+    def set_child(row : Int32, column : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItem_setChild_int_int_QStandardItem_X(self, row, column, item)
+    end
+    
+    def set_child(row : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItem_setChild_int_QStandardItem_X(self, row, item)
+    end
+    
+    def insert_row(row : Int32, items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_insertRow_int_const_QList_QStandardItem_X__R(self, row, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def insert_column(column : Int32, items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_insertColumn_int_const_QList_QStandardItem_X__R(self, column, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def insert_rows(row : Int32, items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_insertRows_int_const_QList_QStandardItem_X__R(self, row, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def insert_rows(row : Int32, count : Int32) : Void
+      Binding.bg_QStandardItem_insertRows_int_int(self, row, count)
+    end
+    
+    def insert_columns(column : Int32, count : Int32) : Void
+      Binding.bg_QStandardItem_insertColumns_int_int(self, column, count)
+    end
+    
+    def remove_row(row : Int32) : Void
+      Binding.bg_QStandardItem_removeRow_int(self, row)
+    end
+    
+    def remove_column(column : Int32) : Void
+      Binding.bg_QStandardItem_removeColumn_int(self, column)
+    end
+    
+    def remove_rows(row : Int32, count : Int32) : Void
+      Binding.bg_QStandardItem_removeRows_int_int(self, row, count)
+    end
+    
+    def remove_columns(column : Int32, count : Int32) : Void
+      Binding.bg_QStandardItem_removeColumns_int_int(self, column, count)
+    end
+    
+    def append_row(items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_appendRow_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def append_rows(items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_appendRows_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def append_column(items : Enumerable(StandardItem)) : Void
+      BindgenHelper.keep_alive(items)
+    Binding.bg_QStandardItem_appendColumn_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
+    end
+    
+    def insert_row(row : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItem_insertRow_int_QStandardItem_X(self, row, item)
+    end
+    
+    def append_row(item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItem_appendRow_QStandardItem_X(self, item)
+    end
+    
+    def take_child(row : Int32, column : Int32 = 0) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItem_takeChild_int_int(self, row, column))
+    end
+    
+    def take_row(row : Int32) : Enumerable(StandardItem)
+      Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItem_takeRow_int(self, row))
+    end
+    
+    def take_column(column : Int32) : Enumerable(StandardItem)
+      Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItem_takeColumn_int(self, column))
+    end
+    
+    def sort_children(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QStandardItem_sortChildren_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def clone() : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItem_clone_(self))
+    end
+    
+    def type() : Int32
+      Binding.bg_QStandardItem_type_(self)
+    end
+    
+    def read(in_ : Binding::QDataStream*) : Void
+      Binding.bg_QStandardItem_read_QDataStream_R(self, in_)
+    end
+    
+    def write(out_ : Binding::QDataStream*) : Void
+      Binding.bg_QStandardItem_write_QDataStream_R(self, out_)
+    end
+    
+    def <(other : StandardItem) : Bool
+      Binding.bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R(self, other)
+    end
+    
+    protected def initialize(other : StandardItem)
+      result = Binding.bg_QStandardItem__COPY_const_QStandardItem_R(other)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def initialize(dd : Binding::QStandardItemPrivate*)
+      result = Binding.bg_QStandardItem__CONSTRUCT_QStandardItemPrivate_R(dd)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(StandardItem)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QStandardItem_data_int", "data", ["Int32"] of String},
+        {"bg_QStandardItem_multiData_QModelRoleDataSpan", "multi_data", ["Binding::QModelRoleDataSpan*"] of String},
+        {"bg_QStandardItem_setData_const_QVariant_R_int", "set_data", ["Variant", "Int32"] of String},
+        {"bg_QStandardItem_clone_", "clone", [] of String},
+        {"bg_QStandardItem_type_", "type", [] of String},
+        {"bg_QStandardItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
+        {"bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R", "<", ["StandardItem"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QStandardItem.new(
+      bg_QStandardItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
+      bg_QStandardItem_multiData_QModelRoleDataSpan: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_multiData_QModelRoleDataSpan") %} Proc(Binding::QModelRoleDataSpan*, Void).new{|role_data_span| self.multi_data(role_data_span) } {% else %} nil {% end %}),
+      bg_QStandardItem_setData_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_setData_const_QVariant_R_int") %} Proc(Binding::CrystalVariant, Int32, Void).new{|value, role| self.set_data(Qt::Variant.new(value), role) } {% else %} nil {% end %}),
+      bg_QStandardItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_clone_") %} Proc(Binding::QStandardItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
+      bg_QStandardItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
+      bg_QStandardItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
+      bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItem__OPERATOR_lt_const_QStandardItem_R") %} Proc(Binding::QStandardItem*, Bool).new{|other| self.<(StandardItem.new(unwrap: other)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QStandardItem_JUMPTABLE_BgJumptable_QStandardItem_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def assign!(other : StandardItem) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItem__OPERATOR_assign_const_QStandardItem_R(self, other))
+    end
+    
+    protected def emit_data_changed() : Void
+      Binding.bg_QStandardItem_emitDataChanged_(self)
+    end
+    
+    enum ItemType : UInt32
+      Type = 0
+      UserType = 1000
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QStandardItem*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : StandardItem)
+      end
+      def data(role : Int32 = 257) : Variant
+        Qt::Variant.new(Binding.bg_QStandardItem_data_SUPER_int(@myself, role))
+      end
+      
+      def multi_data(role_data_span : Binding::QModelRoleDataSpan*) : Void
+        Binding.bg_QStandardItem_multiData_SUPER_QModelRoleDataSpan(@myself, role_data_span)
+      end
+      
+      def set_data(value : Variant, role : Int32 = 257) : Void
+        Binding.bg_QStandardItem_setData_SUPER_const_QVariant_R_int(@myself, (value.to_unsafe), role)
+      end
+      
+      def clone() : StandardItem
+        StandardItem.new(unwrap: Binding.bg_QStandardItem_clone_SUPER_(@myself))
+      end
+      
+      def type() : Int32
+        Binding.bg_QStandardItem_type_SUPER_(@myself)
+      end
+      
+      def read(in_ : Binding::QDataStream*) : Void
+        Binding.bg_QStandardItem_read_SUPER_QDataStream_R(@myself, in_)
+      end
+      
+      def write(out_ : Binding::QDataStream*) : Void
+        Binding.bg_QStandardItem_write_SUPER_QDataStream_R(@myself, out_)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
   class StandardItemModel < AbstractItemModel
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QStandardItemModel_metaObject_(self)
@@ -58378,7 +65570,7 @@ module Qt
         {"bg_QStandardItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QStandardItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
         {"bg_QStandardItemModel_mimeTypes_", "mime_types", [] of String},
-        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
@@ -58447,7 +65639,7 @@ module Qt
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -58457,7 +65649,7 @@ module Qt
       bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
@@ -58513,7 +65705,7 @@ module Qt
         {"bg_QStandardItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QStandardItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
         {"bg_QStandardItemModel_mimeTypes_", "mime_types", [] of String},
-        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
@@ -58582,7 +65774,7 @@ module Qt
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -58592,7 +65784,7 @@ module Qt
       bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
@@ -58717,44 +65909,48 @@ module Qt
       Binding.bg_QStandardItemModel_sort_int_Qt__SortOrder(self, column, order)
     end
     
-    def item_from_index(index : ModelIndex) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_itemFromIndex_const_QModelIndex_R(self, index)
+    def item_from_index(index : ModelIndex) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_itemFromIndex_const_QModelIndex_R(self, index))
     end
     
-    def index_from_item(item : Binding::QStandardItem*) : ModelIndex
+    def index_from_item(item : StandardItem) : ModelIndex
       ModelIndex.new(unwrap: Binding.bg_QStandardItemModel_indexFromItem_const_QStandardItem_X(self, item))
     end
     
-    def item(row : Int32, column : Int32 = 0) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_item_int_int(self, row, column)
+    def item(row : Int32, column : Int32 = 0) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_item_int_int(self, row, column))
     end
     
-    def set_item(row : Int32, column : Int32, item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_setItem_int_int_QStandardItem_X(self, row, column, item)
+    def set_item(row : Int32, column : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_setItem_int_int_QStandardItem_X(self, row, column, item)
     end
     
-    def set_item(row : Int32, item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_setItem_int_QStandardItem_X(self, row, item)
+    def set_item(row : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_setItem_int_QStandardItem_X(self, row, item)
     end
     
-    def invisible_root_item() : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_invisibleRootItem_(self)
+    def invisible_root_item() : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_invisibleRootItem_(self))
     end
     
-    def horizontal_header_item(column : Int32) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_horizontalHeaderItem_int(self, column)
+    def horizontal_header_item(column : Int32) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_horizontalHeaderItem_int(self, column))
     end
     
-    def set_horizontal_header_item(column : Int32, item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_setHorizontalHeaderItem_int_QStandardItem_X(self, column, item)
+    def set_horizontal_header_item(column : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_setHorizontalHeaderItem_int_QStandardItem_X(self, column, item)
     end
     
-    def vertical_header_item(row : Int32) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_verticalHeaderItem_int(self, row)
+    def vertical_header_item(row : Int32) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_verticalHeaderItem_int(self, row))
     end
     
-    def set_vertical_header_item(row : Int32, item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_setVerticalHeaderItem_int_QStandardItem_X(self, row, item)
+    def set_vertical_header_item(row : Int32, item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_setVerticalHeaderItem_int_QStandardItem_X(self, row, item)
     end
     
     def horizontal_header_labels=(labels : Enumerable(String)) : Void
@@ -58773,28 +65969,29 @@ module Qt
       Binding.bg_QStandardItemModel_setColumnCount_int(self, columns)
     end
     
-    def append_row(items : Enumerable(Binding::QStandardItem*)) : Void
+    def append_row(items : Enumerable(StandardItem)) : Void
       BindgenHelper.keep_alive(items)
     Binding.bg_QStandardItemModel_appendRow_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
     end
     
-    def append_column(items : Enumerable(Binding::QStandardItem*)) : Void
+    def append_column(items : Enumerable(StandardItem)) : Void
       Binding.bg_QStandardItemModel_appendColumn_const_QList_QStandardItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
     end
     
-    def append_row(item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_appendRow_QStandardItem_X(self, item)
+    def append_row(item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_appendRow_QStandardItem_X(self, item)
     end
     
-    def insert_row(row : Int32, items : Enumerable(Binding::QStandardItem*)) : Void
+    def insert_row(row : Int32, items : Enumerable(StandardItem)) : Void
       Binding.bg_QStandardItemModel_insertRow_int_const_QList_QStandardItem_X__R(self, row, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
     end
     
-    def insert_column(column : Int32, items : Enumerable(Binding::QStandardItem*)) : Void
+    def insert_column(column : Int32, items : Enumerable(StandardItem)) : Void
       Binding.bg_QStandardItemModel_insertColumn_int_const_QList_QStandardItem_X__R(self, column, BindgenHelper.wrap_container(Container_QList_QStandardItem_X_, items).to_unsafe)
     end
     
-    def insert_row(row : Int32, item : Binding::QStandardItem*) : Void
+    def insert_row(row : Int32, item : StandardItem) : Void
       Binding.bg_QStandardItemModel_insertRow_int_QStandardItem_X(self, row, item)
     end
     
@@ -58814,43 +66011,44 @@ module Qt
       Binding.bg_QStandardItemModel_insertColumn_int_const_QModelIndex_R(self, column, parent)
     end
     
-    def take_item(row : Int32, column : Int32 = 0) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_takeItem_int_int(self, row, column)
+    def take_item(row : Int32, column : Int32 = 0) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeItem_int_int(self, row, column))
     end
     
-    def take_row(row : Int32) : Enumerable(Binding::QStandardItem*)
+    def take_row(row : Int32) : Enumerable(StandardItem)
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_takeRow_int(self, row))
     end
     
-    def take_column(column : Int32) : Enumerable(Binding::QStandardItem*)
+    def take_column(column : Int32) : Enumerable(StandardItem)
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_takeColumn_int(self, column))
     end
     
-    def take_horizontal_header_item(column : Int32) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_takeHorizontalHeaderItem_int(self, column)
+    def take_horizontal_header_item(column : Int32) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeHorizontalHeaderItem_int(self, column))
     end
     
-    def take_vertical_header_item(row : Int32) : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_takeVerticalHeaderItem_int(self, row)
+    def take_vertical_header_item(row : Int32) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeVerticalHeaderItem_int(self, row))
     end
     
-    def item_prototype() : Binding::QStandardItem*
-      Binding.bg_QStandardItemModel_itemPrototype_(self)
+    def item_prototype() : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_itemPrototype_(self))
     end
     
-    def item_prototype=(item : Binding::QStandardItem*) : Void
-      Binding.bg_QStandardItemModel_setItemPrototype_const_QStandardItem_X(self, item)
+    def item_prototype=(item : StandardItem) : Void
+      BindgenHelper.keep_alive(item)
+    Binding.bg_QStandardItemModel_setItemPrototype_const_QStandardItem_X(self, item)
     end
     
-    def find_items(text : String) : Enumerable(Binding::QStandardItem*)
+    def find_items(text : String) : Enumerable(StandardItem)
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_findItems_const_QString_R(self, Qt::Converter::QString.wrap(text)))
     end
     
-    def find_items(text : String, flags : MatchFlags) : Enumerable(Binding::QStandardItem*)
+    def find_items(text : String, flags : MatchFlags) : Enumerable(StandardItem)
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_findItems_const_QString_R_Qt__MatchFlags(self, Qt::Converter::QString.wrap(text), flags))
     end
     
-    def find_items(text : String, flags : MatchFlags, column : Int32 = 0) : Enumerable(Binding::QStandardItem*)
+    def find_items(text : String, flags : MatchFlags, column : Int32 = 0) : Enumerable(StandardItem)
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_findItems_const_QString_R_Qt__MatchFlags_int(self, Qt::Converter::QString.wrap(text), flags, column))
     end
     
@@ -58866,15 +66064,15 @@ module Qt
       StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-      MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_const_QModelIndexList_R(self, indexes))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
     end
     
     def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
       Binding.bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
     end
     
-    def item_changed(item : Binding::QStandardItem*) : Void
+    def item_changed(item : StandardItem) : Void
       Binding.bg_QStandardItemModel_itemChanged_QStandardItem_X(self, item)
     end
     
@@ -58917,7 +66115,7 @@ module Qt
         {"bg_QStandardItemModel_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QStandardItemModel_sort_int_Qt__SortOrder", "sort", ["Int32", "SortOrder"] of String},
         {"bg_QStandardItemModel_mimeTypes_", "mime_types", [] of String},
-        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Binding::QModelIndexList*"] of String},
+        {"bg_QStandardItemModel_mimeData_const_QModelIndexList_R", "mime_data", ["Enumerable(ModelIndex)"] of String},
         {"bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R", "sibling", ["Int32", "Int32", "ModelIndex"] of String},
         {"bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R", "can_drop_mime_data", ["MimeData", "DropAction", "Int32", "Int32", "ModelIndex"] of String},
@@ -58986,7 +66184,7 @@ module Qt
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::ContainerQListQModelIndex*, Binding::QMimeData*).new{|indexes| self.mime_data(Container_QList_QModelIndex_.new(unwrap: indexes)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -58996,7 +66194,7 @@ module Qt
       bg_QAbstractItemModel_fetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_fetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|parent| self.fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|parent| self.can_fetch_more(ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_buddy_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_buddy_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*).new{|index| self.buddy(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::ContainerQListQModelIndex*).new{|start, role, value, hits, flags| BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags)).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractItemModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
@@ -59049,8 +66247,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
     end
     
     def span(index : ModelIndex) : Size
@@ -59189,8 +66387,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Binding::QModelIndexList*) : MimeData
-        MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, indexes))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+        MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
       end
       
       def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -59229,8 +66427,8 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_SUPER_const_QModelIndex_R(@myself, index))
       end
       
-      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-        Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags)
+      def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(@myself, start, role, (value.to_unsafe), hits, flags))
       end
       
       def span(index : ModelIndex) : Size
@@ -59281,8 +66479,8 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def on_item_changed(&_proc_ : Proc(Binding::QStandardItem, Void)) : SignalConnection
-      SignalConnection.new(unwrap: Binding.bg_QStandardItemModel_CONNECT_itemChanged_CrystalProc_void__QStandardItem_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QStandardItem*, Void).new do |arg0| _proc_.call(arg0) end)))
+    def on_item_changed(&_proc_ : Proc(StandardItem, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QStandardItemModel_CONNECT_itemChanged_CrystalProc_void__QStandardItem_X_(self, BindgenHelper.wrap_proc(Proc(Binding::QStandardItem*, Void).new do |arg0| _proc_.call(StandardItem.new(unwrap: arg0)) end)))
     end
     
   end
@@ -68824,7 +76022,7 @@ module Qt
         {"bg_QAbstractItemView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
-        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -68841,7 +76039,7 @@ module Qt
         {"bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R", "data_changed", ["ModelIndex", "ModelIndex", "Enumerable(Int32)"] of String},
         {"bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int", "rows_inserted", ["ModelIndex", "Int32", "Int32"] of String},
         {"bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int", "rows_about_to_be_removed", ["ModelIndex", "Int32", "Int32"] of String},
-        {"bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_updateEditorData_", "update_editor_data", [] of String},
         {"bg_QAbstractItemView_updateEditorGeometries_", "update_editor_geometries", [] of String},
@@ -68858,7 +76056,7 @@ module Qt
         {"bg_QAbstractItemView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
         {"bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QAbstractItemView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X", "edit", ["ModelIndex", "AbstractItemDelegate::EditTrigger", "Event"] of String},
         {"bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X", "selection_command", ["ModelIndex", "Event?"] of String},
@@ -68935,7 +76133,7 @@ module Qt
       bg_QAbstractItemView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -68952,7 +76150,7 @@ module Qt
       bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Binding::ContainerQListInt*, Void).new{|top_left, bottom_right, roles| self.data_changed(ModelIndex.new(unwrap: top_left), ModelIndex.new(unwrap: bottom_right), Container_QList_int_.new(unwrap: roles)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Void).new{|parent, start, end_| self.rows_inserted(ModelIndex.new(unwrap: parent), start, end_) } {% else %} nil {% end %}),
       bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Void).new{|parent, start, end_| self.rows_about_to_be_removed(ModelIndex.new(unwrap: parent), start, end_) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_updateEditorData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_updateEditorData_") %} Proc(Void).new{ self.update_editor_data() } {% else %} nil {% end %}),
       bg_QAbstractItemView_updateEditorGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_updateEditorGeometries_") %} Proc(Void).new{ self.update_editor_geometries() } {% else %} nil {% end %}),
@@ -68969,8 +76167,8 @@ module Qt
       bg_QAbstractItemView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::EditTrigger, Binding::QEvent*, Bool).new{|index, trigger, event| self.edit(ModelIndex.new(unwrap: index), trigger, Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X") %} Proc(Binding::QModelIndex*, Binding::QEvent*, ItemSelectionModel::SelectionFlags).new{|index, event| self.selection_command(ModelIndex.new(unwrap: index), event.try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemView_startDrag_Qt__DropActions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_startDrag_Qt__DropActions") %} Proc(DropActions, Void).new{|supported_actions| self.start_drag(supported_actions) } {% else %} nil {% end %}),
@@ -69039,12 +76237,12 @@ module Qt
       AbstractItemModelImpl.new(unwrap: Binding.bg_QAbstractItemView_model_(self))
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
-    def selection_model() : Binding::QItemSelectionModel*
-      Binding.bg_QAbstractItemView_selectionModel_(self)
+    def selection_model() : ItemSelectionModel
+      ItemSelectionModel.new(unwrap: Binding.bg_QAbstractItemView_selectionModel_(self))
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -69338,7 +76536,7 @@ module Qt
       Binding.bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int(self, parent, start, end_)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -69427,7 +76625,7 @@ module Qt
         {"bg_QAbstractItemView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
-        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -69444,7 +76642,7 @@ module Qt
         {"bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R", "data_changed", ["ModelIndex", "ModelIndex", "Enumerable(Int32)"] of String},
         {"bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int", "rows_inserted", ["ModelIndex", "Int32", "Int32"] of String},
         {"bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int", "rows_about_to_be_removed", ["ModelIndex", "Int32", "Int32"] of String},
-        {"bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_updateEditorData_", "update_editor_data", [] of String},
         {"bg_QAbstractItemView_updateEditorGeometries_", "update_editor_geometries", [] of String},
@@ -69461,7 +76659,7 @@ module Qt
         {"bg_QAbstractItemView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
         {"bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QAbstractItemView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X", "edit", ["ModelIndex", "AbstractItemDelegate::EditTrigger", "Event"] of String},
         {"bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X", "selection_command", ["ModelIndex", "Event?"] of String},
@@ -69538,7 +76736,7 @@ module Qt
       bg_QAbstractItemView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -69555,7 +76753,7 @@ module Qt
       bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_dataChanged_const_QModelIndex_R_const_QModelIndex_R_const_QList_int__R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Binding::ContainerQListInt*, Void).new{|top_left, bottom_right, roles| self.data_changed(ModelIndex.new(unwrap: top_left), ModelIndex.new(unwrap: bottom_right), Container_QList_int_.new(unwrap: roles)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_rowsInserted_const_QModelIndex_R_int_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Void).new{|parent, start, end_| self.rows_inserted(ModelIndex.new(unwrap: parent), start, end_) } {% else %} nil {% end %}),
       bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_rowsAboutToBeRemoved_const_QModelIndex_R_int_int") %} Proc(Binding::QModelIndex*, Int32, Int32, Void).new{|parent, start, end_| self.rows_about_to_be_removed(ModelIndex.new(unwrap: parent), start, end_) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_updateEditorData_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_updateEditorData_") %} Proc(Void).new{ self.update_editor_data() } {% else %} nil {% end %}),
       bg_QAbstractItemView_updateEditorGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_updateEditorGeometries_") %} Proc(Void).new{ self.update_editor_geometries() } {% else %} nil {% end %}),
@@ -69572,8 +76770,8 @@ module Qt
       bg_QAbstractItemView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_edit_const_QModelIndex_R_QAbstractItemView__EditTrigger_QEvent_X") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::EditTrigger, Binding::QEvent*, Bool).new{|index, trigger, event| self.edit(ModelIndex.new(unwrap: index), trigger, Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_selectionCommand_const_QModelIndex_R_const_QEvent_X") %} Proc(Binding::QModelIndex*, Binding::QEvent*, ItemSelectionModel::SelectionFlags).new{|index, event| self.selection_command(ModelIndex.new(unwrap: index), event.try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemView_startDrag_Qt__DropActions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_startDrag_Qt__DropActions") %} Proc(DropActions, Void).new{|supported_actions| self.start_drag(supported_actions) } {% else %} nil {% end %}),
@@ -69638,9 +76836,9 @@ module Qt
     protected abstract def vertical_offset() : Int32
     protected abstract def is_index_hidden(index : ModelIndex) : Bool
     protected abstract def set_selection(rect : Rect, command : ItemSelectionModel::SelectionFlags) : Void
-    protected abstract def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemView_selectedIndexes_(self)
+    protected abstract def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemView_selectedIndexes_(self))
     end
     
     protected def edit(index : ModelIndex, trigger : AbstractItemDelegate::EditTrigger, event : Event) : Bool
@@ -69927,7 +77125,7 @@ module Qt
         Binding.bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(@myself, model)
       end
       
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QAbstractItemView_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -69979,7 +77177,7 @@ module Qt
         Binding.bg_QAbstractItemView_rowsAboutToBeRemoved_SUPER_const_QModelIndex_R_int_int(@myself, parent, start, end_)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QAbstractItemView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -70027,8 +77225,8 @@ module Qt
         Binding.bg_QAbstractItemView_editorDestroyed_SUPER_QObject_X(@myself, editor)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QAbstractItemView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def edit(index : ModelIndex, trigger : AbstractItemDelegate::EditTrigger, event : Event) : Bool
@@ -99962,15 +107160,15 @@ module Qt
         {"bg_QListView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QListView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QListView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QListView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
         {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
-        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
         {"bg_QAbstractItemView_sizeHintForColumn_int", "size_hint_for_column", ["Int32"] of String},
@@ -100073,15 +107271,15 @@ module Qt
       bg_QListView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QListView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForColumn_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForColumn_int") %} Proc(Int32, Int32).new{|column| self.size_hint_for_column(column) } {% else %} nil {% end %}),
@@ -100290,8 +107488,8 @@ module Qt
       Binding.bg_QListView_setRootIndex_const_QModelIndex_R(self, index)
     end
     
-    def indexes_moved(indexes : Binding::QModelIndexList*) : Void
-      Binding.bg_QListView_indexesMoved_const_QModelIndexList_R(self, indexes)
+    def indexes_moved(indexes : Enumerable(ModelIndex)) : Void
+      Binding.bg_QListView_indexesMoved_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe)
     end
     
     protected def initialize(unnamed_arg_0 : Binding::QListViewPrivate*, parent : Widget? = nil)
@@ -100333,15 +107531,15 @@ module Qt
         {"bg_QListView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QListView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QListView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QListView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
         {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
-        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
         {"bg_QAbstractItemView_sizeHintForColumn_int", "size_hint_for_column", ["Int32"] of String},
@@ -100444,15 +107642,15 @@ module Qt
       bg_QListView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QListView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForColumn_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForColumn_int") %} Proc(Int32, Int32).new{|column| self.size_hint_for_column(column) } {% else %} nil {% end %}),
@@ -100613,12 +107811,12 @@ module Qt
       Binding.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QListView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QListView_selectedIndexes_(self)
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QListView_selectedIndexes_(self))
     end
     
     protected def update_geometries() : Void
@@ -100629,7 +107827,7 @@ module Qt
       Binding.bg_QListView_isIndexHidden_const_QModelIndex_R(self, index)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -100671,7 +107869,7 @@ module Qt
     Binding.bg_QAbstractItemView_setModel_QAbstractItemModel_X(self, model)
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
@@ -101015,12 +108213,12 @@ module Qt
         Binding.bg_QListView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(@myself, rect, command)
       end
       
-      protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+      protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
         Binding.bg_QListView_visualRegionForSelection_SUPER_const_QItemSelection_R(@myself, selection)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QListView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QListView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def update_geometries() : Void
@@ -101031,7 +108229,7 @@ module Qt
         Binding.bg_QListView_isIndexHidden_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QListView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -101047,7 +108245,7 @@ module Qt
         Binding.bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(@myself, model)
       end
       
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QAbstractItemView_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -101275,8 +108473,8 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
-    def on_indexes_moved(&_proc_ : Proc(Binding::QModelIndexList, Void)) : SignalConnection
-      SignalConnection.new(unwrap: Binding.bg_QListView_CONNECT_indexesMoved_CrystalProc_void__const_QModelIndexList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QModelIndexList*, Void).new do |arg0| _proc_.call(arg0) end)))
+    def on_indexes_moved(&_proc_ : Proc(Enumerable(ModelIndex), Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QListView_CONNECT_indexesMoved_CrystalProc_void__const_QModelIndexList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQModelIndex*, Void).new do |arg0| _proc_.call(Container_QList_QModelIndex_.new(unwrap: arg0)) end)))
     end
     
   end
@@ -101676,7 +108874,7 @@ module Qt
         {"bg_QListWidget_metaObject_", "meta_object", [] of String},
         {"bg_QListWidget_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QListWidget_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
-        {"bg_QListWidget_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QListWidget_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QListWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
         {"bg_QListWidget_event_QEvent_X", "event", ["Event"] of String},
         {"bg_QListWidget_mimeTypes_", "mime_types", [] of String},
@@ -101707,11 +108905,11 @@ module Qt
         {"bg_QListView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QListView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QListView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QListView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QListView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
@@ -101789,7 +108987,7 @@ module Qt
       bg_QListWidget_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
       bg_QListWidget_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QListWidget_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
-      bg_QListWidget_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QListWidget_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QListWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QListWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QListWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(StringList, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
@@ -101820,11 +109018,11 @@ module Qt
       bg_QListView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QListView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QListView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QListView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QListView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
@@ -101887,7 +109085,7 @@ module Qt
     {% end %}
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QListWidget_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
@@ -102210,12 +109408,12 @@ module Qt
       Binding.bg_QListView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QListView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QListView_selectedIndexes_(self)
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QListView_selectedIndexes_(self))
     end
     
     protected def update_geometries() : Void
@@ -102226,7 +109424,7 @@ module Qt
       Binding.bg_QListView_isIndexHidden_const_QModelIndex_R(self, index)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -102474,7 +109672,7 @@ module Qt
     private class Superclass
       def initialize(@myself : ListWidget)
       end
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QListWidget_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -102598,12 +109796,12 @@ module Qt
         Binding.bg_QListView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(@myself, rect, command)
       end
       
-      protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+      protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
         Binding.bg_QListView_visualRegionForSelection_SUPER_const_QItemSelection_R(@myself, selection)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QListView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QListView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def update_geometries() : Void
@@ -102614,7 +109812,7 @@ module Qt
         Binding.bg_QListView_isIndexHidden_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QListView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -115132,7 +122330,7 @@ module Qt
         {"bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
         {"bg_QTableView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -115146,7 +122344,7 @@ module Qt
         {"bg_QTableView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTableView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTableView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QTableView_viewportSizeHint_", "viewport_size_hint", [] of String},
@@ -115155,7 +122353,7 @@ module Qt
         {"bg_QTableView_verticalScrollbarAction_int", "vertical_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -115242,7 +122440,7 @@ module Qt
       bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ self.do_items_layout() } {% else %} nil {% end %}),
       bg_QTableView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -115256,8 +122454,8 @@ module Qt
       bg_QTableView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QTableView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
@@ -115265,7 +122463,7 @@ module Qt
       bg_QTableView_verticalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.vertical_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -115344,7 +122542,7 @@ module Qt
       Binding.bg_QTableView_setRootIndex_const_QModelIndex_R(self, index)
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
@@ -115566,7 +122764,7 @@ module Qt
         {"bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
         {"bg_QTableView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -115580,7 +122778,7 @@ module Qt
         {"bg_QTableView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTableView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTableView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QTableView_viewportSizeHint_", "viewport_size_hint", [] of String},
@@ -115589,7 +122787,7 @@ module Qt
         {"bg_QTableView_verticalScrollbarAction_int", "vertical_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -115676,7 +122874,7 @@ module Qt
       bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ self.do_items_layout() } {% else %} nil {% end %}),
       bg_QTableView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -115690,8 +122888,8 @@ module Qt
       bg_QTableView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QTableView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
@@ -115699,7 +122897,7 @@ module Qt
       bg_QTableView_verticalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.vertical_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -115805,12 +123003,12 @@ module Qt
       Binding.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QTableView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QTableView_selectedIndexes_(self)
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTableView_selectedIndexes_(self))
     end
     
     protected def update_geometries() : Void
@@ -115841,7 +123039,7 @@ module Qt
       Binding.bg_QTableView_isIndexHidden_const_QModelIndex_R(self, index)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -116129,7 +123327,7 @@ module Qt
         Binding.bg_QTableView_setRootIndex_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QTableView_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -116185,12 +123383,12 @@ module Qt
         Binding.bg_QTableView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(@myself, rect, command)
       end
       
-      protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+      protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
         Binding.bg_QTableView_visualRegionForSelection_SUPER_const_QItemSelection_R(@myself, selection)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QTableView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTableView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def update_geometries() : Void
@@ -116221,7 +123419,7 @@ module Qt
         Binding.bg_QTableView_isIndexHidden_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QTableView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -116889,7 +124087,7 @@ module Qt
         {"bg_QTableWidget_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QTableWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
         {"bg_QTableView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -116902,7 +124100,7 @@ module Qt
         {"bg_QTableView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTableView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTableView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QTableView_viewportSizeHint_", "viewport_size_hint", [] of String},
@@ -116911,7 +124109,7 @@ module Qt
         {"bg_QTableView_verticalScrollbarAction_int", "vertical_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -117002,7 +124200,7 @@ module Qt
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ self.do_items_layout() } {% else %} nil {% end %}),
       bg_QTableView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -117015,8 +124213,8 @@ module Qt
       bg_QTableView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QTableView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
@@ -117024,7 +124222,7 @@ module Qt
       bg_QTableView_verticalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.vertical_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -117112,7 +124310,7 @@ module Qt
         {"bg_QTableWidget_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QTableWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
         {"bg_QTableView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -117125,7 +124323,7 @@ module Qt
         {"bg_QTableView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers", "move_cursor", ["AbstractItemDelegate::CursorAction", "KeyboardModifiers"] of String},
         {"bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTableView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTableView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTableView_updateGeometries_", "update_geometries", [] of String},
         {"bg_QTableView_viewportSizeHint_", "viewport_size_hint", [] of String},
@@ -117134,7 +124332,7 @@ module Qt
         {"bg_QTableView_verticalScrollbarAction_int", "vertical_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTableView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -117225,7 +124423,7 @@ module Qt
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ self.do_items_layout() } {% else %} nil {% end %}),
       bg_QTableView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -117238,8 +124436,8 @@ module Qt
       bg_QTableView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_moveCursor_QAbstractItemView__CursorAction_Qt__KeyboardModifiers") %} Proc(AbstractItemDelegate::CursorAction, KeyboardModifiers, Binding::QModelIndex*).new{|cursor_action, modifiers| self.move_cursor(cursor_action, modifiers).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTableView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTableView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableView_updateGeometries_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_updateGeometries_") %} Proc(Void).new{ self.update_geometries() } {% else %} nil {% end %}),
       bg_QTableView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QTableView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
@@ -117247,7 +124445,7 @@ module Qt
       bg_QTableView_verticalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_verticalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.vertical_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTableView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -117641,7 +124839,7 @@ module Qt
       Binding.bg_QTableView_setRootIndex_const_QModelIndex_R(self, index)
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
@@ -117693,12 +124891,12 @@ module Qt
       Binding.bg_QTableView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QTableView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QTableView_selectedIndexes_(self)
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTableView_selectedIndexes_(self))
     end
     
     protected def update_geometries() : Void
@@ -117729,7 +124927,7 @@ module Qt
       Binding.bg_QTableView_isIndexHidden_const_QModelIndex_R(self, index)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QTableView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -118029,7 +125227,7 @@ module Qt
         Binding.bg_QTableView_setRootIndex_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QTableView_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -118081,12 +125279,12 @@ module Qt
         Binding.bg_QTableView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(@myself, rect, command)
       end
       
-      protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+      protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
         Binding.bg_QTableView_visualRegionForSelection_SUPER_const_QItemSelection_R(@myself, selection)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QTableView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTableView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def update_geometries() : Void
@@ -118117,7 +125315,7 @@ module Qt
         Binding.bg_QTableView_isIndexHidden_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QTableView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -119981,7 +127179,7 @@ module Qt
         {"bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
         {"bg_QTreeView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTreeView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QTreeView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -119999,7 +127197,7 @@ module Qt
         {"bg_QTreeView_horizontalOffset_", "horizontal_offset", [] of String},
         {"bg_QTreeView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTreeView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTreeView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTreeView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTreeView_changeEvent_QEvent_X", "change_event", ["Event"] of String},
         {"bg_QTreeView_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
@@ -120018,7 +127216,7 @@ module Qt
         {"bg_QTreeView_sizeHintForColumn_int", "size_hint_for_column", ["Int32"] of String},
         {"bg_QTreeView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTreeView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -120094,7 +127292,7 @@ module Qt
       bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
       bg_QTreeView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTreeView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QTreeView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -120112,8 +127310,8 @@ module Qt
       bg_QTreeView_horizontalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_horizontalOffset_") %} Proc(Int32).new{ self.horizontal_offset() } {% else %} nil {% end %}),
       bg_QTreeView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTreeView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTreeView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTreeView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTreeView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTreeView_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
       bg_QTreeView_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QTreeView_paintEvent_QPaintEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_paintEvent_QPaintEvent_X") %} Proc(Binding::QPaintEvent*, Void).new{|event| self.paint_event(PaintEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -120131,7 +127329,7 @@ module Qt
       bg_QTreeView_sizeHintForColumn_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_sizeHintForColumn_int") %} Proc(Int32, Int32).new{|column| self.size_hint_for_column(column) } {% else %} nil {% end %}),
       bg_QTreeView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTreeView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -120198,7 +127396,7 @@ module Qt
       Binding.bg_QTreeView_setRootIndex_const_QModelIndex_R(self, index)
     end
     
-    def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+    def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
@@ -120488,7 +127686,7 @@ module Qt
         {"bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
         {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
         {"bg_QTreeView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
-        {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["Binding::QItemSelectionModel*"] of String},
+        {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTreeView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QTreeView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
         {"bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
@@ -120506,7 +127704,7 @@ module Qt
         {"bg_QTreeView_horizontalOffset_", "horizontal_offset", [] of String},
         {"bg_QTreeView_verticalOffset_", "vertical_offset", [] of String},
         {"bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags", "set_selection", ["Rect", "ItemSelectionModel::SelectionFlags"] of String},
-        {"bg_QTreeView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["Binding::QItemSelection*"] of String},
+        {"bg_QTreeView_visualRegionForSelection_const_QItemSelection_R", "visual_region_for_selection", ["ItemSelection"] of String},
         {"bg_QTreeView_selectedIndexes_", "selected_indexes", [] of String},
         {"bg_QTreeView_changeEvent_QEvent_X", "change_event", ["Event"] of String},
         {"bg_QTreeView_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
@@ -120525,7 +127723,7 @@ module Qt
         {"bg_QTreeView_sizeHintForColumn_int", "size_hint_for_column", ["Int32"] of String},
         {"bg_QTreeView_horizontalScrollbarAction_int", "horizontal_scrollbar_action", ["Int32"] of String},
         {"bg_QTreeView_isIndexHidden_const_QModelIndex_R", "is_index_hidden", ["ModelIndex"] of String},
-        {"bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["Binding::QItemSelection*", "Binding::QItemSelection*"] of String},
+        {"bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
         {"bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R", "item_delegate_for_index", ["ModelIndex"] of String},
@@ -120601,7 +127799,7 @@ module Qt
       bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| self.model=(AbstractItemModelImpl.new(unwrap: model)) } {% else %} nil {% end %}),
       bg_QTreeView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| self.root_index=(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
+      bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } {% else %} nil {% end %}),
       bg_QTreeView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString, Void).new{|search| self.keyboard_search(Qt::Converter::QString.unwrap(search)) } {% else %} nil {% end %}),
       bg_QTreeView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, AbstractItemDelegate::ScrollHint, Void).new{|index, hint| self.scroll_to(ModelIndex.new(unwrap: index), hint) } {% else %} nil {% end %}),
@@ -120619,8 +127817,8 @@ module Qt
       bg_QTreeView_horizontalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_horizontalOffset_") %} Proc(Int32).new{ self.horizontal_offset() } {% else %} nil {% end %}),
       bg_QTreeView_verticalOffset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_verticalOffset_") %} Proc(Int32).new{ self.vertical_offset() } {% else %} nil {% end %}),
       bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags") %} Proc(Binding::QRect, ItemSelectionModel::SelectionFlags, Void).new{|rect, command| self.set_selection(Rect.new(unwrap: rect), command) } {% else %} nil {% end %}),
-      bg_QTreeView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(selection) } {% else %} nil {% end %}),
-      bg_QTreeView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectedIndexes_") %} Proc(Binding::QModelIndexList*).new{ self.selected_indexes() } {% else %} nil {% end %}),
+      bg_QTreeView_visualRegionForSelection_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRegionForSelection_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QRegion*).new{|selection| self.visual_region_for_selection(ItemSelection.new(unwrap: selection)) } {% else %} nil {% end %}),
+      bg_QTreeView_selectedIndexes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectedIndexes_") %} Proc(Binding::ContainerQListQModelIndex*).new{ BindgenHelper.wrap_container(Container_QList_QModelIndex_, self.selected_indexes()).to_unsafe } {% else %} nil {% end %}),
       bg_QTreeView_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
       bg_QTreeView_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QTreeView_paintEvent_QPaintEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_paintEvent_QPaintEvent_X") %} Proc(Binding::QPaintEvent*, Void).new{|event| self.paint_event(PaintEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -120638,7 +127836,7 @@ module Qt
       bg_QTreeView_sizeHintForColumn_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_sizeHintForColumn_int") %} Proc(Int32, Int32).new{|column| self.size_hint_for_column(column) } {% else %} nil {% end %}),
       bg_QTreeView_horizontalScrollbarAction_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_horizontalScrollbarAction_int") %} Proc(Int32, Void).new{|action| self.horizontal_scrollbar_action(action) } {% else %} nil {% end %}),
       bg_QTreeView_isIndexHidden_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_isIndexHidden_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.is_index_hidden(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(selected, deselected) } {% else %} nil {% end %}),
+      bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } {% else %} nil {% end %}),
       bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| self.size_hint_for_row(row) } {% else %} nil {% end %}),
       bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QAbstractItemDelegate*).new{|index| self.item_delegate_for_index(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
@@ -120725,12 +127923,12 @@ module Qt
       Binding.bg_QTreeView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QTreeView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
-    protected def selected_indexes() : Binding::QModelIndexList*
-      Binding.bg_QTreeView_selectedIndexes_(self)
+    protected def selected_indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTreeView_selectedIndexes_(self))
     end
     
     protected def change_event(unnamed_arg_0 : Event) : Void
@@ -120813,7 +128011,7 @@ module Qt
       Binding.bg_QTreeView_isIndexHidden_const_QModelIndex_R(self, index)
     end
     
-    protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+    protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
       Binding.bg_QTreeView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R(self, selected, deselected)
     end
     
@@ -121057,7 +128255,7 @@ module Qt
         Binding.bg_QTreeView_setRootIndex_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      def selection_model=(selection_model : Binding::QItemSelectionModel*) : Void
+      def selection_model=(selection_model : ItemSelectionModel) : Void
         Binding.bg_QTreeView_setSelectionModel_SUPER_QItemSelectionModel_X(@myself, selection_model)
       end
       
@@ -121125,12 +128323,12 @@ module Qt
         Binding.bg_QTreeView_setSelection_SUPER_const_QRect_R_QItemSelectionModel__SelectionFlags(@myself, rect, command)
       end
       
-      protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+      protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
         Binding.bg_QTreeView_visualRegionForSelection_SUPER_const_QItemSelection_R(@myself, selection)
       end
       
-      protected def selected_indexes() : Binding::QModelIndexList*
-        Binding.bg_QTreeView_selectedIndexes_SUPER_(@myself)
+      protected def selected_indexes() : Enumerable(ModelIndex)
+        Container_QList_QModelIndex_.new(unwrap: Binding.bg_QTreeView_selectedIndexes_SUPER_(@myself))
       end
       
       protected def change_event(unnamed_arg_0 : Event) : Void
@@ -121201,7 +128399,7 @@ module Qt
         Binding.bg_QTreeView_isIndexHidden_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      protected def selection_changed(selected : Binding::QItemSelection*, deselected : Binding::QItemSelection*) : Void
+      protected def selection_changed(selected : ItemSelection, deselected : ItemSelection) : Void
         Binding.bg_QTreeView_selectionChanged_SUPER_const_QItemSelection_R_const_QItemSelection_R(@myself, selected, deselected)
       end
       
@@ -121616,6 +128814,296 @@ module Qt
     end
     
   end
+  class AbstractTableModelImpl < AbstractTableModel
+    def row_count(parent : ModelIndex) : Int32
+      Binding.bg_QAbstractItemModel_rowCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def column_count(parent : ModelIndex) : Int32
+      Binding.bg_QAbstractItemModel_columnCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def data(index : ModelIndex, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_data_const_QModelIndex_R_int(self, index, role))
+    end
+    
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDropActions_(self)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QAbstractItemModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def initialize(unwrap : Binding::QAbstractTableModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class AbstractListModelImpl < AbstractListModel
+    def row_count(parent : ModelIndex) : Int32
+      Binding.bg_QAbstractItemModel_rowCount_const_QModelIndex_R(self, parent)
+    end
+    
+    def data(index : ModelIndex, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_data_const_QModelIndex_R_int(self, index, role))
+    end
+    
+    def set_data(index : ModelIndex, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setData_const_QModelIndex_R_const_QVariant_R_int(self, index, (value.to_unsafe), role)
+    end
+    
+    def header_data(section : Int32, orientation : Orientation, role : Int32 = 0) : Variant
+      Qt::Variant.new(Binding.bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(self, section, orientation, role))
+    end
+    
+    def set_header_data(section : Int32, orientation : Orientation, value : Variant, role : Int32 = 2) : Bool
+      Binding.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
+    end
+    
+    def clear_item_data(index : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
+    end
+    
+    def mime_types() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
+    end
+    
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
+      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    end
+    
+    def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
+    end
+    
+    def supported_drop_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDropActions_(self)
+    end
+    
+    def supported_drag_actions() : DropActions
+      Binding.bg_QAbstractItemModel_supportedDragActions_(self)
+    end
+    
+    def insert_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def insert_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def remove_rows(row : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(self, row, count, parent)
+    end
+    
+    def remove_columns(column : Int32, count : Int32, parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(self, column, count, parent)
+    end
+    
+    def move_rows(source_parent : ModelIndex, source_row : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_row, count, destination_parent, destination_child)
+    end
+    
+    def move_columns(source_parent : ModelIndex, source_column : Int32, count : Int32, destination_parent : ModelIndex, destination_child : Int32) : Bool
+      Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
+    end
+    
+    def fetch_more(parent : ModelIndex) : Void
+      Binding.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def can_fetch_more(parent : ModelIndex) : Bool
+      Binding.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(self, parent)
+    end
+    
+    def sort(column : Int32, order : SortOrder = SortOrder::AscendingOrder) : Void
+      Binding.bg_QAbstractItemModel_sort_int_Qt__SortOrder(self, column, order)
+    end
+    
+    def buddy(index : ModelIndex) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_QAbstractItemModel_buddy_const_QModelIndex_R(self, index))
+    end
+    
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
+    end
+    
+    def span(index : ModelIndex) : Size
+      Size.new(unwrap: Binding.bg_QAbstractItemModel_span_const_QModelIndex_R(self, index))
+    end
+    
+    def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
+      Binding.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(self, index, role_data_span)
+    end
+    
+    def submit() : Bool
+      Binding.bg_QAbstractItemModel_submit_(self)
+    end
+    
+    def revert() : Void
+      Binding.bg_QAbstractItemModel_revert_(self)
+    end
+    
+    protected def reset_internal_data() : Void
+      Binding.bg_QAbstractItemModel_resetInternalData_(self)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def initialize(unwrap : Binding::QAbstractListModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class AbstractProxyModelImpl < AbstractProxyModel
     def map_to_source(proxy_index : ModelIndex) : ModelIndex
       ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_mapToSource_const_QModelIndex_R(self, proxy_index))
@@ -121665,8 +129153,8 @@ module Qt
       Binding.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(self, source_parent, source_column, count, destination_parent, destination_child)
     end
     
-    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Binding::QModelIndexList*
-      Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags)
+    def match(start : ModelIndex, role : Int32, value : Variant, hits : Int32, flags : MatchFlags) : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(self, start, role, (value.to_unsafe), hits, flags))
     end
     
     def multi_data(index : ModelIndex, role_data_span : Binding::QModelRoleDataSpan*) : Void
@@ -121706,6 +129194,53 @@ module Qt
     end
     
     def initialize(unwrap : Binding::QAbstractProxyModel*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class AnimationGroupImpl < AnimationGroup
+    def duration() : Int32
+      Binding.bg_QAbstractAnimation_duration_(self)
+    end
+    
+    protected def update_current_time(current_time : Int32) : Void
+      Binding.bg_QAbstractAnimation_updateCurrentTime_int(self, current_time)
+    end
+    
+    protected def update_state(new_state : AbstractAnimation::State, old_state : AbstractAnimation::State) : Void
+      Binding.bg_QAbstractAnimation_updateState_QAbstractAnimation__State_QAbstractAnimation__State(self, new_state, old_state)
+    end
+    
+    protected def update_direction(direction : AbstractAnimation::Direction) : Void
+      Binding.bg_QAbstractAnimation_updateDirection_QAbstractAnimation__Direction(self, direction)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def initialize(unwrap : Binding::QAnimationGroup*)
       result = unwrap
     @unwrap = result
     end
@@ -122015,7 +129550,7 @@ module Qt
       Binding.bg_QAbstractItemView_setSelection_const_QRect_R_QItemSelectionModel__SelectionFlags(self, rect, command)
     end
     
-    protected def visual_region_for_selection(selection : Binding::QItemSelection*) : Binding::QRegion*
+    protected def visual_region_for_selection(selection : ItemSelection) : Binding::QRegion*
       Binding.bg_QAbstractItemView_visualRegionForSelection_const_QItemSelection_R(self, selection)
     end
     
@@ -123896,35 +131431,6 @@ module Qt
       User = 65536
     end
   end
-  module ItemSelectionModel
-    enum SelectionFlag : UInt32
-      NoUpdate = 0
-      Clear = 1
-      Select = 2
-      Deselect = 4
-      Toggle = 8
-      Current = 16
-      Rows = 32
-      Columns = 64
-      SelectCurrent = 18
-      ToggleCurrent = 24
-      ClearAndSelect = 3
-    end
-    @[Flags]
-    enum SelectionFlags : UInt32
-      NoUpdate = 0
-      Clear = 1
-      Select = 2
-      Deselect = 4
-      Toggle = 8
-      Current = 16
-      Rows = 32
-      Columns = 64
-      SelectCurrent = 18
-      ToggleCurrent = 24
-      ClearAndSelect = 3
-    end
-  end
   module InputDevice
     enum DeviceType : Int32
       Unknown = 0
@@ -124150,15 +131656,18 @@ module Qt
       {% elsif types == {String} %} {{ StringList }}
       {% elsif types == {Binding::EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
       {% elsif types == {Variant} %} {{ Container_QList_QVariant_ }}
-      {% elsif types == {Pointer(Binding::QPersistentModelIndex)} %} {{ Container_QList_QPersistentModelIndex_ }}
+      {% elsif types == {ModelIndex} %} {{ Container_QList_QModelIndex_ }}
+      {% elsif types == {PersistentModelIndex} %} {{ Container_QList_QPersistentModelIndex_ }}
       {% elsif types == {DayOfWeek} %} {{ Container_QList_Qt__DayOfWeek_ }}
       {% elsif types == {Locale} %} {{ Container_QList_QLocale_ }}
       {% elsif types == {Url} %} {{ Container_QList_QUrl_ }}
       {% elsif types == {CommandLineOption} %} {{ Container_QList_QCommandLineOption_ }}
       {% elsif types == {TimeZoneOffsetData} %} {{ Container_QList_QTimeZone__OffsetData_ }}
+      {% elsif types == {FileInfo} %} {{ Container_QList_QFileInfo_ }}
+      {% elsif types == {PointF} %} {{ Container_QList_QPointF_ }}
+      {% elsif types == {ItemSelectionRange} %} {{ Container_QList_QItemSelectionRange_ }}
       {% elsif types == {MimeType} %} {{ Container_QList_QMimeType_ }}
       {% elsif types == {Point} %} {{ Container_QList_QPoint_ }}
-      {% elsif types == {PointF} %} {{ Container_QList_QPointF_ }}
       {% elsif types == {Size} %} {{ Container_QList_QSize_ }}
       {% elsif types == {Screen} %} {{ Container_QList_QScreen_X_ }}
       {% elsif types == {KeySequence} %} {{ Container_QList_QKeySequence_ }}
@@ -124170,7 +131679,7 @@ module Qt
       {% elsif types == {Line} %} {{ Container_QList_QLine_ }}
       {% elsif types == {RectF} %} {{ Container_QList_QRectF_ }}
       {% elsif types == {Rect} %} {{ Container_QList_QRect_ }}
-      {% elsif types == {Pointer(Binding::QStandardItem)} %} {{ Container_QList_QStandardItem_X_ }}
+      {% elsif types == {StandardItem} %} {{ Container_QList_QStandardItem_X_ }}
       {% elsif types == {Action} %} {{ Container_QList_QAction_X_ }}
       {% elsif types == {AbstractButton} %} {{ Container_QList_QAbstractButton_X_ }}
       {% elsif types == {Gesture} %} {{ Container_QList_QGesture_X_ }}
@@ -124665,9 +132174,41 @@ module Qt
     end
     
   end
+  class Container_QList_QModelIndex_
+    include BindgenHelper::SequentialContainer(ModelIndex)
+    include QList(ModelIndex)
+    
+    @unwrap : Binding::ContainerQListQModelIndex*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QModelIndex___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : ModelIndex
+      ModelIndex.new(unwrap: Binding.bg_Container_QList_QModelIndex__at_int(self, index))
+    end
+    
+    def push(value : ModelIndex) : Void
+      Binding.bg_Container_QList_QModelIndex__push_back_QModelIndex(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QModelIndex__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQModelIndex*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QPersistentModelIndex_
-    include BindgenHelper::SequentialContainer(Binding::QPersistentModelIndex*)
-    include QList(Binding::QPersistentModelIndex*)
+    include BindgenHelper::SequentialContainer(PersistentModelIndex)
+    include QList(PersistentModelIndex)
     
     @unwrap : Binding::ContainerQListQPersistentModelIndex*
     
@@ -124676,11 +132217,11 @@ module Qt
     @unwrap = result
     end
     
-    def unsafe_at(index : Int32) : Binding::QPersistentModelIndex*
-      Binding.bg_Container_QList_QPersistentModelIndex__at_int(self, index)
+    def unsafe_at(index : Int32) : PersistentModelIndex
+      PersistentModelIndex.new(unwrap: Binding.bg_Container_QList_QPersistentModelIndex__at_int(self, index))
     end
     
-    def push(value : Binding::QPersistentModelIndex*) : Void
+    def push(value : PersistentModelIndex) : Void
       Binding.bg_Container_QList_QPersistentModelIndex__push_back_QPersistentModelIndex(self, value)
     end
     
@@ -124857,6 +132398,236 @@ module Qt
     end
     
   end
+  class Container_QList_QFileInfo_
+    include BindgenHelper::SequentialContainer(FileInfo)
+    include QList(FileInfo)
+    
+    @unwrap : Binding::ContainerQListQFileInfo*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QFileInfo___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : FileInfo
+      FileInfo.new(unwrap: Binding.bg_Container_QList_QFileInfo__at_int(self, index))
+    end
+    
+    def push(value : FileInfo) : Void
+      Binding.bg_Container_QList_QFileInfo__push_back_QFileInfo(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QFileInfo__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQFileInfo*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QPointF_
+    include BindgenHelper::SequentialContainer(PointF)
+    include QList(PointF)
+    
+    @unwrap : Binding::ContainerQListQPointF*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QPointF___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : PointF
+      PointF.new(unwrap: Binding.bg_Container_QList_QPointF__at_int(self, index))
+    end
+    
+    def push(value : PointF) : Void
+      Binding.bg_Container_QList_QPointF__push_back_QPointF(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QPointF__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQPointF*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class PolygonF < Container_QList_QPointF_
+    def initialize()
+      result = Binding.bg_QPolygonF__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(v : Enumerable(PointF))
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QList_QPointF__R(BindgenHelper.wrap_container(Container_QList_QPointF_, v).to_unsafe)
+    @unwrap = result
+    end
+    
+    def initialize(r : RectF)
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QRectF_R(r)
+    @unwrap = result
+    end
+    
+    def initialize(a : Polygon)
+      result = Binding.bg_QPolygonF__CONSTRUCT_const_QPolygon_R(a)
+    @unwrap = result
+    end
+    
+    def swap(other : PolygonF) : Void
+      Binding.bg_QPolygonF_swap_QPolygonF_R(self, other)
+    end
+    
+    def to_q_variant() : Variant
+      Qt::Variant.new(Binding.bg_QPolygonF__CONVERT_QVariant_(self))
+    end
+    
+    def translate(dx : Float64, dy : Float64) : Void
+      Binding.bg_QPolygonF_translate_qreal_qreal(self, dx, dy)
+    end
+    
+    def translate(offset : PointF) : Void
+      Binding.bg_QPolygonF_translate_const_QPointF_R(self, offset)
+    end
+    
+    def translated(dx : Float64, dy : Float64) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_qreal_qreal(self, dx, dy))
+    end
+    
+    def translated(offset : PointF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_const_QPointF_R(self, offset))
+    end
+    
+    def to_polygon() : Polygon
+      Polygon.new(unwrap: Binding.bg_QPolygonF_toPolygon_(self))
+    end
+    
+    def closed?() : Bool
+      Binding.bg_QPolygonF_isClosed_(self)
+    end
+    
+    def bounding_rect() : RectF
+      RectF.new(unwrap: Binding.bg_QPolygonF_boundingRect_(self))
+    end
+    
+    def contains_point(pt : PointF, fill_rule : FillRule) : Bool
+      Binding.bg_QPolygonF_containsPoint_const_QPointF_R_Qt__FillRule(self, pt, fill_rule)
+    end
+    
+    def united(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_united_const_QPolygonF_R(self, r))
+    end
+    
+    def intersected(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_intersected_const_QPolygonF_R(self, r))
+    end
+    
+    def subtracted(r : PolygonF) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF_subtracted_const_QPolygonF_R(self, r))
+    end
+    
+    def intersects(r : PolygonF) : Bool
+      Binding.bg_QPolygonF_intersects_const_QPolygonF_R(self, r)
+    end
+    
+    def initialize(unnamed_arg_0 : PolygonF)
+      result = Binding.bg_QPolygonF__COPY_const_QPolygonF_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def *(m : Binding::QTransform*) : PolygonF
+      PolygonF.new(unwrap: Binding.bg_QPolygonF__OPERATOR_mul_const_QTransform_R(self, m))
+    end
+    
+    def initialize(unwrap : Binding::QPolygonF*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QItemSelectionRange_
+    include BindgenHelper::SequentialContainer(ItemSelectionRange)
+    include QList(ItemSelectionRange)
+    
+    @unwrap : Binding::ContainerQListQItemSelectionRange*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QItemSelectionRange___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : ItemSelectionRange
+      ItemSelectionRange.new(unwrap: Binding.bg_Container_QList_QItemSelectionRange__at_int(self, index))
+    end
+    
+    def push(value : ItemSelectionRange) : Void
+      Binding.bg_Container_QList_QItemSelectionRange__push_back_QItemSelectionRange(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QItemSelectionRange__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQItemSelectionRange*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class ItemSelection < Container_QList_QItemSelectionRange_
+    def initialize(top_left : ModelIndex, bottom_right : ModelIndex)
+      result = Binding.bg_QItemSelection__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(top_left, bottom_right)
+    @unwrap = result
+    end
+    
+    def select(top_left : ModelIndex, bottom_right : ModelIndex) : Void
+      Binding.bg_QItemSelection_select_const_QModelIndex_R_const_QModelIndex_R(self, top_left, bottom_right)
+    end
+    
+    def contains(index : ModelIndex) : Bool
+      Binding.bg_QItemSelection_contains_const_QModelIndex_R(self, index)
+    end
+    
+    def indexes() : Enumerable(ModelIndex)
+      Container_QList_QModelIndex_.new(unwrap: Binding.bg_QItemSelection_indexes_(self))
+    end
+    
+    def merge(other : ItemSelection, command : ItemSelectionModel::SelectionFlags) : Void
+      Binding.bg_QItemSelection_merge_const_QItemSelection_R_QItemSelectionModel__SelectionFlags(self, other, command)
+    end
+    
+    def self.split(range : ItemSelectionRange, other : ItemSelectionRange, result : ItemSelection) : Void
+      Binding.bg_QItemSelection_split_STATIC_const_QItemSelectionRange_R_const_QItemSelectionRange_R_QItemSelection_X(range, other, result)
+    end
+    
+    def initialize()
+      result = Binding.bg_QItemSelection__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : ItemSelection)
+      result = Binding.bg_QItemSelection__COPY_const_QItemSelection_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(unwrap : Binding::QItemSelection*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QMimeType_
     include BindgenHelper::SequentialContainer(MimeType)
     include QList(MimeType)
@@ -125023,130 +132794,6 @@ module Qt
     end
     
     def initialize(unwrap : Binding::QPolygon*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
-  class Container_QList_QPointF_
-    include BindgenHelper::SequentialContainer(PointF)
-    include QList(PointF)
-    
-    @unwrap : Binding::ContainerQListQPointF*
-    
-    def initialize()
-      result = Binding.bg_Container_QList_QPointF___CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def unsafe_at(index : Int32) : PointF
-      PointF.new(unwrap: Binding.bg_Container_QList_QPointF__at_int(self, index))
-    end
-    
-    def push(value : PointF) : Void
-      Binding.bg_Container_QList_QPointF__push_back_QPointF(self, value)
-    end
-    
-    def size() : Int32
-      Binding.bg_Container_QList_QPointF__size_(self)
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::ContainerQListQPointF*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-  end
-  class PolygonF < Container_QList_QPointF_
-    def initialize()
-      result = Binding.bg_QPolygonF__CONSTRUCT_()
-    @unwrap = result
-    end
-    
-    def initialize(v : Enumerable(PointF))
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QList_QPointF__R(BindgenHelper.wrap_container(Container_QList_QPointF_, v).to_unsafe)
-    @unwrap = result
-    end
-    
-    def initialize(r : RectF)
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QRectF_R(r)
-    @unwrap = result
-    end
-    
-    def initialize(a : Polygon)
-      result = Binding.bg_QPolygonF__CONSTRUCT_const_QPolygon_R(a)
-    @unwrap = result
-    end
-    
-    def swap(other : PolygonF) : Void
-      Binding.bg_QPolygonF_swap_QPolygonF_R(self, other)
-    end
-    
-    def to_q_variant() : Variant
-      Qt::Variant.new(Binding.bg_QPolygonF__CONVERT_QVariant_(self))
-    end
-    
-    def translate(dx : Float64, dy : Float64) : Void
-      Binding.bg_QPolygonF_translate_qreal_qreal(self, dx, dy)
-    end
-    
-    def translate(offset : PointF) : Void
-      Binding.bg_QPolygonF_translate_const_QPointF_R(self, offset)
-    end
-    
-    def translated(dx : Float64, dy : Float64) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_qreal_qreal(self, dx, dy))
-    end
-    
-    def translated(offset : PointF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_translated_const_QPointF_R(self, offset))
-    end
-    
-    def to_polygon() : Polygon
-      Polygon.new(unwrap: Binding.bg_QPolygonF_toPolygon_(self))
-    end
-    
-    def closed?() : Bool
-      Binding.bg_QPolygonF_isClosed_(self)
-    end
-    
-    def bounding_rect() : RectF
-      RectF.new(unwrap: Binding.bg_QPolygonF_boundingRect_(self))
-    end
-    
-    def contains_point(pt : PointF, fill_rule : FillRule) : Bool
-      Binding.bg_QPolygonF_containsPoint_const_QPointF_R_Qt__FillRule(self, pt, fill_rule)
-    end
-    
-    def united(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_united_const_QPolygonF_R(self, r))
-    end
-    
-    def intersected(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_intersected_const_QPolygonF_R(self, r))
-    end
-    
-    def subtracted(r : PolygonF) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF_subtracted_const_QPolygonF_R(self, r))
-    end
-    
-    def intersects(r : PolygonF) : Bool
-      Binding.bg_QPolygonF_intersects_const_QPolygonF_R(self, r)
-    end
-    
-    def initialize(unnamed_arg_0 : PolygonF)
-      result = Binding.bg_QPolygonF__COPY_const_QPolygonF_R(unnamed_arg_0)
-    @unwrap = result
-    end
-    
-    def *(m : Binding::QTransform*) : PolygonF
-      PolygonF.new(unwrap: Binding.bg_QPolygonF__OPERATOR_mul_const_QTransform_R(self, m))
-    end
-    
-    def initialize(unwrap : Binding::QPolygonF*)
       result = unwrap
     @unwrap = result
     end
@@ -125505,8 +133152,8 @@ module Qt
     
   end
   class Container_QList_QStandardItem_X_
-    include BindgenHelper::SequentialContainer(Binding::QStandardItem*)
-    include QList(Binding::QStandardItem*)
+    include BindgenHelper::SequentialContainer(StandardItem)
+    include QList(StandardItem)
     
     @unwrap : Binding::ContainerQListQStandardItemX*
     
@@ -125515,11 +133162,11 @@ module Qt
     @unwrap = result
     end
     
-    def unsafe_at(index : Int32) : Binding::QStandardItem*
-      Binding.bg_Container_QList_QStandardItem_X__at_int(self, index)
+    def unsafe_at(index : Int32) : StandardItem
+      StandardItem.new(unwrap: Binding.bg_Container_QList_QStandardItem_X__at_int(self, index))
     end
     
-    def push(value : Binding::QStandardItem*) : Void
+    def push(value : StandardItem) : Void
       Binding.bg_Container_QList_QStandardItem_X__push_back_QStandardItem_X(self, value)
     end
     

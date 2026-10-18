@@ -53,6 +53,16 @@ classes:
   QAbstractItemView: AbstractItemView
   QAbstractItemModel: AbstractItemModel
   QStandardItemModel: StandardItemModel
+  QStandardItem: StandardItem
+  QAbstractListModel: AbstractListModel
+  QAbstractTableModel: AbstractTableModel
+  QStringListModel: StringListModel
+  QIdentityProxyModel: IdentityProxyModel
+  QPersistentModelIndex: PersistentModelIndex
+  QItemSelectionRange: ItemSelectionRange
+  QItemSelection: ItemSelection # A QList<QItemSelectionRange>
+  QItemSelectionModel: ItemSelectionModel
+  QFileSystemModel: FileSystemModel
   QTableView: TableView
   QTableWidget: TableWidget
   QTableWidgetItem: TableWidgetItem
@@ -227,6 +237,12 @@ classes:
   QAbstractAnimation: AbstractAnimation
   QVariantAnimation: VariantAnimation
   QPropertyAnimation: PropertyAnimation
+  QAnimationGroup: AnimationGroup
+  QParallelAnimationGroup: ParallelAnimationGroup
+  QSequentialAnimationGroup: SequentialAnimationGroup
+  QPauseAnimation: PauseAnimation
+  QEasingCurve: EasingCurve
+  QTimeLine: TimeLine
   # QStringList is a QList<QString>; Qt keeps its methods in the template
   # specialization QListSpecialMethods<QString>, which QList<QString> derives
   # from, so StringList inherits StringListMethods.

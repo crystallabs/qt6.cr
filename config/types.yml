@@ -195,6 +195,10 @@ types: # Type rewrite rules
   WId: { alias_for: "unsigned int" }
   QVariantList: { alias_for: "QList<QVariant>" }
   QStringList: { alias_for: "QList<QString>" } # Qt 6 declares it so
+  # bindgen instantiates the containers the methods use, resolving the aliases
+  # it knows: Qt's typedefs of other lists go here.
+  QFileInfoList: { alias_for: "QList<QFileInfo>" }
+  QModelIndexList: { alias_for: "QList<QModelIndex>" }
   # The methods of QList<QString> itself (wrapped as Qt::StringList) name these.
   "QList<QString>::DataPointer": { ignore: true } # Private storage, data_ptr
   "QList<QString>::iterator": { ignore: true } # Indexes replace the iterators
@@ -270,6 +274,7 @@ types: # Type rewrite rules
   "QFont::Tag": { ignore: true }
   "QList<QFont::Tag>": { ignore: true }
   "QTextDocument::ResourceProvider": { ignore: true } # std::function
+  "QEasingCurve::EasingFunction": { ignore: true } # C function pointer
   "QPen::DataPtr": { ignore: true }
   "QPointer<QObject>": { ignore: true }
   "QList<QPointer<QObject>>": { ignore: true }
@@ -343,6 +348,12 @@ types: # Type rewrite rules
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
+  # bindgen's virtual_override copies the virtual parent, columnCount and
+  # hasChildren of QAbstractItemModel into QStringListModel's override class:
+  # its private_override? only looks at the class itself, not at
+  # QAbstractListModel in between, which made them private, so the generated
+  # C++ doesn't compile.  Subclass AbstractListModel instead.
+  QStringListModel: { sub_class: false }
   QPolygon:
     ignore_methods: # Variadic, which can't be wrapped
       - setPoints
