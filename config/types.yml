@@ -280,23 +280,16 @@ types: # Type rewrite rules
   NSURL: {ignore: true}
   __CFDate: {ignore: true} # QDateTime#toCFDate, named invalidly for Crystal
   NSDate: {ignore: true}
-  QListWidgetItem:
-    ignore_methods:
-      - "operator<"
-      - setBackgroundColor # Deprecated, but virtual: not hidden by QT_DISABLE_DEPRECATED_BEFORE
   QDateTime:
     ignore_methods:
       # Returns std::chrono::milliseconds, whose from_cpp rule bindgen applies
       # to the right operand only: `(a - (b).count())`.  Use msecs_to instead.
       - "operator-"
-  QMessageBox:
-    ignore_methods:
-      # bindgen's clang parser crashes on the `QMessageBox::Options` enum
-      # (QFlags of an `enum class`, which nothing instantiates).
-      - setOptions
-      - options
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
-  <<+: deprecated.yml # Deep merge: adds to the `ignore_methods` listed above
+  QPolygon:
+    ignore_methods: # Variadic, which can't be wrapped
+      - setPoints
+      - putPoints
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above

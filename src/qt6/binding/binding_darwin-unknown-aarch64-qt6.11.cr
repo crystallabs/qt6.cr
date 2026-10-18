@@ -3859,6 +3859,7 @@ module Qt
       bg_QListWidgetItem_clone_ : CrystalProc
       bg_QListWidgetItem_data_int : CrystalProc
       bg_QListWidgetItem_setData_int_const_QVariant_R : CrystalProc
+      bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R : CrystalProc
       bg_QListWidgetItem_read_QDataStream_R : CrystalProc
       bg_QListWidgetItem_write_QDataStream_R : CrystalProc
     end
@@ -4832,6 +4833,7 @@ module Qt
       bg_QTableWidgetItem_clone_ : CrystalProc
       bg_QTableWidgetItem_data_int : CrystalProc
       bg_QTableWidgetItem_setData_int_const_QVariant_R : CrystalProc
+      bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R : CrystalProc
       bg_QTableWidgetItem_read_QDataStream_R : CrystalProc
       bg_QTableWidgetItem_write_QDataStream_R : CrystalProc
     end
@@ -6152,6 +6154,10 @@ module Qt
     fun bg_QDate_dayOfYear_QCalendar(_self_ : QDate*, cal : QCalendar*) : Int32
     fun bg_QDate_daysInMonth_QCalendar(_self_ : QDate*, cal : QCalendar*) : Int32
     fun bg_QDate_daysInYear_QCalendar(_self_ : QDate*, cal : QCalendar*) : Int32
+    fun bg_QDate_startOfDay_const_QTimeZone_R(_self_ : QDate*, zone : QTimeZone*) : QDateTime*
+    fun bg_QDate_endOfDay_const_QTimeZone_R(_self_ : QDate*, zone : QTimeZone*) : QDateTime*
+    fun bg_QDate_startOfDay_(_self_ : QDate*) : QDateTime*
+    fun bg_QDate_endOfDay_(_self_ : QDate*) : QDateTime*
     fun bg_QDate_toString_Qt__DateFormat(_self_ : QDate*, format : DateFormat) : CrystalString
     fun bg_QDate_toString_const_QString_R(_self_ : QDate*, format : CrystalString) : CrystalString
     fun bg_QDate_toString_const_QString_R_QCalendar(_self_ : QDate*, format : CrystalString, cal : QCalendar*) : CrystalString
@@ -6214,7 +6220,6 @@ module Qt
     fun bg_QTime__OPERATOR_le_const_QTime_R(_self_ : QTime*, rhs : QTime*) : Bool
     fun bg_QTime__OPERATOR_ge_const_QTime_R(_self_ : QTime*, rhs : QTime*) : Bool
     fun bg_QDateTime__CONSTRUCT_() : QDateTime*
-    fun bg_QDateTime__CONSTRUCT_QDate_QTime_Qt__TimeSpec_int(date : QDate*, time : QTime*, spec : TimeSpec, offset_seconds : Int32) : QDateTime*
     fun bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(date : QDate*, time : QTime*, time_zone : QTimeZone*) : QDateTime*
     fun bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R_QDateTime__TransitionResolution(date : QDate*, time : QTime*, time_zone : QTimeZone*, resolve : DateTime::TransitionResolution) : QDateTime*
     fun bg_QDateTime__CONSTRUCT_QDate_QTime(date : QDate*, time : QTime*) : QDateTime*
@@ -6265,6 +6270,10 @@ module Qt
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_QCalendar(string : CrystalString, format : CrystalString, cal : QCalendar*) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int(string : CrystalString, format : CrystalString, base_year : Int32) : QDateTime*
     fun bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(string : CrystalString, format : CrystalString, base_year : Int32, cal : QCalendar*) : QDateTime*
+    fun bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(msecs : Int64, time_zone : QTimeZone*) : QDateTime*
+    fun bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(secs : Int64, time_zone : QTimeZone*) : QDateTime*
+    fun bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64(msecs : Int64) : QDateTime*
+    fun bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64(secs : Int64) : QDateTime*
     fun bg_QDateTime_currentMSecsSinceEpoch_STATIC_() : Int64
     fun bg_QDateTime_currentSecsSinceEpoch_STATIC_() : Int64
     fun bg_QDateTime__OPERATOR_add_assign_std__chrono__milliseconds(_self_ : QDateTime*, duration : Int64) : QDateTime*
@@ -16877,6 +16886,7 @@ module Qt
     fun bg_QListWidgetItem_setSizeHint_const_QSize_R(_self_ : QListWidgetItem*, size : QSize) : Void
     fun bg_QListWidgetItem_data_int(_self_ : QListWidgetItem*, role : Int32) : CrystalVariant
     fun bg_QListWidgetItem_setData_int_const_QVariant_R(_self_ : QListWidgetItem*, role : Int32, value : CrystalVariant) : Void
+    fun bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R(_self_ : QListWidgetItem*, other : QListWidgetItem*) : Bool
     fun bg_QListWidgetItem_read_QDataStream_R(_self_ : QListWidgetItem*, in_ : QDataStream*) : Void
     fun bg_QListWidgetItem_write_QDataStream_R(_self_ : QListWidgetItem*, out_ : QDataStream*) : Void
     fun bg_QListWidgetItem__OPERATOR_assign_const_QListWidgetItem_R(_self_ : QListWidgetItem*, other : QListWidgetItem*) : QListWidgetItem*
@@ -17625,6 +17635,8 @@ module Qt
     fun bg_QMessageBox_checkBox_(_self_ : QMessageBox*) : QCheckBox*
     fun bg_QMessageBox_setOption_QMessageBox__Option_bool(_self_ : QMessageBox*, option : MessageBox::Option, on : Bool) : Void
     fun bg_QMessageBox_testOption_QMessageBox__Option(_self_ : QMessageBox*, option : MessageBox::Option) : Bool
+    fun bg_QMessageBox_setOptions_QMessageBox__Options(_self_ : QMessageBox*, options : MessageBox::Options) : Void
+    fun bg_QMessageBox_options_(_self_ : QMessageBox*) : MessageBox::Options
     fun bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R(parent : QWidget*, title : CrystalString, text : CrystalString) : MessageBox::StandardButton
     fun bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons(parent : QWidget*, title : CrystalString, text : CrystalString, buttons : MessageBox::StandardButtons) : MessageBox::StandardButton
     fun bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QMessageBox__StandardButton(parent : QWidget*, title : CrystalString, text : CrystalString, buttons : MessageBox::StandardButtons, default_button : MessageBox::StandardButton) : MessageBox::StandardButton
@@ -19414,6 +19426,7 @@ module Qt
     fun bg_QTableWidgetItem_setSizeHint_const_QSize_R(_self_ : QTableWidgetItem*, size : QSize) : Void
     fun bg_QTableWidgetItem_data_int(_self_ : QTableWidgetItem*, role : Int32) : CrystalVariant
     fun bg_QTableWidgetItem_setData_int_const_QVariant_R(_self_ : QTableWidgetItem*, role : Int32, value : CrystalVariant) : Void
+    fun bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R(_self_ : QTableWidgetItem*, other : QTableWidgetItem*) : Bool
     fun bg_QTableWidgetItem_read_QDataStream_R(_self_ : QTableWidgetItem*, in_ : QDataStream*) : Void
     fun bg_QTableWidgetItem_write_QDataStream_R(_self_ : QTableWidgetItem*, out_ : QDataStream*) : Void
     fun bg_QTableWidgetItem__OPERATOR_assign_const_QTableWidgetItem_R(_self_ : QTableWidgetItem*, other : QTableWidgetItem*) : QTableWidgetItem*
@@ -27015,6 +27028,22 @@ module Qt
       Binding.bg_QDate_daysInYear_QCalendar(self, cal)
     end
     
+    def start_of_day(zone : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDate_startOfDay_const_QTimeZone_R(self, zone))
+    end
+    
+    def end_of_day(zone : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDate_endOfDay_const_QTimeZone_R(self, zone))
+    end
+    
+    def start_of_day() : DateTime
+      DateTime.new(unwrap: Binding.bg_QDate_startOfDay_(self))
+    end
+    
+    def end_of_day() : DateTime
+      DateTime.new(unwrap: Binding.bg_QDate_endOfDay_(self))
+    end
+    
     def to_string(format : DateFormat = DateFormat::TextDate) : String
       Qt::Converter::QString.unwrap(Binding.bg_QDate_toString_Qt__DateFormat(self, format))
     end
@@ -27292,11 +27321,6 @@ module Qt
     @unwrap = result
     end
     
-    def initialize(date : Date, time : Time, spec : TimeSpec, offset_seconds : Int32 = 0)
-      result = Binding.bg_QDateTime__CONSTRUCT_QDate_QTime_Qt__TimeSpec_int(date, time, spec, offset_seconds)
-    @unwrap = result
-    end
-    
     def initialize(date : Date, time : Time, time_zone : Binding::QTimeZone*)
       result = Binding.bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(date, time, time_zone)
     @unwrap = result
@@ -27500,6 +27524,22 @@ module Qt
     
     def self.from_string(string : String, format : String, base_year : Int32, cal : Binding::QCalendar*) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(Qt::Converter::QString.wrap(string), Qt::Converter::QString.wrap(format), base_year, cal))
+    end
+    
+    def self.from_m_secs_since_epoch(msecs : Int64, time_zone : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(msecs, time_zone))
+    end
+    
+    def self.from_secs_since_epoch(secs : Int64, time_zone : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(secs, time_zone))
+    end
+    
+    def self.from_m_secs_since_epoch(msecs : Int64) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64(msecs))
+    end
+    
+    def self.from_secs_since_epoch(secs : Int64) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64(secs))
     end
     
     def self.current_m_secs_since_epoch() : Int64
@@ -93262,6 +93302,7 @@ module Qt
         {"bg_QListWidgetItem_clone_", "clone", [] of String},
         {"bg_QListWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QListWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R", "<", ["ListWidgetItem"] of String},
         {"bg_QListWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QListWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -93284,6 +93325,7 @@ module Qt
       bg_QListWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_clone_") %} Proc(Binding::QListWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QListWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QListWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R") %} Proc(Binding::QListWidgetItem*, Bool).new{|other| self.<(ListWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QListWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QListWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -93303,6 +93345,7 @@ module Qt
         {"bg_QListWidgetItem_clone_", "clone", [] of String},
         {"bg_QListWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QListWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R", "<", ["ListWidgetItem"] of String},
         {"bg_QListWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QListWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -93325,6 +93368,7 @@ module Qt
       bg_QListWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_clone_") %} Proc(Binding::QListWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QListWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QListWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R") %} Proc(Binding::QListWidgetItem*, Bool).new{|other| self.<(ListWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QListWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QListWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -93344,6 +93388,7 @@ module Qt
         {"bg_QListWidgetItem_clone_", "clone", [] of String},
         {"bg_QListWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QListWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R", "<", ["ListWidgetItem"] of String},
         {"bg_QListWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QListWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -93366,6 +93411,7 @@ module Qt
       bg_QListWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_clone_") %} Proc(Binding::QListWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QListWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QListWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R") %} Proc(Binding::QListWidgetItem*, Bool).new{|other| self.<(ListWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QListWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QListWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -93385,6 +93431,7 @@ module Qt
         {"bg_QListWidgetItem_clone_", "clone", [] of String},
         {"bg_QListWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QListWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R", "<", ["ListWidgetItem"] of String},
         {"bg_QListWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QListWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -93407,6 +93454,7 @@ module Qt
       bg_QListWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_clone_") %} Proc(Binding::QListWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QListWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QListWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R") %} Proc(Binding::QListWidgetItem*, Bool).new{|other| self.<(ListWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QListWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QListWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -93540,6 +93588,10 @@ module Qt
     
     def set_data(role : Int32, value : Variant) : Void
       Binding.bg_QListWidgetItem_setData_int_const_QVariant_R(self, role, (value.to_unsafe))
+    end
+    
+    def <(other : ListWidgetItem) : Bool
+      Binding.bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R(self, other)
     end
     
     def read(in_ : Binding::QDataStream*) : Void
@@ -98304,6 +98356,14 @@ module Qt
       Binding.bg_QMessageBox_testOption_QMessageBox__Option(self, option)
     end
     
+    def options=(options : MessageBox::Options) : Void
+      Binding.bg_QMessageBox_setOptions_QMessageBox__Options(self, options)
+    end
+    
+    def options() : MessageBox::Options
+      Binding.bg_QMessageBox_options_(self)
+    end
+    
     def self.information(parent : Widget, title : String, text : String) : MessageBox::StandardButton
       Binding.bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(title), Qt::Converter::QString.wrap(text))
     end
@@ -98487,6 +98547,10 @@ module Qt
       Escape = 512
       FlagMask = 768
       ButtonMask = -769
+    end
+    @[Flags]
+    enum Options : Int32
+      DontUseNativeDialog = 1
     end
     @[Flags]
     enum StandardButtons : Int32
@@ -108444,6 +108508,7 @@ module Qt
         {"bg_QTableWidgetItem_clone_", "clone", [] of String},
         {"bg_QTableWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QTableWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R", "<", ["TableWidgetItem"] of String},
         {"bg_QTableWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QTableWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -108466,6 +108531,7 @@ module Qt
       bg_QTableWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_clone_") %} Proc(Binding::QTableWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R") %} Proc(Binding::QTableWidgetItem*, Bool).new{|other| self.<(TableWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -108485,6 +108551,7 @@ module Qt
         {"bg_QTableWidgetItem_clone_", "clone", [] of String},
         {"bg_QTableWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QTableWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R", "<", ["TableWidgetItem"] of String},
         {"bg_QTableWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QTableWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -108507,6 +108574,7 @@ module Qt
       bg_QTableWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_clone_") %} Proc(Binding::QTableWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R") %} Proc(Binding::QTableWidgetItem*, Bool).new{|other| self.<(TableWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -108526,6 +108594,7 @@ module Qt
         {"bg_QTableWidgetItem_clone_", "clone", [] of String},
         {"bg_QTableWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QTableWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R", "<", ["TableWidgetItem"] of String},
         {"bg_QTableWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QTableWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -108548,6 +108617,7 @@ module Qt
       bg_QTableWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_clone_") %} Proc(Binding::QTableWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R") %} Proc(Binding::QTableWidgetItem*, Bool).new{|other| self.<(TableWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -108567,6 +108637,7 @@ module Qt
         {"bg_QTableWidgetItem_clone_", "clone", [] of String},
         {"bg_QTableWidgetItem_data_int", "data", ["Int32"] of String},
         {"bg_QTableWidgetItem_setData_int_const_QVariant_R", "set_data", ["Int32", "Variant"] of String},
+        {"bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R", "<", ["TableWidgetItem"] of String},
         {"bg_QTableWidgetItem_read_QDataStream_R", "read", ["Binding::QDataStream*"] of String},
         {"bg_QTableWidgetItem_write_QDataStream_R", "write", ["Binding::QDataStream*"] of String},
       ].each do |sig|
@@ -108589,6 +108660,7 @@ module Qt
       bg_QTableWidgetItem_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_clone_") %} Proc(Binding::QTableWidgetItem*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidgetItem_data_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_data_int") %} Proc(Int32, Binding::CrystalVariant).new{|role| (self.data(role).to_unsafe) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_setData_int_const_QVariant_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_setData_int_const_QVariant_R") %} Proc(Int32, Binding::CrystalVariant, Void).new{|role, value| self.set_data(role, Qt::Variant.new(value)) } {% else %} nil {% end %}),
+      bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R") %} Proc(Binding::QTableWidgetItem*, Bool).new{|other| self.<(TableWidgetItem.new(unwrap: other)) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_read_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_read_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|in_| self.read(in_) } {% else %} nil {% end %}),
       bg_QTableWidgetItem_write_QDataStream_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidgetItem_write_QDataStream_R") %} Proc(Binding::QDataStream*, Void).new{|out_| self.write(out_) } {% else %} nil {% end %}),
     )
@@ -108722,6 +108794,10 @@ module Qt
     
     def set_data(role : Int32, value : Variant) : Void
       Binding.bg_QTableWidgetItem_setData_int_const_QVariant_R(self, role, (value.to_unsafe))
+    end
+    
+    def <(other : TableWidgetItem) : Bool
+      Binding.bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R(self, other)
     end
     
     def read(in_ : Binding::QDataStream*) : Void

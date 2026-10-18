@@ -318,5 +318,6 @@ enums:
   "QAbstractAnimation::DeletionPolicy": AbstractAnimation::DeletionPolicy
   "QDateTime::TransitionResolution": DateTime::TransitionResolution
   "QMessageBox::Option": MessageBox::Option
+  "QMessageBox::Options": MessageBox::Options
   "QProcess::UnixProcessFlags": Process::UnixProcessFlags
   "QSortFilterProxyModel::Directions": SortFilterProxyModel::Directions

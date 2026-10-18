@@ -5633,6 +5633,22 @@ extern "C" int bg_QDate_daysInYear_QCalendar(QDate * _self_, QCalendar & cal) {
   return _self_->daysInYear(cal);
 }
 
+extern "C" QDateTime * bg_QDate_startOfDay_const_QTimeZone_R(QDate * _self_, const QTimeZone & zone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->startOfDay(zone));
+}
+
+extern "C" QDateTime * bg_QDate_endOfDay_const_QTimeZone_R(QDate * _self_, const QTimeZone & zone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->endOfDay(zone));
+}
+
+extern "C" QDateTime * bg_QDate_startOfDay_(QDate * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->startOfDay());
+}
+
+extern "C" QDateTime * bg_QDate_endOfDay_(QDate * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->endOfDay());
+}
+
 extern "C" CrystalString bg_QDate_toString_Qt__DateFormat(QDate * _self_, Qt::DateFormat format) {
   return qstring_to_crystal(_self_->toString(format));
 }
@@ -5881,10 +5897,6 @@ extern "C" QDateTime * bg_QDateTime__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QDateTime>();
 }
 
-extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_Qt__TimeSpec_int(QDate & date, QTime & time, Qt::TimeSpec spec, int offsetSeconds) {
-  return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, spec, offsetSeconds);
-}
-
 extern "C" QDateTime * bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(QDate & date, QTime & time, const QTimeZone & timeZone) {
   return new (UseGC) CrystalGCWrapper<QDateTime>(date, time, timeZone);
 }
@@ -6083,6 +6095,22 @@ extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_const_QStr
 
 extern "C" QDateTime * bg_QDateTime_fromString_STATIC_const_QString_R_const_QString_R_int_QCalendar(const CrystalString string, const CrystalString format, int baseYear, QCalendar & cal) {
   return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (format); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), baseYear, cal));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(qint64 msecs, const QTimeZone & timeZone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromMSecsSinceEpoch(msecs, timeZone));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64_const_QTimeZone_R(qint64 secs, const QTimeZone & timeZone) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromSecsSinceEpoch(secs, timeZone));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromMSecsSinceEpoch_STATIC_qint64(qint64 msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromMSecsSinceEpoch(msecs));
+}
+
+extern "C" QDateTime * bg_QDateTime_fromSecsSinceEpoch_STATIC_qint64(qint64 secs) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (QDateTime::fromSecsSinceEpoch(secs));
 }
 
 extern "C" qint64 bg_QDateTime_currentMSecsSinceEpoch_STATIC_() {
@@ -62776,6 +62804,7 @@ struct BgJumptable_QListWidgetItem {
   CrystalProc<QListWidgetItem *> bg_QListWidgetItem_clone_;
   CrystalProc<CrystalVariant, int> bg_QListWidgetItem_data_int;
   CrystalProc<void, int, const CrystalVariant> bg_QListWidgetItem_setData_int_const_QVariant_R;
+  CrystalProc<bool, const QListWidgetItem *> bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R;
   CrystalProc<void, QDataStream *> bg_QListWidgetItem_read_QDataStream_R;
   CrystalProc<void, QDataStream *> bg_QListWidgetItem_write_QDataStream_R;
 };
@@ -62807,6 +62836,15 @@ struct BgInherit_QListWidgetItem : public QListWidgetItem {
       _self_->bgJump.bg_QListWidgetItem_setData_int_const_QVariant_R(role, qvariant_to_crystal(value));
     } else {
       QListWidgetItem::setData(role, value);
+    }
+  }
+  
+  bool operator<(const QListWidgetItem & other) const override {
+    const BgInherit_QListWidgetItem *_self_ = this;
+    if (_self_->bgJump.bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R.isValid()) {
+      return _self_->bgJump.bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R(&(other));
+    } else {
+      return QListWidgetItem::operator<(other);
     }
   }
   
@@ -62971,6 +63009,10 @@ extern "C" CrystalVariant bg_QListWidgetItem_data_int(QListWidgetItem * _self_, 
 
 extern "C" void bg_QListWidgetItem_setData_int_const_QVariant_R(QListWidgetItem * _self_, int role, const CrystalVariant value) {
   _self_->setData(role, crystal_to_qvariant(value));
+}
+
+extern "C" bool bg_QListWidgetItem__OPERATOR_lt_const_QListWidgetItem_R(QListWidgetItem * _self_, const QListWidgetItem & other) {
+  return (*_self_) < (other);
 }
 
 extern "C" void bg_QListWidgetItem_read_QDataStream_R(QListWidgetItem * _self_, QDataStream & in) {
@@ -67481,6 +67523,14 @@ extern "C" void bg_QMessageBox_setOption_QMessageBox__Option_bool(QMessageBox * 
 
 extern "C" bool bg_QMessageBox_testOption_QMessageBox__Option(QMessageBox * _self_, QMessageBox::Option option) {
   return _self_->testOption(option);
+}
+
+extern "C" void bg_QMessageBox_setOptions_QMessageBox__Options(QMessageBox * _self_, QMessageBox::Options options) {
+  _self_->setOptions(options);
+}
+
+extern "C" QMessageBox::Options bg_QMessageBox_options_(QMessageBox * _self_) {
+  return _self_->options();
 }
 
 extern "C" QMessageBox::StandardButton bg_QMessageBox_information_STATIC_QWidget_X_const_QString_R_const_QString_R(QWidget * parent, const CrystalString title, const CrystalString text) {
@@ -76725,6 +76775,7 @@ struct BgJumptable_QTableWidgetItem {
   CrystalProc<QTableWidgetItem *> bg_QTableWidgetItem_clone_;
   CrystalProc<CrystalVariant, int> bg_QTableWidgetItem_data_int;
   CrystalProc<void, int, const CrystalVariant> bg_QTableWidgetItem_setData_int_const_QVariant_R;
+  CrystalProc<bool, const QTableWidgetItem *> bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R;
   CrystalProc<void, QDataStream *> bg_QTableWidgetItem_read_QDataStream_R;
   CrystalProc<void, QDataStream *> bg_QTableWidgetItem_write_QDataStream_R;
 };
@@ -76756,6 +76807,15 @@ struct BgInherit_QTableWidgetItem : public QTableWidgetItem {
       _self_->bgJump.bg_QTableWidgetItem_setData_int_const_QVariant_R(role, qvariant_to_crystal(value));
     } else {
       QTableWidgetItem::setData(role, value);
+    }
+  }
+  
+  bool operator<(const QTableWidgetItem & other) const override {
+    const BgInherit_QTableWidgetItem *_self_ = this;
+    if (_self_->bgJump.bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R.isValid()) {
+      return _self_->bgJump.bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R(&(other));
+    } else {
+      return QTableWidgetItem::operator<(other);
     }
   }
   
@@ -76920,6 +76980,10 @@ extern "C" CrystalVariant bg_QTableWidgetItem_data_int(QTableWidgetItem * _self_
 
 extern "C" void bg_QTableWidgetItem_setData_int_const_QVariant_R(QTableWidgetItem * _self_, int role, const CrystalVariant value) {
   _self_->setData(role, crystal_to_qvariant(value));
+}
+
+extern "C" bool bg_QTableWidgetItem__OPERATOR_lt_const_QTableWidgetItem_R(QTableWidgetItem * _self_, const QTableWidgetItem & other) {
+  return (*_self_) < (other);
 }
 
 extern "C" void bg_QTableWidgetItem_read_QDataStream_R(QTableWidgetItem * _self_, QDataStream & in) {
