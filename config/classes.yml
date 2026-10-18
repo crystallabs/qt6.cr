@@ -515,3 +515,16 @@ classes:
   QSharedMemory: SharedMemory
   QSystemSemaphore: SystemSemaphore
   QNativeIpcKey: NativeIpcKey
+  # Remaining models, styles and providers
+  QConcatenateTablesProxyModel: ConcatenateTablesProxyModel
+  QTransposeProxyModel: TransposeProxyModel
+  QAbstractFileIconProvider: AbstractFileIconProvider
+  QFileIconProvider: FileIconProvider
+  QItemEditorCreatorBase: ItemEditorCreatorBase
+  Qt6crItemEditorCreator: ItemEditorCreator # Concrete, see ext/item_editor_helper.hpp
+  QStyleHintReturnMask: StyleHintReturnMask
+  QStyleHintReturnVariant: StyleHintReturnVariant
+  QStyleOptionHeaderV2: StyleOptionHeaderV2
+  QStyleOptionMenuItemV2: StyleOptionMenuItemV2
+  QIconEngine: IconEngine
+  QWidgetItemV2: WidgetItemV2

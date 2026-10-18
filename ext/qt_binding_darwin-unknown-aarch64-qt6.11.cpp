@@ -8,6 +8,7 @@
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 #include <meta_helper.hpp>
+#include <item_editor_helper.hpp>
 
 typedef BindgenMapEntries<QHash<int, QByteArray>> Container_QHash_int__QByteArray__Entries;
 typedef QHash<int, QByteArray> Container_QHash_int__QByteArray_;
@@ -77,6 +78,7 @@ typedef QList<QItemSelectionRange> Container_QList_QItemSelectionRange_;
 typedef QList<QPointF> Container_QList_QPointF_;
 typedef QList<QFileInfo> Container_QList_QFileInfo_;
 typedef QList<QTimeZone::OffsetData> Container_QList_QTimeZone__OffsetData_;
+typedef QList<QAbstractItemModel *> Container_QList_QAbstractItemModel_X_;
 typedef QList<QCommandLineOption> Container_QList_QCommandLineOption_;
 typedef QList<QCborValue> Container_QList_QCborValue_;
 typedef QList<QUrl> Container_QList_QUrl_;
@@ -1769,6 +1771,10 @@ extern "C" QChronoTimer * bg_QObject_CAST_ChronoTimer_(QObject * _self_) {
   return bindgen_dynamic_cast<QChronoTimer *>(_self_);
 }
 
+extern "C" QConcatenateTablesProxyModel * bg_QObject_CAST_ConcatenateTablesProxyModel_(QObject * _self_) {
+  return bindgen_dynamic_cast<QConcatenateTablesProxyModel *>(_self_);
+}
+
 extern "C" QFileDevice * bg_QObject_CAST_FileDevice_(QObject * _self_) {
   return bindgen_dynamic_cast<QFileDevice *>(_self_);
 }
@@ -1875,6 +1881,10 @@ extern "C" QTimeLine * bg_QObject_CAST_TimeLine_(QObject * _self_) {
 
 extern "C" QTranslator * bg_QObject_CAST_Translator_(QObject * _self_) {
   return bindgen_dynamic_cast<QTranslator *>(_self_);
+}
+
+extern "C" QTransposeProxyModel * bg_QObject_CAST_TransposeProxyModel_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTransposeProxyModel *>(_self_);
 }
 
 extern "C" QScreen * bg_QObject_CAST_Screen_(QObject * _self_) {
@@ -14706,6 +14716,687 @@ extern "C" CrystalString bg_QCommandLineParser_helpText_(QCommandLineParser * _s
 
 extern "C" void bg_QCommandLineParser_showMessageAndExit_STATIC_QCommandLineParser__MessageType_const_QString_R_int(QCommandLineParser::MessageType type, const CrystalString message, int exitCode) {
   QCommandLineParser::showMessageAndExit(type, ([&]() { auto &&bg_value = (message); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), exitCode);
+}
+
+struct BgJumptable_QConcatenateTablesProxyModel {
+  CrystalProc<const QMetaObject *> bg_QConcatenateTablesProxyModel_metaObject_;
+  CrystalProc<void *, const char *> bg_QConcatenateTablesProxyModel_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QConcatenateTablesProxyModel_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QConcatenateTablesProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QConcatenateTablesProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QConcatenateTablesProxyModel_itemData_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QConcatenateTablesProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
+  CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QConcatenateTablesProxyModel_flags_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int> bg_QConcatenateTablesProxyModel_index_int_int;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QConcatenateTablesProxyModel_index_int_int_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QConcatenateTablesProxyModel_parent_const_QModelIndex_R;
+  CrystalProc<int> bg_QConcatenateTablesProxyModel_rowCount_;
+  CrystalProc<int, const QModelIndex *> bg_QConcatenateTablesProxyModel_rowCount_const_QModelIndex_R;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QConcatenateTablesProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<int> bg_QConcatenateTablesProxyModel_columnCount_;
+  CrystalProc<int, const QModelIndex *> bg_QConcatenateTablesProxyModel_columnCount_const_QModelIndex_R;
+  CrystalProc<QList<QString> *> bg_QConcatenateTablesProxyModel_mimeTypes_;
+  CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QConcatenateTablesProxyModel_mimeData_const_QModelIndexList_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QConcatenateTablesProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QConcatenateTablesProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<QSize *, const QModelIndex *> bg_QConcatenateTablesProxyModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QConcatenateTablesProxyModel_roleNames_;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R;
+  CrystalProc<bool> bg_QAbstractItemModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_clearItemData_const_QModelIndex_R;
+  CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDropActions_;
+  CrystalProc<Qt::DropActions> bg_QAbstractItemModel_supportedDragActions_;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_insertColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QAbstractItemModel_removeColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<void, const QModelIndex *> bg_QAbstractItemModel_fetchMore_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R;
+  CrystalProc<void, int, Qt::SortOrder> bg_QAbstractItemModel_sort_int_Qt__SortOrder;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractItemModel_buddy_const_QModelIndex_R;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
+  CrystalProc<bool> bg_QAbstractItemModel_submit_;
+  CrystalProc<void> bg_QAbstractItemModel_revert_;
+  CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QConcatenateTablesProxyModel : public QConcatenateTablesProxyModel {
+  using QConcatenateTablesProxyModel::QConcatenateTablesProxyModel;
+  BgJumptable_QConcatenateTablesProxyModel bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_metaObject_();
+    } else {
+      return QConcatenateTablesProxyModel::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QConcatenateTablesProxyModel::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QConcatenateTablesProxyModel::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QVariant data(const QModelIndex & index, int role) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_data_const_QModelIndex_R_int.isValid()) {
+      return crystal_to_qvariant(*_self_->bgJump.bg_QConcatenateTablesProxyModel_data_const_QModelIndex_R_int(&(index), role));
+    } else {
+      return QConcatenateTablesProxyModel::data(index, role);
+    }
+  }
+  
+  bool setData(const QModelIndex & index, const QVariant & value, int role) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
+    } else {
+      return QConcatenateTablesProxyModel::setData(index, value, role);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QConcatenateTablesProxyModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QConcatenateTablesProxyModel::itemData(index);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QConcatenateTablesProxyModel::setItemData(index, roles);
+    }
+  }
+  
+  Qt::ItemFlags flags(const QModelIndex & index) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_flags_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_flags_const_QModelIndex_R(&(index));
+    } else {
+      return QConcatenateTablesProxyModel::flags(index);
+    }
+  }
+  
+  QModelIndex index(int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_index_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_index_int_int_const_QModelIndex_R(row, column, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::index(row, column, parent);
+    }
+  }
+  
+  QModelIndex parent(const QModelIndex & child) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_parent_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_parent_const_QModelIndex_R(&(child));
+    } else {
+      return QConcatenateTablesProxyModel::parent(child);
+    }
+  }
+  
+  int rowCount(const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_rowCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_rowCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QConcatenateTablesProxyModel::rowCount(parent);
+    }
+  }
+  
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
+      return crystal_to_qvariant(*_self_->bgJump.bg_QConcatenateTablesProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+    } else {
+      return QConcatenateTablesProxyModel::headerData(section, orientation, role);
+    }
+  }
+  
+  int columnCount(const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_columnCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_columnCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QConcatenateTablesProxyModel::columnCount(parent);
+    }
+  }
+  
+  QList<QString> mimeTypes() const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_mimeTypes_.isValid()) {
+      return *(_self_->bgJump.bg_QConcatenateTablesProxyModel_mimeTypes_());
+    } else {
+      return QConcatenateTablesProxyModel::mimeTypes();
+    }
+  }
+  
+  QMimeData * mimeData(const QModelIndexList & indexes) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_mimeData_const_QModelIndexList_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_mimeData_const_QModelIndexList_R(new (UseGC, bindgen_gc_finalizer<Container_QList_QModelIndex_>()) Container_QList_QModelIndex_ (indexes));
+    } else {
+      return QConcatenateTablesProxyModel::mimeData(indexes);
+    }
+  }
+  
+  bool canDropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::canDropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QConcatenateTablesProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::dropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  QSize span(const QModelIndex & index) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_span_const_QModelIndex_R.isValid()) {
+      return *_self_->bgJump.bg_QConcatenateTablesProxyModel_span_const_QModelIndex_R(&(index));
+    } else {
+      return QConcatenateTablesProxyModel::span(index);
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QConcatenateTablesProxyModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QConcatenateTablesProxyModel_roleNames_());
+    } else {
+      return QConcatenateTablesProxyModel::roleNames();
+    }
+  }
+  
+  QModelIndex sibling(int row, int column, const QModelIndex & idx) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R(row, column, &(idx));
+    } else {
+      return QConcatenateTablesProxyModel::sibling(row, column, idx);
+    }
+  }
+  
+  bool hasChildren(const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_hasChildren_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_hasChildren_const_QModelIndex_R(&(parent));
+    } else {
+      return QConcatenateTablesProxyModel::hasChildren(parent);
+    }
+  }
+  
+  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
+    } else {
+      return QConcatenateTablesProxyModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  bool clearItemData(const QModelIndex & index) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(&(index));
+    } else {
+      return QConcatenateTablesProxyModel::clearItemData(index);
+    }
+  }
+  
+  Qt::DropActions supportedDropActions() const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_supportedDropActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_supportedDropActions_();
+    } else {
+      return QConcatenateTablesProxyModel::supportedDropActions();
+    }
+  }
+  
+  Qt::DropActions supportedDragActions() const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_supportedDragActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_supportedDragActions_();
+    } else {
+      return QConcatenateTablesProxyModel::supportedDragActions();
+    }
+  }
+  
+  bool insertRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_insertRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::insertRows(row, count, parent);
+    }
+  }
+  
+  bool insertColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_insertColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::insertColumns(column, count, parent);
+    }
+  }
+  
+  bool removeRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_removeRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::removeRows(row, count, parent);
+    }
+  }
+  
+  bool removeColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_removeColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QConcatenateTablesProxyModel::removeColumns(column, count, parent);
+    }
+  }
+  
+  bool moveRows(const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceRow, count, &(destinationParent), destinationChild);
+    } else {
+      return QConcatenateTablesProxyModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+    }
+  }
+  
+  bool moveColumns(const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceColumn, count, &(destinationParent), destinationChild);
+    } else {
+      return QConcatenateTablesProxyModel::moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+    }
+  }
+  
+  void fetchMore(const QModelIndex & parent) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_fetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      QConcatenateTablesProxyModel::fetchMore(parent);
+    }
+  }
+  
+  bool canFetchMore(const QModelIndex & parent) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_canFetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      return QConcatenateTablesProxyModel::canFetchMore(parent);
+    }
+  }
+  
+  void sort(int column, Qt::SortOrder order) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_sort_int_Qt__SortOrder.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_sort_int_Qt__SortOrder(column, order);
+    } else {
+      QConcatenateTablesProxyModel::sort(column, order);
+    }
+  }
+  
+  QModelIndex buddy(const QModelIndex & index) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_buddy_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_buddy_const_QModelIndex_R(&(index));
+    } else {
+      return QConcatenateTablesProxyModel::buddy(index);
+    }
+  }
+  
+  QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
+    } else {
+      return QConcatenateTablesProxyModel::match(start, role, value, hits, flags);
+    }
+  }
+  
+  void multiData(const QModelIndex & index, QModelRoleDataSpan roleDataSpan) const override {
+    const BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(&(index), new (UseGC, bindgen_gc_finalizer<QModelRoleDataSpan>()) QModelRoleDataSpan (roleDataSpan));
+    } else {
+      QConcatenateTablesProxyModel::multiData(index, roleDataSpan);
+    }
+  }
+  
+  bool submit() override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_submit_.isValid()) {
+      return _self_->bgJump.bg_QAbstractItemModel_submit_();
+    } else {
+      return QConcatenateTablesProxyModel::submit();
+    }
+  }
+  
+  void revert() override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_revert_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_revert_();
+    } else {
+      QConcatenateTablesProxyModel::revert();
+    }
+  }
+  
+  void resetInternalData() override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_resetInternalData_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_resetInternalData_();
+    } else {
+      QConcatenateTablesProxyModel::resetInternalData();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QConcatenateTablesProxyModel::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QConcatenateTablesProxyModel::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QConcatenateTablesProxyModel::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QConcatenateTablesProxyModel::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QConcatenateTablesProxyModel::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QConcatenateTablesProxyModel::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QConcatenateTablesProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QConcatenateTablesProxyModel::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QConcatenateTablesProxyModel_metaObject_(QConcatenateTablesProxyModel * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QConcatenateTablesProxyModel_qt_metacast_const_char_X(QConcatenateTablesProxyModel * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(QConcatenateTablesProxyModel * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QConcatenateTablesProxyModel_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QConcatenateTablesProxyModel::tr(s));
+}
+
+extern "C" CrystalString bg_QConcatenateTablesProxyModel_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QConcatenateTablesProxyModel::tr(s, c));
+}
+
+extern "C" CrystalString bg_QConcatenateTablesProxyModel_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QConcatenateTablesProxyModel::tr(s, c, n));
+}
+
+extern "C" QConcatenateTablesProxyModel * bg_QConcatenateTablesProxyModel__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QConcatenateTablesProxyModel>(parent);
+}
+
+extern "C" Container_QList_QAbstractItemModel_X_ * bg_QConcatenateTablesProxyModel_sourceModels_(QConcatenateTablesProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QAbstractItemModel_X_>()) Container_QList_QAbstractItemModel_X_ (_self_->sourceModels());
+}
+
+extern "C" void bg_QConcatenateTablesProxyModel_addSourceModel_QAbstractItemModel_X(QConcatenateTablesProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->addSourceModel(sourceModel);
+}
+
+extern "C" void bg_QConcatenateTablesProxyModel_removeSourceModel_QAbstractItemModel_X(QConcatenateTablesProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->removeSourceModel(sourceModel);
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_mapFromSource_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapFromSource(sourceIndex));
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_mapToSource_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapToSource(proxyIndex));
+}
+
+extern "C" CrystalVariant bg_QConcatenateTablesProxyModel_data_const_QModelIndex_R_int(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->data(index, role));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QConcatenateTablesProxyModel_itemData_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
+}
+
+extern "C" Qt::ItemFlags bg_QConcatenateTablesProxyModel_flags_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return _self_->flags(index);
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_index_int_int(QConcatenateTablesProxyModel * _self_, int row, int column) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column));
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_index_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column, parent));
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_parent_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->parent(child));
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_rowCount_(QConcatenateTablesProxyModel * _self_) {
+  return _self_->rowCount();
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_rowCount_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->rowCount(parent);
+}
+
+extern "C" CrystalVariant bg_QConcatenateTablesProxyModel_headerData_int_Qt__Orientation_int(QConcatenateTablesProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->headerData(section, orientation, role));
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_columnCount_(QConcatenateTablesProxyModel * _self_) {
+  return _self_->columnCount();
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_columnCount_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->columnCount(parent);
+}
+
+extern "C" QList<QString> * bg_QConcatenateTablesProxyModel_mimeTypes_(QConcatenateTablesProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->mimeTypes());
+}
+
+extern "C" QMimeData * bg_QConcatenateTablesProxyModel_mimeData_const_QModelIndexList_R(QConcatenateTablesProxyModel * _self_, const Container_QList_QModelIndex_ * indexes) {
+  return _self_->mimeData(*(indexes));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->canDropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" QSize bg_QConcatenateTablesProxyModel_span_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return _self_->span(index);
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QConcatenateTablesProxyModel_roleNames_(QConcatenateTablesProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->roleNames());
+}
+
+extern "C" const QMetaObject * bg_QConcatenateTablesProxyModel_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QConcatenateTablesProxyModel::staticMetaObject);
+}
+
+extern "C" CrystalVariant bg_QConcatenateTablesProxyModel_data_SUPER_const_QModelIndex_R_int(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, int role) {
+  return qvariant_to_crystal(_self_->QConcatenateTablesProxyModel::data(index, role));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_setData_SUPER_const_QModelIndex_R_const_QVariant_R_int(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, const CrystalVariant value, int role) {
+  return _self_->QConcatenateTablesProxyModel::setData(index, crystal_to_qvariant(value), role);
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QConcatenateTablesProxyModel_itemData_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QConcatenateTablesProxyModel::itemData(index));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QConcatenateTablesProxyModel::setItemData(index, *(roles));
+}
+
+extern "C" Qt::ItemFlags bg_QConcatenateTablesProxyModel_flags_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QConcatenateTablesProxyModel::flags(index);
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_index_SUPER_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QConcatenateTablesProxyModel::index(row, column, parent));
+}
+
+extern "C" QModelIndex * bg_QConcatenateTablesProxyModel_parent_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QConcatenateTablesProxyModel::parent(child));
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_rowCount_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QConcatenateTablesProxyModel::rowCount(parent);
+}
+
+extern "C" CrystalVariant bg_QConcatenateTablesProxyModel_headerData_SUPER_int_Qt__Orientation_int(QConcatenateTablesProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->QConcatenateTablesProxyModel::headerData(section, orientation, role));
+}
+
+extern "C" int bg_QConcatenateTablesProxyModel_columnCount_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QConcatenateTablesProxyModel::columnCount(parent);
+}
+
+extern "C" QList<QString> * bg_QConcatenateTablesProxyModel_mimeTypes_SUPER_(QConcatenateTablesProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->QConcatenateTablesProxyModel::mimeTypes());
+}
+
+extern "C" QMimeData * bg_QConcatenateTablesProxyModel_mimeData_SUPER_const_QModelIndexList_R(QConcatenateTablesProxyModel * _self_, const Container_QList_QModelIndex_ * indexes) {
+  return _self_->QConcatenateTablesProxyModel::mimeData(*(indexes));
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->QConcatenateTablesProxyModel::canDropMimeData(data, action, row, column, parent);
+}
+
+extern "C" bool bg_QConcatenateTablesProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) {
+  return _self_->QConcatenateTablesProxyModel::dropMimeData(data, action, row, column, parent);
+}
+
+extern "C" QSize bg_QConcatenateTablesProxyModel_span_SUPER_const_QModelIndex_R(QConcatenateTablesProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QConcatenateTablesProxyModel::span(index);
+}
+
+extern "C" Container_QHash_int__QByteArray_ * bg_QConcatenateTablesProxyModel_roleNames_SUPER_(QConcatenateTablesProxyModel * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QHash_int__QByteArray_>()) Container_QHash_int__QByteArray_ (_self_->QConcatenateTablesProxyModel::roleNames());
+}
+
+extern "C" void bg_BgInherit_QConcatenateTablesProxyModel_JUMPTABLE_BgJumptable_QConcatenateTablesProxyModel_R(BgInherit_QConcatenateTablesProxyModel * _self_, const BgJumptable_QConcatenateTablesProxyModel & table) {
+  _self_->bgJump = (table);
 }
 
 extern "C" QCryptographicHash * bg_QCryptographicHash__CONSTRUCT_QCryptographicHash__Algorithm(QCryptographicHash::Algorithm method) {
@@ -30164,6 +30855,761 @@ extern "C" void bg_BgInherit_QTranslator_JUMPTABLE_BgJumptable_QTranslator_R(BgI
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QTransposeProxyModel {
+  CrystalProc<const QMetaObject *> bg_QTransposeProxyModel_metaObject_;
+  CrystalProc<void *, const char *> bg_QTransposeProxyModel_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTransposeProxyModel_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QAbstractItemModel *> bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X;
+  CrystalProc<int> bg_QTransposeProxyModel_rowCount_;
+  CrystalProc<int, const QModelIndex *> bg_QTransposeProxyModel_rowCount_const_QModelIndex_R;
+  CrystalProc<int> bg_QTransposeProxyModel_columnCount_;
+  CrystalProc<int, const QModelIndex *> bg_QTransposeProxyModel_columnCount_const_QModelIndex_R;
+  CrystalProc<CrystalVariant *, int, Qt::Orientation, int> bg_QTransposeProxyModel_headerData_int_Qt__Orientation_int;
+  CrystalProc<bool, int, Qt::Orientation, const CrystalVariant *, int> bg_QTransposeProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *, const Container_QMap_int__QVariant_ *> bg_QTransposeProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R;
+  CrystalProc<QSize *, const QModelIndex *> bg_QTransposeProxyModel_span_const_QModelIndex_R;
+  CrystalProc<Container_QMap_int__QVariant_ *, const QModelIndex *> bg_QTransposeProxyModel_itemData_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QTransposeProxyModel_mapFromSource_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QTransposeProxyModel_mapToSource_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QTransposeProxyModel_parent_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int> bg_QTransposeProxyModel_index_int_int;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QTransposeProxyModel_index_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QTransposeProxyModel_insertRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QTransposeProxyModel_insertRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QTransposeProxyModel_removeRows_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QTransposeProxyModel_removeRows_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QTransposeProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<bool, int, int> bg_QTransposeProxyModel_insertColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QTransposeProxyModel_insertColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, int, int> bg_QTransposeProxyModel_removeColumns_int_int;
+  CrystalProc<bool, int, int, const QModelIndex *> bg_QTransposeProxyModel_removeColumns_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, int, int, const QModelIndex *, int> bg_QTransposeProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int;
+  CrystalProc<void, int, Qt::SortOrder> bg_QTransposeProxyModel_sort_int_Qt__SortOrder;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R;
+  CrystalProc<QItemSelection &, const QItemSelection *> bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R;
+  CrystalProc<bool> bg_QAbstractProxyModel_submit_;
+  CrystalProc<void> bg_QAbstractProxyModel_revert_;
+  CrystalProc<CrystalVariant *, const QModelIndex *, int> bg_QAbstractProxyModel_data_const_QModelIndex_R_int;
+  CrystalProc<Qt::ItemFlags, const QModelIndex *> bg_QAbstractProxyModel_flags_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *, const CrystalVariant *, int> bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, const QModelIndex *> bg_QAbstractProxyModel_buddy_const_QModelIndex_R;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R;
+  CrystalProc<void, const QModelIndex *> bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R;
+  CrystalProc<bool> bg_QAbstractProxyModel_hasChildren_;
+  CrystalProc<bool, const QModelIndex *> bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R;
+  CrystalProc<QModelIndex &, int, int, const QModelIndex *> bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R;
+  CrystalProc<QMimeData *, const Container_QList_QModelIndex_ *> bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<bool, const QMimeData *, Qt::DropAction, int, int, const QModelIndex *> bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R;
+  CrystalProc<QList<QString> *> bg_QAbstractProxyModel_mimeTypes_;
+  CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDragActions_;
+  CrystalProc<Qt::DropActions> bg_QAbstractProxyModel_supportedDropActions_;
+  CrystalProc<Container_QHash_int__QByteArray_ *> bg_QAbstractProxyModel_roleNames_;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int;
+  CrystalProc<Container_QList_QModelIndex_ *, const QModelIndex *, int, const CrystalVariant *, int, Qt::MatchFlags> bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags;
+  CrystalProc<void, const QModelIndex *, QModelRoleDataSpan *> bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan;
+  CrystalProc<void> bg_QAbstractItemModel_resetInternalData_;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTransposeProxyModel : public QTransposeProxyModel {
+  using QTransposeProxyModel::QTransposeProxyModel;
+  BgJumptable_QTransposeProxyModel bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_metaObject_();
+    } else {
+      return QTransposeProxyModel::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTransposeProxyModel::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTransposeProxyModel::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setSourceModel(QAbstractItemModel * sourceModel) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X.isValid()) {
+      _self_->bgJump.bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X(sourceModel);
+    } else {
+      QTransposeProxyModel::setSourceModel(sourceModel);
+    }
+  }
+  
+  int rowCount(const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_rowCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_rowCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QTransposeProxyModel::rowCount(parent);
+    }
+  }
+  
+  int columnCount(const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_columnCount_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_columnCount_const_QModelIndex_R(&(parent));
+    } else {
+      return QTransposeProxyModel::columnCount(parent);
+    }
+  }
+  
+  QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_headerData_int_Qt__Orientation_int.isValid()) {
+      return crystal_to_qvariant(*_self_->bgJump.bg_QTransposeProxyModel_headerData_int_Qt__Orientation_int(section, orientation, role));
+    } else {
+      return QTransposeProxyModel::headerData(section, orientation, role);
+    }
+  }
+  
+  bool setHeaderData(int section, Qt::Orientation orientation, const QVariant & value, int role) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(section, orientation, bindgen_address(qvariant_to_crystal(value)), role);
+    } else {
+      return QTransposeProxyModel::setHeaderData(section, orientation, value, role);
+    }
+  }
+  
+  bool setItemData(const QModelIndex & index, const QMap<int, QVariant> & roles) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(&(index), new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (roles));
+    } else {
+      return QTransposeProxyModel::setItemData(index, roles);
+    }
+  }
+  
+  QSize span(const QModelIndex & index) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_span_const_QModelIndex_R.isValid()) {
+      return *_self_->bgJump.bg_QTransposeProxyModel_span_const_QModelIndex_R(&(index));
+    } else {
+      return QTransposeProxyModel::span(index);
+    }
+  }
+  
+  QMap<int, QVariant> itemData(const QModelIndex & index) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_itemData_const_QModelIndex_R.isValid()) {
+      return *(_self_->bgJump.bg_QTransposeProxyModel_itemData_const_QModelIndex_R(&(index)));
+    } else {
+      return QTransposeProxyModel::itemData(index);
+    }
+  }
+  
+  QModelIndex mapFromSource(const QModelIndex & sourceIndex) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_mapFromSource_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_mapFromSource_const_QModelIndex_R(&(sourceIndex));
+    } else {
+      return QTransposeProxyModel::mapFromSource(sourceIndex);
+    }
+  }
+  
+  QModelIndex mapToSource(const QModelIndex & proxyIndex) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_mapToSource_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_mapToSource_const_QModelIndex_R(&(proxyIndex));
+    } else {
+      return QTransposeProxyModel::mapToSource(proxyIndex);
+    }
+  }
+  
+  QModelIndex parent(const QModelIndex & child) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_parent_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_parent_const_QModelIndex_R(&(child));
+    } else {
+      return QTransposeProxyModel::parent(child);
+    }
+  }
+  
+  QModelIndex index(int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_index_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_index_int_int_const_QModelIndex_R(row, column, &(parent));
+    } else {
+      return QTransposeProxyModel::index(row, column, parent);
+    }
+  }
+  
+  bool insertRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_insertRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_insertRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QTransposeProxyModel::insertRows(row, count, parent);
+    }
+  }
+  
+  bool removeRows(int row, int count, const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_removeRows_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_removeRows_int_int_const_QModelIndex_R(row, count, &(parent));
+    } else {
+      return QTransposeProxyModel::removeRows(row, count, parent);
+    }
+  }
+  
+  bool moveRows(const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceRow, count, &(destinationParent), destinationChild);
+    } else {
+      return QTransposeProxyModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+    }
+  }
+  
+  bool insertColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_insertColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_insertColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QTransposeProxyModel::insertColumns(column, count, parent);
+    }
+  }
+  
+  bool removeColumns(int column, int count, const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_removeColumns_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_removeColumns_int_int_const_QModelIndex_R(column, count, &(parent));
+    } else {
+      return QTransposeProxyModel::removeColumns(column, count, parent);
+    }
+  }
+  
+  bool moveColumns(const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int.isValid()) {
+      return _self_->bgJump.bg_QTransposeProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(&(sourceParent), sourceColumn, count, &(destinationParent), destinationChild);
+    } else {
+      return QTransposeProxyModel::moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+    }
+  }
+  
+  void sort(int column, Qt::SortOrder order) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QTransposeProxyModel_sort_int_Qt__SortOrder.isValid()) {
+      _self_->bgJump.bg_QTransposeProxyModel_sort_int_Qt__SortOrder(column, order);
+    } else {
+      QTransposeProxyModel::sort(column, order);
+    }
+  }
+  
+  QItemSelection mapSelectionToSource(const QItemSelection & selection) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapSelectionToSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QTransposeProxyModel::mapSelectionToSource(selection);
+    }
+  }
+  
+  QItemSelection mapSelectionFromSource(const QItemSelection & selection) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mapSelectionFromSource_const_QItemSelection_R(&(selection));
+    } else {
+      return QTransposeProxyModel::mapSelectionFromSource(selection);
+    }
+  }
+  
+  bool submit() override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_submit_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_submit_();
+    } else {
+      return QTransposeProxyModel::submit();
+    }
+  }
+  
+  void revert() override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_revert_.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_revert_();
+    } else {
+      QTransposeProxyModel::revert();
+    }
+  }
+  
+  QVariant data(const QModelIndex & index, int role) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int.isValid()) {
+      return crystal_to_qvariant(*_self_->bgJump.bg_QAbstractProxyModel_data_const_QModelIndex_R_int(&(index), role));
+    } else {
+      return QTransposeProxyModel::data(index, role);
+    }
+  }
+  
+  Qt::ItemFlags flags(const QModelIndex & index) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_flags_const_QModelIndex_R(&(index));
+    } else {
+      return QTransposeProxyModel::flags(index);
+    }
+  }
+  
+  bool setData(const QModelIndex & index, const QVariant & value, int role) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_setData_const_QModelIndex_R_const_QVariant_R_int(&(index), bindgen_address(qvariant_to_crystal(value)), role);
+    } else {
+      return QTransposeProxyModel::setData(index, value, role);
+    }
+  }
+  
+  bool clearItemData(const QModelIndex & index) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_clearItemData_const_QModelIndex_R(&(index));
+    } else {
+      return QTransposeProxyModel::clearItemData(index);
+    }
+  }
+  
+  QModelIndex buddy(const QModelIndex & index) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_buddy_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_buddy_const_QModelIndex_R(&(index));
+    } else {
+      return QTransposeProxyModel::buddy(index);
+    }
+  }
+  
+  bool canFetchMore(const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_canFetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      return QTransposeProxyModel::canFetchMore(parent);
+    }
+  }
+  
+  void fetchMore(const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R.isValid()) {
+      _self_->bgJump.bg_QAbstractProxyModel_fetchMore_const_QModelIndex_R(&(parent));
+    } else {
+      QTransposeProxyModel::fetchMore(parent);
+    }
+  }
+  
+  bool hasChildren(const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(&(parent));
+    } else {
+      return QTransposeProxyModel::hasChildren(parent);
+    }
+  }
+  
+  QModelIndex sibling(int row, int column, const QModelIndex & idx) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(row, column, &(idx));
+    } else {
+      return QTransposeProxyModel::sibling(row, column, idx);
+    }
+  }
+  
+  QMimeData * mimeData(const QModelIndexList & indexes) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(new (UseGC, bindgen_gc_finalizer<Container_QList_QModelIndex_>()) Container_QList_QModelIndex_ (indexes));
+    } else {
+      return QTransposeProxyModel::mimeData(indexes);
+    }
+  }
+  
+  bool canDropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QTransposeProxyModel::canDropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(data, action, row, column, &(parent));
+    } else {
+      return QTransposeProxyModel::dropMimeData(data, action, row, column, parent);
+    }
+  }
+  
+  QList<QString> mimeTypes() const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_mimeTypes_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_mimeTypes_());
+    } else {
+      return QTransposeProxyModel::mimeTypes();
+    }
+  }
+  
+  Qt::DropActions supportedDragActions() const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_supportedDragActions_();
+    } else {
+      return QTransposeProxyModel::supportedDragActions();
+    }
+  }
+  
+  Qt::DropActions supportedDropActions() const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_.isValid()) {
+      return _self_->bgJump.bg_QAbstractProxyModel_supportedDropActions_();
+    } else {
+      return QTransposeProxyModel::supportedDropActions();
+    }
+  }
+  
+  QHash<int, QByteArray> roleNames() const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractProxyModel_roleNames_.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractProxyModel_roleNames_());
+    } else {
+      return QTransposeProxyModel::roleNames();
+    }
+  }
+  
+  QModelIndexList match(const QModelIndex & start, int role, const QVariant & value, int hits, Qt::MatchFlags flags) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags.isValid()) {
+      return *(_self_->bgJump.bg_QAbstractItemModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(&(start), role, bindgen_address(qvariant_to_crystal(value)), hits, flags));
+    } else {
+      return QTransposeProxyModel::match(start, role, value, hits, flags);
+    }
+  }
+  
+  void multiData(const QModelIndex & index, QModelRoleDataSpan roleDataSpan) const override {
+    const BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan(&(index), new (UseGC, bindgen_gc_finalizer<QModelRoleDataSpan>()) QModelRoleDataSpan (roleDataSpan));
+    } else {
+      QTransposeProxyModel::multiData(index, roleDataSpan);
+    }
+  }
+  
+  void resetInternalData() override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractItemModel_resetInternalData_.isValid()) {
+      _self_->bgJump.bg_QAbstractItemModel_resetInternalData_();
+    } else {
+      QTransposeProxyModel::resetInternalData();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTransposeProxyModel::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTransposeProxyModel::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTransposeProxyModel::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTransposeProxyModel::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTransposeProxyModel::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTransposeProxyModel::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTransposeProxyModel *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTransposeProxyModel::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTransposeProxyModel_metaObject_(QTransposeProxyModel * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTransposeProxyModel_qt_metacast_const_char_X(QTransposeProxyModel * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTransposeProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(QTransposeProxyModel * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTransposeProxyModel_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTransposeProxyModel::tr(s));
+}
+
+extern "C" CrystalString bg_QTransposeProxyModel_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTransposeProxyModel::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTransposeProxyModel_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTransposeProxyModel::tr(s, c, n));
+}
+
+extern "C" QTransposeProxyModel * bg_QTransposeProxyModel__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTransposeProxyModel>(parent);
+}
+
+extern "C" void bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X(QTransposeProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->setSourceModel(sourceModel);
+}
+
+extern "C" int bg_QTransposeProxyModel_rowCount_(QTransposeProxyModel * _self_) {
+  return _self_->rowCount();
+}
+
+extern "C" int bg_QTransposeProxyModel_rowCount_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->rowCount(parent);
+}
+
+extern "C" int bg_QTransposeProxyModel_columnCount_(QTransposeProxyModel * _self_) {
+  return _self_->columnCount();
+}
+
+extern "C" int bg_QTransposeProxyModel_columnCount_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->columnCount(parent);
+}
+
+extern "C" CrystalVariant bg_QTransposeProxyModel_headerData_int_Qt__Orientation_int(QTransposeProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->headerData(section, orientation, role));
+}
+
+extern "C" bool bg_QTransposeProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(QTransposeProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QTransposeProxyModel_setItemData_const_QModelIndex_R_const_QMap_int__QVariant__R(QTransposeProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->setItemData(index, *(roles));
+}
+
+extern "C" QSize bg_QTransposeProxyModel_span_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & index) {
+  return _self_->span(index);
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QTransposeProxyModel_itemData_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->itemData(index));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_mapFromSource_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapFromSource(sourceIndex));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_mapToSource_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->mapToSource(proxyIndex));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_parent_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->parent(child));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_index_int_int(QTransposeProxyModel * _self_, int row, int column) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_index_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index(row, column, parent));
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertRows_int_int(QTransposeProxyModel * _self_, int row, int count) {
+  return _self_->insertRows(row, count);
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertRows_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->insertRows(row, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeRows_int_int(QTransposeProxyModel * _self_, int row, int count) {
+  return _self_->removeRows(row, count);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeRows_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->removeRows(row, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_moveRows_const_QModelIndex_R_int_int_const_QModelIndex_R_int(QTransposeProxyModel * _self_, const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) {
+  return _self_->moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertColumns_int_int(QTransposeProxyModel * _self_, int column, int count) {
+  return _self_->insertColumns(column, count);
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertColumns_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->insertColumns(column, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeColumns_int_int(QTransposeProxyModel * _self_, int column, int count) {
+  return _self_->removeColumns(column, count);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeColumns_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->removeColumns(column, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int(QTransposeProxyModel * _self_, const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) {
+  return _self_->moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+}
+
+extern "C" void bg_QTransposeProxyModel_sort_int_Qt__SortOrder(QTransposeProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->sort(column, order);
+}
+
+extern "C" QTransposeProxyModel * bg_QTransposeProxyModel__CONSTRUCT_QTransposeProxyModelPrivate_R_QObject_X(QTransposeProxyModelPrivate & unnamed_arg_0, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTransposeProxyModel>(unnamed_arg_0, parent);
+}
+
+extern "C" const QMetaObject * bg_QTransposeProxyModel_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTransposeProxyModel::staticMetaObject);
+}
+
+extern "C" void bg_QTransposeProxyModel_setSourceModel_SUPER_QAbstractItemModel_X(QTransposeProxyModel * _self_, QAbstractItemModel * sourceModel) {
+  _self_->QTransposeProxyModel::setSourceModel(sourceModel);
+}
+
+extern "C" int bg_QTransposeProxyModel_rowCount_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::rowCount(parent);
+}
+
+extern "C" int bg_QTransposeProxyModel_columnCount_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::columnCount(parent);
+}
+
+extern "C" CrystalVariant bg_QTransposeProxyModel_headerData_SUPER_int_Qt__Orientation_int(QTransposeProxyModel * _self_, int section, Qt::Orientation orientation, int role) {
+  return qvariant_to_crystal(_self_->QTransposeProxyModel::headerData(section, orientation, role));
+}
+
+extern "C" bool bg_QTransposeProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(QTransposeProxyModel * _self_, int section, Qt::Orientation orientation, const CrystalVariant value, int role) {
+  return _self_->QTransposeProxyModel::setHeaderData(section, orientation, crystal_to_qvariant(value), role);
+}
+
+extern "C" bool bg_QTransposeProxyModel_setItemData_SUPER_const_QModelIndex_R_const_QMap_int__QVariant__R(QTransposeProxyModel * _self_, const QModelIndex & index, const Container_QMap_int__QVariant_ * roles) {
+  return _self_->QTransposeProxyModel::setItemData(index, *(roles));
+}
+
+extern "C" QSize bg_QTransposeProxyModel_span_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & index) {
+  return _self_->QTransposeProxyModel::span(index);
+}
+
+extern "C" Container_QMap_int__QVariant_ * bg_QTransposeProxyModel_itemData_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_int__QVariant_>()) Container_QMap_int__QVariant_ (_self_->QTransposeProxyModel::itemData(index));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_mapFromSource_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & sourceIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTransposeProxyModel::mapFromSource(sourceIndex));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_mapToSource_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & proxyIndex) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTransposeProxyModel::mapToSource(proxyIndex));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_parent_SUPER_const_QModelIndex_R(QTransposeProxyModel * _self_, const QModelIndex & child) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTransposeProxyModel::parent(child));
+}
+
+extern "C" QModelIndex * bg_QTransposeProxyModel_index_SUPER_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int column, const QModelIndex & parent) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->QTransposeProxyModel::index(row, column, parent));
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertRows_SUPER_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::insertRows(row, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeRows_SUPER_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int row, int count, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::removeRows(row, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_moveRows_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(QTransposeProxyModel * _self_, const QModelIndex & sourceParent, int sourceRow, int count, const QModelIndex & destinationParent, int destinationChild) {
+  return _self_->QTransposeProxyModel::moveRows(sourceParent, sourceRow, count, destinationParent, destinationChild);
+}
+
+extern "C" bool bg_QTransposeProxyModel_insertColumns_SUPER_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::insertColumns(column, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_removeColumns_SUPER_int_int_const_QModelIndex_R(QTransposeProxyModel * _self_, int column, int count, const QModelIndex & parent) {
+  return _self_->QTransposeProxyModel::removeColumns(column, count, parent);
+}
+
+extern "C" bool bg_QTransposeProxyModel_moveColumns_SUPER_const_QModelIndex_R_int_int_const_QModelIndex_R_int(QTransposeProxyModel * _self_, const QModelIndex & sourceParent, int sourceColumn, int count, const QModelIndex & destinationParent, int destinationChild) {
+  return _self_->QTransposeProxyModel::moveColumns(sourceParent, sourceColumn, count, destinationParent, destinationChild);
+}
+
+extern "C" void bg_QTransposeProxyModel_sort_SUPER_int_Qt__SortOrder(QTransposeProxyModel * _self_, int column, Qt::SortOrder order) {
+  _self_->QTransposeProxyModel::sort(column, order);
+}
+
+extern "C" void bg_BgInherit_QTransposeProxyModel_JUMPTABLE_BgJumptable_QTransposeProxyModel_R(BgInherit_QTransposeProxyModel * _self_, const BgJumptable_QTransposeProxyModel & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" QUrlQuery * bg_QUrlQuery__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QUrlQuery>();
 }
@@ -33664,6 +35110,122 @@ extern "C" void bg_QIcon_setFallbackThemeName_STATIC_const_QString_R(const Cryst
 
 extern "C" const QMetaObject * bg_QIcon_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QIcon::staticMetaObject);
+}
+
+struct BgJumptable_QAbstractFileIconProvider {
+  CrystalProc<QIcon &, QAbstractFileIconProvider::IconType> bg_QAbstractFileIconProvider_icon_QAbstractFileIconProvider__IconType;
+  CrystalProc<QIcon &, const QFileInfo *> bg_QAbstractFileIconProvider_icon_const_QFileInfo_R;
+  CrystalProc<CrystalString *, const QFileInfo *> bg_QAbstractFileIconProvider_type_const_QFileInfo_R;
+  CrystalProc<void, QAbstractFileIconProvider::Options> bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options;
+  CrystalProc<QAbstractFileIconProvider::Options> bg_QAbstractFileIconProvider_options_;
+};
+struct BgInherit_QAbstractFileIconProvider : public QAbstractFileIconProvider {
+  using QAbstractFileIconProvider::QAbstractFileIconProvider;
+  BgJumptable_QAbstractFileIconProvider bgJump;
+  QIcon icon(QAbstractFileIconProvider::IconType unnamed_arg_0) const override {
+    const BgInherit_QAbstractFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_icon_QAbstractFileIconProvider__IconType.isValid()) {
+      return _self_->bgJump.bg_QAbstractFileIconProvider_icon_QAbstractFileIconProvider__IconType(unnamed_arg_0);
+    } else {
+      return QAbstractFileIconProvider::icon(unnamed_arg_0);
+    }
+  }
+  
+  QIcon icon(const QFileInfo & unnamed_arg_0) const override {
+    const BgInherit_QAbstractFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_icon_const_QFileInfo_R.isValid()) {
+      return _self_->bgJump.bg_QAbstractFileIconProvider_icon_const_QFileInfo_R(&(unnamed_arg_0));
+    } else {
+      return QAbstractFileIconProvider::icon(unnamed_arg_0);
+    }
+  }
+  
+  QString type(const QFileInfo & unnamed_arg_0) const override {
+    const BgInherit_QAbstractFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_type_const_QFileInfo_R.isValid()) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QAbstractFileIconProvider_type_const_QFileInfo_R(&(unnamed_arg_0))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QAbstractFileIconProvider::type(unnamed_arg_0);
+    }
+  }
+  
+  void setOptions(QAbstractFileIconProvider::Options unnamed_arg_0) override {
+    BgInherit_QAbstractFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options.isValid()) {
+      _self_->bgJump.bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options(unnamed_arg_0);
+    } else {
+      QAbstractFileIconProvider::setOptions(unnamed_arg_0);
+    }
+  }
+  
+  QAbstractFileIconProvider::Options options() const override {
+    const BgInherit_QAbstractFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_options_.isValid()) {
+      return _self_->bgJump.bg_QAbstractFileIconProvider_options_();
+    } else {
+      return QAbstractFileIconProvider::options();
+    }
+  }
+  
+};
+extern "C" QAbstractFileIconProvider * bg_QAbstractFileIconProvider__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractFileIconProvider>();
+}
+
+extern "C" QIcon * bg_QAbstractFileIconProvider_icon_QAbstractFileIconProvider__IconType(QAbstractFileIconProvider * _self_, QAbstractFileIconProvider::IconType unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon(unnamed_arg_0));
+}
+
+extern "C" QIcon * bg_QAbstractFileIconProvider_icon_const_QFileInfo_R(QAbstractFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon(unnamed_arg_0));
+}
+
+extern "C" CrystalString bg_QAbstractFileIconProvider_type_const_QFileInfo_R(QAbstractFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return qstring_to_crystal(_self_->type(unnamed_arg_0));
+}
+
+extern "C" void bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options(QAbstractFileIconProvider * _self_, QAbstractFileIconProvider::Options unnamed_arg_0) {
+  _self_->setOptions(unnamed_arg_0);
+}
+
+extern "C" QAbstractFileIconProvider::Options bg_QAbstractFileIconProvider_options_(QAbstractFileIconProvider * _self_) {
+  return _self_->options();
+}
+
+extern "C" QAbstractFileIconProvider * bg_QAbstractFileIconProvider__CONSTRUCT_QAbstractFileIconProviderPrivate_R(QAbstractFileIconProviderPrivate & dd) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractFileIconProvider>(dd);
+}
+
+extern "C" const QMetaObject * bg_QAbstractFileIconProvider_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractFileIconProvider::staticMetaObject);
+}
+
+extern "C" QFileIconProvider * bg_QAbstractFileIconProvider_CAST_FileIconProvider_(QAbstractFileIconProvider * _self_) {
+  return bindgen_dynamic_cast<QFileIconProvider *>(_self_);
+}
+
+extern "C" void bg_BgInherit_QAbstractFileIconProvider_JUMPTABLE_BgJumptable_QAbstractFileIconProvider_R(BgInherit_QAbstractFileIconProvider * _self_, const BgJumptable_QAbstractFileIconProvider & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QIcon * bg_QAbstractFileIconProvider_icon_SUPER_QAbstractFileIconProvider__IconType(QAbstractFileIconProvider * _self_, QAbstractFileIconProvider::IconType unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QAbstractFileIconProvider::icon(unnamed_arg_0));
+}
+
+extern "C" QIcon * bg_QAbstractFileIconProvider_icon_SUPER_const_QFileInfo_R(QAbstractFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QAbstractFileIconProvider::icon(unnamed_arg_0));
+}
+
+extern "C" CrystalString bg_QAbstractFileIconProvider_type_SUPER_const_QFileInfo_R(QAbstractFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return qstring_to_crystal(_self_->QAbstractFileIconProvider::type(unnamed_arg_0));
+}
+
+extern "C" void bg_QAbstractFileIconProvider_setOptions_SUPER_QAbstractFileIconProvider__Options(QAbstractFileIconProvider * _self_, QAbstractFileIconProvider::Options unnamed_arg_0) {
+  _self_->QAbstractFileIconProvider::setOptions(unnamed_arg_0);
+}
+
+extern "C" QAbstractFileIconProvider::Options bg_QAbstractFileIconProvider_options_SUPER_(QAbstractFileIconProvider * _self_) {
+  return _self_->QAbstractFileIconProvider::options();
 }
 
 extern "C" QVector2D bg_QVector2D__CONSTRUCT_() {
@@ -48393,6 +49955,264 @@ extern "C" bool bg_QFontMetricsF__OPERATOR_eq_const_QFontMetricsF_R(QFontMetrics
 
 extern "C" bool bg_QFontMetricsF__OPERATOR_ne_const_QFontMetricsF_R(QFontMetricsF * _self_, const QFontMetricsF & other) {
   return ((*_self_) != (other));
+}
+
+struct BgJumptable_QIconEngine {
+  CrystalProc<void, QPainter *, const QRect *, QIcon::Mode, QIcon::State> bg_QIconEngine_paint_QPainter_X_const_QRect_R_QIcon__Mode_QIcon__State;
+  CrystalProc<QSize *, const QSize *, QIcon::Mode, QIcon::State> bg_QIconEngine_actualSize_const_QSize_R_QIcon__Mode_QIcon__State;
+  CrystalProc<QPixmap &, const QSize *, QIcon::Mode, QIcon::State> bg_QIconEngine_pixmap_const_QSize_R_QIcon__Mode_QIcon__State;
+  CrystalProc<void, const QPixmap *, QIcon::Mode, QIcon::State> bg_QIconEngine_addPixmap_const_QPixmap_R_QIcon__Mode_QIcon__State;
+  CrystalProc<void, const CrystalString *, const QSize *, QIcon::Mode, QIcon::State> bg_QIconEngine_addFile_const_QString_R_const_QSize_R_QIcon__Mode_QIcon__State;
+  CrystalProc<CrystalString *> bg_QIconEngine_key_;
+  CrystalProc<QIconEngine *> bg_QIconEngine_clone_;
+  CrystalProc<bool, QDataStream *> bg_QIconEngine_read_QDataStream_R;
+  CrystalProc<bool, QDataStream *> bg_QIconEngine_write_QDataStream_R;
+  CrystalProc<Container_QList_QSize_ *, QIcon::Mode, QIcon::State> bg_QIconEngine_availableSizes_QIcon__Mode_QIcon__State;
+  CrystalProc<CrystalString *> bg_QIconEngine_iconName_;
+  CrystalProc<bool> bg_QIconEngine_isNull_;
+  CrystalProc<QPixmap &, const QSize *, QIcon::Mode, QIcon::State, qreal> bg_QIconEngine_scaledPixmap_const_QSize_R_QIcon__Mode_QIcon__State_qreal;
+  CrystalProc<void, int, void *> bg_QIconEngine_virtual_hook_int_void_X;
+};
+struct BgInherit_QIconEngine : public QIconEngine {
+  using QIconEngine::QIconEngine;
+  BgJumptable_QIconEngine bgJump;
+  void paint(QPainter * painter, const QRect & rect, QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QIconEngine_paint_QPainter_X_const_QRect_R_QIcon__Mode_QIcon__State.isValid())) {
+      _self_->bgJump.bg_QIconEngine_paint_QPainter_X_const_QRect_R_QIcon__Mode_QIcon__State(painter, bindgen_address(rect), mode, state);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QIconEngine::paint");
+    }
+  }
+  
+  QSize actualSize(const QSize & size, QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_actualSize_const_QSize_R_QIcon__Mode_QIcon__State.isValid()) {
+      return *_self_->bgJump.bg_QIconEngine_actualSize_const_QSize_R_QIcon__Mode_QIcon__State(bindgen_address(size), mode, state);
+    } else {
+      return QIconEngine::actualSize(size, mode, state);
+    }
+  }
+  
+  QPixmap pixmap(const QSize & size, QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_pixmap_const_QSize_R_QIcon__Mode_QIcon__State.isValid()) {
+      return _self_->bgJump.bg_QIconEngine_pixmap_const_QSize_R_QIcon__Mode_QIcon__State(bindgen_address(size), mode, state);
+    } else {
+      return QIconEngine::pixmap(size, mode, state);
+    }
+  }
+  
+  void addPixmap(const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_addPixmap_const_QPixmap_R_QIcon__Mode_QIcon__State.isValid()) {
+      _self_->bgJump.bg_QIconEngine_addPixmap_const_QPixmap_R_QIcon__Mode_QIcon__State(&(pixmap), mode, state);
+    } else {
+      QIconEngine::addPixmap(pixmap, mode, state);
+    }
+  }
+  
+  void addFile(const QString & fileName, const QSize & size, QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_addFile_const_QString_R_const_QSize_R_QIcon__Mode_QIcon__State.isValid()) {
+      _self_->bgJump.bg_QIconEngine_addFile_const_QString_R_const_QSize_R_QIcon__Mode_QIcon__State(bindgen_address(qstring_to_crystal(fileName)), bindgen_address(size), mode, state);
+    } else {
+      QIconEngine::addFile(fileName, size, mode, state);
+    }
+  }
+  
+  QString key() const override {
+    const BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_key_.isValid()) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QIconEngine_key_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QIconEngine::key();
+    }
+  }
+  
+  QIconEngine * clone() const override {
+    const BgInherit_QIconEngine *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QIconEngine_clone_.isValid())) {
+      return _self_->bgJump.bg_QIconEngine_clone_();
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QIconEngine::clone");
+    }
+  }
+  
+  bool read(QDataStream & in) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_read_QDataStream_R.isValid()) {
+      return _self_->bgJump.bg_QIconEngine_read_QDataStream_R(&(in));
+    } else {
+      return QIconEngine::read(in);
+    }
+  }
+  
+  bool write(QDataStream & out) const override {
+    const BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_write_QDataStream_R.isValid()) {
+      return _self_->bgJump.bg_QIconEngine_write_QDataStream_R(&(out));
+    } else {
+      return QIconEngine::write(out);
+    }
+  }
+  
+  QList<QSize> availableSizes(QIcon::Mode mode, QIcon::State state) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_availableSizes_QIcon__Mode_QIcon__State.isValid()) {
+      return *(_self_->bgJump.bg_QIconEngine_availableSizes_QIcon__Mode_QIcon__State(mode, state));
+    } else {
+      return QIconEngine::availableSizes(mode, state);
+    }
+  }
+  
+  QString iconName() override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_iconName_.isValid()) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QIconEngine_iconName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QIconEngine::iconName();
+    }
+  }
+  
+  bool isNull() override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_isNull_.isValid()) {
+      return _self_->bgJump.bg_QIconEngine_isNull_();
+    } else {
+      return QIconEngine::isNull();
+    }
+  }
+  
+  QPixmap scaledPixmap(const QSize & size, QIcon::Mode mode, QIcon::State state, qreal scale) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_scaledPixmap_const_QSize_R_QIcon__Mode_QIcon__State_qreal.isValid()) {
+      return _self_->bgJump.bg_QIconEngine_scaledPixmap_const_QSize_R_QIcon__Mode_QIcon__State_qreal(bindgen_address(size), mode, state, scale);
+    } else {
+      return QIconEngine::scaledPixmap(size, mode, state, scale);
+    }
+  }
+  
+  void virtual_hook(int id, void * data) override {
+    BgInherit_QIconEngine *_self_ = this;
+    if (_self_->bgJump.bg_QIconEngine_virtual_hook_int_void_X.isValid()) {
+      _self_->bgJump.bg_QIconEngine_virtual_hook_int_void_X(id, data);
+    } else {
+      QIconEngine::virtual_hook(id, data);
+    }
+  }
+  
+};
+extern "C" QIconEngine * bg_QIconEngine__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QIconEngine>();
+}
+
+extern "C" void bg_QIconEngine_paint_QPainter_X_const_QRect_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, QPainter * painter, const QRect rect, QIcon::Mode mode, QIcon::State state) {
+  _self_->paint(painter, rect, mode, state);
+}
+
+extern "C" QSize bg_QIconEngine_actualSize_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  return _self_->actualSize(size, mode, state);
+}
+
+extern "C" QPixmap * bg_QIconEngine_pixmap_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap(size, mode, state));
+}
+
+extern "C" void bg_QIconEngine_addPixmap_const_QPixmap_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state) {
+  _self_->addPixmap(pixmap, mode, state);
+}
+
+extern "C" void bg_QIconEngine_addFile_const_QString_R_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const CrystalString fileName, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  _self_->addFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), size, mode, state);
+}
+
+extern "C" CrystalString bg_QIconEngine_key_(QIconEngine * _self_) {
+  return qstring_to_crystal(_self_->key());
+}
+
+extern "C" QIconEngine * bg_QIconEngine_clone_(QIconEngine * _self_) {
+  return _self_->clone();
+}
+
+extern "C" bool bg_QIconEngine_read_QDataStream_R(QIconEngine * _self_, QDataStream & in) {
+  return _self_->read(in);
+}
+
+extern "C" bool bg_QIconEngine_write_QDataStream_R(QIconEngine * _self_, QDataStream & out) {
+  return _self_->write(out);
+}
+
+extern "C" Container_QList_QSize_ * bg_QIconEngine_availableSizes_QIcon__Mode_QIcon__State(QIconEngine * _self_, QIcon::Mode mode, QIcon::State state) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QSize_>()) Container_QList_QSize_ (_self_->availableSizes(mode, state));
+}
+
+extern "C" CrystalString bg_QIconEngine_iconName_(QIconEngine * _self_) {
+  return qstring_to_crystal(_self_->iconName());
+}
+
+extern "C" bool bg_QIconEngine_isNull_(QIconEngine * _self_) {
+  return _self_->isNull();
+}
+
+extern "C" QPixmap * bg_QIconEngine_scaledPixmap_const_QSize_R_QIcon__Mode_QIcon__State_qreal(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state, qreal scale) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->scaledPixmap(size, mode, state, scale));
+}
+
+extern "C" void bg_QIconEngine_virtual_hook_int_void_X(QIconEngine * _self_, int id, void * data) {
+  _self_->virtual_hook(id, data);
+}
+
+extern "C" QSize bg_QIconEngine_actualSize_SUPER_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  return _self_->QIconEngine::actualSize(size, mode, state);
+}
+
+extern "C" QPixmap * bg_QIconEngine_pixmap_SUPER_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QIconEngine::pixmap(size, mode, state));
+}
+
+extern "C" void bg_QIconEngine_addPixmap_SUPER_const_QPixmap_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const QPixmap & pixmap, QIcon::Mode mode, QIcon::State state) {
+  _self_->QIconEngine::addPixmap(pixmap, mode, state);
+}
+
+extern "C" void bg_QIconEngine_addFile_SUPER_const_QString_R_const_QSize_R_QIcon__Mode_QIcon__State(QIconEngine * _self_, const CrystalString fileName, const QSize size, QIcon::Mode mode, QIcon::State state) {
+  _self_->QIconEngine::addFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), size, mode, state);
+}
+
+extern "C" CrystalString bg_QIconEngine_key_SUPER_(QIconEngine * _self_) {
+  return qstring_to_crystal(_self_->QIconEngine::key());
+}
+
+extern "C" bool bg_QIconEngine_read_SUPER_QDataStream_R(QIconEngine * _self_, QDataStream & in) {
+  return _self_->QIconEngine::read(in);
+}
+
+extern "C" bool bg_QIconEngine_write_SUPER_QDataStream_R(QIconEngine * _self_, QDataStream & out) {
+  return _self_->QIconEngine::write(out);
+}
+
+extern "C" Container_QList_QSize_ * bg_QIconEngine_availableSizes_SUPER_QIcon__Mode_QIcon__State(QIconEngine * _self_, QIcon::Mode mode, QIcon::State state) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QSize_>()) Container_QList_QSize_ (_self_->QIconEngine::availableSizes(mode, state));
+}
+
+extern "C" CrystalString bg_QIconEngine_iconName_SUPER_(QIconEngine * _self_) {
+  return qstring_to_crystal(_self_->QIconEngine::iconName());
+}
+
+extern "C" bool bg_QIconEngine_isNull_SUPER_(QIconEngine * _self_) {
+  return _self_->QIconEngine::isNull();
+}
+
+extern "C" QPixmap * bg_QIconEngine_scaledPixmap_SUPER_const_QSize_R_QIcon__Mode_QIcon__State_qreal(QIconEngine * _self_, const QSize size, QIcon::Mode mode, QIcon::State state, qreal scale) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QIconEngine::scaledPixmap(size, mode, state, scale));
+}
+
+extern "C" void bg_QIconEngine_virtual_hook_SUPER_int_void_X(QIconEngine * _self_, int id, void * data) {
+  _self_->QIconEngine::virtual_hook(id, data);
+}
+
+extern "C" void bg_BgInherit_QIconEngine_JUMPTABLE_BgJumptable_QIconEngine_R(BgInherit_QIconEngine * _self_, const BgJumptable_QIconEngine & table) {
+  _self_->bgJump = (table);
 }
 
 extern "C" CrystalString bg_QImageReader_tr_STATIC_const_char_X(const char * sourceText) {
@@ -67894,6 +69714,46 @@ extern "C" void bg_QStyleOptionHeader_orientation_SETTER_Qt__Orientation(QStyleO
   _self_->orientation = orientation;
 }
 
+extern "C" QStyleOptionHeaderV2 * bg_QStyleOptionHeaderV2__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeaderV2>();
+}
+
+extern "C" QStyleOptionHeaderV2 * bg_QStyleOptionHeaderV2__COPY_const_QStyleOptionHeaderV2_R(const QStyleOptionHeaderV2 & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeaderV2>(other);
+}
+
+extern "C" QStyleOptionHeaderV2 * bg_QStyleOptionHeaderV2__OPERATOR_assign_const_QStyleOptionHeaderV2_R(QStyleOptionHeaderV2 * _self_, const QStyleOptionHeaderV2 & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QStyleOptionHeaderV2 * bg_QStyleOptionHeaderV2__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeaderV2>(version);
+}
+
+extern "C" Qt::TextElideMode bg_QStyleOptionHeaderV2_textElideMode_GETTER_(QStyleOptionHeaderV2 * _self_) {
+  return _self_->textElideMode;
+}
+
+extern "C" void bg_QStyleOptionHeaderV2_textElideMode_SETTER_Qt__TextElideMode(QStyleOptionHeaderV2 * _self_, Qt::TextElideMode textElideMode) {
+  _self_->textElideMode = textElideMode;
+}
+
+extern "C" bool bg_QStyleOptionHeaderV2_isSectionDragTarget_GETTER_(QStyleOptionHeaderV2 * _self_) {
+  return _self_->isSectionDragTarget;
+}
+
+extern "C" void bg_QStyleOptionHeaderV2_isSectionDragTarget_SETTER_bool(QStyleOptionHeaderV2 * _self_, bool isSectionDragTarget) {
+  _self_->isSectionDragTarget = isSectionDragTarget;
+}
+
+extern "C" int bg_QStyleOptionHeaderV2_unused_GETTER_(QStyleOptionHeaderV2 * _self_) {
+  return _self_->unused;
+}
+
+extern "C" void bg_QStyleOptionHeaderV2_unused_SETTER_int(QStyleOptionHeaderV2 * _self_, int unused) {
+  _self_->unused = unused;
+}
+
 extern "C" QStyleOptionButton * bg_QStyleOptionButton__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QStyleOptionButton>();
 }
@@ -68300,6 +70160,38 @@ extern "C" QFont * bg_QStyleOptionMenuItem_font_GETTER_(QStyleOptionMenuItem * _
 
 extern "C" void bg_QStyleOptionMenuItem_font_SETTER_QFont(QStyleOptionMenuItem * _self_, QFont & font) {
   _self_->font = font;
+}
+
+extern "C" QStyleOptionMenuItemV2 * bg_QStyleOptionMenuItemV2__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItemV2>();
+}
+
+extern "C" QStyleOptionMenuItemV2 * bg_QStyleOptionMenuItemV2__COPY_const_QStyleOptionMenuItemV2_R(const QStyleOptionMenuItemV2 & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItemV2>(other);
+}
+
+extern "C" QStyleOptionMenuItemV2 * bg_QStyleOptionMenuItemV2__OPERATOR_assign_const_QStyleOptionMenuItemV2_R(QStyleOptionMenuItemV2 * _self_, const QStyleOptionMenuItemV2 & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QStyleOptionMenuItemV2 * bg_QStyleOptionMenuItemV2__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItemV2>(version);
+}
+
+extern "C" bool bg_QStyleOptionMenuItemV2_mouseDown_GETTER_(QStyleOptionMenuItemV2 * _self_) {
+  return _self_->mouseDown;
+}
+
+extern "C" void bg_QStyleOptionMenuItemV2_mouseDown_SETTER_bool(QStyleOptionMenuItemV2 * _self_, bool mouseDown) {
+  _self_->mouseDown = mouseDown;
+}
+
+extern "C" int bg_QStyleOptionMenuItemV2_unused_GETTER_(QStyleOptionMenuItemV2 * _self_) {
+  return _self_->unused;
+}
+
+extern "C" void bg_QStyleOptionMenuItemV2_unused_SETTER_int(QStyleOptionMenuItemV2 * _self_, int unused) {
+  _self_->unused = unused;
 }
 
 extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__CONSTRUCT_() {
@@ -69108,6 +71000,46 @@ extern "C" int bg_QStyleHintReturn_type_GETTER_(QStyleHintReturn * _self_) {
 
 extern "C" void bg_QStyleHintReturn_type_SETTER_int(QStyleHintReturn * _self_, int type) {
   _self_->type = type;
+}
+
+extern "C" QStyleHintReturnMask * bg_QStyleHintReturnMask__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturnMask>();
+}
+
+extern "C" QStyleHintReturnMask * bg_QStyleHintReturnMask__COPY_const_QStyleHintReturnMask_R(const QStyleHintReturnMask & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturnMask>(unnamed_arg_0);
+}
+
+extern "C" QStyleHintReturnMask * bg_QStyleHintReturnMask__OPERATOR_assign_const_QStyleHintReturnMask_R(QStyleHintReturnMask * _self_, const QStyleHintReturnMask & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QRegion * bg_QStyleHintReturnMask_region_GETTER_(QStyleHintReturnMask * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QRegion>()) QRegion (_self_->region);
+}
+
+extern "C" void bg_QStyleHintReturnMask_region_SETTER_QRegion(QStyleHintReturnMask * _self_, QRegion & region) {
+  _self_->region = region;
+}
+
+extern "C" QStyleHintReturnVariant * bg_QStyleHintReturnVariant__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturnVariant>();
+}
+
+extern "C" QStyleHintReturnVariant * bg_QStyleHintReturnVariant__COPY_const_QStyleHintReturnVariant_R(const QStyleHintReturnVariant & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturnVariant>(unnamed_arg_0);
+}
+
+extern "C" QStyleHintReturnVariant * bg_QStyleHintReturnVariant__OPERATOR_assign_const_QStyleHintReturnVariant_R(QStyleHintReturnVariant * _self_, const QStyleHintReturnVariant & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" CrystalVariant bg_QStyleHintReturnVariant_variant_GETTER_(QStyleHintReturnVariant * _self_) {
+  return qvariant_to_crystal(_self_->variant);
+}
+
+extern "C" void bg_QStyleHintReturnVariant_variant_SETTER_QVariant(QStyleHintReturnVariant * _self_, CrystalVariant variant) {
+  _self_->variant = crystal_to_qvariant(variant);
 }
 
 struct BgJumptable_QAbstractItemDelegate {
@@ -72655,6 +74587,10 @@ extern "C" QWidgetItem * bg_QLayoutItem_CAST_WidgetItem_(QLayoutItem * _self_) {
   return bindgen_dynamic_cast<QWidgetItem *>(_self_);
 }
 
+extern "C" QWidgetItemV2 * bg_QLayoutItem_CAST_WidgetItemV2_(QLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QWidgetItemV2 *>(_self_);
+}
+
 extern "C" QLayout * bg_QLayoutItem_CAST_Layout_(QLayoutItem * _self_) {
   return bindgen_dynamic_cast<QLayout *>(_self_);
 }
@@ -73229,6 +75165,202 @@ extern "C" QSizePolicy::ControlTypes bg_QWidgetItem_controlTypes_SUPER_(QWidgetI
 }
 
 extern "C" void bg_BgInherit_QWidgetItem_JUMPTABLE_BgJumptable_QWidgetItem_R(BgInherit_QWidgetItem * _self_, const BgJumptable_QWidgetItem & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QWidgetItemV2 {
+  CrystalProc<QSize *> bg_QWidgetItemV2_sizeHint_;
+  CrystalProc<QSize *> bg_QWidgetItemV2_minimumSize_;
+  CrystalProc<QSize *> bg_QWidgetItemV2_maximumSize_;
+  CrystalProc<int, int> bg_QWidgetItemV2_heightForWidth_int;
+  CrystalProc<Qt::Orientations> bg_QWidgetItem_expandingDirections_;
+  CrystalProc<bool> bg_QWidgetItem_isEmpty_;
+  CrystalProc<void, const QRect *> bg_QWidgetItem_setGeometry_const_QRect_R;
+  CrystalProc<QRect *> bg_QWidgetItem_geometry_;
+  CrystalProc<QWidget *> bg_QWidgetItem_widget_;
+  CrystalProc<bool> bg_QWidgetItem_hasHeightForWidth_;
+  CrystalProc<int, int> bg_QWidgetItem_minimumHeightForWidth_int;
+  CrystalProc<QSizePolicy::ControlTypes> bg_QWidgetItem_controlTypes_;
+  CrystalProc<void> bg_QLayoutItem_invalidate_;
+  CrystalProc<QLayout *> bg_QLayoutItem_layout_;
+  CrystalProc<QSpacerItem *> bg_QLayoutItem_spacerItem_;
+};
+struct BgInherit_QWidgetItemV2 : public QWidgetItemV2 {
+  using QWidgetItemV2::QWidgetItemV2;
+  BgJumptable_QWidgetItemV2 bgJump;
+  QSize sizeHint() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItemV2_sizeHint_.isValid()) {
+      return *_self_->bgJump.bg_QWidgetItemV2_sizeHint_();
+    } else {
+      return QWidgetItemV2::sizeHint();
+    }
+  }
+  
+  QSize minimumSize() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItemV2_minimumSize_.isValid()) {
+      return *_self_->bgJump.bg_QWidgetItemV2_minimumSize_();
+    } else {
+      return QWidgetItemV2::minimumSize();
+    }
+  }
+  
+  QSize maximumSize() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItemV2_maximumSize_.isValid()) {
+      return *_self_->bgJump.bg_QWidgetItemV2_maximumSize_();
+    } else {
+      return QWidgetItemV2::maximumSize();
+    }
+  }
+  
+  int heightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItemV2_heightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidgetItemV2_heightForWidth_int(unnamed_arg_0);
+    } else {
+      return QWidgetItemV2::heightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  Qt::Orientations expandingDirections() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_expandingDirections_.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_expandingDirections_();
+    } else {
+      return QWidgetItemV2::expandingDirections();
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_isEmpty_();
+    } else {
+      return QWidgetItemV2::isEmpty();
+    }
+  }
+  
+  void setGeometry(const QRect & unnamed_arg_0) override {
+    BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_setGeometry_const_QRect_R.isValid()) {
+      _self_->bgJump.bg_QWidgetItem_setGeometry_const_QRect_R(bindgen_address(unnamed_arg_0));
+    } else {
+      QWidgetItemV2::setGeometry(unnamed_arg_0);
+    }
+  }
+  
+  QRect geometry() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_geometry_.isValid()) {
+      return *_self_->bgJump.bg_QWidgetItem_geometry_();
+    } else {
+      return QWidgetItemV2::geometry();
+    }
+  }
+  
+  QWidget * widget() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_widget_.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_widget_();
+    } else {
+      return QWidgetItemV2::widget();
+    }
+  }
+  
+  bool hasHeightForWidth() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_hasHeightForWidth_.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_hasHeightForWidth_();
+    } else {
+      return QWidgetItemV2::hasHeightForWidth();
+    }
+  }
+  
+  int minimumHeightForWidth(int unnamed_arg_0) const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_minimumHeightForWidth_int.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_minimumHeightForWidth_int(unnamed_arg_0);
+    } else {
+      return QWidgetItemV2::minimumHeightForWidth(unnamed_arg_0);
+    }
+  }
+  
+  QSizePolicy::ControlTypes controlTypes() const override {
+    const BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QWidgetItem_controlTypes_.isValid()) {
+      return _self_->bgJump.bg_QWidgetItem_controlTypes_();
+    } else {
+      return QWidgetItemV2::controlTypes();
+    }
+  }
+  
+  void invalidate() override {
+    BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QLayoutItem_invalidate_.isValid()) {
+      _self_->bgJump.bg_QLayoutItem_invalidate_();
+    } else {
+      QWidgetItemV2::invalidate();
+    }
+  }
+  
+  QLayout * layout() override {
+    BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QLayoutItem_layout_.isValid()) {
+      return _self_->bgJump.bg_QLayoutItem_layout_();
+    } else {
+      return QWidgetItemV2::layout();
+    }
+  }
+  
+  QSpacerItem * spacerItem() override {
+    BgInherit_QWidgetItemV2 *_self_ = this;
+    if (_self_->bgJump.bg_QLayoutItem_spacerItem_.isValid()) {
+      return _self_->bgJump.bg_QLayoutItem_spacerItem_();
+    } else {
+      return QWidgetItemV2::spacerItem();
+    }
+  }
+  
+};
+extern "C" QWidgetItemV2 * bg_QWidgetItemV2__CONSTRUCT_QWidget_X(QWidget * widget) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QWidgetItemV2>(widget);
+}
+
+extern "C" QSize bg_QWidgetItemV2_sizeHint_(QWidgetItemV2 * _self_) {
+  return _self_->sizeHint();
+}
+
+extern "C" QSize bg_QWidgetItemV2_minimumSize_(QWidgetItemV2 * _self_) {
+  return _self_->minimumSize();
+}
+
+extern "C" QSize bg_QWidgetItemV2_maximumSize_(QWidgetItemV2 * _self_) {
+  return _self_->maximumSize();
+}
+
+extern "C" int bg_QWidgetItemV2_heightForWidth_int(QWidgetItemV2 * _self_, int unnamed_arg_0) {
+  return _self_->heightForWidth(unnamed_arg_0);
+}
+
+extern "C" QSize bg_QWidgetItemV2_sizeHint_SUPER_(QWidgetItemV2 * _self_) {
+  return _self_->QWidgetItemV2::sizeHint();
+}
+
+extern "C" QSize bg_QWidgetItemV2_minimumSize_SUPER_(QWidgetItemV2 * _self_) {
+  return _self_->QWidgetItemV2::minimumSize();
+}
+
+extern "C" QSize bg_QWidgetItemV2_maximumSize_SUPER_(QWidgetItemV2 * _self_) {
+  return _self_->QWidgetItemV2::maximumSize();
+}
+
+extern "C" int bg_QWidgetItemV2_heightForWidth_SUPER_int(QWidgetItemV2 * _self_, int unnamed_arg_0) {
+  return _self_->QWidgetItemV2::heightForWidth(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QWidgetItemV2_JUMPTABLE_BgJumptable_QWidgetItemV2_R(BgInherit_QWidgetItemV2 * _self_, const BgJumptable_QWidgetItemV2 & table) {
   _self_->bgJump = (table);
 }
 
@@ -89583,6 +91715,86 @@ extern "C" void bg_QFileDialog_changeEvent_SUPER_QEvent_X(QFileDialog * _self_, 
 }
 
 extern "C" void bg_BgInherit_QFileDialog_JUMPTABLE_BgJumptable_QFileDialog_R(BgInherit_QFileDialog * _self_, const BgJumptable_QFileDialog & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QFileIconProvider {
+  CrystalProc<QIcon &, QAbstractFileIconProvider::IconType> bg_QFileIconProvider_icon_QAbstractFileIconProvider__IconType;
+  CrystalProc<QIcon &, const QFileInfo *> bg_QFileIconProvider_icon_const_QFileInfo_R;
+  CrystalProc<CrystalString *, const QFileInfo *> bg_QAbstractFileIconProvider_type_const_QFileInfo_R;
+  CrystalProc<void, QAbstractFileIconProvider::Options> bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options;
+  CrystalProc<QAbstractFileIconProvider::Options> bg_QAbstractFileIconProvider_options_;
+};
+struct BgInherit_QFileIconProvider : public QFileIconProvider {
+  using QFileIconProvider::QFileIconProvider;
+  BgJumptable_QFileIconProvider bgJump;
+  QIcon icon(QAbstractFileIconProvider::IconType unnamed_arg_0) const override {
+    const BgInherit_QFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QFileIconProvider_icon_QAbstractFileIconProvider__IconType.isValid()) {
+      return _self_->bgJump.bg_QFileIconProvider_icon_QAbstractFileIconProvider__IconType(unnamed_arg_0);
+    } else {
+      return QFileIconProvider::icon(unnamed_arg_0);
+    }
+  }
+  
+  QIcon icon(const QFileInfo & unnamed_arg_0) const override {
+    const BgInherit_QFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QFileIconProvider_icon_const_QFileInfo_R.isValid()) {
+      return _self_->bgJump.bg_QFileIconProvider_icon_const_QFileInfo_R(&(unnamed_arg_0));
+    } else {
+      return QFileIconProvider::icon(unnamed_arg_0);
+    }
+  }
+  
+  QString type(const QFileInfo & unnamed_arg_0) const override {
+    const BgInherit_QFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_type_const_QFileInfo_R.isValid()) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QAbstractFileIconProvider_type_const_QFileInfo_R(&(unnamed_arg_0))); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QFileIconProvider::type(unnamed_arg_0);
+    }
+  }
+  
+  void setOptions(QAbstractFileIconProvider::Options unnamed_arg_0) override {
+    BgInherit_QFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options.isValid()) {
+      _self_->bgJump.bg_QAbstractFileIconProvider_setOptions_QAbstractFileIconProvider__Options(unnamed_arg_0);
+    } else {
+      QFileIconProvider::setOptions(unnamed_arg_0);
+    }
+  }
+  
+  QAbstractFileIconProvider::Options options() const override {
+    const BgInherit_QFileIconProvider *_self_ = this;
+    if (_self_->bgJump.bg_QAbstractFileIconProvider_options_.isValid()) {
+      return _self_->bgJump.bg_QAbstractFileIconProvider_options_();
+    } else {
+      return QFileIconProvider::options();
+    }
+  }
+  
+};
+extern "C" QFileIconProvider * bg_QFileIconProvider__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileIconProvider>();
+}
+
+extern "C" QIcon * bg_QFileIconProvider_icon_QAbstractFileIconProvider__IconType(QFileIconProvider * _self_, QAbstractFileIconProvider::IconType unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon(unnamed_arg_0));
+}
+
+extern "C" QIcon * bg_QFileIconProvider_icon_const_QFileInfo_R(QFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon(unnamed_arg_0));
+}
+
+extern "C" QIcon * bg_QFileIconProvider_icon_SUPER_QAbstractFileIconProvider__IconType(QFileIconProvider * _self_, QAbstractFileIconProvider::IconType unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QFileIconProvider::icon(unnamed_arg_0));
+}
+
+extern "C" QIcon * bg_QFileIconProvider_icon_SUPER_const_QFileInfo_R(QFileIconProvider * _self_, const QFileInfo & unnamed_arg_0) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QFileIconProvider::icon(unnamed_arg_0));
+}
+
+extern "C" void bg_BgInherit_QFileIconProvider_JUMPTABLE_BgJumptable_QFileIconProvider_R(BgInherit_QFileIconProvider * _self_, const BgJumptable_QFileIconProvider & table) {
   _self_->bgJump = (table);
 }
 
@@ -114914,6 +117126,56 @@ extern "C" bool bg_QItemDelegate_editorEvent_SUPER_QEvent_X_QAbstractItemModel_X
 }
 
 extern "C" void bg_BgInherit_QItemDelegate_JUMPTABLE_BgJumptable_QItemDelegate_R(BgInherit_QItemDelegate * _self_, const BgJumptable_QItemDelegate & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QItemEditorCreatorBase {
+  CrystalProc<QWidget *, QWidget *> bg_QItemEditorCreatorBase_createWidget_QWidget_X;
+  CrystalProc<CrystalString *> bg_QItemEditorCreatorBase_valuePropertyName_;
+};
+struct BgInherit_QItemEditorCreatorBase : public QItemEditorCreatorBase {
+  using QItemEditorCreatorBase::QItemEditorCreatorBase;
+  BgJumptable_QItemEditorCreatorBase bgJump;
+  QWidget * createWidget(QWidget * parent) const override {
+    const BgInherit_QItemEditorCreatorBase *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QItemEditorCreatorBase_createWidget_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QItemEditorCreatorBase_createWidget_QWidget_X(parent);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QItemEditorCreatorBase::createWidget");
+    }
+  }
+  
+  QByteArray valuePropertyName() const override {
+    const BgInherit_QItemEditorCreatorBase *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QItemEditorCreatorBase_valuePropertyName_.isValid())) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_QItemEditorCreatorBase_valuePropertyName_()); return QByteArray(bg_value.ptr, bg_value.size); }());
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QItemEditorCreatorBase::valuePropertyName");
+    }
+  }
+  
+};
+extern "C" QWidget * bg_QItemEditorCreatorBase_createWidget_QWidget_X(QItemEditorCreatorBase * _self_, QWidget * parent) {
+  return _self_->createWidget(parent);
+}
+
+extern "C" CrystalString bg_QItemEditorCreatorBase_valuePropertyName_(QItemEditorCreatorBase * _self_) {
+  return qbytearray_to_crystal(_self_->valuePropertyName());
+}
+
+extern "C" QItemEditorCreatorBase * bg_QItemEditorCreatorBase__OPERATOR_assign_const_QItemEditorCreatorBase_R(QItemEditorCreatorBase * _self_, const QItemEditorCreatorBase & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QItemEditorCreatorBase * bg_QItemEditorCreatorBase__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QItemEditorCreatorBase>();
+}
+
+extern "C" Qt6crItemEditorCreator * bg_QItemEditorCreatorBase_CAST_ItemEditorCreator_(QItemEditorCreatorBase * _self_) {
+  return bindgen_dynamic_cast<Qt6crItemEditorCreator *>(_self_);
+}
+
+extern "C" void bg_BgInherit_QItemEditorCreatorBase_JUMPTABLE_BgJumptable_QItemEditorCreatorBase_R(BgInherit_QItemEditorCreatorBase * _self_, const BgJumptable_QItemEditorCreatorBase & table) {
   _self_->bgJump = (table);
 }
 
@@ -149948,6 +152210,65 @@ extern "C" void bg_BgInherit_QWizardPage_JUMPTABLE_BgJumptable_QWizardPage_R(BgI
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_Qt6crItemEditorCreator {
+  CrystalProc<QWidget *, QWidget *> bg_Qt6crItemEditorCreator_createWidget_QWidget_X;
+  CrystalProc<CrystalString *> bg_Qt6crItemEditorCreator_valuePropertyName_;
+};
+struct BgInherit_Qt6crItemEditorCreator : public Qt6crItemEditorCreator {
+  using Qt6crItemEditorCreator::Qt6crItemEditorCreator;
+  BgInherit_Qt6crItemEditorCreator(const Qt6crItemEditorCreator &other) : Qt6crItemEditorCreator(other) { }
+  BgJumptable_Qt6crItemEditorCreator bgJump;
+  QWidget * createWidget(QWidget * parent) const override {
+    const BgInherit_Qt6crItemEditorCreator *_self_ = this;
+    if (_self_->bgJump.bg_Qt6crItemEditorCreator_createWidget_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_Qt6crItemEditorCreator_createWidget_QWidget_X(parent);
+    } else {
+      return Qt6crItemEditorCreator::createWidget(parent);
+    }
+  }
+  
+  QByteArray valuePropertyName() const override {
+    const BgInherit_Qt6crItemEditorCreator *_self_ = this;
+    if (_self_->bgJump.bg_Qt6crItemEditorCreator_valuePropertyName_.isValid()) {
+      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_Qt6crItemEditorCreator_valuePropertyName_()); return QByteArray(bg_value.ptr, bg_value.size); }());
+    } else {
+      return Qt6crItemEditorCreator::valuePropertyName();
+    }
+  }
+  
+};
+extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_Qt6crItemEditorCreator>();
+}
+
+extern "C" QWidget * bg_Qt6crItemEditorCreator_createWidget_QWidget_X(Qt6crItemEditorCreator * _self_, QWidget * parent) {
+  return _self_->createWidget(parent);
+}
+
+extern "C" CrystalString bg_Qt6crItemEditorCreator_valuePropertyName_(Qt6crItemEditorCreator * _self_) {
+  return qbytearray_to_crystal(_self_->valuePropertyName());
+}
+
+extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__COPY_const_Qt6crItemEditorCreator_R(const Qt6crItemEditorCreator & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_Qt6crItemEditorCreator>(unnamed_arg_0);
+}
+
+extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__OPERATOR_assign_const_Qt6crItemEditorCreator_R(Qt6crItemEditorCreator * _self_, const Qt6crItemEditorCreator & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QWidget * bg_Qt6crItemEditorCreator_createWidget_SUPER_QWidget_X(Qt6crItemEditorCreator * _self_, QWidget * parent) {
+  return _self_->Qt6crItemEditorCreator::createWidget(parent);
+}
+
+extern "C" CrystalString bg_Qt6crItemEditorCreator_valuePropertyName_SUPER_(Qt6crItemEditorCreator * _self_) {
+  return qbytearray_to_crystal(_self_->Qt6crItemEditorCreator::valuePropertyName());
+}
+
+extern "C" void bg_BgInherit_Qt6crItemEditorCreator_JUMPTABLE_BgJumptable_Qt6crItemEditorCreator_R(BgInherit_Qt6crItemEditorCreator * _self_, const BgJumptable_Qt6crItemEditorCreator & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" const char * bg____qVersion_STATIC_() {
   return ::qVersion();
 }
@@ -150705,6 +153026,22 @@ extern "C" void bg_Container_QList_QCommandLineOption__push_back_QCommandLineOpt
 }
 
 extern "C" int bg_Container_QList_QCommandLineOption__size_(Container_QList_QCommandLineOption_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QAbstractItemModel_X_ * bg_Container_QList_QAbstractItemModel_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QAbstractItemModel_X_>();
+}
+
+extern "C" QAbstractItemModel * bg_Container_QList_QAbstractItemModel_X__at_int(Container_QList_QAbstractItemModel_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QAbstractItemModel_X__push_back_QAbstractItemModel_X(Container_QList_QAbstractItemModel_X_ * _self_, QAbstractItemModel * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QAbstractItemModel_X__size_(Container_QList_QAbstractItemModel_X_ * _self_) {
   return _self_->size();
 }
 

@@ -580,3 +580,7 @@ enums:
   "QSystemSemaphore::AccessMode": SystemSemaphore::AccessMode
   "QSystemSemaphore::SystemSemaphoreError": SystemSemaphore::SystemSemaphoreError
   "QNativeIpcKey::Type": NativeIpcKey::Type
+  # Remaining models, styles and providers
+  "QAbstractFileIconProvider::IconType": AbstractFileIconProvider::IconType
+  "QAbstractFileIconProvider::Options": AbstractFileIconProvider::Options
+  "QIconEngine::IconEngineHook": IconEngine::IconEngineHook

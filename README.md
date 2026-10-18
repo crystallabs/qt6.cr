@@ -467,6 +467,25 @@ see the comments there:
   `CborValue.new(Qt::CborKnownTags::Url, value).tag` is `32`.
   `CborValue.new(Qt::CborValue::Type::Null)` replaces the `nullptr`
   constructor.  `QUtf8StringView` maps to `String` like `QAnyStringView`.
+* `QStyleOptionHeaderV2` and `QStyleOptionMenuItemV2` keep their fields in
+  bit-fields, which the property methods read and write:
+  `option.text_elide_mode = Qt::TextElideMode::Middle`,
+  `menu_item.mouse_down`.  `StyleHintReturnMask#region` and
+  `StyleHintReturnVariant#variant` are properties too.
+* A Crystal `Qt::IconEngine` subclass implements `paint` and `clone`
+  (see `spec/qt/providers_spec.cr`).  `clone` is declared `IconEngine?`, as
+  every pointer result is, but the override must return an object, so it
+  declares `def clone : Qt::IconEngine`: the C++ side calls `to_unsafe` on the
+  result.  The same holds for any Crystal override of a virtual method
+  returning a pointer.
+* `QItemEditorCreatorBase` is abstract and declares no constructor, which
+  bindgen doesn't add for an abstract class, so a Crystal creator derives from
+  `Qt::ItemEditorCreator`, the concrete `Qt6crItemEditorCreator` of
+  `ext/item_editor_helper.hpp`, implementing `create_widget(parent)` and
+  `value_property_name` (`Bytes`), and registers with
+  `ItemEditorFactory#register_editor(Qt::MetaType::Type::Int.to_i, creator)`.
+  `QItemEditorCreator<T>` is a template and isn't bound.  `QRangeModel`
+  (Qt 6.10+) only has template constructors over a C++ range and isn't bound.
 * `QReadWriteLock` derives from `QBasicReadWriteLock` since Qt 6.11, like
   `QMutex` from `QBasicMutex`: the bases are listed so the methods are
   inherited.  The std-style `try_lock()` and `try_acquire()` aliases of
