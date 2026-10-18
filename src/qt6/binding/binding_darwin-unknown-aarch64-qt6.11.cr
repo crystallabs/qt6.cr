@@ -561,7 +561,7 @@ module Qt
     alias QModelIndex = Void
     alias QModelRoleDataSpan = Void
     alias QPersistentModelIndex = Void
-    alias QStringList = Void
+    alias ContainerQListQString = Void
     alias QModelIndexList = Void
     alias ContainerQListInt = Void
     alias ContainerQListQPersistentModelIndex = Void
@@ -5484,7 +5484,7 @@ module Qt
     fun bg_QAbstractItemModel_headerData_int_Qt__Orientation_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
     fun bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
     fun bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : Bool
-    fun bg_QAbstractItemModel_mimeTypes_(_self_ : QAbstractItemModel*) : QStringList*
+    fun bg_QAbstractItemModel_mimeTypes_(_self_ : QAbstractItemModel*) : ContainerQListQString*
     fun bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
@@ -5592,7 +5592,7 @@ module Qt
     fun bg_QAbstractItemModel_headerData_SUPER_int_Qt__Orientation_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, role : Int32) : CrystalVariant
     fun bg_QAbstractItemModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(_self_ : QAbstractItemModel*, section : Int32, orientation : Orientation, value : CrystalVariant, role : Int32) : Bool
     fun bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(_self_ : QAbstractItemModel*, index : QModelIndex*) : Bool
-    fun bg_QAbstractItemModel_mimeTypes_SUPER_(_self_ : QAbstractItemModel*) : QStringList*
+    fun bg_QAbstractItemModel_mimeTypes_SUPER_(_self_ : QAbstractItemModel*) : ContainerQListQString*
     fun bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractItemModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QAbstractItemModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
@@ -5655,7 +5655,7 @@ module Qt
     fun bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
-    fun bg_QAbstractProxyModel_mimeTypes_(_self_ : QAbstractProxyModel*) : QStringList*
+    fun bg_QAbstractProxyModel_mimeTypes_(_self_ : QAbstractProxyModel*) : ContainerQListQString*
     fun bg_QAbstractProxyModel_supportedDragActions_(_self_ : QAbstractProxyModel*) : DropActions
     fun bg_QAbstractProxyModel_supportedDropActions_(_self_ : QAbstractProxyModel*) : DropActions
     fun bg_QAbstractProxyModel_createSourceIndex_int_int_void_X(_self_ : QAbstractProxyModel*, row : Int32, col : Int32, internal_ptr : Void*) : QModelIndex*
@@ -5703,7 +5703,7 @@ module Qt
     fun bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QAbstractProxyModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QAbstractProxyModel_canDropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
-    fun bg_QAbstractProxyModel_mimeTypes_SUPER_(_self_ : QAbstractProxyModel*) : QStringList*
+    fun bg_QAbstractProxyModel_mimeTypes_SUPER_(_self_ : QAbstractProxyModel*) : ContainerQListQString*
     fun bg_QAbstractProxyModel_supportedDragActions_SUPER_(_self_ : QAbstractProxyModel*) : DropActions
     fun bg_QAbstractProxyModel_supportedDropActions_SUPER_(_self_ : QAbstractProxyModel*) : DropActions
     fun bg_QAbstractItemModel_insertRows_SUPER_int_int_const_QModelIndex_R(_self_ : QAbstractProxyModel*, row : Int32, count : Int32, parent : QModelIndex*) : Bool
@@ -5810,7 +5810,7 @@ module Qt
     fun bg_QCoreApplication_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
     fun bg_QCoreApplication_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QCoreApplication__CONSTRUCT_int_R_char_XX_int(argc : Int32*, argv : UInt8**, unnamed_arg_2 : Int32) : QCoreApplication*
-    fun bg_QCoreApplication_arguments_STATIC_() : QStringList*
+    fun bg_QCoreApplication_arguments_STATIC_() : ContainerQListQString*
     fun bg_QCoreApplication_setAttribute_STATIC_Qt__ApplicationAttribute_bool(attribute : ApplicationAttribute, on : Bool) : Void
     fun bg_QCoreApplication_testAttribute_STATIC_Qt__ApplicationAttribute(attribute : ApplicationAttribute) : Bool
     fun bg_QCoreApplication_setOrganizationDomain_STATIC_const_QString_R(org_domain : CrystalString) : Void
@@ -5843,8 +5843,8 @@ module Qt
     fun bg_QCoreApplication_applicationFilePath_STATIC_() : CrystalString
     fun bg_QCoreApplication_applicationPid_STATIC_() : Int64
     fun bg_QCoreApplication_checkPermission_const_QPermission_R(_self_ : QCoreApplication*, permission : QPermission*) : PermissionStatus
-    fun bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(unnamed_arg_0 : QStringList*) : Void
-    fun bg_QCoreApplication_libraryPaths_STATIC_() : QStringList*
+    fun bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(unnamed_arg_0 : ContainerQListQString*) : Void
+    fun bg_QCoreApplication_libraryPaths_STATIC_() : ContainerQListQString*
     fun bg_QCoreApplication_addLibraryPath_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : Void
     fun bg_QCoreApplication_removeLibraryPath_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : Void
     fun bg_QCoreApplication_installTranslator_STATIC_QTranslator_X(message_file : QTranslator*) : Bool
@@ -6111,8 +6111,8 @@ module Qt
     fun bg_QLocale_toCurrencyString_float_const_QString_R_int(_self_ : QLocale*, i : Float32, symbol : CrystalString, precision : Int32) : CrystalString
     fun bg_QLocale_formattedDataSize_qint64_int(_self_ : QLocale*, bytes : Int64, precision : Int32) : CrystalString
     fun bg_QLocale_formattedDataSize_qint64_int_QLocale__DataSizeFormats(_self_ : QLocale*, bytes : Int64, precision : Int32, format : Locale::DataSizeFormats) : CrystalString
-    fun bg_QLocale_uiLanguages_(_self_ : QLocale*) : QStringList*
-    fun bg_QLocale_uiLanguages_QLocale__TagSeparator(_self_ : QLocale*, separator : Locale::TagSeparator) : QStringList*
+    fun bg_QLocale_uiLanguages_(_self_ : QLocale*) : ContainerQListQString*
+    fun bg_QLocale_uiLanguages_QLocale__TagSeparator(_self_ : QLocale*, separator : Locale::TagSeparator) : ContainerQListQString*
     fun bg_QLocale_languageToCode_STATIC_QLocale__Language(language : Locale::Language) : CrystalString
     fun bg_QLocale_languageToCode_STATIC_QLocale__Language_QLocale__LanguageCodeTypes(language : Locale::Language, code_types : Locale::LanguageCodeTypes) : CrystalString
     fun bg_QLocale_codeToLanguage_STATIC_QStringView(language_code : QStringView*) : Locale::Language
@@ -6132,7 +6132,7 @@ module Qt
     fun bg_QLocale_numberOptions_(_self_ : QLocale*) : Locale::NumberOptions
     fun bg_QLocale_quoteString_const_QString_R_QLocale__QuotationStyle(_self_ : QLocale*, str : CrystalString, style : Locale::QuotationStyle) : CrystalString
     fun bg_QLocale_quoteString_QStringView_QLocale__QuotationStyle(_self_ : QLocale*, str : QStringView*, style : Locale::QuotationStyle) : CrystalString
-    fun bg_QLocale_createSeparatedList_const_QStringList_R(_self_ : QLocale*, strl : QStringList*) : CrystalString
+    fun bg_QLocale_createSeparatedList_const_QStringList_R(_self_ : QLocale*, strl : ContainerQListQString*) : CrystalString
     fun bg_QLocale__OPERATOR_eq_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
     fun bg_QLocale__OPERATOR_ne_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
     fun bg_QLocale__OPERATOR_eq_const_QLocale__Language_R(_self_ : QLocale*, rhs : Locale::Language*) : Bool
@@ -6318,7 +6318,7 @@ module Qt
     fun bg_QRegularExpression_patternErrorOffset_(_self_ : QRegularExpression*) : Int64
     fun bg_QRegularExpression_errorString_(_self_ : QRegularExpression*) : CrystalString
     fun bg_QRegularExpression_captureCount_(_self_ : QRegularExpression*) : Int32
-    fun bg_QRegularExpression_namedCaptureGroups_(_self_ : QRegularExpression*) : QStringList*
+    fun bg_QRegularExpression_namedCaptureGroups_(_self_ : QRegularExpression*) : ContainerQListQString*
     fun bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatch*
     fun bg_QRegularExpression_match_const_QString_R_qsizetype_QRegularExpression__MatchType_QRegularExpression__MatchOptions(_self_ : QRegularExpression*, subject : CrystalString, offset : Int64, match_type : RegularExpression::MatchType, match_options : RegularExpression::MatchOptions) : QRegularExpressionMatch*
     fun bg_QRegularExpression_matchView_QStringView_qsizetype_QRegularExpression__MatchType(_self_ : QRegularExpression*, subject_view : QStringView*, offset : Int64, match_type : RegularExpression::MatchType) : QRegularExpressionMatch*
@@ -6357,7 +6357,7 @@ module Qt
     fun bg_QRegularExpressionMatch_capturedView_int(_self_ : QRegularExpressionMatch*, nth : Int32) : QStringView*
     fun bg_QRegularExpressionMatch_captured_QAnyStringView(_self_ : QRegularExpressionMatch*, name : CrystalString) : CrystalString
     fun bg_QRegularExpressionMatch_capturedView_QAnyStringView(_self_ : QRegularExpressionMatch*, name : CrystalString) : QStringView*
-    fun bg_QRegularExpressionMatch_capturedTexts_(_self_ : QRegularExpressionMatch*) : QStringList*
+    fun bg_QRegularExpressionMatch_capturedTexts_(_self_ : QRegularExpressionMatch*) : ContainerQListQString*
     fun bg_QRegularExpressionMatch_capturedStart_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Int64
     fun bg_QRegularExpressionMatch_capturedLength_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Int64
     fun bg_QRegularExpressionMatch_capturedEnd_int(_self_ : QRegularExpressionMatch*, nth : Int32) : Int64
@@ -6438,11 +6438,11 @@ module Qt
     fun bg_QUrl_fromAce_STATIC_const_QByteArray_R_QUrl__AceProcessingOptions(domain : QByteArray*, options : Url::AceProcessingOptions) : CrystalString
     fun bg_QUrl_toAce_STATIC_const_QString_R(domain : CrystalString) : QByteArray*
     fun bg_QUrl_toAce_STATIC_const_QString_R_QUrl__AceProcessingOptions(domain : CrystalString, options : Url::AceProcessingOptions) : QByteArray*
-    fun bg_QUrl_idnWhitelist_STATIC_() : QStringList*
-    fun bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(uris : ContainerQListQUrl*) : QStringList*
-    fun bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(uris : ContainerQListQUrl*, options : Url::FormattingOptions) : QStringList*
-    fun bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(uris : QStringList*, mode : Url::ParsingMode) : ContainerQListQUrl*
-    fun bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(unnamed_arg_0 : QStringList*) : Void
+    fun bg_QUrl_idnWhitelist_STATIC_() : ContainerQListQString*
+    fun bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(uris : ContainerQListQUrl*) : ContainerQListQString*
+    fun bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(uris : ContainerQListQUrl*, options : Url::FormattingOptions) : ContainerQListQString*
+    fun bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(uris : ContainerQListQString*, mode : Url::ParsingMode) : ContainerQListQUrl*
+    fun bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(unnamed_arg_0 : ContainerQListQString*) : Void
     fun bg_QUrl__OPERATOR_eq_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_ne_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_lt_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
@@ -6504,9 +6504,9 @@ module Qt
     fun bg_QDir_path_(_self_ : QDir*) : CrystalString
     fun bg_QDir_absolutePath_(_self_ : QDir*) : CrystalString
     fun bg_QDir_canonicalPath_(_self_ : QDir*) : CrystalString
-    fun bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(prefix : CrystalString, search_paths : QStringList*) : Void
+    fun bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(prefix : CrystalString, search_paths : ContainerQListQString*) : Void
     fun bg_QDir_addSearchPath_STATIC_const_QString_R_const_QString_R(prefix : CrystalString, path : CrystalString) : Void
-    fun bg_QDir_searchPaths_STATIC_const_QString_R(prefix : CrystalString) : QStringList*
+    fun bg_QDir_searchPaths_STATIC_const_QString_R(prefix : CrystalString) : ContainerQListQString*
     fun bg_QDir_dirName_(_self_ : QDir*) : CrystalString
     fun bg_QDir_filePath_const_QString_R(_self_ : QDir*, file_name : CrystalString) : CrystalString
     fun bg_QDir_absoluteFilePath_const_QString_R(_self_ : QDir*, file_name : CrystalString) : CrystalString
@@ -6515,8 +6515,8 @@ module Qt
     fun bg_QDir_fromNativeSeparators_STATIC_const_QString_R(path_name : CrystalString) : CrystalString
     fun bg_QDir_cd_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_cdUp_(_self_ : QDir*) : Bool
-    fun bg_QDir_nameFilters_(_self_ : QDir*) : QStringList*
-    fun bg_QDir_setNameFilters_const_QStringList_R(_self_ : QDir*, name_filters : QStringList*) : Void
+    fun bg_QDir_nameFilters_(_self_ : QDir*) : ContainerQListQString*
+    fun bg_QDir_setNameFilters_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : Void
     fun bg_QDir_filter_(_self_ : QDir*) : Dir::Filters
     fun bg_QDir_setFilter_QDir__Filters(_self_ : QDir*, filter : Dir::Filters) : Void
     fun bg_QDir_sorting_(_self_ : QDir*) : Dir::SortFlags
@@ -6525,19 +6525,19 @@ module Qt
     fun bg_QDir_isEmpty_(_self_ : QDir*) : Bool
     fun bg_QDir_isEmpty_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : Bool
     fun bg_QDir__OPERATOR_at_qsizetype(_self_ : QDir*, unnamed_arg_0 : Int64) : CrystalString
-    fun bg_QDir_nameFiltersFromString_STATIC_const_QString_R(name_filter : CrystalString) : QStringList*
-    fun bg_QDir_entryList_(_self_ : QDir*) : QStringList*
-    fun bg_QDir_entryList_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : QStringList*
-    fun bg_QDir_entryList_QDir__Filters_QDir__SortFlags(_self_ : QDir*, filters : Dir::Filters, sort : Dir::SortFlags) : QStringList*
-    fun bg_QDir_entryList_const_QStringList_R(_self_ : QDir*, name_filters : QStringList*) : QStringList*
-    fun bg_QDir_entryList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : QStringList*, filters : Dir::Filters) : QStringList*
-    fun bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : QStringList*, filters : Dir::Filters, sort : Dir::SortFlags) : QStringList*
+    fun bg_QDir_nameFiltersFromString_STATIC_const_QString_R(name_filter : CrystalString) : ContainerQListQString*
+    fun bg_QDir_entryList_(_self_ : QDir*) : ContainerQListQString*
+    fun bg_QDir_entryList_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : ContainerQListQString*
+    fun bg_QDir_entryList_QDir__Filters_QDir__SortFlags(_self_ : QDir*, filters : Dir::Filters, sort : Dir::SortFlags) : ContainerQListQString*
+    fun bg_QDir_entryList_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QDir_entryList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters) : ContainerQListQString*
+    fun bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters, sort : Dir::SortFlags) : ContainerQListQString*
     fun bg_QDir_entryInfoList_(_self_ : QDir*) : QFileInfoList*
     fun bg_QDir_entryInfoList_QDir__Filters(_self_ : QDir*, filters : Dir::Filters) : QFileInfoList*
     fun bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(_self_ : QDir*, filters : Dir::Filters, sort : Dir::SortFlags) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R(_self_ : QDir*, name_filters : QStringList*) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : QStringList*, filters : Dir::Filters) : QFileInfoList*
-    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : QStringList*, filters : Dir::Filters, sort : Dir::SortFlags) : QFileInfoList*
+    fun bg_QDir_entryInfoList_const_QStringList_R(_self_ : QDir*, name_filters : ContainerQListQString*) : QFileInfoList*
+    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters) : QFileInfoList*
+    fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : Dir::Filters, sort : Dir::SortFlags) : QFileInfoList*
     fun bg_QDir_mkdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_rmdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_mkpath_const_QString_R(_self_ : QDir*, dir_path : CrystalString) : Bool
@@ -6566,7 +6566,7 @@ module Qt
     fun bg_QDir_rootPath_STATIC_() : CrystalString
     fun bg_QDir_temp_STATIC_() : QDir*
     fun bg_QDir_tempPath_STATIC_() : CrystalString
-    fun bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(filters : QStringList*, file_name : CrystalString) : Bool
+    fun bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(filters : ContainerQListQString*, file_name : CrystalString) : Bool
     fun bg_QDir_match_STATIC_const_QString_R_const_QString_R(filter : CrystalString, file_name : CrystalString) : Bool
     fun bg_QDir_cleanPath_STATIC_const_QString_R(path : CrystalString) : CrystalString
     fun bg_QDir_refresh_(_self_ : QDir*) : Void
@@ -6770,7 +6770,7 @@ module Qt
     fun bg_QMimeData_setData_const_QString_R_const_QByteArray_R(_self_ : QMimeData*, mimetype : CrystalString, data : QByteArray*) : Void
     fun bg_QMimeData_removeFormat_const_QString_R(_self_ : QMimeData*, mimetype : CrystalString) : Void
     fun bg_QMimeData_hasFormat_const_QString_R(_self_ : QMimeData*, mimetype : CrystalString) : Bool
-    fun bg_QMimeData_formats_(_self_ : QMimeData*) : QStringList*
+    fun bg_QMimeData_formats_(_self_ : QMimeData*) : ContainerQListQString*
     fun bg_QMimeData_clear_(_self_ : QMimeData*) : Void
     fun bg_QMimeData_retrieveData_const_QString_R_QMetaType(_self_ : QMimeData*, mimetype : CrystalString, preferred_type : QMetaType*) : CrystalVariant
     fun bg_QObject_event_QEvent_X(_self_ : QMimeData*, event : QEvent*) : Bool
@@ -6782,7 +6782,7 @@ module Qt
     fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QMimeData*, signal : QMetaMethod*) : Void
     fun bg_QMimeData_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QMimeData_hasFormat_SUPER_const_QString_R(_self_ : QMimeData*, mimetype : CrystalString) : Bool
-    fun bg_QMimeData_formats_SUPER_(_self_ : QMimeData*) : QStringList*
+    fun bg_QMimeData_formats_SUPER_(_self_ : QMimeData*) : ContainerQListQString*
     fun bg_QMimeData_retrieveData_SUPER_const_QString_R_QMetaType(_self_ : QMimeData*, mimetype : CrystalString, preferred_type : QMetaType*) : CrystalVariant
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QMimeData*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QMimeData*, watched : QObject*, event : QEvent*) : Bool
@@ -6800,8 +6800,8 @@ module Qt
     fun bg_QProcess_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QProcess__CONSTRUCT_QObject_X(parent : QObject*) : QProcess*
     fun bg_QProcess_start_const_QString_R(_self_ : QProcess*, program : CrystalString) : Void
-    fun bg_QProcess_start_const_QString_R_const_QStringList_R(_self_ : QProcess*, program : CrystalString, arguments : QStringList*) : Void
-    fun bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(_self_ : QProcess*, program : CrystalString, arguments : QStringList*, mode : IODevice::OpenMode) : Void
+    fun bg_QProcess_start_const_QString_R_const_QStringList_R(_self_ : QProcess*, program : CrystalString, arguments : ContainerQListQString*) : Void
+    fun bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(_self_ : QProcess*, program : CrystalString, arguments : ContainerQListQString*, mode : IODevice::OpenMode) : Void
     fun bg_QProcess_start_(_self_ : QProcess*) : Void
     fun bg_QProcess_start_QIODeviceBase__OpenMode(_self_ : QProcess*, mode : IODevice::OpenMode) : Void
     fun bg_QProcess_startCommand_const_QString_R(_self_ : QProcess*, command : CrystalString) : Void
@@ -6811,8 +6811,8 @@ module Qt
     fun bg_QProcess_open_QIODeviceBase__OpenMode(_self_ : QProcess*, mode : IODevice::OpenMode) : Bool
     fun bg_QProcess_program_(_self_ : QProcess*) : CrystalString
     fun bg_QProcess_setProgram_const_QString_R(_self_ : QProcess*, program : CrystalString) : Void
-    fun bg_QProcess_arguments_(_self_ : QProcess*) : QStringList*
-    fun bg_QProcess_setArguments_const_QStringList_R(_self_ : QProcess*, arguments : QStringList*) : Void
+    fun bg_QProcess_arguments_(_self_ : QProcess*) : ContainerQListQString*
+    fun bg_QProcess_setArguments_const_QStringList_R(_self_ : QProcess*, arguments : ContainerQListQString*) : Void
     fun bg_QProcess_processChannelMode_(_self_ : QProcess*) : Process::ProcessChannelMode
     fun bg_QProcess_setProcessChannelMode_QProcess__ProcessChannelMode(_self_ : QProcess*, mode : Process::ProcessChannelMode) : Void
     fun bg_QProcess_inputChannelMode_(_self_ : QProcess*) : Process::InputChannelMode
@@ -6831,8 +6831,8 @@ module Qt
     fun bg_QProcess_setUnixProcessParameters_QProcess__UnixProcessFlags(_self_ : QProcess*, flags_only : Process::UnixProcessFlags) : Void
     fun bg_QProcess_workingDirectory_(_self_ : QProcess*) : CrystalString
     fun bg_QProcess_setWorkingDirectory_const_QString_R(_self_ : QProcess*, dir : CrystalString) : Void
-    fun bg_QProcess_setEnvironment_const_QStringList_R(_self_ : QProcess*, environment : QStringList*) : Void
-    fun bg_QProcess_environment_(_self_ : QProcess*) : QStringList*
+    fun bg_QProcess_setEnvironment_const_QStringList_R(_self_ : QProcess*, environment : ContainerQListQString*) : Void
+    fun bg_QProcess_environment_(_self_ : QProcess*) : ContainerQListQString*
     fun bg_QProcess_setProcessEnvironment_const_QProcessEnvironment_R(_self_ : QProcess*, environment : QProcessEnvironment*) : Void
     fun bg_QProcess_processEnvironment_(_self_ : QProcess*) : QProcessEnvironment*
     fun bg_QProcess_error_(_self_ : QProcess*) : Process::ProcessError
@@ -6850,14 +6850,14 @@ module Qt
     fun bg_QProcess_isSequential_(_self_ : QProcess*) : Bool
     fun bg_QProcess_close_(_self_ : QProcess*) : Void
     fun bg_QProcess_execute_STATIC_const_QString_R(program : CrystalString) : Int32
-    fun bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(program : CrystalString, arguments : QStringList*) : Int32
+    fun bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(program : CrystalString, arguments : ContainerQListQString*) : Int32
     fun bg_QProcess_startDetached_STATIC_const_QString_R(program : CrystalString) : Bool
-    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(program : CrystalString, arguments : QStringList*) : Bool
-    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(program : CrystalString, arguments : QStringList*, working_directory : CrystalString) : Bool
-    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(program : CrystalString, arguments : QStringList*, working_directory : CrystalString, pid : Int64*) : Bool
-    fun bg_QProcess_systemEnvironment_STATIC_() : QStringList*
+    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(program : CrystalString, arguments : ContainerQListQString*) : Bool
+    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(program : CrystalString, arguments : ContainerQListQString*, working_directory : CrystalString) : Bool
+    fun bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(program : CrystalString, arguments : ContainerQListQString*, working_directory : CrystalString, pid : Int64*) : Bool
+    fun bg_QProcess_systemEnvironment_STATIC_() : ContainerQListQString*
     fun bg_QProcess_nullDevice_STATIC_() : CrystalString
-    fun bg_QProcess_splitCommand_STATIC_QStringView(command : QStringView*) : QStringList*
+    fun bg_QProcess_splitCommand_STATIC_QStringView(command : QStringView*) : ContainerQListQString*
     fun bg_QProcess_terminate_(_self_ : QProcess*) : Void
     fun bg_QProcess_kill_(_self_ : QProcess*) : Void
     fun bg_QProcess_finished_int_QProcess__ExitStatus(_self_ : QProcess*, exit_code : Int32, exit_status : Process::ExitStatus) : Void
@@ -7268,9 +7268,9 @@ module Qt
     fun bg_QSettings_beginWriteArray_QAnyStringView_int(_self_ : QSettings*, prefix : CrystalString, size : Int32) : Void
     fun bg_QSettings_endArray_(_self_ : QSettings*) : Void
     fun bg_QSettings_setArrayIndex_int(_self_ : QSettings*, i : Int32) : Void
-    fun bg_QSettings_allKeys_(_self_ : QSettings*) : QStringList*
-    fun bg_QSettings_childKeys_(_self_ : QSettings*) : QStringList*
-    fun bg_QSettings_childGroups_(_self_ : QSettings*) : QStringList*
+    fun bg_QSettings_allKeys_(_self_ : QSettings*) : ContainerQListQString*
+    fun bg_QSettings_childKeys_(_self_ : QSettings*) : ContainerQListQString*
+    fun bg_QSettings_childGroups_(_self_ : QSettings*) : ContainerQListQString*
     fun bg_QSettings_isWritable_(_self_ : QSettings*) : Bool
     fun bg_QSettings_setValue_QAnyStringView_const_QVariant_R(_self_ : QSettings*, key : CrystalString, value : CrystalVariant) : Void
     fun bg_QSettings_value_QAnyStringView_const_QVariant_R(_self_ : QSettings*, key : CrystalString, default_value : CrystalVariant) : CrystalVariant
@@ -7410,7 +7410,7 @@ module Qt
     fun bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
     fun bg_QSortFilterProxyModel_span_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QSize
     fun bg_QSortFilterProxyModel_sort_int_Qt__SortOrder(_self_ : QSortFilterProxyModel*, column : Int32, order : SortOrder) : Void
-    fun bg_QSortFilterProxyModel_mimeTypes_(_self_ : QSortFilterProxyModel*) : QStringList*
+    fun bg_QSortFilterProxyModel_mimeTypes_(_self_ : QSortFilterProxyModel*) : ContainerQListQString*
     fun bg_QSortFilterProxyModel_supportedDropActions_(_self_ : QSortFilterProxyModel*) : DropActions
     fun bg_QSortFilterProxyModel_dynamicSortFilterChanged_bool(_self_ : QSortFilterProxyModel*, dynamic_sort_filter : Bool) : Void
     fun bg_QSortFilterProxyModel_filterCaseSensitivityChanged_Qt__CaseSensitivity(_self_ : QSortFilterProxyModel*, filter_case_sensitivity : CaseSensitivity) : Void
@@ -7476,7 +7476,7 @@ module Qt
     fun bg_QSortFilterProxyModel_match_SUPER_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags(_self_ : QSortFilterProxyModel*, start : QModelIndex*, role : Int32, value : CrystalVariant, hits : Int32, flags : MatchFlags) : QModelIndexList*
     fun bg_QSortFilterProxyModel_span_SUPER_const_QModelIndex_R(_self_ : QSortFilterProxyModel*, index : QModelIndex*) : QSize
     fun bg_QSortFilterProxyModel_sort_SUPER_int_Qt__SortOrder(_self_ : QSortFilterProxyModel*, column : Int32, order : SortOrder) : Void
-    fun bg_QSortFilterProxyModel_mimeTypes_SUPER_(_self_ : QSortFilterProxyModel*) : QStringList*
+    fun bg_QSortFilterProxyModel_mimeTypes_SUPER_(_self_ : QSortFilterProxyModel*) : ContainerQListQString*
     fun bg_QSortFilterProxyModel_supportedDropActions_SUPER_(_self_ : QSortFilterProxyModel*) : DropActions
     fun bg_QAbstractProxyModel_submit_SUPER_(_self_ : QSortFilterProxyModel*) : Bool
     fun bg_QAbstractProxyModel_revert_SUPER_(_self_ : QSortFilterProxyModel*) : Void
@@ -7496,14 +7496,14 @@ module Qt
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSortFilterProxyModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QSortFilterProxyModel_JUMPTABLE_BgJumptable_QSortFilterProxyModel_R(_self_ : QSortFilterProxyModel*, table : BgJumptable_QSortFilterProxyModel*) : Void
     fun bg_QStandardPaths_writableLocation_STATIC_QStandardPaths__StandardLocation(type : StandardPaths::StandardLocation) : CrystalString
-    fun bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type : StandardPaths::StandardLocation) : QStringList*
+    fun bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type : StandardPaths::StandardLocation) : ContainerQListQString*
     fun bg_QStandardPaths_locate_STATIC_QStandardPaths__StandardLocation_const_QString_R(type : StandardPaths::StandardLocation, file_name : CrystalString) : CrystalString
     fun bg_QStandardPaths_locate_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type : StandardPaths::StandardLocation, file_name : CrystalString, options : StandardPaths::LocateOptions) : CrystalString
-    fun bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type : StandardPaths::StandardLocation, file_name : CrystalString) : QStringList*
-    fun bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type : StandardPaths::StandardLocation, file_name : CrystalString, options : StandardPaths::LocateOptions) : QStringList*
+    fun bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type : StandardPaths::StandardLocation, file_name : CrystalString) : ContainerQListQString*
+    fun bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type : StandardPaths::StandardLocation, file_name : CrystalString, options : StandardPaths::LocateOptions) : ContainerQListQString*
     fun bg_QStandardPaths_displayName_STATIC_QStandardPaths__StandardLocation(type : StandardPaths::StandardLocation) : CrystalString
     fun bg_QStandardPaths_findExecutable_STATIC_const_QString_R(executable_name : CrystalString) : CrystalString
-    fun bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(executable_name : CrystalString, paths : QStringList*) : CrystalString
+    fun bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(executable_name : CrystalString, paths : ContainerQListQString*) : CrystalString
     fun bg_QStandardPaths_setTestModeEnabled_STATIC_bool(test_mode : Bool) : Void
     fun bg_QStandardPaths_isTestModeEnabled_STATIC_() : Bool
     fun bg_QStandardPaths_staticMetaObject_STATIC_GETTER_() : QMetaObject*
@@ -7597,7 +7597,7 @@ module Qt
     fun bg_QColor__OPERATOR_assign_Qt__GlobalColor(_self_ : QColor*, color : GlobalColor) : QColor*
     fun bg_QColor_isValid_(_self_ : QColor*) : Bool
     fun bg_QColor_name_QColor__NameFormat(_self_ : QColor*, format : Color::NameFormat) : CrystalString
-    fun bg_QColor_colorNames_STATIC_() : QStringList*
+    fun bg_QColor_colorNames_STATIC_() : ContainerQListQString*
     fun bg_QColor_spec_(_self_ : QColor*) : Color::Spec
     fun bg_QColor_alpha_(_self_ : QColor*) : Int32
     fun bg_QColor_setAlpha_int(_self_ : QColor*, alpha : Int32) : Void
@@ -7890,7 +7890,7 @@ module Qt
     fun bg_QImage_setDotsPerMeterY_int(_self_ : QImage*, unnamed_arg_0 : Int32) : Void
     fun bg_QImage_offset_(_self_ : QImage*) : QPoint
     fun bg_QImage_setOffset_const_QPoint_R(_self_ : QImage*, unnamed_arg_0 : QPoint) : Void
-    fun bg_QImage_textKeys_(_self_ : QImage*) : QStringList*
+    fun bg_QImage_textKeys_(_self_ : QImage*) : ContainerQListQString*
     fun bg_QImage_text_(_self_ : QImage*) : CrystalString
     fun bg_QImage_text_const_QString_R(_self_ : QImage*, key : CrystalString) : CrystalString
     fun bg_QImage_setText_const_QString_R_const_QString_R(_self_ : QImage*, key : CrystalString, value : CrystalString) : Void
@@ -8025,10 +8025,10 @@ module Qt
     fun bg_QIcon_fromTheme_STATIC_QIcon__ThemeIcon(icon : Icon::ThemeIcon) : QIcon*
     fun bg_QIcon_fromTheme_STATIC_QIcon__ThemeIcon_const_QIcon_R(icon : Icon::ThemeIcon, fallback : QIcon*) : QIcon*
     fun bg_QIcon_hasThemeIcon_STATIC_QIcon__ThemeIcon(icon : Icon::ThemeIcon) : Bool
-    fun bg_QIcon_themeSearchPaths_STATIC_() : QStringList*
-    fun bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(searchpath : QStringList*) : Void
-    fun bg_QIcon_fallbackSearchPaths_STATIC_() : QStringList*
-    fun bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(paths : QStringList*) : Void
+    fun bg_QIcon_themeSearchPaths_STATIC_() : ContainerQListQString*
+    fun bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(searchpath : ContainerQListQString*) : Void
+    fun bg_QIcon_fallbackSearchPaths_STATIC_() : ContainerQListQString*
+    fun bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(paths : ContainerQListQString*) : Void
     fun bg_QIcon_themeName_STATIC_() : CrystalString
     fun bg_QIcon_setThemeName_STATIC_const_QString_R(path : CrystalString) : Void
     fun bg_QIcon_fallbackThemeName_STATIC_() : CrystalString
@@ -8743,14 +8743,14 @@ module Qt
     fun bg_BgInherit_QApplicationStateChangeEvent_JUMPTABLE_BgJumptable_QApplicationStateChangeEvent_R(_self_ : QApplicationStateChangeEvent*, table : BgJumptable_QApplicationStateChangeEvent*) : Void
     fun bg_QFont__CONSTRUCT_() : QFont*
     fun bg_QFont__CONSTRUCT_const_QString_R_int_int_bool(family : CrystalString, point_size : Int32, weight : Int32, italic : Bool) : QFont*
-    fun bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(families : QStringList*, point_size : Int32, weight : Int32, italic : Bool) : QFont*
+    fun bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(families : ContainerQListQString*, point_size : Int32, weight : Int32, italic : Bool) : QFont*
     fun bg_QFont__CONSTRUCT_const_QFont_R_const_QPaintDevice_X(font : QFont*, pd : QPaintDevice*) : QFont*
     fun bg_QFont__COPY_const_QFont_R(font : QFont*) : QFont*
     fun bg_QFont_swap_QFont_R(_self_ : QFont*, other : QFont*) : Void
     fun bg_QFont_family_(_self_ : QFont*) : CrystalString
     fun bg_QFont_setFamily_const_QString_R(_self_ : QFont*, unnamed_arg_0 : CrystalString) : Void
-    fun bg_QFont_families_(_self_ : QFont*) : QStringList*
-    fun bg_QFont_setFamilies_const_QStringList_R(_self_ : QFont*, unnamed_arg_0 : QStringList*) : Void
+    fun bg_QFont_families_(_self_ : QFont*) : ContainerQListQString*
+    fun bg_QFont_setFamilies_const_QStringList_R(_self_ : QFont*, unnamed_arg_0 : ContainerQListQString*) : Void
     fun bg_QFont_styleName_(_self_ : QFont*) : CrystalString
     fun bg_QFont_setStyleName_const_QString_R(_self_ : QFont*, unnamed_arg_0 : CrystalString) : Void
     fun bg_QFont_pointSize_(_self_ : QFont*) : Int32
@@ -8805,10 +8805,10 @@ module Qt
     fun bg_QFont_toString_(_self_ : QFont*) : CrystalString
     fun bg_QFont_fromString_const_QString_R(_self_ : QFont*, unnamed_arg_0 : CrystalString) : Bool
     fun bg_QFont_substitute_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : CrystalString
-    fun bg_QFont_substitutes_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : QStringList*
-    fun bg_QFont_substitutions_STATIC_() : QStringList*
+    fun bg_QFont_substitutes_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : ContainerQListQString*
+    fun bg_QFont_substitutions_STATIC_() : ContainerQListQString*
     fun bg_QFont_insertSubstitution_STATIC_const_QString_R_const_QString_R(unnamed_arg_0 : CrystalString, unnamed_arg_1 : CrystalString) : Void
-    fun bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(unnamed_arg_0 : CrystalString, unnamed_arg_1 : QStringList*) : Void
+    fun bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(unnamed_arg_0 : CrystalString, unnamed_arg_1 : ContainerQListQString*) : Void
     fun bg_QFont_removeSubstitutions_STATIC_const_QString_R(unnamed_arg_0 : CrystalString) : Void
     fun bg_QFont_initialize_STATIC_() : Void
     fun bg_QFont_cleanup_STATIC_() : Void
@@ -9127,7 +9127,7 @@ module Qt
     fun bg_QTextCharFormat_isValid_(_self_ : QTextCharFormat*) : Bool
     fun bg_QTextCharFormat_setFont_const_QFont_R_QTextCharFormat__FontPropertiesInheritanceBehavior(_self_ : QTextCharFormat*, font : QFont*, behavior : TextCharFormat::FontPropertiesInheritanceBehavior) : Void
     fun bg_QTextCharFormat_font_(_self_ : QTextCharFormat*) : QFont*
-    fun bg_QTextCharFormat_setFontFamilies_const_QStringList_R(_self_ : QTextCharFormat*, families : QStringList*) : Void
+    fun bg_QTextCharFormat_setFontFamilies_const_QStringList_R(_self_ : QTextCharFormat*, families : ContainerQListQString*) : Void
     fun bg_QTextCharFormat_fontFamilies_(_self_ : QTextCharFormat*) : CrystalVariant
     fun bg_QTextCharFormat_setFontStyleName_const_QString_R(_self_ : QTextCharFormat*, style_name : CrystalString) : Void
     fun bg_QTextCharFormat_fontStyleName_(_self_ : QTextCharFormat*) : CrystalVariant
@@ -9183,8 +9183,8 @@ module Qt
     fun bg_QTextCharFormat_isAnchor_(_self_ : QTextCharFormat*) : Bool
     fun bg_QTextCharFormat_setAnchorHref_const_QString_R(_self_ : QTextCharFormat*, value : CrystalString) : Void
     fun bg_QTextCharFormat_anchorHref_(_self_ : QTextCharFormat*) : CrystalString
-    fun bg_QTextCharFormat_setAnchorNames_const_QStringList_R(_self_ : QTextCharFormat*, names : QStringList*) : Void
-    fun bg_QTextCharFormat_anchorNames_(_self_ : QTextCharFormat*) : QStringList*
+    fun bg_QTextCharFormat_setAnchorNames_const_QStringList_R(_self_ : QTextCharFormat*, names : ContainerQListQString*) : Void
+    fun bg_QTextCharFormat_anchorNames_(_self_ : QTextCharFormat*) : ContainerQListQString*
     fun bg_QTextCharFormat_setTableCellRowSpan_int(_self_ : QTextCharFormat*, table_cell_row_span : Int32) : Void
     fun bg_QTextCharFormat_tableCellRowSpan_(_self_ : QTextCharFormat*) : Int32
     fun bg_QTextCharFormat_setTableCellColumnSpan_int(_self_ : QTextCharFormat*, table_cell_column_span : Int32) : Void
@@ -10149,8 +10149,8 @@ module Qt
     fun bg_QStandardItemModel_setHorizontalHeaderItem_int_QStandardItem_X(_self_ : QStandardItemModel*, column : Int32, item : QStandardItem*) : Void
     fun bg_QStandardItemModel_verticalHeaderItem_int(_self_ : QStandardItemModel*, row : Int32) : QStandardItem*
     fun bg_QStandardItemModel_setVerticalHeaderItem_int_QStandardItem_X(_self_ : QStandardItemModel*, row : Int32, item : QStandardItem*) : Void
-    fun bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(_self_ : QStandardItemModel*, labels : QStringList*) : Void
-    fun bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(_self_ : QStandardItemModel*, labels : QStringList*) : Void
+    fun bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(_self_ : QStandardItemModel*, labels : ContainerQListQString*) : Void
+    fun bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(_self_ : QStandardItemModel*, labels : ContainerQListQString*) : Void
     fun bg_QStandardItemModel_setRowCount_int(_self_ : QStandardItemModel*, rows : Int32) : Void
     fun bg_QStandardItemModel_setColumnCount_int(_self_ : QStandardItemModel*, columns : Int32) : Void
     fun bg_QStandardItemModel_appendRow_const_QList_QStandardItem_X__R(_self_ : QStandardItemModel*, items : ContainerQListQStandardItemX*) : Void
@@ -10175,7 +10175,7 @@ module Qt
     fun bg_QStandardItemModel_findItems_const_QString_R_Qt__MatchFlags_int(_self_ : QStandardItemModel*, text : CrystalString, flags : MatchFlags, column : Int32) : ContainerQListQStandardItemX*
     fun bg_QStandardItemModel_sortRole_(_self_ : QStandardItemModel*) : Int32
     fun bg_QStandardItemModel_setSortRole_int(_self_ : QStandardItemModel*, role : Int32) : Void
-    fun bg_QStandardItemModel_mimeTypes_(_self_ : QStandardItemModel*) : QStringList*
+    fun bg_QStandardItemModel_mimeTypes_(_self_ : QStandardItemModel*) : ContainerQListQString*
     fun bg_QStandardItemModel_mimeData_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QStandardItemModel_itemChanged_QStandardItem_X(_self_ : QStandardItemModel*, item : QStandardItem*) : Void
@@ -10220,7 +10220,7 @@ module Qt
     fun bg_QStandardItemModel_flags_SUPER_const_QModelIndex_R(_self_ : QStandardItemModel*, index : QModelIndex*) : ItemFlags
     fun bg_QStandardItemModel_supportedDropActions_SUPER_(_self_ : QStandardItemModel*) : DropActions
     fun bg_QStandardItemModel_sort_SUPER_int_Qt__SortOrder(_self_ : QStandardItemModel*, column : Int32, order : SortOrder) : Void
-    fun bg_QStandardItemModel_mimeTypes_SUPER_(_self_ : QStandardItemModel*) : QStringList*
+    fun bg_QStandardItemModel_mimeTypes_SUPER_(_self_ : QStandardItemModel*) : ContainerQListQString*
     fun bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(_self_ : QStandardItemModel*, indexes : QModelIndexList*) : QMimeData*
     fun bg_QStandardItemModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, data : QMimeData*, action : DropAction, row : Int32, column : Int32, parent : QModelIndex*) : Bool
     fun bg_QAbstractItemModel_sibling_SUPER_int_int_const_QModelIndex_R(_self_ : QStandardItemModel*, row : Int32, column : Int32, idx : QModelIndex*) : QModelIndex*
@@ -13071,12 +13071,12 @@ module Qt
     fun bg_QComboBox_addItem_const_QString_R_const_QVariant_R(_self_ : QComboBox*, text : CrystalString, user_data : CrystalVariant) : Void
     fun bg_QComboBox_addItem_const_QIcon_R_const_QString_R(_self_ : QComboBox*, icon : QIcon*, text : CrystalString) : Void
     fun bg_QComboBox_addItem_const_QIcon_R_const_QString_R_const_QVariant_R(_self_ : QComboBox*, icon : QIcon*, text : CrystalString, user_data : CrystalVariant) : Void
-    fun bg_QComboBox_addItems_const_QStringList_R(_self_ : QComboBox*, texts : QStringList*) : Void
+    fun bg_QComboBox_addItems_const_QStringList_R(_self_ : QComboBox*, texts : ContainerQListQString*) : Void
     fun bg_QComboBox_insertItem_int_const_QString_R(_self_ : QComboBox*, index : Int32, text : CrystalString) : Void
     fun bg_QComboBox_insertItem_int_const_QString_R_const_QVariant_R(_self_ : QComboBox*, index : Int32, text : CrystalString, user_data : CrystalVariant) : Void
     fun bg_QComboBox_insertItem_int_const_QIcon_R_const_QString_R(_self_ : QComboBox*, index : Int32, icon : QIcon*, text : CrystalString) : Void
     fun bg_QComboBox_insertItem_int_const_QIcon_R_const_QString_R_const_QVariant_R(_self_ : QComboBox*, index : Int32, icon : QIcon*, text : CrystalString, user_data : CrystalVariant) : Void
-    fun bg_QComboBox_insertItems_int_const_QStringList_R(_self_ : QComboBox*, index : Int32, texts : QStringList*) : Void
+    fun bg_QComboBox_insertItems_int_const_QStringList_R(_self_ : QComboBox*, index : Int32, texts : ContainerQListQString*) : Void
     fun bg_QComboBox_insertSeparator_int(_self_ : QComboBox*, index : Int32) : Void
     fun bg_QComboBox_removeItem_int(_self_ : QComboBox*, index : Int32) : Void
     fun bg_QComboBox_setItemText_int_const_QString_R(_self_ : QComboBox*, index : Int32, text : CrystalString) : Void
@@ -13335,7 +13335,7 @@ module Qt
     fun bg_QCompleter_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
     fun bg_QCompleter__CONSTRUCT_QObject_X(parent : QObject*) : QCompleter*
     fun bg_QCompleter__CONSTRUCT_QAbstractItemModel_X_QObject_X(model : QAbstractItemModel*, parent : QObject*) : QCompleter*
-    fun bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(completions : QStringList*, parent : QObject*) : QCompleter*
+    fun bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(completions : ContainerQListQString*, parent : QObject*) : QCompleter*
     fun bg_QCompleter_setWidget_QWidget_X(_self_ : QCompleter*, widget : QWidget*) : Void
     fun bg_QCompleter_widget_(_self_ : QCompleter*) : QWidget*
     fun bg_QCompleter_setModel_QAbstractItemModel_X(_self_ : QCompleter*, c : QAbstractItemModel*) : Void
@@ -13369,7 +13369,7 @@ module Qt
     fun bg_QCompleter_complete_const_QRect_R(_self_ : QCompleter*, rect : QRect) : Void
     fun bg_QCompleter_setWrapAround_bool(_self_ : QCompleter*, wrap : Bool) : Void
     fun bg_QCompleter_pathFromIndex_const_QModelIndex_R(_self_ : QCompleter*, index : QModelIndex*) : CrystalString
-    fun bg_QCompleter_splitPath_const_QString_R(_self_ : QCompleter*, path : CrystalString) : QStringList*
+    fun bg_QCompleter_splitPath_const_QString_R(_self_ : QCompleter*, path : CrystalString) : ContainerQListQString*
     fun bg_QCompleter_eventFilter_QObject_X_QEvent_X(_self_ : QCompleter*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QCompleter_event_QEvent_X(_self_ : QCompleter*, event : QEvent*) : Bool
     fun bg_QCompleter_activated_const_QString_R(_self_ : QCompleter*, text : CrystalString) : Void
@@ -13387,7 +13387,7 @@ module Qt
     fun bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QString_R_(_self_ : QCompleter*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCompleter_CONNECT_highlighted_CrystalProc_void__const_QModelIndex_R_(_self_ : QCompleter*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QCompleter_pathFromIndex_SUPER_const_QModelIndex_R(_self_ : QCompleter*, index : QModelIndex*) : CrystalString
-    fun bg_QCompleter_splitPath_SUPER_const_QString_R(_self_ : QCompleter*, path : CrystalString) : QStringList*
+    fun bg_QCompleter_splitPath_SUPER_const_QString_R(_self_ : QCompleter*, path : CrystalString) : ContainerQListQString*
     fun bg_QCompleter_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QCompleter*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QCompleter_event_SUPER_QEvent_X(_self_ : QCompleter*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QCompleter*, event : QTimerEvent*) : Void
@@ -13824,17 +13824,17 @@ module Qt
     fun bg_QFileDialog_setDirectoryUrl_const_QUrl_R(_self_ : QFileDialog*, directory : QUrl*) : Void
     fun bg_QFileDialog_directoryUrl_(_self_ : QFileDialog*) : QUrl*
     fun bg_QFileDialog_selectFile_const_QString_R(_self_ : QFileDialog*, filename : CrystalString) : Void
-    fun bg_QFileDialog_selectedFiles_(_self_ : QFileDialog*) : QStringList*
+    fun bg_QFileDialog_selectedFiles_(_self_ : QFileDialog*) : ContainerQListQString*
     fun bg_QFileDialog_selectUrl_const_QUrl_R(_self_ : QFileDialog*, url : QUrl*) : Void
     fun bg_QFileDialog_selectedUrls_(_self_ : QFileDialog*) : ContainerQListQUrl*
     fun bg_QFileDialog_setNameFilter_const_QString_R(_self_ : QFileDialog*, filter : CrystalString) : Void
-    fun bg_QFileDialog_setNameFilters_const_QStringList_R(_self_ : QFileDialog*, filters : QStringList*) : Void
-    fun bg_QFileDialog_nameFilters_(_self_ : QFileDialog*) : QStringList*
+    fun bg_QFileDialog_setNameFilters_const_QStringList_R(_self_ : QFileDialog*, filters : ContainerQListQString*) : Void
+    fun bg_QFileDialog_nameFilters_(_self_ : QFileDialog*) : ContainerQListQString*
     fun bg_QFileDialog_selectNameFilter_const_QString_R(_self_ : QFileDialog*, filter : CrystalString) : Void
     fun bg_QFileDialog_selectedMimeTypeFilter_(_self_ : QFileDialog*) : CrystalString
     fun bg_QFileDialog_selectedNameFilter_(_self_ : QFileDialog*) : CrystalString
-    fun bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(_self_ : QFileDialog*, filters : QStringList*) : Void
-    fun bg_QFileDialog_mimeTypeFilters_(_self_ : QFileDialog*) : QStringList*
+    fun bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(_self_ : QFileDialog*, filters : ContainerQListQString*) : Void
+    fun bg_QFileDialog_mimeTypeFilters_(_self_ : QFileDialog*) : ContainerQListQString*
     fun bg_QFileDialog_selectMimeTypeFilter_const_QString_R(_self_ : QFileDialog*, filter : CrystalString) : Void
     fun bg_QFileDialog_filter_(_self_ : QFileDialog*) : Dir::Filters
     fun bg_QFileDialog_setFilter_QDir__Filters(_self_ : QFileDialog*, filters : Dir::Filters) : Void
@@ -13850,16 +13850,16 @@ module Qt
     fun bg_QFileDialog_restoreState_const_QByteArray_R(_self_ : QFileDialog*, state : QByteArray*) : Bool
     fun bg_QFileDialog_setDefaultSuffix_const_QString_R(_self_ : QFileDialog*, suffix : CrystalString) : Void
     fun bg_QFileDialog_defaultSuffix_(_self_ : QFileDialog*) : CrystalString
-    fun bg_QFileDialog_setHistory_const_QStringList_R(_self_ : QFileDialog*, paths : QStringList*) : Void
-    fun bg_QFileDialog_history_(_self_ : QFileDialog*) : QStringList*
+    fun bg_QFileDialog_setHistory_const_QStringList_R(_self_ : QFileDialog*, paths : ContainerQListQString*) : Void
+    fun bg_QFileDialog_history_(_self_ : QFileDialog*) : ContainerQListQString*
     fun bg_QFileDialog_setItemDelegate_QAbstractItemDelegate_X(_self_ : QFileDialog*, delegate : QAbstractItemDelegate*) : Void
     fun bg_QFileDialog_itemDelegate_(_self_ : QFileDialog*) : QAbstractItemDelegate*
     fun bg_QFileDialog_setIconProvider_QAbstractFileIconProvider_X(_self_ : QFileDialog*, provider : QAbstractFileIconProvider*) : Void
     fun bg_QFileDialog_iconProvider_(_self_ : QFileDialog*) : QAbstractFileIconProvider*
     fun bg_QFileDialog_setLabelText_QFileDialog__DialogLabel_const_QString_R(_self_ : QFileDialog*, label : FileDialog::DialogLabel, text : CrystalString) : Void
     fun bg_QFileDialog_labelText_QFileDialog__DialogLabel(_self_ : QFileDialog*, label : FileDialog::DialogLabel) : CrystalString
-    fun bg_QFileDialog_setSupportedSchemes_const_QStringList_R(_self_ : QFileDialog*, schemes : QStringList*) : Void
-    fun bg_QFileDialog_supportedSchemes_(_self_ : QFileDialog*) : QStringList*
+    fun bg_QFileDialog_setSupportedSchemes_const_QStringList_R(_self_ : QFileDialog*, schemes : ContainerQListQString*) : Void
+    fun bg_QFileDialog_supportedSchemes_(_self_ : QFileDialog*) : ContainerQListQString*
     fun bg_QFileDialog_setProxyModel_QAbstractProxyModel_X(_self_ : QFileDialog*, model : QAbstractProxyModel*) : Void
     fun bg_QFileDialog_proxyModel_(_self_ : QFileDialog*) : QAbstractProxyModel*
     fun bg_QFileDialog_setOption_QFileDialog__Option_bool(_self_ : QFileDialog*, option : FileDialog::Option, on : Bool) : Void
@@ -13869,7 +13869,7 @@ module Qt
     fun bg_QFileDialog_open_QObject_X_const_char_X(_self_ : QFileDialog*, receiver : QObject*, member : UInt8*) : Void
     fun bg_QFileDialog_setVisible_bool(_self_ : QFileDialog*, visible : Bool) : Void
     fun bg_QFileDialog_fileSelected_const_QString_R(_self_ : QFileDialog*, file : CrystalString) : Void
-    fun bg_QFileDialog_filesSelected_const_QStringList_R(_self_ : QFileDialog*, files : QStringList*) : Void
+    fun bg_QFileDialog_filesSelected_const_QStringList_R(_self_ : QFileDialog*, files : ContainerQListQString*) : Void
     fun bg_QFileDialog_currentChanged_const_QString_R(_self_ : QFileDialog*, path : CrystalString) : Void
     fun bg_QFileDialog_directoryEntered_const_QString_R(_self_ : QFileDialog*, directory : CrystalString) : Void
     fun bg_QFileDialog_urlSelected_const_QUrl_R(_self_ : QFileDialog*, url : QUrl*) : Void
@@ -13901,11 +13901,11 @@ module Qt
     fun bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R(parent : QWidget*, caption : CrystalString) : QUrl*
     fun bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R(parent : QWidget*, caption : CrystalString, dir : QUrl*) : QUrl*
     fun bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options(parent : QWidget*, caption : CrystalString, dir : QUrl*, options : FileDialog::Options) : QUrl*
-    fun bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent : QWidget*, caption : CrystalString, dir : QUrl*, options : FileDialog::Options, supported_schemes : QStringList*) : QUrl*
-    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent : QWidget*) : QStringList*
-    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent : QWidget*, caption : CrystalString) : QStringList*
-    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent : QWidget*, caption : CrystalString, dir : CrystalString) : QStringList*
-    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent : QWidget*, caption : CrystalString, dir : CrystalString, filter : CrystalString) : QStringList*
+    fun bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent : QWidget*, caption : CrystalString, dir : QUrl*, options : FileDialog::Options, supported_schemes : ContainerQListQString*) : QUrl*
+    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent : QWidget*) : ContainerQListQString*
+    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent : QWidget*, caption : CrystalString) : ContainerQListQString*
+    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent : QWidget*, caption : CrystalString, dir : CrystalString) : ContainerQListQString*
+    fun bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent : QWidget*, caption : CrystalString, dir : CrystalString, filter : CrystalString) : ContainerQListQString*
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X(parent : QWidget*) : ContainerQListQUrl*
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R(parent : QWidget*, caption : CrystalString) : ContainerQListQUrl*
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R_const_QUrl_R(parent : QWidget*, caption : CrystalString, dir : QUrl*) : ContainerQListQUrl*
@@ -16942,10 +16942,10 @@ module Qt
     fun bg_QListWidget_row_const_QListWidgetItem_X(_self_ : QListWidget*, item : QListWidgetItem*) : Int32
     fun bg_QListWidget_insertItem_int_QListWidgetItem_X(_self_ : QListWidget*, row : Int32, item : QListWidgetItem*) : Void
     fun bg_QListWidget_insertItem_int_const_QString_R(_self_ : QListWidget*, row : Int32, label : CrystalString) : Void
-    fun bg_QListWidget_insertItems_int_const_QStringList_R(_self_ : QListWidget*, row : Int32, labels : QStringList*) : Void
+    fun bg_QListWidget_insertItems_int_const_QStringList_R(_self_ : QListWidget*, row : Int32, labels : ContainerQListQString*) : Void
     fun bg_QListWidget_addItem_const_QString_R(_self_ : QListWidget*, label : CrystalString) : Void
     fun bg_QListWidget_addItem_QListWidgetItem_X(_self_ : QListWidget*, item : QListWidgetItem*) : Void
-    fun bg_QListWidget_addItems_const_QStringList_R(_self_ : QListWidget*, labels : QStringList*) : Void
+    fun bg_QListWidget_addItems_const_QStringList_R(_self_ : QListWidget*, labels : ContainerQListQString*) : Void
     fun bg_QListWidget_takeItem_int(_self_ : QListWidget*, row : Int32) : QListWidgetItem*
     fun bg_QListWidget_count_(_self_ : QListWidget*) : Int32
     fun bg_QListWidget_currentItem_(_self_ : QListWidget*) : QListWidgetItem*
@@ -16988,7 +16988,7 @@ module Qt
     fun bg_QListWidget_currentRowChanged_int(_self_ : QListWidget*, current_row : Int32) : Void
     fun bg_QListWidget_itemSelectionChanged_(_self_ : QListWidget*) : Void
     fun bg_QListWidget_event_QEvent_X(_self_ : QListWidget*, event : QEvent*) : Bool
-    fun bg_QListWidget_mimeTypes_(_self_ : QListWidget*) : QStringList*
+    fun bg_QListWidget_mimeTypes_(_self_ : QListWidget*) : ContainerQListQString*
     fun bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R(_self_ : QListWidget*, items : ContainerQListQListWidgetItemX*) : QMimeData*
     fun bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction(_self_ : QListWidget*, index : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QListWidget_supportedDropActions_(_self_ : QListWidget*) : DropActions
@@ -17092,7 +17092,7 @@ module Qt
     fun bg_QListWidget_setSelectionModel_SUPER_QItemSelectionModel_X(_self_ : QListWidget*, selection_model : QItemSelectionModel*) : Void
     fun bg_QListWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QListWidget*, event : QDropEvent*) : Void
     fun bg_QListWidget_event_SUPER_QEvent_X(_self_ : QListWidget*, event : QEvent*) : Bool
-    fun bg_QListWidget_mimeTypes_SUPER_(_self_ : QListWidget*) : QStringList*
+    fun bg_QListWidget_mimeTypes_SUPER_(_self_ : QListWidget*) : ContainerQListQString*
     fun bg_QListWidget_mimeData_SUPER_const_QList_QListWidgetItem_X__R(_self_ : QListWidget*, items : ContainerQListQListWidgetItemX*) : QMimeData*
     fun bg_QListWidget_dropMimeData_SUPER_int_const_QMimeData_X_Qt__DropAction(_self_ : QListWidget*, index : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QListWidget_supportedDropActions_SUPER_(_self_ : QListWidget*) : DropActions
@@ -19493,8 +19493,8 @@ module Qt
     fun bg_QTableWidget_horizontalHeaderItem_int(_self_ : QTableWidget*, column : Int32) : QTableWidgetItem*
     fun bg_QTableWidget_setHorizontalHeaderItem_int_QTableWidgetItem_X(_self_ : QTableWidget*, column : Int32, item : QTableWidgetItem*) : Void
     fun bg_QTableWidget_takeHorizontalHeaderItem_int(_self_ : QTableWidget*, column : Int32) : QTableWidgetItem*
-    fun bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(_self_ : QTableWidget*, labels : QStringList*) : Void
-    fun bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(_self_ : QTableWidget*, labels : QStringList*) : Void
+    fun bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(_self_ : QTableWidget*, labels : ContainerQListQString*) : Void
+    fun bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(_self_ : QTableWidget*, labels : ContainerQListQString*) : Void
     fun bg_QTableWidget_currentRow_(_self_ : QTableWidget*) : Int32
     fun bg_QTableWidget_currentColumn_(_self_ : QTableWidget*) : Int32
     fun bg_QTableWidget_currentItem_(_self_ : QTableWidget*) : QTableWidgetItem*
@@ -19548,7 +19548,7 @@ module Qt
     fun bg_QTableWidget_cellChanged_int_int(_self_ : QTableWidget*, row : Int32, column : Int32) : Void
     fun bg_QTableWidget_currentCellChanged_int_int_int_int(_self_ : QTableWidget*, current_row : Int32, current_column : Int32, previous_row : Int32, previous_column : Int32) : Void
     fun bg_QTableWidget_event_QEvent_X(_self_ : QTableWidget*, event : QEvent*) : Bool
-    fun bg_QTableWidget_mimeTypes_(_self_ : QTableWidget*) : QStringList*
+    fun bg_QTableWidget_mimeTypes_(_self_ : QTableWidget*) : ContainerQListQString*
     fun bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R(_self_ : QTableWidget*, items : ContainerQListQTableWidgetItemX*) : QMimeData*
     fun bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction(_self_ : QTableWidget*, row : Int32, column : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QTableWidget_supportedDropActions_(_self_ : QTableWidget*) : DropActions
@@ -19657,7 +19657,7 @@ module Qt
     fun bg_QTableWidget_CONNECT_cellChanged_CrystalProc_void__int__int_(_self_ : QTableWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTableWidget_CONNECT_currentCellChanged_CrystalProc_void__int__int__int__int_(_self_ : QTableWidget*, _proc_ : CrystalProc) : QMetaObjectConnection*
     fun bg_QTableWidget_event_SUPER_QEvent_X(_self_ : QTableWidget*, event : QEvent*) : Bool
-    fun bg_QTableWidget_mimeTypes_SUPER_(_self_ : QTableWidget*) : QStringList*
+    fun bg_QTableWidget_mimeTypes_SUPER_(_self_ : QTableWidget*) : ContainerQListQString*
     fun bg_QTableWidget_mimeData_SUPER_const_QList_QTableWidgetItem_X__R(_self_ : QTableWidget*, items : ContainerQListQTableWidgetItemX*) : QMimeData*
     fun bg_QTableWidget_dropMimeData_SUPER_int_int_const_QMimeData_X_Qt__DropAction(_self_ : QTableWidget*, row : Int32, column : Int32, data : QMimeData*, action : DropAction) : Bool
     fun bg_QTableWidget_supportedDropActions_SUPER_(_self_ : QTableWidget*) : DropActions
@@ -20294,6 +20294,10 @@ module Qt
     fun bg_Container_QList_QVariant__at_int(_self_ : ContainerQListQVariant*, index : Int32) : CrystalVariant
     fun bg_Container_QList_QVariant__push_back_QVariant(_self_ : ContainerQListQVariant*, value : CrystalVariant) : Void
     fun bg_Container_QList_QVariant__size_(_self_ : ContainerQListQVariant*) : Int32
+    fun bg_Container_QList_QString___CONSTRUCT_() : ContainerQListQString*
+    fun bg_Container_QList_QString__at_int(_self_ : ContainerQListQString*, index : Int32) : CrystalString
+    fun bg_Container_QList_QString__push_back_QString(_self_ : ContainerQListQString*, value : CrystalString) : Void
+    fun bg_Container_QList_QString__size_(_self_ : ContainerQListQString*) : Int32
     fun bg_Container_QList_int___CONSTRUCT_() : ContainerQListInt*
     fun bg_Container_QList_int__at_int(_self_ : ContainerQListInt*, index : Int32) : Int32
     fun bg_Container_QList_int__push_back_int(_self_ : ContainerQListInt*, value : Int32) : Void
@@ -22087,7 +22091,7 @@ module Qt
       bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -22171,8 +22175,8 @@ module Qt
       Binding.bg_QAbstractItemModel_clearItemData_const_QModelIndex_R(self, index)
     end
     
-    def mime_types() : Binding::QStringList*
-      Binding.bg_QAbstractItemModel_mimeTypes_(self)
+    def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
     def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -22464,7 +22468,7 @@ module Qt
       bg_QAbstractItemModel_headerData_int_Qt__Orientation_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_headerData_int_Qt__Orientation_int") %} Proc(Int32, Orientation, Int32, Binding::CrystalVariant).new{|section, orientation, role| (self.header_data(section, orientation, role).to_unsafe) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int") %} Proc(Int32, Orientation, Binding::CrystalVariant, Int32, Bool).new{|section, orientation, value, role| self.set_header_data(section, orientation, Qt::Variant.new(value), role) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_clearItemData_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_clearItemData_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Bool).new{|index| self.clear_item_data(ModelIndex.new(unwrap: index)) } {% else %} nil {% end %}),
-      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QAbstractItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
@@ -22656,8 +22660,8 @@ module Qt
         Binding.bg_QAbstractItemModel_clearItemData_SUPER_const_QModelIndex_R(@myself, index)
       end
       
-      def mime_types() : Binding::QStringList*
-        Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself)
+      def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
       def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -23023,7 +23027,7 @@ module Qt
       bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
@@ -23145,8 +23149,8 @@ module Qt
       Binding.bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(self, data, action, row, column, parent)
     end
     
-    def mime_types() : Binding::QStringList*
-      Binding.bg_QAbstractProxyModel_mimeTypes_(self)
+    def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_(self))
     end
     
     def supported_drag_actions() : DropActions
@@ -23264,7 +23268,7 @@ module Qt
       bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_canDropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.can_drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
-      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QAbstractProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDragActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDragActions_") %} Proc(DropActions).new{ self.supported_drag_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractItemModel_index_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_index_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, parent| self.index(row, column, ModelIndex.new(unwrap: parent)).to_unsafe } {% else %} nil {% end %}),
@@ -23460,8 +23464,8 @@ module Qt
         Binding.bg_QAbstractProxyModel_dropMimeData_SUPER_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R(@myself, data, action, row, column, parent)
       end
       
-      def mime_types() : Binding::QStringList*
-        Binding.bg_QAbstractProxyModel_mimeTypes_SUPER_(@myself)
+      def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QAbstractProxyModel_mimeTypes_SUPER_(@myself))
       end
       
       def supported_drag_actions() : DropActions
@@ -24330,8 +24334,8 @@ module Qt
     {% end %}
     end
     
-    def self.arguments() : Binding::QStringList*
-      Binding.bg_QCoreApplication_arguments_STATIC_()
+    def self.arguments() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QCoreApplication_arguments_STATIC_())
     end
     
     def self.set_attribute(attribute : ApplicationAttribute, on : Bool = true) : Void
@@ -24463,12 +24467,12 @@ module Qt
       Binding.bg_QCoreApplication_checkPermission_const_QPermission_R(self, permission)
     end
     
-    def self.library_paths=(unnamed_arg_0 : Binding::QStringList*) : Void
-      Binding.bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(unnamed_arg_0)
+    def self.library_paths=(unnamed_arg_0 : Enumerable(String)) : Void
+      Binding.bg_QCoreApplication_setLibraryPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
     end
     
-    def self.library_paths() : Binding::QStringList*
-      Binding.bg_QCoreApplication_libraryPaths_STATIC_()
+    def self.library_paths() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QCoreApplication_libraryPaths_STATIC_())
     end
     
     def self.add_library_path(unnamed_arg_0 : String) : Void
@@ -25891,12 +25895,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_formattedDataSize_qint64_int_QLocale__DataSizeFormats(self, bytes, precision, format))
     end
     
-    def ui_languages() : Binding::QStringList*
-      Binding.bg_QLocale_uiLanguages_(self)
+    def ui_languages() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QLocale_uiLanguages_(self))
     end
     
-    def ui_languages(separator : Locale::TagSeparator) : Binding::QStringList*
-      Binding.bg_QLocale_uiLanguages_QLocale__TagSeparator(self, separator)
+    def ui_languages(separator : Locale::TagSeparator) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QLocale_uiLanguages_QLocale__TagSeparator(self, separator))
     end
     
     def self.language_to_code(language : Locale::Language) : String
@@ -25975,8 +25979,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_quoteString_QStringView_QLocale__QuotationStyle(self, str, style))
     end
     
-    def create_separated_list(strl : Binding::QStringList*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QLocale_createSeparatedList_const_QStringList_R(self, strl))
+    def create_separated_list(strl : Enumerable(String)) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QLocale_createSeparatedList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, strl).to_unsafe))
     end
     
     def ==(rhs : Locale) : Bool
@@ -27694,8 +27698,8 @@ module Qt
       Binding.bg_QRegularExpression_captureCount_(self)
     end
     
-    def named_capture_groups() : Binding::QStringList*
-      Binding.bg_QRegularExpression_namedCaptureGroups_(self)
+    def named_capture_groups() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QRegularExpression_namedCaptureGroups_(self))
     end
     
     def match(subject : String, offset : Int64 = 0i64, match_type : RegularExpression::MatchType = RegularExpression::MatchType::NormalMatch) : RegularExpressionMatch
@@ -27894,8 +27898,8 @@ module Qt
       Binding.bg_QRegularExpressionMatch_capturedView_QAnyStringView(self, Qt::Converter::QString.wrap(name))
     end
     
-    def captured_texts() : Binding::QStringList*
-      Binding.bg_QRegularExpressionMatch_capturedTexts_(self)
+    def captured_texts() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QRegularExpressionMatch_capturedTexts_(self))
     end
     
     def captured_start(nth : Int32 = 0) : Int64
@@ -28233,24 +28237,24 @@ module Qt
       Binding.bg_QUrl_toAce_STATIC_const_QString_R_QUrl__AceProcessingOptions(Qt::Converter::QString.wrap(domain), options)
     end
     
-    def self.idn_whitelist() : Binding::QStringList*
-      Binding.bg_QUrl_idnWhitelist_STATIC_()
+    def self.idn_whitelist() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_idnWhitelist_STATIC_())
     end
     
-    def self.to_string_list(uris : Enumerable(Url)) : Binding::QStringList*
-      Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe)
+    def self.to_string_list(uris : Enumerable(Url)) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe))
     end
     
-    def self.to_string_list(uris : Enumerable(Url), options : Url::FormattingOptions) : Binding::QStringList*
-      Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe, options)
+    def self.to_string_list(uris : Enumerable(Url), options : Url::FormattingOptions) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(BindgenHelper.wrap_container(Container_QList_QUrl_, uris).to_unsafe, options))
     end
     
-    def self.from_string_list(uris : Binding::QStringList*, mode : Url::ParsingMode = Url::ParsingMode::TolerantMode) : Enumerable(Url)
-      Container_QList_QUrl_.new(unwrap: Binding.bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(uris, mode))
+    def self.from_string_list(uris : Enumerable(String), mode : Url::ParsingMode = Url::ParsingMode::TolerantMode) : Enumerable(Url)
+      Container_QList_QUrl_.new(unwrap: Binding.bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(BindgenHelper.wrap_container(Container_QList_QString_, uris).to_unsafe, mode))
     end
     
-    def self.idn_whitelist=(unnamed_arg_0 : Binding::QStringList*) : Void
-      Binding.bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(unnamed_arg_0)
+    def self.idn_whitelist=(unnamed_arg_0 : Enumerable(String)) : Void
+      Binding.bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
     end
     
     def ==(rhs : Url) : Bool
@@ -28639,16 +28643,16 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QDir_canonicalPath_(self))
     end
     
-    def self.set_search_paths(prefix : String, search_paths : Binding::QStringList*) : Void
-      Binding.bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(prefix), search_paths)
+    def self.set_search_paths(prefix : String, search_paths : Enumerable(String)) : Void
+      Binding.bg_QDir_setSearchPaths_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(prefix), BindgenHelper.wrap_container(Container_QList_QString_, search_paths).to_unsafe)
     end
     
     def self.add_search_path(prefix : String, path : String) : Void
       Binding.bg_QDir_addSearchPath_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(prefix), Qt::Converter::QString.wrap(path))
     end
     
-    def self.search_paths(prefix : String) : Binding::QStringList*
-      Binding.bg_QDir_searchPaths_STATIC_const_QString_R(Qt::Converter::QString.wrap(prefix))
+    def self.search_paths(prefix : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_searchPaths_STATIC_const_QString_R(Qt::Converter::QString.wrap(prefix)))
     end
     
     def dir_name() : String
@@ -28683,12 +28687,12 @@ module Qt
       Binding.bg_QDir_cdUp_(self)
     end
     
-    def name_filters() : Binding::QStringList*
-      Binding.bg_QDir_nameFilters_(self)
+    def name_filters() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_nameFilters_(self))
     end
     
-    def name_filters=(name_filters : Binding::QStringList*) : Void
-      Binding.bg_QDir_setNameFilters_const_QStringList_R(self, name_filters)
+    def name_filters=(name_filters : Enumerable(String)) : Void
+      Binding.bg_QDir_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe)
     end
     
     def filter() : Dir::Filters
@@ -28723,32 +28727,32 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QDir__OPERATOR_at_qsizetype(self, unnamed_arg_0))
     end
     
-    def self.name_filters_from_string(name_filter : String) : Binding::QStringList*
-      Binding.bg_QDir_nameFiltersFromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(name_filter))
+    def self.name_filters_from_string(name_filter : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_nameFiltersFromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(name_filter)))
     end
     
-    def entry_list() : Binding::QStringList*
-      Binding.bg_QDir_entryList_(self)
+    def entry_list() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_(self))
     end
     
-    def entry_list(filters : Dir::Filters) : Binding::QStringList*
-      Binding.bg_QDir_entryList_QDir__Filters(self, filters)
+    def entry_list(filters : Dir::Filters) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters(self, filters))
     end
     
-    def entry_list(filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QStringList*
-      Binding.bg_QDir_entryList_QDir__Filters_QDir__SortFlags(self, filters, sort)
+    def entry_list(filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_QDir__Filters_QDir__SortFlags(self, filters, sort))
     end
     
-    def entry_list(name_filters : Binding::QStringList*) : Binding::QStringList*
-      Binding.bg_QDir_entryList_const_QStringList_R(self, name_filters)
+    def entry_list(name_filters : Enumerable(String)) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe))
     end
     
-    def entry_list(name_filters : Binding::QStringList*, filters : Dir::Filters) : Binding::QStringList*
-      Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters(self, name_filters, filters)
+    def entry_list(name_filters : Enumerable(String), filters : Dir::Filters) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters))
     end
     
-    def entry_list(name_filters : Binding::QStringList*, filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QStringList*
-      Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, name_filters, filters, sort)
+    def entry_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QDir_entryList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters, sort))
     end
     
     def entry_info_list() : Binding::QFileInfoList*
@@ -28763,16 +28767,16 @@ module Qt
       Binding.bg_QDir_entryInfoList_QDir__Filters_QDir__SortFlags(self, filters, sort)
     end
     
-    def entry_info_list(name_filters : Binding::QStringList*) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R(self, name_filters)
+    def entry_info_list(name_filters : Enumerable(String)) : Binding::QFileInfoList*
+      Binding.bg_QDir_entryInfoList_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe)
     end
     
-    def entry_info_list(name_filters : Binding::QStringList*, filters : Dir::Filters) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, name_filters, filters)
+    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters) : Binding::QFileInfoList*
+      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters)
     end
     
-    def entry_info_list(name_filters : Binding::QStringList*, filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QFileInfoList*
-      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, name_filters, filters, sort)
+    def entry_info_list(name_filters : Enumerable(String), filters : Dir::Filters, sort : Dir::SortFlags) : Binding::QFileInfoList*
+      Binding.bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(self, BindgenHelper.wrap_container(Container_QList_QString_, name_filters).to_unsafe, filters, sort)
     end
     
     def mkdir(dir_name : String) : Bool
@@ -28887,8 +28891,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QDir_tempPath_STATIC_())
     end
     
-    def self.match(filters : Binding::QStringList*, file_name : String) : Bool
-      Binding.bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(filters, Qt::Converter::QString.wrap(file_name))
+    def self.match(filters : Enumerable(String), file_name : String) : Bool
+      Binding.bg_QDir_match_STATIC_const_QStringList_R_const_QString_R(BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe, Qt::Converter::QString.wrap(file_name))
     end
     
     def self.match(filter : String, file_name : String) : Bool
@@ -29819,7 +29823,7 @@ module Qt
       bg_QMimeData_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QMimeData_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QMimeData_hasFormat_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_hasFormat_const_QString_R") %} Proc(Binding::CrystalString, Bool).new{|mimetype| self.has_format(Qt::Converter::QString.unwrap(mimetype)) } {% else %} nil {% end %}),
-      bg_QMimeData_formats_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_formats_") %} Proc(Binding::QStringList*).new{ self.formats() } {% else %} nil {% end %}),
+      bg_QMimeData_formats_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_formats_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.formats()).to_unsafe } {% else %} nil {% end %}),
       bg_QMimeData_retrieveData_const_QString_R_QMetaType: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QMimeData_retrieveData_const_QString_R_QMetaType") %} Proc(Binding::CrystalString, Binding::QMetaType*, Binding::CrystalVariant).new{|mimetype, preferred_type| (self.retrieve_data(Qt::Converter::QString.unwrap(mimetype), preferred_type).to_unsafe) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -29909,8 +29913,8 @@ module Qt
       Binding.bg_QMimeData_hasFormat_const_QString_R(self, Qt::Converter::QString.wrap(mimetype))
     end
     
-    def formats() : Binding::QStringList*
-      Binding.bg_QMimeData_formats_(self)
+    def formats() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QMimeData_formats_(self))
     end
     
     def clear() : Void
@@ -29969,8 +29973,8 @@ module Qt
         Binding.bg_QMimeData_hasFormat_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(mimetype))
       end
       
-      def formats() : Binding::QStringList*
-        Binding.bg_QMimeData_formats_SUPER_(@myself)
+      def formats() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QMimeData_formats_SUPER_(@myself))
       end
       
       protected def retrieve_data(mimetype : String, preferred_type : Binding::QMetaType*) : Variant
@@ -30130,12 +30134,12 @@ module Qt
       Binding.bg_QProcess_start_const_QString_R(self, Qt::Converter::QString.wrap(program))
     end
     
-    def start(program : String, arguments : Binding::QStringList*) : Void
-      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R(self, Qt::Converter::QString.wrap(program), arguments)
+    def start(program : String, arguments : Enumerable(String)) : Void
+      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
     end
     
-    def start(program : String, arguments : Binding::QStringList*, mode : IODevice::OpenMode) : Void
-      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(self, Qt::Converter::QString.wrap(program), arguments, mode)
+    def start(program : String, arguments : Enumerable(String), mode : IODevice::OpenMode) : Void
+      Binding.bg_QProcess_start_const_QString_R_const_QStringList_R_QIODeviceBase__OpenMode(self, Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, mode)
     end
     
     def start() : Void
@@ -30174,12 +30178,12 @@ module Qt
       Binding.bg_QProcess_setProgram_const_QString_R(self, Qt::Converter::QString.wrap(program))
     end
     
-    def arguments() : Binding::QStringList*
-      Binding.bg_QProcess_arguments_(self)
+    def arguments() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_arguments_(self))
     end
     
-    def arguments=(arguments : Binding::QStringList*) : Void
-      Binding.bg_QProcess_setArguments_const_QStringList_R(self, arguments)
+    def arguments=(arguments : Enumerable(String)) : Void
+      Binding.bg_QProcess_setArguments_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
     end
     
     def process_channel_mode() : Process::ProcessChannelMode
@@ -30254,12 +30258,12 @@ module Qt
       Binding.bg_QProcess_setWorkingDirectory_const_QString_R(self, Qt::Converter::QString.wrap(dir))
     end
     
-    def environment=(environment : Binding::QStringList*) : Void
-      Binding.bg_QProcess_setEnvironment_const_QStringList_R(self, environment)
+    def environment=(environment : Enumerable(String)) : Void
+      Binding.bg_QProcess_setEnvironment_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, environment).to_unsafe)
     end
     
-    def environment() : Binding::QStringList*
-      Binding.bg_QProcess_environment_(self)
+    def environment() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_environment_(self))
     end
     
     def process_environment=(environment : Binding::QProcessEnvironment*) : Void
@@ -30330,36 +30334,36 @@ module Qt
       Binding.bg_QProcess_execute_STATIC_const_QString_R(Qt::Converter::QString.wrap(program))
     end
     
-    def self.execute(program : String, arguments : Binding::QStringList*) : Int32
-      Binding.bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), arguments)
+    def self.execute(program : String, arguments : Enumerable(String)) : Int32
+      Binding.bg_QProcess_execute_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
     end
     
     def self.start_detached(program : String) : Bool
       Binding.bg_QProcess_startDetached_STATIC_const_QString_R(Qt::Converter::QString.wrap(program))
     end
     
-    def self.start_detached(program : String, arguments : Binding::QStringList*) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), arguments)
+    def self.start_detached(program : String, arguments : Enumerable(String)) : Bool
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe)
     end
     
-    def self.start_detached(program : String, arguments : Binding::QStringList*, working_directory : String) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(Qt::Converter::QString.wrap(program), arguments, Qt::Converter::QString.wrap(working_directory))
+    def self.start_detached(program : String, arguments : Enumerable(String), working_directory : String) : Bool
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory))
     end
     
-    def self.start_detached(program : String, arguments : Binding::QStringList*, working_directory : String, pid : Int64*? = nil) : Bool
-      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(Qt::Converter::QString.wrap(program), arguments, Qt::Converter::QString.wrap(working_directory), pid)
+    def self.start_detached(program : String, arguments : Enumerable(String), working_directory : String, pid : Int64*? = nil) : Bool
+      Binding.bg_QProcess_startDetached_STATIC_const_QString_R_const_QStringList_R_const_QString_R_qint64_X(Qt::Converter::QString.wrap(program), BindgenHelper.wrap_container(Container_QList_QString_, arguments).to_unsafe, Qt::Converter::QString.wrap(working_directory), pid)
     end
     
-    def self.system_environment() : Binding::QStringList*
-      Binding.bg_QProcess_systemEnvironment_STATIC_()
+    def self.system_environment() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_systemEnvironment_STATIC_())
     end
     
     def self.null_device() : String
       Qt::Converter::QString.unwrap(Binding.bg_QProcess_nullDevice_STATIC_())
     end
     
-    def self.split_command(command : Binding::QStringView*) : Binding::QStringList*
-      Binding.bg_QProcess_splitCommand_STATIC_QStringView(command)
+    def self.split_command(command : Binding::QStringView*) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QProcess_splitCommand_STATIC_QStringView(command))
     end
     
     def terminate() : Void
@@ -32977,16 +32981,16 @@ module Qt
       Binding.bg_QSettings_setArrayIndex_int(self, i)
     end
     
-    def all_keys() : Binding::QStringList*
-      Binding.bg_QSettings_allKeys_(self)
+    def all_keys() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_allKeys_(self))
     end
     
-    def child_keys() : Binding::QStringList*
-      Binding.bg_QSettings_childKeys_(self)
+    def child_keys() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_childKeys_(self))
     end
     
-    def child_groups() : Binding::QStringList*
-      Binding.bg_QSettings_childGroups_(self)
+    def child_groups() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QSettings_childGroups_(self))
     end
     
     def writable?() : Bool
@@ -33560,7 +33564,7 @@ module Qt
       bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_match_const_QModelIndex_R_int_const_QVariant_R_int_Qt__MatchFlags") %} Proc(Binding::QModelIndex*, Int32, Binding::CrystalVariant, Int32, MatchFlags, Binding::QModelIndexList*).new{|start, role, value, hits, flags| self.match(ModelIndex.new(unwrap: start), role, Qt::Variant.new(value), hits, flags) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_span_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_span_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QSize*).new{|index| Pointer(Binding::QSize).malloc(1, self.span(ModelIndex.new(unwrap: index)).to_unsafe) } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QSortFilterProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QSortFilterProxyModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QSortFilterProxyModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSortFilterProxyModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_submit_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_submit_") %} Proc(Bool).new{ self.submit() } {% else %} nil {% end %}),
       bg_QAbstractProxyModel_revert_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractProxyModel_revert_") %} Proc(Void).new{ self.revert() } {% else %} nil {% end %}),
@@ -33859,8 +33863,8 @@ module Qt
       Binding.bg_QSortFilterProxyModel_sort_int_Qt__SortOrder(self, column, order)
     end
     
-    def mime_types() : Binding::QStringList*
-      Binding.bg_QSortFilterProxyModel_mimeTypes_(self)
+    def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_(self))
     end
     
     def supported_drop_actions() : DropActions
@@ -34103,8 +34107,8 @@ module Qt
         Binding.bg_QSortFilterProxyModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
       end
       
-      def mime_types() : Binding::QStringList*
-        Binding.bg_QSortFilterProxyModel_mimeTypes_SUPER_(@myself)
+      def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeTypes_SUPER_(@myself))
       end
       
       def supported_drop_actions() : DropActions
@@ -34229,8 +34233,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_writableLocation_STATIC_QStandardPaths__StandardLocation(type))
     end
     
-    def self.standard_locations(type : StandardPaths::StandardLocation) : Binding::QStringList*
-      Binding.bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type)
+    def self.standard_locations(type : StandardPaths::StandardLocation) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_standardLocations_STATIC_QStandardPaths__StandardLocation(type))
     end
     
     def self.locate(type : StandardPaths::StandardLocation, file_name : String) : String
@@ -34241,12 +34245,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_locate_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type, Qt::Converter::QString.wrap(file_name), options))
     end
     
-    def self.locate_all(type : StandardPaths::StandardLocation, file_name : String) : Binding::QStringList*
-      Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type, Qt::Converter::QString.wrap(file_name))
+    def self.locate_all(type : StandardPaths::StandardLocation, file_name : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R(type, Qt::Converter::QString.wrap(file_name)))
     end
     
-    def self.locate_all(type : StandardPaths::StandardLocation, file_name : String, options : StandardPaths::LocateOptions) : Binding::QStringList*
-      Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type, Qt::Converter::QString.wrap(file_name), options)
+    def self.locate_all(type : StandardPaths::StandardLocation, file_name : String, options : StandardPaths::LocateOptions) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QStandardPaths_locateAll_STATIC_QStandardPaths__StandardLocation_const_QString_R_QStandardPaths__LocateOptions(type, Qt::Converter::QString.wrap(file_name), options))
     end
     
     def self.display_name(type : StandardPaths::StandardLocation) : String
@@ -34257,8 +34261,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_findExecutable_STATIC_const_QString_R(Qt::Converter::QString.wrap(executable_name)))
     end
     
-    def self.find_executable(executable_name : String, paths : Binding::QStringList*) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(executable_name), paths))
+    def self.find_executable(executable_name : String, paths : Enumerable(String)) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QStandardPaths_findExecutable_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(executable_name), BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe))
     end
     
     def self.test_mode_enabled=(test_mode : Bool) : Void
@@ -34674,8 +34678,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QColor_name_QColor__NameFormat(self, format))
     end
     
-    def self.color_names() : Binding::QStringList*
-      Binding.bg_QColor_colorNames_STATIC_()
+    def self.color_names() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QColor_colorNames_STATIC_())
     end
     
     def spec() : Color::Spec
@@ -35981,8 +35985,8 @@ module Qt
       Binding.bg_QImage_setOffset_const_QPoint_R(self, unnamed_arg_0)
     end
     
-    def text_keys() : Binding::QStringList*
-      Binding.bg_QImage_textKeys_(self)
+    def text_keys() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QImage_textKeys_(self))
     end
     
     def text() : String
@@ -36611,20 +36615,20 @@ module Qt
       Binding.bg_QIcon_hasThemeIcon_STATIC_QIcon__ThemeIcon(icon)
     end
     
-    def self.theme_search_paths() : Binding::QStringList*
-      Binding.bg_QIcon_themeSearchPaths_STATIC_()
+    def self.theme_search_paths() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QIcon_themeSearchPaths_STATIC_())
     end
     
-    def self.theme_search_paths=(searchpath : Binding::QStringList*) : Void
-      Binding.bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(searchpath)
+    def self.theme_search_paths=(searchpath : Enumerable(String)) : Void
+      Binding.bg_QIcon_setThemeSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, searchpath).to_unsafe)
     end
     
-    def self.fallback_search_paths() : Binding::QStringList*
-      Binding.bg_QIcon_fallbackSearchPaths_STATIC_()
+    def self.fallback_search_paths() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QIcon_fallbackSearchPaths_STATIC_())
     end
     
-    def self.fallback_search_paths=(paths : Binding::QStringList*) : Void
-      Binding.bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(paths)
+    def self.fallback_search_paths=(paths : Enumerable(String)) : Void
+      Binding.bg_QIcon_setFallbackSearchPaths_STATIC_const_QStringList_R(BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe)
     end
     
     def self.theme_name() : String
@@ -43367,8 +43371,8 @@ module Qt
     @unwrap = result
     end
     
-    def initialize(families : Binding::QStringList*, point_size : Int32 = -1, weight : Int32 = -1, italic : Bool = false)
-      result = Binding.bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(families, point_size, weight, italic)
+    def initialize(families : Enumerable(String), point_size : Int32 = -1, weight : Int32 = -1, italic : Bool = false)
+      result = Binding.bg_QFont__CONSTRUCT_const_QStringList_R_int_int_bool(BindgenHelper.wrap_container(Container_QList_QString_, families).to_unsafe, point_size, weight, italic)
     @unwrap = result
     end
     
@@ -43394,12 +43398,12 @@ module Qt
       Binding.bg_QFont_setFamily_const_QString_R(self, Qt::Converter::QString.wrap(unnamed_arg_0))
     end
     
-    def families() : Binding::QStringList*
-      Binding.bg_QFont_families_(self)
+    def families() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFont_families_(self))
     end
     
-    def families=(unnamed_arg_0 : Binding::QStringList*) : Void
-      Binding.bg_QFont_setFamilies_const_QStringList_R(self, unnamed_arg_0)
+    def families=(unnamed_arg_0 : Enumerable(String)) : Void
+      Binding.bg_QFont_setFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_0).to_unsafe)
     end
     
     def style_name() : String
@@ -43618,20 +43622,20 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QFont_substitute_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
     end
     
-    def self.substitutes(unnamed_arg_0 : String) : Binding::QStringList*
-      Binding.bg_QFont_substitutes_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0))
+    def self.substitutes(unnamed_arg_0 : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFont_substitutes_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
     end
     
-    def self.substitutions() : Binding::QStringList*
-      Binding.bg_QFont_substitutions_STATIC_()
+    def self.substitutions() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFont_substitutions_STATIC_())
     end
     
     def self.insert_substitution(unnamed_arg_0 : String, unnamed_arg_1 : String) : Void
       Binding.bg_QFont_insertSubstitution_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0), Qt::Converter::QString.wrap(unnamed_arg_1))
     end
     
-    def self.insert_substitutions(unnamed_arg_0 : String, unnamed_arg_1 : Binding::QStringList*) : Void
-      Binding.bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(unnamed_arg_0), unnamed_arg_1)
+    def self.insert_substitutions(unnamed_arg_0 : String, unnamed_arg_1 : Enumerable(String)) : Void
+      Binding.bg_QFont_insertSubstitutions_STATIC_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(unnamed_arg_0), BindgenHelper.wrap_container(Container_QList_QString_, unnamed_arg_1).to_unsafe)
     end
     
     def self.remove_substitutions(unnamed_arg_0 : String) : Void
@@ -45449,8 +45453,8 @@ module Qt
       Font.new(unwrap: Binding.bg_QTextCharFormat_font_(self))
     end
     
-    def font_families=(families : Binding::QStringList*) : Void
-      Binding.bg_QTextCharFormat_setFontFamilies_const_QStringList_R(self, families)
+    def font_families=(families : Enumerable(String)) : Void
+      Binding.bg_QTextCharFormat_setFontFamilies_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, families).to_unsafe)
     end
     
     def font_families() : Variant
@@ -45673,12 +45677,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QTextCharFormat_anchorHref_(self))
     end
     
-    def anchor_names=(names : Binding::QStringList*) : Void
-      Binding.bg_QTextCharFormat_setAnchorNames_const_QStringList_R(self, names)
+    def anchor_names=(names : Enumerable(String)) : Void
+      Binding.bg_QTextCharFormat_setAnchorNames_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, names).to_unsafe)
     end
     
-    def anchor_names() : Binding::QStringList*
-      Binding.bg_QTextCharFormat_anchorNames_(self)
+    def anchor_names() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QTextCharFormat_anchorNames_(self))
     end
     
     def table_cell_row_span=(table_cell_row_span : Int32) : Void
@@ -50750,7 +50754,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -50885,7 +50889,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -51061,12 +51065,12 @@ module Qt
       Binding.bg_QStandardItemModel_setVerticalHeaderItem_int_QStandardItem_X(self, row, item)
     end
     
-    def horizontal_header_labels=(labels : Binding::QStringList*) : Void
-      Binding.bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(self, labels)
+    def horizontal_header_labels=(labels : Enumerable(String)) : Void
+      Binding.bg_QStandardItemModel_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
-    def vertical_header_labels=(labels : Binding::QStringList*) : Void
-      Binding.bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(self, labels)
+    def vertical_header_labels=(labels : Enumerable(String)) : Void
+      Binding.bg_QStandardItemModel_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
     def row_count=(rows : Int32) : Void
@@ -51165,8 +51169,8 @@ module Qt
       Binding.bg_QStandardItemModel_setSortRole_int(self, role)
     end
     
-    def mime_types() : Binding::QStringList*
-      Binding.bg_QStandardItemModel_mimeTypes_(self)
+    def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_(self))
     end
     
     def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -51288,7 +51292,7 @@ module Qt
       bg_QStandardItemModel_flags_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_flags_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, ItemFlags).new{|index| self.flags(ModelIndex.new(unwrap: index)).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_sort_int_Qt__SortOrder: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_sort_int_Qt__SortOrder") %} Proc(Int32, SortOrder, Void).new{|column, order| self.sort(column, order) } {% else %} nil {% end %}),
-      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QStandardItemModel_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_mimeData_const_QModelIndexList_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_mimeData_const_QModelIndexList_R") %} Proc(Binding::QModelIndexList*, Binding::QMimeData*).new{|indexes| self.mime_data(indexes).to_unsafe } {% else %} nil {% end %}),
       bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStandardItemModel_dropMimeData_const_QMimeData_X_Qt__DropAction_int_int_const_QModelIndex_R") %} Proc(Binding::QMimeData*, DropAction, Int32, Int32, Binding::QModelIndex*, Bool).new{|data, action, row, column, parent| self.drop_mime_data(MimeData.new(unwrap: data), action, row, column, ModelIndex.new(unwrap: parent)) } {% else %} nil {% end %}),
       bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemModel_sibling_int_int_const_QModelIndex_R") %} Proc(Int32, Int32, Binding::QModelIndex*, Binding::QModelIndex*).new{|row, column, idx| self.sibling(row, column, ModelIndex.new(unwrap: idx)).to_unsafe } {% else %} nil {% end %}),
@@ -51484,8 +51488,8 @@ module Qt
         Binding.bg_QStandardItemModel_sort_SUPER_int_Qt__SortOrder(@myself, column, order)
       end
       
-      def mime_types() : Binding::QStringList*
-        Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself)
+      def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself))
       end
       
       def mime_data(indexes : Binding::QModelIndexList*) : MimeData
@@ -68706,8 +68710,8 @@ module Qt
       Binding.bg_QComboBox_addItem_const_QIcon_R_const_QString_R_const_QVariant_R(self, icon, Qt::Converter::QString.wrap(text), (user_data.to_unsafe))
     end
     
-    def add_items(texts : Binding::QStringList*) : Void
-      Binding.bg_QComboBox_addItems_const_QStringList_R(self, texts)
+    def add_items(texts : Enumerable(String)) : Void
+      Binding.bg_QComboBox_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, texts).to_unsafe)
     end
     
     def insert_item(index : Int32, text : String) : Void
@@ -68726,8 +68730,8 @@ module Qt
       Binding.bg_QComboBox_insertItem_int_const_QIcon_R_const_QString_R_const_QVariant_R(self, index, icon, Qt::Converter::QString.wrap(text), (user_data.to_unsafe))
     end
     
-    def insert_items(index : Int32, texts : Binding::QStringList*) : Void
-      Binding.bg_QComboBox_insertItems_int_const_QStringList_R(self, index, texts)
+    def insert_items(index : Int32, texts : Enumerable(String)) : Void
+      Binding.bg_QComboBox_insertItems_int_const_QStringList_R(self, index, BindgenHelper.wrap_container(Container_QList_QString_, texts).to_unsafe)
     end
     
     def insert_separator(index : Int32) : Void
@@ -70517,7 +70521,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::QStringList*).new{|path| self.split_path(Qt::Converter::QString.unwrap(path)) } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70572,7 +70576,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::QStringList*).new{|path| self.split_path(Qt::Converter::QString.unwrap(path)) } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70585,8 +70589,8 @@ module Qt
     {% end %}
     end
     
-    def initialize(completions : Binding::QStringList*, parent : Object? = nil)
-      result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(completions, parent)
+    def initialize(completions : Enumerable(String), parent : Object? = nil)
+      result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(Container_QList_QString_, completions).to_unsafe, parent)
     @unwrap = result
     {% begin %}
     {%
@@ -70627,7 +70631,7 @@ module Qt
       bg_QCompleter_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QCompleter_pathFromIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_pathFromIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::CrystalString).new{|index| Qt::Converter::QString.wrap(self.path_from_index(ModelIndex.new(unwrap: index))) } {% else %} nil {% end %}),
-      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::QStringList*).new{|path| self.split_path(Qt::Converter::QString.unwrap(path)) } {% else %} nil {% end %}),
+      bg_QCompleter_splitPath_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_splitPath_const_QString_R") %} Proc(Binding::CrystalString, Binding::ContainerQListQString*).new{|path| BindgenHelper.wrap_container(Container_QList_QString_, self.split_path(Qt::Converter::QString.unwrap(path))).to_unsafe } {% else %} nil {% end %}),
       bg_QCompleter_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QCompleter_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QCompleter_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -70775,8 +70779,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QCompleter_pathFromIndex_const_QModelIndex_R(self, index))
     end
     
-    def split_path(path : String) : Binding::QStringList*
-      Binding.bg_QCompleter_splitPath_const_QString_R(self, Qt::Converter::QString.wrap(path))
+    def split_path(path : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QCompleter_splitPath_const_QString_R(self, Qt::Converter::QString.wrap(path)))
     end
     
     protected def event_filter(watched : Object, event : Event) : Bool
@@ -70843,8 +70847,8 @@ module Qt
         Qt::Converter::QString.unwrap(Binding.bg_QCompleter_pathFromIndex_SUPER_const_QModelIndex_R(@myself, index))
       end
       
-      def split_path(path : String) : Binding::QStringList*
-        Binding.bg_QCompleter_splitPath_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(path))
+      def split_path(path : String) : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QCompleter_splitPath_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(path)))
       end
       
       protected def event_filter(watched : Object, event : Event) : Bool
@@ -74722,8 +74726,8 @@ module Qt
       Binding.bg_QFileDialog_selectFile_const_QString_R(self, Qt::Converter::QString.wrap(filename))
     end
     
-    def selected_files() : Binding::QStringList*
-      Binding.bg_QFileDialog_selectedFiles_(self)
+    def selected_files() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_selectedFiles_(self))
     end
     
     def select_url(url : Url) : Void
@@ -74738,12 +74742,12 @@ module Qt
       Binding.bg_QFileDialog_setNameFilter_const_QString_R(self, Qt::Converter::QString.wrap(filter))
     end
     
-    def name_filters=(filters : Binding::QStringList*) : Void
-      Binding.bg_QFileDialog_setNameFilters_const_QStringList_R(self, filters)
+    def name_filters=(filters : Enumerable(String)) : Void
+      Binding.bg_QFileDialog_setNameFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe)
     end
     
-    def name_filters() : Binding::QStringList*
-      Binding.bg_QFileDialog_nameFilters_(self)
+    def name_filters() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_nameFilters_(self))
     end
     
     def select_name_filter(filter : String) : Void
@@ -74758,12 +74762,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QFileDialog_selectedNameFilter_(self))
     end
     
-    def mime_type_filters=(filters : Binding::QStringList*) : Void
-      Binding.bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(self, filters)
+    def mime_type_filters=(filters : Enumerable(String)) : Void
+      Binding.bg_QFileDialog_setMimeTypeFilters_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, filters).to_unsafe)
     end
     
-    def mime_type_filters() : Binding::QStringList*
-      Binding.bg_QFileDialog_mimeTypeFilters_(self)
+    def mime_type_filters() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_mimeTypeFilters_(self))
     end
     
     def select_mime_type_filter(filter : String) : Void
@@ -74826,12 +74830,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QFileDialog_defaultSuffix_(self))
     end
     
-    def history=(paths : Binding::QStringList*) : Void
-      Binding.bg_QFileDialog_setHistory_const_QStringList_R(self, paths)
+    def history=(paths : Enumerable(String)) : Void
+      Binding.bg_QFileDialog_setHistory_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, paths).to_unsafe)
     end
     
-    def history() : Binding::QStringList*
-      Binding.bg_QFileDialog_history_(self)
+    def history() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_history_(self))
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -74859,12 +74863,12 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QFileDialog_labelText_QFileDialog__DialogLabel(self, label))
     end
     
-    def supported_schemes=(schemes : Binding::QStringList*) : Void
-      Binding.bg_QFileDialog_setSupportedSchemes_const_QStringList_R(self, schemes)
+    def supported_schemes=(schemes : Enumerable(String)) : Void
+      Binding.bg_QFileDialog_setSupportedSchemes_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, schemes).to_unsafe)
     end
     
-    def supported_schemes() : Binding::QStringList*
-      Binding.bg_QFileDialog_supportedSchemes_(self)
+    def supported_schemes() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_supportedSchemes_(self))
     end
     
     def proxy_model=(model : AbstractProxyModel) : Void
@@ -74903,8 +74907,8 @@ module Qt
       Binding.bg_QFileDialog_fileSelected_const_QString_R(self, Qt::Converter::QString.wrap(file))
     end
     
-    def files_selected(files : Binding::QStringList*) : Void
-      Binding.bg_QFileDialog_filesSelected_const_QStringList_R(self, files)
+    def files_selected(files : Enumerable(String)) : Void
+      Binding.bg_QFileDialog_filesSelected_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, files).to_unsafe)
     end
     
     def current_changed(path : String) : Void
@@ -75031,24 +75035,24 @@ module Qt
       Url.new(unwrap: Binding.bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options(parent, Qt::Converter::QString.wrap(caption), dir, options))
     end
     
-    def self.get_existing_directory_url(parent : Widget?, caption : String, dir : Url, options : FileDialog::Options, supported_schemes : Binding::QStringList*) : Url
-      Url.new(unwrap: Binding.bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent, Qt::Converter::QString.wrap(caption), dir, options, supported_schemes))
+    def self.get_existing_directory_url(parent : Widget?, caption : String, dir : Url, options : FileDialog::Options, supported_schemes : Enumerable(String)) : Url
+      Url.new(unwrap: Binding.bg_QFileDialog_getExistingDirectoryUrl_STATIC_QWidget_X_const_QString_R_const_QUrl_R_QFileDialog__Options_const_QStringList_R(parent, Qt::Converter::QString.wrap(caption), dir, options, BindgenHelper.wrap_container(Container_QList_QString_, supported_schemes).to_unsafe))
     end
     
-    def self.get_open_file_names(parent : Widget? = nil) : Binding::QStringList*
-      Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent)
+    def self.get_open_file_names(parent : Widget? = nil) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X(parent))
     end
     
-    def self.get_open_file_names(parent : Widget?, caption : String) : Binding::QStringList*
-      Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent, Qt::Converter::QString.wrap(caption))
+    def self.get_open_file_names(parent : Widget?, caption : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R(parent, Qt::Converter::QString.wrap(caption)))
     end
     
-    def self.get_open_file_names(parent : Widget?, caption : String, dir : String) : Binding::QStringList*
-      Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir))
+    def self.get_open_file_names(parent : Widget?, caption : String, dir : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir)))
     end
     
-    def self.get_open_file_names(parent : Widget?, caption : String, dir : String, filter : String) : Binding::QStringList*
-      Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir), Qt::Converter::QString.wrap(filter))
+    def self.get_open_file_names(parent : Widget?, caption : String, dir : String, filter : String) : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QFileDialog_getOpenFileNames_STATIC_QWidget_X_const_QString_R_const_QString_R_const_QString_R(parent, Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(dir), Qt::Converter::QString.wrap(filter)))
     end
     
     def self.get_open_file_urls(parent : Widget? = nil) : Enumerable(Url)
@@ -75682,8 +75686,8 @@ module Qt
       SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_fileSelected_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
     
-    def on_files_selected(&_proc_ : Proc(Binding::QStringList, Void)) : SignalConnection
-      SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::QStringList*, Void).new do |arg0| _proc_.call(arg0) end)))
+    def on_files_selected(&_proc_ : Proc(Enumerable(String), Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileDialog_CONNECT_filesSelected_CrystalProc_void__const_QStringList_R_(self, BindgenHelper.wrap_proc(Proc(Binding::ContainerQListQString*, Void).new do |arg0| _proc_.call(Container_QList_QString_.new(unwrap: arg0)) end)))
     end
     
     def on_current_changed(&_proc_ : Proc(String, Void)) : SignalConnection
@@ -94083,7 +94087,7 @@ module Qt
       bg_QListWidget_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| self.selection_model=(selection_model) } {% else %} nil {% end %}),
       bg_QListWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QListWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QListWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QListWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R") %} Proc(Binding::ContainerQListQListWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QListWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_dropMimeData_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Binding::QMimeData*, DropAction, Bool).new{|index, data, action| self.drop_mime_data(index, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QListWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -94199,8 +94203,8 @@ module Qt
       Binding.bg_QListWidget_insertItem_int_const_QString_R(self, row, Qt::Converter::QString.wrap(label))
     end
     
-    def insert_items(row : Int32, labels : Binding::QStringList*) : Void
-      Binding.bg_QListWidget_insertItems_int_const_QStringList_R(self, row, labels)
+    def insert_items(row : Int32, labels : Enumerable(String)) : Void
+      Binding.bg_QListWidget_insertItems_int_const_QStringList_R(self, row, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
     def add_item(label : String) : Void
@@ -94212,8 +94216,8 @@ module Qt
     Binding.bg_QListWidget_addItem_QListWidgetItem_X(self, item)
     end
     
-    def add_items(labels : Binding::QStringList*) : Void
-      Binding.bg_QListWidget_addItems_const_QStringList_R(self, labels)
+    def add_items(labels : Enumerable(String)) : Void
+      Binding.bg_QListWidget_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
     def take_item(row : Int32) : ListWidgetItem
@@ -94385,8 +94389,8 @@ module Qt
       Binding.bg_QListWidget_event_QEvent_X(self, event)
     end
     
-    protected def mime_types() : Binding::QStringList*
-      Binding.bg_QListWidget_mimeTypes_(self)
+    protected def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QListWidget_mimeTypes_(self))
     end
     
     protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
@@ -94773,8 +94777,8 @@ module Qt
         Binding.bg_QListWidget_event_SUPER_QEvent_X(@myself, event)
       end
       
-      protected def mime_types() : Binding::QStringList*
-        Binding.bg_QListWidget_mimeTypes_SUPER_(@myself)
+      protected def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QListWidget_mimeTypes_SUPER_(@myself))
       end
       
       protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
@@ -109263,7 +109267,7 @@ module Qt
       bg_QTableWidget_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R") %} Proc(Binding::ContainerQListQTableWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QTableWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, DropAction, Bool).new{|row, column, data, action| self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -109486,7 +109490,7 @@ module Qt
       bg_QTableWidget_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QTableWidget_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
-      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::QStringList*).new{ self.mime_types() } {% else %} nil {% end %}),
+      bg_QTableWidget_mimeTypes_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeTypes_") %} Proc(Binding::ContainerQListQString*).new{ BindgenHelper.wrap_container(Container_QList_QString_, self.mime_types()).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R") %} Proc(Binding::ContainerQListQTableWidgetItemX*, Binding::QMimeData*).new{|items| self.mime_data(Container_QList_QTableWidgetItem_X_.new(unwrap: items)).to_unsafe } {% else %} nil {% end %}),
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, DropAction, Bool).new{|row, column, data, action| self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(DropActions).new{ self.supported_drop_actions().to_unsafe } {% else %} nil {% end %}),
@@ -109658,12 +109662,12 @@ module Qt
       TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_takeHorizontalHeaderItem_int(self, column))
     end
     
-    def vertical_header_labels=(labels : Binding::QStringList*) : Void
-      Binding.bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(self, labels)
+    def vertical_header_labels=(labels : Enumerable(String)) : Void
+      Binding.bg_QTableWidget_setVerticalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
-    def horizontal_header_labels=(labels : Binding::QStringList*) : Void
-      Binding.bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(self, labels)
+    def horizontal_header_labels=(labels : Enumerable(String)) : Void
+      Binding.bg_QTableWidget_setHorizontalHeaderLabels_const_QStringList_R(self, BindgenHelper.wrap_container(Container_QList_QString_, labels).to_unsafe)
     end
     
     def current_row() : Int32
@@ -109880,8 +109884,8 @@ module Qt
       Binding.bg_QTableWidget_event_QEvent_X(self, event)
     end
     
-    protected def mime_types() : Binding::QStringList*
-      Binding.bg_QTableWidget_mimeTypes_(self)
+    protected def mime_types() : Enumerable(String)
+      Container_QList_QString_.new(unwrap: Binding.bg_QTableWidget_mimeTypes_(self))
     end
     
     protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
@@ -110268,8 +110272,8 @@ module Qt
         Binding.bg_QTableWidget_event_SUPER_QEvent_X(@myself, event)
       end
       
-      protected def mime_types() : Binding::QStringList*
-        Binding.bg_QTableWidget_mimeTypes_SUPER_(@myself)
+      protected def mime_types() : Enumerable(String)
+        Container_QList_QString_.new(unwrap: Binding.bg_QTableWidget_mimeTypes_SUPER_(@myself))
       end
       
       protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
@@ -116417,6 +116421,7 @@ module Qt
       {% elsif types == {UInt32} %} {{ Container_QList_unsigned_int_ }}
       {% elsif types == {Binding::EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
       {% elsif types == {Variant} %} {{ Container_QList_QVariant_ }}
+      {% elsif types == {String} %} {{ Container_QList_QString_ }}
       {% elsif types == {Int32} %} {{ Container_QList_int_ }}
       {% elsif types == {Pointer(Binding::QPersistentModelIndex)} %} {{ Container_QList_QPersistentModelIndex_ }}
       {% elsif types == {DayOfWeek} %} {{ Container_QList_Qt__DayOfWeek_ }}
@@ -116573,6 +116578,38 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQVariant*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QString_
+    include BindgenHelper::SequentialContainer(String)
+    include QList(String)
+    
+    @unwrap : Binding::ContainerQListQString*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QString___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : String
+      Qt::Converter::QString.unwrap(Binding.bg_Container_QList_QString__at_int(self, index))
+    end
+    
+    def push(value : String) : Void
+      Binding.bg_Container_QList_QString__push_back_QString(self, Qt::Converter::QString.wrap(value))
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QString__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQString*)
       result = unwrap
     @unwrap = result
     end

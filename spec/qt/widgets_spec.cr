@@ -86,7 +86,7 @@ describe "widgets" do
     tabs.current_index.should eq(1)
 
     combo = Qt::ComboBox.new
-    %w[a b c].each { |text| combo.add_item(text) }
+    combo.add_items(["a", "b", "c"])
     combo.count.should eq(3)
     combo.current_index = 2
     combo.current_text.should eq("c")

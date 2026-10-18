@@ -245,8 +245,8 @@ is installed and which version it is, and names the binding after the host, e.g.
 Then verify with `crystal spec`, and build the samples.
 
 `support/generate_bindings.cr` without `--system` downloads and configures Qt
-sources to build bindings for other versions, like qt5.cr's ready-to-use
-branches were built.  This mode is untested with Qt 6.
+sources to build bindings for other versions.  This mode is untested with
+Qt 6.
 
 ## (Re)generating a specific Qt6 binding version
 
@@ -266,6 +266,10 @@ see the comments there:
   structures can be copied and the methods wrapped.
 * `char32_t`, which the `QLocale::toString` overloads take, maps to `Char` like
   `QChar`.
+* `QStringList` and `QVariantList` are aliases of `QList<QString>` and
+  `QList<QVariant>`, so methods take any `Enumerable(String)` and return a
+  `Qt::QList` wrapper that is one: `combo_box.add_items(["a", "b"])`,
+  `dir.entry_list.to_a`.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 
