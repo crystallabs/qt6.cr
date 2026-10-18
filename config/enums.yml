@@ -571,3 +571,12 @@ enums:
   "QCborSimpleType": CborSimpleType
   "QCborKnownTags": CborKnownTags
   "QCborError::Code": CborError::Code
+  # Threads and IPC
+  "QThread::Priority": Thread::Priority
+  "QThread::QualityOfService": Thread::QualityOfService
+  "QReadWriteLock::RecursionMode": ReadWriteLock::RecursionMode
+  "QSharedMemory::AccessMode": SharedMemory::AccessMode
+  "QSharedMemory::SharedMemoryError": SharedMemory::SharedMemoryError
+  "QSystemSemaphore::AccessMode": SystemSemaphore::AccessMode
+  "QSystemSemaphore::SystemSemaphoreError": SystemSemaphore::SystemSemaphoreError
+  "QNativeIpcKey::Type": NativeIpcKey::Type

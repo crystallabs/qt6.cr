@@ -605,6 +605,7 @@ module Qt
     alias QFile = Void
     alias QFileSelector = Void
     alias QFileSystemWatcher = Void
+    alias QThreadPool = Void
     alias QIdentityProxyModel = Void
     alias QItemSelectionModel = Void
     alias QLibrary = Void
@@ -618,6 +619,7 @@ module Qt
     alias QSaveFile = Void
     alias QSequentialAnimationGroup = Void
     alias QSettings = Void
+    alias QSharedMemory = Void
     alias QSignalMapper = Void
     alias QSocketNotifier = Void
     alias QSortFilterProxyModel = Void
@@ -792,6 +794,9 @@ module Qt
     alias QItemSelection = Void
     alias QAbstractProxyModelPrivate = Void
     alias QAnimationGroupPrivate = Void
+    alias QBasicMutex = Void
+    alias QMutex = Void
+    alias QRecursiveMutex = Void
     alias QBasicTimer = Void
     alias QDynamicPropertyChangeEvent = Void
     alias QInputEvent = Void
@@ -890,7 +895,8 @@ module Qt
     alias QDirIterator = Void
     alias ContainerQListQPointF = Void
     alias QElapsedTimer = Void
-    alias QException = Void
+    alias QThreadPrivate = Void
+    alias QRunnable = Void
     alias QIdentityProxyModelPrivate = Void
     alias QItemSelectionRange = Void
     alias QItemSelectionModelPrivate = Void
@@ -916,14 +922,22 @@ module Qt
     alias QVariantAnimationPrivate = Void
     alias QRandomGenerator = Void
     alias QRandomGenerator64 = Void
+    alias QBasicReadWriteLock = Void
+    alias QReadWriteLockPrivate = Void
+    alias QReadWriteLock = Void
     alias QResource = Void
+    alias QSemaphore = Void
+    alias QSemaphoreReleaser = Void
     alias QSequentialAnimationGroupPrivate = Void
+    alias QNativeIpcKey = Void
     alias QStandardPaths = Void
     alias QStorageInfo = Void
     alias ContainerQListQStorageInfo = Void
+    alias QSystemSemaphore = Void
     alias QTemporaryDir = Void
     alias QTextBoundaryFinder = Void
     alias ContainerQListStdPairQStringQString = Void
+    alias QWaitCondition = Void
     alias QXmlStreamAttribute = Void
     alias QXmlStreamAttributes = Void
     alias QXmlStreamNamespaceDeclaration = Void
@@ -1777,10 +1791,6 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
-    struct BgJumptable_QException
-      bg_QException_raise_ : CrystalProc
-      bg_QException_clone_ : CrystalProc
-    end
     struct BgJumptable_QFileSelector
       bg_QFileSelector_metaObject_ : CrystalProc
       bg_QFileSelector_qt_metacast_const_char_X : CrystalProc
@@ -1797,6 +1807,18 @@ module Qt
       bg_QFileSystemWatcher_metaObject_ : CrystalProc
       bg_QFileSystemWatcher_qt_metacast_const_char_X : CrystalProc
       bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QThreadPool
+      bg_QThreadPool_metaObject_ : CrystalProc
+      bg_QThreadPool_qt_metacast_const_char_X : CrystalProc
+      bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
@@ -2077,6 +2099,18 @@ module Qt
       bg_QSettings_qt_metacast_const_char_X : CrystalProc
       bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
       bg_QSettings_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QSharedMemory
+      bg_QSharedMemory_metaObject_ : CrystalProc
+      bg_QSharedMemory_qt_metacast_const_char_X : CrystalProc
+      bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
@@ -9388,6 +9422,8 @@ module Qt
     fun bg_QObject_CAST_File_(_self_ : QObject*) : QFile*
     fun bg_QObject_CAST_FileSelector_(_self_ : QObject*) : QFileSelector*
     fun bg_QObject_CAST_FileSystemWatcher_(_self_ : QObject*) : QFileSystemWatcher*
+    fun bg_QObject_CAST_Thread_(_self_ : QObject*) : QThread*
+    fun bg_QObject_CAST_ThreadPool_(_self_ : QObject*) : QThreadPool*
     fun bg_QObject_CAST_IdentityProxyModel_(_self_ : QObject*) : QIdentityProxyModel*
     fun bg_QObject_CAST_ItemSelectionModel_(_self_ : QObject*) : QItemSelectionModel*
     fun bg_QObject_CAST_Library_(_self_ : QObject*) : QLibrary*
@@ -9401,6 +9437,7 @@ module Qt
     fun bg_QObject_CAST_SaveFile_(_self_ : QObject*) : QSaveFile*
     fun bg_QObject_CAST_SequentialAnimationGroup_(_self_ : QObject*) : QSequentialAnimationGroup*
     fun bg_QObject_CAST_Settings_(_self_ : QObject*) : QSettings*
+    fun bg_QObject_CAST_SharedMemory_(_self_ : QObject*) : QSharedMemory*
     fun bg_QObject_CAST_SignalMapper_(_self_ : QObject*) : QSignalMapper*
     fun bg_QObject_CAST_SocketNotifier_(_self_ : QObject*) : QSocketNotifier*
     fun bg_QObject_CAST_SortFilterProxyModel_(_self_ : QObject*) : QSortFilterProxyModel*
@@ -10431,6 +10468,20 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAnimationGroup*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(_self_ : QAnimationGroup*, table : BgJumptable_QAnimationGroup*) : Void
+    fun bg_QBasicMutex__CONSTRUCT_() : QBasicMutex*
+    fun bg_QBasicMutex_lock_(_self_ : QBasicMutex*) : Void
+    fun bg_QBasicMutex_unlock_(_self_ : QBasicMutex*) : Void
+    fun bg_QBasicMutex_tryLock_(_self_ : QBasicMutex*) : Bool
+    fun bg_QBasicMutex_FutexAlwaysAvailable_STATIC_GETTER_() : Bool
+    fun bg_QMutex__CONSTRUCT_() : QMutex*
+    fun bg_QMutex_tryLock_int(_self_ : QMutex*, timeout : Int32) : Bool
+    fun bg_QMutex_tryLock_QDeadlineTimer(_self_ : QMutex*, timeout : QDeadlineTimer*) : Bool
+    fun bg_QRecursiveMutex__CONSTRUCT_() : QRecursiveMutex*
+    fun bg_QRecursiveMutex_lock_(_self_ : QRecursiveMutex*) : Void
+    fun bg_QRecursiveMutex_tryLock_int(_self_ : QRecursiveMutex*, timeout : Int32) : Bool
+    fun bg_QRecursiveMutex_tryLock_(_self_ : QRecursiveMutex*) : Bool
+    fun bg_QRecursiveMutex_tryLock_QDeadlineTimer(_self_ : QRecursiveMutex*, timer : QDeadlineTimer*) : Bool
+    fun bg_QRecursiveMutex_unlock_(_self_ : QRecursiveMutex*) : Void
     fun bg_QBasicTimer__CONSTRUCT_() : QBasicTimer*
     fun bg_QBasicTimer_swap_QBasicTimer_R(_self_ : QBasicTimer*, other : QBasicTimer*) : Void
     fun bg_QBasicTimer_isActive_(_self_ : QBasicTimer*) : Bool
@@ -12508,14 +12559,6 @@ module Qt
     fun bg_QElapsedTimer__OPERATOR_gt_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
     fun bg_QElapsedTimer__OPERATOR_le_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
     fun bg_QElapsedTimer__OPERATOR_ge_const_QElapsedTimer_R(_self_ : QElapsedTimer*, rhs : QElapsedTimer*) : Bool
-    fun bg_QException__CONSTRUCT_() : QException*
-    fun bg_QException__COPY_const_QException_R(unnamed_arg_0 : QException*) : QException*
-    fun bg_QException__OPERATOR_assign_const_QException_R(_self_ : QException*, unnamed_arg_0 : QException*) : QException*
-    fun bg_QException_raise_(_self_ : QException*) : Void
-    fun bg_QException_clone_(_self_ : QException*) : QException*
-    fun bg_QException_raise_SUPER_(_self_ : QException*) : Void
-    fun bg_QException_clone_SUPER_(_self_ : QException*) : QException*
-    fun bg_BgInherit_QException_JUMPTABLE_BgJumptable_QException_R(_self_ : QException*, table : BgJumptable_QException*) : Void
     fun bg_QFileSelector_metaObject_(_self_ : QFileSelector*) : QMetaObject*
     fun bg_QFileSelector_qt_metacast_const_char_X(_self_ : QFileSelector*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QFileSelector_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileSelector*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -12576,6 +12619,107 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(_self_ : QFileSystemWatcher*, table : BgJumptable_QFileSystemWatcher*) : Void
+    fun bg_QThread_metaObject_(_self_ : QThread*) : QMetaObject*
+    fun bg_QThread_qt_metacast_const_char_X(_self_ : QThread*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QThread_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QThread*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QThread_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QThread_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QThread_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QThread_currentThreadId_STATIC_() : Void*
+    fun bg_QThread_currentThread_STATIC_() : QThread*
+    fun bg_QThread_isMainThread_STATIC_() : Bool
+    fun bg_QThread_idealThreadCount_STATIC_() : Int32
+    fun bg_QThread_yieldCurrentThread_STATIC_() : Void
+    fun bg_QThread__CONSTRUCT_QObject_X(parent : QObject*) : QThread*
+    fun bg_QThread_setPriority_QThread__Priority(_self_ : QThread*, priority : Thread::Priority) : Void
+    fun bg_QThread_priority_(_self_ : QThread*) : Thread::Priority
+    fun bg_QThread_isFinished_(_self_ : QThread*) : Bool
+    fun bg_QThread_isRunning_(_self_ : QThread*) : Bool
+    fun bg_QThread_requestInterruption_(_self_ : QThread*) : Void
+    fun bg_QThread_isInterruptionRequested_(_self_ : QThread*) : Bool
+    fun bg_QThread_setStackSize_uint(_self_ : QThread*, stack_size : UInt32) : Void
+    fun bg_QThread_stackSize_(_self_ : QThread*) : UInt32
+    fun bg_QThread_eventDispatcher_(_self_ : QThread*) : QAbstractEventDispatcher*
+    fun bg_QThread_setEventDispatcher_QAbstractEventDispatcher_X(_self_ : QThread*, event_dispatcher : QAbstractEventDispatcher*) : Void
+    fun bg_QThread_event_QEvent_X(_self_ : QThread*, event : QEvent*) : Bool
+    fun bg_QThread_loopLevel_(_self_ : QThread*) : Int32
+    fun bg_QThread_isCurrentThread_(_self_ : QThread*) : Bool
+    fun bg_QThread_setServiceLevel_QThread__QualityOfService(_self_ : QThread*, service_level : Thread::QualityOfService) : Void
+    fun bg_QThread_serviceLevel_(_self_ : QThread*) : Thread::QualityOfService
+    fun bg_QThread_start_QThread__Priority(_self_ : QThread*, unnamed_arg_0 : Thread::Priority) : Void
+    fun bg_QThread_terminate_(_self_ : QThread*) : Void
+    fun bg_QThread_exit_int(_self_ : QThread*, retcode : Int32) : Void
+    fun bg_QThread_quit_(_self_ : QThread*) : Void
+    fun bg_QThread_wait_(_self_ : QThread*) : Bool
+    fun bg_QThread_wait_QDeadlineTimer(_self_ : QThread*, deadline : QDeadlineTimer*) : Bool
+    fun bg_QThread_wait_unsigned_long(_self_ : QThread*, time : LibC::ULong) : Bool
+    fun bg_QThread_sleep_STATIC_unsigned_long(unnamed_arg_0 : LibC::ULong) : Void
+    fun bg_QThread_msleep_STATIC_unsigned_long(unnamed_arg_0 : LibC::ULong) : Void
+    fun bg_QThread_usleep_STATIC_unsigned_long(unnamed_arg_0 : LibC::ULong) : Void
+    fun bg_QThread_sleep_STATIC_std__chrono__nanoseconds(nsec : Int64) : Void
+    fun bg_QThread_run_(_self_ : QThread*) : Void
+    fun bg_QThread_exec_(_self_ : QThread*) : Int32
+    fun bg_QThread_setTerminationEnabled_STATIC_bool(enabled : Bool) : Void
+    fun bg_QThread__CONSTRUCT_QThreadPrivate_R_QObject_X(dd : QThreadPrivate*, parent : QObject*) : QThread*
+    fun bg_QThread_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QThread*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QThread*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QThread*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QThread*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QThread*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QThread*, signal : QMetaMethod*) : Void
+    fun bg_QThread_CONNECT_started_CrystalProc_void_(_self_ : QThread*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QThread_CONNECT_finished_CrystalProc_void_(_self_ : QThread*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QRunnable_run_(_self_ : QRunnable*) : Void
+    fun bg_QRunnable__CONSTRUCT_() : QRunnable*
+    fun bg_QRunnable_autoDelete_(_self_ : QRunnable*) : Bool
+    fun bg_QRunnable_setAutoDelete_bool(_self_ : QRunnable*, auto_delete : Bool) : Void
+    fun bg_QThreadPool_metaObject_(_self_ : QThreadPool*) : QMetaObject*
+    fun bg_QThreadPool_qt_metacast_const_char_X(_self_ : QThreadPool*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QThreadPool*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QThreadPool_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QThreadPool_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QThreadPool_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QThreadPool__CONSTRUCT_QObject_X(parent : QObject*) : QThreadPool*
+    fun bg_QThreadPool_globalInstance_STATIC_() : QThreadPool*
+    fun bg_QThreadPool_start_QRunnable_X_int(_self_ : QThreadPool*, runnable : QRunnable*, priority : Int32) : Void
+    fun bg_QThreadPool_tryStart_QRunnable_X(_self_ : QThreadPool*, runnable : QRunnable*) : Bool
+    fun bg_QThreadPool_startOnReservedThread_QRunnable_X(_self_ : QThreadPool*, runnable : QRunnable*) : Void
+    fun bg_QThreadPool_expiryTimeout_(_self_ : QThreadPool*) : Int32
+    fun bg_QThreadPool_setExpiryTimeout_int(_self_ : QThreadPool*, expiry_timeout : Int32) : Void
+    fun bg_QThreadPool_maxThreadCount_(_self_ : QThreadPool*) : Int32
+    fun bg_QThreadPool_setMaxThreadCount_int(_self_ : QThreadPool*, max_thread_count : Int32) : Void
+    fun bg_QThreadPool_activeThreadCount_(_self_ : QThreadPool*) : Int32
+    fun bg_QThreadPool_setStackSize_uint(_self_ : QThreadPool*, stack_size : UInt32) : Void
+    fun bg_QThreadPool_stackSize_(_self_ : QThreadPool*) : UInt32
+    fun bg_QThreadPool_setThreadPriority_QThread__Priority(_self_ : QThreadPool*, priority : Thread::Priority) : Void
+    fun bg_QThreadPool_threadPriority_(_self_ : QThreadPool*) : Thread::Priority
+    fun bg_QThreadPool_reserveThread_(_self_ : QThreadPool*) : Void
+    fun bg_QThreadPool_releaseThread_(_self_ : QThreadPool*) : Void
+    fun bg_QThreadPool_setServiceLevel_QThread__QualityOfService(_self_ : QThreadPool*, service_level : Thread::QualityOfService) : Void
+    fun bg_QThreadPool_serviceLevel_(_self_ : QThreadPool*) : Thread::QualityOfService
+    fun bg_QThreadPool_waitForDone_int(_self_ : QThreadPool*, msecs : Int32) : Bool
+    fun bg_QThreadPool_waitForDone_(_self_ : QThreadPool*) : Bool
+    fun bg_QThreadPool_waitForDone_QDeadlineTimer(_self_ : QThreadPool*, deadline : QDeadlineTimer*) : Bool
+    fun bg_QThreadPool_clear_(_self_ : QThreadPool*) : Void
+    fun bg_QThreadPool_contains_const_QThread_X(_self_ : QThreadPool*, thread : QThread*) : Bool
+    fun bg_QThreadPool_tryTake_QRunnable_X(_self_ : QThreadPool*, runnable : QRunnable*) : Bool
+    fun bg_QThreadPool_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QThreadPool*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QThreadPool*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QThreadPool*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QThreadPool*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QThreadPool*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QThreadPool*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QThreadPool*, signal : QMetaMethod*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QThreadPool*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QThreadPool*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QThreadPool*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QThreadPool*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QThreadPool*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QThreadPool*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QThreadPool*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QThreadPool_JUMPTABLE_BgJumptable_QThreadPool_R(_self_ : QThreadPool*, table : BgJumptable_QThreadPool*) : Void
     fun bg_QIdentityProxyModel_metaObject_(_self_ : QIdentityProxyModel*) : QMetaObject*
     fun bg_QIdentityProxyModel_qt_metacast_const_char_X(_self_ : QIdentityProxyModel*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QIdentityProxyModel_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QIdentityProxyModel*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -13970,6 +14114,31 @@ module Qt
     fun bg_QRandomGenerator64_securelySeeded_STATIC_() : QRandomGenerator64*
     fun bg_QRandomGenerator64__COPY_const_QRandomGenerator64_R(unnamed_arg_0 : QRandomGenerator64*) : QRandomGenerator64*
     fun bg_QRandomGenerator64__OPERATOR_assign_const_QRandomGenerator64_R(_self_ : QRandomGenerator64*, unnamed_arg_0 : QRandomGenerator64*) : QRandomGenerator64*
+    fun bg_QBasicReadWriteLock__CONSTRUCT_() : QBasicReadWriteLock*
+    fun bg_QBasicReadWriteLock_lockForRead_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_tryLockForRead_(_self_ : QBasicReadWriteLock*) : Bool
+    fun bg_QBasicReadWriteLock_tryLockForRead_QDeadlineTimer(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*) : Bool
+    fun bg_QBasicReadWriteLock_lockForWrite_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_tryLockForWrite_(_self_ : QBasicReadWriteLock*) : Bool
+    fun bg_QBasicReadWriteLock_tryLockForWrite_QDeadlineTimer(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*) : Bool
+    fun bg_QBasicReadWriteLock_unlock_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_lock_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_lock_shared_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_try_lock_(_self_ : QBasicReadWriteLock*) : Bool
+    fun bg_QBasicReadWriteLock_try_lock_shared_(_self_ : QBasicReadWriteLock*) : Bool
+    fun bg_QBasicReadWriteLock_unlock_shared_(_self_ : QBasicReadWriteLock*) : Void
+    fun bg_QBasicReadWriteLock_fastTryLockForRead_QReadWriteLockPrivate_XR(_self_ : QBasicReadWriteLock*, d : QReadWriteLockPrivate**) : Bool
+    fun bg_QBasicReadWriteLock_tryLockForReadInternal_QDeadlineTimer_unsigned_int(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*, tsan_flags : UInt32) : Bool
+    fun bg_QBasicReadWriteLock_fastTryLockForWrite_QReadWriteLockPrivate_XR(_self_ : QBasicReadWriteLock*, d : QReadWriteLockPrivate**) : Bool
+    fun bg_QBasicReadWriteLock_tryLockForWriteInternal_QDeadlineTimer_unsigned_int(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*, tsan_flags : UInt32) : Bool
+    fun bg_QBasicReadWriteLock_contendedTryLockForRead_QDeadlineTimer_void_X(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*, dd : Void*) : Bool
+    fun bg_QBasicReadWriteLock_contendedTryLockForWrite_QDeadlineTimer_void_X(_self_ : QBasicReadWriteLock*, timeout : QDeadlineTimer*, dd : Void*) : Bool
+    fun bg_QBasicReadWriteLock_contendedUnlock_void_X(_self_ : QBasicReadWriteLock*, dd : Void*) : Void
+    fun bg_QBasicReadWriteLock_isContendedLockForRead_const_void_X(_self_ : QBasicReadWriteLock*, dd : Void*) : Bool
+    fun bg_QBasicReadWriteLock__CONSTRUCT_QReadWriteLockPrivate_X(d : QReadWriteLockPrivate*) : QBasicReadWriteLock*
+    fun bg_QReadWriteLock__CONSTRUCT_QReadWriteLock__RecursionMode(recursion_mode : ReadWriteLock::RecursionMode) : QReadWriteLock*
+    fun bg_QReadWriteLock_tryLockForRead_int(_self_ : QReadWriteLock*, timeout : Int32) : Bool
+    fun bg_QReadWriteLock_tryLockForWrite_int(_self_ : QReadWriteLock*, timeout : Int32) : Bool
     fun bg_QSize__CONSTRUCT_() : QSize
     fun bg_QSize__CONSTRUCT_int_int(w : Int32, h : Int32) : QSize
     fun bg_QSize_isNull_(_self_ : QSize*) : Bool
@@ -14303,6 +14472,19 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(_self_ : QSaveFile*, table : BgJumptable_QSaveFile*) : Void
+    fun bg_QSemaphore__CONSTRUCT_int(n : Int32) : QSemaphore*
+    fun bg_QSemaphore_acquire_int(_self_ : QSemaphore*, n : Int32) : Void
+    fun bg_QSemaphore_tryAcquire_int(_self_ : QSemaphore*, n : Int32) : Bool
+    fun bg_QSemaphore_tryAcquire_int_int(_self_ : QSemaphore*, n : Int32, timeout : Int32) : Bool
+    fun bg_QSemaphore_tryAcquire_int_QDeadlineTimer(_self_ : QSemaphore*, n : Int32, timeout : QDeadlineTimer*) : Bool
+    fun bg_QSemaphore_release_int(_self_ : QSemaphore*, n : Int32) : Void
+    fun bg_QSemaphore_available_(_self_ : QSemaphore*) : Int32
+    fun bg_QSemaphoreReleaser__CONSTRUCT_() : QSemaphoreReleaser*
+    fun bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_R_int(sem : QSemaphore*, n : Int32) : QSemaphoreReleaser*
+    fun bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_X_int(sem : QSemaphore*, n : Int32) : QSemaphoreReleaser*
+    fun bg_QSemaphoreReleaser_swap_QSemaphoreReleaser_R(_self_ : QSemaphoreReleaser*, other : QSemaphoreReleaser*) : Void
+    fun bg_QSemaphoreReleaser_semaphore_(_self_ : QSemaphoreReleaser*) : QSemaphore*
+    fun bg_QSemaphoreReleaser_cancel_(_self_ : QSemaphoreReleaser*) : QSemaphore*
     fun bg_QSequentialAnimationGroup_metaObject_(_self_ : QSequentialAnimationGroup*) : QMetaObject*
     fun bg_QSequentialAnimationGroup_qt_metacast_const_char_X(_self_ : QSequentialAnimationGroup*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QSequentialAnimationGroup_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSequentialAnimationGroup*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -14405,6 +14587,74 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSettings*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSettings*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QSettings_JUMPTABLE_BgJumptable_QSettings_R(_self_ : QSettings*, table : BgJumptable_QSettings*) : Void
+    fun bg_QNativeIpcKey_legacyDefaultTypeForOs_STATIC_() : NativeIpcKey::Type
+    fun bg_QNativeIpcKey__CONSTRUCT_() : QNativeIpcKey*
+    fun bg_QNativeIpcKey__CONSTRUCT_QNativeIpcKey__Type(type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QNativeIpcKey__CONSTRUCT_const_QString_R(k : CrystalString) : QNativeIpcKey*
+    fun bg_QNativeIpcKey__CONSTRUCT_const_QString_R_QNativeIpcKey__Type(k : CrystalString, type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QNativeIpcKey__COPY_const_QNativeIpcKey_R(other : QNativeIpcKey*) : QNativeIpcKey*
+    fun bg_QNativeIpcKey__OPERATOR_assign_const_QNativeIpcKey_R(_self_ : QNativeIpcKey*, other : QNativeIpcKey*) : QNativeIpcKey*
+    fun bg_QNativeIpcKey_swap_QNativeIpcKey_R(_self_ : QNativeIpcKey*, other : QNativeIpcKey*) : Void
+    fun bg_QNativeIpcKey_isEmpty_(_self_ : QNativeIpcKey*) : Bool
+    fun bg_QNativeIpcKey_isValid_(_self_ : QNativeIpcKey*) : Bool
+    fun bg_QNativeIpcKey_type_(_self_ : QNativeIpcKey*) : NativeIpcKey::Type
+    fun bg_QNativeIpcKey_setType_QNativeIpcKey__Type(_self_ : QNativeIpcKey*, type : NativeIpcKey::Type) : Void
+    fun bg_QNativeIpcKey_nativeKey_(_self_ : QNativeIpcKey*) : CrystalString
+    fun bg_QNativeIpcKey_setNativeKey_const_QString_R(_self_ : QNativeIpcKey*, new_key : CrystalString) : Void
+    fun bg_QNativeIpcKey_toString_(_self_ : QNativeIpcKey*) : CrystalString
+    fun bg_QNativeIpcKey_fromString_STATIC_const_QString_R(string : CrystalString) : QNativeIpcKey*
+    fun bg_QNativeIpcKey__OPERATOR_eq_const_QNativeIpcKey_R(_self_ : QNativeIpcKey*, rhs : QNativeIpcKey*) : Bool
+    fun bg_QNativeIpcKey__OPERATOR_ne_const_QNativeIpcKey_R(_self_ : QNativeIpcKey*, rhs : QNativeIpcKey*) : Bool
+    fun bg_QNativeIpcKey_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QNativeIpcKey_DefaultTypeForOs_STATIC_GETTER_() : NativeIpcKey::Type
+    fun bg_QSharedMemory_metaObject_(_self_ : QSharedMemory*) : QMetaObject*
+    fun bg_QSharedMemory_qt_metacast_const_char_X(_self_ : QSharedMemory*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSharedMemory*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QSharedMemory_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QSharedMemory__CONSTRUCT_QObject_X(parent : QObject*) : QSharedMemory*
+    fun bg_QSharedMemory__CONSTRUCT_const_QNativeIpcKey_R_QObject_X(key : QNativeIpcKey*, parent : QObject*) : QSharedMemory*
+    fun bg_QSharedMemory__CONSTRUCT_const_QString_R_QObject_X(key : CrystalString, parent : QObject*) : QSharedMemory*
+    fun bg_QSharedMemory_setKey_const_QString_R(_self_ : QSharedMemory*, key : CrystalString) : Void
+    fun bg_QSharedMemory_key_(_self_ : QSharedMemory*) : CrystalString
+    fun bg_QSharedMemory_setNativeKey_const_QNativeIpcKey_R(_self_ : QSharedMemory*, key : QNativeIpcKey*) : Void
+    fun bg_QSharedMemory_setNativeKey_const_QString_R(_self_ : QSharedMemory*, key : CrystalString) : Void
+    fun bg_QSharedMemory_setNativeKey_const_QString_R_QNativeIpcKey__Type(_self_ : QSharedMemory*, key : CrystalString, type : NativeIpcKey::Type) : Void
+    fun bg_QSharedMemory_nativeKey_(_self_ : QSharedMemory*) : CrystalString
+    fun bg_QSharedMemory_nativeIpcKey_(_self_ : QSharedMemory*) : QNativeIpcKey*
+    fun bg_QSharedMemory_create_qsizetype_QSharedMemory__AccessMode(_self_ : QSharedMemory*, size : Int64, mode : SharedMemory::AccessMode) : Bool
+    fun bg_QSharedMemory_size_(_self_ : QSharedMemory*) : Int64
+    fun bg_QSharedMemory_attach_QSharedMemory__AccessMode(_self_ : QSharedMemory*, mode : SharedMemory::AccessMode) : Bool
+    fun bg_QSharedMemory_isAttached_(_self_ : QSharedMemory*) : Bool
+    fun bg_QSharedMemory_detach_(_self_ : QSharedMemory*) : Bool
+    fun bg_QSharedMemory_data_(_self_ : QSharedMemory*) : Void*
+    fun bg_QSharedMemory_constData_(_self_ : QSharedMemory*) : Void*
+    fun bg_QSharedMemory_lock_(_self_ : QSharedMemory*) : Bool
+    fun bg_QSharedMemory_unlock_(_self_ : QSharedMemory*) : Bool
+    fun bg_QSharedMemory_error_(_self_ : QSharedMemory*) : SharedMemory::SharedMemoryError
+    fun bg_QSharedMemory_errorString_(_self_ : QSharedMemory*) : CrystalString
+    fun bg_QSharedMemory_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(type : NativeIpcKey::Type) : Bool
+    fun bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R(key : CrystalString) : QNativeIpcKey*
+    fun bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(key : CrystalString, type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R(key : CrystalString) : QNativeIpcKey*
+    fun bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(key : CrystalString, type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QSharedMemory_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QSharedMemory*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSharedMemory*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSharedMemory*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSharedMemory*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QSharedMemory*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSharedMemory*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSharedMemory*, signal : QMetaMethod*) : Void
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QSharedMemory*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QSharedMemory*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QSharedMemory*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QSharedMemory*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QSharedMemory*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSharedMemory*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSharedMemory*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QSharedMemory_JUMPTABLE_BgJumptable_QSharedMemory_R(_self_ : QSharedMemory*, table : BgJumptable_QSharedMemory*) : Void
     fun bg_QSignalMapper_metaObject_(_self_ : QSignalMapper*) : QMetaObject*
     fun bg_QSignalMapper_qt_metacast_const_char_X(_self_ : QSignalMapper*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QSignalMapper_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSignalMapper*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -14785,6 +15035,27 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QStringListModel*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QStringListModel*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QStringListModel_JUMPTABLE_BgJumptable_QStringListModel_R(_self_ : QStringListModel*, table : BgJumptable_QStringListModel*) : Void
+    fun bg_QSystemSemaphore_tr_STATIC_const_char_X(source_text : UInt8*) : CrystalString
+    fun bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X(source_text : UInt8*, disambiguation : UInt8*) : CrystalString
+    fun bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X_int(source_text : UInt8*, disambiguation : UInt8*, n : Int32) : CrystalString
+    fun bg_QSystemSemaphore__CONSTRUCT_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(key : QNativeIpcKey*, initial_value : Int32, unnamed_arg_2 : SystemSemaphore::AccessMode) : QSystemSemaphore*
+    fun bg_QSystemSemaphore_setNativeKey_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(_self_ : QSystemSemaphore*, key : QNativeIpcKey*, initial_value : Int32, unnamed_arg_2 : SystemSemaphore::AccessMode) : Void
+    fun bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode(_self_ : QSystemSemaphore*, key : CrystalString, initial_value : Int32, mode : SystemSemaphore::AccessMode) : Void
+    fun bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode_QNativeIpcKey__Type(_self_ : QSystemSemaphore*, key : CrystalString, initial_value : Int32, mode : SystemSemaphore::AccessMode, type : NativeIpcKey::Type) : Void
+    fun bg_QSystemSemaphore_nativeIpcKey_(_self_ : QSystemSemaphore*) : QNativeIpcKey*
+    fun bg_QSystemSemaphore__CONSTRUCT_const_QString_R_int_QSystemSemaphore__AccessMode(key : CrystalString, initial_value : Int32, mode : SystemSemaphore::AccessMode) : QSystemSemaphore*
+    fun bg_QSystemSemaphore_setKey_const_QString_R_int_QSystemSemaphore__AccessMode(_self_ : QSystemSemaphore*, key : CrystalString, initial_value : Int32, mode : SystemSemaphore::AccessMode) : Void
+    fun bg_QSystemSemaphore_key_(_self_ : QSystemSemaphore*) : CrystalString
+    fun bg_QSystemSemaphore_acquire_(_self_ : QSystemSemaphore*) : Bool
+    fun bg_QSystemSemaphore_release_int(_self_ : QSystemSemaphore*, n : Int32) : Bool
+    fun bg_QSystemSemaphore_error_(_self_ : QSystemSemaphore*) : SystemSemaphore::SystemSemaphoreError
+    fun bg_QSystemSemaphore_errorString_(_self_ : QSystemSemaphore*) : CrystalString
+    fun bg_QSystemSemaphore_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(type : NativeIpcKey::Type) : Bool
+    fun bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R(key : CrystalString) : QNativeIpcKey*
+    fun bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(key : CrystalString, type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R(key : CrystalString) : QNativeIpcKey*
+    fun bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(key : CrystalString, type : NativeIpcKey::Type) : QNativeIpcKey*
+    fun bg_QSystemSemaphore_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QTemporaryDir__CONSTRUCT_() : QTemporaryDir*
     fun bg_QTemporaryDir__CONSTRUCT_const_QString_R(template_name : CrystalString) : QTemporaryDir*
     fun bg_QTemporaryDir_swap_QTemporaryDir_R(_self_ : QTemporaryDir*, other : QTemporaryDir*) : Void
@@ -15016,6 +15287,17 @@ module Qt
     fun bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_() : UInt16
     fun bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
     fun bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
+    fun bg_QWaitCondition__CONSTRUCT_() : QWaitCondition*
+    fun bg_QWaitCondition_wait_QMutex_X(_self_ : QWaitCondition*, locked_mutex : QMutex*) : Bool
+    fun bg_QWaitCondition_wait_QMutex_X_QDeadlineTimer(_self_ : QWaitCondition*, locked_mutex : QMutex*, deadline : QDeadlineTimer*) : Bool
+    fun bg_QWaitCondition_wait_QMutex_X_unsigned_long(_self_ : QWaitCondition*, locked_mutex : QMutex*, time : LibC::ULong) : Bool
+    fun bg_QWaitCondition_wait_QReadWriteLock_X(_self_ : QWaitCondition*, locked_read_write_lock : QReadWriteLock*) : Bool
+    fun bg_QWaitCondition_wait_QReadWriteLock_X_QDeadlineTimer(_self_ : QWaitCondition*, locked_read_write_lock : QReadWriteLock*, deadline : QDeadlineTimer*) : Bool
+    fun bg_QWaitCondition_wait_QReadWriteLock_X_unsigned_long(_self_ : QWaitCondition*, locked_read_write_lock : QReadWriteLock*, time : LibC::ULong) : Bool
+    fun bg_QWaitCondition_wakeOne_(_self_ : QWaitCondition*) : Void
+    fun bg_QWaitCondition_wakeAll_(_self_ : QWaitCondition*) : Void
+    fun bg_QWaitCondition_notify_one_(_self_ : QWaitCondition*) : Void
+    fun bg_QWaitCondition_notify_all_(_self_ : QWaitCondition*) : Void
     fun bg_QXmlStreamAttribute__CONSTRUCT_() : QXmlStreamAttribute*
     fun bg_QXmlStreamAttribute__CONSTRUCT_const_QString_R_const_QString_R(qualified_name : CrystalString, value : CrystalString) : QXmlStreamAttribute*
     fun bg_QXmlStreamAttribute__CONSTRUCT_const_QString_R_const_QString_R_const_QString_R(namespace_uri : CrystalString, name : CrystalString, value : CrystalString) : QXmlStreamAttribute*
@@ -39560,11 +39842,11 @@ module Qt
       Binding.bg_QObject_blockSignals_bool(self, b)
     end
     
-    def thread() : Binding::QThread*
-      Binding.bg_QObject_thread_(self)
+    def thread() : Thread?
+      Binding.bg_QObject_thread_(self).try {|ptr| Thread.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def move_to_thread(thread : Binding::QThread*) : Bool
+    def move_to_thread(thread : Thread) : Bool
       Binding.bg_QObject_moveToThread_QThread_X(self, thread)
     end
     
@@ -39768,6 +40050,10 @@ module Qt
         Binding.bg_QObject_CAST_FileSelector_(self).try {|ptr| FileSelector.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == FileSystemWatcher %}
         Binding.bg_QObject_CAST_FileSystemWatcher_(self).try {|ptr| FileSystemWatcher.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == Thread %}
+        Binding.bg_QObject_CAST_Thread_(self).try {|ptr| Thread.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == ThreadPool %}
+        Binding.bg_QObject_CAST_ThreadPool_(self).try {|ptr| ThreadPool.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == IdentityProxyModel %}
         Binding.bg_QObject_CAST_IdentityProxyModel_(self).try {|ptr| IdentityProxyModel.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == ItemSelectionModel %}
@@ -39794,6 +40080,8 @@ module Qt
         Binding.bg_QObject_CAST_SequentialAnimationGroup_(self).try {|ptr| SequentialAnimationGroup.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Settings %}
         Binding.bg_QObject_CAST_Settings_(self).try {|ptr| Settings.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == SharedMemory %}
+        Binding.bg_QObject_CAST_SharedMemory_(self).try {|ptr| SharedMemory.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SignalMapper %}
         Binding.bg_QObject_CAST_SignalMapper_(self).try {|ptr| SignalMapper.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SocketNotifier %}
@@ -41250,8 +41538,8 @@ module Qt
     {% end %}
     end
     
-    def self.instance(thread : Binding::QThread*? = nil) : AbstractEventDispatcher?
-      Binding.bg_QAbstractEventDispatcher_instance_STATIC_QThread_X(thread).try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
+    def self.instance(thread : Thread? = nil) : AbstractEventDispatcher?
+      Binding.bg_QAbstractEventDispatcher_instance_STATIC_QThread_X((thread.try(&.to_unsafe) || Pointer(Binding::QThread).null)).try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     abstract def process_events(flags : EventLoop::ProcessEventsFlags) : Bool
@@ -45490,6 +45778,96 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class BasicMutex
+    @unwrap : Binding::QBasicMutex*
+    
+    def initialize()
+      result = Binding.bg_QBasicMutex__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def lock() : Void
+      Binding.bg_QBasicMutex_lock_(self)
+    end
+    
+    def unlock() : Void
+      Binding.bg_QBasicMutex_unlock_(self)
+    end
+    
+    def try_lock() : Bool
+      Binding.bg_QBasicMutex_tryLock_(self)
+    end
+    
+    private def self.futex_always_available() : Bool
+      Binding.bg_QBasicMutex_FutexAlwaysAvailable_STATIC_GETTER_()
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QBasicMutex*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class QMutex < BasicMutex
+    def initialize()
+      result = Binding.bg_QMutex__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def try_lock(timeout : Int32) : Bool
+      Binding.bg_QMutex_tryLock_int(self, timeout)
+    end
+    
+    def try_lock(timeout : DeadlineTimer) : Bool
+      Binding.bg_QMutex_tryLock_QDeadlineTimer(self, timeout)
+    end
+    
+    def initialize(unwrap : Binding::QMutex*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class RecursiveMutex
+    @unwrap : Binding::QRecursiveMutex*
+    
+    def initialize()
+      result = Binding.bg_QRecursiveMutex__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def lock() : Void
+      Binding.bg_QRecursiveMutex_lock_(self)
+    end
+    
+    def try_lock(timeout : Int32) : Bool
+      Binding.bg_QRecursiveMutex_tryLock_int(self, timeout)
+    end
+    
+    def try_lock() : Bool
+      Binding.bg_QRecursiveMutex_tryLock_(self)
+    end
+    
+    def try_lock(timer : DeadlineTimer) : Bool
+      Binding.bg_QRecursiveMutex_tryLock_QDeadlineTimer(self, timer)
+    end
+    
+    def unlock() : Void
+      Binding.bg_QRecursiveMutex_unlock_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QRecursiveMutex*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class BasicTimer
     @unwrap : Binding::QBasicTimer*
@@ -57605,115 +57983,6 @@ module Qt
     end
     
   end
-  class Exception
-    @unwrap : Binding::QException*
-    
-    def initialize()
-      result = Binding.bg_QException__CONSTRUCT_()
-    @unwrap = result
-    {% begin %}
-    {%
-      methods = [] of Def
-      ([@type] + @type.ancestors).select(&.<(Exception)).map{|x| methods = methods + x.methods}
-      forwarded = [] of String
-      [
-        {"bg_QException_raise_", "raise", [] of String},
-        {"bg_QException_clone_", "clone", [] of String},
-      ].each do |sig|
-        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
-          args = m.splat_index ? m.args[0...m.splat_index] : m.args
-          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
-          sig[2].each_with_index do |name, i|
-            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
-            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
-              r = r.resolve?
-              t = parse_type(name).resolve?
-              ok = false if r && t && !(t <= r) && !(r <= t)
-            end
-          end
-          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
-        end
-      end
-    %}
-    jump_table = Binding::BgJumptable_QException.new(
-      bg_QException_raise_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QException_raise_") %} Proc(Void).new{ self.raise() } {% else %} nil {% end %}),
-      bg_QException_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QException_clone_") %} Proc(Binding::QException*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
-    )
-    Binding.bg_BgInherit_QException_JUMPTABLE_BgJumptable_QException_R(result, pointerof(jump_table))
-    {% end %}
-    end
-    
-    def initialize(unnamed_arg_0 : Exception)
-      result = Binding.bg_QException__COPY_const_QException_R(unnamed_arg_0)
-    @unwrap = result
-    {% begin %}
-    {%
-      methods = [] of Def
-      ([@type] + @type.ancestors).select(&.<(Exception)).map{|x| methods = methods + x.methods}
-      forwarded = [] of String
-      [
-        {"bg_QException_raise_", "raise", [] of String},
-        {"bg_QException_clone_", "clone", [] of String},
-      ].each do |sig|
-        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
-          args = m.splat_index ? m.args[0...m.splat_index] : m.args
-          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
-          sig[2].each_with_index do |name, i|
-            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
-            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
-              r = r.resolve?
-              t = parse_type(name).resolve?
-              ok = false if r && t && !(t <= r) && !(r <= t)
-            end
-          end
-          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
-        end
-      end
-    %}
-    jump_table = Binding::BgJumptable_QException.new(
-      bg_QException_raise_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QException_raise_") %} Proc(Void).new{ self.raise() } {% else %} nil {% end %}),
-      bg_QException_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QException_clone_") %} Proc(Binding::QException*).new{ self.clone().to_unsafe } {% else %} nil {% end %}),
-    )
-    Binding.bg_BgInherit_QException_JUMPTABLE_BgJumptable_QException_R(result, pointerof(jump_table))
-    {% end %}
-    end
-    
-    def assign!(unnamed_arg_0 : Exception) : Exception
-      Exception.new(unwrap: Binding.bg_QException__OPERATOR_assign_const_QException_R(self, unnamed_arg_0))
-    end
-    
-    def raise() : Void
-      Binding.bg_QException_raise_(self)
-    end
-    
-    def clone() : Exception?
-      Binding.bg_QException_clone_(self).try {|ptr| Exception.new(unwrap: ptr) unless ptr.null?}
-    end
-    
-    def to_unsafe
-      @unwrap
-    end
-    def initialize(unwrap : Binding::QException*)
-      result = unwrap
-    @unwrap = result
-    end
-    
-    private class Superclass
-      def initialize(@myself : Exception)
-      end
-      def raise() : Void
-        Binding.bg_QException_raise_SUPER_(@myself)
-      end
-      
-      def clone() : Exception?
-        Binding.bg_QException_clone_SUPER_(@myself).try {|ptr| Exception.new(unwrap: ptr) unless ptr.null?}
-      end
-      
-    end
-    private def superclass
-      Superclass.new(self)
-    end
-  end
   class FileSelector < Object
     def meta_object() : MetaObject?
       Binding.bg_QFileSelector_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
@@ -58130,6 +58399,517 @@ module Qt
       SignalConnection.new(unwrap: Binding.bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString*, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0.value)) end)))
     end
     
+  end
+  class Thread < Object
+    def meta_object() : MetaObject?
+      Binding.bg_QThread_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QThread_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+      Binding.bg_QThread_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThread_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThread_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThread_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def self.current_thread_id() : Void*
+      Binding.bg_QThread_currentThreadId_STATIC_()
+    end
+    
+    def self.current_thread() : Thread?
+      Binding.bg_QThread_currentThread_STATIC_().try {|ptr| Thread.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def self.main_thread?() : Bool
+      Binding.bg_QThread_isMainThread_STATIC_()
+    end
+    
+    def self.ideal_thread_count() : Int32
+      Binding.bg_QThread_idealThreadCount_STATIC_()
+    end
+    
+    def self.yield_current_thread() : Void
+      Binding.bg_QThread_yieldCurrentThread_STATIC_()
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QThread__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    end
+    
+    def priority=(priority : Thread::Priority) : Void
+      Binding.bg_QThread_setPriority_QThread__Priority(self, priority)
+    end
+    
+    def priority() : Thread::Priority
+      Binding.bg_QThread_priority_(self)
+    end
+    
+    def finished?() : Bool
+      Binding.bg_QThread_isFinished_(self)
+    end
+    
+    def running?() : Bool
+      Binding.bg_QThread_isRunning_(self)
+    end
+    
+    def request_interruption() : Void
+      Binding.bg_QThread_requestInterruption_(self)
+    end
+    
+    def interruption_requested?() : Bool
+      Binding.bg_QThread_isInterruptionRequested_(self)
+    end
+    
+    def stack_size=(stack_size : UInt32) : Void
+      Binding.bg_QThread_setStackSize_uint(self, stack_size)
+    end
+    
+    def stack_size() : UInt32
+      Binding.bg_QThread_stackSize_(self)
+    end
+    
+    def event_dispatcher() : AbstractEventDispatcher?
+      Binding.bg_QThread_eventDispatcher_(self).try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def event_dispatcher=(event_dispatcher : AbstractEventDispatcher) : Void
+      Binding.bg_QThread_setEventDispatcher_QAbstractEventDispatcher_X(self, event_dispatcher)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QThread_event_QEvent_X(self, event)
+    end
+    
+    def loop_level() : Int32
+      Binding.bg_QThread_loopLevel_(self)
+    end
+    
+    def current_thread?() : Bool
+      Binding.bg_QThread_isCurrentThread_(self)
+    end
+    
+    def service_level=(service_level : Thread::QualityOfService) : Void
+      Binding.bg_QThread_setServiceLevel_QThread__QualityOfService(self, service_level)
+    end
+    
+    def service_level() : Thread::QualityOfService
+      Binding.bg_QThread_serviceLevel_(self)
+    end
+    
+    def start(unnamed_arg_0 : Thread::Priority = Thread::Priority::InheritPriority) : Void
+      Binding.bg_QThread_start_QThread__Priority(self, unnamed_arg_0)
+    end
+    
+    def terminate() : Void
+      Binding.bg_QThread_terminate_(self)
+    end
+    
+    def exit(retcode : Int32 = 0) : Void
+      Binding.bg_QThread_exit_int(self, retcode)
+    end
+    
+    def quit() : Void
+      Binding.bg_QThread_quit_(self)
+    end
+    
+    def wait() : Bool
+      Binding.bg_QThread_wait_(self)
+    end
+    
+    def wait(deadline : DeadlineTimer) : Bool
+      Binding.bg_QThread_wait_QDeadlineTimer(self, deadline)
+    end
+    
+    def wait(time : LibC::ULong) : Bool
+      Binding.bg_QThread_wait_unsigned_long(self, time)
+    end
+    
+    def self.sleep(unnamed_arg_0 : LibC::ULong) : Void
+      Binding.bg_QThread_sleep_STATIC_unsigned_long(unnamed_arg_0)
+    end
+    
+    def self.msleep(unnamed_arg_0 : LibC::ULong) : Void
+      Binding.bg_QThread_msleep_STATIC_unsigned_long(unnamed_arg_0)
+    end
+    
+    def self.usleep(unnamed_arg_0 : LibC::ULong) : Void
+      Binding.bg_QThread_usleep_STATIC_unsigned_long(unnamed_arg_0)
+    end
+    
+    def self.sleep(nsec : ::Time::Span) : Void
+      Binding.bg_QThread_sleep_STATIC_std__chrono__nanoseconds(Qt::Converter::TimeSpanNanoseconds.wrap(nsec))
+    end
+    
+    protected def run() : Void
+      Binding.bg_QThread_run_(self)
+    end
+    
+    protected def exec() : Int32
+      Binding.bg_QThread_exec_(self)
+    end
+    
+    protected def self.termination_enabled=(enabled : Bool = true) : Void
+      Binding.bg_QThread_setTerminationEnabled_STATIC_bool(enabled)
+    end
+    
+    protected def initialize(dd : Binding::QThreadPrivate*, parent : Object? = nil)
+      result = Binding.bg_QThread__CONSTRUCT_QThreadPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    end
+    
+    def self.static_meta_object() : MetaObject
+      MetaObject.new(unwrap: Binding.bg_QThread_staticMetaObject_STATIC_GETTER_())
+    end
+    
+    enum Priority : UInt32
+      IdlePriority = 0
+      LowestPriority = 1
+      LowPriority = 2
+      NormalPriority = 3
+      HighPriority = 4
+      HighestPriority = 5
+      TimeCriticalPriority = 6
+      InheritPriority = 7
+    end
+    enum QualityOfService : Int32
+      Auto = 0
+      High = 1
+      Eco = 2
+    end
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : ChildEvent) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == Thread %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QThread*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    def on_started(&_proc_ : Proc(Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QThread_CONNECT_started_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
+    def on_finished(&_proc_ : Proc(Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QThread_CONNECT_finished_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
+  end
+  abstract class Runnable
+    @unwrap : Binding::QRunnable*
+    
+    abstract def run() : Void
+    def initialize()
+      result = Binding.bg_QRunnable__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def auto_delete() : Bool
+      Binding.bg_QRunnable_autoDelete_(self)
+    end
+    
+    def auto_delete=(auto_delete : Bool) : Void
+      Binding.bg_QRunnable_setAutoDelete_bool(self, auto_delete)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QRunnable*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class ThreadPool < Object
+    def meta_object() : MetaObject?
+      Binding.bg_QThreadPool_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QThreadPool_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+      Binding.bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThreadPool_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThreadPool_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QThreadPool_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QThreadPool__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(ThreadPool)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QThreadPool_metaObject_", "meta_object", [] of String},
+        {"bg_QThreadPool_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["ChildEvent"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["MetaMethod"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["MetaMethod"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QThreadPool.new(
+      bg_QThreadPool_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QThreadPool_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object().to_unsafe } {% else %} nil {% end %}),
+      bg_QThreadPool_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QThreadPool_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QThreadPool_JUMPTABLE_BgJumptable_QThreadPool_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.global_instance() : ThreadPool?
+      Binding.bg_QThreadPool_globalInstance_STATIC_().try {|ptr| ThreadPool.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def start(runnable : Runnable, priority : Int32 = 0) : Void
+      Binding.bg_QThreadPool_start_QRunnable_X_int(self, runnable, priority)
+    end
+    
+    def try_start(runnable : Runnable) : Bool
+      Binding.bg_QThreadPool_tryStart_QRunnable_X(self, runnable)
+    end
+    
+    def start_on_reserved_thread(runnable : Runnable) : Void
+      Binding.bg_QThreadPool_startOnReservedThread_QRunnable_X(self, runnable)
+    end
+    
+    def expiry_timeout() : Int32
+      Binding.bg_QThreadPool_expiryTimeout_(self)
+    end
+    
+    def expiry_timeout=(expiry_timeout : Int32) : Void
+      Binding.bg_QThreadPool_setExpiryTimeout_int(self, expiry_timeout)
+    end
+    
+    def max_thread_count() : Int32
+      Binding.bg_QThreadPool_maxThreadCount_(self)
+    end
+    
+    def max_thread_count=(max_thread_count : Int32) : Void
+      Binding.bg_QThreadPool_setMaxThreadCount_int(self, max_thread_count)
+    end
+    
+    def active_thread_count() : Int32
+      Binding.bg_QThreadPool_activeThreadCount_(self)
+    end
+    
+    def stack_size=(stack_size : UInt32) : Void
+      Binding.bg_QThreadPool_setStackSize_uint(self, stack_size)
+    end
+    
+    def stack_size() : UInt32
+      Binding.bg_QThreadPool_stackSize_(self)
+    end
+    
+    def thread_priority=(priority : Thread::Priority) : Void
+      Binding.bg_QThreadPool_setThreadPriority_QThread__Priority(self, priority)
+    end
+    
+    def thread_priority() : Thread::Priority
+      Binding.bg_QThreadPool_threadPriority_(self)
+    end
+    
+    def reserve_thread() : Void
+      Binding.bg_QThreadPool_reserveThread_(self)
+    end
+    
+    def release_thread() : Void
+      Binding.bg_QThreadPool_releaseThread_(self)
+    end
+    
+    def service_level=(service_level : Thread::QualityOfService) : Void
+      Binding.bg_QThreadPool_setServiceLevel_QThread__QualityOfService(self, service_level)
+    end
+    
+    def service_level() : Thread::QualityOfService
+      Binding.bg_QThreadPool_serviceLevel_(self)
+    end
+    
+    def wait_for_done(msecs : Int32) : Bool
+      Binding.bg_QThreadPool_waitForDone_int(self, msecs)
+    end
+    
+    def wait_for_done() : Bool
+      Binding.bg_QThreadPool_waitForDone_(self)
+    end
+    
+    def wait_for_done(deadline : DeadlineTimer) : Bool
+      Binding.bg_QThreadPool_waitForDone_QDeadlineTimer(self, deadline)
+    end
+    
+    def clear() : Void
+      Binding.bg_QThreadPool_clear_(self)
+    end
+    
+    def contains(thread : Thread) : Bool
+      Binding.bg_QThreadPool_contains_const_QThread_X(self, thread)
+    end
+    
+    def try_take(runnable : Runnable) : Bool
+      Binding.bg_QThreadPool_tryTake_QRunnable_X(self, runnable)
+    end
+    
+    def self.static_meta_object() : MetaObject
+      MetaObject.new(unwrap: Binding.bg_QThreadPool_staticMetaObject_STATIC_GETTER_())
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : ChildEvent) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == ThreadPool %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QThreadPool*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : ThreadPool)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : ChildEvent) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : MetaMethod) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : MetaMethod) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   class IdentityProxyModel < AbstractProxyModel
     def meta_object() : MetaObject?
@@ -65840,6 +66620,136 @@ module Qt
     end
     
   end
+  class BasicReadWriteLock
+    @unwrap : Binding::QBasicReadWriteLock*
+    
+    def initialize()
+      result = Binding.bg_QBasicReadWriteLock__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def lock_for_read() : Void
+      Binding.bg_QBasicReadWriteLock_lockForRead_(self)
+    end
+    
+    def try_lock_for_read() : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForRead_(self)
+    end
+    
+    def try_lock_for_read(timeout : DeadlineTimer) : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForRead_QDeadlineTimer(self, timeout)
+    end
+    
+    def lock_for_write() : Void
+      Binding.bg_QBasicReadWriteLock_lockForWrite_(self)
+    end
+    
+    def try_lock_for_write() : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForWrite_(self)
+    end
+    
+    def try_lock_for_write(timeout : DeadlineTimer) : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForWrite_QDeadlineTimer(self, timeout)
+    end
+    
+    def unlock() : Void
+      Binding.bg_QBasicReadWriteLock_unlock_(self)
+    end
+    
+    def lock() : Void
+      Binding.bg_QBasicReadWriteLock_lock_(self)
+    end
+    
+    def lock_shared() : Void
+      Binding.bg_QBasicReadWriteLock_lock_shared_(self)
+    end
+    
+    def try_lock() : Bool
+      Binding.bg_QBasicReadWriteLock_try_lock_(self)
+    end
+    
+    def try_lock_shared() : Bool
+      Binding.bg_QBasicReadWriteLock_try_lock_shared_(self)
+    end
+    
+    def unlock_shared() : Void
+      Binding.bg_QBasicReadWriteLock_unlock_shared_(self)
+    end
+    
+    protected def fast_try_lock_for_read(d : Binding::QReadWriteLockPrivate**) : Bool
+      Binding.bg_QBasicReadWriteLock_fastTryLockForRead_QReadWriteLockPrivate_XR(self, d)
+    end
+    
+    protected def try_lock_for_read_internal(timeout : DeadlineTimer, tsan_flags : UInt32) : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForReadInternal_QDeadlineTimer_unsigned_int(self, timeout, tsan_flags)
+    end
+    
+    protected def fast_try_lock_for_write(d : Binding::QReadWriteLockPrivate**) : Bool
+      Binding.bg_QBasicReadWriteLock_fastTryLockForWrite_QReadWriteLockPrivate_XR(self, d)
+    end
+    
+    protected def try_lock_for_write_internal(timeout : DeadlineTimer, tsan_flags : UInt32) : Bool
+      Binding.bg_QBasicReadWriteLock_tryLockForWriteInternal_QDeadlineTimer_unsigned_int(self, timeout, tsan_flags)
+    end
+    
+    protected def contended_try_lock_for_read(timeout : DeadlineTimer, dd : Void*) : Bool
+      Binding.bg_QBasicReadWriteLock_contendedTryLockForRead_QDeadlineTimer_void_X(self, timeout, dd)
+    end
+    
+    protected def contended_try_lock_for_write(timeout : DeadlineTimer, dd : Void*) : Bool
+      Binding.bg_QBasicReadWriteLock_contendedTryLockForWrite_QDeadlineTimer_void_X(self, timeout, dd)
+    end
+    
+    protected def contended_unlock(dd : Void*) : Void
+      Binding.bg_QBasicReadWriteLock_contendedUnlock_void_X(self, dd)
+    end
+    
+    protected def is_contended_lock_for_read(dd : Void*) : Bool
+      Binding.bg_QBasicReadWriteLock_isContendedLockForRead_const_void_X(self, dd)
+    end
+    
+    protected def initialize(d : Binding::QReadWriteLockPrivate*)
+      result = Binding.bg_QBasicReadWriteLock__CONSTRUCT_QReadWriteLockPrivate_X(d)
+    @unwrap = result
+    end
+    
+    STATE_LOCKED_FOR_READ = 1u64
+    STATE_LOCKED_FOR_WRITE = 2u64
+    STATE_MASK = 3u64
+    COUNTER = 16u64
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QBasicReadWriteLock*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class ReadWriteLock < BasicReadWriteLock
+    def initialize(recursion_mode : ReadWriteLock::RecursionMode = ReadWriteLock::RecursionMode::NonRecursive)
+      result = Binding.bg_QReadWriteLock__CONSTRUCT_QReadWriteLock__RecursionMode(recursion_mode)
+    @unwrap = result
+    end
+    
+    def try_lock_for_read(timeout : Int32) : Bool
+      Binding.bg_QReadWriteLock_tryLockForRead_int(self, timeout)
+    end
+    
+    def try_lock_for_write(timeout : Int32) : Bool
+      Binding.bg_QReadWriteLock_tryLockForWrite_int(self, timeout)
+    end
+    
+    enum RecursionMode : UInt32
+      NonRecursive = 0
+      Recursive = 1
+    end
+    def initialize(unwrap : Binding::QReadWriteLock*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   struct Size
     @unwrap : Binding::QSize
     
@@ -67466,6 +68376,86 @@ module Qt
       Superclass.new(self)
     end
   end
+  class Semaphore
+    @unwrap : Binding::QSemaphore*
+    
+    def initialize(n : Int32 = 0)
+      result = Binding.bg_QSemaphore__CONSTRUCT_int(n)
+    @unwrap = result
+    end
+    
+    def acquire(n : Int32 = 1) : Void
+      Binding.bg_QSemaphore_acquire_int(self, n)
+    end
+    
+    def try_acquire(n : Int32 = 1) : Bool
+      Binding.bg_QSemaphore_tryAcquire_int(self, n)
+    end
+    
+    def try_acquire(n : Int32, timeout : Int32) : Bool
+      Binding.bg_QSemaphore_tryAcquire_int_int(self, n, timeout)
+    end
+    
+    def try_acquire(n : Int32, timeout : DeadlineTimer) : Bool
+      Binding.bg_QSemaphore_tryAcquire_int_QDeadlineTimer(self, n, timeout)
+    end
+    
+    def release(n : Int32 = 1) : Void
+      Binding.bg_QSemaphore_release_int(self, n)
+    end
+    
+    def available() : Int32
+      Binding.bg_QSemaphore_available_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QSemaphore*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class SemaphoreReleaser
+    @unwrap : Binding::QSemaphoreReleaser*
+    
+    def initialize()
+      result = Binding.bg_QSemaphoreReleaser__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(sem : Semaphore, n : Int32 = 1)
+      result = Binding.bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_R_int(sem, n)
+    @unwrap = result
+    end
+    
+    def initialize(sem : Semaphore, n : Int32 = 1)
+      result = Binding.bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_X_int(sem, n)
+    @unwrap = result
+    end
+    
+    def swap(other : SemaphoreReleaser) : Void
+      Binding.bg_QSemaphoreReleaser_swap_QSemaphoreReleaser_R(self, other)
+    end
+    
+    def semaphore() : Semaphore?
+      Binding.bg_QSemaphoreReleaser_semaphore_(self).try {|ptr| Semaphore.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def cancel() : Semaphore?
+      Binding.bg_QSemaphoreReleaser_cancel_(self).try {|ptr| Semaphore.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QSemaphoreReleaser*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class SequentialAnimationGroup < AnimationGroup
     def meta_object() : MetaObject?
       Binding.bg_QSequentialAnimationGroup_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
@@ -68583,6 +69573,474 @@ module Qt
       end
       protected def event(event : Event) : Bool
         Binding.bg_QSettings_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : ChildEvent) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : MetaMethod) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : MetaMethod) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class NativeIpcKey
+    @unwrap : Binding::QNativeIpcKey*
+    
+    def self.legacy_default_type_for_os() : NativeIpcKey::Type
+      Binding.bg_QNativeIpcKey_legacyDefaultTypeForOs_STATIC_()
+    end
+    
+    def initialize()
+      result = Binding.bg_QNativeIpcKey__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(type : NativeIpcKey::Type)
+      result = Binding.bg_QNativeIpcKey__CONSTRUCT_QNativeIpcKey__Type(type)
+    @unwrap = result
+    end
+    
+    def initialize(k : String)
+      result = Binding.bg_QNativeIpcKey__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(k))
+    @unwrap = result
+    end
+    
+    def initialize(k : String, type : NativeIpcKey::Type)
+      result = Binding.bg_QNativeIpcKey__CONSTRUCT_const_QString_R_QNativeIpcKey__Type(Qt::Converter::QString.wrap(k), type)
+    @unwrap = result
+    end
+    
+    def initialize(other : NativeIpcKey)
+      result = Binding.bg_QNativeIpcKey__COPY_const_QNativeIpcKey_R(other)
+    @unwrap = result
+    end
+    
+    def assign!(other : NativeIpcKey) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QNativeIpcKey__OPERATOR_assign_const_QNativeIpcKey_R(self, other))
+    end
+    
+    def swap(other : NativeIpcKey) : Void
+      Binding.bg_QNativeIpcKey_swap_QNativeIpcKey_R(self, other)
+    end
+    
+    def empty?() : Bool
+      Binding.bg_QNativeIpcKey_isEmpty_(self)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QNativeIpcKey_isValid_(self)
+    end
+    
+    def type() : NativeIpcKey::Type
+      Binding.bg_QNativeIpcKey_type_(self)
+    end
+    
+    def type=(type : NativeIpcKey::Type) : Void
+      Binding.bg_QNativeIpcKey_setType_QNativeIpcKey__Type(self, type)
+    end
+    
+    def native_key() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QNativeIpcKey_nativeKey_(self))
+    end
+    
+    def native_key=(new_key : String) : Void
+      Binding.bg_QNativeIpcKey_setNativeKey_const_QString_R(self, Qt::Converter::QString.wrap(new_key))
+    end
+    
+    def to_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QNativeIpcKey_toString_(self))
+    end
+    
+    def self.from_string(string : String) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QNativeIpcKey_fromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(string)))
+    end
+    
+    def ==(rhs : NativeIpcKey) : Bool
+      Binding.bg_QNativeIpcKey__OPERATOR_eq_const_QNativeIpcKey_R(self, rhs)
+    end
+    
+    def !=(rhs : NativeIpcKey) : Bool
+      Binding.bg_QNativeIpcKey__OPERATOR_ne_const_QNativeIpcKey_R(self, rhs)
+    end
+    
+    def self.static_meta_object() : MetaObject
+      MetaObject.new(unwrap: Binding.bg_QNativeIpcKey_staticMetaObject_STATIC_GETTER_())
+    end
+    
+    def self.default_type_for_os() : NativeIpcKey::Type
+      Binding.bg_QNativeIpcKey_DefaultTypeForOs_STATIC_GETTER_()
+    end
+    
+    enum Type : UInt16
+      SystemV = 81
+      PosixRealtime = 256
+      Windows = 257
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QNativeIpcKey*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class SharedMemory < Object
+    def meta_object() : MetaObject?
+      Binding.bg_QSharedMemory_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QSharedMemory_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+      Binding.bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QSharedMemory__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SharedMemory)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSharedMemory_metaObject_", "meta_object", [] of String},
+        {"bg_QSharedMemory_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["ChildEvent"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["MetaMethod"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["MetaMethod"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSharedMemory.new(
+      bg_QSharedMemory_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object().to_unsafe } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSharedMemory_JUMPTABLE_BgJumptable_QSharedMemory_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(key : NativeIpcKey, parent : Object? = nil)
+      result = Binding.bg_QSharedMemory__CONSTRUCT_const_QNativeIpcKey_R_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SharedMemory)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSharedMemory_metaObject_", "meta_object", [] of String},
+        {"bg_QSharedMemory_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["ChildEvent"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["MetaMethod"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["MetaMethod"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSharedMemory.new(
+      bg_QSharedMemory_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object().to_unsafe } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSharedMemory_JUMPTABLE_BgJumptable_QSharedMemory_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(key : String, parent : Object? = nil)
+      result = Binding.bg_QSharedMemory__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(key), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SharedMemory)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSharedMemory_metaObject_", "meta_object", [] of String},
+        {"bg_QSharedMemory_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["ChildEvent"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["MetaMethod"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["MetaMethod"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSharedMemory.new(
+      bg_QSharedMemory_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object().to_unsafe } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(MetaMethod.new(unwrap: signal)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSharedMemory_JUMPTABLE_BgJumptable_QSharedMemory_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def key=(key : String) : Void
+      Binding.bg_QSharedMemory_setKey_const_QString_R(self, Qt::Converter::QString.wrap(key))
+    end
+    
+    def key() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_key_(self))
+    end
+    
+    def native_key=(key : NativeIpcKey) : Void
+      Binding.bg_QSharedMemory_setNativeKey_const_QNativeIpcKey_R(self, key)
+    end
+    
+    def native_key=(key : String) : Void
+      Binding.bg_QSharedMemory_setNativeKey_const_QString_R(self, Qt::Converter::QString.wrap(key))
+    end
+    
+    def set_native_key(key : String, type : NativeIpcKey::Type) : Void
+      Binding.bg_QSharedMemory_setNativeKey_const_QString_R_QNativeIpcKey__Type(self, Qt::Converter::QString.wrap(key), type)
+    end
+    
+    def native_key() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_nativeKey_(self))
+    end
+    
+    def native_ipc_key() : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSharedMemory_nativeIpcKey_(self))
+    end
+    
+    def create(size : Int64, mode : SharedMemory::AccessMode = SharedMemory::AccessMode::ReadWrite) : Bool
+      Binding.bg_QSharedMemory_create_qsizetype_QSharedMemory__AccessMode(self, size, mode)
+    end
+    
+    def size() : Int64
+      Binding.bg_QSharedMemory_size_(self)
+    end
+    
+    def attach(mode : SharedMemory::AccessMode = SharedMemory::AccessMode::ReadWrite) : Bool
+      Binding.bg_QSharedMemory_attach_QSharedMemory__AccessMode(self, mode)
+    end
+    
+    def attached?() : Bool
+      Binding.bg_QSharedMemory_isAttached_(self)
+    end
+    
+    def detach() : Bool
+      Binding.bg_QSharedMemory_detach_(self)
+    end
+    
+    def data() : Void*
+      Binding.bg_QSharedMemory_data_(self)
+    end
+    
+    def const_data() : Void*
+      Binding.bg_QSharedMemory_constData_(self)
+    end
+    
+    def lock() : Bool
+      Binding.bg_QSharedMemory_lock_(self)
+    end
+    
+    def unlock() : Bool
+      Binding.bg_QSharedMemory_unlock_(self)
+    end
+    
+    def error() : SharedMemory::SharedMemoryError
+      Binding.bg_QSharedMemory_error_(self)
+    end
+    
+    def error_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSharedMemory_errorString_(self))
+    end
+    
+    def self.is_key_type_supported(type : NativeIpcKey::Type) : Bool
+      Binding.bg_QSharedMemory_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(type)
+    end
+    
+    def self.platform_safe_key(key : String) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R(Qt::Converter::QString.wrap(key)))
+    end
+    
+    def self.platform_safe_key(key : String, type : NativeIpcKey::Type) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(Qt::Converter::QString.wrap(key), type))
+    end
+    
+    def self.legacy_native_key(key : String) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R(Qt::Converter::QString.wrap(key)))
+    end
+    
+    def self.legacy_native_key(key : String, type : NativeIpcKey::Type) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(Qt::Converter::QString.wrap(key), type))
+    end
+    
+    def self.static_meta_object() : MetaObject
+      MetaObject.new(unwrap: Binding.bg_QSharedMemory_staticMetaObject_STATIC_GETTER_())
+    end
+    
+    enum AccessMode : UInt32
+      ReadOnly = 0
+      ReadWrite = 1
+    end
+    enum SharedMemoryError : UInt32
+      NoError = 0
+      PermissionDenied = 1
+      InvalidSize = 2
+      KeyError = 3
+      AlreadyExists = 4
+      NotFound = 5
+      LockError = 6
+      OutOfResources = 7
+      UnknownError = 8
+    end
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : ChildEvent) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : MetaMethod) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == SharedMemory %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QSharedMemory*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : SharedMemory)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
       end
       
       def event_filter(watched : Object, event : Event) : Bool
@@ -70857,6 +72315,117 @@ module Qt
       Superclass.new(self)
     end
   end
+  class SystemSemaphore
+    @unwrap : Binding::QSystemSemaphore*
+    
+    def self.tr(source_text : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSystemSemaphore_tr_STATIC_const_char_X(source_text))
+    end
+    
+    def self.tr(source_text : UInt8*, disambiguation : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X(source_text, disambiguation))
+    end
+    
+    def self.tr(source_text : UInt8*, disambiguation : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X_int(source_text, disambiguation, n))
+    end
+    
+    def initialize(key : NativeIpcKey, initial_value : Int32 = 0, unnamed_arg_2 : SystemSemaphore::AccessMode = SystemSemaphore::AccessMode::Open)
+      result = Binding.bg_QSystemSemaphore__CONSTRUCT_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(key, initial_value, unnamed_arg_2)
+    @unwrap = result
+    end
+    
+    def set_native_key(key : NativeIpcKey, initial_value : Int32 = 0, unnamed_arg_2 : SystemSemaphore::AccessMode = SystemSemaphore::AccessMode::Open) : Void
+      Binding.bg_QSystemSemaphore_setNativeKey_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(self, key, initial_value, unnamed_arg_2)
+    end
+    
+    def set_native_key(key : String, initial_value : Int32 = 0, mode : SystemSemaphore::AccessMode = SystemSemaphore::AccessMode::Open) : Void
+      Binding.bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode(self, Qt::Converter::QString.wrap(key), initial_value, mode)
+    end
+    
+    def set_native_key(key : String, initial_value : Int32, mode : SystemSemaphore::AccessMode, type : NativeIpcKey::Type) : Void
+      Binding.bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode_QNativeIpcKey__Type(self, Qt::Converter::QString.wrap(key), initial_value, mode, type)
+    end
+    
+    def native_ipc_key() : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSystemSemaphore_nativeIpcKey_(self))
+    end
+    
+    def initialize(key : String, initial_value : Int32 = 0, mode : SystemSemaphore::AccessMode = SystemSemaphore::AccessMode::Open)
+      result = Binding.bg_QSystemSemaphore__CONSTRUCT_const_QString_R_int_QSystemSemaphore__AccessMode(Qt::Converter::QString.wrap(key), initial_value, mode)
+    @unwrap = result
+    end
+    
+    def set_key(key : String, initial_value : Int32 = 0, mode : SystemSemaphore::AccessMode = SystemSemaphore::AccessMode::Open) : Void
+      Binding.bg_QSystemSemaphore_setKey_const_QString_R_int_QSystemSemaphore__AccessMode(self, Qt::Converter::QString.wrap(key), initial_value, mode)
+    end
+    
+    def key() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSystemSemaphore_key_(self))
+    end
+    
+    def acquire() : Bool
+      Binding.bg_QSystemSemaphore_acquire_(self)
+    end
+    
+    def release(n : Int32 = 1) : Bool
+      Binding.bg_QSystemSemaphore_release_int(self, n)
+    end
+    
+    def error() : SystemSemaphore::SystemSemaphoreError
+      Binding.bg_QSystemSemaphore_error_(self)
+    end
+    
+    def error_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSystemSemaphore_errorString_(self))
+    end
+    
+    def self.is_key_type_supported(type : NativeIpcKey::Type) : Bool
+      Binding.bg_QSystemSemaphore_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(type)
+    end
+    
+    def self.platform_safe_key(key : String) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R(Qt::Converter::QString.wrap(key)))
+    end
+    
+    def self.platform_safe_key(key : String, type : NativeIpcKey::Type) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(Qt::Converter::QString.wrap(key), type))
+    end
+    
+    def self.legacy_native_key(key : String) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R(Qt::Converter::QString.wrap(key)))
+    end
+    
+    def self.legacy_native_key(key : String, type : NativeIpcKey::Type) : NativeIpcKey
+      NativeIpcKey.new(unwrap: Binding.bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(Qt::Converter::QString.wrap(key), type))
+    end
+    
+    def self.static_meta_object() : MetaObject
+      MetaObject.new(unwrap: Binding.bg_QSystemSemaphore_staticMetaObject_STATIC_GETTER_())
+    end
+    
+    enum AccessMode : UInt32
+      Open = 0
+      Create = 1
+    end
+    enum SystemSemaphoreError : UInt32
+      NoError = 0
+      PermissionDenied = 1
+      KeyError = 2
+      AlreadyExists = 3
+      NotFound = 4
+      OutOfResources = 5
+      UnknownError = 6
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QSystemSemaphore*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TemporaryDir
     @unwrap : Binding::QTemporaryDir*
     
@@ -72367,6 +73936,63 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QUrlQuery*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class WaitCondition
+    @unwrap : Binding::QWaitCondition*
+    
+    def initialize()
+      result = Binding.bg_QWaitCondition__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def wait(locked_mutex : QMutex) : Bool
+      Binding.bg_QWaitCondition_wait_QMutex_X(self, locked_mutex)
+    end
+    
+    def wait(locked_mutex : QMutex, deadline : DeadlineTimer) : Bool
+      Binding.bg_QWaitCondition_wait_QMutex_X_QDeadlineTimer(self, locked_mutex, deadline)
+    end
+    
+    def wait(locked_mutex : QMutex, time : LibC::ULong) : Bool
+      Binding.bg_QWaitCondition_wait_QMutex_X_unsigned_long(self, locked_mutex, time)
+    end
+    
+    def wait(locked_read_write_lock : ReadWriteLock) : Bool
+      Binding.bg_QWaitCondition_wait_QReadWriteLock_X(self, locked_read_write_lock)
+    end
+    
+    def wait(locked_read_write_lock : ReadWriteLock, deadline : DeadlineTimer) : Bool
+      Binding.bg_QWaitCondition_wait_QReadWriteLock_X_QDeadlineTimer(self, locked_read_write_lock, deadline)
+    end
+    
+    def wait(locked_read_write_lock : ReadWriteLock, time : LibC::ULong) : Bool
+      Binding.bg_QWaitCondition_wait_QReadWriteLock_X_unsigned_long(self, locked_read_write_lock, time)
+    end
+    
+    def wake_one() : Void
+      Binding.bg_QWaitCondition_wakeOne_(self)
+    end
+    
+    def wake_all() : Void
+      Binding.bg_QWaitCondition_wakeAll_(self)
+    end
+    
+    def notify_one() : Void
+      Binding.bg_QWaitCondition_notify_one_(self)
+    end
+    
+    def notify_all() : Void
+      Binding.bg_QWaitCondition_notify_all_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QWaitCondition*)
       result = unwrap
     @unwrap = result
     end
@@ -211791,6 +213417,17 @@ module Qt
     end
     
     def initialize(unwrap : Binding::QIODevice*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class RunnableImpl < Runnable
+    def run() : Void
+      Binding.bg_QRunnable_run_(self)
+    end
+    
+    def initialize(unwrap : Binding::QRunnable*)
       result = unwrap
     @unwrap = result
     end

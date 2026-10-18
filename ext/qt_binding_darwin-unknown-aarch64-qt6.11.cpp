@@ -1785,6 +1785,14 @@ extern "C" QFileSystemWatcher * bg_QObject_CAST_FileSystemWatcher_(QObject * _se
   return bindgen_dynamic_cast<QFileSystemWatcher *>(_self_);
 }
 
+extern "C" QThread * bg_QObject_CAST_Thread_(QObject * _self_) {
+  return bindgen_dynamic_cast<QThread *>(_self_);
+}
+
+extern "C" QThreadPool * bg_QObject_CAST_ThreadPool_(QObject * _self_) {
+  return bindgen_dynamic_cast<QThreadPool *>(_self_);
+}
+
 extern "C" QIdentityProxyModel * bg_QObject_CAST_IdentityProxyModel_(QObject * _self_) {
   return bindgen_dynamic_cast<QIdentityProxyModel *>(_self_);
 }
@@ -1835,6 +1843,10 @@ extern "C" QSequentialAnimationGroup * bg_QObject_CAST_SequentialAnimationGroup_
 
 extern "C" QSettings * bg_QObject_CAST_Settings_(QObject * _self_) {
   return bindgen_dynamic_cast<QSettings *>(_self_);
+}
+
+extern "C" QSharedMemory * bg_QObject_CAST_SharedMemory_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSharedMemory *>(_self_);
 }
 
 extern "C" QSignalMapper * bg_QObject_CAST_SignalMapper_(QObject * _self_) {
@@ -7494,6 +7506,62 @@ extern "C" bool bg_QAnimationGroup_event_SUPER_QEvent_X(QAnimationGroup * _self_
 
 extern "C" void bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(BgInherit_QAnimationGroup * _self_, const BgJumptable_QAnimationGroup & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QBasicMutex * bg_QBasicMutex__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QBasicMutex>();
+}
+
+extern "C" void bg_QBasicMutex_lock_(QBasicMutex * _self_) {
+  _self_->lock();
+}
+
+extern "C" void bg_QBasicMutex_unlock_(QBasicMutex * _self_) {
+  _self_->unlock();
+}
+
+extern "C" bool bg_QBasicMutex_tryLock_(QBasicMutex * _self_) {
+  return _self_->tryLock();
+}
+
+extern "C" const bool bg_QBasicMutex_FutexAlwaysAvailable_STATIC_GETTER_() {
+  return QBasicMutex::FutexAlwaysAvailable;
+}
+
+extern "C" QMutex * bg_QMutex__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QMutex>();
+}
+
+extern "C" bool bg_QMutex_tryLock_int(QMutex * _self_, int timeout) {
+  return _self_->tryLock(timeout);
+}
+
+extern "C" bool bg_QMutex_tryLock_QDeadlineTimer(QMutex * _self_, QDeadlineTimer & timeout) {
+  return _self_->tryLock(timeout);
+}
+
+extern "C" QRecursiveMutex * bg_QRecursiveMutex__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QRecursiveMutex>();
+}
+
+extern "C" void bg_QRecursiveMutex_lock_(QRecursiveMutex * _self_) {
+  _self_->lock();
+}
+
+extern "C" bool bg_QRecursiveMutex_tryLock_int(QRecursiveMutex * _self_, int timeout) {
+  return _self_->tryLock(timeout);
+}
+
+extern "C" bool bg_QRecursiveMutex_tryLock_(QRecursiveMutex * _self_) {
+  return _self_->tryLock();
+}
+
+extern "C" bool bg_QRecursiveMutex_tryLock_QDeadlineTimer(QRecursiveMutex * _self_, QDeadlineTimer & timer) {
+  return _self_->tryLock(timer);
+}
+
+extern "C" void bg_QRecursiveMutex_unlock_(QRecursiveMutex * _self_) {
+  _self_->unlock();
 }
 
 extern "C" QBasicTimer * bg_QBasicTimer__CONSTRUCT_() {
@@ -16800,65 +16868,6 @@ extern "C" bool bg_QElapsedTimer__OPERATOR_ge_const_QElapsedTimer_R(QElapsedTime
   return ((*_self_) >= (rhs));
 }
 
-struct BgJumptable_QException {
-  CrystalProc<void> bg_QException_raise_;
-  CrystalProc<QException *> bg_QException_clone_;
-};
-struct BgInherit_QException : public QException {
-  using QException::QException;
-  BgInherit_QException(const QException &other) : QException(other) { }
-  BgJumptable_QException bgJump;
-  void raise() const override {
-    const BgInherit_QException *_self_ = this;
-    if (_self_->bgJump.bg_QException_raise_.isValid()) {
-      _self_->bgJump.bg_QException_raise_();
-    } else {
-      QException::raise();
-    }
-  }
-  
-  QException * clone() const override {
-    const BgInherit_QException *_self_ = this;
-    if (_self_->bgJump.bg_QException_clone_.isValid()) {
-      return _self_->bgJump.bg_QException_clone_();
-    } else {
-      return QException::clone();
-    }
-  }
-  
-};
-extern "C" QException * bg_QException__CONSTRUCT_() {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QException>();
-}
-
-extern "C" QException * bg_QException__COPY_const_QException_R(const QException & unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QException>(unnamed_arg_0);
-}
-
-extern "C" QException * bg_QException__OPERATOR_assign_const_QException_R(QException * _self_, const QException & unnamed_arg_0) {
-  return &(((*_self_) = (unnamed_arg_0)));
-}
-
-extern "C" void bg_QException_raise_(QException * _self_) {
-  _self_->raise();
-}
-
-extern "C" QException * bg_QException_clone_(QException * _self_) {
-  return _self_->clone();
-}
-
-extern "C" void bg_QException_raise_SUPER_(QException * _self_) {
-  _self_->QException::raise();
-}
-
-extern "C" QException * bg_QException_clone_SUPER_(QException * _self_) {
-  return _self_->QException::clone();
-}
-
-extern "C" void bg_BgInherit_QException_JUMPTABLE_BgJumptable_QException_R(BgInherit_QException * _self_, const BgJumptable_QException & table) {
-  _self_->bgJump = (table);
-}
-
 struct BgJumptable_QFileSelector {
   CrystalProc<const QMetaObject *> bg_QFileSelector_metaObject_;
   CrystalProc<void *, const char *> bg_QFileSelector_qt_metacast_const_char_X;
@@ -17196,6 +17205,432 @@ extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_directoryChan
 }
 
 extern "C" void bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(BgInherit_QFileSystemWatcher * _self_, const BgJumptable_QFileSystemWatcher & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" const QMetaObject * bg_QThread_metaObject_(QThread * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QThread_qt_metacast_const_char_X(QThread * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QThread_qt_metacall_QMetaObject__Call_int_void_XX(QThread * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QThread_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QThread::tr(s));
+}
+
+extern "C" CrystalString bg_QThread_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QThread::tr(s, c));
+}
+
+extern "C" CrystalString bg_QThread_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QThread::tr(s, c, n));
+}
+
+extern "C" void * bg_QThread_currentThreadId_STATIC_() {
+  return QThread::currentThreadId();
+}
+
+extern "C" QThread * bg_QThread_currentThread_STATIC_() {
+  return QThread::currentThread();
+}
+
+extern "C" bool bg_QThread_isMainThread_STATIC_() {
+  return QThread::isMainThread();
+}
+
+extern "C" int bg_QThread_idealThreadCount_STATIC_() {
+  return QThread::idealThreadCount();
+}
+
+extern "C" void bg_QThread_yieldCurrentThread_STATIC_() {
+  QThread::yieldCurrentThread();
+}
+
+extern "C" QThread * bg_QThread__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<QThread>(parent);
+}
+
+extern "C" void bg_QThread_setPriority_QThread__Priority(QThread * _self_, QThread::Priority priority) {
+  _self_->setPriority(priority);
+}
+
+extern "C" QThread::Priority bg_QThread_priority_(QThread * _self_) {
+  return _self_->priority();
+}
+
+extern "C" bool bg_QThread_isFinished_(QThread * _self_) {
+  return _self_->isFinished();
+}
+
+extern "C" bool bg_QThread_isRunning_(QThread * _self_) {
+  return _self_->isRunning();
+}
+
+extern "C" void bg_QThread_requestInterruption_(QThread * _self_) {
+  _self_->requestInterruption();
+}
+
+extern "C" bool bg_QThread_isInterruptionRequested_(QThread * _self_) {
+  return _self_->isInterruptionRequested();
+}
+
+extern "C" void bg_QThread_setStackSize_uint(QThread * _self_, uint stackSize) {
+  _self_->setStackSize(stackSize);
+}
+
+extern "C" uint bg_QThread_stackSize_(QThread * _self_) {
+  return _self_->stackSize();
+}
+
+extern "C" QAbstractEventDispatcher * bg_QThread_eventDispatcher_(QThread * _self_) {
+  return _self_->eventDispatcher();
+}
+
+extern "C" void bg_QThread_setEventDispatcher_QAbstractEventDispatcher_X(QThread * _self_, QAbstractEventDispatcher * eventDispatcher) {
+  _self_->setEventDispatcher(eventDispatcher);
+}
+
+extern "C" bool bg_QThread_event_QEvent_X(QThread * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" int bg_QThread_loopLevel_(QThread * _self_) {
+  return _self_->loopLevel();
+}
+
+extern "C" bool bg_QThread_isCurrentThread_(QThread * _self_) {
+  return _self_->isCurrentThread();
+}
+
+extern "C" void bg_QThread_setServiceLevel_QThread__QualityOfService(QThread * _self_, QThread::QualityOfService serviceLevel) {
+  _self_->setServiceLevel(serviceLevel);
+}
+
+extern "C" QThread::QualityOfService bg_QThread_serviceLevel_(QThread * _self_) {
+  return _self_->serviceLevel();
+}
+
+extern "C" void bg_QThread_start_QThread__Priority(QThread * _self_, QThread::Priority unnamed_arg_0) {
+  _self_->start(unnamed_arg_0);
+}
+
+extern "C" void bg_QThread_terminate_(QThread * _self_) {
+  _self_->terminate();
+}
+
+extern "C" void bg_QThread_exit_int(QThread * _self_, int retcode) {
+  _self_->exit(retcode);
+}
+
+extern "C" void bg_QThread_quit_(QThread * _self_) {
+  _self_->quit();
+}
+
+extern "C" bool bg_QThread_wait_(QThread * _self_) {
+  return _self_->wait();
+}
+
+extern "C" bool bg_QThread_wait_QDeadlineTimer(QThread * _self_, QDeadlineTimer & deadline) {
+  return _self_->wait(deadline);
+}
+
+extern "C" bool bg_QThread_wait_unsigned_long(QThread * _self_, unsigned long time) {
+  return _self_->wait(time);
+}
+
+extern "C" void bg_QThread_sleep_STATIC_unsigned_long(unsigned long unnamed_arg_0) {
+  QThread::sleep(unnamed_arg_0);
+}
+
+extern "C" void bg_QThread_msleep_STATIC_unsigned_long(unsigned long unnamed_arg_0) {
+  QThread::msleep(unnamed_arg_0);
+}
+
+extern "C" void bg_QThread_usleep_STATIC_unsigned_long(unsigned long unnamed_arg_0) {
+  QThread::usleep(unnamed_arg_0);
+}
+
+extern "C" void bg_QThread_sleep_STATIC_std__chrono__nanoseconds(int64_t nsec) {
+  QThread::sleep(std::chrono::nanoseconds(nsec));
+}
+
+extern "C" void bg_QThread_run_(QThread * _self_) {
+  _self_->run();
+}
+
+extern "C" int bg_QThread_exec_(QThread * _self_) {
+  return _self_->exec();
+}
+
+extern "C" void bg_QThread_setTerminationEnabled_STATIC_bool(bool enabled) {
+  QThread::setTerminationEnabled(enabled);
+}
+
+extern "C" QThread * bg_QThread__CONSTRUCT_QThreadPrivate_R_QObject_X(QThreadPrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<QThread>(dd, parent);
+}
+
+extern "C" const QMetaObject * bg_QThread_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QThread::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QThread_CONNECT_started_CrystalProc_void_(QThread * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QThread::*)())&QThread::started, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QThread_CONNECT_finished_CrystalProc_void_(QThread * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QThread::*)())&QThread::finished, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QRunnable_run_(QRunnable * _self_) {
+  _self_->run();
+}
+
+extern "C" bool bg_QRunnable_autoDelete_(QRunnable * _self_) {
+  return _self_->autoDelete();
+}
+
+extern "C" void bg_QRunnable_setAutoDelete_bool(QRunnable * _self_, bool autoDelete) {
+  _self_->setAutoDelete(autoDelete);
+}
+
+struct BgJumptable_QThreadPool {
+  CrystalProc<const QMetaObject *> bg_QThreadPool_metaObject_;
+  CrystalProc<void *, const char *> bg_QThreadPool_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QThreadPool : public QThreadPool {
+  using QThreadPool::QThreadPool;
+  BgJumptable_QThreadPool bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QThreadPool_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QThreadPool_metaObject_();
+    } else {
+      return QThreadPool::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QThreadPool_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QThreadPool_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QThreadPool::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QThreadPool::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QThreadPool::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QThreadPool::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QThreadPool::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QThreadPool::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QThreadPool::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QThreadPool::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QThreadPool *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QThreadPool::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QThreadPool_metaObject_(QThreadPool * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QThreadPool_qt_metacast_const_char_X(QThreadPool * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QThreadPool_qt_metacall_QMetaObject__Call_int_void_XX(QThreadPool * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QThreadPool_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QThreadPool::tr(s));
+}
+
+extern "C" CrystalString bg_QThreadPool_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QThreadPool::tr(s, c));
+}
+
+extern "C" CrystalString bg_QThreadPool_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QThreadPool::tr(s, c, n));
+}
+
+extern "C" QThreadPool * bg_QThreadPool__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QThreadPool>(parent);
+}
+
+extern "C" QThreadPool * bg_QThreadPool_globalInstance_STATIC_() {
+  return QThreadPool::globalInstance();
+}
+
+extern "C" void bg_QThreadPool_start_QRunnable_X_int(QThreadPool * _self_, QRunnable * runnable, int priority) {
+  _self_->start(runnable, priority);
+}
+
+extern "C" bool bg_QThreadPool_tryStart_QRunnable_X(QThreadPool * _self_, QRunnable * runnable) {
+  return _self_->tryStart(runnable);
+}
+
+extern "C" void bg_QThreadPool_startOnReservedThread_QRunnable_X(QThreadPool * _self_, QRunnable * runnable) {
+  _self_->startOnReservedThread(runnable);
+}
+
+extern "C" int bg_QThreadPool_expiryTimeout_(QThreadPool * _self_) {
+  return _self_->expiryTimeout();
+}
+
+extern "C" void bg_QThreadPool_setExpiryTimeout_int(QThreadPool * _self_, int expiryTimeout) {
+  _self_->setExpiryTimeout(expiryTimeout);
+}
+
+extern "C" int bg_QThreadPool_maxThreadCount_(QThreadPool * _self_) {
+  return _self_->maxThreadCount();
+}
+
+extern "C" void bg_QThreadPool_setMaxThreadCount_int(QThreadPool * _self_, int maxThreadCount) {
+  _self_->setMaxThreadCount(maxThreadCount);
+}
+
+extern "C" int bg_QThreadPool_activeThreadCount_(QThreadPool * _self_) {
+  return _self_->activeThreadCount();
+}
+
+extern "C" void bg_QThreadPool_setStackSize_uint(QThreadPool * _self_, uint stackSize) {
+  _self_->setStackSize(stackSize);
+}
+
+extern "C" uint bg_QThreadPool_stackSize_(QThreadPool * _self_) {
+  return _self_->stackSize();
+}
+
+extern "C" void bg_QThreadPool_setThreadPriority_QThread__Priority(QThreadPool * _self_, QThread::Priority priority) {
+  _self_->setThreadPriority(priority);
+}
+
+extern "C" QThread::Priority bg_QThreadPool_threadPriority_(QThreadPool * _self_) {
+  return _self_->threadPriority();
+}
+
+extern "C" void bg_QThreadPool_reserveThread_(QThreadPool * _self_) {
+  _self_->reserveThread();
+}
+
+extern "C" void bg_QThreadPool_releaseThread_(QThreadPool * _self_) {
+  _self_->releaseThread();
+}
+
+extern "C" void bg_QThreadPool_setServiceLevel_QThread__QualityOfService(QThreadPool * _self_, QThread::QualityOfService serviceLevel) {
+  _self_->setServiceLevel(serviceLevel);
+}
+
+extern "C" QThread::QualityOfService bg_QThreadPool_serviceLevel_(QThreadPool * _self_) {
+  return _self_->serviceLevel();
+}
+
+extern "C" bool bg_QThreadPool_waitForDone_int(QThreadPool * _self_, int msecs) {
+  return _self_->waitForDone(msecs);
+}
+
+extern "C" bool bg_QThreadPool_waitForDone_(QThreadPool * _self_) {
+  return _self_->waitForDone();
+}
+
+extern "C" bool bg_QThreadPool_waitForDone_QDeadlineTimer(QThreadPool * _self_, QDeadlineTimer & deadline) {
+  return _self_->waitForDone(deadline);
+}
+
+extern "C" void bg_QThreadPool_clear_(QThreadPool * _self_) {
+  _self_->clear();
+}
+
+extern "C" bool bg_QThreadPool_contains_const_QThread_X(QThreadPool * _self_, const QThread * thread) {
+  return _self_->contains(thread);
+}
+
+extern "C" bool bg_QThreadPool_tryTake_QRunnable_X(QThreadPool * _self_, QRunnable * runnable) {
+  return _self_->tryTake(runnable);
+}
+
+extern "C" const QMetaObject * bg_QThreadPool_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QThreadPool::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QThreadPool_JUMPTABLE_BgJumptable_QThreadPool_R(BgInherit_QThreadPool * _self_, const BgJumptable_QThreadPool & table) {
   _self_->bgJump = (table);
 }
 
@@ -23881,6 +24316,106 @@ extern "C" QRandomGenerator64 * bg_QRandomGenerator64__OPERATOR_assign_const_QRa
   return &(((*_self_) = (unnamed_arg_0)));
 }
 
+extern "C" QBasicReadWriteLock * bg_QBasicReadWriteLock__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QBasicReadWriteLock>();
+}
+
+extern "C" void bg_QBasicReadWriteLock_lockForRead_(QBasicReadWriteLock * _self_) {
+  _self_->lockForRead();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForRead_(QBasicReadWriteLock * _self_) {
+  return _self_->tryLockForRead();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForRead_QDeadlineTimer(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout) {
+  return _self_->tryLockForRead(timeout);
+}
+
+extern "C" void bg_QBasicReadWriteLock_lockForWrite_(QBasicReadWriteLock * _self_) {
+  _self_->lockForWrite();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForWrite_(QBasicReadWriteLock * _self_) {
+  return _self_->tryLockForWrite();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForWrite_QDeadlineTimer(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout) {
+  return _self_->tryLockForWrite(timeout);
+}
+
+extern "C" void bg_QBasicReadWriteLock_unlock_(QBasicReadWriteLock * _self_) {
+  _self_->unlock();
+}
+
+extern "C" void bg_QBasicReadWriteLock_lock_(QBasicReadWriteLock * _self_) {
+  _self_->lock();
+}
+
+extern "C" void bg_QBasicReadWriteLock_lock_shared_(QBasicReadWriteLock * _self_) {
+  _self_->lock_shared();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_try_lock_(QBasicReadWriteLock * _self_) {
+  return _self_->try_lock();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_try_lock_shared_(QBasicReadWriteLock * _self_) {
+  return _self_->try_lock_shared();
+}
+
+extern "C" void bg_QBasicReadWriteLock_unlock_shared_(QBasicReadWriteLock * _self_) {
+  _self_->unlock_shared();
+}
+
+extern "C" bool bg_QBasicReadWriteLock_fastTryLockForRead_QReadWriteLockPrivate_XR(QBasicReadWriteLock * _self_, QReadWriteLockPrivate *& d) {
+  return _self_->fastTryLockForRead(d);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForReadInternal_QDeadlineTimer_unsigned_int(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout, unsigned int tsanFlags) {
+  return _self_->tryLockForReadInternal(timeout, tsanFlags);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_fastTryLockForWrite_QReadWriteLockPrivate_XR(QBasicReadWriteLock * _self_, QReadWriteLockPrivate *& d) {
+  return _self_->fastTryLockForWrite(d);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_tryLockForWriteInternal_QDeadlineTimer_unsigned_int(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout, unsigned int tsanFlags) {
+  return _self_->tryLockForWriteInternal(timeout, tsanFlags);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_contendedTryLockForRead_QDeadlineTimer_void_X(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout, void * dd) {
+  return _self_->contendedTryLockForRead(timeout, dd);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_contendedTryLockForWrite_QDeadlineTimer_void_X(QBasicReadWriteLock * _self_, QDeadlineTimer & timeout, void * dd) {
+  return _self_->contendedTryLockForWrite(timeout, dd);
+}
+
+extern "C" void bg_QBasicReadWriteLock_contendedUnlock_void_X(QBasicReadWriteLock * _self_, void * dd) {
+  _self_->contendedUnlock(dd);
+}
+
+extern "C" bool bg_QBasicReadWriteLock_isContendedLockForRead_const_void_X(QBasicReadWriteLock * _self_, const void * dd) {
+  return _self_->isContendedLockForRead(dd);
+}
+
+extern "C" QBasicReadWriteLock * bg_QBasicReadWriteLock__CONSTRUCT_QReadWriteLockPrivate_X(QReadWriteLockPrivate * d) {
+  return new (UseGC) CrystalGCWrapper<QBasicReadWriteLock>(d);
+}
+
+extern "C" QReadWriteLock * bg_QReadWriteLock__CONSTRUCT_QReadWriteLock__RecursionMode(QReadWriteLock::RecursionMode recursionMode) {
+  return new (UseGC) CrystalGCWrapper<QReadWriteLock>(recursionMode);
+}
+
+extern "C" bool bg_QReadWriteLock_tryLockForRead_int(QReadWriteLock * _self_, int timeout) {
+  return _self_->tryLockForRead(timeout);
+}
+
+extern "C" bool bg_QReadWriteLock_tryLockForWrite_int(QReadWriteLock * _self_, int timeout) {
+  return _self_->tryLockForWrite(timeout);
+}
+
 extern "C" QSize bg_QSize__CONSTRUCT_() {
   return *(bg_deref<QSize>());
 }
@@ -25324,6 +25859,58 @@ extern "C" void bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(BgInher
   _self_->bgJump = (table);
 }
 
+extern "C" QSemaphore * bg_QSemaphore__CONSTRUCT_int(int n) {
+  return new (UseGC) CrystalGCWrapper<QSemaphore>(n);
+}
+
+extern "C" void bg_QSemaphore_acquire_int(QSemaphore * _self_, int n) {
+  _self_->acquire(n);
+}
+
+extern "C" bool bg_QSemaphore_tryAcquire_int(QSemaphore * _self_, int n) {
+  return _self_->tryAcquire(n);
+}
+
+extern "C" bool bg_QSemaphore_tryAcquire_int_int(QSemaphore * _self_, int n, int timeout) {
+  return _self_->tryAcquire(n, timeout);
+}
+
+extern "C" bool bg_QSemaphore_tryAcquire_int_QDeadlineTimer(QSemaphore * _self_, int n, QDeadlineTimer & timeout) {
+  return _self_->tryAcquire(n, timeout);
+}
+
+extern "C" void bg_QSemaphore_release_int(QSemaphore * _self_, int n) {
+  _self_->release(n);
+}
+
+extern "C" int bg_QSemaphore_available_(QSemaphore * _self_) {
+  return _self_->available();
+}
+
+extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>();
+}
+
+extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_R_int(QSemaphore & sem, int n) {
+  return new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n);
+}
+
+extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_X_int(QSemaphore * sem, int n) {
+  return new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n);
+}
+
+extern "C" void bg_QSemaphoreReleaser_swap_QSemaphoreReleaser_R(QSemaphoreReleaser * _self_, QSemaphoreReleaser & other) {
+  _self_->swap(other);
+}
+
+extern "C" QSemaphore * bg_QSemaphoreReleaser_semaphore_(QSemaphoreReleaser * _self_) {
+  return _self_->semaphore();
+}
+
+extern "C" QSemaphore * bg_QSemaphoreReleaser_cancel_(QSemaphoreReleaser * _self_) {
+  return _self_->cancel();
+}
+
 struct BgJumptable_QSequentialAnimationGroup {
   CrystalProc<const QMetaObject *> bg_QSequentialAnimationGroup_metaObject_;
   CrystalProc<void *, const char *> bg_QSequentialAnimationGroup_qt_metacast_const_char_X;
@@ -25885,6 +26472,328 @@ extern "C" bool bg_QSettings_event_SUPER_QEvent_X(QSettings * _self_, QEvent * e
 }
 
 extern "C" void bg_BgInherit_QSettings_JUMPTABLE_BgJumptable_QSettings_R(BgInherit_QSettings * _self_, const BgJumptable_QSettings & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QNativeIpcKey::Type bg_QNativeIpcKey_legacyDefaultTypeForOs_STATIC_() {
+  return QNativeIpcKey::legacyDefaultTypeForOs();
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QNativeIpcKey>();
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__CONSTRUCT_QNativeIpcKey__Type(QNativeIpcKey::Type type) {
+  return new (UseGC) CrystalGCWrapper<QNativeIpcKey>(type);
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__CONSTRUCT_const_QString_R(const CrystalString k) {
+  return new (UseGC) CrystalGCWrapper<QNativeIpcKey>(([&]() { auto &&bg_value = (k); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__CONSTRUCT_const_QString_R_QNativeIpcKey__Type(const CrystalString k, QNativeIpcKey::Type type) {
+  return new (UseGC) CrystalGCWrapper<QNativeIpcKey>(([&]() { auto &&bg_value = (k); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type);
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__COPY_const_QNativeIpcKey_R(const QNativeIpcKey & other) {
+  return new (UseGC) CrystalGCWrapper<QNativeIpcKey>(other);
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey__OPERATOR_assign_const_QNativeIpcKey_R(QNativeIpcKey * _self_, const QNativeIpcKey & other) {
+  return &(((*_self_) = (other)));
+}
+
+extern "C" void bg_QNativeIpcKey_swap_QNativeIpcKey_R(QNativeIpcKey * _self_, QNativeIpcKey & other) {
+  _self_->swap(other);
+}
+
+extern "C" bool bg_QNativeIpcKey_isEmpty_(QNativeIpcKey * _self_) {
+  return _self_->isEmpty();
+}
+
+extern "C" bool bg_QNativeIpcKey_isValid_(QNativeIpcKey * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" QNativeIpcKey::Type bg_QNativeIpcKey_type_(QNativeIpcKey * _self_) {
+  return _self_->type();
+}
+
+extern "C" void bg_QNativeIpcKey_setType_QNativeIpcKey__Type(QNativeIpcKey * _self_, QNativeIpcKey::Type type) {
+  _self_->setType(type);
+}
+
+extern "C" CrystalString bg_QNativeIpcKey_nativeKey_(QNativeIpcKey * _self_) {
+  return qstring_to_crystal(_self_->nativeKey());
+}
+
+extern "C" void bg_QNativeIpcKey_setNativeKey_const_QString_R(QNativeIpcKey * _self_, const CrystalString newKey) {
+  _self_->setNativeKey(([&]() { auto &&bg_value = (newKey); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QNativeIpcKey_toString_(QNativeIpcKey * _self_) {
+  return qstring_to_crystal(_self_->toString());
+}
+
+extern "C" QNativeIpcKey * bg_QNativeIpcKey_fromString_STATIC_const_QString_R(const CrystalString string) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QNativeIpcKey::fromString(([&]() { auto &&bg_value = (string); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" bool bg_QNativeIpcKey__OPERATOR_eq_const_QNativeIpcKey_R(QNativeIpcKey * _self_, const QNativeIpcKey & rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QNativeIpcKey__OPERATOR_ne_const_QNativeIpcKey_R(QNativeIpcKey * _self_, const QNativeIpcKey & rhs) {
+  return ((*_self_) != (rhs));
+}
+
+extern "C" const QMetaObject * bg_QNativeIpcKey_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QNativeIpcKey::staticMetaObject);
+}
+
+extern "C" const QNativeIpcKey::Type bg_QNativeIpcKey_DefaultTypeForOs_STATIC_GETTER_() {
+  return QNativeIpcKey::DefaultTypeForOs;
+}
+
+struct BgJumptable_QSharedMemory {
+  CrystalProc<const QMetaObject *> bg_QSharedMemory_metaObject_;
+  CrystalProc<void *, const char *> bg_QSharedMemory_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSharedMemory : public QSharedMemory {
+  using QSharedMemory::QSharedMemory;
+  BgJumptable_QSharedMemory bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QSharedMemory_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSharedMemory_metaObject_();
+    } else {
+      return QSharedMemory::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QSharedMemory_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSharedMemory_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSharedMemory::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSharedMemory::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QSharedMemory::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSharedMemory::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSharedMemory::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSharedMemory::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSharedMemory::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSharedMemory::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSharedMemory *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSharedMemory::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSharedMemory_metaObject_(QSharedMemory * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSharedMemory_qt_metacast_const_char_X(QSharedMemory * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSharedMemory_qt_metacall_QMetaObject__Call_int_void_XX(QSharedMemory * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSharedMemory_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSharedMemory::tr(s));
+}
+
+extern "C" CrystalString bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSharedMemory::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSharedMemory_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSharedMemory::tr(s, c, n));
+}
+
+extern "C" QSharedMemory * bg_QSharedMemory__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSharedMemory>(parent);
+}
+
+extern "C" QSharedMemory * bg_QSharedMemory__CONSTRUCT_const_QNativeIpcKey_R_QObject_X(const QNativeIpcKey & key, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSharedMemory>(key, parent);
+}
+
+extern "C" QSharedMemory * bg_QSharedMemory__CONSTRUCT_const_QString_R_QObject_X(const CrystalString key, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSharedMemory>(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" void bg_QSharedMemory_setKey_const_QString_R(QSharedMemory * _self_, const CrystalString key) {
+  _self_->setKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QSharedMemory_key_(QSharedMemory * _self_) {
+  return qstring_to_crystal(_self_->key());
+}
+
+extern "C" void bg_QSharedMemory_setNativeKey_const_QNativeIpcKey_R(QSharedMemory * _self_, const QNativeIpcKey & key) {
+  _self_->setNativeKey(key);
+}
+
+extern "C" void bg_QSharedMemory_setNativeKey_const_QString_R(QSharedMemory * _self_, const CrystalString key) {
+  _self_->setNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QSharedMemory_setNativeKey_const_QString_R_QNativeIpcKey__Type(QSharedMemory * _self_, const CrystalString key, QNativeIpcKey::Type type) {
+  _self_->setNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type);
+}
+
+extern "C" CrystalString bg_QSharedMemory_nativeKey_(QSharedMemory * _self_) {
+  return qstring_to_crystal(_self_->nativeKey());
+}
+
+extern "C" QNativeIpcKey * bg_QSharedMemory_nativeIpcKey_(QSharedMemory * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (_self_->nativeIpcKey());
+}
+
+extern "C" bool bg_QSharedMemory_create_qsizetype_QSharedMemory__AccessMode(QSharedMemory * _self_, qsizetype size, QSharedMemory::AccessMode mode) {
+  return _self_->create(size, mode);
+}
+
+extern "C" qsizetype bg_QSharedMemory_size_(QSharedMemory * _self_) {
+  return _self_->size();
+}
+
+extern "C" bool bg_QSharedMemory_attach_QSharedMemory__AccessMode(QSharedMemory * _self_, QSharedMemory::AccessMode mode) {
+  return _self_->attach(mode);
+}
+
+extern "C" bool bg_QSharedMemory_isAttached_(QSharedMemory * _self_) {
+  return _self_->isAttached();
+}
+
+extern "C" bool bg_QSharedMemory_detach_(QSharedMemory * _self_) {
+  return _self_->detach();
+}
+
+extern "C" void * bg_QSharedMemory_data_(QSharedMemory * _self_) {
+  return _self_->data();
+}
+
+extern "C" const void * bg_QSharedMemory_constData_(QSharedMemory * _self_) {
+  return _self_->constData();
+}
+
+extern "C" bool bg_QSharedMemory_lock_(QSharedMemory * _self_) {
+  return _self_->lock();
+}
+
+extern "C" bool bg_QSharedMemory_unlock_(QSharedMemory * _self_) {
+  return _self_->unlock();
+}
+
+extern "C" QSharedMemory::SharedMemoryError bg_QSharedMemory_error_(QSharedMemory * _self_) {
+  return _self_->error();
+}
+
+extern "C" CrystalString bg_QSharedMemory_errorString_(QSharedMemory * _self_) {
+  return qstring_to_crystal(_self_->errorString());
+}
+
+extern "C" bool bg_QSharedMemory_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(QNativeIpcKey::Type type) {
+  return QSharedMemory::isKeyTypeSupported(type);
+}
+
+extern "C" QNativeIpcKey * bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R(const CrystalString key) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSharedMemory::platformSafeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QNativeIpcKey * bg_QSharedMemory_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(const CrystalString key, QNativeIpcKey::Type type) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSharedMemory::platformSafeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type));
+}
+
+extern "C" QNativeIpcKey * bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R(const CrystalString key) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSharedMemory::legacyNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QNativeIpcKey * bg_QSharedMemory_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(const CrystalString key, QNativeIpcKey::Type type) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSharedMemory::legacyNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type));
+}
+
+extern "C" const QMetaObject * bg_QSharedMemory_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSharedMemory::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QSharedMemory_JUMPTABLE_BgJumptable_QSharedMemory_R(BgInherit_QSharedMemory * _self_, const BgJumptable_QSharedMemory & table) {
   _self_->bgJump = (table);
 }
 
@@ -28127,6 +29036,90 @@ extern "C" void bg_BgInherit_QStringListModel_JUMPTABLE_BgJumptable_QStringListM
   _self_->bgJump = (table);
 }
 
+extern "C" CrystalString bg_QSystemSemaphore_tr_STATIC_const_char_X(const char * sourceText) {
+  return qstring_to_crystal(QSystemSemaphore::tr(sourceText));
+}
+
+extern "C" CrystalString bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X(const char * sourceText, const char * disambiguation) {
+  return qstring_to_crystal(QSystemSemaphore::tr(sourceText, disambiguation));
+}
+
+extern "C" CrystalString bg_QSystemSemaphore_tr_STATIC_const_char_X_const_char_X_int(const char * sourceText, const char * disambiguation, int n) {
+  return qstring_to_crystal(QSystemSemaphore::tr(sourceText, disambiguation, n));
+}
+
+extern "C" QSystemSemaphore * bg_QSystemSemaphore__CONSTRUCT_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(const QNativeIpcKey & key, int initialValue, QSystemSemaphore::AccessMode unnamed_arg_2) {
+  return new (UseGC) CrystalGCWrapper<QSystemSemaphore>(key, initialValue, unnamed_arg_2);
+}
+
+extern "C" void bg_QSystemSemaphore_setNativeKey_const_QNativeIpcKey_R_int_QSystemSemaphore__AccessMode(QSystemSemaphore * _self_, const QNativeIpcKey & key, int initialValue, QSystemSemaphore::AccessMode unnamed_arg_2) {
+  _self_->setNativeKey(key, initialValue, unnamed_arg_2);
+}
+
+extern "C" void bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode(QSystemSemaphore * _self_, const CrystalString key, int initialValue, QSystemSemaphore::AccessMode mode) {
+  _self_->setNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), initialValue, mode);
+}
+
+extern "C" void bg_QSystemSemaphore_setNativeKey_const_QString_R_int_QSystemSemaphore__AccessMode_QNativeIpcKey__Type(QSystemSemaphore * _self_, const CrystalString key, int initialValue, QSystemSemaphore::AccessMode mode, QNativeIpcKey::Type type) {
+  _self_->setNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), initialValue, mode, type);
+}
+
+extern "C" QNativeIpcKey * bg_QSystemSemaphore_nativeIpcKey_(QSystemSemaphore * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (_self_->nativeIpcKey());
+}
+
+extern "C" QSystemSemaphore * bg_QSystemSemaphore__CONSTRUCT_const_QString_R_int_QSystemSemaphore__AccessMode(const CrystalString key, int initialValue, QSystemSemaphore::AccessMode mode) {
+  return new (UseGC) CrystalGCWrapper<QSystemSemaphore>(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), initialValue, mode);
+}
+
+extern "C" void bg_QSystemSemaphore_setKey_const_QString_R_int_QSystemSemaphore__AccessMode(QSystemSemaphore * _self_, const CrystalString key, int initialValue, QSystemSemaphore::AccessMode mode) {
+  _self_->setKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), initialValue, mode);
+}
+
+extern "C" CrystalString bg_QSystemSemaphore_key_(QSystemSemaphore * _self_) {
+  return qstring_to_crystal(_self_->key());
+}
+
+extern "C" bool bg_QSystemSemaphore_acquire_(QSystemSemaphore * _self_) {
+  return _self_->acquire();
+}
+
+extern "C" bool bg_QSystemSemaphore_release_int(QSystemSemaphore * _self_, int n) {
+  return _self_->release(n);
+}
+
+extern "C" QSystemSemaphore::SystemSemaphoreError bg_QSystemSemaphore_error_(QSystemSemaphore * _self_) {
+  return _self_->error();
+}
+
+extern "C" CrystalString bg_QSystemSemaphore_errorString_(QSystemSemaphore * _self_) {
+  return qstring_to_crystal(_self_->errorString());
+}
+
+extern "C" bool bg_QSystemSemaphore_isKeyTypeSupported_STATIC_QNativeIpcKey__Type(QNativeIpcKey::Type type) {
+  return QSystemSemaphore::isKeyTypeSupported(type);
+}
+
+extern "C" QNativeIpcKey * bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R(const CrystalString key) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSystemSemaphore::platformSafeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QNativeIpcKey * bg_QSystemSemaphore_platformSafeKey_STATIC_const_QString_R_QNativeIpcKey__Type(const CrystalString key, QNativeIpcKey::Type type) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSystemSemaphore::platformSafeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type));
+}
+
+extern "C" QNativeIpcKey * bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R(const CrystalString key) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSystemSemaphore::legacyNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QNativeIpcKey * bg_QSystemSemaphore_legacyNativeKey_STATIC_const_QString_R_QNativeIpcKey__Type(const CrystalString key, QNativeIpcKey::Type type) {
+  return new (UseGC, bindgen_gc_finalizer<QNativeIpcKey>()) QNativeIpcKey (QSystemSemaphore::legacyNativeKey(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), type));
+}
+
+extern "C" const QMetaObject * bg_QSystemSemaphore_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSystemSemaphore::staticMetaObject);
+}
+
 extern "C" QTemporaryDir * bg_QTemporaryDir__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QTemporaryDir>();
 }
@@ -29297,6 +30290,50 @@ extern "C" bool bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(QUrlQuery * _self_, 
 
 extern "C" bool bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(QUrlQuery * _self_, const QUrlQuery & rhs) {
   return ((*_self_) != (rhs));
+}
+
+extern "C" QWaitCondition * bg_QWaitCondition__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QWaitCondition>();
+}
+
+extern "C" bool bg_QWaitCondition_wait_QMutex_X(QWaitCondition * _self_, QMutex * lockedMutex) {
+  return _self_->wait(lockedMutex);
+}
+
+extern "C" bool bg_QWaitCondition_wait_QMutex_X_QDeadlineTimer(QWaitCondition * _self_, QMutex * lockedMutex, QDeadlineTimer & deadline) {
+  return _self_->wait(lockedMutex, deadline);
+}
+
+extern "C" bool bg_QWaitCondition_wait_QMutex_X_unsigned_long(QWaitCondition * _self_, QMutex * lockedMutex, unsigned long time) {
+  return _self_->wait(lockedMutex, time);
+}
+
+extern "C" bool bg_QWaitCondition_wait_QReadWriteLock_X(QWaitCondition * _self_, QReadWriteLock * lockedReadWriteLock) {
+  return _self_->wait(lockedReadWriteLock);
+}
+
+extern "C" bool bg_QWaitCondition_wait_QReadWriteLock_X_QDeadlineTimer(QWaitCondition * _self_, QReadWriteLock * lockedReadWriteLock, QDeadlineTimer & deadline) {
+  return _self_->wait(lockedReadWriteLock, deadline);
+}
+
+extern "C" bool bg_QWaitCondition_wait_QReadWriteLock_X_unsigned_long(QWaitCondition * _self_, QReadWriteLock * lockedReadWriteLock, unsigned long time) {
+  return _self_->wait(lockedReadWriteLock, time);
+}
+
+extern "C" void bg_QWaitCondition_wakeOne_(QWaitCondition * _self_) {
+  _self_->wakeOne();
+}
+
+extern "C" void bg_QWaitCondition_wakeAll_(QWaitCondition * _self_) {
+  _self_->wakeAll();
+}
+
+extern "C" void bg_QWaitCondition_notify_one_(QWaitCondition * _self_) {
+  _self_->notify_one();
+}
+
+extern "C" void bg_QWaitCondition_notify_all_(QWaitCondition * _self_) {
+  _self_->notify_all();
 }
 
 extern "C" QXmlStreamAttribute * bg_QXmlStreamAttribute__CONSTRUCT_() {
