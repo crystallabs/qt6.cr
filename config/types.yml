@@ -241,13 +241,6 @@ types: # Type rewrite rules
   # Qt 6 types without a mapping yet
   "Qt::Disambiguated_t": { ignore: true } # Overload tag
   "Qt::Initialization": { ignore: true } # Qt::Uninitialized constructor tag
-  # std::chrono::nanoseconds maps to ::Time::Span below.  Qt's typedefs of it
-  # aren't looked through like a list typedef: the canonical type the parser
-  # reports is the std::chrono::duration<...> instantiation, which the
-  # nanoseconds rule doesn't name.
-  "QElapsedTimer::Duration": { alias_for: "std::chrono::nanoseconds" }
-  "QBasicTimer::Duration": { alias_for: "std::chrono::nanoseconds" }
-  "QAbstractEventDispatcher::Duration": { alias_for: "std::chrono::nanoseconds" }
   "QVersionNumber::const_iterator": { ignore: true } # Use #segments
   "QVersionNumber::const_reverse_iterator": { ignore: true }
   "QUuid::Id128Bytes": { ignore: true } # A union; use #to_rfc4122 (Bytes)
@@ -262,11 +255,6 @@ types: # Type rewrite rules
   "std::filesystem::path": { ignore: true }
   "QFont::Tag": { ignore: true }
   "QList<QFont::Tag>": { ignore: true }
-  # bindgen instantiates the maps of an ignored key type too (the methods
-  # using them are dropped), which doesn't compile; QFont#features and
-  # #variable_axes.
-  "QMap<QFont::Tag, quint32>": { ignore: true }
-  "QMap<QFont::Tag, float>": { ignore: true }
   "QTextDocument::ResourceProvider": { ignore: true } # std::function
   "QEasingCurve::EasingFunction": { ignore: true } # C function pointer
   "QPen::DataPtr": { ignore: true }

@@ -13059,14 +13059,14 @@ module Qt
     fun bg_QRandomGenerator__OPERATOR_eq_const_QRandomGenerator_R(_self_ : QRandomGenerator*, rng2 : QRandomGenerator*) : Bool
     fun bg_QRandomGenerator__OPERATOR_ne_const_QRandomGenerator_R(_self_ : QRandomGenerator*, rng2 : QRandomGenerator*) : Bool
     fun bg_QRandomGenerator64_generate_(_self_ : QRandomGenerator64*) : UInt64
-    fun bg_QRandomGenerator64__OPERATOR_call_(_self_ : QRandomGenerator64*) : LibC::ULongLong
+    fun bg_QRandomGenerator64__OPERATOR_call_(_self_ : QRandomGenerator64*) : UInt64
     fun bg_QRandomGenerator64__CONSTRUCT_quint32(seed_value : UInt32) : QRandomGenerator64*
     fun bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_qsizetype(seed_buffer : UInt32*, len : Int64) : QRandomGenerator64*
     fun bg_QRandomGenerator64__CONSTRUCT_const_quint32_X_const_quint32_X(begin_ : UInt32*, end_ : UInt32*) : QRandomGenerator64*
     fun bg_QRandomGenerator64__CONSTRUCT_const_QRandomGenerator_R(other : QRandomGenerator*) : QRandomGenerator64*
     fun bg_QRandomGenerator64_discard_unsigned_long_long(_self_ : QRandomGenerator64*, z : LibC::ULongLong) : Void
-    fun bg_QRandomGenerator64_min_STATIC_() : LibC::ULongLong
-    fun bg_QRandomGenerator64_max_STATIC_() : LibC::ULongLong
+    fun bg_QRandomGenerator64_min_STATIC_() : UInt64
+    fun bg_QRandomGenerator64_max_STATIC_() : UInt64
     fun bg_QRandomGenerator64_system_STATIC_() : QRandomGenerator64*
     fun bg_QRandomGenerator64_global_STATIC_() : QRandomGenerator64*
     fun bg_QRandomGenerator64_securelySeeded_STATIC_() : QRandomGenerator64*
@@ -38256,25 +38256,25 @@ module Qt
       {% if T == Object %}
         self
       {% elsif T == AbstractAnimation %}
-        Binding.bg_QObject_CAST_AbstractAnimation_(self).try {|ptr| AbstractAnimation.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractAnimation_(self).try {|ptr| AbstractAnimationImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == EventLoop %}
         Binding.bg_QObject_CAST_EventLoop_(self).try {|ptr| EventLoop.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractEventDispatcher %}
-        Binding.bg_QObject_CAST_AbstractEventDispatcher_(self).try {|ptr| AbstractEventDispatcher.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractEventDispatcher_(self).try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractItemModel %}
-        Binding.bg_QObject_CAST_AbstractItemModel_(self).try {|ptr| AbstractItemModel.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractItemModel_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractTableModel %}
-        Binding.bg_QObject_CAST_AbstractTableModel_(self).try {|ptr| AbstractTableModel.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractTableModel_(self).try {|ptr| AbstractTableModelImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractListModel %}
-        Binding.bg_QObject_CAST_AbstractListModel_(self).try {|ptr| AbstractListModel.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractListModel_(self).try {|ptr| AbstractListModelImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractProxyModel %}
-        Binding.bg_QObject_CAST_AbstractProxyModel_(self).try {|ptr| AbstractProxyModel.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractProxyModel_(self).try {|ptr| AbstractProxyModelImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AnimationGroup %}
-        Binding.bg_QObject_CAST_AnimationGroup_(self).try {|ptr| AnimationGroup.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AnimationGroup_(self).try {|ptr| AnimationGroupImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == CoreApplication %}
         Binding.bg_QObject_CAST_CoreApplication_(self).try {|ptr| CoreApplication.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == IODevice %}
-        Binding.bg_QObject_CAST_IODevice_(self).try {|ptr| IODevice.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_IODevice_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Buffer %}
         Binding.bg_QObject_CAST_Buffer_(self).try {|ptr| Buffer.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Timer %}
@@ -38340,7 +38340,7 @@ module Qt
       {% elsif T == TextDocument %}
         Binding.bg_QObject_CAST_TextDocument_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractTextDocumentLayout %}
-        Binding.bg_QObject_CAST_AbstractTextDocumentLayout_(self).try {|ptr| AbstractTextDocumentLayout.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractTextDocumentLayout_(self).try {|ptr| AbstractTextDocumentLayoutImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Action %}
         Binding.bg_QObject_CAST_Action_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == ActionGroup %}
@@ -38376,7 +38376,7 @@ module Qt
       {% elsif T == TextFrame %}
         Binding.bg_QObject_CAST_TextFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SyntaxHighlighter %}
-        Binding.bg_QObject_CAST_SyntaxHighlighter_(self).try {|ptr| SyntaxHighlighter.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_SyntaxHighlighter_(self).try {|ptr| SyntaxHighlighterImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TextList %}
         Binding.bg_QObject_CAST_TextList_(self).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TextTable %}
@@ -38386,7 +38386,7 @@ module Qt
       {% elsif T == UndoStack %}
         Binding.bg_QObject_CAST_UndoStack_(self).try {|ptr| UndoStack.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Validator %}
-        Binding.bg_QObject_CAST_Validator_(self).try {|ptr| Validator.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_Validator_(self).try {|ptr| ValidatorImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == IntValidator %}
         Binding.bg_QObject_CAST_IntValidator_(self).try {|ptr| IntValidator.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == DoubleValidator %}
@@ -38396,7 +38396,7 @@ module Qt
       {% elsif T == Widget %}
         Binding.bg_QObject_CAST_Widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractButton %}
-        Binding.bg_QObject_CAST_AbstractButton_(self).try {|ptr| AbstractButton.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractButton_(self).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractSpinBox %}
         Binding.bg_QObject_CAST_AbstractSpinBox_(self).try {|ptr| AbstractSpinBox.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractSlider %}
@@ -38404,7 +38404,7 @@ module Qt
       {% elsif T == Slider %}
         Binding.bg_QObject_CAST_Slider_(self).try {|ptr| Slider.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Style %}
-        Binding.bg_QObject_CAST_Style_(self).try {|ptr| Style.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_Style_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TabBar %}
         Binding.bg_QObject_CAST_TabBar_(self).try {|ptr| TabBar.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == TabWidget %}
@@ -38414,15 +38414,15 @@ module Qt
       {% elsif T == Frame %}
         Binding.bg_QObject_CAST_Frame_(self).try {|ptr| Frame.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractItemDelegate %}
-        Binding.bg_QObject_CAST_AbstractItemDelegate_(self).try {|ptr| AbstractItemDelegate.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractItemDelegate_(self).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractScrollArea %}
         Binding.bg_QObject_CAST_AbstractScrollArea_(self).try {|ptr| AbstractScrollArea.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractItemView %}
-        Binding.bg_QObject_CAST_AbstractItemView_(self).try {|ptr| AbstractItemView.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_AbstractItemView_(self).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Application %}
         Binding.bg_QObject_CAST_Application_(self).try {|ptr| Application.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Layout %}
-        Binding.bg_QObject_CAST_Layout_(self).try {|ptr| Layout.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_Layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GridLayout %}
         Binding.bg_QObject_CAST_GridLayout_(self).try {|ptr| GridLayout.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == BoxLayout %}
@@ -38492,13 +38492,13 @@ module Qt
       {% elsif T == TapAndHoldGesture %}
         Binding.bg_QObject_CAST_TapAndHoldGesture_(self).try {|ptr| TapAndHoldGesture.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsObject %}
-        Binding.bg_QObject_CAST_GraphicsObject_(self).try {|ptr| GraphicsObject.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_GraphicsObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsTextItem %}
         Binding.bg_QObject_CAST_GraphicsTextItem_(self).try {|ptr| GraphicsTextItem.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsAnchor %}
         Binding.bg_QObject_CAST_GraphicsAnchor_(self).try {|ptr| GraphicsAnchor.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsEffect %}
-        Binding.bg_QObject_CAST_GraphicsEffect_(self).try {|ptr| GraphicsEffect.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_GraphicsEffect_(self).try {|ptr| GraphicsEffectImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsColorizeEffect %}
         Binding.bg_QObject_CAST_GraphicsColorizeEffect_(self).try {|ptr| GraphicsColorizeEffect.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsBlurEffect %}
@@ -38516,7 +38516,7 @@ module Qt
       {% elsif T == GraphicsScene %}
         Binding.bg_QObject_CAST_GraphicsScene_(self).try {|ptr| GraphicsScene.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsTransform %}
-        Binding.bg_QObject_CAST_GraphicsTransform_(self).try {|ptr| GraphicsTransform.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QObject_CAST_GraphicsTransform_(self).try {|ptr| GraphicsTransformImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsScale %}
         Binding.bg_QObject_CAST_GraphicsScale_(self).try {|ptr| GraphicsScale.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsRotation %}
@@ -60766,7 +60766,7 @@ module Qt
       Binding.bg_QRandomGenerator64_generate_(self)
     end
     
-    def call() : LibC::ULongLong
+    def call() : UInt64
       Binding.bg_QRandomGenerator64__OPERATOR_call_(self)
     end
     
@@ -60794,11 +60794,11 @@ module Qt
       Binding.bg_QRandomGenerator64_discard_unsigned_long_long(self, z)
     end
     
-    def self.min() : LibC::ULongLong
+    def self.min() : UInt64
       Binding.bg_QRandomGenerator64_min_STATIC_()
     end
     
-    def self.max() : LibC::ULongLong
+    def self.max() : UInt64
       Binding.bg_QRandomGenerator64_max_STATIC_()
     end
     
@@ -68152,7 +68152,7 @@ module Qt
       {% elsif T == Bitmap %}
         Binding.bg_QPaintDevice_CAST_Bitmap_(self).try {|ptr| Bitmap.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == PagedPaintDevice %}
-        Binding.bg_QPaintDevice_CAST_PagedPaintDevice_(self).try {|ptr| PagedPaintDevice.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QPaintDevice_CAST_PagedPaintDevice_(self).try {|ptr| PagedPaintDeviceImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == PaintDeviceWindow %}
         Binding.bg_QPaintDevice_CAST_PaintDeviceWindow_(self).try {|ptr| PaintDeviceWindow.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == PdfWriter %}
@@ -68164,7 +68164,7 @@ module Qt
       {% elsif T == Widget %}
         Binding.bg_QPaintDevice_CAST_Widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractButton %}
-        Binding.bg_QPaintDevice_CAST_AbstractButton_(self).try {|ptr| AbstractButton.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QPaintDevice_CAST_AbstractButton_(self).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractSpinBox %}
         Binding.bg_QPaintDevice_CAST_AbstractSpinBox_(self).try {|ptr| AbstractSpinBox.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractSlider %}
@@ -68182,7 +68182,7 @@ module Qt
       {% elsif T == AbstractScrollArea %}
         Binding.bg_QPaintDevice_CAST_AbstractScrollArea_(self).try {|ptr| AbstractScrollArea.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractItemView %}
-        Binding.bg_QPaintDevice_CAST_AbstractItemView_(self).try {|ptr| AbstractItemView.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QPaintDevice_CAST_AbstractItemView_(self).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == CalendarWidget %}
         Binding.bg_QPaintDevice_CAST_CalendarWidget_(self).try {|ptr| CalendarWidget.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == CheckBox %}
@@ -119510,7 +119510,7 @@ module Qt
       {% elsif T == WidgetItem %}
         Binding.bg_QLayoutItem_CAST_WidgetItem_(self).try {|ptr| WidgetItem.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Layout %}
-        Binding.bg_QLayoutItem_CAST_Layout_(self).try {|ptr| Layout.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QLayoutItem_CAST_Layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GridLayout %}
         Binding.bg_QLayoutItem_CAST_GridLayout_(self).try {|ptr| GridLayout.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == BoxLayout %}
@@ -145028,9 +145028,9 @@ module Qt
       {% if T == GraphicsItem %}
         self
       {% elsif T == GraphicsObject %}
-        Binding.bg_QGraphicsItem_CAST_GraphicsObject_(self).try {|ptr| GraphicsObject.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QGraphicsItem_CAST_GraphicsObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == AbstractGraphicsShapeItem %}
-        Binding.bg_QGraphicsItem_CAST_AbstractGraphicsShapeItem_(self).try {|ptr| AbstractGraphicsShapeItem.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QGraphicsItem_CAST_AbstractGraphicsShapeItem_(self).try {|ptr| AbstractGraphicsShapeItemImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsPathItem %}
         Binding.bg_QGraphicsItem_CAST_GraphicsPathItem_(self).try {|ptr| GraphicsPathItem.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsRectItem %}
@@ -152553,7 +152553,7 @@ module Qt
       {% if T == GraphicsLayoutItem %}
         self
       {% elsif T == GraphicsLayout %}
-        Binding.bg_QGraphicsLayoutItem_CAST_GraphicsLayout_(self).try {|ptr| GraphicsLayout.new(unwrap: ptr) unless ptr.null?}
+        Binding.bg_QGraphicsLayoutItem_CAST_GraphicsLayout_(self).try {|ptr| GraphicsLayoutImpl.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsAnchorLayout %}
         Binding.bg_QGraphicsLayoutItem_CAST_GraphicsAnchorLayout_(self).try {|ptr| GraphicsAnchorLayout.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GraphicsGridLayout %}

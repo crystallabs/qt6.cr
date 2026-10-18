@@ -401,8 +401,6 @@ see the comments there:
   `AbstractItemModel#role_names` of `Int32` to `Bytes`,
   `CalendarWidget#date_text_format` of `Date` to `TextCharFormat`, and the
   setters take a `Hash`: `model.set_item_data(index, {role => Qt.variant(x)})`.
-  bindgen instantiates the maps of an ignored key type too, so
-  `QMap<QFont::Tag, ...>` is ignored explicitly.
 * `std::optional<QFont>` (`FontComboBox#display_font`) has no mapping yet and
   is ignored.
 * `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
@@ -426,7 +424,8 @@ see the comments there:
   `stream << "text"`, `stream.read(String)` and `stream.read(Int32)` over the
   wrapped `>>(Int32*)`.  The `>>` of a copied structure (`QPoint &`) is
   dropped like `QValidator::validate` above.
-* `std::chrono::nanoseconds` maps to `::Time::Span` like milliseconds:
+* `std::chrono::nanoseconds` maps to `::Time::Span` like milliseconds, and so
+  do Qt's typedefs of it like `QElapsedTimer::Duration`:
   `ChronoTimer.new(5.milliseconds)`, `ElapsedTimer#duration_elapsed`.
 * `QKeyCombination` and `QPointingDeviceUniqueId` are copied structures:
   `KeyCombination.new(KeyboardModifiers::ControlModifier, Key::A)`.
