@@ -241,6 +241,10 @@ types: # Type rewrite rules
   "QVariantAnimation::KeyValue": { ignore: true }
   "QList<QVariantAnimation::KeyValue>": { ignore: true }
 
+  # QList<std::pair<...>> of QGraphicsItemAnimation, no mapping for std::pair
+  # yet; use #pos_at, #rotation_at and the setters.
+  "QList<std::pair<qreal, QPointF>>": { ignore: true }
+  "QList<std::pair<qreal, qreal>>": { ignore: true }
   # QList<QPair<QString, QString>>, no mapping for std::pair yet; use
   # UrlQuery#query_item_value and #add_query_item.
   "QList<std::pair<QString, QString>>": { ignore: true }
@@ -371,6 +375,11 @@ types: # Type rewrite rules
   # QAbstractListModel in between, which made them private, so the generated
   # C++ doesn't compile.  Subclass AbstractListModel instead.
   QStringListModel: { sub_class: false }
+  # bindgen can't pass a QString (the Crystal String, by value) by non-const
+  # reference, so it drops QValidator::validate and fixup: the helpers in
+  # ext/validator_helper.hpp call them, see src/qt6/validator.cr.  As validate
+  # is pure virtual, a subclass from Crystal would stay abstract in C++.
+  QValidator: { sub_class: false }
   QHeaderView:
     ignore_methods:
       # bindgen wraps Qt's protected `initialize()` under that name, which

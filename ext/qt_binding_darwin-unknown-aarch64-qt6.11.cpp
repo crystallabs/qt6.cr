@@ -4,12 +4,14 @@
 #include <QtGui/QtGui>
 #include <QtWidgets/QtWidgets>
 #include <locale_helper.hpp>
+#include <validator_helper.hpp>
 
 typedef QList<QWizard::WizardButton> Container_QList_QWizard__WizardButton_;
 typedef QList<QWidget *> Container_QList_QWidget_X_;
 typedef QList<QTreeWidgetItem *> Container_QList_QTreeWidgetItem_X_;
 typedef QList<QTableWidgetSelectionRange> Container_QList_QTableWidgetSelectionRange_;
 typedef QList<QTableWidgetItem *> Container_QList_QTableWidgetItem_X_;
+typedef QList<QScroller *> Container_QList_QScroller_X_;
 typedef QList<QMdiSubWindow *> Container_QList_QMdiSubWindow_X_;
 typedef QList<QDockWidget *> Container_QList_QDockWidget_X_;
 typedef QList<QListWidgetItem *> Container_QList_QListWidgetItem_X_;
@@ -697,6 +699,10 @@ extern "C" QStandardItemModel * bg_QObject_CAST_StandardItemModel_(QObject * _se
   return bindgen_dynamic_cast<QStandardItemModel *>(_self_);
 }
 
+extern "C" QStyleHints * bg_QObject_CAST_StyleHints_(QObject * _self_) {
+  return bindgen_dynamic_cast<QStyleHints *>(_self_);
+}
+
 extern "C" QSyntaxHighlighter * bg_QObject_CAST_SyntaxHighlighter_(QObject * _self_) {
   return bindgen_dynamic_cast<QSyntaxHighlighter *>(_self_);
 }
@@ -707,6 +713,22 @@ extern "C" QUndoGroup * bg_QObject_CAST_UndoGroup_(QObject * _self_) {
 
 extern "C" QUndoStack * bg_QObject_CAST_UndoStack_(QObject * _self_) {
   return bindgen_dynamic_cast<QUndoStack *>(_self_);
+}
+
+extern "C" QValidator * bg_QObject_CAST_Validator_(QObject * _self_) {
+  return bindgen_dynamic_cast<QValidator *>(_self_);
+}
+
+extern "C" QIntValidator * bg_QObject_CAST_IntValidator_(QObject * _self_) {
+  return bindgen_dynamic_cast<QIntValidator *>(_self_);
+}
+
+extern "C" QDoubleValidator * bg_QObject_CAST_DoubleValidator_(QObject * _self_) {
+  return bindgen_dynamic_cast<QDoubleValidator *>(_self_);
+}
+
+extern "C" QRegularExpressionValidator * bg_QObject_CAST_RegularExpressionValidator_(QObject * _self_) {
+  return bindgen_dynamic_cast<QRegularExpressionValidator *>(_self_);
 }
 
 extern "C" QWidget * bg_QObject_CAST_Widget_(QObject * _self_) {
@@ -727,6 +749,10 @@ extern "C" QAbstractSlider * bg_QObject_CAST_AbstractSlider_(QObject * _self_) {
 
 extern "C" QSlider * bg_QObject_CAST_Slider_(QObject * _self_) {
   return bindgen_dynamic_cast<QSlider *>(_self_);
+}
+
+extern "C" QStyle * bg_QObject_CAST_Style_(QObject * _self_) {
+  return bindgen_dynamic_cast<QStyle *>(_self_);
 }
 
 extern "C" QTabBar * bg_QObject_CAST_TabBar_(QObject * _self_) {
@@ -817,6 +843,10 @@ extern "C" QCommandLinkButton * bg_QObject_CAST_CommandLinkButton_(QObject * _se
   return bindgen_dynamic_cast<QCommandLinkButton *>(_self_);
 }
 
+extern "C" QCommonStyle * bg_QObject_CAST_CommonStyle_(QObject * _self_) {
+  return bindgen_dynamic_cast<QCommonStyle *>(_self_);
+}
+
 extern "C" QCompleter * bg_QObject_CAST_Completer_(QObject * _self_) {
   return bindgen_dynamic_cast<QCompleter *>(_self_);
 }
@@ -885,8 +915,40 @@ extern "C" QGraphicsTextItem * bg_QObject_CAST_GraphicsTextItem_(QObject * _self
   return bindgen_dynamic_cast<QGraphicsTextItem *>(_self_);
 }
 
+extern "C" QGraphicsAnchor * bg_QObject_CAST_GraphicsAnchor_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsAnchor *>(_self_);
+}
+
+extern "C" QGraphicsEffect * bg_QObject_CAST_GraphicsEffect_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsEffect *>(_self_);
+}
+
+extern "C" QGraphicsColorizeEffect * bg_QObject_CAST_GraphicsColorizeEffect_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsColorizeEffect *>(_self_);
+}
+
+extern "C" QGraphicsBlurEffect * bg_QObject_CAST_GraphicsBlurEffect_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsBlurEffect *>(_self_);
+}
+
+extern "C" QGraphicsDropShadowEffect * bg_QObject_CAST_GraphicsDropShadowEffect_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsDropShadowEffect *>(_self_);
+}
+
+extern "C" QGraphicsOpacityEffect * bg_QObject_CAST_GraphicsOpacityEffect_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsOpacityEffect *>(_self_);
+}
+
+extern "C" QGraphicsItemAnimation * bg_QObject_CAST_GraphicsItemAnimation_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsItemAnimation *>(_self_);
+}
+
 extern "C" QGraphicsWidget * bg_QObject_CAST_GraphicsWidget_(QObject * _self_) {
   return bindgen_dynamic_cast<QGraphicsWidget *>(_self_);
+}
+
+extern "C" QGraphicsProxyWidget * bg_QObject_CAST_GraphicsProxyWidget_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsProxyWidget *>(_self_);
 }
 
 extern "C" QGraphicsScene * bg_QObject_CAST_GraphicsScene_(QObject * _self_) {
@@ -895,6 +957,14 @@ extern "C" QGraphicsScene * bg_QObject_CAST_GraphicsScene_(QObject * _self_) {
 
 extern "C" QGraphicsTransform * bg_QObject_CAST_GraphicsTransform_(QObject * _self_) {
   return bindgen_dynamic_cast<QGraphicsTransform *>(_self_);
+}
+
+extern "C" QGraphicsScale * bg_QObject_CAST_GraphicsScale_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsScale *>(_self_);
+}
+
+extern "C" QGraphicsRotation * bg_QObject_CAST_GraphicsRotation_(QObject * _self_) {
+  return bindgen_dynamic_cast<QGraphicsRotation *>(_self_);
 }
 
 extern "C" QScrollArea * bg_QObject_CAST_ScrollArea_(QObject * _self_) {
@@ -989,12 +1059,20 @@ extern "C" QProgressDialog * bg_QObject_CAST_ProgressDialog_(QObject * _self_) {
   return bindgen_dynamic_cast<QProgressDialog *>(_self_);
 }
 
+extern "C" QProxyStyle * bg_QObject_CAST_ProxyStyle_(QObject * _self_) {
+  return bindgen_dynamic_cast<QProxyStyle *>(_self_);
+}
+
 extern "C" QRadioButton * bg_QObject_CAST_RadioButton_(QObject * _self_) {
   return bindgen_dynamic_cast<QRadioButton *>(_self_);
 }
 
 extern "C" QScrollBar * bg_QObject_CAST_ScrollBar_(QObject * _self_) {
   return bindgen_dynamic_cast<QScrollBar *>(_self_);
+}
+
+extern "C" QScroller * bg_QObject_CAST_Scroller_(QObject * _self_) {
+  return bindgen_dynamic_cast<QScroller *>(_self_);
 }
 
 extern "C" QSizeGrip * bg_QObject_CAST_SizeGrip_(QObject * _self_) {
@@ -5910,6 +5988,38 @@ extern "C" QGestureEvent * bg_QEvent_CAST_GestureEvent_(QEvent * _self_) {
 
 extern "C" QGraphicsSceneEvent * bg_QEvent_CAST_GraphicsSceneEvent_(QEvent * _self_) {
   return bindgen_dynamic_cast<QGraphicsSceneEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneMouseEvent * bg_QEvent_CAST_GraphicsSceneMouseEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneMouseEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneWheelEvent * bg_QEvent_CAST_GraphicsSceneWheelEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneWheelEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneContextMenuEvent * bg_QEvent_CAST_GraphicsSceneContextMenuEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneContextMenuEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneHoverEvent * bg_QEvent_CAST_GraphicsSceneHoverEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneHoverEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneHelpEvent * bg_QEvent_CAST_GraphicsSceneHelpEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneHelpEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneDragDropEvent * bg_QEvent_CAST_GraphicsSceneDragDropEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneDragDropEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneResizeEvent * bg_QEvent_CAST_GraphicsSceneResizeEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneResizeEvent *>(_self_);
+}
+
+extern "C" QGraphicsSceneMoveEvent * bg_QEvent_CAST_GraphicsSceneMoveEvent_(QEvent * _self_) {
+  return bindgen_dynamic_cast<QGraphicsSceneMoveEvent *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QEvent_JUMPTABLE_BgJumptable_QEvent_R(BgInherit_QEvent * _self_, const BgJumptable_QEvent & table) {
@@ -35833,6 +35943,412 @@ extern "C" void bg_BgInherit_QStandardItemModel_JUMPTABLE_BgJumptable_QStandardI
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QStyleHints {
+  CrystalProc<const QMetaObject *> bg_QStyleHints_metaObject_;
+  CrystalProc<void *, const char *> bg_QStyleHints_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QStyleHints_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QStyleHints : public QStyleHints {
+  using QStyleHints::QStyleHints;
+  BgJumptable_QStyleHints bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QStyleHints_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QStyleHints_metaObject_();
+    } else {
+      return QStyleHints::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QStyleHints_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QStyleHints_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QStyleHints::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QStyleHints_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QStyleHints_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QStyleHints::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QStyleHints::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QStyleHints::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QStyleHints::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QStyleHints::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QStyleHints::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStyleHints::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStyleHints *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStyleHints::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QStyleHints_metaObject_(QStyleHints * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QStyleHints_qt_metacast_const_char_X(QStyleHints * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QStyleHints_qt_metacall_QMetaObject__Call_int_void_XX(QStyleHints * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QStyleHints_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QStyleHints::tr(s));
+}
+
+extern "C" CrystalString bg_QStyleHints_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QStyleHints::tr(s, c));
+}
+
+extern "C" CrystalString bg_QStyleHints_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QStyleHints::tr(s, c, n));
+}
+
+extern "C" void bg_QStyleHints_setMouseDoubleClickInterval_int(QStyleHints * _self_, int mouseDoubleClickInterval) {
+  _self_->setMouseDoubleClickInterval(mouseDoubleClickInterval);
+}
+
+extern "C" int bg_QStyleHints_mouseDoubleClickInterval_(QStyleHints * _self_) {
+  return _self_->mouseDoubleClickInterval();
+}
+
+extern "C" int bg_QStyleHints_mouseDoubleClickDistance_(QStyleHints * _self_) {
+  return _self_->mouseDoubleClickDistance();
+}
+
+extern "C" int bg_QStyleHints_touchDoubleTapDistance_(QStyleHints * _self_) {
+  return _self_->touchDoubleTapDistance();
+}
+
+extern "C" void bg_QStyleHints_setMousePressAndHoldInterval_int(QStyleHints * _self_, int mousePressAndHoldInterval) {
+  _self_->setMousePressAndHoldInterval(mousePressAndHoldInterval);
+}
+
+extern "C" int bg_QStyleHints_mousePressAndHoldInterval_(QStyleHints * _self_) {
+  return _self_->mousePressAndHoldInterval();
+}
+
+extern "C" void bg_QStyleHints_setStartDragDistance_int(QStyleHints * _self_, int startDragDistance) {
+  _self_->setStartDragDistance(startDragDistance);
+}
+
+extern "C" int bg_QStyleHints_startDragDistance_(QStyleHints * _self_) {
+  return _self_->startDragDistance();
+}
+
+extern "C" void bg_QStyleHints_setStartDragTime_int(QStyleHints * _self_, int startDragTime) {
+  _self_->setStartDragTime(startDragTime);
+}
+
+extern "C" int bg_QStyleHints_startDragTime_(QStyleHints * _self_) {
+  return _self_->startDragTime();
+}
+
+extern "C" int bg_QStyleHints_startDragVelocity_(QStyleHints * _self_) {
+  return _self_->startDragVelocity();
+}
+
+extern "C" void bg_QStyleHints_setKeyboardInputInterval_int(QStyleHints * _self_, int keyboardInputInterval) {
+  _self_->setKeyboardInputInterval(keyboardInputInterval);
+}
+
+extern "C" int bg_QStyleHints_keyboardInputInterval_(QStyleHints * _self_) {
+  return _self_->keyboardInputInterval();
+}
+
+extern "C" qreal bg_QStyleHints_keyboardAutoRepeatRateF_(QStyleHints * _self_) {
+  return _self_->keyboardAutoRepeatRateF();
+}
+
+extern "C" void bg_QStyleHints_setCursorFlashTime_int(QStyleHints * _self_, int cursorFlashTime) {
+  _self_->setCursorFlashTime(cursorFlashTime);
+}
+
+extern "C" int bg_QStyleHints_cursorFlashTime_(QStyleHints * _self_) {
+  return _self_->cursorFlashTime();
+}
+
+extern "C" bool bg_QStyleHints_showIsFullScreen_(QStyleHints * _self_) {
+  return _self_->showIsFullScreen();
+}
+
+extern "C" bool bg_QStyleHints_showIsMaximized_(QStyleHints * _self_) {
+  return _self_->showIsMaximized();
+}
+
+extern "C" bool bg_QStyleHints_showShortcutsInContextMenus_(QStyleHints * _self_) {
+  return _self_->showShortcutsInContextMenus();
+}
+
+extern "C" void bg_QStyleHints_setShowShortcutsInContextMenus_bool(QStyleHints * _self_, bool showShortcutsInContextMenus) {
+  _self_->setShowShortcutsInContextMenus(showShortcutsInContextMenus);
+}
+
+extern "C" Qt::ContextMenuTrigger bg_QStyleHints_contextMenuTrigger_(QStyleHints * _self_) {
+  return _self_->contextMenuTrigger();
+}
+
+extern "C" void bg_QStyleHints_setContextMenuTrigger_Qt__ContextMenuTrigger(QStyleHints * _self_, Qt::ContextMenuTrigger contextMenuTrigger) {
+  _self_->setContextMenuTrigger(contextMenuTrigger);
+}
+
+extern "C" bool bg_QStyleHints_menuSelectionWraps_(QStyleHints * _self_) {
+  return _self_->menuSelectionWraps();
+}
+
+extern "C" int bg_QStyleHints_passwordMaskDelay_(QStyleHints * _self_) {
+  return _self_->passwordMaskDelay();
+}
+
+extern "C" int32_t bg_QStyleHints_passwordMaskCharacter_(QStyleHints * _self_) {
+  return static_cast<int32_t>(_self_->passwordMaskCharacter().unicode());
+}
+
+extern "C" qreal bg_QStyleHints_fontSmoothingGamma_(QStyleHints * _self_) {
+  return _self_->fontSmoothingGamma();
+}
+
+extern "C" bool bg_QStyleHints_useRtlExtensions_(QStyleHints * _self_) {
+  return _self_->useRtlExtensions();
+}
+
+extern "C" bool bg_QStyleHints_setFocusOnTouchRelease_(QStyleHints * _self_) {
+  return _self_->setFocusOnTouchRelease();
+}
+
+extern "C" Qt::TabFocusBehavior bg_QStyleHints_tabFocusBehavior_(QStyleHints * _self_) {
+  return _self_->tabFocusBehavior();
+}
+
+extern "C" void bg_QStyleHints_setTabFocusBehavior_Qt__TabFocusBehavior(QStyleHints * _self_, Qt::TabFocusBehavior tabFocusBehavior) {
+  _self_->setTabFocusBehavior(tabFocusBehavior);
+}
+
+extern "C" bool bg_QStyleHints_singleClickActivation_(QStyleHints * _self_) {
+  return _self_->singleClickActivation();
+}
+
+extern "C" bool bg_QStyleHints_useHoverEffects_(QStyleHints * _self_) {
+  return _self_->useHoverEffects();
+}
+
+extern "C" void bg_QStyleHints_setUseHoverEffects_bool(QStyleHints * _self_, bool useHoverEffects) {
+  _self_->setUseHoverEffects(useHoverEffects);
+}
+
+extern "C" int bg_QStyleHints_wheelScrollLines_(QStyleHints * _self_) {
+  return _self_->wheelScrollLines();
+}
+
+extern "C" void bg_QStyleHints_setWheelScrollLines_int(QStyleHints * _self_, int scrollLines) {
+  _self_->setWheelScrollLines(scrollLines);
+}
+
+extern "C" void bg_QStyleHints_setMouseQuickSelectionThreshold_int(QStyleHints * _self_, int threshold) {
+  _self_->setMouseQuickSelectionThreshold(threshold);
+}
+
+extern "C" int bg_QStyleHints_mouseQuickSelectionThreshold_(QStyleHints * _self_) {
+  return _self_->mouseQuickSelectionThreshold();
+}
+
+extern "C" Qt::ColorScheme bg_QStyleHints_colorScheme_(QStyleHints * _self_) {
+  return _self_->colorScheme();
+}
+
+extern "C" void bg_QStyleHints_setColorScheme_Qt__ColorScheme(QStyleHints * _self_, Qt::ColorScheme scheme) {
+  _self_->setColorScheme(scheme);
+}
+
+extern "C" void bg_QStyleHints_unsetColorScheme_(QStyleHints * _self_) {
+  _self_->unsetColorScheme();
+}
+
+extern "C" const QAccessibilityHints * bg_QStyleHints_accessibility_(QStyleHints * _self_) {
+  return _self_->accessibility();
+}
+
+extern "C" void bg_QStyleHints_cursorFlashTimeChanged_int(QStyleHints * _self_, int cursorFlashTime) {
+  _self_->cursorFlashTimeChanged(cursorFlashTime);
+}
+
+extern "C" void bg_QStyleHints_keyboardInputIntervalChanged_int(QStyleHints * _self_, int keyboardInputInterval) {
+  _self_->keyboardInputIntervalChanged(keyboardInputInterval);
+}
+
+extern "C" void bg_QStyleHints_mouseDoubleClickIntervalChanged_int(QStyleHints * _self_, int mouseDoubleClickInterval) {
+  _self_->mouseDoubleClickIntervalChanged(mouseDoubleClickInterval);
+}
+
+extern "C" void bg_QStyleHints_mousePressAndHoldIntervalChanged_int(QStyleHints * _self_, int mousePressAndHoldInterval) {
+  _self_->mousePressAndHoldIntervalChanged(mousePressAndHoldInterval);
+}
+
+extern "C" void bg_QStyleHints_startDragDistanceChanged_int(QStyleHints * _self_, int startDragDistance) {
+  _self_->startDragDistanceChanged(startDragDistance);
+}
+
+extern "C" void bg_QStyleHints_startDragTimeChanged_int(QStyleHints * _self_, int startDragTime) {
+  _self_->startDragTimeChanged(startDragTime);
+}
+
+extern "C" void bg_QStyleHints_tabFocusBehaviorChanged_Qt__TabFocusBehavior(QStyleHints * _self_, Qt::TabFocusBehavior tabFocusBehavior) {
+  _self_->tabFocusBehaviorChanged(tabFocusBehavior);
+}
+
+extern "C" void bg_QStyleHints_useHoverEffectsChanged_bool(QStyleHints * _self_, bool useHoverEffects) {
+  _self_->useHoverEffectsChanged(useHoverEffects);
+}
+
+extern "C" void bg_QStyleHints_showShortcutsInContextMenusChanged_bool(QStyleHints * _self_, bool unnamed_arg_0) {
+  _self_->showShortcutsInContextMenusChanged(unnamed_arg_0);
+}
+
+extern "C" void bg_QStyleHints_contextMenuTriggerChanged_Qt__ContextMenuTrigger(QStyleHints * _self_, Qt::ContextMenuTrigger contextMenuTrigger) {
+  _self_->contextMenuTriggerChanged(contextMenuTrigger);
+}
+
+extern "C" void bg_QStyleHints_wheelScrollLinesChanged_int(QStyleHints * _self_, int scrollLines) {
+  _self_->wheelScrollLinesChanged(scrollLines);
+}
+
+extern "C" void bg_QStyleHints_mouseQuickSelectionThresholdChanged_int(QStyleHints * _self_, int threshold) {
+  _self_->mouseQuickSelectionThresholdChanged(threshold);
+}
+
+extern "C" void bg_QStyleHints_colorSchemeChanged_Qt__ColorScheme(QStyleHints * _self_, Qt::ColorScheme colorScheme) {
+  _self_->colorSchemeChanged(colorScheme);
+}
+
+extern "C" const QMetaObject * bg_QStyleHints_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStyleHints::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_cursorFlashTimeChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::cursorFlashTimeChanged, [_proc_](int cursorFlashTime){ _proc_(cursorFlashTime); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_keyboardInputIntervalChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::keyboardInputIntervalChanged, [_proc_](int keyboardInputInterval){ _proc_(keyboardInputInterval); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_mouseDoubleClickIntervalChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::mouseDoubleClickIntervalChanged, [_proc_](int mouseDoubleClickInterval){ _proc_(mouseDoubleClickInterval); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_mousePressAndHoldIntervalChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::mousePressAndHoldIntervalChanged, [_proc_](int mousePressAndHoldInterval){ _proc_(mousePressAndHoldInterval); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_startDragDistanceChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::startDragDistanceChanged, [_proc_](int startDragDistance){ _proc_(startDragDistance); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_startDragTimeChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::startDragTimeChanged, [_proc_](int startDragTime){ _proc_(startDragTime); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_tabFocusBehaviorChanged_CrystalProc_void__Qt__TabFocusBehavior_(QStyleHints * _self_, CrystalProc<void, Qt::TabFocusBehavior> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(Qt::TabFocusBehavior))&QStyleHints::tabFocusBehaviorChanged, [_proc_](Qt::TabFocusBehavior tabFocusBehavior){ _proc_(tabFocusBehavior); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_useHoverEffectsChanged_CrystalProc_void__bool_(QStyleHints * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(bool))&QStyleHints::useHoverEffectsChanged, [_proc_](bool useHoverEffects){ _proc_(useHoverEffects); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_showShortcutsInContextMenusChanged_CrystalProc_void__bool_(QStyleHints * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(bool))&QStyleHints::showShortcutsInContextMenusChanged, [_proc_](bool unnamed_arg_0){ _proc_(unnamed_arg_0); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_contextMenuTriggerChanged_CrystalProc_void__Qt__ContextMenuTrigger_(QStyleHints * _self_, CrystalProc<void, Qt::ContextMenuTrigger> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(Qt::ContextMenuTrigger))&QStyleHints::contextMenuTriggerChanged, [_proc_](Qt::ContextMenuTrigger contextMenuTrigger){ _proc_(contextMenuTrigger); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_wheelScrollLinesChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::wheelScrollLinesChanged, [_proc_](int scrollLines){ _proc_(scrollLines); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_mouseQuickSelectionThresholdChanged_CrystalProc_void__int_(QStyleHints * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(int))&QStyleHints::mouseQuickSelectionThresholdChanged, [_proc_](int threshold){ _proc_(threshold); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QStyleHints_CONNECT_colorSchemeChanged_CrystalProc_void__Qt__ColorScheme_(QStyleHints * _self_, CrystalProc<void, Qt::ColorScheme> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QStyleHints::*)(Qt::ColorScheme))&QStyleHints::colorSchemeChanged, [_proc_](Qt::ColorScheme colorScheme){ _proc_(colorScheme); }));
+}
+
+extern "C" void bg_BgInherit_QStyleHints_JUMPTABLE_BgJumptable_QStyleHints_R(BgInherit_QStyleHints * _self_, const BgJumptable_QStyleHints & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" QTextBlockUserData * bg_QTextBlockUserData__OPERATOR_assign_const_QTextBlockUserData_R(QTextBlockUserData * _self_, const QTextBlockUserData & unnamed_arg_0) {
   return &((*_self_) = (unnamed_arg_0));
 }
@@ -36880,6 +37396,612 @@ extern "C" QMetaObject::Connection * bg_QUndoStack_CONNECT_redoTextChanged_Cryst
 }
 
 extern "C" void bg_BgInherit_QUndoStack_JUMPTABLE_BgJumptable_QUndoStack_R(BgInherit_QUndoStack * _self_, const BgJumptable_QUndoStack & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" const QMetaObject * bg_QValidator_metaObject_(QValidator * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QValidator_qt_metacast_const_char_X(QValidator * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QValidator_qt_metacall_QMetaObject__Call_int_void_XX(QValidator * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QValidator_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QValidator::tr(s));
+}
+
+extern "C" CrystalString bg_QValidator_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QValidator::tr(s, c));
+}
+
+extern "C" CrystalString bg_QValidator_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QValidator::tr(s, c, n));
+}
+
+extern "C" void bg_QValidator_setLocale_const_QLocale_R(QValidator * _self_, const QLocale & locale) {
+  _self_->setLocale(locale);
+}
+
+extern "C" QLocale * bg_QValidator_locale_(QValidator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QLocale>()) QLocale (_self_->locale());
+}
+
+extern "C" void bg_QValidator_changed_(QValidator * _self_) {
+  _self_->changed();
+}
+
+extern "C" const QMetaObject * bg_QValidator_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QValidator::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QValidator_CONNECT_changed_CrystalProc_void_(QValidator * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QValidator::*)())&QValidator::changed, [_proc_](){ _proc_(); }));
+}
+
+struct BgJumptable_QIntValidator {
+  CrystalProc<const QMetaObject *> bg_QIntValidator_metaObject_;
+  CrystalProc<void *, const char *> bg_QIntValidator_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QIntValidator_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QIntValidator : public QIntValidator {
+  using QIntValidator::QIntValidator;
+  BgJumptable_QIntValidator bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QIntValidator_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QIntValidator_metaObject_();
+    } else {
+      return QIntValidator::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QIntValidator_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QIntValidator_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QIntValidator::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QIntValidator_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QIntValidator_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QIntValidator::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QIntValidator::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QIntValidator::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QIntValidator::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QIntValidator::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QIntValidator::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QIntValidator::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QIntValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QIntValidator::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QIntValidator_metaObject_(QIntValidator * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QIntValidator_qt_metacast_const_char_X(QIntValidator * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QIntValidator_qt_metacall_QMetaObject__Call_int_void_XX(QIntValidator * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QIntValidator_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QIntValidator::tr(s));
+}
+
+extern "C" CrystalString bg_QIntValidator_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QIntValidator::tr(s, c));
+}
+
+extern "C" CrystalString bg_QIntValidator_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QIntValidator::tr(s, c, n));
+}
+
+extern "C" QIntValidator * bg_QIntValidator__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QIntValidator>(parent);
+}
+
+extern "C" QIntValidator * bg_QIntValidator__CONSTRUCT_int_int_QObject_X(int bottom, int top, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QIntValidator>(bottom, top, parent);
+}
+
+extern "C" void bg_QIntValidator_setBottom_int(QIntValidator * _self_, int unnamed_arg_0) {
+  _self_->setBottom(unnamed_arg_0);
+}
+
+extern "C" void bg_QIntValidator_setTop_int(QIntValidator * _self_, int unnamed_arg_0) {
+  _self_->setTop(unnamed_arg_0);
+}
+
+extern "C" void bg_QIntValidator_setRange_int_int(QIntValidator * _self_, int bottom, int top) {
+  _self_->setRange(bottom, top);
+}
+
+extern "C" int bg_QIntValidator_bottom_(QIntValidator * _self_) {
+  return _self_->bottom();
+}
+
+extern "C" int bg_QIntValidator_top_(QIntValidator * _self_) {
+  return _self_->top();
+}
+
+extern "C" void bg_QIntValidator_bottomChanged_int(QIntValidator * _self_, int bottom) {
+  _self_->bottomChanged(bottom);
+}
+
+extern "C" void bg_QIntValidator_topChanged_int(QIntValidator * _self_, int top) {
+  _self_->topChanged(top);
+}
+
+extern "C" const QMetaObject * bg_QIntValidator_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QIntValidator::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QIntValidator_CONNECT_bottomChanged_CrystalProc_void__int_(QIntValidator * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QIntValidator::*)(int))&QIntValidator::bottomChanged, [_proc_](int bottom){ _proc_(bottom); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QIntValidator_CONNECT_topChanged_CrystalProc_void__int_(QIntValidator * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QIntValidator::*)(int))&QIntValidator::topChanged, [_proc_](int top){ _proc_(top); }));
+}
+
+extern "C" void bg_BgInherit_QIntValidator_JUMPTABLE_BgJumptable_QIntValidator_R(BgInherit_QIntValidator * _self_, const BgJumptable_QIntValidator & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QDoubleValidator {
+  CrystalProc<const QMetaObject *> bg_QDoubleValidator_metaObject_;
+  CrystalProc<void *, const char *> bg_QDoubleValidator_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QDoubleValidator_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QDoubleValidator : public QDoubleValidator {
+  using QDoubleValidator::QDoubleValidator;
+  BgJumptable_QDoubleValidator bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QDoubleValidator_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QDoubleValidator_metaObject_();
+    } else {
+      return QDoubleValidator::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QDoubleValidator_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QDoubleValidator_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QDoubleValidator::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QDoubleValidator_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QDoubleValidator_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QDoubleValidator::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QDoubleValidator::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QDoubleValidator::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QDoubleValidator::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QDoubleValidator::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QDoubleValidator::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDoubleValidator::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QDoubleValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QDoubleValidator::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QDoubleValidator_metaObject_(QDoubleValidator * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QDoubleValidator_qt_metacast_const_char_X(QDoubleValidator * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QDoubleValidator_qt_metacall_QMetaObject__Call_int_void_XX(QDoubleValidator * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QDoubleValidator_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QDoubleValidator::tr(s));
+}
+
+extern "C" CrystalString bg_QDoubleValidator_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QDoubleValidator::tr(s, c));
+}
+
+extern "C" CrystalString bg_QDoubleValidator_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QDoubleValidator::tr(s, c, n));
+}
+
+extern "C" QDoubleValidator * bg_QDoubleValidator__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDoubleValidator>(parent);
+}
+
+extern "C" QDoubleValidator * bg_QDoubleValidator__CONSTRUCT_double_double_int_QObject_X(double bottom, double top, int decimals, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QDoubleValidator>(bottom, top, decimals, parent);
+}
+
+extern "C" void bg_QDoubleValidator_setRange_double_double_int(QDoubleValidator * _self_, double bottom, double top, int decimals) {
+  _self_->setRange(bottom, top, decimals);
+}
+
+extern "C" void bg_QDoubleValidator_setRange_double_double(QDoubleValidator * _self_, double bottom, double top) {
+  _self_->setRange(bottom, top);
+}
+
+extern "C" void bg_QDoubleValidator_setBottom_double(QDoubleValidator * _self_, double unnamed_arg_0) {
+  _self_->setBottom(unnamed_arg_0);
+}
+
+extern "C" void bg_QDoubleValidator_setTop_double(QDoubleValidator * _self_, double unnamed_arg_0) {
+  _self_->setTop(unnamed_arg_0);
+}
+
+extern "C" void bg_QDoubleValidator_setDecimals_int(QDoubleValidator * _self_, int unnamed_arg_0) {
+  _self_->setDecimals(unnamed_arg_0);
+}
+
+extern "C" void bg_QDoubleValidator_setNotation_QDoubleValidator__Notation(QDoubleValidator * _self_, QDoubleValidator::Notation unnamed_arg_0) {
+  _self_->setNotation(unnamed_arg_0);
+}
+
+extern "C" double bg_QDoubleValidator_bottom_(QDoubleValidator * _self_) {
+  return _self_->bottom();
+}
+
+extern "C" double bg_QDoubleValidator_top_(QDoubleValidator * _self_) {
+  return _self_->top();
+}
+
+extern "C" int bg_QDoubleValidator_decimals_(QDoubleValidator * _self_) {
+  return _self_->decimals();
+}
+
+extern "C" QDoubleValidator::Notation bg_QDoubleValidator_notation_(QDoubleValidator * _self_) {
+  return _self_->notation();
+}
+
+extern "C" void bg_QDoubleValidator_bottomChanged_double(QDoubleValidator * _self_, double bottom) {
+  _self_->bottomChanged(bottom);
+}
+
+extern "C" void bg_QDoubleValidator_topChanged_double(QDoubleValidator * _self_, double top) {
+  _self_->topChanged(top);
+}
+
+extern "C" void bg_QDoubleValidator_decimalsChanged_int(QDoubleValidator * _self_, int decimals) {
+  _self_->decimalsChanged(decimals);
+}
+
+extern "C" void bg_QDoubleValidator_notationChanged_QDoubleValidator__Notation(QDoubleValidator * _self_, QDoubleValidator::Notation notation) {
+  _self_->notationChanged(notation);
+}
+
+extern "C" const QMetaObject * bg_QDoubleValidator_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QDoubleValidator::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QDoubleValidator_CONNECT_bottomChanged_CrystalProc_void__double_(QDoubleValidator * _self_, CrystalProc<void, double> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleValidator::*)(double))&QDoubleValidator::bottomChanged, [_proc_](double bottom){ _proc_(bottom); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDoubleValidator_CONNECT_topChanged_CrystalProc_void__double_(QDoubleValidator * _self_, CrystalProc<void, double> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleValidator::*)(double))&QDoubleValidator::topChanged, [_proc_](double top){ _proc_(top); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDoubleValidator_CONNECT_decimalsChanged_CrystalProc_void__int_(QDoubleValidator * _self_, CrystalProc<void, int> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleValidator::*)(int))&QDoubleValidator::decimalsChanged, [_proc_](int decimals){ _proc_(decimals); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QDoubleValidator_CONNECT_notationChanged_CrystalProc_void__QDoubleValidator__Notation_(QDoubleValidator * _self_, CrystalProc<void, QDoubleValidator::Notation> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QDoubleValidator::*)(QDoubleValidator::Notation))&QDoubleValidator::notationChanged, [_proc_](QDoubleValidator::Notation notation){ _proc_(notation); }));
+}
+
+extern "C" void bg_BgInherit_QDoubleValidator_JUMPTABLE_BgJumptable_QDoubleValidator_R(BgInherit_QDoubleValidator * _self_, const BgJumptable_QDoubleValidator & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QRegularExpressionValidator {
+  CrystalProc<const QMetaObject *> bg_QRegularExpressionValidator_metaObject_;
+  CrystalProc<void *, const char *> bg_QRegularExpressionValidator_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QRegularExpressionValidator_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QRegularExpressionValidator : public QRegularExpressionValidator {
+  using QRegularExpressionValidator::QRegularExpressionValidator;
+  BgJumptable_QRegularExpressionValidator bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QRegularExpressionValidator_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QRegularExpressionValidator_metaObject_();
+    } else {
+      return QRegularExpressionValidator::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QRegularExpressionValidator_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QRegularExpressionValidator_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QRegularExpressionValidator::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QRegularExpressionValidator_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QRegularExpressionValidator_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QRegularExpressionValidator::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QRegularExpressionValidator::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QRegularExpressionValidator::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QRegularExpressionValidator::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QRegularExpressionValidator::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QRegularExpressionValidator::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QRegularExpressionValidator::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QRegularExpressionValidator *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QRegularExpressionValidator::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QRegularExpressionValidator_metaObject_(QRegularExpressionValidator * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QRegularExpressionValidator_qt_metacast_const_char_X(QRegularExpressionValidator * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QRegularExpressionValidator_qt_metacall_QMetaObject__Call_int_void_XX(QRegularExpressionValidator * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QRegularExpressionValidator_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QRegularExpressionValidator::tr(s));
+}
+
+extern "C" CrystalString bg_QRegularExpressionValidator_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QRegularExpressionValidator::tr(s, c));
+}
+
+extern "C" CrystalString bg_QRegularExpressionValidator_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QRegularExpressionValidator::tr(s, c, n));
+}
+
+extern "C" QRegularExpressionValidator * bg_QRegularExpressionValidator__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QRegularExpressionValidator>(parent);
+}
+
+extern "C" QRegularExpressionValidator * bg_QRegularExpressionValidator__CONSTRUCT_const_QRegularExpression_R_QObject_X(const QRegularExpression & re, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QRegularExpressionValidator>(re, parent);
+}
+
+extern "C" QRegularExpression * bg_QRegularExpressionValidator_regularExpression_(QRegularExpressionValidator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QRegularExpression>()) QRegularExpression (_self_->regularExpression());
+}
+
+extern "C" void bg_QRegularExpressionValidator_setRegularExpression_const_QRegularExpression_R(QRegularExpressionValidator * _self_, const QRegularExpression & re) {
+  _self_->setRegularExpression(re);
+}
+
+extern "C" void bg_QRegularExpressionValidator_regularExpressionChanged_const_QRegularExpression_R(QRegularExpressionValidator * _self_, const QRegularExpression & re) {
+  _self_->regularExpressionChanged(re);
+}
+
+extern "C" const QMetaObject * bg_QRegularExpressionValidator_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QRegularExpressionValidator::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QRegularExpressionValidator_CONNECT_regularExpressionChanged_CrystalProc_void__const_QRegularExpression_R_(QRegularExpressionValidator * _self_, CrystalProc<void, const QRegularExpression *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QRegularExpressionValidator::*)(const QRegularExpression &))&QRegularExpressionValidator::regularExpressionChanged, [_proc_](const QRegularExpression & re){ _proc_(&(re)); }));
+}
+
+extern "C" void bg_BgInherit_QRegularExpressionValidator_JUMPTABLE_BgJumptable_QRegularExpressionValidator_R(BgInherit_QRegularExpressionValidator * _self_, const BgJumptable_QRegularExpressionValidator & table) {
   _self_->bgJump = (table);
 }
 
@@ -42095,6 +43217,550 @@ extern "C" void bg_BgInherit_QSlider_JUMPTABLE_BgJumptable_QSlider_R(BgInherit_Q
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QStyle {
+  CrystalProc<const QMetaObject *> bg_QStyle_metaObject_;
+  CrystalProc<void *, const char *> bg_QStyle_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QStyle_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QWidget *> bg_QStyle_polish_QWidget_X;
+  CrystalProc<void, QWidget *> bg_QStyle_unpolish_QWidget_X;
+  CrystalProc<void, QApplication *> bg_QStyle_polish_QApplication_X;
+  CrystalProc<void, QApplication *> bg_QStyle_unpolish_QApplication_X;
+  CrystalProc<void, QPalette *> bg_QStyle_polish_QPalette_R;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QPalette &> bg_QStyle_standardPalette_;
+  CrystalProc<void, QStyle::PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *> bg_QStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
+  CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
+  CrystalProc<QPixmap &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QIcon &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QPixmap &, QIcon::Mode, const QPixmap *, const QStyleOption *> bg_QStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X;
+  CrystalProc<int, QSizePolicy::ControlType, QSizePolicy::ControlType, Qt::Orientation, const QStyleOption *, const QWidget *> bg_QStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QStyle : public QStyle {
+  using QStyle::QStyle;
+  BgJumptable_QStyle bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QStyle_metaObject_();
+    } else {
+      return QStyle::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QStyle_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QStyle::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QStyle_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QStyle::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void polish(QWidget * widget) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_polish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QStyle_polish_QWidget_X(widget);
+    } else {
+      QStyle::polish(widget);
+    }
+  }
+  
+  void unpolish(QWidget * widget) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_unpolish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QStyle_unpolish_QWidget_X(widget);
+    } else {
+      QStyle::unpolish(widget);
+    }
+  }
+  
+  void polish(QApplication * application) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_polish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QStyle_polish_QApplication_X(application);
+    } else {
+      QStyle::polish(application);
+    }
+  }
+  
+  void unpolish(QApplication * application) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_unpolish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QStyle_unpolish_QApplication_X(application);
+    } else {
+      QStyle::unpolish(application);
+    }
+  }
+  
+  void polish(QPalette & palette) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_polish_QPalette_R.isValid()) {
+      _self_->bgJump.bg_QStyle_polish_QPalette_R(&(palette));
+    } else {
+      QStyle::polish(palette);
+    }
+  }
+  
+  QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
+      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+    } else {
+      return QStyle::itemTextRect(fm, r, flags, enabled, text);
+    }
+  }
+  
+  QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+    } else {
+      return QStyle::itemPixmapRect(r, flags, pixmap);
+    }
+  }
+  
+  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
+      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+    } else {
+      QStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
+    }
+  }
+  
+  void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+    } else {
+      QStyle::drawItemPixmap(painter, rect, alignment, pixmap);
+    }
+  }
+  
+  QPalette standardPalette() const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_standardPalette_.isValid()) {
+      return _self_->bgJump.bg_QStyle_standardPalette_();
+    } else {
+      return QStyle::standardPalette();
+    }
+  }
+  
+  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid())) {
+      _self_->bgJump.bg_QStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(pe, opt, p, w);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::drawPrimitive");
+    }
+  }
+  
+  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid())) {
+      _self_->bgJump.bg_QStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(element, opt, p, w);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::drawControl");
+    }
+  }
+  
+  QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X.isValid())) {
+      return *_self_->bgJump.bg_QStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(subElement, option, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::subElementRect");
+    }
+  }
+  
+  void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X.isValid())) {
+      _self_->bgJump.bg_QStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(cc, opt, p, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::drawComplexControl");
+    }
+  }
+  
+  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::hitTestComplexControl");
+    }
+  }
+  
+  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X.isValid())) {
+      return *_self_->bgJump.bg_QStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(cc, opt, sc, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::subControlRect");
+    }
+  }
+  
+  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(metric, option, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::pixelMetric");
+    }
+  }
+  
+  QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid())) {
+      return *_self_->bgJump.bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::sizeFromContents");
+    }
+  }
+  
+  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(stylehint, opt, widget, returnData);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::styleHint");
+    }
+  }
+  
+  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardPixmap, opt, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::standardPixmap");
+    }
+  }
+  
+  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardIcon, option, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::standardIcon");
+    }
+  }
+  
+  QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(iconMode, &(pixmap), opt);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::generatedIconPixmap");
+    }
+  }
+  
+  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QStyle *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X.isValid())) {
+      return _self_->bgJump.bg_QStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(control1, control2, orientation, option, widget);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QStyle::layoutSpacing");
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QStyle::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QStyle::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QStyle::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QStyle::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QStyle::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStyle::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QStyle::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QStyle_metaObject_(QStyle * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QStyle_qt_metacast_const_char_X(QStyle * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QStyle_qt_metacall_QMetaObject__Call_int_void_XX(QStyle * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QStyle_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QStyle::tr(s));
+}
+
+extern "C" CrystalString bg_QStyle_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QStyle::tr(s, c));
+}
+
+extern "C" CrystalString bg_QStyle_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QStyle::tr(s, c, n));
+}
+
+extern "C" QStyle * bg_QStyle__CONSTRUCT_QStylePrivate_R(QStylePrivate & dd) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QStyle>(dd);
+}
+
+extern "C" QStyle * bg_QStyle__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QStyle>();
+}
+
+extern "C" CrystalString bg_QStyle_name_(QStyle * _self_) {
+  return qstring_to_crystal(_self_->name());
+}
+
+extern "C" void bg_QStyle_polish_QWidget_X(QStyle * _self_, QWidget * widget) {
+  _self_->polish(widget);
+}
+
+extern "C" void bg_QStyle_unpolish_QWidget_X(QStyle * _self_, QWidget * widget) {
+  _self_->unpolish(widget);
+}
+
+extern "C" void bg_QStyle_polish_QApplication_X(QStyle * _self_, QApplication * application) {
+  _self_->polish(application);
+}
+
+extern "C" void bg_QStyle_unpolish_QApplication_X(QStyle * _self_, QApplication * application) {
+  _self_->unpolish(application);
+}
+
+extern "C" void bg_QStyle_polish_QPalette_R(QStyle * _self_, QPalette & palette) {
+  _self_->polish(palette);
+}
+
+extern "C" QRect bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(QStyle * _self_, const QFontMetrics & fm, const QRect r, int flags, bool enabled, const CrystalString text) {
+  return _self_->itemTextRect(fm, r, flags, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(QStyle * _self_, const QRect r, int flags, const QPixmap & pixmap) {
+  return _self_->itemPixmapRect(r, flags, pixmap);
+}
+
+extern "C" void bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(QStyle * _self_, QPainter * painter, const QRect rect, int flags, const QPalette & pal, bool enabled, const CrystalString text, QPalette::ColorRole textRole) {
+  _self_->drawItemText(painter, rect, flags, pal, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textRole);
+}
+
+extern "C" void bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(QStyle * _self_, QPainter * painter, const QRect rect, int alignment, const QPixmap & pixmap) {
+  _self_->drawItemPixmap(painter, rect, alignment, pixmap);
+}
+
+extern "C" QPalette * bg_QStyle_standardPalette_(QStyle * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->standardPalette());
+}
+
+extern "C" void bg_QStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QStyle * _self_, QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawPrimitive(pe, opt, p, w);
+}
+
+extern "C" void bg_QStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QStyle * _self_, QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawControl(element, opt, p, w);
+}
+
+extern "C" QRect bg_QStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(QStyle * _self_, QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) {
+  return _self_->subElementRect(subElement, option, widget);
+}
+
+extern "C" void bg_QStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(QStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) {
+  _self_->drawComplexControl(cc, opt, p, widget);
+}
+
+extern "C" QStyle::SubControl bg_QStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(QStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint pt, const QWidget * widget) {
+  return _self_->hitTestComplexControl(cc, opt, pt, widget);
+}
+
+extern "C" QRect bg_QStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(QStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) {
+  return _self_->subControlRect(cc, opt, sc, widget);
+}
+
+extern "C" int bg_QStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(QStyle * _self_, QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) {
+  return _self_->pixelMetric(metric, option, widget);
+}
+
+extern "C" QSize bg_QStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(QStyle * _self_, QStyle::ContentsType ct, const QStyleOption * opt, const QSize contentsSize, const QWidget * w) {
+  return _self_->sizeFromContents(ct, opt, contentsSize, w);
+}
+
+extern "C" int bg_QStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(QStyle * _self_, QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) {
+  return _self_->styleHint(stylehint, opt, widget, returnData);
+}
+
+extern "C" QPixmap * bg_QStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QStyle * _self_, QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->standardPixmap(standardPixmap, opt, widget));
+}
+
+extern "C" QIcon * bg_QStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QStyle * _self_, QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->standardIcon(standardIcon, option, widget));
+}
+
+extern "C" QPixmap * bg_QStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(QStyle * _self_, QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->generatedIconPixmap(iconMode, pixmap, opt));
+}
+
+extern "C" QRect bg_QStyle_visualRect_STATIC_Qt__LayoutDirection_const_QRect_R_const_QRect_R(Qt::LayoutDirection direction, const QRect boundingRect, const QRect logicalRect) {
+  return QStyle::visualRect(direction, boundingRect, logicalRect);
+}
+
+extern "C" QPoint bg_QStyle_visualPos_STATIC_Qt__LayoutDirection_const_QRect_R_const_QPoint_R(Qt::LayoutDirection direction, const QRect boundingRect, const QPoint logicalPos) {
+  return QStyle::visualPos(direction, boundingRect, logicalPos);
+}
+
+extern "C" int bg_QStyle_sliderPositionFromValue_STATIC_int_int_int_int_bool(int min, int max, int val, int space, bool upsideDown) {
+  return QStyle::sliderPositionFromValue(min, max, val, space, upsideDown);
+}
+
+extern "C" int bg_QStyle_sliderValueFromPosition_STATIC_int_int_int_int_bool(int min, int max, int pos, int space, bool upsideDown) {
+  return QStyle::sliderValueFromPosition(min, max, pos, space, upsideDown);
+}
+
+extern "C" Qt::Alignment bg_QStyle_visualAlignment_STATIC_Qt__LayoutDirection_Qt__Alignment(Qt::LayoutDirection direction, Qt::Alignment alignment) {
+  return QStyle::visualAlignment(direction, alignment);
+}
+
+extern "C" QRect bg_QStyle_alignedRect_STATIC_Qt__LayoutDirection_Qt__Alignment_const_QSize_R_const_QRect_R(Qt::LayoutDirection direction, Qt::Alignment alignment, const QSize size, const QRect rectangle) {
+  return QStyle::alignedRect(direction, alignment, size, rectangle);
+}
+
+extern "C" int bg_QStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(QStyle * _self_, QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) {
+  return _self_->layoutSpacing(control1, control2, orientation, option, widget);
+}
+
+extern "C" int bg_QStyle_combinedLayoutSpacing_QSizePolicy__ControlTypes_QSizePolicy__ControlTypes_Qt__Orientation_QStyleOption_X_QWidget_X(QStyle * _self_, QSizePolicy::ControlTypes controls1, QSizePolicy::ControlTypes controls2, Qt::Orientation orientation, QStyleOption * option, QWidget * widget) {
+  return _self_->combinedLayoutSpacing(controls1, controls2, orientation, option, widget);
+}
+
+extern "C" const QStyle * bg_QStyle_proxy_(QStyle * _self_) {
+  return _self_->proxy();
+}
+
+extern "C" const QMetaObject * bg_QStyle_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStyle::staticMetaObject);
+}
+
+extern "C" void bg_QStyle_polish_SUPER_QWidget_X(QStyle * _self_, QWidget * widget) {
+  _self_->QStyle::polish(widget);
+}
+
+extern "C" void bg_QStyle_unpolish_SUPER_QWidget_X(QStyle * _self_, QWidget * widget) {
+  _self_->QStyle::unpolish(widget);
+}
+
+extern "C" void bg_QStyle_polish_SUPER_QApplication_X(QStyle * _self_, QApplication * application) {
+  _self_->QStyle::polish(application);
+}
+
+extern "C" void bg_QStyle_unpolish_SUPER_QApplication_X(QStyle * _self_, QApplication * application) {
+  _self_->QStyle::unpolish(application);
+}
+
+extern "C" void bg_QStyle_polish_SUPER_QPalette_R(QStyle * _self_, QPalette & palette) {
+  _self_->QStyle::polish(palette);
+}
+
+extern "C" QRect bg_QStyle_itemTextRect_SUPER_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(QStyle * _self_, const QFontMetrics & fm, const QRect r, int flags, bool enabled, const CrystalString text) {
+  return _self_->QStyle::itemTextRect(fm, r, flags, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QStyle_itemPixmapRect_SUPER_const_QRect_R_int_const_QPixmap_R(QStyle * _self_, const QRect r, int flags, const QPixmap & pixmap) {
+  return _self_->QStyle::itemPixmapRect(r, flags, pixmap);
+}
+
+extern "C" void bg_QStyle_drawItemText_SUPER_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(QStyle * _self_, QPainter * painter, const QRect rect, int flags, const QPalette & pal, bool enabled, const CrystalString text, QPalette::ColorRole textRole) {
+  _self_->QStyle::drawItemText(painter, rect, flags, pal, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textRole);
+}
+
+extern "C" void bg_QStyle_drawItemPixmap_SUPER_QPainter_X_const_QRect_R_int_const_QPixmap_R(QStyle * _self_, QPainter * painter, const QRect rect, int alignment, const QPixmap & pixmap) {
+  _self_->QStyle::drawItemPixmap(painter, rect, alignment, pixmap);
+}
+
+extern "C" QPalette * bg_QStyle_standardPalette_SUPER_(QStyle * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->QStyle::standardPalette());
+}
+
+extern "C" void bg_BgInherit_QStyle_JUMPTABLE_BgJumptable_QStyle_R(BgInherit_QStyle * _self_, const BgJumptable_QStyle & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QTabBar {
   CrystalProc<const QMetaObject *> bg_QTabBar_metaObject_;
   CrystalProc<void *, const char *> bg_QTabBar_qt_metacast_const_char_X;
@@ -45277,6 +46943,1534 @@ extern "C" void bg_BgInherit_QFrame_JUMPTABLE_BgJumptable_QFrame_R(BgInherit_QFr
   _self_->bgJump = (table);
 }
 
+extern "C" QStyleOption * bg_QStyleOption__CONSTRUCT_int_int(int version, int type) {
+  return new (UseGC) CrystalGCWrapper<QStyleOption>(version, type);
+}
+
+extern "C" QStyleOption * bg_QStyleOption__COPY_const_QStyleOption_R(const QStyleOption & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOption>(other);
+}
+
+extern "C" void bg_QStyleOption_initFrom_const_QWidget_X(QStyleOption * _self_, const QWidget * w) {
+  _self_->initFrom(w);
+}
+
+extern "C" QStyleOption * bg_QStyleOption__OPERATOR_assign_const_QStyleOption_R(QStyleOption * _self_, const QStyleOption & other) {
+  return &((*_self_) = (other));
+}
+
+extern "C" int bg_QStyleOption_version_GETTER_(QStyleOption * _self_) {
+  return _self_->version;
+}
+
+extern "C" void bg_QStyleOption_version_SETTER_int(QStyleOption * _self_, int version) {
+  _self_->version = version;
+}
+
+extern "C" int bg_QStyleOption_type_GETTER_(QStyleOption * _self_) {
+  return _self_->type;
+}
+
+extern "C" void bg_QStyleOption_type_SETTER_int(QStyleOption * _self_, int type) {
+  _self_->type = type;
+}
+
+extern "C" QStyle::State bg_QStyleOption_state_GETTER_(QStyleOption * _self_) {
+  return _self_->state;
+}
+
+extern "C" void bg_QStyleOption_state_SETTER_QStyle__State(QStyleOption * _self_, QStyle::State state) {
+  _self_->state = state;
+}
+
+extern "C" Qt::LayoutDirection bg_QStyleOption_direction_GETTER_(QStyleOption * _self_) {
+  return _self_->direction;
+}
+
+extern "C" void bg_QStyleOption_direction_SETTER_Qt__LayoutDirection(QStyleOption * _self_, Qt::LayoutDirection direction) {
+  _self_->direction = direction;
+}
+
+extern "C" QRect bg_QStyleOption_rect_GETTER_(QStyleOption * _self_) {
+  return _self_->rect;
+}
+
+extern "C" void bg_QStyleOption_rect_SETTER_QRect(QStyleOption * _self_, QRect rect) {
+  _self_->rect = rect;
+}
+
+extern "C" QFontMetrics * bg_QStyleOption_fontMetrics_GETTER_(QStyleOption * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFontMetrics>()) QFontMetrics (_self_->fontMetrics);
+}
+
+extern "C" void bg_QStyleOption_fontMetrics_SETTER_QFontMetrics(QStyleOption * _self_, QFontMetrics & fontMetrics) {
+  _self_->fontMetrics = fontMetrics;
+}
+
+extern "C" QPalette * bg_QStyleOption_palette_GETTER_(QStyleOption * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->palette);
+}
+
+extern "C" void bg_QStyleOption_palette_SETTER_QPalette(QStyleOption * _self_, QPalette & palette) {
+  _self_->palette = palette;
+}
+
+extern "C" QObject * bg_QStyleOption_styleObject_GETTER_(QStyleOption * _self_) {
+  return _self_->styleObject;
+}
+
+extern "C" void bg_QStyleOption_styleObject_SETTER_QObject_X(QStyleOption * _self_, QObject * styleObject) {
+  _self_->styleObject = styleObject;
+}
+
+extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFocusRect>();
+}
+
+extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__COPY_const_QStyleOptionFocusRect_R(const QStyleOptionFocusRect & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFocusRect>(other);
+}
+
+extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__OPERATOR_assign_const_QStyleOptionFocusRect_R(QStyleOptionFocusRect * _self_, const QStyleOptionFocusRect & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionFocusRect * bg_QStyleOptionFocusRect__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFocusRect>(version);
+}
+
+extern "C" QColor * bg_QStyleOptionFocusRect_backgroundColor_GETTER_(QStyleOptionFocusRect * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->backgroundColor);
+}
+
+extern "C" void bg_QStyleOptionFocusRect_backgroundColor_SETTER_QColor(QStyleOptionFocusRect * _self_, QColor & backgroundColor) {
+  _self_->backgroundColor = backgroundColor;
+}
+
+extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFrame>();
+}
+
+extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__COPY_const_QStyleOptionFrame_R(const QStyleOptionFrame & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFrame>(other);
+}
+
+extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__OPERATOR_assign_const_QStyleOptionFrame_R(QStyleOptionFrame * _self_, const QStyleOptionFrame & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionFrame * bg_QStyleOptionFrame__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionFrame>(version);
+}
+
+extern "C" int bg_QStyleOptionFrame_lineWidth_GETTER_(QStyleOptionFrame * _self_) {
+  return _self_->lineWidth;
+}
+
+extern "C" void bg_QStyleOptionFrame_lineWidth_SETTER_int(QStyleOptionFrame * _self_, int lineWidth) {
+  _self_->lineWidth = lineWidth;
+}
+
+extern "C" int bg_QStyleOptionFrame_midLineWidth_GETTER_(QStyleOptionFrame * _self_) {
+  return _self_->midLineWidth;
+}
+
+extern "C" void bg_QStyleOptionFrame_midLineWidth_SETTER_int(QStyleOptionFrame * _self_, int midLineWidth) {
+  _self_->midLineWidth = midLineWidth;
+}
+
+extern "C" QStyleOptionFrame::FrameFeatures bg_QStyleOptionFrame_features_GETTER_(QStyleOptionFrame * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionFrame_features_SETTER_QStyleOptionFrame__FrameFeatures(QStyleOptionFrame * _self_, QStyleOptionFrame::FrameFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" QFrame::Shape bg_QStyleOptionFrame_frameShape_GETTER_(QStyleOptionFrame * _self_) {
+  return _self_->frameShape;
+}
+
+extern "C" void bg_QStyleOptionFrame_frameShape_SETTER_QFrame__Shape(QStyleOptionFrame * _self_, QFrame::Shape frameShape) {
+  _self_->frameShape = frameShape;
+}
+
+extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabWidgetFrame>();
+}
+
+extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__COPY_const_QStyleOptionTabWidgetFrame_R(const QStyleOptionTabWidgetFrame & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabWidgetFrame>(other);
+}
+
+extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__OPERATOR_assign_const_QStyleOptionTabWidgetFrame_R(QStyleOptionTabWidgetFrame * _self_, const QStyleOptionTabWidgetFrame & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionTabWidgetFrame * bg_QStyleOptionTabWidgetFrame__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabWidgetFrame>(version);
+}
+
+extern "C" int bg_QStyleOptionTabWidgetFrame_lineWidth_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->lineWidth;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_lineWidth_SETTER_int(QStyleOptionTabWidgetFrame * _self_, int lineWidth) {
+  _self_->lineWidth = lineWidth;
+}
+
+extern "C" int bg_QStyleOptionTabWidgetFrame_midLineWidth_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->midLineWidth;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_midLineWidth_SETTER_int(QStyleOptionTabWidgetFrame * _self_, int midLineWidth) {
+  _self_->midLineWidth = midLineWidth;
+}
+
+extern "C" QTabBar::Shape bg_QStyleOptionTabWidgetFrame_shape_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->shape;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_shape_SETTER_QTabBar__Shape(QStyleOptionTabWidgetFrame * _self_, QTabBar::Shape shape) {
+  _self_->shape = shape;
+}
+
+extern "C" QSize bg_QStyleOptionTabWidgetFrame_tabBarSize_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->tabBarSize;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_tabBarSize_SETTER_QSize(QStyleOptionTabWidgetFrame * _self_, QSize tabBarSize) {
+  _self_->tabBarSize = tabBarSize;
+}
+
+extern "C" QSize bg_QStyleOptionTabWidgetFrame_rightCornerWidgetSize_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->rightCornerWidgetSize;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_rightCornerWidgetSize_SETTER_QSize(QStyleOptionTabWidgetFrame * _self_, QSize rightCornerWidgetSize) {
+  _self_->rightCornerWidgetSize = rightCornerWidgetSize;
+}
+
+extern "C" QSize bg_QStyleOptionTabWidgetFrame_leftCornerWidgetSize_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->leftCornerWidgetSize;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_leftCornerWidgetSize_SETTER_QSize(QStyleOptionTabWidgetFrame * _self_, QSize leftCornerWidgetSize) {
+  _self_->leftCornerWidgetSize = leftCornerWidgetSize;
+}
+
+extern "C" QRect bg_QStyleOptionTabWidgetFrame_tabBarRect_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->tabBarRect;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_tabBarRect_SETTER_QRect(QStyleOptionTabWidgetFrame * _self_, QRect tabBarRect) {
+  _self_->tabBarRect = tabBarRect;
+}
+
+extern "C" QRect bg_QStyleOptionTabWidgetFrame_selectedTabRect_GETTER_(QStyleOptionTabWidgetFrame * _self_) {
+  return _self_->selectedTabRect;
+}
+
+extern "C" void bg_QStyleOptionTabWidgetFrame_selectedTabRect_SETTER_QRect(QStyleOptionTabWidgetFrame * _self_, QRect selectedTabRect) {
+  _self_->selectedTabRect = selectedTabRect;
+}
+
+extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabBarBase>();
+}
+
+extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__COPY_const_QStyleOptionTabBarBase_R(const QStyleOptionTabBarBase & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabBarBase>(other);
+}
+
+extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__OPERATOR_assign_const_QStyleOptionTabBarBase_R(QStyleOptionTabBarBase * _self_, const QStyleOptionTabBarBase & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionTabBarBase * bg_QStyleOptionTabBarBase__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTabBarBase>(version);
+}
+
+extern "C" QTabBar::Shape bg_QStyleOptionTabBarBase_shape_GETTER_(QStyleOptionTabBarBase * _self_) {
+  return _self_->shape;
+}
+
+extern "C" void bg_QStyleOptionTabBarBase_shape_SETTER_QTabBar__Shape(QStyleOptionTabBarBase * _self_, QTabBar::Shape shape) {
+  _self_->shape = shape;
+}
+
+extern "C" QRect bg_QStyleOptionTabBarBase_tabBarRect_GETTER_(QStyleOptionTabBarBase * _self_) {
+  return _self_->tabBarRect;
+}
+
+extern "C" void bg_QStyleOptionTabBarBase_tabBarRect_SETTER_QRect(QStyleOptionTabBarBase * _self_, QRect tabBarRect) {
+  _self_->tabBarRect = tabBarRect;
+}
+
+extern "C" QRect bg_QStyleOptionTabBarBase_selectedTabRect_GETTER_(QStyleOptionTabBarBase * _self_) {
+  return _self_->selectedTabRect;
+}
+
+extern "C" void bg_QStyleOptionTabBarBase_selectedTabRect_SETTER_QRect(QStyleOptionTabBarBase * _self_, QRect selectedTabRect) {
+  _self_->selectedTabRect = selectedTabRect;
+}
+
+extern "C" bool bg_QStyleOptionTabBarBase_documentMode_GETTER_(QStyleOptionTabBarBase * _self_) {
+  return _self_->documentMode;
+}
+
+extern "C" void bg_QStyleOptionTabBarBase_documentMode_SETTER_bool(QStyleOptionTabBarBase * _self_, bool documentMode) {
+  _self_->documentMode = documentMode;
+}
+
+extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeader>();
+}
+
+extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__COPY_const_QStyleOptionHeader_R(const QStyleOptionHeader & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeader>(other);
+}
+
+extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__OPERATOR_assign_const_QStyleOptionHeader_R(QStyleOptionHeader * _self_, const QStyleOptionHeader & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionHeader * bg_QStyleOptionHeader__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionHeader>(version);
+}
+
+extern "C" int bg_QStyleOptionHeader_section_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->section;
+}
+
+extern "C" void bg_QStyleOptionHeader_section_SETTER_int(QStyleOptionHeader * _self_, int section) {
+  _self_->section = section;
+}
+
+extern "C" CrystalString bg_QStyleOptionHeader_text_GETTER_(QStyleOptionHeader * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionHeader_text_SETTER_QString(QStyleOptionHeader * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionHeader_textAlignment_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->textAlignment;
+}
+
+extern "C" void bg_QStyleOptionHeader_textAlignment_SETTER_Qt__Alignment(QStyleOptionHeader * _self_, Qt::Alignment textAlignment) {
+  _self_->textAlignment = textAlignment;
+}
+
+extern "C" QIcon * bg_QStyleOptionHeader_icon_GETTER_(QStyleOptionHeader * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionHeader_icon_SETTER_QIcon(QStyleOptionHeader * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionHeader_iconAlignment_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->iconAlignment;
+}
+
+extern "C" void bg_QStyleOptionHeader_iconAlignment_SETTER_Qt__Alignment(QStyleOptionHeader * _self_, Qt::Alignment iconAlignment) {
+  _self_->iconAlignment = iconAlignment;
+}
+
+extern "C" QStyleOptionHeader::SectionPosition bg_QStyleOptionHeader_position_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->position;
+}
+
+extern "C" void bg_QStyleOptionHeader_position_SETTER_QStyleOptionHeader__SectionPosition(QStyleOptionHeader * _self_, QStyleOptionHeader::SectionPosition position) {
+  _self_->position = position;
+}
+
+extern "C" QStyleOptionHeader::SelectedPosition bg_QStyleOptionHeader_selectedPosition_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->selectedPosition;
+}
+
+extern "C" void bg_QStyleOptionHeader_selectedPosition_SETTER_QStyleOptionHeader__SelectedPosition(QStyleOptionHeader * _self_, QStyleOptionHeader::SelectedPosition selectedPosition) {
+  _self_->selectedPosition = selectedPosition;
+}
+
+extern "C" QStyleOptionHeader::SortIndicator bg_QStyleOptionHeader_sortIndicator_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->sortIndicator;
+}
+
+extern "C" void bg_QStyleOptionHeader_sortIndicator_SETTER_QStyleOptionHeader__SortIndicator(QStyleOptionHeader * _self_, QStyleOptionHeader::SortIndicator sortIndicator) {
+  _self_->sortIndicator = sortIndicator;
+}
+
+extern "C" Qt::Orientation bg_QStyleOptionHeader_orientation_GETTER_(QStyleOptionHeader * _self_) {
+  return _self_->orientation;
+}
+
+extern "C" void bg_QStyleOptionHeader_orientation_SETTER_Qt__Orientation(QStyleOptionHeader * _self_, Qt::Orientation orientation) {
+  _self_->orientation = orientation;
+}
+
+extern "C" QStyleOptionButton * bg_QStyleOptionButton__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionButton>();
+}
+
+extern "C" QStyleOptionButton * bg_QStyleOptionButton__COPY_const_QStyleOptionButton_R(const QStyleOptionButton & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionButton>(other);
+}
+
+extern "C" QStyleOptionButton * bg_QStyleOptionButton__OPERATOR_assign_const_QStyleOptionButton_R(QStyleOptionButton * _self_, const QStyleOptionButton & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionButton * bg_QStyleOptionButton__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionButton>(version);
+}
+
+extern "C" QStyleOptionButton::ButtonFeatures bg_QStyleOptionButton_features_GETTER_(QStyleOptionButton * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionButton_features_SETTER_QStyleOptionButton__ButtonFeatures(QStyleOptionButton * _self_, QStyleOptionButton::ButtonFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" CrystalString bg_QStyleOptionButton_text_GETTER_(QStyleOptionButton * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionButton_text_SETTER_QString(QStyleOptionButton * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionButton_icon_GETTER_(QStyleOptionButton * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionButton_icon_SETTER_QIcon(QStyleOptionButton * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" QSize bg_QStyleOptionButton_iconSize_GETTER_(QStyleOptionButton * _self_) {
+  return _self_->iconSize;
+}
+
+extern "C" void bg_QStyleOptionButton_iconSize_SETTER_QSize(QStyleOptionButton * _self_, QSize iconSize) {
+  _self_->iconSize = iconSize;
+}
+
+extern "C" QStyleOptionTab * bg_QStyleOptionTab__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTab>();
+}
+
+extern "C" QStyleOptionTab * bg_QStyleOptionTab__COPY_const_QStyleOptionTab_R(const QStyleOptionTab & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTab>(other);
+}
+
+extern "C" QStyleOptionTab * bg_QStyleOptionTab__OPERATOR_assign_const_QStyleOptionTab_R(QStyleOptionTab * _self_, const QStyleOptionTab & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionTab * bg_QStyleOptionTab__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTab>(version);
+}
+
+extern "C" QTabBar::Shape bg_QStyleOptionTab_shape_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->shape;
+}
+
+extern "C" void bg_QStyleOptionTab_shape_SETTER_QTabBar__Shape(QStyleOptionTab * _self_, QTabBar::Shape shape) {
+  _self_->shape = shape;
+}
+
+extern "C" CrystalString bg_QStyleOptionTab_text_GETTER_(QStyleOptionTab * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionTab_text_SETTER_QString(QStyleOptionTab * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionTab_icon_GETTER_(QStyleOptionTab * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionTab_icon_SETTER_QIcon(QStyleOptionTab * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" int bg_QStyleOptionTab_row_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->row;
+}
+
+extern "C" void bg_QStyleOptionTab_row_SETTER_int(QStyleOptionTab * _self_, int row) {
+  _self_->row = row;
+}
+
+extern "C" QStyleOptionTab::TabPosition bg_QStyleOptionTab_position_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->position;
+}
+
+extern "C" void bg_QStyleOptionTab_position_SETTER_QStyleOptionTab__TabPosition(QStyleOptionTab * _self_, QStyleOptionTab::TabPosition position) {
+  _self_->position = position;
+}
+
+extern "C" QStyleOptionTab::SelectedPosition bg_QStyleOptionTab_selectedPosition_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->selectedPosition;
+}
+
+extern "C" void bg_QStyleOptionTab_selectedPosition_SETTER_QStyleOptionTab__SelectedPosition(QStyleOptionTab * _self_, QStyleOptionTab::SelectedPosition selectedPosition) {
+  _self_->selectedPosition = selectedPosition;
+}
+
+extern "C" QStyleOptionTab::CornerWidgets bg_QStyleOptionTab_cornerWidgets_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->cornerWidgets;
+}
+
+extern "C" void bg_QStyleOptionTab_cornerWidgets_SETTER_QStyleOptionTab__CornerWidgets(QStyleOptionTab * _self_, QStyleOptionTab::CornerWidgets cornerWidgets) {
+  _self_->cornerWidgets = cornerWidgets;
+}
+
+extern "C" QSize bg_QStyleOptionTab_iconSize_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->iconSize;
+}
+
+extern "C" void bg_QStyleOptionTab_iconSize_SETTER_QSize(QStyleOptionTab * _self_, QSize iconSize) {
+  _self_->iconSize = iconSize;
+}
+
+extern "C" bool bg_QStyleOptionTab_documentMode_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->documentMode;
+}
+
+extern "C" void bg_QStyleOptionTab_documentMode_SETTER_bool(QStyleOptionTab * _self_, bool documentMode) {
+  _self_->documentMode = documentMode;
+}
+
+extern "C" QSize bg_QStyleOptionTab_leftButtonSize_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->leftButtonSize;
+}
+
+extern "C" void bg_QStyleOptionTab_leftButtonSize_SETTER_QSize(QStyleOptionTab * _self_, QSize leftButtonSize) {
+  _self_->leftButtonSize = leftButtonSize;
+}
+
+extern "C" QSize bg_QStyleOptionTab_rightButtonSize_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->rightButtonSize;
+}
+
+extern "C" void bg_QStyleOptionTab_rightButtonSize_SETTER_QSize(QStyleOptionTab * _self_, QSize rightButtonSize) {
+  _self_->rightButtonSize = rightButtonSize;
+}
+
+extern "C" QStyleOptionTab::TabFeatures bg_QStyleOptionTab_features_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionTab_features_SETTER_QStyleOptionTab__TabFeatures(QStyleOptionTab * _self_, QStyleOptionTab::TabFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" int bg_QStyleOptionTab_tabIndex_GETTER_(QStyleOptionTab * _self_) {
+  return _self_->tabIndex;
+}
+
+extern "C" void bg_QStyleOptionTab_tabIndex_SETTER_int(QStyleOptionTab * _self_, int tabIndex) {
+  _self_->tabIndex = tabIndex;
+}
+
+extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBar>();
+}
+
+extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__COPY_const_QStyleOptionToolBar_R(const QStyleOptionToolBar & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBar>(other);
+}
+
+extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__OPERATOR_assign_const_QStyleOptionToolBar_R(QStyleOptionToolBar * _self_, const QStyleOptionToolBar & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionToolBar * bg_QStyleOptionToolBar__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBar>(version);
+}
+
+extern "C" QStyleOptionToolBar::ToolBarPosition bg_QStyleOptionToolBar_positionOfLine_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->positionOfLine;
+}
+
+extern "C" void bg_QStyleOptionToolBar_positionOfLine_SETTER_QStyleOptionToolBar__ToolBarPosition(QStyleOptionToolBar * _self_, QStyleOptionToolBar::ToolBarPosition positionOfLine) {
+  _self_->positionOfLine = positionOfLine;
+}
+
+extern "C" QStyleOptionToolBar::ToolBarPosition bg_QStyleOptionToolBar_positionWithinLine_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->positionWithinLine;
+}
+
+extern "C" void bg_QStyleOptionToolBar_positionWithinLine_SETTER_QStyleOptionToolBar__ToolBarPosition(QStyleOptionToolBar * _self_, QStyleOptionToolBar::ToolBarPosition positionWithinLine) {
+  _self_->positionWithinLine = positionWithinLine;
+}
+
+extern "C" Qt::ToolBarArea bg_QStyleOptionToolBar_toolBarArea_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->toolBarArea;
+}
+
+extern "C" void bg_QStyleOptionToolBar_toolBarArea_SETTER_Qt__ToolBarArea(QStyleOptionToolBar * _self_, Qt::ToolBarArea toolBarArea) {
+  _self_->toolBarArea = toolBarArea;
+}
+
+extern "C" QStyleOptionToolBar::ToolBarFeatures bg_QStyleOptionToolBar_features_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionToolBar_features_SETTER_QStyleOptionToolBar__ToolBarFeatures(QStyleOptionToolBar * _self_, QStyleOptionToolBar::ToolBarFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" int bg_QStyleOptionToolBar_lineWidth_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->lineWidth;
+}
+
+extern "C" void bg_QStyleOptionToolBar_lineWidth_SETTER_int(QStyleOptionToolBar * _self_, int lineWidth) {
+  _self_->lineWidth = lineWidth;
+}
+
+extern "C" int bg_QStyleOptionToolBar_midLineWidth_GETTER_(QStyleOptionToolBar * _self_) {
+  return _self_->midLineWidth;
+}
+
+extern "C" void bg_QStyleOptionToolBar_midLineWidth_SETTER_int(QStyleOptionToolBar * _self_, int midLineWidth) {
+  _self_->midLineWidth = midLineWidth;
+}
+
+extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionProgressBar>();
+}
+
+extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__COPY_const_QStyleOptionProgressBar_R(const QStyleOptionProgressBar & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionProgressBar>(other);
+}
+
+extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__OPERATOR_assign_const_QStyleOptionProgressBar_R(QStyleOptionProgressBar * _self_, const QStyleOptionProgressBar & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionProgressBar * bg_QStyleOptionProgressBar__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionProgressBar>(version);
+}
+
+extern "C" int bg_QStyleOptionProgressBar_minimum_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->minimum;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_minimum_SETTER_int(QStyleOptionProgressBar * _self_, int minimum) {
+  _self_->minimum = minimum;
+}
+
+extern "C" int bg_QStyleOptionProgressBar_maximum_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->maximum;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_maximum_SETTER_int(QStyleOptionProgressBar * _self_, int maximum) {
+  _self_->maximum = maximum;
+}
+
+extern "C" int bg_QStyleOptionProgressBar_progress_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->progress;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_progress_SETTER_int(QStyleOptionProgressBar * _self_, int progress) {
+  _self_->progress = progress;
+}
+
+extern "C" CrystalString bg_QStyleOptionProgressBar_text_GETTER_(QStyleOptionProgressBar * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionProgressBar_text_SETTER_QString(QStyleOptionProgressBar * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionProgressBar_textAlignment_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->textAlignment;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_textAlignment_SETTER_Qt__Alignment(QStyleOptionProgressBar * _self_, Qt::Alignment textAlignment) {
+  _self_->textAlignment = textAlignment;
+}
+
+extern "C" bool bg_QStyleOptionProgressBar_textVisible_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->textVisible;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_textVisible_SETTER_bool(QStyleOptionProgressBar * _self_, bool textVisible) {
+  _self_->textVisible = textVisible;
+}
+
+extern "C" bool bg_QStyleOptionProgressBar_invertedAppearance_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->invertedAppearance;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_invertedAppearance_SETTER_bool(QStyleOptionProgressBar * _self_, bool invertedAppearance) {
+  _self_->invertedAppearance = invertedAppearance;
+}
+
+extern "C" bool bg_QStyleOptionProgressBar_bottomToTop_GETTER_(QStyleOptionProgressBar * _self_) {
+  return _self_->bottomToTop;
+}
+
+extern "C" void bg_QStyleOptionProgressBar_bottomToTop_SETTER_bool(QStyleOptionProgressBar * _self_, bool bottomToTop) {
+  _self_->bottomToTop = bottomToTop;
+}
+
+extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItem>();
+}
+
+extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__COPY_const_QStyleOptionMenuItem_R(const QStyleOptionMenuItem & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItem>(other);
+}
+
+extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__OPERATOR_assign_const_QStyleOptionMenuItem_R(QStyleOptionMenuItem * _self_, const QStyleOptionMenuItem & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionMenuItem * bg_QStyleOptionMenuItem__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionMenuItem>(version);
+}
+
+extern "C" QStyleOptionMenuItem::MenuItemType bg_QStyleOptionMenuItem_menuItemType_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->menuItemType;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_menuItemType_SETTER_QStyleOptionMenuItem__MenuItemType(QStyleOptionMenuItem * _self_, QStyleOptionMenuItem::MenuItemType menuItemType) {
+  _self_->menuItemType = menuItemType;
+}
+
+extern "C" QStyleOptionMenuItem::CheckType bg_QStyleOptionMenuItem_checkType_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->checkType;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_checkType_SETTER_QStyleOptionMenuItem__CheckType(QStyleOptionMenuItem * _self_, QStyleOptionMenuItem::CheckType checkType) {
+  _self_->checkType = checkType;
+}
+
+extern "C" bool bg_QStyleOptionMenuItem_checked_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->checked;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_checked_SETTER_bool(QStyleOptionMenuItem * _self_, bool checked) {
+  _self_->checked = checked;
+}
+
+extern "C" bool bg_QStyleOptionMenuItem_menuHasCheckableItems_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->menuHasCheckableItems;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_menuHasCheckableItems_SETTER_bool(QStyleOptionMenuItem * _self_, bool menuHasCheckableItems) {
+  _self_->menuHasCheckableItems = menuHasCheckableItems;
+}
+
+extern "C" QRect bg_QStyleOptionMenuItem_menuRect_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->menuRect;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_menuRect_SETTER_QRect(QStyleOptionMenuItem * _self_, QRect menuRect) {
+  _self_->menuRect = menuRect;
+}
+
+extern "C" CrystalString bg_QStyleOptionMenuItem_text_GETTER_(QStyleOptionMenuItem * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionMenuItem_text_SETTER_QString(QStyleOptionMenuItem * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionMenuItem_icon_GETTER_(QStyleOptionMenuItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionMenuItem_icon_SETTER_QIcon(QStyleOptionMenuItem * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" int bg_QStyleOptionMenuItem_maxIconWidth_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->maxIconWidth;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_maxIconWidth_SETTER_int(QStyleOptionMenuItem * _self_, int maxIconWidth) {
+  _self_->maxIconWidth = maxIconWidth;
+}
+
+extern "C" int bg_QStyleOptionMenuItem_reservedShortcutWidth_GETTER_(QStyleOptionMenuItem * _self_) {
+  return _self_->reservedShortcutWidth;
+}
+
+extern "C" void bg_QStyleOptionMenuItem_reservedShortcutWidth_SETTER_int(QStyleOptionMenuItem * _self_, int reservedShortcutWidth) {
+  _self_->reservedShortcutWidth = reservedShortcutWidth;
+}
+
+extern "C" QFont * bg_QStyleOptionMenuItem_font_GETTER_(QStyleOptionMenuItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->font);
+}
+
+extern "C" void bg_QStyleOptionMenuItem_font_SETTER_QFont(QStyleOptionMenuItem * _self_, QFont & font) {
+  _self_->font = font;
+}
+
+extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionDockWidget>();
+}
+
+extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__COPY_const_QStyleOptionDockWidget_R(const QStyleOptionDockWidget & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionDockWidget>(other);
+}
+
+extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__OPERATOR_assign_const_QStyleOptionDockWidget_R(QStyleOptionDockWidget * _self_, const QStyleOptionDockWidget & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionDockWidget * bg_QStyleOptionDockWidget__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionDockWidget>(version);
+}
+
+extern "C" CrystalString bg_QStyleOptionDockWidget_title_GETTER_(QStyleOptionDockWidget * _self_) {
+  return qstring_to_crystal(_self_->title);
+}
+
+extern "C" void bg_QStyleOptionDockWidget_title_SETTER_QString(QStyleOptionDockWidget * _self_, CrystalString title) {
+  _self_->title = ([&]() { auto &&bg_value = (title); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" bool bg_QStyleOptionDockWidget_closable_GETTER_(QStyleOptionDockWidget * _self_) {
+  return _self_->closable;
+}
+
+extern "C" void bg_QStyleOptionDockWidget_closable_SETTER_bool(QStyleOptionDockWidget * _self_, bool closable) {
+  _self_->closable = closable;
+}
+
+extern "C" bool bg_QStyleOptionDockWidget_movable_GETTER_(QStyleOptionDockWidget * _self_) {
+  return _self_->movable;
+}
+
+extern "C" void bg_QStyleOptionDockWidget_movable_SETTER_bool(QStyleOptionDockWidget * _self_, bool movable) {
+  _self_->movable = movable;
+}
+
+extern "C" bool bg_QStyleOptionDockWidget_floatable_GETTER_(QStyleOptionDockWidget * _self_) {
+  return _self_->floatable;
+}
+
+extern "C" void bg_QStyleOptionDockWidget_floatable_SETTER_bool(QStyleOptionDockWidget * _self_, bool floatable) {
+  _self_->floatable = floatable;
+}
+
+extern "C" bool bg_QStyleOptionDockWidget_verticalTitleBar_GETTER_(QStyleOptionDockWidget * _self_) {
+  return _self_->verticalTitleBar;
+}
+
+extern "C" void bg_QStyleOptionDockWidget_verticalTitleBar_SETTER_bool(QStyleOptionDockWidget * _self_, bool verticalTitleBar) {
+  _self_->verticalTitleBar = verticalTitleBar;
+}
+
+extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionViewItem>();
+}
+
+extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__COPY_const_QStyleOptionViewItem_R(const QStyleOptionViewItem & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionViewItem>(other);
+}
+
+extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__OPERATOR_assign_const_QStyleOptionViewItem_R(QStyleOptionViewItem * _self_, const QStyleOptionViewItem & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionViewItem * bg_QStyleOptionViewItem__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionViewItem>(version);
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionViewItem_displayAlignment_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->displayAlignment;
+}
+
+extern "C" void bg_QStyleOptionViewItem_displayAlignment_SETTER_Qt__Alignment(QStyleOptionViewItem * _self_, Qt::Alignment displayAlignment) {
+  _self_->displayAlignment = displayAlignment;
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionViewItem_decorationAlignment_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->decorationAlignment;
+}
+
+extern "C" void bg_QStyleOptionViewItem_decorationAlignment_SETTER_Qt__Alignment(QStyleOptionViewItem * _self_, Qt::Alignment decorationAlignment) {
+  _self_->decorationAlignment = decorationAlignment;
+}
+
+extern "C" Qt::TextElideMode bg_QStyleOptionViewItem_textElideMode_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->textElideMode;
+}
+
+extern "C" void bg_QStyleOptionViewItem_textElideMode_SETTER_Qt__TextElideMode(QStyleOptionViewItem * _self_, Qt::TextElideMode textElideMode) {
+  _self_->textElideMode = textElideMode;
+}
+
+extern "C" QStyleOptionViewItem::Position bg_QStyleOptionViewItem_decorationPosition_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->decorationPosition;
+}
+
+extern "C" void bg_QStyleOptionViewItem_decorationPosition_SETTER_QStyleOptionViewItem__Position(QStyleOptionViewItem * _self_, QStyleOptionViewItem::Position decorationPosition) {
+  _self_->decorationPosition = decorationPosition;
+}
+
+extern "C" QSize bg_QStyleOptionViewItem_decorationSize_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->decorationSize;
+}
+
+extern "C" void bg_QStyleOptionViewItem_decorationSize_SETTER_QSize(QStyleOptionViewItem * _self_, QSize decorationSize) {
+  _self_->decorationSize = decorationSize;
+}
+
+extern "C" QFont * bg_QStyleOptionViewItem_font_GETTER_(QStyleOptionViewItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->font);
+}
+
+extern "C" void bg_QStyleOptionViewItem_font_SETTER_QFont(QStyleOptionViewItem * _self_, QFont & font) {
+  _self_->font = font;
+}
+
+extern "C" bool bg_QStyleOptionViewItem_showDecorationSelected_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->showDecorationSelected;
+}
+
+extern "C" void bg_QStyleOptionViewItem_showDecorationSelected_SETTER_bool(QStyleOptionViewItem * _self_, bool showDecorationSelected) {
+  _self_->showDecorationSelected = showDecorationSelected;
+}
+
+extern "C" QStyleOptionViewItem::ViewItemFeatures bg_QStyleOptionViewItem_features_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionViewItem_features_SETTER_QStyleOptionViewItem__ViewItemFeatures(QStyleOptionViewItem * _self_, QStyleOptionViewItem::ViewItemFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" QLocale * bg_QStyleOptionViewItem_locale_GETTER_(QStyleOptionViewItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QLocale>()) QLocale (_self_->locale);
+}
+
+extern "C" void bg_QStyleOptionViewItem_locale_SETTER_QLocale(QStyleOptionViewItem * _self_, QLocale & locale) {
+  _self_->locale = locale;
+}
+
+extern "C" const QWidget * bg_QStyleOptionViewItem_widget_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->widget;
+}
+
+extern "C" QModelIndex * bg_QStyleOptionViewItem_index_GETTER_(QStyleOptionViewItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QModelIndex>()) QModelIndex (_self_->index);
+}
+
+extern "C" void bg_QStyleOptionViewItem_index_SETTER_QModelIndex(QStyleOptionViewItem * _self_, QModelIndex & index) {
+  _self_->index = index;
+}
+
+extern "C" Qt::CheckState bg_QStyleOptionViewItem_checkState_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->checkState;
+}
+
+extern "C" void bg_QStyleOptionViewItem_checkState_SETTER_Qt__CheckState(QStyleOptionViewItem * _self_, Qt::CheckState checkState) {
+  _self_->checkState = checkState;
+}
+
+extern "C" QIcon * bg_QStyleOptionViewItem_icon_GETTER_(QStyleOptionViewItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionViewItem_icon_SETTER_QIcon(QStyleOptionViewItem * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" CrystalString bg_QStyleOptionViewItem_text_GETTER_(QStyleOptionViewItem * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionViewItem_text_SETTER_QString(QStyleOptionViewItem * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QStyleOptionViewItem::ViewItemPosition bg_QStyleOptionViewItem_viewItemPosition_GETTER_(QStyleOptionViewItem * _self_) {
+  return _self_->viewItemPosition;
+}
+
+extern "C" void bg_QStyleOptionViewItem_viewItemPosition_SETTER_QStyleOptionViewItem__ViewItemPosition(QStyleOptionViewItem * _self_, QStyleOptionViewItem::ViewItemPosition viewItemPosition) {
+  _self_->viewItemPosition = viewItemPosition;
+}
+
+extern "C" QBrush * bg_QStyleOptionViewItem_backgroundBrush_GETTER_(QStyleOptionViewItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->backgroundBrush);
+}
+
+extern "C" void bg_QStyleOptionViewItem_backgroundBrush_SETTER_QBrush(QStyleOptionViewItem * _self_, QBrush & backgroundBrush) {
+  _self_->backgroundBrush = backgroundBrush;
+}
+
+extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBox>();
+}
+
+extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__COPY_const_QStyleOptionToolBox_R(const QStyleOptionToolBox & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBox>(other);
+}
+
+extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__OPERATOR_assign_const_QStyleOptionToolBox_R(QStyleOptionToolBox * _self_, const QStyleOptionToolBox & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionToolBox * bg_QStyleOptionToolBox__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolBox>(version);
+}
+
+extern "C" CrystalString bg_QStyleOptionToolBox_text_GETTER_(QStyleOptionToolBox * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionToolBox_text_SETTER_QString(QStyleOptionToolBox * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionToolBox_icon_GETTER_(QStyleOptionToolBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionToolBox_icon_SETTER_QIcon(QStyleOptionToolBox * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" QStyleOptionToolBox::TabPosition bg_QStyleOptionToolBox_position_GETTER_(QStyleOptionToolBox * _self_) {
+  return _self_->position;
+}
+
+extern "C" void bg_QStyleOptionToolBox_position_SETTER_QStyleOptionToolBox__TabPosition(QStyleOptionToolBox * _self_, QStyleOptionToolBox::TabPosition position) {
+  _self_->position = position;
+}
+
+extern "C" QStyleOptionToolBox::SelectedPosition bg_QStyleOptionToolBox_selectedPosition_GETTER_(QStyleOptionToolBox * _self_) {
+  return _self_->selectedPosition;
+}
+
+extern "C" void bg_QStyleOptionToolBox_selectedPosition_SETTER_QStyleOptionToolBox__SelectedPosition(QStyleOptionToolBox * _self_, QStyleOptionToolBox::SelectedPosition selectedPosition) {
+  _self_->selectedPosition = selectedPosition;
+}
+
+extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionRubberBand>();
+}
+
+extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__COPY_const_QStyleOptionRubberBand_R(const QStyleOptionRubberBand & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionRubberBand>(other);
+}
+
+extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__OPERATOR_assign_const_QStyleOptionRubberBand_R(QStyleOptionRubberBand * _self_, const QStyleOptionRubberBand & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionRubberBand * bg_QStyleOptionRubberBand__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionRubberBand>(version);
+}
+
+extern "C" QRubberBand::Shape bg_QStyleOptionRubberBand_shape_GETTER_(QStyleOptionRubberBand * _self_) {
+  return _self_->shape;
+}
+
+extern "C" void bg_QStyleOptionRubberBand_shape_SETTER_QRubberBand__Shape(QStyleOptionRubberBand * _self_, QRubberBand::Shape shape) {
+  _self_->shape = shape;
+}
+
+extern "C" bool bg_QStyleOptionRubberBand_opaque_GETTER_(QStyleOptionRubberBand * _self_) {
+  return _self_->opaque;
+}
+
+extern "C" void bg_QStyleOptionRubberBand_opaque_SETTER_bool(QStyleOptionRubberBand * _self_, bool opaque) {
+  _self_->opaque = opaque;
+}
+
+extern "C" QStyleOptionComplex * bg_QStyleOptionComplex__CONSTRUCT_int_int(int version, int type) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionComplex>(version, type);
+}
+
+extern "C" QStyleOptionComplex * bg_QStyleOptionComplex__COPY_const_QStyleOptionComplex_R(const QStyleOptionComplex & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionComplex>(other);
+}
+
+extern "C" QStyleOptionComplex * bg_QStyleOptionComplex__OPERATOR_assign_const_QStyleOptionComplex_R(QStyleOptionComplex * _self_, const QStyleOptionComplex & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyle::SubControls bg_QStyleOptionComplex_subControls_GETTER_(QStyleOptionComplex * _self_) {
+  return _self_->subControls;
+}
+
+extern "C" void bg_QStyleOptionComplex_subControls_SETTER_QStyle__SubControls(QStyleOptionComplex * _self_, QStyle::SubControls subControls) {
+  _self_->subControls = subControls;
+}
+
+extern "C" QStyle::SubControls bg_QStyleOptionComplex_activeSubControls_GETTER_(QStyleOptionComplex * _self_) {
+  return _self_->activeSubControls;
+}
+
+extern "C" void bg_QStyleOptionComplex_activeSubControls_SETTER_QStyle__SubControls(QStyleOptionComplex * _self_, QStyle::SubControls activeSubControls) {
+  _self_->activeSubControls = activeSubControls;
+}
+
+extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSlider>();
+}
+
+extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__COPY_const_QStyleOptionSlider_R(const QStyleOptionSlider & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSlider>(other);
+}
+
+extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__OPERATOR_assign_const_QStyleOptionSlider_R(QStyleOptionSlider * _self_, const QStyleOptionSlider & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionSlider * bg_QStyleOptionSlider__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSlider>(version);
+}
+
+extern "C" Qt::Orientation bg_QStyleOptionSlider_orientation_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->orientation;
+}
+
+extern "C" void bg_QStyleOptionSlider_orientation_SETTER_Qt__Orientation(QStyleOptionSlider * _self_, Qt::Orientation orientation) {
+  _self_->orientation = orientation;
+}
+
+extern "C" int bg_QStyleOptionSlider_minimum_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->minimum;
+}
+
+extern "C" void bg_QStyleOptionSlider_minimum_SETTER_int(QStyleOptionSlider * _self_, int minimum) {
+  _self_->minimum = minimum;
+}
+
+extern "C" int bg_QStyleOptionSlider_maximum_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->maximum;
+}
+
+extern "C" void bg_QStyleOptionSlider_maximum_SETTER_int(QStyleOptionSlider * _self_, int maximum) {
+  _self_->maximum = maximum;
+}
+
+extern "C" QSlider::TickPosition bg_QStyleOptionSlider_tickPosition_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->tickPosition;
+}
+
+extern "C" void bg_QStyleOptionSlider_tickPosition_SETTER_QSlider__TickPosition(QStyleOptionSlider * _self_, QSlider::TickPosition tickPosition) {
+  _self_->tickPosition = tickPosition;
+}
+
+extern "C" int bg_QStyleOptionSlider_tickInterval_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->tickInterval;
+}
+
+extern "C" void bg_QStyleOptionSlider_tickInterval_SETTER_int(QStyleOptionSlider * _self_, int tickInterval) {
+  _self_->tickInterval = tickInterval;
+}
+
+extern "C" bool bg_QStyleOptionSlider_upsideDown_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->upsideDown;
+}
+
+extern "C" void bg_QStyleOptionSlider_upsideDown_SETTER_bool(QStyleOptionSlider * _self_, bool upsideDown) {
+  _self_->upsideDown = upsideDown;
+}
+
+extern "C" int bg_QStyleOptionSlider_sliderPosition_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->sliderPosition;
+}
+
+extern "C" void bg_QStyleOptionSlider_sliderPosition_SETTER_int(QStyleOptionSlider * _self_, int sliderPosition) {
+  _self_->sliderPosition = sliderPosition;
+}
+
+extern "C" int bg_QStyleOptionSlider_sliderValue_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->sliderValue;
+}
+
+extern "C" void bg_QStyleOptionSlider_sliderValue_SETTER_int(QStyleOptionSlider * _self_, int sliderValue) {
+  _self_->sliderValue = sliderValue;
+}
+
+extern "C" int bg_QStyleOptionSlider_singleStep_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->singleStep;
+}
+
+extern "C" void bg_QStyleOptionSlider_singleStep_SETTER_int(QStyleOptionSlider * _self_, int singleStep) {
+  _self_->singleStep = singleStep;
+}
+
+extern "C" int bg_QStyleOptionSlider_pageStep_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->pageStep;
+}
+
+extern "C" void bg_QStyleOptionSlider_pageStep_SETTER_int(QStyleOptionSlider * _self_, int pageStep) {
+  _self_->pageStep = pageStep;
+}
+
+extern "C" qreal bg_QStyleOptionSlider_notchTarget_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->notchTarget;
+}
+
+extern "C" void bg_QStyleOptionSlider_notchTarget_SETTER_qreal(QStyleOptionSlider * _self_, qreal notchTarget) {
+  _self_->notchTarget = notchTarget;
+}
+
+extern "C" bool bg_QStyleOptionSlider_dialWrapping_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->dialWrapping;
+}
+
+extern "C" void bg_QStyleOptionSlider_dialWrapping_SETTER_bool(QStyleOptionSlider * _self_, bool dialWrapping) {
+  _self_->dialWrapping = dialWrapping;
+}
+
+extern "C" Qt::KeyboardModifiers bg_QStyleOptionSlider_keyboardModifiers_GETTER_(QStyleOptionSlider * _self_) {
+  return _self_->keyboardModifiers;
+}
+
+extern "C" void bg_QStyleOptionSlider_keyboardModifiers_SETTER_Qt__KeyboardModifiers(QStyleOptionSlider * _self_, Qt::KeyboardModifiers keyboardModifiers) {
+  _self_->keyboardModifiers = keyboardModifiers;
+}
+
+extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSpinBox>();
+}
+
+extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__COPY_const_QStyleOptionSpinBox_R(const QStyleOptionSpinBox & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSpinBox>(other);
+}
+
+extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__OPERATOR_assign_const_QStyleOptionSpinBox_R(QStyleOptionSpinBox * _self_, const QStyleOptionSpinBox & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionSpinBox * bg_QStyleOptionSpinBox__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSpinBox>(version);
+}
+
+extern "C" QAbstractSpinBox::ButtonSymbols bg_QStyleOptionSpinBox_buttonSymbols_GETTER_(QStyleOptionSpinBox * _self_) {
+  return _self_->buttonSymbols;
+}
+
+extern "C" void bg_QStyleOptionSpinBox_buttonSymbols_SETTER_QAbstractSpinBox__ButtonSymbols(QStyleOptionSpinBox * _self_, QAbstractSpinBox::ButtonSymbols buttonSymbols) {
+  _self_->buttonSymbols = buttonSymbols;
+}
+
+extern "C" QAbstractSpinBox::StepEnabled bg_QStyleOptionSpinBox_stepEnabled_GETTER_(QStyleOptionSpinBox * _self_) {
+  return _self_->stepEnabled;
+}
+
+extern "C" void bg_QStyleOptionSpinBox_stepEnabled_SETTER_QAbstractSpinBox__StepEnabled(QStyleOptionSpinBox * _self_, QAbstractSpinBox::StepEnabled stepEnabled) {
+  _self_->stepEnabled = stepEnabled;
+}
+
+extern "C" bool bg_QStyleOptionSpinBox_frame_GETTER_(QStyleOptionSpinBox * _self_) {
+  return _self_->frame;
+}
+
+extern "C" void bg_QStyleOptionSpinBox_frame_SETTER_bool(QStyleOptionSpinBox * _self_, bool frame) {
+  _self_->frame = frame;
+}
+
+extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolButton>();
+}
+
+extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__COPY_const_QStyleOptionToolButton_R(const QStyleOptionToolButton & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolButton>(other);
+}
+
+extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__OPERATOR_assign_const_QStyleOptionToolButton_R(QStyleOptionToolButton * _self_, const QStyleOptionToolButton & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionToolButton * bg_QStyleOptionToolButton__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionToolButton>(version);
+}
+
+extern "C" QStyleOptionToolButton::ToolButtonFeatures bg_QStyleOptionToolButton_features_GETTER_(QStyleOptionToolButton * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionToolButton_features_SETTER_QStyleOptionToolButton__ToolButtonFeatures(QStyleOptionToolButton * _self_, QStyleOptionToolButton::ToolButtonFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" QIcon * bg_QStyleOptionToolButton_icon_GETTER_(QStyleOptionToolButton * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionToolButton_icon_SETTER_QIcon(QStyleOptionToolButton * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" QSize bg_QStyleOptionToolButton_iconSize_GETTER_(QStyleOptionToolButton * _self_) {
+  return _self_->iconSize;
+}
+
+extern "C" void bg_QStyleOptionToolButton_iconSize_SETTER_QSize(QStyleOptionToolButton * _self_, QSize iconSize) {
+  _self_->iconSize = iconSize;
+}
+
+extern "C" CrystalString bg_QStyleOptionToolButton_text_GETTER_(QStyleOptionToolButton * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionToolButton_text_SETTER_QString(QStyleOptionToolButton * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" Qt::ArrowType bg_QStyleOptionToolButton_arrowType_GETTER_(QStyleOptionToolButton * _self_) {
+  return _self_->arrowType;
+}
+
+extern "C" void bg_QStyleOptionToolButton_arrowType_SETTER_Qt__ArrowType(QStyleOptionToolButton * _self_, Qt::ArrowType arrowType) {
+  _self_->arrowType = arrowType;
+}
+
+extern "C" Qt::ToolButtonStyle bg_QStyleOptionToolButton_toolButtonStyle_GETTER_(QStyleOptionToolButton * _self_) {
+  return _self_->toolButtonStyle;
+}
+
+extern "C" void bg_QStyleOptionToolButton_toolButtonStyle_SETTER_Qt__ToolButtonStyle(QStyleOptionToolButton * _self_, Qt::ToolButtonStyle toolButtonStyle) {
+  _self_->toolButtonStyle = toolButtonStyle;
+}
+
+extern "C" QPoint bg_QStyleOptionToolButton_pos_GETTER_(QStyleOptionToolButton * _self_) {
+  return _self_->pos;
+}
+
+extern "C" void bg_QStyleOptionToolButton_pos_SETTER_QPoint(QStyleOptionToolButton * _self_, QPoint pos) {
+  _self_->pos = pos;
+}
+
+extern "C" QFont * bg_QStyleOptionToolButton_font_GETTER_(QStyleOptionToolButton * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->font);
+}
+
+extern "C" void bg_QStyleOptionToolButton_font_SETTER_QFont(QStyleOptionToolButton * _self_, QFont & font) {
+  _self_->font = font;
+}
+
+extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionComboBox>();
+}
+
+extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__COPY_const_QStyleOptionComboBox_R(const QStyleOptionComboBox & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionComboBox>(other);
+}
+
+extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__OPERATOR_assign_const_QStyleOptionComboBox_R(QStyleOptionComboBox * _self_, const QStyleOptionComboBox & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionComboBox * bg_QStyleOptionComboBox__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionComboBox>(version);
+}
+
+extern "C" bool bg_QStyleOptionComboBox_editable_GETTER_(QStyleOptionComboBox * _self_) {
+  return _self_->editable;
+}
+
+extern "C" void bg_QStyleOptionComboBox_editable_SETTER_bool(QStyleOptionComboBox * _self_, bool editable) {
+  _self_->editable = editable;
+}
+
+extern "C" QRect bg_QStyleOptionComboBox_popupRect_GETTER_(QStyleOptionComboBox * _self_) {
+  return _self_->popupRect;
+}
+
+extern "C" void bg_QStyleOptionComboBox_popupRect_SETTER_QRect(QStyleOptionComboBox * _self_, QRect popupRect) {
+  _self_->popupRect = popupRect;
+}
+
+extern "C" bool bg_QStyleOptionComboBox_frame_GETTER_(QStyleOptionComboBox * _self_) {
+  return _self_->frame;
+}
+
+extern "C" void bg_QStyleOptionComboBox_frame_SETTER_bool(QStyleOptionComboBox * _self_, bool frame) {
+  _self_->frame = frame;
+}
+
+extern "C" CrystalString bg_QStyleOptionComboBox_currentText_GETTER_(QStyleOptionComboBox * _self_) {
+  return qstring_to_crystal(_self_->currentText);
+}
+
+extern "C" void bg_QStyleOptionComboBox_currentText_SETTER_QString(QStyleOptionComboBox * _self_, CrystalString currentText) {
+  _self_->currentText = ([&]() { auto &&bg_value = (currentText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionComboBox_currentIcon_GETTER_(QStyleOptionComboBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->currentIcon);
+}
+
+extern "C" void bg_QStyleOptionComboBox_currentIcon_SETTER_QIcon(QStyleOptionComboBox * _self_, QIcon & currentIcon) {
+  _self_->currentIcon = currentIcon;
+}
+
+extern "C" QSize bg_QStyleOptionComboBox_iconSize_GETTER_(QStyleOptionComboBox * _self_) {
+  return _self_->iconSize;
+}
+
+extern "C" void bg_QStyleOptionComboBox_iconSize_SETTER_QSize(QStyleOptionComboBox * _self_, QSize iconSize) {
+  _self_->iconSize = iconSize;
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionComboBox_textAlignment_GETTER_(QStyleOptionComboBox * _self_) {
+  return _self_->textAlignment;
+}
+
+extern "C" void bg_QStyleOptionComboBox_textAlignment_SETTER_Qt__Alignment(QStyleOptionComboBox * _self_, Qt::Alignment textAlignment) {
+  _self_->textAlignment = textAlignment;
+}
+
+extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTitleBar>();
+}
+
+extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__COPY_const_QStyleOptionTitleBar_R(const QStyleOptionTitleBar & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTitleBar>(other);
+}
+
+extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__OPERATOR_assign_const_QStyleOptionTitleBar_R(QStyleOptionTitleBar * _self_, const QStyleOptionTitleBar & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionTitleBar * bg_QStyleOptionTitleBar__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionTitleBar>(version);
+}
+
+extern "C" CrystalString bg_QStyleOptionTitleBar_text_GETTER_(QStyleOptionTitleBar * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionTitleBar_text_SETTER_QString(QStyleOptionTitleBar * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" QIcon * bg_QStyleOptionTitleBar_icon_GETTER_(QStyleOptionTitleBar * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->icon);
+}
+
+extern "C" void bg_QStyleOptionTitleBar_icon_SETTER_QIcon(QStyleOptionTitleBar * _self_, QIcon & icon) {
+  _self_->icon = icon;
+}
+
+extern "C" int bg_QStyleOptionTitleBar_titleBarState_GETTER_(QStyleOptionTitleBar * _self_) {
+  return _self_->titleBarState;
+}
+
+extern "C" void bg_QStyleOptionTitleBar_titleBarState_SETTER_int(QStyleOptionTitleBar * _self_, int titleBarState) {
+  _self_->titleBarState = titleBarState;
+}
+
+extern "C" Qt::WindowFlags bg_QStyleOptionTitleBar_titleBarFlags_GETTER_(QStyleOptionTitleBar * _self_) {
+  return _self_->titleBarFlags;
+}
+
+extern "C" void bg_QStyleOptionTitleBar_titleBarFlags_SETTER_Qt__WindowFlags(QStyleOptionTitleBar * _self_, Qt::WindowFlags titleBarFlags) {
+  _self_->titleBarFlags = titleBarFlags;
+}
+
+extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionGroupBox>();
+}
+
+extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__COPY_const_QStyleOptionGroupBox_R(const QStyleOptionGroupBox & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionGroupBox>(other);
+}
+
+extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__OPERATOR_assign_const_QStyleOptionGroupBox_R(QStyleOptionGroupBox * _self_, const QStyleOptionGroupBox & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionGroupBox * bg_QStyleOptionGroupBox__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionGroupBox>(version);
+}
+
+extern "C" QStyleOptionFrame::FrameFeatures bg_QStyleOptionGroupBox_features_GETTER_(QStyleOptionGroupBox * _self_) {
+  return _self_->features;
+}
+
+extern "C" void bg_QStyleOptionGroupBox_features_SETTER_QStyleOptionFrame__FrameFeatures(QStyleOptionGroupBox * _self_, QStyleOptionFrame::FrameFeatures features) {
+  _self_->features = features;
+}
+
+extern "C" CrystalString bg_QStyleOptionGroupBox_text_GETTER_(QStyleOptionGroupBox * _self_) {
+  return qstring_to_crystal(_self_->text);
+}
+
+extern "C" void bg_QStyleOptionGroupBox_text_SETTER_QString(QStyleOptionGroupBox * _self_, CrystalString text) {
+  _self_->text = ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+}
+
+extern "C" Qt::Alignment bg_QStyleOptionGroupBox_textAlignment_GETTER_(QStyleOptionGroupBox * _self_) {
+  return _self_->textAlignment;
+}
+
+extern "C" void bg_QStyleOptionGroupBox_textAlignment_SETTER_Qt__Alignment(QStyleOptionGroupBox * _self_, Qt::Alignment textAlignment) {
+  _self_->textAlignment = textAlignment;
+}
+
+extern "C" QColor * bg_QStyleOptionGroupBox_textColor_GETTER_(QStyleOptionGroupBox * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->textColor);
+}
+
+extern "C" void bg_QStyleOptionGroupBox_textColor_SETTER_QColor(QStyleOptionGroupBox * _self_, QColor & textColor) {
+  _self_->textColor = textColor;
+}
+
+extern "C" int bg_QStyleOptionGroupBox_lineWidth_GETTER_(QStyleOptionGroupBox * _self_) {
+  return _self_->lineWidth;
+}
+
+extern "C" void bg_QStyleOptionGroupBox_lineWidth_SETTER_int(QStyleOptionGroupBox * _self_, int lineWidth) {
+  _self_->lineWidth = lineWidth;
+}
+
+extern "C" int bg_QStyleOptionGroupBox_midLineWidth_GETTER_(QStyleOptionGroupBox * _self_) {
+  return _self_->midLineWidth;
+}
+
+extern "C" void bg_QStyleOptionGroupBox_midLineWidth_SETTER_int(QStyleOptionGroupBox * _self_, int midLineWidth) {
+  _self_->midLineWidth = midLineWidth;
+}
+
+extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSizeGrip>();
+}
+
+extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__COPY_const_QStyleOptionSizeGrip_R(const QStyleOptionSizeGrip & other) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSizeGrip>(other);
+}
+
+extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__OPERATOR_assign_const_QStyleOptionSizeGrip_R(QStyleOptionSizeGrip * _self_, const QStyleOptionSizeGrip & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" QStyleOptionSizeGrip * bg_QStyleOptionSizeGrip__CONSTRUCT_int(int version) {
+  return new (UseGC) CrystalGCWrapper<QStyleOptionSizeGrip>(version);
+}
+
+extern "C" Qt::Corner bg_QStyleOptionSizeGrip_corner_GETTER_(QStyleOptionSizeGrip * _self_) {
+  return _self_->corner;
+}
+
+extern "C" void bg_QStyleOptionSizeGrip_corner_SETTER_Qt__Corner(QStyleOptionSizeGrip * _self_, Qt::Corner corner) {
+  _self_->corner = corner;
+}
+
 extern "C" QStyleOptionGraphicsItem * bg_QStyleOptionGraphicsItem__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QStyleOptionGraphicsItem>();
 }
@@ -45303,6 +48497,34 @@ extern "C" QRectF bg_QStyleOptionGraphicsItem_exposedRect_GETTER_(QStyleOptionGr
 
 extern "C" void bg_QStyleOptionGraphicsItem_exposedRect_SETTER_QRectF(QStyleOptionGraphicsItem * _self_, QRectF exposedRect) {
   _self_->exposedRect = exposedRect;
+}
+
+extern "C" QStyleHintReturn * bg_QStyleHintReturn__CONSTRUCT_int_int(int version, int type) {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturn>(version, type);
+}
+
+extern "C" QStyleHintReturn * bg_QStyleHintReturn__COPY_const_QStyleHintReturn_R(const QStyleHintReturn & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QStyleHintReturn>(unnamed_arg_0);
+}
+
+extern "C" QStyleHintReturn * bg_QStyleHintReturn__OPERATOR_assign_const_QStyleHintReturn_R(QStyleHintReturn * _self_, const QStyleHintReturn & unnamed_arg_0) {
+  return &((*_self_) = (unnamed_arg_0));
+}
+
+extern "C" int bg_QStyleHintReturn_version_GETTER_(QStyleHintReturn * _self_) {
+  return _self_->version;
+}
+
+extern "C" void bg_QStyleHintReturn_version_SETTER_int(QStyleHintReturn * _self_, int version) {
+  _self_->version = version;
+}
+
+extern "C" int bg_QStyleHintReturn_type_GETTER_(QStyleHintReturn * _self_) {
+  return _self_->type;
+}
+
+extern "C" void bg_QStyleHintReturn_type_SETTER_int(QStyleHintReturn * _self_, int type) {
+  _self_->type = type;
 }
 
 struct BgJumptable_QAbstractItemDelegate {
@@ -58836,6 +62058,526 @@ extern "C" void bg_BgInherit_QCommandLinkButton_JUMPTABLE_BgJumptable_QCommandLi
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QCommonStyle {
+  CrystalProc<const QMetaObject *> bg_QCommonStyle_metaObject_;
+  CrystalProc<void *, const char *> bg_QCommonStyle_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QCommonStyle_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QStyle::PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *> bg_QCommonStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QCommonStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QCommonStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QCommonStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QCommonStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QCommonStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QCommonStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
+  CrystalProc<QIcon &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QCommonStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QPixmap &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QCommonStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QPixmap &, QIcon::Mode, const QPixmap *, const QStyleOption *> bg_QCommonStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X;
+  CrystalProc<int, QSizePolicy::ControlType, QSizePolicy::ControlType, Qt::Orientation, const QStyleOption *, const QWidget *> bg_QCommonStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<void, QPalette *> bg_QCommonStyle_polish_QPalette_R;
+  CrystalProc<void, QApplication *> bg_QCommonStyle_polish_QApplication_X;
+  CrystalProc<void, QWidget *> bg_QCommonStyle_polish_QWidget_X;
+  CrystalProc<void, QWidget *> bg_QCommonStyle_unpolish_QWidget_X;
+  CrystalProc<void, QApplication *> bg_QCommonStyle_unpolish_QApplication_X;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QPalette &> bg_QStyle_standardPalette_;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QCommonStyle : public QCommonStyle {
+  using QCommonStyle::QCommonStyle;
+  BgJumptable_QCommonStyle bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_metaObject_();
+    } else {
+      return QCommonStyle::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QCommonStyle::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QCommonStyle::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(pe, opt, p, w);
+    } else {
+      QCommonStyle::drawPrimitive(pe, opt, p, w);
+    }
+  }
+  
+  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(element, opt, p, w);
+    } else {
+      QCommonStyle::drawControl(element, opt, p, w);
+    }
+  }
+  
+  QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QCommonStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(subElement, option, widget);
+    } else {
+      return QCommonStyle::subElementRect(subElement, option, widget);
+    }
+  }
+  
+  void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(cc, opt, p, widget);
+    } else {
+      QCommonStyle::drawComplexControl(cc, opt, p, widget);
+    }
+  }
+  
+  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+    } else {
+      return QCommonStyle::hitTestComplexControl(cc, opt, pt, widget);
+    }
+  }
+  
+  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QCommonStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(cc, opt, sc, widget);
+    } else {
+      return QCommonStyle::subControlRect(cc, opt, sc, widget);
+    }
+  }
+  
+  QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+    } else {
+      return QCommonStyle::sizeFromContents(ct, opt, contentsSize, w);
+    }
+  }
+  
+  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(metric, option, widget);
+    } else {
+      return QCommonStyle::pixelMetric(metric, option, widget);
+    }
+  }
+  
+  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(stylehint, opt, widget, returnData);
+    } else {
+      return QCommonStyle::styleHint(stylehint, opt, widget, returnData);
+    }
+  }
+  
+  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardIcon, option, widget);
+    } else {
+      return QCommonStyle::standardIcon(standardIcon, option, widget);
+    }
+  }
+  
+  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardPixmap, opt, widget);
+    } else {
+      return QCommonStyle::standardPixmap(standardPixmap, opt, widget);
+    }
+  }
+  
+  QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(iconMode, &(pixmap), opt);
+    } else {
+      return QCommonStyle::generatedIconPixmap(iconMode, pixmap, opt);
+    }
+  }
+  
+  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QCommonStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(control1, control2, orientation, option, widget);
+    } else {
+      return QCommonStyle::layoutSpacing(control1, control2, orientation, option, widget);
+    }
+  }
+  
+  void polish(QPalette & palette) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_polish_QPalette_R.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_polish_QPalette_R(&(palette));
+    } else {
+      QCommonStyle::polish(palette);
+    }
+  }
+  
+  void polish(QApplication * application) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_polish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_polish_QApplication_X(application);
+    } else {
+      QCommonStyle::polish(application);
+    }
+  }
+  
+  void polish(QWidget * widget) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_polish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_polish_QWidget_X(widget);
+    } else {
+      QCommonStyle::polish(widget);
+    }
+  }
+  
+  void unpolish(QWidget * widget) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_unpolish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_unpolish_QWidget_X(widget);
+    } else {
+      QCommonStyle::unpolish(widget);
+    }
+  }
+  
+  void unpolish(QApplication * application) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QCommonStyle_unpolish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QCommonStyle_unpolish_QApplication_X(application);
+    } else {
+      QCommonStyle::unpolish(application);
+    }
+  }
+  
+  QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
+      return *_self_->bgJump.bg_QStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+    } else {
+      return QCommonStyle::itemTextRect(fm, r, flags, enabled, text);
+    }
+  }
+  
+  QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      return *_self_->bgJump.bg_QStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+    } else {
+      return QCommonStyle::itemPixmapRect(r, flags, pixmap);
+    }
+  }
+  
+  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
+      _self_->bgJump.bg_QStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+    } else {
+      QCommonStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
+    }
+  }
+  
+  void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      _self_->bgJump.bg_QStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+    } else {
+      QCommonStyle::drawItemPixmap(painter, rect, alignment, pixmap);
+    }
+  }
+  
+  QPalette standardPalette() const override {
+    const BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QStyle_standardPalette_.isValid()) {
+      return _self_->bgJump.bg_QStyle_standardPalette_();
+    } else {
+      return QCommonStyle::standardPalette();
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QCommonStyle::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QCommonStyle::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QCommonStyle::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QCommonStyle::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QCommonStyle::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCommonStyle::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QCommonStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QCommonStyle::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QCommonStyle_metaObject_(QCommonStyle * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QCommonStyle_qt_metacast_const_char_X(QCommonStyle * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QCommonStyle_qt_metacall_QMetaObject__Call_int_void_XX(QCommonStyle * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QCommonStyle_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QCommonStyle::tr(s));
+}
+
+extern "C" CrystalString bg_QCommonStyle_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QCommonStyle::tr(s, c));
+}
+
+extern "C" CrystalString bg_QCommonStyle_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QCommonStyle::tr(s, c, n));
+}
+
+extern "C" QCommonStyle * bg_QCommonStyle__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCommonStyle>();
+}
+
+extern "C" void bg_QCommonStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawPrimitive(pe, opt, p, w);
+}
+
+extern "C" void bg_QCommonStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawControl(element, opt, p, w);
+}
+
+extern "C" QRect bg_QCommonStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) {
+  return _self_->subElementRect(subElement, option, widget);
+}
+
+extern "C" void bg_QCommonStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) {
+  _self_->drawComplexControl(cc, opt, p, widget);
+}
+
+extern "C" QStyle::SubControl bg_QCommonStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint pt, const QWidget * widget) {
+  return _self_->hitTestComplexControl(cc, opt, pt, widget);
+}
+
+extern "C" QRect bg_QCommonStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) {
+  return _self_->subControlRect(cc, opt, sc, widget);
+}
+
+extern "C" QSize bg_QCommonStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(QCommonStyle * _self_, QStyle::ContentsType ct, const QStyleOption * opt, const QSize contentsSize, const QWidget * w) {
+  return _self_->sizeFromContents(ct, opt, contentsSize, w);
+}
+
+extern "C" int bg_QCommonStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) {
+  return _self_->pixelMetric(metric, option, widget);
+}
+
+extern "C" int bg_QCommonStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(QCommonStyle * _self_, QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) {
+  return _self_->styleHint(stylehint, opt, widget, returnData);
+}
+
+extern "C" QIcon * bg_QCommonStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->standardIcon(standardIcon, option, widget));
+}
+
+extern "C" QPixmap * bg_QCommonStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->standardPixmap(standardPixmap, opt, widget));
+}
+
+extern "C" QPixmap * bg_QCommonStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(QCommonStyle * _self_, QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->generatedIconPixmap(iconMode, pixmap, opt));
+}
+
+extern "C" int bg_QCommonStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) {
+  return _self_->layoutSpacing(control1, control2, orientation, option, widget);
+}
+
+extern "C" void bg_QCommonStyle_polish_QPalette_R(QCommonStyle * _self_, QPalette & palette) {
+  _self_->polish(palette);
+}
+
+extern "C" void bg_QCommonStyle_polish_QApplication_X(QCommonStyle * _self_, QApplication * application) {
+  _self_->polish(application);
+}
+
+extern "C" void bg_QCommonStyle_polish_QWidget_X(QCommonStyle * _self_, QWidget * widget) {
+  _self_->polish(widget);
+}
+
+extern "C" void bg_QCommonStyle_unpolish_QWidget_X(QCommonStyle * _self_, QWidget * widget) {
+  _self_->unpolish(widget);
+}
+
+extern "C" void bg_QCommonStyle_unpolish_QApplication_X(QCommonStyle * _self_, QApplication * application) {
+  _self_->unpolish(application);
+}
+
+extern "C" QCommonStyle * bg_QCommonStyle__CONSTRUCT_QCommonStylePrivate_R(QCommonStylePrivate & dd) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QCommonStyle>(dd);
+}
+
+extern "C" const QMetaObject * bg_QCommonStyle_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCommonStyle::staticMetaObject);
+}
+
+extern "C" void bg_QCommonStyle_drawPrimitive_SUPER_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->QCommonStyle::drawPrimitive(pe, opt, p, w);
+}
+
+extern "C" void bg_QCommonStyle_drawControl_SUPER_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->QCommonStyle::drawControl(element, opt, p, w);
+}
+
+extern "C" QRect bg_QCommonStyle_subElementRect_SUPER_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QCommonStyle::subElementRect(subElement, option, widget);
+}
+
+extern "C" void bg_QCommonStyle_drawComplexControl_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) {
+  _self_->QCommonStyle::drawComplexControl(cc, opt, p, widget);
+}
+
+extern "C" QStyle::SubControl bg_QCommonStyle_hitTestComplexControl_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint pt, const QWidget * widget) {
+  return _self_->QCommonStyle::hitTestComplexControl(cc, opt, pt, widget);
+}
+
+extern "C" QRect bg_QCommonStyle_subControlRect_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(QCommonStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) {
+  return _self_->QCommonStyle::subControlRect(cc, opt, sc, widget);
+}
+
+extern "C" QSize bg_QCommonStyle_sizeFromContents_SUPER_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(QCommonStyle * _self_, QStyle::ContentsType ct, const QStyleOption * opt, const QSize contentsSize, const QWidget * w) {
+  return _self_->QCommonStyle::sizeFromContents(ct, opt, contentsSize, w);
+}
+
+extern "C" int bg_QCommonStyle_pixelMetric_SUPER_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QCommonStyle::pixelMetric(metric, option, widget);
+}
+
+extern "C" int bg_QCommonStyle_styleHint_SUPER_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(QCommonStyle * _self_, QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) {
+  return _self_->QCommonStyle::styleHint(stylehint, opt, widget, returnData);
+}
+
+extern "C" QIcon * bg_QCommonStyle_standardIcon_SUPER_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QCommonStyle::standardIcon(standardIcon, option, widget));
+}
+
+extern "C" QPixmap * bg_QCommonStyle_standardPixmap_SUPER_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QCommonStyle::standardPixmap(standardPixmap, opt, widget));
+}
+
+extern "C" QPixmap * bg_QCommonStyle_generatedIconPixmap_SUPER_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(QCommonStyle * _self_, QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QCommonStyle::generatedIconPixmap(iconMode, pixmap, opt));
+}
+
+extern "C" int bg_QCommonStyle_layoutSpacing_SUPER_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(QCommonStyle * _self_, QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QCommonStyle::layoutSpacing(control1, control2, orientation, option, widget);
+}
+
+extern "C" void bg_QCommonStyle_polish_SUPER_QPalette_R(QCommonStyle * _self_, QPalette & palette) {
+  _self_->QCommonStyle::polish(palette);
+}
+
+extern "C" void bg_QCommonStyle_polish_SUPER_QApplication_X(QCommonStyle * _self_, QApplication * application) {
+  _self_->QCommonStyle::polish(application);
+}
+
+extern "C" void bg_QCommonStyle_polish_SUPER_QWidget_X(QCommonStyle * _self_, QWidget * widget) {
+  _self_->QCommonStyle::polish(widget);
+}
+
+extern "C" void bg_QCommonStyle_unpolish_SUPER_QWidget_X(QCommonStyle * _self_, QWidget * widget) {
+  _self_->QCommonStyle::unpolish(widget);
+}
+
+extern "C" void bg_QCommonStyle_unpolish_SUPER_QApplication_X(QCommonStyle * _self_, QApplication * application) {
+  _self_->QCommonStyle::unpolish(application);
+}
+
+extern "C" void bg_BgInherit_QCommonStyle_JUMPTABLE_BgJumptable_QCommonStyle_R(BgInherit_QCommonStyle * _self_, const BgJumptable_QCommonStyle & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QCompleter {
   CrystalProc<const QMetaObject *> bg_QCompleter_metaObject_;
   CrystalProc<void *, const char *> bg_QCompleter_qt_metacast_const_char_X;
@@ -69309,6 +73051,10 @@ extern "C" QGraphicsPolygonItem * bg_QGraphicsItem_CAST_GraphicsPolygonItem_(QGr
   return bindgen_dynamic_cast<QGraphicsPolygonItem *>(_self_);
 }
 
+extern "C" QGraphicsLineItem * bg_QGraphicsItem_CAST_GraphicsLineItem_(QGraphicsItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsLineItem *>(_self_);
+}
+
 extern "C" QGraphicsPixmapItem * bg_QGraphicsItem_CAST_GraphicsPixmapItem_(QGraphicsItem * _self_) {
   return bindgen_dynamic_cast<QGraphicsPixmapItem *>(_self_);
 }
@@ -69321,8 +73067,16 @@ extern "C" QGraphicsSimpleTextItem * bg_QGraphicsItem_CAST_GraphicsSimpleTextIte
   return bindgen_dynamic_cast<QGraphicsSimpleTextItem *>(_self_);
 }
 
+extern "C" QGraphicsItemGroup * bg_QGraphicsItem_CAST_GraphicsItemGroup_(QGraphicsItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsItemGroup *>(_self_);
+}
+
 extern "C" QGraphicsWidget * bg_QGraphicsItem_CAST_GraphicsWidget_(QGraphicsItem * _self_) {
   return bindgen_dynamic_cast<QGraphicsWidget *>(_self_);
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsItem_CAST_GraphicsProxyWidget_(QGraphicsItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsProxyWidget *>(_self_);
 }
 
 extern "C" void bg_BgInherit_QGraphicsItem_JUMPTABLE_BgJumptable_QGraphicsItem_R(BgInherit_QGraphicsItem * _self_, const BgJumptable_QGraphicsItem & table) {
@@ -73301,6 +77055,478 @@ extern "C" void bg_BgInherit_QGraphicsPolygonItem_JUMPTABLE_BgJumptable_QGraphic
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QGraphicsLineItem {
+  CrystalProc<QRectF *> bg_QGraphicsLineItem_boundingRect_;
+  CrystalProc<QPainterPath &> bg_QGraphicsLineItem_shape_;
+  CrystalProc<bool, const QPointF> bg_QGraphicsLineItem_contains_const_QPointF_R;
+  CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsLineItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
+  CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsLineItem_isObscuredBy_const_QGraphicsItem_X;
+  CrystalProc<QPainterPath &> bg_QGraphicsLineItem_opaqueArea_;
+  CrystalProc<int> bg_QGraphicsLineItem_type_;
+  CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsLineItem_supportsExtension_QGraphicsItem__Extension;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsLineItem_extension_const_QVariant_R;
+  CrystalProc<void, int> bg_QGraphicsItem_advance_int;
+  CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
+  CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
+  CrystalProc<bool, QGraphicsItem *, QEvent *> bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QGraphicsItem_sceneEvent_QEvent_X;
+  CrystalProc<void, QGraphicsSceneContextMenuEvent *> bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsItem_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsItem_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsItem_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
+  CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+};
+struct BgInherit_QGraphicsLineItem : public QGraphicsLineItem {
+  using QGraphicsLineItem::QGraphicsLineItem;
+  BgJumptable_QGraphicsLineItem bgJump;
+  QRectF boundingRect() const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_boundingRect_.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsLineItem_boundingRect_();
+    } else {
+      return QGraphicsLineItem::boundingRect();
+    }
+  }
+  
+  QPainterPath shape() const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_shape_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_shape_();
+    } else {
+      return QGraphicsLineItem::shape();
+    }
+  }
+  
+  bool contains(const QPointF & point) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_contains_const_QPointF_R.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_contains_const_QPointF_R(point);
+    } else {
+      return QGraphicsLineItem::contains(point);
+    }
+  }
+  
+  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLineItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(painter, option, widget);
+    } else {
+      QGraphicsLineItem::paint(painter, option, widget);
+    }
+  }
+  
+  bool isObscuredBy(const QGraphicsItem * item) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_isObscuredBy_const_QGraphicsItem_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_isObscuredBy_const_QGraphicsItem_X(item);
+    } else {
+      return QGraphicsLineItem::isObscuredBy(item);
+    }
+  }
+  
+  QPainterPath opaqueArea() const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_opaqueArea_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_opaqueArea_();
+    } else {
+      return QGraphicsLineItem::opaqueArea();
+    }
+  }
+  
+  int type() const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_type_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_type_();
+    } else {
+      return QGraphicsLineItem::type();
+    }
+  }
+  
+  bool supportsExtension(QGraphicsItem::Extension extension) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_supportsExtension_QGraphicsItem__Extension.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLineItem_supportsExtension_QGraphicsItem__Extension(extension);
+    } else {
+      return QGraphicsLineItem::supportsExtension(extension);
+    }
+  }
+  
+  void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+    } else {
+      QGraphicsLineItem::setExtension(extension, variant);
+    }
+  }
+  
+  QVariant extension(const QVariant & variant) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLineItem_extension_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsLineItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+    } else {
+      return QGraphicsLineItem::extension(variant);
+    }
+  }
+  
+  void advance(int phase) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_advance_int.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_advance_int(phase);
+    } else {
+      QGraphicsLineItem::advance(phase);
+    }
+  }
+  
+  bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(other, mode);
+    } else {
+      return QGraphicsLineItem::collidesWithItem(other, mode);
+    }
+  }
+  
+  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(&(path), mode);
+    } else {
+      return QGraphicsLineItem::collidesWithPath(path, mode);
+    }
+  }
+  
+  bool sceneEventFilter(QGraphicsItem * watched, QEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsLineItem::sceneEventFilter(watched, event);
+    }
+  }
+  
+  bool sceneEvent(QEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_sceneEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_sceneEvent_QEvent_X(event);
+    } else {
+      return QGraphicsLineItem::sceneEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QGraphicsSceneContextMenuEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(event);
+    } else {
+      QGraphicsLineItem::contextMenuEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsLineItem::dragEnterEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsLineItem::dragLeaveEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsLineItem::dragMoveEvent(event);
+    }
+  }
+  
+  void dropEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsLineItem::dropEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsLineItem::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsLineItem::focusOutEvent(event);
+    }
+  }
+  
+  void hoverEnterEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsLineItem::hoverEnterEvent(event);
+    }
+  }
+  
+  void hoverMoveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsLineItem::hoverMoveEvent(event);
+    }
+  }
+  
+  void hoverLeaveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsLineItem::hoverLeaveEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsLineItem::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsLineItem::keyReleaseEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsLineItem::mousePressEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsLineItem::mouseMoveEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsLineItem::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsLineItem::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QGraphicsSceneWheelEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(event);
+    } else {
+      QGraphicsLineItem::wheelEvent(event);
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * event) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(event);
+    } else {
+      QGraphicsLineItem::inputMethodEvent(event);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
+    const BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+    } else {
+      return QGraphicsLineItem::inputMethodQuery(query);
+    }
+  }
+  
+  QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
+    BgInherit_QGraphicsLineItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+    } else {
+      return QGraphicsLineItem::itemChange(change, value);
+    }
+  }
+  
+};
+extern "C" QGraphicsLineItem * bg_QGraphicsLineItem__CONSTRUCT_QGraphicsItem_X(QGraphicsItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLineItem>(parent);
+}
+
+extern "C" QGraphicsLineItem * bg_QGraphicsLineItem__CONSTRUCT_const_QLineF_R_QGraphicsItem_X(const QLineF line, QGraphicsItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLineItem>(line, parent);
+}
+
+extern "C" QGraphicsLineItem * bg_QGraphicsLineItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLineItem>(x1, y1, x2, y2, parent);
+}
+
+extern "C" QPen * bg_QGraphicsLineItem_pen_(QGraphicsLineItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPen>()) QPen (_self_->pen());
+}
+
+extern "C" void bg_QGraphicsLineItem_setPen_const_QPen_R(QGraphicsLineItem * _self_, const QPen & pen) {
+  _self_->setPen(pen);
+}
+
+extern "C" QLineF bg_QGraphicsLineItem_line_(QGraphicsLineItem * _self_) {
+  return _self_->line();
+}
+
+extern "C" void bg_QGraphicsLineItem_setLine_const_QLineF_R(QGraphicsLineItem * _self_, const QLineF line) {
+  _self_->setLine(line);
+}
+
+extern "C" void bg_QGraphicsLineItem_setLine_qreal_qreal_qreal_qreal(QGraphicsLineItem * _self_, qreal x1, qreal y1, qreal x2, qreal y2) {
+  _self_->setLine(x1, y1, x2, y2);
+}
+
+extern "C" QRectF bg_QGraphicsLineItem_boundingRect_(QGraphicsLineItem * _self_) {
+  return _self_->boundingRect();
+}
+
+extern "C" QPainterPath * bg_QGraphicsLineItem_shape_(QGraphicsLineItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->shape());
+}
+
+extern "C" bool bg_QGraphicsLineItem_contains_const_QPointF_R(QGraphicsLineItem * _self_, const QPointF point) {
+  return _self_->contains(point);
+}
+
+extern "C" void bg_QGraphicsLineItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsLineItem * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->paint(painter, option, widget);
+}
+
+extern "C" bool bg_QGraphicsLineItem_isObscuredBy_const_QGraphicsItem_X(QGraphicsLineItem * _self_, const QGraphicsItem * item) {
+  return _self_->isObscuredBy(item);
+}
+
+extern "C" QPainterPath * bg_QGraphicsLineItem_opaqueArea_(QGraphicsLineItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->opaqueArea());
+}
+
+extern "C" int bg_QGraphicsLineItem_type_(QGraphicsLineItem * _self_) {
+  return _self_->type();
+}
+
+extern "C" bool bg_QGraphicsLineItem_supportsExtension_QGraphicsItem__Extension(QGraphicsLineItem * _self_, QGraphicsItem::Extension extension) {
+  return _self_->supportsExtension(extension);
+}
+
+extern "C" void bg_QGraphicsLineItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(QGraphicsLineItem * _self_, QGraphicsItem::Extension extension, const CrystalVariant variant) {
+  _self_->setExtension(extension, crystal_to_qvariant(variant));
+}
+
+extern "C" CrystalVariant bg_QGraphicsLineItem_extension_const_QVariant_R(QGraphicsLineItem * _self_, const CrystalVariant variant) {
+  return qvariant_to_crystal(_self_->extension(crystal_to_qvariant(variant)));
+}
+
+extern "C" QRectF bg_QGraphicsLineItem_boundingRect_SUPER_(QGraphicsLineItem * _self_) {
+  return _self_->QGraphicsLineItem::boundingRect();
+}
+
+extern "C" QPainterPath * bg_QGraphicsLineItem_shape_SUPER_(QGraphicsLineItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->QGraphicsLineItem::shape());
+}
+
+extern "C" bool bg_QGraphicsLineItem_contains_SUPER_const_QPointF_R(QGraphicsLineItem * _self_, const QPointF point) {
+  return _self_->QGraphicsLineItem::contains(point);
+}
+
+extern "C" void bg_QGraphicsLineItem_paint_SUPER_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsLineItem * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->QGraphicsLineItem::paint(painter, option, widget);
+}
+
+extern "C" bool bg_QGraphicsLineItem_isObscuredBy_SUPER_const_QGraphicsItem_X(QGraphicsLineItem * _self_, const QGraphicsItem * item) {
+  return _self_->QGraphicsLineItem::isObscuredBy(item);
+}
+
+extern "C" QPainterPath * bg_QGraphicsLineItem_opaqueArea_SUPER_(QGraphicsLineItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->QGraphicsLineItem::opaqueArea());
+}
+
+extern "C" int bg_QGraphicsLineItem_type_SUPER_(QGraphicsLineItem * _self_) {
+  return _self_->QGraphicsLineItem::type();
+}
+
+extern "C" bool bg_QGraphicsLineItem_supportsExtension_SUPER_QGraphicsItem__Extension(QGraphicsLineItem * _self_, QGraphicsItem::Extension extension) {
+  return _self_->QGraphicsLineItem::supportsExtension(extension);
+}
+
+extern "C" void bg_QGraphicsLineItem_setExtension_SUPER_QGraphicsItem__Extension_const_QVariant_R(QGraphicsLineItem * _self_, QGraphicsItem::Extension extension, const CrystalVariant variant) {
+  _self_->QGraphicsLineItem::setExtension(extension, crystal_to_qvariant(variant));
+}
+
+extern "C" CrystalVariant bg_QGraphicsLineItem_extension_SUPER_const_QVariant_R(QGraphicsLineItem * _self_, const CrystalVariant variant) {
+  return qvariant_to_crystal(_self_->QGraphicsLineItem::extension(crystal_to_qvariant(variant)));
+}
+
+extern "C" void bg_BgInherit_QGraphicsLineItem_JUMPTABLE_BgJumptable_QGraphicsLineItem_R(BgInherit_QGraphicsLineItem * _self_, const BgJumptable_QGraphicsLineItem & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QGraphicsPixmapItem {
   CrystalProc<QRectF *> bg_QGraphicsPixmapItem_boundingRect_;
   CrystalProc<QPainterPath &> bg_QGraphicsPixmapItem_shape_;
@@ -75017,6 +79243,3210 @@ extern "C" void bg_BgInherit_QGraphicsSimpleTextItem_JUMPTABLE_BgJumptable_QGrap
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QGraphicsItemGroup {
+  CrystalProc<QRectF *> bg_QGraphicsItemGroup_boundingRect_;
+  CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsItemGroup_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
+  CrystalProc<bool, const QGraphicsItem *> bg_QGraphicsItemGroup_isObscuredBy_const_QGraphicsItem_X;
+  CrystalProc<QPainterPath &> bg_QGraphicsItemGroup_opaqueArea_;
+  CrystalProc<int> bg_QGraphicsItemGroup_type_;
+  CrystalProc<void, int> bg_QGraphicsItem_advance_int;
+  CrystalProc<QPainterPath &> bg_QGraphicsItem_shape_;
+  CrystalProc<bool, const QPointF> bg_QGraphicsItem_contains_const_QPointF_R;
+  CrystalProc<bool, const QGraphicsItem *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode;
+  CrystalProc<bool, const QPainterPath *, Qt::ItemSelectionMode> bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode;
+  CrystalProc<bool, QGraphicsItem *, QEvent *> bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QGraphicsItem_sceneEvent_QEvent_X;
+  CrystalProc<void, QGraphicsSceneContextMenuEvent *> bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsItem_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsItem_focusOutEvent_QFocusEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsItem_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X;
+  CrystalProc<void, QInputMethodEvent *> bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<bool, QGraphicsItem::Extension> bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension;
+  CrystalProc<void, QGraphicsItem::Extension, const CrystalVariant> bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R;
+  CrystalProc<CrystalVariant, const CrystalVariant> bg_QGraphicsItem_extension_const_QVariant_R;
+};
+struct BgInherit_QGraphicsItemGroup : public QGraphicsItemGroup {
+  using QGraphicsItemGroup::QGraphicsItemGroup;
+  BgJumptable_QGraphicsItemGroup bgJump;
+  QRectF boundingRect() const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemGroup_boundingRect_.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsItemGroup_boundingRect_();
+    } else {
+      return QGraphicsItemGroup::boundingRect();
+    }
+  }
+  
+  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemGroup_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItemGroup_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(painter, option, widget);
+    } else {
+      QGraphicsItemGroup::paint(painter, option, widget);
+    }
+  }
+  
+  bool isObscuredBy(const QGraphicsItem * item) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemGroup_isObscuredBy_const_QGraphicsItem_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemGroup_isObscuredBy_const_QGraphicsItem_X(item);
+    } else {
+      return QGraphicsItemGroup::isObscuredBy(item);
+    }
+  }
+  
+  QPainterPath opaqueArea() const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemGroup_opaqueArea_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemGroup_opaqueArea_();
+    } else {
+      return QGraphicsItemGroup::opaqueArea();
+    }
+  }
+  
+  int type() const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemGroup_type_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemGroup_type_();
+    } else {
+      return QGraphicsItemGroup::type();
+    }
+  }
+  
+  void advance(int phase) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_advance_int.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_advance_int(phase);
+    } else {
+      QGraphicsItemGroup::advance(phase);
+    }
+  }
+  
+  QPainterPath shape() const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_shape_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_shape_();
+    } else {
+      return QGraphicsItemGroup::shape();
+    }
+  }
+  
+  bool contains(const QPointF & point) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_contains_const_QPointF_R(point);
+    } else {
+      return QGraphicsItemGroup::contains(point);
+    }
+  }
+  
+  bool collidesWithItem(const QGraphicsItem * other, Qt::ItemSelectionMode mode) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_collidesWithItem_const_QGraphicsItem_X_Qt__ItemSelectionMode(other, mode);
+    } else {
+      return QGraphicsItemGroup::collidesWithItem(other, mode);
+    }
+  }
+  
+  bool collidesWithPath(const QPainterPath & path, Qt::ItemSelectionMode mode) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_collidesWithPath_const_QPainterPath_R_Qt__ItemSelectionMode(&(path), mode);
+    } else {
+      return QGraphicsItemGroup::collidesWithPath(path, mode);
+    }
+  }
+  
+  bool sceneEventFilter(QGraphicsItem * watched, QEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_sceneEventFilter_QGraphicsItem_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsItemGroup::sceneEventFilter(watched, event);
+    }
+  }
+  
+  bool sceneEvent(QEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_sceneEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_sceneEvent_QEvent_X(event);
+    } else {
+      return QGraphicsItemGroup::sceneEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QGraphicsSceneContextMenuEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(event);
+    } else {
+      QGraphicsItemGroup::contextMenuEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragEnterEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsItemGroup::dragEnterEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsItemGroup::dragLeaveEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dragMoveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsItemGroup::dragMoveEvent(event);
+    }
+  }
+  
+  void dropEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_dropEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsItemGroup::dropEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsItemGroup::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsItemGroup::focusOutEvent(event);
+    }
+  }
+  
+  void hoverEnterEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverEnterEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsItemGroup::hoverEnterEvent(event);
+    }
+  }
+  
+  void hoverMoveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverMoveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsItemGroup::hoverMoveEvent(event);
+    }
+  }
+  
+  void hoverLeaveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsItemGroup::hoverLeaveEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsItemGroup::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsItemGroup::keyReleaseEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mousePressEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsItemGroup::mousePressEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseMoveEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsItemGroup::mouseMoveEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsItemGroup::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsItemGroup::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QGraphicsSceneWheelEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_wheelEvent_QGraphicsSceneWheelEvent_X(event);
+    } else {
+      QGraphicsItemGroup::wheelEvent(event);
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * event) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_inputMethodEvent_QInputMethodEvent_X(event);
+    } else {
+      QGraphicsItemGroup::inputMethodEvent(event);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_inputMethodQuery_Qt__InputMethodQuery(query));
+    } else {
+      return QGraphicsItemGroup::inputMethodQuery(query);
+    }
+  }
+  
+  QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+    } else {
+      return QGraphicsItemGroup::itemChange(change, value);
+    }
+  }
+  
+  bool supportsExtension(QGraphicsItem::Extension extension) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItem_supportsExtension_QGraphicsItem__Extension(extension);
+    } else {
+      return QGraphicsItemGroup::supportsExtension(extension);
+    }
+  }
+  
+  void setExtension(QGraphicsItem::Extension extension, const QVariant & variant) override {
+    BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsItem_setExtension_QGraphicsItem__Extension_const_QVariant_R(extension, qvariant_to_crystal(variant));
+    } else {
+      QGraphicsItemGroup::setExtension(extension, variant);
+    }
+  }
+  
+  QVariant extension(const QVariant & variant) const override {
+    const BgInherit_QGraphicsItemGroup *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsItem_extension_const_QVariant_R(qvariant_to_crystal(variant)));
+    } else {
+      return QGraphicsItemGroup::extension(variant);
+    }
+  }
+  
+};
+extern "C" QGraphicsItemGroup * bg_QGraphicsItemGroup__CONSTRUCT_QGraphicsItem_X(QGraphicsItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsItemGroup>(parent);
+}
+
+extern "C" void bg_QGraphicsItemGroup_addToGroup_QGraphicsItem_X(QGraphicsItemGroup * _self_, QGraphicsItem * item) {
+  _self_->addToGroup(item);
+}
+
+extern "C" void bg_QGraphicsItemGroup_removeFromGroup_QGraphicsItem_X(QGraphicsItemGroup * _self_, QGraphicsItem * item) {
+  _self_->removeFromGroup(item);
+}
+
+extern "C" QRectF bg_QGraphicsItemGroup_boundingRect_(QGraphicsItemGroup * _self_) {
+  return _self_->boundingRect();
+}
+
+extern "C" void bg_QGraphicsItemGroup_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsItemGroup * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->paint(painter, option, widget);
+}
+
+extern "C" bool bg_QGraphicsItemGroup_isObscuredBy_const_QGraphicsItem_X(QGraphicsItemGroup * _self_, const QGraphicsItem * item) {
+  return _self_->isObscuredBy(item);
+}
+
+extern "C" QPainterPath * bg_QGraphicsItemGroup_opaqueArea_(QGraphicsItemGroup * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->opaqueArea());
+}
+
+extern "C" int bg_QGraphicsItemGroup_type_(QGraphicsItemGroup * _self_) {
+  return _self_->type();
+}
+
+extern "C" QRectF bg_QGraphicsItemGroup_boundingRect_SUPER_(QGraphicsItemGroup * _self_) {
+  return _self_->QGraphicsItemGroup::boundingRect();
+}
+
+extern "C" void bg_QGraphicsItemGroup_paint_SUPER_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsItemGroup * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->QGraphicsItemGroup::paint(painter, option, widget);
+}
+
+extern "C" bool bg_QGraphicsItemGroup_isObscuredBy_SUPER_const_QGraphicsItem_X(QGraphicsItemGroup * _self_, const QGraphicsItem * item) {
+  return _self_->QGraphicsItemGroup::isObscuredBy(item);
+}
+
+extern "C" QPainterPath * bg_QGraphicsItemGroup_opaqueArea_SUPER_(QGraphicsItemGroup * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPainterPath>()) QPainterPath (_self_->QGraphicsItemGroup::opaqueArea());
+}
+
+extern "C" int bg_QGraphicsItemGroup_type_SUPER_(QGraphicsItemGroup * _self_) {
+  return _self_->QGraphicsItemGroup::type();
+}
+
+extern "C" void bg_BgInherit_QGraphicsItemGroup_JUMPTABLE_BgJumptable_QGraphicsItemGroup_R(BgInherit_QGraphicsItemGroup * _self_, const BgJumptable_QGraphicsItemGroup & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsLayoutItem {
+  CrystalProc<void, const QRectF> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayoutItem_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void> bg_QGraphicsLayoutItem_updateGeometry_;
+  CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
+};
+struct BgInherit_QGraphicsLayoutItem : public QGraphicsLayoutItem {
+  using QGraphicsLayoutItem::QGraphicsLayoutItem;
+  BgJumptable_QGraphicsLayoutItem bgJump;
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsLayoutItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsLayoutItem::setGeometry(rect);
+    }
+  }
+  
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsLayoutItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayoutItem_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsLayoutItem::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsLayoutItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayoutItem_updateGeometry_();
+    } else {
+      QGraphicsLayoutItem::updateGeometry();
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsLayoutItem *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_();
+    } else {
+      return QGraphicsLayoutItem::isEmpty();
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsLayoutItem *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid())) {
+      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsLayoutItem::sizeHint");
+    }
+  }
+  
+};
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLayoutItem__CONSTRUCT_QGraphicsLayoutItem_X_bool(QGraphicsLayoutItem * parent, bool isLayout) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLayoutItem>(parent, isLayout);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setSizePolicy_const_QSizePolicy_R(QGraphicsLayoutItem * _self_, const QSizePolicy & policy) {
+  _self_->setSizePolicy(policy);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setSizePolicy_QSizePolicy__Policy_QSizePolicy__Policy_QSizePolicy__ControlType(QGraphicsLayoutItem * _self_, QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType) {
+  _self_->setSizePolicy(hPolicy, vPolicy, controlType);
+}
+
+extern "C" QSizePolicy * bg_QGraphicsLayoutItem_sizePolicy_(QGraphicsLayoutItem * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QSizePolicy>()) QSizePolicy (_self_->sizePolicy());
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMinimumSize_const_QSizeF_R(QGraphicsLayoutItem * _self_, const QSizeF size) {
+  _self_->setMinimumSize(size);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMinimumSize_qreal_qreal(QGraphicsLayoutItem * _self_, qreal w, qreal h) {
+  _self_->setMinimumSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_minimumSize_(QGraphicsLayoutItem * _self_) {
+  return _self_->minimumSize();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMinimumWidth_qreal(QGraphicsLayoutItem * _self_, qreal width) {
+  _self_->setMinimumWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_minimumWidth_(QGraphicsLayoutItem * _self_) {
+  return _self_->minimumWidth();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMinimumHeight_qreal(QGraphicsLayoutItem * _self_, qreal height) {
+  _self_->setMinimumHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_minimumHeight_(QGraphicsLayoutItem * _self_) {
+  return _self_->minimumHeight();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setPreferredSize_const_QSizeF_R(QGraphicsLayoutItem * _self_, const QSizeF size) {
+  _self_->setPreferredSize(size);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setPreferredSize_qreal_qreal(QGraphicsLayoutItem * _self_, qreal w, qreal h) {
+  _self_->setPreferredSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_preferredSize_(QGraphicsLayoutItem * _self_) {
+  return _self_->preferredSize();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setPreferredWidth_qreal(QGraphicsLayoutItem * _self_, qreal width) {
+  _self_->setPreferredWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_preferredWidth_(QGraphicsLayoutItem * _self_) {
+  return _self_->preferredWidth();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setPreferredHeight_qreal(QGraphicsLayoutItem * _self_, qreal height) {
+  _self_->setPreferredHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_preferredHeight_(QGraphicsLayoutItem * _self_) {
+  return _self_->preferredHeight();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMaximumSize_const_QSizeF_R(QGraphicsLayoutItem * _self_, const QSizeF size) {
+  _self_->setMaximumSize(size);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMaximumSize_qreal_qreal(QGraphicsLayoutItem * _self_, qreal w, qreal h) {
+  _self_->setMaximumSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_maximumSize_(QGraphicsLayoutItem * _self_) {
+  return _self_->maximumSize();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMaximumWidth_qreal(QGraphicsLayoutItem * _self_, qreal width) {
+  _self_->setMaximumWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_maximumWidth_(QGraphicsLayoutItem * _self_) {
+  return _self_->maximumWidth();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setMaximumHeight_qreal(QGraphicsLayoutItem * _self_, qreal height) {
+  _self_->setMaximumHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsLayoutItem_maximumHeight_(QGraphicsLayoutItem * _self_) {
+  return _self_->maximumHeight();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(QGraphicsLayoutItem * _self_, const QRectF rect) {
+  _self_->setGeometry(rect);
+}
+
+extern "C" QRectF bg_QGraphicsLayoutItem_geometry_(QGraphicsLayoutItem * _self_) {
+  return _self_->geometry();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(QGraphicsLayoutItem * _self_, qreal * left, qreal * top, qreal * right, qreal * bottom) {
+  _self_->getContentsMargins(left, top, right, bottom);
+}
+
+extern "C" QRectF bg_QGraphicsLayoutItem_contentsRect_(QGraphicsLayoutItem * _self_) {
+  return _self_->contentsRect();
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_effectiveSizeHint_Qt__SizeHint(QGraphicsLayoutItem * _self_, Qt::SizeHint which) {
+  return _self_->effectiveSizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_effectiveSizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsLayoutItem * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->effectiveSizeHint(which, constraint);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_updateGeometry_(QGraphicsLayoutItem * _self_) {
+  _self_->updateGeometry();
+}
+
+extern "C" bool bg_QGraphicsLayoutItem_isEmpty_(QGraphicsLayoutItem * _self_) {
+  return _self_->isEmpty();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLayoutItem_parentLayoutItem_(QGraphicsLayoutItem * _self_) {
+  return _self_->parentLayoutItem();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setParentLayoutItem_QGraphicsLayoutItem_X(QGraphicsLayoutItem * _self_, QGraphicsLayoutItem * parent) {
+  _self_->setParentLayoutItem(parent);
+}
+
+extern "C" bool bg_QGraphicsLayoutItem_isLayout_(QGraphicsLayoutItem * _self_) {
+  return _self_->isLayout();
+}
+
+extern "C" QGraphicsItem * bg_QGraphicsLayoutItem_graphicsItem_(QGraphicsLayoutItem * _self_) {
+  return _self_->graphicsItem();
+}
+
+extern "C" bool bg_QGraphicsLayoutItem_ownedByLayout_(QGraphicsLayoutItem * _self_) {
+  return _self_->ownedByLayout();
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setGraphicsItem_QGraphicsItem_X(QGraphicsLayoutItem * _self_, QGraphicsItem * item) {
+  _self_->setGraphicsItem(item);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setOwnedByLayout_bool(QGraphicsLayoutItem * _self_, bool ownedByLayout) {
+  _self_->setOwnedByLayout(ownedByLayout);
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLayoutItem__CONSTRUCT_QGraphicsLayoutItemPrivate_R(QGraphicsLayoutItemPrivate & dd) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLayoutItem>(dd);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint(QGraphicsLayoutItem * _self_, Qt::SizeHint which) {
+  return _self_->sizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsLayoutItem * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->sizeHint(which, constraint);
+}
+
+extern "C" QGraphicsLayout * bg_QGraphicsLayoutItem_CAST_GraphicsLayout_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsLayout *>(_self_);
+}
+
+extern "C" QGraphicsAnchorLayout * bg_QGraphicsLayoutItem_CAST_GraphicsAnchorLayout_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsAnchorLayout *>(_self_);
+}
+
+extern "C" QGraphicsGridLayout * bg_QGraphicsLayoutItem_CAST_GraphicsGridLayout_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsGridLayout *>(_self_);
+}
+
+extern "C" QGraphicsLinearLayout * bg_QGraphicsLayoutItem_CAST_GraphicsLinearLayout_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsLinearLayout *>(_self_);
+}
+
+extern "C" QGraphicsWidget * bg_QGraphicsLayoutItem_CAST_GraphicsWidget_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsWidget *>(_self_);
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsLayoutItem_CAST_GraphicsProxyWidget_(QGraphicsLayoutItem * _self_) {
+  return bindgen_dynamic_cast<QGraphicsProxyWidget *>(_self_);
+}
+
+extern "C" void bg_BgInherit_QGraphicsLayoutItem_JUMPTABLE_BgJumptable_QGraphicsLayoutItem_R(BgInherit_QGraphicsLayoutItem * _self_, const BgJumptable_QGraphicsLayoutItem & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_setGeometry_SUPER_const_QRectF_R(QGraphicsLayoutItem * _self_, const QRectF rect) {
+  _self_->QGraphicsLayoutItem::setGeometry(rect);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_getContentsMargins_SUPER_qreal_X_qreal_X_qreal_X_qreal_X(QGraphicsLayoutItem * _self_, qreal * left, qreal * top, qreal * right, qreal * bottom) {
+  _self_->QGraphicsLayoutItem::getContentsMargins(left, top, right, bottom);
+}
+
+extern "C" void bg_QGraphicsLayoutItem_updateGeometry_SUPER_(QGraphicsLayoutItem * _self_) {
+  _self_->QGraphicsLayoutItem::updateGeometry();
+}
+
+extern "C" bool bg_QGraphicsLayoutItem_isEmpty_SUPER_(QGraphicsLayoutItem * _self_) {
+  return _self_->QGraphicsLayoutItem::isEmpty();
+}
+
+struct BgJumptable_QGraphicsLayout {
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void> bg_QGraphicsLayout_invalidate_;
+  CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
+  CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
+  CrystalProc<int> bg_QGraphicsLayout_count_;
+  CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsLayout_itemAt_int;
+  CrystalProc<void, int> bg_QGraphicsLayout_removeAt_int;
+  CrystalProc<void, const QRectF> bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R;
+  CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R;
+};
+struct BgInherit_QGraphicsLayout : public QGraphicsLayout {
+  using QGraphicsLayout::QGraphicsLayout;
+  BgJumptable_QGraphicsLayout bgJump;
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsLayout::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void invalidate() override {
+    BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_invalidate_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_invalidate_();
+    } else {
+      QGraphicsLayout::invalidate();
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_updateGeometry_();
+    } else {
+      QGraphicsLayout::updateGeometry();
+    }
+  }
+  
+  void widgetEvent(QEvent * e) override {
+    BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X(e);
+    } else {
+      QGraphicsLayout::widgetEvent(e);
+    }
+  }
+  
+  int count() const override {
+    const BgInherit_QGraphicsLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayout_count_.isValid())) {
+      return _self_->bgJump.bg_QGraphicsLayout_count_();
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsLayout::count");
+    }
+  }
+  
+  QGraphicsLayoutItem * itemAt(int i) const override {
+    const BgInherit_QGraphicsLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayout_itemAt_int.isValid())) {
+      return _self_->bgJump.bg_QGraphicsLayout_itemAt_int(i);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsLayout::itemAt");
+    }
+  }
+  
+  void removeAt(int index) override {
+    BgInherit_QGraphicsLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayout_removeAt_int.isValid())) {
+      _self_->bgJump.bg_QGraphicsLayout_removeAt_int(index);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsLayout::removeAt");
+    }
+  }
+  
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayoutItem_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsLayout::setGeometry(rect);
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_();
+    } else {
+      return QGraphicsLayout::isEmpty();
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsLayout *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid())) {
+      return *_self_->bgJump.bg_QGraphicsLayoutItem_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsLayoutItem::sizeHint");
+    }
+  }
+  
+};
+extern "C" QGraphicsLayout * bg_QGraphicsLayout__CONSTRUCT_QGraphicsLayoutItem_X(QGraphicsLayoutItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLayout>(parent);
+}
+
+extern "C" void bg_QGraphicsLayout_setContentsMargins_qreal_qreal_qreal_qreal(QGraphicsLayout * _self_, qreal left, qreal top, qreal right, qreal bottom) {
+  _self_->setContentsMargins(left, top, right, bottom);
+}
+
+extern "C" void bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(QGraphicsLayout * _self_, qreal * left, qreal * top, qreal * right, qreal * bottom) {
+  _self_->getContentsMargins(left, top, right, bottom);
+}
+
+extern "C" void bg_QGraphicsLayout_activate_(QGraphicsLayout * _self_) {
+  _self_->activate();
+}
+
+extern "C" bool bg_QGraphicsLayout_isActivated_(QGraphicsLayout * _self_) {
+  return _self_->isActivated();
+}
+
+extern "C" void bg_QGraphicsLayout_invalidate_(QGraphicsLayout * _self_) {
+  _self_->invalidate();
+}
+
+extern "C" void bg_QGraphicsLayout_updateGeometry_(QGraphicsLayout * _self_) {
+  _self_->updateGeometry();
+}
+
+extern "C" void bg_QGraphicsLayout_widgetEvent_QEvent_X(QGraphicsLayout * _self_, QEvent * e) {
+  _self_->widgetEvent(e);
+}
+
+extern "C" int bg_QGraphicsLayout_count_(QGraphicsLayout * _self_) {
+  return _self_->count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLayout_itemAt_int(QGraphicsLayout * _self_, int i) {
+  return _self_->itemAt(i);
+}
+
+extern "C" void bg_QGraphicsLayout_removeAt_int(QGraphicsLayout * _self_, int index) {
+  _self_->removeAt(index);
+}
+
+extern "C" void bg_QGraphicsLayout_setInstantInvalidatePropagation_STATIC_bool(bool enable) {
+  QGraphicsLayout::setInstantInvalidatePropagation(enable);
+}
+
+extern "C" bool bg_QGraphicsLayout_instantInvalidatePropagation_STATIC_() {
+  return QGraphicsLayout::instantInvalidatePropagation();
+}
+
+extern "C" QGraphicsLayout * bg_QGraphicsLayout__CONSTRUCT_QGraphicsLayoutPrivate_R_QGraphicsLayoutItem_X(QGraphicsLayoutPrivate & unnamed_arg_0, QGraphicsLayoutItem * unnamed_arg_1) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLayout>(unnamed_arg_0, unnamed_arg_1);
+}
+
+extern "C" void bg_QGraphicsLayout_addChildLayoutItem_QGraphicsLayoutItem_X(QGraphicsLayout * _self_, QGraphicsLayoutItem * layoutItem) {
+  _self_->addChildLayoutItem(layoutItem);
+}
+
+extern "C" void bg_QGraphicsLayout_getContentsMargins_SUPER_qreal_X_qreal_X_qreal_X_qreal_X(QGraphicsLayout * _self_, qreal * left, qreal * top, qreal * right, qreal * bottom) {
+  _self_->QGraphicsLayout::getContentsMargins(left, top, right, bottom);
+}
+
+extern "C" void bg_QGraphicsLayout_invalidate_SUPER_(QGraphicsLayout * _self_) {
+  _self_->QGraphicsLayout::invalidate();
+}
+
+extern "C" void bg_QGraphicsLayout_updateGeometry_SUPER_(QGraphicsLayout * _self_) {
+  _self_->QGraphicsLayout::updateGeometry();
+}
+
+extern "C" void bg_QGraphicsLayout_widgetEvent_SUPER_QEvent_X(QGraphicsLayout * _self_, QEvent * e) {
+  _self_->QGraphicsLayout::widgetEvent(e);
+}
+
+extern "C" void bg_BgInherit_QGraphicsLayout_JUMPTABLE_BgJumptable_QGraphicsLayout_R(BgInherit_QGraphicsLayout * _self_, const BgJumptable_QGraphicsLayout & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsAnchor {
+  CrystalProc<const QMetaObject *> bg_QGraphicsAnchor_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsAnchor_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsAnchor_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsAnchor : public QGraphicsAnchor {
+  using QGraphicsAnchor::QGraphicsAnchor;
+  BgJumptable_QGraphicsAnchor bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchor_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsAnchor_metaObject_();
+    } else {
+      return QGraphicsAnchor::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchor_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsAnchor_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsAnchor::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchor_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsAnchor_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsAnchor::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsAnchor::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsAnchor::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsAnchor::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsAnchor::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsAnchor::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsAnchor::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsAnchor *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsAnchor::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsAnchor_metaObject_(QGraphicsAnchor * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsAnchor_qt_metacast_const_char_X(QGraphicsAnchor * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsAnchor_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsAnchor * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsAnchor_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsAnchor::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsAnchor_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsAnchor::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsAnchor_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsAnchor::tr(s, c, n));
+}
+
+extern "C" void bg_QGraphicsAnchor_setSpacing_qreal(QGraphicsAnchor * _self_, qreal spacing) {
+  _self_->setSpacing(spacing);
+}
+
+extern "C" void bg_QGraphicsAnchor_unsetSpacing_(QGraphicsAnchor * _self_) {
+  _self_->unsetSpacing();
+}
+
+extern "C" qreal bg_QGraphicsAnchor_spacing_(QGraphicsAnchor * _self_) {
+  return _self_->spacing();
+}
+
+extern "C" void bg_QGraphicsAnchor_setSizePolicy_QSizePolicy__Policy(QGraphicsAnchor * _self_, QSizePolicy::Policy policy) {
+  _self_->setSizePolicy(policy);
+}
+
+extern "C" QSizePolicy::Policy bg_QGraphicsAnchor_sizePolicy_(QGraphicsAnchor * _self_) {
+  return _self_->sizePolicy();
+}
+
+extern "C" const QMetaObject * bg_QGraphicsAnchor_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsAnchor::staticMetaObject);
+}
+
+extern "C" void bg_BgInherit_QGraphicsAnchor_JUMPTABLE_BgJumptable_QGraphicsAnchor_R(BgInherit_QGraphicsAnchor * _self_, const BgJumptable_QGraphicsAnchor & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsAnchorLayout {
+  CrystalProc<void, int> bg_QGraphicsAnchorLayout_removeAt_int;
+  CrystalProc<void, const QRectF> bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R;
+  CrystalProc<int> bg_QGraphicsAnchorLayout_count_;
+  CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsAnchorLayout_itemAt_int;
+  CrystalProc<void> bg_QGraphicsAnchorLayout_invalidate_;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
+  CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
+  CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
+};
+struct BgInherit_QGraphicsAnchorLayout : public QGraphicsAnchorLayout {
+  using QGraphicsAnchorLayout::QGraphicsAnchorLayout;
+  BgJumptable_QGraphicsAnchorLayout bgJump;
+  void removeAt(int index) override {
+    BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_removeAt_int.isValid()) {
+      _self_->bgJump.bg_QGraphicsAnchorLayout_removeAt_int(index);
+    } else {
+      QGraphicsAnchorLayout::removeAt(index);
+    }
+  }
+  
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsAnchorLayout::setGeometry(rect);
+    }
+  }
+  
+  int count() const override {
+    const BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_count_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsAnchorLayout_count_();
+    } else {
+      return QGraphicsAnchorLayout::count();
+    }
+  }
+  
+  QGraphicsLayoutItem * itemAt(int i) const override {
+    const BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_itemAt_int.isValid()) {
+      return _self_->bgJump.bg_QGraphicsAnchorLayout_itemAt_int(i);
+    } else {
+      return QGraphicsAnchorLayout::itemAt(i);
+    }
+  }
+  
+  void invalidate() override {
+    BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_invalidate_.isValid()) {
+      _self_->bgJump.bg_QGraphicsAnchorLayout_invalidate_();
+    } else {
+      QGraphicsAnchorLayout::invalidate();
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      return QGraphicsAnchorLayout::sizeHint(which, constraint);
+    }
+  }
+  
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsAnchorLayout::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_updateGeometry_();
+    } else {
+      QGraphicsAnchorLayout::updateGeometry();
+    }
+  }
+  
+  void widgetEvent(QEvent * e) override {
+    BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X(e);
+    } else {
+      QGraphicsAnchorLayout::widgetEvent(e);
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsAnchorLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_();
+    } else {
+      return QGraphicsAnchorLayout::isEmpty();
+    }
+  }
+  
+};
+extern "C" QGraphicsAnchorLayout * bg_QGraphicsAnchorLayout__CONSTRUCT_QGraphicsLayoutItem_X(QGraphicsLayoutItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsAnchorLayout>(parent);
+}
+
+extern "C" QGraphicsAnchor * bg_QGraphicsAnchorLayout_addAnchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(QGraphicsAnchorLayout * _self_, QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge) {
+  return _self_->addAnchor(firstItem, firstEdge, secondItem, secondEdge);
+}
+
+extern "C" QGraphicsAnchor * bg_QGraphicsAnchorLayout_anchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(QGraphicsAnchorLayout * _self_, QGraphicsLayoutItem * firstItem, Qt::AnchorPoint firstEdge, QGraphicsLayoutItem * secondItem, Qt::AnchorPoint secondEdge) {
+  return _self_->anchor(firstItem, firstEdge, secondItem, secondEdge);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_addCornerAnchors_QGraphicsLayoutItem_X_Qt__Corner_QGraphicsLayoutItem_X_Qt__Corner(QGraphicsAnchorLayout * _self_, QGraphicsLayoutItem * firstItem, Qt::Corner firstCorner, QGraphicsLayoutItem * secondItem, Qt::Corner secondCorner) {
+  _self_->addCornerAnchors(firstItem, firstCorner, secondItem, secondCorner);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_addAnchors_QGraphicsLayoutItem_X_QGraphicsLayoutItem_X(QGraphicsAnchorLayout * _self_, QGraphicsLayoutItem * firstItem, QGraphicsLayoutItem * secondItem) {
+  _self_->addAnchors(firstItem, secondItem);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_addAnchors_QGraphicsLayoutItem_X_QGraphicsLayoutItem_X_Qt__Orientations(QGraphicsAnchorLayout * _self_, QGraphicsLayoutItem * firstItem, QGraphicsLayoutItem * secondItem, Qt::Orientations orientations) {
+  _self_->addAnchors(firstItem, secondItem, orientations);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_setHorizontalSpacing_qreal(QGraphicsAnchorLayout * _self_, qreal spacing) {
+  _self_->setHorizontalSpacing(spacing);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_setVerticalSpacing_qreal(QGraphicsAnchorLayout * _self_, qreal spacing) {
+  _self_->setVerticalSpacing(spacing);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_setSpacing_qreal(QGraphicsAnchorLayout * _self_, qreal spacing) {
+  _self_->setSpacing(spacing);
+}
+
+extern "C" qreal bg_QGraphicsAnchorLayout_horizontalSpacing_(QGraphicsAnchorLayout * _self_) {
+  return _self_->horizontalSpacing();
+}
+
+extern "C" qreal bg_QGraphicsAnchorLayout_verticalSpacing_(QGraphicsAnchorLayout * _self_) {
+  return _self_->verticalSpacing();
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_removeAt_int(QGraphicsAnchorLayout * _self_, int index) {
+  _self_->removeAt(index);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_setGeometry_const_QRectF_R(QGraphicsAnchorLayout * _self_, const QRectF rect) {
+  _self_->setGeometry(rect);
+}
+
+extern "C" int bg_QGraphicsAnchorLayout_count_(QGraphicsAnchorLayout * _self_) {
+  return _self_->count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsAnchorLayout_itemAt_int(QGraphicsAnchorLayout * _self_, int i) {
+  return _self_->itemAt(i);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_invalidate_(QGraphicsAnchorLayout * _self_) {
+  _self_->invalidate();
+}
+
+extern "C" QSizeF bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint(QGraphicsAnchorLayout * _self_, Qt::SizeHint which) {
+  return _self_->sizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsAnchorLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsAnchorLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->sizeHint(which, constraint);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_removeAt_SUPER_int(QGraphicsAnchorLayout * _self_, int index) {
+  _self_->QGraphicsAnchorLayout::removeAt(index);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_setGeometry_SUPER_const_QRectF_R(QGraphicsAnchorLayout * _self_, const QRectF rect) {
+  _self_->QGraphicsAnchorLayout::setGeometry(rect);
+}
+
+extern "C" int bg_QGraphicsAnchorLayout_count_SUPER_(QGraphicsAnchorLayout * _self_) {
+  return _self_->QGraphicsAnchorLayout::count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsAnchorLayout_itemAt_SUPER_int(QGraphicsAnchorLayout * _self_, int i) {
+  return _self_->QGraphicsAnchorLayout::itemAt(i);
+}
+
+extern "C" void bg_QGraphicsAnchorLayout_invalidate_SUPER_(QGraphicsAnchorLayout * _self_) {
+  _self_->QGraphicsAnchorLayout::invalidate();
+}
+
+extern "C" QSizeF bg_QGraphicsAnchorLayout_sizeHint_SUPER_Qt__SizeHint_const_QSizeF_R(QGraphicsAnchorLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->QGraphicsAnchorLayout::sizeHint(which, constraint);
+}
+
+extern "C" void bg_BgInherit_QGraphicsAnchorLayout_JUMPTABLE_BgJumptable_QGraphicsAnchorLayout_R(BgInherit_QGraphicsAnchorLayout * _self_, const BgJumptable_QGraphicsAnchorLayout & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsEffect {
+  CrystalProc<const QMetaObject *> bg_QGraphicsEffect_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsEffect_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsEffect_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<void, QPainter *> bg_QGraphicsEffect_draw_QPainter_X;
+  CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsEffect : public QGraphicsEffect {
+  using QGraphicsEffect::QGraphicsEffect;
+  BgJumptable_QGraphicsEffect bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsEffect_metaObject_();
+    } else {
+      return QGraphicsEffect::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsEffect_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsEffect::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsEffect_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsEffect::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QRectF boundingRectFor(const QRectF & sourceRect) const override {
+    const BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+    } else {
+      return QGraphicsEffect::boundingRectFor(sourceRect);
+    }
+  }
+  
+  void draw(QPainter * painter) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (bindgen_likely(_self_->bgJump.bg_QGraphicsEffect_draw_QPainter_X.isValid())) {
+      _self_->bgJump.bg_QGraphicsEffect_draw_QPainter_X(painter);
+    } else {
+      bindgen_fatal_panic("No implementation for pure method QGraphicsEffect::draw");
+    }
+  }
+  
+  void sourceChanged(QGraphicsEffect::ChangeFlags flags) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags.isValid()) {
+      _self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(flags);
+    } else {
+      QGraphicsEffect::sourceChanged(flags);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsEffect::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsEffect::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsEffect::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsEffect::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsEffect::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsEffect::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsEffect::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsEffect_metaObject_(QGraphicsEffect * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsEffect_qt_metacast_const_char_X(QGraphicsEffect * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsEffect_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsEffect * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsEffect_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsEffect::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsEffect_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsEffect::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsEffect_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsEffect::tr(s, c, n));
+}
+
+extern "C" QGraphicsEffect * bg_QGraphicsEffect__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsEffect>(parent);
+}
+
+extern "C" QRectF bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(QGraphicsEffect * _self_, const QRectF sourceRect) {
+  return _self_->boundingRectFor(sourceRect);
+}
+
+extern "C" QRectF bg_QGraphicsEffect_boundingRect_(QGraphicsEffect * _self_) {
+  return _self_->boundingRect();
+}
+
+extern "C" bool bg_QGraphicsEffect_isEnabled_(QGraphicsEffect * _self_) {
+  return _self_->isEnabled();
+}
+
+extern "C" void bg_QGraphicsEffect_setEnabled_bool(QGraphicsEffect * _self_, bool enable) {
+  _self_->setEnabled(enable);
+}
+
+extern "C" void bg_QGraphicsEffect_update_(QGraphicsEffect * _self_) {
+  _self_->update();
+}
+
+extern "C" void bg_QGraphicsEffect_enabledChanged_bool(QGraphicsEffect * _self_, bool enabled) {
+  _self_->enabledChanged(enabled);
+}
+
+extern "C" QGraphicsEffect * bg_QGraphicsEffect__CONSTRUCT_QGraphicsEffectPrivate_R_QObject_X(QGraphicsEffectPrivate & d, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsEffect>(d, parent);
+}
+
+extern "C" void bg_QGraphicsEffect_draw_QPainter_X(QGraphicsEffect * _self_, QPainter * painter) {
+  _self_->draw(painter);
+}
+
+extern "C" void bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(QGraphicsEffect * _self_, QGraphicsEffect::ChangeFlags flags) {
+  _self_->sourceChanged(flags);
+}
+
+extern "C" void bg_QGraphicsEffect_updateBoundingRect_(QGraphicsEffect * _self_) {
+  _self_->updateBoundingRect();
+}
+
+extern "C" bool bg_QGraphicsEffect_sourceIsPixmap_(QGraphicsEffect * _self_) {
+  return _self_->sourceIsPixmap();
+}
+
+extern "C" QRectF bg_QGraphicsEffect_sourceBoundingRect_Qt__CoordinateSystem(QGraphicsEffect * _self_, Qt::CoordinateSystem system) {
+  return _self_->sourceBoundingRect(system);
+}
+
+extern "C" void bg_QGraphicsEffect_drawSource_QPainter_X(QGraphicsEffect * _self_, QPainter * painter) {
+  _self_->drawSource(painter);
+}
+
+extern "C" QGraphicsEffectSource * bg_QGraphicsEffect_source_(QGraphicsEffect * _self_) {
+  return _self_->source();
+}
+
+extern "C" const QMetaObject * bg_QGraphicsEffect_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsEffect::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsEffect_CONNECT_enabledChanged_CrystalProc_void__bool_(QGraphicsEffect * _self_, CrystalProc<void, bool> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsEffect::*)(bool))&QGraphicsEffect::enabledChanged, [_proc_](bool enabled){ _proc_(enabled); }));
+}
+
+extern "C" QRectF bg_QGraphicsEffect_boundingRectFor_SUPER_const_QRectF_R(QGraphicsEffect * _self_, const QRectF sourceRect) {
+  return _self_->QGraphicsEffect::boundingRectFor(sourceRect);
+}
+
+extern "C" void bg_QGraphicsEffect_sourceChanged_SUPER_QGraphicsEffect__ChangeFlags(QGraphicsEffect * _self_, QGraphicsEffect::ChangeFlags flags) {
+  _self_->QGraphicsEffect::sourceChanged(flags);
+}
+
+extern "C" void bg_BgInherit_QGraphicsEffect_JUMPTABLE_BgJumptable_QGraphicsEffect_R(BgInherit_QGraphicsEffect * _self_, const BgJumptable_QGraphicsEffect & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsColorizeEffect {
+  CrystalProc<const QMetaObject *> bg_QGraphicsColorizeEffect_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsColorizeEffect_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsColorizeEffect_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QPainter *> bg_QGraphicsColorizeEffect_draw_QPainter_X;
+  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsColorizeEffect : public QGraphicsColorizeEffect {
+  using QGraphicsColorizeEffect::QGraphicsColorizeEffect;
+  BgJumptable_QGraphicsColorizeEffect bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsColorizeEffect_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsColorizeEffect_metaObject_();
+    } else {
+      return QGraphicsColorizeEffect::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsColorizeEffect_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsColorizeEffect_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsColorizeEffect::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsColorizeEffect_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsColorizeEffect_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsColorizeEffect::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void draw(QPainter * painter) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsColorizeEffect_draw_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsColorizeEffect_draw_QPainter_X(painter);
+    } else {
+      QGraphicsColorizeEffect::draw(painter);
+    }
+  }
+  
+  QRectF boundingRectFor(const QRectF & sourceRect) const override {
+    const BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+    } else {
+      return QGraphicsColorizeEffect::boundingRectFor(sourceRect);
+    }
+  }
+  
+  void sourceChanged(QGraphicsEffect::ChangeFlags flags) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags.isValid()) {
+      _self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(flags);
+    } else {
+      QGraphicsColorizeEffect::sourceChanged(flags);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsColorizeEffect::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsColorizeEffect::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsColorizeEffect::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsColorizeEffect::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsColorizeEffect::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsColorizeEffect::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsColorizeEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsColorizeEffect::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsColorizeEffect_metaObject_(QGraphicsColorizeEffect * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsColorizeEffect_qt_metacast_const_char_X(QGraphicsColorizeEffect * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsColorizeEffect_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsColorizeEffect * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsColorizeEffect_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsColorizeEffect::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsColorizeEffect_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsColorizeEffect::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsColorizeEffect_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsColorizeEffect::tr(s, c, n));
+}
+
+extern "C" QGraphicsColorizeEffect * bg_QGraphicsColorizeEffect__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsColorizeEffect>(parent);
+}
+
+extern "C" QColor * bg_QGraphicsColorizeEffect_color_(QGraphicsColorizeEffect * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->color());
+}
+
+extern "C" qreal bg_QGraphicsColorizeEffect_strength_(QGraphicsColorizeEffect * _self_) {
+  return _self_->strength();
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_setColor_const_QColor_R(QGraphicsColorizeEffect * _self_, const QColor & c) {
+  _self_->setColor(c);
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_setStrength_qreal(QGraphicsColorizeEffect * _self_, qreal strength) {
+  _self_->setStrength(strength);
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_colorChanged_const_QColor_R(QGraphicsColorizeEffect * _self_, const QColor & color) {
+  _self_->colorChanged(color);
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_strengthChanged_qreal(QGraphicsColorizeEffect * _self_, qreal strength) {
+  _self_->strengthChanged(strength);
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_draw_QPainter_X(QGraphicsColorizeEffect * _self_, QPainter * painter) {
+  _self_->draw(painter);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsColorizeEffect_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsColorizeEffect::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsColorizeEffect_CONNECT_colorChanged_CrystalProc_void__const_QColor_R_(QGraphicsColorizeEffect * _self_, CrystalProc<void, const QColor *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsColorizeEffect::*)(const QColor &))&QGraphicsColorizeEffect::colorChanged, [_proc_](const QColor & color){ _proc_(&(color)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsColorizeEffect_CONNECT_strengthChanged_CrystalProc_void__qreal_(QGraphicsColorizeEffect * _self_, CrystalProc<void, qreal> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsColorizeEffect::*)(qreal))&QGraphicsColorizeEffect::strengthChanged, [_proc_](qreal strength){ _proc_(strength); }));
+}
+
+extern "C" void bg_QGraphicsColorizeEffect_draw_SUPER_QPainter_X(QGraphicsColorizeEffect * _self_, QPainter * painter) {
+  _self_->QGraphicsColorizeEffect::draw(painter);
+}
+
+extern "C" void bg_BgInherit_QGraphicsColorizeEffect_JUMPTABLE_BgJumptable_QGraphicsColorizeEffect_R(BgInherit_QGraphicsColorizeEffect * _self_, const BgJumptable_QGraphicsColorizeEffect & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsBlurEffect {
+  CrystalProc<const QMetaObject *> bg_QGraphicsBlurEffect_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsBlurEffect_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsBlurEffect_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QRectF *, const QRectF> bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<void, QPainter *> bg_QGraphicsBlurEffect_draw_QPainter_X;
+  CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsBlurEffect : public QGraphicsBlurEffect {
+  using QGraphicsBlurEffect::QGraphicsBlurEffect;
+  BgJumptable_QGraphicsBlurEffect bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsBlurEffect_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsBlurEffect_metaObject_();
+    } else {
+      return QGraphicsBlurEffect::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsBlurEffect_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsBlurEffect_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsBlurEffect::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsBlurEffect_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsBlurEffect_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsBlurEffect::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QRectF boundingRectFor(const QRectF & sourceRect) const override {
+    const BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R(sourceRect);
+    } else {
+      return QGraphicsBlurEffect::boundingRectFor(sourceRect);
+    }
+  }
+  
+  void draw(QPainter * painter) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsBlurEffect_draw_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsBlurEffect_draw_QPainter_X(painter);
+    } else {
+      QGraphicsBlurEffect::draw(painter);
+    }
+  }
+  
+  void sourceChanged(QGraphicsEffect::ChangeFlags flags) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags.isValid()) {
+      _self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(flags);
+    } else {
+      QGraphicsBlurEffect::sourceChanged(flags);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsBlurEffect::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsBlurEffect::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsBlurEffect::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsBlurEffect::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsBlurEffect::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsBlurEffect::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsBlurEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsBlurEffect::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsBlurEffect_metaObject_(QGraphicsBlurEffect * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsBlurEffect_qt_metacast_const_char_X(QGraphicsBlurEffect * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsBlurEffect_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsBlurEffect * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsBlurEffect_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsBlurEffect::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsBlurEffect_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsBlurEffect::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsBlurEffect_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsBlurEffect::tr(s, c, n));
+}
+
+extern "C" QGraphicsBlurEffect * bg_QGraphicsBlurEffect__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsBlurEffect>(parent);
+}
+
+extern "C" QRectF bg_QGraphicsBlurEffect_boundingRectFor_const_QRectF_R(QGraphicsBlurEffect * _self_, const QRectF sourceRect) {
+  return _self_->boundingRectFor(sourceRect);
+}
+
+extern "C" qreal bg_QGraphicsBlurEffect_blurRadius_(QGraphicsBlurEffect * _self_) {
+  return _self_->blurRadius();
+}
+
+extern "C" QGraphicsBlurEffect::BlurHints bg_QGraphicsBlurEffect_blurHints_(QGraphicsBlurEffect * _self_) {
+  return _self_->blurHints();
+}
+
+extern "C" void bg_QGraphicsBlurEffect_setBlurRadius_qreal(QGraphicsBlurEffect * _self_, qreal blurRadius) {
+  _self_->setBlurRadius(blurRadius);
+}
+
+extern "C" void bg_QGraphicsBlurEffect_setBlurHints_QGraphicsBlurEffect__BlurHints(QGraphicsBlurEffect * _self_, QGraphicsBlurEffect::BlurHints hints) {
+  _self_->setBlurHints(hints);
+}
+
+extern "C" void bg_QGraphicsBlurEffect_blurRadiusChanged_qreal(QGraphicsBlurEffect * _self_, qreal blurRadius) {
+  _self_->blurRadiusChanged(blurRadius);
+}
+
+extern "C" void bg_QGraphicsBlurEffect_blurHintsChanged_QGraphicsBlurEffect__BlurHints(QGraphicsBlurEffect * _self_, QGraphicsBlurEffect::BlurHints hints) {
+  _self_->blurHintsChanged(hints);
+}
+
+extern "C" void bg_QGraphicsBlurEffect_draw_QPainter_X(QGraphicsBlurEffect * _self_, QPainter * painter) {
+  _self_->draw(painter);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsBlurEffect_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsBlurEffect::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsBlurEffect_CONNECT_blurRadiusChanged_CrystalProc_void__qreal_(QGraphicsBlurEffect * _self_, CrystalProc<void, qreal> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsBlurEffect::*)(qreal))&QGraphicsBlurEffect::blurRadiusChanged, [_proc_](qreal blurRadius){ _proc_(blurRadius); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsBlurEffect_CONNECT_blurHintsChanged_CrystalProc_void__QGraphicsBlurEffect__BlurHints_(QGraphicsBlurEffect * _self_, CrystalProc<void, QGraphicsBlurEffect::BlurHints> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsBlurEffect::*)(QGraphicsBlurEffect::BlurHints))&QGraphicsBlurEffect::blurHintsChanged, [_proc_](QGraphicsBlurEffect::BlurHints hints){ _proc_(hints); }));
+}
+
+extern "C" QRectF bg_QGraphicsBlurEffect_boundingRectFor_SUPER_const_QRectF_R(QGraphicsBlurEffect * _self_, const QRectF sourceRect) {
+  return _self_->QGraphicsBlurEffect::boundingRectFor(sourceRect);
+}
+
+extern "C" void bg_QGraphicsBlurEffect_draw_SUPER_QPainter_X(QGraphicsBlurEffect * _self_, QPainter * painter) {
+  _self_->QGraphicsBlurEffect::draw(painter);
+}
+
+extern "C" void bg_BgInherit_QGraphicsBlurEffect_JUMPTABLE_BgJumptable_QGraphicsBlurEffect_R(BgInherit_QGraphicsBlurEffect * _self_, const BgJumptable_QGraphicsBlurEffect & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsDropShadowEffect {
+  CrystalProc<const QMetaObject *> bg_QGraphicsDropShadowEffect_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsDropShadowEffect_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsDropShadowEffect_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<QRectF *, const QRectF> bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<void, QPainter *> bg_QGraphicsDropShadowEffect_draw_QPainter_X;
+  CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsDropShadowEffect : public QGraphicsDropShadowEffect {
+  using QGraphicsDropShadowEffect::QGraphicsDropShadowEffect;
+  BgJumptable_QGraphicsDropShadowEffect bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsDropShadowEffect_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsDropShadowEffect_metaObject_();
+    } else {
+      return QGraphicsDropShadowEffect::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsDropShadowEffect_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsDropShadowEffect_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsDropShadowEffect::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsDropShadowEffect_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsDropShadowEffect_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsDropShadowEffect::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QRectF boundingRectFor(const QRectF & sourceRect) const override {
+    const BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R(sourceRect);
+    } else {
+      return QGraphicsDropShadowEffect::boundingRectFor(sourceRect);
+    }
+  }
+  
+  void draw(QPainter * painter) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsDropShadowEffect_draw_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsDropShadowEffect_draw_QPainter_X(painter);
+    } else {
+      QGraphicsDropShadowEffect::draw(painter);
+    }
+  }
+  
+  void sourceChanged(QGraphicsEffect::ChangeFlags flags) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags.isValid()) {
+      _self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(flags);
+    } else {
+      QGraphicsDropShadowEffect::sourceChanged(flags);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsDropShadowEffect::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsDropShadowEffect::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsDropShadowEffect::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsDropShadowEffect::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsDropShadowEffect::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsDropShadowEffect::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsDropShadowEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsDropShadowEffect::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsDropShadowEffect_metaObject_(QGraphicsDropShadowEffect * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsDropShadowEffect_qt_metacast_const_char_X(QGraphicsDropShadowEffect * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsDropShadowEffect_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsDropShadowEffect * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsDropShadowEffect_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsDropShadowEffect::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsDropShadowEffect_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsDropShadowEffect::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsDropShadowEffect_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsDropShadowEffect::tr(s, c, n));
+}
+
+extern "C" QGraphicsDropShadowEffect * bg_QGraphicsDropShadowEffect__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsDropShadowEffect>(parent);
+}
+
+extern "C" QRectF bg_QGraphicsDropShadowEffect_boundingRectFor_const_QRectF_R(QGraphicsDropShadowEffect * _self_, const QRectF sourceRect) {
+  return _self_->boundingRectFor(sourceRect);
+}
+
+extern "C" QPointF bg_QGraphicsDropShadowEffect_offset_(QGraphicsDropShadowEffect * _self_) {
+  return _self_->offset();
+}
+
+extern "C" qreal bg_QGraphicsDropShadowEffect_xOffset_(QGraphicsDropShadowEffect * _self_) {
+  return _self_->xOffset();
+}
+
+extern "C" qreal bg_QGraphicsDropShadowEffect_yOffset_(QGraphicsDropShadowEffect * _self_) {
+  return _self_->yOffset();
+}
+
+extern "C" qreal bg_QGraphicsDropShadowEffect_blurRadius_(QGraphicsDropShadowEffect * _self_) {
+  return _self_->blurRadius();
+}
+
+extern "C" QColor * bg_QGraphicsDropShadowEffect_color_(QGraphicsDropShadowEffect * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QColor>()) QColor (_self_->color());
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setOffset_const_QPointF_R(QGraphicsDropShadowEffect * _self_, const QPointF ofs) {
+  _self_->setOffset(ofs);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setOffset_qreal_qreal(QGraphicsDropShadowEffect * _self_, qreal dx, qreal dy) {
+  _self_->setOffset(dx, dy);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setOffset_qreal(QGraphicsDropShadowEffect * _self_, qreal d) {
+  _self_->setOffset(d);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setXOffset_qreal(QGraphicsDropShadowEffect * _self_, qreal dx) {
+  _self_->setXOffset(dx);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setYOffset_qreal(QGraphicsDropShadowEffect * _self_, qreal dy) {
+  _self_->setYOffset(dy);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setBlurRadius_qreal(QGraphicsDropShadowEffect * _self_, qreal blurRadius) {
+  _self_->setBlurRadius(blurRadius);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_setColor_const_QColor_R(QGraphicsDropShadowEffect * _self_, const QColor & color) {
+  _self_->setColor(color);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_offsetChanged_const_QPointF_R(QGraphicsDropShadowEffect * _self_, const QPointF offset) {
+  _self_->offsetChanged(offset);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_blurRadiusChanged_qreal(QGraphicsDropShadowEffect * _self_, qreal blurRadius) {
+  _self_->blurRadiusChanged(blurRadius);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_colorChanged_const_QColor_R(QGraphicsDropShadowEffect * _self_, const QColor & color) {
+  _self_->colorChanged(color);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_draw_QPainter_X(QGraphicsDropShadowEffect * _self_, QPainter * painter) {
+  _self_->draw(painter);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsDropShadowEffect_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsDropShadowEffect::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_offsetChanged_CrystalProc_void__const_QPointF_R_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, const QPointF> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsDropShadowEffect::*)(const QPointF &))&QGraphicsDropShadowEffect::offsetChanged, [_proc_](const QPointF & offset){ _proc_(offset); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_blurRadiusChanged_CrystalProc_void__qreal_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, qreal> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsDropShadowEffect::*)(qreal))&QGraphicsDropShadowEffect::blurRadiusChanged, [_proc_](qreal blurRadius){ _proc_(blurRadius); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsDropShadowEffect_CONNECT_colorChanged_CrystalProc_void__const_QColor_R_(QGraphicsDropShadowEffect * _self_, CrystalProc<void, const QColor *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsDropShadowEffect::*)(const QColor &))&QGraphicsDropShadowEffect::colorChanged, [_proc_](const QColor & color){ _proc_(&(color)); }));
+}
+
+extern "C" QRectF bg_QGraphicsDropShadowEffect_boundingRectFor_SUPER_const_QRectF_R(QGraphicsDropShadowEffect * _self_, const QRectF sourceRect) {
+  return _self_->QGraphicsDropShadowEffect::boundingRectFor(sourceRect);
+}
+
+extern "C" void bg_QGraphicsDropShadowEffect_draw_SUPER_QPainter_X(QGraphicsDropShadowEffect * _self_, QPainter * painter) {
+  _self_->QGraphicsDropShadowEffect::draw(painter);
+}
+
+extern "C" void bg_BgInherit_QGraphicsDropShadowEffect_JUMPTABLE_BgJumptable_QGraphicsDropShadowEffect_R(BgInherit_QGraphicsDropShadowEffect * _self_, const BgJumptable_QGraphicsDropShadowEffect & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsOpacityEffect {
+  CrystalProc<const QMetaObject *> bg_QGraphicsOpacityEffect_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsOpacityEffect_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsOpacityEffect_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QPainter *> bg_QGraphicsOpacityEffect_draw_QPainter_X;
+  CrystalProc<QRectF *, const QRectF> bg_QGraphicsEffect_boundingRectFor_const_QRectF_R;
+  CrystalProc<void, QGraphicsEffect::ChangeFlags> bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsOpacityEffect : public QGraphicsOpacityEffect {
+  using QGraphicsOpacityEffect::QGraphicsOpacityEffect;
+  BgJumptable_QGraphicsOpacityEffect bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsOpacityEffect_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsOpacityEffect_metaObject_();
+    } else {
+      return QGraphicsOpacityEffect::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsOpacityEffect_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsOpacityEffect_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsOpacityEffect::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsOpacityEffect_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsOpacityEffect_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsOpacityEffect::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void draw(QPainter * painter) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsOpacityEffect_draw_QPainter_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsOpacityEffect_draw_QPainter_X(painter);
+    } else {
+      QGraphicsOpacityEffect::draw(painter);
+    }
+  }
+  
+  QRectF boundingRectFor(const QRectF & sourceRect) const override {
+    const BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsEffect_boundingRectFor_const_QRectF_R(sourceRect);
+    } else {
+      return QGraphicsOpacityEffect::boundingRectFor(sourceRect);
+    }
+  }
+  
+  void sourceChanged(QGraphicsEffect::ChangeFlags flags) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags.isValid()) {
+      _self_->bgJump.bg_QGraphicsEffect_sourceChanged_QGraphicsEffect__ChangeFlags(flags);
+    } else {
+      QGraphicsOpacityEffect::sourceChanged(flags);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsOpacityEffect::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsOpacityEffect::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsOpacityEffect::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsOpacityEffect::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsOpacityEffect::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsOpacityEffect::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsOpacityEffect *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsOpacityEffect::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsOpacityEffect_metaObject_(QGraphicsOpacityEffect * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsOpacityEffect_qt_metacast_const_char_X(QGraphicsOpacityEffect * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsOpacityEffect_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsOpacityEffect * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsOpacityEffect_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsOpacityEffect::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsOpacityEffect_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsOpacityEffect::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsOpacityEffect_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsOpacityEffect::tr(s, c, n));
+}
+
+extern "C" QGraphicsOpacityEffect * bg_QGraphicsOpacityEffect__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsOpacityEffect>(parent);
+}
+
+extern "C" qreal bg_QGraphicsOpacityEffect_opacity_(QGraphicsOpacityEffect * _self_) {
+  return _self_->opacity();
+}
+
+extern "C" QBrush * bg_QGraphicsOpacityEffect_opacityMask_(QGraphicsOpacityEffect * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBrush>()) QBrush (_self_->opacityMask());
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_setOpacity_qreal(QGraphicsOpacityEffect * _self_, qreal opacity) {
+  _self_->setOpacity(opacity);
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_setOpacityMask_const_QBrush_R(QGraphicsOpacityEffect * _self_, const QBrush & mask) {
+  _self_->setOpacityMask(mask);
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_opacityChanged_qreal(QGraphicsOpacityEffect * _self_, qreal opacity) {
+  _self_->opacityChanged(opacity);
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_opacityMaskChanged_const_QBrush_R(QGraphicsOpacityEffect * _self_, const QBrush & mask) {
+  _self_->opacityMaskChanged(mask);
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_draw_QPainter_X(QGraphicsOpacityEffect * _self_, QPainter * painter) {
+  _self_->draw(painter);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsOpacityEffect_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsOpacityEffect::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsOpacityEffect_CONNECT_opacityChanged_CrystalProc_void__qreal_(QGraphicsOpacityEffect * _self_, CrystalProc<void, qreal> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsOpacityEffect::*)(qreal))&QGraphicsOpacityEffect::opacityChanged, [_proc_](qreal opacity){ _proc_(opacity); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsOpacityEffect_CONNECT_opacityMaskChanged_CrystalProc_void__const_QBrush_R_(QGraphicsOpacityEffect * _self_, CrystalProc<void, const QBrush *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsOpacityEffect::*)(const QBrush &))&QGraphicsOpacityEffect::opacityMaskChanged, [_proc_](const QBrush & mask){ _proc_(&(mask)); }));
+}
+
+extern "C" void bg_QGraphicsOpacityEffect_draw_SUPER_QPainter_X(QGraphicsOpacityEffect * _self_, QPainter * painter) {
+  _self_->QGraphicsOpacityEffect::draw(painter);
+}
+
+extern "C" void bg_BgInherit_QGraphicsOpacityEffect_JUMPTABLE_BgJumptable_QGraphicsOpacityEffect_R(BgInherit_QGraphicsOpacityEffect * _self_, const BgJumptable_QGraphicsOpacityEffect & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsGridLayout {
+  CrystalProc<int> bg_QGraphicsGridLayout_count_;
+  CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsGridLayout_itemAt_int;
+  CrystalProc<void, int> bg_QGraphicsGridLayout_removeAt_int;
+  CrystalProc<void> bg_QGraphicsGridLayout_invalidate_;
+  CrystalProc<void, const QRectF> bg_QGraphicsGridLayout_setGeometry_const_QRectF_R;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
+  CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
+  CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
+};
+struct BgInherit_QGraphicsGridLayout : public QGraphicsGridLayout {
+  using QGraphicsGridLayout::QGraphicsGridLayout;
+  BgJumptable_QGraphicsGridLayout bgJump;
+  int count() const override {
+    const BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_count_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsGridLayout_count_();
+    } else {
+      return QGraphicsGridLayout::count();
+    }
+  }
+  
+  QGraphicsLayoutItem * itemAt(int i) const override {
+    const BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_itemAt_int.isValid()) {
+      return _self_->bgJump.bg_QGraphicsGridLayout_itemAt_int(i);
+    } else {
+      return QGraphicsGridLayout::itemAt(i);
+    }
+  }
+  
+  void removeAt(int index) override {
+    BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_removeAt_int.isValid()) {
+      _self_->bgJump.bg_QGraphicsGridLayout_removeAt_int(index);
+    } else {
+      QGraphicsGridLayout::removeAt(index);
+    }
+  }
+  
+  void invalidate() override {
+    BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_invalidate_.isValid()) {
+      _self_->bgJump.bg_QGraphicsGridLayout_invalidate_();
+    } else {
+      QGraphicsGridLayout::invalidate();
+    }
+  }
+  
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsGridLayout_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsGridLayout::setGeometry(rect);
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      return QGraphicsGridLayout::sizeHint(which, constraint);
+    }
+  }
+  
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsGridLayout::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_updateGeometry_();
+    } else {
+      QGraphicsGridLayout::updateGeometry();
+    }
+  }
+  
+  void widgetEvent(QEvent * e) override {
+    BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X(e);
+    } else {
+      QGraphicsGridLayout::widgetEvent(e);
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsGridLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_();
+    } else {
+      return QGraphicsGridLayout::isEmpty();
+    }
+  }
+  
+};
+extern "C" QGraphicsGridLayout * bg_QGraphicsGridLayout__CONSTRUCT_QGraphicsLayoutItem_X(QGraphicsLayoutItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsGridLayout>(parent);
+}
+
+extern "C" void bg_QGraphicsGridLayout_addItem_QGraphicsLayoutItem_X_int_int_int_int(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item, int row, int column, int rowSpan, int columnSpan) {
+  _self_->addItem(item, row, column, rowSpan, columnSpan);
+}
+
+extern "C" void bg_QGraphicsGridLayout_addItem_QGraphicsLayoutItem_X_int_int_int_int_Qt__Alignment(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item, int row, int column, int rowSpan, int columnSpan, Qt::Alignment alignment) {
+  _self_->addItem(item, row, column, rowSpan, columnSpan, alignment);
+}
+
+extern "C" void bg_QGraphicsGridLayout_addItem_QGraphicsLayoutItem_X_int_int(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item, int row, int column) {
+  _self_->addItem(item, row, column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_addItem_QGraphicsLayoutItem_X_int_int_Qt__Alignment(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item, int row, int column, Qt::Alignment alignment) {
+  _self_->addItem(item, row, column, alignment);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setHorizontalSpacing_qreal(QGraphicsGridLayout * _self_, qreal spacing) {
+  _self_->setHorizontalSpacing(spacing);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_horizontalSpacing_(QGraphicsGridLayout * _self_) {
+  return _self_->horizontalSpacing();
+}
+
+extern "C" void bg_QGraphicsGridLayout_setVerticalSpacing_qreal(QGraphicsGridLayout * _self_, qreal spacing) {
+  _self_->setVerticalSpacing(spacing);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_verticalSpacing_(QGraphicsGridLayout * _self_) {
+  return _self_->verticalSpacing();
+}
+
+extern "C" void bg_QGraphicsGridLayout_setSpacing_qreal(QGraphicsGridLayout * _self_, qreal spacing) {
+  _self_->setSpacing(spacing);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowSpacing_int_qreal(QGraphicsGridLayout * _self_, int row, qreal spacing) {
+  _self_->setRowSpacing(row, spacing);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_rowSpacing_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowSpacing(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnSpacing_int_qreal(QGraphicsGridLayout * _self_, int column, qreal spacing) {
+  _self_->setColumnSpacing(column, spacing);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_columnSpacing_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnSpacing(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowStretchFactor_int_int(QGraphicsGridLayout * _self_, int row, int stretch) {
+  _self_->setRowStretchFactor(row, stretch);
+}
+
+extern "C" int bg_QGraphicsGridLayout_rowStretchFactor_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowStretchFactor(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnStretchFactor_int_int(QGraphicsGridLayout * _self_, int column, int stretch) {
+  _self_->setColumnStretchFactor(column, stretch);
+}
+
+extern "C" int bg_QGraphicsGridLayout_columnStretchFactor_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnStretchFactor(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowMinimumHeight_int_qreal(QGraphicsGridLayout * _self_, int row, qreal height) {
+  _self_->setRowMinimumHeight(row, height);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_rowMinimumHeight_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowMinimumHeight(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowPreferredHeight_int_qreal(QGraphicsGridLayout * _self_, int row, qreal height) {
+  _self_->setRowPreferredHeight(row, height);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_rowPreferredHeight_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowPreferredHeight(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowMaximumHeight_int_qreal(QGraphicsGridLayout * _self_, int row, qreal height) {
+  _self_->setRowMaximumHeight(row, height);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_rowMaximumHeight_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowMaximumHeight(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowFixedHeight_int_qreal(QGraphicsGridLayout * _self_, int row, qreal height) {
+  _self_->setRowFixedHeight(row, height);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnMinimumWidth_int_qreal(QGraphicsGridLayout * _self_, int column, qreal width) {
+  _self_->setColumnMinimumWidth(column, width);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_columnMinimumWidth_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnMinimumWidth(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnPreferredWidth_int_qreal(QGraphicsGridLayout * _self_, int column, qreal width) {
+  _self_->setColumnPreferredWidth(column, width);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_columnPreferredWidth_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnPreferredWidth(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnMaximumWidth_int_qreal(QGraphicsGridLayout * _self_, int column, qreal width) {
+  _self_->setColumnMaximumWidth(column, width);
+}
+
+extern "C" qreal bg_QGraphicsGridLayout_columnMaximumWidth_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnMaximumWidth(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnFixedWidth_int_qreal(QGraphicsGridLayout * _self_, int column, qreal width) {
+  _self_->setColumnFixedWidth(column, width);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setRowAlignment_int_Qt__Alignment(QGraphicsGridLayout * _self_, int row, Qt::Alignment alignment) {
+  _self_->setRowAlignment(row, alignment);
+}
+
+extern "C" Qt::Alignment bg_QGraphicsGridLayout_rowAlignment_int(QGraphicsGridLayout * _self_, int row) {
+  return _self_->rowAlignment(row);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setColumnAlignment_int_Qt__Alignment(QGraphicsGridLayout * _self_, int column, Qt::Alignment alignment) {
+  _self_->setColumnAlignment(column, alignment);
+}
+
+extern "C" Qt::Alignment bg_QGraphicsGridLayout_columnAlignment_int(QGraphicsGridLayout * _self_, int column) {
+  return _self_->columnAlignment(column);
+}
+
+extern "C" void bg_QGraphicsGridLayout_setAlignment_QGraphicsLayoutItem_X_Qt__Alignment(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item, Qt::Alignment alignment) {
+  _self_->setAlignment(item, alignment);
+}
+
+extern "C" Qt::Alignment bg_QGraphicsGridLayout_alignment_QGraphicsLayoutItem_X(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item) {
+  return _self_->alignment(item);
+}
+
+extern "C" int bg_QGraphicsGridLayout_rowCount_(QGraphicsGridLayout * _self_) {
+  return _self_->rowCount();
+}
+
+extern "C" int bg_QGraphicsGridLayout_columnCount_(QGraphicsGridLayout * _self_) {
+  return _self_->columnCount();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsGridLayout_itemAt_int_int(QGraphicsGridLayout * _self_, int row, int column) {
+  return _self_->itemAt(row, column);
+}
+
+extern "C" int bg_QGraphicsGridLayout_count_(QGraphicsGridLayout * _self_) {
+  return _self_->count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsGridLayout_itemAt_int(QGraphicsGridLayout * _self_, int i) {
+  return _self_->itemAt(i);
+}
+
+extern "C" void bg_QGraphicsGridLayout_removeAt_int(QGraphicsGridLayout * _self_, int index) {
+  _self_->removeAt(index);
+}
+
+extern "C" void bg_QGraphicsGridLayout_removeItem_QGraphicsLayoutItem_X(QGraphicsGridLayout * _self_, QGraphicsLayoutItem * item) {
+  _self_->removeItem(item);
+}
+
+extern "C" void bg_QGraphicsGridLayout_invalidate_(QGraphicsGridLayout * _self_) {
+  _self_->invalidate();
+}
+
+extern "C" void bg_QGraphicsGridLayout_setGeometry_const_QRectF_R(QGraphicsGridLayout * _self_, const QRectF rect) {
+  _self_->setGeometry(rect);
+}
+
+extern "C" QSizeF bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint(QGraphicsGridLayout * _self_, Qt::SizeHint which) {
+  return _self_->sizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsGridLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsGridLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->sizeHint(which, constraint);
+}
+
+extern "C" int bg_QGraphicsGridLayout_count_SUPER_(QGraphicsGridLayout * _self_) {
+  return _self_->QGraphicsGridLayout::count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsGridLayout_itemAt_SUPER_int(QGraphicsGridLayout * _self_, int i) {
+  return _self_->QGraphicsGridLayout::itemAt(i);
+}
+
+extern "C" void bg_QGraphicsGridLayout_removeAt_SUPER_int(QGraphicsGridLayout * _self_, int index) {
+  _self_->QGraphicsGridLayout::removeAt(index);
+}
+
+extern "C" void bg_QGraphicsGridLayout_invalidate_SUPER_(QGraphicsGridLayout * _self_) {
+  _self_->QGraphicsGridLayout::invalidate();
+}
+
+extern "C" void bg_QGraphicsGridLayout_setGeometry_SUPER_const_QRectF_R(QGraphicsGridLayout * _self_, const QRectF rect) {
+  _self_->QGraphicsGridLayout::setGeometry(rect);
+}
+
+extern "C" QSizeF bg_QGraphicsGridLayout_sizeHint_SUPER_Qt__SizeHint_const_QSizeF_R(QGraphicsGridLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->QGraphicsGridLayout::sizeHint(which, constraint);
+}
+
+extern "C" void bg_BgInherit_QGraphicsGridLayout_JUMPTABLE_BgJumptable_QGraphicsGridLayout_R(BgInherit_QGraphicsGridLayout * _self_, const BgJumptable_QGraphicsGridLayout & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsItemAnimation {
+  CrystalProc<const QMetaObject *> bg_QGraphicsItemAnimation_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsItemAnimation_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsItemAnimation_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, qreal> bg_QGraphicsItemAnimation_beforeAnimationStep_qreal;
+  CrystalProc<void, qreal> bg_QGraphicsItemAnimation_afterAnimationStep_qreal;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsItemAnimation : public QGraphicsItemAnimation {
+  using QGraphicsItemAnimation::QGraphicsItemAnimation;
+  BgJumptable_QGraphicsItemAnimation bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemAnimation_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemAnimation_metaObject_();
+    } else {
+      return QGraphicsItemAnimation::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemAnimation_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemAnimation_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsItemAnimation::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemAnimation_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsItemAnimation_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsItemAnimation::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void beforeAnimationStep(qreal step) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemAnimation_beforeAnimationStep_qreal.isValid()) {
+      _self_->bgJump.bg_QGraphicsItemAnimation_beforeAnimationStep_qreal(step);
+    } else {
+      QGraphicsItemAnimation::beforeAnimationStep(step);
+    }
+  }
+  
+  void afterAnimationStep(qreal step) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsItemAnimation_afterAnimationStep_qreal.isValid()) {
+      _self_->bgJump.bg_QGraphicsItemAnimation_afterAnimationStep_qreal(step);
+    } else {
+      QGraphicsItemAnimation::afterAnimationStep(step);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsItemAnimation::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsItemAnimation::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsItemAnimation::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsItemAnimation::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsItemAnimation::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsItemAnimation::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsItemAnimation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsItemAnimation::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsItemAnimation_metaObject_(QGraphicsItemAnimation * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsItemAnimation_qt_metacast_const_char_X(QGraphicsItemAnimation * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsItemAnimation_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsItemAnimation * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsItemAnimation_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsItemAnimation::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsItemAnimation_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsItemAnimation::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsItemAnimation_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsItemAnimation::tr(s, c, n));
+}
+
+extern "C" QGraphicsItemAnimation * bg_QGraphicsItemAnimation__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsItemAnimation>(parent);
+}
+
+extern "C" QGraphicsItem * bg_QGraphicsItemAnimation_item_(QGraphicsItemAnimation * _self_) {
+  return _self_->item();
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setItem_QGraphicsItem_X(QGraphicsItemAnimation * _self_, QGraphicsItem * item) {
+  _self_->setItem(item);
+}
+
+extern "C" QTimeLine * bg_QGraphicsItemAnimation_timeLine_(QGraphicsItemAnimation * _self_) {
+  return _self_->timeLine();
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setTimeLine_QTimeLine_X(QGraphicsItemAnimation * _self_, QTimeLine * timeLine) {
+  _self_->setTimeLine(timeLine);
+}
+
+extern "C" QPointF bg_QGraphicsItemAnimation_posAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->posAt(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setPosAt_qreal_const_QPointF_R(QGraphicsItemAnimation * _self_, qreal step, const QPointF pos) {
+  _self_->setPosAt(step, pos);
+}
+
+extern "C" QTransform * bg_QGraphicsItemAnimation_transformAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (_self_->transformAt(step));
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_rotationAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->rotationAt(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setRotationAt_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal angle) {
+  _self_->setRotationAt(step, angle);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_xTranslationAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->xTranslationAt(step);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_yTranslationAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->yTranslationAt(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setTranslationAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal dx, qreal dy) {
+  _self_->setTranslationAt(step, dx, dy);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_verticalScaleAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->verticalScaleAt(step);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_horizontalScaleAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->horizontalScaleAt(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setScaleAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal sx, qreal sy) {
+  _self_->setScaleAt(step, sx, sy);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_verticalShearAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->verticalShearAt(step);
+}
+
+extern "C" qreal bg_QGraphicsItemAnimation_horizontalShearAt_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  return _self_->horizontalShearAt(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setShearAt_qreal_qreal_qreal(QGraphicsItemAnimation * _self_, qreal step, qreal sh, qreal sv) {
+  _self_->setShearAt(step, sh, sv);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_clear_(QGraphicsItemAnimation * _self_) {
+  _self_->clear();
+}
+
+extern "C" void bg_QGraphicsItemAnimation_setStep_qreal(QGraphicsItemAnimation * _self_, qreal x) {
+  _self_->setStep(x);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_beforeAnimationStep_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  _self_->beforeAnimationStep(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_afterAnimationStep_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  _self_->afterAnimationStep(step);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsItemAnimation_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsItemAnimation::staticMetaObject);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_beforeAnimationStep_SUPER_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  _self_->QGraphicsItemAnimation::beforeAnimationStep(step);
+}
+
+extern "C" void bg_QGraphicsItemAnimation_afterAnimationStep_SUPER_qreal(QGraphicsItemAnimation * _self_, qreal step) {
+  _self_->QGraphicsItemAnimation::afterAnimationStep(step);
+}
+
+extern "C" void bg_BgInherit_QGraphicsItemAnimation_JUMPTABLE_BgJumptable_QGraphicsItemAnimation_R(BgInherit_QGraphicsItemAnimation * _self_, const BgJumptable_QGraphicsItemAnimation & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsLinearLayout {
+  CrystalProc<void, int> bg_QGraphicsLinearLayout_removeAt_int;
+  CrystalProc<void, const QRectF> bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R;
+  CrystalProc<int> bg_QGraphicsLinearLayout_count_;
+  CrystalProc<QGraphicsLayoutItem *, int> bg_QGraphicsLinearLayout_itemAt_int;
+  CrystalProc<void> bg_QGraphicsLinearLayout_invalidate_;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void> bg_QGraphicsLayout_updateGeometry_;
+  CrystalProc<void, QEvent *> bg_QGraphicsLayout_widgetEvent_QEvent_X;
+  CrystalProc<bool> bg_QGraphicsLayoutItem_isEmpty_;
+};
+struct BgInherit_QGraphicsLinearLayout : public QGraphicsLinearLayout {
+  using QGraphicsLinearLayout::QGraphicsLinearLayout;
+  BgJumptable_QGraphicsLinearLayout bgJump;
+  void removeAt(int index) override {
+    BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_removeAt_int.isValid()) {
+      _self_->bgJump.bg_QGraphicsLinearLayout_removeAt_int(index);
+    } else {
+      QGraphicsLinearLayout::removeAt(index);
+    }
+  }
+  
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsLinearLayout::setGeometry(rect);
+    }
+  }
+  
+  int count() const override {
+    const BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_count_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLinearLayout_count_();
+    } else {
+      return QGraphicsLinearLayout::count();
+    }
+  }
+  
+  QGraphicsLayoutItem * itemAt(int i) const override {
+    const BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_itemAt_int.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLinearLayout_itemAt_int(i);
+    } else {
+      return QGraphicsLinearLayout::itemAt(i);
+    }
+  }
+  
+  void invalidate() override {
+    BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_invalidate_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLinearLayout_invalidate_();
+    } else {
+      QGraphicsLinearLayout::invalidate();
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      return QGraphicsLinearLayout::sizeHint(which, constraint);
+    }
+  }
+  
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsLinearLayout::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_updateGeometry_();
+    } else {
+      QGraphicsLinearLayout::updateGeometry();
+    }
+  }
+  
+  void widgetEvent(QEvent * e) override {
+    BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsLayout_widgetEvent_QEvent_X(e);
+    } else {
+      QGraphicsLinearLayout::widgetEvent(e);
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsLinearLayout *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsLayoutItem_isEmpty_();
+    } else {
+      return QGraphicsLinearLayout::isEmpty();
+    }
+  }
+  
+};
+extern "C" QGraphicsLinearLayout * bg_QGraphicsLinearLayout__CONSTRUCT_QGraphicsLayoutItem_X(QGraphicsLayoutItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLinearLayout>(parent);
+}
+
+extern "C" QGraphicsLinearLayout * bg_QGraphicsLinearLayout__CONSTRUCT_Qt__Orientation_QGraphicsLayoutItem_X(Qt::Orientation orientation, QGraphicsLayoutItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsLinearLayout>(orientation, parent);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setOrientation_Qt__Orientation(QGraphicsLinearLayout * _self_, Qt::Orientation orientation) {
+  _self_->setOrientation(orientation);
+}
+
+extern "C" Qt::Orientation bg_QGraphicsLinearLayout_orientation_(QGraphicsLinearLayout * _self_) {
+  return _self_->orientation();
+}
+
+extern "C" void bg_QGraphicsLinearLayout_addItem_QGraphicsLayoutItem_X(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item) {
+  _self_->addItem(item);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_addStretch_int(QGraphicsLinearLayout * _self_, int stretch) {
+  _self_->addStretch(stretch);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_insertItem_int_QGraphicsLayoutItem_X(QGraphicsLinearLayout * _self_, int index, QGraphicsLayoutItem * item) {
+  _self_->insertItem(index, item);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_insertStretch_int_int(QGraphicsLinearLayout * _self_, int index, int stretch) {
+  _self_->insertStretch(index, stretch);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_removeItem_QGraphicsLayoutItem_X(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item) {
+  _self_->removeItem(item);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_removeAt_int(QGraphicsLinearLayout * _self_, int index) {
+  _self_->removeAt(index);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setSpacing_qreal(QGraphicsLinearLayout * _self_, qreal spacing) {
+  _self_->setSpacing(spacing);
+}
+
+extern "C" qreal bg_QGraphicsLinearLayout_spacing_(QGraphicsLinearLayout * _self_) {
+  return _self_->spacing();
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setItemSpacing_int_qreal(QGraphicsLinearLayout * _self_, int index, qreal spacing) {
+  _self_->setItemSpacing(index, spacing);
+}
+
+extern "C" qreal bg_QGraphicsLinearLayout_itemSpacing_int(QGraphicsLinearLayout * _self_, int index) {
+  return _self_->itemSpacing(index);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setStretchFactor_QGraphicsLayoutItem_X_int(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item, int stretch) {
+  _self_->setStretchFactor(item, stretch);
+}
+
+extern "C" int bg_QGraphicsLinearLayout_stretchFactor_QGraphicsLayoutItem_X(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item) {
+  return _self_->stretchFactor(item);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setAlignment_QGraphicsLayoutItem_X_Qt__Alignment(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item, Qt::Alignment alignment) {
+  _self_->setAlignment(item, alignment);
+}
+
+extern "C" Qt::Alignment bg_QGraphicsLinearLayout_alignment_QGraphicsLayoutItem_X(QGraphicsLinearLayout * _self_, QGraphicsLayoutItem * item) {
+  return _self_->alignment(item);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setGeometry_const_QRectF_R(QGraphicsLinearLayout * _self_, const QRectF rect) {
+  _self_->setGeometry(rect);
+}
+
+extern "C" int bg_QGraphicsLinearLayout_count_(QGraphicsLinearLayout * _self_) {
+  return _self_->count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLinearLayout_itemAt_int(QGraphicsLinearLayout * _self_, int i) {
+  return _self_->itemAt(i);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_invalidate_(QGraphicsLinearLayout * _self_) {
+  _self_->invalidate();
+}
+
+extern "C" QSizeF bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint(QGraphicsLinearLayout * _self_, Qt::SizeHint which) {
+  return _self_->sizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsLinearLayout_sizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsLinearLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->sizeHint(which, constraint);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_dump_int(QGraphicsLinearLayout * _self_, int indent) {
+  _self_->dump(indent);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_removeAt_SUPER_int(QGraphicsLinearLayout * _self_, int index) {
+  _self_->QGraphicsLinearLayout::removeAt(index);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_setGeometry_SUPER_const_QRectF_R(QGraphicsLinearLayout * _self_, const QRectF rect) {
+  _self_->QGraphicsLinearLayout::setGeometry(rect);
+}
+
+extern "C" int bg_QGraphicsLinearLayout_count_SUPER_(QGraphicsLinearLayout * _self_) {
+  return _self_->QGraphicsLinearLayout::count();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsLinearLayout_itemAt_SUPER_int(QGraphicsLinearLayout * _self_, int i) {
+  return _self_->QGraphicsLinearLayout::itemAt(i);
+}
+
+extern "C" void bg_QGraphicsLinearLayout_invalidate_SUPER_(QGraphicsLinearLayout * _self_) {
+  _self_->QGraphicsLinearLayout::invalidate();
+}
+
+extern "C" QSizeF bg_QGraphicsLinearLayout_sizeHint_SUPER_Qt__SizeHint_const_QSizeF_R(QGraphicsLinearLayout * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->QGraphicsLinearLayout::sizeHint(which, constraint);
+}
+
+extern "C" void bg_BgInherit_QGraphicsLinearLayout_JUMPTABLE_BgJumptable_QGraphicsLinearLayout_R(BgInherit_QGraphicsLinearLayout * _self_, const BgJumptable_QGraphicsLinearLayout & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QGraphicsWidget {
   CrystalProc<const QMetaObject *> bg_QGraphicsWidget_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsWidget_qt_metacast_const_char_X;
@@ -75060,6 +82490,7 @@ struct BgJumptable_QGraphicsWidget {
   CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
   CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
   CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+  CrystalProc<bool> bg_QGraphicsWidget_isEmpty_;
 };
 struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
   using QGraphicsWidget::QGraphicsWidget;
@@ -75430,6 +82861,15 @@ struct BgInherit_QGraphicsWidget : public QGraphicsWidget {
       _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
     } else {
       QGraphicsWidget::disconnectNotify(signal);
+    }
+  }
+  
+  bool isEmpty() const override {
+    const BgInherit_QGraphicsWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_isEmpty_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsWidget_isEmpty_();
+    } else {
+      return QGraphicsWidget::isEmpty();
     }
   }
   
@@ -75818,6 +83258,150 @@ extern "C" const QMetaObject * bg_QGraphicsWidget_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsWidget::staticMetaObject);
 }
 
+extern "C" QGraphicsLayoutItem * bg_QGraphicsWidget_AS_GraphicsLayoutItem_(QGraphicsWidget * _self_) {
+  return static_cast<QGraphicsLayoutItem *>(_self_);
+}
+
+extern "C" void bg_QGraphicsWidget_setSizePolicy_const_QSizePolicy_R(QGraphicsWidget * _self_, const QSizePolicy & policy) {
+  _self_->setSizePolicy(policy);
+}
+
+extern "C" void bg_QGraphicsWidget_setSizePolicy_QSizePolicy__Policy_QSizePolicy__Policy_QSizePolicy__ControlType(QGraphicsWidget * _self_, QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType) {
+  _self_->setSizePolicy(hPolicy, vPolicy, controlType);
+}
+
+extern "C" QSizePolicy * bg_QGraphicsWidget_sizePolicy_(QGraphicsWidget * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QSizePolicy>()) QSizePolicy (_self_->sizePolicy());
+}
+
+extern "C" void bg_QGraphicsWidget_setMinimumSize_const_QSizeF_R(QGraphicsWidget * _self_, const QSizeF size) {
+  _self_->setMinimumSize(size);
+}
+
+extern "C" void bg_QGraphicsWidget_setMinimumSize_qreal_qreal(QGraphicsWidget * _self_, qreal w, qreal h) {
+  _self_->setMinimumSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsWidget_minimumSize_(QGraphicsWidget * _self_) {
+  return _self_->minimumSize();
+}
+
+extern "C" void bg_QGraphicsWidget_setMinimumWidth_qreal(QGraphicsWidget * _self_, qreal width) {
+  _self_->setMinimumWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsWidget_minimumWidth_(QGraphicsWidget * _self_) {
+  return _self_->minimumWidth();
+}
+
+extern "C" void bg_QGraphicsWidget_setMinimumHeight_qreal(QGraphicsWidget * _self_, qreal height) {
+  _self_->setMinimumHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsWidget_minimumHeight_(QGraphicsWidget * _self_) {
+  return _self_->minimumHeight();
+}
+
+extern "C" void bg_QGraphicsWidget_setPreferredSize_const_QSizeF_R(QGraphicsWidget * _self_, const QSizeF size) {
+  _self_->setPreferredSize(size);
+}
+
+extern "C" void bg_QGraphicsWidget_setPreferredSize_qreal_qreal(QGraphicsWidget * _self_, qreal w, qreal h) {
+  _self_->setPreferredSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsWidget_preferredSize_(QGraphicsWidget * _self_) {
+  return _self_->preferredSize();
+}
+
+extern "C" void bg_QGraphicsWidget_setPreferredWidth_qreal(QGraphicsWidget * _self_, qreal width) {
+  _self_->setPreferredWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsWidget_preferredWidth_(QGraphicsWidget * _self_) {
+  return _self_->preferredWidth();
+}
+
+extern "C" void bg_QGraphicsWidget_setPreferredHeight_qreal(QGraphicsWidget * _self_, qreal height) {
+  _self_->setPreferredHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsWidget_preferredHeight_(QGraphicsWidget * _self_) {
+  return _self_->preferredHeight();
+}
+
+extern "C" void bg_QGraphicsWidget_setMaximumSize_const_QSizeF_R(QGraphicsWidget * _self_, const QSizeF size) {
+  _self_->setMaximumSize(size);
+}
+
+extern "C" void bg_QGraphicsWidget_setMaximumSize_qreal_qreal(QGraphicsWidget * _self_, qreal w, qreal h) {
+  _self_->setMaximumSize(w, h);
+}
+
+extern "C" QSizeF bg_QGraphicsWidget_maximumSize_(QGraphicsWidget * _self_) {
+  return _self_->maximumSize();
+}
+
+extern "C" void bg_QGraphicsWidget_setMaximumWidth_qreal(QGraphicsWidget * _self_, qreal width) {
+  _self_->setMaximumWidth(width);
+}
+
+extern "C" qreal bg_QGraphicsWidget_maximumWidth_(QGraphicsWidget * _self_) {
+  return _self_->maximumWidth();
+}
+
+extern "C" void bg_QGraphicsWidget_setMaximumHeight_qreal(QGraphicsWidget * _self_, qreal height) {
+  _self_->setMaximumHeight(height);
+}
+
+extern "C" qreal bg_QGraphicsWidget_maximumHeight_(QGraphicsWidget * _self_) {
+  return _self_->maximumHeight();
+}
+
+extern "C" QRectF bg_QGraphicsWidget_geometry_(QGraphicsWidget * _self_) {
+  return _self_->geometry();
+}
+
+extern "C" QRectF bg_QGraphicsWidget_contentsRect_(QGraphicsWidget * _self_) {
+  return _self_->contentsRect();
+}
+
+extern "C" QSizeF bg_QGraphicsWidget_effectiveSizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsWidget * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->effectiveSizeHint(which, constraint);
+}
+
+extern "C" bool bg_QGraphicsWidget_isEmpty_(QGraphicsWidget * _self_) {
+  return _self_->isEmpty();
+}
+
+extern "C" QGraphicsLayoutItem * bg_QGraphicsWidget_parentLayoutItem_(QGraphicsWidget * _self_) {
+  return _self_->parentLayoutItem();
+}
+
+extern "C" void bg_QGraphicsWidget_setParentLayoutItem_QGraphicsLayoutItem_X(QGraphicsWidget * _self_, QGraphicsLayoutItem * parent) {
+  _self_->setParentLayoutItem(parent);
+}
+
+extern "C" bool bg_QGraphicsWidget_isLayout_(QGraphicsWidget * _self_) {
+  return _self_->isLayout();
+}
+
+extern "C" QGraphicsItem * bg_QGraphicsWidget_graphicsItem_(QGraphicsWidget * _self_) {
+  return _self_->graphicsItem();
+}
+
+extern "C" bool bg_QGraphicsWidget_ownedByLayout_(QGraphicsWidget * _self_) {
+  return _self_->ownedByLayout();
+}
+
+extern "C" void bg_QGraphicsWidget_setGraphicsItem_QGraphicsItem_X(QGraphicsWidget * _self_, QGraphicsItem * item) {
+  _self_->setGraphicsItem(item);
+}
+
+extern "C" void bg_QGraphicsWidget_setOwnedByLayout_bool(QGraphicsWidget * _self_, bool ownedByLayout) {
+  _self_->setOwnedByLayout(ownedByLayout);
+}
+
 extern "C" QMetaObject::Connection * bg_QGraphicsWidget_CONNECT_geometryChanged_CrystalProc_void_(QGraphicsWidget * _self_, CrystalProc<void> _proc_) {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsWidget::*)())&QGraphicsWidget::geometryChanged, [_proc_](){ _proc_(); }));
 }
@@ -75954,7 +83538,898 @@ extern "C" void bg_QGraphicsWidget_ungrabKeyboardEvent_SUPER_QEvent_X(QGraphicsW
   _self_->QGraphicsWidget::ungrabKeyboardEvent(event);
 }
 
+extern "C" bool bg_QGraphicsWidget_isEmpty_SUPER_(QGraphicsWidget * _self_) {
+  return _self_->QGraphicsWidget::isEmpty();
+}
+
 extern "C" void bg_BgInherit_QGraphicsWidget_JUMPTABLE_BgJumptable_QGraphicsWidget_R(BgInherit_QGraphicsWidget * _self_, const BgJumptable_QGraphicsWidget & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsProxyWidget {
+  CrystalProc<const QMetaObject *> bg_QGraphicsProxyWidget_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsProxyWidget_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsProxyWidget_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, const QRectF> bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R;
+  CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsProxyWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
+  CrystalProc<int> bg_QGraphicsProxyWidget_type_;
+  CrystalProc<CrystalVariant, QGraphicsItem::GraphicsItemChange, const CrystalVariant> bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R;
+  CrystalProc<bool, QEvent *> bg_QGraphicsProxyWidget_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QGraphicsProxyWidget_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QShowEvent *> bg_QGraphicsProxyWidget_showEvent_QShowEvent_X;
+  CrystalProc<void, QHideEvent *> bg_QGraphicsProxyWidget_hideEvent_QHideEvent_X;
+  CrystalProc<void, QGraphicsSceneContextMenuEvent *> bg_QGraphicsProxyWidget_contextMenuEvent_QGraphicsSceneContextMenuEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsProxyWidget_dragEnterEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsProxyWidget_dragLeaveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsProxyWidget_dragMoveEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneDragDropEvent *> bg_QGraphicsProxyWidget_dropEvent_QGraphicsSceneDragDropEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsProxyWidget_hoverEnterEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsProxyWidget_hoverLeaveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QGraphicsSceneHoverEvent *> bg_QGraphicsProxyWidget_hoverMoveEvent_QGraphicsSceneHoverEvent_X;
+  CrystalProc<void, QEvent *> bg_QGraphicsProxyWidget_grabMouseEvent_QEvent_X;
+  CrystalProc<void, QEvent *> bg_QGraphicsProxyWidget_ungrabMouseEvent_QEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsProxyWidget_mouseMoveEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsProxyWidget_mousePressEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsProxyWidget_mouseReleaseEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneMouseEvent *> bg_QGraphicsProxyWidget_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X;
+  CrystalProc<void, QGraphicsSceneWheelEvent *> bg_QGraphicsProxyWidget_wheelEvent_QGraphicsSceneWheelEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsProxyWidget_keyPressEvent_QKeyEvent_X;
+  CrystalProc<void, QKeyEvent *> bg_QGraphicsProxyWidget_keyReleaseEvent_QKeyEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsProxyWidget_focusInEvent_QFocusEvent_X;
+  CrystalProc<void, QFocusEvent *> bg_QGraphicsProxyWidget_focusOutEvent_QFocusEvent_X;
+  CrystalProc<bool, bool> bg_QGraphicsProxyWidget_focusNextPrevChild_bool;
+  CrystalProc<CrystalVariant, Qt::InputMethodQuery> bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery;
+  CrystalProc<void, QInputMethodEvent *> bg_QGraphicsProxyWidget_inputMethodEvent_QInputMethodEvent_X;
+  CrystalProc<QSizeF *, Qt::SizeHint> bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint;
+  CrystalProc<QSizeF *, Qt::SizeHint, const QSizeF> bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R;
+  CrystalProc<void, QGraphicsSceneResizeEvent *> bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X;
+  CrystalProc<void, qreal *, qreal *, qreal *, qreal *> bg_QGraphicsWidget_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X;
+  CrystalProc<void, QPainter *, const QStyleOptionGraphicsItem *, QWidget *> bg_QGraphicsWidget_paintWindowFrame_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X;
+  CrystalProc<QRectF *> bg_QGraphicsWidget_boundingRect_;
+  CrystalProc<QPainterPath &> bg_QGraphicsWidget_shape_;
+  CrystalProc<void, QStyleOption *> bg_QGraphicsWidget_initStyleOption_QStyleOption_X;
+  CrystalProc<void> bg_QGraphicsWidget_updateGeometry_;
+  CrystalProc<CrystalVariant, const CrystalString, const CrystalVariant> bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R;
+  CrystalProc<bool, QEvent *> bg_QGraphicsWidget_sceneEvent_QEvent_X;
+  CrystalProc<bool, QEvent *> bg_QGraphicsWidget_windowFrameEvent_QEvent_X;
+  CrystalProc<Qt::WindowFrameSection, const QPointF> bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R;
+  CrystalProc<void, QEvent *> bg_QGraphicsWidget_changeEvent_QEvent_X;
+  CrystalProc<void, QCloseEvent *> bg_QGraphicsWidget_closeEvent_QCloseEvent_X;
+  CrystalProc<void, QGraphicsSceneMoveEvent *> bg_QGraphicsWidget_moveEvent_QGraphicsSceneMoveEvent_X;
+  CrystalProc<void> bg_QGraphicsWidget_polishEvent_;
+  CrystalProc<void, QEvent *> bg_QGraphicsWidget_grabKeyboardEvent_QEvent_X;
+  CrystalProc<void, QEvent *> bg_QGraphicsWidget_ungrabKeyboardEvent_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsProxyWidget : public QGraphicsProxyWidget {
+  using QGraphicsProxyWidget::QGraphicsProxyWidget;
+  BgJumptable_QGraphicsProxyWidget bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_metaObject_();
+    } else {
+      return QGraphicsProxyWidget::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsProxyWidget::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsProxyWidget::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void setGeometry(const QRectF & rect) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R(rect);
+    } else {
+      QGraphicsProxyWidget::setGeometry(rect);
+    }
+  }
+  
+  void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(painter, option, widget);
+    } else {
+      QGraphicsProxyWidget::paint(painter, option, widget);
+    }
+  }
+  
+  int type() const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_type_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_type_();
+    } else {
+      return QGraphicsProxyWidget::type();
+    }
+  }
+  
+  QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(change, qvariant_to_crystal(value)));
+    } else {
+      return QGraphicsProxyWidget::itemChange(change, value);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_event_QEvent_X(event);
+    } else {
+      return QGraphicsProxyWidget::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsProxyWidget::eventFilter(watched, event);
+    }
+  }
+  
+  void showEvent(QShowEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_showEvent_QShowEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_showEvent_QShowEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::showEvent(event);
+    }
+  }
+  
+  void hideEvent(QHideEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_hideEvent_QHideEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_hideEvent_QHideEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::hideEvent(event);
+    }
+  }
+  
+  void contextMenuEvent(QGraphicsSceneContextMenuEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_contextMenuEvent_QGraphicsSceneContextMenuEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::contextMenuEvent(event);
+    }
+  }
+  
+  void dragEnterEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_dragEnterEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_dragEnterEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::dragEnterEvent(event);
+    }
+  }
+  
+  void dragLeaveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_dragLeaveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::dragLeaveEvent(event);
+    }
+  }
+  
+  void dragMoveEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_dragMoveEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_dragMoveEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::dragMoveEvent(event);
+    }
+  }
+  
+  void dropEvent(QGraphicsSceneDragDropEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_dropEvent_QGraphicsSceneDragDropEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_dropEvent_QGraphicsSceneDragDropEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::dropEvent(event);
+    }
+  }
+  
+  void hoverEnterEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_hoverEnterEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_hoverEnterEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::hoverEnterEvent(event);
+    }
+  }
+  
+  void hoverLeaveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_hoverLeaveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::hoverLeaveEvent(event);
+    }
+  }
+  
+  void hoverMoveEvent(QGraphicsSceneHoverEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_hoverMoveEvent_QGraphicsSceneHoverEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_hoverMoveEvent_QGraphicsSceneHoverEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::hoverMoveEvent(event);
+    }
+  }
+  
+  void grabMouseEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_grabMouseEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_grabMouseEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::grabMouseEvent(event);
+    }
+  }
+  
+  void ungrabMouseEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_ungrabMouseEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_ungrabMouseEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::ungrabMouseEvent(event);
+    }
+  }
+  
+  void mouseMoveEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_mouseMoveEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_mouseMoveEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::mouseMoveEvent(event);
+    }
+  }
+  
+  void mousePressEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_mousePressEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_mousePressEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::mousePressEvent(event);
+    }
+  }
+  
+  void mouseReleaseEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_mouseReleaseEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::mouseReleaseEvent(event);
+    }
+  }
+  
+  void mouseDoubleClickEvent(QGraphicsSceneMouseEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::mouseDoubleClickEvent(event);
+    }
+  }
+  
+  void wheelEvent(QGraphicsSceneWheelEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_wheelEvent_QGraphicsSceneWheelEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_wheelEvent_QGraphicsSceneWheelEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::wheelEvent(event);
+    }
+  }
+  
+  void keyPressEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_keyPressEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_keyPressEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::keyPressEvent(event);
+    }
+  }
+  
+  void keyReleaseEvent(QKeyEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_keyReleaseEvent_QKeyEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_keyReleaseEvent_QKeyEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::keyReleaseEvent(event);
+    }
+  }
+  
+  void focusInEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_focusInEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_focusInEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::focusInEvent(event);
+    }
+  }
+  
+  void focusOutEvent(QFocusEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_focusOutEvent_QFocusEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_focusOutEvent_QFocusEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::focusOutEvent(event);
+    }
+  }
+  
+  bool focusNextPrevChild(bool next) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_focusNextPrevChild_bool.isValid()) {
+      return _self_->bgJump.bg_QGraphicsProxyWidget_focusNextPrevChild_bool(next);
+    } else {
+      return QGraphicsProxyWidget::focusNextPrevChild(next);
+    }
+  }
+  
+  QVariant inputMethodQuery(Qt::InputMethodQuery query) const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery(query));
+    } else {
+      return QGraphicsProxyWidget::inputMethodQuery(query);
+    }
+  }
+  
+  void inputMethodEvent(QInputMethodEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_inputMethodEvent_QInputMethodEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_inputMethodEvent_QInputMethodEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::inputMethodEvent(event);
+    }
+  }
+  
+  QSizeF sizeHint(Qt::SizeHint which, const QSizeF & constraint) const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(which, constraint);
+    } else {
+      return QGraphicsProxyWidget::sizeHint(which, constraint);
+    }
+  }
+  
+  void resizeEvent(QGraphicsSceneResizeEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::resizeEvent(event);
+    }
+  }
+  
+  void getContentsMargins(qreal * left, qreal * top, qreal * right, qreal * bottom) const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_getContentsMargins_qreal_X_qreal_X_qreal_X_qreal_X(left, top, right, bottom);
+    } else {
+      QGraphicsProxyWidget::getContentsMargins(left, top, right, bottom);
+    }
+  }
+  
+  void paintWindowFrame(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_paintWindowFrame_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_paintWindowFrame_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(painter, option, widget);
+    } else {
+      QGraphicsProxyWidget::paintWindowFrame(painter, option, widget);
+    }
+  }
+  
+  QRectF boundingRect() const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_boundingRect_.isValid()) {
+      return *_self_->bgJump.bg_QGraphicsWidget_boundingRect_();
+    } else {
+      return QGraphicsProxyWidget::boundingRect();
+    }
+  }
+  
+  QPainterPath shape() const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_shape_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsWidget_shape_();
+    } else {
+      return QGraphicsProxyWidget::shape();
+    }
+  }
+  
+  void initStyleOption(QStyleOption * option) const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_initStyleOption_QStyleOption_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_initStyleOption_QStyleOption_X(option);
+    } else {
+      QGraphicsProxyWidget::initStyleOption(option);
+    }
+  }
+  
+  void updateGeometry() override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_updateGeometry_.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_updateGeometry_();
+    } else {
+      QGraphicsProxyWidget::updateGeometry();
+    }
+  }
+  
+  QVariant propertyChange(const QString & propertyName, const QVariant & value) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R.isValid()) {
+      return crystal_to_qvariant(_self_->bgJump.bg_QGraphicsWidget_propertyChange_const_QString_R_const_QVariant_R(qstring_to_crystal(propertyName), qvariant_to_crystal(value)));
+    } else {
+      return QGraphicsProxyWidget::propertyChange(propertyName, value);
+    }
+  }
+  
+  bool sceneEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_sceneEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsWidget_sceneEvent_QEvent_X(event);
+    } else {
+      return QGraphicsProxyWidget::sceneEvent(event);
+    }
+  }
+  
+  bool windowFrameEvent(QEvent * e) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_windowFrameEvent_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsWidget_windowFrameEvent_QEvent_X(e);
+    } else {
+      return QGraphicsProxyWidget::windowFrameEvent(e);
+    }
+  }
+  
+  Qt::WindowFrameSection windowFrameSectionAt(const QPointF & pos) const override {
+    const BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R.isValid()) {
+      return _self_->bgJump.bg_QGraphicsWidget_windowFrameSectionAt_const_QPointF_R(pos);
+    } else {
+      return QGraphicsProxyWidget::windowFrameSectionAt(pos);
+    }
+  }
+  
+  void changeEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_changeEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_changeEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::changeEvent(event);
+    }
+  }
+  
+  void closeEvent(QCloseEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_closeEvent_QCloseEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_closeEvent_QCloseEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::closeEvent(event);
+    }
+  }
+  
+  void moveEvent(QGraphicsSceneMoveEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_moveEvent_QGraphicsSceneMoveEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_moveEvent_QGraphicsSceneMoveEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::moveEvent(event);
+    }
+  }
+  
+  void polishEvent() override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_polishEvent_.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_polishEvent_();
+    } else {
+      QGraphicsProxyWidget::polishEvent();
+    }
+  }
+  
+  void grabKeyboardEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_grabKeyboardEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_grabKeyboardEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::grabKeyboardEvent(event);
+    }
+  }
+  
+  void ungrabKeyboardEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsWidget_ungrabKeyboardEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsWidget_ungrabKeyboardEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::ungrabKeyboardEvent(event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsProxyWidget::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsProxyWidget::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsProxyWidget *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsProxyWidget::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsProxyWidget_metaObject_(QGraphicsProxyWidget * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsProxyWidget_qt_metacast_const_char_X(QGraphicsProxyWidget * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsProxyWidget_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsProxyWidget * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsProxyWidget_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsProxyWidget::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsProxyWidget_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsProxyWidget::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsProxyWidget_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsProxyWidget::tr(s, c, n));
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X(QGraphicsItem * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsProxyWidget>(parent);
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X_Qt__WindowFlags(QGraphicsItem * parent, Qt::WindowFlags wFlags) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsProxyWidget>(parent, wFlags);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_setWidget_QWidget_X(QGraphicsProxyWidget * _self_, QWidget * widget) {
+  _self_->setWidget(widget);
+}
+
+extern "C" QWidget * bg_QGraphicsProxyWidget_widget_(QGraphicsProxyWidget * _self_) {
+  return _self_->widget();
+}
+
+extern "C" QRectF bg_QGraphicsProxyWidget_subWidgetRect_const_QWidget_X(QGraphicsProxyWidget * _self_, const QWidget * widget) {
+  return _self_->subWidgetRect(widget);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_setGeometry_const_QRectF_R(QGraphicsProxyWidget * _self_, const QRectF rect) {
+  _self_->setGeometry(rect);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsProxyWidget * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->paint(painter, option, widget);
+}
+
+extern "C" int bg_QGraphicsProxyWidget_type_(QGraphicsProxyWidget * _self_) {
+  return _self_->type();
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsProxyWidget_createProxyForChildWidget_QWidget_X(QGraphicsProxyWidget * _self_, QWidget * child) {
+  return _self_->createProxyForChildWidget(child);
+}
+
+extern "C" CrystalVariant bg_QGraphicsProxyWidget_itemChange_QGraphicsItem__GraphicsItemChange_const_QVariant_R(QGraphicsProxyWidget * _self_, QGraphicsItem::GraphicsItemChange change, const CrystalVariant value) {
+  return qvariant_to_crystal(_self_->itemChange(change, crystal_to_qvariant(value)));
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_event_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_eventFilter_QObject_X_QEvent_X(QGraphicsProxyWidget * _self_, QObject * watched, QEvent * event) {
+  return _self_->eventFilter(watched, event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_showEvent_QShowEvent_X(QGraphicsProxyWidget * _self_, QShowEvent * event) {
+  _self_->showEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hideEvent_QHideEvent_X(QGraphicsProxyWidget * _self_, QHideEvent * event) {
+  _self_->hideEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_contextMenuEvent_QGraphicsSceneContextMenuEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneContextMenuEvent * event) {
+  _self_->contextMenuEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragEnterEvent_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->dragEnterEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragLeaveEvent_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->dragLeaveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragMoveEvent_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->dragMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dropEvent_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->dropEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverEnterEvent_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->hoverEnterEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverLeaveEvent_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->hoverLeaveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverMoveEvent_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->hoverMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_grabMouseEvent_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  _self_->grabMouseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_ungrabMouseEvent_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  _self_->ungrabMouseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseMoveEvent_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->mouseMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mousePressEvent_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->mousePressEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseReleaseEvent_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseDoubleClickEvent_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_wheelEvent_QGraphicsSceneWheelEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneWheelEvent * event) {
+  _self_->wheelEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_keyPressEvent_QKeyEvent_X(QGraphicsProxyWidget * _self_, QKeyEvent * event) {
+  _self_->keyPressEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_keyReleaseEvent_QKeyEvent_X(QGraphicsProxyWidget * _self_, QKeyEvent * event) {
+  _self_->keyReleaseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_focusInEvent_QFocusEvent_X(QGraphicsProxyWidget * _self_, QFocusEvent * event) {
+  _self_->focusInEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_focusOutEvent_QFocusEvent_X(QGraphicsProxyWidget * _self_, QFocusEvent * event) {
+  _self_->focusOutEvent(event);
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_focusNextPrevChild_bool(QGraphicsProxyWidget * _self_, bool next) {
+  return _self_->focusNextPrevChild(next);
+}
+
+extern "C" CrystalVariant bg_QGraphicsProxyWidget_inputMethodQuery_Qt__InputMethodQuery(QGraphicsProxyWidget * _self_, Qt::InputMethodQuery query) {
+  return qvariant_to_crystal(_self_->inputMethodQuery(query));
+}
+
+extern "C" void bg_QGraphicsProxyWidget_inputMethodEvent_QInputMethodEvent_X(QGraphicsProxyWidget * _self_, QInputMethodEvent * event) {
+  _self_->inputMethodEvent(event);
+}
+
+extern "C" QSizeF bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint(QGraphicsProxyWidget * _self_, Qt::SizeHint which) {
+  return _self_->sizeHint(which);
+}
+
+extern "C" QSizeF bg_QGraphicsProxyWidget_sizeHint_Qt__SizeHint_const_QSizeF_R(QGraphicsProxyWidget * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->sizeHint(which, constraint);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneResizeEvent * event) {
+  _self_->resizeEvent(event);
+}
+
+extern "C" QGraphicsProxyWidget * bg_QGraphicsProxyWidget_newProxyWidget_const_QWidget_X(QGraphicsProxyWidget * _self_, const QWidget * unnamed_arg_0) {
+  return _self_->newProxyWidget(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QGraphicsProxyWidget_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsProxyWidget::staticMetaObject);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_setGeometry_SUPER_const_QRectF_R(QGraphicsProxyWidget * _self_, const QRectF rect) {
+  _self_->QGraphicsProxyWidget::setGeometry(rect);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_paint_SUPER_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(QGraphicsProxyWidget * _self_, QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) {
+  _self_->QGraphicsProxyWidget::paint(painter, option, widget);
+}
+
+extern "C" int bg_QGraphicsProxyWidget_type_SUPER_(QGraphicsProxyWidget * _self_) {
+  return _self_->QGraphicsProxyWidget::type();
+}
+
+extern "C" CrystalVariant bg_QGraphicsProxyWidget_itemChange_SUPER_QGraphicsItem__GraphicsItemChange_const_QVariant_R(QGraphicsProxyWidget * _self_, QGraphicsItem::GraphicsItemChange change, const CrystalVariant value) {
+  return qvariant_to_crystal(_self_->QGraphicsProxyWidget::itemChange(change, crystal_to_qvariant(value)));
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_event_SUPER_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  return _self_->QGraphicsProxyWidget::event(event);
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_eventFilter_SUPER_QObject_X_QEvent_X(QGraphicsProxyWidget * _self_, QObject * watched, QEvent * event) {
+  return _self_->QGraphicsProxyWidget::eventFilter(watched, event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_showEvent_SUPER_QShowEvent_X(QGraphicsProxyWidget * _self_, QShowEvent * event) {
+  _self_->QGraphicsProxyWidget::showEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hideEvent_SUPER_QHideEvent_X(QGraphicsProxyWidget * _self_, QHideEvent * event) {
+  _self_->QGraphicsProxyWidget::hideEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_contextMenuEvent_SUPER_QGraphicsSceneContextMenuEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneContextMenuEvent * event) {
+  _self_->QGraphicsProxyWidget::contextMenuEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragEnterEvent_SUPER_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->QGraphicsProxyWidget::dragEnterEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragLeaveEvent_SUPER_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->QGraphicsProxyWidget::dragLeaveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dragMoveEvent_SUPER_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->QGraphicsProxyWidget::dragMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_dropEvent_SUPER_QGraphicsSceneDragDropEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneDragDropEvent * event) {
+  _self_->QGraphicsProxyWidget::dropEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverEnterEvent_SUPER_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->QGraphicsProxyWidget::hoverEnterEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverLeaveEvent_SUPER_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->QGraphicsProxyWidget::hoverLeaveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_hoverMoveEvent_SUPER_QGraphicsSceneHoverEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneHoverEvent * event) {
+  _self_->QGraphicsProxyWidget::hoverMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_grabMouseEvent_SUPER_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  _self_->QGraphicsProxyWidget::grabMouseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_ungrabMouseEvent_SUPER_QEvent_X(QGraphicsProxyWidget * _self_, QEvent * event) {
+  _self_->QGraphicsProxyWidget::ungrabMouseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseMoveEvent_SUPER_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->QGraphicsProxyWidget::mouseMoveEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mousePressEvent_SUPER_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->QGraphicsProxyWidget::mousePressEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseReleaseEvent_SUPER_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->QGraphicsProxyWidget::mouseReleaseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_mouseDoubleClickEvent_SUPER_QGraphicsSceneMouseEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneMouseEvent * event) {
+  _self_->QGraphicsProxyWidget::mouseDoubleClickEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_wheelEvent_SUPER_QGraphicsSceneWheelEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneWheelEvent * event) {
+  _self_->QGraphicsProxyWidget::wheelEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_keyPressEvent_SUPER_QKeyEvent_X(QGraphicsProxyWidget * _self_, QKeyEvent * event) {
+  _self_->QGraphicsProxyWidget::keyPressEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_keyReleaseEvent_SUPER_QKeyEvent_X(QGraphicsProxyWidget * _self_, QKeyEvent * event) {
+  _self_->QGraphicsProxyWidget::keyReleaseEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_focusInEvent_SUPER_QFocusEvent_X(QGraphicsProxyWidget * _self_, QFocusEvent * event) {
+  _self_->QGraphicsProxyWidget::focusInEvent(event);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_focusOutEvent_SUPER_QFocusEvent_X(QGraphicsProxyWidget * _self_, QFocusEvent * event) {
+  _self_->QGraphicsProxyWidget::focusOutEvent(event);
+}
+
+extern "C" bool bg_QGraphicsProxyWidget_focusNextPrevChild_SUPER_bool(QGraphicsProxyWidget * _self_, bool next) {
+  return _self_->QGraphicsProxyWidget::focusNextPrevChild(next);
+}
+
+extern "C" CrystalVariant bg_QGraphicsProxyWidget_inputMethodQuery_SUPER_Qt__InputMethodQuery(QGraphicsProxyWidget * _self_, Qt::InputMethodQuery query) {
+  return qvariant_to_crystal(_self_->QGraphicsProxyWidget::inputMethodQuery(query));
+}
+
+extern "C" void bg_QGraphicsProxyWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(QGraphicsProxyWidget * _self_, QInputMethodEvent * event) {
+  _self_->QGraphicsProxyWidget::inputMethodEvent(event);
+}
+
+extern "C" QSizeF bg_QGraphicsProxyWidget_sizeHint_SUPER_Qt__SizeHint_const_QSizeF_R(QGraphicsProxyWidget * _self_, Qt::SizeHint which, const QSizeF constraint) {
+  return _self_->QGraphicsProxyWidget::sizeHint(which, constraint);
+}
+
+extern "C" void bg_QGraphicsProxyWidget_resizeEvent_SUPER_QGraphicsSceneResizeEvent_X(QGraphicsProxyWidget * _self_, QGraphicsSceneResizeEvent * event) {
+  _self_->QGraphicsProxyWidget::resizeEvent(event);
+}
+
+extern "C" void bg_BgInherit_QGraphicsProxyWidget_JUMPTABLE_BgJumptable_QGraphicsProxyWidget_R(BgInherit_QGraphicsProxyWidget * _self_, const BgJumptable_QGraphicsProxyWidget & table) {
   _self_->bgJump = (table);
 }
 
@@ -77016,6 +85491,698 @@ extern "C" void bg_BgInherit_QGraphicsSceneEvent_JUMPTABLE_BgJumptable_QGraphics
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QGraphicsSceneMouseEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneMouseEvent : public QGraphicsSceneMouseEvent {
+  using QGraphicsSceneMouseEvent::QGraphicsSceneMouseEvent;
+  BgJumptable_QGraphicsSceneMouseEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneMouseEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneMouseEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneMouseEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneMouseEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneMouseEvent * bg_QGraphicsSceneMouseEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneMouseEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_pos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setPos_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, const QPointF pos) {
+  _self_->setPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_scenePos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setScenePos_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneMouseEvent_screenPos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setScreenPos_const_QPoint_R(QGraphicsSceneMouseEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_buttonDownPos_Qt__MouseButton(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button) {
+  return _self_->buttonDownPos(button);
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setButtonDownPos_Qt__MouseButton_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button, const QPointF pos) {
+  _self_->setButtonDownPos(button, pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_buttonDownScenePos_Qt__MouseButton(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button) {
+  return _self_->buttonDownScenePos(button);
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setButtonDownScenePos_Qt__MouseButton_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button, const QPointF pos) {
+  _self_->setButtonDownScenePos(button, pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneMouseEvent_buttonDownScreenPos_Qt__MouseButton(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button) {
+  return _self_->buttonDownScreenPos(button);
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setButtonDownScreenPos_Qt__MouseButton_const_QPoint_R(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button, const QPoint pos) {
+  _self_->setButtonDownScreenPos(button, pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_lastPos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->lastPos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setLastPos_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, const QPointF pos) {
+  _self_->setLastPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMouseEvent_lastScenePos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->lastScenePos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setLastScenePos_const_QPointF_R(QGraphicsSceneMouseEvent * _self_, const QPointF pos) {
+  _self_->setLastScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneMouseEvent_lastScreenPos_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->lastScreenPos();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setLastScreenPos_const_QPoint_R(QGraphicsSceneMouseEvent * _self_, const QPoint pos) {
+  _self_->setLastScreenPos(pos);
+}
+
+extern "C" Qt::MouseButtons bg_QGraphicsSceneMouseEvent_buttons_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->buttons();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setButtons_Qt__MouseButtons(QGraphicsSceneMouseEvent * _self_, Qt::MouseButtons buttons) {
+  _self_->setButtons(buttons);
+}
+
+extern "C" Qt::MouseButton bg_QGraphicsSceneMouseEvent_button_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->button();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setButton_Qt__MouseButton(QGraphicsSceneMouseEvent * _self_, Qt::MouseButton button) {
+  _self_->setButton(button);
+}
+
+extern "C" Qt::KeyboardModifiers bg_QGraphicsSceneMouseEvent_modifiers_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->modifiers();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setModifiers_Qt__KeyboardModifiers(QGraphicsSceneMouseEvent * _self_, Qt::KeyboardModifiers modifiers) {
+  _self_->setModifiers(modifiers);
+}
+
+extern "C" Qt::MouseEventSource bg_QGraphicsSceneMouseEvent_source_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->source();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setSource_Qt__MouseEventSource(QGraphicsSceneMouseEvent * _self_, Qt::MouseEventSource source) {
+  _self_->setSource(source);
+}
+
+extern "C" Qt::MouseEventFlags bg_QGraphicsSceneMouseEvent_flags_(QGraphicsSceneMouseEvent * _self_) {
+  return _self_->flags();
+}
+
+extern "C" void bg_QGraphicsSceneMouseEvent_setFlags_Qt__MouseEventFlags(QGraphicsSceneMouseEvent * _self_, Qt::MouseEventFlags unnamed_arg_0) {
+  _self_->setFlags(unnamed_arg_0);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneMouseEvent_JUMPTABLE_BgJumptable_QGraphicsSceneMouseEvent_R(BgInherit_QGraphicsSceneMouseEvent * _self_, const BgJumptable_QGraphicsSceneMouseEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneWheelEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneWheelEvent : public QGraphicsSceneWheelEvent {
+  using QGraphicsSceneWheelEvent::QGraphicsSceneWheelEvent;
+  BgJumptable_QGraphicsSceneWheelEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneWheelEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneWheelEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneWheelEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneWheelEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneWheelEvent * bg_QGraphicsSceneWheelEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneWheelEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneWheelEvent_pos_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setPos_const_QPointF_R(QGraphicsSceneWheelEvent * _self_, const QPointF pos) {
+  _self_->setPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneWheelEvent_scenePos_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setScenePos_const_QPointF_R(QGraphicsSceneWheelEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneWheelEvent_screenPos_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setScreenPos_const_QPoint_R(QGraphicsSceneWheelEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" Qt::MouseButtons bg_QGraphicsSceneWheelEvent_buttons_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->buttons();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setButtons_Qt__MouseButtons(QGraphicsSceneWheelEvent * _self_, Qt::MouseButtons buttons) {
+  _self_->setButtons(buttons);
+}
+
+extern "C" Qt::KeyboardModifiers bg_QGraphicsSceneWheelEvent_modifiers_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->modifiers();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setModifiers_Qt__KeyboardModifiers(QGraphicsSceneWheelEvent * _self_, Qt::KeyboardModifiers modifiers) {
+  _self_->setModifiers(modifiers);
+}
+
+extern "C" int bg_QGraphicsSceneWheelEvent_delta_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->delta();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setDelta_int(QGraphicsSceneWheelEvent * _self_, int delta) {
+  _self_->setDelta(delta);
+}
+
+extern "C" Qt::Orientation bg_QGraphicsSceneWheelEvent_orientation_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->orientation();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setOrientation_Qt__Orientation(QGraphicsSceneWheelEvent * _self_, Qt::Orientation orientation) {
+  _self_->setOrientation(orientation);
+}
+
+extern "C" Qt::ScrollPhase bg_QGraphicsSceneWheelEvent_phase_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->phase();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setPhase_Qt__ScrollPhase(QGraphicsSceneWheelEvent * _self_, Qt::ScrollPhase scrollPhase) {
+  _self_->setPhase(scrollPhase);
+}
+
+extern "C" QPoint bg_QGraphicsSceneWheelEvent_pixelDelta_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->pixelDelta();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setPixelDelta_QPoint(QGraphicsSceneWheelEvent * _self_, QPoint delta) {
+  _self_->setPixelDelta(delta);
+}
+
+extern "C" bool bg_QGraphicsSceneWheelEvent_isInverted_(QGraphicsSceneWheelEvent * _self_) {
+  return _self_->isInverted();
+}
+
+extern "C" void bg_QGraphicsSceneWheelEvent_setInverted_bool(QGraphicsSceneWheelEvent * _self_, bool inverted) {
+  _self_->setInverted(inverted);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneWheelEvent_JUMPTABLE_BgJumptable_QGraphicsSceneWheelEvent_R(BgInherit_QGraphicsSceneWheelEvent * _self_, const BgJumptable_QGraphicsSceneWheelEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneContextMenuEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneContextMenuEvent : public QGraphicsSceneContextMenuEvent {
+  using QGraphicsSceneContextMenuEvent::QGraphicsSceneContextMenuEvent;
+  BgJumptable_QGraphicsSceneContextMenuEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneContextMenuEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneContextMenuEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneContextMenuEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneContextMenuEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneContextMenuEvent * bg_QGraphicsSceneContextMenuEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneContextMenuEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneContextMenuEvent_pos_(QGraphicsSceneContextMenuEvent * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QGraphicsSceneContextMenuEvent_setPos_const_QPointF_R(QGraphicsSceneContextMenuEvent * _self_, const QPointF pos) {
+  _self_->setPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneContextMenuEvent_scenePos_(QGraphicsSceneContextMenuEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneContextMenuEvent_setScenePos_const_QPointF_R(QGraphicsSceneContextMenuEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneContextMenuEvent_screenPos_(QGraphicsSceneContextMenuEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneContextMenuEvent_setScreenPos_const_QPoint_R(QGraphicsSceneContextMenuEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" Qt::KeyboardModifiers bg_QGraphicsSceneContextMenuEvent_modifiers_(QGraphicsSceneContextMenuEvent * _self_) {
+  return _self_->modifiers();
+}
+
+extern "C" void bg_QGraphicsSceneContextMenuEvent_setModifiers_Qt__KeyboardModifiers(QGraphicsSceneContextMenuEvent * _self_, Qt::KeyboardModifiers modifiers) {
+  _self_->setModifiers(modifiers);
+}
+
+extern "C" QGraphicsSceneContextMenuEvent::Reason bg_QGraphicsSceneContextMenuEvent_reason_(QGraphicsSceneContextMenuEvent * _self_) {
+  return _self_->reason();
+}
+
+extern "C" void bg_QGraphicsSceneContextMenuEvent_setReason_QGraphicsSceneContextMenuEvent__Reason(QGraphicsSceneContextMenuEvent * _self_, QGraphicsSceneContextMenuEvent::Reason reason) {
+  _self_->setReason(reason);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneContextMenuEvent_JUMPTABLE_BgJumptable_QGraphicsSceneContextMenuEvent_R(BgInherit_QGraphicsSceneContextMenuEvent * _self_, const BgJumptable_QGraphicsSceneContextMenuEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneHoverEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneHoverEvent : public QGraphicsSceneHoverEvent {
+  using QGraphicsSceneHoverEvent::QGraphicsSceneHoverEvent;
+  BgJumptable_QGraphicsSceneHoverEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneHoverEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneHoverEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneHoverEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneHoverEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneHoverEvent * bg_QGraphicsSceneHoverEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneHoverEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneHoverEvent_pos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setPos_const_QPointF_R(QGraphicsSceneHoverEvent * _self_, const QPointF pos) {
+  _self_->setPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneHoverEvent_scenePos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setScenePos_const_QPointF_R(QGraphicsSceneHoverEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneHoverEvent_screenPos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setScreenPos_const_QPoint_R(QGraphicsSceneHoverEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneHoverEvent_lastPos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->lastPos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setLastPos_const_QPointF_R(QGraphicsSceneHoverEvent * _self_, const QPointF pos) {
+  _self_->setLastPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneHoverEvent_lastScenePos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->lastScenePos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setLastScenePos_const_QPointF_R(QGraphicsSceneHoverEvent * _self_, const QPointF pos) {
+  _self_->setLastScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneHoverEvent_lastScreenPos_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->lastScreenPos();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setLastScreenPos_const_QPoint_R(QGraphicsSceneHoverEvent * _self_, const QPoint pos) {
+  _self_->setLastScreenPos(pos);
+}
+
+extern "C" Qt::KeyboardModifiers bg_QGraphicsSceneHoverEvent_modifiers_(QGraphicsSceneHoverEvent * _self_) {
+  return _self_->modifiers();
+}
+
+extern "C" void bg_QGraphicsSceneHoverEvent_setModifiers_Qt__KeyboardModifiers(QGraphicsSceneHoverEvent * _self_, Qt::KeyboardModifiers modifiers) {
+  _self_->setModifiers(modifiers);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneHoverEvent_JUMPTABLE_BgJumptable_QGraphicsSceneHoverEvent_R(BgInherit_QGraphicsSceneHoverEvent * _self_, const BgJumptable_QGraphicsSceneHoverEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneHelpEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneHelpEvent : public QGraphicsSceneHelpEvent {
+  using QGraphicsSceneHelpEvent::QGraphicsSceneHelpEvent;
+  BgJumptable_QGraphicsSceneHelpEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneHelpEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneHelpEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneHelpEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneHelpEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneHelpEvent * bg_QGraphicsSceneHelpEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneHelpEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneHelpEvent_scenePos_(QGraphicsSceneHelpEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneHelpEvent_setScenePos_const_QPointF_R(QGraphicsSceneHelpEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneHelpEvent_screenPos_(QGraphicsSceneHelpEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneHelpEvent_setScreenPos_const_QPoint_R(QGraphicsSceneHelpEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneHelpEvent_JUMPTABLE_BgJumptable_QGraphicsSceneHelpEvent_R(BgInherit_QGraphicsSceneHelpEvent * _self_, const BgJumptable_QGraphicsSceneHelpEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneDragDropEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneDragDropEvent : public QGraphicsSceneDragDropEvent {
+  using QGraphicsSceneDragDropEvent::QGraphicsSceneDragDropEvent;
+  BgJumptable_QGraphicsSceneDragDropEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneDragDropEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneDragDropEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneDragDropEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneDragDropEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneDragDropEvent * bg_QGraphicsSceneDragDropEvent__CONSTRUCT_QEvent__Type(QEvent::Type type) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneDragDropEvent>(type);
+}
+
+extern "C" QPointF bg_QGraphicsSceneDragDropEvent_pos_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setPos_const_QPointF_R(QGraphicsSceneDragDropEvent * _self_, const QPointF pos) {
+  _self_->setPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneDragDropEvent_scenePos_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->scenePos();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setScenePos_const_QPointF_R(QGraphicsSceneDragDropEvent * _self_, const QPointF pos) {
+  _self_->setScenePos(pos);
+}
+
+extern "C" QPoint bg_QGraphicsSceneDragDropEvent_screenPos_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->screenPos();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setScreenPos_const_QPoint_R(QGraphicsSceneDragDropEvent * _self_, const QPoint pos) {
+  _self_->setScreenPos(pos);
+}
+
+extern "C" Qt::MouseButtons bg_QGraphicsSceneDragDropEvent_buttons_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->buttons();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setButtons_Qt__MouseButtons(QGraphicsSceneDragDropEvent * _self_, Qt::MouseButtons buttons) {
+  _self_->setButtons(buttons);
+}
+
+extern "C" Qt::KeyboardModifiers bg_QGraphicsSceneDragDropEvent_modifiers_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->modifiers();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setModifiers_Qt__KeyboardModifiers(QGraphicsSceneDragDropEvent * _self_, Qt::KeyboardModifiers modifiers) {
+  _self_->setModifiers(modifiers);
+}
+
+extern "C" Qt::DropActions bg_QGraphicsSceneDragDropEvent_possibleActions_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->possibleActions();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setPossibleActions_Qt__DropActions(QGraphicsSceneDragDropEvent * _self_, Qt::DropActions actions) {
+  _self_->setPossibleActions(actions);
+}
+
+extern "C" Qt::DropAction bg_QGraphicsSceneDragDropEvent_proposedAction_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->proposedAction();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setProposedAction_Qt__DropAction(QGraphicsSceneDragDropEvent * _self_, Qt::DropAction action) {
+  _self_->setProposedAction(action);
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_acceptProposedAction_(QGraphicsSceneDragDropEvent * _self_) {
+  _self_->acceptProposedAction();
+}
+
+extern "C" Qt::DropAction bg_QGraphicsSceneDragDropEvent_dropAction_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->dropAction();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setDropAction_Qt__DropAction(QGraphicsSceneDragDropEvent * _self_, Qt::DropAction action) {
+  _self_->setDropAction(action);
+}
+
+extern "C" QWidget * bg_QGraphicsSceneDragDropEvent_source_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->source();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setSource_QWidget_X(QGraphicsSceneDragDropEvent * _self_, QWidget * source) {
+  _self_->setSource(source);
+}
+
+extern "C" const QMimeData * bg_QGraphicsSceneDragDropEvent_mimeData_(QGraphicsSceneDragDropEvent * _self_) {
+  return _self_->mimeData();
+}
+
+extern "C" void bg_QGraphicsSceneDragDropEvent_setMimeData_const_QMimeData_X(QGraphicsSceneDragDropEvent * _self_, const QMimeData * data) {
+  _self_->setMimeData(data);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneDragDropEvent_JUMPTABLE_BgJumptable_QGraphicsSceneDragDropEvent_R(BgInherit_QGraphicsSceneDragDropEvent * _self_, const BgJumptable_QGraphicsSceneDragDropEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneResizeEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneResizeEvent : public QGraphicsSceneResizeEvent {
+  using QGraphicsSceneResizeEvent::QGraphicsSceneResizeEvent;
+  BgJumptable_QGraphicsSceneResizeEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneResizeEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneResizeEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneResizeEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneResizeEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneResizeEvent * bg_QGraphicsSceneResizeEvent__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneResizeEvent>();
+}
+
+extern "C" QSizeF bg_QGraphicsSceneResizeEvent_oldSize_(QGraphicsSceneResizeEvent * _self_) {
+  return _self_->oldSize();
+}
+
+extern "C" void bg_QGraphicsSceneResizeEvent_setOldSize_const_QSizeF_R(QGraphicsSceneResizeEvent * _self_, const QSizeF size) {
+  _self_->setOldSize(size);
+}
+
+extern "C" QSizeF bg_QGraphicsSceneResizeEvent_newSize_(QGraphicsSceneResizeEvent * _self_) {
+  return _self_->newSize();
+}
+
+extern "C" void bg_QGraphicsSceneResizeEvent_setNewSize_const_QSizeF_R(QGraphicsSceneResizeEvent * _self_, const QSizeF size) {
+  _self_->setNewSize(size);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneResizeEvent_JUMPTABLE_BgJumptable_QGraphicsSceneResizeEvent_R(BgInherit_QGraphicsSceneResizeEvent * _self_, const BgJumptable_QGraphicsSceneResizeEvent & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsSceneMoveEvent {
+  CrystalProc<void, bool> bg_QEvent_setAccepted_bool;
+  CrystalProc<QEvent *> bg_QEvent_clone_;
+};
+struct BgInherit_QGraphicsSceneMoveEvent : public QGraphicsSceneMoveEvent {
+  using QGraphicsSceneMoveEvent::QGraphicsSceneMoveEvent;
+  BgJumptable_QGraphicsSceneMoveEvent bgJump;
+  void setAccepted(bool accepted) override {
+    BgInherit_QGraphicsSceneMoveEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_setAccepted_bool.isValid()) {
+      _self_->bgJump.bg_QEvent_setAccepted_bool(accepted);
+    } else {
+      QGraphicsSceneMoveEvent::setAccepted(accepted);
+    }
+  }
+  
+  QEvent * clone() const override {
+    const BgInherit_QGraphicsSceneMoveEvent *_self_ = this;
+    if (_self_->bgJump.bg_QEvent_clone_.isValid()) {
+      return _self_->bgJump.bg_QEvent_clone_();
+    } else {
+      return QGraphicsSceneMoveEvent::clone();
+    }
+  }
+  
+};
+extern "C" QGraphicsSceneMoveEvent * bg_QGraphicsSceneMoveEvent__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsSceneMoveEvent>();
+}
+
+extern "C" QPointF bg_QGraphicsSceneMoveEvent_oldPos_(QGraphicsSceneMoveEvent * _self_) {
+  return _self_->oldPos();
+}
+
+extern "C" void bg_QGraphicsSceneMoveEvent_setOldPos_const_QPointF_R(QGraphicsSceneMoveEvent * _self_, const QPointF pos) {
+  _self_->setOldPos(pos);
+}
+
+extern "C" QPointF bg_QGraphicsSceneMoveEvent_newPos_(QGraphicsSceneMoveEvent * _self_) {
+  return _self_->newPos();
+}
+
+extern "C" void bg_QGraphicsSceneMoveEvent_setNewPos_const_QPointF_R(QGraphicsSceneMoveEvent * _self_, const QPointF pos) {
+  _self_->setNewPos(pos);
+}
+
+extern "C" void bg_BgInherit_QGraphicsSceneMoveEvent_JUMPTABLE_BgJumptable_QGraphicsSceneMoveEvent_R(BgInherit_QGraphicsSceneMoveEvent * _self_, const BgJumptable_QGraphicsSceneMoveEvent & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QGraphicsTransform {
   CrystalProc<const QMetaObject *> bg_QGraphicsTransform_metaObject_;
   CrystalProc<void *, const char *> bg_QGraphicsTransform_qt_metacast_const_char_X;
@@ -77177,6 +86344,450 @@ extern "C" const QMetaObject * bg_QGraphicsTransform_staticMetaObject_STATIC_GET
 }
 
 extern "C" void bg_BgInherit_QGraphicsTransform_JUMPTABLE_BgJumptable_QGraphicsTransform_R(BgInherit_QGraphicsTransform * _self_, const BgJumptable_QGraphicsTransform & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsScale {
+  CrystalProc<const QMetaObject *> bg_QGraphicsScale_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsScale_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsScale_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QMatrix4x4 *> bg_QGraphicsScale_applyTo_QMatrix4x4_X;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsScale : public QGraphicsScale {
+  using QGraphicsScale::QGraphicsScale;
+  BgJumptable_QGraphicsScale bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsScale_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsScale_metaObject_();
+    } else {
+      return QGraphicsScale::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsScale_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsScale_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsScale::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsScale_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsScale_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsScale::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void applyTo(QMatrix4x4 * matrix) const override {
+    const BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsScale_applyTo_QMatrix4x4_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsScale_applyTo_QMatrix4x4_X(matrix);
+    } else {
+      QGraphicsScale::applyTo(matrix);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsScale::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsScale::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsScale::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsScale::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsScale::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsScale::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsScale *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsScale::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsScale_metaObject_(QGraphicsScale * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsScale_qt_metacast_const_char_X(QGraphicsScale * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsScale_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsScale * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsScale_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsScale::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsScale_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsScale::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsScale_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsScale::tr(s, c, n));
+}
+
+extern "C" QGraphicsScale * bg_QGraphicsScale__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsScale>(parent);
+}
+
+extern "C" QVector3D * bg_QGraphicsScale_origin_(QGraphicsScale * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QVector3D>()) QVector3D (_self_->origin());
+}
+
+extern "C" void bg_QGraphicsScale_setOrigin_const_QVector3D_R(QGraphicsScale * _self_, const QVector3D & point) {
+  _self_->setOrigin(point);
+}
+
+extern "C" qreal bg_QGraphicsScale_xScale_(QGraphicsScale * _self_) {
+  return _self_->xScale();
+}
+
+extern "C" void bg_QGraphicsScale_setXScale_qreal(QGraphicsScale * _self_, qreal unnamed_arg_0) {
+  _self_->setXScale(unnamed_arg_0);
+}
+
+extern "C" qreal bg_QGraphicsScale_yScale_(QGraphicsScale * _self_) {
+  return _self_->yScale();
+}
+
+extern "C" void bg_QGraphicsScale_setYScale_qreal(QGraphicsScale * _self_, qreal unnamed_arg_0) {
+  _self_->setYScale(unnamed_arg_0);
+}
+
+extern "C" qreal bg_QGraphicsScale_zScale_(QGraphicsScale * _self_) {
+  return _self_->zScale();
+}
+
+extern "C" void bg_QGraphicsScale_setZScale_qreal(QGraphicsScale * _self_, qreal unnamed_arg_0) {
+  _self_->setZScale(unnamed_arg_0);
+}
+
+extern "C" void bg_QGraphicsScale_applyTo_QMatrix4x4_X(QGraphicsScale * _self_, QMatrix4x4 * matrix) {
+  _self_->applyTo(matrix);
+}
+
+extern "C" void bg_QGraphicsScale_originChanged_(QGraphicsScale * _self_) {
+  _self_->originChanged();
+}
+
+extern "C" void bg_QGraphicsScale_xScaleChanged_(QGraphicsScale * _self_) {
+  _self_->xScaleChanged();
+}
+
+extern "C" void bg_QGraphicsScale_yScaleChanged_(QGraphicsScale * _self_) {
+  _self_->yScaleChanged();
+}
+
+extern "C" void bg_QGraphicsScale_zScaleChanged_(QGraphicsScale * _self_) {
+  _self_->zScaleChanged();
+}
+
+extern "C" void bg_QGraphicsScale_scaleChanged_(QGraphicsScale * _self_) {
+  _self_->scaleChanged();
+}
+
+extern "C" const QMetaObject * bg_QGraphicsScale_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsScale::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsScale_CONNECT_originChanged_CrystalProc_void_(QGraphicsScale * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScale::*)())&QGraphicsScale::originChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsScale_CONNECT_xScaleChanged_CrystalProc_void_(QGraphicsScale * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScale::*)())&QGraphicsScale::xScaleChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsScale_CONNECT_yScaleChanged_CrystalProc_void_(QGraphicsScale * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScale::*)())&QGraphicsScale::yScaleChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsScale_CONNECT_zScaleChanged_CrystalProc_void_(QGraphicsScale * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScale::*)())&QGraphicsScale::zScaleChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsScale_CONNECT_scaleChanged_CrystalProc_void_(QGraphicsScale * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsScale::*)())&QGraphicsScale::scaleChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QGraphicsScale_applyTo_SUPER_QMatrix4x4_X(QGraphicsScale * _self_, QMatrix4x4 * matrix) {
+  _self_->QGraphicsScale::applyTo(matrix);
+}
+
+extern "C" void bg_BgInherit_QGraphicsScale_JUMPTABLE_BgJumptable_QGraphicsScale_R(BgInherit_QGraphicsScale * _self_, const BgJumptable_QGraphicsScale & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QGraphicsRotation {
+  CrystalProc<const QMetaObject *> bg_QGraphicsRotation_metaObject_;
+  CrystalProc<void *, const char *> bg_QGraphicsRotation_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QGraphicsRotation_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QMatrix4x4 *> bg_QGraphicsRotation_applyTo_QMatrix4x4_X;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QGraphicsRotation : public QGraphicsRotation {
+  using QGraphicsRotation::QGraphicsRotation;
+  BgJumptable_QGraphicsRotation bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsRotation_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QGraphicsRotation_metaObject_();
+    } else {
+      return QGraphicsRotation::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsRotation_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QGraphicsRotation_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QGraphicsRotation::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsRotation_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QGraphicsRotation_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QGraphicsRotation::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void applyTo(QMatrix4x4 * matrix) const override {
+    const BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QGraphicsRotation_applyTo_QMatrix4x4_X.isValid()) {
+      _self_->bgJump.bg_QGraphicsRotation_applyTo_QMatrix4x4_X(matrix);
+    } else {
+      QGraphicsRotation::applyTo(matrix);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QGraphicsRotation::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QGraphicsRotation::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QGraphicsRotation::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QGraphicsRotation::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QGraphicsRotation::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsRotation::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QGraphicsRotation *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QGraphicsRotation::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QGraphicsRotation_metaObject_(QGraphicsRotation * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QGraphicsRotation_qt_metacast_const_char_X(QGraphicsRotation * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QGraphicsRotation_qt_metacall_QMetaObject__Call_int_void_XX(QGraphicsRotation * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QGraphicsRotation_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QGraphicsRotation::tr(s));
+}
+
+extern "C" CrystalString bg_QGraphicsRotation_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QGraphicsRotation::tr(s, c));
+}
+
+extern "C" CrystalString bg_QGraphicsRotation_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QGraphicsRotation::tr(s, c, n));
+}
+
+extern "C" QGraphicsRotation * bg_QGraphicsRotation__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QGraphicsRotation>(parent);
+}
+
+extern "C" QVector3D * bg_QGraphicsRotation_origin_(QGraphicsRotation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QVector3D>()) QVector3D (_self_->origin());
+}
+
+extern "C" void bg_QGraphicsRotation_setOrigin_const_QVector3D_R(QGraphicsRotation * _self_, const QVector3D & point) {
+  _self_->setOrigin(point);
+}
+
+extern "C" qreal bg_QGraphicsRotation_angle_(QGraphicsRotation * _self_) {
+  return _self_->angle();
+}
+
+extern "C" void bg_QGraphicsRotation_setAngle_qreal(QGraphicsRotation * _self_, qreal unnamed_arg_0) {
+  _self_->setAngle(unnamed_arg_0);
+}
+
+extern "C" QVector3D * bg_QGraphicsRotation_axis_(QGraphicsRotation * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QVector3D>()) QVector3D (_self_->axis());
+}
+
+extern "C" void bg_QGraphicsRotation_setAxis_const_QVector3D_R(QGraphicsRotation * _self_, const QVector3D & axis) {
+  _self_->setAxis(axis);
+}
+
+extern "C" void bg_QGraphicsRotation_setAxis_Qt__Axis(QGraphicsRotation * _self_, Qt::Axis axis) {
+  _self_->setAxis(axis);
+}
+
+extern "C" void bg_QGraphicsRotation_applyTo_QMatrix4x4_X(QGraphicsRotation * _self_, QMatrix4x4 * matrix) {
+  _self_->applyTo(matrix);
+}
+
+extern "C" void bg_QGraphicsRotation_originChanged_(QGraphicsRotation * _self_) {
+  _self_->originChanged();
+}
+
+extern "C" void bg_QGraphicsRotation_angleChanged_(QGraphicsRotation * _self_) {
+  _self_->angleChanged();
+}
+
+extern "C" void bg_QGraphicsRotation_axisChanged_(QGraphicsRotation * _self_) {
+  _self_->axisChanged();
+}
+
+extern "C" const QMetaObject * bg_QGraphicsRotation_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsRotation::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsRotation_CONNECT_originChanged_CrystalProc_void_(QGraphicsRotation * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsRotation::*)())&QGraphicsRotation::originChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsRotation_CONNECT_angleChanged_CrystalProc_void_(QGraphicsRotation * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsRotation::*)())&QGraphicsRotation::angleChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QGraphicsRotation_CONNECT_axisChanged_CrystalProc_void_(QGraphicsRotation * _self_, CrystalProc<void> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QGraphicsRotation::*)())&QGraphicsRotation::axisChanged, [_proc_](){ _proc_(); }));
+}
+
+extern "C" void bg_QGraphicsRotation_applyTo_SUPER_QMatrix4x4_X(QGraphicsRotation * _self_, QMatrix4x4 * matrix) {
+  _self_->QGraphicsRotation::applyTo(matrix);
+}
+
+extern "C" void bg_BgInherit_QGraphicsRotation_JUMPTABLE_BgJumptable_QGraphicsRotation_R(BgInherit_QGraphicsRotation * _self_, const BgJumptable_QGraphicsRotation & table) {
   _self_->bgJump = (table);
 }
 
@@ -98022,6 +107633,582 @@ extern "C" void bg_BgInherit_QProgressDialog_JUMPTABLE_BgJumptable_QProgressDial
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QProxyStyle {
+  CrystalProc<const QMetaObject *> bg_QProxyStyle_metaObject_;
+  CrystalProc<void *, const char *> bg_QProxyStyle_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QProxyStyle_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void, QStyle::PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *> bg_QProxyStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ControlElement, const QStyleOption *, QPainter *, const QWidget *> bg_QProxyStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X;
+  CrystalProc<void, QStyle::ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *> bg_QProxyStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X;
+  CrystalProc<void, QPainter *, const QRect, int, const QPalette *, bool, const CrystalString, QPalette::ColorRole> bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole;
+  CrystalProc<void, QPainter *, const QRect, int, const QPixmap *> bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QSize *, QStyle::ContentsType, const QStyleOption *, const QSize, const QWidget *> bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::SubElement, const QStyleOption *, const QWidget *> bg_QProxyStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QRect *, QStyle::ComplexControl, const QStyleOptionComplex *, QStyle::SubControl, const QWidget *> bg_QProxyStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X;
+  CrystalProc<QRect *, const QFontMetrics *, const QRect, int, bool, const CrystalString> bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R;
+  CrystalProc<QRect *, const QRect, int, const QPixmap *> bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R;
+  CrystalProc<QStyle::SubControl, QStyle::ComplexControl, const QStyleOptionComplex *, const QPoint, const QWidget *> bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X;
+  CrystalProc<int, QStyle::StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *> bg_QProxyStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X;
+  CrystalProc<int, QStyle::PixelMetric, const QStyleOption *, const QWidget *> bg_QProxyStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<int, QSizePolicy::ControlType, QSizePolicy::ControlType, Qt::Orientation, const QStyleOption *, const QWidget *> bg_QProxyStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QIcon &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QProxyStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QPixmap &, QStyle::StandardPixmap, const QStyleOption *, const QWidget *> bg_QProxyStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X;
+  CrystalProc<QPixmap &, QIcon::Mode, const QPixmap *, const QStyleOption *> bg_QProxyStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X;
+  CrystalProc<QPalette &> bg_QProxyStyle_standardPalette_;
+  CrystalProc<void, QWidget *> bg_QProxyStyle_polish_QWidget_X;
+  CrystalProc<void, QPalette *> bg_QProxyStyle_polish_QPalette_R;
+  CrystalProc<void, QApplication *> bg_QProxyStyle_polish_QApplication_X;
+  CrystalProc<void, QWidget *> bg_QProxyStyle_unpolish_QWidget_X;
+  CrystalProc<void, QApplication *> bg_QProxyStyle_unpolish_QApplication_X;
+  CrystalProc<bool, QEvent *> bg_QProxyStyle_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QProxyStyle : public QProxyStyle {
+  using QProxyStyle::QProxyStyle;
+  BgJumptable_QProxyStyle bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_metaObject_();
+    } else {
+      return QProxyStyle::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QProxyStyle::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QProxyStyle::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void drawPrimitive(QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(pe, opt, p, w);
+    } else {
+      QProxyStyle::drawPrimitive(pe, opt, p, w);
+    }
+  }
+  
+  void drawControl(QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(element, opt, p, w);
+    } else {
+      QProxyStyle::drawControl(element, opt, p, w);
+    }
+  }
+  
+  void drawComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(cc, opt, p, widget);
+    } else {
+      QProxyStyle::drawComplexControl(cc, opt, p, widget);
+    }
+  }
+  
+  void drawItemText(QPainter * painter, const QRect & rect, int flags, const QPalette & pal, bool enabled, const QString & text, QPalette::ColorRole textRole) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(painter, rect, flags, &(pal), enabled, qstring_to_crystal(text), textRole);
+    } else {
+      QProxyStyle::drawItemText(painter, rect, flags, pal, enabled, text, textRole);
+    }
+  }
+  
+  void drawItemPixmap(QPainter * painter, const QRect & rect, int alignment, const QPixmap & pixmap) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(painter, rect, alignment, &(pixmap));
+    } else {
+      QProxyStyle::drawItemPixmap(painter, rect, alignment, pixmap);
+    }
+  }
+  
+  QSize sizeFromContents(QStyle::ContentsType ct, const QStyleOption * opt, const QSize & contentsSize, const QWidget * w) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(ct, opt, contentsSize, w);
+    } else {
+      return QProxyStyle::sizeFromContents(ct, opt, contentsSize, w);
+    }
+  }
+  
+  QRect subElementRect(QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QProxyStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(subElement, option, widget);
+    } else {
+      return QProxyStyle::subElementRect(subElement, option, widget);
+    }
+  }
+  
+  QRect subControlRect(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X.isValid()) {
+      return *_self_->bgJump.bg_QProxyStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(cc, opt, sc, widget);
+    } else {
+      return QProxyStyle::subControlRect(cc, opt, sc, widget);
+    }
+  }
+  
+  QRect itemTextRect(const QFontMetrics & fm, const QRect & r, int flags, bool enabled, const QString & text) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R.isValid()) {
+      return *_self_->bgJump.bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(&(fm), r, flags, enabled, qstring_to_crystal(text));
+    } else {
+      return QProxyStyle::itemTextRect(fm, r, flags, enabled, text);
+    }
+  }
+  
+  QRect itemPixmapRect(const QRect & r, int flags, const QPixmap & pixmap) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R.isValid()) {
+      return *_self_->bgJump.bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(r, flags, &(pixmap));
+    } else {
+      return QProxyStyle::itemPixmapRect(r, flags, pixmap);
+    }
+  }
+  
+  QStyle::SubControl hitTestComplexControl(QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint & pt, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(cc, opt, pt, widget);
+    } else {
+      return QProxyStyle::hitTestComplexControl(cc, opt, pt, widget);
+    }
+  }
+  
+  int styleHint(QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(stylehint, opt, widget, returnData);
+    } else {
+      return QProxyStyle::styleHint(stylehint, opt, widget, returnData);
+    }
+  }
+  
+  int pixelMetric(QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(metric, option, widget);
+    } else {
+      return QProxyStyle::pixelMetric(metric, option, widget);
+    }
+  }
+  
+  int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(control1, control2, orientation, option, widget);
+    } else {
+      return QProxyStyle::layoutSpacing(control1, control2, orientation, option, widget);
+    }
+  }
+  
+  QIcon standardIcon(QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardIcon, option, widget);
+    } else {
+      return QProxyStyle::standardIcon(standardIcon, option, widget);
+    }
+  }
+  
+  QPixmap standardPixmap(QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(standardPixmap, opt, widget);
+    } else {
+      return QProxyStyle::standardPixmap(standardPixmap, opt, widget);
+    }
+  }
+  
+  QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(iconMode, &(pixmap), opt);
+    } else {
+      return QProxyStyle::generatedIconPixmap(iconMode, pixmap, opt);
+    }
+  }
+  
+  QPalette standardPalette() const override {
+    const BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_standardPalette_.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_standardPalette_();
+    } else {
+      return QProxyStyle::standardPalette();
+    }
+  }
+  
+  void polish(QWidget * widget) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_polish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_polish_QWidget_X(widget);
+    } else {
+      QProxyStyle::polish(widget);
+    }
+  }
+  
+  void polish(QPalette & palette) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_polish_QPalette_R.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_polish_QPalette_R(&(palette));
+    } else {
+      QProxyStyle::polish(palette);
+    }
+  }
+  
+  void polish(QApplication * application) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_polish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_polish_QApplication_X(application);
+    } else {
+      QProxyStyle::polish(application);
+    }
+  }
+  
+  void unpolish(QWidget * widget) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_unpolish_QWidget_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_unpolish_QWidget_X(widget);
+    } else {
+      QProxyStyle::unpolish(widget);
+    }
+  }
+  
+  void unpolish(QApplication * application) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_unpolish_QApplication_X.isValid()) {
+      _self_->bgJump.bg_QProxyStyle_unpolish_QApplication_X(application);
+    } else {
+      QProxyStyle::unpolish(application);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QProxyStyle_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QProxyStyle_event_QEvent_X(event);
+    } else {
+      return QProxyStyle::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QProxyStyle::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QProxyStyle::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QProxyStyle::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QProxyStyle::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProxyStyle::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QProxyStyle *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QProxyStyle::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QProxyStyle_metaObject_(QProxyStyle * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QProxyStyle_qt_metacast_const_char_X(QProxyStyle * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QProxyStyle_qt_metacall_QMetaObject__Call_int_void_XX(QProxyStyle * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QProxyStyle_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QProxyStyle::tr(s));
+}
+
+extern "C" CrystalString bg_QProxyStyle_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QProxyStyle::tr(s, c));
+}
+
+extern "C" CrystalString bg_QProxyStyle_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QProxyStyle::tr(s, c, n));
+}
+
+extern "C" QProxyStyle * bg_QProxyStyle__CONSTRUCT_QStyle_X(QStyle * style) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProxyStyle>(style);
+}
+
+extern "C" QProxyStyle * bg_QProxyStyle__CONSTRUCT_const_QString_R(const CrystalString key) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QProxyStyle>(([&]() { auto &&bg_value = (key); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QStyle * bg_QProxyStyle_baseStyle_(QProxyStyle * _self_) {
+  return _self_->baseStyle();
+}
+
+extern "C" void bg_QProxyStyle_setBaseStyle_QStyle_X(QProxyStyle * _self_, QStyle * style) {
+  _self_->setBaseStyle(style);
+}
+
+extern "C" void bg_QProxyStyle_drawPrimitive_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawPrimitive(pe, opt, p, w);
+}
+
+extern "C" void bg_QProxyStyle_drawControl_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->drawControl(element, opt, p, w);
+}
+
+extern "C" void bg_QProxyStyle_drawComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) {
+  _self_->drawComplexControl(cc, opt, p, widget);
+}
+
+extern "C" void bg_QProxyStyle_drawItemText_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(QProxyStyle * _self_, QPainter * painter, const QRect rect, int flags, const QPalette & pal, bool enabled, const CrystalString text, QPalette::ColorRole textRole) {
+  _self_->drawItemText(painter, rect, flags, pal, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textRole);
+}
+
+extern "C" void bg_QProxyStyle_drawItemPixmap_QPainter_X_const_QRect_R_int_const_QPixmap_R(QProxyStyle * _self_, QPainter * painter, const QRect rect, int alignment, const QPixmap & pixmap) {
+  _self_->drawItemPixmap(painter, rect, alignment, pixmap);
+}
+
+extern "C" QSize bg_QProxyStyle_sizeFromContents_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(QProxyStyle * _self_, QStyle::ContentsType ct, const QStyleOption * opt, const QSize contentsSize, const QWidget * w) {
+  return _self_->sizeFromContents(ct, opt, contentsSize, w);
+}
+
+extern "C" QRect bg_QProxyStyle_subElementRect_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) {
+  return _self_->subElementRect(subElement, option, widget);
+}
+
+extern "C" QRect bg_QProxyStyle_subControlRect_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) {
+  return _self_->subControlRect(cc, opt, sc, widget);
+}
+
+extern "C" QRect bg_QProxyStyle_itemTextRect_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(QProxyStyle * _self_, const QFontMetrics & fm, const QRect r, int flags, bool enabled, const CrystalString text) {
+  return _self_->itemTextRect(fm, r, flags, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QProxyStyle_itemPixmapRect_const_QRect_R_int_const_QPixmap_R(QProxyStyle * _self_, const QRect r, int flags, const QPixmap & pixmap) {
+  return _self_->itemPixmapRect(r, flags, pixmap);
+}
+
+extern "C" QStyle::SubControl bg_QProxyStyle_hitTestComplexControl_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint pt, const QWidget * widget) {
+  return _self_->hitTestComplexControl(cc, opt, pt, widget);
+}
+
+extern "C" int bg_QProxyStyle_styleHint_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(QProxyStyle * _self_, QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) {
+  return _self_->styleHint(stylehint, opt, widget, returnData);
+}
+
+extern "C" int bg_QProxyStyle_pixelMetric_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) {
+  return _self_->pixelMetric(metric, option, widget);
+}
+
+extern "C" int bg_QProxyStyle_layoutSpacing_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) {
+  return _self_->layoutSpacing(control1, control2, orientation, option, widget);
+}
+
+extern "C" QIcon * bg_QProxyStyle_standardIcon_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->standardIcon(standardIcon, option, widget));
+}
+
+extern "C" QPixmap * bg_QProxyStyle_standardPixmap_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->standardPixmap(standardPixmap, opt, widget));
+}
+
+extern "C" QPixmap * bg_QProxyStyle_generatedIconPixmap_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(QProxyStyle * _self_, QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->generatedIconPixmap(iconMode, pixmap, opt));
+}
+
+extern "C" QPalette * bg_QProxyStyle_standardPalette_(QProxyStyle * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->standardPalette());
+}
+
+extern "C" void bg_QProxyStyle_polish_QWidget_X(QProxyStyle * _self_, QWidget * widget) {
+  _self_->polish(widget);
+}
+
+extern "C" void bg_QProxyStyle_polish_QPalette_R(QProxyStyle * _self_, QPalette & palette) {
+  _self_->polish(palette);
+}
+
+extern "C" void bg_QProxyStyle_polish_QApplication_X(QProxyStyle * _self_, QApplication * application) {
+  _self_->polish(application);
+}
+
+extern "C" void bg_QProxyStyle_unpolish_QWidget_X(QProxyStyle * _self_, QWidget * widget) {
+  _self_->unpolish(widget);
+}
+
+extern "C" void bg_QProxyStyle_unpolish_QApplication_X(QProxyStyle * _self_, QApplication * application) {
+  _self_->unpolish(application);
+}
+
+extern "C" bool bg_QProxyStyle_event_QEvent_X(QProxyStyle * _self_, QEvent * event) {
+  return _self_->event(event);
+}
+
+extern "C" const QMetaObject * bg_QProxyStyle_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QProxyStyle::staticMetaObject);
+}
+
+extern "C" void bg_QProxyStyle_drawPrimitive_SUPER_QStyle__PrimitiveElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::PrimitiveElement pe, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->QProxyStyle::drawPrimitive(pe, opt, p, w);
+}
+
+extern "C" void bg_QProxyStyle_drawControl_SUPER_QStyle__ControlElement_const_QStyleOption_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::ControlElement element, const QStyleOption * opt, QPainter * p, const QWidget * w) {
+  _self_->QProxyStyle::drawControl(element, opt, p, w);
+}
+
+extern "C" void bg_QProxyStyle_drawComplexControl_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_QPainter_X_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QPainter * p, const QWidget * widget) {
+  _self_->QProxyStyle::drawComplexControl(cc, opt, p, widget);
+}
+
+extern "C" void bg_QProxyStyle_drawItemText_SUPER_QPainter_X_const_QRect_R_int_const_QPalette_R_bool_const_QString_R_QPalette__ColorRole(QProxyStyle * _self_, QPainter * painter, const QRect rect, int flags, const QPalette & pal, bool enabled, const CrystalString text, QPalette::ColorRole textRole) {
+  _self_->QProxyStyle::drawItemText(painter, rect, flags, pal, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), textRole);
+}
+
+extern "C" void bg_QProxyStyle_drawItemPixmap_SUPER_QPainter_X_const_QRect_R_int_const_QPixmap_R(QProxyStyle * _self_, QPainter * painter, const QRect rect, int alignment, const QPixmap & pixmap) {
+  _self_->QProxyStyle::drawItemPixmap(painter, rect, alignment, pixmap);
+}
+
+extern "C" QSize bg_QProxyStyle_sizeFromContents_SUPER_QStyle__ContentsType_const_QStyleOption_X_const_QSize_R_const_QWidget_X(QProxyStyle * _self_, QStyle::ContentsType ct, const QStyleOption * opt, const QSize contentsSize, const QWidget * w) {
+  return _self_->QProxyStyle::sizeFromContents(ct, opt, contentsSize, w);
+}
+
+extern "C" QRect bg_QProxyStyle_subElementRect_SUPER_QStyle__SubElement_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::SubElement subElement, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QProxyStyle::subElementRect(subElement, option, widget);
+}
+
+extern "C" QRect bg_QProxyStyle_subControlRect_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_QStyle__SubControl_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, QStyle::SubControl sc, const QWidget * widget) {
+  return _self_->QProxyStyle::subControlRect(cc, opt, sc, widget);
+}
+
+extern "C" QRect bg_QProxyStyle_itemTextRect_SUPER_const_QFontMetrics_R_const_QRect_R_int_bool_const_QString_R(QProxyStyle * _self_, const QFontMetrics & fm, const QRect r, int flags, bool enabled, const CrystalString text) {
+  return _self_->QProxyStyle::itemTextRect(fm, r, flags, enabled, ([&]() { auto &&bg_value = (text); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QRect bg_QProxyStyle_itemPixmapRect_SUPER_const_QRect_R_int_const_QPixmap_R(QProxyStyle * _self_, const QRect r, int flags, const QPixmap & pixmap) {
+  return _self_->QProxyStyle::itemPixmapRect(r, flags, pixmap);
+}
+
+extern "C" QStyle::SubControl bg_QProxyStyle_hitTestComplexControl_SUPER_QStyle__ComplexControl_const_QStyleOptionComplex_X_const_QPoint_R_const_QWidget_X(QProxyStyle * _self_, QStyle::ComplexControl cc, const QStyleOptionComplex * opt, const QPoint pt, const QWidget * widget) {
+  return _self_->QProxyStyle::hitTestComplexControl(cc, opt, pt, widget);
+}
+
+extern "C" int bg_QProxyStyle_styleHint_SUPER_QStyle__StyleHint_const_QStyleOption_X_const_QWidget_X_QStyleHintReturn_X(QProxyStyle * _self_, QStyle::StyleHint stylehint, const QStyleOption * opt, const QWidget * widget, QStyleHintReturn * returnData) {
+  return _self_->QProxyStyle::styleHint(stylehint, opt, widget, returnData);
+}
+
+extern "C" int bg_QProxyStyle_pixelMetric_SUPER_QStyle__PixelMetric_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::PixelMetric metric, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QProxyStyle::pixelMetric(metric, option, widget);
+}
+
+extern "C" int bg_QProxyStyle_layoutSpacing_SUPER_QSizePolicy__ControlType_QSizePolicy__ControlType_Qt__Orientation_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation, const QStyleOption * option, const QWidget * widget) {
+  return _self_->QProxyStyle::layoutSpacing(control1, control2, orientation, option, widget);
+}
+
+extern "C" QIcon * bg_QProxyStyle_standardIcon_SUPER_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::StandardPixmap standardIcon, const QStyleOption * option, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QIcon>()) QIcon (_self_->QProxyStyle::standardIcon(standardIcon, option, widget));
+}
+
+extern "C" QPixmap * bg_QProxyStyle_standardPixmap_SUPER_QStyle__StandardPixmap_const_QStyleOption_X_const_QWidget_X(QProxyStyle * _self_, QStyle::StandardPixmap standardPixmap, const QStyleOption * opt, const QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QProxyStyle::standardPixmap(standardPixmap, opt, widget));
+}
+
+extern "C" QPixmap * bg_QProxyStyle_generatedIconPixmap_SUPER_QIcon__Mode_const_QPixmap_R_const_QStyleOption_X(QProxyStyle * _self_, QIcon::Mode iconMode, const QPixmap & pixmap, const QStyleOption * opt) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->QProxyStyle::generatedIconPixmap(iconMode, pixmap, opt));
+}
+
+extern "C" QPalette * bg_QProxyStyle_standardPalette_SUPER_(QProxyStyle * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPalette>()) QPalette (_self_->QProxyStyle::standardPalette());
+}
+
+extern "C" void bg_QProxyStyle_polish_SUPER_QWidget_X(QProxyStyle * _self_, QWidget * widget) {
+  _self_->QProxyStyle::polish(widget);
+}
+
+extern "C" void bg_QProxyStyle_polish_SUPER_QPalette_R(QProxyStyle * _self_, QPalette & palette) {
+  _self_->QProxyStyle::polish(palette);
+}
+
+extern "C" void bg_QProxyStyle_polish_SUPER_QApplication_X(QProxyStyle * _self_, QApplication * application) {
+  _self_->QProxyStyle::polish(application);
+}
+
+extern "C" void bg_QProxyStyle_unpolish_SUPER_QWidget_X(QProxyStyle * _self_, QWidget * widget) {
+  _self_->QProxyStyle::unpolish(widget);
+}
+
+extern "C" void bg_QProxyStyle_unpolish_SUPER_QApplication_X(QProxyStyle * _self_, QApplication * application) {
+  _self_->QProxyStyle::unpolish(application);
+}
+
+extern "C" bool bg_QProxyStyle_event_SUPER_QEvent_X(QProxyStyle * _self_, QEvent * event) {
+  return _self_->QProxyStyle::event(event);
+}
+
+extern "C" void bg_BgInherit_QProxyStyle_JUMPTABLE_BgJumptable_QProxyStyle_R(BgInherit_QProxyStyle * _self_, const BgJumptable_QProxyStyle & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QRadioButton {
   CrystalProc<const QMetaObject *> bg_QRadioButton_metaObject_;
   CrystalProc<void *, const char *> bg_QRadioButton_qt_metacast_const_char_X;
@@ -99300,6 +109487,186 @@ extern "C" void bg_QScrollBar_initStyleOption_SUPER_QStyleOptionSlider_X(QScroll
 
 extern "C" void bg_BgInherit_QScrollBar_JUMPTABLE_BgJumptable_QScrollBar_R(BgInherit_QScrollBar * _self_, const BgJumptable_QScrollBar & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QScrollerProperties * bg_QScrollerProperties__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QScrollerProperties>();
+}
+
+extern "C" QScrollerProperties * bg_QScrollerProperties__COPY_const_QScrollerProperties_R(const QScrollerProperties & sp) {
+  return new (UseGC) CrystalGCWrapper<QScrollerProperties>(sp);
+}
+
+extern "C" QScrollerProperties * bg_QScrollerProperties__OPERATOR_assign_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
+  return &((*_self_) = (sp));
+}
+
+extern "C" bool bg_QScrollerProperties__OPERATOR_eq_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
+  return (*_self_) == (sp);
+}
+
+extern "C" bool bg_QScrollerProperties__OPERATOR_ne_const_QScrollerProperties_R(QScrollerProperties * _self_, const QScrollerProperties & sp) {
+  return (*_self_) != (sp);
+}
+
+extern "C" void bg_QScrollerProperties_setDefaultScrollerProperties_STATIC_const_QScrollerProperties_R(const QScrollerProperties & sp) {
+  QScrollerProperties::setDefaultScrollerProperties(sp);
+}
+
+extern "C" void bg_QScrollerProperties_unsetDefaultScrollerProperties_STATIC_() {
+  QScrollerProperties::unsetDefaultScrollerProperties();
+}
+
+extern "C" CrystalVariant bg_QScrollerProperties_scrollMetric_QScrollerProperties__ScrollMetric(QScrollerProperties * _self_, QScrollerProperties::ScrollMetric metric) {
+  return qvariant_to_crystal(_self_->scrollMetric(metric));
+}
+
+extern "C" void bg_QScrollerProperties_setScrollMetric_QScrollerProperties__ScrollMetric_const_QVariant_R(QScrollerProperties * _self_, QScrollerProperties::ScrollMetric metric, const CrystalVariant value) {
+  _self_->setScrollMetric(metric, crystal_to_qvariant(value));
+}
+
+extern "C" const QMetaObject * bg_QScroller_metaObject_(QScroller * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QScroller_qt_metacast_const_char_X(QScroller * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QScroller_qt_metacall_QMetaObject__Call_int_void_XX(QScroller * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QScroller_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QScroller::tr(s));
+}
+
+extern "C" CrystalString bg_QScroller_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QScroller::tr(s, c));
+}
+
+extern "C" CrystalString bg_QScroller_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QScroller::tr(s, c, n));
+}
+
+extern "C" bool bg_QScroller_hasScroller_STATIC_QObject_X(QObject * target) {
+  return QScroller::hasScroller(target);
+}
+
+extern "C" QScroller * bg_QScroller_scroller_STATIC_QObject_X(QObject * target) {
+  return QScroller::scroller(target);
+}
+
+extern "C" const QScroller * bg_QScroller_scroller_STATIC_const_QObject_X(const QObject * target) {
+  return QScroller::scroller(target);
+}
+
+extern "C" Qt::GestureType bg_QScroller_grabGesture_STATIC_QObject_X_QScroller__ScrollerGestureType(QObject * target, QScroller::ScrollerGestureType gestureType) {
+  return QScroller::grabGesture(target, gestureType);
+}
+
+extern "C" Qt::GestureType bg_QScroller_grabbedGesture_STATIC_QObject_X(QObject * target) {
+  return QScroller::grabbedGesture(target);
+}
+
+extern "C" void bg_QScroller_ungrabGesture_STATIC_QObject_X(QObject * target) {
+  QScroller::ungrabGesture(target);
+}
+
+extern "C" Container_QList_QScroller_X_ * bg_QScroller_activeScrollers_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QScroller_X_>()) Container_QList_QScroller_X_ (QScroller::activeScrollers());
+}
+
+extern "C" QObject * bg_QScroller_target_(QScroller * _self_) {
+  return _self_->target();
+}
+
+extern "C" QScroller::State bg_QScroller_state_(QScroller * _self_) {
+  return _self_->state();
+}
+
+extern "C" bool bg_QScroller_handleInput_QScroller__Input_const_QPointF_R_qint64(QScroller * _self_, QScroller::Input input, const QPointF position, qint64 timestamp) {
+  return _self_->handleInput(input, position, timestamp);
+}
+
+extern "C" void bg_QScroller_stop_(QScroller * _self_) {
+  _self_->stop();
+}
+
+extern "C" QPointF bg_QScroller_velocity_(QScroller * _self_) {
+  return _self_->velocity();
+}
+
+extern "C" QPointF bg_QScroller_finalPosition_(QScroller * _self_) {
+  return _self_->finalPosition();
+}
+
+extern "C" QPointF bg_QScroller_pixelPerMeter_(QScroller * _self_) {
+  return _self_->pixelPerMeter();
+}
+
+extern "C" QScrollerProperties * bg_QScroller_scrollerProperties_(QScroller * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QScrollerProperties>()) QScrollerProperties (_self_->scrollerProperties());
+}
+
+extern "C" void bg_QScroller_setSnapPositionsX_const_QList_qreal__R(QScroller * _self_, const Container_QList_qreal_ * positions) {
+  _self_->setSnapPositionsX(*(positions));
+}
+
+extern "C" void bg_QScroller_setSnapPositionsX_qreal_qreal(QScroller * _self_, qreal first, qreal interval) {
+  _self_->setSnapPositionsX(first, interval);
+}
+
+extern "C" void bg_QScroller_setSnapPositionsY_const_QList_qreal__R(QScroller * _self_, const Container_QList_qreal_ * positions) {
+  _self_->setSnapPositionsY(*(positions));
+}
+
+extern "C" void bg_QScroller_setSnapPositionsY_qreal_qreal(QScroller * _self_, qreal first, qreal interval) {
+  _self_->setSnapPositionsY(first, interval);
+}
+
+extern "C" void bg_QScroller_setScrollerProperties_const_QScrollerProperties_R(QScroller * _self_, const QScrollerProperties & prop) {
+  _self_->setScrollerProperties(prop);
+}
+
+extern "C" void bg_QScroller_scrollTo_const_QPointF_R(QScroller * _self_, const QPointF pos) {
+  _self_->scrollTo(pos);
+}
+
+extern "C" void bg_QScroller_scrollTo_const_QPointF_R_int(QScroller * _self_, const QPointF pos, int scrollTime) {
+  _self_->scrollTo(pos, scrollTime);
+}
+
+extern "C" void bg_QScroller_ensureVisible_const_QRectF_R_qreal_qreal(QScroller * _self_, const QRectF rect, qreal xmargin, qreal ymargin) {
+  _self_->ensureVisible(rect, xmargin, ymargin);
+}
+
+extern "C" void bg_QScroller_ensureVisible_const_QRectF_R_qreal_qreal_int(QScroller * _self_, const QRectF rect, qreal xmargin, qreal ymargin, int scrollTime) {
+  _self_->ensureVisible(rect, xmargin, ymargin, scrollTime);
+}
+
+extern "C" void bg_QScroller_resendPrepareEvent_(QScroller * _self_) {
+  _self_->resendPrepareEvent();
+}
+
+extern "C" void bg_QScroller_stateChanged_QScroller__State(QScroller * _self_, QScroller::State newstate) {
+  _self_->stateChanged(newstate);
+}
+
+extern "C" void bg_QScroller_scrollerPropertiesChanged_const_QScrollerProperties_R(QScroller * _self_, const QScrollerProperties & unnamed_arg_0) {
+  _self_->scrollerPropertiesChanged(unnamed_arg_0);
+}
+
+extern "C" const QMetaObject * bg_QScroller_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QScroller::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QScroller_CONNECT_stateChanged_CrystalProc_void__QScroller__State_(QScroller * _self_, CrystalProc<void, QScroller::State> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScroller::*)(QScroller::State))&QScroller::stateChanged, [_proc_](QScroller::State newstate){ _proc_(newstate); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QScroller_CONNECT_scrollerPropertiesChanged_CrystalProc_void__const_QScrollerProperties_R_(QScroller * _self_, CrystalProc<void, const QScrollerProperties *> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QScroller::*)(const QScrollerProperties &))&QScroller::scrollerPropertiesChanged, [_proc_](const QScrollerProperties & unnamed_arg_0){ _proc_(&(unnamed_arg_0)); }));
 }
 
 struct BgJumptable_QSizeGrip {
@@ -105362,6 +115729,22 @@ extern "C" bool bg_QStyledItemDelegate_editorEvent_SUPER_QEvent_X_QAbstractItemM
 
 extern "C" void bg_BgInherit_QStyledItemDelegate_JUMPTABLE_BgJumptable_QStyledItemDelegate_R(BgInherit_QStyledItemDelegate * _self_, const BgJumptable_QStyledItemDelegate & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QList<QString> * bg_QStyleFactory_keys_STATIC_() {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (QStyleFactory::keys());
+}
+
+extern "C" QStyle * bg_QStyleFactory_create_STATIC_const_QString_R(const CrystalString unnamed_arg_0) {
+  return QStyleFactory::create(([&]() { auto &&bg_value = (unnamed_arg_0); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QStyleFactory * bg_QStyleFactory__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QStyleFactory>();
+}
+
+extern "C" QStyleFactory * bg_QStyleFactory__COPY_const_QStyleFactory_R(const QStyleFactory & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QStyleFactory>(unnamed_arg_0);
 }
 
 struct BgJumptable_QSystemTrayIcon {
@@ -117953,6 +128336,14 @@ extern "C" void bg____qt6cr_reset_numeric_locale_STATIC_() {
   ::qt6cr_reset_numeric_locale();
 }
 
+extern "C" QValidator::State bg____qt6cr_validator_validate_STATIC_const_QValidator_X_const_QString_R_int(const QValidator * validator, const CrystalString input, int pos) {
+  return ::qt6cr_validator_validate(validator, ([&]() { auto &&bg_value = (input); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), pos);
+}
+
+extern "C" CrystalString bg____qt6cr_validator_fixup_STATIC_const_QValidator_X_const_QString_R(const QValidator * validator, const CrystalString input) {
+  return qstring_to_crystal(::qt6cr_validator_fixup(validator, ([&]() { auto &&bg_value = (input); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
 extern "C" Container_QList_qreal_ * bg_Container_QList_qreal___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_qreal_>();
 }
@@ -118862,6 +129253,22 @@ extern "C" void bg_Container_QList_QMdiSubWindow_X__push_back_QMdiSubWindow_X(Co
 }
 
 extern "C" int bg_Container_QList_QMdiSubWindow_X__size_(Container_QList_QMdiSubWindow_X_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QScroller_X_ * bg_Container_QList_QScroller_X___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QScroller_X_>();
+}
+
+extern "C" QScroller * bg_Container_QList_QScroller_X__at_int(Container_QList_QScroller_X_ * _self_, int index) {
+  return _self_->at(index);
+}
+
+extern "C" void bg_Container_QList_QScroller_X__push_back_QScroller_X(Container_QList_QScroller_X_ * _self_, QScroller * value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QScroller_X__size_(Container_QList_QScroller_X_ * _self_) {
   return _self_->size();
 }
 

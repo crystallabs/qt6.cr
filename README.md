@@ -328,6 +328,21 @@ see the comments there:
   combine with `|`.  `Qt::TreeWidgetItemIterator` is an `Iterator`.
 * `QHeaderView`'s protected `initialize()` is dropped, as Crystal reserves the
   name for constructors.
+* `QValidator::validate` and `fixup` take the input by non-const reference,
+  which bindgen can't pass a `String` (a `QString` by value) by, so
+  `ext/validator_helper.hpp` calls them on a copy: `validator.validate("42")`
+  returns the `Validator::State`, `#fixup` the fixed string.  Validators can't
+  be written in Crystal (`sub_class: false`), as `validate` is pure virtual.
+* `QStyle::SubControls` maps as a plain enum, as Qt's `SC_All` is all bits
+  set, which a Crystal `@[Flags]` enum defines itself.  The `QStyle` enum
+  constants drop their prefixes: `Style::PixelMetric::ButtonMargin`.
+* `QGraphicsWidget` derives from `QGraphicsObject` and `QGraphicsLayoutItem`:
+  the wrapper has the layout item methods, and `#as_graphics_layout_item`
+  casts it for `GraphicsLinearLayout#add_item` and friends.
+* `src/qt6/proxy_style.cr` passes the nilable arguments of the `ProxyStyle`
+  superclass methods as pointers: bindgen passes them as is, which Crystal
+  only accepts for `nil` or an object, not for their union, which the jump
+  table of a Crystal override passes on.
 * `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`),
   `std::optional<QFont>` (`FontComboBox#display_font`) and
   `QList<QKeyCombination>` (`KeySequenceEdit#finishing_key_combinations`) have
