@@ -20249,7 +20249,7 @@ module Qt
     fun bg_QList_QString__length_(_self_ : ContainerQListQString*) : Int64
     fun bg_QList_QString__isEmpty_(_self_ : ContainerQListQString*) : Bool
     fun bg_QList_QString__resize_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
-    fun bg_QList_QString__resize_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, size : Int64, c : CrystalString) : Void
+    fun bg_QList_QString__resize_qsizetype_const_QString_R(_self_ : ContainerQListQString*, size : Int64, c : CrystalString) : Void
     fun bg_QList_QString__resizeForOverwrite_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
     fun bg_QList_QString__capacity_(_self_ : ContainerQListQString*) : Int64
     fun bg_QList_QString__reserve_qsizetype(_self_ : ContainerQListQString*, size : Int64) : Void
@@ -20258,19 +20258,19 @@ module Qt
     fun bg_QList_QString__isDetached_(_self_ : ContainerQListQString*) : Bool
     fun bg_QList_QString__isSharedWith_const_QList_QString__R(_self_ : ContainerQListQString*, other : ContainerQListQString*) : Bool
     fun bg_QList_QString__clear_(_self_ : ContainerQListQString*) : Void
-    fun bg_QList_QString__append_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__append_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : Void
     fun bg_QList_QString__append_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : Void
-    fun bg_QList_QString__prepend_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
-    fun bg_QList_QString__assign_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, n : Int64, t : CrystalString) : ContainerQListQString*
-    fun bg_QList_QString__replace_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, i : Int64, t : CrystalString) : Void
+    fun bg_QList_QString__prepend_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__assign_qsizetype_const_QString_R(_self_ : ContainerQListQString*, n : Int64, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString__replace_qsizetype_const_QString_R(_self_ : ContainerQListQString*, i : Int64, t : CrystalString) : Void
     fun bg_QList_QString__remove_qsizetype(_self_ : ContainerQListQString*, i : Int64) : Void
     fun bg_QList_QString__remove_qsizetype_qsizetype(_self_ : ContainerQListQString*, i : Int64, n : Int64) : Void
     fun bg_QList_QString__removeFirst_(_self_ : ContainerQListQString*) : Void
     fun bg_QList_QString__removeLast_(_self_ : ContainerQListQString*) : Void
     fun bg_QList_QString__takeFirst_(_self_ : ContainerQListQString*) : CrystalString
     fun bg_QList_QString__takeLast_(_self_ : ContainerQListQString*) : CrystalString
-    fun bg_QList_QString__fill_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
-    fun bg_QList_QString__fill_QList_QString___parameter_type_qsizetype(_self_ : ContainerQListQString*, t : CrystalString, size : Int64) : ContainerQListQString*
+    fun bg_QList_QString__fill_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString__fill_const_QString_R_qsizetype(_self_ : ContainerQListQString*, t : CrystalString, size : Int64) : ContainerQListQString*
     fun bg_QList_QString__removeAt_qsizetype(_self_ : ContainerQListQString*, i : Int64) : Void
     fun bg_QList_QString__takeAt_qsizetype(_self_ : ContainerQListQString*, i : Int64) : CrystalString
     fun bg_QList_QString__move_qsizetype_qsizetype(_self_ : ContainerQListQString*, from : Int64, to : Int64) : Void
@@ -20278,8 +20278,8 @@ module Qt
     fun bg_QList_QString__constFirst_(_self_ : ContainerQListQString*) : CrystalString
     fun bg_QList_QString__last_(_self_ : ContainerQListQString*) : CrystalString
     fun bg_QList_QString__constLast_(_self_ : ContainerQListQString*) : CrystalString
-    fun bg_QList_QString__startsWith_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Bool
-    fun bg_QList_QString__endsWith_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Bool
+    fun bg_QList_QString__startsWith_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : Bool
+    fun bg_QList_QString__endsWith_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : Bool
     fun bg_QList_QString__mid_qsizetype(_self_ : ContainerQListQString*, pos : Int64) : ContainerQListQString*
     fun bg_QList_QString__mid_qsizetype_qsizetype(_self_ : ContainerQListQString*, pos : Int64, len : Int64) : ContainerQListQString*
     fun bg_QList_QString__first_qsizetype(_self_ : ContainerQListQString*, n : Int64) : ContainerQListQString*
@@ -20287,9 +20287,9 @@ module Qt
     fun bg_QList_QString__sliced_qsizetype(_self_ : ContainerQListQString*, pos : Int64) : ContainerQListQString*
     fun bg_QList_QString__sliced_qsizetype_qsizetype(_self_ : ContainerQListQString*, pos : Int64, n : Int64) : ContainerQListQString*
     fun bg_QList_QString__value_qsizetype(_self_ : ContainerQListQString*, i : Int64) : CrystalString
-    fun bg_QList_QString__value_qsizetype_QList_QString___parameter_type(_self_ : ContainerQListQString*, i : Int64, default_value : CrystalString) : CrystalString
+    fun bg_QList_QString__value_qsizetype_const_QString_R(_self_ : ContainerQListQString*, i : Int64, default_value : CrystalString) : CrystalString
     fun bg_QList_QString__swapItemsAt_qsizetype_qsizetype(_self_ : ContainerQListQString*, i : Int64, j : Int64) : Void
-    fun bg_QList_QString__push_front_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : Void
+    fun bg_QList_QString__push_front_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : Void
     fun bg_QList_QString__pop_back_(_self_ : ContainerQListQString*) : Void
     fun bg_QList_QString__pop_front_(_self_ : ContainerQListQString*) : Void
     fun bg_QList_QString__empty_(_self_ : ContainerQListQString*) : Bool
@@ -20299,8 +20299,8 @@ module Qt
     fun bg_QList_QString__max_size_(_self_ : ContainerQListQString*) : Int64
     fun bg_QList_QString___OPERATOR_add_assign_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
     fun bg_QList_QString___OPERATOR_add_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
-    fun bg_QList_QString___OPERATOR_add_assign_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
-    fun bg_QList_QString___OPERATOR_lshift_QList_QString___parameter_type(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_add_assign_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
+    fun bg_QList_QString___OPERATOR_lshift_const_QString_R(_self_ : ContainerQListQString*, t : CrystalString) : ContainerQListQString*
     fun bg_QList_QString___OPERATOR_lshift_const_QList_QString__R(_self_ : ContainerQListQString*, l : ContainerQListQString*) : ContainerQListQString*
     fun bg_QList_QString__fromList_STATIC_const_QList_QString__R(list : ContainerQListQString*) : ContainerQListQString*
     fun bg_QList_QString__toList_(_self_ : ContainerQListQString*) : ContainerQListQString*
@@ -116206,7 +116206,7 @@ module Qt
     end
     
     def resize(size : Int64, c : String) : Void
-      Binding.bg_QList_QString__resize_qsizetype_QList_QString___parameter_type(self, size, Qt::Converter::QString.wrap(c))
+      Binding.bg_QList_QString__resize_qsizetype_const_QString_R(self, size, Qt::Converter::QString.wrap(c))
     end
     
     def resize_for_overwrite(size : Int64) : Void
@@ -116242,7 +116242,7 @@ module Qt
     end
     
     def append(t : String) : Void
-      Binding.bg_QList_QString__append_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__append_const_QString_R(self, Qt::Converter::QString.wrap(t))
     end
     
     def append(l : Enumerable(String)) : Void
@@ -116250,15 +116250,15 @@ module Qt
     end
     
     def prepend(t : String) : Void
-      Binding.bg_QList_QString__prepend_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__prepend_const_QString_R(self, Qt::Converter::QString.wrap(t))
     end
     
     def assign(n : Int64, t : String) : Enumerable(String)
-      StringList.new(unwrap: Binding.bg_QList_QString__assign_qsizetype_QList_QString___parameter_type(self, n, Qt::Converter::QString.wrap(t)))
+      StringList.new(unwrap: Binding.bg_QList_QString__assign_qsizetype_const_QString_R(self, n, Qt::Converter::QString.wrap(t)))
     end
     
     def replace(i : Int64, t : String) : Void
-      Binding.bg_QList_QString__replace_qsizetype_QList_QString___parameter_type(self, i, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__replace_qsizetype_const_QString_R(self, i, Qt::Converter::QString.wrap(t))
     end
     
     def remove(i : Int64) : Void
@@ -116286,11 +116286,11 @@ module Qt
     end
     
     def fill(t : String) : Enumerable(String)
-      StringList.new(unwrap: Binding.bg_QList_QString__fill_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+      StringList.new(unwrap: Binding.bg_QList_QString__fill_const_QString_R(self, Qt::Converter::QString.wrap(t)))
     end
     
     def fill(t : String, size : Int64) : Enumerable(String)
-      StringList.new(unwrap: Binding.bg_QList_QString__fill_QList_QString___parameter_type_qsizetype(self, Qt::Converter::QString.wrap(t), size))
+      StringList.new(unwrap: Binding.bg_QList_QString__fill_const_QString_R_qsizetype(self, Qt::Converter::QString.wrap(t), size))
     end
     
     def remove_at(i : Int64) : Void
@@ -116322,11 +116322,11 @@ module Qt
     end
     
     def starts_with(t : String) : Bool
-      Binding.bg_QList_QString__startsWith_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__startsWith_const_QString_R(self, Qt::Converter::QString.wrap(t))
     end
     
     def ends_with(t : String) : Bool
-      Binding.bg_QList_QString__endsWith_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__endsWith_const_QString_R(self, Qt::Converter::QString.wrap(t))
     end
     
     def mid(pos : Int64) : Enumerable(String)
@@ -116358,7 +116358,7 @@ module Qt
     end
     
     def value(i : Int64, default_value : String) : String
-      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__value_qsizetype_QList_QString___parameter_type(self, i, Qt::Converter::QString.wrap(default_value)))
+      Qt::Converter::QString.unwrap(Binding.bg_QList_QString__value_qsizetype_const_QString_R(self, i, Qt::Converter::QString.wrap(default_value)))
     end
     
     def swap_items_at(i : Int64, j : Int64) : Void
@@ -116366,7 +116366,7 @@ module Qt
     end
     
     def push_front(t : String) : Void
-      Binding.bg_QList_QString__push_front_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t))
+      Binding.bg_QList_QString__push_front_const_QString_R(self, Qt::Converter::QString.wrap(t))
     end
     
     def pop_back() : Void
@@ -116406,11 +116406,11 @@ module Qt
     end
     
     def add!(t : String) : Enumerable(String)
-      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_add_assign_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_add_assign_const_QString_R(self, Qt::Converter::QString.wrap(t)))
     end
     
     def <<(t : String) : Enumerable(String)
-      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_lshift_QList_QString___parameter_type(self, Qt::Converter::QString.wrap(t)))
+      StringList.new(unwrap: Binding.bg_QList_QString___OPERATOR_lshift_const_QString_R(self, Qt::Converter::QString.wrap(t)))
     end
     
     def <<(l : Enumerable(String)) : Enumerable(String)

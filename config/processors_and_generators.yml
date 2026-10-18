@@ -8,9 +8,6 @@ processors:
   - instance_properties # Add property methods for public instance members
   - filter_methods # Throw out filtered methods
   - auto_container_instantiation
-  # Before the containers: a `QList<Qt::DayOfWeek>` wrapper includes
-  # `SequentialContainer(DayOfWeek)`, so the enum must be declared before it,
-  # or the generated binding doesn't compile.
   - enums # Add enums
   - instantiate_containers # Actually instantiate containers
   - inheritance # After the containers, so QPolygon inherits QList<QPoint>

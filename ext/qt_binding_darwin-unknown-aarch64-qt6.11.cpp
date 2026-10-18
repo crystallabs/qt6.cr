@@ -81498,7 +81498,7 @@ extern "C" void bg_QList_QString__resize_qsizetype(QList<QString> * _self_, qsiz
   _self_->resize(size);
 }
 
-extern "C" void bg_QList_QString__resize_qsizetype_QList_QString___parameter_type(QList<QString> * _self_, qsizetype size, const CrystalString c) {
+extern "C" void bg_QList_QString__resize_qsizetype_const_QString_R(QList<QString> * _self_, qsizetype size, const CrystalString c) {
   _self_->resize(size, ([&]() { auto &&bg_value = (c); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
@@ -81534,7 +81534,7 @@ extern "C" void bg_QList_QString__clear_(QList<QString> * _self_) {
   _self_->clear();
 }
 
-extern "C" void bg_QList_QString__append_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" void bg_QList_QString__append_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   _self_->append(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
@@ -81542,15 +81542,15 @@ extern "C" void bg_QList_QString__append_const_QList_QString__R(QList<QString> *
   _self_->append(*(l));
 }
 
-extern "C" void bg_QList_QString__prepend_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" void bg_QList_QString__prepend_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   _self_->prepend(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
-extern "C" QList<QString> * bg_QList_QString__assign_qsizetype_QList_QString___parameter_type(QList<QString> * _self_, qsizetype n, const CrystalString t) {
+extern "C" QList<QString> * bg_QList_QString__assign_qsizetype_const_QString_R(QList<QString> * _self_, qsizetype n, const CrystalString t) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->assign(n, ([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" void bg_QList_QString__replace_qsizetype_QList_QString___parameter_type(QList<QString> * _self_, qsizetype i, const CrystalString t) {
+extern "C" void bg_QList_QString__replace_qsizetype_const_QString_R(QList<QString> * _self_, qsizetype i, const CrystalString t) {
   _self_->replace(i, ([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
@@ -81578,11 +81578,11 @@ extern "C" CrystalString bg_QList_QString__takeLast_(QList<QString> * _self_) {
   return qstring_to_crystal(_self_->takeLast());
 }
 
-extern "C" QList<QString> * bg_QList_QString__fill_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" QList<QString> * bg_QList_QString__fill_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->fill(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QList<QString> * bg_QList_QString__fill_QList_QString___parameter_type_qsizetype(QList<QString> * _self_, const CrystalString t, qsizetype size) {
+extern "C" QList<QString> * bg_QList_QString__fill_const_QString_R_qsizetype(QList<QString> * _self_, const CrystalString t, qsizetype size) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->fill(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), size));
 }
 
@@ -81614,11 +81614,11 @@ extern "C" const CrystalString bg_QList_QString__constLast_(QList<QString> * _se
   return qstring_to_crystal(_self_->constLast());
 }
 
-extern "C" bool bg_QList_QString__startsWith_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" bool bg_QList_QString__startsWith_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   return _self_->startsWith(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
-extern "C" bool bg_QList_QString__endsWith_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" bool bg_QList_QString__endsWith_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   return _self_->endsWith(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
@@ -81650,7 +81650,7 @@ extern "C" CrystalString bg_QList_QString__value_qsizetype(QList<QString> * _sel
   return qstring_to_crystal(_self_->value(i));
 }
 
-extern "C" CrystalString bg_QList_QString__value_qsizetype_QList_QString___parameter_type(QList<QString> * _self_, qsizetype i, const CrystalString defaultValue) {
+extern "C" CrystalString bg_QList_QString__value_qsizetype_const_QString_R(QList<QString> * _self_, qsizetype i, const CrystalString defaultValue) {
   return qstring_to_crystal(_self_->value(i, ([&]() { auto &&bg_value = (defaultValue); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
@@ -81658,7 +81658,7 @@ extern "C" void bg_QList_QString__swapItemsAt_qsizetype_qsizetype(QList<QString>
   _self_->swapItemsAt(i, j);
 }
 
-extern "C" void bg_QList_QString__push_front_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" void bg_QList_QString__push_front_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   _self_->push_front(([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
@@ -81698,11 +81698,11 @@ extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_const_QList_QString_
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) + (*(l)));
 }
 
-extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_assign_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" QList<QString> * bg_QList_QString___OPERATOR_add_assign_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) += (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
-extern "C" QList<QString> * bg_QList_QString___OPERATOR_lshift_QList_QString___parameter_type(QList<QString> * _self_, const CrystalString t) {
+extern "C" QList<QString> * bg_QList_QString___OPERATOR_lshift_const_QString_R(QList<QString> * _self_, const CrystalString t) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ ((*_self_) << (([&]() { auto &&bg_value = (t); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 

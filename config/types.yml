@@ -166,7 +166,6 @@ types: # Type rewrite rules
   QVariantList: { alias_for: "QList<QVariant>" }
   QStringList: { alias_for: "QList<QString>" } # Qt 6 declares it so
   # The methods of QList<QString> itself (wrapped as Qt::StringList) name these.
-  "QList<QString>::value_type": { alias_for: QString } # takeFirst, takeLast
   "QList<QString>::DataPointer": { ignore: true } # Private storage, data_ptr
   "QList<QString>::iterator": { ignore: true } # Indexes replace the iterators
   "QList<QString>::const_iterator": { ignore: true }
