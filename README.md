@@ -285,8 +285,8 @@ see the comments there:
 
 | System                   | Status           | Qt version | Notes                       |
 | ------------------------ | ---------------- | ---------- | --------------------------- |
-| macOS (Homebrew, arm64)  | **Works**        | 6.11       | Specs and samples pass      |
-| Ubuntu 24.04             | CI               | 6.4        | LLVM 14 and 18              |
+| Ubuntu 24.04             | **Works**        | 6.4        | CI, with LLVM 14 and 18     |
+| macOS (Homebrew, arm64)  | **Works**        | 6.11       | CI                          |
 | ArchLinux                | Should work      | 6.x        | Help wanted                 |
 | Windows                  | Help wanted      | ?          |                             |
 
