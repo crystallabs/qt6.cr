@@ -36,8 +36,6 @@ describe Qt::RegularExpression do
 end
 
 describe Qt::Settings do
-  # `Qt::Variant` holds Crystal values Qt can't serialize, so the values
-  # survive within the process only: a sync would write them as invalid.
   it "stores values" do
     path = File.join(Qt::Dir.temp_path, "qt6cr-spec-#{Process.pid}.ini")
     begin
@@ -98,18 +96,17 @@ describe "container widgets" do
 end
 
 describe Qt::SortFilterProxyModel do
-  # Sorting and filtering happen in Qt, so the source holds Qt strings: a
-  # `Qt::Variant` is opaque to Qt.
   it "filters and sorts a source model" do
-    list = Qt::ListWidget.new
-    %w[banana apple cherry].each { |name| list.add_item(name) }
+    model = Qt::StandardItemModel.new(3, 1)
+    %w[banana apple cherry].each_with_index { |name, row| model.set_data(model.index(row, 0), Qt.variant(name)) }
     proxy = Qt::SortFilterProxyModel.new
-    proxy.source_model = list.model
+    proxy.source_model = model
     proxy.row_count.should eq(3)
 
     proxy.sort(0)
     (0..2).map { |row| proxy.map_to_source(proxy.index(row, 0)).row }.should eq([1, 0, 2])
-    proxy.map_from_source(list.model.index(2, 0)).row.should eq(2)
+    (0..2).map { |row| proxy.data(proxy.index(row, 0)).to(String) }.should eq(%w[apple banana cherry])
+    proxy.map_from_source(model.index(2, 0)).row.should eq(2)
 
     proxy.filter_regular_expression = "an"
     proxy.row_count.should eq(1)
