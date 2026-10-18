@@ -3,8 +3,6 @@
 # This script downloads all sources of all supported Qt6 versions, and then
 # proceed to generate all bindings for all configured platforms.
 #
-# This script is what the `ready-to-use` branches are built by.
-#
 # With `--system`, it instead generates the binding for the Qt6 installed on
 # this system, as found by `qmake`.  Set `QMAKE` to choose a specific one.
 

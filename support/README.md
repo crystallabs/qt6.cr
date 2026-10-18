@@ -19,10 +19,9 @@ detection part, making it quite slow to compile.
 
 ### `generate_bindings.cr`
 
-(Re-)Generate all bindings this shard support. This is used for the
-`ready-to-use` branches.  This script automatically downloads and unpacks all
-supported Qt versions from the internet, and then generates all configured
-bindings using **bindgen**.  This mode is inherited from qt5.cr and untested
+(Re-)Generates the bindings for the configured Qt versions.  This script
+automatically downloads and unpacks their sources from the internet, and then
+generates all configured bindings using **bindgen**.  This mode is inherited from qt5.cr and untested
 with Qt 6, whose `configure` wraps CMake.
 
 With `--system`, it instead generates the binding for the Qt6 installed on the
