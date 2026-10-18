@@ -272,3 +272,12 @@ QGraphicsItemAnimation:
 QProxyStyle:
   keep_alive:
     "^setBaseStyle$": true
+QMovie:
+  keep_alive:
+    "^setDevice$": true
+QImageReader:
+  keep_alive:
+    "^setDevice$": true
+QImageWriter:
+  keep_alive:
+    "^setDevice$": true

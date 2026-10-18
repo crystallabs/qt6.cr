@@ -8,3 +8,7 @@ functions:
     destination: "::"
   "^qt6cr_validator_fixup$":
     destination: "::"
+  "^qt6cr_transform_inverted$": # See ext/matrix_helper.hpp
+    destination: "::"
+  "^qt6cr_matrix4x4_inverted$":
+    destination: "::"

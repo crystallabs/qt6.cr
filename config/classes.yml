@@ -353,3 +353,42 @@ classes:
   # from, so StringList inherits StringListMethods.
   "QList<QString>": StringList
   "QListSpecialMethods<QString>": StringListMethods # The QStringList methods
+  # Painting and geometry
+  QPainterPath: PainterPath
+  "QPainterPath::Element": PainterPathElement
+  QPainterPathStroker: PainterPathStroker
+  QTransform: Transform
+  QMatrix4x4: Matrix4x4
+  QVector2D: Vector2D
+  QVector3D: Vector3D
+  QVector4D: Vector4D
+  QQuaternion: Quaternion
+  "QQuaternion::Axis": QuaternionAxis
+  "QQuaternion::Axes": QuaternionAxes
+  QGradient: Gradient
+  QLinearGradient: LinearGradient
+  QRadialGradient: RadialGradient
+  QConicalGradient: ConicalGradient
+  QRegion: Region
+  QColorSpace: ColorSpace
+  "QColorSpace::PrimaryPoints": ColorSpacePrimaryPoints
+  QPicture: Picture
+  QPixmapCache: PixmapCache
+  "QPixmapCache::Key": PixmapCacheKey
+  QImageReader: ImageReader
+  QImageWriter: ImageWriter
+  QMovie: Movie
+  QRgba64: Rgba64
+  QPagedPaintDevice: PagedPaintDevice
+  QPageSize: PageSize
+  QPageLayout: PageLayout
+  QPageRanges: PageRanges
+  "QPageRanges::Range": PageRange
+  QPdfWriter: PdfWriter
+  QPdfOutputIntent: PdfOutputIntent
+  QBackingStore: BackingStore
+  QPaintDeviceWindow: PaintDeviceWindow
+  QRasterWindow: RasterWindow
+  QSurfaceFormat: SurfaceFormat
+  QOffscreenSurface: OffscreenSurface
+  QMarginsF: MarginsF

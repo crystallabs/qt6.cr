@@ -347,6 +347,19 @@ see the comments there:
   `std::optional<QFont>` (`FontComboBox#display_font`) and
   `QList<QKeyCombination>` (`KeySequenceEdit#finishing_key_combinations`) have
   no mapping yet and are ignored.
+* `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
+  `QPainterPath::Element`, `QPageRanges::Range` and
+  `QColorSpace::PrimaryPoints` are copied structures passed by value, like
+  `QPoint`.  bindgen gives a copied structure no accessors for its public
+  fields, so `src/qt6/copied_fields.cr` adds them: `element.x`, `range.from`.
+* `QTransform#inverted` and `QMatrix4x4#inverted` take `bool *invertible =
+  nullptr`, which bindgen renders as `Bool*? = true`, so
+  `src/qt6/transform.cr` wraps them through `ext/matrix_helper.hpp`.  That
+  helper also defines `Vector3D * Matrix4x4` and its mirror, which Qt declares
+  as friends but whose definitions are deprecated and hidden by the cutoff.
+* `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
+  `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`;
+  `QGradientStops` (a list of `std::pair`) too, use `Gradient#set_color_at`.
 * Types without a mapping yet, like `QFont::Tag`, `std::chrono::nanoseconds` or
   the `QEvent` constructor tags, are ignored, which drops the methods using them.
 

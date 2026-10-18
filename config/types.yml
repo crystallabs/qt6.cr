@@ -274,6 +274,7 @@ types: # Type rewrite rules
 
   # Qt 6 types without a mapping yet
   "Qt::Disambiguated_t": { ignore: true } # Overload tag
+  "Qt::Initialization": { ignore: true } # Qt::Uninitialized constructor tag
   "std::chrono::nanoseconds": { ignore: true }
   "QElapsedTimer::Duration": { ignore: true } # std::chrono::nanoseconds
   "QVersionNumber::const_iterator": { ignore: true } # Use #segments
@@ -389,4 +390,94 @@ types: # Type rewrite rules
     ignore_methods: # Variadic, which can't be wrapped
       - setPoints
       - putPoints
+
+  # Painting and geometry.  The small value classes are copied structures,
+  # passed by value like QPoint.  (Each rule is spelled out: bindgen keeps
+  # per-type state in the rule, so a YAML alias would share it.)
+  QVector2D:
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  QVector3D:
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  QVector4D:
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  QQuaternion:
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QQuaternion::Axis":
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QQuaternion::Axes":
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  QRgba64:
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QPainterPath::Element": # Field accessors in src/qt6/copied_fields.cr
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QPageRanges::Range": # Field accessors in src/qt6/copied_fields.cr
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QColorSpace::PrimaryPoints":
+    copy_structure: true
+    generate_binding: true
+    generate_wrapper: true
+    pass_by: Value
+    kind: Struct
+  "QQuaternion::EulerAngles<float>": { ignore: true } # Template; use #get_euler_angles
+  # A typedef of QGenericMatrix<3, 3, float>, a template bindgen can't
+  # instantiate; drops Matrix4x4#normal_matrix and Quaternion#to_rotation_matrix.
+  QMatrix3x3: { ignore: true }
+  # QGradientStops is a QList<std::pair<qreal, QColor>>, no mapping for
+  # std::pair yet; use Gradient#set_color_at.
+  QGradientStop: { ignore: true }
+  QGradientStops: { ignore: true }
+  "QList<std::pair<qreal, QColor>>": { ignore: true }
+  "QGradient::QGradientData": { ignore: true } # Private union
+  "QRegion::QRegionData": { ignore: true } # Private
+  "QRegion::const_iterator": { ignore: true } # Use #rect_count and #bounding_rect
+  "QRegion::const_reverse_iterator": { ignore: true }
+  "QPicture::DataPtr": { ignore: true }
+  QTransform:
+    ignore_methods:
+      # Private, with a deduced (`auto`) return type the parser reports as the
+      # unqualified `Affine`, which no type rule matches.
+      - asAffineMatrix
+      # bindgen renders its `bool *invertible = nullptr` default as `true`,
+      # which doesn't compile: ext/matrix_helper.hpp, src/qt6/transform.cr.
+      - inverted
+  QMatrix4x4:
+    ignore_methods:
+      - inverted # Like QTransform::inverted
+  "QPixmapCache::KeyData": { ignore: true } # Private
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above
