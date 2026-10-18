@@ -486,8 +486,24 @@ extern "C" QIODevice * bg_QObject_CAST_IODevice_(QObject * _self_) {
   return bindgen_dynamic_cast<QIODevice *>(_self_);
 }
 
+extern "C" QBuffer * bg_QObject_CAST_Buffer_(QObject * _self_) {
+  return bindgen_dynamic_cast<QBuffer *>(_self_);
+}
+
 extern "C" QTimer * bg_QObject_CAST_Timer_(QObject * _self_) {
   return bindgen_dynamic_cast<QTimer *>(_self_);
+}
+
+extern "C" QFileDevice * bg_QObject_CAST_FileDevice_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFileDevice *>(_self_);
+}
+
+extern "C" QFile * bg_QObject_CAST_File_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFile *>(_self_);
+}
+
+extern "C" QFileSystemWatcher * bg_QObject_CAST_FileSystemWatcher_(QObject * _self_) {
+  return bindgen_dynamic_cast<QFileSystemWatcher *>(_self_);
 }
 
 extern "C" QMimeData * bg_QObject_CAST_MimeData_(QObject * _self_) {
@@ -506,6 +522,10 @@ extern "C" QPropertyAnimation * bg_QObject_CAST_PropertyAnimation_(QObject * _se
   return bindgen_dynamic_cast<QPropertyAnimation *>(_self_);
 }
 
+extern "C" QSaveFile * bg_QObject_CAST_SaveFile_(QObject * _self_) {
+  return bindgen_dynamic_cast<QSaveFile *>(_self_);
+}
+
 extern "C" QSettings * bg_QObject_CAST_Settings_(QObject * _self_) {
   return bindgen_dynamic_cast<QSettings *>(_self_);
 }
@@ -516,6 +536,10 @@ extern "C" QSocketNotifier * bg_QObject_CAST_SocketNotifier_(QObject * _self_) {
 
 extern "C" QSortFilterProxyModel * bg_QObject_CAST_SortFilterProxyModel_(QObject * _self_) {
   return bindgen_dynamic_cast<QSortFilterProxyModel *>(_self_);
+}
+
+extern "C" QTemporaryFile * bg_QObject_CAST_TemporaryFile_(QObject * _self_) {
+  return bindgen_dynamic_cast<QTemporaryFile *>(_self_);
 }
 
 extern "C" QScreen * bg_QObject_CAST_Screen_(QObject * _self_) {
@@ -1706,6 +1730,294 @@ extern "C" void bg_QAbstractEventDispatcher_closingDown_SUPER_(QAbstractEventDis
 
 extern "C" void bg_BgInherit_QAbstractEventDispatcher_JUMPTABLE_BgJumptable_QAbstractEventDispatcher_R(BgInherit_QAbstractEventDispatcher * _self_, const BgJumptable_QAbstractEventDispatcher & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextStream>();
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_QIODevice_X(QIODevice * device) {
+  return new (UseGC) CrystalGCWrapper<QTextStream>(device);
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_FILE_X(FILE * fileHandle) {
+  return new (UseGC) CrystalGCWrapper<QTextStream>(fileHandle);
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_FILE_X_QIODeviceBase__OpenMode(FILE * fileHandle, QIODeviceBase::OpenMode openMode) {
+  return new (UseGC) CrystalGCWrapper<QTextStream>(fileHandle, openMode);
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_const_QByteArray_R(const CrystalString array) {
+  return new (UseGC) CrystalGCWrapper<QTextStream>(([&]() { auto &&bg_value = (array); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTextStream * bg_QTextStream__CONSTRUCT_const_QByteArray_R_QIODeviceBase__OpenMode(const CrystalString array, QIODeviceBase::OpenMode openMode) {
+  return new (UseGC) CrystalGCWrapper<QTextStream>(([&]() { auto &&bg_value = (array); return QByteArray(bg_value.ptr, bg_value.size); }()), openMode);
+}
+
+extern "C" void bg_QTextStream_setEncoding_QStringConverter__Encoding(QTextStream * _self_, QStringConverter::Encoding encoding) {
+  _self_->setEncoding(encoding);
+}
+
+extern "C" QStringConverter::Encoding bg_QTextStream_encoding_(QTextStream * _self_) {
+  return _self_->encoding();
+}
+
+extern "C" void bg_QTextStream_setAutoDetectUnicode_bool(QTextStream * _self_, bool enabled) {
+  _self_->setAutoDetectUnicode(enabled);
+}
+
+extern "C" bool bg_QTextStream_autoDetectUnicode_(QTextStream * _self_) {
+  return _self_->autoDetectUnicode();
+}
+
+extern "C" void bg_QTextStream_setGenerateByteOrderMark_bool(QTextStream * _self_, bool generate) {
+  _self_->setGenerateByteOrderMark(generate);
+}
+
+extern "C" bool bg_QTextStream_generateByteOrderMark_(QTextStream * _self_) {
+  return _self_->generateByteOrderMark();
+}
+
+extern "C" void bg_QTextStream_setLocale_const_QLocale_R(QTextStream * _self_, const QLocale & locale) {
+  _self_->setLocale(locale);
+}
+
+extern "C" QLocale * bg_QTextStream_locale_(QTextStream * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QLocale>()) QLocale (_self_->locale());
+}
+
+extern "C" void bg_QTextStream_setDevice_QIODevice_X(QTextStream * _self_, QIODevice * device) {
+  _self_->setDevice(device);
+}
+
+extern "C" QIODevice * bg_QTextStream_device_(QTextStream * _self_) {
+  return _self_->device();
+}
+
+extern "C" QTextStream::Status bg_QTextStream_status_(QTextStream * _self_) {
+  return _self_->status();
+}
+
+extern "C" void bg_QTextStream_setStatus_QTextStream__Status(QTextStream * _self_, QTextStream::Status status) {
+  _self_->setStatus(status);
+}
+
+extern "C" void bg_QTextStream_resetStatus_(QTextStream * _self_) {
+  _self_->resetStatus();
+}
+
+extern "C" bool bg_QTextStream_atEnd_(QTextStream * _self_) {
+  return _self_->atEnd();
+}
+
+extern "C" void bg_QTextStream_reset_(QTextStream * _self_) {
+  _self_->reset();
+}
+
+extern "C" void bg_QTextStream_flush_(QTextStream * _self_) {
+  _self_->flush();
+}
+
+extern "C" bool bg_QTextStream_seek_qint64(QTextStream * _self_, qint64 pos) {
+  return _self_->seek(pos);
+}
+
+extern "C" qint64 bg_QTextStream_pos_(QTextStream * _self_) {
+  return _self_->pos();
+}
+
+extern "C" void bg_QTextStream_skipWhiteSpace_(QTextStream * _self_) {
+  _self_->skipWhiteSpace();
+}
+
+extern "C" CrystalString bg_QTextStream_readLine_qint64(QTextStream * _self_, qint64 maxlen) {
+  return qstring_to_crystal(_self_->readLine(maxlen));
+}
+
+extern "C" CrystalString bg_QTextStream_readAll_(QTextStream * _self_) {
+  return qstring_to_crystal(_self_->readAll());
+}
+
+extern "C" CrystalString bg_QTextStream_read_qint64(QTextStream * _self_, qint64 maxlen) {
+  return qstring_to_crystal(_self_->read(maxlen));
+}
+
+extern "C" void bg_QTextStream_setFieldAlignment_QTextStream__FieldAlignment(QTextStream * _self_, QTextStream::FieldAlignment alignment) {
+  _self_->setFieldAlignment(alignment);
+}
+
+extern "C" QTextStream::FieldAlignment bg_QTextStream_fieldAlignment_(QTextStream * _self_) {
+  return _self_->fieldAlignment();
+}
+
+extern "C" void bg_QTextStream_setPadChar_QChar(QTextStream * _self_, int32_t ch) {
+  _self_->setPadChar(QChar(ch));
+}
+
+extern "C" int32_t bg_QTextStream_padChar_(QTextStream * _self_) {
+  return static_cast<int32_t>(_self_->padChar().unicode());
+}
+
+extern "C" void bg_QTextStream_setFieldWidth_int(QTextStream * _self_, int width) {
+  _self_->setFieldWidth(width);
+}
+
+extern "C" int bg_QTextStream_fieldWidth_(QTextStream * _self_) {
+  return _self_->fieldWidth();
+}
+
+extern "C" void bg_QTextStream_setNumberFlags_QTextStream__NumberFlags(QTextStream * _self_, QTextStream::NumberFlags flags) {
+  _self_->setNumberFlags(flags);
+}
+
+extern "C" QTextStream::NumberFlags bg_QTextStream_numberFlags_(QTextStream * _self_) {
+  return _self_->numberFlags();
+}
+
+extern "C" void bg_QTextStream_setIntegerBase_int(QTextStream * _self_, int base) {
+  _self_->setIntegerBase(base);
+}
+
+extern "C" int bg_QTextStream_integerBase_(QTextStream * _self_) {
+  return _self_->integerBase();
+}
+
+extern "C" void bg_QTextStream_setRealNumberNotation_QTextStream__RealNumberNotation(QTextStream * _self_, QTextStream::RealNumberNotation notation) {
+  _self_->setRealNumberNotation(notation);
+}
+
+extern "C" QTextStream::RealNumberNotation bg_QTextStream_realNumberNotation_(QTextStream * _self_) {
+  return _self_->realNumberNotation();
+}
+
+extern "C" void bg_QTextStream_setRealNumberPrecision_int(QTextStream * _self_, int precision) {
+  _self_->setRealNumberPrecision(precision);
+}
+
+extern "C" int bg_QTextStream_realNumberPrecision_(QTextStream * _self_) {
+  return _self_->realNumberPrecision();
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_char_R(QTextStream * _self_, char & ch) {
+  return &((*_self_) >> (ch));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_short_R(QTextStream * _self_, short & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_short_R(QTextStream * _self_, unsigned short & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_int_R(QTextStream * _self_, int & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_int_R(QTextStream * _self_, unsigned int & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_long_R(QTextStream * _self_, long & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_unsigned_long_R(QTextStream * _self_, unsigned long & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_qlonglong_R(QTextStream * _self_, qlonglong & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_qulonglong_R(QTextStream * _self_, qulonglong & i) {
+  return &((*_self_) >> (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_float_R(QTextStream * _self_, float & f) {
+  return &((*_self_) >> (f));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_double_R(QTextStream * _self_, double & f) {
+  return &((*_self_) >> (f));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_rshift_char_X(QTextStream * _self_, char * c) {
+  return &((*_self_) >> (c));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_QChar(QTextStream * _self_, int32_t ch) {
+  return &((*_self_) << (QChar(ch)));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_char(QTextStream * _self_, char ch) {
+  return &((*_self_) << (ch));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_char16_t(QTextStream * _self_, char16_t ch) {
+  return &((*_self_) << (ch));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_short(QTextStream * _self_, short i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_short(QTextStream * _self_, unsigned short i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_int(QTextStream * _self_, int i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_int(QTextStream * _self_, unsigned int i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_long(QTextStream * _self_, long i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_unsigned_long(QTextStream * _self_, unsigned long i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_qlonglong(QTextStream * _self_, qlonglong i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_qulonglong(QTextStream * _self_, qulonglong i) {
+  return &((*_self_) << (i));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_float(QTextStream * _self_, float f) {
+  return &((*_self_) << (f));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_double(QTextStream * _self_, double f) {
+  return &((*_self_) << (f));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_QString_R(QTextStream * _self_, const CrystalString s) {
+  return &((*_self_) << (([&]() { auto &&bg_value = (s); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_QByteArray_R(QTextStream * _self_, const CrystalString array) {
+  return &((*_self_) << (([&]() { auto &&bg_value = (array); return QByteArray(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_char_X(QTextStream * _self_, const char * c) {
+  return &((*_self_) << (c));
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_void_X(QTextStream * _self_, const void * ptr) {
+  return &((*_self_) << (ptr));
+}
+
+extern "C" bool bg_QTextStream__CONVERT_bool_(QTextStream * _self_) {
+  return _self_->operator bool();
 }
 
 extern "C" QModelIndex * bg_QModelIndex__CONSTRUCT_() {
@@ -5041,6 +5353,422 @@ extern "C" void bg_BgInherit_QIODevice_JUMPTABLE_BgJumptable_QIODevice_R(BgInher
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QBuffer {
+  CrystalProc<const QMetaObject *> bg_QBuffer_metaObject_;
+  CrystalProc<void *, const char *> bg_QBuffer_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QBuffer_open_QIODeviceBase__OpenMode;
+  CrystalProc<void> bg_QBuffer_close_;
+  CrystalProc<qint64> bg_QBuffer_size_;
+  CrystalProc<qint64> bg_QBuffer_pos_;
+  CrystalProc<bool, qint64> bg_QBuffer_seek_qint64;
+  CrystalProc<bool> bg_QBuffer_atEnd_;
+  CrystalProc<bool> bg_QBuffer_canReadLine_;
+  CrystalProc<void, const QMetaMethod *> bg_QBuffer_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QBuffer_disconnectNotify_const_QMetaMethod_R;
+  CrystalProc<qint64, char *, qint64> bg_QBuffer_readData_char_X_qint64;
+  CrystalProc<qint64, const char *, qint64> bg_QBuffer_writeData_const_char_X_qint64;
+  CrystalProc<bool> bg_QIODevice_isSequential_;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<qint64> bg_QIODevice_bytesToWrite_;
+  CrystalProc<bool, int> bg_QIODevice_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QIODevice_waitForBytesWritten_int;
+  CrystalProc<qint64, char *, qint64> bg_QIODevice_readLineData_char_X_qint64;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+};
+struct BgInherit_QBuffer : public QBuffer {
+  using QBuffer::QBuffer;
+  BgJumptable_QBuffer bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QBuffer_metaObject_();
+    } else {
+      return QBuffer::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QBuffer_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QBuffer::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QBuffer::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QBuffer_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QBuffer::open(mode);
+    }
+  }
+  
+  void close() override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_close_.isValid()) {
+      _self_->bgJump.bg_QBuffer_close_();
+    } else {
+      QBuffer::close();
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_size_.isValid()) {
+      return _self_->bgJump.bg_QBuffer_size_();
+    } else {
+      return QBuffer::size();
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_pos_.isValid()) {
+      return _self_->bgJump.bg_QBuffer_pos_();
+    } else {
+      return QBuffer::pos();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QBuffer_seek_qint64(pos);
+    } else {
+      return QBuffer::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QBuffer_atEnd_();
+    } else {
+      return QBuffer::atEnd();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QBuffer_canReadLine_();
+    } else {
+      return QBuffer::canReadLine();
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QBuffer_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QBuffer::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QBuffer_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QBuffer::disconnectNotify(signal);
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QBuffer_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QBuffer::readData(data, maxlen);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QBuffer_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QBuffer_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QBuffer::writeData(data, len);
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_isSequential_();
+    } else {
+      return QBuffer::isSequential();
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QBuffer::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QBuffer::bytesAvailable();
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesToWrite_();
+    } else {
+      return QBuffer::bytesToWrite();
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForReadyRead_int(msecs);
+    } else {
+      return QBuffer::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForBytesWritten_int(msecs);
+    } else {
+      return QBuffer::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QBuffer::readLineData(data, maxlen);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QBuffer::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QBuffer::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QBuffer::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QBuffer::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QBuffer::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QBuffer *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QBuffer::customEvent(event);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QBuffer_metaObject_(QBuffer * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QBuffer_qt_metacast_const_char_X(QBuffer * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX(QBuffer * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QBuffer_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QBuffer::tr(s));
+}
+
+extern "C" CrystalString bg_QBuffer_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QBuffer::tr(s, c));
+}
+
+extern "C" CrystalString bg_QBuffer_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QBuffer::tr(s, c, n));
+}
+
+extern "C" QBuffer * bg_QBuffer__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QBuffer>(parent);
+}
+
+extern "C" CrystalString bg_QBuffer_buffer_(QBuffer * _self_) {
+  return qbytearray_to_crystal(_self_->buffer());
+}
+
+extern "C" void bg_QBuffer_setData_const_QByteArray_R(QBuffer * _self_, const CrystalString data) {
+  _self_->setData(([&]() { auto &&bg_value = (data); return QByteArray(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QBuffer_setData_const_char_X_qsizetype(QBuffer * _self_, const char * data, qsizetype len) {
+  _self_->setData(data, len);
+}
+
+extern "C" const CrystalString bg_QBuffer_data_(QBuffer * _self_) {
+  return qbytearray_to_crystal(_self_->data());
+}
+
+extern "C" bool bg_QBuffer_open_QIODeviceBase__OpenMode(QBuffer * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->open(mode);
+}
+
+extern "C" void bg_QBuffer_close_(QBuffer * _self_) {
+  _self_->close();
+}
+
+extern "C" qint64 bg_QBuffer_size_(QBuffer * _self_) {
+  return _self_->size();
+}
+
+extern "C" qint64 bg_QBuffer_pos_(QBuffer * _self_) {
+  return _self_->pos();
+}
+
+extern "C" bool bg_QBuffer_seek_qint64(QBuffer * _self_, qint64 pos) {
+  return _self_->seek(pos);
+}
+
+extern "C" bool bg_QBuffer_atEnd_(QBuffer * _self_) {
+  return _self_->atEnd();
+}
+
+extern "C" bool bg_QBuffer_canReadLine_(QBuffer * _self_) {
+  return _self_->canReadLine();
+}
+
+extern "C" void bg_QBuffer_connectNotify_const_QMetaMethod_R(QBuffer * _self_, const QMetaMethod & signal) {
+  _self_->connectNotify(signal);
+}
+
+extern "C" void bg_QBuffer_disconnectNotify_const_QMetaMethod_R(QBuffer * _self_, const QMetaMethod & signal) {
+  _self_->disconnectNotify(signal);
+}
+
+extern "C" qint64 bg_QBuffer_readData_char_X_qint64(QBuffer * _self_, char * data, qint64 maxlen) {
+  return _self_->readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QBuffer_writeData_const_char_X_qint64(QBuffer * _self_, const char * data, qint64 len) {
+  return _self_->writeData(data, len);
+}
+
+extern "C" const QMetaObject * bg_QBuffer_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QBuffer::staticMetaObject);
+}
+
+extern "C" bool bg_QBuffer_open_SUPER_QIODeviceBase__OpenMode(QBuffer * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->QBuffer::open(mode);
+}
+
+extern "C" void bg_QBuffer_close_SUPER_(QBuffer * _self_) {
+  _self_->QBuffer::close();
+}
+
+extern "C" qint64 bg_QBuffer_size_SUPER_(QBuffer * _self_) {
+  return _self_->QBuffer::size();
+}
+
+extern "C" qint64 bg_QBuffer_pos_SUPER_(QBuffer * _self_) {
+  return _self_->QBuffer::pos();
+}
+
+extern "C" bool bg_QBuffer_seek_SUPER_qint64(QBuffer * _self_, qint64 pos) {
+  return _self_->QBuffer::seek(pos);
+}
+
+extern "C" bool bg_QBuffer_atEnd_SUPER_(QBuffer * _self_) {
+  return _self_->QBuffer::atEnd();
+}
+
+extern "C" bool bg_QBuffer_canReadLine_SUPER_(QBuffer * _self_) {
+  return _self_->QBuffer::canReadLine();
+}
+
+extern "C" void bg_QBuffer_connectNotify_SUPER_const_QMetaMethod_R(QBuffer * _self_, const QMetaMethod & signal) {
+  _self_->QBuffer::connectNotify(signal);
+}
+
+extern "C" void bg_QBuffer_disconnectNotify_SUPER_const_QMetaMethod_R(QBuffer * _self_, const QMetaMethod & signal) {
+  _self_->QBuffer::disconnectNotify(signal);
+}
+
+extern "C" qint64 bg_QBuffer_readData_SUPER_char_X_qint64(QBuffer * _self_, char * data, qint64 maxlen) {
+  return _self_->QBuffer::readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QBuffer_writeData_SUPER_const_char_X_qint64(QBuffer * _self_, const char * data, qint64 len) {
+  return _self_->QBuffer::writeData(data, len);
+}
+
+extern "C" void bg_BgInherit_QBuffer_JUMPTABLE_BgJumptable_QBuffer_R(BgInherit_QBuffer * _self_, const BgJumptable_QBuffer & table) {
+  _self_->bgJump = (table);
+}
+
 extern "C" QLocale * bg_QLocale__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QLocale>();
 }
@@ -6919,6 +7647,1310 @@ extern "C" void bg_BgInherit_QTimer_JUMPTABLE_BgJumptable_QTimer_R(BgInherit_QTi
   _self_->bgJump = (table);
 }
 
+struct BgJumptable_QFileDevice {
+  CrystalProc<const QMetaObject *> bg_QFileDevice_metaObject_;
+  CrystalProc<void *, const char *> bg_QFileDevice_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<void> bg_QFileDevice_close_;
+  CrystalProc<bool> bg_QFileDevice_isSequential_;
+  CrystalProc<CrystalString> bg_QFileDevice_fileName_;
+  CrystalProc<qint64> bg_QFileDevice_pos_;
+  CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
+  CrystalProc<bool> bg_QFileDevice_atEnd_;
+  CrystalProc<qint64> bg_QFileDevice_size_;
+  CrystalProc<bool, qint64> bg_QFileDevice_resize_qint64;
+  CrystalProc<QFileDevice::Permissions> bg_QFileDevice_permissions_;
+  CrystalProc<bool, QFileDevice::Permissions> bg_QFileDevice_setPermissions_QFileDevice__Permissions;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readData_char_X_qint64;
+  CrystalProc<qint64, const char *, qint64> bg_QFileDevice_writeData_const_char_X_qint64;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readLineData_char_X_qint64;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QIODevice_open_QIODeviceBase__OpenMode;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<qint64> bg_QIODevice_bytesToWrite_;
+  CrystalProc<bool> bg_QIODevice_canReadLine_;
+  CrystalProc<bool, int> bg_QIODevice_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QIODevice_waitForBytesWritten_int;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFileDevice : public QFileDevice {
+  using QFileDevice::QFileDevice;
+  BgJumptable_QFileDevice bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_metaObject_();
+    } else {
+      return QFileDevice::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFileDevice::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFileDevice::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  void close() override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_close_.isValid()) {
+      _self_->bgJump.bg_QFileDevice_close_();
+    } else {
+      QFileDevice::close();
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_isSequential_();
+    } else {
+      return QFileDevice::isSequential();
+    }
+  }
+  
+  QString fileName() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_fileName_.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QFileDevice_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QFileDevice::fileName();
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_pos_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_pos_();
+    } else {
+      return QFileDevice::pos();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_seek_qint64(pos);
+    } else {
+      return QFileDevice::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_atEnd_();
+    } else {
+      return QFileDevice::atEnd();
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_size_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_size_();
+    } else {
+      return QFileDevice::size();
+    }
+  }
+  
+  bool resize(qint64 sz) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_resize_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_resize_qint64(sz);
+    } else {
+      return QFileDevice::resize(sz);
+    }
+  }
+  
+  QFileDevice::Permissions permissions() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_permissions_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_permissions_();
+    } else {
+      return QFileDevice::permissions();
+    }
+  }
+  
+  bool setPermissions(QFileDevice::Permissions permissionSpec) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_setPermissions_QFileDevice__Permissions.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_setPermissions_QFileDevice__Permissions(permissionSpec);
+    } else {
+      return QFileDevice::setPermissions(permissionSpec);
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QFileDevice::readData(data, maxlen);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QFileDevice::writeData(data, len);
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QFileDevice::readLineData(data, maxlen);
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QIODevice_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QFileDevice::open(mode);
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QFileDevice::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QFileDevice::bytesAvailable();
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesToWrite_();
+    } else {
+      return QFileDevice::bytesToWrite();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_canReadLine_();
+    } else {
+      return QFileDevice::canReadLine();
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForReadyRead_int(msecs);
+    } else {
+      return QFileDevice::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForBytesWritten_int(msecs);
+    } else {
+      return QFileDevice::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QFileDevice::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QFileDevice::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFileDevice::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFileDevice::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFileDevice::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFileDevice::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFileDevice::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFileDevice *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFileDevice::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFileDevice_metaObject_(QFileDevice * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFileDevice_qt_metacast_const_char_X(QFileDevice * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX(QFileDevice * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFileDevice_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFileDevice::tr(s));
+}
+
+extern "C" CrystalString bg_QFileDevice_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFileDevice::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFileDevice_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFileDevice::tr(s, c, n));
+}
+
+extern "C" QFileDevice::FileError bg_QFileDevice_error_(QFileDevice * _self_) {
+  return _self_->error();
+}
+
+extern "C" void bg_QFileDevice_unsetError_(QFileDevice * _self_) {
+  _self_->unsetError();
+}
+
+extern "C" void bg_QFileDevice_close_(QFileDevice * _self_) {
+  _self_->close();
+}
+
+extern "C" bool bg_QFileDevice_isSequential_(QFileDevice * _self_) {
+  return _self_->isSequential();
+}
+
+extern "C" int bg_QFileDevice_handle_(QFileDevice * _self_) {
+  return _self_->handle();
+}
+
+extern "C" CrystalString bg_QFileDevice_fileName_(QFileDevice * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" qint64 bg_QFileDevice_pos_(QFileDevice * _self_) {
+  return _self_->pos();
+}
+
+extern "C" bool bg_QFileDevice_seek_qint64(QFileDevice * _self_, qint64 pos) {
+  return _self_->seek(pos);
+}
+
+extern "C" bool bg_QFileDevice_atEnd_(QFileDevice * _self_) {
+  return _self_->atEnd();
+}
+
+extern "C" bool bg_QFileDevice_flush_(QFileDevice * _self_) {
+  return _self_->flush();
+}
+
+extern "C" qint64 bg_QFileDevice_size_(QFileDevice * _self_) {
+  return _self_->size();
+}
+
+extern "C" bool bg_QFileDevice_resize_qint64(QFileDevice * _self_, qint64 sz) {
+  return _self_->resize(sz);
+}
+
+extern "C" QFileDevice::Permissions bg_QFileDevice_permissions_(QFileDevice * _self_) {
+  return _self_->permissions();
+}
+
+extern "C" bool bg_QFileDevice_setPermissions_QFileDevice__Permissions(QFileDevice * _self_, QFileDevice::Permissions permissionSpec) {
+  return _self_->setPermissions(permissionSpec);
+}
+
+extern "C" uchar * bg_QFileDevice_map_qint64_qint64(QFileDevice * _self_, qint64 offset, qint64 size) {
+  return _self_->map(offset, size);
+}
+
+extern "C" uchar * bg_QFileDevice_map_qint64_qint64_QFileDevice__MemoryMapFlags(QFileDevice * _self_, qint64 offset, qint64 size, QFileDevice::MemoryMapFlags flags) {
+  return _self_->map(offset, size, flags);
+}
+
+extern "C" bool bg_QFileDevice_unmap_uchar_X(QFileDevice * _self_, uchar * address) {
+  return _self_->unmap(address);
+}
+
+extern "C" QDateTime * bg_QFileDevice_fileTime_QFileDevice__FileTime(QFileDevice * _self_, QFileDevice::FileTime time) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->fileTime(time));
+}
+
+extern "C" bool bg_QFileDevice_setFileTime_const_QDateTime_R_QFileDevice__FileTime(QFileDevice * _self_, const QDateTime & newDate, QFileDevice::FileTime fileTime) {
+  return _self_->setFileTime(newDate, fileTime);
+}
+
+extern "C" QFileDevice * bg_QFileDevice__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileDevice>();
+}
+
+extern "C" QFileDevice * bg_QFileDevice__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileDevice>(parent);
+}
+
+extern "C" QFileDevice * bg_QFileDevice__CONSTRUCT_QFileDevicePrivate_R_QObject_X(QFileDevicePrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileDevice>(dd, parent);
+}
+
+extern "C" qint64 bg_QFileDevice_readData_char_X_qint64(QFileDevice * _self_, char * data, qint64 maxlen) {
+  return _self_->readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QFileDevice_writeData_const_char_X_qint64(QFileDevice * _self_, const char * data, qint64 len) {
+  return _self_->writeData(data, len);
+}
+
+extern "C" qint64 bg_QFileDevice_readLineData_char_X_qint64(QFileDevice * _self_, char * data, qint64 maxlen) {
+  return _self_->readLineData(data, maxlen);
+}
+
+extern "C" const QMetaObject * bg_QFileDevice_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileDevice::staticMetaObject);
+}
+
+extern "C" void bg_QFileDevice_close_SUPER_(QFileDevice * _self_) {
+  _self_->QFileDevice::close();
+}
+
+extern "C" bool bg_QFileDevice_isSequential_SUPER_(QFileDevice * _self_) {
+  return _self_->QFileDevice::isSequential();
+}
+
+extern "C" CrystalString bg_QFileDevice_fileName_SUPER_(QFileDevice * _self_) {
+  return qstring_to_crystal(_self_->QFileDevice::fileName());
+}
+
+extern "C" qint64 bg_QFileDevice_pos_SUPER_(QFileDevice * _self_) {
+  return _self_->QFileDevice::pos();
+}
+
+extern "C" bool bg_QFileDevice_seek_SUPER_qint64(QFileDevice * _self_, qint64 pos) {
+  return _self_->QFileDevice::seek(pos);
+}
+
+extern "C" bool bg_QFileDevice_atEnd_SUPER_(QFileDevice * _self_) {
+  return _self_->QFileDevice::atEnd();
+}
+
+extern "C" qint64 bg_QFileDevice_size_SUPER_(QFileDevice * _self_) {
+  return _self_->QFileDevice::size();
+}
+
+extern "C" bool bg_QFileDevice_resize_SUPER_qint64(QFileDevice * _self_, qint64 sz) {
+  return _self_->QFileDevice::resize(sz);
+}
+
+extern "C" QFileDevice::Permissions bg_QFileDevice_permissions_SUPER_(QFileDevice * _self_) {
+  return _self_->QFileDevice::permissions();
+}
+
+extern "C" bool bg_QFileDevice_setPermissions_SUPER_QFileDevice__Permissions(QFileDevice * _self_, QFileDevice::Permissions permissionSpec) {
+  return _self_->QFileDevice::setPermissions(permissionSpec);
+}
+
+extern "C" qint64 bg_QFileDevice_readData_SUPER_char_X_qint64(QFileDevice * _self_, char * data, qint64 maxlen) {
+  return _self_->QFileDevice::readData(data, maxlen);
+}
+
+extern "C" qint64 bg_QFileDevice_writeData_SUPER_const_char_X_qint64(QFileDevice * _self_, const char * data, qint64 len) {
+  return _self_->QFileDevice::writeData(data, len);
+}
+
+extern "C" qint64 bg_QFileDevice_readLineData_SUPER_char_X_qint64(QFileDevice * _self_, char * data, qint64 maxlen) {
+  return _self_->QFileDevice::readLineData(data, maxlen);
+}
+
+extern "C" void bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(BgInherit_QFileDevice * _self_, const BgJumptable_QFileDevice & table) {
+  _self_->bgJump = (table);
+}
+
+struct BgJumptable_QFile {
+  CrystalProc<const QMetaObject *> bg_QFile_metaObject_;
+  CrystalProc<void *, const char *> bg_QFile_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<CrystalString> bg_QFile_fileName_;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QFile_open_QIODeviceBase__OpenMode;
+  CrystalProc<qint64> bg_QFile_size_;
+  CrystalProc<bool, qint64> bg_QFile_resize_qint64;
+  CrystalProc<QFileDevice::Permissions> bg_QFile_permissions_;
+  CrystalProc<bool, QFileDevice::Permissions> bg_QFile_setPermissions_QFileDevice__Permissions;
+  CrystalProc<void> bg_QFileDevice_close_;
+  CrystalProc<bool> bg_QFileDevice_isSequential_;
+  CrystalProc<qint64> bg_QFileDevice_pos_;
+  CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
+  CrystalProc<bool> bg_QFileDevice_atEnd_;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readData_char_X_qint64;
+  CrystalProc<qint64, const char *, qint64> bg_QFileDevice_writeData_const_char_X_qint64;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readLineData_char_X_qint64;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<qint64> bg_QIODevice_bytesToWrite_;
+  CrystalProc<bool> bg_QIODevice_canReadLine_;
+  CrystalProc<bool, int> bg_QIODevice_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QIODevice_waitForBytesWritten_int;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFile : public QFile {
+  using QFile::QFile;
+  BgJumptable_QFile bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFile_metaObject_();
+    } else {
+      return QFile::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFile_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFile::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFile::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QString fileName() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_fileName_.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QFile::fileName();
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QFile_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QFile::open(mode);
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_size_.isValid()) {
+      return _self_->bgJump.bg_QFile_size_();
+    } else {
+      return QFile::size();
+    }
+  }
+  
+  bool resize(qint64 sz) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_resize_qint64.isValid()) {
+      return _self_->bgJump.bg_QFile_resize_qint64(sz);
+    } else {
+      return QFile::resize(sz);
+    }
+  }
+  
+  QFileDevice::Permissions permissions() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_permissions_.isValid()) {
+      return _self_->bgJump.bg_QFile_permissions_();
+    } else {
+      return QFile::permissions();
+    }
+  }
+  
+  bool setPermissions(QFileDevice::Permissions permissionSpec) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_setPermissions_QFileDevice__Permissions.isValid()) {
+      return _self_->bgJump.bg_QFile_setPermissions_QFileDevice__Permissions(permissionSpec);
+    } else {
+      return QFile::setPermissions(permissionSpec);
+    }
+  }
+  
+  void close() override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_close_.isValid()) {
+      _self_->bgJump.bg_QFileDevice_close_();
+    } else {
+      QFile::close();
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_isSequential_();
+    } else {
+      return QFile::isSequential();
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_pos_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_pos_();
+    } else {
+      return QFile::pos();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_seek_qint64(pos);
+    } else {
+      return QFile::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_atEnd_();
+    } else {
+      return QFile::atEnd();
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QFile::readData(data, maxlen);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QFile::writeData(data, len);
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QFile::readLineData(data, maxlen);
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QFile::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QFile::bytesAvailable();
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesToWrite_();
+    } else {
+      return QFile::bytesToWrite();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_canReadLine_();
+    } else {
+      return QFile::canReadLine();
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForReadyRead_int(msecs);
+    } else {
+      return QFile::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForBytesWritten_int(msecs);
+    } else {
+      return QFile::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QFile::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QFile::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFile::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFile::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFile::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFile::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFile::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFile::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFile_metaObject_(QFile * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFile_qt_metacast_const_char_X(QFile * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX(QFile * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFile_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFile::tr(s));
+}
+
+extern "C" CrystalString bg_QFile_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFile::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFile_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFile::tr(s, c, n));
+}
+
+extern "C" QFile * bg_QFile__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFile>();
+}
+
+extern "C" QFile * bg_QFile__CONSTRUCT_const_QString_R(const CrystalString name) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFile>(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QFile * bg_QFile__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFile>(parent);
+}
+
+extern "C" QFile * bg_QFile__CONSTRUCT_const_QString_R_QObject_X(const CrystalString name, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFile>(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" CrystalString bg_QFile_fileName_(QFile * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" void bg_QFile_setFileName_const_QString_R(QFile * _self_, const CrystalString name) {
+  _self_->setFileName(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QFile_encodeName_STATIC_const_QString_R(const CrystalString fileName) {
+  return qbytearray_to_crystal(QFile::encodeName(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QFile_decodeName_STATIC_const_QByteArray_R(const CrystalString localFileName) {
+  return qstring_to_crystal(QFile::decodeName(([&]() { auto &&bg_value = (localFileName); return QByteArray(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QFile_decodeName_STATIC_const_char_X(const char * localFileName) {
+  return qstring_to_crystal(QFile::decodeName(localFileName));
+}
+
+extern "C" bool bg_QFile_exists_(QFile * _self_) {
+  return _self_->exists();
+}
+
+extern "C" bool bg_QFile_exists_STATIC_const_QString_R(const CrystalString fileName) {
+  return QFile::exists(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QFile_symLinkTarget_(QFile * _self_) {
+  return qstring_to_crystal(_self_->symLinkTarget());
+}
+
+extern "C" CrystalString bg_QFile_symLinkTarget_STATIC_const_QString_R(const CrystalString fileName) {
+  return qstring_to_crystal(QFile::symLinkTarget(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" bool bg_QFile_remove_(QFile * _self_) {
+  return _self_->remove();
+}
+
+extern "C" bool bg_QFile_remove_STATIC_const_QString_R(const CrystalString fileName) {
+  return QFile::remove(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_supportsMoveToTrash_STATIC_() {
+  return QFile::supportsMoveToTrash();
+}
+
+extern "C" bool bg_QFile_moveToTrash_(QFile * _self_) {
+  return _self_->moveToTrash();
+}
+
+extern "C" bool bg_QFile_rename_const_QString_R(QFile * _self_, const CrystalString newName) {
+  return _self_->rename(([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_rename_STATIC_const_QString_R_const_QString_R(const CrystalString oldName, const CrystalString newName) {
+  return QFile::rename(([&]() { auto &&bg_value = (oldName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_link_const_QString_R(QFile * _self_, const CrystalString newName) {
+  return _self_->link(([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_link_STATIC_const_QString_R_const_QString_R(const CrystalString fileName, const CrystalString newName) {
+  return QFile::link(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_copy_const_QString_R(QFile * _self_, const CrystalString newName) {
+  return _self_->copy(([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_copy_STATIC_const_QString_R_const_QString_R(const CrystalString fileName, const CrystalString newName) {
+  return QFile::copy(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_open_QIODeviceBase__OpenMode(QFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->open(mode);
+}
+
+extern "C" bool bg_QFile_open_QIODeviceBase__OpenMode_QFileDevice__Permissions(QFile * _self_, QIODeviceBase::OpenMode flags, QFileDevice::Permissions permissions) {
+  return _self_->open(flags, permissions);
+}
+
+extern "C" bool bg_QFile_open_FILE_X_QIODeviceBase__OpenMode(QFile * _self_, FILE * f, QIODeviceBase::OpenMode ioFlags) {
+  return _self_->open(f, ioFlags);
+}
+
+extern "C" bool bg_QFile_open_FILE_X_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(QFile * _self_, FILE * f, QIODeviceBase::OpenMode ioFlags, QFileDevice::FileHandleFlags handleFlags) {
+  return _self_->open(f, ioFlags, handleFlags);
+}
+
+extern "C" bool bg_QFile_open_int_QIODeviceBase__OpenMode(QFile * _self_, int fd, QIODeviceBase::OpenMode ioFlags) {
+  return _self_->open(fd, ioFlags);
+}
+
+extern "C" bool bg_QFile_open_int_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(QFile * _self_, int fd, QIODeviceBase::OpenMode ioFlags, QFileDevice::FileHandleFlags handleFlags) {
+  return _self_->open(fd, ioFlags, handleFlags);
+}
+
+extern "C" qint64 bg_QFile_size_(QFile * _self_) {
+  return _self_->size();
+}
+
+extern "C" bool bg_QFile_resize_qint64(QFile * _self_, qint64 sz) {
+  return _self_->resize(sz);
+}
+
+extern "C" bool bg_QFile_resize_STATIC_const_QString_R_qint64(const CrystalString filename, qint64 sz) {
+  return QFile::resize(([&]() { auto &&bg_value = (filename); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), sz);
+}
+
+extern "C" QFileDevice::Permissions bg_QFile_permissions_(QFile * _self_) {
+  return _self_->permissions();
+}
+
+extern "C" QFileDevice::Permissions bg_QFile_permissions_STATIC_const_QString_R(const CrystalString filename) {
+  return QFile::permissions(([&]() { auto &&bg_value = (filename); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFile_setPermissions_QFileDevice__Permissions(QFile * _self_, QFileDevice::Permissions permissionSpec) {
+  return _self_->setPermissions(permissionSpec);
+}
+
+extern "C" bool bg_QFile_setPermissions_STATIC_const_QString_R_QFileDevice__Permissions(const CrystalString filename, QFileDevice::Permissions permissionSpec) {
+  return QFile::setPermissions(([&]() { auto &&bg_value = (filename); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), permissionSpec);
+}
+
+extern "C" QFile * bg_QFile__CONSTRUCT_QFilePrivate_R_QObject_X(QFilePrivate & dd, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFile>(dd, parent);
+}
+
+extern "C" const QMetaObject * bg_QFile_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFile::staticMetaObject);
+}
+
+extern "C" CrystalString bg_QFile_fileName_SUPER_(QFile * _self_) {
+  return qstring_to_crystal(_self_->QFile::fileName());
+}
+
+extern "C" bool bg_QFile_open_SUPER_QIODeviceBase__OpenMode(QFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->QFile::open(mode);
+}
+
+extern "C" qint64 bg_QFile_size_SUPER_(QFile * _self_) {
+  return _self_->QFile::size();
+}
+
+extern "C" bool bg_QFile_resize_SUPER_qint64(QFile * _self_, qint64 sz) {
+  return _self_->QFile::resize(sz);
+}
+
+extern "C" QFileDevice::Permissions bg_QFile_permissions_SUPER_(QFile * _self_) {
+  return _self_->QFile::permissions();
+}
+
+extern "C" bool bg_QFile_setPermissions_SUPER_QFileDevice__Permissions(QFile * _self_, QFileDevice::Permissions permissionSpec) {
+  return _self_->QFile::setPermissions(permissionSpec);
+}
+
+extern "C" void bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(BgInherit_QFile * _self_, const BgJumptable_QFile & table) {
+  _self_->bgJump = (table);
+}
+
+extern "C" QFileInfo * bg_QFileInfo__CONSTRUCT_QFileInfoPrivate_X(QFileInfoPrivate * d) {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>(d);
+}
+
+extern "C" QFileInfo * bg_QFileInfo__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>();
+}
+
+extern "C" QFileInfo * bg_QFileInfo__CONSTRUCT_const_QString_R(const CrystalString file) {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>(([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QFileInfo * bg_QFileInfo__CONSTRUCT_const_QFileDevice_R(const QFileDevice & file) {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>(file);
+}
+
+extern "C" QFileInfo * bg_QFileInfo__CONSTRUCT_const_QDir_R_const_QString_R(const QDir & dir, const CrystalString file) {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>(dir, ([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QFileInfo * bg_QFileInfo__COPY_const_QFileInfo_R(const QFileInfo & fileinfo) {
+  return new (UseGC) CrystalGCWrapper<QFileInfo>(fileinfo);
+}
+
+extern "C" QFileInfo * bg_QFileInfo__OPERATOR_assign_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & fileinfo) {
+  return &((*_self_) = (fileinfo));
+}
+
+extern "C" void bg_QFileInfo_swap_QFileInfo_R(QFileInfo * _self_, QFileInfo & other) {
+  _self_->swap(other);
+}
+
+extern "C" void bg_QFileInfo_setFile_const_QString_R(QFileInfo * _self_, const CrystalString file) {
+  _self_->setFile(([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QFileInfo_setFile_const_QFileDevice_R(QFileInfo * _self_, const QFileDevice & file) {
+  _self_->setFile(file);
+}
+
+extern "C" void bg_QFileInfo_setFile_const_QDir_R_const_QString_R(QFileInfo * _self_, const QDir & dir, const CrystalString file) {
+  _self_->setFile(dir, ([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QFileInfo_exists_(QFileInfo * _self_) {
+  return _self_->exists();
+}
+
+extern "C" bool bg_QFileInfo_exists_STATIC_const_QString_R(const CrystalString file) {
+  return QFileInfo::exists(([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QFileInfo_refresh_(QFileInfo * _self_) {
+  _self_->refresh();
+}
+
+extern "C" CrystalString bg_QFileInfo_filePath_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->filePath());
+}
+
+extern "C" CrystalString bg_QFileInfo_absoluteFilePath_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->absoluteFilePath());
+}
+
+extern "C" CrystalString bg_QFileInfo_canonicalFilePath_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->canonicalFilePath());
+}
+
+extern "C" CrystalString bg_QFileInfo_fileName_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" CrystalString bg_QFileInfo_baseName_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->baseName());
+}
+
+extern "C" CrystalString bg_QFileInfo_completeBaseName_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->completeBaseName());
+}
+
+extern "C" CrystalString bg_QFileInfo_suffix_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->suffix());
+}
+
+extern "C" CrystalString bg_QFileInfo_bundleName_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->bundleName());
+}
+
+extern "C" CrystalString bg_QFileInfo_completeSuffix_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->completeSuffix());
+}
+
+extern "C" CrystalString bg_QFileInfo_path_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->path());
+}
+
+extern "C" CrystalString bg_QFileInfo_absolutePath_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->absolutePath());
+}
+
+extern "C" CrystalString bg_QFileInfo_canonicalPath_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->canonicalPath());
+}
+
+extern "C" QDir * bg_QFileInfo_dir_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDir>()) QDir (_self_->dir());
+}
+
+extern "C" QDir * bg_QFileInfo_absoluteDir_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDir>()) QDir (_self_->absoluteDir());
+}
+
+extern "C" bool bg_QFileInfo_isReadable_(QFileInfo * _self_) {
+  return _self_->isReadable();
+}
+
+extern "C" bool bg_QFileInfo_isWritable_(QFileInfo * _self_) {
+  return _self_->isWritable();
+}
+
+extern "C" bool bg_QFileInfo_isExecutable_(QFileInfo * _self_) {
+  return _self_->isExecutable();
+}
+
+extern "C" bool bg_QFileInfo_isHidden_(QFileInfo * _self_) {
+  return _self_->isHidden();
+}
+
+extern "C" bool bg_QFileInfo_isNativePath_(QFileInfo * _self_) {
+  return _self_->isNativePath();
+}
+
+extern "C" bool bg_QFileInfo_isRelative_(QFileInfo * _self_) {
+  return _self_->isRelative();
+}
+
+extern "C" bool bg_QFileInfo_isAbsolute_(QFileInfo * _self_) {
+  return _self_->isAbsolute();
+}
+
+extern "C" bool bg_QFileInfo_makeAbsolute_(QFileInfo * _self_) {
+  return _self_->makeAbsolute();
+}
+
+extern "C" bool bg_QFileInfo_isFile_(QFileInfo * _self_) {
+  return _self_->isFile();
+}
+
+extern "C" bool bg_QFileInfo_isDir_(QFileInfo * _self_) {
+  return _self_->isDir();
+}
+
+extern "C" bool bg_QFileInfo_isSymLink_(QFileInfo * _self_) {
+  return _self_->isSymLink();
+}
+
+extern "C" bool bg_QFileInfo_isSymbolicLink_(QFileInfo * _self_) {
+  return _self_->isSymbolicLink();
+}
+
+extern "C" bool bg_QFileInfo_isOther_(QFileInfo * _self_) {
+  return _self_->isOther();
+}
+
+extern "C" bool bg_QFileInfo_isShortcut_(QFileInfo * _self_) {
+  return _self_->isShortcut();
+}
+
+extern "C" bool bg_QFileInfo_isAlias_(QFileInfo * _self_) {
+  return _self_->isAlias();
+}
+
+extern "C" bool bg_QFileInfo_isJunction_(QFileInfo * _self_) {
+  return _self_->isJunction();
+}
+
+extern "C" bool bg_QFileInfo_isRoot_(QFileInfo * _self_) {
+  return _self_->isRoot();
+}
+
+extern "C" bool bg_QFileInfo_isBundle_(QFileInfo * _self_) {
+  return _self_->isBundle();
+}
+
+extern "C" CrystalString bg_QFileInfo_symLinkTarget_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->symLinkTarget());
+}
+
+extern "C" CrystalString bg_QFileInfo_readSymLink_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->readSymLink());
+}
+
+extern "C" CrystalString bg_QFileInfo_junctionTarget_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->junctionTarget());
+}
+
+extern "C" CrystalString bg_QFileInfo_owner_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->owner());
+}
+
+extern "C" uint bg_QFileInfo_ownerId_(QFileInfo * _self_) {
+  return _self_->ownerId();
+}
+
+extern "C" CrystalString bg_QFileInfo_group_(QFileInfo * _self_) {
+  return qstring_to_crystal(_self_->group());
+}
+
+extern "C" uint bg_QFileInfo_groupId_(QFileInfo * _self_) {
+  return _self_->groupId();
+}
+
+extern "C" bool bg_QFileInfo_permission_QFileDevice__Permissions(QFileInfo * _self_, QFileDevice::Permissions permissions) {
+  return _self_->permission(permissions);
+}
+
+extern "C" QFileDevice::Permissions bg_QFileInfo_permissions_(QFileInfo * _self_) {
+  return _self_->permissions();
+}
+
+extern "C" qint64 bg_QFileInfo_size_(QFileInfo * _self_) {
+  return _self_->size();
+}
+
+extern "C" QDateTime * bg_QFileInfo_birthTime_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->birthTime());
+}
+
+extern "C" QDateTime * bg_QFileInfo_metadataChangeTime_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->metadataChangeTime());
+}
+
+extern "C" QDateTime * bg_QFileInfo_lastModified_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->lastModified());
+}
+
+extern "C" QDateTime * bg_QFileInfo_lastRead_(QFileInfo * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->lastRead());
+}
+
+extern "C" QDateTime * bg_QFileInfo_fileTime_QFileDevice__FileTime(QFileInfo * _self_, QFileDevice::FileTime time) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->fileTime(time));
+}
+
+extern "C" QDateTime * bg_QFileInfo_birthTime_const_QTimeZone_R(QFileInfo * _self_, const QTimeZone & tz) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->birthTime(tz));
+}
+
+extern "C" QDateTime * bg_QFileInfo_metadataChangeTime_const_QTimeZone_R(QFileInfo * _self_, const QTimeZone & tz) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->metadataChangeTime(tz));
+}
+
+extern "C" QDateTime * bg_QFileInfo_lastModified_const_QTimeZone_R(QFileInfo * _self_, const QTimeZone & tz) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->lastModified(tz));
+}
+
+extern "C" QDateTime * bg_QFileInfo_lastRead_const_QTimeZone_R(QFileInfo * _self_, const QTimeZone & tz) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->lastRead(tz));
+}
+
+extern "C" QDateTime * bg_QFileInfo_fileTime_QFileDevice__FileTime_const_QTimeZone_R(QFileInfo * _self_, QFileDevice::FileTime time, const QTimeZone & tz) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (_self_->fileTime(time, tz));
+}
+
+extern "C" bool bg_QFileInfo_caching_(QFileInfo * _self_) {
+  return _self_->caching();
+}
+
+extern "C" void bg_QFileInfo_setCaching_bool(QFileInfo * _self_, bool on) {
+  _self_->setCaching(on);
+}
+
+extern "C" void bg_QFileInfo_stat_(QFileInfo * _self_) {
+  _self_->stat();
+}
+
+extern "C" bool bg_QFileInfo__OPERATOR_eq_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & rhs) {
+  return (*_self_) == (rhs);
+}
+
+extern "C" bool bg_QFileInfo__OPERATOR_ne_const_QFileInfo_R(QFileInfo * _self_, const QFileInfo & rhs) {
+  return (*_self_) != (rhs);
+}
+
 extern "C" QDir * bg_QDir__COPY_const_QDir_R(const QDir & unnamed_arg_0) {
   return new (UseGC) CrystalGCWrapper<QDir>(unnamed_arg_0);
 }
@@ -7241,6 +9273,248 @@ extern "C" bool bg_QDir__OPERATOR_eq_const_QDir_R(QDir * _self_, const QDir & rh
 
 extern "C" bool bg_QDir__OPERATOR_ne_const_QDir_R(QDir * _self_, const QDir & rhs) {
   return (*_self_) != (rhs);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QDir_R(const QDir & dir) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(dir);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QDir_R_QDirIterator__IteratorFlags(const QDir & dir, QDirIterator::IteratorFlags flags) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(dir, flags);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R(const CrystalString path) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_QDirIterator__IteratorFlags(const CrystalString path, QDirIterator::IteratorFlags flags) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), flags);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters(const CrystalString path, QDir::Filters filter) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), filter);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters_QDirIterator__IteratorFlags(const CrystalString path, QDir::Filters filter, QDirIterator::IteratorFlags flags) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), filter, flags);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R(const CrystalString path, const QList<QString> * nameFilters) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(nameFilters));
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters(const CrystalString path, const QList<QString> * nameFilters, QDir::Filters filters) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(nameFilters), filters);
+}
+
+extern "C" QDirIterator * bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters_QDirIterator__IteratorFlags(const CrystalString path, const QList<QString> * nameFilters, QDir::Filters filters, QDirIterator::IteratorFlags flags) {
+  return new (UseGC) CrystalGCWrapper<QDirIterator>(([&]() { auto &&bg_value = (path); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(nameFilters), filters, flags);
+}
+
+extern "C" CrystalString bg_QDirIterator_next_(QDirIterator * _self_) {
+  return qstring_to_crystal(_self_->next());
+}
+
+extern "C" QFileInfo * bg_QDirIterator_nextFileInfo_(QDirIterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFileInfo>()) QFileInfo (_self_->nextFileInfo());
+}
+
+extern "C" bool bg_QDirIterator_hasNext_(QDirIterator * _self_) {
+  return _self_->hasNext();
+}
+
+extern "C" CrystalString bg_QDirIterator_fileName_(QDirIterator * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" CrystalString bg_QDirIterator_filePath_(QDirIterator * _self_) {
+  return qstring_to_crystal(_self_->filePath());
+}
+
+extern "C" QFileInfo * bg_QDirIterator_fileInfo_(QDirIterator * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFileInfo>()) QFileInfo (_self_->fileInfo());
+}
+
+extern "C" CrystalString bg_QDirIterator_path_(QDirIterator * _self_) {
+  return qstring_to_crystal(_self_->path());
+}
+
+struct BgJumptable_QFileSystemWatcher {
+  CrystalProc<const QMetaObject *> bg_QFileSystemWatcher_metaObject_;
+  CrystalProc<void *, const char *> bg_QFileSystemWatcher_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QFileSystemWatcher : public QFileSystemWatcher {
+  using QFileSystemWatcher::QFileSystemWatcher;
+  BgJumptable_QFileSystemWatcher bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QFileSystemWatcher_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QFileSystemWatcher_metaObject_();
+    } else {
+      return QFileSystemWatcher::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QFileSystemWatcher_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QFileSystemWatcher_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QFileSystemWatcher::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QFileSystemWatcher::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QFileSystemWatcher::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QFileSystemWatcher::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QFileSystemWatcher::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QFileSystemWatcher::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QFileSystemWatcher::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFileSystemWatcher::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QFileSystemWatcher *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QFileSystemWatcher::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QFileSystemWatcher_metaObject_(QFileSystemWatcher * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QFileSystemWatcher_qt_metacast_const_char_X(QFileSystemWatcher * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX(QFileSystemWatcher * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QFileSystemWatcher_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QFileSystemWatcher::tr(s));
+}
+
+extern "C" CrystalString bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QFileSystemWatcher::tr(s, c));
+}
+
+extern "C" CrystalString bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QFileSystemWatcher::tr(s, c, n));
+}
+
+extern "C" QFileSystemWatcher * bg_QFileSystemWatcher__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileSystemWatcher>(parent);
+}
+
+extern "C" QFileSystemWatcher * bg_QFileSystemWatcher__CONSTRUCT_const_QStringList_R_QObject_X(const QList<QString> * paths, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QFileSystemWatcher>(*(paths), parent);
+}
+
+extern "C" bool bg_QFileSystemWatcher_addPath_const_QString_R(QFileSystemWatcher * _self_, const CrystalString file) {
+  return _self_->addPath(([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QList<QString> * bg_QFileSystemWatcher_addPaths_const_QStringList_R(QFileSystemWatcher * _self_, const QList<QString> * files) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->addPaths(*(files)));
+}
+
+extern "C" bool bg_QFileSystemWatcher_removePath_const_QString_R(QFileSystemWatcher * _self_, const CrystalString file) {
+  return _self_->removePath(([&]() { auto &&bg_value = (file); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QList<QString> * bg_QFileSystemWatcher_removePaths_const_QStringList_R(QFileSystemWatcher * _self_, const QList<QString> * files) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->removePaths(*(files)));
+}
+
+extern "C" QList<QString> * bg_QFileSystemWatcher_files_(QFileSystemWatcher * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->files());
+}
+
+extern "C" QList<QString> * bg_QFileSystemWatcher_directories_(QFileSystemWatcher * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QString_>()) Container_QList_QString_ (_self_->directories());
+}
+
+extern "C" const QMetaObject * bg_QFileSystemWatcher_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileSystemWatcher::staticMetaObject);
+}
+
+extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_fileChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::fileChanged, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+}
+
+extern "C" QMetaObject::Connection * bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(QFileSystemWatcher * _self_, CrystalProc<void, const CrystalString> _proc_) {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject::Connection>()) QMetaObject::Connection (QObject::connect(_self_, (void(QFileSystemWatcher::*)(const QString &))&QFileSystemWatcher::directoryChanged, [_proc_](const QString & path){ _proc_(qstring_to_crystal(path)); }));
+}
+
+extern "C" void bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(BgInherit_QFileSystemWatcher * _self_, const BgJumptable_QFileSystemWatcher & table) {
+  _self_->bgJump = (table);
 }
 
 extern "C" QPoint bg_QPoint__CONSTRUCT_() {
@@ -7773,6 +10047,62 @@ extern "C" bool bg_QLineF__OPERATOR_ne_const_QLine_R(QLineF * _self_, const QLin
 
 extern "C" QLineF bg_QLineF__OPERATOR_mul_const_QTransform_R(QLineF * _self_, const QTransform & m) {
   return (*_self_) * (m);
+}
+
+extern "C" QLockFile * bg_QLockFile__CONSTRUCT_const_QString_R(const CrystalString fileName) {
+  return new (UseGC) CrystalGCWrapper<QLockFile>(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" CrystalString bg_QLockFile_fileName_(QLockFile * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" bool bg_QLockFile_lock_(QLockFile * _self_) {
+  return _self_->lock();
+}
+
+extern "C" bool bg_QLockFile_tryLock_int(QLockFile * _self_, int timeout) {
+  return _self_->tryLock(timeout);
+}
+
+extern "C" void bg_QLockFile_unlock_(QLockFile * _self_) {
+  _self_->unlock();
+}
+
+extern "C" void bg_QLockFile_setStaleLockTime_int(QLockFile * _self_, int unnamed_arg_0) {
+  _self_->setStaleLockTime(unnamed_arg_0);
+}
+
+extern "C" int bg_QLockFile_staleLockTime_(QLockFile * _self_) {
+  return _self_->staleLockTime();
+}
+
+extern "C" bool bg_QLockFile_tryLock_(QLockFile * _self_) {
+  return _self_->tryLock();
+}
+
+extern "C" bool bg_QLockFile_tryLock_std__chrono__milliseconds(QLockFile * _self_, int64_t timeout) {
+  return _self_->tryLock(std::chrono::milliseconds(timeout));
+}
+
+extern "C" void bg_QLockFile_setStaleLockTime_std__chrono__milliseconds(QLockFile * _self_, int64_t value) {
+  _self_->setStaleLockTime(std::chrono::milliseconds(value));
+}
+
+extern "C" int64_t bg_QLockFile_staleLockTimeAsDuration_(QLockFile * _self_) {
+  return (_self_->staleLockTimeAsDuration().count());
+}
+
+extern "C" bool bg_QLockFile_isLocked_(QLockFile * _self_) {
+  return _self_->isLocked();
+}
+
+extern "C" bool bg_QLockFile_removeStaleLockFile_(QLockFile * _self_) {
+  return _self_->removeStaleLockFile();
+}
+
+extern "C" QLockFile::LockError bg_QLockFile_error_(QLockFile * _self_) {
+  return _self_->error();
 }
 
 extern "C" QMargins * bg_QMargins__CONSTRUCT_() {
@@ -10324,6 +12654,396 @@ extern "C" QRectF bg_QRectF__OPERATOR_sub_const_QMarginsF_R(QRectF * _self_, con
   return (*_self_) - (rhs);
 }
 
+struct BgJumptable_QSaveFile {
+  CrystalProc<const QMetaObject *> bg_QSaveFile_metaObject_;
+  CrystalProc<void *, const char *> bg_QSaveFile_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<CrystalString> bg_QSaveFile_fileName_;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QSaveFile_open_QIODeviceBase__OpenMode;
+  CrystalProc<qint64, const char *, qint64> bg_QSaveFile_writeData_const_char_X_qint64;
+  CrystalProc<bool> bg_QFileDevice_isSequential_;
+  CrystalProc<qint64> bg_QFileDevice_pos_;
+  CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
+  CrystalProc<bool> bg_QFileDevice_atEnd_;
+  CrystalProc<qint64> bg_QFileDevice_size_;
+  CrystalProc<bool, qint64> bg_QFileDevice_resize_qint64;
+  CrystalProc<QFileDevice::Permissions> bg_QFileDevice_permissions_;
+  CrystalProc<bool, QFileDevice::Permissions> bg_QFileDevice_setPermissions_QFileDevice__Permissions;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readData_char_X_qint64;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readLineData_char_X_qint64;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<qint64> bg_QIODevice_bytesToWrite_;
+  CrystalProc<bool> bg_QIODevice_canReadLine_;
+  CrystalProc<bool, int> bg_QIODevice_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QIODevice_waitForBytesWritten_int;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QSaveFile : public QSaveFile {
+  using QSaveFile::QSaveFile;
+  BgJumptable_QSaveFile bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QSaveFile_metaObject_();
+    } else {
+      return QSaveFile::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QSaveFile_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QSaveFile::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QSaveFile::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QString fileName() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_fileName_.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QSaveFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QSaveFile::fileName();
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QSaveFile_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QSaveFile::open(mode);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QSaveFile_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QSaveFile_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QSaveFile::writeData(data, len);
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_isSequential_();
+    } else {
+      return QSaveFile::isSequential();
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_pos_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_pos_();
+    } else {
+      return QSaveFile::pos();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_seek_qint64(pos);
+    } else {
+      return QSaveFile::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_atEnd_();
+    } else {
+      return QSaveFile::atEnd();
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_size_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_size_();
+    } else {
+      return QSaveFile::size();
+    }
+  }
+  
+  bool resize(qint64 sz) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_resize_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_resize_qint64(sz);
+    } else {
+      return QSaveFile::resize(sz);
+    }
+  }
+  
+  QFileDevice::Permissions permissions() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_permissions_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_permissions_();
+    } else {
+      return QSaveFile::permissions();
+    }
+  }
+  
+  bool setPermissions(QFileDevice::Permissions permissionSpec) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_setPermissions_QFileDevice__Permissions.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_setPermissions_QFileDevice__Permissions(permissionSpec);
+    } else {
+      return QSaveFile::setPermissions(permissionSpec);
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QSaveFile::readData(data, maxlen);
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QSaveFile::readLineData(data, maxlen);
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QSaveFile::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QSaveFile::bytesAvailable();
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesToWrite_();
+    } else {
+      return QSaveFile::bytesToWrite();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_canReadLine_();
+    } else {
+      return QSaveFile::canReadLine();
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForReadyRead_int(msecs);
+    } else {
+      return QSaveFile::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForBytesWritten_int(msecs);
+    } else {
+      return QSaveFile::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QSaveFile::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QSaveFile::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QSaveFile::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QSaveFile::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QSaveFile::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QSaveFile::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSaveFile::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QSaveFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QSaveFile::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QSaveFile_metaObject_(QSaveFile * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QSaveFile_qt_metacast_const_char_X(QSaveFile * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX(QSaveFile * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QSaveFile_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QSaveFile::tr(s));
+}
+
+extern "C" CrystalString bg_QSaveFile_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QSaveFile::tr(s, c));
+}
+
+extern "C" CrystalString bg_QSaveFile_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QSaveFile::tr(s, c, n));
+}
+
+extern "C" QSaveFile * bg_QSaveFile__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSaveFile>(parent);
+}
+
+extern "C" QSaveFile * bg_QSaveFile__CONSTRUCT_const_QString_R_QObject_X(const CrystalString name, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QSaveFile>(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" CrystalString bg_QSaveFile_fileName_(QSaveFile * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" void bg_QSaveFile_setFileName_const_QString_R(QSaveFile * _self_, const CrystalString name) {
+  _self_->setFileName(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QSaveFile_open_QIODeviceBase__OpenMode(QSaveFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->open(mode);
+}
+
+extern "C" bool bg_QSaveFile_commit_(QSaveFile * _self_) {
+  return _self_->commit();
+}
+
+extern "C" void bg_QSaveFile_cancelWriting_(QSaveFile * _self_) {
+  _self_->cancelWriting();
+}
+
+extern "C" void bg_QSaveFile_setDirectWriteFallback_bool(QSaveFile * _self_, bool enabled) {
+  _self_->setDirectWriteFallback(enabled);
+}
+
+extern "C" bool bg_QSaveFile_directWriteFallback_(QSaveFile * _self_) {
+  return _self_->directWriteFallback();
+}
+
+extern "C" qint64 bg_QSaveFile_writeData_const_char_X_qint64(QSaveFile * _self_, const char * data, qint64 len) {
+  return _self_->writeData(data, len);
+}
+
+extern "C" const QMetaObject * bg_QSaveFile_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QSaveFile::staticMetaObject);
+}
+
+extern "C" CrystalString bg_QSaveFile_fileName_SUPER_(QSaveFile * _self_) {
+  return qstring_to_crystal(_self_->QSaveFile::fileName());
+}
+
+extern "C" bool bg_QSaveFile_open_SUPER_QIODeviceBase__OpenMode(QSaveFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->QSaveFile::open(mode);
+}
+
+extern "C" qint64 bg_QSaveFile_writeData_SUPER_const_char_X_qint64(QSaveFile * _self_, const char * data, qint64 len) {
+  return _self_->QSaveFile::writeData(data, len);
+}
+
+extern "C" void bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(BgInherit_QSaveFile * _self_, const BgJumptable_QSaveFile & table) {
+  _self_->bgJump = (table);
+}
+
 struct BgJumptable_QSettings {
   CrystalProc<const QMetaObject *> bg_QSettings_metaObject_;
   CrystalProc<void *, const char *> bg_QSettings_qt_metacast_const_char_X;
@@ -11921,6 +14641,462 @@ extern "C" bool bg_QStandardPaths_isTestModeEnabled_STATIC_() {
 
 extern "C" const QMetaObject * bg_QStandardPaths_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStandardPaths::staticMetaObject);
+}
+
+extern "C" QTemporaryDir * bg_QTemporaryDir__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTemporaryDir>();
+}
+
+extern "C" QTemporaryDir * bg_QTemporaryDir__CONSTRUCT_const_QString_R(const CrystalString templateName) {
+  return new (UseGC) CrystalGCWrapper<QTemporaryDir>(([&]() { auto &&bg_value = (templateName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" void bg_QTemporaryDir_swap_QTemporaryDir_R(QTemporaryDir * _self_, QTemporaryDir & other) {
+  _self_->swap(other);
+}
+
+extern "C" bool bg_QTemporaryDir_isValid_(QTemporaryDir * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" CrystalString bg_QTemporaryDir_errorString_(QTemporaryDir * _self_) {
+  return qstring_to_crystal(_self_->errorString());
+}
+
+extern "C" bool bg_QTemporaryDir_autoRemove_(QTemporaryDir * _self_) {
+  return _self_->autoRemove();
+}
+
+extern "C" void bg_QTemporaryDir_setAutoRemove_bool(QTemporaryDir * _self_, bool b) {
+  _self_->setAutoRemove(b);
+}
+
+extern "C" bool bg_QTemporaryDir_remove_(QTemporaryDir * _self_) {
+  return _self_->remove();
+}
+
+extern "C" CrystalString bg_QTemporaryDir_path_(QTemporaryDir * _self_) {
+  return qstring_to_crystal(_self_->path());
+}
+
+extern "C" CrystalString bg_QTemporaryDir_filePath_const_QString_R(QTemporaryDir * _self_, const CrystalString fileName) {
+  return qstring_to_crystal(_self_->filePath(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+struct BgJumptable_QTemporaryFile {
+  CrystalProc<const QMetaObject *> bg_QTemporaryFile_metaObject_;
+  CrystalProc<void *, const char *> bg_QTemporaryFile_qt_metacast_const_char_X;
+  CrystalProc<int, QMetaObject::Call, int, void **> bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX;
+  CrystalProc<CrystalString> bg_QTemporaryFile_fileName_;
+  CrystalProc<bool, QIODeviceBase::OpenMode> bg_QTemporaryFile_open_QIODeviceBase__OpenMode;
+  CrystalProc<qint64> bg_QFile_size_;
+  CrystalProc<bool, qint64> bg_QFile_resize_qint64;
+  CrystalProc<QFileDevice::Permissions> bg_QFile_permissions_;
+  CrystalProc<bool, QFileDevice::Permissions> bg_QFile_setPermissions_QFileDevice__Permissions;
+  CrystalProc<void> bg_QFileDevice_close_;
+  CrystalProc<bool> bg_QFileDevice_isSequential_;
+  CrystalProc<qint64> bg_QFileDevice_pos_;
+  CrystalProc<bool, qint64> bg_QFileDevice_seek_qint64;
+  CrystalProc<bool> bg_QFileDevice_atEnd_;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readData_char_X_qint64;
+  CrystalProc<qint64, const char *, qint64> bg_QFileDevice_writeData_const_char_X_qint64;
+  CrystalProc<qint64, char *, qint64> bg_QFileDevice_readLineData_char_X_qint64;
+  CrystalProc<bool> bg_QIODevice_reset_;
+  CrystalProc<qint64> bg_QIODevice_bytesAvailable_;
+  CrystalProc<qint64> bg_QIODevice_bytesToWrite_;
+  CrystalProc<bool> bg_QIODevice_canReadLine_;
+  CrystalProc<bool, int> bg_QIODevice_waitForReadyRead_int;
+  CrystalProc<bool, int> bg_QIODevice_waitForBytesWritten_int;
+  CrystalProc<qint64, qint64> bg_QIODevice_skipData_qint64;
+  CrystalProc<bool, QEvent *> bg_QObject_event_QEvent_X;
+  CrystalProc<bool, QObject *, QEvent *> bg_QObject_eventFilter_QObject_X_QEvent_X;
+  CrystalProc<void, QTimerEvent *> bg_QObject_timerEvent_QTimerEvent_X;
+  CrystalProc<void, QChildEvent *> bg_QObject_childEvent_QChildEvent_X;
+  CrystalProc<void, QEvent *> bg_QObject_customEvent_QEvent_X;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_connectNotify_const_QMetaMethod_R;
+  CrystalProc<void, const QMetaMethod *> bg_QObject_disconnectNotify_const_QMetaMethod_R;
+};
+struct BgInherit_QTemporaryFile : public QTemporaryFile {
+  using QTemporaryFile::QTemporaryFile;
+  BgJumptable_QTemporaryFile bgJump;
+  const QMetaObject * metaObject() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QTemporaryFile_metaObject_.isValid()) {
+      return _self_->bgJump.bg_QTemporaryFile_metaObject_();
+    } else {
+      return QTemporaryFile::metaObject();
+    }
+  }
+  
+  void * qt_metacast(const char * unnamed_arg_0) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QTemporaryFile_qt_metacast_const_char_X.isValid()) {
+      return _self_->bgJump.bg_QTemporaryFile_qt_metacast_const_char_X(unnamed_arg_0);
+    } else {
+      return QTemporaryFile::qt_metacast(unnamed_arg_0);
+    }
+  }
+  
+  int qt_metacall(QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX.isValid()) {
+      return _self_->bgJump.bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    } else {
+      return QTemporaryFile::qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+    }
+  }
+  
+  QString fileName() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QTemporaryFile_fileName_.isValid()) {
+      return ([&]() { auto &&bg_value = (_self_->bgJump.bg_QTemporaryFile_fileName_()); return QString::fromUtf8(bg_value.ptr, bg_value.size); }());
+    } else {
+      return QTemporaryFile::fileName();
+    }
+  }
+  
+  bool open(QIODeviceBase::OpenMode mode) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QTemporaryFile_open_QIODeviceBase__OpenMode.isValid()) {
+      return _self_->bgJump.bg_QTemporaryFile_open_QIODeviceBase__OpenMode(mode);
+    } else {
+      return QTemporaryFile::open(mode);
+    }
+  }
+  
+  qint64 size() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_size_.isValid()) {
+      return _self_->bgJump.bg_QFile_size_();
+    } else {
+      return QTemporaryFile::size();
+    }
+  }
+  
+  bool resize(qint64 sz) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_resize_qint64.isValid()) {
+      return _self_->bgJump.bg_QFile_resize_qint64(sz);
+    } else {
+      return QTemporaryFile::resize(sz);
+    }
+  }
+  
+  QFileDevice::Permissions permissions() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_permissions_.isValid()) {
+      return _self_->bgJump.bg_QFile_permissions_();
+    } else {
+      return QTemporaryFile::permissions();
+    }
+  }
+  
+  bool setPermissions(QFileDevice::Permissions permissionSpec) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFile_setPermissions_QFileDevice__Permissions.isValid()) {
+      return _self_->bgJump.bg_QFile_setPermissions_QFileDevice__Permissions(permissionSpec);
+    } else {
+      return QTemporaryFile::setPermissions(permissionSpec);
+    }
+  }
+  
+  void close() override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_close_.isValid()) {
+      _self_->bgJump.bg_QFileDevice_close_();
+    } else {
+      QTemporaryFile::close();
+    }
+  }
+  
+  bool isSequential() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_isSequential_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_isSequential_();
+    } else {
+      return QTemporaryFile::isSequential();
+    }
+  }
+  
+  qint64 pos() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_pos_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_pos_();
+    } else {
+      return QTemporaryFile::pos();
+    }
+  }
+  
+  bool seek(qint64 pos) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_seek_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_seek_qint64(pos);
+    } else {
+      return QTemporaryFile::seek(pos);
+    }
+  }
+  
+  bool atEnd() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_atEnd_.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_atEnd_();
+    } else {
+      return QTemporaryFile::atEnd();
+    }
+  }
+  
+  qint64 readData(char * data, qint64 maxlen) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readData_char_X_qint64(data, maxlen);
+    } else {
+      return QTemporaryFile::readData(data, maxlen);
+    }
+  }
+  
+  qint64 writeData(const char * data, qint64 len) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_writeData_const_char_X_qint64(data, len);
+    } else {
+      return QTemporaryFile::writeData(data, len);
+    }
+  }
+  
+  qint64 readLineData(char * data, qint64 maxlen) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64.isValid()) {
+      return _self_->bgJump.bg_QFileDevice_readLineData_char_X_qint64(data, maxlen);
+    } else {
+      return QTemporaryFile::readLineData(data, maxlen);
+    }
+  }
+  
+  bool reset() override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_reset_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_reset_();
+    } else {
+      return QTemporaryFile::reset();
+    }
+  }
+  
+  qint64 bytesAvailable() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesAvailable_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesAvailable_();
+    } else {
+      return QTemporaryFile::bytesAvailable();
+    }
+  }
+  
+  qint64 bytesToWrite() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_bytesToWrite_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_bytesToWrite_();
+    } else {
+      return QTemporaryFile::bytesToWrite();
+    }
+  }
+  
+  bool canReadLine() const override {
+    const BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_canReadLine_.isValid()) {
+      return _self_->bgJump.bg_QIODevice_canReadLine_();
+    } else {
+      return QTemporaryFile::canReadLine();
+    }
+  }
+  
+  bool waitForReadyRead(int msecs) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForReadyRead_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForReadyRead_int(msecs);
+    } else {
+      return QTemporaryFile::waitForReadyRead(msecs);
+    }
+  }
+  
+  bool waitForBytesWritten(int msecs) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_waitForBytesWritten_int.isValid()) {
+      return _self_->bgJump.bg_QIODevice_waitForBytesWritten_int(msecs);
+    } else {
+      return QTemporaryFile::waitForBytesWritten(msecs);
+    }
+  }
+  
+  qint64 skipData(qint64 maxSize) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QIODevice_skipData_qint64.isValid()) {
+      return _self_->bgJump.bg_QIODevice_skipData_qint64(maxSize);
+    } else {
+      return QTemporaryFile::skipData(maxSize);
+    }
+  }
+  
+  bool event(QEvent * event) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_event_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_event_QEvent_X(event);
+    } else {
+      return QTemporaryFile::event(event);
+    }
+  }
+  
+  bool eventFilter(QObject * watched, QEvent * event) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X.isValid()) {
+      return _self_->bgJump.bg_QObject_eventFilter_QObject_X_QEvent_X(watched, event);
+    } else {
+      return QTemporaryFile::eventFilter(watched, event);
+    }
+  }
+  
+  void timerEvent(QTimerEvent * event) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_timerEvent_QTimerEvent_X(event);
+    } else {
+      QTemporaryFile::timerEvent(event);
+    }
+  }
+  
+  void childEvent(QChildEvent * event) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_childEvent_QChildEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_childEvent_QChildEvent_X(event);
+    } else {
+      QTemporaryFile::childEvent(event);
+    }
+  }
+  
+  void customEvent(QEvent * event) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_customEvent_QEvent_X.isValid()) {
+      _self_->bgJump.bg_QObject_customEvent_QEvent_X(event);
+    } else {
+      QTemporaryFile::customEvent(event);
+    }
+  }
+  
+  void connectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_connectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTemporaryFile::connectNotify(signal);
+    }
+  }
+  
+  void disconnectNotify(const QMetaMethod & signal) override {
+    BgInherit_QTemporaryFile *_self_ = this;
+    if (_self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R.isValid()) {
+      _self_->bgJump.bg_QObject_disconnectNotify_const_QMetaMethod_R(&(signal));
+    } else {
+      QTemporaryFile::disconnectNotify(signal);
+    }
+  }
+  
+};
+extern "C" const QMetaObject * bg_QTemporaryFile_metaObject_(QTemporaryFile * _self_) {
+  return _self_->metaObject();
+}
+
+extern "C" void * bg_QTemporaryFile_qt_metacast_const_char_X(QTemporaryFile * _self_, const char * unnamed_arg_0) {
+  return _self_->qt_metacast(unnamed_arg_0);
+}
+
+extern "C" int bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX(QTemporaryFile * _self_, QMetaObject::Call unnamed_arg_0, int unnamed_arg_1, void ** unnamed_arg_2) {
+  return _self_->qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2);
+}
+
+extern "C" CrystalString bg_QTemporaryFile_tr_STATIC_const_char_X(const char * s) {
+  return qstring_to_crystal(QTemporaryFile::tr(s));
+}
+
+extern "C" CrystalString bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X(const char * s, const char * c) {
+  return qstring_to_crystal(QTemporaryFile::tr(s, c));
+}
+
+extern "C" CrystalString bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X_int(const char * s, const char * c, int n) {
+  return qstring_to_crystal(QTemporaryFile::tr(s, c, n));
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTemporaryFile>();
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile__CONSTRUCT_const_QString_R(const CrystalString templateName) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTemporaryFile>(([&]() { auto &&bg_value = (templateName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile__CONSTRUCT_QObject_X(QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTemporaryFile>(parent);
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile__CONSTRUCT_const_QString_R_QObject_X(const CrystalString templateName, QObject * parent) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QTemporaryFile>(([&]() { auto &&bg_value = (templateName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
+}
+
+extern "C" bool bg_QTemporaryFile_autoRemove_(QTemporaryFile * _self_) {
+  return _self_->autoRemove();
+}
+
+extern "C" void bg_QTemporaryFile_setAutoRemove_bool(QTemporaryFile * _self_, bool b) {
+  _self_->setAutoRemove(b);
+}
+
+extern "C" bool bg_QTemporaryFile_open_(QTemporaryFile * _self_) {
+  return _self_->open();
+}
+
+extern "C" CrystalString bg_QTemporaryFile_fileName_(QTemporaryFile * _self_) {
+  return qstring_to_crystal(_self_->fileName());
+}
+
+extern "C" CrystalString bg_QTemporaryFile_fileTemplate_(QTemporaryFile * _self_) {
+  return qstring_to_crystal(_self_->fileTemplate());
+}
+
+extern "C" void bg_QTemporaryFile_setFileTemplate_const_QString_R(QTemporaryFile * _self_, const CrystalString name) {
+  _self_->setFileTemplate(([&]() { auto &&bg_value = (name); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QTemporaryFile_rename_const_QString_R(QTemporaryFile * _self_, const CrystalString newName) {
+  return _self_->rename(([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QTemporaryFile_renameOverwrite_const_QString_R(QTemporaryFile * _self_, const CrystalString newName) {
+  return _self_->renameOverwrite(([&]() { auto &&bg_value = (newName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile_createNativeFile_STATIC_const_QString_R(const CrystalString fileName) {
+  return QTemporaryFile::createNativeFile(([&]() { auto &&bg_value = (fileName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" QTemporaryFile * bg_QTemporaryFile_createNativeFile_STATIC_QFile_R(QFile & file) {
+  return QTemporaryFile::createNativeFile(file);
+}
+
+extern "C" bool bg_QTemporaryFile_open_QIODeviceBase__OpenMode(QTemporaryFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->open(mode);
+}
+
+extern "C" const QMetaObject * bg_QTemporaryFile_staticMetaObject_STATIC_GETTER_() {
+  return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTemporaryFile::staticMetaObject);
+}
+
+extern "C" CrystalString bg_QTemporaryFile_fileName_SUPER_(QTemporaryFile * _self_) {
+  return qstring_to_crystal(_self_->QTemporaryFile::fileName());
+}
+
+extern "C" bool bg_QTemporaryFile_open_SUPER_QIODeviceBase__OpenMode(QTemporaryFile * _self_, QIODeviceBase::OpenMode mode) {
+  return _self_->QTemporaryFile::open(mode);
+}
+
+extern "C" void bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(BgInherit_QTemporaryFile * _self_, const BgJumptable_QTemporaryFile & table) {
+  _self_->bgJump = (table);
 }
 
 struct BgJumptable_QPaintDevice {

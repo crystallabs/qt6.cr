@@ -476,14 +476,20 @@ module Qt
     alias QAbstractProxyModel = Void
     alias QCoreApplication = Void
     alias QIODevice = Void
+    alias QBuffer = Void
     alias QTimer = Void
+    alias QFileDevice = Void
+    alias QFile = Void
+    alias QFileSystemWatcher = Void
     alias QMimeData = Void
     alias QProcess = Void
     alias QVariantAnimation = Void
     alias QPropertyAnimation = Void
+    alias QSaveFile = Void
     alias QSettings = Void
     alias QSocketNotifier = Void
     alias QSortFilterProxyModel = Void
+    alias QTemporaryFile = Void
     alias QScreen = Void
     alias QGuiApplication = Void
     alias QTextDocument = Void
@@ -561,6 +567,9 @@ module Qt
     alias ContainerQListQAbstractEventDispatcherTimerInfo = Void
     alias QAbstractNativeEventFilter = Void
     alias QAbstractEventDispatcherPrivate = Void
+    alias QTextStream = Void
+    alias FILE = Void
+    alias QLocale = Void
     alias QModelIndex = Void
     alias QModelRoleDataSpan = Void
     alias QPersistentModelIndex = Void
@@ -612,7 +621,6 @@ module Qt
     alias QTranslator = Void
     alias QCoreApplicationPrivate = Void
     alias QIODevicePrivate = Void
-    alias QLocale = Void
     alias QDate = Void
     alias QTime = Void
     alias QDateTime = Void
@@ -626,11 +634,17 @@ module Qt
     alias QByteArrayView = Void
     alias QUrlQuery = Void
     alias ContainerQListQUrl = Void
+    alias QFileDevicePrivate = Void
+    alias QFilePrivate = Void
+    alias QFileInfo = Void
+    alias QFileInfoPrivate = Void
     alias QDir = Void
     alias QFileInfoList = Void
     alias QDirPrivate = Void
+    alias QDirIterator = Void
     alias QTransform = Void
     alias QMatrix4x4 = Void
+    alias QLockFile = Void
     alias QMargins = Void
     alias QMarginsF = Void
     alias QMetaType = Void
@@ -638,6 +652,7 @@ module Qt
     alias QEasingCurve = Void
     alias QVariantAnimationPrivate = Void
     alias QStandardPaths = Void
+    alias QTemporaryDir = Void
     alias QPaintDevice = Void
     alias QPaintEngine = Void
     alias QPainter = Void
@@ -1097,6 +1112,35 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QBuffer
+      bg_QBuffer_metaObject_ : CrystalProc
+      bg_QBuffer_qt_metacast_const_char_X : CrystalProc
+      bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QBuffer_open_QIODeviceBase__OpenMode : CrystalProc
+      bg_QBuffer_close_ : CrystalProc
+      bg_QBuffer_size_ : CrystalProc
+      bg_QBuffer_pos_ : CrystalProc
+      bg_QBuffer_seek_qint64 : CrystalProc
+      bg_QBuffer_atEnd_ : CrystalProc
+      bg_QBuffer_canReadLine_ : CrystalProc
+      bg_QBuffer_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QBuffer_disconnectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QBuffer_readData_char_X_qint64 : CrystalProc
+      bg_QBuffer_writeData_const_char_X_qint64 : CrystalProc
+      bg_QIODevice_isSequential_ : CrystalProc
+      bg_QIODevice_reset_ : CrystalProc
+      bg_QIODevice_bytesAvailable_ : CrystalProc
+      bg_QIODevice_bytesToWrite_ : CrystalProc
+      bg_QIODevice_waitForReadyRead_int : CrystalProc
+      bg_QIODevice_waitForBytesWritten_int : CrystalProc
+      bg_QIODevice_readLineData_char_X_qint64 : CrystalProc
+      bg_QIODevice_skipData_qint64 : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+    end
     struct BgJumptable_QTimer
       bg_QTimer_metaObject_ : CrystalProc
       bg_QTimer_qt_metacast_const_char_X : CrystalProc
@@ -1104,6 +1148,84 @@ module Qt
       bg_QTimer_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QFileDevice
+      bg_QFileDevice_metaObject_ : CrystalProc
+      bg_QFileDevice_qt_metacast_const_char_X : CrystalProc
+      bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QFileDevice_close_ : CrystalProc
+      bg_QFileDevice_isSequential_ : CrystalProc
+      bg_QFileDevice_fileName_ : CrystalProc
+      bg_QFileDevice_pos_ : CrystalProc
+      bg_QFileDevice_seek_qint64 : CrystalProc
+      bg_QFileDevice_atEnd_ : CrystalProc
+      bg_QFileDevice_size_ : CrystalProc
+      bg_QFileDevice_resize_qint64 : CrystalProc
+      bg_QFileDevice_permissions_ : CrystalProc
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions : CrystalProc
+      bg_QFileDevice_readData_char_X_qint64 : CrystalProc
+      bg_QFileDevice_writeData_const_char_X_qint64 : CrystalProc
+      bg_QFileDevice_readLineData_char_X_qint64 : CrystalProc
+      bg_QIODevice_open_QIODeviceBase__OpenMode : CrystalProc
+      bg_QIODevice_reset_ : CrystalProc
+      bg_QIODevice_bytesAvailable_ : CrystalProc
+      bg_QIODevice_bytesToWrite_ : CrystalProc
+      bg_QIODevice_canReadLine_ : CrystalProc
+      bg_QIODevice_waitForReadyRead_int : CrystalProc
+      bg_QIODevice_waitForBytesWritten_int : CrystalProc
+      bg_QIODevice_skipData_qint64 : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QFile
+      bg_QFile_metaObject_ : CrystalProc
+      bg_QFile_qt_metacast_const_char_X : CrystalProc
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QFile_fileName_ : CrystalProc
+      bg_QFile_open_QIODeviceBase__OpenMode : CrystalProc
+      bg_QFile_size_ : CrystalProc
+      bg_QFile_resize_qint64 : CrystalProc
+      bg_QFile_permissions_ : CrystalProc
+      bg_QFile_setPermissions_QFileDevice__Permissions : CrystalProc
+      bg_QFileDevice_close_ : CrystalProc
+      bg_QFileDevice_isSequential_ : CrystalProc
+      bg_QFileDevice_pos_ : CrystalProc
+      bg_QFileDevice_seek_qint64 : CrystalProc
+      bg_QFileDevice_atEnd_ : CrystalProc
+      bg_QFileDevice_readData_char_X_qint64 : CrystalProc
+      bg_QFileDevice_writeData_const_char_X_qint64 : CrystalProc
+      bg_QFileDevice_readLineData_char_X_qint64 : CrystalProc
+      bg_QIODevice_reset_ : CrystalProc
+      bg_QIODevice_bytesAvailable_ : CrystalProc
+      bg_QIODevice_bytesToWrite_ : CrystalProc
+      bg_QIODevice_canReadLine_ : CrystalProc
+      bg_QIODevice_waitForReadyRead_int : CrystalProc
+      bg_QIODevice_waitForBytesWritten_int : CrystalProc
+      bg_QIODevice_skipData_qint64 : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QFileSystemWatcher
+      bg_QFileSystemWatcher_metaObject_ : CrystalProc
+      bg_QFileSystemWatcher_qt_metacast_const_char_X : CrystalProc
+      bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
       bg_QObject_childEvent_QChildEvent_X : CrystalProc
       bg_QObject_customEvent_QEvent_X : CrystalProc
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
@@ -1190,6 +1312,38 @@ module Qt
       bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
       bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
     end
+    struct BgJumptable_QSaveFile
+      bg_QSaveFile_metaObject_ : CrystalProc
+      bg_QSaveFile_qt_metacast_const_char_X : CrystalProc
+      bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QSaveFile_fileName_ : CrystalProc
+      bg_QSaveFile_open_QIODeviceBase__OpenMode : CrystalProc
+      bg_QSaveFile_writeData_const_char_X_qint64 : CrystalProc
+      bg_QFileDevice_isSequential_ : CrystalProc
+      bg_QFileDevice_pos_ : CrystalProc
+      bg_QFileDevice_seek_qint64 : CrystalProc
+      bg_QFileDevice_atEnd_ : CrystalProc
+      bg_QFileDevice_size_ : CrystalProc
+      bg_QFileDevice_resize_qint64 : CrystalProc
+      bg_QFileDevice_permissions_ : CrystalProc
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions : CrystalProc
+      bg_QFileDevice_readData_char_X_qint64 : CrystalProc
+      bg_QFileDevice_readLineData_char_X_qint64 : CrystalProc
+      bg_QIODevice_reset_ : CrystalProc
+      bg_QIODevice_bytesAvailable_ : CrystalProc
+      bg_QIODevice_bytesToWrite_ : CrystalProc
+      bg_QIODevice_canReadLine_ : CrystalProc
+      bg_QIODevice_waitForReadyRead_int : CrystalProc
+      bg_QIODevice_waitForBytesWritten_int : CrystalProc
+      bg_QIODevice_skipData_qint64 : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
     struct BgJumptable_QSettings
       bg_QSettings_metaObject_ : CrystalProc
       bg_QSettings_qt_metacast_const_char_X : CrystalProc
@@ -1269,6 +1423,39 @@ module Qt
       bg_QAbstractItemModel_moveColumns_const_QModelIndex_R_int_int_const_QModelIndex_R_int : CrystalProc
       bg_QAbstractItemModel_multiData_const_QModelIndex_R_QModelRoleDataSpan : CrystalProc
       bg_QAbstractItemModel_resetInternalData_ : CrystalProc
+      bg_QObject_event_QEvent_X : CrystalProc
+      bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
+      bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
+      bg_QObject_childEvent_QChildEvent_X : CrystalProc
+      bg_QObject_customEvent_QEvent_X : CrystalProc
+      bg_QObject_connectNotify_const_QMetaMethod_R : CrystalProc
+      bg_QObject_disconnectNotify_const_QMetaMethod_R : CrystalProc
+    end
+    struct BgJumptable_QTemporaryFile
+      bg_QTemporaryFile_metaObject_ : CrystalProc
+      bg_QTemporaryFile_qt_metacast_const_char_X : CrystalProc
+      bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX : CrystalProc
+      bg_QTemporaryFile_fileName_ : CrystalProc
+      bg_QTemporaryFile_open_QIODeviceBase__OpenMode : CrystalProc
+      bg_QFile_size_ : CrystalProc
+      bg_QFile_resize_qint64 : CrystalProc
+      bg_QFile_permissions_ : CrystalProc
+      bg_QFile_setPermissions_QFileDevice__Permissions : CrystalProc
+      bg_QFileDevice_close_ : CrystalProc
+      bg_QFileDevice_isSequential_ : CrystalProc
+      bg_QFileDevice_pos_ : CrystalProc
+      bg_QFileDevice_seek_qint64 : CrystalProc
+      bg_QFileDevice_atEnd_ : CrystalProc
+      bg_QFileDevice_readData_char_X_qint64 : CrystalProc
+      bg_QFileDevice_writeData_const_char_X_qint64 : CrystalProc
+      bg_QFileDevice_readLineData_char_X_qint64 : CrystalProc
+      bg_QIODevice_reset_ : CrystalProc
+      bg_QIODevice_bytesAvailable_ : CrystalProc
+      bg_QIODevice_bytesToWrite_ : CrystalProc
+      bg_QIODevice_canReadLine_ : CrystalProc
+      bg_QIODevice_waitForReadyRead_int : CrystalProc
+      bg_QIODevice_waitForBytesWritten_int : CrystalProc
+      bg_QIODevice_skipData_qint64 : CrystalProc
       bg_QObject_event_QEvent_X : CrystalProc
       bg_QObject_eventFilter_QObject_X_QEvent_X : CrystalProc
       bg_QObject_timerEvent_QTimerEvent_X : CrystalProc
@@ -5225,14 +5412,20 @@ module Qt
     fun bg_QObject_CAST_AbstractProxyModel_(_self_ : QObject*) : QAbstractProxyModel*
     fun bg_QObject_CAST_CoreApplication_(_self_ : QObject*) : QCoreApplication*
     fun bg_QObject_CAST_IODevice_(_self_ : QObject*) : QIODevice*
+    fun bg_QObject_CAST_Buffer_(_self_ : QObject*) : QBuffer*
     fun bg_QObject_CAST_Timer_(_self_ : QObject*) : QTimer*
+    fun bg_QObject_CAST_FileDevice_(_self_ : QObject*) : QFileDevice*
+    fun bg_QObject_CAST_File_(_self_ : QObject*) : QFile*
+    fun bg_QObject_CAST_FileSystemWatcher_(_self_ : QObject*) : QFileSystemWatcher*
     fun bg_QObject_CAST_MimeData_(_self_ : QObject*) : QMimeData*
     fun bg_QObject_CAST_Process_(_self_ : QObject*) : QProcess*
     fun bg_QObject_CAST_VariantAnimation_(_self_ : QObject*) : QVariantAnimation*
     fun bg_QObject_CAST_PropertyAnimation_(_self_ : QObject*) : QPropertyAnimation*
+    fun bg_QObject_CAST_SaveFile_(_self_ : QObject*) : QSaveFile*
     fun bg_QObject_CAST_Settings_(_self_ : QObject*) : QSettings*
     fun bg_QObject_CAST_SocketNotifier_(_self_ : QObject*) : QSocketNotifier*
     fun bg_QObject_CAST_SortFilterProxyModel_(_self_ : QObject*) : QSortFilterProxyModel*
+    fun bg_QObject_CAST_TemporaryFile_(_self_ : QObject*) : QTemporaryFile*
     fun bg_QObject_CAST_Screen_(_self_ : QObject*) : QScreen*
     fun bg_QObject_CAST_GuiApplication_(_self_ : QObject*) : QGuiApplication*
     fun bg_QObject_CAST_TextDocument_(_self_ : QObject*) : QTextDocument*
@@ -5449,6 +5642,78 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAbstractEventDispatcher_JUMPTABLE_BgJumptable_QAbstractEventDispatcher_R(_self_ : QAbstractEventDispatcher*, table : BgJumptable_QAbstractEventDispatcher*) : Void
+    fun bg_QTextStream__CONSTRUCT_() : QTextStream*
+    fun bg_QTextStream__CONSTRUCT_QIODevice_X(device : QIODevice*) : QTextStream*
+    fun bg_QTextStream__CONSTRUCT_FILE_X(file_handle : FILE*) : QTextStream*
+    fun bg_QTextStream__CONSTRUCT_FILE_X_QIODeviceBase__OpenMode(file_handle : FILE*, open_mode : IODevice::OpenMode) : QTextStream*
+    fun bg_QTextStream__CONSTRUCT_const_QByteArray_R(array : CrystalString) : QTextStream*
+    fun bg_QTextStream__CONSTRUCT_const_QByteArray_R_QIODeviceBase__OpenMode(array : CrystalString, open_mode : IODevice::OpenMode) : QTextStream*
+    fun bg_QTextStream_setEncoding_QStringConverter__Encoding(_self_ : QTextStream*, encoding : StringConverter::Encoding) : Void
+    fun bg_QTextStream_encoding_(_self_ : QTextStream*) : StringConverter::Encoding
+    fun bg_QTextStream_setAutoDetectUnicode_bool(_self_ : QTextStream*, enabled : Bool) : Void
+    fun bg_QTextStream_autoDetectUnicode_(_self_ : QTextStream*) : Bool
+    fun bg_QTextStream_setGenerateByteOrderMark_bool(_self_ : QTextStream*, generate : Bool) : Void
+    fun bg_QTextStream_generateByteOrderMark_(_self_ : QTextStream*) : Bool
+    fun bg_QTextStream_setLocale_const_QLocale_R(_self_ : QTextStream*, locale : QLocale*) : Void
+    fun bg_QTextStream_locale_(_self_ : QTextStream*) : QLocale*
+    fun bg_QTextStream_setDevice_QIODevice_X(_self_ : QTextStream*, device : QIODevice*) : Void
+    fun bg_QTextStream_device_(_self_ : QTextStream*) : QIODevice*
+    fun bg_QTextStream_status_(_self_ : QTextStream*) : TextStream::Status
+    fun bg_QTextStream_setStatus_QTextStream__Status(_self_ : QTextStream*, status : TextStream::Status) : Void
+    fun bg_QTextStream_resetStatus_(_self_ : QTextStream*) : Void
+    fun bg_QTextStream_atEnd_(_self_ : QTextStream*) : Bool
+    fun bg_QTextStream_reset_(_self_ : QTextStream*) : Void
+    fun bg_QTextStream_flush_(_self_ : QTextStream*) : Void
+    fun bg_QTextStream_seek_qint64(_self_ : QTextStream*, pos : Int64) : Bool
+    fun bg_QTextStream_pos_(_self_ : QTextStream*) : Int64
+    fun bg_QTextStream_skipWhiteSpace_(_self_ : QTextStream*) : Void
+    fun bg_QTextStream_readLine_qint64(_self_ : QTextStream*, maxlen : Int64) : CrystalString
+    fun bg_QTextStream_readAll_(_self_ : QTextStream*) : CrystalString
+    fun bg_QTextStream_read_qint64(_self_ : QTextStream*, maxlen : Int64) : CrystalString
+    fun bg_QTextStream_setFieldAlignment_QTextStream__FieldAlignment(_self_ : QTextStream*, alignment : TextStream::FieldAlignment) : Void
+    fun bg_QTextStream_fieldAlignment_(_self_ : QTextStream*) : TextStream::FieldAlignment
+    fun bg_QTextStream_setPadChar_QChar(_self_ : QTextStream*, ch : Int32) : Void
+    fun bg_QTextStream_padChar_(_self_ : QTextStream*) : Int32
+    fun bg_QTextStream_setFieldWidth_int(_self_ : QTextStream*, width : Int32) : Void
+    fun bg_QTextStream_fieldWidth_(_self_ : QTextStream*) : Int32
+    fun bg_QTextStream_setNumberFlags_QTextStream__NumberFlags(_self_ : QTextStream*, flags : TextStream::NumberFlags) : Void
+    fun bg_QTextStream_numberFlags_(_self_ : QTextStream*) : TextStream::NumberFlags
+    fun bg_QTextStream_setIntegerBase_int(_self_ : QTextStream*, base : Int32) : Void
+    fun bg_QTextStream_integerBase_(_self_ : QTextStream*) : Int32
+    fun bg_QTextStream_setRealNumberNotation_QTextStream__RealNumberNotation(_self_ : QTextStream*, notation : TextStream::RealNumberNotation) : Void
+    fun bg_QTextStream_realNumberNotation_(_self_ : QTextStream*) : TextStream::RealNumberNotation
+    fun bg_QTextStream_setRealNumberPrecision_int(_self_ : QTextStream*, precision : Int32) : Void
+    fun bg_QTextStream_realNumberPrecision_(_self_ : QTextStream*) : Int32
+    fun bg_QTextStream__OPERATOR_rshift_char_R(_self_ : QTextStream*, ch : UInt8*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_short_R(_self_ : QTextStream*, i : Int16*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_unsigned_short_R(_self_ : QTextStream*, i : UInt16*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_int_R(_self_ : QTextStream*, i : Int32*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_unsigned_int_R(_self_ : QTextStream*, i : UInt32*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_long_R(_self_ : QTextStream*, i : LibC::Long*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_unsigned_long_R(_self_ : QTextStream*, i : LibC::ULong*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_qlonglong_R(_self_ : QTextStream*, i : Int64*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_qulonglong_R(_self_ : QTextStream*, i : UInt64*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_float_R(_self_ : QTextStream*, f : Float32*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_double_R(_self_ : QTextStream*, f : Float64*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_rshift_char_X(_self_ : QTextStream*, c : UInt8*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_QChar(_self_ : QTextStream*, ch : Int32) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_char(_self_ : QTextStream*, ch : UInt8) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_char16_t(_self_ : QTextStream*, ch : UInt16) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_short(_self_ : QTextStream*, i : Int16) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_unsigned_short(_self_ : QTextStream*, i : UInt16) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_int(_self_ : QTextStream*, i : Int32) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_unsigned_int(_self_ : QTextStream*, i : UInt32) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_long(_self_ : QTextStream*, i : LibC::Long) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_unsigned_long(_self_ : QTextStream*, i : LibC::ULong) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_qlonglong(_self_ : QTextStream*, i : Int64) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_qulonglong(_self_ : QTextStream*, i : UInt64) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_float(_self_ : QTextStream*, f : Float32) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_double(_self_ : QTextStream*, f : Float64) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_const_QString_R(_self_ : QTextStream*, s : CrystalString) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_const_QByteArray_R(_self_ : QTextStream*, array : CrystalString) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_const_char_X(_self_ : QTextStream*, c : UInt8*) : QTextStream*
+    fun bg_QTextStream__OPERATOR_lshift_const_void_X(_self_ : QTextStream*, ptr : Void*) : QTextStream*
+    fun bg_QTextStream__CONVERT_bool_(_self_ : QTextStream*) : Bool
     fun bg_QModelIndex__CONSTRUCT_() : QModelIndex*
     fun bg_QModelIndex_row_(_self_ : QModelIndex*) : Int32
     fun bg_QModelIndex_column_(_self_ : QModelIndex*) : Int32
@@ -6006,6 +6271,67 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QIODevice*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QIODevice*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QIODevice_JUMPTABLE_BgJumptable_QIODevice_R(_self_ : QIODevice*, table : BgJumptable_QIODevice*) : Void
+    fun bg_QBuffer_metaObject_(_self_ : QBuffer*) : QMetaObject*
+    fun bg_QBuffer_qt_metacast_const_char_X(_self_ : QBuffer*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QBuffer*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QBuffer_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QBuffer_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QBuffer_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QBuffer__CONSTRUCT_QObject_X(parent : QObject*) : QBuffer*
+    fun bg_QBuffer_buffer_(_self_ : QBuffer*) : CrystalString
+    fun bg_QBuffer_setData_const_QByteArray_R(_self_ : QBuffer*, data : CrystalString) : Void
+    fun bg_QBuffer_setData_const_char_X_qsizetype(_self_ : QBuffer*, data : UInt8*, len : Int64) : Void
+    fun bg_QBuffer_data_(_self_ : QBuffer*) : CrystalString
+    fun bg_QBuffer_open_QIODeviceBase__OpenMode(_self_ : QBuffer*, mode : IODevice::OpenMode) : Bool
+    fun bg_QBuffer_close_(_self_ : QBuffer*) : Void
+    fun bg_QBuffer_size_(_self_ : QBuffer*) : Int64
+    fun bg_QBuffer_pos_(_self_ : QBuffer*) : Int64
+    fun bg_QBuffer_seek_qint64(_self_ : QBuffer*, pos : Int64) : Bool
+    fun bg_QBuffer_atEnd_(_self_ : QBuffer*) : Bool
+    fun bg_QBuffer_canReadLine_(_self_ : QBuffer*) : Bool
+    fun bg_QBuffer_connectNotify_const_QMetaMethod_R(_self_ : QBuffer*, signal : QMetaMethod*) : Void
+    fun bg_QBuffer_disconnectNotify_const_QMetaMethod_R(_self_ : QBuffer*, signal : QMetaMethod*) : Void
+    fun bg_QBuffer_readData_char_X_qint64(_self_ : QBuffer*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QBuffer_writeData_const_char_X_qint64(_self_ : QBuffer*, data : UInt8*, len : Int64) : Int64
+    fun bg_QBuffer_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QIODevice_isSequential_(_self_ : QBuffer*) : Bool
+    fun bg_QIODevice_reset_(_self_ : QBuffer*) : Bool
+    fun bg_QIODevice_bytesAvailable_(_self_ : QBuffer*) : Int64
+    fun bg_QIODevice_bytesToWrite_(_self_ : QBuffer*) : Int64
+    fun bg_QIODevice_waitForReadyRead_int(_self_ : QBuffer*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_int(_self_ : QBuffer*, msecs : Int32) : Bool
+    fun bg_QIODevice_readLineData_char_X_qint64(_self_ : QBuffer*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_skipData_qint64(_self_ : QBuffer*, max_size : Int64) : Int64
+    fun bg_QObject_event_QEvent_X(_self_ : QBuffer*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QBuffer*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QBuffer*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QBuffer*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QBuffer*, event : QEvent*) : Void
+    fun bg_QBuffer_open_SUPER_QIODeviceBase__OpenMode(_self_ : QBuffer*, mode : IODevice::OpenMode) : Bool
+    fun bg_QBuffer_close_SUPER_(_self_ : QBuffer*) : Void
+    fun bg_QBuffer_size_SUPER_(_self_ : QBuffer*) : Int64
+    fun bg_QBuffer_pos_SUPER_(_self_ : QBuffer*) : Int64
+    fun bg_QBuffer_seek_SUPER_qint64(_self_ : QBuffer*, pos : Int64) : Bool
+    fun bg_QBuffer_atEnd_SUPER_(_self_ : QBuffer*) : Bool
+    fun bg_QBuffer_canReadLine_SUPER_(_self_ : QBuffer*) : Bool
+    fun bg_QBuffer_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QBuffer*, signal : QMetaMethod*) : Void
+    fun bg_QBuffer_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QBuffer*, signal : QMetaMethod*) : Void
+    fun bg_QBuffer_readData_SUPER_char_X_qint64(_self_ : QBuffer*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QBuffer_writeData_SUPER_const_char_X_qint64(_self_ : QBuffer*, data : UInt8*, len : Int64) : Int64
+    fun bg_QIODevice_isSequential_SUPER_(_self_ : QBuffer*) : Bool
+    fun bg_QIODevice_reset_SUPER_(_self_ : QBuffer*) : Bool
+    fun bg_QIODevice_bytesAvailable_SUPER_(_self_ : QBuffer*) : Int64
+    fun bg_QIODevice_bytesToWrite_SUPER_(_self_ : QBuffer*) : Int64
+    fun bg_QIODevice_waitForReadyRead_SUPER_int(_self_ : QBuffer*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_SUPER_int(_self_ : QBuffer*, msecs : Int32) : Bool
+    fun bg_QIODevice_readLineData_SUPER_char_X_qint64(_self_ : QBuffer*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_skipData_SUPER_qint64(_self_ : QBuffer*, max_size : Int64) : Int64
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QBuffer*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QBuffer*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QBuffer*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QBuffer*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QBuffer*, event : QEvent*) : Void
+    fun bg_BgInherit_QBuffer_JUMPTABLE_BgJumptable_QBuffer_R(_self_ : QBuffer*, table : BgJumptable_QBuffer*) : Void
     fun bg_QLocale__CONSTRUCT_() : QLocale*
     fun bg_QLocale__CONSTRUCT_const_QString_R(name : CrystalString) : QLocale*
     fun bg_QLocale__CONSTRUCT_QLocale__Language_QLocale__Territory(language : Locale::Language, territory : Locale::Territory) : QLocale*
@@ -6461,6 +6787,248 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTimer*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTimer_JUMPTABLE_BgJumptable_QTimer_R(_self_ : QTimer*, table : BgJumptable_QTimer*) : Void
+    fun bg_QFileDevice_metaObject_(_self_ : QFileDevice*) : QMetaObject*
+    fun bg_QFileDevice_qt_metacast_const_char_X(_self_ : QFileDevice*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileDevice*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QFileDevice_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QFileDevice_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QFileDevice_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QFileDevice_error_(_self_ : QFileDevice*) : FileDevice::FileError
+    fun bg_QFileDevice_unsetError_(_self_ : QFileDevice*) : Void
+    fun bg_QFileDevice_close_(_self_ : QFileDevice*) : Void
+    fun bg_QFileDevice_isSequential_(_self_ : QFileDevice*) : Bool
+    fun bg_QFileDevice_handle_(_self_ : QFileDevice*) : Int32
+    fun bg_QFileDevice_fileName_(_self_ : QFileDevice*) : CrystalString
+    fun bg_QFileDevice_pos_(_self_ : QFileDevice*) : Int64
+    fun bg_QFileDevice_seek_qint64(_self_ : QFileDevice*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_(_self_ : QFileDevice*) : Bool
+    fun bg_QFileDevice_flush_(_self_ : QFileDevice*) : Bool
+    fun bg_QFileDevice_size_(_self_ : QFileDevice*) : Int64
+    fun bg_QFileDevice_resize_qint64(_self_ : QFileDevice*, sz : Int64) : Bool
+    fun bg_QFileDevice_permissions_(_self_ : QFileDevice*) : FileDevice::Permissions
+    fun bg_QFileDevice_setPermissions_QFileDevice__Permissions(_self_ : QFileDevice*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_map_qint64_qint64(_self_ : QFileDevice*, offset : Int64, size : Int64) : UInt8*
+    fun bg_QFileDevice_map_qint64_qint64_QFileDevice__MemoryMapFlags(_self_ : QFileDevice*, offset : Int64, size : Int64, flags : FileDevice::MemoryMapFlags) : UInt8*
+    fun bg_QFileDevice_unmap_uchar_X(_self_ : QFileDevice*, address : UInt8*) : Bool
+    fun bg_QFileDevice_fileTime_QFileDevice__FileTime(_self_ : QFileDevice*, time : FileDevice::FileTime) : QDateTime*
+    fun bg_QFileDevice_setFileTime_const_QDateTime_R_QFileDevice__FileTime(_self_ : QFileDevice*, new_date : QDateTime*, file_time : FileDevice::FileTime) : Bool
+    fun bg_QFileDevice__CONSTRUCT_() : QFileDevice*
+    fun bg_QFileDevice__CONSTRUCT_QObject_X(parent : QObject*) : QFileDevice*
+    fun bg_QFileDevice__CONSTRUCT_QFileDevicePrivate_R_QObject_X(dd : QFileDevicePrivate*, parent : QObject*) : QFileDevice*
+    fun bg_QFileDevice_readData_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_const_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QIODevice_open_QIODeviceBase__OpenMode(_self_ : QFileDevice*, mode : IODevice::OpenMode) : Bool
+    fun bg_QIODevice_reset_(_self_ : QFileDevice*) : Bool
+    fun bg_QIODevice_bytesAvailable_(_self_ : QFileDevice*) : Int64
+    fun bg_QIODevice_bytesToWrite_(_self_ : QFileDevice*) : Int64
+    fun bg_QIODevice_canReadLine_(_self_ : QFileDevice*) : Bool
+    fun bg_QIODevice_waitForReadyRead_int(_self_ : QFileDevice*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_int(_self_ : QFileDevice*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_qint64(_self_ : QFileDevice*, max_size : Int64) : Int64
+    fun bg_QObject_event_QEvent_X(_self_ : QFileDevice*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QFileDevice*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QFileDevice*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QFileDevice*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QFileDevice*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFileDevice*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFileDevice*, signal : QMetaMethod*) : Void
+    fun bg_QFileDevice_close_SUPER_(_self_ : QFileDevice*) : Void
+    fun bg_QFileDevice_isSequential_SUPER_(_self_ : QFileDevice*) : Bool
+    fun bg_QFileDevice_fileName_SUPER_(_self_ : QFileDevice*) : CrystalString
+    fun bg_QFileDevice_pos_SUPER_(_self_ : QFileDevice*) : Int64
+    fun bg_QFileDevice_seek_SUPER_qint64(_self_ : QFileDevice*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_SUPER_(_self_ : QFileDevice*) : Bool
+    fun bg_QFileDevice_size_SUPER_(_self_ : QFileDevice*) : Int64
+    fun bg_QFileDevice_resize_SUPER_qint64(_self_ : QFileDevice*, sz : Int64) : Bool
+    fun bg_QFileDevice_permissions_SUPER_(_self_ : QFileDevice*) : FileDevice::Permissions
+    fun bg_QFileDevice_setPermissions_SUPER_QFileDevice__Permissions(_self_ : QFileDevice*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_readData_SUPER_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_SUPER_const_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_SUPER_char_X_qint64(_self_ : QFileDevice*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_open_SUPER_QIODeviceBase__OpenMode(_self_ : QFileDevice*, mode : IODevice::OpenMode) : Bool
+    fun bg_QIODevice_reset_SUPER_(_self_ : QFileDevice*) : Bool
+    fun bg_QIODevice_bytesAvailable_SUPER_(_self_ : QFileDevice*) : Int64
+    fun bg_QIODevice_bytesToWrite_SUPER_(_self_ : QFileDevice*) : Int64
+    fun bg_QIODevice_canReadLine_SUPER_(_self_ : QFileDevice*) : Bool
+    fun bg_QIODevice_waitForReadyRead_SUPER_int(_self_ : QFileDevice*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_SUPER_int(_self_ : QFileDevice*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_SUPER_qint64(_self_ : QFileDevice*, max_size : Int64) : Int64
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QFileDevice*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QFileDevice*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QFileDevice*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QFileDevice*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QFileDevice*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileDevice*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileDevice*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(_self_ : QFileDevice*, table : BgJumptable_QFileDevice*) : Void
+    fun bg_QFile_metaObject_(_self_ : QFile*) : QMetaObject*
+    fun bg_QFile_qt_metacast_const_char_X(_self_ : QFile*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFile*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QFile_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QFile_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QFile_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QFile__CONSTRUCT_() : QFile*
+    fun bg_QFile__CONSTRUCT_const_QString_R(name : CrystalString) : QFile*
+    fun bg_QFile__CONSTRUCT_QObject_X(parent : QObject*) : QFile*
+    fun bg_QFile__CONSTRUCT_const_QString_R_QObject_X(name : CrystalString, parent : QObject*) : QFile*
+    fun bg_QFile_fileName_(_self_ : QFile*) : CrystalString
+    fun bg_QFile_setFileName_const_QString_R(_self_ : QFile*, name : CrystalString) : Void
+    fun bg_QFile_encodeName_STATIC_const_QString_R(file_name : CrystalString) : CrystalString
+    fun bg_QFile_decodeName_STATIC_const_QByteArray_R(local_file_name : CrystalString) : CrystalString
+    fun bg_QFile_decodeName_STATIC_const_char_X(local_file_name : UInt8*) : CrystalString
+    fun bg_QFile_exists_(_self_ : QFile*) : Bool
+    fun bg_QFile_exists_STATIC_const_QString_R(file_name : CrystalString) : Bool
+    fun bg_QFile_symLinkTarget_(_self_ : QFile*) : CrystalString
+    fun bg_QFile_symLinkTarget_STATIC_const_QString_R(file_name : CrystalString) : CrystalString
+    fun bg_QFile_remove_(_self_ : QFile*) : Bool
+    fun bg_QFile_remove_STATIC_const_QString_R(file_name : CrystalString) : Bool
+    fun bg_QFile_supportsMoveToTrash_STATIC_() : Bool
+    fun bg_QFile_moveToTrash_(_self_ : QFile*) : Bool
+    fun bg_QFile_rename_const_QString_R(_self_ : QFile*, new_name : CrystalString) : Bool
+    fun bg_QFile_rename_STATIC_const_QString_R_const_QString_R(old_name : CrystalString, new_name : CrystalString) : Bool
+    fun bg_QFile_link_const_QString_R(_self_ : QFile*, new_name : CrystalString) : Bool
+    fun bg_QFile_link_STATIC_const_QString_R_const_QString_R(file_name : CrystalString, new_name : CrystalString) : Bool
+    fun bg_QFile_copy_const_QString_R(_self_ : QFile*, new_name : CrystalString) : Bool
+    fun bg_QFile_copy_STATIC_const_QString_R_const_QString_R(file_name : CrystalString, new_name : CrystalString) : Bool
+    fun bg_QFile_open_QIODeviceBase__OpenMode(_self_ : QFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QFile_open_QIODeviceBase__OpenMode_QFileDevice__Permissions(_self_ : QFile*, flags : IODevice::OpenMode, permissions : FileDevice::Permissions) : Bool
+    fun bg_QFile_open_FILE_X_QIODeviceBase__OpenMode(_self_ : QFile*, f : FILE*, io_flags : IODevice::OpenMode) : Bool
+    fun bg_QFile_open_FILE_X_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(_self_ : QFile*, f : FILE*, io_flags : IODevice::OpenMode, handle_flags : FileDevice::FileHandleFlags) : Bool
+    fun bg_QFile_open_int_QIODeviceBase__OpenMode(_self_ : QFile*, fd : Int32, io_flags : IODevice::OpenMode) : Bool
+    fun bg_QFile_open_int_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(_self_ : QFile*, fd : Int32, io_flags : IODevice::OpenMode, handle_flags : FileDevice::FileHandleFlags) : Bool
+    fun bg_QFile_size_(_self_ : QFile*) : Int64
+    fun bg_QFile_resize_qint64(_self_ : QFile*, sz : Int64) : Bool
+    fun bg_QFile_resize_STATIC_const_QString_R_qint64(filename : CrystalString, sz : Int64) : Bool
+    fun bg_QFile_permissions_(_self_ : QFile*) : FileDevice::Permissions
+    fun bg_QFile_permissions_STATIC_const_QString_R(filename : CrystalString) : FileDevice::Permissions
+    fun bg_QFile_setPermissions_QFileDevice__Permissions(_self_ : QFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFile_setPermissions_STATIC_const_QString_R_QFileDevice__Permissions(filename : CrystalString, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFile__CONSTRUCT_QFilePrivate_R_QObject_X(dd : QFilePrivate*, parent : QObject*) : QFile*
+    fun bg_QFile_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QFileDevice_close_(_self_ : QFile*) : Void
+    fun bg_QFileDevice_isSequential_(_self_ : QFile*) : Bool
+    fun bg_QFileDevice_pos_(_self_ : QFile*) : Int64
+    fun bg_QFileDevice_seek_qint64(_self_ : QFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_(_self_ : QFile*) : Bool
+    fun bg_QFileDevice_readData_char_X_qint64(_self_ : QFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_const_char_X_qint64(_self_ : QFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_char_X_qint64(_self_ : QFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_(_self_ : QFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_(_self_ : QFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_(_self_ : QFile*) : Int64
+    fun bg_QIODevice_canReadLine_(_self_ : QFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_int(_self_ : QFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_int(_self_ : QFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_qint64(_self_ : QFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_QEvent_X(_self_ : QFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
+    fun bg_QFile_fileName_SUPER_(_self_ : QFile*) : CrystalString
+    fun bg_QFile_open_SUPER_QIODeviceBase__OpenMode(_self_ : QFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QFile_size_SUPER_(_self_ : QFile*) : Int64
+    fun bg_QFile_resize_SUPER_qint64(_self_ : QFile*, sz : Int64) : Bool
+    fun bg_QFile_permissions_SUPER_(_self_ : QFile*) : FileDevice::Permissions
+    fun bg_QFile_setPermissions_SUPER_QFileDevice__Permissions(_self_ : QFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_close_SUPER_(_self_ : QFile*) : Void
+    fun bg_QFileDevice_isSequential_SUPER_(_self_ : QFile*) : Bool
+    fun bg_QFileDevice_pos_SUPER_(_self_ : QFile*) : Int64
+    fun bg_QFileDevice_seek_SUPER_qint64(_self_ : QFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_SUPER_(_self_ : QFile*) : Bool
+    fun bg_QFileDevice_readData_SUPER_char_X_qint64(_self_ : QFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_SUPER_const_char_X_qint64(_self_ : QFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_SUPER_char_X_qint64(_self_ : QFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_SUPER_(_self_ : QFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_SUPER_(_self_ : QFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_SUPER_(_self_ : QFile*) : Int64
+    fun bg_QIODevice_canReadLine_SUPER_(_self_ : QFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_SUPER_int(_self_ : QFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_SUPER_int(_self_ : QFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_SUPER_qint64(_self_ : QFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFile*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(_self_ : QFile*, table : BgJumptable_QFile*) : Void
+    fun bg_QFileInfo__CONSTRUCT_QFileInfoPrivate_X(d : QFileInfoPrivate*) : QFileInfo*
+    fun bg_QFileInfo__CONSTRUCT_() : QFileInfo*
+    fun bg_QFileInfo__CONSTRUCT_const_QString_R(file : CrystalString) : QFileInfo*
+    fun bg_QFileInfo__CONSTRUCT_const_QFileDevice_R(file : QFileDevice*) : QFileInfo*
+    fun bg_QFileInfo__CONSTRUCT_const_QDir_R_const_QString_R(dir : QDir*, file : CrystalString) : QFileInfo*
+    fun bg_QFileInfo__COPY_const_QFileInfo_R(fileinfo : QFileInfo*) : QFileInfo*
+    fun bg_QFileInfo__OPERATOR_assign_const_QFileInfo_R(_self_ : QFileInfo*, fileinfo : QFileInfo*) : QFileInfo*
+    fun bg_QFileInfo_swap_QFileInfo_R(_self_ : QFileInfo*, other : QFileInfo*) : Void
+    fun bg_QFileInfo_setFile_const_QString_R(_self_ : QFileInfo*, file : CrystalString) : Void
+    fun bg_QFileInfo_setFile_const_QFileDevice_R(_self_ : QFileInfo*, file : QFileDevice*) : Void
+    fun bg_QFileInfo_setFile_const_QDir_R_const_QString_R(_self_ : QFileInfo*, dir : QDir*, file : CrystalString) : Void
+    fun bg_QFileInfo_exists_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_exists_STATIC_const_QString_R(file : CrystalString) : Bool
+    fun bg_QFileInfo_refresh_(_self_ : QFileInfo*) : Void
+    fun bg_QFileInfo_filePath_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_absoluteFilePath_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_canonicalFilePath_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_fileName_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_baseName_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_completeBaseName_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_suffix_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_bundleName_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_completeSuffix_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_path_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_absolutePath_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_canonicalPath_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_dir_(_self_ : QFileInfo*) : QDir*
+    fun bg_QFileInfo_absoluteDir_(_self_ : QFileInfo*) : QDir*
+    fun bg_QFileInfo_isReadable_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isWritable_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isExecutable_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isHidden_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isNativePath_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isRelative_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isAbsolute_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_makeAbsolute_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isFile_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isDir_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isSymLink_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isSymbolicLink_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isOther_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isShortcut_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isAlias_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isJunction_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isRoot_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_isBundle_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_symLinkTarget_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_readSymLink_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_junctionTarget_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_owner_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_ownerId_(_self_ : QFileInfo*) : UInt32
+    fun bg_QFileInfo_group_(_self_ : QFileInfo*) : CrystalString
+    fun bg_QFileInfo_groupId_(_self_ : QFileInfo*) : UInt32
+    fun bg_QFileInfo_permission_QFileDevice__Permissions(_self_ : QFileInfo*, permissions : FileDevice::Permissions) : Bool
+    fun bg_QFileInfo_permissions_(_self_ : QFileInfo*) : FileDevice::Permissions
+    fun bg_QFileInfo_size_(_self_ : QFileInfo*) : Int64
+    fun bg_QFileInfo_birthTime_(_self_ : QFileInfo*) : QDateTime*
+    fun bg_QFileInfo_metadataChangeTime_(_self_ : QFileInfo*) : QDateTime*
+    fun bg_QFileInfo_lastModified_(_self_ : QFileInfo*) : QDateTime*
+    fun bg_QFileInfo_lastRead_(_self_ : QFileInfo*) : QDateTime*
+    fun bg_QFileInfo_fileTime_QFileDevice__FileTime(_self_ : QFileInfo*, time : FileDevice::FileTime) : QDateTime*
+    fun bg_QFileInfo_birthTime_const_QTimeZone_R(_self_ : QFileInfo*, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileInfo_metadataChangeTime_const_QTimeZone_R(_self_ : QFileInfo*, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileInfo_lastModified_const_QTimeZone_R(_self_ : QFileInfo*, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileInfo_lastRead_const_QTimeZone_R(_self_ : QFileInfo*, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileInfo_fileTime_QFileDevice__FileTime_const_QTimeZone_R(_self_ : QFileInfo*, time : FileDevice::FileTime, tz : QTimeZone*) : QDateTime*
+    fun bg_QFileInfo_caching_(_self_ : QFileInfo*) : Bool
+    fun bg_QFileInfo_setCaching_bool(_self_ : QFileInfo*, on : Bool) : Void
+    fun bg_QFileInfo_stat_(_self_ : QFileInfo*) : Void
+    fun bg_QFileInfo__OPERATOR_eq_const_QFileInfo_R(_self_ : QFileInfo*, rhs : QFileInfo*) : Bool
+    fun bg_QFileInfo__OPERATOR_ne_const_QFileInfo_R(_self_ : QFileInfo*, rhs : QFileInfo*) : Bool
     fun bg_QDir__COPY_const_QDir_R(unnamed_arg_0 : QDir*) : QDir*
     fun bg_QDir__CONSTRUCT_() : QDir*
     fun bg_QDir__CONSTRUCT_const_QString_R(path : CrystalString) : QDir*
@@ -6542,6 +7110,54 @@ module Qt
     fun bg_QDir__CONSTRUCT_QDirPrivate_R(d : QDirPrivate*) : QDir*
     fun bg_QDir__OPERATOR_eq_const_QDir_R(_self_ : QDir*, rhs : QDir*) : Bool
     fun bg_QDir__OPERATOR_ne_const_QDir_R(_self_ : QDir*, rhs : QDir*) : Bool
+    fun bg_QDirIterator__CONSTRUCT_const_QDir_R(dir : QDir*) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QDir_R_QDirIterator__IteratorFlags(dir : QDir*, flags : DirIterator::IteratorFlags) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R(path : CrystalString) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_QDirIterator__IteratorFlags(path : CrystalString, flags : DirIterator::IteratorFlags) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters(path : CrystalString, filter : Dir::Filters) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters_QDirIterator__IteratorFlags(path : CrystalString, filter : Dir::Filters, flags : DirIterator::IteratorFlags) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R(path : CrystalString, name_filters : ContainerQListQString*) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters(path : CrystalString, name_filters : ContainerQListQString*, filters : Dir::Filters) : QDirIterator*
+    fun bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters_QDirIterator__IteratorFlags(path : CrystalString, name_filters : ContainerQListQString*, filters : Dir::Filters, flags : DirIterator::IteratorFlags) : QDirIterator*
+    fun bg_QDirIterator_next_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QDirIterator_nextFileInfo_(_self_ : QDirIterator*) : QFileInfo*
+    fun bg_QDirIterator_hasNext_(_self_ : QDirIterator*) : Bool
+    fun bg_QDirIterator_fileName_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QDirIterator_filePath_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QDirIterator_fileInfo_(_self_ : QDirIterator*) : QFileInfo*
+    fun bg_QDirIterator_path_(_self_ : QDirIterator*) : CrystalString
+    fun bg_QFileSystemWatcher_metaObject_(_self_ : QFileSystemWatcher*) : QMetaObject*
+    fun bg_QFileSystemWatcher_qt_metacast_const_char_X(_self_ : QFileSystemWatcher*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QFileSystemWatcher*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QFileSystemWatcher_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QFileSystemWatcher__CONSTRUCT_QObject_X(parent : QObject*) : QFileSystemWatcher*
+    fun bg_QFileSystemWatcher__CONSTRUCT_const_QStringList_R_QObject_X(paths : ContainerQListQString*, parent : QObject*) : QFileSystemWatcher*
+    fun bg_QFileSystemWatcher_addPath_const_QString_R(_self_ : QFileSystemWatcher*, file : CrystalString) : Bool
+    fun bg_QFileSystemWatcher_addPaths_const_QStringList_R(_self_ : QFileSystemWatcher*, files : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QFileSystemWatcher_removePath_const_QString_R(_self_ : QFileSystemWatcher*, file : CrystalString) : Bool
+    fun bg_QFileSystemWatcher_removePaths_const_QStringList_R(_self_ : QFileSystemWatcher*, files : ContainerQListQString*) : ContainerQListQString*
+    fun bg_QFileSystemWatcher_files_(_self_ : QFileSystemWatcher*) : ContainerQListQString*
+    fun bg_QFileSystemWatcher_directories_(_self_ : QFileSystemWatcher*) : ContainerQListQString*
+    fun bg_QFileSystemWatcher_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QObject_event_QEvent_X(_self_ : QFileSystemWatcher*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QFileSystemWatcher*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QFileSystemWatcher*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QFileSystemWatcher*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QFileSystemWatcher*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
+    fun bg_QFileSystemWatcher_CONNECT_fileChanged_CrystalProc_void__const_QString_R_(_self_ : QFileSystemWatcher*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(_self_ : QFileSystemWatcher*, _proc_ : CrystalProc) : QMetaObjectConnection*
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QFileSystemWatcher*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QFileSystemWatcher*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QFileSystemWatcher*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QFileSystemWatcher*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QFileSystemWatcher*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFileSystemWatcher*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(_self_ : QFileSystemWatcher*, table : BgJumptable_QFileSystemWatcher*) : Void
     fun bg_QPoint__CONSTRUCT_() : QPoint
     fun bg_QPoint__CONSTRUCT_int_int(xpos : Int32, ypos : Int32) : QPoint
     fun bg_QPoint_isNull_(_self_ : QPoint*) : Bool
@@ -6675,6 +7291,20 @@ module Qt
     fun bg_QLineF__OPERATOR_eq_const_QLine_R(_self_ : QLineF*, rhs : QLine) : Bool
     fun bg_QLineF__OPERATOR_ne_const_QLine_R(_self_ : QLineF*, rhs : QLine) : Bool
     fun bg_QLineF__OPERATOR_mul_const_QTransform_R(_self_ : QLineF*, m : QTransform*) : QLineF
+    fun bg_QLockFile__CONSTRUCT_const_QString_R(file_name : CrystalString) : QLockFile*
+    fun bg_QLockFile_fileName_(_self_ : QLockFile*) : CrystalString
+    fun bg_QLockFile_lock_(_self_ : QLockFile*) : Bool
+    fun bg_QLockFile_tryLock_int(_self_ : QLockFile*, timeout : Int32) : Bool
+    fun bg_QLockFile_unlock_(_self_ : QLockFile*) : Void
+    fun bg_QLockFile_setStaleLockTime_int(_self_ : QLockFile*, unnamed_arg_0 : Int32) : Void
+    fun bg_QLockFile_staleLockTime_(_self_ : QLockFile*) : Int32
+    fun bg_QLockFile_tryLock_(_self_ : QLockFile*) : Bool
+    fun bg_QLockFile_tryLock_std__chrono__milliseconds(_self_ : QLockFile*, timeout : Int64) : Bool
+    fun bg_QLockFile_setStaleLockTime_std__chrono__milliseconds(_self_ : QLockFile*, value : Int64) : Void
+    fun bg_QLockFile_staleLockTimeAsDuration_(_self_ : QLockFile*) : Int64
+    fun bg_QLockFile_isLocked_(_self_ : QLockFile*) : Bool
+    fun bg_QLockFile_removeStaleLockFile_(_self_ : QLockFile*) : Bool
+    fun bg_QLockFile_error_(_self_ : QLockFile*) : LockFile::LockError
     fun bg_QMargins__CONSTRUCT_() : QMargins*
     fun bg_QMargins__CONSTRUCT_int_int_int_int(left : Int32, top : Int32, right : Int32, bottom : Int32) : QMargins*
     fun bg_QMargins_isNull_(_self_ : QMargins*) : Bool
@@ -7206,6 +7836,75 @@ module Qt
     fun bg_QRectF__OPERATOR_ne_const_QRect_R(_self_ : QRectF*, rhs : QRect) : Bool
     fun bg_QRectF__OPERATOR_add_const_QMarginsF_R(_self_ : QRectF*, rhs : QMarginsF*) : QRectF
     fun bg_QRectF__OPERATOR_sub_const_QMarginsF_R(_self_ : QRectF*, rhs : QMarginsF*) : QRectF
+    fun bg_QSaveFile_metaObject_(_self_ : QSaveFile*) : QMetaObject*
+    fun bg_QSaveFile_qt_metacast_const_char_X(_self_ : QSaveFile*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSaveFile*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QSaveFile_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QSaveFile_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QSaveFile_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QSaveFile__CONSTRUCT_QObject_X(parent : QObject*) : QSaveFile*
+    fun bg_QSaveFile__CONSTRUCT_const_QString_R_QObject_X(name : CrystalString, parent : QObject*) : QSaveFile*
+    fun bg_QSaveFile_fileName_(_self_ : QSaveFile*) : CrystalString
+    fun bg_QSaveFile_setFileName_const_QString_R(_self_ : QSaveFile*, name : CrystalString) : Void
+    fun bg_QSaveFile_open_QIODeviceBase__OpenMode(_self_ : QSaveFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QSaveFile_commit_(_self_ : QSaveFile*) : Bool
+    fun bg_QSaveFile_cancelWriting_(_self_ : QSaveFile*) : Void
+    fun bg_QSaveFile_setDirectWriteFallback_bool(_self_ : QSaveFile*, enabled : Bool) : Void
+    fun bg_QSaveFile_directWriteFallback_(_self_ : QSaveFile*) : Bool
+    fun bg_QSaveFile_writeData_const_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QSaveFile_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QFileDevice_isSequential_(_self_ : QSaveFile*) : Bool
+    fun bg_QFileDevice_pos_(_self_ : QSaveFile*) : Int64
+    fun bg_QFileDevice_seek_qint64(_self_ : QSaveFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_(_self_ : QSaveFile*) : Bool
+    fun bg_QFileDevice_size_(_self_ : QSaveFile*) : Int64
+    fun bg_QFileDevice_resize_qint64(_self_ : QSaveFile*, sz : Int64) : Bool
+    fun bg_QFileDevice_permissions_(_self_ : QSaveFile*) : FileDevice::Permissions
+    fun bg_QFileDevice_setPermissions_QFileDevice__Permissions(_self_ : QSaveFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_readData_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_readLineData_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_(_self_ : QSaveFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_(_self_ : QSaveFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_(_self_ : QSaveFile*) : Int64
+    fun bg_QIODevice_canReadLine_(_self_ : QSaveFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_int(_self_ : QSaveFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_int(_self_ : QSaveFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_qint64(_self_ : QSaveFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_QEvent_X(_self_ : QSaveFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QSaveFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QSaveFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QSaveFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QSaveFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
+    fun bg_QSaveFile_fileName_SUPER_(_self_ : QSaveFile*) : CrystalString
+    fun bg_QSaveFile_open_SUPER_QIODeviceBase__OpenMode(_self_ : QSaveFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QSaveFile_writeData_SUPER_const_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_isSequential_SUPER_(_self_ : QSaveFile*) : Bool
+    fun bg_QFileDevice_pos_SUPER_(_self_ : QSaveFile*) : Int64
+    fun bg_QFileDevice_seek_SUPER_qint64(_self_ : QSaveFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_SUPER_(_self_ : QSaveFile*) : Bool
+    fun bg_QFileDevice_size_SUPER_(_self_ : QSaveFile*) : Int64
+    fun bg_QFileDevice_resize_SUPER_qint64(_self_ : QSaveFile*, sz : Int64) : Bool
+    fun bg_QFileDevice_permissions_SUPER_(_self_ : QSaveFile*) : FileDevice::Permissions
+    fun bg_QFileDevice_setPermissions_SUPER_QFileDevice__Permissions(_self_ : QSaveFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_readData_SUPER_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_readLineData_SUPER_char_X_qint64(_self_ : QSaveFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_SUPER_(_self_ : QSaveFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_SUPER_(_self_ : QSaveFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_SUPER_(_self_ : QSaveFile*) : Int64
+    fun bg_QIODevice_canReadLine_SUPER_(_self_ : QSaveFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_SUPER_int(_self_ : QSaveFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_SUPER_int(_self_ : QSaveFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_SUPER_qint64(_self_ : QSaveFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QSaveFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QSaveFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QSaveFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QSaveFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QSaveFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QSaveFile*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(_self_ : QSaveFile*, table : BgJumptable_QSaveFile*) : Void
     fun bg_QSettings_metaObject_(_self_ : QSettings*) : QMetaObject*
     fun bg_QSettings_qt_metacast_const_char_X(_self_ : QSettings*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QSettings_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QSettings*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -7475,6 +8174,93 @@ module Qt
     fun bg_QStandardPaths_setTestModeEnabled_STATIC_bool(test_mode : Bool) : Void
     fun bg_QStandardPaths_isTestModeEnabled_STATIC_() : Bool
     fun bg_QStandardPaths_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QTemporaryDir__CONSTRUCT_() : QTemporaryDir*
+    fun bg_QTemporaryDir__CONSTRUCT_const_QString_R(template_name : CrystalString) : QTemporaryDir*
+    fun bg_QTemporaryDir_swap_QTemporaryDir_R(_self_ : QTemporaryDir*, other : QTemporaryDir*) : Void
+    fun bg_QTemporaryDir_isValid_(_self_ : QTemporaryDir*) : Bool
+    fun bg_QTemporaryDir_errorString_(_self_ : QTemporaryDir*) : CrystalString
+    fun bg_QTemporaryDir_autoRemove_(_self_ : QTemporaryDir*) : Bool
+    fun bg_QTemporaryDir_setAutoRemove_bool(_self_ : QTemporaryDir*, b : Bool) : Void
+    fun bg_QTemporaryDir_remove_(_self_ : QTemporaryDir*) : Bool
+    fun bg_QTemporaryDir_path_(_self_ : QTemporaryDir*) : CrystalString
+    fun bg_QTemporaryDir_filePath_const_QString_R(_self_ : QTemporaryDir*, file_name : CrystalString) : CrystalString
+    fun bg_QTemporaryFile_metaObject_(_self_ : QTemporaryFile*) : QMetaObject*
+    fun bg_QTemporaryFile_qt_metacast_const_char_X(_self_ : QTemporaryFile*, unnamed_arg_0 : UInt8*) : Void*
+    fun bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QTemporaryFile*, unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
+    fun bg_QTemporaryFile_tr_STATIC_const_char_X(s : UInt8*) : CrystalString
+    fun bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X(s : UInt8*, c : UInt8*) : CrystalString
+    fun bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X_int(s : UInt8*, c : UInt8*, n : Int32) : CrystalString
+    fun bg_QTemporaryFile__CONSTRUCT_() : QTemporaryFile*
+    fun bg_QTemporaryFile__CONSTRUCT_const_QString_R(template_name : CrystalString) : QTemporaryFile*
+    fun bg_QTemporaryFile__CONSTRUCT_QObject_X(parent : QObject*) : QTemporaryFile*
+    fun bg_QTemporaryFile__CONSTRUCT_const_QString_R_QObject_X(template_name : CrystalString, parent : QObject*) : QTemporaryFile*
+    fun bg_QTemporaryFile_autoRemove_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QTemporaryFile_setAutoRemove_bool(_self_ : QTemporaryFile*, b : Bool) : Void
+    fun bg_QTemporaryFile_open_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QTemporaryFile_fileName_(_self_ : QTemporaryFile*) : CrystalString
+    fun bg_QTemporaryFile_fileTemplate_(_self_ : QTemporaryFile*) : CrystalString
+    fun bg_QTemporaryFile_setFileTemplate_const_QString_R(_self_ : QTemporaryFile*, name : CrystalString) : Void
+    fun bg_QTemporaryFile_rename_const_QString_R(_self_ : QTemporaryFile*, new_name : CrystalString) : Bool
+    fun bg_QTemporaryFile_renameOverwrite_const_QString_R(_self_ : QTemporaryFile*, new_name : CrystalString) : Bool
+    fun bg_QTemporaryFile_createNativeFile_STATIC_const_QString_R(file_name : CrystalString) : QTemporaryFile*
+    fun bg_QTemporaryFile_createNativeFile_STATIC_QFile_R(file : QFile*) : QTemporaryFile*
+    fun bg_QTemporaryFile_open_QIODeviceBase__OpenMode(_self_ : QTemporaryFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QTemporaryFile_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QFile_size_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QFile_resize_qint64(_self_ : QTemporaryFile*, sz : Int64) : Bool
+    fun bg_QFile_permissions_(_self_ : QTemporaryFile*) : FileDevice::Permissions
+    fun bg_QFile_setPermissions_QFileDevice__Permissions(_self_ : QTemporaryFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_close_(_self_ : QTemporaryFile*) : Void
+    fun bg_QFileDevice_isSequential_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QFileDevice_pos_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QFileDevice_seek_qint64(_self_ : QTemporaryFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QFileDevice_readData_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_const_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QIODevice_canReadLine_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_int(_self_ : QTemporaryFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_int(_self_ : QTemporaryFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_qint64(_self_ : QTemporaryFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_QEvent_X(_self_ : QTemporaryFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QTemporaryFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QTemporaryFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTemporaryFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_QEvent_X(_self_ : QTemporaryFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
+    fun bg_QTemporaryFile_fileName_SUPER_(_self_ : QTemporaryFile*) : CrystalString
+    fun bg_QTemporaryFile_open_SUPER_QIODeviceBase__OpenMode(_self_ : QTemporaryFile*, mode : IODevice::OpenMode) : Bool
+    fun bg_QFile_size_SUPER_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QFile_resize_SUPER_qint64(_self_ : QTemporaryFile*, sz : Int64) : Bool
+    fun bg_QFile_permissions_SUPER_(_self_ : QTemporaryFile*) : FileDevice::Permissions
+    fun bg_QFile_setPermissions_SUPER_QFileDevice__Permissions(_self_ : QTemporaryFile*, permission_spec : FileDevice::Permissions) : Bool
+    fun bg_QFileDevice_close_SUPER_(_self_ : QTemporaryFile*) : Void
+    fun bg_QFileDevice_isSequential_SUPER_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QFileDevice_pos_SUPER_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QFileDevice_seek_SUPER_qint64(_self_ : QTemporaryFile*, pos : Int64) : Bool
+    fun bg_QFileDevice_atEnd_SUPER_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QFileDevice_readData_SUPER_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QFileDevice_writeData_SUPER_const_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, len : Int64) : Int64
+    fun bg_QFileDevice_readLineData_SUPER_char_X_qint64(_self_ : QTemporaryFile*, data : UInt8*, maxlen : Int64) : Int64
+    fun bg_QIODevice_reset_SUPER_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QIODevice_bytesAvailable_SUPER_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QIODevice_bytesToWrite_SUPER_(_self_ : QTemporaryFile*) : Int64
+    fun bg_QIODevice_canReadLine_SUPER_(_self_ : QTemporaryFile*) : Bool
+    fun bg_QIODevice_waitForReadyRead_SUPER_int(_self_ : QTemporaryFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_waitForBytesWritten_SUPER_int(_self_ : QTemporaryFile*, msecs : Int32) : Bool
+    fun bg_QIODevice_skipData_SUPER_qint64(_self_ : QTemporaryFile*, max_size : Int64) : Int64
+    fun bg_QObject_event_SUPER_QEvent_X(_self_ : QTemporaryFile*, event : QEvent*) : Bool
+    fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QTemporaryFile*, watched : QObject*, event : QEvent*) : Bool
+    fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QTemporaryFile*, event : QTimerEvent*) : Void
+    fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTemporaryFile*, event : QChildEvent*) : Void
+    fun bg_QObject_customEvent_SUPER_QEvent_X(_self_ : QTemporaryFile*, event : QEvent*) : Void
+    fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
+    fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTemporaryFile*, signal : QMetaMethod*) : Void
+    fun bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(_self_ : QTemporaryFile*, table : BgJumptable_QTemporaryFile*) : Void
     fun bg_QPaintDevice_devType_(_self_ : QPaintDevice*) : Int32
     fun bg_QPaintDevice_paintingActive_(_self_ : QPaintDevice*) : Bool
     fun bg_QPaintDevice_paintEngine_(_self_ : QPaintDevice*) : QPaintEngine*
@@ -20861,8 +21647,16 @@ module Qt
         Binding.bg_QObject_CAST_CoreApplication_(self).try {|ptr| CoreApplication.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == IODevice %}
         Binding.bg_QObject_CAST_IODevice_(self).try {|ptr| IODevice.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == Buffer %}
+        Binding.bg_QObject_CAST_Buffer_(self).try {|ptr| Buffer.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Timer %}
         Binding.bg_QObject_CAST_Timer_(self).try {|ptr| Timer.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == FileDevice %}
+        Binding.bg_QObject_CAST_FileDevice_(self).try {|ptr| FileDevice.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == File %}
+        Binding.bg_QObject_CAST_File_(self).try {|ptr| File.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == FileSystemWatcher %}
+        Binding.bg_QObject_CAST_FileSystemWatcher_(self).try {|ptr| FileSystemWatcher.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == MimeData %}
         Binding.bg_QObject_CAST_MimeData_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Process %}
@@ -20871,12 +21665,16 @@ module Qt
         Binding.bg_QObject_CAST_VariantAnimation_(self).try {|ptr| VariantAnimation.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == PropertyAnimation %}
         Binding.bg_QObject_CAST_PropertyAnimation_(self).try {|ptr| PropertyAnimation.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == SaveFile %}
+        Binding.bg_QObject_CAST_SaveFile_(self).try {|ptr| SaveFile.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Settings %}
         Binding.bg_QObject_CAST_Settings_(self).try {|ptr| Settings.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SocketNotifier %}
         Binding.bg_QObject_CAST_SocketNotifier_(self).try {|ptr| SocketNotifier.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == SortFilterProxyModel %}
         Binding.bg_QObject_CAST_SortFilterProxyModel_(self).try {|ptr| SortFilterProxyModel.new(unwrap: ptr) unless ptr.null?}
+      {% elsif T == TemporaryFile %}
+        Binding.bg_QObject_CAST_TemporaryFile_(self).try {|ptr| TemporaryFile.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == Screen %}
         Binding.bg_QObject_CAST_Screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
       {% elsif T == GuiApplication %}
@@ -21958,6 +22756,344 @@ module Qt
     
   end
   module QAbstractEventDispatcher
+  end
+  class TextStream
+    @unwrap : Binding::QTextStream*
+    
+    def initialize()
+      result = Binding.bg_QTextStream__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(device : IODevice)
+      result = Binding.bg_QTextStream__CONSTRUCT_QIODevice_X(device)
+    @unwrap = result
+    end
+    
+    def initialize(file_handle : Binding::FILE*)
+      result = Binding.bg_QTextStream__CONSTRUCT_FILE_X(file_handle)
+    @unwrap = result
+    end
+    
+    def initialize(file_handle : Binding::FILE*, open_mode : IODevice::OpenMode)
+      result = Binding.bg_QTextStream__CONSTRUCT_FILE_X_QIODeviceBase__OpenMode(file_handle, open_mode)
+    @unwrap = result
+    end
+    
+    def initialize(array : Bytes)
+      result = Binding.bg_QTextStream__CONSTRUCT_const_QByteArray_R(Qt::Converter::QByteArray.wrap(array))
+    @unwrap = result
+    end
+    
+    def initialize(array : Bytes, open_mode : IODevice::OpenMode)
+      result = Binding.bg_QTextStream__CONSTRUCT_const_QByteArray_R_QIODeviceBase__OpenMode(Qt::Converter::QByteArray.wrap(array), open_mode)
+    @unwrap = result
+    end
+    
+    def encoding=(encoding : StringConverter::Encoding) : Void
+      Binding.bg_QTextStream_setEncoding_QStringConverter__Encoding(self, encoding)
+    end
+    
+    def encoding() : StringConverter::Encoding
+      Binding.bg_QTextStream_encoding_(self)
+    end
+    
+    def auto_detect_unicode=(enabled : Bool) : Void
+      Binding.bg_QTextStream_setAutoDetectUnicode_bool(self, enabled)
+    end
+    
+    def auto_detect_unicode() : Bool
+      Binding.bg_QTextStream_autoDetectUnicode_(self)
+    end
+    
+    def generate_byte_order_mark=(generate : Bool) : Void
+      Binding.bg_QTextStream_setGenerateByteOrderMark_bool(self, generate)
+    end
+    
+    def generate_byte_order_mark() : Bool
+      Binding.bg_QTextStream_generateByteOrderMark_(self)
+    end
+    
+    def locale=(locale : Locale) : Void
+      Binding.bg_QTextStream_setLocale_const_QLocale_R(self, locale)
+    end
+    
+    def locale() : Locale
+      Locale.new(unwrap: Binding.bg_QTextStream_locale_(self))
+    end
+    
+    def device=(device : IODevice) : Void
+      Binding.bg_QTextStream_setDevice_QIODevice_X(self, device)
+    end
+    
+    def device() : IODevice
+      IODeviceImpl.new(unwrap: Binding.bg_QTextStream_device_(self))
+    end
+    
+    def status() : TextStream::Status
+      Binding.bg_QTextStream_status_(self)
+    end
+    
+    def status=(status : TextStream::Status) : Void
+      Binding.bg_QTextStream_setStatus_QTextStream__Status(self, status)
+    end
+    
+    def reset_status() : Void
+      Binding.bg_QTextStream_resetStatus_(self)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QTextStream_atEnd_(self)
+    end
+    
+    def reset() : Void
+      Binding.bg_QTextStream_reset_(self)
+    end
+    
+    def flush() : Void
+      Binding.bg_QTextStream_flush_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QTextStream_seek_qint64(self, pos)
+    end
+    
+    def pos() : Int64
+      Binding.bg_QTextStream_pos_(self)
+    end
+    
+    def skip_white_space() : Void
+      Binding.bg_QTextStream_skipWhiteSpace_(self)
+    end
+    
+    def read_line(maxlen : Int64 = 0i64) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextStream_readLine_qint64(self, maxlen))
+    end
+    
+    def read_all() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextStream_readAll_(self))
+    end
+    
+    def read(maxlen : Int64) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTextStream_read_qint64(self, maxlen))
+    end
+    
+    def field_alignment=(alignment : TextStream::FieldAlignment) : Void
+      Binding.bg_QTextStream_setFieldAlignment_QTextStream__FieldAlignment(self, alignment)
+    end
+    
+    def field_alignment() : TextStream::FieldAlignment
+      Binding.bg_QTextStream_fieldAlignment_(self)
+    end
+    
+    def pad_char=(ch : Char) : Void
+      Binding.bg_QTextStream_setPadChar_QChar(self, (ch.ord))
+    end
+    
+    def pad_char() : Char
+      (Binding.bg_QTextStream_padChar_(self).chr)
+    end
+    
+    def field_width=(width : Int32) : Void
+      Binding.bg_QTextStream_setFieldWidth_int(self, width)
+    end
+    
+    def field_width() : Int32
+      Binding.bg_QTextStream_fieldWidth_(self)
+    end
+    
+    def number_flags=(flags : TextStream::NumberFlags) : Void
+      Binding.bg_QTextStream_setNumberFlags_QTextStream__NumberFlags(self, flags)
+    end
+    
+    def number_flags() : TextStream::NumberFlags
+      Binding.bg_QTextStream_numberFlags_(self)
+    end
+    
+    def integer_base=(base : Int32) : Void
+      Binding.bg_QTextStream_setIntegerBase_int(self, base)
+    end
+    
+    def integer_base() : Int32
+      Binding.bg_QTextStream_integerBase_(self)
+    end
+    
+    def real_number_notation=(notation : TextStream::RealNumberNotation) : Void
+      Binding.bg_QTextStream_setRealNumberNotation_QTextStream__RealNumberNotation(self, notation)
+    end
+    
+    def real_number_notation() : TextStream::RealNumberNotation
+      Binding.bg_QTextStream_realNumberNotation_(self)
+    end
+    
+    def real_number_precision=(precision : Int32) : Void
+      Binding.bg_QTextStream_setRealNumberPrecision_int(self, precision)
+    end
+    
+    def real_number_precision() : Int32
+      Binding.bg_QTextStream_realNumberPrecision_(self)
+    end
+    
+    def >>(ch : UInt8*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_char_R(self, ch))
+    end
+    
+    def >>(i : Int16*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_short_R(self, i))
+    end
+    
+    def >>(i : UInt16*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_unsigned_short_R(self, i))
+    end
+    
+    def >>(i : Int32*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_int_R(self, i))
+    end
+    
+    def >>(i : UInt32*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_unsigned_int_R(self, i))
+    end
+    
+    def >>(i : LibC::Long*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_long_R(self, i))
+    end
+    
+    def >>(i : LibC::ULong*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_unsigned_long_R(self, i))
+    end
+    
+    def >>(i : Int64*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_qlonglong_R(self, i))
+    end
+    
+    def >>(i : UInt64*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_qulonglong_R(self, i))
+    end
+    
+    def >>(f : Float32*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_float_R(self, f))
+    end
+    
+    def >>(f : Float64*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_double_R(self, f))
+    end
+    
+    def >>(c : UInt8*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_rshift_char_X(self, c))
+    end
+    
+    def <<(ch : Char) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_QChar(self, (ch.ord)))
+    end
+    
+    def <<(ch : UInt8) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_char(self, ch))
+    end
+    
+    def <<(ch : Char) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_char16_t(self, (ch.ord.to_u16)))
+    end
+    
+    def <<(i : Int16) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_short(self, i))
+    end
+    
+    def <<(i : UInt16) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_unsigned_short(self, i))
+    end
+    
+    def <<(i : Int32) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_int(self, i))
+    end
+    
+    def <<(i : UInt32) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_unsigned_int(self, i))
+    end
+    
+    def <<(i : LibC::Long) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_long(self, i))
+    end
+    
+    def <<(i : LibC::ULong) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_unsigned_long(self, i))
+    end
+    
+    def <<(i : Int64) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_qlonglong(self, i))
+    end
+    
+    def <<(i : UInt64) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_qulonglong(self, i))
+    end
+    
+    def <<(f : Float32) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_float(self, f))
+    end
+    
+    def <<(f : Float64) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_double(self, f))
+    end
+    
+    def <<(s : String) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_const_QString_R(self, Qt::Converter::QString.wrap(s)))
+    end
+    
+    def <<(array : Bytes) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_const_QByteArray_R(self, Qt::Converter::QByteArray.wrap(array)))
+    end
+    
+    def <<(c : UInt8*) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_const_char_X(self, c))
+    end
+    
+    def <<(ptr : Void**) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_const_void_X(self, ptr))
+    end
+    
+    def to_bool() : Bool
+      Binding.bg_QTextStream__CONVERT_bool_(self)
+    end
+    
+    enum RealNumberNotation : UInt32
+      SmartNotation = 0
+      FixedNotation = 1
+      ScientificNotation = 2
+    end
+    enum FieldAlignment : UInt32
+      AlignLeft = 0
+      AlignRight = 1
+      AlignCenter = 2
+      AlignAccountingStyle = 3
+    end
+    enum Status : UInt32
+      Ok = 0
+      ReadPastEnd = 1
+      ReadCorruptData = 2
+      WriteFailed = 3
+    end
+    enum NumberFlag : UInt32
+      ShowBase = 1
+      ForcePoint = 2
+      ForceSign = 4
+      UppercaseBase = 8
+      UppercaseDigits = 16
+    end
+    @[Flags]
+    enum NumberFlags : UInt32
+      ShowBase = 1
+      ForcePoint = 2
+      ForceSign = 4
+      UppercaseBase = 8
+      UppercaseDigits = 16
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextStream*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class ModelIndex
     @unwrap : Binding::QModelIndex*
@@ -25514,6 +26650,349 @@ module Qt
     end
     
   end
+  class Buffer < IODevice
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QBuffer_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QBuffer_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QBuffer_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QBuffer_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QBuffer_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QBuffer__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(Buffer)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QBuffer_metaObject_", "meta_object", [] of String},
+        {"bg_QBuffer_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QBuffer_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QBuffer_close_", "close", [] of String},
+        {"bg_QBuffer_size_", "size", [] of String},
+        {"bg_QBuffer_pos_", "pos", [] of String},
+        {"bg_QBuffer_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QBuffer_atEnd_", "at_end", [] of String},
+        {"bg_QBuffer_canReadLine_", "can_read_line", [] of String},
+        {"bg_QBuffer_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QBuffer_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QBuffer_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QBuffer_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_isSequential_", "sequential?", [] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QBuffer.new(
+      bg_QBuffer_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QBuffer_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QBuffer_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QBuffer_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QBuffer_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QBuffer_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QBuffer_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QBuffer_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QBuffer_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QBuffer_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QBuffer_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+      bg_QBuffer_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QBuffer_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QBuffer_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QIODevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QBuffer_JUMPTABLE_BgJumptable_QBuffer_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def buffer() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QBuffer_buffer_(self))
+    end
+    
+    def data=(data : Bytes) : Void
+      Binding.bg_QBuffer_setData_const_QByteArray_R(self, Qt::Converter::QByteArray.wrap(data))
+    end
+    
+    def set_data(data : UInt8*, len : Int64) : Void
+      Binding.bg_QBuffer_setData_const_char_X_qsizetype(self, data, len)
+    end
+    
+    def data() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QBuffer_data_(self))
+    end
+    
+    def open(mode : IODevice::OpenMode) : Bool
+      Binding.bg_QBuffer_open_QIODeviceBase__OpenMode(self, mode)
+    end
+    
+    def close() : Void
+      Binding.bg_QBuffer_close_(self)
+    end
+    
+    def size() : Int64
+      Binding.bg_QBuffer_size_(self)
+    end
+    
+    def pos() : Int64
+      Binding.bg_QBuffer_pos_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QBuffer_seek_qint64(self, pos)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QBuffer_atEnd_(self)
+    end
+    
+    def can_read_line() : Bool
+      Binding.bg_QBuffer_canReadLine_(self)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QBuffer_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QBuffer_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QBuffer_readData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def write_data(data : UInt8*, len : Int64) : Int64
+      Binding.bg_QBuffer_writeData_const_char_X_qint64(self, data, len)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QBuffer_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def sequential?() : Bool
+      Binding.bg_QIODevice_isSequential_(self)
+    end
+    
+    def reset() : Bool
+      Binding.bg_QIODevice_reset_(self)
+    end
+    
+    def bytes_available() : Int64
+      Binding.bg_QIODevice_bytesAvailable_(self)
+    end
+    
+    def bytes_to_write() : Int64
+      Binding.bg_QIODevice_bytesToWrite_(self)
+    end
+    
+    def wait_for_ready_read(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForReadyRead_int(self, msecs)
+    end
+    
+    def wait_for_bytes_written(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForBytesWritten_int(self, msecs)
+    end
+    
+    protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QIODevice_readLineData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def skip_data(max_size : Int64) : Int64
+      Binding.bg_QIODevice_skipData_qint64(self, max_size)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == Buffer %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QBuffer*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : Buffer)
+      end
+      def open(mode : IODevice::OpenMode) : Bool
+        Binding.bg_QBuffer_open_SUPER_QIODeviceBase__OpenMode(@myself, mode)
+      end
+      
+      def close() : Void
+        Binding.bg_QBuffer_close_SUPER_(@myself)
+      end
+      
+      def size() : Int64
+        Binding.bg_QBuffer_size_SUPER_(@myself)
+      end
+      
+      def pos() : Int64
+        Binding.bg_QBuffer_pos_SUPER_(@myself)
+      end
+      
+      def seek(pos : Int64) : Bool
+        Binding.bg_QBuffer_seek_SUPER_qint64(@myself, pos)
+      end
+      
+      def at_end() : Bool
+        Binding.bg_QBuffer_atEnd_SUPER_(@myself)
+      end
+      
+      def can_read_line() : Bool
+        Binding.bg_QBuffer_canReadLine_SUPER_(@myself)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QBuffer_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QBuffer_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QBuffer_readData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def write_data(data : UInt8*, len : Int64) : Int64
+        Binding.bg_QBuffer_writeData_SUPER_const_char_X_qint64(@myself, data, len)
+      end
+      
+      def sequential?() : Bool
+        Binding.bg_QIODevice_isSequential_SUPER_(@myself)
+      end
+      
+      def reset() : Bool
+        Binding.bg_QIODevice_reset_SUPER_(@myself)
+      end
+      
+      def bytes_available() : Int64
+        Binding.bg_QIODevice_bytesAvailable_SUPER_(@myself)
+      end
+      
+      def bytes_to_write() : Int64
+        Binding.bg_QIODevice_bytesToWrite_SUPER_(@myself)
+      end
+      
+      def wait_for_ready_read(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForReadyRead_SUPER_int(@myself, msecs)
+      end
+      
+      def wait_for_bytes_written(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForBytesWritten_SUPER_int(@myself, msecs)
+      end
+      
+      protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QIODevice_readLineData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def skip_data(max_size : Int64) : Int64
+        Binding.bg_QIODevice_skipData_SUPER_qint64(@myself, max_size)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
   class Locale
     @unwrap : Binding::QLocale*
     
@@ -27466,7 +28945,7 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QDateTime_addMSecs_qint64(self, msecs))
     end
     
-    def add_duration(msecs : Time::Span) : DateTime
+    def add_duration(msecs : ::Time::Span) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime_addDuration_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(msecs)))
     end
     
@@ -27550,15 +29029,15 @@ module Qt
       Binding.bg_QDateTime_currentSecsSinceEpoch_STATIC_()
     end
     
-    def add!(duration : Time::Span) : DateTime
+    def add!(duration : ::Time::Span) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime__OPERATOR_add_assign_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration)))
     end
     
-    def sub!(duration : Time::Span) : DateTime
+    def sub!(duration : ::Time::Span) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime__OPERATOR_sub_assign_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration)))
     end
     
-    def +(duration : Time::Span) : DateTime
+    def +(duration : ::Time::Span) : DateTime
       DateTime.new(unwrap: Binding.bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration)))
     end
     
@@ -28407,19 +29886,19 @@ module Qt
       Binding.bg_QTimer_stop_(self)
     end
     
-    def interval=(value : Time::Span) : Void
+    def interval=(value : ::Time::Span) : Void
       Binding.bg_QTimer_setInterval_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(value))
     end
     
-    def interval_as_duration() : Time::Span
+    def interval_as_duration() : ::Time::Span
       Qt::Converter::TimeSpan.unwrap(Binding.bg_QTimer_intervalAsDuration_(self))
     end
     
-    def remaining_time_as_duration() : Time::Span
+    def remaining_time_as_duration() : ::Time::Span
       Qt::Converter::TimeSpan.unwrap(Binding.bg_QTimer_remainingTimeAsDuration_(self))
     end
     
-    def start(value : Time::Span) : Void
+    def start(value : ::Time::Span) : Void
       Binding.bg_QTimer_start_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(value))
     end
     
@@ -28505,6 +29984,1810 @@ module Qt
     end
     def on_timeout(&_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QTimer_CONNECT_timeout_CrystalProc_void_(self, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
+  end
+  class FileDevice < IODevice
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileDevice_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QFileDevice_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileDevice_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileDevice_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileDevice_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def error() : FileDevice::FileError
+      Binding.bg_QFileDevice_error_(self)
+    end
+    
+    def unset_error() : Void
+      Binding.bg_QFileDevice_unsetError_(self)
+    end
+    
+    def close() : Void
+      Binding.bg_QFileDevice_close_(self)
+    end
+    
+    def sequential?() : Bool
+      Binding.bg_QFileDevice_isSequential_(self)
+    end
+    
+    def handle() : Int32
+      Binding.bg_QFileDevice_handle_(self)
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileDevice_fileName_(self))
+    end
+    
+    def pos() : Int64
+      Binding.bg_QFileDevice_pos_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QFileDevice_seek_qint64(self, pos)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QFileDevice_atEnd_(self)
+    end
+    
+    def flush() : Bool
+      Binding.bg_QFileDevice_flush_(self)
+    end
+    
+    def size() : Int64
+      Binding.bg_QFileDevice_size_(self)
+    end
+    
+    def resize(sz : Int64) : Bool
+      Binding.bg_QFileDevice_resize_qint64(self, sz)
+    end
+    
+    def permissions() : FileDevice::Permissions
+      Binding.bg_QFileDevice_permissions_(self)
+    end
+    
+    def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+      Binding.bg_QFileDevice_setPermissions_QFileDevice__Permissions(self, permission_spec)
+    end
+    
+    def map(offset : Int64, size : Int64) : UInt8*
+      Binding.bg_QFileDevice_map_qint64_qint64(self, offset, size)
+    end
+    
+    def map(offset : Int64, size : Int64, flags : FileDevice::MemoryMapFlags) : UInt8*
+      Binding.bg_QFileDevice_map_qint64_qint64_QFileDevice__MemoryMapFlags(self, offset, size, flags)
+    end
+    
+    def unmap(address : UInt8*) : Bool
+      Binding.bg_QFileDevice_unmap_uchar_X(self, address)
+    end
+    
+    def file_time(time : FileDevice::FileTime) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileDevice_fileTime_QFileDevice__FileTime(self, time))
+    end
+    
+    def set_file_time(new_date : DateTime, file_time : FileDevice::FileTime) : Bool
+      Binding.bg_QFileDevice_setFileTime_const_QDateTime_R_QFileDevice__FileTime(self, new_date, file_time)
+    end
+    
+    protected def initialize()
+      result = Binding.bg_QFileDevice__CONSTRUCT_()
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileDevice)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileDevice_metaObject_", "meta_object", [] of String},
+        {"bg_QFileDevice_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_fileName_", "file_name", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_size_", "size", [] of String},
+        {"bg_QFileDevice_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFileDevice_permissions_", "permissions", [] of String},
+        {"bg_QFileDevice_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileDevice.new(
+      bg_QFileDevice_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFileDevice_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFileDevice_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def initialize(parent : Object)
+      result = Binding.bg_QFileDevice__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileDevice)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileDevice_metaObject_", "meta_object", [] of String},
+        {"bg_QFileDevice_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_fileName_", "file_name", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_size_", "size", [] of String},
+        {"bg_QFileDevice_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFileDevice_permissions_", "permissions", [] of String},
+        {"bg_QFileDevice_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileDevice.new(
+      bg_QFileDevice_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFileDevice_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFileDevice_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def initialize(dd : Binding::QFileDevicePrivate*, parent : Object? = nil)
+      result = Binding.bg_QFileDevice__CONSTRUCT_QFileDevicePrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileDevice)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileDevice_metaObject_", "meta_object", [] of String},
+        {"bg_QFileDevice_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_fileName_", "file_name", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_size_", "size", [] of String},
+        {"bg_QFileDevice_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFileDevice_permissions_", "permissions", [] of String},
+        {"bg_QFileDevice_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileDevice.new(
+      bg_QFileDevice_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFileDevice_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFileDevice_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def write_data(data : UInt8*, len : Int64) : Int64
+      Binding.bg_QFileDevice_writeData_const_char_X_qint64(self, data, len)
+    end
+    
+    protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readLineData_char_X_qint64(self, data, maxlen)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileDevice_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    enum FileError : UInt32
+      NoError = 0
+      ReadError = 1
+      WriteError = 2
+      FatalError = 3
+      ResourceError = 4
+      OpenError = 5
+      AbortError = 6
+      TimeOutError = 7
+      UnspecifiedError = 8
+      RemoveError = 9
+      RenameError = 10
+      PositionError = 11
+      ResizeError = 12
+      PermissionsError = 13
+      CopyError = 14
+    end
+    enum FileTime : UInt32
+      FileAccessTime = 0
+      FileBirthTime = 1
+      FileMetadataChangeTime = 2
+      FileModificationTime = 3
+    end
+    enum Permission : UInt32
+      ReadOwner = 16384
+      WriteOwner = 8192
+      ExeOwner = 4096
+      ReadUser = 1024
+      WriteUser = 512
+      ExeUser = 256
+      ReadGroup = 64
+      WriteGroup = 32
+      ExeGroup = 16
+      ReadOther = 4
+      WriteOther = 2
+      ExeOther = 1
+    end
+    @[Flags]
+    enum Permissions : UInt32
+      ReadOwner = 16384
+      WriteOwner = 8192
+      ExeOwner = 4096
+      ReadUser = 1024
+      WriteUser = 512
+      ExeUser = 256
+      ReadGroup = 64
+      WriteGroup = 32
+      ExeGroup = 16
+      ReadOther = 4
+      WriteOther = 2
+      ExeOther = 1
+    end
+    enum FileHandleFlag : UInt32
+      AutoCloseHandle = 1
+      DontCloseHandle = 0
+    end
+    @[Flags]
+    enum FileHandleFlags : UInt32
+      AutoCloseHandle = 1
+      DontCloseHandle = 0
+    end
+    enum MemoryMapFlag : UInt32
+      NoOptions = 0
+      MapPrivateOption = 1
+    end
+    @[Flags]
+    enum MemoryMapFlags : UInt32
+      NoOptions = 0
+      MapPrivateOption = 1
+    end
+    def open(mode : IODevice::OpenMode) : Bool
+      Binding.bg_QIODevice_open_QIODeviceBase__OpenMode(self, mode)
+    end
+    
+    def reset() : Bool
+      Binding.bg_QIODevice_reset_(self)
+    end
+    
+    def bytes_available() : Int64
+      Binding.bg_QIODevice_bytesAvailable_(self)
+    end
+    
+    def bytes_to_write() : Int64
+      Binding.bg_QIODevice_bytesToWrite_(self)
+    end
+    
+    def can_read_line() : Bool
+      Binding.bg_QIODevice_canReadLine_(self)
+    end
+    
+    def wait_for_ready_read(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForReadyRead_int(self, msecs)
+    end
+    
+    def wait_for_bytes_written(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForBytesWritten_int(self, msecs)
+    end
+    
+    protected def skip_data(max_size : Int64) : Int64
+      Binding.bg_QIODevice_skipData_qint64(self, max_size)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == FileDevice %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QFileDevice*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : FileDevice)
+      end
+      def close() : Void
+        Binding.bg_QFileDevice_close_SUPER_(@myself)
+      end
+      
+      def sequential?() : Bool
+        Binding.bg_QFileDevice_isSequential_SUPER_(@myself)
+      end
+      
+      def file_name() : String
+        Qt::Converter::QString.unwrap(Binding.bg_QFileDevice_fileName_SUPER_(@myself))
+      end
+      
+      def pos() : Int64
+        Binding.bg_QFileDevice_pos_SUPER_(@myself)
+      end
+      
+      def seek(pos : Int64) : Bool
+        Binding.bg_QFileDevice_seek_SUPER_qint64(@myself, pos)
+      end
+      
+      def at_end() : Bool
+        Binding.bg_QFileDevice_atEnd_SUPER_(@myself)
+      end
+      
+      def size() : Int64
+        Binding.bg_QFileDevice_size_SUPER_(@myself)
+      end
+      
+      def resize(sz : Int64) : Bool
+        Binding.bg_QFileDevice_resize_SUPER_qint64(@myself, sz)
+      end
+      
+      def permissions() : FileDevice::Permissions
+        Binding.bg_QFileDevice_permissions_SUPER_(@myself)
+      end
+      
+      def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+        Binding.bg_QFileDevice_setPermissions_SUPER_QFileDevice__Permissions(@myself, permission_spec)
+      end
+      
+      protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def write_data(data : UInt8*, len : Int64) : Int64
+        Binding.bg_QFileDevice_writeData_SUPER_const_char_X_qint64(@myself, data, len)
+      end
+      
+      protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readLineData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      def open(mode : IODevice::OpenMode) : Bool
+        Binding.bg_QIODevice_open_SUPER_QIODeviceBase__OpenMode(@myself, mode)
+      end
+      
+      def reset() : Bool
+        Binding.bg_QIODevice_reset_SUPER_(@myself)
+      end
+      
+      def bytes_available() : Int64
+        Binding.bg_QIODevice_bytesAvailable_SUPER_(@myself)
+      end
+      
+      def bytes_to_write() : Int64
+        Binding.bg_QIODevice_bytesToWrite_SUPER_(@myself)
+      end
+      
+      def can_read_line() : Bool
+        Binding.bg_QIODevice_canReadLine_SUPER_(@myself)
+      end
+      
+      def wait_for_ready_read(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForReadyRead_SUPER_int(@myself, msecs)
+      end
+      
+      def wait_for_bytes_written(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForBytesWritten_SUPER_int(@myself, msecs)
+      end
+      
+      protected def skip_data(max_size : Int64) : Int64
+        Binding.bg_QIODevice_skipData_SUPER_qint64(@myself, max_size)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class File < FileDevice
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QFile_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QFile_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize()
+      result = Binding.bg_QFile__CONSTRUCT_()
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(File)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFile_metaObject_", "meta_object", [] of String},
+        {"bg_QFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFile_fileName_", "file_name", [] of String},
+        {"bg_QFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFile.new(
+      bg_QFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(name : String)
+      result = Binding.bg_QFile__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(name))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(File)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFile_metaObject_", "meta_object", [] of String},
+        {"bg_QFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFile_fileName_", "file_name", [] of String},
+        {"bg_QFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFile.new(
+      bg_QFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(parent : Object)
+      result = Binding.bg_QFile__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(File)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFile_metaObject_", "meta_object", [] of String},
+        {"bg_QFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFile_fileName_", "file_name", [] of String},
+        {"bg_QFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFile.new(
+      bg_QFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(name : String, parent : Object)
+      result = Binding.bg_QFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(File)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFile_metaObject_", "meta_object", [] of String},
+        {"bg_QFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFile_fileName_", "file_name", [] of String},
+        {"bg_QFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFile.new(
+      bg_QFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_fileName_(self))
+    end
+    
+    def file_name=(name : String) : Void
+      Binding.bg_QFile_setFileName_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def self.encode_name(file_name : String) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QFile_encodeName_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def self.decode_name(local_file_name : Bytes) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_decodeName_STATIC_const_QByteArray_R(Qt::Converter::QByteArray.wrap(local_file_name)))
+    end
+    
+    def self.decode_name(local_file_name : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_decodeName_STATIC_const_char_X(local_file_name))
+    end
+    
+    def exists() : Bool
+      Binding.bg_QFile_exists_(self)
+    end
+    
+    def self.exists(file_name : String) : Bool
+      Binding.bg_QFile_exists_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name))
+    end
+    
+    def sym_link_target() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_symLinkTarget_(self))
+    end
+    
+    def self.sym_link_target(file_name : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFile_symLinkTarget_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def remove() : Bool
+      Binding.bg_QFile_remove_(self)
+    end
+    
+    def self.remove(file_name : String) : Bool
+      Binding.bg_QFile_remove_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name))
+    end
+    
+    def self.supports_move_to_trash() : Bool
+      Binding.bg_QFile_supportsMoveToTrash_STATIC_()
+    end
+    
+    def move_to_trash() : Bool
+      Binding.bg_QFile_moveToTrash_(self)
+    end
+    
+    def rename(new_name : String) : Bool
+      Binding.bg_QFile_rename_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def self.rename(old_name : String, new_name : String) : Bool
+      Binding.bg_QFile_rename_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(old_name), Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def link(new_name : String) : Bool
+      Binding.bg_QFile_link_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def self.link(file_name : String, new_name : String) : Bool
+      Binding.bg_QFile_link_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(file_name), Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def copy(new_name : String) : Bool
+      Binding.bg_QFile_copy_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def self.copy(file_name : String, new_name : String) : Bool
+      Binding.bg_QFile_copy_STATIC_const_QString_R_const_QString_R(Qt::Converter::QString.wrap(file_name), Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def open(mode : IODevice::OpenMode) : Bool
+      Binding.bg_QFile_open_QIODeviceBase__OpenMode(self, mode)
+    end
+    
+    def open(flags : IODevice::OpenMode, permissions : FileDevice::Permissions) : Bool
+      Binding.bg_QFile_open_QIODeviceBase__OpenMode_QFileDevice__Permissions(self, flags, permissions)
+    end
+    
+    def open(f : Binding::FILE*, io_flags : IODevice::OpenMode) : Bool
+      Binding.bg_QFile_open_FILE_X_QIODeviceBase__OpenMode(self, f, io_flags)
+    end
+    
+    def open(f : Binding::FILE*, io_flags : IODevice::OpenMode, handle_flags : FileDevice::FileHandleFlags) : Bool
+      Binding.bg_QFile_open_FILE_X_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(self, f, io_flags, handle_flags)
+    end
+    
+    def open(fd : Int32, io_flags : IODevice::OpenMode) : Bool
+      Binding.bg_QFile_open_int_QIODeviceBase__OpenMode(self, fd, io_flags)
+    end
+    
+    def open(fd : Int32, io_flags : IODevice::OpenMode, handle_flags : FileDevice::FileHandleFlags) : Bool
+      Binding.bg_QFile_open_int_QIODeviceBase__OpenMode_QFileDevice__FileHandleFlags(self, fd, io_flags, handle_flags)
+    end
+    
+    def size() : Int64
+      Binding.bg_QFile_size_(self)
+    end
+    
+    def resize(sz : Int64) : Bool
+      Binding.bg_QFile_resize_qint64(self, sz)
+    end
+    
+    def self.resize(filename : String, sz : Int64) : Bool
+      Binding.bg_QFile_resize_STATIC_const_QString_R_qint64(Qt::Converter::QString.wrap(filename), sz)
+    end
+    
+    def permissions() : FileDevice::Permissions
+      Binding.bg_QFile_permissions_(self)
+    end
+    
+    def self.permissions(filename : String) : FileDevice::Permissions
+      Binding.bg_QFile_permissions_STATIC_const_QString_R(Qt::Converter::QString.wrap(filename))
+    end
+    
+    def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+      Binding.bg_QFile_setPermissions_QFileDevice__Permissions(self, permission_spec)
+    end
+    
+    def self.set_permissions(filename : String, permission_spec : FileDevice::Permissions) : Bool
+      Binding.bg_QFile_setPermissions_STATIC_const_QString_R_QFileDevice__Permissions(Qt::Converter::QString.wrap(filename), permission_spec)
+    end
+    
+    protected def initialize(dd : Binding::QFilePrivate*, parent : Object? = nil)
+      result = Binding.bg_QFile__CONSTRUCT_QFilePrivate_R_QObject_X(dd, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(File)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFile_metaObject_", "meta_object", [] of String},
+        {"bg_QFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QFile_fileName_", "file_name", [] of String},
+        {"bg_QFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFile.new(
+      bg_QFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFile_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def close() : Void
+      Binding.bg_QFileDevice_close_(self)
+    end
+    
+    def sequential?() : Bool
+      Binding.bg_QFileDevice_isSequential_(self)
+    end
+    
+    def pos() : Int64
+      Binding.bg_QFileDevice_pos_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QFileDevice_seek_qint64(self, pos)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QFileDevice_atEnd_(self)
+    end
+    
+    protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def write_data(data : UInt8*, len : Int64) : Int64
+      Binding.bg_QFileDevice_writeData_const_char_X_qint64(self, data, len)
+    end
+    
+    protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readLineData_char_X_qint64(self, data, maxlen)
+    end
+    
+    def reset() : Bool
+      Binding.bg_QIODevice_reset_(self)
+    end
+    
+    def bytes_available() : Int64
+      Binding.bg_QIODevice_bytesAvailable_(self)
+    end
+    
+    def bytes_to_write() : Int64
+      Binding.bg_QIODevice_bytesToWrite_(self)
+    end
+    
+    def can_read_line() : Bool
+      Binding.bg_QIODevice_canReadLine_(self)
+    end
+    
+    def wait_for_ready_read(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForReadyRead_int(self, msecs)
+    end
+    
+    def wait_for_bytes_written(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForBytesWritten_int(self, msecs)
+    end
+    
+    protected def skip_data(max_size : Int64) : Int64
+      Binding.bg_QIODevice_skipData_qint64(self, max_size)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == File %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QFile*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : File)
+      end
+      def file_name() : String
+        Qt::Converter::QString.unwrap(Binding.bg_QFile_fileName_SUPER_(@myself))
+      end
+      
+      def open(mode : IODevice::OpenMode) : Bool
+        Binding.bg_QFile_open_SUPER_QIODeviceBase__OpenMode(@myself, mode)
+      end
+      
+      def size() : Int64
+        Binding.bg_QFile_size_SUPER_(@myself)
+      end
+      
+      def resize(sz : Int64) : Bool
+        Binding.bg_QFile_resize_SUPER_qint64(@myself, sz)
+      end
+      
+      def permissions() : FileDevice::Permissions
+        Binding.bg_QFile_permissions_SUPER_(@myself)
+      end
+      
+      def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+        Binding.bg_QFile_setPermissions_SUPER_QFileDevice__Permissions(@myself, permission_spec)
+      end
+      
+      def close() : Void
+        Binding.bg_QFileDevice_close_SUPER_(@myself)
+      end
+      
+      def sequential?() : Bool
+        Binding.bg_QFileDevice_isSequential_SUPER_(@myself)
+      end
+      
+      def pos() : Int64
+        Binding.bg_QFileDevice_pos_SUPER_(@myself)
+      end
+      
+      def seek(pos : Int64) : Bool
+        Binding.bg_QFileDevice_seek_SUPER_qint64(@myself, pos)
+      end
+      
+      def at_end() : Bool
+        Binding.bg_QFileDevice_atEnd_SUPER_(@myself)
+      end
+      
+      protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def write_data(data : UInt8*, len : Int64) : Int64
+        Binding.bg_QFileDevice_writeData_SUPER_const_char_X_qint64(@myself, data, len)
+      end
+      
+      protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readLineData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      def reset() : Bool
+        Binding.bg_QIODevice_reset_SUPER_(@myself)
+      end
+      
+      def bytes_available() : Int64
+        Binding.bg_QIODevice_bytesAvailable_SUPER_(@myself)
+      end
+      
+      def bytes_to_write() : Int64
+        Binding.bg_QIODevice_bytesToWrite_SUPER_(@myself)
+      end
+      
+      def can_read_line() : Bool
+        Binding.bg_QIODevice_canReadLine_SUPER_(@myself)
+      end
+      
+      def wait_for_ready_read(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForReadyRead_SUPER_int(@myself, msecs)
+      end
+      
+      def wait_for_bytes_written(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForBytesWritten_SUPER_int(@myself, msecs)
+      end
+      
+      protected def skip_data(max_size : Int64) : Int64
+        Binding.bg_QIODevice_skipData_SUPER_qint64(@myself, max_size)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
+  class FileInfo
+    @unwrap : Binding::QFileInfo*
+    
+    def initialize(d : Binding::QFileInfoPrivate*)
+      result = Binding.bg_QFileInfo__CONSTRUCT_QFileInfoPrivate_X(d)
+    @unwrap = result
+    end
+    
+    def initialize()
+      result = Binding.bg_QFileInfo__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(file : String)
+      result = Binding.bg_QFileInfo__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(file))
+    @unwrap = result
+    end
+    
+    def initialize(file : FileDevice)
+      result = Binding.bg_QFileInfo__CONSTRUCT_const_QFileDevice_R(file)
+    @unwrap = result
+    end
+    
+    def initialize(dir : Dir, file : String)
+      result = Binding.bg_QFileInfo__CONSTRUCT_const_QDir_R_const_QString_R(dir, Qt::Converter::QString.wrap(file))
+    @unwrap = result
+    end
+    
+    def initialize(fileinfo : FileInfo)
+      result = Binding.bg_QFileInfo__COPY_const_QFileInfo_R(fileinfo)
+    @unwrap = result
+    end
+    
+    def assign!(fileinfo : FileInfo) : FileInfo
+      FileInfo.new(unwrap: Binding.bg_QFileInfo__OPERATOR_assign_const_QFileInfo_R(self, fileinfo))
+    end
+    
+    def swap(other : FileInfo) : Void
+      Binding.bg_QFileInfo_swap_QFileInfo_R(self, other)
+    end
+    
+    def file=(file : String) : Void
+      Binding.bg_QFileInfo_setFile_const_QString_R(self, Qt::Converter::QString.wrap(file))
+    end
+    
+    def file=(file : FileDevice) : Void
+      Binding.bg_QFileInfo_setFile_const_QFileDevice_R(self, file)
+    end
+    
+    def set_file(dir : Dir, file : String) : Void
+      Binding.bg_QFileInfo_setFile_const_QDir_R_const_QString_R(self, dir, Qt::Converter::QString.wrap(file))
+    end
+    
+    def exists() : Bool
+      Binding.bg_QFileInfo_exists_(self)
+    end
+    
+    def self.exists(file : String) : Bool
+      Binding.bg_QFileInfo_exists_STATIC_const_QString_R(Qt::Converter::QString.wrap(file))
+    end
+    
+    def refresh() : Void
+      Binding.bg_QFileInfo_refresh_(self)
+    end
+    
+    def file_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_filePath_(self))
+    end
+    
+    def absolute_file_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_absoluteFilePath_(self))
+    end
+    
+    def canonical_file_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_canonicalFilePath_(self))
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_fileName_(self))
+    end
+    
+    def base_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_baseName_(self))
+    end
+    
+    def complete_base_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_completeBaseName_(self))
+    end
+    
+    def suffix() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_suffix_(self))
+    end
+    
+    def bundle_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_bundleName_(self))
+    end
+    
+    def complete_suffix() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_completeSuffix_(self))
+    end
+    
+    def path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_path_(self))
+    end
+    
+    def absolute_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_absolutePath_(self))
+    end
+    
+    def canonical_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_canonicalPath_(self))
+    end
+    
+    def dir() : Dir
+      Dir.new(unwrap: Binding.bg_QFileInfo_dir_(self))
+    end
+    
+    def absolute_dir() : Dir
+      Dir.new(unwrap: Binding.bg_QFileInfo_absoluteDir_(self))
+    end
+    
+    def readable?() : Bool
+      Binding.bg_QFileInfo_isReadable_(self)
+    end
+    
+    def writable?() : Bool
+      Binding.bg_QFileInfo_isWritable_(self)
+    end
+    
+    def executable?() : Bool
+      Binding.bg_QFileInfo_isExecutable_(self)
+    end
+    
+    def hidden?() : Bool
+      Binding.bg_QFileInfo_isHidden_(self)
+    end
+    
+    def native_path?() : Bool
+      Binding.bg_QFileInfo_isNativePath_(self)
+    end
+    
+    def relative?() : Bool
+      Binding.bg_QFileInfo_isRelative_(self)
+    end
+    
+    def absolute?() : Bool
+      Binding.bg_QFileInfo_isAbsolute_(self)
+    end
+    
+    def make_absolute() : Bool
+      Binding.bg_QFileInfo_makeAbsolute_(self)
+    end
+    
+    def file?() : Bool
+      Binding.bg_QFileInfo_isFile_(self)
+    end
+    
+    def dir?() : Bool
+      Binding.bg_QFileInfo_isDir_(self)
+    end
+    
+    def sym_link?() : Bool
+      Binding.bg_QFileInfo_isSymLink_(self)
+    end
+    
+    def symbolic_link?() : Bool
+      Binding.bg_QFileInfo_isSymbolicLink_(self)
+    end
+    
+    def other?() : Bool
+      Binding.bg_QFileInfo_isOther_(self)
+    end
+    
+    def shortcut?() : Bool
+      Binding.bg_QFileInfo_isShortcut_(self)
+    end
+    
+    def alias?() : Bool
+      Binding.bg_QFileInfo_isAlias_(self)
+    end
+    
+    def junction?() : Bool
+      Binding.bg_QFileInfo_isJunction_(self)
+    end
+    
+    def root?() : Bool
+      Binding.bg_QFileInfo_isRoot_(self)
+    end
+    
+    def bundle?() : Bool
+      Binding.bg_QFileInfo_isBundle_(self)
+    end
+    
+    def sym_link_target() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_symLinkTarget_(self))
+    end
+    
+    def read_sym_link() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_readSymLink_(self))
+    end
+    
+    def junction_target() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_junctionTarget_(self))
+    end
+    
+    def owner() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_owner_(self))
+    end
+    
+    def owner_id() : UInt32
+      Binding.bg_QFileInfo_ownerId_(self)
+    end
+    
+    def group() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileInfo_group_(self))
+    end
+    
+    def group_id() : UInt32
+      Binding.bg_QFileInfo_groupId_(self)
+    end
+    
+    def permission(permissions : FileDevice::Permissions) : Bool
+      Binding.bg_QFileInfo_permission_QFileDevice__Permissions(self, permissions)
+    end
+    
+    def permissions() : FileDevice::Permissions
+      Binding.bg_QFileInfo_permissions_(self)
+    end
+    
+    def size() : Int64
+      Binding.bg_QFileInfo_size_(self)
+    end
+    
+    def birth_time() : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_birthTime_(self))
+    end
+    
+    def metadata_change_time() : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_metadataChangeTime_(self))
+    end
+    
+    def last_modified() : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_lastModified_(self))
+    end
+    
+    def last_read() : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_lastRead_(self))
+    end
+    
+    def file_time(time : FileDevice::FileTime) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_fileTime_QFileDevice__FileTime(self, time))
+    end
+    
+    def birth_time(tz : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_birthTime_const_QTimeZone_R(self, tz))
+    end
+    
+    def metadata_change_time(tz : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_metadataChangeTime_const_QTimeZone_R(self, tz))
+    end
+    
+    def last_modified(tz : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_lastModified_const_QTimeZone_R(self, tz))
+    end
+    
+    def last_read(tz : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_lastRead_const_QTimeZone_R(self, tz))
+    end
+    
+    def file_time(time : FileDevice::FileTime, tz : Binding::QTimeZone*) : DateTime
+      DateTime.new(unwrap: Binding.bg_QFileInfo_fileTime_QFileDevice__FileTime_const_QTimeZone_R(self, time, tz))
+    end
+    
+    def caching() : Bool
+      Binding.bg_QFileInfo_caching_(self)
+    end
+    
+    def caching=(on : Bool) : Void
+      Binding.bg_QFileInfo_setCaching_bool(self, on)
+    end
+    
+    def stat() : Void
+      Binding.bg_QFileInfo_stat_(self)
+    end
+    
+    def ==(rhs : FileInfo) : Bool
+      Binding.bg_QFileInfo__OPERATOR_eq_const_QFileInfo_R(self, rhs)
+    end
+    
+    def !=(rhs : FileInfo) : Bool
+      Binding.bg_QFileInfo__OPERATOR_ne_const_QFileInfo_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFileInfo*)
+      result = unwrap
+    @unwrap = result
     end
     
   end
@@ -28886,6 +32169,342 @@ module Qt
     def initialize(unwrap : Binding::QDir*)
       result = unwrap
     @unwrap = result
+    end
+    
+  end
+  class DirIterator
+    @unwrap : Binding::QDirIterator*
+    
+    def initialize(dir : Dir)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QDir_R(dir)
+    @unwrap = result
+    end
+    
+    def initialize(dir : Dir, flags : DirIterator::IteratorFlags)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QDir_R_QDirIterator__IteratorFlags(dir, flags)
+    @unwrap = result
+    end
+    
+    def initialize(path : String)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(path))
+    @unwrap = result
+    end
+    
+    def initialize(path : String, flags : DirIterator::IteratorFlags)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_QDirIterator__IteratorFlags(Qt::Converter::QString.wrap(path), flags)
+    @unwrap = result
+    end
+    
+    def initialize(path : String, filter : Dir::Filters)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters(Qt::Converter::QString.wrap(path), filter)
+    @unwrap = result
+    end
+    
+    def initialize(path : String, filter : Dir::Filters, flags : DirIterator::IteratorFlags)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_QDir__Filters_QDirIterator__IteratorFlags(Qt::Converter::QString.wrap(path), filter, flags)
+    @unwrap = result
+    end
+    
+    def initialize(path : String, name_filters : Enumerable(String))
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R(Qt::Converter::QString.wrap(path), BindgenHelper.wrap_container(StringList, name_filters).to_unsafe)
+    @unwrap = result
+    end
+    
+    def initialize(path : String, name_filters : Enumerable(String), filters : Dir::Filters)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters(Qt::Converter::QString.wrap(path), BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters)
+    @unwrap = result
+    end
+    
+    def initialize(path : String, name_filters : Enumerable(String), filters : Dir::Filters, flags : DirIterator::IteratorFlags)
+      result = Binding.bg_QDirIterator__CONSTRUCT_const_QString_R_const_QStringList_R_QDir__Filters_QDirIterator__IteratorFlags(Qt::Converter::QString.wrap(path), BindgenHelper.wrap_container(StringList, name_filters).to_unsafe, filters, flags)
+    @unwrap = result
+    end
+    
+    def next() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QDirIterator_next_(self))
+    end
+    
+    def next_file_info() : FileInfo
+      FileInfo.new(unwrap: Binding.bg_QDirIterator_nextFileInfo_(self))
+    end
+    
+    def has_next?() : Bool
+      Binding.bg_QDirIterator_hasNext_(self)
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QDirIterator_fileName_(self))
+    end
+    
+    def file_path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QDirIterator_filePath_(self))
+    end
+    
+    def file_info() : FileInfo
+      FileInfo.new(unwrap: Binding.bg_QDirIterator_fileInfo_(self))
+    end
+    
+    def path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QDirIterator_path_(self))
+    end
+    
+    enum IteratorFlag : UInt32
+      NoIteratorFlags = 0
+      FollowSymlinks = 1
+      Subdirectories = 2
+    end
+    @[Flags]
+    enum IteratorFlags : UInt32
+      NoIteratorFlags = 0
+      FollowSymlinks = 1
+      Subdirectories = 2
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QDirIterator*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class FileSystemWatcher < Object
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileSystemWatcher_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QFileSystemWatcher_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemWatcher_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QFileSystemWatcher_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QFileSystemWatcher__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileSystemWatcher)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileSystemWatcher_metaObject_", "meta_object", [] of String},
+        {"bg_QFileSystemWatcher_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileSystemWatcher.new(
+      bg_QFileSystemWatcher_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileSystemWatcher_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(paths : Enumerable(String), parent : Object? = nil)
+      result = Binding.bg_QFileSystemWatcher__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, paths).to_unsafe, parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(FileSystemWatcher)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QFileSystemWatcher_metaObject_", "meta_object", [] of String},
+        {"bg_QFileSystemWatcher_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QFileSystemWatcher.new(
+      bg_QFileSystemWatcher_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QFileSystemWatcher_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileSystemWatcher_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QFileSystemWatcher_JUMPTABLE_BgJumptable_QFileSystemWatcher_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def add_path(file : String) : Bool
+      Binding.bg_QFileSystemWatcher_addPath_const_QString_R(self, Qt::Converter::QString.wrap(file))
+    end
+    
+    def add_paths(files : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemWatcher_addPaths_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, files).to_unsafe))
+    end
+    
+    def remove_path(file : String) : Bool
+      Binding.bg_QFileSystemWatcher_removePath_const_QString_R(self, Qt::Converter::QString.wrap(file))
+    end
+    
+    def remove_paths(files : Enumerable(String)) : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemWatcher_removePaths_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, files).to_unsafe))
+    end
+    
+    def files() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemWatcher_files_(self))
+    end
+    
+    def directories() : Enumerable(String)
+      StringList.new(unwrap: Binding.bg_QFileSystemWatcher_directories_(self))
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QFileSystemWatcher_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == FileSystemWatcher %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QFileSystemWatcher*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : FileSystemWatcher)
+      end
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+    def on_file_changed(&_proc_ : Proc(String, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileSystemWatcher_CONNECT_fileChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
+    end
+    
+    def on_directory_changed(&_proc_ : Proc(String, Void)) : SignalConnection
+      SignalConnection.new(unwrap: Binding.bg_QFileSystemWatcher_CONNECT_directoryChanged_CrystalProc_void__const_QString_R_(self, BindgenHelper.wrap_proc(Proc(Binding::CrystalString, Void).new do |arg0| _proc_.call(Qt::Converter::QString.unwrap(arg0)) end)))
     end
     
   end
@@ -29499,6 +33118,81 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QLineF)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class LockFile
+    @unwrap : Binding::QLockFile*
+    
+    def initialize(file_name : String)
+      result = Binding.bg_QLockFile__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(file_name))
+    @unwrap = result
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QLockFile_fileName_(self))
+    end
+    
+    def lock() : Bool
+      Binding.bg_QLockFile_lock_(self)
+    end
+    
+    def try_lock(timeout : Int32) : Bool
+      Binding.bg_QLockFile_tryLock_int(self, timeout)
+    end
+    
+    def unlock() : Void
+      Binding.bg_QLockFile_unlock_(self)
+    end
+    
+    def stale_lock_time=(unnamed_arg_0 : Int32) : Void
+      Binding.bg_QLockFile_setStaleLockTime_int(self, unnamed_arg_0)
+    end
+    
+    def stale_lock_time() : Int32
+      Binding.bg_QLockFile_staleLockTime_(self)
+    end
+    
+    def try_lock() : Bool
+      Binding.bg_QLockFile_tryLock_(self)
+    end
+    
+    def try_lock(timeout : ::Time::Span) : Bool
+      Binding.bg_QLockFile_tryLock_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(timeout))
+    end
+    
+    def stale_lock_time=(value : ::Time::Span) : Void
+      Binding.bg_QLockFile_setStaleLockTime_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(value))
+    end
+    
+    def stale_lock_time_as_duration() : ::Time::Span
+      Qt::Converter::TimeSpan.unwrap(Binding.bg_QLockFile_staleLockTimeAsDuration_(self))
+    end
+    
+    def locked?() : Bool
+      Binding.bg_QLockFile_isLocked_(self)
+    end
+    
+    def remove_stale_lock_file() : Bool
+      Binding.bg_QLockFile_removeStaleLockFile_(self)
+    end
+    
+    def error() : LockFile::LockError
+      Binding.bg_QLockFile_error_(self)
+    end
+    
+    enum LockError : UInt32
+      NoError = 0
+      LockFailedError = 1
+      PermissionError = 2
+      UnknownError = 3
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QLockFile*)
       result = unwrap
     @unwrap = result
     end
@@ -32214,6 +35908,474 @@ module Qt
     end
     
   end
+  class SaveFile < FileDevice
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QSaveFile_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QSaveFile_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSaveFile_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSaveFile_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSaveFile_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize(parent : Object? = nil)
+      result = Binding.bg_QSaveFile__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SaveFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSaveFile_metaObject_", "meta_object", [] of String},
+        {"bg_QSaveFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QSaveFile_fileName_", "file_name", [] of String},
+        {"bg_QSaveFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QSaveFile_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_size_", "size", [] of String},
+        {"bg_QFileDevice_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFileDevice_permissions_", "permissions", [] of String},
+        {"bg_QFileDevice_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSaveFile.new(
+      bg_QSaveFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QSaveFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QSaveFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QSaveFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QSaveFile_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFileDevice_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFileDevice_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(name : String, parent : Object? = nil)
+      result = Binding.bg_QSaveFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(SaveFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QSaveFile_metaObject_", "meta_object", [] of String},
+        {"bg_QSaveFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QSaveFile_fileName_", "file_name", [] of String},
+        {"bg_QSaveFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QSaveFile_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_size_", "size", [] of String},
+        {"bg_QFileDevice_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFileDevice_permissions_", "permissions", [] of String},
+        {"bg_QFileDevice_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QSaveFile.new(
+      bg_QSaveFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QSaveFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QSaveFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QSaveFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QSaveFile_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QSaveFile_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFileDevice_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFileDevice_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFileDevice_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QSaveFile_JUMPTABLE_BgJumptable_QSaveFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QSaveFile_fileName_(self))
+    end
+    
+    def file_name=(name : String) : Void
+      Binding.bg_QSaveFile_setFileName_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def open(mode : IODevice::OpenMode) : Bool
+      Binding.bg_QSaveFile_open_QIODeviceBase__OpenMode(self, mode)
+    end
+    
+    def commit() : Bool
+      Binding.bg_QSaveFile_commit_(self)
+    end
+    
+    def cancel_writing() : Void
+      Binding.bg_QSaveFile_cancelWriting_(self)
+    end
+    
+    def direct_write_fallback=(enabled : Bool) : Void
+      Binding.bg_QSaveFile_setDirectWriteFallback_bool(self, enabled)
+    end
+    
+    def direct_write_fallback() : Bool
+      Binding.bg_QSaveFile_directWriteFallback_(self)
+    end
+    
+    protected def write_data(data : UInt8*, len : Int64) : Int64
+      Binding.bg_QSaveFile_writeData_const_char_X_qint64(self, data, len)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QSaveFile_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def sequential?() : Bool
+      Binding.bg_QFileDevice_isSequential_(self)
+    end
+    
+    def pos() : Int64
+      Binding.bg_QFileDevice_pos_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QFileDevice_seek_qint64(self, pos)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QFileDevice_atEnd_(self)
+    end
+    
+    def size() : Int64
+      Binding.bg_QFileDevice_size_(self)
+    end
+    
+    def resize(sz : Int64) : Bool
+      Binding.bg_QFileDevice_resize_qint64(self, sz)
+    end
+    
+    def permissions() : FileDevice::Permissions
+      Binding.bg_QFileDevice_permissions_(self)
+    end
+    
+    def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+      Binding.bg_QFileDevice_setPermissions_QFileDevice__Permissions(self, permission_spec)
+    end
+    
+    protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readLineData_char_X_qint64(self, data, maxlen)
+    end
+    
+    def reset() : Bool
+      Binding.bg_QIODevice_reset_(self)
+    end
+    
+    def bytes_available() : Int64
+      Binding.bg_QIODevice_bytesAvailable_(self)
+    end
+    
+    def bytes_to_write() : Int64
+      Binding.bg_QIODevice_bytesToWrite_(self)
+    end
+    
+    def can_read_line() : Bool
+      Binding.bg_QIODevice_canReadLine_(self)
+    end
+    
+    def wait_for_ready_read(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForReadyRead_int(self, msecs)
+    end
+    
+    def wait_for_bytes_written(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForBytesWritten_int(self, msecs)
+    end
+    
+    protected def skip_data(max_size : Int64) : Int64
+      Binding.bg_QIODevice_skipData_qint64(self, max_size)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == SaveFile %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QSaveFile*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : SaveFile)
+      end
+      def file_name() : String
+        Qt::Converter::QString.unwrap(Binding.bg_QSaveFile_fileName_SUPER_(@myself))
+      end
+      
+      def open(mode : IODevice::OpenMode) : Bool
+        Binding.bg_QSaveFile_open_SUPER_QIODeviceBase__OpenMode(@myself, mode)
+      end
+      
+      protected def write_data(data : UInt8*, len : Int64) : Int64
+        Binding.bg_QSaveFile_writeData_SUPER_const_char_X_qint64(@myself, data, len)
+      end
+      
+      def sequential?() : Bool
+        Binding.bg_QFileDevice_isSequential_SUPER_(@myself)
+      end
+      
+      def pos() : Int64
+        Binding.bg_QFileDevice_pos_SUPER_(@myself)
+      end
+      
+      def seek(pos : Int64) : Bool
+        Binding.bg_QFileDevice_seek_SUPER_qint64(@myself, pos)
+      end
+      
+      def at_end() : Bool
+        Binding.bg_QFileDevice_atEnd_SUPER_(@myself)
+      end
+      
+      def size() : Int64
+        Binding.bg_QFileDevice_size_SUPER_(@myself)
+      end
+      
+      def resize(sz : Int64) : Bool
+        Binding.bg_QFileDevice_resize_SUPER_qint64(@myself, sz)
+      end
+      
+      def permissions() : FileDevice::Permissions
+        Binding.bg_QFileDevice_permissions_SUPER_(@myself)
+      end
+      
+      def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+        Binding.bg_QFileDevice_setPermissions_SUPER_QFileDevice__Permissions(@myself, permission_spec)
+      end
+      
+      protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readLineData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      def reset() : Bool
+        Binding.bg_QIODevice_reset_SUPER_(@myself)
+      end
+      
+      def bytes_available() : Int64
+        Binding.bg_QIODevice_bytesAvailable_SUPER_(@myself)
+      end
+      
+      def bytes_to_write() : Int64
+        Binding.bg_QIODevice_bytesToWrite_SUPER_(@myself)
+      end
+      
+      def can_read_line() : Bool
+        Binding.bg_QIODevice_canReadLine_SUPER_(@myself)
+      end
+      
+      def wait_for_ready_read(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForReadyRead_SUPER_int(@myself, msecs)
+      end
+      
+      def wait_for_bytes_written(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForBytesWritten_SUPER_int(@myself, msecs)
+      end
+      
+      protected def skip_data(max_size : Int64) : Int64
+        Binding.bg_QIODevice_skipData_SUPER_qint64(@myself, max_size)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
+  end
   class Settings < Object
     def meta_object() : Binding::QMetaObject*
       Binding.bg_QSettings_metaObject_(self)
@@ -34237,6 +38399,742 @@ module Qt
     @unwrap = result
     end
     
+  end
+  class TemporaryDir
+    @unwrap : Binding::QTemporaryDir*
+    
+    def initialize()
+      result = Binding.bg_QTemporaryDir__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(template_name : String)
+      result = Binding.bg_QTemporaryDir__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(template_name))
+    @unwrap = result
+    end
+    
+    def swap(other : TemporaryDir) : Void
+      Binding.bg_QTemporaryDir_swap_QTemporaryDir_R(self, other)
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QTemporaryDir_isValid_(self)
+    end
+    
+    def error_string() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryDir_errorString_(self))
+    end
+    
+    def auto_remove() : Bool
+      Binding.bg_QTemporaryDir_autoRemove_(self)
+    end
+    
+    def auto_remove=(b : Bool) : Void
+      Binding.bg_QTemporaryDir_setAutoRemove_bool(self, b)
+    end
+    
+    def remove() : Bool
+      Binding.bg_QTemporaryDir_remove_(self)
+    end
+    
+    def path() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryDir_path_(self))
+    end
+    
+    def file_path(file_name : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryDir_filePath_const_QString_R(self, Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTemporaryDir*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TemporaryFile < File
+    def meta_object() : Binding::QMetaObject*
+      Binding.bg_QTemporaryFile_metaObject_(self)
+    end
+    
+    def qt_metacast(unnamed_arg_0 : UInt8*) : Void*
+      Binding.bg_QTemporaryFile_qt_metacast_const_char_X(self, unnamed_arg_0)
+    end
+    
+    def qt_metacall(unnamed_arg_0 : MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void***) : Int32
+      Binding.bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX(self, unnamed_arg_0, unnamed_arg_1, unnamed_arg_2)
+    end
+    
+    def self.tr(s : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_tr_STATIC_const_char_X(s))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X(s, c))
+    end
+    
+    def self.tr(s : UInt8*, c : UInt8*, n : Int32 = -1) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_tr_STATIC_const_char_X_const_char_X_int(s, c, n))
+    end
+    
+    def initialize()
+      result = Binding.bg_QTemporaryFile__CONSTRUCT_()
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TemporaryFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTemporaryFile_metaObject_", "meta_object", [] of String},
+        {"bg_QTemporaryFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTemporaryFile_fileName_", "file_name", [] of String},
+        {"bg_QTemporaryFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTemporaryFile.new(
+      bg_QTemporaryFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(template_name : String)
+      result = Binding.bg_QTemporaryFile__CONSTRUCT_const_QString_R(Qt::Converter::QString.wrap(template_name))
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TemporaryFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTemporaryFile_metaObject_", "meta_object", [] of String},
+        {"bg_QTemporaryFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTemporaryFile_fileName_", "file_name", [] of String},
+        {"bg_QTemporaryFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTemporaryFile.new(
+      bg_QTemporaryFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(parent : Object)
+      result = Binding.bg_QTemporaryFile__CONSTRUCT_QObject_X(parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TemporaryFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTemporaryFile_metaObject_", "meta_object", [] of String},
+        {"bg_QTemporaryFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTemporaryFile_fileName_", "file_name", [] of String},
+        {"bg_QTemporaryFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTemporaryFile.new(
+      bg_QTemporaryFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def initialize(template_name : String, parent : Object)
+      result = Binding.bg_QTemporaryFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(template_name), parent)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(TemporaryFile)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QTemporaryFile_metaObject_", "meta_object", [] of String},
+        {"bg_QTemporaryFile_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
+        {"bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void***"] of String},
+        {"bg_QTemporaryFile_fileName_", "file_name", [] of String},
+        {"bg_QTemporaryFile_open_QIODeviceBase__OpenMode", "open", ["IODevice::OpenMode"] of String},
+        {"bg_QFile_size_", "size", [] of String},
+        {"bg_QFile_resize_qint64", "resize", ["Int64"] of String},
+        {"bg_QFile_permissions_", "permissions", [] of String},
+        {"bg_QFile_setPermissions_QFileDevice__Permissions", "set_permissions", ["FileDevice::Permissions"] of String},
+        {"bg_QFileDevice_close_", "close", [] of String},
+        {"bg_QFileDevice_isSequential_", "sequential?", [] of String},
+        {"bg_QFileDevice_pos_", "pos", [] of String},
+        {"bg_QFileDevice_seek_qint64", "seek", ["Int64"] of String},
+        {"bg_QFileDevice_atEnd_", "at_end", [] of String},
+        {"bg_QFileDevice_readData_char_X_qint64", "read_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_writeData_const_char_X_qint64", "write_data", ["UInt8*", "Int64"] of String},
+        {"bg_QFileDevice_readLineData_char_X_qint64", "read_line_data", ["UInt8*", "Int64"] of String},
+        {"bg_QIODevice_reset_", "reset", [] of String},
+        {"bg_QIODevice_bytesAvailable_", "bytes_available", [] of String},
+        {"bg_QIODevice_bytesToWrite_", "bytes_to_write", [] of String},
+        {"bg_QIODevice_canReadLine_", "can_read_line", [] of String},
+        {"bg_QIODevice_waitForReadyRead_int", "wait_for_ready_read", ["Int32"] of String},
+        {"bg_QIODevice_waitForBytesWritten_int", "wait_for_bytes_written", ["Int32"] of String},
+        {"bg_QIODevice_skipData_qint64", "skip_data", ["Int64"] of String},
+        {"bg_QObject_event_QEvent_X", "event", ["Event"] of String},
+        {"bg_QObject_eventFilter_QObject_X_QEvent_X", "event_filter", ["Object", "Event"] of String},
+        {"bg_QObject_timerEvent_QTimerEvent_X", "timer_event", ["TimerEvent"] of String},
+        {"bg_QObject_childEvent_QChildEvent_X", "child_event", ["Binding::QChildEvent*"] of String},
+        {"bg_QObject_customEvent_QEvent_X", "custom_event", ["Event"] of String},
+        {"bg_QObject_connectNotify_const_QMetaMethod_R", "connect_notify", ["Binding::QMetaMethod*"] of String},
+        {"bg_QObject_disconnectNotify_const_QMetaMethod_R", "disconnect_notify", ["Binding::QMetaMethod*"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QTemporaryFile.new(
+      bg_QTemporaryFile_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_metaObject_") %} Proc(Binding::QMetaObject*).new{ self.meta_object() } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| self.qt_metacast(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_fileName_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_fileName_") %} Proc(Binding::CrystalString).new{ Qt::Converter::QString.wrap(self.file_name()) } {% else %} nil {% end %}),
+      bg_QTemporaryFile_open_QIODeviceBase__OpenMode: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTemporaryFile_open_QIODeviceBase__OpenMode") %} Proc(IODevice::OpenMode, Bool).new{|mode| self.open(mode) } {% else %} nil {% end %}),
+      bg_QFile_size_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_size_") %} Proc(Int64).new{ self.size() } {% else %} nil {% end %}),
+      bg_QFile_resize_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_resize_qint64") %} Proc(Int64, Bool).new{|sz| self.resize(sz) } {% else %} nil {% end %}),
+      bg_QFile_permissions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_permissions_") %} Proc(FileDevice::Permissions).new{ self.permissions().to_unsafe } {% else %} nil {% end %}),
+      bg_QFile_setPermissions_QFileDevice__Permissions: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFile_setPermissions_QFileDevice__Permissions") %} Proc(FileDevice::Permissions, Bool).new{|permission_spec| self.set_permissions(permission_spec) } {% else %} nil {% end %}),
+      bg_QFileDevice_close_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_close_") %} Proc(Void).new{ self.close() } {% else %} nil {% end %}),
+      bg_QFileDevice_isSequential_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_isSequential_") %} Proc(Bool).new{ self.sequential?() } {% else %} nil {% end %}),
+      bg_QFileDevice_pos_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_pos_") %} Proc(Int64).new{ self.pos() } {% else %} nil {% end %}),
+      bg_QFileDevice_seek_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_seek_qint64") %} Proc(Int64, Bool).new{|pos| self.seek(pos) } {% else %} nil {% end %}),
+      bg_QFileDevice_atEnd_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_atEnd_") %} Proc(Bool).new{ self.at_end() } {% else %} nil {% end %}),
+      bg_QFileDevice_readData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QFileDevice_writeData_const_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_writeData_const_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, len| self.write_data(data, len) } {% else %} nil {% end %}),
+      bg_QFileDevice_readLineData_char_X_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFileDevice_readLineData_char_X_qint64") %} Proc(UInt8*, Int64, Int64).new{|data, maxlen| self.read_line_data(data, maxlen) } {% else %} nil {% end %}),
+      bg_QIODevice_reset_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_reset_") %} Proc(Bool).new{ self.reset() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesAvailable_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesAvailable_") %} Proc(Int64).new{ self.bytes_available() } {% else %} nil {% end %}),
+      bg_QIODevice_bytesToWrite_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_bytesToWrite_") %} Proc(Int64).new{ self.bytes_to_write() } {% else %} nil {% end %}),
+      bg_QIODevice_canReadLine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_canReadLine_") %} Proc(Bool).new{ self.can_read_line() } {% else %} nil {% end %}),
+      bg_QIODevice_waitForReadyRead_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForReadyRead_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_ready_read(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_waitForBytesWritten_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_waitForBytesWritten_int") %} Proc(Int32, Bool).new{|msecs| self.wait_for_bytes_written(msecs) } {% else %} nil {% end %}),
+      bg_QIODevice_skipData_qint64: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QIODevice_skipData_qint64") %} Proc(Int64, Int64).new{|max_size| self.skip_data(max_size) } {% else %} nil {% end %}),
+      bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(event) } {% else %} nil {% end %}),
+      bg_QObject_customEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_customEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|event| self.custom_event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
+      bg_QObject_connectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_connectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.connect_notify(signal) } {% else %} nil {% end %}),
+      bg_QObject_disconnectNotify_const_QMetaMethod_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_disconnectNotify_const_QMetaMethod_R") %} Proc(Binding::QMetaMethod*, Void).new{|signal| self.disconnect_notify(signal) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QTemporaryFile_JUMPTABLE_BgJumptable_QTemporaryFile_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
+    def auto_remove() : Bool
+      Binding.bg_QTemporaryFile_autoRemove_(self)
+    end
+    
+    def auto_remove=(b : Bool) : Void
+      Binding.bg_QTemporaryFile_setAutoRemove_bool(self, b)
+    end
+    
+    def open() : Bool
+      Binding.bg_QTemporaryFile_open_(self)
+    end
+    
+    def file_name() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_fileName_(self))
+    end
+    
+    def file_template() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_fileTemplate_(self))
+    end
+    
+    def file_template=(name : String) : Void
+      Binding.bg_QTemporaryFile_setFileTemplate_const_QString_R(self, Qt::Converter::QString.wrap(name))
+    end
+    
+    def rename(new_name : String) : Bool
+      Binding.bg_QTemporaryFile_rename_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def rename_overwrite(new_name : String) : Bool
+      Binding.bg_QTemporaryFile_renameOverwrite_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
+    end
+    
+    def self.create_native_file(file_name : String) : TemporaryFile
+      TemporaryFile.new(unwrap: Binding.bg_QTemporaryFile_createNativeFile_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name)))
+    end
+    
+    def self.create_native_file(file : File) : TemporaryFile
+      TemporaryFile.new(unwrap: Binding.bg_QTemporaryFile_createNativeFile_STATIC_QFile_R(file))
+    end
+    
+    protected def open(mode : IODevice::OpenMode) : Bool
+      Binding.bg_QTemporaryFile_open_QIODeviceBase__OpenMode(self, mode)
+    end
+    
+    def self.static_meta_object() : Binding::QMetaObject*
+      Binding.bg_QTemporaryFile_staticMetaObject_STATIC_GETTER_()
+    end
+    
+    def size() : Int64
+      Binding.bg_QFile_size_(self)
+    end
+    
+    def resize(sz : Int64) : Bool
+      Binding.bg_QFile_resize_qint64(self, sz)
+    end
+    
+    def permissions() : FileDevice::Permissions
+      Binding.bg_QFile_permissions_(self)
+    end
+    
+    def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+      Binding.bg_QFile_setPermissions_QFileDevice__Permissions(self, permission_spec)
+    end
+    
+    def close() : Void
+      Binding.bg_QFileDevice_close_(self)
+    end
+    
+    def sequential?() : Bool
+      Binding.bg_QFileDevice_isSequential_(self)
+    end
+    
+    def pos() : Int64
+      Binding.bg_QFileDevice_pos_(self)
+    end
+    
+    def seek(pos : Int64) : Bool
+      Binding.bg_QFileDevice_seek_qint64(self, pos)
+    end
+    
+    def at_end() : Bool
+      Binding.bg_QFileDevice_atEnd_(self)
+    end
+    
+    protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readData_char_X_qint64(self, data, maxlen)
+    end
+    
+    protected def write_data(data : UInt8*, len : Int64) : Int64
+      Binding.bg_QFileDevice_writeData_const_char_X_qint64(self, data, len)
+    end
+    
+    protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+      Binding.bg_QFileDevice_readLineData_char_X_qint64(self, data, maxlen)
+    end
+    
+    def reset() : Bool
+      Binding.bg_QIODevice_reset_(self)
+    end
+    
+    def bytes_available() : Int64
+      Binding.bg_QIODevice_bytesAvailable_(self)
+    end
+    
+    def bytes_to_write() : Int64
+      Binding.bg_QIODevice_bytesToWrite_(self)
+    end
+    
+    def can_read_line() : Bool
+      Binding.bg_QIODevice_canReadLine_(self)
+    end
+    
+    def wait_for_ready_read(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForReadyRead_int(self, msecs)
+    end
+    
+    def wait_for_bytes_written(msecs : Int32) : Bool
+      Binding.bg_QIODevice_waitForBytesWritten_int(self, msecs)
+    end
+    
+    protected def skip_data(max_size : Int64) : Int64
+      Binding.bg_QIODevice_skipData_qint64(self, max_size)
+    end
+    
+    def event(event : Event) : Bool
+      Binding.bg_QObject_event_QEvent_X(self, event)
+    end
+    
+    def event_filter(watched : Object, event : Event) : Bool
+      Binding.bg_QObject_eventFilter_QObject_X_QEvent_X(self, watched, event)
+    end
+    
+    protected def timer_event(event : TimerEvent) : Void
+      Binding.bg_QObject_timerEvent_QTimerEvent_X(self, event)
+    end
+    
+    protected def child_event(event : Binding::QChildEvent*) : Void
+      Binding.bg_QObject_childEvent_QChildEvent_X(self, event)
+    end
+    
+    protected def custom_event(event : Event) : Void
+      Binding.bg_QObject_customEvent_QEvent_X(self, event)
+    end
+    
+    protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_connectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+      Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
+    end
+    
+    def to?(_type_ : T.class) forall T
+      {% if T == TemporaryFile %}
+        self
+      {% else %}
+        super
+      {% end %}
+    end
+    
+    def initialize(unwrap : Binding::QTemporaryFile*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+    private class Superclass
+      def initialize(@myself : TemporaryFile)
+      end
+      def file_name() : String
+        Qt::Converter::QString.unwrap(Binding.bg_QTemporaryFile_fileName_SUPER_(@myself))
+      end
+      
+      protected def open(mode : IODevice::OpenMode) : Bool
+        Binding.bg_QTemporaryFile_open_SUPER_QIODeviceBase__OpenMode(@myself, mode)
+      end
+      
+      def size() : Int64
+        Binding.bg_QFile_size_SUPER_(@myself)
+      end
+      
+      def resize(sz : Int64) : Bool
+        Binding.bg_QFile_resize_SUPER_qint64(@myself, sz)
+      end
+      
+      def permissions() : FileDevice::Permissions
+        Binding.bg_QFile_permissions_SUPER_(@myself)
+      end
+      
+      def set_permissions(permission_spec : FileDevice::Permissions) : Bool
+        Binding.bg_QFile_setPermissions_SUPER_QFileDevice__Permissions(@myself, permission_spec)
+      end
+      
+      def close() : Void
+        Binding.bg_QFileDevice_close_SUPER_(@myself)
+      end
+      
+      def sequential?() : Bool
+        Binding.bg_QFileDevice_isSequential_SUPER_(@myself)
+      end
+      
+      def pos() : Int64
+        Binding.bg_QFileDevice_pos_SUPER_(@myself)
+      end
+      
+      def seek(pos : Int64) : Bool
+        Binding.bg_QFileDevice_seek_SUPER_qint64(@myself, pos)
+      end
+      
+      def at_end() : Bool
+        Binding.bg_QFileDevice_atEnd_SUPER_(@myself)
+      end
+      
+      protected def read_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      protected def write_data(data : UInt8*, len : Int64) : Int64
+        Binding.bg_QFileDevice_writeData_SUPER_const_char_X_qint64(@myself, data, len)
+      end
+      
+      protected def read_line_data(data : UInt8*, maxlen : Int64) : Int64
+        Binding.bg_QFileDevice_readLineData_SUPER_char_X_qint64(@myself, data, maxlen)
+      end
+      
+      def reset() : Bool
+        Binding.bg_QIODevice_reset_SUPER_(@myself)
+      end
+      
+      def bytes_available() : Int64
+        Binding.bg_QIODevice_bytesAvailable_SUPER_(@myself)
+      end
+      
+      def bytes_to_write() : Int64
+        Binding.bg_QIODevice_bytesToWrite_SUPER_(@myself)
+      end
+      
+      def can_read_line() : Bool
+        Binding.bg_QIODevice_canReadLine_SUPER_(@myself)
+      end
+      
+      def wait_for_ready_read(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForReadyRead_SUPER_int(@myself, msecs)
+      end
+      
+      def wait_for_bytes_written(msecs : Int32) : Bool
+        Binding.bg_QIODevice_waitForBytesWritten_SUPER_int(@myself, msecs)
+      end
+      
+      protected def skip_data(max_size : Int64) : Int64
+        Binding.bg_QIODevice_skipData_SUPER_qint64(@myself, max_size)
+      end
+      
+      def event(event : Event) : Bool
+        Binding.bg_QObject_event_SUPER_QEvent_X(@myself, event)
+      end
+      
+      def event_filter(watched : Object, event : Event) : Bool
+        Binding.bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
+      end
+      
+      protected def timer_event(event : TimerEvent) : Void
+        Binding.bg_QObject_timerEvent_SUPER_QTimerEvent_X(@myself, event)
+      end
+      
+      protected def child_event(event : Binding::QChildEvent*) : Void
+        Binding.bg_QObject_childEvent_SUPER_QChildEvent_X(@myself, event)
+      end
+      
+      protected def custom_event(event : Event) : Void
+        Binding.bg_QObject_customEvent_SUPER_QEvent_X(@myself, event)
+      end
+      
+      protected def connect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+      protected def disconnect_notify(signal : Binding::QMetaMethod*) : Void
+        Binding.bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(@myself, signal)
+      end
+      
+    end
+    private def superclass
+      Superclass.new(self)
+    end
   end
   abstract class PaintDevice
     @unwrap : Binding::QPaintDevice*
@@ -115793,6 +120691,20 @@ module Qt
     CustomCall = 9
     ConstructInPlace = 10
   end
+  module StringConverter
+    enum Encoding : UInt32
+      Utf8 = 0
+      Utf16 = 1
+      Utf16LE = 2
+      Utf16BE = 3
+      Utf32 = 4
+      Utf32LE = 5
+      Utf32BE = 6
+      Latin1 = 7
+      System = 8
+      LastEncoding = 8
+    end
+  end
   module MetaType
     enum Type : UInt32
       Bool = 1
@@ -115887,23 +120799,6 @@ module Qt
       Qreal = 6
       UnknownType = 0
       User = 65536
-    end
-  end
-  module FileDevice
-    @[Flags]
-    enum Permissions : UInt32
-      ReadOwner = 16384
-      WriteOwner = 8192
-      ExeOwner = 4096
-      ReadUser = 1024
-      WriteUser = 512
-      ExeUser = 256
-      ReadGroup = 64
-      WriteGroup = 32
-      ExeGroup = 16
-      ReadOther = 4
-      WriteOther = 2
-      ExeOther = 1
     end
   end
   module ItemSelectionModel

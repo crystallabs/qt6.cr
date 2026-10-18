@@ -51,6 +51,14 @@ types: # Type rewrite rules
     from_crystal: "(%.ord.to_u32)"
     kind: Struct
     pass_by: Value
+  char16_t: # Map as Crystal Char, like char32_t; QTextStream#<< takes it
+    binding_type: UInt16
+    builtin: true
+    crystal_type: Char
+    to_crystal: "(%.chr)"
+    from_crystal: "(%.ord.to_u16)"
+    kind: Struct
+    pass_by: Value
   QVariant:
     crystal_type: Variant
     binding_type: CrystalVariant
@@ -255,6 +263,12 @@ types: # Type rewrite rules
   "QtPrivate::FunctionPointer<Func2>::Object": { ignore: true }
   "T": { ignore: true }
   "void ()": { ignore: true }
+  # The QTextStream manipulators (Qt::endl etc.) are C function pointers;
+  # qfloat16 is Qt's half-float class, which has no Crystal counterpart.
+  QTextStreamFunction: { ignore: true }
+  "QTextStream &(QTextStream &)": { ignore: true }
+  QTextStreamManipulator: { ignore: true } # qSetFieldWidth etc., use the setters
+  qfloat16: { ignore: true }
   "void (void *)": { ignore: true }
   "std::__1::function<void (const QString &, const QByteArray &)>":
     ignore: true
@@ -263,7 +277,7 @@ types: # Type rewrite rules
   "std::chrono::milliseconds":
     cpp_type: int64_t
     binding_type: Int64
-    crystal_type: Time::Span
+    crystal_type: "::Time::Span" # Qt::Time shadows Time inside module Qt
     generate_binding: false
     generate_wrapper: false
     pass_by: Value

@@ -283,8 +283,11 @@ see the comments there:
 * Class-local typedefs like `QPoint::Representation` (Qt 6.10+, a
   `QCheckedInt<int>`) or `QPalette::ResolveMask` get `alias_for` rules, so the
   structures can be copied and the methods wrapped.
-* `char32_t`, which the `QLocale::toString` overloads take, maps to `Char` like
-  `QChar`.
+* `char32_t`, which the `QLocale::toString` overloads take, and `char16_t`,
+  which `QTextStream#<<` takes, map to `Char` like `QChar`.
+* `std::chrono::milliseconds` maps to `::Time::Span` (qualified, as `Qt::Time`
+  shadows `Time` inside the module): `timer.start(2.seconds)`,
+  `lock_file.try_lock(10.milliseconds)`.
 * `QStringList` and `QVariantList` are aliases of `QList<QString>` and
   `QList<QVariant>`, so methods take any `Enumerable(String)`:
   `combo_box.add_items(["a", "b"])`.  `QList<QString>` and

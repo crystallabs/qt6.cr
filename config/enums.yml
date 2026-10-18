@@ -210,6 +210,22 @@ enums:
   "QIODeviceBase::OpenMode": IODevice::OpenMode
   "QIODeviceBase::OpenModeFlag": IODevice::OpenModeFlag
   "QFileDevice::Permissions": FileDevice::Permissions # QDir#mkdir on Qt < 6.10
+  "QFileDevice::Permission": FileDevice::Permission
+  "QFileDevice::FileError": FileDevice::FileError
+  "QFileDevice::FileTime": FileDevice::FileTime
+  "QFileDevice::FileHandleFlag": FileDevice::FileHandleFlag
+  "QFileDevice::FileHandleFlags": FileDevice::FileHandleFlags
+  "QFileDevice::MemoryMapFlag": FileDevice::MemoryMapFlag
+  "QFileDevice::MemoryMapFlags": FileDevice::MemoryMapFlags
+  "QTextStream::RealNumberNotation": TextStream::RealNumberNotation
+  "QTextStream::FieldAlignment": TextStream::FieldAlignment
+  "QTextStream::Status": TextStream::Status
+  "QTextStream::NumberFlag": TextStream::NumberFlag
+  "QTextStream::NumberFlags": TextStream::NumberFlags
+  "QStringConverter::Encoding": StringConverter::Encoding # QTextStream#encoding
+  "QDirIterator::IteratorFlag": DirIterator::IteratorFlag
+  "QDirIterator::IteratorFlags": DirIterator::IteratorFlags
+  "QLockFile::LockError": LockFile::LockError
   "QScrollEvent::ScrollState": ScrollEvent::ScrollState
   "Qt::ScreenOrientation": ScreenOrientation
   "Qt::GestureState": GestureState
