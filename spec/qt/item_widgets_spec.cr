@@ -47,14 +47,14 @@ describe Qt::TreeWidget do
 
     tree.column_count.should eq(2)
     tree.top_level_item_count.should eq(2)
-    tree.header_item.text(1).should eq("Size")
-    tree.top_level_item(0).text(0).should eq("root")
+    tree.header_item.not_nil!.text(1).should eq("Size")
+    tree.top_level_item(0).not_nil!.text(0).should eq("root")
     tree.index_of_top_level_item(other).should eq(1)
     root.child_count.should eq(1)
-    root.child(0).text(1).should eq("2")
-    child.parent.to_unsafe.should eq(root.to_unsafe)
-    child.tree_widget.to_unsafe.should eq(tree.to_unsafe)
-    other.child(0).text(0).should eq("grandchild")
+    root.child(0).not_nil!.text(1).should eq("2")
+    child.parent.not_nil!.to_unsafe.should eq(root.to_unsafe)
+    child.tree_widget.not_nil!.to_unsafe.should eq(tree.to_unsafe)
+    other.child(0).not_nil!.text(0).should eq("grandchild")
 
     child.set_text(1, "20")
     child.text(1).should eq("20")
@@ -64,9 +64,9 @@ describe Qt::TreeWidget do
     root.expanded = true
     root.expanded?.should be_true
     tree.current_item = child
-    tree.current_item.text(0).should eq("child")
+    tree.current_item.not_nil!.text(0).should eq("child")
     tree.index_from_item(child, 1).column.should eq(1)
-    tree.item_from_index(tree.index_from_item(child)).to_unsafe.should eq(child.to_unsafe)
+    tree.item_from_index(tree.index_from_item(child)).not_nil!.to_unsafe.should eq(child.to_unsafe)
     tree.find_items("other", Qt::MatchFlags::MatchExactly).size.should eq(1)
 
     iterator = Qt::TreeWidgetItemIterator.new(tree)
@@ -81,10 +81,10 @@ describe Qt::TreeWidget do
     Qt::TreeWidgetItemIterator::IteratorFlags::All.includes?(Qt::TreeWidgetItemIterator::IteratorFlags::NoChildren).should be_true
 
     tree.sort_items(0, Qt::SortOrder::DescendingOrder)
-    tree.top_level_item(0).text(0).should eq("root")
+    tree.top_level_item(0).not_nil!.text(0).should eq("root")
     tree.sort_items(0, Qt::SortOrder::AscendingOrder)
-    tree.top_level_item(0).text(0).should eq("other")
-    taken = tree.take_top_level_item(0)
+    tree.top_level_item(0).not_nil!.text(0).should eq("other")
+    taken = tree.take_top_level_item(0).not_nil!
     taken.text(0).should eq("other")
     tree.top_level_item_count.should eq(1)
     tree.clear
@@ -94,7 +94,7 @@ describe Qt::TreeWidget do
   it "shows a header view with sections" do
     tree = Qt::TreeWidget.new
     tree.header_labels = ["a", "b", "c"]
-    header = tree.header
+    header = tree.header.not_nil!
     header.count.should eq(3)
     header.orientation.should eq(Qt::Orientation::Horizontal)
     header.resize_section(1, 120)
@@ -124,18 +124,18 @@ describe Qt::PlainTextEdit do
     changes.should eq(1)
     edit.plain_text = "third"
     edit.to_plain_text.should eq("third")
-    edit.document.block_count.should eq(1)
+    edit.document.not_nil!.block_count.should eq(1)
     edit.line_wrap_mode = Qt::PlainTextEdit::LineWrapMode::NoWrap
     edit.line_wrap_mode.should eq(Qt::PlainTextEdit::LineWrapMode::NoWrap)
     edit.read_only = true
     edit.read_only?.should be_true
-    edit.document.document_layout.document.to_unsafe.should eq(edit.document.to_unsafe)
+    edit.document.not_nil!.document_layout.not_nil!.document.not_nil!.to_unsafe.should eq(edit.document.not_nil!.to_unsafe)
   end
 
   it "highlights blocks from Crystal" do
     document = Qt::TextDocument.new("a key\nno\nkeykey")
     highlighter = KeywordHighlighter.new(document)
-    highlighter.document.to_unsafe.should eq(document.to_unsafe)
+    highlighter.document.not_nil!.to_unsafe.should eq(document.to_unsafe)
     highlighter.rehighlight
     highlighter.blocks.should eq(["a key", "no", "keykey"])
     highlighter.weights.should eq([Qt::Font::Weight::Normal.to_i, Qt::Font::Weight::Normal.to_i, Qt::Font::Weight::Bold.to_i])
@@ -199,7 +199,7 @@ describe Qt::UndoStack do
     stack.end_macro
     list.should eq(["c", "d"])
     stack.count.should eq(1)
-    stack.command(0).child_count.should eq(2)
+    stack.command(0).not_nil!.child_count.should eq(2)
     stack.undo
     list.should be_empty
 
@@ -212,8 +212,8 @@ describe Qt::UndoStack do
     group.stacks.size.should eq(1)
 
     view = Qt::UndoView.new(stack)
-    view.stack.to_unsafe.should eq(stack.to_unsafe)
-    view.model.row_count.should eq(2) # The clean state and the macro
+    view.stack.not_nil!.to_unsafe.should eq(stack.to_unsafe)
+    view.model.not_nil!.row_count.should eq(2) # The clean state and the macro
     view.empty_label = "nothing"
     view.empty_label.should eq("nothing")
   end
@@ -259,7 +259,7 @@ describe Qt::ItemDelegate do
     view = Qt::TableView.new
     delegate = Qt::ItemDelegate.new
     view.item_delegate = delegate
-    view.item_delegate.to_unsafe.should eq(delegate.to_unsafe)
+    view.item_delegate.not_nil!.to_unsafe.should eq(delegate.to_unsafe)
     delegate.has_clipping?.should be_true
     delegate.clipping = false
     delegate.has_clipping?.should be_false

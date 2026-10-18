@@ -48,20 +48,20 @@ describe Qt::StandardItem do
     model.append_row(root)
 
     model.row_count.should eq(1)
-    model.item(0).text.should eq("root")
-    model.item(0).to_unsafe.should eq(root.to_unsafe) # No operator== on QStandardItem
+    model.item(0).not_nil!.text.should eq("root")
+    model.item(0).not_nil!.to_unsafe.should eq(root.to_unsafe) # No operator== on QStandardItem
     root.has_children?.should be_true
-    root.child(0).text.should eq("child")
-    child.parent.to_unsafe.should eq(root.to_unsafe)
+    root.child(0).not_nil!.text.should eq("child")
+    child.parent.not_nil!.to_unsafe.should eq(root.to_unsafe)
     child.row.should eq(0)
     child.index.parent.should eq(root.index)
-    model.item_from_index(child.index).to_unsafe.should eq(child.to_unsafe)
+    model.item_from_index(child.index).not_nil!.to_unsafe.should eq(child.to_unsafe)
     model.data(child.index).to(String).should eq("child")
 
     root.append_row([Qt::StandardItem.new("a"), Qt::StandardItem.new("b")])
     root.row_count.should eq(2)
     root.column_count.should eq(2)
-    root.child(1, 1).text.should eq("b")
+    root.child(1, 1).not_nil!.text.should eq("b")
 
     child.text = "renamed"
     child.set_data(Qt.variant(42))
@@ -76,12 +76,12 @@ describe Qt::StandardItem do
     model.find_items("root").size.should eq(1)
     model.find_items("renamed").size.should eq(0) # Top level only
 
-    taken = root.take_child(0)
+    taken = root.take_child(0).not_nil!
     taken.to_unsafe.should eq(child.to_unsafe)
-    root.child(0).to_unsafe.null?.should be_true # No item there any more
+    root.child(0).should be_nil # No item there any more
     root.remove_row(0)
     root.row_count.should eq(1)
-    clone = root.clone
+    clone = root.clone.not_nil!
     clone.text.should eq("root")
     clone.row_count.should eq(0)
   end
@@ -106,7 +106,7 @@ describe Qt::StringListModel do
 
     view = Qt::ListView.new
     view.model = model
-    view.model.row_count.should eq(2)
+    view.model.not_nil!.row_count.should eq(2)
   end
 
   it "backs a proxy model" do
@@ -291,7 +291,7 @@ describe "animation groups" do
     current = [] of Qt::AbstractAnimation
     group.on_current_animation_changed { |animation| current << animation }
     group.add_animation(first) # Makes it the current animation already
-    pause = group.add_pause(5)
+    pause = group.add_pause(5).not_nil!
     pause.duration.should eq(5)
     group.add_animation(second)
     group.animation_count.should eq(3)
@@ -310,7 +310,7 @@ describe "animation groups" do
     # Signals pass the base type, so compare the wrapped pointers
     current.map(&.to_unsafe).should eq([first, pause, second].map(&.to_unsafe))
 
-    group.take_animation(1).to_unsafe.should eq(pause.to_unsafe)
+    group.take_animation(1).not_nil!.to_unsafe.should eq(pause.to_unsafe)
     group.animation_count.should eq(2)
     group.clear
     group.animation_count.should eq(0)
@@ -371,8 +371,8 @@ describe "Models written in Crystal" do
 
     view = Qt::ListView.new
     view.model = model
-    view.model.row_count.should eq(4)
-    view.model.index(1, 0).data.to(Int32).should eq(1)
+    view.model.not_nil!.row_count.should eq(4)
+    view.model.not_nil!.index(1, 0).data.to(Int32).should eq(1)
 
     grid = GridModel.new
     grid.row_count.should eq(2)

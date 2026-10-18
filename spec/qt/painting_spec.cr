@@ -387,7 +387,7 @@ describe Qt::OffscreenSurface do
     plain = Qt::Window.new
     plain.resize(Qt::Size.new(8, 8))
     store = Qt::BackingStore.new(plain)
-    store.window.to_unsafe.should eq(plain.to_unsafe)
+    store.window.not_nil!.to_unsafe.should eq(plain.to_unsafe)
     store.resize(Qt::Size.new(8, 8))
     store.size.should eq(Qt::Size.new(8, 8))
     store.has_static_contents?.should be_false

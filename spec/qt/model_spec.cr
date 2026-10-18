@@ -29,7 +29,7 @@ describe "item models" do
     view = Qt::ListView.new
     view.model = model
     view.show
-    view.model.row_count.should eq(3)
+    view.model.not_nil!.row_count.should eq(3)
     view.current_index = model.index(2, 0)
     view.current_index.row.should eq(2)
   end
@@ -39,9 +39,9 @@ describe "item models" do
     table.set_item(0, 0, Qt::TableWidgetItem.new("top left"))
     table.set_item(1, 1, Qt::TableWidgetItem.new("bottom right"))
     table.row_count.should eq(2)
-    table.item(0, 0).text.should eq("top left")
-    table.item(1, 1).text.should eq("bottom right")
+    table.item(0, 0).not_nil!.text.should eq("top left")
+    table.item(1, 1).not_nil!.text.should eq("bottom right")
     table.set_current_cell(1, 1)
-    table.current_item.text.should eq("bottom right")
+    table.current_item.not_nil!.text.should eq("bottom right")
   end
 end

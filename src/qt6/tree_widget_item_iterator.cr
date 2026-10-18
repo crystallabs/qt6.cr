@@ -10,8 +10,7 @@ module Qt
 
     # Returns the current item, or `nil` past the last one.
     def value : TreeWidgetItem?
-      item = deref
-      item unless item.to_unsafe.null?
+      deref
     end
 
     # Returns the current item and advances, see `Iterator#next`.

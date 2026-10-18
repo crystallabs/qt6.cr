@@ -88,8 +88,8 @@ describe Qt::RandomGenerator do
     (0...10).should contain(value)
     generator.bounded(5, 8).should be >= 5
     generator.generate_double.should be < 1.0
-    Qt::RandomGenerator.global.bounded(1_u32).should eq(0)
-    Qt::RandomGenerator64.global.generate.should be_a(UInt64)
+    Qt::RandomGenerator.global.not_nil!.bounded(1_u32).should eq(0)
+    Qt::RandomGenerator64.global.not_nil!.generate.should be_a(UInt64)
   end
 end
 

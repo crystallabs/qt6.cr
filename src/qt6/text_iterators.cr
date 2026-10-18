@@ -11,8 +11,7 @@ module Qt
     # Returns the current frame or block, or `nil` past the last one.
     def value : TextFrame | TextBlock | Nil
       return nil if at_end
-      frame = current_frame
-      frame.to_unsafe.null? ? current_block : frame
+      current_frame || current_block
     end
 
     # Returns the current frame or block and advances, see `Iterator#next`.

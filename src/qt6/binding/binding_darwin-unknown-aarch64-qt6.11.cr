@@ -37089,8 +37089,8 @@ module Qt
     # ***************************************************************************
     # QDataStream inline functions
     # ***************************************************************************
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QDataStream_device_(self))
+    def device() : IODevice?
+      Binding.bg_QDataStream_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def device=(unnamed_arg_0 : IODevice) : Void
@@ -38052,8 +38052,8 @@ module Qt
       Binding.bg_QObject_destroyed_QObject_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
-    def parent() : Object
-      Object.new(unwrap: Binding.bg_QObject_parent_(self))
+    def parent() : Object?
+      Binding.bg_QObject_parent_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def inherits(classname : UInt8*) : Bool
@@ -38064,8 +38064,8 @@ module Qt
       Binding.bg_QObject_deleteLater_(self)
     end
     
-    protected def sender() : Object
-      Object.new(unwrap: Binding.bg_QObject_sender_(self))
+    protected def sender() : Object?
+      Binding.bg_QObject_sender_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def sender_signal_index() : Int32
@@ -38618,8 +38618,8 @@ module Qt
       Binding.bg_QAbstractAnimation_state_(self)
     end
     
-    def group() : AnimationGroup
-      AnimationGroupImpl.new(unwrap: Binding.bg_QAbstractAnimation_group_(self))
+    def group() : AnimationGroup?
+      Binding.bg_QAbstractAnimation_group_(self).try {|ptr| AnimationGroupImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def direction() : AbstractAnimation::Direction
@@ -39333,8 +39333,8 @@ module Qt
     {% end %}
     end
     
-    def self.instance(thread : Binding::QThread*? = nil) : AbstractEventDispatcher
-      AbstractEventDispatcherImpl.new(unwrap: Binding.bg_QAbstractEventDispatcher_instance_STATIC_QThread_X(thread))
+    def self.instance(thread : Binding::QThread*? = nil) : AbstractEventDispatcher?
+      Binding.bg_QAbstractEventDispatcher_instance_STATIC_QThread_X(thread).try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     abstract def process_events(flags : EventLoop::ProcessEventsFlags) : Bool
@@ -39638,8 +39638,8 @@ module Qt
       Binding.bg_QTextStream_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QTextStream_device_(self))
+    def device() : IODevice?
+      Binding.bg_QTextStream_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def status() : TextStream::Status
@@ -39963,8 +39963,8 @@ module Qt
       Binding.bg_QModelIndex_flags_(self)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QModelIndex_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QModelIndex_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def valid?() : Bool
@@ -40111,8 +40111,8 @@ module Qt
       Binding.bg_QPersistentModelIndex_flags_(self)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QPersistentModelIndex_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QPersistentModelIndex_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def valid?() : Bool
@@ -40395,8 +40395,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -40902,8 +40902,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -41481,8 +41481,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -41661,8 +41661,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -42143,8 +42143,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -42323,8 +42323,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -42612,8 +42612,8 @@ module Qt
       Binding.bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X(self, source_model)
     end
     
-    def source_model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QAbstractProxyModel_sourceModel_(self))
+    def source_model() : AbstractItemModel?
+      Binding.bg_QAbstractProxyModel_sourceModel_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     abstract def map_to_source(proxy_index : ModelIndex) : ModelIndex
@@ -42690,8 +42690,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_sibling_int_int_const_QModelIndex_R(self, row, column, idx))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -43057,8 +43057,8 @@ module Qt
         ModelIndex.new(unwrap: Binding.bg_QAbstractProxyModel_sibling_SUPER_int_int_const_QModelIndex_R(@myself, row, column, idx))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -43238,8 +43238,8 @@ module Qt
     {% end %}
     end
     
-    def animation_at(index : Int32) : AbstractAnimation
-      AbstractAnimationImpl.new(unwrap: Binding.bg_QAnimationGroup_animationAt_int(self, index))
+    def animation_at(index : Int32) : AbstractAnimation?
+      Binding.bg_QAnimationGroup_animationAt_int(self, index).try {|ptr| AbstractAnimationImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def animation_count() : Int32
@@ -43264,8 +43264,8 @@ module Qt
       Binding.bg_QAnimationGroup_removeAnimation_QAbstractAnimation_X(self, animation)
     end
     
-    def take_animation(index : Int32) : AbstractAnimation
-      AbstractAnimationImpl.new(unwrap: Binding.bg_QAnimationGroup_takeAnimation_int(self, index))
+    def take_animation(index : Int32) : AbstractAnimation?
+      Binding.bg_QAnimationGroup_takeAnimation_int(self, index).try {|ptr| AbstractAnimationImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def clear() : Void
@@ -43604,8 +43604,8 @@ module Qt
       Binding.bg_QEvent_registerEventType_STATIC_int(hint)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -43932,8 +43932,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -43981,8 +43981,8 @@ module Qt
       TimerEvent.new(unwrap: Binding.bg_QTimerEvent__OPERATOR_assign_const_QTimerEvent_R(self, other))
     end
     
-    def clone() : TimerEvent
-      TimerEvent.new(unwrap: Binding.bg_QTimerEvent_clone_(self))
+    def clone() : TimerEvent?
+      Binding.bg_QTimerEvent_clone_(self).try {|ptr| TimerEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(timer_id : Int32)
@@ -44095,8 +44095,8 @@ module Qt
     private class Superclass
       def initialize(@myself : TimerEvent)
       end
-      def clone() : TimerEvent
-        TimerEvent.new(unwrap: Binding.bg_QTimerEvent_clone_SUPER_(@myself))
+      def clone() : TimerEvent?
+        Binding.bg_QTimerEvent_clone_SUPER_(@myself).try {|ptr| TimerEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -44148,8 +44148,8 @@ module Qt
       ChildEvent.new(unwrap: Binding.bg_QChildEvent__OPERATOR_assign_const_QChildEvent_R(self, other))
     end
     
-    def clone() : ChildEvent
-      ChildEvent.new(unwrap: Binding.bg_QChildEvent_clone_(self))
+    def clone() : ChildEvent?
+      Binding.bg_QChildEvent_clone_(self).try {|ptr| ChildEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, child : Object)
@@ -44187,8 +44187,8 @@ module Qt
     {% end %}
     end
     
-    def child() : Object
-      Object.new(unwrap: Binding.bg_QChildEvent_child_(self))
+    def child() : Object?
+      Binding.bg_QChildEvent_child_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def added() : Bool
@@ -44203,8 +44203,8 @@ module Qt
       Binding.bg_QChildEvent_removed_(self)
     end
     
-    private def c() : Object
-      Object.new(unwrap: Binding.bg_QChildEvent_c_GETTER_(self))
+    private def c() : Object?
+      Binding.bg_QChildEvent_c_GETTER_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def c=(c : Object) : Void
@@ -44231,8 +44231,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ChildEvent)
       end
-      def clone() : ChildEvent
-        ChildEvent.new(unwrap: Binding.bg_QChildEvent_clone_SUPER_(@myself))
+      def clone() : ChildEvent?
+        Binding.bg_QChildEvent_clone_SUPER_(@myself).try {|ptr| ChildEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -44284,8 +44284,8 @@ module Qt
       DynamicPropertyChangeEvent.new(unwrap: Binding.bg_QDynamicPropertyChangeEvent__OPERATOR_assign_const_QDynamicPropertyChangeEvent_R(self, other))
     end
     
-    def clone() : DynamicPropertyChangeEvent
-      DynamicPropertyChangeEvent.new(unwrap: Binding.bg_QDynamicPropertyChangeEvent_clone_(self))
+    def clone() : DynamicPropertyChangeEvent?
+      Binding.bg_QDynamicPropertyChangeEvent_clone_(self).try {|ptr| DynamicPropertyChangeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(name : Bytes)
@@ -44347,8 +44347,8 @@ module Qt
     private class Superclass
       def initialize(@myself : DynamicPropertyChangeEvent)
       end
-      def clone() : DynamicPropertyChangeEvent
-        DynamicPropertyChangeEvent.new(unwrap: Binding.bg_QDynamicPropertyChangeEvent_clone_SUPER_(@myself))
+      def clone() : DynamicPropertyChangeEvent?
+        Binding.bg_QDynamicPropertyChangeEvent_clone_SUPER_(@myself).try {|ptr| DynamicPropertyChangeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -44490,8 +44490,8 @@ module Qt
       Binding.bg_QCoreApplication_isSetuidAllowed_STATIC_()
     end
     
-    def self.instance() : CoreApplication
-      CoreApplication.new(unwrap: Binding.bg_QCoreApplication_instance_STATIC_())
+    def self.instance() : CoreApplication?
+      Binding.bg_QCoreApplication_instance_STATIC_().try {|ptr| CoreApplication.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.instance_exists() : Bool
@@ -44535,8 +44535,8 @@ module Qt
       Binding.bg_QCoreApplication_removePostedEvents_STATIC_QObject_X_int(receiver, event_type)
     end
     
-    def self.event_dispatcher() : AbstractEventDispatcher
-      AbstractEventDispatcherImpl.new(unwrap: Binding.bg_QCoreApplication_eventDispatcher_STATIC_())
+    def self.event_dispatcher() : AbstractEventDispatcher?
+      Binding.bg_QCoreApplication_eventDispatcher_STATIC_().try {|ptr| AbstractEventDispatcherImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.event_dispatcher=(event_dispatcher : AbstractEventDispatcher) : Void
@@ -53941,8 +53941,8 @@ module Qt
       Binding.bg_QAbstractProxyModel_hasChildren_const_QModelIndex_R(self, parent)
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -54141,8 +54141,8 @@ module Qt
         Binding.bg_QAbstractProxyModel_hasChildren_SUPER_const_QModelIndex_R(@myself, parent)
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -54260,8 +54260,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QItemSelectionRange_parent_(self))
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QItemSelectionRange_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QItemSelectionRange_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def contains(index : ModelIndex) : Bool
@@ -54529,8 +54529,8 @@ module Qt
       ItemSelection.new(unwrap: Binding.bg_QItemSelectionModel_selection_(self))
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QItemSelectionModel_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QItemSelectionModel_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def model=(model : AbstractItemModel) : Void
@@ -55370,16 +55370,16 @@ module Qt
       Binding.bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonObject_R(self, rhs)
     end
     
-    private def a() : JsonArray
-      JsonArray.new(unwrap: Binding.bg_QJsonValueConstRef_a_GETTER_(self))
+    private def a() : JsonArray?
+      Binding.bg_QJsonValueConstRef_a_GETTER_(self).try {|ptr| JsonArray.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def a=(a : JsonArray) : Void
       Binding.bg_QJsonValueConstRef_a_SETTER_QJsonArray_X(self, a)
     end
     
-    private def o() : JsonObject
-      JsonObject.new(unwrap: Binding.bg_QJsonValueConstRef_o_GETTER_(self))
+    private def o() : JsonObject?
+      Binding.bg_QJsonValueConstRef_o_GETTER_(self).try {|ptr| JsonObject.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def o=(o : JsonObject) : Void
@@ -57217,8 +57217,8 @@ module Qt
       LoggingCategory.new(unwrap: Binding.bg_QLoggingCategory__OPERATOR_call_(self))
     end
     
-    def self.default_category() : LoggingCategory
-      LoggingCategory.new(unwrap: Binding.bg_QLoggingCategory_defaultCategory_STATIC_())
+    def self.default_category() : LoggingCategory?
+      Binding.bg_QLoggingCategory_defaultCategory_STATIC_().try {|ptr| LoggingCategory.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.filter_rules=(rules : String) : Void
@@ -60128,8 +60128,8 @@ module Qt
     {% end %}
     end
     
-    def target_object() : Object
-      Object.new(unwrap: Binding.bg_QPropertyAnimation_targetObject_(self))
+    def target_object() : Object?
+      Binding.bg_QPropertyAnimation_targetObject_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def target_object=(target : Object) : Void
@@ -60388,12 +60388,12 @@ module Qt
       Binding.bg_QRandomGenerator_max_STATIC_()
     end
     
-    def self.system() : RandomGenerator
-      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator_system_STATIC_())
+    def self.system() : RandomGenerator?
+      Binding.bg_QRandomGenerator_system_STATIC_().try {|ptr| RandomGenerator.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.global() : RandomGenerator
-      RandomGenerator.new(unwrap: Binding.bg_QRandomGenerator_global_STATIC_())
+    def self.global() : RandomGenerator?
+      Binding.bg_QRandomGenerator_global_STATIC_().try {|ptr| RandomGenerator.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.securely_seeded() : RandomGenerator
@@ -60458,12 +60458,12 @@ module Qt
       Binding.bg_QRandomGenerator64_max_STATIC_()
     end
     
-    def self.system() : RandomGenerator64
-      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64_system_STATIC_())
+    def self.system() : RandomGenerator64?
+      Binding.bg_QRandomGenerator64_system_STATIC_().try {|ptr| RandomGenerator64.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.global() : RandomGenerator64
-      RandomGenerator64.new(unwrap: Binding.bg_QRandomGenerator64_global_STATIC_())
+    def self.global() : RandomGenerator64?
+      Binding.bg_QRandomGenerator64_global_STATIC_().try {|ptr| RandomGenerator64.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.securely_seeded() : RandomGenerator64
@@ -62195,16 +62195,16 @@ module Qt
     {% end %}
     end
     
-    def add_pause(msecs : Int32) : PauseAnimation
-      PauseAnimation.new(unwrap: Binding.bg_QSequentialAnimationGroup_addPause_int(self, msecs))
+    def add_pause(msecs : Int32) : PauseAnimation?
+      Binding.bg_QSequentialAnimationGroup_addPause_int(self, msecs).try {|ptr| PauseAnimation.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_pause(index : Int32, msecs : Int32) : PauseAnimation
-      PauseAnimation.new(unwrap: Binding.bg_QSequentialAnimationGroup_insertPause_int_int(self, index, msecs))
+    def insert_pause(index : Int32, msecs : Int32) : PauseAnimation?
+      Binding.bg_QSequentialAnimationGroup_insertPause_int_int(self, index, msecs).try {|ptr| PauseAnimation.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def current_animation() : AbstractAnimation
-      AbstractAnimationImpl.new(unwrap: Binding.bg_QSequentialAnimationGroup_currentAnimation_(self))
+    def current_animation() : AbstractAnimation?
+      Binding.bg_QSequentialAnimationGroup_currentAnimation_(self).try {|ptr| AbstractAnimationImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def duration() : Int32
@@ -63355,16 +63355,16 @@ module Qt
       Binding.bg_QSignalMapper_removeMappings_QObject_X(self, sender)
     end
     
-    def mapping(id : Int32) : Object
-      Object.new(unwrap: Binding.bg_QSignalMapper_mapping_int(self, id))
+    def mapping(id : Int32) : Object?
+      Binding.bg_QSignalMapper_mapping_int(self, id).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def mapping(text : String) : Object
-      Object.new(unwrap: Binding.bg_QSignalMapper_mapping_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def mapping(text : String) : Object?
+      Binding.bg_QSignalMapper_mapping_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def mapping(object : Object) : Object
-      Object.new(unwrap: Binding.bg_QSignalMapper_mapping_QObject_X(self, object))
+    def mapping(object : Object) : Object?
+      Binding.bg_QSignalMapper_mapping_QObject_X(self, object).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def mapped_int(unnamed_arg_0 : Int32) : Void
@@ -64103,8 +64103,8 @@ module Qt
       Binding.bg_QSortFilterProxyModel_setHeaderData_int_Qt__Orientation_const_QVariant_R_int(self, section, orientation, (value.to_unsafe), role)
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QSortFilterProxyModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -64377,8 +64377,8 @@ module Qt
         Binding.bg_QSortFilterProxyModel_setHeaderData_SUPER_int_Qt__Orientation_const_QVariant_R_int(@myself, section, orientation, (value.to_unsafe), role)
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QSortFilterProxyModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -65163,8 +65163,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -65343,8 +65343,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QAbstractItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -65919,12 +65919,12 @@ module Qt
       Binding.bg_QTemporaryFile_renameOverwrite_const_QString_R(self, Qt::Converter::QString.wrap(new_name))
     end
     
-    def self.create_native_file(file_name : String) : TemporaryFile
-      TemporaryFile.new(unwrap: Binding.bg_QTemporaryFile_createNativeFile_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name)))
+    def self.create_native_file(file_name : String) : TemporaryFile?
+      Binding.bg_QTemporaryFile_createNativeFile_STATIC_const_QString_R(Qt::Converter::QString.wrap(file_name)).try {|ptr| TemporaryFile.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.create_native_file(file : File) : TemporaryFile
-      TemporaryFile.new(unwrap: Binding.bg_QTemporaryFile_createNativeFile_STATIC_QFile_R(file))
+    def self.create_native_file(file : File) : TemporaryFile?
+      Binding.bg_QTemporaryFile_createNativeFile_STATIC_QFile_R(file).try {|ptr| TemporaryFile.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def open(mode : IODevice::OpenMode) : Bool
@@ -67187,8 +67187,8 @@ module Qt
     Binding.bg_QXmlStreamReader_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QXmlStreamReader_device_(self))
+    def device() : IODevice?
+      Binding.bg_QXmlStreamReader_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_data(data : String) : Void
@@ -67360,8 +67360,8 @@ module Qt
     Binding.bg_QXmlStreamReader_setEntityResolver_QXmlStreamEntityResolver_X(self, resolver)
     end
     
-    def entity_resolver() : XmlStreamEntityResolver
-      XmlStreamEntityResolver.new(unwrap: Binding.bg_QXmlStreamReader_entityResolver_(self))
+    def entity_resolver() : XmlStreamEntityResolver?
+      Binding.bg_QXmlStreamReader_entityResolver_(self).try {|ptr| XmlStreamEntityResolver.new(unwrap: ptr) unless ptr.null?}
     end
     
     enum TokenType : UInt32
@@ -67416,8 +67416,8 @@ module Qt
     Binding.bg_QXmlStreamWriter_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QXmlStreamWriter_device_(self))
+    def device() : IODevice?
+      Binding.bg_QXmlStreamWriter_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def auto_formatting=(unnamed_arg_0 : Bool) : Void
@@ -67700,8 +67700,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def get_decoded_metric_f(metric_a : PaintDevice::PaintDeviceMetric, metric_b : PaintDevice::PaintDeviceMetric) : Float64
@@ -67926,8 +67926,8 @@ module Qt
         Binding.bg_QPaintDevice_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -69816,8 +69816,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -70144,8 +70144,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -71151,8 +71151,8 @@ module Qt
       Container_QList_QScreen_X_.new(unwrap: Binding.bg_QScreen_virtualSiblings_(self))
     end
     
-    def virtual_sibling_at(point : Point) : Screen
-      Screen.new(unwrap: Binding.bg_QScreen_virtualSiblingAt_QPoint(self, point))
+    def virtual_sibling_at(point : Point) : Screen?
+      Binding.bg_QScreen_virtualSiblingAt_QPoint(self, point).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def virtual_size() : Size
@@ -71693,8 +71693,8 @@ module Qt
       Container_QList_QWindow_X_.new(unwrap: Binding.bg_QGuiApplication_topLevelWindows_STATIC_())
     end
     
-    def self.top_level_at(pos : Point) : Window
-      Window.new(unwrap: Binding.bg_QGuiApplication_topLevelAt_STATIC_const_QPoint_R(pos))
+    def self.top_level_at(pos : Point) : Window?
+      Binding.bg_QGuiApplication_topLevelAt_STATIC_const_QPoint_R(pos).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.window_icon=(icon : Icon) : Void
@@ -71709,36 +71709,36 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QGuiApplication_platformName_STATIC_())
     end
     
-    def self.modal_window() : Window
-      Window.new(unwrap: Binding.bg_QGuiApplication_modalWindow_STATIC_())
+    def self.modal_window() : Window?
+      Binding.bg_QGuiApplication_modalWindow_STATIC_().try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.focus_window() : Window
-      Window.new(unwrap: Binding.bg_QGuiApplication_focusWindow_STATIC_())
+    def self.focus_window() : Window?
+      Binding.bg_QGuiApplication_focusWindow_STATIC_().try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.focus_object() : Object
-      Object.new(unwrap: Binding.bg_QGuiApplication_focusObject_STATIC_())
+    def self.focus_object() : Object?
+      Binding.bg_QGuiApplication_focusObject_STATIC_().try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.primary_screen() : Screen
-      Screen.new(unwrap: Binding.bg_QGuiApplication_primaryScreen_STATIC_())
+    def self.primary_screen() : Screen?
+      Binding.bg_QGuiApplication_primaryScreen_STATIC_().try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.screens() : Enumerable(Screen)
       Container_QList_QScreen_X_.new(unwrap: Binding.bg_QGuiApplication_screens_STATIC_())
     end
     
-    def self.screen_at(point : Point) : Screen
-      Screen.new(unwrap: Binding.bg_QGuiApplication_screenAt_STATIC_const_QPoint_R(point))
+    def self.screen_at(point : Point) : Screen?
+      Binding.bg_QGuiApplication_screenAt_STATIC_const_QPoint_R(point).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def device_pixel_ratio() : Float64
       Binding.bg_QGuiApplication_devicePixelRatio_(self)
     end
     
-    def self.override_cursor() : Cursor
-      Cursor.new(unwrap: Binding.bg_QGuiApplication_overrideCursor_STATIC_())
+    def self.override_cursor() : Cursor?
+      Binding.bg_QGuiApplication_overrideCursor_STATIC_().try {|ptr| Cursor.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.override_cursor=(unnamed_arg_0 : Cursor) : Void
@@ -71761,8 +71761,8 @@ module Qt
       Binding.bg_QGuiApplication_setFont_STATIC_const_QFont_R(unnamed_arg_0)
     end
     
-    def self.clipboard() : Clipboard
-      Clipboard.new(unwrap: Binding.bg_QGuiApplication_clipboard_STATIC_())
+    def self.clipboard() : Clipboard?
+      Binding.bg_QGuiApplication_clipboard_STATIC_().try {|ptr| Clipboard.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.palette() : Palette
@@ -71801,8 +71801,8 @@ module Qt
       Binding.bg_QGuiApplication_isLeftToRight_STATIC_()
     end
     
-    def self.style_hints() : StyleHints
-      StyleHints.new(unwrap: Binding.bg_QGuiApplication_styleHints_STATIC_())
+    def self.style_hints() : StyleHints?
+      Binding.bg_QGuiApplication_styleHints_STATIC_().try {|ptr| StyleHints.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.desktop_settings_aware=(on : Bool) : Void
@@ -71813,8 +71813,8 @@ module Qt
       Binding.bg_QGuiApplication_desktopSettingsAware_STATIC_()
     end
     
-    def self.input_method() : InputMethod
-      InputMethod.new(unwrap: Binding.bg_QGuiApplication_inputMethod_STATIC_())
+    def self.input_method() : InputMethod?
+      Binding.bg_QGuiApplication_inputMethod_STATIC_().try {|ptr| InputMethod.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.platform_native_interface() : Binding::QPlatformNativeInterface*
@@ -72372,12 +72372,12 @@ module Qt
       Container_QList_const_QInputDevice_X_.new(unwrap: Binding.bg_QInputDevice_devices_STATIC_())
     end
     
-    def self.primary_keyboard() : InputDevice
-      InputDevice.new(unwrap: Binding.bg_QInputDevice_primaryKeyboard_STATIC_())
+    def self.primary_keyboard() : InputDevice?
+      Binding.bg_QInputDevice_primaryKeyboard_STATIC_().try {|ptr| InputDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.primary_keyboard(seat_name : String) : InputDevice
-      InputDevice.new(unwrap: Binding.bg_QInputDevice_primaryKeyboard_STATIC_const_QString_R(Qt::Converter::QString.wrap(seat_name)))
+    def self.primary_keyboard(seat_name : String) : InputDevice?
+      Binding.bg_QInputDevice_primaryKeyboard_STATIC_const_QString_R(Qt::Converter::QString.wrap(seat_name)).try {|ptr| InputDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     def ==(other : InputDevice) : Bool
@@ -72925,12 +72925,12 @@ module Qt
       PointingDeviceUniqueId.new(unwrap: Binding.bg_QPointingDevice_uniqueId_(self))
     end
     
-    def self.primary_pointing_device() : PointingDevice
-      PointingDevice.new(unwrap: Binding.bg_QPointingDevice_primaryPointingDevice_STATIC_())
+    def self.primary_pointing_device() : PointingDevice?
+      Binding.bg_QPointingDevice_primaryPointingDevice_STATIC_().try {|ptr| PointingDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.primary_pointing_device(seat_name : String) : PointingDevice
-      PointingDevice.new(unwrap: Binding.bg_QPointingDevice_primaryPointingDevice_STATIC_const_QString_R(Qt::Converter::QString.wrap(seat_name)))
+    def self.primary_pointing_device(seat_name : String) : PointingDevice?
+      Binding.bg_QPointingDevice_primaryPointingDevice_STATIC_const_QString_R(Qt::Converter::QString.wrap(seat_name)).try {|ptr| PointingDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     def ==(other : PointingDevice) : Bool
@@ -73199,8 +73199,8 @@ module Qt
       Binding.bg_QEventPoint_state_(self)
     end
     
-    def device() : PointingDevice
-      PointingDevice.new(unwrap: Binding.bg_QEventPoint_device_(self))
+    def device() : PointingDevice?
+      Binding.bg_QEventPoint_device_(self).try {|ptr| PointingDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     def id() : Int32
@@ -73540,8 +73540,8 @@ module Qt
       InputEvent.new(unwrap: Binding.bg_QInputEvent__OPERATOR_assign_const_QInputEvent_R(self, other))
     end
     
-    def clone() : InputEvent
-      InputEvent.new(unwrap: Binding.bg_QInputEvent_clone_(self))
+    def clone() : InputEvent?
+      Binding.bg_QInputEvent_clone_(self).try {|ptr| InputEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, m_dev : InputDevice)
@@ -73618,8 +73618,8 @@ module Qt
     {% end %}
     end
     
-    def device() : InputDevice
-      InputDevice.new(unwrap: Binding.bg_QInputEvent_device_(self))
+    def device() : InputDevice?
+      Binding.bg_QInputEvent_device_(self).try {|ptr| InputDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     def device_type() : InputDevice::DeviceType
@@ -73642,8 +73642,8 @@ module Qt
       Binding.bg_QInputEvent_setTimestamp_quint64(self, timestamp)
     end
     
-    private def m_dev() : InputDevice
-      InputDevice.new(unwrap: Binding.bg_QInputEvent_m_dev_GETTER_(self))
+    private def m_dev() : InputDevice?
+      Binding.bg_QInputEvent_m_dev_GETTER_(self).try {|ptr| InputDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def m_time_stamp() : UInt64
@@ -73690,8 +73690,8 @@ module Qt
     private class Superclass
       def initialize(@myself : InputEvent)
       end
-      def clone() : InputEvent
-        InputEvent.new(unwrap: Binding.bg_QInputEvent_clone_SUPER_(@myself))
+      def clone() : InputEvent?
+        Binding.bg_QInputEvent_clone_SUPER_(@myself).try {|ptr| InputEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def timestamp=(timestamp : UInt64) : Void
@@ -73755,8 +73755,8 @@ module Qt
       PointerEvent.new(unwrap: Binding.bg_QPointerEvent__OPERATOR_assign_const_QPointerEvent_R(self, other))
     end
     
-    def clone() : PointerEvent
-      PointerEvent.new(unwrap: Binding.bg_QPointerEvent_clone_(self))
+    def clone() : PointerEvent?
+      Binding.bg_QPointerEvent_clone_(self).try {|ptr| PointerEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, dev : PointingDevice)
@@ -73888,8 +73888,8 @@ module Qt
     {% end %}
     end
     
-    def pointing_device() : PointingDevice
-      PointingDevice.new(unwrap: Binding.bg_QPointerEvent_pointingDevice_(self))
+    def pointing_device() : PointingDevice?
+      Binding.bg_QPointerEvent_pointingDevice_(self).try {|ptr| PointingDevice.new(unwrap: ptr) unless ptr.null?}
     end
     
     def pointer_type() : PointingDevice::PointerType
@@ -73912,8 +73912,8 @@ module Qt
       Container_QList_QEventPoint_.new(unwrap: Binding.bg_QPointerEvent_points_(self))
     end
     
-    def point_by_id(id : Int32) : EventPoint
-      EventPoint.new(unwrap: Binding.bg_QPointerEvent_pointById_int(self, id))
+    def point_by_id(id : Int32) : EventPoint?
+      Binding.bg_QPointerEvent_pointById_int(self, id).try {|ptr| EventPoint.new(unwrap: ptr) unless ptr.null?}
     end
     
     def all_points_grabbed() : Bool
@@ -73940,8 +73940,8 @@ module Qt
       Binding.bg_QPointerEvent_setAccepted_bool(self, accepted)
     end
     
-    def exclusive_grabber(point : EventPoint) : Object
-      Object.new(unwrap: Binding.bg_QPointerEvent_exclusiveGrabber_const_QEventPoint_R(self, point))
+    def exclusive_grabber(point : EventPoint) : Object?
+      Binding.bg_QPointerEvent_exclusiveGrabber_const_QEventPoint_R(self, point).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_exclusive_grabber(point : EventPoint, exclusive_grabber : Object) : Void
@@ -73988,8 +73988,8 @@ module Qt
     private class Superclass
       def initialize(@myself : PointerEvent)
       end
-      def clone() : PointerEvent
-        PointerEvent.new(unwrap: Binding.bg_QPointerEvent_clone_SUPER_(@myself))
+      def clone() : PointerEvent?
+        Binding.bg_QPointerEvent_clone_SUPER_(@myself).try {|ptr| PointerEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def timestamp=(timestamp : UInt64) : Void
@@ -74065,8 +74065,8 @@ module Qt
       SinglePointEvent.new(unwrap: Binding.bg_QSinglePointEvent__OPERATOR_assign_const_QSinglePointEvent_R(self, other))
     end
     
-    def clone() : SinglePointEvent
-      SinglePointEvent.new(unwrap: Binding.bg_QSinglePointEvent_clone_(self))
+    def clone() : SinglePointEvent?
+      Binding.bg_QSinglePointEvent_clone_(self).try {|ptr| SinglePointEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def button() : MouseButton
@@ -74101,8 +74101,8 @@ module Qt
       Binding.bg_QSinglePointEvent_isEndEvent_(self)
     end
     
-    def exclusive_point_grabber() : Object
-      Object.new(unwrap: Binding.bg_QSinglePointEvent_exclusivePointGrabber_(self))
+    def exclusive_point_grabber() : Object?
+      Binding.bg_QSinglePointEvent_exclusivePointGrabber_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def exclusive_point_grabber=(exclusive_grabber : Object) : Void
@@ -74287,8 +74287,8 @@ module Qt
     private class Superclass
       def initialize(@myself : SinglePointEvent)
       end
-      def clone() : SinglePointEvent
-        SinglePointEvent.new(unwrap: Binding.bg_QSinglePointEvent_clone_SUPER_(@myself))
+      def clone() : SinglePointEvent?
+        Binding.bg_QSinglePointEvent_clone_SUPER_(@myself).try {|ptr| SinglePointEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -74364,8 +74364,8 @@ module Qt
       EnterEvent.new(unwrap: Binding.bg_QEnterEvent__OPERATOR_assign_const_QEnterEvent_R(self, other))
     end
     
-    def clone() : EnterEvent
-      EnterEvent.new(unwrap: Binding.bg_QEnterEvent_clone_(self))
+    def clone() : EnterEvent?
+      Binding.bg_QEnterEvent_clone_(self).try {|ptr| EnterEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(local_pos : PointF, scene_pos : PointF, global_pos : PointF)
@@ -74490,8 +74490,8 @@ module Qt
     private class Superclass
       def initialize(@myself : EnterEvent)
       end
-      def clone() : EnterEvent
-        EnterEvent.new(unwrap: Binding.bg_QEnterEvent_clone_SUPER_(@myself))
+      def clone() : EnterEvent?
+        Binding.bg_QEnterEvent_clone_SUPER_(@myself).try {|ptr| EnterEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -74567,8 +74567,8 @@ module Qt
       MouseEvent.new(unwrap: Binding.bg_QMouseEvent__OPERATOR_assign_const_QMouseEvent_R(self, other))
     end
     
-    def clone() : MouseEvent
-      MouseEvent.new(unwrap: Binding.bg_QMouseEvent_clone_(self))
+    def clone() : MouseEvent?
+      Binding.bg_QMouseEvent_clone_(self).try {|ptr| MouseEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, local_pos : PointF, global_pos : PointF, button : MouseButton, buttons : MouseButtons, modifiers : KeyboardModifiers)
@@ -74877,8 +74877,8 @@ module Qt
     private class Superclass
       def initialize(@myself : MouseEvent)
       end
-      def clone() : MouseEvent
-        MouseEvent.new(unwrap: Binding.bg_QMouseEvent_clone_SUPER_(@myself))
+      def clone() : MouseEvent?
+        Binding.bg_QMouseEvent_clone_SUPER_(@myself).try {|ptr| MouseEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -74954,8 +74954,8 @@ module Qt
       HoverEvent.new(unwrap: Binding.bg_QHoverEvent__OPERATOR_assign_const_QHoverEvent_R(self, other))
     end
     
-    def clone() : HoverEvent
-      HoverEvent.new(unwrap: Binding.bg_QHoverEvent_clone_(self))
+    def clone() : HoverEvent?
+      Binding.bg_QHoverEvent_clone_(self).try {|ptr| HoverEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, scene_pos : PointF, global_pos : PointF, old_pos : PointF)
@@ -75139,8 +75139,8 @@ module Qt
     private class Superclass
       def initialize(@myself : HoverEvent)
       end
-      def clone() : HoverEvent
-        HoverEvent.new(unwrap: Binding.bg_QHoverEvent_clone_SUPER_(@myself))
+      def clone() : HoverEvent?
+        Binding.bg_QHoverEvent_clone_SUPER_(@myself).try {|ptr| HoverEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def update_event?() : Bool
@@ -75216,8 +75216,8 @@ module Qt
       WheelEvent.new(unwrap: Binding.bg_QWheelEvent__OPERATOR_assign_const_QWheelEvent_R(self, other))
     end
     
-    def clone() : WheelEvent
-      WheelEvent.new(unwrap: Binding.bg_QWheelEvent_clone_(self))
+    def clone() : WheelEvent?
+      Binding.bg_QWheelEvent_clone_(self).try {|ptr| WheelEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(pos : PointF, global_pos : PointF, pixel_delta : Point, angle_delta : Point, buttons : MouseButtons, modifiers : KeyboardModifiers, phase : ScrollPhase, inverted : Bool, source : MouseEventSource = MouseEventSource::MouseEventNotSynthesized)
@@ -75383,8 +75383,8 @@ module Qt
     private class Superclass
       def initialize(@myself : WheelEvent)
       end
-      def clone() : WheelEvent
-        WheelEvent.new(unwrap: Binding.bg_QWheelEvent_clone_SUPER_(@myself))
+      def clone() : WheelEvent?
+        Binding.bg_QWheelEvent_clone_SUPER_(@myself).try {|ptr| WheelEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -75468,8 +75468,8 @@ module Qt
       TabletEvent.new(unwrap: Binding.bg_QTabletEvent__OPERATOR_assign_const_QTabletEvent_R(self, other))
     end
     
-    def clone() : TabletEvent
-      TabletEvent.new(unwrap: Binding.bg_QTabletEvent_clone_(self))
+    def clone() : TabletEvent?
+      Binding.bg_QTabletEvent_clone_(self).try {|ptr| TabletEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(t : Event::Type, device : PointingDevice, pos : PointF, global_pos : PointF, pressure : Float64, x_tilt : Float32, y_tilt : Float32, tangential_pressure : Float32, rotation : Float64, z : Float32, key_state : KeyboardModifiers, button : MouseButton, buttons : MouseButtons)
@@ -75607,8 +75607,8 @@ module Qt
     private class Superclass
       def initialize(@myself : TabletEvent)
       end
-      def clone() : TabletEvent
-        TabletEvent.new(unwrap: Binding.bg_QTabletEvent_clone_SUPER_(@myself))
+      def clone() : TabletEvent?
+        Binding.bg_QTabletEvent_clone_SUPER_(@myself).try {|ptr| TabletEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -75684,8 +75684,8 @@ module Qt
       NativeGestureEvent.new(unwrap: Binding.bg_QNativeGestureEvent__OPERATOR_assign_const_QNativeGestureEvent_R(self, other))
     end
     
-    def clone() : NativeGestureEvent
-      NativeGestureEvent.new(unwrap: Binding.bg_QNativeGestureEvent_clone_(self))
+    def clone() : NativeGestureEvent?
+      Binding.bg_QNativeGestureEvent_clone_(self).try {|ptr| NativeGestureEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : NativeGestureType, dev : PointingDevice, finger_count : Int32, local_pos : PointF, scene_pos : PointF, global_pos : PointF, value : Float64, delta : PointF, sequence_id : UInt64 = 18446744073709551615u64)
@@ -75831,8 +75831,8 @@ module Qt
     private class Superclass
       def initialize(@myself : NativeGestureEvent)
       end
-      def clone() : NativeGestureEvent
-        NativeGestureEvent.new(unwrap: Binding.bg_QNativeGestureEvent_clone_SUPER_(@myself))
+      def clone() : NativeGestureEvent?
+        Binding.bg_QNativeGestureEvent_clone_SUPER_(@myself).try {|ptr| NativeGestureEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -75902,8 +75902,8 @@ module Qt
       KeyEvent.new(unwrap: Binding.bg_QKeyEvent__OPERATOR_assign_const_QKeyEvent_R(self, other))
     end
     
-    def clone() : KeyEvent
-      KeyEvent.new(unwrap: Binding.bg_QKeyEvent_clone_(self))
+    def clone() : KeyEvent?
+      Binding.bg_QKeyEvent_clone_(self).try {|ptr| KeyEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, key : Int32, modifiers : KeyboardModifiers)
@@ -76359,8 +76359,8 @@ module Qt
     private class Superclass
       def initialize(@myself : KeyEvent)
       end
-      def clone() : KeyEvent
-        KeyEvent.new(unwrap: Binding.bg_QKeyEvent_clone_SUPER_(@myself))
+      def clone() : KeyEvent?
+        Binding.bg_QKeyEvent_clone_SUPER_(@myself).try {|ptr| KeyEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def timestamp=(timestamp : UInt64) : Void
@@ -76416,8 +76416,8 @@ module Qt
       FocusEvent.new(unwrap: Binding.bg_QFocusEvent__OPERATOR_assign_const_QFocusEvent_R(self, other))
     end
     
-    def clone() : FocusEvent
-      FocusEvent.new(unwrap: Binding.bg_QFocusEvent_clone_(self))
+    def clone() : FocusEvent?
+      Binding.bg_QFocusEvent_clone_(self).try {|ptr| FocusEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, reason : FocusReason = FocusReason::OtherFocusReason)
@@ -76487,8 +76487,8 @@ module Qt
     private class Superclass
       def initialize(@myself : FocusEvent)
       end
-      def clone() : FocusEvent
-        FocusEvent.new(unwrap: Binding.bg_QFocusEvent_clone_SUPER_(@myself))
+      def clone() : FocusEvent?
+        Binding.bg_QFocusEvent_clone_SUPER_(@myself).try {|ptr| FocusEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -76540,8 +76540,8 @@ module Qt
       PaintEvent.new(unwrap: Binding.bg_QPaintEvent__OPERATOR_assign_const_QPaintEvent_R(self, other))
     end
     
-    def clone() : PaintEvent
-      PaintEvent.new(unwrap: Binding.bg_QPaintEvent_clone_(self))
+    def clone() : PaintEvent?
+      Binding.bg_QPaintEvent_clone_(self).try {|ptr| PaintEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(paint_region : Region)
@@ -76666,8 +76666,8 @@ module Qt
     private class Superclass
       def initialize(@myself : PaintEvent)
       end
-      def clone() : PaintEvent
-        PaintEvent.new(unwrap: Binding.bg_QPaintEvent_clone_SUPER_(@myself))
+      def clone() : PaintEvent?
+        Binding.bg_QPaintEvent_clone_SUPER_(@myself).try {|ptr| PaintEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -76719,8 +76719,8 @@ module Qt
       MoveEvent.new(unwrap: Binding.bg_QMoveEvent__OPERATOR_assign_const_QMoveEvent_R(self, other))
     end
     
-    def clone() : MoveEvent
-      MoveEvent.new(unwrap: Binding.bg_QMoveEvent_clone_(self))
+    def clone() : MoveEvent?
+      Binding.bg_QMoveEvent_clone_(self).try {|ptr| MoveEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(pos : Point, old_pos : Point)
@@ -76802,8 +76802,8 @@ module Qt
     private class Superclass
       def initialize(@myself : MoveEvent)
       end
-      def clone() : MoveEvent
-        MoveEvent.new(unwrap: Binding.bg_QMoveEvent_clone_SUPER_(@myself))
+      def clone() : MoveEvent?
+        Binding.bg_QMoveEvent_clone_SUPER_(@myself).try {|ptr| MoveEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -76855,8 +76855,8 @@ module Qt
       ExposeEvent.new(unwrap: Binding.bg_QExposeEvent__OPERATOR_assign_const_QExposeEvent_R(self, other))
     end
     
-    def clone() : ExposeEvent
-      ExposeEvent.new(unwrap: Binding.bg_QExposeEvent_clone_(self))
+    def clone() : ExposeEvent?
+      Binding.bg_QExposeEvent_clone_(self).try {|ptr| ExposeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(m_region : Region)
@@ -76922,8 +76922,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ExposeEvent)
       end
-      def clone() : ExposeEvent
-        ExposeEvent.new(unwrap: Binding.bg_QExposeEvent_clone_SUPER_(@myself))
+      def clone() : ExposeEvent?
+        Binding.bg_QExposeEvent_clone_SUPER_(@myself).try {|ptr| ExposeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -76975,8 +76975,8 @@ module Qt
       PlatformSurfaceEvent.new(unwrap: Binding.bg_QPlatformSurfaceEvent__OPERATOR_assign_const_QPlatformSurfaceEvent_R(self, other))
     end
     
-    def clone() : PlatformSurfaceEvent
-      PlatformSurfaceEvent.new(unwrap: Binding.bg_QPlatformSurfaceEvent_clone_(self))
+    def clone() : PlatformSurfaceEvent?
+      Binding.bg_QPlatformSurfaceEvent_clone_(self).try {|ptr| PlatformSurfaceEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(surface_event_type : PlatformSurfaceEvent::SurfaceEventType)
@@ -77050,8 +77050,8 @@ module Qt
     private class Superclass
       def initialize(@myself : PlatformSurfaceEvent)
       end
-      def clone() : PlatformSurfaceEvent
-        PlatformSurfaceEvent.new(unwrap: Binding.bg_QPlatformSurfaceEvent_clone_SUPER_(@myself))
+      def clone() : PlatformSurfaceEvent?
+        Binding.bg_QPlatformSurfaceEvent_clone_SUPER_(@myself).try {|ptr| PlatformSurfaceEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77103,8 +77103,8 @@ module Qt
       ResizeEvent.new(unwrap: Binding.bg_QResizeEvent__OPERATOR_assign_const_QResizeEvent_R(self, other))
     end
     
-    def clone() : ResizeEvent
-      ResizeEvent.new(unwrap: Binding.bg_QResizeEvent_clone_(self))
+    def clone() : ResizeEvent?
+      Binding.bg_QResizeEvent_clone_(self).try {|ptr| ResizeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(size : Size, old_size : Size)
@@ -77186,8 +77186,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ResizeEvent)
       end
-      def clone() : ResizeEvent
-        ResizeEvent.new(unwrap: Binding.bg_QResizeEvent_clone_SUPER_(@myself))
+      def clone() : ResizeEvent?
+        Binding.bg_QResizeEvent_clone_SUPER_(@myself).try {|ptr| ResizeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77239,8 +77239,8 @@ module Qt
       CloseEvent.new(unwrap: Binding.bg_QCloseEvent__OPERATOR_assign_const_QCloseEvent_R(self, other))
     end
     
-    def clone() : CloseEvent
-      CloseEvent.new(unwrap: Binding.bg_QCloseEvent_clone_(self))
+    def clone() : CloseEvent?
+      Binding.bg_QCloseEvent_clone_(self).try {|ptr| CloseEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -77298,8 +77298,8 @@ module Qt
     private class Superclass
       def initialize(@myself : CloseEvent)
       end
-      def clone() : CloseEvent
-        CloseEvent.new(unwrap: Binding.bg_QCloseEvent_clone_SUPER_(@myself))
+      def clone() : CloseEvent?
+        Binding.bg_QCloseEvent_clone_SUPER_(@myself).try {|ptr| CloseEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77351,8 +77351,8 @@ module Qt
       IconDragEvent.new(unwrap: Binding.bg_QIconDragEvent__OPERATOR_assign_const_QIconDragEvent_R(self, other))
     end
     
-    def clone() : IconDragEvent
-      IconDragEvent.new(unwrap: Binding.bg_QIconDragEvent_clone_(self))
+    def clone() : IconDragEvent?
+      Binding.bg_QIconDragEvent_clone_(self).try {|ptr| IconDragEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -77410,8 +77410,8 @@ module Qt
     private class Superclass
       def initialize(@myself : IconDragEvent)
       end
-      def clone() : IconDragEvent
-        IconDragEvent.new(unwrap: Binding.bg_QIconDragEvent_clone_SUPER_(@myself))
+      def clone() : IconDragEvent?
+        Binding.bg_QIconDragEvent_clone_SUPER_(@myself).try {|ptr| IconDragEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77463,8 +77463,8 @@ module Qt
       ShowEvent.new(unwrap: Binding.bg_QShowEvent__OPERATOR_assign_const_QShowEvent_R(self, other))
     end
     
-    def clone() : ShowEvent
-      ShowEvent.new(unwrap: Binding.bg_QShowEvent_clone_(self))
+    def clone() : ShowEvent?
+      Binding.bg_QShowEvent_clone_(self).try {|ptr| ShowEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -77522,8 +77522,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ShowEvent)
       end
-      def clone() : ShowEvent
-        ShowEvent.new(unwrap: Binding.bg_QShowEvent_clone_SUPER_(@myself))
+      def clone() : ShowEvent?
+        Binding.bg_QShowEvent_clone_SUPER_(@myself).try {|ptr| ShowEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77575,8 +77575,8 @@ module Qt
       HideEvent.new(unwrap: Binding.bg_QHideEvent__OPERATOR_assign_const_QHideEvent_R(self, other))
     end
     
-    def clone() : HideEvent
-      HideEvent.new(unwrap: Binding.bg_QHideEvent_clone_(self))
+    def clone() : HideEvent?
+      Binding.bg_QHideEvent_clone_(self).try {|ptr| HideEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -77634,8 +77634,8 @@ module Qt
     private class Superclass
       def initialize(@myself : HideEvent)
       end
-      def clone() : HideEvent
-        HideEvent.new(unwrap: Binding.bg_QHideEvent_clone_SUPER_(@myself))
+      def clone() : HideEvent?
+        Binding.bg_QHideEvent_clone_SUPER_(@myself).try {|ptr| HideEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -77689,8 +77689,8 @@ module Qt
       ContextMenuEvent.new(unwrap: Binding.bg_QContextMenuEvent__OPERATOR_assign_const_QContextMenuEvent_R(self, other))
     end
     
-    def clone() : ContextMenuEvent
-      ContextMenuEvent.new(unwrap: Binding.bg_QContextMenuEvent_clone_(self))
+    def clone() : ContextMenuEvent?
+      Binding.bg_QContextMenuEvent_clone_(self).try {|ptr| ContextMenuEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(reason : ContextMenuEvent::Reason, pos : Point, global_pos : Point)
@@ -77848,8 +77848,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ContextMenuEvent)
       end
-      def clone() : ContextMenuEvent
-        ContextMenuEvent.new(unwrap: Binding.bg_QContextMenuEvent_clone_SUPER_(@myself))
+      def clone() : ContextMenuEvent?
+        Binding.bg_QContextMenuEvent_clone_SUPER_(@myself).try {|ptr| ContextMenuEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def timestamp=(timestamp : UInt64) : Void
@@ -77905,8 +77905,8 @@ module Qt
       InputMethodEvent.new(unwrap: Binding.bg_QInputMethodEvent__OPERATOR_assign_const_QInputMethodEvent_R(self, other))
     end
     
-    def clone() : InputMethodEvent
-      InputMethodEvent.new(unwrap: Binding.bg_QInputMethodEvent_clone_(self))
+    def clone() : InputMethodEvent?
+      Binding.bg_QInputMethodEvent_clone_(self).try {|ptr| InputMethodEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -77992,8 +77992,8 @@ module Qt
     private class Superclass
       def initialize(@myself : InputMethodEvent)
       end
-      def clone() : InputMethodEvent
-        InputMethodEvent.new(unwrap: Binding.bg_QInputMethodEvent_clone_SUPER_(@myself))
+      def clone() : InputMethodEvent?
+        Binding.bg_QInputMethodEvent_clone_SUPER_(@myself).try {|ptr| InputMethodEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78045,8 +78045,8 @@ module Qt
       InputMethodQueryEvent.new(unwrap: Binding.bg_QInputMethodQueryEvent__OPERATOR_assign_const_QInputMethodQueryEvent_R(self, other))
     end
     
-    def clone() : InputMethodQueryEvent
-      InputMethodQueryEvent.new(unwrap: Binding.bg_QInputMethodQueryEvent_clone_(self))
+    def clone() : InputMethodQueryEvent?
+      Binding.bg_QInputMethodQueryEvent_clone_(self).try {|ptr| InputMethodQueryEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(queries : InputMethodQueries)
@@ -78116,8 +78116,8 @@ module Qt
     private class Superclass
       def initialize(@myself : InputMethodQueryEvent)
       end
-      def clone() : InputMethodQueryEvent
-        InputMethodQueryEvent.new(unwrap: Binding.bg_QInputMethodQueryEvent_clone_SUPER_(@myself))
+      def clone() : InputMethodQueryEvent?
+        Binding.bg_QInputMethodQueryEvent_clone_SUPER_(@myself).try {|ptr| InputMethodQueryEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78169,8 +78169,8 @@ module Qt
       DropEvent.new(unwrap: Binding.bg_QDropEvent__OPERATOR_assign_const_QDropEvent_R(self, other))
     end
     
-    def clone() : DropEvent
-      DropEvent.new(unwrap: Binding.bg_QDropEvent_clone_(self))
+    def clone() : DropEvent?
+      Binding.bg_QDropEvent_clone_(self).try {|ptr| DropEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(pos : PointF, actions : DropActions, data : MimeData, buttons : MouseButtons, modifiers : KeyboardModifiers, type : Event::Type = Event::Type::Drop)
@@ -78240,12 +78240,12 @@ module Qt
       Binding.bg_QDropEvent_setDropAction_Qt__DropAction(self, action)
     end
     
-    def source() : Object
-      Object.new(unwrap: Binding.bg_QDropEvent_source_(self))
+    def source() : Object?
+      Binding.bg_QDropEvent_source_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def mime_data() : MimeData
-      MimeData.new(unwrap: Binding.bg_QDropEvent_mimeData_(self))
+    def mime_data() : MimeData?
+      Binding.bg_QDropEvent_mimeData_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def m_pos() : PointF
@@ -78296,8 +78296,8 @@ module Qt
       Binding.bg_QDropEvent_m_defaultAction_SETTER_Qt__DropAction(self, m_default_action)
     end
     
-    private def m_data() : MimeData
-      MimeData.new(unwrap: Binding.bg_QDropEvent_m_data_GETTER_(self))
+    private def m_data() : MimeData?
+      Binding.bg_QDropEvent_m_data_GETTER_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def accepted=(accepted : Bool) : Void
@@ -78320,8 +78320,8 @@ module Qt
     private class Superclass
       def initialize(@myself : DropEvent)
       end
-      def clone() : DropEvent
-        DropEvent.new(unwrap: Binding.bg_QDropEvent_clone_SUPER_(@myself))
+      def clone() : DropEvent?
+        Binding.bg_QDropEvent_clone_SUPER_(@myself).try {|ptr| DropEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78373,8 +78373,8 @@ module Qt
       DragMoveEvent.new(unwrap: Binding.bg_QDragMoveEvent__OPERATOR_assign_const_QDragMoveEvent_R(self, other))
     end
     
-    def clone() : DragMoveEvent
-      DragMoveEvent.new(unwrap: Binding.bg_QDragMoveEvent_clone_(self))
+    def clone() : DragMoveEvent?
+      Binding.bg_QDragMoveEvent_clone_(self).try {|ptr| DragMoveEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(pos : Point, actions : DropActions, data : MimeData, buttons : MouseButtons, modifiers : KeyboardModifiers, type : Event::Type = Event::Type::DragMove)
@@ -78460,8 +78460,8 @@ module Qt
     private class Superclass
       def initialize(@myself : DragMoveEvent)
       end
-      def clone() : DragMoveEvent
-        DragMoveEvent.new(unwrap: Binding.bg_QDragMoveEvent_clone_SUPER_(@myself))
+      def clone() : DragMoveEvent?
+        Binding.bg_QDragMoveEvent_clone_SUPER_(@myself).try {|ptr| DragMoveEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78513,8 +78513,8 @@ module Qt
       DragEnterEvent.new(unwrap: Binding.bg_QDragEnterEvent__OPERATOR_assign_const_QDragEnterEvent_R(self, other))
     end
     
-    def clone() : DragEnterEvent
-      DragEnterEvent.new(unwrap: Binding.bg_QDragEnterEvent_clone_(self))
+    def clone() : DragEnterEvent?
+      Binding.bg_QDragEnterEvent_clone_(self).try {|ptr| DragEnterEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(pos : Point, actions : DropActions, data : MimeData, buttons : MouseButtons, modifiers : KeyboardModifiers)
@@ -78572,8 +78572,8 @@ module Qt
     private class Superclass
       def initialize(@myself : DragEnterEvent)
       end
-      def clone() : DragEnterEvent
-        DragEnterEvent.new(unwrap: Binding.bg_QDragEnterEvent_clone_SUPER_(@myself))
+      def clone() : DragEnterEvent?
+        Binding.bg_QDragEnterEvent_clone_SUPER_(@myself).try {|ptr| DragEnterEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78625,8 +78625,8 @@ module Qt
       DragLeaveEvent.new(unwrap: Binding.bg_QDragLeaveEvent__OPERATOR_assign_const_QDragLeaveEvent_R(self, other))
     end
     
-    def clone() : DragLeaveEvent
-      DragLeaveEvent.new(unwrap: Binding.bg_QDragLeaveEvent_clone_(self))
+    def clone() : DragLeaveEvent?
+      Binding.bg_QDragLeaveEvent_clone_(self).try {|ptr| DragLeaveEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -78684,8 +78684,8 @@ module Qt
     private class Superclass
       def initialize(@myself : DragLeaveEvent)
       end
-      def clone() : DragLeaveEvent
-        DragLeaveEvent.new(unwrap: Binding.bg_QDragLeaveEvent_clone_SUPER_(@myself))
+      def clone() : DragLeaveEvent?
+        Binding.bg_QDragLeaveEvent_clone_SUPER_(@myself).try {|ptr| DragLeaveEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78737,8 +78737,8 @@ module Qt
       HelpEvent.new(unwrap: Binding.bg_QHelpEvent__OPERATOR_assign_const_QHelpEvent_R(self, other))
     end
     
-    def clone() : HelpEvent
-      HelpEvent.new(unwrap: Binding.bg_QHelpEvent_clone_(self))
+    def clone() : HelpEvent?
+      Binding.bg_QHelpEvent_clone_(self).try {|ptr| HelpEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, pos : Point, global_pos : Point)
@@ -78820,8 +78820,8 @@ module Qt
     private class Superclass
       def initialize(@myself : HelpEvent)
       end
-      def clone() : HelpEvent
-        HelpEvent.new(unwrap: Binding.bg_QHelpEvent_clone_SUPER_(@myself))
+      def clone() : HelpEvent?
+        Binding.bg_QHelpEvent_clone_SUPER_(@myself).try {|ptr| HelpEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78873,8 +78873,8 @@ module Qt
       StatusTipEvent.new(unwrap: Binding.bg_QStatusTipEvent__OPERATOR_assign_const_QStatusTipEvent_R(self, other))
     end
     
-    def clone() : StatusTipEvent
-      StatusTipEvent.new(unwrap: Binding.bg_QStatusTipEvent_clone_(self))
+    def clone() : StatusTipEvent?
+      Binding.bg_QStatusTipEvent_clone_(self).try {|ptr| StatusTipEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(tip : String)
@@ -78936,8 +78936,8 @@ module Qt
     private class Superclass
       def initialize(@myself : StatusTipEvent)
       end
-      def clone() : StatusTipEvent
-        StatusTipEvent.new(unwrap: Binding.bg_QStatusTipEvent_clone_SUPER_(@myself))
+      def clone() : StatusTipEvent?
+        Binding.bg_QStatusTipEvent_clone_SUPER_(@myself).try {|ptr| StatusTipEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -78989,8 +78989,8 @@ module Qt
       WhatsThisClickedEvent.new(unwrap: Binding.bg_QWhatsThisClickedEvent__OPERATOR_assign_const_QWhatsThisClickedEvent_R(self, other))
     end
     
-    def clone() : WhatsThisClickedEvent
-      WhatsThisClickedEvent.new(unwrap: Binding.bg_QWhatsThisClickedEvent_clone_(self))
+    def clone() : WhatsThisClickedEvent?
+      Binding.bg_QWhatsThisClickedEvent_clone_(self).try {|ptr| WhatsThisClickedEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(href : String)
@@ -79052,8 +79052,8 @@ module Qt
     private class Superclass
       def initialize(@myself : WhatsThisClickedEvent)
       end
-      def clone() : WhatsThisClickedEvent
-        WhatsThisClickedEvent.new(unwrap: Binding.bg_QWhatsThisClickedEvent_clone_SUPER_(@myself))
+      def clone() : WhatsThisClickedEvent?
+        Binding.bg_QWhatsThisClickedEvent_clone_SUPER_(@myself).try {|ptr| WhatsThisClickedEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79105,8 +79105,8 @@ module Qt
       ActionEvent.new(unwrap: Binding.bg_QActionEvent__OPERATOR_assign_const_QActionEvent_R(self, other))
     end
     
-    def clone() : ActionEvent
-      ActionEvent.new(unwrap: Binding.bg_QActionEvent_clone_(self))
+    def clone() : ActionEvent?
+      Binding.bg_QActionEvent_clone_(self).try {|ptr| ActionEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Int32, action : Action, before : Action? = nil)
@@ -79144,12 +79144,12 @@ module Qt
     {% end %}
     end
     
-    def action() : Action
-      Action.new(unwrap: Binding.bg_QActionEvent_action_(self))
+    def action() : Action?
+      Binding.bg_QActionEvent_action_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def before() : Action
-      Action.new(unwrap: Binding.bg_QActionEvent_before_(self))
+    def before() : Action?
+      Binding.bg_QActionEvent_before_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def accepted=(accepted : Bool) : Void
@@ -79172,8 +79172,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ActionEvent)
       end
-      def clone() : ActionEvent
-        ActionEvent.new(unwrap: Binding.bg_QActionEvent_clone_SUPER_(@myself))
+      def clone() : ActionEvent?
+        Binding.bg_QActionEvent_clone_SUPER_(@myself).try {|ptr| ActionEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79225,8 +79225,8 @@ module Qt
       FileOpenEvent.new(unwrap: Binding.bg_QFileOpenEvent__OPERATOR_assign_const_QFileOpenEvent_R(self, other))
     end
     
-    def clone() : FileOpenEvent
-      FileOpenEvent.new(unwrap: Binding.bg_QFileOpenEvent_clone_(self))
+    def clone() : FileOpenEvent?
+      Binding.bg_QFileOpenEvent_clone_(self).try {|ptr| FileOpenEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(file : String)
@@ -79327,8 +79327,8 @@ module Qt
     private class Superclass
       def initialize(@myself : FileOpenEvent)
       end
-      def clone() : FileOpenEvent
-        FileOpenEvent.new(unwrap: Binding.bg_QFileOpenEvent_clone_SUPER_(@myself))
+      def clone() : FileOpenEvent?
+        Binding.bg_QFileOpenEvent_clone_SUPER_(@myself).try {|ptr| FileOpenEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79380,8 +79380,8 @@ module Qt
       ToolBarChangeEvent.new(unwrap: Binding.bg_QToolBarChangeEvent__OPERATOR_assign_const_QToolBarChangeEvent_R(self, other))
     end
     
-    def clone() : ToolBarChangeEvent
-      ToolBarChangeEvent.new(unwrap: Binding.bg_QToolBarChangeEvent_clone_(self))
+    def clone() : ToolBarChangeEvent?
+      Binding.bg_QToolBarChangeEvent_clone_(self).try {|ptr| ToolBarChangeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(t : Bool)
@@ -79443,8 +79443,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ToolBarChangeEvent)
       end
-      def clone() : ToolBarChangeEvent
-        ToolBarChangeEvent.new(unwrap: Binding.bg_QToolBarChangeEvent_clone_SUPER_(@myself))
+      def clone() : ToolBarChangeEvent?
+        Binding.bg_QToolBarChangeEvent_clone_SUPER_(@myself).try {|ptr| ToolBarChangeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79496,8 +79496,8 @@ module Qt
       ShortcutEvent.new(unwrap: Binding.bg_QShortcutEvent__OPERATOR_assign_const_QShortcutEvent_R(self, other))
     end
     
-    def clone() : ShortcutEvent
-      ShortcutEvent.new(unwrap: Binding.bg_QShortcutEvent_clone_(self))
+    def clone() : ShortcutEvent?
+      Binding.bg_QShortcutEvent_clone_(self).try {|ptr| ShortcutEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(key : KeySequence, id : Int32, ambiguous : Bool = false)
@@ -79626,8 +79626,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ShortcutEvent)
       end
-      def clone() : ShortcutEvent
-        ShortcutEvent.new(unwrap: Binding.bg_QShortcutEvent_clone_SUPER_(@myself))
+      def clone() : ShortcutEvent?
+        Binding.bg_QShortcutEvent_clone_SUPER_(@myself).try {|ptr| ShortcutEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79679,8 +79679,8 @@ module Qt
       WindowStateChangeEvent.new(unwrap: Binding.bg_QWindowStateChangeEvent__OPERATOR_assign_const_QWindowStateChangeEvent_R(self, other))
     end
     
-    def clone() : WindowStateChangeEvent
-      WindowStateChangeEvent.new(unwrap: Binding.bg_QWindowStateChangeEvent_clone_(self))
+    def clone() : WindowStateChangeEvent?
+      Binding.bg_QWindowStateChangeEvent_clone_(self).try {|ptr| WindowStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(old_state : WindowStates, is_override : Bool = false)
@@ -79746,8 +79746,8 @@ module Qt
     private class Superclass
       def initialize(@myself : WindowStateChangeEvent)
       end
-      def clone() : WindowStateChangeEvent
-        WindowStateChangeEvent.new(unwrap: Binding.bg_QWindowStateChangeEvent_clone_SUPER_(@myself))
+      def clone() : WindowStateChangeEvent?
+        Binding.bg_QWindowStateChangeEvent_clone_SUPER_(@myself).try {|ptr| WindowStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -79807,8 +79807,8 @@ module Qt
       TouchEvent.new(unwrap: Binding.bg_QTouchEvent__OPERATOR_assign_const_QTouchEvent_R(self, other))
     end
     
-    def clone() : TouchEvent
-      TouchEvent.new(unwrap: Binding.bg_QTouchEvent_clone_(self))
+    def clone() : TouchEvent?
+      Binding.bg_QTouchEvent_clone_(self).try {|ptr| TouchEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(event_type : Event::Type, device : PointingDevice? = nil)
@@ -79940,8 +79940,8 @@ module Qt
     {% end %}
     end
     
-    def target() : Object
-      Object.new(unwrap: Binding.bg_QTouchEvent_target_(self))
+    def target() : Object?
+      Binding.bg_QTouchEvent_target_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def touch_point_states() : EventPoint::States
@@ -79960,8 +79960,8 @@ module Qt
       Binding.bg_QTouchEvent_isEndEvent_(self)
     end
     
-    private def m_target() : Object
-      Object.new(unwrap: Binding.bg_QTouchEvent_m_target_GETTER_(self))
+    private def m_target() : Object?
+      Binding.bg_QTouchEvent_m_target_GETTER_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def m_target=(m_target : Object) : Void
@@ -80008,8 +80008,8 @@ module Qt
     private class Superclass
       def initialize(@myself : TouchEvent)
       end
-      def clone() : TouchEvent
-        TouchEvent.new(unwrap: Binding.bg_QTouchEvent_clone_SUPER_(@myself))
+      def clone() : TouchEvent?
+        Binding.bg_QTouchEvent_clone_SUPER_(@myself).try {|ptr| TouchEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def begin_event?() : Bool
@@ -80077,8 +80077,8 @@ module Qt
       ScrollPrepareEvent.new(unwrap: Binding.bg_QScrollPrepareEvent__OPERATOR_assign_const_QScrollPrepareEvent_R(self, other))
     end
     
-    def clone() : ScrollPrepareEvent
-      ScrollPrepareEvent.new(unwrap: Binding.bg_QScrollPrepareEvent_clone_(self))
+    def clone() : ScrollPrepareEvent?
+      Binding.bg_QScrollPrepareEvent_clone_(self).try {|ptr| ScrollPrepareEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(start_pos : PointF)
@@ -80164,8 +80164,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ScrollPrepareEvent)
       end
-      def clone() : ScrollPrepareEvent
-        ScrollPrepareEvent.new(unwrap: Binding.bg_QScrollPrepareEvent_clone_SUPER_(@myself))
+      def clone() : ScrollPrepareEvent?
+        Binding.bg_QScrollPrepareEvent_clone_SUPER_(@myself).try {|ptr| ScrollPrepareEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -80217,8 +80217,8 @@ module Qt
       ScrollEvent.new(unwrap: Binding.bg_QScrollEvent__OPERATOR_assign_const_QScrollEvent_R(self, other))
     end
     
-    def clone() : ScrollEvent
-      ScrollEvent.new(unwrap: Binding.bg_QScrollEvent_clone_(self))
+    def clone() : ScrollEvent?
+      Binding.bg_QScrollEvent_clone_(self).try {|ptr| ScrollEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(content_pos : PointF, overshoot : PointF, scroll_state : ScrollEvent::ScrollState)
@@ -80293,8 +80293,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ScrollEvent)
       end
-      def clone() : ScrollEvent
-        ScrollEvent.new(unwrap: Binding.bg_QScrollEvent_clone_SUPER_(@myself))
+      def clone() : ScrollEvent?
+        Binding.bg_QScrollEvent_clone_SUPER_(@myself).try {|ptr| ScrollEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -80346,8 +80346,8 @@ module Qt
       ScreenOrientationChangeEvent.new(unwrap: Binding.bg_QScreenOrientationChangeEvent__OPERATOR_assign_const_QScreenOrientationChangeEvent_R(self, other))
     end
     
-    def clone() : ScreenOrientationChangeEvent
-      ScreenOrientationChangeEvent.new(unwrap: Binding.bg_QScreenOrientationChangeEvent_clone_(self))
+    def clone() : ScreenOrientationChangeEvent?
+      Binding.bg_QScreenOrientationChangeEvent_clone_(self).try {|ptr| ScreenOrientationChangeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(screen : Screen, orientation : ScreenOrientation)
@@ -80385,8 +80385,8 @@ module Qt
     {% end %}
     end
     
-    def screen() : Screen
-      Screen.new(unwrap: Binding.bg_QScreenOrientationChangeEvent_screen_(self))
+    def screen() : Screen?
+      Binding.bg_QScreenOrientationChangeEvent_screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def orientation() : ScreenOrientation
@@ -80413,8 +80413,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ScreenOrientationChangeEvent)
       end
-      def clone() : ScreenOrientationChangeEvent
-        ScreenOrientationChangeEvent.new(unwrap: Binding.bg_QScreenOrientationChangeEvent_clone_SUPER_(@myself))
+      def clone() : ScreenOrientationChangeEvent?
+        Binding.bg_QScreenOrientationChangeEvent_clone_SUPER_(@myself).try {|ptr| ScreenOrientationChangeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -80466,8 +80466,8 @@ module Qt
       ApplicationStateChangeEvent.new(unwrap: Binding.bg_QApplicationStateChangeEvent__OPERATOR_assign_const_QApplicationStateChangeEvent_R(self, other))
     end
     
-    def clone() : ApplicationStateChangeEvent
-      ApplicationStateChangeEvent.new(unwrap: Binding.bg_QApplicationStateChangeEvent_clone_(self))
+    def clone() : ApplicationStateChangeEvent?
+      Binding.bg_QApplicationStateChangeEvent_clone_(self).try {|ptr| ApplicationStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(state : ApplicationState)
@@ -80529,8 +80529,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ApplicationStateChangeEvent)
       end
-      def clone() : ApplicationStateChangeEvent
-        ApplicationStateChangeEvent.new(unwrap: Binding.bg_QApplicationStateChangeEvent_clone_SUPER_(@myself))
+      def clone() : ApplicationStateChangeEvent?
+        Binding.bg_QApplicationStateChangeEvent_clone_SUPER_(@myself).try {|ptr| ApplicationStateChangeEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -80582,8 +80582,8 @@ module Qt
       ChildWindowEvent.new(unwrap: Binding.bg_QChildWindowEvent__OPERATOR_assign_const_QChildWindowEvent_R(self, other))
     end
     
-    def clone() : ChildWindowEvent
-      ChildWindowEvent.new(unwrap: Binding.bg_QChildWindowEvent_clone_(self))
+    def clone() : ChildWindowEvent?
+      Binding.bg_QChildWindowEvent_clone_(self).try {|ptr| ChildWindowEvent.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(type : Event::Type, child_window : Window)
@@ -80621,8 +80621,8 @@ module Qt
     {% end %}
     end
     
-    def child() : Window
-      Window.new(unwrap: Binding.bg_QChildWindowEvent_child_(self))
+    def child() : Window?
+      Binding.bg_QChildWindowEvent_child_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
     def accepted=(accepted : Bool) : Void
@@ -80645,8 +80645,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ChildWindowEvent)
       end
-      def clone() : ChildWindowEvent
-        ChildWindowEvent.new(unwrap: Binding.bg_QChildWindowEvent_clone_SUPER_(@myself))
+      def clone() : ChildWindowEvent?
+        Binding.bg_QChildWindowEvent_clone_SUPER_(@myself).try {|ptr| ChildWindowEvent.new(unwrap: ptr) unless ptr.null?}
       end
       
       def accepted=(accepted : Bool) : Void
@@ -81775,8 +81775,8 @@ module Qt
     {% end %}
     end
     
-    def clone(parent : Object? = nil) : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QTextDocument_clone_QObject_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null)))
+    def clone(parent : Object? = nil) : TextDocument?
+      Binding.bg_QTextDocument_clone_QObject_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null)).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def empty?() : Bool
@@ -81819,8 +81819,8 @@ module Qt
       Binding.bg_QTextDocument_setDocumentLayout_QAbstractTextDocumentLayout_X(self, layout)
     end
     
-    def document_layout() : AbstractTextDocumentLayout
-      AbstractTextDocumentLayoutImpl.new(unwrap: Binding.bg_QTextDocument_documentLayout_(self))
+    def document_layout() : AbstractTextDocumentLayout?
+      Binding.bg_QTextDocument_documentLayout_(self).try {|ptr| AbstractTextDocumentLayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_meta_information(info : TextDocument::MetaInformation, unnamed_arg_1 : String) : Void
@@ -81903,20 +81903,20 @@ module Qt
       TextCursor.new(unwrap: Binding.bg_QTextDocument_find_const_QRegularExpression_R_const_QTextCursor_R_QTextDocument__FindFlags(self, expr, cursor, options))
     end
     
-    def frame_at(pos : Int32) : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextDocument_frameAt_int(self, pos))
+    def frame_at(pos : Int32) : TextFrame?
+      Binding.bg_QTextDocument_frameAt_int(self, pos).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def root_frame() : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextDocument_rootFrame_(self))
+    def root_frame() : TextFrame?
+      Binding.bg_QTextDocument_rootFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def object(object_index : Int32) : TextObject
-      TextObject.new(unwrap: Binding.bg_QTextDocument_object_int(self, object_index))
+    def object(object_index : Int32) : TextObject?
+      Binding.bg_QTextDocument_object_int(self, object_index).try {|ptr| TextObject.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def object_for_format(unnamed_arg_0 : TextFormat) : TextObject
-      TextObject.new(unwrap: Binding.bg_QTextDocument_objectForFormat_const_QTextFormat_R(self, unnamed_arg_0))
+    def object_for_format(unnamed_arg_0 : TextFormat) : TextObject?
+      Binding.bg_QTextDocument_objectForFormat_const_QTextFormat_R(self, unnamed_arg_0).try {|ptr| TextObject.new(unwrap: ptr) unless ptr.null?}
     end
     
     def find_block(pos : Int32) : TextBlock
@@ -82195,8 +82195,8 @@ module Qt
       Binding.bg_QTextDocument_setModified_bool(self, m)
     end
     
-    protected def create_object(f : TextFormat) : TextObject
-      TextObject.new(unwrap: Binding.bg_QTextDocument_createObject_const_QTextFormat_R(self, f))
+    protected def create_object(f : TextFormat) : TextObject?
+      Binding.bg_QTextDocument_createObject_const_QTextFormat_R(self, f).try {|ptr| TextObject.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def load_resource(type : Int32, name : Url) : Variant
@@ -82286,8 +82286,8 @@ module Qt
         Binding.bg_QTextDocument_clear_SUPER_(@myself)
       end
       
-      protected def create_object(f : TextFormat) : TextObject
-        TextObject.new(unwrap: Binding.bg_QTextDocument_createObject_SUPER_const_QTextFormat_R(@myself, f))
+      protected def create_object(f : TextFormat) : TextObject?
+        Binding.bg_QTextDocument_createObject_SUPER_const_QTextFormat_R(@myself, f).try {|ptr| TextObject.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def load_resource(type : Int32, name : Url) : Variant
@@ -82488,8 +82488,8 @@ module Qt
       Binding.bg_QBrush_setColor_Qt__GlobalColor(self, color)
     end
     
-    def gradient() : Gradient
-      Gradient.new(unwrap: Binding.bg_QBrush_gradient_(self))
+    def gradient() : Gradient?
+      Binding.bg_QBrush_gradient_(self).try {|ptr| Gradient.new(unwrap: ptr) unless ptr.null?}
     end
     
     def opaque?() : Bool
@@ -84958,44 +84958,44 @@ module Qt
       Binding.bg_QTextCursor_insertBlock_const_QTextBlockFormat_R_const_QTextCharFormat_R(self, format, char_format)
     end
     
-    def insert_list(format : TextListFormat) : TextList
-      TextList.new(unwrap: Binding.bg_QTextCursor_insertList_const_QTextListFormat_R(self, format))
+    def insert_list(format : TextListFormat) : TextList?
+      Binding.bg_QTextCursor_insertList_const_QTextListFormat_R(self, format).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_list(style : TextListFormat::Style) : TextList
-      TextList.new(unwrap: Binding.bg_QTextCursor_insertList_QTextListFormat__Style(self, style))
+    def insert_list(style : TextListFormat::Style) : TextList?
+      Binding.bg_QTextCursor_insertList_QTextListFormat__Style(self, style).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_list(format : TextListFormat) : TextList
-      TextList.new(unwrap: Binding.bg_QTextCursor_createList_const_QTextListFormat_R(self, format))
+    def create_list(format : TextListFormat) : TextList?
+      Binding.bg_QTextCursor_createList_const_QTextListFormat_R(self, format).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_list(style : TextListFormat::Style) : TextList
-      TextList.new(unwrap: Binding.bg_QTextCursor_createList_QTextListFormat__Style(self, style))
+    def create_list(style : TextListFormat::Style) : TextList?
+      Binding.bg_QTextCursor_createList_QTextListFormat__Style(self, style).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def current_list() : TextList
-      TextList.new(unwrap: Binding.bg_QTextCursor_currentList_(self))
+    def current_list() : TextList?
+      Binding.bg_QTextCursor_currentList_(self).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_table(rows : Int32, cols : Int32, format : TextTableFormat) : TextTable
-      TextTable.new(unwrap: Binding.bg_QTextCursor_insertTable_int_int_const_QTextTableFormat_R(self, rows, cols, format))
+    def insert_table(rows : Int32, cols : Int32, format : TextTableFormat) : TextTable?
+      Binding.bg_QTextCursor_insertTable_int_int_const_QTextTableFormat_R(self, rows, cols, format).try {|ptr| TextTable.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_table(rows : Int32, cols : Int32) : TextTable
-      TextTable.new(unwrap: Binding.bg_QTextCursor_insertTable_int_int(self, rows, cols))
+    def insert_table(rows : Int32, cols : Int32) : TextTable?
+      Binding.bg_QTextCursor_insertTable_int_int(self, rows, cols).try {|ptr| TextTable.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def current_table() : TextTable
-      TextTable.new(unwrap: Binding.bg_QTextCursor_currentTable_(self))
+    def current_table() : TextTable?
+      Binding.bg_QTextCursor_currentTable_(self).try {|ptr| TextTable.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_frame(format : TextFrameFormat) : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextCursor_insertFrame_const_QTextFrameFormat_R(self, format))
+    def insert_frame(format : TextFrameFormat) : TextFrame?
+      Binding.bg_QTextCursor_insertFrame_const_QTextFrameFormat_R(self, format).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def current_frame() : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextCursor_currentFrame_(self))
+    def current_frame() : TextFrame?
+      Binding.bg_QTextCursor_currentFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
     def insert_fragment(fragment : TextDocumentFragment) : Void
@@ -85082,8 +85082,8 @@ module Qt
       Binding.bg_QTextCursor_columnNumber_(self)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QTextCursor_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QTextCursor_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     enum MoveMode : UInt32
@@ -86016,12 +86016,12 @@ module Qt
     Binding.bg_QAbstractTextDocumentLayout_setPaintDevice_QPaintDevice_X(self, device)
     end
     
-    def paint_device() : PaintDevice
-      PaintDeviceImpl.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_paintDevice_(self))
+    def paint_device() : PaintDevice?
+      Binding.bg_QAbstractTextDocumentLayout_paintDevice_(self).try {|ptr| PaintDeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QAbstractTextDocumentLayout_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QAbstractTextDocumentLayout_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def register_handler(object_type : Int32, component : Object) : Void
@@ -86553,8 +86553,8 @@ module Qt
       Binding.bg_QAction_setActionGroup_QActionGroup_X(self, group)
     end
     
-    def action_group() : ActionGroup
-      ActionGroup.new(unwrap: Binding.bg_QAction_actionGroup_(self))
+    def action_group() : ActionGroup?
+      Binding.bg_QAction_actionGroup_(self).try {|ptr| ActionGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def icon=(icon : Icon) : Void
@@ -87039,18 +87039,18 @@ module Qt
     {% end %}
     end
     
-    def add_action(a : Action) : Action
+    def add_action(a : Action) : Action?
       BindgenHelper.keep_alive(a)
-    Action.new(unwrap: Binding.bg_QActionGroup_addAction_QAction_X(self, a))
+    Binding.bg_QActionGroup_addAction_QAction_X(self, a).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(text : String) : Action
-      Action.new(unwrap: Binding.bg_QActionGroup_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def add_action(text : String) : Action?
+      Binding.bg_QActionGroup_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(icon : Icon, text : String) : Action
+    def add_action(icon : Icon, text : String) : Action?
       BindgenHelper.keep_alive(icon)
-    Action.new(unwrap: Binding.bg_QActionGroup_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)))
+    Binding.bg_QActionGroup_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_action(a : Action) : Void
@@ -87061,8 +87061,8 @@ module Qt
       Container_QList_QAction_X_.new(unwrap: Binding.bg_QActionGroup_actions_(self))
     end
     
-    def checked_action() : Action
-      Action.new(unwrap: Binding.bg_QActionGroup_checkedAction_(self))
+    def checked_action() : Action?
+      Binding.bg_QActionGroup_checkedAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def exclusive?() : Bool
@@ -87907,8 +87907,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -87943,8 +87943,8 @@ module Qt
         Binding.bg_QPaintDevice_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -88308,8 +88308,8 @@ module Qt
       Binding.bg_QWindow_winId_(self)
     end
     
-    def parent(mode : Window::AncestorMode = Window::AncestorMode::ExcludeTransients) : Window
-      Window.new(unwrap: Binding.bg_QWindow_parent_QWindow__AncestorMode(self, mode))
+    def parent(mode : Window::AncestorMode = Window::AncestorMode::ExcludeTransients) : Window?
+      Binding.bg_QWindow_parent_QWindow__AncestorMode(self, mode).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
     def parent=(parent : Window) : Void
@@ -88416,8 +88416,8 @@ module Qt
       Binding.bg_QWindow_setTransientParent_QWindow_X(self, parent)
     end
     
-    def transient_parent() : Window
-      Window.new(unwrap: Binding.bg_QWindow_transientParent_(self))
+    def transient_parent() : Window?
+      Binding.bg_QWindow_transientParent_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
     def is_ancestor_of(child : Window, mode : Window::AncestorMode = Window::AncestorMode::IncludeTransients) : Bool
@@ -88572,8 +88572,8 @@ module Qt
       Binding.bg_QWindow_setMouseGrabEnabled_bool(self, grab)
     end
     
-    def screen() : Screen
-      Screen.new(unwrap: Binding.bg_QWindow_screen_(self))
+    def screen() : Screen?
+      Binding.bg_QWindow_screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def screen=(screen : Screen) : Void
@@ -88584,8 +88584,8 @@ module Qt
       Binding.bg_QWindow_accessibleRoot_(self)
     end
     
-    def focus_object() : Object
-      Object.new(unwrap: Binding.bg_QWindow_focusObject_(self))
+    def focus_object() : Object?
+      Binding.bg_QWindow_focusObject_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def map_to_global(pos : PointF) : PointF
@@ -88616,8 +88616,8 @@ module Qt
       Binding.bg_QWindow_unsetCursor_(self)
     end
     
-    def self.from_win_id(id : UInt32) : Window
-      Window.new(unwrap: Binding.bg_QWindow_fromWinId_STATIC_WId(id))
+    def self.from_win_id(id : UInt32) : Window?
+      Binding.bg_QWindow_fromWinId_STATIC_WId(id).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
     def vulkan_instance=(instance : Binding::QVulkanInstance*) : Void
@@ -89053,8 +89053,8 @@ module Qt
         Binding.bg_QWindow_accessibleRoot_SUPER_(@myself)
       end
       
-      def focus_object() : Object
-        Object.new(unwrap: Binding.bg_QWindow_focusObject_SUPER_(@myself))
+      def focus_object() : Object?
+        Binding.bg_QWindow_focusObject_SUPER_(@myself).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def expose_event(unnamed_arg_0 : ExposeEvent) : Void
@@ -89290,12 +89290,12 @@ module Qt
     @unwrap = result
     end
     
-    def window() : Window
-      Window.new(unwrap: Binding.bg_QBackingStore_window_(self))
+    def window() : Window?
+      Binding.bg_QBackingStore_window_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def paint_device() : PaintDevice
-      PaintDeviceImpl.new(unwrap: Binding.bg_QBackingStore_paintDevice_(self))
+    def paint_device() : PaintDevice?
+      Binding.bg_QBackingStore_paintDevice_(self).try {|ptr| PaintDeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def flush(region : Region, window : Window? = nil) : Void
@@ -89408,8 +89408,8 @@ module Qt
       Binding.bg_QClipboard_setText_const_QString_R_QClipboard__Mode(self, Qt::Converter::QString.wrap(unnamed_arg_0), mode)
     end
     
-    def mime_data(mode : Clipboard::Mode = Clipboard::Mode::Clipboard) : MimeData
-      MimeData.new(unwrap: Binding.bg_QClipboard_mimeData_QClipboard__Mode(self, mode))
+    def mime_data(mode : Clipboard::Mode = Clipboard::Mode::Clipboard) : MimeData?
+      Binding.bg_QClipboard_mimeData_QClipboard__Mode(self, mode).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_mime_data(data : MimeData, mode : Clipboard::Mode = Clipboard::Mode::Clipboard) : Void
@@ -89932,8 +89932,8 @@ module Qt
     Binding.bg_QDrag_setMimeData_QMimeData_X(self, data)
     end
     
-    def mime_data() : MimeData
-      MimeData.new(unwrap: Binding.bg_QDrag_mimeData_(self))
+    def mime_data() : MimeData?
+      Binding.bg_QDrag_mimeData_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def pixmap=(unnamed_arg_0 : Pixmap) : Void
@@ -89952,12 +89952,12 @@ module Qt
       Point.new(unwrap: Binding.bg_QDrag_hotSpot_(self))
     end
     
-    def source() : Object
-      Object.new(unwrap: Binding.bg_QDrag_source_(self))
+    def source() : Object?
+      Binding.bg_QDrag_source_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def target() : Object
-      Object.new(unwrap: Binding.bg_QDrag_target_(self))
+    def target() : Object?
+      Binding.bg_QDrag_target_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def exec() : DropAction
@@ -90343,8 +90343,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QFileSystemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QFileSystemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QFileSystemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -90830,8 +90830,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QFileSystemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QFileSystemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QFileSystemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -91465,8 +91465,8 @@ module Qt
     Binding.bg_QImageReader_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QImageReader_device_(self))
+    def device() : IODevice?
+      Binding.bg_QImageReader_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def file_name=(file_name : String) : Void
@@ -91701,8 +91701,8 @@ module Qt
     Binding.bg_QImageWriter_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QImageWriter_device_(self))
+    def device() : IODevice?
+      Binding.bg_QImageWriter_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def file_name=(file_name : String) : Void
@@ -92520,8 +92520,8 @@ module Qt
     Binding.bg_QMovie_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QMovie_device_(self))
+    def device() : IODevice?
+      Binding.bg_QMovie_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def file_name=(file_name : String) : Void
@@ -92896,8 +92896,8 @@ module Qt
       Size.new(unwrap: Binding.bg_QOffscreenSurface_size_(self))
     end
     
-    def screen() : Screen
-      Screen.new(unwrap: Binding.bg_QOffscreenSurface_screen_(self))
+    def screen() : Screen?
+      Binding.bg_QOffscreenSurface_screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def screen=(screen : Screen) : Void
@@ -93793,8 +93793,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -93848,8 +93848,8 @@ module Qt
         Binding.bg_QPaintDevice_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -94075,8 +94075,8 @@ module Qt
         Binding.bg_QWindow_accessibleRoot_SUPER_(@myself)
       end
       
-      def focus_object() : Object
-        Object.new(unwrap: Binding.bg_QWindow_focusObject_SUPER_(@myself))
+      def focus_object() : Object?
+        Binding.bg_QWindow_focusObject_SUPER_(@myself).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def resize_event(unnamed_arg_0 : ResizeEvent) : Void
@@ -94179,8 +94179,8 @@ module Qt
         Binding.bg_QPaintDeviceWindow_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPaintDeviceWindow_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPaintDeviceWindow_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -94203,8 +94203,8 @@ module Qt
       Binding.bg_QWindow_accessibleRoot_(self)
     end
     
-    def focus_object() : Object
-      Object.new(unwrap: Binding.bg_QWindow_focusObject_(self))
+    def focus_object() : Object?
+      Binding.bg_QWindow_focusObject_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def resize_event(unnamed_arg_0 : ResizeEvent) : Void
@@ -94359,8 +94359,8 @@ module Qt
       Binding.bg_QPaintDeviceWindow_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDeviceWindow_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDeviceWindow_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def get_decoded_metric_f(metric_a : PaintDevice::PaintDeviceMetric, metric_b : PaintDevice::PaintDeviceMetric) : Float64
@@ -94381,8 +94381,8 @@ module Qt
     @unwrap = result
     end
     
-    def device() : PaintDevice
-      PaintDeviceImpl.new(unwrap: Binding.bg_QPainter_device_(self))
+    def device() : PaintDevice?
+      Binding.bg_QPainter_device_(self).try {|ptr| PaintDeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def begin(unnamed_arg_0 : PaintDevice) : Bool
@@ -96146,8 +96146,8 @@ module Qt
         Binding.bg_QPdfWriter_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPdfWriter_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPdfWriter_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -96222,8 +96222,8 @@ module Qt
       Binding.bg_QPdfWriter_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPdfWriter_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPdfWriter_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
   end
@@ -96433,8 +96433,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -96473,8 +96473,8 @@ module Qt
         Binding.bg_QPaintDevice_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QPaintDevice_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -97099,8 +97099,8 @@ module Qt
       Binding.bg_QWindow_accessibleRoot_(self)
     end
     
-    def focus_object() : Object
-      Object.new(unwrap: Binding.bg_QWindow_focusObject_(self))
+    def focus_object() : Object?
+      Binding.bg_QWindow_focusObject_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def move_event(unnamed_arg_0 : MoveEvent) : Void
@@ -97243,8 +97243,8 @@ module Qt
         Binding.bg_QWindow_accessibleRoot_SUPER_(@myself)
       end
       
-      def focus_object() : Object
-        Object.new(unwrap: Binding.bg_QWindow_focusObject_SUPER_(@myself))
+      def focus_object() : Object?
+        Binding.bg_QWindow_focusObject_SUPER_(@myself).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def move_event(unnamed_arg_0 : MoveEvent) : Void
@@ -98356,8 +98356,8 @@ module Qt
       Binding.bg_QStandardItem_setDropEnabled_bool(self, drop_enabled)
     end
     
-    def parent() : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItem_parent_(self))
+    def parent() : StandardItem?
+      Binding.bg_QStandardItem_parent_(self).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def row() : Int32
@@ -98372,8 +98372,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QStandardItem_index_(self))
     end
     
-    def model() : StandardItemModel
-      StandardItemModel.new(unwrap: Binding.bg_QStandardItem_model_(self))
+    def model() : StandardItemModel?
+      Binding.bg_QStandardItem_model_(self).try {|ptr| StandardItemModel.new(unwrap: ptr) unless ptr.null?}
     end
     
     def row_count() : Int32
@@ -98396,8 +98396,8 @@ module Qt
       Binding.bg_QStandardItem_hasChildren_(self)
     end
     
-    def child(row : Int32, column : Int32 = 0) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItem_child_int_int(self, row, column))
+    def child(row : Int32, column : Int32 = 0) : StandardItem?
+      Binding.bg_QStandardItem_child_int_int(self, row, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_child(row : Int32, column : Int32, item : StandardItem) : Void
@@ -98474,8 +98474,8 @@ module Qt
     Binding.bg_QStandardItem_appendRow_QStandardItem_X(self, item)
     end
     
-    def take_child(row : Int32, column : Int32 = 0) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItem_takeChild_int_int(self, row, column))
+    def take_child(row : Int32, column : Int32 = 0) : StandardItem?
+      Binding.bg_QStandardItem_takeChild_int_int(self, row, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def take_row(row : Int32) : Enumerable(StandardItem)
@@ -98490,8 +98490,8 @@ module Qt
       Binding.bg_QStandardItem_sortChildren_int_Qt__SortOrder(self, column, order)
     end
     
-    def clone() : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItem_clone_(self))
+    def clone() : StandardItem?
+      Binding.bg_QStandardItem_clone_(self).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def type() : Int32
@@ -98639,8 +98639,8 @@ module Qt
         Binding.bg_QStandardItem_setData_SUPER_const_QVariant_R_int(@myself, (value.to_unsafe), role)
       end
       
-      def clone() : StandardItem
-        StandardItem.new(unwrap: Binding.bg_QStandardItem_clone_SUPER_(@myself))
+      def clone() : StandardItem?
+        Binding.bg_QStandardItem_clone_SUPER_(@myself).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def type() : Int32
@@ -99067,16 +99067,16 @@ module Qt
       Binding.bg_QStandardItemModel_sort_int_Qt__SortOrder(self, column, order)
     end
     
-    def item_from_index(index : ModelIndex) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_itemFromIndex_const_QModelIndex_R(self, index))
+    def item_from_index(index : ModelIndex) : StandardItem?
+      Binding.bg_QStandardItemModel_itemFromIndex_const_QModelIndex_R(self, index).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index_from_item(item : StandardItem) : ModelIndex
       ModelIndex.new(unwrap: Binding.bg_QStandardItemModel_indexFromItem_const_QStandardItem_X(self, item))
     end
     
-    def item(row : Int32, column : Int32 = 0) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_item_int_int(self, row, column))
+    def item(row : Int32, column : Int32 = 0) : StandardItem?
+      Binding.bg_QStandardItemModel_item_int_int(self, row, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item(row : Int32, column : Int32, item : StandardItem) : Void
@@ -99089,12 +99089,12 @@ module Qt
     Binding.bg_QStandardItemModel_setItem_int_QStandardItem_X(self, row, item)
     end
     
-    def invisible_root_item() : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_invisibleRootItem_(self))
+    def invisible_root_item() : StandardItem?
+      Binding.bg_QStandardItemModel_invisibleRootItem_(self).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def horizontal_header_item(column : Int32) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_horizontalHeaderItem_int(self, column))
+    def horizontal_header_item(column : Int32) : StandardItem?
+      Binding.bg_QStandardItemModel_horizontalHeaderItem_int(self, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_horizontal_header_item(column : Int32, item : StandardItem) : Void
@@ -99102,8 +99102,8 @@ module Qt
     Binding.bg_QStandardItemModel_setHorizontalHeaderItem_int_QStandardItem_X(self, column, item)
     end
     
-    def vertical_header_item(row : Int32) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_verticalHeaderItem_int(self, row))
+    def vertical_header_item(row : Int32) : StandardItem?
+      Binding.bg_QStandardItemModel_verticalHeaderItem_int(self, row).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_vertical_header_item(row : Int32, item : StandardItem) : Void
@@ -99169,8 +99169,8 @@ module Qt
       Binding.bg_QStandardItemModel_insertColumn_int_const_QModelIndex_R(self, column, parent)
     end
     
-    def take_item(row : Int32, column : Int32 = 0) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeItem_int_int(self, row, column))
+    def take_item(row : Int32, column : Int32 = 0) : StandardItem?
+      Binding.bg_QStandardItemModel_takeItem_int_int(self, row, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def take_row(row : Int32) : Enumerable(StandardItem)
@@ -99181,16 +99181,16 @@ module Qt
       Container_QList_QStandardItem_X_.new(unwrap: Binding.bg_QStandardItemModel_takeColumn_int(self, column))
     end
     
-    def take_horizontal_header_item(column : Int32) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeHorizontalHeaderItem_int(self, column))
+    def take_horizontal_header_item(column : Int32) : StandardItem?
+      Binding.bg_QStandardItemModel_takeHorizontalHeaderItem_int(self, column).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_vertical_header_item(row : Int32) : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_takeVerticalHeaderItem_int(self, row))
+    def take_vertical_header_item(row : Int32) : StandardItem?
+      Binding.bg_QStandardItemModel_takeVerticalHeaderItem_int(self, row).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_prototype() : StandardItem
-      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_itemPrototype_(self))
+    def item_prototype() : StandardItem?
+      Binding.bg_QStandardItemModel_itemPrototype_(self).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_prototype=(item : StandardItem) : Void
@@ -99222,8 +99222,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QStandardItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -99551,8 +99551,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QStandardItemModel_mimeTypes_SUPER_(@myself))
       end
       
-      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+      def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+        Binding.bg_QStandardItemModel_mimeData_SUPER_const_QModelIndexList_R(@myself, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       def drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -100213,8 +100213,8 @@ module Qt
       Binding.bg_QTextObject_formatIndex_(self)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QTextObject_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QTextObject_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def object_index() : Int32
@@ -100705,8 +100705,8 @@ module Qt
       Container_QList_QTextFrame_X_.new(unwrap: Binding.bg_QTextFrame_childFrames_(self))
     end
     
-    def parent_frame() : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextFrame_parentFrame_(self))
+    def parent_frame() : TextFrame?
+      Binding.bg_QTextFrame_parentFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
     def begin() : TextFrameIterator
@@ -100857,12 +100857,12 @@ module Qt
     @unwrap = result
     end
     
-    def parent_frame() : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextFrame__iterator_parentFrame_(self))
+    def parent_frame() : TextFrame?
+      Binding.bg_QTextFrame__iterator_parentFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def current_frame() : TextFrame
-      TextFrame.new(unwrap: Binding.bg_QTextFrame__iterator_currentFrame_(self))
+    def current_frame() : TextFrame?
+      Binding.bg_QTextFrame__iterator_currentFrame_(self).try {|ptr| TextFrame.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_block() : TextBlock
@@ -100982,8 +100982,8 @@ module Qt
       Binding.bg_QTextBlock_contains_int(self, position)
     end
     
-    def layout() : TextLayout
-      TextLayout.new(unwrap: Binding.bg_QTextBlock_layout_(self))
+    def layout() : TextLayout?
+      Binding.bg_QTextBlock_layout_(self).try {|ptr| TextLayout.new(unwrap: ptr) unless ptr.null?}
     end
     
     def clear_layout() : Void
@@ -101018,16 +101018,16 @@ module Qt
       Container_QList_QTextLayout__FormatRange_.new(unwrap: Binding.bg_QTextBlock_textFormats_(self))
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QTextBlock_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QTextBlock_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def text_list() : TextList
-      TextList.new(unwrap: Binding.bg_QTextBlock_textList_(self))
+    def text_list() : TextList?
+      Binding.bg_QTextBlock_textList_(self).try {|ptr| TextList.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def user_data() : TextBlockUserData
-      TextBlockUserData.new(unwrap: Binding.bg_QTextBlock_userData_(self))
+    def user_data() : TextBlockUserData?
+      Binding.bg_QTextBlock_userData_(self).try {|ptr| TextBlockUserData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def user_data=(data : TextBlockUserData) : Void
@@ -101364,8 +101364,8 @@ module Qt
     Binding.bg_QSyntaxHighlighter_setDocument_QTextDocument_X(self, doc)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QSyntaxHighlighter_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QSyntaxHighlighter_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def rehighlight() : Void
@@ -101409,8 +101409,8 @@ module Qt
       Binding.bg_QSyntaxHighlighter_setCurrentBlockUserData_QTextBlockUserData_X(self, data)
     end
     
-    protected def current_block_user_data() : TextBlockUserData
-      TextBlockUserData.new(unwrap: Binding.bg_QSyntaxHighlighter_currentBlockUserData_(self))
+    protected def current_block_user_data() : TextBlockUserData?
+      Binding.bg_QSyntaxHighlighter_currentBlockUserData_(self).try {|ptr| TextBlockUserData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def current_block() : TextBlock
@@ -101610,8 +101610,8 @@ module Qt
     Binding.bg_QTextDocumentWriter_setDevice_QIODevice_X(self, device)
     end
     
-    def device() : IODevice
-      IODeviceImpl.new(unwrap: Binding.bg_QTextDocumentWriter_device_(self))
+    def device() : IODevice?
+      Binding.bg_QTextDocumentWriter_device_(self).try {|ptr| IODeviceImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def file_name=(file_name : String) : Void
@@ -102278,24 +102278,24 @@ module Qt
       Container_QList_QUndoStack_X_.new(unwrap: Binding.bg_QUndoGroup_stacks_(self))
     end
     
-    def active_stack() : UndoStack
-      UndoStack.new(unwrap: Binding.bg_QUndoGroup_activeStack_(self))
+    def active_stack() : UndoStack?
+      Binding.bg_QUndoGroup_activeStack_(self).try {|ptr| UndoStack.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_undo_action(parent : Object) : Action
-      Action.new(unwrap: Binding.bg_QUndoGroup_createUndoAction_QObject_X(self, parent))
+    def create_undo_action(parent : Object) : Action?
+      Binding.bg_QUndoGroup_createUndoAction_QObject_X(self, parent).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_undo_action(parent : Object, prefix : String) : Action
-      Action.new(unwrap: Binding.bg_QUndoGroup_createUndoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)))
+    def create_undo_action(parent : Object, prefix : String) : Action?
+      Binding.bg_QUndoGroup_createUndoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_redo_action(parent : Object) : Action
-      Action.new(unwrap: Binding.bg_QUndoGroup_createRedoAction_QObject_X(self, parent))
+    def create_redo_action(parent : Object) : Action?
+      Binding.bg_QUndoGroup_createRedoAction_QObject_X(self, parent).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_redo_action(parent : Object, prefix : String) : Action
-      Action.new(unwrap: Binding.bg_QUndoGroup_createRedoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)))
+    def create_redo_action(parent : Object, prefix : String) : Action?
+      Binding.bg_QUndoGroup_createRedoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_undo() : Bool
@@ -102588,8 +102588,8 @@ module Qt
       Binding.bg_QUndoCommand_childCount_(self)
     end
     
-    def child(index : Int32) : UndoCommand
-      UndoCommand.new(unwrap: Binding.bg_QUndoCommand_child_int(self, index))
+    def child(index : Int32) : UndoCommand?
+      Binding.bg_QUndoCommand_child_int(self, index).try {|ptr| UndoCommand.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to_unsafe
@@ -102737,20 +102737,20 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QUndoStack_text_int(self, idx))
     end
     
-    def create_undo_action(parent : Object) : Action
-      Action.new(unwrap: Binding.bg_QUndoStack_createUndoAction_QObject_X(self, parent))
+    def create_undo_action(parent : Object) : Action?
+      Binding.bg_QUndoStack_createUndoAction_QObject_X(self, parent).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_undo_action(parent : Object, prefix : String) : Action
-      Action.new(unwrap: Binding.bg_QUndoStack_createUndoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)))
+    def create_undo_action(parent : Object, prefix : String) : Action?
+      Binding.bg_QUndoStack_createUndoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_redo_action(parent : Object) : Action
-      Action.new(unwrap: Binding.bg_QUndoStack_createRedoAction_QObject_X(self, parent))
+    def create_redo_action(parent : Object) : Action?
+      Binding.bg_QUndoStack_createRedoAction_QObject_X(self, parent).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_redo_action(parent : Object, prefix : String) : Action
-      Action.new(unwrap: Binding.bg_QUndoStack_createRedoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)))
+    def create_redo_action(parent : Object, prefix : String) : Action?
+      Binding.bg_QUndoStack_createRedoAction_QObject_X_const_QString_R(self, parent, Qt::Converter::QString.wrap(prefix)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active?() : Bool
@@ -102781,8 +102781,8 @@ module Qt
       Binding.bg_QUndoStack_undoLimit_(self)
     end
     
-    def command(index : Int32) : UndoCommand
-      UndoCommand.new(unwrap: Binding.bg_QUndoStack_command_int(self, index))
+    def command(index : Int32) : UndoCommand?
+      Binding.bg_QUndoStack_command_int(self, index).try {|ptr| UndoCommand.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_clean() : Void
@@ -104268,8 +104268,8 @@ module Qt
       Binding.bg_QWidget_effectiveWinId_(self)
     end
     
-    def style() : Style
-      StyleImpl.new(unwrap: Binding.bg_QWidget_style_(self))
+    def style() : Style?
+      Binding.bg_QWidget_style_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def style=(unnamed_arg_0 : Style) : Void
@@ -104509,16 +104509,16 @@ module Qt
       Point.new(unwrap: Binding.bg_QWidget_mapFrom_const_QWidget_X_const_QPoint_R(self, unnamed_arg_0, unnamed_arg_1))
     end
     
-    def window() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_window_(self))
+    def window() : Widget?
+      Binding.bg_QWidget_window_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def native_parent_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_nativeParentWidget_(self))
+    def native_parent_widget() : Widget?
+      Binding.bg_QWidget_nativeParentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_topLevelWidget_(self))
+    def top_level_widget() : Widget?
+      Binding.bg_QWidget_topLevelWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def palette() : Palette
@@ -104649,8 +104649,8 @@ module Qt
       Pixmap.new(unwrap: Binding.bg_QWidget_grab_const_QRect_R(self, rectangle))
     end
     
-    def graphics_effect() : GraphicsEffect
-      GraphicsEffectImpl.new(unwrap: Binding.bg_QWidget_graphicsEffect_(self))
+    def graphics_effect() : GraphicsEffect?
+      Binding.bg_QWidget_graphicsEffect_(self).try {|ptr| GraphicsEffectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def graphics_effect=(effect : GraphicsEffect) : Void
@@ -104858,8 +104858,8 @@ module Qt
       Binding.bg_QWidget_setFocusProxy_QWidget_X(self, unnamed_arg_0)
     end
     
-    def focus_proxy() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_focusProxy_(self))
+    def focus_proxy() : Widget?
+      Binding.bg_QWidget_focusProxy_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def context_menu_policy() : ContextMenuPolicy
@@ -104906,12 +104906,12 @@ module Qt
       Binding.bg_QWidget_setShortcutAutoRepeat_int_bool(self, id, enable)
     end
     
-    def self.mouse_grabber() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_mouseGrabber_STATIC_())
+    def self.mouse_grabber() : Widget?
+      Binding.bg_QWidget_mouseGrabber_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.keyboard_grabber() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_keyboardGrabber_STATIC_())
+    def self.keyboard_grabber() : Widget?
+      Binding.bg_QWidget_keyboardGrabber_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def updates_enabled() : Bool
@@ -104922,8 +104922,8 @@ module Qt
       Binding.bg_QWidget_setUpdatesEnabled_bool(self, enable)
     end
     
-    def graphics_proxy_widget() : GraphicsProxyWidget
-      GraphicsProxyWidget.new(unwrap: Binding.bg_QWidget_graphicsProxyWidget_(self))
+    def graphics_proxy_widget() : GraphicsProxyWidget?
+      Binding.bg_QWidget_graphicsProxyWidget_(self).try {|ptr| GraphicsProxyWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def update() : Void
@@ -105126,8 +105126,8 @@ module Qt
       Rect.new(unwrap: Binding.bg_QWidget_contentsRect_(self))
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QWidget_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QWidget_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def layout=(unnamed_arg_0 : Layout) : Void
@@ -105155,16 +105155,16 @@ module Qt
       Binding.bg_QWidget_scroll_int_int_const_QRect_R(self, dx, dy, unnamed_arg_2)
     end
     
-    def focus_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_focusWidget_(self))
+    def focus_widget() : Widget?
+      Binding.bg_QWidget_focusWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def next_in_focus_chain() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_nextInFocusChain_(self))
+    def next_in_focus_chain() : Widget?
+      Binding.bg_QWidget_nextInFocusChain_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def previous_in_focus_chain() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_previousInFocusChain_(self))
+    def previous_in_focus_chain() : Widget?
+      Binding.bg_QWidget_previousInFocusChain_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def accept_drops() : Bool
@@ -105201,52 +105201,52 @@ module Qt
       Container_QList_QAction_X_.new(unwrap: Binding.bg_QWidget_actions_(self))
     end
     
-    def add_action(text : String) : Action
-      Action.new(unwrap: Binding.bg_QWidget_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def add_action(text : String) : Action?
+      Binding.bg_QWidget_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(icon : Icon, text : String) : Action
+    def add_action(icon : Icon, text : String) : Action?
       BindgenHelper.keep_alive(icon)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)))
+    Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
+    def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
       BindgenHelper.keep_alive(receiver)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), receiver, member, type))
+    Binding.bg_QWidget_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), receiver, member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
+    def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(receiver)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), receiver, member, type))
+    Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), receiver, member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(text : String, shortcut : KeySequence) : Action
+    def add_action(text : String, shortcut : KeySequence) : Action?
       BindgenHelper.keep_alive(shortcut)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut))
+    Binding.bg_QWidget_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action
+    def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action?
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(shortcut)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut))
+    Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
+    def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
       BindgenHelper.keep_alive(shortcut)
     BindgenHelper.keep_alive(receiver)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, receiver, member, type))
+    Binding.bg_QWidget_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, receiver, member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
+    def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(shortcut)
     BindgenHelper.keep_alive(receiver)
-    Action.new(unwrap: Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, receiver, member, type))
+    Binding.bg_QWidget_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, receiver, member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_parentWidget_(self))
+    def parent_widget() : Widget?
+      Binding.bg_QWidget_parentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def window_flags=(type : WindowFlags) : Void
@@ -105269,20 +105269,20 @@ module Qt
       Binding.bg_QWidget_windowType_(self)
     end
     
-    def self.find(unnamed_arg_0 : UInt32) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_find_STATIC_WId(unnamed_arg_0))
+    def self.find(unnamed_arg_0 : UInt32) : Widget?
+      Binding.bg_QWidget_find_STATIC_WId(unnamed_arg_0).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def child_at(x : Int32, y : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_childAt_int_int(self, x, y))
+    def child_at(x : Int32, y : Int32) : Widget?
+      Binding.bg_QWidget_childAt_int_int(self, x, y).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def child_at(p : Point) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_childAt_const_QPoint_R(self, p))
+    def child_at(p : Point) : Widget?
+      Binding.bg_QWidget_childAt_const_QPoint_R(self, p).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def child_at(p : PointF) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_childAt_const_QPointF_R(self, p))
+    def child_at(p : PointF) : Widget?
+      Binding.bg_QWidget_childAt_const_QPointF_R(self, p).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_attribute(unnamed_arg_0 : Widget::Attribute, on : Bool = true) : Void
@@ -105313,28 +105313,28 @@ module Qt
       Binding.bg_QWidget_setAutoFillBackground_bool(self, enabled)
     end
     
-    def backing_store() : BackingStore
-      BackingStore.new(unwrap: Binding.bg_QWidget_backingStore_(self))
+    def backing_store() : BackingStore?
+      Binding.bg_QWidget_backingStore_(self).try {|ptr| BackingStore.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def window_handle() : Window
-      Window.new(unwrap: Binding.bg_QWidget_windowHandle_(self))
+    def window_handle() : Window?
+      Binding.bg_QWidget_windowHandle_(self).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def screen() : Screen
-      Screen.new(unwrap: Binding.bg_QWidget_screen_(self))
+    def screen() : Screen?
+      Binding.bg_QWidget_screen_(self).try {|ptr| Screen.new(unwrap: ptr) unless ptr.null?}
     end
     
     def screen=(unnamed_arg_0 : Screen) : Void
       Binding.bg_QWidget_setScreen_QScreen_X(self, unnamed_arg_0)
     end
     
-    def self.create_window_container(window : Window, parent : Widget? = nil) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_createWindowContainer_STATIC_QWindow_X_QWidget_X(window, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null)))
+    def self.create_window_container(window : Window, parent : Widget? = nil) : Widget?
+      Binding.bg_QWidget_createWindowContainer_STATIC_QWindow_X_QWidget_X(window, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null)).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.create_window_container(window : Window, parent : Widget?, flags : WindowFlags) : Widget
-      Widget.new(unwrap: Binding.bg_QWidget_createWindowContainer_STATIC_QWindow_X_QWidget_X_Qt__WindowFlags(window, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags))
+    def self.create_window_container(window : Window, parent : Widget?, flags : WindowFlags) : Widget?
+      Binding.bg_QWidget_createWindowContainer_STATIC_QWindow_X_QWidget_X_Qt__WindowFlags(window, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def window_title_changed(title : String) : Void
@@ -105469,8 +105469,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -105923,8 +105923,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -106296,8 +106296,8 @@ module Qt
       Binding.bg_QAbstractButton_autoExclusive_(self)
     end
     
-    def group() : ButtonGroup
-      ButtonGroup.new(unwrap: Binding.bg_QAbstractButton_group_(self))
+    def group() : ButtonGroup?
+      Binding.bg_QAbstractButton_group_(self).try {|ptr| ButtonGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def icon_size=(size : Size) : Void
@@ -106632,8 +106632,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -106840,8 +106840,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -107255,8 +107255,8 @@ module Qt
       Binding.bg_QAbstractSpinBox_initStyleOption_QStyleOptionSpinBox_X(self, option)
     end
     
-    protected def line_edit() : LineEdit
-      LineEdit.new(unwrap: Binding.bg_QAbstractSpinBox_lineEdit_(self))
+    protected def line_edit() : LineEdit?
+      Binding.bg_QAbstractSpinBox_lineEdit_(self).try {|ptr| LineEdit.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def line_edit=(edit : LineEdit) : Void
@@ -107512,8 +107512,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -107728,8 +107728,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -108360,8 +108360,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -108564,8 +108564,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -109104,8 +109104,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -109312,8 +109312,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -109657,8 +109657,8 @@ module Qt
       Binding.bg_QStyle_combinedLayoutSpacing_QSizePolicy__ControlTypes_QSizePolicy__ControlTypes_Qt__Orientation_QStyleOption_X_QWidget_X(self, controls1, controls2, orientation, (option.try(&.to_unsafe) || Pointer(Binding::QStyleOption).null), (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
-    def proxy() : Style
-      StyleImpl.new(unwrap: Binding.bg_QStyle_proxy_(self))
+    def proxy() : Style?
+      Binding.bg_QStyle_proxy_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -110773,8 +110773,8 @@ module Qt
     Binding.bg_QTabBar_setTabButton_int_QTabBar__ButtonPosition_QWidget_X(self, index, position, widget)
     end
     
-    def tab_button(index : Int32, position : TabBar::ButtonPosition) : Widget
-      Widget.new(unwrap: Binding.bg_QTabBar_tabButton_int_QTabBar__ButtonPosition(self, index, position))
+    def tab_button(index : Int32, position : TabBar::ButtonPosition) : Widget?
+      Binding.bg_QTabBar_tabButton_int_QTabBar__ButtonPosition(self, index, position).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selection_behavior_on_remove() : TabBar::SelectionBehavior
@@ -111044,8 +111044,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -111268,8 +111268,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -111565,12 +111565,12 @@ module Qt
       Binding.bg_QTabWidget_currentIndex_(self)
     end
     
-    def current_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QTabWidget_currentWidget_(self))
+    def current_widget() : Widget?
+      Binding.bg_QTabWidget_currentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def widget(index : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QTabWidget_widget_int(self, index))
+    def widget(index : Int32) : Widget?
+      Binding.bg_QTabWidget_widget_int(self, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index_of(widget : Widget) : Int32
@@ -111634,8 +111634,8 @@ module Qt
     Binding.bg_QTabWidget_setCornerWidget_QWidget_X_Qt__Corner(self, w, corner)
     end
     
-    def corner_widget(corner : Corner = Corner::TopRightCorner) : Widget
-      Widget.new(unwrap: Binding.bg_QTabWidget_cornerWidget_Qt__Corner(self, corner))
+    def corner_widget(corner : Corner = Corner::TopRightCorner) : Widget?
+      Binding.bg_QTabWidget_cornerWidget_Qt__Corner(self, corner).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def elide_mode() : TextElideMode
@@ -111682,8 +111682,8 @@ module Qt
       Binding.bg_QTabWidget_clear_(self)
     end
     
-    def tab_bar() : TabBar
-      TabBar.new(unwrap: Binding.bg_QTabWidget_tabBar_(self))
+    def tab_bar() : TabBar?
+      Binding.bg_QTabWidget_tabBar_(self).try {|ptr| TabBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_index=(index : Int32) : Void
@@ -111868,8 +111868,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -112080,8 +112080,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -112481,8 +112481,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -112685,8 +112685,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -113501,8 +113501,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -113705,8 +113705,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -113827,8 +113827,8 @@ module Qt
       Binding.bg_QStyleOption_palette_SETTER_QPalette(self, palette)
     end
     
-    def style_object() : Object
-      Object.new(unwrap: Binding.bg_QStyleOption_styleObject_GETTER_(self))
+    def style_object() : Object?
+      Binding.bg_QStyleOption_styleObject_GETTER_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def style_object=(style_object : Object) : Void
@@ -114931,8 +114931,8 @@ module Qt
       Binding.bg_QStyleOptionViewItem_locale_SETTER_QLocale(self, locale)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QStyleOptionViewItem_widget_GETTER_(self))
+    def widget() : Widget?
+      Binding.bg_QStyleOptionViewItem_widget_GETTER_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index() : ModelIndex
@@ -115887,8 +115887,8 @@ module Qt
     
     abstract def paint(painter : Painter, option : StyleOptionViewItem, index : ModelIndex) : Void
     abstract def size_hint(option : StyleOptionViewItem, index : ModelIndex) : Size
-    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-      Widget.new(unwrap: Binding.bg_QAbstractItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index))
+    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+      Binding.bg_QAbstractItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def destroy_editor(editor : Widget, index : ModelIndex) : Void
@@ -116065,8 +116065,8 @@ module Qt
     private class Superclass
       def initialize(@myself : AbstractItemDelegate)
       end
-      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-        Widget.new(unwrap: Binding.bg_QAbstractItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index))
+      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+        Binding.bg_QAbstractItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       def destroy_editor(editor : Widget, index : ModelIndex) : Void
@@ -116314,8 +116314,8 @@ module Qt
       Binding.bg_QAbstractScrollArea_setVerticalScrollBarPolicy_Qt__ScrollBarPolicy(self, unnamed_arg_0)
     end
     
-    def vertical_scroll_bar() : ScrollBar
-      ScrollBar.new(unwrap: Binding.bg_QAbstractScrollArea_verticalScrollBar_(self))
+    def vertical_scroll_bar() : ScrollBar?
+      Binding.bg_QAbstractScrollArea_verticalScrollBar_(self).try {|ptr| ScrollBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def vertical_scroll_bar=(scrollbar : ScrollBar) : Void
@@ -116331,8 +116331,8 @@ module Qt
       Binding.bg_QAbstractScrollArea_setHorizontalScrollBarPolicy_Qt__ScrollBarPolicy(self, unnamed_arg_0)
     end
     
-    def horizontal_scroll_bar() : ScrollBar
-      ScrollBar.new(unwrap: Binding.bg_QAbstractScrollArea_horizontalScrollBar_(self))
+    def horizontal_scroll_bar() : ScrollBar?
+      Binding.bg_QAbstractScrollArea_horizontalScrollBar_(self).try {|ptr| ScrollBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def horizontal_scroll_bar=(scrollbar : ScrollBar) : Void
@@ -116340,8 +116340,8 @@ module Qt
     Binding.bg_QAbstractScrollArea_setHorizontalScrollBar_QScrollBar_X(self, scrollbar)
     end
     
-    def corner_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QAbstractScrollArea_cornerWidget_(self))
+    def corner_widget() : Widget?
+      Binding.bg_QAbstractScrollArea_cornerWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def corner_widget=(widget : Widget) : Void
@@ -116358,8 +116358,8 @@ module Qt
       Container_QList_QWidget_X_.new(unwrap: Binding.bg_QAbstractScrollArea_scrollBarWidgets_Qt__Alignment(self, alignment))
     end
     
-    def viewport() : Widget
-      Widget.new(unwrap: Binding.bg_QAbstractScrollArea_viewport_(self))
+    def viewport() : Widget?
+      Binding.bg_QAbstractScrollArea_viewport_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def viewport=(widget : Widget) : Void
@@ -116707,8 +116707,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -116927,8 +116927,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -117217,16 +117217,16 @@ module Qt
     Binding.bg_QAbstractItemView_setModel_QAbstractItemModel_X(self, model)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QAbstractItemView_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QAbstractItemView_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
       Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
-    def selection_model() : ItemSelectionModel
-      ItemSelectionModel.new(unwrap: Binding.bg_QAbstractItemView_selectionModel_(self))
+    def selection_model() : ItemSelectionModel?
+      Binding.bg_QAbstractItemView_selectionModel_(self).try {|ptr| ItemSelectionModel.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -117234,8 +117234,8 @@ module Qt
     Binding.bg_QAbstractItemView_setItemDelegate_QAbstractItemDelegate_X(self, delegate)
     end
     
-    def item_delegate() : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegate_(self))
+    def item_delegate() : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegate_(self).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selection_mode=(mode : AbstractItemDelegate::SelectionMode) : Void
@@ -117434,8 +117434,8 @@ module Qt
     Binding.bg_QAbstractItemView_setIndexWidget_const_QModelIndex_R_QWidget_X(self, index, widget)
     end
     
-    def index_widget(index : ModelIndex) : Widget
-      Widget.new(unwrap: Binding.bg_QAbstractItemView_indexWidget_const_QModelIndex_R(self, index))
+    def index_widget(index : ModelIndex) : Widget?
+      Binding.bg_QAbstractItemView_indexWidget_const_QModelIndex_R(self, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item_delegate_for_row(row : Int32, delegate : AbstractItemDelegate) : Void
@@ -117443,8 +117443,8 @@ module Qt
     Binding.bg_QAbstractItemView_setItemDelegateForRow_int_QAbstractItemDelegate_X(self, row, delegate)
     end
     
-    def item_delegate_for_row(row : Int32) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForRow_int(self, row))
+    def item_delegate_for_row(row : Int32) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForRow_int(self, row).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item_delegate_for_column(column : Int32, delegate : AbstractItemDelegate) : Void
@@ -117452,12 +117452,12 @@ module Qt
     Binding.bg_QAbstractItemView_setItemDelegateForColumn_int_QAbstractItemDelegate_X(self, column, delegate)
     end
     
-    def item_delegate_for_column(column : Int32) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForColumn_int(self, column))
+    def item_delegate_for_column(column : Int32) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForColumn_int(self, column).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -118069,8 +118069,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -118125,8 +118125,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -118409,8 +118409,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -118540,8 +118540,8 @@ module Qt
     {% end %}
     end
     
-    def self.style() : Style
-      StyleImpl.new(unwrap: Binding.bg_QApplication_style_STATIC_())
+    def self.style() : Style?
+      Binding.bg_QApplication_style_STATIC_().try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.style=(unnamed_arg_0 : Style) : Void
@@ -118549,8 +118549,8 @@ module Qt
     Binding.bg_QApplication_setStyle_STATIC_QStyle_X(unnamed_arg_0)
     end
     
-    def self.set_style(unnamed_arg_0 : String) : Style
-      StyleImpl.new(unwrap: Binding.bg_QApplication_setStyle_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
+    def self.set_style(unnamed_arg_0 : String) : Style?
+      Binding.bg_QApplication_setStyle_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.palette(unnamed_arg_0 : Widget) : Palette
@@ -118597,36 +118597,36 @@ module Qt
       Container_QList_QWidget_X_.new(unwrap: Binding.bg_QApplication_topLevelWidgets_STATIC_())
     end
     
-    def self.active_popup_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_activePopupWidget_STATIC_())
+    def self.active_popup_widget() : Widget?
+      Binding.bg_QApplication_activePopupWidget_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.active_modal_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_activeModalWidget_STATIC_())
+    def self.active_modal_widget() : Widget?
+      Binding.bg_QApplication_activeModalWidget_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.focus_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_focusWidget_STATIC_())
+    def self.focus_widget() : Widget?
+      Binding.bg_QApplication_focusWidget_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.active_window() : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_activeWindow_STATIC_())
+    def self.active_window() : Widget?
+      Binding.bg_QApplication_activeWindow_STATIC_().try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.widget_at(p : Point) : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_widgetAt_STATIC_const_QPoint_R(p))
+    def self.widget_at(p : Point) : Widget?
+      Binding.bg_QApplication_widgetAt_STATIC_const_QPoint_R(p).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.widget_at(x : Int32, y : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_widgetAt_STATIC_int_int(x, y))
+    def self.widget_at(x : Int32, y : Int32) : Widget?
+      Binding.bg_QApplication_widgetAt_STATIC_int_int(x, y).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.top_level_at(p : Point) : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_topLevelAt_STATIC_const_QPoint_R(p))
+    def self.top_level_at(p : Point) : Widget?
+      Binding.bg_QApplication_topLevelAt_STATIC_const_QPoint_R(p).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.top_level_at(x : Int32, y : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QApplication_topLevelAt_STATIC_int_int(x, y))
+    def self.top_level_at(x : Int32, y : Int32) : Widget?
+      Binding.bg_QApplication_topLevelAt_STATIC_int_int(x, y).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.beep() : Void
@@ -118970,16 +118970,16 @@ module Qt
       Binding.bg_QLayoutItem_invalidate_(self)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QLayoutItem_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QLayoutItem_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayoutItem_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def spacer_item() : SpacerItem
-      SpacerItem.new(unwrap: Binding.bg_QLayoutItem_spacerItem_(self))
+    def spacer_item() : SpacerItem?
+      Binding.bg_QLayoutItem_spacerItem_(self).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def alignment() : Alignment
@@ -119059,16 +119059,16 @@ module Qt
         Binding.bg_QLayoutItem_invalidate_SUPER_(@myself)
       end
       
-      def widget() : Widget
-        Widget.new(unwrap: Binding.bg_QLayoutItem_widget_SUPER_(@myself))
+      def widget() : Widget?
+        Binding.bg_QLayoutItem_widget_SUPER_(@myself).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayoutItem_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def spacer_item() : SpacerItem
-        SpacerItem.new(unwrap: Binding.bg_QLayoutItem_spacerItem_SUPER_(@myself))
+      def spacer_item() : SpacerItem?
+        Binding.bg_QLayoutItem_spacerItem_SUPER_(@myself).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def control_types() : SizePolicy::ControlTypes
@@ -119174,8 +119174,8 @@ module Qt
       Rect.new(unwrap: Binding.bg_QSpacerItem_geometry_(self))
     end
     
-    def spacer_item() : SpacerItem
-      SpacerItem.new(unwrap: Binding.bg_QSpacerItem_spacerItem_(self))
+    def spacer_item() : SpacerItem?
+      Binding.bg_QSpacerItem_spacerItem_(self).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def size_policy() : SizePolicy
@@ -119263,12 +119263,12 @@ module Qt
       Binding.bg_QLayoutItem_invalidate_(self)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QLayoutItem_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QLayoutItem_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayoutItem_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def control_types() : SizePolicy::ControlTypes
@@ -119319,8 +119319,8 @@ module Qt
         Rect.new(unwrap: Binding.bg_QSpacerItem_geometry_SUPER_(@myself))
       end
       
-      def spacer_item() : SpacerItem
-        SpacerItem.new(unwrap: Binding.bg_QSpacerItem_spacerItem_SUPER_(@myself))
+      def spacer_item() : SpacerItem?
+        Binding.bg_QSpacerItem_spacerItem_SUPER_(@myself).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def has_height_for_width?() : Bool
@@ -119339,12 +119339,12 @@ module Qt
         Binding.bg_QLayoutItem_invalidate_SUPER_(@myself)
       end
       
-      def widget() : Widget
-        Widget.new(unwrap: Binding.bg_QLayoutItem_widget_SUPER_(@myself))
+      def widget() : Widget?
+        Binding.bg_QLayoutItem_widget_SUPER_(@myself).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayoutItem_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def control_types() : SizePolicy::ControlTypes
@@ -119446,8 +119446,8 @@ module Qt
       Rect.new(unwrap: Binding.bg_QWidgetItem_geometry_(self))
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetItem_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QWidgetItem_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def has_height_for_width?() : Bool
@@ -119466,8 +119466,8 @@ module Qt
       Binding.bg_QWidgetItem_controlTypes_(self)
     end
     
-    private def wid() : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetItem_wid_GETTER_(self))
+    private def wid() : Widget?
+      Binding.bg_QWidgetItem_wid_GETTER_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     private def wid=(wid : Widget) : Void
@@ -119478,12 +119478,12 @@ module Qt
       Binding.bg_QLayoutItem_invalidate_(self)
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayoutItem_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def spacer_item() : SpacerItem
-      SpacerItem.new(unwrap: Binding.bg_QLayoutItem_spacerItem_(self))
+    def spacer_item() : SpacerItem?
+      Binding.bg_QLayoutItem_spacerItem_(self).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -119530,8 +119530,8 @@ module Qt
         Rect.new(unwrap: Binding.bg_QWidgetItem_geometry_SUPER_(@myself))
       end
       
-      def widget() : Widget
-        Widget.new(unwrap: Binding.bg_QWidgetItem_widget_SUPER_(@myself))
+      def widget() : Widget?
+        Binding.bg_QWidgetItem_widget_SUPER_(@myself).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       def has_height_for_width?() : Bool
@@ -119554,12 +119554,12 @@ module Qt
         Binding.bg_QLayoutItem_invalidate_SUPER_(@myself)
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayoutItem_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayoutItem_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def spacer_item() : SpacerItem
-        SpacerItem.new(unwrap: Binding.bg_QLayoutItem_spacerItem_SUPER_(@myself))
+      def spacer_item() : SpacerItem?
+        Binding.bg_QLayoutItem_spacerItem_SUPER_(@myself).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -119766,12 +119766,12 @@ module Qt
     Binding.bg_QLayout_setMenuBar_QWidget_X(self, w)
     end
     
-    def menu_bar() : Widget
-      Widget.new(unwrap: Binding.bg_QLayout_menuBar_(self))
+    def menu_bar() : Widget?
+      Binding.bg_QLayout_menuBar_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QLayout_parentWidget_(self))
+    def parent_widget() : Widget?
+      Binding.bg_QLayout_parentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def invalidate() : Void
@@ -119820,8 +119820,8 @@ module Qt
       Binding.bg_QLayout_setGeometry_const_QRect_R(self, unnamed_arg_0)
     end
     
-    abstract def item_at(index : Int32) : LayoutItem
-    abstract def take_at(index : Int32) : LayoutItem
+    abstract def item_at(index : Int32) : LayoutItem?
+    abstract def take_at(index : Int32) : LayoutItem?
     def index_of(unnamed_arg_0 : Widget) : Int32
       Binding.bg_QLayout_indexOf_const_QWidget_X(self, unnamed_arg_0)
     end
@@ -119839,14 +119839,14 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def total_minimum_height_for_width(w : Int32) : Int32
@@ -119869,8 +119869,8 @@ module Qt
       Size.new(unwrap: Binding.bg_QLayout_totalSizeHint_(self))
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def enabled=(unnamed_arg_0 : Bool) : Void
@@ -120092,12 +120092,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -120140,12 +120140,12 @@ module Qt
         Binding.bg_QLayout_minimumHeightForWidth_SUPER_int(@myself, unnamed_arg_0)
       end
       
-      def widget() : Widget
-        Widget.new(unwrap: Binding.bg_QLayout_widget_SUPER_(@myself))
+      def widget() : Widget?
+        Binding.bg_QLayout_widget_SUPER_(@myself).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def spacer_item() : SpacerItem
-        SpacerItem.new(unwrap: Binding.bg_QLayout_spacerItem_SUPER_(@myself))
+      def spacer_item() : SpacerItem?
+        Binding.bg_QLayout_spacerItem_SUPER_(@myself).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -120189,12 +120189,12 @@ module Qt
       Binding.bg_QLayout_minimumHeightForWidth_int(self, unnamed_arg_0)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QLayout_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QLayout_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def spacer_item() : SpacerItem
-      SpacerItem.new(unwrap: Binding.bg_QLayout_spacerItem_(self))
+    def spacer_item() : SpacerItem?
+      Binding.bg_QLayout_spacerItem_(self).try {|ptr| SpacerItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def alignment() : Alignment
@@ -120477,16 +120477,16 @@ module Qt
       Binding.bg_QGridLayout_originCorner_(self)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QGridLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QGridLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at_position(row : Int32, column : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QGridLayout_itemAtPosition_int_int(self, row, column))
+    def item_at_position(row : Int32, column : Int32) : LayoutItem?
+      Binding.bg_QGridLayout_itemAtPosition_int_int(self, row, column).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QGridLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QGridLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -120544,18 +120544,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -120642,12 +120642,12 @@ module Qt
         Binding.bg_QGridLayout_invalidate_SUPER_(@myself)
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QGridLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QGridLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QGridLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QGridLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def count() : Int32
@@ -120682,12 +120682,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -120979,12 +120979,12 @@ module Qt
       Binding.bg_QBoxLayout_invalidate_(self)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -121027,18 +121027,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -121129,12 +121129,12 @@ module Qt
         Binding.bg_QBoxLayout_invalidate_SUPER_(@myself)
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def count() : Int32
@@ -121165,12 +121165,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -121474,12 +121474,12 @@ module Qt
       Binding.bg_QBoxLayout_invalidate_(self)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -121510,18 +121510,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -121612,12 +121612,12 @@ module Qt
         Binding.bg_QBoxLayout_invalidate_SUPER_(@myself)
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def count() : Int32
@@ -121648,12 +121648,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -121957,12 +121957,12 @@ module Qt
       Binding.bg_QBoxLayout_invalidate_(self)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QBoxLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -121993,18 +121993,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -122095,12 +122095,12 @@ module Qt
         Binding.bg_QBoxLayout_invalidate_SUPER_(@myself)
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QBoxLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def count() : Int32
@@ -122131,12 +122131,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -122269,12 +122269,12 @@ module Qt
       Container_QList_QAbstractButton_X_.new(unwrap: Binding.bg_QButtonGroup_buttons_(self))
     end
     
-    def checked_button() : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QButtonGroup_checkedButton_(self))
+    def checked_button() : AbstractButton?
+      Binding.bg_QButtonGroup_checkedButton_(self).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def button(id : Int32) : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QButtonGroup_button_int(self, id))
+    def button(id : Int32) : AbstractButton?
+      Binding.bg_QButtonGroup_button_int(self, id).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_id(button : AbstractButton, id : Int32) : Void
@@ -122952,8 +122952,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -123156,8 +123156,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -123700,8 +123700,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -123916,8 +123916,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -124754,8 +124754,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -124974,8 +124974,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -125595,8 +125595,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -125815,8 +125815,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -126162,8 +126162,8 @@ module Qt
       Binding.bg_QColumnView_isPreviewColumnVisible_(self)
     end
     
-    def preview_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QColumnView_previewWidget_(self))
+    def preview_widget() : Widget?
+      Binding.bg_QColumnView_previewWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def preview_widget=(widget : Widget) : Void
@@ -126439,8 +126439,8 @@ module Qt
       Binding.bg_QColumnView_scrollContentsBy_int_int(self, dx, dy)
     end
     
-    protected def create_column(root_index : ModelIndex) : AbstractItemView
-      AbstractItemViewImpl.new(unwrap: Binding.bg_QColumnView_createColumn_const_QModelIndex_R(self, root_index))
+    protected def create_column(root_index : ModelIndex) : AbstractItemView?
+      Binding.bg_QColumnView_createColumn_const_QModelIndex_R(self, root_index).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def initialize_column(column : AbstractItemView) : Void
@@ -126463,8 +126463,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForColumn_int(self, column)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -126723,8 +126723,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -126831,8 +126831,8 @@ module Qt
         Binding.bg_QColumnView_scrollContentsBy_SUPER_int_int(@myself, dx, dy)
       end
       
-      protected def create_column(root_index : ModelIndex) : AbstractItemView
-        AbstractItemViewImpl.new(unwrap: Binding.bg_QColumnView_createColumn_SUPER_const_QModelIndex_R(@myself, root_index))
+      protected def create_column(root_index : ModelIndex) : AbstractItemView?
+        Binding.bg_QColumnView_createColumn_SUPER_const_QModelIndex_R(@myself, root_index).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def keyboard_search(search : String) : Void
@@ -126847,8 +126847,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -127103,8 +127103,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -127399,8 +127399,8 @@ module Qt
     Binding.bg_QComboBox_setLineEdit_QLineEdit_X(self, edit)
     end
     
-    def line_edit() : LineEdit
-      LineEdit.new(unwrap: Binding.bg_QComboBox_lineEdit_(self))
+    def line_edit() : LineEdit?
+      Binding.bg_QComboBox_lineEdit_(self).try {|ptr| LineEdit.new(unwrap: ptr) unless ptr.null?}
     end
     
     def validator=(v : Validator) : Void
@@ -127408,8 +127408,8 @@ module Qt
     Binding.bg_QComboBox_setValidator_const_QValidator_X(self, v)
     end
     
-    def validator() : Validator
-      ValidatorImpl.new(unwrap: Binding.bg_QComboBox_validator_(self))
+    def validator() : Validator?
+      Binding.bg_QComboBox_validator_(self).try {|ptr| ValidatorImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def completer=(c : Completer) : Void
@@ -127417,12 +127417,12 @@ module Qt
     Binding.bg_QComboBox_setCompleter_QCompleter_X(self, c)
     end
     
-    def completer() : Completer
-      Completer.new(unwrap: Binding.bg_QComboBox_completer_(self))
+    def completer() : Completer?
+      Binding.bg_QComboBox_completer_(self).try {|ptr| Completer.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_delegate() : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QComboBox_itemDelegate_(self))
+    def item_delegate() : AbstractItemDelegate?
+      Binding.bg_QComboBox_itemDelegate_(self).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -127430,8 +127430,8 @@ module Qt
     Binding.bg_QComboBox_setItemDelegate_QAbstractItemDelegate_X(self, delegate)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QComboBox_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QComboBox_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def model=(model : AbstractItemModel) : Void
@@ -127547,8 +127547,8 @@ module Qt
       Binding.bg_QComboBox_setItemData_int_const_QVariant_R_int(self, index, (value.to_unsafe), role)
     end
     
-    def view() : AbstractItemView
-      AbstractItemViewImpl.new(unwrap: Binding.bg_QComboBox_view_(self))
+    def view() : AbstractItemView?
+      Binding.bg_QComboBox_view_(self).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def view=(item_view : AbstractItemView) : Void
@@ -127931,8 +127931,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -128147,8 +128147,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -128677,8 +128677,8 @@ module Qt
     Binding.bg_QPushButton_setMenu_QMenu_X(self, menu)
     end
     
-    def menu() : Menu
-      Menu.new(unwrap: Binding.bg_QPushButton_menu_(self))
+    def menu() : Menu?
+      Binding.bg_QPushButton_menu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def flat=(unnamed_arg_0 : Bool) : Void
@@ -128990,8 +128990,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -129206,8 +129206,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -129859,8 +129859,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -130075,8 +130075,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -130795,8 +130795,8 @@ module Qt
     Binding.bg_QCompleter_setWidget_QWidget_X(self, widget)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QCompleter_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QCompleter_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def model=(c : AbstractItemModel) : Void
@@ -130804,8 +130804,8 @@ module Qt
     Binding.bg_QCompleter_setModel_QAbstractItemModel_X(self, c)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QCompleter_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QCompleter_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def completion_mode=(mode : Completer::CompletionMode) : Void
@@ -130824,8 +130824,8 @@ module Qt
       Binding.bg_QCompleter_filterMode_(self)
     end
     
-    def popup() : AbstractItemView
-      AbstractItemViewImpl.new(unwrap: Binding.bg_QCompleter_popup_(self))
+    def popup() : AbstractItemView?
+      Binding.bg_QCompleter_popup_(self).try {|ptr| AbstractItemViewImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def popup=(popup : AbstractItemView) : Void
@@ -130897,8 +130897,8 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QCompleter_currentCompletion_(self))
     end
     
-    def completion_model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QCompleter_completionModel_(self))
+    def completion_model() : AbstractItemModel?
+      Binding.bg_QCompleter_completionModel_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def completion_prefix() : String
@@ -131143,8 +131143,8 @@ module Qt
     Binding.bg_QDataWidgetMapper_setModel_QAbstractItemModel_X(self, model)
     end
     
-    def model() : AbstractItemModel
-      AbstractItemModelImpl.new(unwrap: Binding.bg_QDataWidgetMapper_model_(self))
+    def model() : AbstractItemModel?
+      Binding.bg_QDataWidgetMapper_model_(self).try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_delegate=(delegate : AbstractItemDelegate) : Void
@@ -131152,8 +131152,8 @@ module Qt
     Binding.bg_QDataWidgetMapper_setItemDelegate_QAbstractItemDelegate_X(self, delegate)
     end
     
-    def item_delegate() : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QDataWidgetMapper_itemDelegate_(self))
+    def item_delegate() : AbstractItemDelegate?
+      Binding.bg_QDataWidgetMapper_itemDelegate_(self).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def root_index=(index : ModelIndex) : Void
@@ -131202,8 +131202,8 @@ module Qt
       Qt::Converter::QByteArray.unwrap(Binding.bg_QDataWidgetMapper_mappedPropertyName_QWidget_X(self, widget))
     end
     
-    def mapped_widget_at(section : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QDataWidgetMapper_mappedWidgetAt_int(self, section))
+    def mapped_widget_at(section : Int32) : Widget?
+      Binding.bg_QDataWidgetMapper_mappedWidgetAt_int(self, section).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def clear_mapping() : Void
@@ -132060,8 +132060,8 @@ module Qt
       Binding.bg_QDateTimeEdit_setCurrentSectionIndex_int(self, index)
     end
     
-    def calendar_widget() : CalendarWidget
-      CalendarWidget.new(unwrap: Binding.bg_QDateTimeEdit_calendarWidget_(self))
+    def calendar_widget() : CalendarWidget?
+      Binding.bg_QDateTimeEdit_calendarWidget_(self).try {|ptr| CalendarWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def calendar_widget=(calendar_widget : CalendarWidget) : Void
@@ -132480,8 +132480,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -132704,8 +132704,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -133244,8 +133244,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -133468,8 +133468,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -134000,8 +134000,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -134224,8 +134224,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -134607,8 +134607,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -134815,8 +134815,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -135410,12 +135410,12 @@ module Qt
     Binding.bg_QDialogButtonBox_addButton_QAbstractButton_X_QDialogButtonBox__ButtonRole(self, button, role)
     end
     
-    def add_button(text : String, role : DialogButtonBox::ButtonRole) : PushButton
-      PushButton.new(unwrap: Binding.bg_QDialogButtonBox_addButton_const_QString_R_QDialogButtonBox__ButtonRole(self, Qt::Converter::QString.wrap(text), role))
+    def add_button(text : String, role : DialogButtonBox::ButtonRole) : PushButton?
+      Binding.bg_QDialogButtonBox_addButton_const_QString_R_QDialogButtonBox__ButtonRole(self, Qt::Converter::QString.wrap(text), role).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_button(button : DialogButtonBox::StandardButton) : PushButton
-      PushButton.new(unwrap: Binding.bg_QDialogButtonBox_addButton_QDialogButtonBox__StandardButton(self, button))
+    def add_button(button : DialogButtonBox::StandardButton) : PushButton?
+      Binding.bg_QDialogButtonBox_addButton_QDialogButtonBox__StandardButton(self, button).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_button(button : AbstractButton) : Void
@@ -135446,8 +135446,8 @@ module Qt
       Binding.bg_QDialogButtonBox_standardButton_QAbstractButton_X(self, button)
     end
     
-    def button(which : DialogButtonBox::StandardButton) : PushButton
-      PushButton.new(unwrap: Binding.bg_QDialogButtonBox_button_QDialogButtonBox__StandardButton(self, which))
+    def button(which : DialogButtonBox::StandardButton) : PushButton?
+      Binding.bg_QDialogButtonBox_button_QDialogButtonBox__StandardButton(self, which).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
     def center_buttons=(center : Bool) : Void
@@ -135689,8 +135689,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -135889,8 +135889,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -136499,8 +136499,8 @@ module Qt
     {% end %}
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QDockWidget_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QDockWidget_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def widget=(widget : Widget) : Void
@@ -136537,8 +136537,8 @@ module Qt
     Binding.bg_QDockWidget_setTitleBarWidget_QWidget_X(self, widget)
     end
     
-    def title_bar_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QDockWidget_titleBarWidget_(self))
+    def title_bar_widget() : Widget?
+      Binding.bg_QDockWidget_titleBarWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def dock_location=(area : DockWidgetArea) : Void
@@ -136553,8 +136553,8 @@ module Qt
       Binding.bg_QDockWidget_isAreaAllowed_Qt__DockWidgetArea(self, area)
     end
     
-    def toggle_view_action() : Action
-      Action.new(unwrap: Binding.bg_QDockWidget_toggleViewAction_(self))
+    def toggle_view_action() : Action?
+      Binding.bg_QDockWidget_toggleViewAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def features_changed(features : DockWidget::Features) : Void
@@ -136748,8 +136748,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -136952,8 +136952,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -137181,8 +137181,8 @@ module Qt
     {% end %}
     end
     
-    def self.qt_handler() : ErrorMessage
-      ErrorMessage.new(unwrap: Binding.bg_QErrorMessage_qtHandler_STATIC_())
+    def self.qt_handler() : ErrorMessage?
+      Binding.bg_QErrorMessage_qtHandler_STATIC_().try {|ptr| ErrorMessage.new(unwrap: ptr) unless ptr.null?}
     end
     
     def show_message(message : String) : Void
@@ -137365,8 +137365,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -137585,8 +137585,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -138487,8 +138487,8 @@ module Qt
     Binding.bg_QFileDialog_setItemDelegate_QAbstractItemDelegate_X(self, delegate)
     end
     
-    def item_delegate() : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QFileDialog_itemDelegate_(self))
+    def item_delegate() : AbstractItemDelegate?
+      Binding.bg_QFileDialog_itemDelegate_(self).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def icon_provider=(provider : Binding::QAbstractFileIconProvider*) : Void
@@ -138519,8 +138519,8 @@ module Qt
       Binding.bg_QFileDialog_setProxyModel_QAbstractProxyModel_X(self, model)
     end
     
-    def proxy_model() : AbstractProxyModel
-      AbstractProxyModelImpl.new(unwrap: Binding.bg_QFileDialog_proxyModel_(self))
+    def proxy_model() : AbstractProxyModel?
+      Binding.bg_QFileDialog_proxyModel_(self).try {|ptr| AbstractProxyModelImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_option(option : FileDialog::Option, on : Bool = true) : Void
@@ -139066,8 +139066,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -139286,8 +139286,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -139524,8 +139524,8 @@ module Qt
     Binding.bg_QFocusFrame_setWidget_QWidget_X(self, widget)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QFocusFrame_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QFocusFrame_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def event(event : Event) : Bool
@@ -139684,8 +139684,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -139888,8 +139888,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -140327,8 +140327,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -140543,8 +140543,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -141132,8 +141132,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -141352,8 +141352,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -141692,8 +141692,8 @@ module Qt
       Binding.bg_QFormLayout_isRowVisible_QLayout_X(self, layout)
     end
     
-    def item_at(row : Int32, role : FormLayout::ItemRole) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QFormLayout_itemAt_int_QFormLayout__ItemRole(self, row, role))
+    def item_at(row : Int32, role : FormLayout::ItemRole) : LayoutItem?
+      Binding.bg_QFormLayout_itemAt_int_QFormLayout__ItemRole(self, row, role).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def get_item_position(index : Int32, row_ptr : Int32*, role_ptr : FormLayout::ItemRole*) : Void
@@ -141708,12 +141708,12 @@ module Qt
       Binding.bg_QFormLayout_getLayoutPosition_QLayout_X_int_X_QFormLayout__ItemRole_X(self, layout, row_ptr, role_ptr)
     end
     
-    def label_for_field(field : Widget) : Widget
-      Widget.new(unwrap: Binding.bg_QFormLayout_labelForField_QWidget_X(self, field))
+    def label_for_field(field : Widget) : Widget?
+      Binding.bg_QFormLayout_labelForField_QWidget_X(self, field).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def label_for_field(field : Layout) : Widget
-      Widget.new(unwrap: Binding.bg_QFormLayout_labelForField_QLayout_X(self, field))
+    def label_for_field(field : Layout) : Widget?
+      Binding.bg_QFormLayout_labelForField_QLayout_X(self, field).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_item(unnamed_arg_0 : LayoutItem) : Void
@@ -141721,12 +141721,12 @@ module Qt
     Binding.bg_QFormLayout_addItem_QLayoutItem_X(self, unnamed_arg_0)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QFormLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QFormLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QFormLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QFormLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def geometry=(unnamed_arg_0 : Rect) : Void
@@ -141808,18 +141808,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -141878,12 +141878,12 @@ module Qt
         Binding.bg_QFormLayout_addItem_SUPER_QLayoutItem_X(@myself, unnamed_arg_0)
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QFormLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QFormLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QFormLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QFormLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def geometry=(unnamed_arg_0 : Rect) : Void
@@ -141942,12 +141942,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -143226,8 +143226,8 @@ module Qt
       Container_QList_QGesture_X_.new(unwrap: Binding.bg_QGestureEvent_gestures_(self))
     end
     
-    def gesture(type : GestureType) : Gesture
-      Gesture.new(unwrap: Binding.bg_QGestureEvent_gesture_Qt__GestureType(self, type))
+    def gesture(type : GestureType) : Gesture?
+      Binding.bg_QGestureEvent_gesture_Qt__GestureType(self, type).try {|ptr| Gesture.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active_gestures() : Enumerable(Gesture)
@@ -143274,8 +143274,8 @@ module Qt
       Binding.bg_QGestureEvent_setWidget_QWidget_X(self, widget)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QGestureEvent_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QGestureEvent_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def map_to_graphics_scene(gesture_point : PointF) : PointF
@@ -143325,8 +143325,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -143349,8 +143349,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -143398,8 +143398,8 @@ module Qt
     {% end %}
     end
     
-    def create(target : Object) : Gesture
-      Gesture.new(unwrap: Binding.bg_QGestureRecognizer_create_QObject_X(self, target))
+    def create(target : Object) : Gesture?
+      Binding.bg_QGestureRecognizer_create_QObject_X(self, target).try {|ptr| Gesture.new(unwrap: ptr) unless ptr.null?}
     end
     
     abstract def recognize(state : Gesture, watched : Object, event : Event) : GestureRecognizer::Result
@@ -143452,8 +143452,8 @@ module Qt
     private class Superclass
       def initialize(@myself : GestureRecognizer)
       end
-      def create(target : Object) : Gesture
-        Gesture.new(unwrap: Binding.bg_QGestureRecognizer_create_SUPER_QObject_X(@myself, target))
+      def create(target : Object) : Gesture?
+        Binding.bg_QGestureRecognizer_create_SUPER_QObject_X(@myself, target).try {|ptr| Gesture.new(unwrap: ptr) unless ptr.null?}
       end
       
       def reset(state : Gesture) : Void
@@ -143569,36 +143569,36 @@ module Qt
     {% end %}
     end
     
-    def scene() : GraphicsScene
-      GraphicsScene.new(unwrap: Binding.bg_QGraphicsItem_scene_(self))
+    def scene() : GraphicsScene?
+      Binding.bg_QGraphicsItem_scene_(self).try {|ptr| GraphicsScene.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_parentItem_(self))
+    def parent_item() : GraphicsItem?
+      Binding.bg_QGraphicsItem_parentItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_topLevelItem_(self))
+    def top_level_item() : GraphicsItem?
+      Binding.bg_QGraphicsItem_topLevelItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_object() : GraphicsObject
-      GraphicsObjectImpl.new(unwrap: Binding.bg_QGraphicsItem_parentObject_(self))
+    def parent_object() : GraphicsObject?
+      Binding.bg_QGraphicsItem_parentObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_widget() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsItem_parentWidget_(self))
+    def parent_widget() : GraphicsWidget?
+      Binding.bg_QGraphicsItem_parentWidget_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_widget() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsItem_topLevelWidget_(self))
+    def top_level_widget() : GraphicsWidget?
+      Binding.bg_QGraphicsItem_topLevelWidget_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def window() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsItem_window_(self))
+    def window() : GraphicsWidget?
+      Binding.bg_QGraphicsItem_window_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def panel() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_panel_(self))
+    def panel() : GraphicsItem?
+      Binding.bg_QGraphicsItem_panel_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def parent_item=(parent : GraphicsItem) : Void
@@ -143621,12 +143621,12 @@ module Qt
       Binding.bg_QGraphicsItem_isPanel_(self)
     end
     
-    def to_graphics_object() : GraphicsObject
-      GraphicsObjectImpl.new(unwrap: Binding.bg_QGraphicsItem_toGraphicsObject_(self))
+    def to_graphics_object() : GraphicsObject?
+      Binding.bg_QGraphicsItem_toGraphicsObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def group() : GraphicsItemGroup
-      GraphicsItemGroup.new(unwrap: Binding.bg_QGraphicsItem_group_(self))
+    def group() : GraphicsItemGroup?
+      Binding.bg_QGraphicsItem_group_(self).try {|ptr| GraphicsItemGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def group=(group : GraphicsItemGroup) : Void
@@ -143749,8 +143749,8 @@ module Qt
       Binding.bg_QGraphicsItem_setOpacity_qreal(self, opacity)
     end
     
-    def graphics_effect() : GraphicsEffect
-      GraphicsEffectImpl.new(unwrap: Binding.bg_QGraphicsItem_graphicsEffect_(self))
+    def graphics_effect() : GraphicsEffect?
+      Binding.bg_QGraphicsItem_graphicsEffect_(self).try {|ptr| GraphicsEffectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def graphics_effect=(effect : GraphicsEffect) : Void
@@ -143818,20 +143818,20 @@ module Qt
       Binding.bg_QGraphicsItem_clearFocus_(self)
     end
     
-    def focus_proxy() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_focusProxy_(self))
+    def focus_proxy() : GraphicsItem?
+      Binding.bg_QGraphicsItem_focusProxy_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def focus_proxy=(item : GraphicsItem) : Void
       Binding.bg_QGraphicsItem_setFocusProxy_QGraphicsItem_X(self, item)
     end
     
-    def focus_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_focusItem_(self))
+    def focus_item() : GraphicsItem?
+      Binding.bg_QGraphicsItem_focusItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def focus_scope_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_focusScopeItem_(self))
+    def focus_scope_item() : GraphicsItem?
+      Binding.bg_QGraphicsItem_focusScopeItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def grab_mouse() : Void
@@ -144268,8 +144268,8 @@ module Qt
       Binding.bg_QGraphicsItem_isAncestorOf_const_QGraphicsItem_X(self, child)
     end
     
-    def common_ancestor_item(other : GraphicsItem) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItem_commonAncestorItem_const_QGraphicsItem_X(self, other))
+    def common_ancestor_item(other : GraphicsItem) : GraphicsItem?
+      Binding.bg_QGraphicsItem_commonAncestorItem_const_QGraphicsItem_X(self, other).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def under_mouse?() : Bool
@@ -145348,36 +145348,36 @@ module Qt
       Binding.bg_QObject_disconnectNotify_const_QMetaMethod_R(self, signal)
     end
     
-    def scene() : GraphicsScene
-      GraphicsScene.new(unwrap: Binding.bg_QGraphicsObject_scene_(self))
+    def scene() : GraphicsScene?
+      Binding.bg_QGraphicsObject_scene_(self).try {|ptr| GraphicsScene.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_parentItem_(self))
+    def parent_item() : GraphicsItem?
+      Binding.bg_QGraphicsObject_parentItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_topLevelItem_(self))
+    def top_level_item() : GraphicsItem?
+      Binding.bg_QGraphicsObject_topLevelItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_object() : GraphicsObject
-      GraphicsObjectImpl.new(unwrap: Binding.bg_QGraphicsObject_parentObject_(self))
+    def parent_object() : GraphicsObject?
+      Binding.bg_QGraphicsObject_parentObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_widget() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsObject_parentWidget_(self))
+    def parent_widget() : GraphicsWidget?
+      Binding.bg_QGraphicsObject_parentWidget_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_widget() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsObject_topLevelWidget_(self))
+    def top_level_widget() : GraphicsWidget?
+      Binding.bg_QGraphicsObject_topLevelWidget_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def window() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsObject_window_(self))
+    def window() : GraphicsWidget?
+      Binding.bg_QGraphicsObject_window_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def panel() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_panel_(self))
+    def panel() : GraphicsItem?
+      Binding.bg_QGraphicsObject_panel_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def parent_item=(parent : GraphicsItem) : Void
@@ -145400,12 +145400,12 @@ module Qt
       Binding.bg_QGraphicsObject_isPanel_(self)
     end
     
-    def to_graphics_object() : GraphicsObject
-      GraphicsObjectImpl.new(unwrap: Binding.bg_QGraphicsObject_toGraphicsObject_(self))
+    def to_graphics_object() : GraphicsObject?
+      Binding.bg_QGraphicsObject_toGraphicsObject_(self).try {|ptr| GraphicsObjectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def group() : GraphicsItemGroup
-      GraphicsItemGroup.new(unwrap: Binding.bg_QGraphicsObject_group_(self))
+    def group() : GraphicsItemGroup?
+      Binding.bg_QGraphicsObject_group_(self).try {|ptr| GraphicsItemGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def group=(group : GraphicsItemGroup) : Void
@@ -145528,8 +145528,8 @@ module Qt
       Binding.bg_QGraphicsObject_setOpacity_qreal(self, opacity)
     end
     
-    def graphics_effect() : GraphicsEffect
-      GraphicsEffectImpl.new(unwrap: Binding.bg_QGraphicsObject_graphicsEffect_(self))
+    def graphics_effect() : GraphicsEffect?
+      Binding.bg_QGraphicsObject_graphicsEffect_(self).try {|ptr| GraphicsEffectImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def graphics_effect=(effect : GraphicsEffect) : Void
@@ -145596,20 +145596,20 @@ module Qt
       Binding.bg_QGraphicsObject_clearFocus_(self)
     end
     
-    def focus_proxy() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_focusProxy_(self))
+    def focus_proxy() : GraphicsItem?
+      Binding.bg_QGraphicsObject_focusProxy_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def focus_proxy=(item : GraphicsItem) : Void
       Binding.bg_QGraphicsObject_setFocusProxy_QGraphicsItem_X(self, item)
     end
     
-    def focus_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_focusItem_(self))
+    def focus_item() : GraphicsItem?
+      Binding.bg_QGraphicsObject_focusItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def focus_scope_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_focusScopeItem_(self))
+    def focus_scope_item() : GraphicsItem?
+      Binding.bg_QGraphicsObject_focusScopeItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def grab_mouse() : Void
@@ -146046,8 +146046,8 @@ module Qt
       Binding.bg_QGraphicsObject_isAncestorOf_const_QGraphicsItem_X(self, child)
     end
     
-    def common_ancestor_item(other : GraphicsItem) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsObject_commonAncestorItem_const_QGraphicsItem_X(self, other))
+    def common_ancestor_item(other : GraphicsItem) : GraphicsItem?
+      Binding.bg_QGraphicsObject_commonAncestorItem_const_QGraphicsItem_X(self, other).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def under_mouse?() : Bool
@@ -150527,8 +150527,8 @@ module Qt
     Binding.bg_QGraphicsTextItem_setDocument_QTextDocument_X(self, document)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QGraphicsTextItem_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QGraphicsTextItem_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def text_interaction_flags=(flags : TextInteractionFlags) : Void
@@ -151973,8 +151973,8 @@ module Qt
       Binding.bg_QGraphicsLayoutItem_isEmpty_(self)
     end
     
-    def parent_layout_item() : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsLayoutItem_parentLayoutItem_(self))
+    def parent_layout_item() : GraphicsLayoutItem?
+      Binding.bg_QGraphicsLayoutItem_parentLayoutItem_(self).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def parent_layout_item=(parent : GraphicsLayoutItem) : Void
@@ -151985,8 +151985,8 @@ module Qt
       Binding.bg_QGraphicsLayoutItem_isLayout_(self)
     end
     
-    def graphics_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsLayoutItem_graphicsItem_(self))
+    def graphics_item() : GraphicsItem?
+      Binding.bg_QGraphicsLayoutItem_graphicsItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def owned_by_layout() : Bool
@@ -152184,7 +152184,7 @@ module Qt
     end
     
     abstract def count() : Int32
-    abstract def item_at(i : Int32) : GraphicsLayoutItem
+    abstract def item_at(i : Int32) : GraphicsLayoutItem?
     abstract def remove_at(index : Int32) : Void
     def self.instant_invalidate_propagation=(enable : Bool) : Void
       Binding.bg_QGraphicsLayout_setInstantInvalidatePropagation_STATIC_bool(enable)
@@ -152489,14 +152489,14 @@ module Qt
     {% end %}
     end
     
-    def add_anchor(first_item : GraphicsLayoutItem, first_edge : AnchorPoint, second_item : GraphicsLayoutItem, second_edge : AnchorPoint) : GraphicsAnchor
+    def add_anchor(first_item : GraphicsLayoutItem, first_edge : AnchorPoint, second_item : GraphicsLayoutItem, second_edge : AnchorPoint) : GraphicsAnchor?
       BindgenHelper.keep_alive(first_item)
     BindgenHelper.keep_alive(second_item)
-    GraphicsAnchor.new(unwrap: Binding.bg_QGraphicsAnchorLayout_addAnchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(self, first_item, first_edge, second_item, second_edge))
+    Binding.bg_QGraphicsAnchorLayout_addAnchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(self, first_item, first_edge, second_item, second_edge).try {|ptr| GraphicsAnchor.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def anchor(first_item : GraphicsLayoutItem, first_edge : AnchorPoint, second_item : GraphicsLayoutItem, second_edge : AnchorPoint) : GraphicsAnchor
-      GraphicsAnchor.new(unwrap: Binding.bg_QGraphicsAnchorLayout_anchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(self, first_item, first_edge, second_item, second_edge))
+    def anchor(first_item : GraphicsLayoutItem, first_edge : AnchorPoint, second_item : GraphicsLayoutItem, second_edge : AnchorPoint) : GraphicsAnchor?
+      Binding.bg_QGraphicsAnchorLayout_anchor_QGraphicsLayoutItem_X_Qt__AnchorPoint_QGraphicsLayoutItem_X_Qt__AnchorPoint(self, first_item, first_edge, second_item, second_edge).try {|ptr| GraphicsAnchor.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_corner_anchors(first_item : GraphicsLayoutItem, first_corner : Corner, second_item : GraphicsLayoutItem, second_corner : Corner) : Void
@@ -152549,8 +152549,8 @@ module Qt
       Binding.bg_QGraphicsAnchorLayout_count_(self)
     end
     
-    def item_at(i : Int32) : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsAnchorLayout_itemAt_int(self, i))
+    def item_at(i : Int32) : GraphicsLayoutItem?
+      Binding.bg_QGraphicsAnchorLayout_itemAt_int(self, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def invalidate() : Void
@@ -152609,8 +152609,8 @@ module Qt
         Binding.bg_QGraphicsAnchorLayout_count_SUPER_(@myself)
       end
       
-      def item_at(i : Int32) : GraphicsLayoutItem
-        GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsAnchorLayout_itemAt_SUPER_int(@myself, i))
+      def item_at(i : Int32) : GraphicsLayoutItem?
+        Binding.bg_QGraphicsAnchorLayout_itemAt_SUPER_int(@myself, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def invalidate() : Void
@@ -154082,16 +154082,16 @@ module Qt
       Binding.bg_QGraphicsGridLayout_columnCount_(self)
     end
     
-    def item_at(row : Int32, column : Int32) : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsGridLayout_itemAt_int_int(self, row, column))
+    def item_at(row : Int32, column : Int32) : GraphicsLayoutItem?
+      Binding.bg_QGraphicsGridLayout_itemAt_int_int(self, row, column).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
       Binding.bg_QGraphicsGridLayout_count_(self)
     end
     
-    def item_at(i : Int32) : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsGridLayout_itemAt_int(self, i))
+    def item_at(i : Int32) : GraphicsLayoutItem?
+      Binding.bg_QGraphicsGridLayout_itemAt_int(self, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_at(index : Int32) : Void
@@ -154154,8 +154154,8 @@ module Qt
         Binding.bg_QGraphicsGridLayout_count_SUPER_(@myself)
       end
       
-      def item_at(i : Int32) : GraphicsLayoutItem
-        GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsGridLayout_itemAt_SUPER_int(@myself, i))
+      def item_at(i : Int32) : GraphicsLayoutItem?
+        Binding.bg_QGraphicsGridLayout_itemAt_SUPER_int(@myself, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def remove_at(index : Int32) : Void
@@ -154275,8 +154275,8 @@ module Qt
     {% end %}
     end
     
-    def item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsItemAnimation_item_(self))
+    def item() : GraphicsItem?
+      Binding.bg_QGraphicsItemAnimation_item_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item=(item : GraphicsItem) : Void
@@ -154284,8 +154284,8 @@ module Qt
     Binding.bg_QGraphicsItemAnimation_setItem_QGraphicsItem_X(self, item)
     end
     
-    def time_line() : TimeLine
-      TimeLine.new(unwrap: Binding.bg_QGraphicsItemAnimation_timeLine_(self))
+    def time_line() : TimeLine?
+      Binding.bg_QGraphicsItemAnimation_timeLine_(self).try {|ptr| TimeLine.new(unwrap: ptr) unless ptr.null?}
     end
     
     def time_line=(time_line : TimeLine) : Void
@@ -154655,8 +154655,8 @@ module Qt
       Binding.bg_QGraphicsLinearLayout_count_(self)
     end
     
-    def item_at(i : Int32) : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsLinearLayout_itemAt_int(self, i))
+    def item_at(i : Int32) : GraphicsLayoutItem?
+      Binding.bg_QGraphicsLinearLayout_itemAt_int(self, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def invalidate() : Void
@@ -154719,8 +154719,8 @@ module Qt
         Binding.bg_QGraphicsLinearLayout_count_SUPER_(@myself)
       end
       
-      def item_at(i : Int32) : GraphicsLayoutItem
-        GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsLinearLayout_itemAt_SUPER_int(@myself, i))
+      def item_at(i : Int32) : GraphicsLayoutItem?
+        Binding.bg_QGraphicsLinearLayout_itemAt_SUPER_int(@myself, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def invalidate() : Void
@@ -155011,8 +155011,8 @@ module Qt
     {% end %}
     end
     
-    def layout() : GraphicsLayout
-      GraphicsLayoutImpl.new(unwrap: Binding.bg_QGraphicsWidget_layout_(self))
+    def layout() : GraphicsLayout?
+      Binding.bg_QGraphicsWidget_layout_(self).try {|ptr| GraphicsLayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def layout=(layout : GraphicsLayout) : Void
@@ -155036,8 +155036,8 @@ module Qt
       Binding.bg_QGraphicsWidget_unsetLayoutDirection_(self)
     end
     
-    def style() : Style
-      StyleImpl.new(unwrap: Binding.bg_QGraphicsWidget_style_(self))
+    def style() : Style?
+      Binding.bg_QGraphicsWidget_style_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def style=(style : Style) : Void
@@ -155164,8 +155164,8 @@ module Qt
       Binding.bg_QGraphicsWidget_setTabOrder_STATIC_QGraphicsWidget_X_QGraphicsWidget_X(first, second)
     end
     
-    def focus_widget() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsWidget_focusWidget_(self))
+    def focus_widget() : GraphicsWidget?
+      Binding.bg_QGraphicsWidget_focusWidget_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def grab_shortcut(sequence : KeySequence, context : ShortcutContext = ShortcutContext::WindowShortcut) : Int32
@@ -155915,8 +155915,8 @@ module Qt
       Binding.bg_QGraphicsWidget_isEmpty_(self)
     end
     
-    def parent_layout_item() : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsWidget_parentLayoutItem_(self))
+    def parent_layout_item() : GraphicsLayoutItem?
+      Binding.bg_QGraphicsWidget_parentLayoutItem_(self).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def parent_layout_item=(parent : GraphicsLayoutItem) : Void
@@ -155927,8 +155927,8 @@ module Qt
       Binding.bg_QGraphicsWidget_isLayout_(self)
     end
     
-    def graphics_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsWidget_graphicsItem_(self))
+    def graphics_item() : GraphicsItem?
+      Binding.bg_QGraphicsWidget_graphicsItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def owned_by_layout() : Bool
@@ -156272,8 +156272,8 @@ module Qt
     Binding.bg_QGraphicsProxyWidget_setWidget_QWidget_X(self, widget)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QGraphicsProxyWidget_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QGraphicsProxyWidget_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def sub_widget_rect(widget : Widget) : RectF
@@ -156292,8 +156292,8 @@ module Qt
       Binding.bg_QGraphicsProxyWidget_type_(self)
     end
     
-    def create_proxy_for_child_widget(child : Widget) : GraphicsProxyWidget
-      GraphicsProxyWidget.new(unwrap: Binding.bg_QGraphicsProxyWidget_createProxyForChildWidget_QWidget_X(self, child))
+    def create_proxy_for_child_widget(child : Widget) : GraphicsProxyWidget?
+      Binding.bg_QGraphicsProxyWidget_createProxyForChildWidget_QWidget_X(self, child).try {|ptr| GraphicsProxyWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def item_change(change : GraphicsItem::Change, value : Variant) : Variant
@@ -156416,8 +156416,8 @@ module Qt
       Binding.bg_QGraphicsProxyWidget_resizeEvent_QGraphicsSceneResizeEvent_X(self, event)
     end
     
-    protected def new_proxy_widget(unnamed_arg_0 : Widget) : GraphicsProxyWidget
-      GraphicsProxyWidget.new(unwrap: Binding.bg_QGraphicsProxyWidget_newProxyWidget_const_QWidget_X(self, unnamed_arg_0))
+    protected def new_proxy_widget(unnamed_arg_0 : Widget) : GraphicsProxyWidget?
+      Binding.bg_QGraphicsProxyWidget_newProxyWidget_const_QWidget_X(self, unnamed_arg_0).try {|ptr| GraphicsProxyWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -157150,12 +157150,12 @@ module Qt
       Container_QList_QGraphicsItem_X_.new(unwrap: Binding.bg_QGraphicsScene_collidingItems_const_QGraphicsItem_X_Qt__ItemSelectionMode(self, item, mode))
     end
     
-    def item_at(pos : PointF, device_transform : Transform) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsScene_itemAt_const_QPointF_R_const_QTransform_R(self, pos, device_transform))
+    def item_at(pos : PointF, device_transform : Transform) : GraphicsItem?
+      Binding.bg_QGraphicsScene_itemAt_const_QPointF_R_const_QTransform_R(self, pos, device_transform).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at(x : Float64, y : Float64, device_transform : Transform) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsScene_itemAt_qreal_qreal_const_QTransform_R(self, x, y, device_transform))
+    def item_at(x : Float64, y : Float64, device_transform : Transform) : GraphicsItem?
+      Binding.bg_QGraphicsScene_itemAt_qreal_qreal_const_QTransform_R(self, x, y, device_transform).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selected_items() : Enumerable(GraphicsItem)
@@ -157178,8 +157178,8 @@ module Qt
       Binding.bg_QGraphicsScene_setSelectionArea_const_QPainterPath_R_Qt__ItemSelectionOperation_Qt__ItemSelectionMode_const_QTransform_R(self, path, selection_operation, mode, device_transform)
     end
     
-    def create_item_group(items : Enumerable(GraphicsItem)) : GraphicsItemGroup
-      GraphicsItemGroup.new(unwrap: Binding.bg_QGraphicsScene_createItemGroup_const_QList_QGraphicsItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QGraphicsItem_X_, items).to_unsafe))
+    def create_item_group(items : Enumerable(GraphicsItem)) : GraphicsItemGroup?
+      Binding.bg_QGraphicsScene_createItemGroup_const_QList_QGraphicsItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QGraphicsItem_X_, items).to_unsafe).try {|ptr| GraphicsItemGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def destroy_item_group(group : GraphicsItemGroup) : Void
@@ -157191,130 +157191,130 @@ module Qt
     Binding.bg_QGraphicsScene_addItem_QGraphicsItem_X(self, item)
     end
     
-    def add_ellipse(rect : RectF) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R(self, rect))
+    def add_ellipse(rect : RectF) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R(self, rect).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_ellipse(rect : RectF, pen : Pen) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R_const_QPen_R(self, rect, pen))
+    def add_ellipse(rect : RectF, pen : Pen) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R_const_QPen_R(self, rect, pen).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_ellipse(rect : RectF, pen : Pen, brush : Brush) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R_const_QPen_R_const_QBrush_R(self, rect, pen, brush))
+    def add_ellipse(rect : RectF, pen : Pen, brush : Brush) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_const_QRectF_R_const_QPen_R_const_QBrush_R(self, rect, pen, brush).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_line(line : LineF) : GraphicsLineItem
-      GraphicsLineItem.new(unwrap: Binding.bg_QGraphicsScene_addLine_const_QLineF_R(self, line))
+    def add_line(line : LineF) : GraphicsLineItem?
+      Binding.bg_QGraphicsScene_addLine_const_QLineF_R(self, line).try {|ptr| GraphicsLineItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_line(line : LineF, pen : Pen) : GraphicsLineItem
-      GraphicsLineItem.new(unwrap: Binding.bg_QGraphicsScene_addLine_const_QLineF_R_const_QPen_R(self, line, pen))
+    def add_line(line : LineF, pen : Pen) : GraphicsLineItem?
+      Binding.bg_QGraphicsScene_addLine_const_QLineF_R_const_QPen_R(self, line, pen).try {|ptr| GraphicsLineItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_path(path : PainterPath) : GraphicsPathItem
-      GraphicsPathItem.new(unwrap: Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R(self, path))
+    def add_path(path : PainterPath) : GraphicsPathItem?
+      Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R(self, path).try {|ptr| GraphicsPathItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_path(path : PainterPath, pen : Pen) : GraphicsPathItem
-      GraphicsPathItem.new(unwrap: Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R_const_QPen_R(self, path, pen))
+    def add_path(path : PainterPath, pen : Pen) : GraphicsPathItem?
+      Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R_const_QPen_R(self, path, pen).try {|ptr| GraphicsPathItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_path(path : PainterPath, pen : Pen, brush : Brush) : GraphicsPathItem
-      GraphicsPathItem.new(unwrap: Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R_const_QPen_R_const_QBrush_R(self, path, pen, brush))
+    def add_path(path : PainterPath, pen : Pen, brush : Brush) : GraphicsPathItem?
+      Binding.bg_QGraphicsScene_addPath_const_QPainterPath_R_const_QPen_R_const_QBrush_R(self, path, pen, brush).try {|ptr| GraphicsPathItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_pixmap(pixmap : Pixmap) : GraphicsPixmapItem
-      GraphicsPixmapItem.new(unwrap: Binding.bg_QGraphicsScene_addPixmap_const_QPixmap_R(self, pixmap))
+    def add_pixmap(pixmap : Pixmap) : GraphicsPixmapItem?
+      Binding.bg_QGraphicsScene_addPixmap_const_QPixmap_R(self, pixmap).try {|ptr| GraphicsPixmapItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_polygon(polygon : PolygonF) : GraphicsPolygonItem
-      GraphicsPolygonItem.new(unwrap: Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R(self, polygon))
+    def add_polygon(polygon : PolygonF) : GraphicsPolygonItem?
+      Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R(self, polygon).try {|ptr| GraphicsPolygonItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_polygon(polygon : PolygonF, pen : Pen) : GraphicsPolygonItem
-      GraphicsPolygonItem.new(unwrap: Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R_const_QPen_R(self, polygon, pen))
+    def add_polygon(polygon : PolygonF, pen : Pen) : GraphicsPolygonItem?
+      Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R_const_QPen_R(self, polygon, pen).try {|ptr| GraphicsPolygonItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_polygon(polygon : PolygonF, pen : Pen, brush : Brush) : GraphicsPolygonItem
-      GraphicsPolygonItem.new(unwrap: Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R_const_QPen_R_const_QBrush_R(self, polygon, pen, brush))
+    def add_polygon(polygon : PolygonF, pen : Pen, brush : Brush) : GraphicsPolygonItem?
+      Binding.bg_QGraphicsScene_addPolygon_const_QPolygonF_R_const_QPen_R_const_QBrush_R(self, polygon, pen, brush).try {|ptr| GraphicsPolygonItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(rect : RectF) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_const_QRectF_R(self, rect))
+    def add_rect(rect : RectF) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_const_QRectF_R(self, rect).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(rect : RectF, pen : Pen) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_const_QRectF_R_const_QPen_R(self, rect, pen))
+    def add_rect(rect : RectF, pen : Pen) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_const_QRectF_R_const_QPen_R(self, rect, pen).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(rect : RectF, pen : Pen, brush : Brush) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_const_QRectF_R_const_QPen_R_const_QBrush_R(self, rect, pen, brush))
+    def add_rect(rect : RectF, pen : Pen, brush : Brush) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_const_QRectF_R_const_QPen_R_const_QBrush_R(self, rect, pen, brush).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_text(text : String) : GraphicsTextItem
-      GraphicsTextItem.new(unwrap: Binding.bg_QGraphicsScene_addText_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def add_text(text : String) : GraphicsTextItem?
+      Binding.bg_QGraphicsScene_addText_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| GraphicsTextItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_text(text : String, font : Font) : GraphicsTextItem
-      GraphicsTextItem.new(unwrap: Binding.bg_QGraphicsScene_addText_const_QString_R_const_QFont_R(self, Qt::Converter::QString.wrap(text), font))
+    def add_text(text : String, font : Font) : GraphicsTextItem?
+      Binding.bg_QGraphicsScene_addText_const_QString_R_const_QFont_R(self, Qt::Converter::QString.wrap(text), font).try {|ptr| GraphicsTextItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_simple_text(text : String) : GraphicsSimpleTextItem
-      GraphicsSimpleTextItem.new(unwrap: Binding.bg_QGraphicsScene_addSimpleText_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def add_simple_text(text : String) : GraphicsSimpleTextItem?
+      Binding.bg_QGraphicsScene_addSimpleText_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| GraphicsSimpleTextItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_simple_text(text : String, font : Font) : GraphicsSimpleTextItem
-      GraphicsSimpleTextItem.new(unwrap: Binding.bg_QGraphicsScene_addSimpleText_const_QString_R_const_QFont_R(self, Qt::Converter::QString.wrap(text), font))
+    def add_simple_text(text : String, font : Font) : GraphicsSimpleTextItem?
+      Binding.bg_QGraphicsScene_addSimpleText_const_QString_R_const_QFont_R(self, Qt::Converter::QString.wrap(text), font).try {|ptr| GraphicsSimpleTextItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_widget(widget : Widget) : GraphicsProxyWidget
+    def add_widget(widget : Widget) : GraphicsProxyWidget?
       BindgenHelper.keep_alive(widget)
-    GraphicsProxyWidget.new(unwrap: Binding.bg_QGraphicsScene_addWidget_QWidget_X(self, widget))
+    Binding.bg_QGraphicsScene_addWidget_QWidget_X(self, widget).try {|ptr| GraphicsProxyWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_widget(widget : Widget, w_flags : WindowFlags) : GraphicsProxyWidget
+    def add_widget(widget : Widget, w_flags : WindowFlags) : GraphicsProxyWidget?
       BindgenHelper.keep_alive(widget)
-    GraphicsProxyWidget.new(unwrap: Binding.bg_QGraphicsScene_addWidget_QWidget_X_Qt__WindowFlags(self, widget, w_flags))
+    Binding.bg_QGraphicsScene_addWidget_QWidget_X_Qt__WindowFlags(self, widget, w_flags).try {|ptr| GraphicsProxyWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal(self, x, y, w, h))
+    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal(self, x, y, w, h).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal_const_QPen_R(self, x, y, w, h, pen))
+    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal_const_QPen_R(self, x, y, w, h, pen).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen, brush : Brush) : GraphicsEllipseItem
-      GraphicsEllipseItem.new(unwrap: Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal_const_QPen_R_const_QBrush_R(self, x, y, w, h, pen, brush))
+    def add_ellipse(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen, brush : Brush) : GraphicsEllipseItem?
+      Binding.bg_QGraphicsScene_addEllipse_qreal_qreal_qreal_qreal_const_QPen_R_const_QBrush_R(self, x, y, w, h, pen, brush).try {|ptr| GraphicsEllipseItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_line(x1 : Float64, y1 : Float64, x2 : Float64, y2 : Float64) : GraphicsLineItem
-      GraphicsLineItem.new(unwrap: Binding.bg_QGraphicsScene_addLine_qreal_qreal_qreal_qreal(self, x1, y1, x2, y2))
+    def add_line(x1 : Float64, y1 : Float64, x2 : Float64, y2 : Float64) : GraphicsLineItem?
+      Binding.bg_QGraphicsScene_addLine_qreal_qreal_qreal_qreal(self, x1, y1, x2, y2).try {|ptr| GraphicsLineItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_line(x1 : Float64, y1 : Float64, x2 : Float64, y2 : Float64, pen : Pen) : GraphicsLineItem
-      GraphicsLineItem.new(unwrap: Binding.bg_QGraphicsScene_addLine_qreal_qreal_qreal_qreal_const_QPen_R(self, x1, y1, x2, y2, pen))
+    def add_line(x1 : Float64, y1 : Float64, x2 : Float64, y2 : Float64, pen : Pen) : GraphicsLineItem?
+      Binding.bg_QGraphicsScene_addLine_qreal_qreal_qreal_qreal_const_QPen_R(self, x1, y1, x2, y2, pen).try {|ptr| GraphicsLineItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal(self, x, y, w, h))
+    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal(self, x, y, w, h).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal_const_QPen_R(self, x, y, w, h, pen))
+    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal_const_QPen_R(self, x, y, w, h, pen).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen, brush : Brush) : GraphicsRectItem
-      GraphicsRectItem.new(unwrap: Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal_const_QPen_R_const_QBrush_R(self, x, y, w, h, pen, brush))
+    def add_rect(x : Float64, y : Float64, w : Float64, h : Float64, pen : Pen, brush : Brush) : GraphicsRectItem?
+      Binding.bg_QGraphicsScene_addRect_qreal_qreal_qreal_qreal_const_QPen_R_const_QBrush_R(self, x, y, w, h, pen, brush).try {|ptr| GraphicsRectItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_item(item : GraphicsItem) : Void
       Binding.bg_QGraphicsScene_removeItem_QGraphicsItem_X(self, item)
     end
     
-    def focus_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsScene_focusItem_(self))
+    def focus_item() : GraphicsItem?
+      Binding.bg_QGraphicsScene_focusItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_focus_item(item : GraphicsItem, focus_reason : FocusReason = FocusReason::OtherFocusReason) : Void
@@ -157341,8 +157341,8 @@ module Qt
       Binding.bg_QGraphicsScene_stickyFocus_(self)
     end
     
-    def mouse_grabber_item() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsScene_mouseGrabberItem_(self))
+    def mouse_grabber_item() : GraphicsItem?
+      Binding.bg_QGraphicsScene_mouseGrabberItem_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def background_brush() : Brush
@@ -157381,8 +157381,8 @@ module Qt
       Binding.bg_QGraphicsScene_invalidate_qreal_qreal_qreal_qreal_QGraphicsScene__SceneLayers(self, x, y, w, h, layers)
     end
     
-    def style() : Style
-      StyleImpl.new(unwrap: Binding.bg_QGraphicsScene_style_(self))
+    def style() : Style?
+      Binding.bg_QGraphicsScene_style_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def style=(style : Style) : Void
@@ -157409,16 +157409,16 @@ module Qt
       Binding.bg_QGraphicsScene_isActive_(self)
     end
     
-    def active_panel() : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsScene_activePanel_(self))
+    def active_panel() : GraphicsItem?
+      Binding.bg_QGraphicsScene_activePanel_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active_panel=(item : GraphicsItem) : Void
       Binding.bg_QGraphicsScene_setActivePanel_QGraphicsItem_X(self, item)
     end
     
-    def active_window() : GraphicsWidget
-      GraphicsWidget.new(unwrap: Binding.bg_QGraphicsScene_activeWindow_(self))
+    def active_window() : GraphicsWidget?
+      Binding.bg_QGraphicsScene_activeWindow_(self).try {|ptr| GraphicsWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active_window=(widget : GraphicsWidget) : Void
@@ -157807,8 +157807,8 @@ module Qt
     {% end %}
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QGraphicsSceneEvent_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QGraphicsSceneEvent_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def widget=(widget : Widget) : Void
@@ -157866,8 +157866,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -157890,8 +157890,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158051,8 +158051,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158075,8 +158075,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158204,8 +158204,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158228,8 +158228,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158322,8 +158322,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158346,8 +158346,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158451,8 +158451,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158475,8 +158475,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158540,8 +158540,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158564,8 +158564,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158677,16 +158677,16 @@ module Qt
       Binding.bg_QGraphicsSceneDragDropEvent_setDropAction_Qt__DropAction(self, action)
     end
     
-    def source() : Widget
-      Widget.new(unwrap: Binding.bg_QGraphicsSceneDragDropEvent_source_(self))
+    def source() : Widget?
+      Binding.bg_QGraphicsSceneDragDropEvent_source_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def source=(source : Widget) : Void
       Binding.bg_QGraphicsSceneDragDropEvent_setSource_QWidget_X(self, source)
     end
     
-    def mime_data() : MimeData
-      MimeData.new(unwrap: Binding.bg_QGraphicsSceneDragDropEvent_mimeData_(self))
+    def mime_data() : MimeData?
+      Binding.bg_QGraphicsSceneDragDropEvent_mimeData_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def mime_data=(data : MimeData) : Void
@@ -158697,8 +158697,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158721,8 +158721,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158786,8 +158786,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158810,8 +158810,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -158875,8 +158875,8 @@ module Qt
       Binding.bg_QEvent_setAccepted_bool(self, accepted)
     end
     
-    def clone() : Event
-      Event.new(unwrap: Binding.bg_QEvent_clone_(self))
+    def clone() : Event?
+      Binding.bg_QEvent_clone_(self).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
     end
     
     def to?(_type_ : T.class) forall T
@@ -158899,8 +158899,8 @@ module Qt
         Binding.bg_QEvent_setAccepted_SUPER_bool(@myself, accepted)
       end
       
-      def clone() : Event
-        Event.new(unwrap: Binding.bg_QEvent_clone_SUPER_(@myself))
+      def clone() : Event?
+        Binding.bg_QEvent_clone_SUPER_(@myself).try {|ptr| Event.new(unwrap: ptr) unless ptr.null?}
       end
       
     end
@@ -159747,8 +159747,8 @@ module Qt
     {% end %}
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QScrollArea_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QScrollArea_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def widget=(widget : Widget) : Void
@@ -159756,8 +159756,8 @@ module Qt
     Binding.bg_QScrollArea_setWidget_QWidget_X(self, widget)
     end
     
-    def take_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QScrollArea_takeWidget_(self))
+    def take_widget() : Widget?
+      Binding.bg_QScrollArea_takeWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def widget_resizable() : Bool
@@ -160099,8 +160099,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -160319,8 +160319,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -160771,8 +160771,8 @@ module Qt
       Binding.bg_QGraphicsView_setInteractive_bool(self, allowed)
     end
     
-    def scene() : GraphicsScene
-      GraphicsScene.new(unwrap: Binding.bg_QGraphicsView_scene_(self))
+    def scene() : GraphicsScene?
+      Binding.bg_QGraphicsView_scene_(self).try {|ptr| GraphicsScene.new(unwrap: ptr) unless ptr.null?}
     end
     
     def scene=(scene : GraphicsScene) : Void
@@ -160908,12 +160908,12 @@ module Qt
       Container_QList_QGraphicsItem_X_.new(unwrap: Binding.bg_QGraphicsView_items_const_QPainterPath_R_Qt__ItemSelectionMode(self, path, mode))
     end
     
-    def item_at(pos : Point) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsView_itemAt_const_QPoint_R(self, pos))
+    def item_at(pos : Point) : GraphicsItem?
+      Binding.bg_QGraphicsView_itemAt_const_QPoint_R(self, pos).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at(x : Int32, y : Int32) : GraphicsItem
-      GraphicsItemImpl.new(unwrap: Binding.bg_QGraphicsView_itemAt_int_int(self, x, y))
+    def item_at(x : Int32, y : Int32) : GraphicsItem?
+      Binding.bg_QGraphicsView_itemAt_int_int(self, x, y).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def map_to_scene(point : Point) : PointF
@@ -161374,8 +161374,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def timer_event(event : TimerEvent) : Void
@@ -161606,8 +161606,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def timer_event(event : TimerEvent) : Void
@@ -162130,8 +162130,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -162334,8 +162334,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -163345,8 +163345,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForColumn_int(self, column)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -163565,8 +163565,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -163737,8 +163737,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -163953,8 +163953,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -164370,8 +164370,8 @@ module Qt
     Binding.bg_QLineEdit_setValidator_const_QValidator_X(self, unnamed_arg_0)
     end
     
-    def validator() : Validator
-      ValidatorImpl.new(unwrap: Binding.bg_QLineEdit_validator_(self))
+    def validator() : Validator?
+      Binding.bg_QLineEdit_validator_(self).try {|ptr| ValidatorImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def completer=(completer : Completer) : Void
@@ -164379,8 +164379,8 @@ module Qt
     Binding.bg_QLineEdit_setCompleter_QCompleter_X(self, completer)
     end
     
-    def completer() : Completer
-      Completer.new(unwrap: Binding.bg_QLineEdit_completer_(self))
+    def completer() : Completer?
+      Binding.bg_QLineEdit_completer_(self).try {|ptr| Completer.new(unwrap: ptr) unless ptr.null?}
     end
     
     def size_hint() : Size
@@ -164528,9 +164528,9 @@ module Qt
     Binding.bg_QLineEdit_addAction_QAction_X_QLineEdit__ActionPosition(self, action, position)
     end
     
-    def add_action(icon : Icon, position : LineEdit::ActionPosition) : Action
+    def add_action(icon : Icon, position : LineEdit::ActionPosition) : Action?
       BindgenHelper.keep_alive(icon)
-    Action.new(unwrap: Binding.bg_QLineEdit_addAction_const_QIcon_R_QLineEdit__ActionPosition(self, icon, position))
+    Binding.bg_QLineEdit_addAction_const_QIcon_R_QLineEdit__ActionPosition(self, icon, position).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def text=(unnamed_arg_0 : String) : Void
@@ -164573,8 +164573,8 @@ module Qt
       Binding.bg_QLineEdit_insert_const_QString_R(self, Qt::Converter::QString.wrap(unnamed_arg_0))
     end
     
-    def create_standard_context_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QLineEdit_createStandardContextMenu_(self))
+    def create_standard_context_menu() : Menu?
+      Binding.bg_QLineEdit_createStandardContextMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def text_changed(unnamed_arg_0 : String) : Void
@@ -164779,8 +164779,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -164983,8 +164983,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def focus_next_prev_child(next_ : Bool) : Bool
@@ -165795,8 +165795,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -166015,8 +166015,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -166200,8 +166200,8 @@ module Qt
       Size.new(unwrap: Binding.bg_QItemDelegate_sizeHint_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, option, index))
     end
     
-    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-      Widget.new(unwrap: Binding.bg_QItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index))
+    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+      Binding.bg_QItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_editor_data(editor : Widget, index : ModelIndex) : Void
@@ -166216,8 +166216,8 @@ module Qt
       Binding.bg_QItemDelegate_updateEditorGeometry_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, editor, option, index)
     end
     
-    def item_editor_factory() : ItemEditorFactory
-      ItemEditorFactory.new(unwrap: Binding.bg_QItemDelegate_itemEditorFactory_(self))
+    def item_editor_factory() : ItemEditorFactory?
+      Binding.bg_QItemDelegate_itemEditorFactory_(self).try {|ptr| ItemEditorFactory.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_editor_factory=(factory : ItemEditorFactory) : Void
@@ -166341,8 +166341,8 @@ module Qt
         Size.new(unwrap: Binding.bg_QItemDelegate_sizeHint_SUPER_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, option, index))
       end
       
-      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-        Widget.new(unwrap: Binding.bg_QItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index))
+      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+        Binding.bg_QItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       def set_editor_data(editor : Widget, index : ModelIndex) : Void
@@ -166460,8 +166460,8 @@ module Qt
     {% end %}
     end
     
-    def create_editor(user_type : Int32, parent : Widget) : Widget
-      Widget.new(unwrap: Binding.bg_QItemEditorFactory_createEditor_int_QWidget_X(self, user_type, parent))
+    def create_editor(user_type : Int32, parent : Widget) : Widget?
+      Binding.bg_QItemEditorFactory_createEditor_int_QWidget_X(self, user_type, parent).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def value_property_name(user_type : Int32) : Bytes
@@ -166472,8 +166472,8 @@ module Qt
       Binding.bg_QItemEditorFactory_registerEditor_int_QItemEditorCreatorBase_X(self, user_type, creator)
     end
     
-    def self.default_factory() : ItemEditorFactory
-      ItemEditorFactory.new(unwrap: Binding.bg_QItemEditorFactory_defaultFactory_STATIC_())
+    def self.default_factory() : ItemEditorFactory?
+      Binding.bg_QItemEditorFactory_defaultFactory_STATIC_().try {|ptr| ItemEditorFactory.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.default_factory=(factory : ItemEditorFactory) : Void
@@ -166530,8 +166530,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ItemEditorFactory)
       end
-      def create_editor(user_type : Int32, parent : Widget) : Widget
-        Widget.new(unwrap: Binding.bg_QItemEditorFactory_createEditor_SUPER_int_QWidget_X(@myself, user_type, parent))
+      def create_editor(user_type : Int32, parent : Widget) : Widget?
+        Binding.bg_QItemEditorFactory_createEditor_SUPER_int_QWidget_X(@myself, user_type, parent).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       def value_property_name(user_type : Int32) : Bytes
@@ -167151,8 +167151,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -167351,8 +167351,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -167961,8 +167961,8 @@ module Qt
       Picture.new(unwrap: Binding.bg_QLabel_picture_(self))
     end
     
-    def movie() : Movie
-      Movie.new(unwrap: Binding.bg_QLabel_movie_(self))
+    def movie() : Movie?
+      Binding.bg_QLabel_movie_(self).try {|ptr| Movie.new(unwrap: ptr) unless ptr.null?}
     end
     
     def text_format() : TextFormatEnum
@@ -168026,8 +168026,8 @@ module Qt
     Binding.bg_QLabel_setBuddy_QWidget_X(self, unnamed_arg_0)
     end
     
-    def buddy() : Widget
-      Widget.new(unwrap: Binding.bg_QLabel_buddy_(self))
+    def buddy() : Widget?
+      Binding.bg_QLabel_buddy_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def height_for_width(unnamed_arg_0 : Int32) : Int32
@@ -168246,8 +168246,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -168450,8 +168450,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -169029,8 +169029,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -169233,8 +169233,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -170071,8 +170071,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForColumn_int(self, column)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -170259,8 +170259,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -170447,8 +170447,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -170635,8 +170635,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -170839,12 +170839,12 @@ module Qt
     {% end %}
     end
     
-    def clone() : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidgetItem_clone_(self))
+    def clone() : ListWidgetItem?
+      Binding.bg_QListWidgetItem_clone_(self).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def list_widget() : ListWidget
-      ListWidget.new(unwrap: Binding.bg_QListWidgetItem_listWidget_(self))
+    def list_widget() : ListWidget?
+      Binding.bg_QListWidgetItem_listWidget_(self).try {|ptr| ListWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selected=(select_ : Bool) : Void
@@ -170998,8 +170998,8 @@ module Qt
     private class Superclass
       def initialize(@myself : ListWidgetItem)
       end
-      def clone() : ListWidgetItem
-        ListWidgetItem.new(unwrap: Binding.bg_QListWidgetItem_clone_SUPER_(@myself))
+      def clone() : ListWidgetItem?
+        Binding.bg_QListWidgetItem_clone_SUPER_(@myself).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def data(role : Int32) : Variant
@@ -171279,8 +171279,8 @@ module Qt
       Binding.bg_QListWidget_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
-    def item(row : Int32) : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_item_int(self, row))
+    def item(row : Int32) : ListWidgetItem?
+      Binding.bg_QListWidget_item_int(self, row).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def row(item : ListWidgetItem) : Int32
@@ -171313,16 +171313,16 @@ module Qt
       Binding.bg_QListWidget_addItems_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, labels).to_unsafe)
     end
     
-    def take_item(row : Int32) : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_takeItem_int(self, row))
+    def take_item(row : Int32) : ListWidgetItem?
+      Binding.bg_QListWidget_takeItem_int(self, row).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
       Binding.bg_QListWidget_count_(self)
     end
     
-    def current_item() : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_currentItem_(self))
+    def current_item() : ListWidgetItem?
+      Binding.bg_QListWidget_currentItem_(self).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_item=(item : ListWidgetItem) : Void
@@ -171345,12 +171345,12 @@ module Qt
       Binding.bg_QListWidget_setCurrentRow_int_QItemSelectionModel__SelectionFlags(self, row, command)
     end
     
-    def item_at(p : Point) : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_itemAt_const_QPoint_R(self, p))
+    def item_at(p : Point) : ListWidgetItem?
+      Binding.bg_QListWidget_itemAt_const_QPoint_R(self, p).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at(x : Int32, y : Int32) : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_itemAt_int_int(self, x, y))
+    def item_at(x : Int32, y : Int32) : ListWidgetItem?
+      Binding.bg_QListWidget_itemAt_int_int(self, x, y).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def visual_item_rect(item : ListWidgetItem) : Rect
@@ -171385,8 +171385,8 @@ module Qt
       Binding.bg_QListWidget_isPersistentEditorOpen_QListWidgetItem_X(self, item)
     end
     
-    def item_widget(item : ListWidgetItem) : Widget
-      Widget.new(unwrap: Binding.bg_QListWidget_itemWidget_QListWidgetItem_X(self, item))
+    def item_widget(item : ListWidgetItem) : Widget?
+      Binding.bg_QListWidget_itemWidget_QListWidgetItem_X(self, item).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item_widget(item : ListWidgetItem, widget : Widget) : Void
@@ -171414,8 +171414,8 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QListWidget_indexFromItem_const_QListWidgetItem_X(self, item))
     end
     
-    def item_from_index(index : ModelIndex) : ListWidgetItem
-      ListWidgetItem.new(unwrap: Binding.bg_QListWidget_itemFromIndex_const_QModelIndex_R(self, index))
+    def item_from_index(index : ModelIndex) : ListWidgetItem?
+      Binding.bg_QListWidget_itemFromIndex_const_QModelIndex_R(self, index).try {|ptr| ListWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def supported_drag_actions=(actions : DropActions) : Void
@@ -171486,8 +171486,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QListWidget_mimeTypes_(self))
     end
     
-    protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QListWidgetItem_X_, items).to_unsafe))
+    protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData?
+      Binding.bg_QListWidget_mimeData_const_QList_QListWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QListWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def drop_mime_data(index : Int32, data : MimeData, action : DropAction) : Bool
@@ -171647,8 +171647,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForColumn_int(self, column)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -171835,8 +171835,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -171887,8 +171887,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QListWidget_mimeTypes_SUPER_(@myself))
       end
       
-      protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QListWidget_mimeData_SUPER_const_QList_QListWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QListWidgetItem_X_, items).to_unsafe))
+      protected def mime_data(items : Enumerable(ListWidgetItem)) : MimeData?
+        Binding.bg_QListWidget_mimeData_SUPER_const_QList_QListWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QListWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def drop_mime_data(index : Int32, data : MimeData, action : DropAction) : Bool
@@ -172035,8 +172035,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -172223,8 +172223,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -172635,8 +172635,8 @@ module Qt
       Binding.bg_QMainWindow_isSeparator_const_QPoint_R(self, pos)
     end
     
-    def menu_bar() : MenuBar
-      MenuBar.new(unwrap: Binding.bg_QMainWindow_menuBar_(self))
+    def menu_bar() : MenuBar?
+      Binding.bg_QMainWindow_menuBar_(self).try {|ptr| MenuBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def menu_bar=(menubar : MenuBar) : Void
@@ -172644,8 +172644,8 @@ module Qt
     Binding.bg_QMainWindow_setMenuBar_QMenuBar_X(self, menubar)
     end
     
-    def menu_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMainWindow_menuWidget_(self))
+    def menu_widget() : Widget?
+      Binding.bg_QMainWindow_menuWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def menu_widget=(menubar : Widget) : Void
@@ -172653,8 +172653,8 @@ module Qt
     Binding.bg_QMainWindow_setMenuWidget_QWidget_X(self, menubar)
     end
     
-    def status_bar() : StatusBar
-      StatusBar.new(unwrap: Binding.bg_QMainWindow_statusBar_(self))
+    def status_bar() : StatusBar?
+      Binding.bg_QMainWindow_statusBar_(self).try {|ptr| StatusBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def status_bar=(statusbar : StatusBar) : Void
@@ -172662,8 +172662,8 @@ module Qt
     Binding.bg_QMainWindow_setStatusBar_QStatusBar_X(self, statusbar)
     end
     
-    def central_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMainWindow_centralWidget_(self))
+    def central_widget() : Widget?
+      Binding.bg_QMainWindow_centralWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def central_widget=(widget : Widget) : Void
@@ -172671,8 +172671,8 @@ module Qt
     Binding.bg_QMainWindow_setCentralWidget_QWidget_X(self, widget)
     end
     
-    def take_central_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMainWindow_takeCentralWidget_(self))
+    def take_central_widget() : Widget?
+      Binding.bg_QMainWindow_takeCentralWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_corner(corner : Corner, area : DockWidgetArea) : Void
@@ -172701,8 +172701,8 @@ module Qt
     Binding.bg_QMainWindow_addToolBar_QToolBar_X(self, toolbar)
     end
     
-    def add_tool_bar(title : String) : ToolBar
-      ToolBar.new(unwrap: Binding.bg_QMainWindow_addToolBar_const_QString_R(self, Qt::Converter::QString.wrap(title)))
+    def add_tool_bar(title : String) : ToolBar?
+      Binding.bg_QMainWindow_addToolBar_const_QString_R(self, Qt::Converter::QString.wrap(title)).try {|ptr| ToolBar.new(unwrap: ptr) unless ptr.null?}
     end
     
     def insert_tool_bar(before : ToolBar, toolbar : ToolBar) : Void
@@ -172776,8 +172776,8 @@ module Qt
       Binding.bg_QMainWindow_restoreState_const_QByteArray_R_int(self, Qt::Converter::QByteArray.wrap(state), version)
     end
     
-    def create_popup_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QMainWindow_createPopupMenu_(self))
+    def create_popup_menu() : Menu?
+      Binding.bg_QMainWindow_createPopupMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def animated=(enabled : Bool) : Void
@@ -172961,8 +172961,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -173017,8 +173017,8 @@ module Qt
     private class Superclass
       def initialize(@myself : MainWindow)
       end
-      def create_popup_menu() : Menu
-        Menu.new(unwrap: Binding.bg_QMainWindow_createPopupMenu_SUPER_(@myself))
+      def create_popup_menu() : Menu?
+        Binding.bg_QMainWindow_createPopupMenu_SUPER_(@myself).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def context_menu_event(event : ContextMenuEvent) : Void
@@ -173165,8 +173165,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -173394,26 +173394,26 @@ module Qt
       Size.new(unwrap: Binding.bg_QMdiArea_minimumSizeHint_(self))
     end
     
-    def current_sub_window() : MdiSubWindow
-      MdiSubWindow.new(unwrap: Binding.bg_QMdiArea_currentSubWindow_(self))
+    def current_sub_window() : MdiSubWindow?
+      Binding.bg_QMdiArea_currentSubWindow_(self).try {|ptr| MdiSubWindow.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def active_sub_window() : MdiSubWindow
-      MdiSubWindow.new(unwrap: Binding.bg_QMdiArea_activeSubWindow_(self))
+    def active_sub_window() : MdiSubWindow?
+      Binding.bg_QMdiArea_activeSubWindow_(self).try {|ptr| MdiSubWindow.new(unwrap: ptr) unless ptr.null?}
     end
     
     def sub_window_list(order : MdiArea::WindowOrder = MdiArea::WindowOrder::CreationOrder) : Enumerable(MdiSubWindow)
       Container_QList_QMdiSubWindow_X_.new(unwrap: Binding.bg_QMdiArea_subWindowList_QMdiArea__WindowOrder(self, order))
     end
     
-    def add_sub_window(widget : Widget) : MdiSubWindow
+    def add_sub_window(widget : Widget) : MdiSubWindow?
       BindgenHelper.keep_alive(widget)
-    MdiSubWindow.new(unwrap: Binding.bg_QMdiArea_addSubWindow_QWidget_X(self, widget))
+    Binding.bg_QMdiArea_addSubWindow_QWidget_X(self, widget).try {|ptr| MdiSubWindow.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_sub_window(widget : Widget, flags : WindowFlags) : MdiSubWindow
+    def add_sub_window(widget : Widget, flags : WindowFlags) : MdiSubWindow?
       BindgenHelper.keep_alive(widget)
-    MdiSubWindow.new(unwrap: Binding.bg_QMdiArea_addSubWindow_QWidget_X_Qt__WindowFlags(self, widget, flags))
+    Binding.bg_QMdiArea_addSubWindow_QWidget_X_Qt__WindowFlags(self, widget, flags).try {|ptr| MdiSubWindow.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_sub_window(widget : Widget) : Void
@@ -173712,8 +173712,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -173932,8 +173932,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -174265,16 +174265,16 @@ module Qt
     Binding.bg_QMdiSubWindow_setWidget_QWidget_X(self, widget)
     end
     
-    def widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMdiSubWindow_widget_(self))
+    def widget() : Widget?
+      Binding.bg_QMdiSubWindow_widget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def maximized_buttons_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMdiSubWindow_maximizedButtonsWidget_(self))
+    def maximized_buttons_widget() : Widget?
+      Binding.bg_QMdiSubWindow_maximizedButtonsWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def maximized_system_menu_icon_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QMdiSubWindow_maximizedSystemMenuIconWidget_(self))
+    def maximized_system_menu_icon_widget() : Widget?
+      Binding.bg_QMdiSubWindow_maximizedSystemMenuIconWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def shaded?() : Bool
@@ -174310,12 +174310,12 @@ module Qt
     Binding.bg_QMdiSubWindow_setSystemMenu_QMenu_X(self, system_menu)
     end
     
-    def system_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QMdiSubWindow_systemMenu_(self))
+    def system_menu() : Menu?
+      Binding.bg_QMdiSubWindow_systemMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def mdi_area() : MdiArea
-      MdiArea.new(unwrap: Binding.bg_QMdiSubWindow_mdiArea_(self))
+    def mdi_area() : MdiArea?
+      Binding.bg_QMdiSubWindow_mdiArea_(self).try {|ptr| MdiArea.new(unwrap: ptr) unless ptr.null?}
     end
     
     def window_state_changed(old_state : WindowStates, new_state : WindowStates) : Void
@@ -174499,8 +174499,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -174699,8 +174699,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -175027,47 +175027,47 @@ module Qt
     {% end %}
     end
     
-    def add_menu(menu : Menu) : Action
+    def add_menu(menu : Menu) : Action?
       BindgenHelper.keep_alive(menu)
-    Action.new(unwrap: Binding.bg_QMenu_addMenu_QMenu_X(self, menu))
+    Binding.bg_QMenu_addMenu_QMenu_X(self, menu).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_menu(title : String) : Menu
-      Menu.new(unwrap: Binding.bg_QMenu_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)))
+    def add_menu(title : String) : Menu?
+      Binding.bg_QMenu_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_menu(icon : Icon, title : String) : Menu
+    def add_menu(icon : Icon, title : String) : Menu?
       BindgenHelper.keep_alive(icon)
-    Menu.new(unwrap: Binding.bg_QMenu_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)))
+    Binding.bg_QMenu_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_separator() : Action
-      Action.new(unwrap: Binding.bg_QMenu_addSeparator_(self))
+    def add_separator() : Action?
+      Binding.bg_QMenu_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_section(text : String) : Action
-      Action.new(unwrap: Binding.bg_QMenu_addSection_const_QString_R(self, Qt::Converter::QString.wrap(text)))
+    def add_section(text : String) : Action?
+      Binding.bg_QMenu_addSection_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_section(icon : Icon, text : String) : Action
-      Action.new(unwrap: Binding.bg_QMenu_addSection_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)))
+    def add_section(icon : Icon, text : String) : Action?
+      Binding.bg_QMenu_addSection_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_menu(before : Action, menu : Menu) : Action
+    def insert_menu(before : Action, menu : Menu) : Action?
       BindgenHelper.keep_alive(menu)
-    Action.new(unwrap: Binding.bg_QMenu_insertMenu_QAction_X_QMenu_X(self, before, menu))
+    Binding.bg_QMenu_insertMenu_QAction_X_QMenu_X(self, before, menu).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_separator(before : Action) : Action
-      Action.new(unwrap: Binding.bg_QMenu_insertSeparator_QAction_X(self, before))
+    def insert_separator(before : Action) : Action?
+      Binding.bg_QMenu_insertSeparator_QAction_X(self, before).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_section(before : Action, text : String) : Action
-      Action.new(unwrap: Binding.bg_QMenu_insertSection_QAction_X_const_QString_R(self, before, Qt::Converter::QString.wrap(text)))
+    def insert_section(before : Action, text : String) : Action?
+      Binding.bg_QMenu_insertSection_QAction_X_const_QString_R(self, before, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_section(before : Action, icon : Icon, text : String) : Action
-      Action.new(unwrap: Binding.bg_QMenu_insertSection_QAction_X_const_QIcon_R_const_QString_R(self, before, icon, Qt::Converter::QString.wrap(text)))
+    def insert_section(before : Action, icon : Icon, text : String) : Action?
+      Binding.bg_QMenu_insertSection_QAction_X_const_QIcon_R_const_QString_R(self, before, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def empty?() : Bool
@@ -175107,32 +175107,32 @@ module Qt
     Binding.bg_QMenu_setDefaultAction_QAction_X(self, unnamed_arg_0)
     end
     
-    def default_action() : Action
-      Action.new(unwrap: Binding.bg_QMenu_defaultAction_(self))
+    def default_action() : Action?
+      Binding.bg_QMenu_defaultAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active_action=(act : Action) : Void
       Binding.bg_QMenu_setActiveAction_QAction_X(self, act)
     end
     
-    def active_action() : Action
-      Action.new(unwrap: Binding.bg_QMenu_activeAction_(self))
+    def active_action() : Action?
+      Binding.bg_QMenu_activeAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def popup(pos : Point, at : Action? = nil) : Void
       Binding.bg_QMenu_popup_const_QPoint_R_QAction_X(self, pos, (at.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
-    def exec() : Action
-      Action.new(unwrap: Binding.bg_QMenu_exec_(self))
+    def exec() : Action?
+      Binding.bg_QMenu_exec_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def exec(pos : Point, at : Action? = nil) : Action
-      Action.new(unwrap: Binding.bg_QMenu_exec_const_QPoint_R_QAction_X(self, pos, (at.try(&.to_unsafe) || Pointer(Binding::QAction).null)))
+    def exec(pos : Point, at : Action? = nil) : Action?
+      Binding.bg_QMenu_exec_const_QPoint_R_QAction_X(self, pos, (at.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.exec(actions : Enumerable(Action), pos : Point, at : Action? = nil, parent : Widget? = nil) : Action
-      Action.new(unwrap: Binding.bg_QMenu_exec_STATIC_const_QList_QAction_X__R_const_QPoint_R_QAction_X_QWidget_X(BindgenHelper.wrap_container(Container_QList_QAction_X_, actions).to_unsafe, pos, (at.try(&.to_unsafe) || Pointer(Binding::QAction).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null)))
+    def self.exec(actions : Enumerable(Action), pos : Point, at : Action? = nil, parent : Widget? = nil) : Action?
+      Binding.bg_QMenu_exec_STATIC_const_QList_QAction_X__R_const_QPoint_R_QAction_X_QWidget_X(BindgenHelper.wrap_container(Container_QList_QAction_X_, actions).to_unsafe, pos, (at.try(&.to_unsafe) || Pointer(Binding::QAction).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def size_hint() : Size
@@ -175143,16 +175143,16 @@ module Qt
       Rect.new(unwrap: Binding.bg_QMenu_actionGeometry_QAction_X(self, unnamed_arg_0))
     end
     
-    def action_at(unnamed_arg_0 : Point) : Action
-      Action.new(unwrap: Binding.bg_QMenu_actionAt_const_QPoint_R(self, unnamed_arg_0))
+    def action_at(unnamed_arg_0 : Point) : Action?
+      Binding.bg_QMenu_actionAt_const_QPoint_R(self, unnamed_arg_0).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def menu_action() : Action
-      Action.new(unwrap: Binding.bg_QMenu_menuAction_(self))
+    def menu_action() : Action?
+      Binding.bg_QMenu_menuAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.menu_in_action(action : Action) : Menu
-      Menu.new(unwrap: Binding.bg_QMenu_menuInAction_STATIC_const_QAction_X(action))
+    def self.menu_in_action(action : Action) : Menu?
+      Binding.bg_QMenu_menuInAction_STATIC_const_QAction_X(action).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def title() : String
@@ -175510,8 +175510,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -175714,8 +175714,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -175923,39 +175923,39 @@ module Qt
     {% end %}
     end
     
-    def add_menu(menu : Menu) : Action
+    def add_menu(menu : Menu) : Action?
       BindgenHelper.keep_alive(menu)
-    Action.new(unwrap: Binding.bg_QMenuBar_addMenu_QMenu_X(self, menu))
+    Binding.bg_QMenuBar_addMenu_QMenu_X(self, menu).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_menu(title : String) : Menu
-      Menu.new(unwrap: Binding.bg_QMenuBar_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)))
+    def add_menu(title : String) : Menu?
+      Binding.bg_QMenuBar_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_menu(icon : Icon, title : String) : Menu
+    def add_menu(icon : Icon, title : String) : Menu?
       BindgenHelper.keep_alive(icon)
-    Menu.new(unwrap: Binding.bg_QMenuBar_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)))
+    Binding.bg_QMenuBar_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_separator() : Action
-      Action.new(unwrap: Binding.bg_QMenuBar_addSeparator_(self))
+    def add_separator() : Action?
+      Binding.bg_QMenuBar_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_separator(before : Action) : Action
-      Action.new(unwrap: Binding.bg_QMenuBar_insertSeparator_QAction_X(self, before))
+    def insert_separator(before : Action) : Action?
+      Binding.bg_QMenuBar_insertSeparator_QAction_X(self, before).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_menu(before : Action, menu : Menu) : Action
+    def insert_menu(before : Action, menu : Menu) : Action?
       BindgenHelper.keep_alive(menu)
-    Action.new(unwrap: Binding.bg_QMenuBar_insertMenu_QAction_X_QMenu_X(self, before, menu))
+    Binding.bg_QMenuBar_insertMenu_QAction_X_QMenu_X(self, before, menu).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def clear() : Void
       Binding.bg_QMenuBar_clear_(self)
     end
     
-    def active_action() : Action
-      Action.new(unwrap: Binding.bg_QMenuBar_activeAction_(self))
+    def active_action() : Action?
+      Binding.bg_QMenuBar_activeAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def active_action=(action : Action) : Void
@@ -175986,8 +175986,8 @@ module Qt
       Rect.new(unwrap: Binding.bg_QMenuBar_actionGeometry_QAction_X(self, unnamed_arg_0))
     end
     
-    def action_at(unnamed_arg_0 : Point) : Action
-      Action.new(unwrap: Binding.bg_QMenuBar_actionAt_const_QPoint_R(self, unnamed_arg_0))
+    def action_at(unnamed_arg_0 : Point) : Action?
+      Binding.bg_QMenuBar_actionAt_const_QPoint_R(self, unnamed_arg_0).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_corner_widget(w : Widget, corner : Corner = Corner::TopRightCorner) : Void
@@ -175995,8 +175995,8 @@ module Qt
     Binding.bg_QMenuBar_setCornerWidget_QWidget_X_Qt__Corner(self, w, corner)
     end
     
-    def corner_widget(corner : Corner = Corner::TopRightCorner) : Widget
-      Widget.new(unwrap: Binding.bg_QMenuBar_cornerWidget_Qt__Corner(self, corner))
+    def corner_widget(corner : Corner = Corner::TopRightCorner) : Widget?
+      Binding.bg_QMenuBar_cornerWidget_Qt__Corner(self, corner).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def native_menu_bar?() : Bool
@@ -176167,8 +176167,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -176371,8 +176371,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -177140,12 +177140,12 @@ module Qt
       Binding.bg_QMessageBox_addButton_QAbstractButton_X_QMessageBox__ButtonRole(self, button, role)
     end
     
-    def add_button(text : String, role : MessageBox::ButtonRole) : PushButton
-      PushButton.new(unwrap: Binding.bg_QMessageBox_addButton_const_QString_R_QMessageBox__ButtonRole(self, Qt::Converter::QString.wrap(text), role))
+    def add_button(text : String, role : MessageBox::ButtonRole) : PushButton?
+      Binding.bg_QMessageBox_addButton_const_QString_R_QMessageBox__ButtonRole(self, Qt::Converter::QString.wrap(text), role).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_button(button : MessageBox::StandardButton) : PushButton
-      PushButton.new(unwrap: Binding.bg_QMessageBox_addButton_QMessageBox__StandardButton(self, button))
+    def add_button(button : MessageBox::StandardButton) : PushButton?
+      Binding.bg_QMessageBox_addButton_QMessageBox__StandardButton(self, button).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_button(button : AbstractButton) : Void
@@ -177176,12 +177176,12 @@ module Qt
       Binding.bg_QMessageBox_standardButton_QAbstractButton_X(self, button)
     end
     
-    def button(which : MessageBox::StandardButton) : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QMessageBox_button_QMessageBox__StandardButton(self, which))
+    def button(which : MessageBox::StandardButton) : AbstractButton?
+      Binding.bg_QMessageBox_button_QMessageBox__StandardButton(self, which).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def default_button() : PushButton
-      PushButton.new(unwrap: Binding.bg_QMessageBox_defaultButton_(self))
+    def default_button() : PushButton?
+      Binding.bg_QMessageBox_defaultButton_(self).try {|ptr| PushButton.new(unwrap: ptr) unless ptr.null?}
     end
     
     def default_button=(button : PushButton) : Void
@@ -177192,8 +177192,8 @@ module Qt
       Binding.bg_QMessageBox_setDefaultButton_QMessageBox__StandardButton(self, button)
     end
     
-    def escape_button() : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QMessageBox_escapeButton_(self))
+    def escape_button() : AbstractButton?
+      Binding.bg_QMessageBox_escapeButton_(self).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def escape_button=(button : AbstractButton) : Void
@@ -177204,8 +177204,8 @@ module Qt
       Binding.bg_QMessageBox_setEscapeButton_QMessageBox__StandardButton(self, button)
     end
     
-    def clicked_button() : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QMessageBox_clickedButton_(self))
+    def clicked_button() : AbstractButton?
+      Binding.bg_QMessageBox_clickedButton_(self).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def text() : String
@@ -177252,8 +177252,8 @@ module Qt
       Binding.bg_QMessageBox_setCheckBox_QCheckBox_X(self, cb)
     end
     
-    def check_box() : CheckBox
-      CheckBox.new(unwrap: Binding.bg_QMessageBox_checkBox_(self))
+    def check_box() : CheckBox?
+      Binding.bg_QMessageBox_checkBox_(self).try {|ptr| CheckBox.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_option(option : MessageBox::Option, on : Bool = true) : Void
@@ -177634,8 +177634,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -177854,8 +177854,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -178227,8 +178227,8 @@ module Qt
     Binding.bg_QTextEdit_setDocument_QTextDocument_X(self, document)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QTextEdit_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QTextEdit_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def placeholder_text=(placeholder_text : String) : Void
@@ -178407,12 +178407,12 @@ module Qt
       Qt::Variant.new(Binding.bg_QTextEdit_loadResource_int_const_QUrl_R(self, type, name))
     end
     
-    def create_standard_context_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QTextEdit_createStandardContextMenu_(self))
+    def create_standard_context_menu() : Menu?
+      Binding.bg_QTextEdit_createStandardContextMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_standard_context_menu(position : Point) : Menu
-      Menu.new(unwrap: Binding.bg_QTextEdit_createStandardContextMenu_const_QPoint_R(self, position))
+    def create_standard_context_menu(position : Point) : Menu?
+      Binding.bg_QTextEdit_createStandardContextMenu_const_QPoint_R(self, position).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def cursor_for_position(pos : Point) : TextCursor
@@ -178699,8 +178699,8 @@ module Qt
       Binding.bg_QTextEdit_wheelEvent_QWheelEvent_X(self, event)
     end
     
-    protected def create_mime_data_from_selection() : MimeData
-      MimeData.new(unwrap: Binding.bg_QTextEdit_createMimeDataFromSelection_(self))
+    protected def create_mime_data_from_selection() : MimeData?
+      Binding.bg_QTextEdit_createMimeDataFromSelection_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -178985,8 +178985,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -179113,8 +179113,8 @@ module Qt
         Binding.bg_QTextEdit_wheelEvent_SUPER_QWheelEvent_X(@myself, event)
       end
       
-      protected def create_mime_data_from_selection() : MimeData
-        MimeData.new(unwrap: Binding.bg_QTextEdit_createMimeDataFromSelection_SUPER_(@myself))
+      protected def create_mime_data_from_selection() : MimeData?
+        Binding.bg_QTextEdit_createMimeDataFromSelection_SUPER_(@myself).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -179225,8 +179225,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -179606,8 +179606,8 @@ module Qt
     Binding.bg_QPlainTextEdit_setDocument_QTextDocument_X(self, document)
     end
     
-    def document() : TextDocument
-      TextDocument.new(unwrap: Binding.bg_QPlainTextEdit_document_(self))
+    def document() : TextDocument?
+      Binding.bg_QPlainTextEdit_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
     end
     
     def placeholder_text=(placeholder_text : String) : Void
@@ -179746,12 +179746,12 @@ module Qt
       Qt::Variant.new(Binding.bg_QPlainTextEdit_loadResource_int_const_QUrl_R(self, type, name))
     end
     
-    def create_standard_context_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QPlainTextEdit_createStandardContextMenu_(self))
+    def create_standard_context_menu() : Menu?
+      Binding.bg_QPlainTextEdit_createStandardContextMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def create_standard_context_menu(position : Point) : Menu
-      Menu.new(unwrap: Binding.bg_QPlainTextEdit_createStandardContextMenu_const_QPoint_R(self, position))
+    def create_standard_context_menu(position : Point) : Menu?
+      Binding.bg_QPlainTextEdit_createStandardContextMenu_const_QPoint_R(self, position).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def cursor_for_position(pos : Point) : TextCursor
@@ -179994,8 +179994,8 @@ module Qt
       Binding.bg_QPlainTextEdit_wheelEvent_QWheelEvent_X(self, event)
     end
     
-    protected def create_mime_data_from_selection() : MimeData
-      MimeData.new(unwrap: Binding.bg_QPlainTextEdit_createMimeDataFromSelection_(self))
+    protected def create_mime_data_from_selection() : MimeData?
+      Binding.bg_QPlainTextEdit_createMimeDataFromSelection_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -180287,8 +180287,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -180415,8 +180415,8 @@ module Qt
         Binding.bg_QPlainTextEdit_wheelEvent_SUPER_QWheelEvent_X(@myself, event)
       end
       
-      protected def create_mime_data_from_selection() : MimeData
-        MimeData.new(unwrap: Binding.bg_QPlainTextEdit_createMimeDataFromSelection_SUPER_(@myself))
+      protected def create_mime_data_from_selection() : MimeData?
+        Binding.bg_QPlainTextEdit_createMimeDataFromSelection_SUPER_(@myself).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -180527,8 +180527,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -181267,8 +181267,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -181475,8 +181475,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -182380,8 +182380,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -182600,8 +182600,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -182864,8 +182864,8 @@ module Qt
     {% end %}
     end
     
-    def base_style() : Style
-      StyleImpl.new(unwrap: Binding.bg_QProxyStyle_baseStyle_(self))
+    def base_style() : Style?
+      Binding.bg_QProxyStyle_baseStyle_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def base_style=(style : Style) : Void
@@ -183605,8 +183605,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -183821,8 +183821,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -184161,8 +184161,8 @@ module Qt
       Binding.bg_QScrollBar_event_QEvent_X(self, event)
     end
     
-    def create_standard_context_menu(position : Point) : Menu
-      Menu.new(unwrap: Binding.bg_QScrollBar_createStandardContextMenu_QPoint(self, position))
+    def create_standard_context_menu(position : Point) : Menu?
+      Binding.bg_QScrollBar_createStandardContextMenu_QPoint(self, position).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def wheel_event(event : WheelEvent) : Void
@@ -184317,8 +184317,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -184525,8 +184525,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -184679,12 +184679,12 @@ module Qt
       Binding.bg_QScroller_hasScroller_STATIC_QObject_X(target)
     end
     
-    def self.scroller(target : Object) : Scroller
-      Scroller.new(unwrap: Binding.bg_QScroller_scroller_STATIC_QObject_X(target))
+    def self.scroller(target : Object) : Scroller?
+      Binding.bg_QScroller_scroller_STATIC_QObject_X(target).try {|ptr| Scroller.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def self.scroller(target : Object) : Scroller
-      Scroller.new(unwrap: Binding.bg_QScroller_scroller_STATIC_const_QObject_X(target))
+    def self.scroller(target : Object) : Scroller?
+      Binding.bg_QScroller_scroller_STATIC_const_QObject_X(target).try {|ptr| Scroller.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.grab_gesture(target : Object, gesture_type : Scroller::ScrollerGestureType = Scroller::ScrollerGestureType::TouchGesture) : GestureType
@@ -184703,8 +184703,8 @@ module Qt
       Container_QList_QScroller_X_.new(unwrap: Binding.bg_QScroller_activeScrollers_STATIC_())
     end
     
-    def target() : Object
-      Object.new(unwrap: Binding.bg_QScroller_target_(self))
+    def target() : Object?
+      Binding.bg_QScroller_target_(self).try {|ptr| Object.new(unwrap: ptr) unless ptr.null?}
     end
     
     def state() : Scroller::State
@@ -185160,8 +185160,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -185360,8 +185360,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -185827,8 +185827,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -186051,8 +186051,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -186522,8 +186522,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -186746,8 +186746,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -187790,8 +187790,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -187994,8 +187994,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -188344,9 +188344,9 @@ module Qt
     Binding.bg_QSplitter_insertWidget_int_QWidget_X(self, index, widget)
     end
     
-    def replace_widget(index : Int32, widget : Widget) : Widget
+    def replace_widget(index : Int32, widget : Widget) : Widget?
       BindgenHelper.keep_alive(widget)
-    Widget.new(unwrap: Binding.bg_QSplitter_replaceWidget_int_QWidget_X(self, index, widget))
+    Binding.bg_QSplitter_replaceWidget_int_QWidget_X(self, index, widget).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def orientation=(unnamed_arg_0 : Orientation) : Void
@@ -188421,8 +188421,8 @@ module Qt
       Binding.bg_QSplitter_indexOf_QWidget_X(self, w)
     end
     
-    def widget(index : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QSplitter_widget_int(self, index))
+    def widget(index : Int32) : Widget?
+      Binding.bg_QSplitter_widget_int(self, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -188433,8 +188433,8 @@ module Qt
       Binding.bg_QSplitter_getRange_int_int_X_int_X(self, index, unnamed_arg_1, unnamed_arg_2)
     end
     
-    def handle(index : Int32) : SplitterHandle
-      SplitterHandle.new(unwrap: Binding.bg_QSplitter_handle_int(self, index))
+    def handle(index : Int32) : SplitterHandle?
+      Binding.bg_QSplitter_handle_int(self, index).try {|ptr| SplitterHandle.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_stretch_factor(index : Int32, stretch : Int32) : Void
@@ -188445,8 +188445,8 @@ module Qt
       Binding.bg_QSplitter_splitterMoved_int_int(self, pos, index)
     end
     
-    protected def create_handle() : SplitterHandle
-      SplitterHandle.new(unwrap: Binding.bg_QSplitter_createHandle_(self))
+    protected def create_handle() : SplitterHandle?
+      Binding.bg_QSplitter_createHandle_(self).try {|ptr| SplitterHandle.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -188609,8 +188609,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -188669,8 +188669,8 @@ module Qt
         Size.new(unwrap: Binding.bg_QSplitter_minimumSizeHint_SUPER_(@myself))
       end
       
-      protected def create_handle() : SplitterHandle
-        SplitterHandle.new(unwrap: Binding.bg_QSplitter_createHandle_SUPER_(@myself))
+      protected def create_handle() : SplitterHandle?
+        Binding.bg_QSplitter_createHandle_SUPER_(@myself).try {|ptr| SplitterHandle.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -188817,8 +188817,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -189028,8 +189028,8 @@ module Qt
       Binding.bg_QSplitterHandle_opaqueResize_(self)
     end
     
-    def splitter() : Splitter
-      Splitter.new(unwrap: Binding.bg_QSplitterHandle_splitter_(self))
+    def splitter() : Splitter?
+      Binding.bg_QSplitterHandle_splitter_(self).try {|ptr| Splitter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def size_hint() : Size
@@ -189188,8 +189188,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -189388,8 +189388,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -189753,16 +189753,16 @@ module Qt
     Binding.bg_QStackedLayout_insertWidget_int_QWidget_X(self, index, w)
     end
     
-    def current_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QStackedLayout_currentWidget_(self))
+    def current_widget() : Widget?
+      Binding.bg_QStackedLayout_currentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_index() : Int32
       Binding.bg_QStackedLayout_currentIndex_(self)
     end
     
-    def widget(unnamed_arg_0 : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QStackedLayout_widget_int(self, unnamed_arg_0))
+    def widget(unnamed_arg_0 : Int32) : Widget?
+      Binding.bg_QStackedLayout_widget_int(self, unnamed_arg_0).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -189790,12 +189790,12 @@ module Qt
       Size.new(unwrap: Binding.bg_QStackedLayout_minimumSize_(self))
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QStackedLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QStackedLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QStackedLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QStackedLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def geometry=(unnamed_arg_0 : Rect) : Void
@@ -189878,18 +189878,18 @@ module Qt
       Binding.bg_QLayout_controlTypes_(self)
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
+    def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X_Qt__FindChildOptions(self, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def layout() : Layout
-      LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_(self))
+    def layout() : Layout?
+      Binding.bg_QLayout_layout_(self).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -189952,12 +189952,12 @@ module Qt
         Size.new(unwrap: Binding.bg_QStackedLayout_minimumSize_SUPER_(@myself))
       end
       
-      def item_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QStackedLayout_itemAt_SUPER_int(@myself, index))
+      def item_at(index : Int32) : LayoutItem?
+        Binding.bg_QStackedLayout_itemAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def take_at(index : Int32) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QStackedLayout_takeAt_SUPER_int(@myself, index))
+      def take_at(index : Int32) : LayoutItem?
+        Binding.bg_QStackedLayout_takeAt_SUPER_int(@myself, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def geometry=(unnamed_arg_0 : Rect) : Void
@@ -190012,12 +190012,12 @@ module Qt
         Binding.bg_QLayout_controlTypes_SUPER_(@myself)
       end
       
-      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem
-        LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options))
+      def replace_widget(from : Widget, to : Widget, options : FindChildOptions) : LayoutItem?
+        Binding.bg_QLayout_replaceWidget_SUPER_QWidget_X_QWidget_X_Qt__FindChildOptions(@myself, from, to, options).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
-      def layout() : Layout
-        LayoutImpl.new(unwrap: Binding.bg_QLayout_layout_SUPER_(@myself))
+      def layout() : Layout?
+        Binding.bg_QLayout_layout_SUPER_(@myself).try {|ptr| LayoutImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -190233,8 +190233,8 @@ module Qt
       Binding.bg_QStackedWidget_removeWidget_QWidget_X(self, w)
     end
     
-    def current_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QStackedWidget_currentWidget_(self))
+    def current_widget() : Widget?
+      Binding.bg_QStackedWidget_currentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_index() : Int32
@@ -190245,8 +190245,8 @@ module Qt
       Binding.bg_QStackedWidget_indexOf_const_QWidget_X(self, unnamed_arg_0)
     end
     
-    def widget(unnamed_arg_0 : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QStackedWidget_widget_int(self, unnamed_arg_0))
+    def widget(unnamed_arg_0 : Int32) : Widget?
+      Binding.bg_QStackedWidget_widget_int(self, unnamed_arg_0).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -190425,8 +190425,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -190629,8 +190629,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -191044,8 +191044,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -191244,8 +191244,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -191401,8 +191401,8 @@ module Qt
       Size.new(unwrap: Binding.bg_QStyledItemDelegate_sizeHint_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, option, index))
     end
     
-    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-      Widget.new(unwrap: Binding.bg_QStyledItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index))
+    def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+      Binding.bg_QStyledItemDelegate_createEditor_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_editor_data(editor : Widget, index : ModelIndex) : Void
@@ -191417,8 +191417,8 @@ module Qt
       Binding.bg_QStyledItemDelegate_updateEditorGeometry_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(self, editor, option, index)
     end
     
-    def item_editor_factory() : ItemEditorFactory
-      ItemEditorFactory.new(unwrap: Binding.bg_QStyledItemDelegate_itemEditorFactory_(self))
+    def item_editor_factory() : ItemEditorFactory?
+      Binding.bg_QStyledItemDelegate_itemEditorFactory_(self).try {|ptr| ItemEditorFactory.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_editor_factory=(factory : ItemEditorFactory) : Void
@@ -191506,8 +191506,8 @@ module Qt
         Size.new(unwrap: Binding.bg_QStyledItemDelegate_sizeHint_SUPER_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, option, index))
       end
       
-      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget
-        Widget.new(unwrap: Binding.bg_QStyledItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index))
+      def create_editor(parent : Widget, option : StyleOptionViewItem, index : ModelIndex) : Widget?
+        Binding.bg_QStyledItemDelegate_createEditor_SUPER_QWidget_X_const_QStyleOptionViewItem_R_const_QModelIndex_R(@myself, parent, option, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       def set_editor_data(editor : Widget, index : ModelIndex) : Void
@@ -191586,8 +191586,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QStyleFactory_keys_STATIC_())
     end
     
-    def self.create(unnamed_arg_0 : String) : Style
-      StyleImpl.new(unwrap: Binding.bg_QStyleFactory_create_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)))
+    def self.create(unnamed_arg_0 : String) : Style?
+      Binding.bg_QStyleFactory_create_STATIC_const_QString_R(Qt::Converter::QString.wrap(unnamed_arg_0)).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize()
@@ -191741,8 +191741,8 @@ module Qt
     Binding.bg_QSystemTrayIcon_setContextMenu_QMenu_X(self, menu)
     end
     
-    def context_menu() : Menu
-      Menu.new(unwrap: Binding.bg_QSystemTrayIcon_contextMenu_(self))
+    def context_menu() : Menu?
+      Binding.bg_QSystemTrayIcon_contextMenu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def icon() : Icon
@@ -192168,12 +192168,12 @@ module Qt
       Binding.bg_QTableView_doItemsLayout_(self)
     end
     
-    def horizontal_header() : HeaderView
-      HeaderView.new(unwrap: Binding.bg_QTableView_horizontalHeader_(self))
+    def horizontal_header() : HeaderView?
+      Binding.bg_QTableView_horizontalHeader_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def vertical_header() : HeaderView
-      HeaderView.new(unwrap: Binding.bg_QTableView_verticalHeader_(self))
+    def vertical_header() : HeaderView?
+      Binding.bg_QTableView_verticalHeader_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
     end
     
     def horizontal_header=(header : HeaderView) : Void
@@ -192675,8 +192675,8 @@ module Qt
       Binding.bg_QAbstractItemView_keyboardSearch_const_QString_R(self, Qt::Converter::QString.wrap(search))
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -192907,8 +192907,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -193055,8 +193055,8 @@ module Qt
         Binding.bg_QAbstractItemView_keyboardSearch_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(search))
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -193283,8 +193283,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -193483,12 +193483,12 @@ module Qt
     {% end %}
     end
     
-    def clone() : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidgetItem_clone_(self))
+    def clone() : TableWidgetItem?
+      Binding.bg_QTableWidgetItem_clone_(self).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def table_widget() : TableWidget
-      TableWidget.new(unwrap: Binding.bg_QTableWidgetItem_tableWidget_(self))
+    def table_widget() : TableWidget?
+      Binding.bg_QTableWidgetItem_tableWidget_(self).try {|ptr| TableWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def row() : Int32
@@ -193642,8 +193642,8 @@ module Qt
     private class Superclass
       def initialize(@myself : TableWidgetItem)
       end
-      def clone() : TableWidgetItem
-        TableWidgetItem.new(unwrap: Binding.bg_QTableWidgetItem_clone_SUPER_(@myself))
+      def clone() : TableWidgetItem?
+        Binding.bg_QTableWidgetItem_clone_SUPER_(@myself).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def data(role : Int32) : Variant
@@ -194170,8 +194170,8 @@ module Qt
       Binding.bg_QTableWidget_column_const_QTableWidgetItem_X(self, item)
     end
     
-    def item(row : Int32, column : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_item_int_int(self, row, column))
+    def item(row : Int32, column : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_item_int_int(self, row, column).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item(row : Int32, column : Int32, item : TableWidgetItem) : Void
@@ -194179,8 +194179,8 @@ module Qt
     Binding.bg_QTableWidget_setItem_int_int_QTableWidgetItem_X(self, row, column, item)
     end
     
-    def take_item(row : Int32, column : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_takeItem_int_int(self, row, column))
+    def take_item(row : Int32, column : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_takeItem_int_int(self, row, column).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def items(data : MimeData) : Enumerable(TableWidgetItem)
@@ -194191,12 +194191,12 @@ module Qt
       ModelIndex.new(unwrap: Binding.bg_QTableWidget_indexFromItem_const_QTableWidgetItem_X(self, item))
     end
     
-    def item_from_index(index : ModelIndex) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_itemFromIndex_const_QModelIndex_R(self, index))
+    def item_from_index(index : ModelIndex) : TableWidgetItem?
+      Binding.bg_QTableWidget_itemFromIndex_const_QModelIndex_R(self, index).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def vertical_header_item(row : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_verticalHeaderItem_int(self, row))
+    def vertical_header_item(row : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_verticalHeaderItem_int(self, row).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_vertical_header_item(row : Int32, item : TableWidgetItem) : Void
@@ -194204,12 +194204,12 @@ module Qt
     Binding.bg_QTableWidget_setVerticalHeaderItem_int_QTableWidgetItem_X(self, row, item)
     end
     
-    def take_vertical_header_item(row : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_takeVerticalHeaderItem_int(self, row))
+    def take_vertical_header_item(row : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_takeVerticalHeaderItem_int(self, row).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def horizontal_header_item(column : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_horizontalHeaderItem_int(self, column))
+    def horizontal_header_item(column : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_horizontalHeaderItem_int(self, column).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_horizontal_header_item(column : Int32, item : TableWidgetItem) : Void
@@ -194217,8 +194217,8 @@ module Qt
     Binding.bg_QTableWidget_setHorizontalHeaderItem_int_QTableWidgetItem_X(self, column, item)
     end
     
-    def take_horizontal_header_item(column : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_takeHorizontalHeaderItem_int(self, column))
+    def take_horizontal_header_item(column : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_takeHorizontalHeaderItem_int(self, column).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def vertical_header_labels=(labels : Enumerable(String)) : Void
@@ -194237,8 +194237,8 @@ module Qt
       Binding.bg_QTableWidget_currentColumn_(self)
     end
     
-    def current_item() : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_currentItem_(self))
+    def current_item() : TableWidgetItem?
+      Binding.bg_QTableWidget_currentItem_(self).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_item=(item : TableWidgetItem) : Void
@@ -194285,8 +194285,8 @@ module Qt
       Binding.bg_QTableWidget_isPersistentEditorOpen_QTableWidgetItem_X(self, item)
     end
     
-    def cell_widget(row : Int32, column : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QTableWidget_cellWidget_int_int(self, row, column))
+    def cell_widget(row : Int32, column : Int32) : Widget?
+      Binding.bg_QTableWidget_cellWidget_int_int(self, row, column).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_cell_widget(row : Int32, column : Int32, widget : Widget) : Void
@@ -194322,20 +194322,20 @@ module Qt
       Binding.bg_QTableWidget_visualColumn_int(self, logical_column)
     end
     
-    def item_at(p : Point) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_itemAt_const_QPoint_R(self, p))
+    def item_at(p : Point) : TableWidgetItem?
+      Binding.bg_QTableWidget_itemAt_const_QPoint_R(self, p).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at(x : Int32, y : Int32) : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_itemAt_int_int(self, x, y))
+    def item_at(x : Int32, y : Int32) : TableWidgetItem?
+      Binding.bg_QTableWidget_itemAt_int_int(self, x, y).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def visual_item_rect(item : TableWidgetItem) : Rect
       Rect.new(unwrap: Binding.bg_QTableWidget_visualItemRect_const_QTableWidgetItem_X(self, item))
     end
     
-    def item_prototype() : TableWidgetItem
-      TableWidgetItem.new(unwrap: Binding.bg_QTableWidget_itemPrototype_(self))
+    def item_prototype() : TableWidgetItem?
+      Binding.bg_QTableWidget_itemPrototype_(self).try {|ptr| TableWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def item_prototype=(item : TableWidgetItem) : Void
@@ -194447,8 +194447,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QTableWidget_mimeTypes_(self))
     end
     
-    protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTableWidgetItem_X_, items).to_unsafe))
+    protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData?
+      Binding.bg_QTableWidget_mimeData_const_QList_QTableWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTableWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def drop_mime_data(row : Int32, column : Int32, data : MimeData, action : DropAction) : Bool
@@ -194576,8 +194576,8 @@ module Qt
       Binding.bg_QAbstractItemView_keyboardSearch_const_QString_R(self, Qt::Converter::QString.wrap(search))
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -194804,8 +194804,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -194848,8 +194848,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QTableWidget_mimeTypes_SUPER_(@myself))
       end
       
-      protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QTableWidget_mimeData_SUPER_const_QList_QTableWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QTableWidgetItem_X_, items).to_unsafe))
+      protected def mime_data(items : Enumerable(TableWidgetItem)) : MimeData?
+        Binding.bg_QTableWidget_mimeData_SUPER_const_QList_QTableWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QTableWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def drop_mime_data(row : Int32, column : Int32, data : MimeData, action : DropAction) : Bool
@@ -194968,8 +194968,8 @@ module Qt
         Binding.bg_QAbstractItemView_keyboardSearch_SUPER_const_QString_R(@myself, Qt::Converter::QString.wrap(search))
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -195192,8 +195192,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -195665,8 +195665,8 @@ module Qt
       Binding.bg_QTextEdit_wheelEvent_QWheelEvent_X(self, event)
     end
     
-    protected def create_mime_data_from_selection() : MimeData
-      MimeData.new(unwrap: Binding.bg_QTextEdit_createMimeDataFromSelection_(self))
+    protected def create_mime_data_from_selection() : MimeData?
+      Binding.bg_QTextEdit_createMimeDataFromSelection_(self).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -195777,8 +195777,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -195925,8 +195925,8 @@ module Qt
         Binding.bg_QTextEdit_wheelEvent_SUPER_QWheelEvent_X(@myself, event)
       end
       
-      protected def create_mime_data_from_selection() : MimeData
-        MimeData.new(unwrap: Binding.bg_QTextEdit_createMimeDataFromSelection_SUPER_(@myself))
+      protected def create_mime_data_from_selection() : MimeData?
+        Binding.bg_QTextEdit_createMimeDataFromSelection_SUPER_(@myself).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def can_insert_from_mime_data(source : MimeData) : Bool
@@ -196037,8 +196037,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -196405,38 +196405,38 @@ module Qt
       Binding.bg_QToolBar_clear_(self)
     end
     
-    def add_separator() : Action
-      Action.new(unwrap: Binding.bg_QToolBar_addSeparator_(self))
+    def add_separator() : Action?
+      Binding.bg_QToolBar_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_separator(before : Action) : Action
-      Action.new(unwrap: Binding.bg_QToolBar_insertSeparator_QAction_X(self, before))
+    def insert_separator(before : Action) : Action?
+      Binding.bg_QToolBar_insertSeparator_QAction_X(self, before).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def add_widget(widget : Widget) : Action
+    def add_widget(widget : Widget) : Action?
       BindgenHelper.keep_alive(widget)
-    Action.new(unwrap: Binding.bg_QToolBar_addWidget_QWidget_X(self, widget))
+    Binding.bg_QToolBar_addWidget_QWidget_X(self, widget).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def insert_widget(before : Action, widget : Widget) : Action
+    def insert_widget(before : Action, widget : Widget) : Action?
       BindgenHelper.keep_alive(widget)
-    Action.new(unwrap: Binding.bg_QToolBar_insertWidget_QAction_X_QWidget_X(self, before, widget))
+    Binding.bg_QToolBar_insertWidget_QAction_X_QWidget_X(self, before, widget).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def action_geometry(action : Action) : Rect
       Rect.new(unwrap: Binding.bg_QToolBar_actionGeometry_QAction_X(self, action))
     end
     
-    def action_at(p : Point) : Action
-      Action.new(unwrap: Binding.bg_QToolBar_actionAt_const_QPoint_R(self, p))
+    def action_at(p : Point) : Action?
+      Binding.bg_QToolBar_actionAt_const_QPoint_R(self, p).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def action_at(x : Int32, y : Int32) : Action
-      Action.new(unwrap: Binding.bg_QToolBar_actionAt_int_int(self, x, y))
+    def action_at(x : Int32, y : Int32) : Action?
+      Binding.bg_QToolBar_actionAt_int_int(self, x, y).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def toggle_view_action() : Action
-      Action.new(unwrap: Binding.bg_QToolBar_toggleViewAction_(self))
+    def toggle_view_action() : Action?
+      Binding.bg_QToolBar_toggleViewAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def icon_size() : Size
@@ -196447,8 +196447,8 @@ module Qt
       Binding.bg_QToolBar_toolButtonStyle_(self)
     end
     
-    def widget_for_action(action : Action) : Widget
-      Widget.new(unwrap: Binding.bg_QToolBar_widgetForAction_QAction_X(self, action))
+    def widget_for_action(action : Action) : Widget?
+      Binding.bg_QToolBar_widgetForAction_QAction_X(self, action).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def floatable?() : Bool
@@ -196655,8 +196655,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -196859,8 +196859,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -197291,12 +197291,12 @@ module Qt
       Binding.bg_QToolBox_currentIndex_(self)
     end
     
-    def current_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QToolBox_currentWidget_(self))
+    def current_widget() : Widget?
+      Binding.bg_QToolBox_currentWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def widget(index : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QToolBox_widget_int(self, index))
+    def widget(index : Int32) : Widget?
+      Binding.bg_QToolBox_widget_int(self, index).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index_of(widget : Widget) : Int32
@@ -197479,8 +197479,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -197691,8 +197691,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -197927,8 +197927,8 @@ module Qt
     Binding.bg_QToolButton_setMenu_QMenu_X(self, menu)
     end
     
-    def menu() : Menu
-      Menu.new(unwrap: Binding.bg_QToolButton_menu_(self))
+    def menu() : Menu?
+      Binding.bg_QToolButton_menu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def popup_mode=(mode : ToolButton::ToolButtonPopupMode) : Void
@@ -197939,8 +197939,8 @@ module Qt
       Binding.bg_QToolButton_popupMode_(self)
     end
     
-    def default_action() : Action
-      Action.new(unwrap: Binding.bg_QToolButton_defaultAction_(self))
+    def default_action() : Action?
+      Binding.bg_QToolButton_defaultAction_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def auto_raise=(enable : Bool) : Void
@@ -198133,8 +198133,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -198349,8 +198349,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -198711,8 +198711,8 @@ module Qt
       Binding.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(self, selection_model)
     end
     
-    def header() : HeaderView
-      HeaderView.new(unwrap: Binding.bg_QTreeView_header_(self))
+    def header() : HeaderView?
+      Binding.bg_QTreeView_header_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
     end
     
     def header=(header : HeaderView) : Void
@@ -199338,8 +199338,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForRow_int(self, row)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -199522,8 +199522,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -199722,8 +199722,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForRow_SUPER_int(@myself, row)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -199906,8 +199906,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -199995,8 +199995,8 @@ module Qt
       TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_sub_assign_int(self, n))
     end
     
-    def deref() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_deref_(self))
+    def deref() : TreeWidgetItem?
+      Binding.bg_QTreeWidgetItemIterator__OPERATOR_deref_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     @[Flags]
@@ -200421,12 +200421,12 @@ module Qt
     {% end %}
     end
     
-    def clone() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem_clone_(self))
+    def clone() : TreeWidgetItem?
+      Binding.bg_QTreeWidgetItem_clone_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def tree_widget() : TreeWidget
-      TreeWidget.new(unwrap: Binding.bg_QTreeWidgetItem_treeWidget_(self))
+    def tree_widget() : TreeWidget?
+      Binding.bg_QTreeWidgetItem_treeWidget_(self).try {|ptr| TreeWidget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selected=(select_ : Bool) : Void
@@ -200597,12 +200597,12 @@ module Qt
       TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem__OPERATOR_assign_const_QTreeWidgetItem_R(self, other))
     end
     
-    def parent() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem_parent_(self))
+    def parent() : TreeWidgetItem?
+      Binding.bg_QTreeWidgetItem_parent_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def child(index : Int32) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem_child_int(self, index))
+    def child(index : Int32) : TreeWidgetItem?
+      Binding.bg_QTreeWidgetItem_child_int(self, index).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def child_count() : Int32
@@ -200631,8 +200631,8 @@ module Qt
       Binding.bg_QTreeWidgetItem_removeChild_QTreeWidgetItem_X(self, child)
     end
     
-    def take_child(index : Int32) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem_takeChild_int(self, index))
+    def take_child(index : Int32) : TreeWidgetItem?
+      Binding.bg_QTreeWidgetItem_takeChild_int(self, index).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_children(children : Enumerable(TreeWidgetItem)) : Void
@@ -200681,8 +200681,8 @@ module Qt
     private class Superclass
       def initialize(@myself : TreeWidgetItem)
       end
-      def clone() : TreeWidgetItem
-        TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItem_clone_SUPER_(@myself))
+      def clone() : TreeWidgetItem?
+        Binding.bg_QTreeWidgetItem_clone_SUPER_(@myself).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
       end
       
       def data(column : Int32, role : Int32) : Variant
@@ -200970,12 +200970,12 @@ module Qt
       Binding.bg_QTreeWidget_setColumnCount_int(self, columns)
     end
     
-    def invisible_root_item() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_invisibleRootItem_(self))
+    def invisible_root_item() : TreeWidgetItem?
+      Binding.bg_QTreeWidget_invisibleRootItem_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def top_level_item(index : Int32) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_topLevelItem_int(self, index))
+    def top_level_item(index : Int32) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_topLevelItem_int(self, index).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def top_level_item_count() : Int32
@@ -200992,8 +200992,8 @@ module Qt
     Binding.bg_QTreeWidget_addTopLevelItem_QTreeWidgetItem_X(self, item)
     end
     
-    def take_top_level_item(index : Int32) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_takeTopLevelItem_int(self, index))
+    def take_top_level_item(index : Int32) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_takeTopLevelItem_int(self, index).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index_of_top_level_item(item : TreeWidgetItem) : Int32
@@ -201010,8 +201010,8 @@ module Qt
     Binding.bg_QTreeWidget_addTopLevelItems_const_QList_QTreeWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe)
     end
     
-    def header_item() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_headerItem_(self))
+    def header_item() : TreeWidgetItem?
+      Binding.bg_QTreeWidget_headerItem_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def header_item=(item : TreeWidgetItem) : Void
@@ -201027,8 +201027,8 @@ module Qt
       Binding.bg_QTreeWidget_setHeaderLabel_const_QString_R(self, Qt::Converter::QString.wrap(label))
     end
     
-    def current_item() : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_currentItem_(self))
+    def current_item() : TreeWidgetItem?
+      Binding.bg_QTreeWidget_currentItem_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_column() : Int32
@@ -201047,12 +201047,12 @@ module Qt
       Binding.bg_QTreeWidget_setCurrentItem_QTreeWidgetItem_X_int_QItemSelectionModel__SelectionFlags(self, item, column, command)
     end
     
-    def item_at(p : Point) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_itemAt_const_QPoint_R(self, p))
+    def item_at(p : Point) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_itemAt_const_QPoint_R(self, p).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_at(x : Int32, y : Int32) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_itemAt_int_int(self, x, y))
+    def item_at(x : Int32, y : Int32) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_itemAt_int_int(self, x, y).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def visual_item_rect(item : TreeWidgetItem) : Rect
@@ -201083,8 +201083,8 @@ module Qt
       Binding.bg_QTreeWidget_isPersistentEditorOpen_QTreeWidgetItem_X_int(self, item, column)
     end
     
-    def item_widget(item : TreeWidgetItem, column : Int32) : Widget
-      Widget.new(unwrap: Binding.bg_QTreeWidget_itemWidget_QTreeWidgetItem_X_int(self, item, column))
+    def item_widget(item : TreeWidgetItem, column : Int32) : Widget?
+      Binding.bg_QTreeWidget_itemWidget_QTreeWidgetItem_X_int(self, item, column).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_item_widget(item : TreeWidgetItem, column : Int32, widget : Widget) : Void
@@ -201104,20 +201104,20 @@ module Qt
       Container_QList_QTreeWidgetItem_X_.new(unwrap: Binding.bg_QTreeWidget_findItems_const_QString_R_Qt__MatchFlags_int(self, Qt::Converter::QString.wrap(text), flags, column))
     end
     
-    def item_above(item : TreeWidgetItem) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_itemAbove_const_QTreeWidgetItem_X(self, item))
+    def item_above(item : TreeWidgetItem) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_itemAbove_const_QTreeWidgetItem_X(self, item).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def item_below(item : TreeWidgetItem) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_itemBelow_const_QTreeWidgetItem_X(self, item))
+    def item_below(item : TreeWidgetItem) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_itemBelow_const_QTreeWidgetItem_X(self, item).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def index_from_item(item : TreeWidgetItem, column : Int32 = 0) : ModelIndex
       ModelIndex.new(unwrap: Binding.bg_QTreeWidget_indexFromItem_const_QTreeWidgetItem_X_int(self, item, column))
     end
     
-    def item_from_index(index : ModelIndex) : TreeWidgetItem
-      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_itemFromIndex_const_QModelIndex_R(self, index))
+    def item_from_index(index : ModelIndex) : TreeWidgetItem?
+      Binding.bg_QTreeWidget_itemFromIndex_const_QModelIndex_R(self, index).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
@@ -201196,8 +201196,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QTreeWidget_mimeTypes_(self))
     end
     
-    protected def mime_data(items : Enumerable(TreeWidgetItem)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QTreeWidget_mimeData_const_QList_QTreeWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe))
+    protected def mime_data(items : Enumerable(TreeWidgetItem)) : MimeData?
+      Binding.bg_QTreeWidget_mimeData_const_QList_QTreeWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def drop_mime_data(parent : TreeWidgetItem, index : Int32, data : MimeData, action : DropAction) : Bool
@@ -201380,8 +201380,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForRow_int(self, row)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -201556,8 +201556,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -201604,8 +201604,8 @@ module Qt
         StringList.new(unwrap: Binding.bg_QTreeWidget_mimeTypes_SUPER_(@myself))
       end
       
-      protected def mime_data(items : Enumerable(TreeWidgetItem)) : MimeData
-        MimeData.new(unwrap: Binding.bg_QTreeWidget_mimeData_SUPER_const_QList_QTreeWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe))
+      protected def mime_data(items : Enumerable(TreeWidgetItem)) : MimeData?
+        Binding.bg_QTreeWidget_mimeData_SUPER_const_QList_QTreeWidgetItem_X__R(@myself, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def drop_mime_data(parent : TreeWidgetItem, index : Int32, data : MimeData, action : DropAction) : Bool
@@ -201776,8 +201776,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForRow_SUPER_int(@myself, row)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -201952,8 +201952,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -202699,12 +202699,12 @@ module Qt
     {% end %}
     end
     
-    def stack() : UndoStack
-      UndoStack.new(unwrap: Binding.bg_QUndoView_stack_(self))
+    def stack() : UndoStack?
+      Binding.bg_QUndoView_stack_(self).try {|ptr| UndoStack.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def group() : UndoGroup
-      UndoGroup.new(unwrap: Binding.bg_QUndoView_group_(self))
+    def group() : UndoGroup?
+      Binding.bg_QUndoView_group_(self).try {|ptr| UndoGroup.new(unwrap: ptr) unless ptr.null?}
     end
     
     def empty_label=(label : String) : Void
@@ -202894,8 +202894,8 @@ module Qt
       Binding.bg_QAbstractItemView_sizeHintForColumn_int(self, column)
     end
     
-    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-      AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index))
+    def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+      Binding.bg_QAbstractItemView_itemDelegateForIndex_const_QModelIndex_R(self, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -203082,8 +203082,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -203270,8 +203270,8 @@ module Qt
         Binding.bg_QAbstractItemView_sizeHintForColumn_SUPER_int(@myself, column)
       end
       
-      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate
-        AbstractItemDelegateImpl.new(unwrap: Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index))
+      def item_delegate_for_index(index : ModelIndex) : AbstractItemDelegate?
+        Binding.bg_QAbstractItemView_itemDelegateForIndex_SUPER_const_QModelIndex_R(@myself, index).try {|ptr| AbstractItemDelegateImpl.new(unwrap: ptr) unless ptr.null?}
       end
       
       def input_method_query(unnamed_arg_0 : InputMethodQuery) : Variant
@@ -203458,8 +203458,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def child_event(event : ChildEvent) : Void
@@ -203506,8 +203506,8 @@ module Qt
       Binding.bg_QWhatsThis_hideText_STATIC_()
     end
     
-    def self.create_action(parent : Object? = nil) : Action
-      Action.new(unwrap: Binding.bg_QWhatsThis_createAction_STATIC_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null)))
+    def self.create_action(parent : Object? = nil) : Action?
+      Binding.bg_QWhatsThis_createAction_STATIC_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(unnamed_arg_0 : WhatsThis)
@@ -203609,12 +203609,12 @@ module Qt
     Binding.bg_QWidgetAction_setDefaultWidget_QWidget_X(self, w)
     end
     
-    def default_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetAction_defaultWidget_(self))
+    def default_widget() : Widget?
+      Binding.bg_QWidgetAction_defaultWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def request_widget(parent : Widget) : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetAction_requestWidget_QWidget_X(self, parent))
+    def request_widget(parent : Widget) : Widget?
+      Binding.bg_QWidgetAction_requestWidget_QWidget_X(self, parent).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def release_widget(widget : Widget) : Void
@@ -203629,8 +203629,8 @@ module Qt
       Binding.bg_QWidgetAction_eventFilter_QObject_X_QEvent_X(self, watched, event)
     end
     
-    protected def create_widget(parent : Widget) : Widget
-      Widget.new(unwrap: Binding.bg_QWidgetAction_createWidget_QWidget_X(self, parent))
+    protected def create_widget(parent : Widget) : Widget?
+      Binding.bg_QWidgetAction_createWidget_QWidget_X(self, parent).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def delete_widget(widget : Widget) : Void
@@ -203689,8 +203689,8 @@ module Qt
         Binding.bg_QWidgetAction_eventFilter_SUPER_QObject_X_QEvent_X(@myself, watched, event)
       end
       
-      protected def create_widget(parent : Widget) : Widget
-        Widget.new(unwrap: Binding.bg_QWidgetAction_createWidget_SUPER_QWidget_X(@myself, parent))
+      protected def create_widget(parent : Widget) : Widget?
+        Binding.bg_QWidgetAction_createWidget_SUPER_QWidget_X(@myself, parent).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def delete_widget(widget : Widget) : Void
@@ -204055,8 +204055,8 @@ module Qt
       Binding.bg_QWizard_removePage_int(self, id)
     end
     
-    def page(id : Int32) : WizardPage
-      WizardPage.new(unwrap: Binding.bg_QWizard_page_int(self, id))
+    def page(id : Int32) : WizardPage?
+      Binding.bg_QWizard_page_int(self, id).try {|ptr| WizardPage.new(unwrap: ptr) unless ptr.null?}
     end
     
     def has_visited_page(id : Int32) : Bool
@@ -204079,8 +204079,8 @@ module Qt
       Binding.bg_QWizard_startId_(self)
     end
     
-    def current_page() : WizardPage
-      WizardPage.new(unwrap: Binding.bg_QWizard_currentPage_(self))
+    def current_page() : WizardPage?
+      Binding.bg_QWizard_currentPage_(self).try {|ptr| WizardPage.new(unwrap: ptr) unless ptr.null?}
     end
     
     def current_id() : Int32
@@ -204144,8 +204144,8 @@ module Qt
     Binding.bg_QWizard_setButton_QWizard__WizardButton_QAbstractButton_X(self, which, button)
     end
     
-    def button(which : Wizard::Button) : AbstractButton
-      AbstractButtonImpl.new(unwrap: Binding.bg_QWizard_button_QWizard__WizardButton(self, which))
+    def button(which : Wizard::Button) : AbstractButton?
+      Binding.bg_QWizard_button_QWizard__WizardButton(self, which).try {|ptr| AbstractButtonImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def title_format=(format : TextFormatEnum) : Void
@@ -204177,8 +204177,8 @@ module Qt
     Binding.bg_QWizard_setSideWidget_QWidget_X(self, widget)
     end
     
-    def side_widget() : Widget
-      Widget.new(unwrap: Binding.bg_QWizard_sideWidget_(self))
+    def side_widget() : Widget?
+      Binding.bg_QWizard_sideWidget_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
     end
     
     def set_default_property(class_name : UInt8*, property : UInt8*, changed_signal : UInt8*) : Void
@@ -204471,8 +204471,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -204707,8 +204707,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -205027,8 +205027,8 @@ module Qt
     Binding.bg_QWizardPage_registerField_const_QString_R_QWidget_X_const_char_X_const_char_X(self, Qt::Converter::QString.wrap(name), widget, property, changed_signal)
     end
     
-    protected def wizard() : Wizard
-      Wizard.new(unwrap: Binding.bg_QWizardPage_wizard_(self))
+    protected def wizard() : Wizard?
+      Binding.bg_QWizardPage_wizard_(self).try {|ptr| Wizard.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.static_meta_object() : Binding::QMetaObject*
@@ -205179,8 +205179,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -205399,8 +205399,8 @@ module Qt
         Binding.bg_QWidget_initPainter_SUPER_QPainter_X(@myself, painter)
       end
       
-      protected def shared_painter() : Painter
-        Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_SUPER_(@myself))
+      protected def shared_painter() : Painter?
+        Binding.bg_QWidget_sharedPainter_SUPER_(@myself).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
       end
       
       protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -205715,8 +205715,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -205906,8 +205906,8 @@ module Qt
       StringList.new(unwrap: Binding.bg_QAbstractItemModel_mimeTypes_(self))
     end
     
-    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData
-      MimeData.new(unwrap: Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe))
+    def mime_data(indexes : Enumerable(ModelIndex)) : MimeData?
+      Binding.bg_QAbstractItemModel_mimeData_const_QModelIndexList_R(self, BindgenHelper.wrap_container(Container_QList_QModelIndex_, indexes).to_unsafe).try {|ptr| MimeData.new(unwrap: ptr) unless ptr.null?}
     end
     
     def can_drop_mime_data(data : MimeData, action : DropAction, row : Int32, column : Int32, parent : ModelIndex) : Bool
@@ -206382,8 +206382,8 @@ module Qt
       Binding.bg_QPaintDevice_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QPaintDevice_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QPaintDevice_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     def initialize(unwrap : Binding::QPagedPaintDevice*)
@@ -206575,8 +206575,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def input_method_event(unnamed_arg_0 : InputMethodEvent) : Void
@@ -206892,8 +206892,8 @@ module Qt
       Binding.bg_QWidget_initPainter_QPainter_X(self, painter)
     end
     
-    protected def shared_painter() : Painter
-      Painter.new(unwrap: Binding.bg_QWidget_sharedPainter_(self))
+    protected def shared_painter() : Painter?
+      Binding.bg_QWidget_sharedPainter_(self).try {|ptr| Painter.new(unwrap: ptr) unless ptr.null?}
     end
     
     protected def child_event(event : ChildEvent) : Void
@@ -206959,12 +206959,12 @@ module Qt
     Binding.bg_QLayout_addItem_QLayoutItem_X(self, unnamed_arg_0)
     end
     
-    def item_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QLayout_itemAt_int(self, index))
+    def item_at(index : Int32) : LayoutItem?
+      Binding.bg_QLayout_itemAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def take_at(index : Int32) : LayoutItem
-      LayoutItemImpl.new(unwrap: Binding.bg_QLayout_takeAt_int(self, index))
+    def take_at(index : Int32) : LayoutItem?
+      Binding.bg_QLayout_takeAt_int(self, index).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def count() : Int32
@@ -206975,9 +206975,9 @@ module Qt
       Size.new(unwrap: Binding.bg_QLayout_sizeHint_(self))
     end
     
-    def replace_widget(from : Widget, to : Widget) : LayoutItem
+    def replace_widget(from : Widget, to : Widget) : LayoutItem?
       BindgenHelper.keep_alive(to)
-    LayoutItemImpl.new(unwrap: Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to))
+    Binding.bg_QLayout_replaceWidget_QWidget_X_QWidget_X(self, from, to).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def event(event : Event) : Bool
@@ -207234,8 +207234,8 @@ module Qt
       Binding.bg_QGraphicsLayout_count_(self)
     end
     
-    def item_at(i : Int32) : GraphicsLayoutItem
-      GraphicsLayoutItemImpl.new(unwrap: Binding.bg_QGraphicsLayout_itemAt_int(self, i))
+    def item_at(i : Int32) : GraphicsLayoutItem?
+      Binding.bg_QGraphicsLayout_itemAt_int(self, i).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
     def remove_at(index : Int32) : Void

@@ -71,15 +71,15 @@ describe "input events" do
 
     child = Qt::Object.new
     child_event = Qt::ChildEvent.new(Qt::Event::Type::ChildAdded, child)
-    child_event.child.to_unsafe.should eq(child.to_unsafe)
+    child_event.child.not_nil!.to_unsafe.should eq(child.to_unsafe)
     child_event.added.should be_true
     Qt::WindowStateChangeEvent.new(Qt::WindowStates::WindowMinimized).old_state.should eq(Qt::WindowStates::WindowMinimized)
     window = Qt::Window.new
-    Qt::ChildWindowEvent.new(Qt::Event::Type::ChildWindowAdded, window).child.to_unsafe.should eq(window.to_unsafe)
+    Qt::ChildWindowEvent.new(Qt::Event::Type::ChildWindowAdded, window).child.not_nil!.to_unsafe.should eq(window.to_unsafe)
   end
 
   it "come from input devices" do
-    device = Qt::PointingDevice.primary_pointing_device
+    device = Qt::PointingDevice.primary_pointing_device.not_nil!
     device.pointer_type.should eq(Qt::PointingDevice::PointerType::Generic)
     device.type.should eq(Qt::InputDevice::DeviceType::Mouse)
     device.name.should_not be_empty
@@ -96,7 +96,7 @@ describe "input events" do
     Qt::KeyCombination.from_combined(combination.to_combined).should eq(combination)
     Qt::KeySequence.new(combination.to_combined).to_string.should_not be_empty
 
-    input_method = Qt::GuiApplication.input_method
+    input_method = Qt::GuiApplication.input_method.not_nil!
     input_method.visible?.should be_false
     input_method.keyboard_rectangle.should be_a(Qt::RectF)
     input_method.locale.should be_a(Qt::Locale)
@@ -164,7 +164,7 @@ describe Qt::SignalMapper do
     mapper = Qt::SignalMapper.new
     button = Qt::PushButton.new("one")
     mapper.set_mapping(button, "first")
-    mapper.mapping("first").to_unsafe.should eq(button.to_unsafe)
+    mapper.mapping("first").not_nil!.to_unsafe.should eq(button.to_unsafe)
     button.on_clicked { mapper.map(button) }
     received = [] of String
     mapper.on_mapped_string { |text| received << text }
@@ -389,7 +389,7 @@ describe Qt::BitArray do
     category.debug_enabled?.should be_true
     category.set_enabled(Qt::MsgType::QtDebugMsg, false)
     category.is_enabled(Qt::MsgType::QtDebugMsg).should be_false
-    Qt::LoggingCategory.default_category.category_name.null?.should be_false
+    Qt::LoggingCategory.default_category.not_nil!.category_name.null?.should be_false
 
     mac = Qt::MessageAuthenticationCode.hash("message".to_slice, "key".to_slice, Qt::CryptographicHash::Algorithm::Sha256)
     mac.hexstring.should eq(OpenSSL::HMAC.hexdigest(:sha256, "key", "message"))

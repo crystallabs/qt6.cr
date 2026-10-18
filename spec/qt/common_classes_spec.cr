@@ -89,7 +89,7 @@ describe "container widgets" do
     tree = Qt::TreeView.new
     tree.model = model
     tree.show
-    tree.model.row_count.should eq(2)
+    tree.model.not_nil!.row_count.should eq(2)
     tree.current_index = model.index(1, 0)
     tree.current_index.row.should eq(1)
   end
@@ -133,7 +133,7 @@ end
 
 describe Qt::Clipboard do
   it "holds text" do
-    clipboard = Qt::Application.clipboard
+    clipboard = Qt::Application.clipboard.not_nil!
     clipboard.set_text("copied")
     clipboard.text.should eq("copied")
     clipboard.clear

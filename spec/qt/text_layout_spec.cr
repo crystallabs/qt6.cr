@@ -138,7 +138,7 @@ describe Qt::TextDocument do
     format = Qt::TextTableFormat.new
     format.cell_padding = 2.0
     format.border = 1.0
-    table = cursor.insert_table(2, 3, format)
+    table = cursor.insert_table(2, 3, format).not_nil!
     table.rows.should eq(2)
     table.columns.should eq(3)
     table.format.cell_padding.should eq(2.0)
@@ -153,11 +153,11 @@ describe Qt::TextDocument do
     table.rows.should eq(3)
     table.merge_cells(0, 0, 1, 2)
     table.cell_at(0, 1).column_span.should eq(2)
-    cursor.current_table.to_unsafe.should eq(table.to_unsafe)
-    cursor.current_frame.to_unsafe.should eq(table.to_unsafe)
+    cursor.current_table.not_nil!.to_unsafe.should eq(table.to_unsafe)
+    cursor.current_frame.not_nil!.to_unsafe.should eq(table.to_unsafe)
     table.first_position.should be > 0
     table.last_position.should be > table.first_position
-    table.parent_frame.to_unsafe.should eq(document.root_frame.to_unsafe)
+    table.parent_frame.not_nil!.to_unsafe.should eq(document.root_frame.not_nil!.to_unsafe)
     cell_format = Qt::TextTableCellFormat.new
     cell_format.left_padding = 3.0
     cell_format.padding = 4.0
@@ -167,18 +167,18 @@ describe Qt::TextDocument do
 
     cursor.move_position(Qt::TextCursor::MoveOperation::End)
     cursor.insert_block
-    list = cursor.insert_list(Qt::TextListFormat::Style::ListDecimal)
+    list = cursor.insert_list(Qt::TextListFormat::Style::ListDecimal).not_nil!
     cursor.insert_text("one")
     cursor.insert_block
     cursor.insert_text("two")
     list.count.should eq(2)
-    list.item(1).text.should eq("two")
+    list.item(1).not_nil!.text.should eq("two")
     list.item_text(list.item(1)).should eq("2.")
     list.item_number(cursor.block).should eq(1)
     list.format.style.should eq(Qt::TextListFormat::Style::ListDecimal)
-    cursor.current_list.to_unsafe.should eq(list.to_unsafe)
-    cursor.block.text_list.to_unsafe.should eq(list.to_unsafe)
-    list.document.to_unsafe.should eq(document.to_unsafe)
+    cursor.current_list.not_nil!.to_unsafe.should eq(list.to_unsafe)
+    cursor.block.text_list.not_nil!.to_unsafe.should eq(list.to_unsafe)
+    list.document.not_nil!.to_unsafe.should eq(document.to_unsafe)
     list.remove_item(0)
     list.count.should eq(1)
 
@@ -196,11 +196,11 @@ describe Qt::TextDocument do
     cursor.insert_block
     frame_format = Qt::TextFrameFormat.new
     frame_format.border = 2.0
-    frame = cursor.insert_frame(frame_format)
+    frame = cursor.insert_frame(frame_format).not_nil!
     cursor.insert_text("inside")
     frame.frame_format.border.should eq(2.0)
-    frame.parent_frame.to_unsafe.should eq(document.root_frame.to_unsafe)
-    document.root_frame.child_frames.to_a.size.should eq(1)
+    frame.parent_frame.not_nil!.to_unsafe.should eq(document.root_frame.not_nil!.to_unsafe)
+    document.root_frame.not_nil!.child_frames.to_a.size.should eq(1)
 
     block = document.first_block
     fragments = block.begin.to_a
@@ -213,7 +213,7 @@ describe Qt::TextDocument do
     block.text_formats.to_a.size.should eq(2)
     block.text_formats.to_a[1].start.should eq(6)
 
-    items = document.root_frame.begin.to_a
+    items = document.root_frame.not_nil!.begin.to_a
     items.size.should be >= 3 # The blocks around the frame, and the frame
     items.first.should be_a(Qt::TextBlock)
     items.first.as(Qt::TextBlock).text.should eq("plain bold")
@@ -227,7 +227,7 @@ describe Qt::TextDocument do
     iterator.succ!
     iterator.at_end.should be_true
 
-    document.document_layout.document_size.width.should be > 0
+    document.document_layout.not_nil!.document_size.width.should be > 0
     context = Qt::TextDocumentLayoutPaintContext.new
     context.cursor_position.should eq(-1)
     context.clip = Qt::RectF.new(0.0, 0.0, 10.0, 10.0)

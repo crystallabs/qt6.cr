@@ -14,6 +14,10 @@ module: Qt
 # Drop the API Qt deprecated after 6.8, overload by overload.  The API
 # deprecated up to 6.8 is hidden by QT_DISABLE_DEPRECATED_BEFORE below.
 ignore_deprecated: true
+# A method returning a pointer to a wrapped class returns nil for a null
+# pointer, so its result is `T?`: Widget#parent_widget, ListWidget#item.  See
+# "Null pointers" in the README.
+nilable_results: true
 if_os_is_darwin:
   library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp"
 else:

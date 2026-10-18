@@ -10,7 +10,7 @@ end
 
 describe Qt::Style do
   it "answers pixel metrics and hints" do
-    style = Qt::Application.style
+    style = Qt::Application.style.not_nil!
     style.name.should_not be_empty
     style.pixel_metric(Qt::Style::PixelMetric::ButtonMargin).should be > 0
     style.pixel_metric(Qt::Style::PixelMetric::DefaultFrameWidth, nil, nil).should be >= 0
@@ -34,9 +34,9 @@ describe Qt::Style do
     option.rect.width.should eq(button.width)
     option.type.should eq(Qt::StyleOption::OptionType::Button.to_i)
     option.state.includes?(Qt::Style::State::Enabled).should be_true
-    size = Qt::Application.style.size_from_contents(Qt::Style::ContentsType::PushButton, option, Qt::Size.new(10, 10), button)
+    size = Qt::Application.style.not_nil!.size_from_contents(Qt::Style::ContentsType::PushButton, option, Qt::Size.new(10, 10), button)
     size.width.should be >= 10
-    Qt::Application.style.sub_element_rect(Qt::Style::SubElement::PushButtonContents, option, button).width.should be > 0
+    Qt::Application.style.not_nil!.sub_element_rect(Qt::Style::SubElement::PushButtonContents, option, button).width.should be > 0
     hint = Qt::StyleHintReturn.new
     hint.type.should eq(Qt::StyleHintReturn::HintReturnType::Default.to_i)
     complex = Qt::StyleOptionSlider.new
@@ -49,25 +49,25 @@ describe Qt::Style do
   end
 
   it "is overridden from Crystal" do
-    base = Qt::Application.style
+    base = Qt::Application.style.not_nil!
     style = WideStyle.new
-    style.base_style.name.should eq(base.name) # A new instance of the application's style
+    style.base_style.not_nil!.name.should eq(base.name) # A new instance of the application's style
     margin = base.pixel_metric(Qt::Style::PixelMetric::ButtonMargin)
     style.pixel_metric(Qt::Style::PixelMetric::ButtonMargin).should eq(margin * 2)
     style.pixel_metric(Qt::Style::PixelMetric::DefaultFrameWidth).should eq(base.pixel_metric(Qt::Style::PixelMetric::DefaultFrameWidth))
     button = Qt::PushButton.new("styled")
     button.style = style
-    button.style.pixel_metric(Qt::Style::PixelMetric::ButtonMargin).should eq(margin * 2)
-    button.style.to_unsafe.should eq(style.to_unsafe)
+    button.style.not_nil!.pixel_metric(Qt::Style::PixelMetric::ButtonMargin).should eq(margin * 2)
+    button.style.not_nil!.to_unsafe.should eq(style.to_unsafe)
   end
 
   it "comes from a factory" do
     keys = Qt::StyleFactory.keys.to_a
     keys.should contain("Fusion")
-    fusion = Qt::StyleFactory.create("Fusion")
+    fusion = Qt::StyleFactory.create("Fusion").not_nil!
     fusion.name.downcase.should eq("fusion")
-    Qt::StyleFactory.create("no such style").to_unsafe.null?.should be_true
-    hints = Qt::Application.style_hints
+    Qt::StyleFactory.create("no such style").should be_nil
+    hints = Qt::Application.style_hints.not_nil!
     hints.cursor_flash_time.should be >= 0
     hints.tab_focus_behavior.should be_a(Qt::TabFocusBehavior)
     hints.password_mask_character.should be_a(Char)
@@ -92,7 +92,7 @@ describe Qt::Validator do
 
     edit = Qt::LineEdit.new
     edit.validator = validator
-    edit.validator.to_unsafe.should eq(validator.to_unsafe)
+    edit.validator.not_nil!.to_unsafe.should eq(validator.to_unsafe)
     edit.text = "7"
     edit.has_acceptable_input?.should be_false
     edit.text = "4"
@@ -123,10 +123,10 @@ describe Qt::GraphicsProxyWidget do
   it "embeds a widget in a scene" do
     scene = Qt::GraphicsScene.new
     label = Qt::Label.new("embedded")
-    proxy = scene.add_widget(label)
+    proxy = scene.add_widget(label).not_nil!
     proxy.should be_a(Qt::GraphicsProxyWidget)
-    proxy.widget.to_unsafe.should eq(label.to_unsafe)
-    Qt::Label.new(unwrap: proxy.widget.to_unsafe.as(Qt::Binding::QLabel*)).text.should eq("embedded")
+    proxy.widget.not_nil!.to_unsafe.should eq(label.to_unsafe)
+    Qt::Label.new(unwrap: proxy.widget.not_nil!.to_unsafe.as(Qt::Binding::QLabel*)).text.should eq("embedded")
     scene.items.size.should eq(1)
     proxy.set_pos(10.0, 20.0)
     proxy.pos.x.should eq(10.0)
@@ -137,7 +137,7 @@ describe Qt::GraphicsProxyWidget do
     effect.set_offset(2.0, 3.0)
     effect.color = Qt::Color.new(0, 0, 0, 128)
     proxy.graphics_effect = effect
-    proxy.graphics_effect.to_unsafe.should eq(effect.to_unsafe)
+    proxy.graphics_effect.not_nil!.to_unsafe.should eq(effect.to_unsafe)
     effect.blur_radius.should eq(4.0)
     effect.offset.should eq(Qt::PointF.new(2.0, 3.0))
     effect.x_offset.should eq(2.0)
@@ -155,7 +155,7 @@ describe Qt::GraphicsProxyWidget do
     colorize.strength.should eq(0.25)
     widget = Qt::Widget.new
     widget.graphics_effect = opacity
-    widget.graphics_effect.to_unsafe.should eq(opacity.to_unsafe)
+    widget.graphics_effect.not_nil!.to_unsafe.should eq(opacity.to_unsafe)
   end
 end
 
@@ -173,17 +173,17 @@ describe Qt::GraphicsLinearLayout do
     layout.add_item(second.as_graphics_layout_item)
     layout.count.should eq(2)
     layout.orientation.should eq(Qt::Orientation::Vertical)
-    layout.item_at(1).to_unsafe.should eq(second.as_graphics_layout_item.to_unsafe)
+    layout.item_at(1).not_nil!.to_unsafe.should eq(second.as_graphics_layout_item.to_unsafe)
     layout.set_stretch_factor(second.as_graphics_layout_item, 2)
     layout.stretch_factor(second.as_graphics_layout_item).should eq(2)
     layout.spacing = 5.0
     layout.spacing.should eq(5.0)
     form.layout = layout
-    form.layout.to_unsafe.should eq(layout.to_unsafe)
+    form.layout.not_nil!.to_unsafe.should eq(layout.to_unsafe)
     form.resize(100.0, 100.0)
     first.geometry.width.should be > 50.0 # Less the contents margins
     first.geometry.y.should be < second.geometry.y
-    first.parent_layout_item.to_unsafe.should eq(layout.to_unsafe)
+    first.parent_layout_item.not_nil!.to_unsafe.should eq(layout.to_unsafe)
     first.size_policy.horizontal_policy.should eq(Qt::SizePolicy::Policy::Preferred)
 
     grid = Qt::GraphicsGridLayout.new
@@ -196,7 +196,7 @@ describe Qt::GraphicsLinearLayout do
     anchors = Qt::GraphicsAnchorLayout.new
     a = Qt::GraphicsWidget.new.as_graphics_layout_item
     b = Qt::GraphicsWidget.new.as_graphics_layout_item
-    anchor = anchors.add_anchor(a, Qt::AnchorPoint::AnchorRight, b, Qt::AnchorPoint::AnchorLeft)
+    anchor = anchors.add_anchor(a, Qt::AnchorPoint::AnchorRight, b, Qt::AnchorPoint::AnchorLeft).not_nil!
     anchor.spacing = 7.0
     anchor.spacing.should eq(7.0)
     anchors.count.should eq(2)
@@ -209,7 +209,7 @@ describe Qt::GraphicsLinearLayout do
     line.set_line(0.0, 0.0, 3.0, 4.0)
     line.line.length.should eq(5.0)
     rect = Qt::GraphicsRectItem.new(Qt::RectF.new(0.0, 0.0, 5.0, 5.0))
-    group = scene.create_item_group([line.as(Qt::GraphicsItem), rect.as(Qt::GraphicsItem)])
+    group = scene.create_item_group([line.as(Qt::GraphicsItem), rect.as(Qt::GraphicsItem)]).not_nil!
     group.should be_a(Qt::GraphicsItemGroup)
     group.child_items.size.should eq(2)
     group.remove_from_group(rect)
@@ -264,13 +264,14 @@ end
 describe Qt::Scroller do
   it "scrolls a widget" do
     area = Qt::ScrollArea.new
-    Qt::Scroller.has_scroller(area.viewport).should be_false
-    gesture = Qt::Scroller.grab_gesture(area.viewport, Qt::Scroller::ScrollerGestureType::LeftMouseButtonGesture)
+    viewport = area.viewport.not_nil!
+    Qt::Scroller.has_scroller(viewport).should be_false
+    gesture = Qt::Scroller.grab_gesture(viewport, Qt::Scroller::ScrollerGestureType::LeftMouseButtonGesture)
     gesture.to_i.should be >= Qt::GestureType::CustomGesture.to_i # A registered custom gesture
-    Qt::Scroller.grabbed_gesture(area.viewport).should eq(gesture)
-    scroller = Qt::Scroller.scroller(area.viewport)
-    Qt::Scroller.has_scroller(area.viewport).should be_true
-    scroller.target.to_unsafe.should eq(area.viewport.to_unsafe)
+    Qt::Scroller.grabbed_gesture(viewport).should eq(gesture)
+    scroller = Qt::Scroller.scroller(viewport).not_nil!
+    Qt::Scroller.has_scroller(viewport).should be_true
+    scroller.target.not_nil!.to_unsafe.should eq(viewport.to_unsafe)
     scroller.state.should eq(Qt::Scroller::State::Inactive)
     properties = scroller.scroller_properties
     properties.scroll_metric(Qt::ScrollerProperties::ScrollMetric::FrameRate).is_nil?.should be_false # A QVariant of the FrameRates enum, unknown to Qt::Variant
@@ -278,6 +279,6 @@ describe Qt::Scroller do
     properties.scroll_metric(Qt::ScrollerProperties::ScrollMetric::DecelerationFactor).to(Float64).should eq(0.5)
     scroller.scroller_properties = properties
     scroller.scroller_properties.scroll_metric(Qt::ScrollerProperties::ScrollMetric::DecelerationFactor).to(Float64).should eq(0.5)
-    Qt::Scroller.ungrab_gesture(area.viewport)
+    Qt::Scroller.ungrab_gesture(viewport)
   end
 end

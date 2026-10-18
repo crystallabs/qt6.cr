@@ -98,12 +98,12 @@ describe Qt::Wizard do
     wizard.add_page(first).should eq(0)
     wizard.set_page(7, last)
     wizard.page_ids.to_a.should eq([0, 7])
-    wizard.page(7).title.should eq("Last")
+    wizard.page(7).not_nil!.title.should eq("Last")
     wizard.start_id.should eq(0)
     wizard.current_id.should eq(-1) # Not shown yet
     wizard.restart
     wizard.current_id.should eq(0)
-    wizard.current_page.to_unsafe.should eq(first.to_unsafe)
+    wizard.current_page.not_nil!.to_unsafe.should eq(first.to_unsafe)
     wizard.next_id.should eq(7)     # From the Crystal override
     first.complete?.should be_false # The mandatory field is empty
     first.edit.text = "Someone"
@@ -132,10 +132,10 @@ describe Qt::DialogButtonBox do
     box = Qt::DialogButtonBox.new(Qt::DialogButtonBox::StandardButtons::Ok | Qt::DialogButtonBox::StandardButtons::Cancel)
     box.standard_buttons.should eq(Qt::DialogButtonBox::StandardButtons::Ok | Qt::DialogButtonBox::StandardButtons::Cancel)
     box.buttons.size.should eq(2)
-    ok = box.button(Qt::DialogButtonBox::StandardButton::Ok)
+    ok = box.button(Qt::DialogButtonBox::StandardButton::Ok).not_nil!
     box.standard_button(ok).should eq(Qt::DialogButtonBox::StandardButton::Ok)
     box.button_role(ok).should eq(Qt::DialogButtonBox::ButtonRole::AcceptRole)
-    custom = box.add_button("Maybe", Qt::DialogButtonBox::ButtonRole::ActionRole)
+    custom = box.add_button("Maybe", Qt::DialogButtonBox::ButtonRole::ActionRole).not_nil!
     custom.text.should eq("Maybe")
     box.buttons.size.should eq(3)
     accepted = 0
@@ -155,7 +155,7 @@ end
 describe Qt::MdiArea do
   it "holds sub windows" do
     area = Qt::MdiArea.new
-    first = area.add_sub_window(Qt::Label.new("one"))
+    first = area.add_sub_window(Qt::Label.new("one")).not_nil!
     second = Qt::MdiSubWindow.new
     second.widget = Qt::Label.new("two")
     second.window_title = "second"
@@ -163,7 +163,7 @@ describe Qt::MdiArea do
     area.sub_window_list.size.should eq(2)
     area.sub_window_list.map(&.window_title).to_a.should eq(["", "second"])
     first.widget.should be_a(Qt::Widget)
-    second.widget.to_unsafe.null?.should be_false
+    second.widget.should_not be_nil
     area.active_sub_window = second
     area.view_mode = Qt::MdiArea::ViewMode::TabbedView
     area.view_mode.should eq(Qt::MdiArea::ViewMode::TabbedView)
@@ -189,7 +189,7 @@ describe Qt::ToolBox do
     box.current_index = 1
     box.current_index.should eq(1)
     changes.should eq([1])
-    box.index_of(box.current_widget).should eq(1)
+    box.index_of(box.current_widget.not_nil!).should eq(1)
     box.remove_item(0)
     box.count.should eq(1)
   end
@@ -216,8 +216,8 @@ describe Qt::Splitter do
     splitter.sizes = [100, 200]
     splitter.sizes.to_a.sum.should be > 0
     splitter.handle(1).should be_a(Qt::SplitterHandle)
-    splitter.handle(1).orientation.should eq(Qt::Orientation::Horizontal)
-    splitter.handle(1).splitter.to_unsafe.should eq(splitter.to_unsafe)
+    splitter.handle(1).not_nil!.orientation.should eq(Qt::Orientation::Horizontal)
+    splitter.handle(1).not_nil!.splitter.not_nil!.to_unsafe.should eq(splitter.to_unsafe)
     splitter.children_collapsible = false
     splitter.children_collapsible.should be_false
   end
@@ -227,7 +227,7 @@ describe Qt::SizeGrip do
   it "is a widget" do
     parent = Qt::Widget.new
     grip = Qt::SizeGrip.new(parent)
-    grip.parent_widget.to_unsafe.should eq(parent.to_unsafe)
+    grip.parent_widget.not_nil!.to_unsafe.should eq(parent.to_unsafe)
     grip.size_hint.width.should be > 0
   end
 end
@@ -247,7 +247,7 @@ describe Qt::FocusFrame do
     edit = Qt::LineEdit.new(parent) # Only a widget in a window is framed
     frame = Qt::FocusFrame.new
     frame.widget = edit
-    frame.widget.to_unsafe.should eq(edit.to_unsafe)
+    frame.widget.not_nil!.to_unsafe.should eq(edit.to_unsafe)
   end
 end
 
@@ -349,7 +349,7 @@ end
 describe Qt::ActionGroup do
   it "makes actions exclusive" do
     group = Qt::ActionGroup.new(Qt::Widget.new)
-    one = group.add_action("one")
+    one = group.add_action("one").not_nil!
     two = Qt::Action.new("two")
     group.add_action(two)
     one.checkable = true
@@ -363,7 +363,7 @@ describe Qt::ActionGroup do
     two.trigger
     two.checked?.should be_true
     one.checked?.should be_false
-    group.checked_action.text.should eq("two")
+    group.checked_action.not_nil!.text.should eq("two")
     triggered.should eq(["one", "two"])
     group.exclusion_policy = Qt::ActionGroup::ExclusionPolicy::None
     group.exclusive?.should be_false
@@ -377,7 +377,7 @@ describe Qt::WidgetAction do
     action = Qt::WidgetAction.new(Qt::Widget.new)
     label = Qt::Label.new("inside")
     action.default_widget = label
-    action.default_widget.to_unsafe.should eq(label.to_unsafe)
+    action.default_widget.not_nil!.to_unsafe.should eq(label.to_unsafe)
     menu = Qt::Menu.new
     menu.add_action(action)
     menu.actions.size.should eq(1)
@@ -390,6 +390,6 @@ describe Qt::ToolTip do
     Qt::ToolTip.font.should be_a(Qt::Font)
     Qt::ToolTip.text.should eq("")
     Qt::WhatsThis.in_whats_this_mode.should be_false
-    Qt::WhatsThis.create_action.text.should eq("What's This?")
+    Qt::WhatsThis.create_action.not_nil!.text.should eq("What's This?")
   end
 end
