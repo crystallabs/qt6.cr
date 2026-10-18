@@ -502,10 +502,7 @@ classes:
   QThreadPool: ThreadPool
   QRunnable: Runnable
   QBasicMutex: BasicMutex
-  # Not Mutex: bindgen's keep-alive glue (lib/bindgen/assets/glue.cr) names
-  # Crystal's `Mutex` unqualified inside the module, which Qt::Mutex would
-  # shadow.
-  QMutex: QMutex
+  QMutex: Mutex
   QRecursiveMutex: RecursiveMutex
   QSemaphore: Semaphore
   QSemaphoreReleaser: SemaphoreReleaser
@@ -521,7 +518,6 @@ classes:
   QAbstractFileIconProvider: AbstractFileIconProvider
   QFileIconProvider: FileIconProvider
   QItemEditorCreatorBase: ItemEditorCreatorBase
-  Qt6crItemEditorCreator: ItemEditorCreator # Concrete, see ext/item_editor_helper.hpp
   QStyleHintReturnMask: StyleHintReturnMask
   QStyleHintReturnVariant: StyleHintReturnVariant
   QStyleOptionHeaderV2: StyleOptionHeaderV2

@@ -44,9 +44,9 @@ describe Qt::ThreadPool do
   end
 end
 
-describe Qt::QMutex do
+describe Qt::Mutex do
   it "locks" do
-    mutex = Qt::QMutex.new
+    mutex = Qt::Mutex.new
     mutex.try_lock.should be_true
     mutex.try_lock(10).should be_false
     mutex.unlock
@@ -83,7 +83,7 @@ describe Qt::Semaphore do
     releaser.cancel.not_nil!.to_unsafe.should eq(semaphore.to_unsafe)
 
     condition = Qt::WaitCondition.new
-    mutex = Qt::QMutex.new
+    mutex = Qt::Mutex.new
     mutex.lock
     condition.wait(mutex, Qt::DeadlineTimer.new(1_i64)).should be_false
     mutex.unlock

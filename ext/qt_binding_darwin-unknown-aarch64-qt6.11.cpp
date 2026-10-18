@@ -8,7 +8,6 @@
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 #include <meta_helper.hpp>
-#include <item_editor_helper.hpp>
 
 typedef BindgenMapEntries<QHash<int, QByteArray>> Container_QHash_int__QByteArray__Entries;
 typedef QHash<int, QByteArray> Container_QHash_int__QByteArray_;
@@ -7540,6 +7539,10 @@ extern "C" const bool bg_QBasicMutex_FutexAlwaysAvailable_STATIC_GETTER_() {
 
 extern "C" QMutex * bg_QMutex__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QMutex>();
+}
+
+extern "C" bool bg_QMutex_try_lock_(QMutex * _self_) {
+  return _self_->try_lock();
 }
 
 extern "C" bool bg_QMutex_tryLock_int(QMutex * _self_, int timeout) {
@@ -117171,10 +117174,6 @@ extern "C" QItemEditorCreatorBase * bg_QItemEditorCreatorBase__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<BgInherit_QItemEditorCreatorBase>();
 }
 
-extern "C" Qt6crItemEditorCreator * bg_QItemEditorCreatorBase_CAST_ItemEditorCreator_(QItemEditorCreatorBase * _self_) {
-  return bindgen_dynamic_cast<Qt6crItemEditorCreator *>(_self_);
-}
-
 extern "C" void bg_BgInherit_QItemEditorCreatorBase_JUMPTABLE_BgJumptable_QItemEditorCreatorBase_R(BgInherit_QItemEditorCreatorBase * _self_, const BgJumptable_QItemEditorCreatorBase & table) {
   _self_->bgJump = (table);
 }
@@ -152207,65 +152206,6 @@ extern "C" int bg_QWizardPage_nextId_SUPER_(QWizardPage * _self_) {
 }
 
 extern "C" void bg_BgInherit_QWizardPage_JUMPTABLE_BgJumptable_QWizardPage_R(BgInherit_QWizardPage * _self_, const BgJumptable_QWizardPage & table) {
-  _self_->bgJump = (table);
-}
-
-struct BgJumptable_Qt6crItemEditorCreator {
-  CrystalProc<QWidget *, QWidget *> bg_Qt6crItemEditorCreator_createWidget_QWidget_X;
-  CrystalProc<CrystalString *> bg_Qt6crItemEditorCreator_valuePropertyName_;
-};
-struct BgInherit_Qt6crItemEditorCreator : public Qt6crItemEditorCreator {
-  using Qt6crItemEditorCreator::Qt6crItemEditorCreator;
-  BgInherit_Qt6crItemEditorCreator(const Qt6crItemEditorCreator &other) : Qt6crItemEditorCreator(other) { }
-  BgJumptable_Qt6crItemEditorCreator bgJump;
-  QWidget * createWidget(QWidget * parent) const override {
-    const BgInherit_Qt6crItemEditorCreator *_self_ = this;
-    if (_self_->bgJump.bg_Qt6crItemEditorCreator_createWidget_QWidget_X.isValid()) {
-      return _self_->bgJump.bg_Qt6crItemEditorCreator_createWidget_QWidget_X(parent);
-    } else {
-      return Qt6crItemEditorCreator::createWidget(parent);
-    }
-  }
-  
-  QByteArray valuePropertyName() const override {
-    const BgInherit_Qt6crItemEditorCreator *_self_ = this;
-    if (_self_->bgJump.bg_Qt6crItemEditorCreator_valuePropertyName_.isValid()) {
-      return ([&]() { auto &&bg_value = (*_self_->bgJump.bg_Qt6crItemEditorCreator_valuePropertyName_()); return QByteArray(bg_value.ptr, bg_value.size); }());
-    } else {
-      return Qt6crItemEditorCreator::valuePropertyName();
-    }
-  }
-  
-};
-extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__CONSTRUCT_() {
-  return new (UseGC) CrystalGCWrapper<BgInherit_Qt6crItemEditorCreator>();
-}
-
-extern "C" QWidget * bg_Qt6crItemEditorCreator_createWidget_QWidget_X(Qt6crItemEditorCreator * _self_, QWidget * parent) {
-  return _self_->createWidget(parent);
-}
-
-extern "C" CrystalString bg_Qt6crItemEditorCreator_valuePropertyName_(Qt6crItemEditorCreator * _self_) {
-  return qbytearray_to_crystal(_self_->valuePropertyName());
-}
-
-extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__COPY_const_Qt6crItemEditorCreator_R(const Qt6crItemEditorCreator & unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_Qt6crItemEditorCreator>(unnamed_arg_0);
-}
-
-extern "C" Qt6crItemEditorCreator * bg_Qt6crItemEditorCreator__OPERATOR_assign_const_Qt6crItemEditorCreator_R(Qt6crItemEditorCreator * _self_, const Qt6crItemEditorCreator & unnamed_arg_0) {
-  return &(((*_self_) = (unnamed_arg_0)));
-}
-
-extern "C" QWidget * bg_Qt6crItemEditorCreator_createWidget_SUPER_QWidget_X(Qt6crItemEditorCreator * _self_, QWidget * parent) {
-  return _self_->Qt6crItemEditorCreator::createWidget(parent);
-}
-
-extern "C" CrystalString bg_Qt6crItemEditorCreator_valuePropertyName_SUPER_(Qt6crItemEditorCreator * _self_) {
-  return qbytearray_to_crystal(_self_->Qt6crItemEditorCreator::valuePropertyName());
-}
-
-extern "C" void bg_BgInherit_Qt6crItemEditorCreator_JUMPTABLE_BgJumptable_Qt6crItemEditorCreator_R(BgInherit_Qt6crItemEditorCreator * _self_, const BgJumptable_Qt6crItemEditorCreator & table) {
   _self_->bgJump = (table);
 }
 
