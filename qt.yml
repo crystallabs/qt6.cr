@@ -1,19 +1,19 @@
-# This is the binding configuration for Qt5.
-# Targeted version: Qt 5.9.1
+# This is the binding configuration for Qt6.
+# Targeted version: Qt 6.4 and later
 # Main Page: https://www.qt.io/
-# C++ Documentation: https://doc.qt.io/qt-5/index.html
+# C++ Documentation: https://doc.qt.io/qt-6/index.html
 #
 # Please take note of Qts own license at:
-#   https://doc.qt.io/qt-5/licensing.html
+#   https://doc.qt.io/qt-6/licensing.html
 # Also see the license of THE BINDINGS in the LICENSE file.
 #
 # These bindings will, as configured, bind to Qt dynamically.
 
 module: Qt
 if_os_is_darwin:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt5Widgets` -lgccpp"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp"
 else:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt5Core -lQt5Gui -lQt5Widgets -lgccpp"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt6Core -lQt6Gui -lQt6Widgets -lgccpp"
 
 <<: config/processors_and_generators.yml
 <<: config/find_paths.yml
@@ -31,8 +31,12 @@ parser: # Clang parser configuration
       - "c++"
       - "-std=c++17"
       - "-fPIC"
-      # Hide the APIs Qt deprecated up to 5.15.  Must match `ext/Makefile`.
-      - "-DQT_DISABLE_DEPRECATED_BEFORE=0x050F00"
+      # Hide the APIs Qt deprecated up to 6.8.  Must match `ext/Makefile`.
+      # Qt 6.5+ calls this QT_DISABLE_DEPRECATED_UP_TO, but still reads the old
+      # name, which Qt before 6.5 only knows.
+      - "-DQT_DISABLE_DEPRECATED_BEFORE=0x060800"
+      # Qt built as macOS frameworks keeps its headers in the frameworks.
+      - "-F{QT_LIBS_DIR}"
   else:
     flags:
       - "-x"
@@ -40,7 +44,8 @@ parser: # Clang parser configuration
       - "-stdlib=libc++"
       - "-std=c++17"
       - "-fPIC"
-      - "-DQT_DISABLE_DEPRECATED_BEFORE=0x050F00"
+      - "-DQT_DISABLE_DEPRECATED_BEFORE=0x060800"
+      - "-F{QT_LIBS_DIR}"
       - "-target"
       - "{TARGET_TRIPLE}"
   files:
@@ -54,4 +59,3 @@ parser: # Clang parser configuration
     - "{QT_INCLUDE_DIR}/QtGui/"
     - "{QT_INCLUDE_DIR}/QtWidgets/"
     - "{EXT_INCLUDES}"
-

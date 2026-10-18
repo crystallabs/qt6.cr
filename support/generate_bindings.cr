@@ -1,11 +1,11 @@
 #!/usr/bin/env crystal
 
-# This script downloads all sources of all supported Qt5 versions, and then
+# This script downloads all sources of all supported Qt6 versions, and then
 # proceed to generate all bindings for all configured platforms.
 #
 # This script is what the `ready-to-use` branches are built by.
 #
-# With `--system`, it instead generates the binding for the Qt5 installed on
+# With `--system`, it instead generates the binding for the Qt6 installed on
 # this system, as found by `qmake`.  Set `QMAKE` to choose a specific one.
 
 require "file_utils"
@@ -19,20 +19,10 @@ require "../lib/bindgen/src/bindgen/variables"
 # spoved_logger :trace, bind: true, clear: true, dispatcher: :sync
 
 configurations = [
-  #      OS       LIBC   ARCH      Qt   Patch   Clang target triplet      Ptr  Endian
-  #  { "linux", "gnu", "x86_64", "5.5",  "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.6",  "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.7",  "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.8",  "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.9",  "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.10", "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.11", "2", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.12", "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  {"linux", "gnu", "x86_64", "5.13", "0", "x86_64-unknown-linux-gnu", 8, "little"},
-  #  { "linux", "gnu", "x86_64", "5.14", "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  { "linux", "gnu", "x86_64", "5.15", "0", "x86_64-unknown-linux-gnu", 8, "little" },
-  #  {"darwin", "unknown", "x86_64", "5.13", "x86_64-apple-darwin19.6.0", 8, "little"},
-  #  {"darwin", "unknown", "x86_64", "5.15", "x86_64-apple-darwin19.6.0", 8, "little"},
+  #      OS       LIBC   ARCH      Qt     Patch   Clang target triplet      Ptr  Endian
+  {"linux", "gnu", "x86_64", "6.8", "0", "x86_64-unknown-linux-gnu", 8, "little"},
+  #  {"linux", "gnu", "x86_64", "6.4", "0", "x86_64-unknown-linux-gnu", 8, "little"},
+  #  {"darwin", "unknown", "aarch64", "6.8", "0", "arm64-apple-darwin23.0.0", 8, "little"},
 ]
 
 TEMPDIR = File.expand_path("#{__DIR__}/../download_cache")
@@ -42,17 +32,11 @@ struct QtVersion
   getter patch : String
   delegate to_s, to: @name
 
-  @infix = ""
-
   def initialize(@name, @patch = "0")
-    res = Bindgen::FindPath::GenericVersion.parse(@name) <=> Bindgen::FindPath::GenericVersion.parse("5.10")
-    if res == -1
-      @infix = "-opensource"
-    end
   end
 
   def base_name
-    "qt-everywhere#{@infix}-src-#{@name}.#{@patch}"
+    "qt-everywhere-src-#{@name}.#{@patch}"
   end
 
   def download_urls
@@ -71,7 +55,7 @@ end
 
 # A platform to generate a binding for.
 abstract class Platform
-  # Name of the binding, like `linux-gnu-x86_64-qt5.15`.
+  # Name of the binding, like `linux-gnu-x86_64-qt6.8`.
   abstract def target : String
 
   # Environment variables for `config/find_paths.yml`.
@@ -129,7 +113,7 @@ class TargetPlatform < Platform
   end
 end
 
-# The Qt5 installed on this system, as reported by `qmake -query`.  Bindgen's
+# The Qt6 installed on this system, as reported by `qmake -query`.  Bindgen's
 # built-in variables describe the platform, like in `decide_binding_slow.cr`.
 class SystemPlatform < Platform
   getter qmake : String
@@ -138,14 +122,13 @@ class SystemPlatform < Platform
   @query : Hash(String, String)
 
   def initialize
-    ENV["QT_SELECT"] = "5" # For qtchooser's `qmake`
-    candidates = ENV["QMAKE"]?.try { |path| [path] } || ["qmake-qt5", "qmake"]
+    candidates = ENV["QMAKE"]?.try { |path| [path] } || ["qmake6", "qmake-qt6", "qmake"]
     qmake = candidates.each do |name|
       if path = Process.find_executable(name)
         break path
       end
     end
-    @qmake = qmake || abort "Can't find qmake: install Qt5 or set QMAKE"
+    @qmake = qmake || abort "Can't find qmake: install Qt6 or set QMAKE"
 
     @query = Hash(String, String).new
     `#{Process.quote(@qmake)} -query`.each_line do |line|
@@ -154,8 +137,8 @@ class SystemPlatform < Platform
     end
 
     version = @query["QT_VERSION"]? || abort "#{@qmake} -query didn't report QT_VERSION"
-    abort "#{@qmake} is Qt #{version}, not Qt5" unless version.starts_with?("5.")
-    @qt = version.split('.')[0..1].join('.') # "5.15.8" -> "5.15"
+    abort "#{@qmake} is Qt #{version}, not Qt6" unless version.starts_with?("6.")
+    @qt = version.split('.')[0..1].join('.') # "6.8.2" -> "6.8"
   end
 
   def target : String
@@ -279,6 +262,8 @@ def get_qt_modules(version) : Array(String)
   end
 end
 
+# NOTE: Untested with Qt 6, whose `configure` wraps CMake.  The `--system` mode
+# below is the supported way to generate a binding.
 def configure_qts(versions)
   keep_modules = {"base"}
   list = versions.reject { |v| Process.find_executable("#{v.path}/qtbase/bin/qmake") }
@@ -342,7 +327,7 @@ else
 end
 
 # Run bindgen for all configured platforms, or the system one
-report_step(system_qt ? "Generating the binding for the system Qt5" : "Generating bindings for all platforms")
+report_step(system_qt ? "Generating the binding for the system Qt6" : "Generating bindings for all platforms")
 platforms.each_with_index do |platform, idx|
   report(idx, platforms.size, "Generating #{platform.target}")
   # Run bindgen

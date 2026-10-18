@@ -1,19 +1,19 @@
 # Support scripts
 
-This directory hosts support (helper) scripts for Qt5.cr
+This directory hosts support (helper) scripts for Qt6.cr
 
 ## Contents
 
 ### `decide_binding_fast.cr`
 
-Used to read (or generate) the "qt5.lock" file. This script is called from
-`src/qt5/binding.cr`!
+Used to read (or generate) the "qt6.lock" file. This script is called from
+`src/qt6/binding.cr`!
 
 ### `decide_binding_slow.cr`
 
-Auto-detects which Qt5 version is available on the host system, and then chooses
+Auto-detects which Qt6 version is available on the host system, and then chooses
 the appropriate ready-built binding to use.  Used in tandem with
-`decide_binding_fast.cr`:  If no "qt5.lock" file exists, it calls this script.
+`decide_binding_fast.cr`:  If no "qt6.lock" file exists, it calls this script.
 The reason for this split is that this code pulls in **bindgen** for the
 detection part, making it quite slow to compile.
 
@@ -22,11 +22,12 @@ detection part, making it quite slow to compile.
 (Re-)Generate all bindings this shard support. This is used for the
 `ready-to-use` branches.  This script automatically downloads and unpacks all
 supported Qt versions from the internet, and then generates all configured
-bindings using **bindgen**.
+bindings using **bindgen**.  This mode is inherited from qt5.cr and untested
+with Qt 6, whose `configure` wraps CMake.
 
-With `--system`, it instead generates the binding for the Qt5 installed on the
-system, as found by `qmake`.  Set `QMAKE` to choose a specific installation.
-This needs neither `curl` nor `tar`.
+With `--system`, it instead generates the binding for the Qt6 installed on the
+system, as found by `qmake` (`qmake6`, `qmake-qt6` or `qmake`).  Set `QMAKE` to
+choose a specific installation.  This needs neither `curl` nor `tar`.
 
 #### Dependencies
 
@@ -41,7 +42,8 @@ that bindgen doesn't wrap them.  It generates the binding with every method
 through `generate_bindings.cr` (arguments, like `--system`, are passed on), and
 collects the methods the C++ compiler warns about.  Both GCC's and Clang's
 warnings are understood:  For Clang, the class is taken from the enclosing
-wrapper function in the generated `ext/qt_binding_*.cpp`.
+wrapper function, or virtual override subclass, in the generated
+`ext/qt_binding_*.cpp`.
 
 If generating fails, or a deprecation warning can't be attributed to a class,
 the previous `config/deprecated.yml` is restored.

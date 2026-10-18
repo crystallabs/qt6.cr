@@ -1,12 +1,10 @@
 require "ini"
 
-LOCK_FILE = "qt5.lock"
-min_version = "5.0.0"
-
-ENV["QT_SELECT"] = "5"
+LOCK_FILE = "qt6.lock"
+min_version = "6.0.0"
 
 # 0. Is there a binding override?
-if File.exists?("#{__DIR__}/../src/qt5/binding/binding_.cr")
+if File.exists?("#{__DIR__}/../src/qt6/binding/binding_.cr")
   puts "" # Yes, there is.  Use it!
   exit 0
 end
@@ -14,7 +12,7 @@ end
 # 1. Find project root
 project_root = nil
 lib_path = File.expand_path("../../../", __DIR__)
-if Dir.exists?(lib_path) && File.basename(lib_path) == "lib" && Dir.exists?("#{lib_path}/qt5.cr")
+if Dir.exists?(lib_path) && File.basename(lib_path) == "lib" && Dir.exists?("#{lib_path}/qt6.cr")
   project_root = File.expand_path("..", lib_path)
 else
   project_root = File.expand_path("..", __DIR__)
@@ -51,13 +49,13 @@ if chosen_binding.nil?
   File.open(lock_file_path, "w") do |h|
     h.puts <<-EOF
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ATTENTION ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ; This file configures which Qt5 version your program uses.
+    ; This file configures which Qt6 version your program uses.
     ;
     ; IMPORTANT: If you change this file then clear your crystal cache!
     ;            On Linux: $ rm -r ~/.cache/crystal
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-    ; What is the minimum Qt5 version you want to use?  This is only used if
+    ; What is the minimum Qt6 version you want to use?  This is only used if
     ; no "binding" (Below) is set.
     min_version = #{min_version}
 
