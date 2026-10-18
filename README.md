@@ -317,12 +317,12 @@ see the comments there:
   `Gradient#stops` (`QGradientStops`) an `Enumerable({Float64, Color})`,
   `VariantAnimation#key_values` an `Enumerable({Float64, Variant})`, and the
   setters take an array of tuples: `gradient.stops = [{0.0, red}, {1.0, blue}]`.
-* `QAbstractListModel` and `QAbstractTableModel` override `parent`,
-  `columnCount` and `hasChildren` privately; `src/qt6/abstract_list_model.cr`
-  and `abstract_table_model.cr` give their `Impl` classes those, as Qt does.
-  `StringListModel` can't be subclassed from Crystal (`sub_class: false`),
-  as bindgen would forward those private overrides; subclass
-  `AbstractListModel` instead.
+* A model written in Crystal implements the pure virtual methods only, like
+  `row_count(parent)` and `data(index, role)` of an `AbstractListModel`:
+  bindgen makes the no-argument overloads a default argument splits off
+  concrete, and wraps the methods `QAbstractListModel` overrides privately
+  (`parent`, `columnCount`, `hasChildren`) through `QAbstractItemModel`.
+  `StringListModel` can be subclassed too.  See `spec/qt/models_spec.cr`.
 * `QAbstractTextDocumentLayout::PaintContext` and `Selection`,
   `QTextLayout::FormatRange`, bare structs of Qt classes, are wrapped as
   classes with property methods: `Qt::TextDocumentLayoutPaintContext`,
@@ -339,17 +339,14 @@ see the comments there:
   which bindgen can't pass a `String` (a `QString` by value) by, so
   `ext/validator_helper.hpp` calls them on a copy: `validator.validate("42")`
   returns the `Validator::State`, `#fixup` the fixed string.  Validators can't
-  be written in Crystal (`sub_class: false`), as `validate` is pure virtual.
+  be written in Crystal: as the pure virtual `validate` is dropped, bindgen
+  skips the C++ subclass (a warning, shown by `tool.sh --debug`).
 * `QStyle::SubControls` maps as a plain enum, as Qt's `SC_All` is all bits
   set, which a Crystal `@[Flags]` enum defines itself.  The `QStyle` enum
   constants drop their prefixes: `Style::PixelMetric::ButtonMargin`.
 * `QGraphicsWidget` derives from `QGraphicsObject` and `QGraphicsLayoutItem`:
   the wrapper has the layout item methods, and `#as_graphics_layout_item`
   casts it for `GraphicsLinearLayout#add_item` and friends.
-* `src/qt6/proxy_style.cr` passes the nilable arguments of the `ProxyStyle`
-  superclass methods as pointers: bindgen passes them as is, which Crystal
-  only accepts for `nil` or an object, not for their union, which the jump
-  table of a Crystal override passes on.
 * `QMap<QDate, QTextCharFormat>` (use `CalendarWidget#date_text_format(date)`)
   and `std::optional<QFont>` (`FontComboBox#display_font`) have no mapping yet
   and are ignored.

@@ -352,17 +352,6 @@ types: # Type rewrite rules
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
-  # bindgen's virtual_override copies the virtual parent, columnCount and
-  # hasChildren of QAbstractItemModel into QStringListModel's override class:
-  # its private_override? only looks at the class itself, not at
-  # QAbstractListModel in between, which made them private, so the generated
-  # C++ doesn't compile.  Subclass AbstractListModel instead.
-  QStringListModel: { sub_class: false }
-  # bindgen can't pass a QString (the Crystal String, by value) by non-const
-  # reference, so it drops QValidator::validate and fixup: the helpers in
-  # ext/validator_helper.hpp call them, see src/qt6/validator.cr.  As validate
-  # is pure virtual, a subclass from Crystal would stay abstract in C++.
-  QValidator: { sub_class: false }
   QHeaderView:
     ignore_methods:
       # bindgen wraps Qt's protected `initialize()` under that name, which

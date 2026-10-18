@@ -1,5 +1,44 @@
 require "../spec_helper"
 
+# A list model written in Crystal implements only row_count(parent) and
+# data(index, role): bindgen makes the no-argument overloads concrete and
+# wraps the privately overridden parent, column_count and has_children
+# through AbstractItemModel.
+class SquaresModel < Qt::AbstractListModel
+  def row_count(parent : Qt::ModelIndex) : Int32
+    parent.valid? ? 0 : 4
+  end
+
+  def data(index : Qt::ModelIndex, role : Int32 = 0) : Qt::Variant
+    return Qt.variant(nil) unless role == Qt::ItemDataRole::DisplayRole.to_i
+    Qt.variant(index.row * index.row)
+  end
+end
+
+# A table model implements column_count(parent) too.
+class GridModel < Qt::AbstractTableModel
+  def row_count(parent : Qt::ModelIndex) : Int32
+    parent.valid? ? 0 : 2
+  end
+
+  def column_count(parent : Qt::ModelIndex) : Int32
+    parent.valid? ? 0 : 3
+  end
+
+  def data(index : Qt::ModelIndex, role : Int32 = 0) : Qt::Variant
+    return Qt.variant(nil) unless role == Qt::ItemDataRole::DisplayRole.to_i
+    Qt.variant("#{index.row},#{index.column}")
+  end
+end
+
+# A subclass of a concrete model only overrides what it changes.
+class ShoutingListModel < Qt::StringListModel
+  def data(index : Qt::ModelIndex, role : Int32 = 0) : Qt::Variant
+    value = superclass.data(index, role)
+    role == Qt::ItemDataRole::DisplayRole.to_i ? Qt.variant(value.to(String).upcase) : value
+  end
+end
+
 describe Qt::StandardItem do
   it "builds a tree in a model" do
     model = Qt::StandardItemModel.new
@@ -316,5 +355,40 @@ describe Qt::TimeLine do
     frames.last.should eq(10)
     frames.should eq(frames.sort)
     states.should eq([Qt::TimeLine::State::Running, Qt::TimeLine::State::NotRunning])
+  end
+end
+
+describe "Models written in Crystal" do
+  it "implement the pure virtual methods only" do
+    model = SquaresModel.new
+    model.row_count.should eq(4)
+    model.column_count.should eq(1)
+    model.has_children?.should be_true
+    model.has_children(model.index(0)).should be_false
+    model.parent(model.index(2)).valid?.should be_false
+    model.data(model.index(3)).to(Int32).should eq(9)
+    model.data(model.index(3), Qt::ItemDataRole::ToolTipRole.to_i).to?(Int32).should be_nil
+
+    view = Qt::ListView.new
+    view.model = model
+    view.model.row_count.should eq(4)
+    view.model.index(1, 0).data.to(Int32).should eq(1)
+
+    grid = GridModel.new
+    grid.row_count.should eq(2)
+    grid.column_count.should eq(3)
+    grid.has_children?.should be_true
+    grid.index(1, 2).data.to(String).should eq("1,2")
+    grid.index(1, 2).sibling(0, 0).data.to(String).should eq("0,0")
+  end
+
+  it "subclass a concrete model" do
+    model = ShoutingListModel.new
+    model.string_list = ["a", "b"]
+    model.row_count.should eq(2)
+    model.column_count.should eq(1)
+    model.data(model.index(1)).to(String).should eq("B")
+    model.data(model.index(1), Qt::ItemDataRole::EditRole.to_i).to(String).should eq("b")
+    model.index(0).data.to(String).should eq("A")
   end
 end
