@@ -1,0 +1,17 @@
+name: qt5
+version: 0.4.0
+description: Qt5 bindings for Crystal
+
+authors:
+  - Stefan Merettig <stefan-merettig@nuriaproject.org>
+
+crystal: ">= 1.8.0, < 2.0.0"
+
+dependencies:
+  bindgen:
+    github: crystallabs/bindgen
+    version: ~> 0.11
+scripts:
+  postinstall: shards
+
+license: MPL-2
