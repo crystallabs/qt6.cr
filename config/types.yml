@@ -352,11 +352,6 @@ types: # Type rewrite rules
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
-  QHeaderView:
-    ignore_methods:
-      # bindgen wraps Qt's protected `initialize()` under that name, which
-      # Crystal reserves for constructors, so the wrapper doesn't compile.
-      - initialize
   QPolygon:
     ignore_methods: # Variadic, which can't be wrapped
       - setPoints
@@ -407,13 +402,13 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QPainterPath::Element": # Field accessors in src/qt6/copied_fields.cr
+  "QPainterPath::Element":
     copy_structure: true
     generate_binding: true
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QPageRanges::Range": # Field accessors in src/qt6/copied_fields.cr
+  "QPageRanges::Range":
     copy_structure: true
     generate_binding: true
     generate_wrapper: true
@@ -451,19 +446,14 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QCalendar::YearMonthDay": # Three ints; field accessors in src/qt6/copied_fields.cr
+  "QCalendar::YearMonthDay": # Three ints
     copy_structure: true
     generate_binding: true
     generate_wrapper: true
     pass_by: Value
     kind: Struct
   "QtPrivate::QKeyValueRange<QJsonObject &>": { ignore: true } # Use #keys and #value
-  # QDataStream's friend operators name these, which have no mapping.
-  "QTransform::Affine": { ignore: true } # Private
-  "QGenericMatrix<N, M, T>": { ignore: true } # Template
-  "QRangeModelAdapter<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>::DataReference": { ignore: true }
-  "QRangeModelAdapter<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>::RowReference": { ignore: true }
-  Reference: { ignore: true } # The parser's name for a friend's QRangeModelAdapter::Reference
+  "QTransform::Affine": { ignore: true } # Private; drops the private asAffineMatrix
   "std::nullptr_t": { ignore: true } # QDataStream >> nullptr_t; emitted as invalid Crystal otherwise
   QTypeRevision: { ignore: true }
   QCborValue: { ignore: true } # The CBOR classes aren't bound
@@ -473,25 +463,11 @@ types: # Type rewrite rules
   QVariantMap: { ignore: true } # No support for associative containers yet
   QVariantHash: { ignore: true }
   QJsonObjectKeyValues: { ignore: true } # Private
-  "QJsonObject::iterator": # Returned by QJsonObject#insert
-    ignore_methods:
-      - "operator->" # bindgen aborts on it: `Unexpected operator "operator->"`
   "QJsonObject::const_iterator": { ignore: true } # Use #keys and #value
   "QJsonObject::key_value_iterator": { ignore: true }
   "QJsonObject::const_key_value_iterator": { ignore: true }
   "QJsonArray::iterator": { ignore: true } # Use #at and #size
   "QJsonArray::const_iterator": { ignore: true }
-  QJsonValueConstRef:
-    ignore_methods: # Protected helpers whose argument Qt names `self`, which
-      - concrete     # bindgen emits as a Crystal parameter name (invalid)
-      - concreteBool
-      - concreteDouble
-      - concreteInt
-      - concreteString
-      - concreteStringView
-      - concreteType
-      - objectKey
-      - objectKeyView
   "std::initializer_list<std::pair<QString, QJsonValue>>": { ignore: true }
   "std::initializer_list<QJsonValue>": { ignore: true }
   "QXmlStreamReader::PrivateConstructorTag": { ignore: true }
@@ -501,16 +477,5 @@ types: # Type rewrite rules
   "QLoggingCategory::CategoryFilter": { ignore: true } # C function pointer
   "QLoggingCategory::AtomicBools": { ignore: true } # Private
   "QRegularExpressionMatchIteratorRangeBasedForIterator": { ignore: true } # Qt::RegularExpressionMatchIterator is an Iterator
-  QTransform:
-    ignore_methods:
-      # Private, with a deduced (`auto`) return type the parser reports as the
-      # unqualified `Affine`, which no type rule matches.
-      - asAffineMatrix
-      # bindgen renders its `bool *invertible = nullptr` default as `true`,
-      # which doesn't compile: ext/matrix_helper.hpp, src/qt6/transform.cr.
-      - inverted
-  QMatrix4x4:
-    ignore_methods:
-      - inverted # Like QTransform::inverted
   "QPixmapCache::KeyData": { ignore: true } # Private
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above

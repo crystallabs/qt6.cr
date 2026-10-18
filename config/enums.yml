@@ -367,12 +367,9 @@ enums:
   "QHeaderView::ResizeMode": HeaderView::ResizeMode
   "QTreeWidgetItem::ItemType": TreeWidgetItem::ItemType
   "QTreeWidgetItem::ChildIndicatorPolicy": TreeWidgetItem::ChildIndicatorPolicy
-  "QTreeWidgetItemIterator::IteratorFlags":
-    destination: TreeWidgetItemIterator::IteratorFlags
-    # Qt's `All = 0` means no filter, which a Crystal @[Flags] enum calls None
-    # and defines All as the union of the flags; so map it as a plain enum,
-    # whose constants still combine with `|`.
-    flags: false
+  # Qt's `All = 0` means no filter, which a Crystal @[Flags] enum calls None
+  # and defines All as the union of the flags, so bindgen renames it CppAll.
+  "QTreeWidgetItemIterator::IteratorFlags": TreeWidgetItemIterator::IteratorFlags
   "QDataWidgetMapper::SubmitPolicy": DataWidgetMapper::SubmitPolicy
   "QPlainTextEdit::LineWrapMode": PlainTextEdit::LineWrapMode
   "QTextDocument::ResourceType": TextDocument::ResourceType
@@ -415,12 +412,9 @@ enums:
   "QStyle::SubElement": { destination: "Style::SubElement", prefix: "SE_" }
   "QStyle::ComplexControl": { destination: "Style::ComplexControl", prefix: "CC_" }
   "QStyle::SubControl": { destination: "Style::SubControl", prefix: "SC_" }
-  "QStyle::SubControls":
-    destination: Style::SubControls
-    prefix: "SC_"
-    # Qt's SC_All is all bits set, which a Crystal @[Flags] enum defines
-    # itself, so map it as a plain enum; the constants still combine with `|`.
-    flags: false
+  # Qt's SC_All is all bits set, which a Crystal @[Flags] enum defines itself,
+  # so bindgen drops it.
+  "QStyle::SubControls": { destination: "Style::SubControls", prefix: "SC_" }
   "QStyle::PixelMetric": { destination: "Style::PixelMetric", prefix: "PM_" }
   "QStyle::ContentsType": { destination: "Style::ContentsType", prefix: "CT_" }
   "QStyle::RequestSoftwareInputPanel": { destination: "Style::RequestSoftwareInputPanel", prefix: "RSIP_" }
@@ -521,11 +515,7 @@ enums:
   "QGlyphRun::GlyphRunFlags": GlyphRun::GlyphRunFlags
   "QStaticText::PerformanceHint": StaticText::PerformanceHint
   "QTextLayout::GlyphRunRetrievalFlag": TextLayout::GlyphRunRetrievalFlag
-  "QTextLayout::GlyphRunRetrievalFlags":
-    destination: TextLayout::GlyphRunRetrievalFlags
-    # Qt's RetrieveAll is all bits set, which a Crystal @[Flags] enum defines
-    # itself, so map it as a plain enum; the constants still combine with `|`.
-    flags: false
+  "QTextLayout::GlyphRunRetrievalFlags": TextLayout::GlyphRunRetrievalFlags
   "QTextLayout::CursorMode": TextLayout::CursorMode
   "QTextLine::Edge": TextLine::Edge
   "QTextLine::CursorPosition": TextLine::CursorPosition
@@ -537,11 +527,7 @@ enums:
   "QEventPoint::State": EventPoint::State
   "QEventPoint::States": EventPoint::States
   "QInputDevice::Capability": InputDevice::Capability
-  "QInputDevice::Capabilities":
-    destination: InputDevice::Capabilities
-    # Qt's All is all bits set, which a Crystal @[Flags] enum defines itself,
-    # so map it as a plain enum; the constants still combine with `|`.
-    flags: false
+  "QInputDevice::Capabilities": InputDevice::Capabilities # Qt's All is Crystal's
   "Qt::Modifier": Modifier # QKeyCombination
   "Qt::Modifiers": Modifiers
   "QPointingDevice::PointerTypes": PointingDevice::PointerTypes

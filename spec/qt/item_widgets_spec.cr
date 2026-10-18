@@ -76,6 +76,9 @@ describe Qt::TreeWidget do
     Qt::TreeWidgetItemIterator.new(other).map(&.text(0)).to_a.should eq(["other", "grandchild"])
     Qt::TreeWidgetItemIterator.new(tree, Qt::TreeWidgetItemIterator::IteratorFlags::NoChildren)
       .map(&.text(0)).to_a.should eq(["child", "grandchild"])
+    # Qt's `All = 0` is renamed, as Crystal's @[Flags] All is the union
+    Qt::TreeWidgetItemIterator::IteratorFlags::CppAll.should eq(Qt::TreeWidgetItemIterator::IteratorFlags::None)
+    Qt::TreeWidgetItemIterator::IteratorFlags::All.includes?(Qt::TreeWidgetItemIterator::IteratorFlags::NoChildren).should be_true
 
     tree.sort_items(0, Qt::SortOrder::DescendingOrder)
     tree.top_level_item(0).text(0).should eq("root")

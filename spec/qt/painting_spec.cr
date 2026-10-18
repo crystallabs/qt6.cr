@@ -64,6 +64,11 @@ describe Qt::Transform do
     point.y.should be_close(1.0, 1e-9)
     transform.map(Qt::Point.new(10, 0)).should eq(Qt::Point.new(0, 10))
     transform.inverted.map(Qt::Point.new(0, 10)).should eq(Qt::Point.new(10, 0))
+    invertible = false
+    transform.inverted(pointerof(invertible)).invertible?.should be_true
+    invertible.should be_true
+    Qt::Transform.from_scale(0.0, 0.0).inverted(pointerof(invertible)).identity?.should be_true
+    invertible.should be_false
     Qt::Transform.from_translate(3.0, 4.0).map(Qt::Point.new(1, 1)).should eq(Qt::Point.new(4, 5))
     Qt::Transform.from_scale(2.0, 3.0).map_rect(Qt::Rect.new(1, 1, 2, 2)).should eq(Qt::Rect.new(2, 3, 4, 6))
     (Qt::Transform.new * Qt::Transform.from_scale(2.0, 2.0)).m11.should eq(2.0)
@@ -86,6 +91,10 @@ describe Qt::Matrix4x4 do
     matrix = Qt::Matrix4x4.new
     matrix.identity?.should be_true
     matrix.translate(1.0_f32, 2.0_f32, 3.0_f32)
+    invertible = false
+    matrix.inverted(pointerof(invertible)).map(Qt::Vector3D.new(2.0_f32, 3.0_f32, 4.0_f32)).x.should eq(1.0_f32)
+    invertible.should be_true
+    (matrix.inverted * matrix).identity?.should be_true
     vector = matrix.map(Qt::Vector3D.new(1.0_f32, 1.0_f32, 1.0_f32))
     {vector.x, vector.y, vector.z}.should eq({2.0_f32, 3.0_f32, 4.0_f32})
     vector.length.should be_close(Math.sqrt(29.0), 1e-5)

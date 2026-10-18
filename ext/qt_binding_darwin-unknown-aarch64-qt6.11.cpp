@@ -15652,6 +15652,50 @@ extern "C" const QJsonValue * bg_QJsonValueConstRef__OPERATOR_at_qsizetype(QJson
   return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (((*_self_)[i]));
 }
 
+extern "C" QJsonValue::Type bg_QJsonValueConstRef_concreteType_STATIC_QJsonValueConstRef(QJsonValueConstRef & self) {
+  return QJsonValueConstRef::concreteType(self);
+}
+
+extern "C" bool bg_QJsonValueConstRef_concreteBool_STATIC_QJsonValueConstRef_bool(QJsonValueConstRef & self, bool defaultValue) {
+  return QJsonValueConstRef::concreteBool(self, defaultValue);
+}
+
+extern "C" qint64 bg_QJsonValueConstRef_concreteInt_STATIC_QJsonValueConstRef_qint64_bool(QJsonValueConstRef & self, qint64 defaultValue, bool clamp) {
+  return QJsonValueConstRef::concreteInt(self, defaultValue, clamp);
+}
+
+extern "C" double bg_QJsonValueConstRef_concreteDouble_STATIC_QJsonValueConstRef_double(QJsonValueConstRef & self, double defaultValue) {
+  return QJsonValueConstRef::concreteDouble(self, defaultValue);
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_concreteString_STATIC_QJsonValueConstRef_const_QString_R(QJsonValueConstRef & self, const CrystalString defaultValue) {
+  return qstring_to_crystal(QJsonValueConstRef::concreteString(self, ([&]() { auto &&bg_value = (defaultValue); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_concreteStringView_STATIC_QJsonValueConstRef_QAnyStringView(QJsonValueConstRef & self, CrystalString defaultValue) {
+  return qstring_to_crystal(QJsonValueConstRef::concreteStringView(self, ([&]() { auto &&bg_value = (defaultValue); return QAnyStringView(bg_value.ptr, bg_value.size); }())).toString());
+}
+
+extern "C" QJsonValue * bg_QJsonValueConstRef_concrete_STATIC_QJsonValueConstRef(QJsonValueConstRef & self) {
+  return new (UseGC, bindgen_gc_finalizer<QJsonValue>()) QJsonValue (QJsonValueConstRef::concrete(self));
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_objectKey_STATIC_QJsonValueConstRef(QJsonValueConstRef & self) {
+  return qstring_to_crystal(QJsonValueConstRef::objectKey(self));
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_objectKey_(QJsonValueConstRef * _self_) {
+  return qstring_to_crystal(_self_->objectKey());
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_objectKeyView_STATIC_QJsonValueConstRef(QJsonValueConstRef & self) {
+  return qstring_to_crystal(QJsonValueConstRef::objectKeyView(self).toString());
+}
+
+extern "C" CrystalString bg_QJsonValueConstRef_objectKeyView_(QJsonValueConstRef * _self_) {
+  return qstring_to_crystal(_self_->objectKeyView().toString());
+}
+
 extern "C" QJsonValueConstRef * bg_QJsonValueConstRef__CONSTRUCT_QJsonArray_X_qsizetype(QJsonArray * array, qsizetype idx) {
   return new (UseGC) CrystalGCWrapper<QJsonValueConstRef>(array, idx);
 }
@@ -27509,6 +27553,10 @@ extern "C" qreal bg_QTransform_dy_(QTransform * _self_) {
 
 extern "C" void bg_QTransform_setMatrix_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(QTransform * _self_, qreal m11, qreal m12, qreal m13, qreal m21, qreal m22, qreal m23, qreal m31, qreal m32, qreal m33) {
   _self_->setMatrix(m11, m12, m13, m21, m22, m23, m31, m32, m33);
+}
+
+extern "C" QTransform * bg_QTransform_inverted_bool_X(QTransform * _self_, bool * invertible) {
+  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (_self_->inverted(invertible));
 }
 
 extern "C" QTransform * bg_QTransform_adjoint_(QTransform * _self_) {
@@ -43868,6 +43916,10 @@ extern "C" void bg_QMatrix4x4_fill_float(QMatrix4x4 * _self_, float value) {
 
 extern "C" double bg_QMatrix4x4_determinant_(QMatrix4x4 * _self_) {
   return _self_->determinant();
+}
+
+extern "C" QMatrix4x4 * bg_QMatrix4x4_inverted_bool_X(QMatrix4x4 * _self_, bool * invertible) {
+  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (_self_->inverted(invertible));
 }
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4_transposed_(QMatrix4x4 * _self_) {
@@ -107240,6 +107292,10 @@ extern "C" QHeaderView * bg_QHeaderView__CONSTRUCT_QHeaderViewPrivate_R_Qt__Orie
   return new (UseGC) CrystalGCWrapper<BgInherit_QHeaderView>(dd, orientation, parent);
 }
 
+extern "C" void bg_QHeaderView_initialize_(QHeaderView * _self_) {
+  _self_->initialize();
+}
+
 extern "C" void bg_QHeaderView_initializeSections_(QHeaderView * _self_) {
   _self_->initializeSections();
 }
@@ -144935,14 +144991,6 @@ extern "C" QValidator::State bg____qt6cr_validator_validate_STATIC_const_QValida
 
 extern "C" CrystalString bg____qt6cr_validator_fixup_STATIC_const_QValidator_X_const_QString_R(const QValidator * validator, const CrystalString input) {
   return qstring_to_crystal(::qt6cr_validator_fixup(validator, ([&]() { auto &&bg_value = (input); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
-}
-
-extern "C" QTransform * bg____qt6cr_transform_inverted_STATIC_const_QTransform_R_bool_X(const QTransform & transform, bool * invertible) {
-  return new (UseGC, bindgen_gc_finalizer<QTransform>()) QTransform (::qt6cr_transform_inverted(transform, invertible));
-}
-
-extern "C" QMatrix4x4 * bg____qt6cr_matrix4x4_inverted_STATIC_const_QMatrix4x4_R_bool_X(const QMatrix4x4 & matrix, bool * invertible) {
-  return new (UseGC, bindgen_gc_finalizer<QMatrix4x4>()) QMatrix4x4 (::qt6cr_matrix4x4_inverted(matrix, invertible));
 }
 
 extern "C" CrystalString bg____qt6cr_xml_reader_documentVersion_STATIC_const_QXmlStreamReader_X(const QXmlStreamReader * object) {

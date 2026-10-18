@@ -12046,6 +12046,17 @@ module Qt
     fun bg_QJsonValueConstRef_toArray_(_self_ : QJsonValueConstRef*) : QJsonArray*
     fun bg_QJsonValueConstRef_toObject_(_self_ : QJsonValueConstRef*) : QJsonObject*
     fun bg_QJsonValueConstRef__OPERATOR_at_qsizetype(_self_ : QJsonValueConstRef*, i : Int64) : QJsonValue*
+    fun bg_QJsonValueConstRef_concreteType_STATIC_QJsonValueConstRef(self_ : QJsonValueConstRef*) : JsonValue::Type
+    fun bg_QJsonValueConstRef_concreteBool_STATIC_QJsonValueConstRef_bool(self_ : QJsonValueConstRef*, default_value : Bool) : Bool
+    fun bg_QJsonValueConstRef_concreteInt_STATIC_QJsonValueConstRef_qint64_bool(self_ : QJsonValueConstRef*, default_value : Int64, clamp : Bool) : Int64
+    fun bg_QJsonValueConstRef_concreteDouble_STATIC_QJsonValueConstRef_double(self_ : QJsonValueConstRef*, default_value : Float64) : Float64
+    fun bg_QJsonValueConstRef_concreteString_STATIC_QJsonValueConstRef_const_QString_R(self_ : QJsonValueConstRef*, default_value : CrystalString) : CrystalString
+    fun bg_QJsonValueConstRef_concreteStringView_STATIC_QJsonValueConstRef_QAnyStringView(self_ : QJsonValueConstRef*, default_value : CrystalString) : CrystalString
+    fun bg_QJsonValueConstRef_concrete_STATIC_QJsonValueConstRef(self_ : QJsonValueConstRef*) : QJsonValue*
+    fun bg_QJsonValueConstRef_objectKey_STATIC_QJsonValueConstRef(self_ : QJsonValueConstRef*) : CrystalString
+    fun bg_QJsonValueConstRef_objectKey_(_self_ : QJsonValueConstRef*) : CrystalString
+    fun bg_QJsonValueConstRef_objectKeyView_STATIC_QJsonValueConstRef(self_ : QJsonValueConstRef*) : CrystalString
+    fun bg_QJsonValueConstRef_objectKeyView_(_self_ : QJsonValueConstRef*) : CrystalString
     fun bg_QJsonValueConstRef__CONSTRUCT_QJsonArray_X_qsizetype(array : QJsonArray*, idx : Int64) : QJsonValueConstRef*
     fun bg_QJsonValueConstRef__CONSTRUCT_QJsonObject_X_qsizetype(object : QJsonObject*, idx : Int64) : QJsonValueConstRef*
     fun bg_QJsonValueConstRef_rebind_QJsonValueConstRef(_self_ : QJsonValueConstRef*, other : QJsonValueConstRef*) : Void
@@ -14525,6 +14536,7 @@ module Qt
     fun bg_QTransform_dx_(_self_ : QTransform*) : Float64
     fun bg_QTransform_dy_(_self_ : QTransform*) : Float64
     fun bg_QTransform_setMatrix_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(_self_ : QTransform*, m11 : Float64, m12 : Float64, m13 : Float64, m21 : Float64, m22 : Float64, m23 : Float64, m31 : Float64, m32 : Float64, m33 : Float64) : Void
+    fun bg_QTransform_inverted_bool_X(_self_ : QTransform*, invertible : Bool*) : QTransform*
     fun bg_QTransform_adjoint_(_self_ : QTransform*) : QTransform*
     fun bg_QTransform_transposed_(_self_ : QTransform*) : QTransform*
     fun bg_QTransform_translate_qreal_qreal(_self_ : QTransform*, dx : Float64, dy : Float64) : QTransform*
@@ -18077,6 +18089,7 @@ module Qt
     fun bg_QMatrix4x4_setToIdentity_(_self_ : QMatrix4x4*) : Void
     fun bg_QMatrix4x4_fill_float(_self_ : QMatrix4x4*, value : Float32) : Void
     fun bg_QMatrix4x4_determinant_(_self_ : QMatrix4x4*) : Float64
+    fun bg_QMatrix4x4_inverted_bool_X(_self_ : QMatrix4x4*, invertible : Bool*) : QMatrix4x4*
     fun bg_QMatrix4x4_transposed_(_self_ : QMatrix4x4*) : QMatrix4x4*
     fun bg_QMatrix4x4__OPERATOR_add_assign_const_QMatrix4x4_R(_self_ : QMatrix4x4*, other : QMatrix4x4*) : QMatrix4x4*
     fun bg_QMatrix4x4__OPERATOR_sub_assign_const_QMatrix4x4_R(_self_ : QMatrix4x4*, other : QMatrix4x4*) : QMatrix4x4*
@@ -29437,6 +29450,7 @@ module Qt
     fun bg_QHeaderView_sectionsInserted_const_QModelIndex_R_int_int(_self_ : QHeaderView*, parent : QModelIndex*, logical_first : Int32, logical_last : Int32) : Void
     fun bg_QHeaderView_sectionsAboutToBeRemoved_const_QModelIndex_R_int_int(_self_ : QHeaderView*, parent : QModelIndex*, logical_first : Int32, logical_last : Int32) : Void
     fun bg_QHeaderView__CONSTRUCT_QHeaderViewPrivate_R_Qt__Orientation_QWidget_X(dd : QHeaderViewPrivate*, orientation : Orientation, parent : QWidget*) : QHeaderView*
+    fun bg_QHeaderView_initialize_(_self_ : QHeaderView*) : Void
     fun bg_QHeaderView_initializeSections_(_self_ : QHeaderView*) : Void
     fun bg_QHeaderView_initializeSections_int_int(_self_ : QHeaderView*, start : Int32, end_ : Int32) : Void
     fun bg_QHeaderView_currentChanged_const_QModelIndex_R_const_QModelIndex_R(_self_ : QHeaderView*, current : QModelIndex*, previous : QModelIndex*) : Void
@@ -36402,8 +36416,6 @@ module Qt
     fun bg____qt6cr_reset_numeric_locale_STATIC_() : Void
     fun bg____qt6cr_validator_validate_STATIC_const_QValidator_X_const_QString_R_int(validator : QValidator*, input : CrystalString, pos : Int32) : Validator::State
     fun bg____qt6cr_validator_fixup_STATIC_const_QValidator_X_const_QString_R(validator : QValidator*, input : CrystalString) : CrystalString
-    fun bg____qt6cr_transform_inverted_STATIC_const_QTransform_R_bool_X(transform : QTransform*, invertible : Bool*) : QTransform*
-    fun bg____qt6cr_matrix4x4_inverted_STATIC_const_QMatrix4x4_R_bool_X(matrix : QMatrix4x4*, invertible : Bool*) : QMatrix4x4*
     fun bg____qt6cr_xml_reader_documentVersion_STATIC_const_QXmlStreamReader_X(object : QXmlStreamReader*) : CrystalString
     fun bg____qt6cr_xml_reader_documentEncoding_STATIC_const_QXmlStreamReader_X(object : QXmlStreamReader*) : CrystalString
     fun bg____qt6cr_xml_reader_name_STATIC_const_QXmlStreamReader_X(object : QXmlStreamReader*) : CrystalString
@@ -55268,6 +55280,50 @@ module Qt
       JsonValue.new(unwrap: Binding.bg_QJsonValueConstRef__OPERATOR_at_qsizetype(self, i))
     end
     
+    protected def self.concrete_type(self_ : JsonValueConstRef) : JsonValue::Type
+      Binding.bg_QJsonValueConstRef_concreteType_STATIC_QJsonValueConstRef(self_)
+    end
+    
+    protected def self.concrete_bool(self_ : JsonValueConstRef, default_value : Bool) : Bool
+      Binding.bg_QJsonValueConstRef_concreteBool_STATIC_QJsonValueConstRef_bool(self_, default_value)
+    end
+    
+    protected def self.concrete_int(self_ : JsonValueConstRef, default_value : Int64, clamp : Bool) : Int64
+      Binding.bg_QJsonValueConstRef_concreteInt_STATIC_QJsonValueConstRef_qint64_bool(self_, default_value, clamp)
+    end
+    
+    protected def self.concrete_double(self_ : JsonValueConstRef, default_value : Float64) : Float64
+      Binding.bg_QJsonValueConstRef_concreteDouble_STATIC_QJsonValueConstRef_double(self_, default_value)
+    end
+    
+    protected def self.concrete_string(self_ : JsonValueConstRef, default_value : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_concreteString_STATIC_QJsonValueConstRef_const_QString_R(self_, Qt::Converter::QString.wrap(default_value)))
+    end
+    
+    protected def self.concrete_string_view(self_ : JsonValueConstRef, default_value : String) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_concreteStringView_STATIC_QJsonValueConstRef_QAnyStringView(self_, Qt::Converter::QString.wrap(default_value)))
+    end
+    
+    protected def self.concrete(self_ : JsonValueConstRef) : JsonValue
+      JsonValue.new(unwrap: Binding.bg_QJsonValueConstRef_concrete_STATIC_QJsonValueConstRef(self_))
+    end
+    
+    protected def self.object_key(self_ : JsonValueConstRef) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_objectKey_STATIC_QJsonValueConstRef(self_))
+    end
+    
+    protected def object_key() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_objectKey_(self))
+    end
+    
+    protected def self.object_key_view(self_ : JsonValueConstRef) : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_objectKeyView_STATIC_QJsonValueConstRef(self_))
+    end
+    
+    protected def object_key_view() : String
+      Qt::Converter::QString.unwrap(Binding.bg_QJsonValueConstRef_objectKeyView_(self))
+    end
+    
     protected def initialize(array : JsonArray, idx : Int64)
       result = Binding.bg_QJsonValueConstRef__CONSTRUCT_QJsonArray_X_qsizetype(array, idx)
     @unwrap = result
@@ -68935,6 +68991,10 @@ module Qt
       Binding.bg_QTransform_setMatrix_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(self, m11, m12, m13, m21, m22, m23, m31, m32, m33)
     end
     
+    def inverted(invertible : Bool*? = nil) : Transform
+      Transform.new(unwrap: Binding.bg_QTransform_inverted_bool_X(self, invertible))
+    end
+    
     def adjoint() : Transform
       Transform.new(unwrap: Binding.bg_QTransform_adjoint_(self))
     end
@@ -72428,8 +72488,8 @@ module Qt
       Zposition = 16384
       All = 2147483647
     end
+    @[Flags]
     enum Capabilities : Int32
-      None = 0
       Position = 1
       Area = 2
       Pressure = 4
@@ -72444,7 +72504,7 @@ module Qt
       Ytilt = 4096
       TangentialPressure = 8192
       Zposition = 16384
-      All = 2147483647
+      CppAll = 2147483647
     end
     def event(event : Event) : Bool
       Binding.bg_QObject_event_QEvent_X(self, event)
@@ -85345,6 +85405,7 @@ module Qt
       DefaultRetrievalFlags = 3
       RetrieveAll = 65535
     end
+    @[Flags]
     enum GlyphRunRetrievalFlags : UInt16
       RetrieveGlyphIndexes = 1
       RetrieveGlyphPositions = 2
@@ -91821,6 +91882,10 @@ module Qt
     
     def determinant() : Float64
       Binding.bg_QMatrix4x4_determinant_(self)
+    end
+    
+    def inverted(invertible : Bool*? = nil) : Matrix4x4
+      Matrix4x4.new(unwrap: Binding.bg_QMatrix4x4_inverted_bool_X(self, invertible))
     end
     
     def transposed() : Matrix4x4
@@ -109882,8 +109947,8 @@ module Qt
       CustomBase = 4026531840
       All = 4294967295
     end
+    @[Flags]
     enum SubControls : UInt32
-      None = 0
       ScrollBarAddLine = 1
       ScrollBarSubLine = 2
       ScrollBarAddPage = 4
@@ -109925,7 +109990,7 @@ module Qt
       MdiNormalButton = 2
       MdiCloseButton = 4
       CustomBase = 4026531840
-      All = 4294967295
+      CppAll = 4294967295
     end
     enum PixelMetric : UInt32
       ButtonMargin = 0
@@ -163137,6 +163202,10 @@ module Qt
     {% end %}
     end
     
+    protected def cpp_initialize() : Void
+      Binding.bg_QHeaderView_initialize_(self)
+    end
+    
     protected def initialize_sections() : Void
       Binding.bg_QHeaderView_initializeSections_(self)
     end
@@ -199930,8 +199999,9 @@ module Qt
       TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_deref_(self))
     end
     
+    @[Flags]
     enum IteratorFlags : UInt32
-      All = 0
+      CppAll = 0
       Hidden = 1
       NotHidden = 2
       Selected = 4
@@ -207286,14 +207356,6 @@ module Qt
   
   def self.qt6cr_validator_fixup(validator : Validator, input : String) : String
     Qt::Converter::QString.unwrap(Binding.bg____qt6cr_validator_fixup_STATIC_const_QValidator_X_const_QString_R(validator, Qt::Converter::QString.wrap(input)))
-  end
-  
-  def self.qt6cr_transform_inverted(transform : Transform, invertible : Bool*) : Transform
-    Transform.new(unwrap: Binding.bg____qt6cr_transform_inverted_STATIC_const_QTransform_R_bool_X(transform, invertible))
-  end
-  
-  def self.qt6cr_matrix4x4_inverted(matrix : Matrix4x4, invertible : Bool*) : Matrix4x4
-    Matrix4x4.new(unwrap: Binding.bg____qt6cr_matrix4x4_inverted_STATIC_const_QMatrix4x4_R_bool_X(matrix, invertible))
   end
   
   def self.qt6cr_xml_reader_document_version(object : XmlStreamReader) : String

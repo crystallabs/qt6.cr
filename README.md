@@ -330,20 +330,22 @@ see the comments there:
 * `QTextFrame::iterator` and `QTextBlock::iterator` are Crystal `Iterator`s
   (`src/qt6/text_iterators.cr`): `frame.begin.each { |frame_or_block| }`,
   `block.begin.map(&.text)`.
-* `QTreeWidgetItemIterator::IteratorFlags` maps as a plain enum, as Qt's
-  `All = 0` is what a Crystal `@[Flags]` enum calls `None`; its constants still
-  combine with `|`.  `Qt::TreeWidgetItemIterator` is an `Iterator`.
-* `QHeaderView`'s protected `initialize()` is dropped, as Crystal reserves the
-  name for constructors.
+* A Crystal `@[Flags]` enum defines `None` and `All` itself, so bindgen
+  drops Qt's when they agree and renames the others `CppAll`:
+  `QTreeWidgetItemIterator::IteratorFlags::All` (Qt's `0`, no filter) is
+  `IteratorFlags::CppAll`, like `Style::SubControls::CppAll` (`SC_All`, all
+  bits set) and `InputDevice::Capabilities::CppAll`.
+  `Qt::TreeWidgetItemIterator` is an `Iterator`.
+* `QHeaderView`'s protected `initialize()` is `#cpp_initialize`, as Crystal
+  reserves the name for constructors.
 * `QValidator::validate` and `fixup` take the input by non-const reference,
   which bindgen can't pass a `String` (a `QString` by value) by, so
   `ext/validator_helper.hpp` calls them on a copy: `validator.validate("42")`
   returns the `Validator::State`, `#fixup` the fixed string.  Validators can't
   be written in Crystal: as the pure virtual `validate` is dropped, bindgen
   skips the C++ subclass (a warning, shown by `tool.sh --debug`).
-* `QStyle::SubControls` maps as a plain enum, as Qt's `SC_All` is all bits
-  set, which a Crystal `@[Flags]` enum defines itself.  The `QStyle` enum
-  constants drop their prefixes: `Style::PixelMetric::ButtonMargin`.
+* The `QStyle` enum constants drop their prefixes:
+  `Style::PixelMetric::ButtonMargin`.
 * `QGraphicsWidget` derives from `QGraphicsObject` and `QGraphicsLayoutItem`:
   the wrapper has the layout item methods, and `#as_graphics_layout_item`
   casts it for `GraphicsLinearLayout#add_item` and friends.
@@ -353,13 +355,11 @@ see the comments there:
 * `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
   `QPainterPath::Element`, `QPageRanges::Range` and
   `QColorSpace::PrimaryPoints` are copied structures passed by value, like
-  `QPoint`.  bindgen gives a copied structure no accessors for its public
-  fields, so `src/qt6/copied_fields.cr` adds them: `element.x`, `range.from`.
-* `QTransform#inverted` and `QMatrix4x4#inverted` take `bool *invertible =
-  nullptr`, which bindgen renders as `Bool*? = true`, so
-  `src/qt6/transform.cr` wraps them through `ext/matrix_helper.hpp`.  That
-  helper also defines `Vector3D * Matrix4x4` and its mirror, which Qt declares
-  as friends but whose definitions are deprecated and hidden by the cutoff.
+  `QPoint`, with property methods for their public fields: `element.x`,
+  `range.from`.
+* `ext/matrix_helper.hpp` defines `Vector3D * Matrix4x4` and its mirror, which
+  Qt declares as friends but whose definitions are deprecated and hidden by
+  the cutoff, so the binding wouldn't link without them.
 * `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
   `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`.
 * The QXmlStream classes return names, values and text as `QStringView`, which
@@ -377,7 +377,7 @@ see the comments there:
   `ChronoTimer.new(5.milliseconds)`, `ElapsedTimer#duration_elapsed`.
 * `QKeyCombination` and `QPointingDeviceUniqueId` are copied structures:
   `KeyCombination.new(KeyboardModifiers::ControlModifier, Key::A)`.
-  `QCalendar::YearMonthDay` too, with its fields from `copied_fields.cr`.
+  `QCalendar::YearMonthDay` too.
 * `Qt::RegularExpressionMatchIterator` (`RegularExpression#global_match`) is
   an `Iterator(RegularExpressionMatch)`.
 * `QJsonObject#[]` returns a `JsonValue` copy; `QJsonArray#[]` a
@@ -385,8 +385,8 @@ see the comments there:
   returns a `JsonObjectIterator`.  The CBOR classes aren't bound.
 * Types without a mapping yet, like `QFont::Tag` or the `QEvent` constructor
   tags, are ignored, which drops the methods using them.  A `bool *ok =
-  nullptr` argument comes out as `ok : Bool*? = true`, which only compiles
-  when `nil` is passed explicitly: `bits.to_u_int32(endian, nil)`.
+  nullptr` argument is `ok : Bool*? = nil`: `bits.to_u_int32(endian)`, or
+  `transform.inverted(pointerof(invertible))` to learn the outcome.
 
 ## Future things to do
 

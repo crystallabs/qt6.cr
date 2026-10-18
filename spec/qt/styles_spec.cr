@@ -42,6 +42,8 @@ describe Qt::Style do
     complex = Qt::StyleOptionSlider.new
     complex.sub_controls = Qt::Style::SubControls::SliderGroove | Qt::Style::SubControls::SliderHandle
     complex.sub_controls.should eq(Qt::Style::SubControls::SliderGroove | Qt::Style::SubControls::SliderHandle)
+    Qt::Style::SubControls::CppAll.value.should eq(UInt32::MAX) # Qt's SC_All; Crystal's All is the union
+    Qt::Style::SubControls::All.includes?(Qt::Style::SubControls::SliderHandle).should be_true
     complex.orientation = Qt::Orientation::Vertical
     complex.orientation.should eq(Qt::Orientation::Vertical)
   end
