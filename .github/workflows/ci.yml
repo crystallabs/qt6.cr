@@ -8,15 +8,30 @@ on:
 
 jobs:
   bindings:
-    name: Qt6 with LLVM ${{ matrix.llvm }}
-    runs-on: ubuntu-24.04
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        # The oldest LLVM bindgen supports, and Ubuntu's default.
-        llvm: [14, 18]
+        # Both ends of the supported Qt range: Ubuntu's Qt 6.4 with the oldest
+        # LLVM bindgen supports and with Ubuntu's default, and Homebrew's
+        # current Qt.  Qt hides API it removed in later versions, so a binding
+        # that generates against one end can still fail against the other.
+        include:
+          - name: Ubuntu 24.04 Qt 6.4, LLVM 14
+            os: ubuntu-24.04
+            llvm: 14
+            llvm_dir: /usr/lib/llvm-14/lib/cmake/llvm
+          - name: Ubuntu 24.04 Qt 6.4, LLVM 18
+            os: ubuntu-24.04
+            llvm: 18
+            llvm_dir: /usr/lib/llvm-18/lib/cmake/llvm
+          - name: macOS Homebrew Qt
+            os: macos-15
+            llvm_dir: /opt/homebrew/opt/llvm/lib/cmake/llvm
     env:
       LLVM: ${{ matrix.llvm }}
+      LLVM_DIR: ${{ matrix.llvm_dir }}
       QT_QPA_PLATFORM: offscreen
     steps:
       - uses: actions/checkout@v5
@@ -24,17 +39,31 @@ jobs:
       # install-crystal installs packages without refreshing the package
       # index, which fails when the runner image's index has gone stale.
       - name: Update package index
+        if: runner.os == 'Linux'
         run: sudo apt-get update
 
       - uses: crystal-lang/install-crystal@v1
 
       - name: Install dependencies
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get install -y --no-install-recommends \
             qt6-base-dev qt6-base-dev-tools libgc-dev \
             "clang-$LLVM" "libclang-$LLVM-dev" "libclang-cpp$LLVM-dev" "llvm-$LLVM-dev" \
             cmake libpcre2-dev libyaml-dev libevent-dev \
             libxml2-dev libz3-dev libzstd-dev zlib1g-dev libncurses-dev
+
+      # Homebrew's Qt is built as frameworks, see the README's macOS section.
+      - name: Install dependencies
+        if: runner.os == 'macOS'
+        run: |
+          brew install qt bdw-gc llvm cmake pkgconf
+          {
+            echo "SDKROOT=$(xcrun --show-sdk-path)"
+            echo "CPPFLAGS=-I/opt/homebrew/include"
+            echo "LIBRARY_PATH=/opt/homebrew/lib"
+            echo "PKG_CONFIG_PATH=/opt/homebrew/opt/qt/lib/pkgconfig"
+          } >> "$GITHUB_ENV"
 
       - name: Install shards
         run: shards install
@@ -45,7 +74,7 @@ jobs:
 
       - name: Build clang tool
         working-directory: lib/bindgen/clang
-        run: cmake -DLLVM_DIR="/usr/lib/llvm-$LLVM/lib/cmake/llvm" . && make
+        run: cmake -DLLVM_DIR="$LLVM_DIR" . && make
 
       - name: Detect binding platform
         run: |
