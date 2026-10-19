@@ -9901,6 +9901,9 @@ module Qt
     fun bg_QDeadlineTimer_remainingTimeAsDuration_(_self_ : QDeadlineTimer*) : Int64
     fun bg_QDeadlineTimer__COPY_const_QDeadlineTimer_R(unnamed_arg_0 : QDeadlineTimer*) : QDeadlineTimer*
     fun bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, unnamed_arg_0 : QDeadlineTimer*) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_add_qint64(_self_ : QDeadlineTimer*, msecs : Int64) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_sub_qint64(_self_ : QDeadlineTimer*, msecs : Int64) : QDeadlineTimer*
+    fun bg_QDeadlineTimer__OPERATOR_sub_QDeadlineTimer(_self_ : QDeadlineTimer*, dt2 : QDeadlineTimer*) : Int64
     fun bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
     fun bg_QDeadlineTimer__OPERATOR_ne_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
     fun bg_QDeadlineTimer__OPERATOR_lt_const_QDeadlineTimer_R(_self_ : QDeadlineTimer*, rhs : QDeadlineTimer*) : Bool
@@ -10890,6 +10893,7 @@ module Qt
     fun bg_QBitArray__OPERATOR_bit_and_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
     fun bg_QBitArray__OPERATOR_bit_or_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
     fun bg_QBitArray__OPERATOR_bit_xor_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
+    fun bg_QBitArray__OPERATOR_bit_not_(_self_ : QBitArray*) : QBitArray*
     fun bg_QBitArray__OPERATOR_eq_const_QBitArray_R(_self_ : QBitArray*, rhs : QBitArray*) : Bool
     fun bg_QBitArray__OPERATOR_ne_const_QBitArray_R(_self_ : QBitArray*, rhs : QBitArray*) : Bool
     fun bg_QIODevice_metaObject_(_self_ : QIODevice*) : QMetaObject*
@@ -13980,6 +13984,10 @@ module Qt
     fun bg_QOperatingSystemVersionBase_compare_STATIC_QOperatingSystemVersionBase_QOperatingSystemVersionBase(v1 : QOperatingSystemVersionBase*, v2 : QOperatingSystemVersionBase*) : Int32
     fun bg_QOperatingSystemVersionBase__CONSTRUCT_() : QOperatingSystemVersionBase*
     fun bg_QOperatingSystemVersionBase__COPY_const_QOperatingSystemVersionBase_R(unnamed_arg_0 : QOperatingSystemVersionBase*) : QOperatingSystemVersionBase*
+    fun bg_QOperatingSystemVersionBase__OPERATOR_gt_QOperatingSystemVersionBase(_self_ : QOperatingSystemVersionBase*, rhs : QOperatingSystemVersionBase*) : Bool
+    fun bg_QOperatingSystemVersionBase__OPERATOR_ge_QOperatingSystemVersionBase(_self_ : QOperatingSystemVersionBase*, rhs : QOperatingSystemVersionBase*) : Bool
+    fun bg_QOperatingSystemVersionBase__OPERATOR_lt_QOperatingSystemVersionBase(_self_ : QOperatingSystemVersionBase*, rhs : QOperatingSystemVersionBase*) : Bool
+    fun bg_QOperatingSystemVersionBase__OPERATOR_le_QOperatingSystemVersionBase(_self_ : QOperatingSystemVersionBase*, rhs : QOperatingSystemVersionBase*) : Bool
     fun bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase(other : QOperatingSystemVersionBase*) : QOperatingSystemVersionUnexported*
     fun bg_QOperatingSystemVersionUnexported__CONSTRUCT_() : QOperatingSystemVersionUnexported*
     fun bg_QOperatingSystemVersionUnexported__COPY_const_QOperatingSystemVersionUnexported_R(unnamed_arg_0 : QOperatingSystemVersionUnexported*) : QOperatingSystemVersionUnexported*
@@ -16052,6 +16060,8 @@ module Qt
     fun bg_QPixelFormat_yuvLayout_(_self_ : QPixelFormat*) : ::Qt::PixelFormat::YUVLayout
     fun bg_QPixelFormat_subEnum_(_self_ : QPixelFormat*) : UInt8
     fun bg_QPixelFormat__COPY_const_QPixelFormat_R(unnamed_arg_0 : QPixelFormat*) : QPixelFormat*
+    fun bg_QPixelFormat__OPERATOR_eq_QPixelFormat(_self_ : QPixelFormat*, fmt2 : QPixelFormat*) : Bool
+    fun bg_QPixelFormat__OPERATOR_ne_QPixelFormat(_self_ : QPixelFormat*, fmt2 : QPixelFormat*) : Bool
     fun bg_QPixelFormat_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPolygon__CONSTRUCT_() : QPolygon*
     fun bg_QPolygon__CONSTRUCT_const_QList_QPoint__R(v : ContainerQListQPoint*) : QPolygon*
@@ -16517,6 +16527,15 @@ module Qt
     fun bg_QVector2D__CONVERT_QVariant_(_self_ : Vector2D*) : CrystalVariant
     fun bg_QVector2D__COPY_const_QVector2D_R(unnamed_arg_0 : Vector2D) : Vector2D
     fun bg_QVector2D__OPERATOR_assign_const_QVector2D_R(_self_ : Vector2D*, unnamed_arg_0 : Vector2D) : Vector2D
+    fun bg_QVector2D__OPERATOR_eq_QVector2D(_self_ : Vector2D*, v2 : Vector2D) : Bool
+    fun bg_QVector2D__OPERATOR_ne_QVector2D(_self_ : Vector2D*, v2 : Vector2D) : Bool
+    fun bg_QVector2D__OPERATOR_add_QVector2D(_self_ : Vector2D*, v2 : Vector2D) : Vector2D
+    fun bg_QVector2D__OPERATOR_sub_QVector2D(_self_ : Vector2D*, v2 : Vector2D) : Vector2D
+    fun bg_QVector2D__OPERATOR_mul_float(_self_ : Vector2D*, factor : Float32) : Vector2D
+    fun bg_QVector2D__OPERATOR_mul_QVector2D(_self_ : Vector2D*, v2 : Vector2D) : Vector2D
+    fun bg_QVector2D__OPERATOR_neg_(_self_ : Vector2D*) : Vector2D
+    fun bg_QVector2D__OPERATOR_div_float(_self_ : Vector2D*, divisor : Float32) : Vector2D
+    fun bg_QVector2D__OPERATOR_div_QVector2D(_self_ : Vector2D*, divisor : Vector2D) : Vector2D
     fun bg_QVector3D__CONSTRUCT_() : Vector3D
     fun bg_QVector3D__CONSTRUCT_float_float_float(xpos : Float32, ypos : Float32, zpos : Float32) : Vector3D
     fun bg_QVector3D__CONSTRUCT_QPoint(point : QPoint) : Vector3D
@@ -16559,6 +16578,15 @@ module Qt
     fun bg_QVector3D__CONVERT_QVariant_(_self_ : Vector3D*) : CrystalVariant
     fun bg_QVector3D__COPY_const_QVector3D_R(unnamed_arg_0 : Vector3D) : Vector3D
     fun bg_QVector3D__OPERATOR_assign_const_QVector3D_R(_self_ : Vector3D*, unnamed_arg_0 : Vector3D) : Vector3D
+    fun bg_QVector3D__OPERATOR_eq_QVector3D(_self_ : Vector3D*, v2 : Vector3D) : Bool
+    fun bg_QVector3D__OPERATOR_ne_QVector3D(_self_ : Vector3D*, v2 : Vector3D) : Bool
+    fun bg_QVector3D__OPERATOR_add_QVector3D(_self_ : Vector3D*, v2 : Vector3D) : Vector3D
+    fun bg_QVector3D__OPERATOR_sub_QVector3D(_self_ : Vector3D*, v2 : Vector3D) : Vector3D
+    fun bg_QVector3D__OPERATOR_mul_float(_self_ : Vector3D*, factor : Float32) : Vector3D
+    fun bg_QVector3D__OPERATOR_mul_QVector3D(_self_ : Vector3D*, v2 : Vector3D) : Vector3D
+    fun bg_QVector3D__OPERATOR_neg_(_self_ : Vector3D*) : Vector3D
+    fun bg_QVector3D__OPERATOR_div_float(_self_ : Vector3D*, divisor : Float32) : Vector3D
+    fun bg_QVector3D__OPERATOR_div_QVector3D(_self_ : Vector3D*, divisor : Vector3D) : Vector3D
     fun bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(_self_ : Vector3D*, matrix : QMatrix4x4*) : Vector3D
     fun bg_QVector4D__CONSTRUCT_() : Vector4D
     fun bg_QVector4D__CONSTRUCT_float_float_float_float(xpos : Float32, ypos : Float32, zpos : Float32, wpos : Float32) : Vector4D
@@ -16597,6 +16625,15 @@ module Qt
     fun bg_QVector4D_toPointF_(_self_ : Vector4D*) : QPointF
     fun bg_QVector4D__CONVERT_QVariant_(_self_ : Vector4D*) : CrystalVariant
     fun bg_QVector4D__COPY_const_QVector4D_R(unnamed_arg_0 : Vector4D) : Vector4D
+    fun bg_QVector4D__OPERATOR_eq_QVector4D(_self_ : Vector4D*, v2 : Vector4D) : Bool
+    fun bg_QVector4D__OPERATOR_ne_QVector4D(_self_ : Vector4D*, v2 : Vector4D) : Bool
+    fun bg_QVector4D__OPERATOR_add_QVector4D(_self_ : Vector4D*, v2 : Vector4D) : Vector4D
+    fun bg_QVector4D__OPERATOR_sub_QVector4D(_self_ : Vector4D*, v2 : Vector4D) : Vector4D
+    fun bg_QVector4D__OPERATOR_mul_float(_self_ : Vector4D*, factor : Float32) : Vector4D
+    fun bg_QVector4D__OPERATOR_mul_QVector4D(_self_ : Vector4D*, v2 : Vector4D) : Vector4D
+    fun bg_QVector4D__OPERATOR_neg_(_self_ : Vector4D*) : Vector4D
+    fun bg_QVector4D__OPERATOR_div_float(_self_ : Vector4D*, divisor : Float32) : Vector4D
+    fun bg_QVector4D__OPERATOR_div_QVector4D(_self_ : Vector4D*, divisor : Vector4D) : Vector4D
     fun bg_QVector4D__OPERATOR_mul_const_QMatrix4x4_R(_self_ : Vector4D*, matrix : QMatrix4x4*) : Vector4D
     fun bg_QScreen_metaObject_(_self_ : QScreen*) : QMetaObject*
     fun bg_QScreen_qt_metacast_const_char_X(_self_ : QScreen*, unnamed_arg_0 : UInt8*) : Void*
@@ -16867,6 +16904,8 @@ module Qt
     fun bg_QPointingDeviceUniqueId_isValid_(_self_ : PointingDeviceUniqueId*) : Bool
     fun bg_QPointingDeviceUniqueId_numericId_(_self_ : PointingDeviceUniqueId*) : Int64
     fun bg_QPointingDeviceUniqueId__COPY_const_QPointingDeviceUniqueId_R(unnamed_arg_0 : PointingDeviceUniqueId) : PointingDeviceUniqueId
+    fun bg_QPointingDeviceUniqueId__OPERATOR_eq_QPointingDeviceUniqueId(_self_ : PointingDeviceUniqueId*, rhs : PointingDeviceUniqueId) : Bool
+    fun bg_QPointingDeviceUniqueId__OPERATOR_ne_QPointingDeviceUniqueId(_self_ : PointingDeviceUniqueId*, rhs : PointingDeviceUniqueId) : Bool
     fun bg_QPointingDeviceUniqueId_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPointingDevice_metaObject_(_self_ : QPointingDevice*) : QMetaObject*
     fun bg_QPointingDevice_qt_metacast_const_char_X(_self_ : QPointingDevice*, unnamed_arg_0 : UInt8*) : Void*
@@ -20005,6 +20044,9 @@ module Qt
     fun bg_QPageRanges__Range_contains_int(_self_ : PageRange*, page_number : Int32) : Bool
     fun bg_QPageRanges__Range__CONSTRUCT_() : PageRange
     fun bg_QPageRanges__Range__COPY_const_QPageRanges__Range_R(unnamed_arg_0 : PageRange) : PageRange
+    fun bg_QPageRanges__Range__OPERATOR_eq_QPageRanges__Range(_self_ : PageRange*, rhs : PageRange) : Bool
+    fun bg_QPageRanges__Range__OPERATOR_ne_QPageRanges__Range(_self_ : PageRange*, rhs : PageRange) : Bool
+    fun bg_QPageRanges__Range__OPERATOR_lt_QPageRanges__Range(_self_ : PageRange*, rhs : PageRange) : Bool
     fun bg_QPageRanges__Range_from_GETTER_(_self_ : PageRange*) : Int32
     fun bg_QPageRanges__Range_from_SETTER_int(_self_ : PageRange*, from : Int32) : Void
     fun bg_QPageRanges__Range_to_GETTER_(_self_ : PageRange*) : Int32
@@ -41540,6 +41582,18 @@ module Qt
       DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTimer_R(self, unnamed_arg_0))
     end
     
+    def +(msecs : Int64) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_add_qint64(self, msecs))
+    end
+    
+    def -(msecs : Int64) : DeadlineTimer
+      DeadlineTimer.new(unwrap: Binding.bg_QDeadlineTimer__OPERATOR_sub_qint64(self, msecs))
+    end
+    
+    def -(dt2 : DeadlineTimer) : Int64
+      Binding.bg_QDeadlineTimer__OPERATOR_sub_QDeadlineTimer(self, dt2)
+    end
+    
     def ==(rhs : DeadlineTimer) : Bool
       Binding.bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(self, rhs)
     end
@@ -47695,6 +47749,10 @@ module Qt
     
     def ^(a2 : BitArray) : BitArray
       BitArray.new(unwrap: Binding.bg_QBitArray__OPERATOR_bit_xor_const_QBitArray_R(self, a2))
+    end
+    
+    def ~() : BitArray
+      BitArray.new(unwrap: Binding.bg_QBitArray__OPERATOR_bit_not_(self))
     end
     
     def ==(rhs : BitArray) : Bool
@@ -65100,6 +65158,22 @@ module Qt
     @unwrap = result
     end
     
+    def >(rhs : OperatingSystemVersionBase) : Bool
+      Binding.bg_QOperatingSystemVersionBase__OPERATOR_gt_QOperatingSystemVersionBase(self, rhs)
+    end
+    
+    def >=(rhs : OperatingSystemVersionBase) : Bool
+      Binding.bg_QOperatingSystemVersionBase__OPERATOR_ge_QOperatingSystemVersionBase(self, rhs)
+    end
+    
+    def <(rhs : OperatingSystemVersionBase) : Bool
+      Binding.bg_QOperatingSystemVersionBase__OPERATOR_lt_QOperatingSystemVersionBase(self, rhs)
+    end
+    
+    def <=(rhs : OperatingSystemVersionBase) : Bool
+      Binding.bg_QOperatingSystemVersionBase__OPERATOR_le_QOperatingSystemVersionBase(self, rhs)
+    end
+    
     enum OSType : UInt32
       Unknown = 0
       Windows = 1
@@ -77081,6 +77155,14 @@ module Qt
     @unwrap = result
     end
     
+    def ==(fmt2 : PixelFormat) : Bool
+      Binding.bg_QPixelFormat__OPERATOR_eq_QPixelFormat(self, fmt2)
+    end
+    
+    def !=(fmt2 : PixelFormat) : Bool
+      Binding.bg_QPixelFormat__OPERATOR_ne_QPixelFormat(self, fmt2)
+    end
+    
     def self.static_meta_object() : MetaObject
       MetaObject.new(unwrap: Binding.bg_QPixelFormat_staticMetaObject_STATIC_GETTER_())
     end
@@ -79266,6 +79348,42 @@ module Qt
       Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_assign_const_QVector2D_R(pointerof(@unwrap), unnamed_arg_0))
     end
     
+    def ==(v2 : Vector2D) : Bool
+      Binding.bg_QVector2D__OPERATOR_eq_QVector2D(pointerof(@unwrap), v2)
+    end
+    
+    def !=(v2 : Vector2D) : Bool
+      Binding.bg_QVector2D__OPERATOR_ne_QVector2D(pointerof(@unwrap), v2)
+    end
+    
+    def +(v2 : Vector2D) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_add_QVector2D(pointerof(@unwrap), v2))
+    end
+    
+    def -(v2 : Vector2D) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_sub_QVector2D(pointerof(@unwrap), v2))
+    end
+    
+    def *(factor : Float32) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_mul_float(pointerof(@unwrap), factor))
+    end
+    
+    def *(v2 : Vector2D) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_mul_QVector2D(pointerof(@unwrap), v2))
+    end
+    
+    def -() : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_neg_(pointerof(@unwrap)))
+    end
+    
+    def /(divisor : Float32) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_div_float(pointerof(@unwrap), divisor))
+    end
+    
+    def /(divisor : Vector2D) : Vector2D
+      Vector2D.new(unwrap: Binding.bg_QVector2D__OPERATOR_div_QVector2D(pointerof(@unwrap), divisor))
+    end
+    
     def to_unsafe
       @unwrap
     end
@@ -79454,6 +79572,42 @@ module Qt
       Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_assign_const_QVector3D_R(pointerof(@unwrap), unnamed_arg_0))
     end
     
+    def ==(v2 : Vector3D) : Bool
+      Binding.bg_QVector3D__OPERATOR_eq_QVector3D(pointerof(@unwrap), v2)
+    end
+    
+    def !=(v2 : Vector3D) : Bool
+      Binding.bg_QVector3D__OPERATOR_ne_QVector3D(pointerof(@unwrap), v2)
+    end
+    
+    def +(v2 : Vector3D) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_add_QVector3D(pointerof(@unwrap), v2))
+    end
+    
+    def -(v2 : Vector3D) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_sub_QVector3D(pointerof(@unwrap), v2))
+    end
+    
+    def *(factor : Float32) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_mul_float(pointerof(@unwrap), factor))
+    end
+    
+    def *(v2 : Vector3D) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_mul_QVector3D(pointerof(@unwrap), v2))
+    end
+    
+    def -() : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_neg_(pointerof(@unwrap)))
+    end
+    
+    def /(divisor : Float32) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_div_float(pointerof(@unwrap), divisor))
+    end
+    
+    def /(divisor : Vector3D) : Vector3D
+      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_div_QVector3D(pointerof(@unwrap), divisor))
+    end
+    
     def *(matrix : Matrix4x4) : Vector3D
       Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(pointerof(@unwrap), matrix))
     end
@@ -79625,6 +79779,42 @@ module Qt
     def initialize(unnamed_arg_0 : Vector4D)
       result = Binding.bg_QVector4D__COPY_const_QVector4D_R(unnamed_arg_0)
     @unwrap = result
+    end
+    
+    def ==(v2 : Vector4D) : Bool
+      Binding.bg_QVector4D__OPERATOR_eq_QVector4D(pointerof(@unwrap), v2)
+    end
+    
+    def !=(v2 : Vector4D) : Bool
+      Binding.bg_QVector4D__OPERATOR_ne_QVector4D(pointerof(@unwrap), v2)
+    end
+    
+    def +(v2 : Vector4D) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_add_QVector4D(pointerof(@unwrap), v2))
+    end
+    
+    def -(v2 : Vector4D) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_sub_QVector4D(pointerof(@unwrap), v2))
+    end
+    
+    def *(factor : Float32) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_mul_float(pointerof(@unwrap), factor))
+    end
+    
+    def *(v2 : Vector4D) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_mul_QVector4D(pointerof(@unwrap), v2))
+    end
+    
+    def -() : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_neg_(pointerof(@unwrap)))
+    end
+    
+    def /(divisor : Float32) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_div_float(pointerof(@unwrap), divisor))
+    end
+    
+    def /(divisor : Vector4D) : Vector4D
+      Vector4D.new(unwrap: Binding.bg_QVector4D__OPERATOR_div_QVector4D(pointerof(@unwrap), divisor))
     end
     
     def *(matrix : Matrix4x4) : Vector4D
@@ -81137,6 +81327,14 @@ module Qt
     def initialize(unnamed_arg_0 : PointingDeviceUniqueId)
       result = Binding.bg_QPointingDeviceUniqueId__COPY_const_QPointingDeviceUniqueId_R(unnamed_arg_0)
     @unwrap = result
+    end
+    
+    def ==(rhs : PointingDeviceUniqueId) : Bool
+      Binding.bg_QPointingDeviceUniqueId__OPERATOR_eq_QPointingDeviceUniqueId(pointerof(@unwrap), rhs)
+    end
+    
+    def !=(rhs : PointingDeviceUniqueId) : Bool
+      Binding.bg_QPointingDeviceUniqueId__OPERATOR_ne_QPointingDeviceUniqueId(pointerof(@unwrap), rhs)
     end
     
     def self.static_meta_object() : MetaObject
@@ -102034,6 +102232,18 @@ module Qt
     def initialize(unnamed_arg_0 : PageRange)
       result = Binding.bg_QPageRanges__Range__COPY_const_QPageRanges__Range_R(unnamed_arg_0)
     @unwrap = result
+    end
+    
+    def ==(rhs : PageRange) : Bool
+      Binding.bg_QPageRanges__Range__OPERATOR_eq_QPageRanges__Range(pointerof(@unwrap), rhs)
+    end
+    
+    def !=(rhs : PageRange) : Bool
+      Binding.bg_QPageRanges__Range__OPERATOR_ne_QPageRanges__Range(pointerof(@unwrap), rhs)
+    end
+    
+    def <(rhs : PageRange) : Bool
+      Binding.bg_QPageRanges__Range__OPERATOR_lt_QPageRanges__Range(pointerof(@unwrap), rhs)
     end
     
     def from() : Int32

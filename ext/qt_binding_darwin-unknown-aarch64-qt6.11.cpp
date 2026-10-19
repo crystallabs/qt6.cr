@@ -3158,6 +3158,18 @@ extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_assign_const_QDeadlineTi
   return &(((*_self_) = (unnamed_arg_0)));
 }
 
+extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_add_qint64(QDeadlineTimer * _self_, qint64 msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QDeadlineTimer>()) QDeadlineTimer (((*_self_) + (msecs)));
+}
+
+extern "C" QDeadlineTimer * bg_QDeadlineTimer__OPERATOR_sub_qint64(QDeadlineTimer * _self_, qint64 msecs) {
+  return new (UseGC, bindgen_gc_finalizer<QDeadlineTimer>()) QDeadlineTimer (((*_self_) - (msecs)));
+}
+
+extern "C" qint64 bg_QDeadlineTimer__OPERATOR_sub_QDeadlineTimer(QDeadlineTimer * _self_, QDeadlineTimer & dt2) {
+  return ((*_self_) - (dt2));
+}
+
 extern "C" bool bg_QDeadlineTimer__OPERATOR_eq_const_QDeadlineTimer_R(QDeadlineTimer * _self_, const QDeadlineTimer & rhs) {
   return ((*_self_) == (rhs));
 }
@@ -8615,6 +8627,10 @@ extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_or_const_QBitArray_R(QBitArray
 
 extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_xor_const_QBitArray_R(QBitArray * _self_, const QBitArray & a2) {
   return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray (((*_self_) ^ (a2)));
+}
+
+extern "C" QBitArray * bg_QBitArray__OPERATOR_bit_not_(QBitArray * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QBitArray>()) QBitArray ((~(*_self_)));
 }
 
 extern "C" bool bg_QBitArray__OPERATOR_eq_const_QBitArray_R(QBitArray * _self_, const QBitArray & rhs) {
@@ -22761,6 +22777,22 @@ extern "C" QOperatingSystemVersionBase * bg_QOperatingSystemVersionBase__COPY_co
   return new (UseGC) CrystalGCWrapper<QOperatingSystemVersionBase>(unnamed_arg_0);
 }
 
+extern "C" bool bg_QOperatingSystemVersionBase__OPERATOR_gt_QOperatingSystemVersionBase(QOperatingSystemVersionBase * _self_, QOperatingSystemVersionBase & rhs) {
+  return ((*_self_) > (rhs));
+}
+
+extern "C" bool bg_QOperatingSystemVersionBase__OPERATOR_ge_QOperatingSystemVersionBase(QOperatingSystemVersionBase * _self_, QOperatingSystemVersionBase & rhs) {
+  return ((*_self_) >= (rhs));
+}
+
+extern "C" bool bg_QOperatingSystemVersionBase__OPERATOR_lt_QOperatingSystemVersionBase(QOperatingSystemVersionBase * _self_, QOperatingSystemVersionBase & rhs) {
+  return ((*_self_) < (rhs));
+}
+
+extern "C" bool bg_QOperatingSystemVersionBase__OPERATOR_le_QOperatingSystemVersionBase(QOperatingSystemVersionBase * _self_, QOperatingSystemVersionBase & rhs) {
+  return ((*_self_) <= (rhs));
+}
+
 extern "C" QOperatingSystemVersionUnexported * bg_QOperatingSystemVersionUnexported__CONSTRUCT_QOperatingSystemVersionBase(QOperatingSystemVersionBase & other) {
   return new (UseGC) CrystalGCWrapper<QOperatingSystemVersionUnexported>(other);
 }
@@ -33217,6 +33249,14 @@ extern "C" QPixelFormat * bg_QPixelFormat__COPY_const_QPixelFormat_R(const QPixe
   return new (UseGC) CrystalGCWrapper<QPixelFormat>(unnamed_arg_0);
 }
 
+extern "C" bool bg_QPixelFormat__OPERATOR_eq_QPixelFormat(QPixelFormat * _self_, QPixelFormat & fmt2) {
+  return ((*_self_) == (fmt2));
+}
+
+extern "C" bool bg_QPixelFormat__OPERATOR_ne_QPixelFormat(QPixelFormat * _self_, QPixelFormat & fmt2) {
+  return ((*_self_) != (fmt2));
+}
+
 extern "C" const QMetaObject * bg_QPixelFormat_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPixelFormat::staticMetaObject);
 }
@@ -35117,6 +35157,42 @@ extern "C" QVector2D bg_QVector2D__OPERATOR_assign_const_QVector2D_R(QVector2D *
   return ((*_self_) = (unnamed_arg_0));
 }
 
+extern "C" bool bg_QVector2D__OPERATOR_eq_QVector2D(QVector2D * _self_, QVector2D v2) {
+  return ((*_self_) == (v2));
+}
+
+extern "C" bool bg_QVector2D__OPERATOR_ne_QVector2D(QVector2D * _self_, QVector2D v2) {
+  return ((*_self_) != (v2));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_add_QVector2D(QVector2D * _self_, QVector2D v2) {
+  return ((*_self_) + (v2));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_sub_QVector2D(QVector2D * _self_, QVector2D v2) {
+  return ((*_self_) - (v2));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_mul_float(QVector2D * _self_, float factor) {
+  return ((*_self_) * (factor));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_mul_QVector2D(QVector2D * _self_, QVector2D v2) {
+  return ((*_self_) * (v2));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_neg_(QVector2D * _self_) {
+  return (-(*_self_));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_div_float(QVector2D * _self_, float divisor) {
+  return ((*_self_) / (divisor));
+}
+
+extern "C" QVector2D bg_QVector2D__OPERATOR_div_QVector2D(QVector2D * _self_, QVector2D divisor) {
+  return ((*_self_) / (divisor));
+}
+
 extern "C" QVector3D bg_QVector3D__CONSTRUCT_() {
   return *(bg_deref<QVector3D>());
 }
@@ -35285,6 +35361,42 @@ extern "C" QVector3D bg_QVector3D__OPERATOR_assign_const_QVector3D_R(QVector3D *
   return ((*_self_) = (unnamed_arg_0));
 }
 
+extern "C" bool bg_QVector3D__OPERATOR_eq_QVector3D(QVector3D * _self_, QVector3D v2) {
+  return ((*_self_) == (v2));
+}
+
+extern "C" bool bg_QVector3D__OPERATOR_ne_QVector3D(QVector3D * _self_, QVector3D v2) {
+  return ((*_self_) != (v2));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_add_QVector3D(QVector3D * _self_, QVector3D v2) {
+  return ((*_self_) + (v2));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_sub_QVector3D(QVector3D * _self_, QVector3D v2) {
+  return ((*_self_) - (v2));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_mul_float(QVector3D * _self_, float factor) {
+  return ((*_self_) * (factor));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_mul_QVector3D(QVector3D * _self_, QVector3D v2) {
+  return ((*_self_) * (v2));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_neg_(QVector3D * _self_) {
+  return (-(*_self_));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_div_float(QVector3D * _self_, float divisor) {
+  return ((*_self_) / (divisor));
+}
+
+extern "C" QVector3D bg_QVector3D__OPERATOR_div_QVector3D(QVector3D * _self_, QVector3D divisor) {
+  return ((*_self_) / (divisor));
+}
+
 extern "C" QVector3D bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(QVector3D * _self_, const QMatrix4x4 & matrix) {
   return ((*_self_) * (matrix));
 }
@@ -35435,6 +35547,42 @@ extern "C" CrystalVariant bg_QVector4D__CONVERT_QVariant_(QVector4D * _self_) {
 
 extern "C" QVector4D bg_QVector4D__COPY_const_QVector4D_R(const QVector4D unnamed_arg_0) {
   return *(bg_deref<QVector4D>(unnamed_arg_0));
+}
+
+extern "C" bool bg_QVector4D__OPERATOR_eq_QVector4D(QVector4D * _self_, QVector4D v2) {
+  return ((*_self_) == (v2));
+}
+
+extern "C" bool bg_QVector4D__OPERATOR_ne_QVector4D(QVector4D * _self_, QVector4D v2) {
+  return ((*_self_) != (v2));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_add_QVector4D(QVector4D * _self_, QVector4D v2) {
+  return ((*_self_) + (v2));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_sub_QVector4D(QVector4D * _self_, QVector4D v2) {
+  return ((*_self_) - (v2));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_mul_float(QVector4D * _self_, float factor) {
+  return ((*_self_) * (factor));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_mul_QVector4D(QVector4D * _self_, QVector4D v2) {
+  return ((*_self_) * (v2));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_neg_(QVector4D * _self_) {
+  return (-(*_self_));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_div_float(QVector4D * _self_, float divisor) {
+  return ((*_self_) / (divisor));
+}
+
+extern "C" QVector4D bg_QVector4D__OPERATOR_div_QVector4D(QVector4D * _self_, QVector4D divisor) {
+  return ((*_self_) / (divisor));
 }
 
 extern "C" QVector4D bg_QVector4D__OPERATOR_mul_const_QMatrix4x4_R(QVector4D * _self_, const QMatrix4x4 & matrix) {
@@ -36655,6 +36803,14 @@ extern "C" qint64 bg_QPointingDeviceUniqueId_numericId_(QPointingDeviceUniqueId 
 
 extern "C" QPointingDeviceUniqueId bg_QPointingDeviceUniqueId__COPY_const_QPointingDeviceUniqueId_R(const QPointingDeviceUniqueId unnamed_arg_0) {
   return *(bg_deref<QPointingDeviceUniqueId>(unnamed_arg_0));
+}
+
+extern "C" bool bg_QPointingDeviceUniqueId__OPERATOR_eq_QPointingDeviceUniqueId(QPointingDeviceUniqueId * _self_, QPointingDeviceUniqueId rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QPointingDeviceUniqueId__OPERATOR_ne_QPointingDeviceUniqueId(QPointingDeviceUniqueId * _self_, QPointingDeviceUniqueId rhs) {
+  return ((*_self_) != (rhs));
 }
 
 extern "C" const QMetaObject * bg_QPointingDeviceUniqueId_staticMetaObject_STATIC_GETTER_() {
@@ -51524,6 +51680,18 @@ extern "C" QPageRanges::Range bg_QPageRanges__Range__CONSTRUCT_() {
 
 extern "C" QPageRanges::Range bg_QPageRanges__Range__COPY_const_QPageRanges__Range_R(const QPageRanges::Range unnamed_arg_0) {
   return *(bg_deref<QPageRanges::Range>(unnamed_arg_0));
+}
+
+extern "C" bool bg_QPageRanges__Range__OPERATOR_eq_QPageRanges__Range(QPageRanges::Range * _self_, QPageRanges::Range rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QPageRanges__Range__OPERATOR_ne_QPageRanges__Range(QPageRanges::Range * _self_, QPageRanges::Range rhs) {
+  return ((*_self_) != (rhs));
+}
+
+extern "C" bool bg_QPageRanges__Range__OPERATOR_lt_QPageRanges__Range(QPageRanges::Range * _self_, QPageRanges::Range rhs) {
+  return ((*_self_) < (rhs));
 }
 
 extern "C" int bg_QPageRanges__Range_from_GETTER_(QPageRanges::Range * _self_) {
