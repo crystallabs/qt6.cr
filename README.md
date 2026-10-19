@@ -100,6 +100,10 @@ Build bindgen's clang tool with Homebrew's LLVM:
 cd lib/bindgen/clang && cmake -DLLVM_DIR=/opt/homebrew/opt/llvm/lib/cmake/llvm . && make
 ```
 
+If linking the tool fails with `ld: could not parse bitcode object file`, the
+Xcode linker is older than Homebrew's LLVM, whose static libraries hold
+bitcode.  Link LLVM dynamically instead: `BINDGEN_DYNAMIC=1 cmake ...`.
+
 If Homebrew's `qt@5` is installed as well, make sure `qmake6` (not `qt@5`'s
 `qmake`) is found, or set `QMAKE=/opt/homebrew/opt/qt/bin/qmake6`.
 

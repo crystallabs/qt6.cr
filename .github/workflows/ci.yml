@@ -54,6 +54,8 @@ jobs:
             libxml2-dev libz3-dev libzstd-dev zlib1g-dev libncurses-dev
 
       # Homebrew's Qt is built as frameworks, see the README's macOS section.
+      # Homebrew's LLVM static libraries hold bitcode newer than the runner's
+      # Xcode linker reads, so bindgen's parser links LLVM dynamically.
       - name: Install dependencies
         if: runner.os == 'macOS'
         run: |
@@ -63,6 +65,7 @@ jobs:
             echo "CPPFLAGS=-I/opt/homebrew/include"
             echo "LIBRARY_PATH=/opt/homebrew/lib"
             echo "PKG_CONFIG_PATH=/opt/homebrew/opt/qt/lib/pkgconfig"
+            echo "BINDGEN_DYNAMIC=1"
           } >> "$GITHUB_ENV"
 
       - name: Install shards
