@@ -3759,7 +3759,7 @@ extern "C" QTextStream * bg_QTextStream__CONSTRUCT_() {
 }
 
 extern "C" QTextStream * bg_QTextStream__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QTextStream>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTextStream>(device), {device});
 }
 
 extern "C" QTextStream * bg_QTextStream__CONSTRUCT_FILE_X(FILE * fileHandle) {
@@ -4163,11 +4163,11 @@ extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__CONSTRUCT_() {
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__CONSTRUCT_const_QModelIndex_R(const QModelIndex & index) {
-  return new (UseGC) CrystalGCWrapper<QPersistentModelIndex>(index);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QPersistentModelIndex>(index), {&index});
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__COPY_const_QPersistentModelIndex_R(const QPersistentModelIndex & other) {
-  return new (UseGC) CrystalGCWrapper<QPersistentModelIndex>(other);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QPersistentModelIndex>(other), {&other});
 }
 
 extern "C" QPersistentModelIndex * bg_QPersistentModelIndex__OPERATOR_assign_const_QPersistentModelIndex_R(QPersistentModelIndex * _self_, const QPersistentModelIndex & other) {
@@ -52449,7 +52449,7 @@ extern "C" QPainter * bg_QPainter__CONSTRUCT_() {
 }
 
 extern "C" QPainter * bg_QPainter__CONSTRUCT_QPaintDevice_X(QPaintDevice * unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<QPainter>(unnamed_arg_0);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QPainter>(unnamed_arg_0), {unnamed_arg_0});
 }
 
 extern "C" QPaintDevice * bg_QPainter_device_(QPainter * _self_) {
@@ -147120,47 +147120,27 @@ extern "C" void bg_BgInherit_QTreeView_JUMPTABLE_BgJumptable_QTreeView_R(BgInher
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__COPY_const_QTreeWidgetItemIterator_R(const QTreeWidgetItemIterator & it) {
-  return new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(it);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(it), {&it});
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidget_X(QTreeWidget * widget) {
-  return new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(widget);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(widget), {widget});
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidget_X_QTreeWidgetItemIterator__IteratorFlags(QTreeWidget * widget, QTreeWidgetItemIterator::IteratorFlags flags) {
-  return new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(widget, flags);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(widget, flags), {widget});
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidgetItem_X(QTreeWidgetItem * item) {
-  return new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(item);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(item), {item});
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidgetItem_X_QTreeWidgetItemIterator__IteratorFlags(QTreeWidgetItem * item, QTreeWidgetItemIterator::IteratorFlags flags) {
-  return new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(item, flags);
-}
-
-extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_assign_const_QTreeWidgetItemIterator_R(QTreeWidgetItemIterator * _self_, const QTreeWidgetItemIterator & it) {
-  return &(((*_self_) = (it)));
-}
-
-extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_succ_(QTreeWidgetItemIterator * _self_) {
-  return &((++(*_self_)));
-}
-
-extern "C" const QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_post_succ_(QTreeWidgetItemIterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator (((*_self_)++));
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTreeWidgetItemIterator>(item, flags), {item});
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_add_assign_int(QTreeWidgetItemIterator * _self_, int n) {
   return &(((*_self_) += (n)));
-}
-
-extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_pred_(QTreeWidgetItemIterator * _self_) {
-  return &((--(*_self_)));
-}
-
-extern "C" const QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_post_pred_(QTreeWidgetItemIterator * _self_) {
-  return new (UseGC, bindgen_gc_finalizer<QTreeWidgetItemIterator>()) QTreeWidgetItemIterator (((*_self_)--));
 }
 
 extern "C" QTreeWidgetItemIterator * bg_QTreeWidgetItemIterator__OPERATOR_sub_assign_int(QTreeWidgetItemIterator * _self_, int n) {

@@ -37205,12 +37205,7 @@ module Qt
     fun bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidget_X_QTreeWidgetItemIterator__IteratorFlags(widget : QTreeWidget*, flags : ::Qt::TreeWidgetItemIterator::IteratorFlags) : QTreeWidgetItemIterator*
     fun bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidgetItem_X(item : QTreeWidgetItem*) : QTreeWidgetItemIterator*
     fun bg_QTreeWidgetItemIterator__CONSTRUCT_QTreeWidgetItem_X_QTreeWidgetItemIterator__IteratorFlags(item : QTreeWidgetItem*, flags : ::Qt::TreeWidgetItemIterator::IteratorFlags) : QTreeWidgetItemIterator*
-    fun bg_QTreeWidgetItemIterator__OPERATOR_assign_const_QTreeWidgetItemIterator_R(_self_ : QTreeWidgetItemIterator*, it : QTreeWidgetItemIterator*) : QTreeWidgetItemIterator*
-    fun bg_QTreeWidgetItemIterator__OPERATOR_succ_(_self_ : QTreeWidgetItemIterator*) : QTreeWidgetItemIterator*
-    fun bg_QTreeWidgetItemIterator__OPERATOR_post_succ_(_self_ : QTreeWidgetItemIterator*) : QTreeWidgetItemIterator*
     fun bg_QTreeWidgetItemIterator__OPERATOR_add_assign_int(_self_ : QTreeWidgetItemIterator*, n : Int32) : QTreeWidgetItemIterator*
-    fun bg_QTreeWidgetItemIterator__OPERATOR_pred_(_self_ : QTreeWidgetItemIterator*) : QTreeWidgetItemIterator*
-    fun bg_QTreeWidgetItemIterator__OPERATOR_post_pred_(_self_ : QTreeWidgetItemIterator*) : QTreeWidgetItemIterator*
     fun bg_QTreeWidgetItemIterator__OPERATOR_sub_assign_int(_self_ : QTreeWidgetItemIterator*, n : Int32) : QTreeWidgetItemIterator*
     fun bg_QTreeWidgetItemIterator__OPERATOR_deref_(_self_ : QTreeWidgetItemIterator*) : QTreeWidgetItem*
     fun bg_QTreeWidgetItem__CONSTRUCT_int(type : Int32) : QTreeWidgetItem*
@@ -208541,28 +208536,8 @@ module Qt
     @unwrap = result
     end
     
-    def assign!(it : TreeWidgetItemIterator) : TreeWidgetItemIterator
-      TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_assign_const_QTreeWidgetItemIterator_R(self, it))
-    end
-    
-    def succ!() : TreeWidgetItemIterator
-      TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_succ_(self))
-    end
-    
-    def post_succ!() : TreeWidgetItemIterator
-      TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_post_succ_(self))
-    end
-    
     def add!(n : Int32) : TreeWidgetItemIterator
       TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_add_assign_int(self, n))
-    end
-    
-    def pred!() : TreeWidgetItemIterator
-      TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_pred_(self))
-    end
-    
-    def post_pred!() : TreeWidgetItemIterator
-      TreeWidgetItemIterator.new(unwrap: Binding.bg_QTreeWidgetItemIterator__OPERATOR_post_pred_(self))
     end
     
     def sub!(n : Int32) : TreeWidgetItemIterator
