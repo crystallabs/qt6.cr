@@ -8,6 +8,7 @@
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 #include <meta_helper.hpp>
+#include <action_helper.hpp>
 
 typedef BindgenMapEntries<QHash<int, QByteArray>> Container_QHash_int__QByteArray__Entries;
 typedef QHash<int, QByteArray> Container_QHash_int__QByteArray_;
@@ -151835,6 +151836,14 @@ extern "C" CrystalString bg____qt6cr_data_stream_read_bytes_STATIC_QDataStream_X
 
 extern "C" bool bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType(QObject * object, const char * member, Qt::ConnectionType type) {
   return ::qt6cr_invoke_method(object, member, type);
+}
+
+extern "C" void bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X(QAction * action, QMenu * menu) {
+  ::qt6cr_action_set_menu(action, menu);
+}
+
+extern "C" QMenu * bg____qt6cr_action_menu_STATIC_const_QAction_X(const QAction * action) {
+  return ::qt6cr_action_menu(action);
 }
 
 extern "C" Container_std__pair_QCborValue__QCborValue_ * bg_Container_std__pair_QCborValue__QCborValue___CONSTRUCT_() {

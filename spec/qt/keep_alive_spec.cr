@@ -13,9 +13,12 @@ end
 
 # Qt keeps a pointer to these without taking ownership, from memory the GC
 # doesn't scan either.
-private def assign(view, button)
+private def assign(view, button, action)
   view.model = Qt::StandardItemModel.new(3, 2)
   button.menu = Qt::Menu.new("menu")
+  submenu = Qt::Menu.new("submenu")
+  submenu.add_action("entry")
+  action.menu = submenu
 end
 
 # Builds a tree of four items, two of them top-level.  Returns the tree and
@@ -70,11 +73,13 @@ describe "objects used by Qt" do
   it "aren't collected while Qt keeps a pointer to them" do
     view = Qt::TableView.new
     button = Qt::PushButton.new
-    assign(view, button)
+    action = Qt::Action.new("action")
+    assign(view, button, action)
     churn
 
     view.model.not_nil!.row_count.should eq(3)
     button.menu.not_nil!.title.should eq("menu")
+    action.menu.not_nil!.actions.map(&.text).should eq(["entry"])
   end
 end
 

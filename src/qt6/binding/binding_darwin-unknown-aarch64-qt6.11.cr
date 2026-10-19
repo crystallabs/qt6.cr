@@ -38118,6 +38118,8 @@ module Qt
     fun bg____qt6cr_data_stream_write_bytes_STATIC_QDataStream_X_const_QByteArray_R(stream : QDataStream*, bytes : CrystalString) : Void
     fun bg____qt6cr_data_stream_read_bytes_STATIC_QDataStream_X(stream : QDataStream*) : CrystalString
     fun bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType(object : QObject*, member : UInt8*, type : ::Qt::ConnectionType) : Bool
+    fun bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X(action : QAction*, menu : QMenu*) : Void
+    fun bg____qt6cr_action_menu_STATIC_const_QAction_X(action : QAction*) : QMenu*
     fun bg_Container_std__pair_QCborValue__QCborValue___CONSTRUCT_() : ContainerStdPairQCborValueQCborValue*
     fun bg____Container_std__pair_QCborValue__QCborValue__first_Container_std__pair_QCborValue__QCborValue__R(pair : ContainerStdPairQCborValueQCborValue*) : QCborValue*
     fun bg____Container_std__pair_QCborValue__QCborValue__second_Container_std__pair_QCborValue__QCborValue__R(pair : ContainerStdPairQCborValueQCborValue*) : QCborValue*
@@ -216090,6 +216092,14 @@ module Qt
   
   def self.qt6cr_invoke_method(object : Object, member : UInt8*, type : ConnectionType) : Bool
     Binding.bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType((object.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type)
+  end
+  
+  def self.qt6cr_action_set_menu(action : Action, menu : Menu) : Void
+    Binding.bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X((action.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null))
+  end
+  
+  def self.qt6cr_action_menu(action : Action) : Menu?
+    Binding.bg____qt6cr_action_menu_STATIC_const_QAction_X((action.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
   end
   
   enum MsgType : UInt32

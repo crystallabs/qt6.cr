@@ -360,6 +360,19 @@ describe Qt::Shortcut do
   end
 end
 
+describe Qt::Action do
+  it "shows a menu" do
+    action = Qt::Action.new("File")
+    action.menu.should be_nil
+    menu = Qt::Menu.new("file menu")
+    action.menu = menu
+    action.menu.not_nil!.to_unsafe.should eq(menu.to_unsafe)
+    # The action becomes the action of the menu, and names it
+    menu.menu_action.not_nil!.to_unsafe.should eq(action.to_unsafe)
+    menu.title.should eq("File")
+  end
+end
+
 describe Qt::ActionGroup do
   it "makes actions exclusive" do
     group = Qt::ActionGroup.new(Qt::Widget.new)

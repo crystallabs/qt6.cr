@@ -14,3 +14,7 @@ functions:
     destination: "::"
   "^qt6cr_invoke_method$": # See ext/meta_helper.hpp
     destination: "::"
+  "^qt6cr_action_set_menu$": # See ext/action_helper.hpp
+    destination: "::"
+  "^qt6cr_action_menu$":
+    destination: "::"
