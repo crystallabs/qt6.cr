@@ -81,9 +81,8 @@ QMenu:
     "^addMenu$": [0]
     "^insertMenu$": [1]
     "^setDefaultAction$": true
-QAction:
-  keep_alive:
-    "^setMenu$": true
+# QAction::setMenu is a template in Qt 6, which bindgen can't bind, so there is
+# no `Action#menu=` to keep the menu alive from.
 QPushButton:
   keep_alive:
     "^setMenu$": true
