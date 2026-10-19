@@ -196,10 +196,14 @@ describe "system information" do
     Qt::SysInfo.pretty_product_name.should_not be_empty
     Qt::SysInfo.machine_host_name.should_not be_empty
     version = Qt::OperatingSystemVersion.current
-    version.major_version.should be > 0
-    version.type.should_not eq(Qt::OperatingSystemVersion::OSType::Unknown)
-    version.name.should_not be_empty
     Qt::OperatingSystemVersion.current_type.should eq(version.type)
+    {% if flag?(:darwin) %}
+      version.major_version.should be > 0
+      version.type.should_not eq(Qt::OperatingSystemVersion::OSType::Unknown)
+      version.name.should_not be_empty
+    {% else %}
+      version.type.should eq(Qt::OperatingSystemVersion::OSType::Unknown) # Qt knows no version of Linux
+    {% end %}
     {% if Qt::QT_VERSION >= 0x060500 %}
       Qt::OperatingSystemVersion.mac_os_sonoma.major_version.should eq(14)
     {% end %}
