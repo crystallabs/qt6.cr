@@ -132,10 +132,12 @@ describe Qt::StyleOptionHeaderV2 do
     option.text = "head"
     option.text.should eq("head")
 
-    menu_item = Qt::StyleOptionMenuItemV2.new
-    menu_item.version.should eq(2)
-    menu_item.mouse_down = true
-    menu_item.mouse_down.should be_true
+    {% if Qt::QT_VERSION >= 0x060b00 %}
+      menu_item = Qt::StyleOptionMenuItemV2.new
+      menu_item.version.should eq(2)
+      menu_item.mouse_down = true
+      menu_item.mouse_down.should be_true
+    {% end %}
   end
 end
 

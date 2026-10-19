@@ -112,12 +112,21 @@ describe Qt::CborValue do
     reader.length.should eq(2)
     reader.enter_container.should be_true
     reader.string?.should be_true
-    reader.read_all_string.should eq("n")
+    {% if Qt::QT_VERSION >= 0x060700 %}
+      reader.read_all_string.should eq("n")
+    {% else %}
+      reader.next.should be_true # readAllString is Qt 6.7+
+    {% end %}
     reader.unsigned_integer?.should be_true
     reader.to_integer.should eq(7)
     reader.next.should be_true
-    reader.read_all_string.should eq("s")
-    reader.read_all_string.should eq("text")
+    {% if Qt::QT_VERSION >= 0x060700 %}
+      reader.read_all_string.should eq("s")
+      reader.read_all_string.should eq("text")
+    {% else %}
+      reader.next.should be_true
+      reader.next
+    {% end %}
     reader.has_next?.should be_false
     reader.leave_container.should be_true
     reader.last_error.c.should eq(Qt::CborError::Code::NoError)

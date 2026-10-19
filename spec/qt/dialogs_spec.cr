@@ -82,7 +82,9 @@ end
 describe Qt::ErrorMessage do
   it "is a dialog" do
     dialog = Qt::ErrorMessage.new
-    dialog.modal?.should be_true
+    {% if Qt::QT_VERSION >= 0x060500 %}
+      dialog.modal?.should be_true # Modal by default since Qt 6.5
+    {% end %}
     dialog.window_title = "Error"
     dialog.window_title.should eq("Error")
   end
@@ -260,8 +262,10 @@ describe Qt::KeySequenceEdit do
     edit.on_key_sequence_changed { |seq| changes << seq.to_string }
     edit.key_sequence = Qt::KeySequence.new("Ctrl+Q")
     changes.should eq(["Ctrl+Q"])
-    edit.maximum_sequence_length = 2
-    edit.maximum_sequence_length.should eq(2)
+    {% if Qt::QT_VERSION >= 0x060500 %}
+      edit.maximum_sequence_length = 2
+      edit.maximum_sequence_length.should eq(2)
+    {% end %}
     edit.clear
     edit.key_sequence.empty?.should be_true
   end

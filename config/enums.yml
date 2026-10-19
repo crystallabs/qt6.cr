@@ -579,7 +579,8 @@ enums:
   "QSharedMemory::SharedMemoryError": SharedMemory::SharedMemoryError
   "QSystemSemaphore::AccessMode": SystemSemaphore::AccessMode
   "QSystemSemaphore::SystemSemaphoreError": SystemSemaphore::SystemSemaphoreError
-  "QNativeIpcKey::Type": NativeIpcKey::Type
+  if_QT_VERSION_newer_or_6.6:
+    "QNativeIpcKey::Type": NativeIpcKey::Type
   # Remaining models, styles and providers
   "QAbstractFileIconProvider::IconType": AbstractFileIconProvider::IconType
   "QAbstractFileIconProvider::Options": AbstractFileIconProvider::Options

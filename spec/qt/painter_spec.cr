@@ -30,7 +30,7 @@ describe "painting" do
     image.fill(Qt::Color.new(255, 255, 255))
     painter = Qt::Painter.new(image)
     painter.pen = Qt::Color.new(255, 0, 0)
-    painter.brush = Qt::Color.new(255, 0, 0)
+    painter.brush = Qt::Brush.new(Qt::Color.new(255, 0, 0))
     painter.draw_polygon(polygon)
     painter.end
     image.pixel_color(5, 2).name.should eq("#ff0000") # Inside the triangle
@@ -46,7 +46,7 @@ describe "painting" do
     image.fill(Qt::Color.new(255, 255, 255))
     painter = Qt::Painter.new(image)
     painter.pen = Qt::Color.new(0, 0, 255)
-    painter.brush = Qt::Color.new(0, 0, 255)
+    painter.brush = Qt::Brush.new(Qt::Color.new(0, 0, 255))
     painter.draw_polygon(polygon_f)
     painter.end
     image.pixel_color(5, 2).name.should eq("#0000ff")

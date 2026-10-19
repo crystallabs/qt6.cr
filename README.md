@@ -67,9 +67,9 @@ generate a binding):
 * **Debian/Ubuntu/Devuan** `apt-get install qt6-base-dev qt6-base-dev-tools libgc-dev cmake llvm-dev clang libclang-dev libpcre2-dev libz-dev libstdc++-dev`
 * **macOS** `brew install qt bdw-gc llvm cmake`
 
-The bindings need bindgen 0.11.1 or newer, which needs LLVM and Clang 14 or
+The bindings need bindgen 0.12.1 or newer, which needs LLVM and Clang 14 or
 newer, CMake 3.12 or newer and Crystal 1.8 or newer.  Qt 6.4 or newer is
-supported.
+supported, see [Qt versions](#qt-versions).
 
 If linking Crystal programs fails with undefined references like
 `__isoc23_strtol` from `libgc.a`, your Crystal package bundles a `libgc` built
@@ -285,6 +285,19 @@ The generated `src/qt6/binding/binding_*.cr` and `ext/qt_binding_*.cpp` of the
 platforms CI builds are committed.  CI regenerates them on every run, warns
 when the committed ones are out of date, and uploads the fresh ones as the
 `binding-<platform>` workflow artifact: download it and commit its two files.
+
+## Qt versions
+
+Qt 6.4 or newer is supported.  The classes Qt added later are bound when the
+binding is generated against a Qt that has them: `QNativeIpcKey` and
+`QOperatingSystemVersionUnexported` (Qt 6.6), `QChildWindowEvent` (6.7),
+`QChronoTimer` and `QPdfOutputIntent` (6.8), `QColorSpace::PrimaryPoints`
+(6.9), `QQuaternion::Axis`, `QQuaternion::Axes`, `QBasicReadWriteLock` and
+`QStyleOptionMenuItemV2` (6.11).  The configuration lists them under
+conditions like `if_QT_VERSION_newer_or_6.6:`, which bindgen evaluates with
+the Qt version `find_paths` found (also when `QMAKE` is set by hand), and the
+specs test `Qt::QT_VERSION` at compile time.  Methods a newer Qt added simply
+don't exist in a binding for an older Qt.
 
 ## Deprecated Qt API
 

@@ -5,8 +5,10 @@ require "../spec_helper"
 describe Qt::Thread do
   it "runs an event loop" do
     main = Qt::Thread.current_thread.not_nil!
-    main.current_thread?.should be_true
-    Qt::Thread.main_thread?.should be_true
+    {% if Qt::QT_VERSION >= 0x060800 %}
+      main.current_thread?.should be_true
+      Qt::Thread.main_thread?.should be_true
+    {% end %}
     Qt::Thread.ideal_thread_count.should be > 0
 
     thread = Qt::Thread.new
@@ -16,7 +18,9 @@ describe Qt::Thread do
     thread.on_started { started = true }
     thread.start
     thread.running?.should be_true
-    thread.current_thread?.should be_false
+    {% if Qt::QT_VERSION >= 0x060800 %}
+      thread.current_thread?.should be_false
+    {% end %}
     thread.interruption_requested?.should be_false
     thread.quit
     thread.wait.should be_true
@@ -26,7 +30,11 @@ describe Qt::Thread do
     # event loop, not from the Qt thread.
     Qt::CoreApplication.process_events
     started.should be_true
-    Qt::Thread.sleep(1.millisecond)
+    {% if Qt::QT_VERSION >= 0x060600 %}
+      Qt::Thread.sleep(1.millisecond)
+    {% else %}
+      Qt::Thread.msleep(1) # The duration overload is Qt 6.6+
+    {% end %}
   end
 end
 
@@ -96,7 +104,9 @@ describe Qt::SharedMemory do
     key = "qt6cr-spec-#{::Process.pid}"
     memory = Qt::SharedMemory.new(key)
     memory.key.should eq(key)
-    memory.native_ipc_key.valid?.should be_true
+    {% if Qt::QT_VERSION >= 0x060600 %}
+      memory.native_ipc_key.valid?.should be_true
+    {% end %}
     memory.attached?.should be_false
     memory.create(64).should be_true
     memory.error.should eq(Qt::SharedMemory::SharedMemoryError::NoError)
@@ -106,7 +116,7 @@ describe Qt::SharedMemory do
     memory.data.as(UInt8*)[0] = 42_u8
     memory.unlock.should be_true
 
-    other = Qt::SharedMemory.new(memory.native_ipc_key)
+    other = {% if Qt::QT_VERSION >= 0x060600 %} Qt::SharedMemory.new(memory.native_ipc_key) {% else %} Qt::SharedMemory.new(key) {% end %}
     other.attach(Qt::SharedMemory::AccessMode::ReadOnly).should be_true
     other.const_data.as(UInt8*)[0].should eq(42)
     other.detach.should be_true
@@ -122,23 +132,28 @@ end
 
 describe Qt::SystemSemaphore do
   it "acquires and releases" do
-    key = Qt::NativeIpcKey.new("qt6cr-spec-#{::Process.pid}")
+    # QNativeIpcKey is Qt 6.6+; older Qt keys the semaphore by a string.
+    key = {% if Qt::QT_VERSION >= 0x060600 %} Qt::NativeIpcKey.new("qt6cr-spec-#{::Process.pid}") {% else %} "qt6cr-spec-#{::Process.pid}" {% end %}
     semaphore = Qt::SystemSemaphore.new(key, 1, Qt::SystemSemaphore::AccessMode::Create)
     semaphore.error.should eq(Qt::SystemSemaphore::SystemSemaphoreError::NoError)
-    semaphore.native_ipc_key.should eq(key)
+    {% if Qt::QT_VERSION >= 0x060600 %}
+      semaphore.native_ipc_key.should eq(key)
+    {% end %}
     semaphore.acquire.should be_true
     semaphore.release.should be_true
   end
 end
 
-describe Qt::NativeIpcKey do
-  it "names a key" do
-    key = Qt::NativeIpcKey.new("spec", Qt::NativeIpcKey::Type::PosixRealtime)
-    key.valid?.should be_true
-    key.native_key.should eq("spec")
-    key.type.should eq(Qt::NativeIpcKey::Type::PosixRealtime)
-    Qt::NativeIpcKey.from_string(key.to_string).should eq(key)
-    Qt::NativeIpcKey.new.empty?.should be_true
-    Qt::SharedMemory.platform_safe_key("spec").valid?.should be_true
+{% if Qt::QT_VERSION >= 0x060600 %}
+  describe Qt::NativeIpcKey do
+    it "names a key" do
+      key = Qt::NativeIpcKey.new("spec", Qt::NativeIpcKey::Type::PosixRealtime)
+      key.valid?.should be_true
+      key.native_key.should eq("spec")
+      key.type.should eq(Qt::NativeIpcKey::Type::PosixRealtime)
+      Qt::NativeIpcKey.from_string(key.to_string).should eq(key)
+      Qt::NativeIpcKey.new.empty?.should be_true
+      Qt::SharedMemory.platform_safe_key("spec").valid?.should be_true
+    end
   end
-end
+{% end %}

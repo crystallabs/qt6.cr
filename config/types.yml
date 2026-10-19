@@ -384,18 +384,19 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QQuaternion::Axis":
-    copy_structure: true
-    generate_binding: true
-    generate_wrapper: true
-    pass_by: Value
-    kind: Struct
-  "QQuaternion::Axes":
-    copy_structure: true
-    generate_binding: true
-    generate_wrapper: true
-    pass_by: Value
-    kind: Struct
+  if_QT_VERSION_newer_or_6.11:
+    "QQuaternion::Axis":
+      copy_structure: true
+      generate_binding: true
+      generate_wrapper: true
+      pass_by: Value
+      kind: Struct
+    "QQuaternion::Axes":
+      copy_structure: true
+      generate_binding: true
+      generate_wrapper: true
+      pass_by: Value
+      kind: Struct
   QRgba64:
     copy_structure: true
     generate_binding: true
@@ -414,12 +415,13 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
-  "QColorSpace::PrimaryPoints":
-    copy_structure: true
-    generate_binding: true
-    generate_wrapper: true
-    pass_by: Value
-    kind: Struct
+  if_QT_VERSION_newer_or_6.9:
+    "QColorSpace::PrimaryPoints":
+      copy_structure: true
+      generate_binding: true
+      generate_wrapper: true
+      pass_by: Value
+      kind: Struct
   "QQuaternion::EulerAngles<float>": { ignore: true } # Template; use #get_euler_angles
   # A typedef of QGenericMatrix<3, 3, float>, a template bindgen can't
   # instantiate; drops Matrix4x4#normal_matrix and Quaternion#to_rotation_matrix.

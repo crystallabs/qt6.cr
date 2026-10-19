@@ -74,8 +74,10 @@ describe "input events" do
     child_event.child.not_nil!.to_unsafe.should eq(child.to_unsafe)
     child_event.added.should be_true
     Qt::WindowStateChangeEvent.new(Qt::WindowStates::WindowMinimized).old_state.should eq(Qt::WindowStates::WindowMinimized)
-    window = Qt::Window.new
-    Qt::ChildWindowEvent.new(Qt::Event::Type::ChildWindowAdded, window).child.not_nil!.to_unsafe.should eq(window.to_unsafe)
+    {% if Qt::QT_VERSION >= 0x060700 %}
+      window = Qt::Window.new
+      Qt::ChildWindowEvent.new(Qt::Event::Type::ChildWindowAdded, window).child.not_nil!.to_unsafe.should eq(window.to_unsafe)
+    {% end %}
   end
 
   it "come from input devices" do
@@ -139,24 +141,26 @@ describe Qt::BasicTimer do
     widget.timer_ticks.should eq(2)
   end
 
-  it "counts in durations as a chrono timer" do
-    loop = Qt::EventLoop.new
-    timer = Qt::ChronoTimer.new(5.milliseconds)
-    timer.interval.should eq(5.milliseconds)
-    timer.single_shot = true
-    fired = 0
-    timer.on_timeout do
-      fired += 1
-      loop.quit
+  {% if Qt::QT_VERSION >= 0x060800 %}
+    it "counts in durations as a chrono timer" do
+      loop = Qt::EventLoop.new
+      timer = Qt::ChronoTimer.new(5.milliseconds)
+      timer.interval.should eq(5.milliseconds)
+      timer.single_shot = true
+      fired = 0
+      timer.on_timeout do
+        fired += 1
+        loop.quit
+      end
+      timer.start
+      timer.active?.should be_true
+      timer.remaining_time.should be <= 5.milliseconds
+      loop.exec.should eq(0)
+      Qt::Application.process_events
+      fired.should eq(1)
+      timer.active?.should be_false
     end
-    timer.start
-    timer.active?.should be_true
-    timer.remaining_time.should be <= 5.milliseconds
-    loop.exec.should eq(0)
-    Qt::Application.process_events
-    fired.should eq(1)
-    timer.active?.should be_false
-  end
+  {% end %}
 end
 
 describe Qt::SignalMapper do

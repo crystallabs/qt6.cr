@@ -209,9 +209,12 @@ classes:
   QMimeDatabase: MimeDatabase
   QMimeType: MimeType
   # Qt 6 splits QOperatingSystemVersion in three: the named versions it adds
-  # over time live in the unexported middle class.
+  # over time live in the unexported middle class (Qt 6.6+).  Classes newer
+  # than Qt 6.4 are bound when generating against a Qt that has them; the
+  # conditions test the Qt version `find_paths` found.
   QOperatingSystemVersionBase: OperatingSystemVersionBase
-  QOperatingSystemVersionUnexported: OperatingSystemVersionUnexported
+  if_QT_VERSION_newer_or_6.6:
+    QOperatingSystemVersionUnexported: OperatingSystemVersionUnexported
   QOperatingSystemVersion: OperatingSystemVersion
   QSysInfo: SysInfo
   QGesture: Gesture
@@ -363,15 +366,17 @@ classes:
   QVector3D: Vector3D
   QVector4D: Vector4D
   QQuaternion: Quaternion
-  "QQuaternion::Axis": QuaternionAxis
-  "QQuaternion::Axes": QuaternionAxes
+  if_QT_VERSION_newer_or_6.11:
+    "QQuaternion::Axis": QuaternionAxis
+    "QQuaternion::Axes": QuaternionAxes
   QGradient: Gradient
   QLinearGradient: LinearGradient
   QRadialGradient: RadialGradient
   QConicalGradient: ConicalGradient
   QRegion: Region
   QColorSpace: ColorSpace
-  "QColorSpace::PrimaryPoints": ColorSpacePrimaryPoints
+  if_QT_VERSION_newer_or_6.9:
+    "QColorSpace::PrimaryPoints": ColorSpacePrimaryPoints
   QPicture: Picture
   QPixmapCache: PixmapCache
   "QPixmapCache::Key": PixmapCacheKey
@@ -385,7 +390,8 @@ classes:
   QPageRanges: PageRanges
   "QPageRanges::Range": PageRange
   QPdfWriter: PdfWriter
-  QPdfOutputIntent: PdfOutputIntent
+  if_QT_VERSION_newer_or_6.8:
+    QPdfOutputIntent: PdfOutputIntent
   QBackingStore: BackingStore
   QPaintDeviceWindow: PaintDeviceWindow
   QRasterWindow: RasterWindow
@@ -428,7 +434,8 @@ classes:
   QNativeGestureEvent: NativeGestureEvent
   QContextMenuEvent: ContextMenuEvent
   QChildEvent: ChildEvent
-  QChildWindowEvent: ChildWindowEvent
+  if_QT_VERSION_newer_or_6.7:
+    QChildWindowEvent: ChildWindowEvent
   QWindowStateChangeEvent: WindowStateChangeEvent
   QEventPoint: EventPoint
   QInputDevice: InputDevice
@@ -443,7 +450,8 @@ classes:
   QInputMethod: InputMethod
   QKeyCombination: KeyCombination
   QBasicTimer: BasicTimer
-  QChronoTimer: ChronoTimer
+  if_QT_VERSION_newer_or_6.8:
+    QChronoTimer: ChronoTimer
   QSignalMapper: SignalMapper
   QProcessEnvironment: ProcessEnvironment
   QBitArray: BitArray
@@ -507,11 +515,13 @@ classes:
   QSemaphore: Semaphore
   QSemaphoreReleaser: SemaphoreReleaser
   QWaitCondition: WaitCondition
-  QBasicReadWriteLock: BasicReadWriteLock # Base of QReadWriteLock since Qt 6.11
+  if_QT_VERSION_newer_or_6.11:
+    QBasicReadWriteLock: BasicReadWriteLock # Base of QReadWriteLock since Qt 6.11
   QReadWriteLock: ReadWriteLock
   QSharedMemory: SharedMemory
   QSystemSemaphore: SystemSemaphore
-  QNativeIpcKey: NativeIpcKey
+  if_QT_VERSION_newer_or_6.6:
+    QNativeIpcKey: NativeIpcKey
   # Remaining models, styles and providers
   QConcatenateTablesProxyModel: ConcatenateTablesProxyModel
   QTransposeProxyModel: TransposeProxyModel
@@ -521,6 +531,7 @@ classes:
   QStyleHintReturnMask: StyleHintReturnMask
   QStyleHintReturnVariant: StyleHintReturnVariant
   QStyleOptionHeaderV2: StyleOptionHeaderV2
-  QStyleOptionMenuItemV2: StyleOptionMenuItemV2
+  if_QT_VERSION_newer_or_6.11:
+    QStyleOptionMenuItemV2: StyleOptionMenuItemV2
   QIconEngine: IconEngine
   QWidgetItemV2: WidgetItemV2

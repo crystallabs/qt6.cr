@@ -346,14 +346,18 @@ describe Qt::Rgba64 do
     srgb.valid?.should be_true
     srgb.primaries.should eq(Qt::ColorSpace::Primaries::Srgb)
     srgb.transfer_function.should eq(Qt::ColorSpace::TransferFunction::Srgb)
-    srgb.color_model.should eq(Qt::ColorSpace::ColorModel::Rgb)
+    {% if Qt::QT_VERSION >= 0x060800 %}
+      srgb.color_model.should eq(Qt::ColorSpace::ColorModel::Rgb)
+    {% end %}
     srgb.icc_profile.size.should be > 0
     Qt::ColorSpace.from_icc_profile(srgb.icc_profile).valid?.should be_true
     linear = Qt::ColorSpace.new(Qt::ColorSpace::Primaries::Srgb, Qt::ColorSpace::TransferFunction::Linear)
     linear.gamma.should eq(1.0_f32)
-    points = Qt::ColorSpacePrimaryPoints.from_primaries(Qt::ColorSpace::Primaries::Srgb)
-    points.valid?.should be_true
-    points.white_point.x.should be_close(0.3127, 0.001)
+    {% if Qt::QT_VERSION >= 0x060900 %}
+      points = Qt::ColorSpacePrimaryPoints.from_primaries(Qt::ColorSpace::Primaries::Srgb)
+      points.valid?.should be_true
+      points.white_point.x.should be_close(0.3127, 0.001)
+    {% end %}
   end
 end
 

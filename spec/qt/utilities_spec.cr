@@ -111,7 +111,7 @@ describe "timers" do
     deadline.forever?.should be_false
     deadline.has_expired?.should be_false
     deadline.remaining_time.should be <= 1_000
-    Qt::DeadlineTimer.new(Qt::DeadlineTimer.forever).forever?.should be_true
+    Qt::DeadlineTimer.new(Qt::DeadlineTimer::ForeverConstant::Forever).forever?.should be_true
     Qt::DeadlineTimer.new(0_i64).has_expired?.should be_true
     Qt::DeadlineTimer.current.has_expired?.should be_true
   end
@@ -200,7 +200,9 @@ describe "system information" do
     version.type.should_not eq(Qt::OperatingSystemVersion::OSType::Unknown)
     version.name.should_not be_empty
     Qt::OperatingSystemVersion.current_type.should eq(version.type)
-    Qt::OperatingSystemVersion.mac_os_sonoma.major_version.should eq(14)
+    {% if Qt::QT_VERSION >= 0x060500 %}
+      Qt::OperatingSystemVersion.mac_os_sonoma.major_version.should eq(14)
+    {% end %}
     Qt::LibraryInfo.path(Qt::LibraryInfo::LibraryPath::PrefixPath).should_not be_empty
   end
 end
@@ -224,8 +226,10 @@ describe Qt::TimeZone do
     data = zone.offset_data(summer)
     data.daylight_time_offset.should eq(3600)
     zone.transitions(winter, summer).size.should eq(1)
-    Qt::TimeZone.from_seconds_ahead_of_utc(3600).fixed_seconds_ahead_of_utc.should eq(3600)
-    Qt::TimeZone.from_duration_ahead_of_utc(-2.hours).fixed_seconds_ahead_of_utc.should eq(-7200)
+    {% if Qt::QT_VERSION >= 0x060500 %}
+      Qt::TimeZone.from_seconds_ahead_of_utc(3600).fixed_seconds_ahead_of_utc.should eq(3600)
+      Qt::TimeZone.from_duration_ahead_of_utc(-2.hours).fixed_seconds_ahead_of_utc.should eq(-7200)
+    {% end %}
     Qt::TimeZone.available_time_zone_ids.map { |id| String.new(id) }.should contain("Europe/Zagreb")
     Qt::TimeZone.new("Nowhere/Land".to_slice).valid?.should be_false
   end
@@ -237,7 +241,8 @@ describe Qt::Translator do
     translator.empty?.should be_true
     translator.load("no-such-file.qm").should be_false
     translator.translate("Context".to_unsafe, "Hello".to_unsafe).should eq("")
-    Qt::CoreApplication.install_translator(translator).should be_true
+    # Qt 6.10 installs an empty translator; older Qt refuses it.
+    Qt::CoreApplication.install_translator(translator).should eq(Qt::QT_VERSION >= 0x060a00)
     Qt::CoreApplication.remove_translator(translator).should be_true
   end
 end

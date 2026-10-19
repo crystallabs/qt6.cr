@@ -75,7 +75,9 @@ describe Qt::MetaObject do
     shape.flag?.should be_false
     shape.key_count.should eq(Qt::Frame::Shape.values.size)
     shape.key_to_value("Box".to_unsafe).should eq(Qt::Frame::Shape::Box.to_i)
-    String.new(shape.value_to_key(Qt::Frame::Shape::Panel.to_u64)).should eq("Panel")
+    # Qt 6.9 replaced valueToKey(int) with valueToKey(quint64).
+    panel = {% if Qt::QT_VERSION >= 0x060900 %} Qt::Frame::Shape::Panel.to_u64 {% else %} Qt::Frame::Shape::Panel.to_i {% end %}
+    String.new(shape.value_to_key(panel)).should eq("Panel")
     (0...shape.key_count).map { |i| String.new(shape.key(i)) }.should contain("NoFrame")
     meta.class_info_count.should eq(0)
   end
@@ -88,7 +90,9 @@ describe Qt::MetaType do
     String.new(int.name).should eq("int")
     int.size_of.should eq(4)
     int.flags.should_not eq(Qt::MetaType::TypeFlags::None)
-    int.default_constructible?.should be_true
+    {% if Qt::QT_VERSION >= 0x060500 %}
+      int.default_constructible?.should be_true
+    {% end %}
     string = Qt::MetaType.from_name("QString".to_slice)
     string.id.should eq(Qt::MetaType::Type::QString.to_i)
     (int == string).should be_false
