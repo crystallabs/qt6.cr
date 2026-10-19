@@ -19,9 +19,9 @@ ignore_deprecated: true
 # "Null pointers" in the README.
 nilable_results: true
 if_os_is_darwin:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp -lm"
 else:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt6Core -lQt6Gui -lQt6Widgets -lgccpp"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt6Core -lQt6Gui -lQt6Widgets -lgccpp -lm"
 
 <<: config/processors_and_generators.yml
 <<: config/find_paths.yml

@@ -512,7 +512,7 @@ module Qt
     end
   end
   
-  @[Link(ldflags: "#{__DIR__}/../../../ext/binding_darwin-unknown-aarch64-qt6.11.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp")]
+  @[Link(ldflags: "#{__DIR__}/../../../ext/binding_darwin-unknown-aarch64-qt6.11.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp -lm")]
   lib Binding
     alias QListSpecialMethodsQString = Void
     alias ContainerQListQString = Void
