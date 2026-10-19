@@ -1,10 +1,10 @@
 name: qt6
-version: 0.1.0
+version: 0.2.0
 description: Qt6 bindings for Crystal
 
 authors:
-  - Stefan Merettig <stefan-merettig@nuriaproject.org>
   - Davor Ocelic <docelic@crystallabs.io>
+  - Stefan Merettig <stefan-merettig@nuriaproject.org>
 
 crystal: ">= 1.8.0, < 2.0.0"
 
