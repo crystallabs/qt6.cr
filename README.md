@@ -67,7 +67,7 @@ generate a binding):
 * **Debian/Ubuntu/Devuan** `apt-get install qt6-base-dev qt6-base-dev-tools libgc-dev cmake llvm-dev clang libclang-dev libpcre2-dev libz-dev libstdc++-dev`
 * **macOS** `brew install qt bdw-gc llvm cmake`
 
-The bindings need bindgen 0.12.1 or newer, which needs LLVM and Clang 14 or
+The bindings need bindgen 0.13.0 or newer, which needs LLVM and Clang 14 or
 newer, CMake 3.12 or newer and Crystal 1.8 or newer.  Qt 6.4 or newer is
 supported, see [Qt versions](#qt-versions).
 
