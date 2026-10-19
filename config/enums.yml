@@ -303,7 +303,7 @@ enums:
   "QItemSelectionModel::SelectionFlag": ItemSelectionModel::SelectionFlag
   "QCompleter::CompletionMode": Completer::CompletionMode
   "QCompleter::ModelSorting": Completer::ModelSorting
-  "QMetaType::Type": { destination: MetaType::Type, camelcase: false } # QString, not Qstring
+  "QMetaType::Type": { destination: "MetaType::Type", camelcase: false } # QString, not Qstring
   "QListView::Flow": ListView::Flow
   "QListView::Movement": ListView::Movement
   "QListView::ResizeMode": ListView::ResizeMode
@@ -561,7 +561,7 @@ enums:
   "QMetaMethod::Access": MetaMethod::Access
   "QMetaMethod::MethodType": MetaMethod::MethodType
   "QMetaMethod::Attributes": MetaMethod::Attributes
-  "QMetaType::Type": { destination: MetaType::Type, camelcase: false } # QString, not Qstring
+  "QMetaType::Type": { destination: "MetaType::Type", camelcase: false } # QString, not Qstring
   "QMetaType::TypeFlags": MetaType::TypeFlags
   "QCborValue::Type": CborValue::Type
   "QCborValue::EncodingOptions": CborValue::EncodingOptions
