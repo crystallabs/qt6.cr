@@ -21,6 +21,7 @@ This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
       * [Differences to qt5.cr](#differences-to-qt5cr)
    * [Developer perspective](#developer-perspective)
       * [Generating the bindings](#generating-the-bindings)
+      * [Qt versions](#qt-versions)
       * [Deprecated Qt API](#deprecated-qt-api)
       * [Naming scheme](#naming-scheme)
       * [(Re)generating the binding for the system's Qt6](#regenerating-the-binding-for-the-systems-qt6)
