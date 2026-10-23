@@ -21,6 +21,17 @@ describe "signals with deprecated overloads" do
   end
 end
 
+describe "signals with a pointer argument defaulting to nullptr" do
+  it "type the argument of the block as nilable" do
+    object = Qt::Object.new
+    destroyed = [] of Bool
+    object.on_destroyed { |o| destroyed << o.nil? } # Didn't compile as a Proc(Object, Void)
+    object.delete_later
+    Qt::CoreApplication.send_posted_events(nil, Qt::Event::Type::DeferredDelete.value.to_i)
+    destroyed.should eq([false])
+  end
+end
+
 describe "connection type" do
   it "queues a connection to the event loop" do
     spin_box = Qt::SpinBox.new

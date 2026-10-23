@@ -181,13 +181,24 @@ button.menu = Qt::Menu.new             # And so does this
 ```
 
 Objects created from Crystal are kept alive until Qt deletes them, like a
-parent deletes its children, or until passed to `Qt::BindgenHelper.release`,
-e.g. after taking a widget out again without deleting it.  An object Qt created
-itself, which Crystal only wraps, is kept until released:
+parent deletes its children, or until released.  The methods taking an object
+out again without deleting it release it, so the GC may collect it once Crystal
+drops it, like `Qt::Layout#remove_widget` and `#take_at`,
+`Qt::ListWidget#take_item`, `Qt::StandardItemModel#take_item`,
+`Qt::GraphicsScene#remove_item` or `Qt::MainWindow#take_central_widget`:
 
 ```crystal
-layout.remove_widget(label)
-Qt::BindgenHelper.release(label)
+layout.remove_widget(label) # Released
+item = list.take_item(0)    # Released too
+```
+
+Others hand back only an index, like `Qt::TabWidget#remove_tab`, or take out
+an object which may be used elsewhere still, like `Qt::Widget#remove_action`.
+After these, `Qt::BindgenHelper.release` releases an object by hand:
+
+```crystal
+tabs.remove_tab(tabs.index_of(page))
+Qt::BindgenHelper.release(page)
 ```
 
 The methods are configured in `config/keep_alive.yml`.  An object given a
@@ -267,7 +278,9 @@ signal or an overridden virtual method receives: a block of
 `Qt::StandardItemModel#on_item_changed` gets a `Qt::StandardItem`, and an
 override of `Qt::Widget#mouse_press_event` takes a `Qt::MouseEvent`, as
 declared (see `samples/virtual_override.cr`).  This is bindgen's
-`nilable_results` option, set in `qt.yml`.
+`nilable_results` option, set in `qt.yml`.  A signal argument defaulting to
+`nullptr` is the exception: a block of `Qt::Object#on_destroyed` gets a
+`Qt::Object?`.
 
 ## Downcasts
 

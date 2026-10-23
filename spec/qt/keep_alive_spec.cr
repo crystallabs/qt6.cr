@@ -139,3 +139,29 @@ describe "objects deleted by Qt" do
     Qt::BindgenHelper.kept_alive?(label).should be_false
   end
 end
+
+describe "objects handed back by Qt" do
+  it "are released when taken out of a layout" do
+    layout = Qt::VBoxLayout.new
+    label = Qt::Label.new("label")
+    layout.add_widget(label)
+    Qt::BindgenHelper.kept_alive?(label).should be_true
+    layout.remove_widget(label)
+    Qt::BindgenHelper.kept_alive?(label).should be_false
+
+    spacer = Qt::SpacerItem.new(1, 1)
+    layout.add_item(spacer)
+    Qt::BindgenHelper.kept_alive?(spacer).should be_true
+    layout.take_at(0)
+    Qt::BindgenHelper.kept_alive?(spacer).should be_false
+  end
+
+  it "are released when taken out of a list widget" do
+    list = Qt::ListWidget.new
+    item = Qt::ListWidgetItem.new("item")
+    list.add_item(item)
+    Qt::BindgenHelper.kept_alive?(item).should be_true
+    list.take_item(0).should_not be_nil
+    Qt::BindgenHelper.kept_alive?(item).should be_false
+  end
+end
