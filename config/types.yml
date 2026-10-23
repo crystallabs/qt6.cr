@@ -527,3 +527,4 @@ types: # Type rewrite rules
   QThread: { sub_class: false }
   QRunnable: { sub_class: false }
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above
+  <<+: methods.yml # Deep merge: adds `rename` and `nilable` to classes listed above

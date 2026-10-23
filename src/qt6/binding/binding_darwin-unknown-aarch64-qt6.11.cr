@@ -106144,7 +106144,7 @@ module Qt
       Binding.bg_QWindow_close_(self)
     end
     
-    def raise() : Void
+    def raise_() : Void
       Binding.bg_QWindow_raise_(self)
     end
     
@@ -118532,8 +118532,8 @@ module Qt
     Binding.bg_QStandardItemModel_setItem_int_QStandardItem_X(self, row, (item.try(&.to_unsafe) || Pointer(Binding::QStandardItem).null))
     end
     
-    def invisible_root_item() : StandardItem?
-      Binding.bg_QStandardItemModel_invisibleRootItem_(self).try {|ptr| StandardItem.new(unwrap: ptr) unless ptr.null?}
+    def invisible_root_item() : StandardItem
+      StandardItem.new(unwrap: Binding.bg_QStandardItemModel_invisibleRootItem_(self))
     end
     
     def horizontal_header_item(column : Int32) : StandardItem?
@@ -124945,11 +124945,11 @@ module Qt
       Binding.bg_QWidget_effectiveWinId_(self)
     end
     
-    def style() : Style?
-      Binding.bg_QWidget_style_(self).try {|ptr| StyleImpl.new(unwrap: ptr) unless ptr.null?}
+    def style() : Style
+      StyleImpl.new(unwrap: Binding.bg_QWidget_style_(self))
     end
     
-    def style=(unnamed_arg_0 : Style) : Void
+    def style=(unnamed_arg_0 : Style?) : Void
       BindgenHelper.keep_alive(unnamed_arg_0)
     Binding.bg_QWidget_setStyle_QStyle_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
     end
@@ -125186,8 +125186,8 @@ module Qt
       Point.new(unwrap: Binding.bg_QWidget_mapFrom_const_QWidget_X_const_QPoint_R(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QWidget).null), unnamed_arg_1))
     end
     
-    def window() : Widget?
-      Binding.bg_QWidget_window_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
+    def window() : Widget
+      Widget.new(unwrap: Binding.bg_QWidget_window_(self))
     end
     
     def native_parent_widget() : Widget?
@@ -125531,7 +125531,7 @@ module Qt
       Binding.bg_QWidget_setTabOrder_STATIC_QWidget_X_QWidget_X((unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QWidget).null), (unnamed_arg_1.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
-    def focus_proxy=(unnamed_arg_0 : Widget) : Void
+    def focus_proxy=(unnamed_arg_0 : Widget?) : Void
       BindgenHelper.keep_alive(unnamed_arg_0)
     Binding.bg_QWidget_setFocusProxy_QWidget_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
@@ -125679,7 +125679,7 @@ module Qt
       Binding.bg_QWidget_close_(self)
     end
     
-    def raise() : Void
+    def raise_() : Void
       Binding.bg_QWidget_raise_(self)
     end
     
@@ -140489,8 +140489,8 @@ module Qt
       Binding.bg_QAbstractScrollArea_setVerticalScrollBarPolicy_Qt__ScrollBarPolicy(self, unnamed_arg_0)
     end
     
-    def vertical_scroll_bar() : ScrollBar?
-      Binding.bg_QAbstractScrollArea_verticalScrollBar_(self).try {|ptr| ScrollBar.new(unwrap: ptr) unless ptr.null?}
+    def vertical_scroll_bar() : ScrollBar
+      ScrollBar.new(unwrap: Binding.bg_QAbstractScrollArea_verticalScrollBar_(self))
     end
     
     def vertical_scroll_bar=(scrollbar : ScrollBar) : Void
@@ -140506,8 +140506,8 @@ module Qt
       Binding.bg_QAbstractScrollArea_setHorizontalScrollBarPolicy_Qt__ScrollBarPolicy(self, unnamed_arg_0)
     end
     
-    def horizontal_scroll_bar() : ScrollBar?
-      Binding.bg_QAbstractScrollArea_horizontalScrollBar_(self).try {|ptr| ScrollBar.new(unwrap: ptr) unless ptr.null?}
+    def horizontal_scroll_bar() : ScrollBar
+      ScrollBar.new(unwrap: Binding.bg_QAbstractScrollArea_horizontalScrollBar_(self))
     end
     
     def horizontal_scroll_bar=(scrollbar : ScrollBar) : Void
@@ -140533,8 +140533,8 @@ module Qt
       Container_QList_QWidget_X_.new(unwrap: Binding.bg_QAbstractScrollArea_scrollBarWidgets_Qt__Alignment(self, alignment))
     end
     
-    def viewport() : Widget?
-      Binding.bg_QAbstractScrollArea_viewport_(self).try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}
+    def viewport() : Widget
+      Widget.new(unwrap: Binding.bg_QAbstractScrollArea_viewport_(self))
     end
     
     def viewport=(widget : Widget) : Void
@@ -141537,7 +141537,7 @@ module Qt
         {"bg_QAbstractItemView_metaObject_", "meta_object", [] of String},
         {"bg_QAbstractItemView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
@@ -141648,7 +141648,7 @@ module Qt
       bg_QAbstractItemView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| BindgenHelper.rescued(Pointer(Binding::QRect).malloc(1)) { Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } } {% else %} nil {% end %}),
@@ -141744,7 +141744,7 @@ module Qt
     {% end %}
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -142340,7 +142340,7 @@ module Qt
         {"bg_QAbstractItemView_metaObject_", "meta_object", [] of String},
         {"bg_QAbstractItemView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
@@ -142451,7 +142451,7 @@ module Qt
       bg_QAbstractItemView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| BindgenHelper.rescued(Pointer(Binding::QRect).malloc(1)) { Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } } {% else %} nil {% end %}),
@@ -143223,7 +143223,7 @@ module Qt
     private class Superclass
       def initialize(@myself : AbstractItemView)
       end
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -154166,7 +154166,7 @@ module Qt
         {"bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
         {"bg_QColumnView_sizeHint_", "size_hint", [] of String},
         {"bg_QColumnView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
-        {"bg_QColumnView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QColumnView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QColumnView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QColumnView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QColumnView_selectAll_", "select_all", [] of String},
@@ -154278,7 +154278,7 @@ module Qt
       bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, ::Qt::AbstractItemDelegate::ScrollHint, Void).new{|index, hint| BindgenHelper.rescued(nil) { self.scroll_to(ModelIndex.new(unwrap: index), hint) } } {% else %} nil {% end %}),
       bg_QColumnView_sizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_sizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.size_hint().to_unsafe) } } {% else %} nil {% end %}),
       bg_QColumnView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| BindgenHelper.rescued(Pointer(Binding::QRect).malloc(1)) { Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } } {% else %} nil {% end %}),
-      bg_QColumnView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QColumnView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QColumnView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QColumnView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QColumnView_selectAll_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_selectAll_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.select_all() } } {% else %} nil {% end %}),
@@ -154415,7 +154415,7 @@ module Qt
     Rect.new(unwrap: Binding.bg_QColumnView_visualRect_const_QModelIndex_R(self, index))
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -154511,7 +154511,7 @@ module Qt
         {"bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint", "scroll_to", ["ModelIndex", "AbstractItemDelegate::ScrollHint"] of String},
         {"bg_QColumnView_sizeHint_", "size_hint", [] of String},
         {"bg_QColumnView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
-        {"bg_QColumnView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QColumnView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QColumnView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QColumnView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QColumnView_selectAll_", "select_all", [] of String},
@@ -154623,7 +154623,7 @@ module Qt
       bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_scrollTo_const_QModelIndex_R_QAbstractItemView__ScrollHint") %} Proc(Binding::QModelIndex*, ::Qt::AbstractItemDelegate::ScrollHint, Void).new{|index, hint| BindgenHelper.rescued(nil) { self.scroll_to(ModelIndex.new(unwrap: index), hint) } } {% else %} nil {% end %}),
       bg_QColumnView_sizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_sizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.size_hint().to_unsafe) } } {% else %} nil {% end %}),
       bg_QColumnView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| BindgenHelper.rescued(Pointer(Binding::QRect).malloc(1)) { Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } } {% else %} nil {% end %}),
-      bg_QColumnView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QColumnView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QColumnView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QColumnView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QColumnView_selectAll_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QColumnView_selectAll_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.select_all() } } {% else %} nil {% end %}),
@@ -155674,7 +155674,7 @@ module Qt
         Rect.new(unwrap: Binding.bg_QColumnView_visualRect_SUPER_const_QModelIndex_R(@myself, index))
       end
       
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QColumnView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -156302,7 +156302,7 @@ module Qt
       Binding.bg_QComboBox_lineEdit_(self).try {|ptr| LineEdit.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def validator=(v : Validator) : Void
+    def validator=(v : Validator?) : Void
       BindgenHelper.keep_alive(v)
     Binding.bg_QComboBox_setValidator_const_QValidator_X(self, (v.try(&.to_unsafe) || Pointer(Binding::QValidator).null))
     end
@@ -156311,7 +156311,7 @@ module Qt
       Binding.bg_QComboBox_validator_(self).try {|ptr| ValidatorImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def completer=(c : Completer) : Void
+    def completer=(c : Completer?) : Void
       BindgenHelper.keep_alive(c)
     Binding.bg_QComboBox_setCompleter_QCompleter_X(self, (c.try(&.to_unsafe) || Pointer(Binding::QCompleter).null))
     end
@@ -203494,7 +203494,7 @@ module Qt
         {"bg_QHeaderView_metaObject_", "meta_object", [] of String},
         {"bg_QHeaderView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QHeaderView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QHeaderView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QHeaderView_sizeHint_", "size_hint", [] of String},
         {"bg_QHeaderView_setVisible_bool", "visible=", ["Bool"] of String},
         {"bg_QHeaderView_doItemsLayout_", "do_items_layout", [] of String},
@@ -203609,7 +203609,7 @@ module Qt
       bg_QHeaderView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QHeaderView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QHeaderView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QHeaderView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QHeaderView_sizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_sizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.size_hint().to_unsafe) } } {% else %} nil {% end %}),
       bg_QHeaderView_setVisible_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setVisible_bool") %} Proc(Bool, Void).new{|visible| BindgenHelper.rescued(nil) { self.visible=(visible) } } {% else %} nil {% end %}),
       bg_QHeaderView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -203709,7 +203709,7 @@ module Qt
     {% end %}
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -204098,7 +204098,7 @@ module Qt
         {"bg_QHeaderView_metaObject_", "meta_object", [] of String},
         {"bg_QHeaderView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QHeaderView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QHeaderView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QHeaderView_sizeHint_", "size_hint", [] of String},
         {"bg_QHeaderView_setVisible_bool", "visible=", ["Bool"] of String},
         {"bg_QHeaderView_doItemsLayout_", "do_items_layout", [] of String},
@@ -204213,7 +204213,7 @@ module Qt
       bg_QHeaderView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QHeaderView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QHeaderView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QHeaderView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QHeaderView_sizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_sizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.size_hint().to_unsafe) } } {% else %} nil {% end %}),
       bg_QHeaderView_setVisible_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_setVisible_bool") %} Proc(Bool, Void).new{|visible| BindgenHelper.rescued(nil) { self.visible=(visible) } } {% else %} nil {% end %}),
       bg_QHeaderView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QHeaderView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -205330,7 +205330,7 @@ module Qt
     private class Superclass
       def initialize(@myself : HeaderView)
       end
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QHeaderView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -206095,7 +206095,7 @@ module Qt
       Binding.bg_QLineEdit_setReadOnly_bool(self, unnamed_arg_0)
     end
     
-    def validator=(unnamed_arg_0 : Validator) : Void
+    def validator=(unnamed_arg_0 : Validator?) : Void
       BindgenHelper.keep_alive(unnamed_arg_0)
     Binding.bg_QLineEdit_setValidator_const_QValidator_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QValidator).null))
     end
@@ -206104,7 +206104,7 @@ module Qt
       Binding.bg_QLineEdit_validator_(self).try {|ptr| ValidatorImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def completer=(completer : Completer) : Void
+    def completer=(completer : Completer?) : Void
       BindgenHelper.keep_alive(completer)
     Binding.bg_QLineEdit_setCompleter_QCompleter_X(self, (completer.try(&.to_unsafe) || Pointer(Binding::QCompleter).null))
     end
@@ -213007,7 +213007,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
@@ -213118,7 +213118,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
@@ -213421,7 +213421,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
@@ -213532,7 +213532,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
@@ -213936,7 +213936,7 @@ module Qt
       ListMode = 0
       IconMode = 1
     end
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -214714,7 +214714,7 @@ module Qt
         Size.new(unwrap: Binding.bg_QListView_viewportSizeHint_SUPER_(@myself))
       end
       
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -215423,7 +215423,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
         {"bg_QAbstractItemView_sizeHintForColumn_int", "size_hint_for_column", ["Int32"] of String},
@@ -215538,7 +215538,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForColumn_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForColumn_int") %} Proc(Int32, Int32).new{|column| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_column(column) } } {% else %} nil {% end %}),
@@ -216227,7 +216227,7 @@ module Qt
     Size.new(unwrap: Binding.bg_QListView_viewportSizeHint_(self))
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       BindgenHelper.keep_alive(model)
     Binding.bg_QAbstractItemView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
@@ -217618,8 +217618,8 @@ module Qt
       Binding.bg_QMainWindow_isSeparator_const_QPoint_R(self, pos)
     end
     
-    def menu_bar() : MenuBar?
-      Binding.bg_QMainWindow_menuBar_(self).try {|ptr| MenuBar.new(unwrap: ptr) unless ptr.null?}
+    def menu_bar() : MenuBar
+      MenuBar.new(unwrap: Binding.bg_QMainWindow_menuBar_(self))
     end
     
     def menu_bar=(menubar : MenuBar) : Void
@@ -217636,8 +217636,8 @@ module Qt
     Binding.bg_QMainWindow_setMenuWidget_QWidget_X(self, (menubar.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
-    def status_bar() : StatusBar?
-      Binding.bg_QMainWindow_statusBar_(self).try {|ptr| StatusBar.new(unwrap: ptr) unless ptr.null?}
+    def status_bar() : StatusBar
+      StatusBar.new(unwrap: Binding.bg_QMainWindow_statusBar_(self))
     end
     
     def status_bar=(statusbar : StatusBar) : Void
@@ -221025,48 +221025,48 @@ module Qt
     {% end %}
     end
     
-    def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
+    def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(shortcut)
     BindgenHelper.keep_alive(receiver)
-    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type))
     end
     
-    def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
+    def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
       BindgenHelper.keep_alive(shortcut)
     BindgenHelper.keep_alive(receiver)
-    Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type))
     end
     
-    def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action?
+    def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(shortcut)
-    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut))
     end
     
-    def add_action(text : String, shortcut : KeySequence) : Action?
+    def add_action(text : String, shortcut : KeySequence) : Action
       BindgenHelper.keep_alive(shortcut)
-    Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut))
     end
     
-    def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
+    def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
       BindgenHelper.keep_alive(icon)
     BindgenHelper.keep_alive(receiver)
-    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type))
     end
     
-    def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
+    def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action
       BindgenHelper.keep_alive(receiver)
-    Binding.bg_QMenu_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type))
     end
     
-    def add_action(icon : Icon, text : String) : Action?
+    def add_action(icon : Icon, text : String) : Action
       BindgenHelper.keep_alive(icon)
-    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)))
     end
     
-    def add_action(text : String) : Action?
-      Binding.bg_QMenu_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_action(text : String) : Action
+      Action.new(unwrap: Binding.bg_QMenu_addAction_const_QString_R(self, Qt::Converter::QString.wrap(text)))
     end
     
     def add_action(action : Action) : Void
@@ -221074,47 +221074,47 @@ module Qt
     Binding.bg_QMenu_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
-    def add_menu(menu : Menu) : Action?
+    def add_menu(menu : Menu) : Action
       BindgenHelper.keep_alive(menu)
-    Binding.bg_QMenu_addMenu_QMenu_X(self, (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_addMenu_QMenu_X(self, (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)))
     end
     
-    def add_menu(title : String) : Menu?
-      Binding.bg_QMenu_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
+    def add_menu(title : String) : Menu
+      Menu.new(unwrap: Binding.bg_QMenu_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)))
     end
     
-    def add_menu(icon : Icon, title : String) : Menu?
+    def add_menu(icon : Icon, title : String) : Menu
       BindgenHelper.keep_alive(icon)
-    Binding.bg_QMenu_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
+    Menu.new(unwrap: Binding.bg_QMenu_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)))
     end
     
-    def add_separator() : Action?
-      Binding.bg_QMenu_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_separator() : Action
+      Action.new(unwrap: Binding.bg_QMenu_addSeparator_(self))
     end
     
-    def add_section(text : String) : Action?
-      Binding.bg_QMenu_addSection_const_QString_R(self, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_section(text : String) : Action
+      Action.new(unwrap: Binding.bg_QMenu_addSection_const_QString_R(self, Qt::Converter::QString.wrap(text)))
     end
     
-    def add_section(icon : Icon, text : String) : Action?
-      Binding.bg_QMenu_addSection_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_section(icon : Icon, text : String) : Action
+      Action.new(unwrap: Binding.bg_QMenu_addSection_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)))
     end
     
-    def insert_menu(before : Action, menu : Menu) : Action?
+    def insert_menu(before : Action, menu : Menu) : Action
       BindgenHelper.keep_alive(menu)
-    Binding.bg_QMenu_insertMenu_QAction_X_QMenu_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenu_insertMenu_QAction_X_QMenu_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)))
     end
     
-    def insert_separator(before : Action) : Action?
-      Binding.bg_QMenu_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def insert_separator(before : Action) : Action
+      Action.new(unwrap: Binding.bg_QMenu_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)))
     end
     
-    def insert_section(before : Action, text : String) : Action?
-      Binding.bg_QMenu_insertSection_QAction_X_const_QString_R(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def insert_section(before : Action, text : String) : Action
+      Action.new(unwrap: Binding.bg_QMenu_insertSection_QAction_X_const_QString_R(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), Qt::Converter::QString.wrap(text)))
     end
     
-    def insert_section(before : Action, icon : Icon, text : String) : Action?
-      Binding.bg_QMenu_insertSection_QAction_X_const_QIcon_R_const_QString_R(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def insert_section(before : Action, icon : Icon, text : String) : Action
+      Action.new(unwrap: Binding.bg_QMenu_insertSection_QAction_X_const_QIcon_R_const_QString_R(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), icon, Qt::Converter::QString.wrap(text)))
     end
     
     def empty?() : Bool
@@ -222348,31 +222348,31 @@ module Qt
     Binding.bg_QMenuBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
-    def add_menu(menu : Menu) : Action?
+    def add_menu(menu : Menu) : Action
       BindgenHelper.keep_alive(menu)
-    Binding.bg_QMenuBar_addMenu_QMenu_X(self, (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenuBar_addMenu_QMenu_X(self, (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)))
     end
     
-    def add_menu(title : String) : Menu?
-      Binding.bg_QMenuBar_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
+    def add_menu(title : String) : Menu
+      Menu.new(unwrap: Binding.bg_QMenuBar_addMenu_const_QString_R(self, Qt::Converter::QString.wrap(title)))
     end
     
-    def add_menu(icon : Icon, title : String) : Menu?
+    def add_menu(icon : Icon, title : String) : Menu
       BindgenHelper.keep_alive(icon)
-    Binding.bg_QMenuBar_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
+    Menu.new(unwrap: Binding.bg_QMenuBar_addMenu_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(title)))
     end
     
-    def add_separator() : Action?
-      Binding.bg_QMenuBar_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_separator() : Action
+      Action.new(unwrap: Binding.bg_QMenuBar_addSeparator_(self))
     end
     
-    def insert_separator(before : Action) : Action?
-      Binding.bg_QMenuBar_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def insert_separator(before : Action) : Action
+      Action.new(unwrap: Binding.bg_QMenuBar_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)))
     end
     
-    def insert_menu(before : Action, menu : Menu) : Action?
+    def insert_menu(before : Action, menu : Menu) : Action
       BindgenHelper.keep_alive(menu)
-    Binding.bg_QMenuBar_insertMenu_QAction_X_QMenu_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QMenuBar_insertMenu_QAction_X_QMenu_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null)))
     end
     
     def clear() : Void
@@ -225189,8 +225189,8 @@ module Qt
     Binding.bg_QTextEdit_setDocument_QTextDocument_X(self, (document.try(&.to_unsafe) || Pointer(Binding::QTextDocument).null))
     end
     
-    def document() : TextDocument?
-      Binding.bg_QTextEdit_document_(self).try {|ptr| TextDocument.new(unwrap: ptr) unless ptr.null?}
+    def document() : TextDocument
+      TextDocument.new(unwrap: Binding.bg_QTextEdit_document_(self))
     end
     
     def placeholder_text=(placeholder_text : String) : Void
@@ -244647,7 +244647,7 @@ module Qt
         {"bg_QTableView_metaObject_", "meta_object", [] of String},
         {"bg_QTableView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
@@ -244758,7 +244758,7 @@ module Qt
       bg_QTableView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QTableView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -244854,7 +244854,7 @@ module Qt
     {% end %}
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -244900,12 +244900,12 @@ module Qt
     Binding.bg_QTableView_doItemsLayout_(self)
     end
     
-    def horizontal_header() : HeaderView?
-      Binding.bg_QTableView_horizontalHeader_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
+    def horizontal_header() : HeaderView
+      HeaderView.new(unwrap: Binding.bg_QTableView_horizontalHeader_(self))
     end
     
-    def vertical_header() : HeaderView?
-      Binding.bg_QTableView_verticalHeader_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
+    def vertical_header() : HeaderView
+      HeaderView.new(unwrap: Binding.bg_QTableView_verticalHeader_(self))
     end
     
     def horizontal_header=(header : HeaderView) : Void
@@ -245136,7 +245136,7 @@ module Qt
         {"bg_QTableView_metaObject_", "meta_object", [] of String},
         {"bg_QTableView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
@@ -245247,7 +245247,7 @@ module Qt
       bg_QTableView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QTableView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -246281,7 +246281,7 @@ module Qt
     private class Superclass
       def initialize(@myself : TableView)
       end
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QTableView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -247145,7 +247145,7 @@ module Qt
         {"bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction", "drop_mime_data", ["Int32", "Int32", "MimeData", "DropAction"] of String},
         {"bg_QTableWidget_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QTableWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
-        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
@@ -247260,7 +247260,7 @@ module Qt
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, ::Qt::DropAction, Bool).new{|row, column, data, action| BindgenHelper.rescued(BindgenHelper.zero_value(Bool)) { self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(::Qt::DropActions).new{ BindgenHelper.rescued(BindgenHelper.zero_value(::Qt::DropActions)) { self.supported_drop_actions() } } {% else %} nil {% end %}),
       bg_QTableWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| BindgenHelper.rescued(nil) { self.drop_event(DropEvent.new(unwrap: event)) } } {% else %} nil {% end %}),
-      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -247373,7 +247373,7 @@ module Qt
         {"bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction", "drop_mime_data", ["Int32", "Int32", "MimeData", "DropAction"] of String},
         {"bg_QTableWidget_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QTableWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
-        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTableView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTableView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTableView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTableView_doItemsLayout_", "do_items_layout", [] of String},
@@ -247488,7 +247488,7 @@ module Qt
       bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropMimeData_int_int_const_QMimeData_X_Qt__DropAction") %} Proc(Int32, Int32, Binding::QMimeData*, ::Qt::DropAction, Bool).new{|row, column, data, action| BindgenHelper.rescued(BindgenHelper.zero_value(Bool)) { self.drop_mime_data(row, column, MimeData.new(unwrap: data), action) } } {% else %} nil {% end %}),
       bg_QTableWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_supportedDropActions_") %} Proc(::Qt::DropActions).new{ BindgenHelper.rescued(BindgenHelper.zero_value(::Qt::DropActions)) { self.supported_drop_actions() } } {% else %} nil {% end %}),
       bg_QTableWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| BindgenHelper.rescued(nil) { self.drop_event(DropEvent.new(unwrap: event)) } } {% else %} nil {% end %}),
-      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTableView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTableView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTableView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTableView_doItemsLayout_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTableView_doItemsLayout_") %} Proc(Void).new{ BindgenHelper.rescued(nil) { self.do_items_layout() } } {% else %} nil {% end %}),
@@ -247955,7 +247955,7 @@ module Qt
       MetaObject.new(unwrap: Binding.bg_QTableWidget_staticMetaObject_STATIC_GETTER_())
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       BindgenHelper.keep_alive(model)
     Binding.bg_QTableView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
@@ -250979,22 +250979,22 @@ module Qt
     Binding.bg_QToolBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
-    def add_separator() : Action?
-      Binding.bg_QToolBar_addSeparator_(self).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def add_separator() : Action
+      Action.new(unwrap: Binding.bg_QToolBar_addSeparator_(self))
     end
     
-    def insert_separator(before : Action) : Action?
-      Binding.bg_QToolBar_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    def insert_separator(before : Action) : Action
+      Action.new(unwrap: Binding.bg_QToolBar_insertSeparator_QAction_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null)))
     end
     
-    def add_widget(widget : Widget) : Action?
+    def add_widget(widget : Widget) : Action
       BindgenHelper.keep_alive(widget)
-    Binding.bg_QToolBar_addWidget_QWidget_X(self, (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QToolBar_addWidget_QWidget_X(self, (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null)))
     end
     
-    def insert_widget(before : Action, widget : Widget) : Action?
+    def insert_widget(before : Action, widget : Widget) : Action
       BindgenHelper.keep_alive(widget)
-    Binding.bg_QToolBar_insertWidget_QAction_X_QWidget_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+    Action.new(unwrap: Binding.bg_QToolBar_insertWidget_QAction_X_QWidget_X(self, (before.try(&.to_unsafe) || Pointer(Binding::QAction).null), (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null)))
     end
     
     def action_geometry(action : Action) : Rect
@@ -254079,7 +254079,7 @@ module Qt
         {"bg_QTreeView_metaObject_", "meta_object", [] of String},
         {"bg_QTreeView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTreeView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTreeView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
@@ -254192,7 +254192,7 @@ module Qt
       bg_QTreeView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QTreeView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTreeView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTreeView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
@@ -254290,7 +254290,7 @@ module Qt
     {% end %}
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -254325,8 +254325,8 @@ module Qt
     Binding.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
-    def header() : HeaderView?
-      Binding.bg_QTreeView_header_(self).try {|ptr| HeaderView.new(unwrap: ptr) unless ptr.null?}
+    def header() : HeaderView
+      HeaderView.new(unwrap: Binding.bg_QTreeView_header_(self))
     end
     
     def header=(header : HeaderView) : Void
@@ -254674,7 +254674,7 @@ module Qt
         {"bg_QTreeView_metaObject_", "meta_object", [] of String},
         {"bg_QTreeView_qt_metacast_const_char_X", "qt_metacast", ["UInt8*"] of String},
         {"bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX", "qt_metacall", ["MetaObjectCall", "Int32", "Void**"] of String},
-        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTreeView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTreeView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QTreeView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
@@ -254787,7 +254787,7 @@ module Qt
       bg_QTreeView_metaObject_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_metaObject_") %} Proc(Binding::QMetaObject*).new{ BindgenHelper.rescued(Pointer(Binding::QMetaObject).null) { (self.meta_object().try(&.to_unsafe) || Pointer(Binding::QMetaObject).null) } } {% else %} nil {% end %}),
       bg_QTreeView_qt_metacast_const_char_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacast_const_char_X") %} Proc(UInt8*, Void*).new{|unnamed_arg_0| BindgenHelper.rescued(Pointer(Void).null) { self.qt_metacast(unnamed_arg_0) } } {% else %} nil {% end %}),
       bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } } {% else %} nil {% end %}),
-      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTreeView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTreeView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QTreeView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
@@ -255798,7 +255798,7 @@ module Qt
     private class Superclass
       def initialize(@myself : TreeView)
       end
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QTreeView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
@@ -257011,7 +257011,7 @@ module Qt
         {"bg_QTreeWidget_dropMimeData_QTreeWidgetItem_X_int_const_QMimeData_X_Qt__DropAction", "drop_mime_data", ["TreeWidgetItem", "Int32", "MimeData", "DropAction"] of String},
         {"bg_QTreeWidget_supportedDropActions_", "supported_drop_actions", [] of String},
         {"bg_QTreeWidget_dropEvent_QDropEvent_X", "drop_event", ["DropEvent"] of String},
-        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QTreeView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QTreeView_setRootIndex_const_QModelIndex_R", "root_index=", ["ModelIndex"] of String},
         {"bg_QTreeView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QTreeView_visualRect_const_QModelIndex_R", "visual_rect", ["ModelIndex"] of String},
@@ -257128,7 +257128,7 @@ module Qt
       bg_QTreeWidget_dropMimeData_QTreeWidgetItem_X_int_const_QMimeData_X_Qt__DropAction: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeWidget_dropMimeData_QTreeWidgetItem_X_int_const_QMimeData_X_Qt__DropAction") %} Proc(Binding::QTreeWidgetItem*, Int32, Binding::QMimeData*, ::Qt::DropAction, Bool).new{|parent, index, data, action| BindgenHelper.rescued(BindgenHelper.zero_value(Bool)) { self.drop_mime_data(TreeWidgetItem.new(unwrap: parent), index, MimeData.new(unwrap: data), action) } } {% else %} nil {% end %}),
       bg_QTreeWidget_supportedDropActions_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeWidget_supportedDropActions_") %} Proc(::Qt::DropActions).new{ BindgenHelper.rescued(BindgenHelper.zero_value(::Qt::DropActions)) { self.supported_drop_actions() } } {% else %} nil {% end %}),
       bg_QTreeWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| BindgenHelper.rescued(nil) { self.drop_event(DropEvent.new(unwrap: event)) } } {% else %} nil {% end %}),
-      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QTreeView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QTreeView_setRootIndex_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_setRootIndex_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Void).new{|index| BindgenHelper.rescued(nil) { self.root_index=(ModelIndex.new(unwrap: index)) } } {% else %} nil {% end %}),
       bg_QTreeView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QTreeView_visualRect_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QTreeView_visualRect_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QRect*).new{|index| BindgenHelper.rescued(Pointer(Binding::QRect).malloc(1)) { Pointer(Binding::QRect).malloc(1, self.visual_rect(ModelIndex.new(unwrap: index)).to_unsafe) } } {% else %} nil {% end %}),
@@ -257231,8 +257231,8 @@ module Qt
       Binding.bg_QTreeWidget_setColumnCount_int(self, columns)
     end
     
-    def invisible_root_item() : TreeWidgetItem?
-      Binding.bg_QTreeWidget_invisibleRootItem_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
+    def invisible_root_item() : TreeWidgetItem
+      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_invisibleRootItem_(self))
     end
     
     def top_level_item(index : Int32) : TreeWidgetItem?
@@ -257273,8 +257273,8 @@ module Qt
     Binding.bg_QTreeWidget_addTopLevelItems_const_QList_QTreeWidgetItem_X__R(self, BindgenHelper.wrap_container(Container_QList_QTreeWidgetItem_X_, items).to_unsafe)
     end
     
-    def header_item() : TreeWidgetItem?
-      Binding.bg_QTreeWidget_headerItem_(self).try {|ptr| TreeWidgetItem.new(unwrap: ptr) unless ptr.null?}
+    def header_item() : TreeWidgetItem
+      TreeWidgetItem.new(unwrap: Binding.bg_QTreeWidget_headerItem_(self))
     end
     
     def header_item=(item : TreeWidgetItem) : Void
@@ -257533,7 +257533,7 @@ module Qt
       MetaObject.new(unwrap: Binding.bg_QTreeWidget_staticMetaObject_STATIC_GETTER_())
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       BindgenHelper.keep_alive(model)
     Binding.bg_QTreeView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
@@ -259022,7 +259022,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
@@ -259133,7 +259133,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
@@ -259242,7 +259242,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
@@ -259353,7 +259353,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
@@ -259462,7 +259462,7 @@ module Qt
         {"bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R", "selection_changed", ["ItemSelection", "ItemSelection"] of String},
         {"bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R", "current_changed", ["ModelIndex", "ModelIndex"] of String},
         {"bg_QListView_viewportSizeHint_", "viewport_size_hint", [] of String},
-        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel"] of String},
+        {"bg_QAbstractItemView_setModel_QAbstractItemModel_X", "model=", ["AbstractItemModel?"] of String},
         {"bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X", "selection_model=", ["ItemSelectionModel"] of String},
         {"bg_QAbstractItemView_keyboardSearch_const_QString_R", "keyboard_search", ["String"] of String},
         {"bg_QAbstractItemView_sizeHintForRow_int", "size_hint_for_row", ["Int32"] of String},
@@ -259573,7 +259573,7 @@ module Qt
       bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_selectionChanged_const_QItemSelection_R_const_QItemSelection_R") %} Proc(Binding::QItemSelection*, Binding::QItemSelection*, Void).new{|selected, deselected| BindgenHelper.rescued(nil) { self.selection_changed(ItemSelection.new(unwrap: selected), ItemSelection.new(unwrap: deselected)) } } {% else %} nil {% end %}),
       bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_currentChanged_const_QModelIndex_R_const_QModelIndex_R") %} Proc(Binding::QModelIndex*, Binding::QModelIndex*, Void).new{|current, previous| BindgenHelper.rescued(nil) { self.current_changed(ModelIndex.new(unwrap: current), ModelIndex.new(unwrap: previous)) } } {% else %} nil {% end %}),
       bg_QListView_viewportSizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QListView_viewportSizeHint_") %} Proc(Binding::QSize*).new{ BindgenHelper.rescued(Pointer(Binding::QSize).malloc(1)) { Pointer(Binding::QSize).malloc(1, self.viewport_size_hint().to_unsafe) } } {% else %} nil {% end %}),
-      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(AbstractItemModelImpl.new(unwrap: model)) } } {% else %} nil {% end %}),
+      bg_QAbstractItemView_setModel_QAbstractItemModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setModel_QAbstractItemModel_X") %} Proc(Binding::QAbstractItemModel*, Void).new{|model| BindgenHelper.rescued(nil) { self.model=(model.try {|ptr| AbstractItemModelImpl.new(unwrap: ptr) unless ptr.null?}) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X") %} Proc(Binding::QItemSelectionModel*, Void).new{|selection_model| BindgenHelper.rescued(nil) { self.selection_model=(ItemSelectionModel.new(unwrap: selection_model)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_keyboardSearch_const_QString_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_keyboardSearch_const_QString_R") %} Proc(Binding::CrystalString*, Void).new{|search| BindgenHelper.rescued(nil) { self.keyboard_search(Qt::Converter::QString.unwrap(search.value)) } } {% else %} nil {% end %}),
       bg_QAbstractItemView_sizeHintForRow_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QAbstractItemView_sizeHintForRow_int") %} Proc(Int32, Int32).new{|row| BindgenHelper.rescued(BindgenHelper.zero_value(Int32)) { self.size_hint_for_row(row) } } {% else %} nil {% end %}),
@@ -260040,7 +260040,7 @@ module Qt
     Size.new(unwrap: Binding.bg_QListView_viewportSizeHint_(self))
     end
     
-    def model=(model : AbstractItemModel) : Void
+    def model=(model : AbstractItemModel?) : Void
       {% unless @type.annotation(BindgenWrapper) %}
       {% if @type.has_method?("superclass") %}
         if (_superclass_ = superclass).responds_to?(:model=)
@@ -260818,7 +260818,7 @@ module Qt
         Size.new(unwrap: Binding.bg_QListView_viewportSizeHint_SUPER_(@myself))
       end
       
-      def model=(model : AbstractItemModel) : Void
+      def model=(model : AbstractItemModel?) : Void
         BindgenHelper.keep_alive(model)
       Binding.bg_QAbstractItemView_setModel_SUPER_QAbstractItemModel_X(@myself, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
       end
