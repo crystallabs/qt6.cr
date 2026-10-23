@@ -41971,11 +41971,13 @@ module Qt
     abstract def register_socket_notifier(notifier : SocketNotifier) : Void
     abstract def unregister_socket_notifier(notifier : SocketNotifier) : Void
     def register_timer(interval : ::Time::Span, timer_type : TimerType, object : Object) : TimerId
-      Binding.bg_QAbstractEventDispatcher_registerTimer_QAbstractEventDispatcher__Duration_Qt__TimerType_QObject_X(self, Qt::Converter::TimeSpanNanoseconds.wrap(interval), timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(object)
+    Binding.bg_QAbstractEventDispatcher_registerTimer_QAbstractEventDispatcher__Duration_Qt__TimerType_QObject_X(self, Qt::Converter::TimeSpanNanoseconds.wrap(interval), timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
     def register_timer(interval : Int64, timer_type : TimerType, object : Object) : Int32
-      Binding.bg_QAbstractEventDispatcher_registerTimer_qint64_Qt__TimerType_QObject_X(self, interval, timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(object)
+    Binding.bg_QAbstractEventDispatcher_registerTimer_qint64_Qt__TimerType_QObject_X(self, interval, timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
     abstract def register_timer(timer_id : Int32, interval : Int64, timer_type : TimerType, object : Object) : Void
@@ -41984,7 +41986,8 @@ module Qt
     abstract def registered_timers(object : Object) : Enumerable(Binding::EventDispatcherTimerInfo)
     abstract def remaining_time(timer_id : Int32) : Int32
     def register_timer(timer_id : TimerId, interval : ::Time::Span, timer_type : TimerType, object : Object) : Void
-      Binding.bg_QAbstractEventDispatcher_registerTimer_Qt__TimerId_QAbstractEventDispatcher__Duration_Qt__TimerType_QObject_X(self, timer_id, Qt::Converter::TimeSpanNanoseconds.wrap(interval), timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(object)
+    Binding.bg_QAbstractEventDispatcher_registerTimer_Qt__TimerId_QAbstractEventDispatcher__Duration_Qt__TimerType_QObject_X(self, timer_id, Qt::Converter::TimeSpanNanoseconds.wrap(interval), timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
     def unregister_timer(timer_id : TimerId) : Bool
@@ -45333,7 +45336,8 @@ module Qt
     end
     
     def source_model=(source_model : AbstractItemModel) : Void
-      Binding.bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(source_model)
+    Binding.bg_QAbstractProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def source_model() : AbstractItemModel?
@@ -47380,7 +47384,8 @@ module Qt
     end
     
     def self.event_dispatcher=(event_dispatcher : AbstractEventDispatcher) : Void
-      Binding.bg_QCoreApplication_setEventDispatcher_STATIC_QAbstractEventDispatcher_X((event_dispatcher.try(&.to_unsafe) || Pointer(Binding::QAbstractEventDispatcher).null))
+      BindgenHelper.keep_alive(event_dispatcher)
+    Binding.bg_QCoreApplication_setEventDispatcher_STATIC_QAbstractEventDispatcher_X((event_dispatcher.try(&.to_unsafe) || Pointer(Binding::QAbstractEventDispatcher).null))
     end
     
     def notify(unnamed_arg_0 : Object, unnamed_arg_1 : Event) : Bool
@@ -47428,7 +47433,8 @@ module Qt
     end
     
     def self.install_translator(message_file : Translator) : Bool
-      Binding.bg_QCoreApplication_installTranslator_STATIC_QTranslator_X((message_file.try(&.to_unsafe) || Pointer(Binding::QTranslator).null))
+      BindgenHelper.keep_alive(message_file)
+    Binding.bg_QCoreApplication_installTranslator_STATIC_QTranslator_X((message_file.try(&.to_unsafe) || Pointer(Binding::QTranslator).null))
     end
     
     def self.remove_translator(message_file : Translator) : Bool
@@ -59438,7 +59444,8 @@ module Qt
     end
     
     def event_dispatcher=(event_dispatcher : AbstractEventDispatcher) : Void
-      Binding.bg_QThread_setEventDispatcher_QAbstractEventDispatcher_X(self, (event_dispatcher.try(&.to_unsafe) || Pointer(Binding::QAbstractEventDispatcher).null))
+      BindgenHelper.keep_alive(event_dispatcher)
+    Binding.bg_QThread_setEventDispatcher_QAbstractEventDispatcher_X(self, (event_dispatcher.try(&.to_unsafe) || Pointer(Binding::QAbstractEventDispatcher).null))
     end
     
     def event(event : Event) : Bool
@@ -60101,7 +60108,8 @@ module Qt
     end
     
     def source_model=(source_model : AbstractItemModel) : Void
-      Binding.bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(source_model)
+    Binding.bg_QIdentityProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def insert_columns(column : Int32, count : Int32) : Bool
@@ -67061,7 +67069,8 @@ module Qt
     end
     
     def initialize(parent : Object? = nil)
-      result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(parent)
+    result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     {% begin %}
     {%
@@ -67124,7 +67133,8 @@ module Qt
     end
     
     def initialize(target : Object, property_name : Bytes, parent : Object? = nil)
-      result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X((target.try(&.to_unsafe) || Pointer(Binding::QObject).null), Qt::Converter::QByteArray.wrap(property_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(target)
+    result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X((target.try(&.to_unsafe) || Pointer(Binding::QObject).null), Qt::Converter::QByteArray.wrap(property_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     {% begin %}
     {%
@@ -67191,7 +67201,8 @@ module Qt
     end
     
     def target_object=(target : Object) : Void
-      Binding.bg_QPropertyAnimation_setTargetObject_QObject_X(self, (target.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(target)
+    Binding.bg_QPropertyAnimation_setTargetObject_QObject_X(self, (target.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
     def property_name() : Bytes
@@ -71481,7 +71492,8 @@ module Qt
     end
     
     def source_model=(source_model : AbstractItemModel) : Void
-      Binding.bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(source_model)
+    Binding.bg_QSortFilterProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def map_to_source(proxy_index : ModelIndex) : ModelIndex
@@ -74708,7 +74720,8 @@ module Qt
     end
     
     def source_model=(source_model : AbstractItemModel) : Void
-      Binding.bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(source_model)
+    Binding.bg_QTransposeProxyModel_setSourceModel_QAbstractItemModel_X(self, (source_model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def row_count() : Int32
@@ -90359,7 +90372,8 @@ module Qt
     end
     
     def document_layout=(layout : AbstractTextDocumentLayout) : Void
-      Binding.bg_QTextDocument_setDocumentLayout_QAbstractTextDocumentLayout_X(self, (layout.try(&.to_unsafe) || Pointer(Binding::QAbstractTextDocumentLayout).null))
+      BindgenHelper.keep_alive(layout)
+    Binding.bg_QTextDocument_setDocumentLayout_QAbstractTextDocumentLayout_X(self, (layout.try(&.to_unsafe) || Pointer(Binding::QAbstractTextDocumentLayout).null))
     end
     
     def document_layout() : AbstractTextDocumentLayout?
@@ -95089,7 +95103,8 @@ module Qt
     end
     
     def action_group=(group : ActionGroup) : Void
-      Binding.bg_QAction_setActionGroup_QActionGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QActionGroup).null))
+      BindgenHelper.keep_alive(group)
+    Binding.bg_QAction_setActionGroup_QActionGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QActionGroup).null))
     end
     
     def action_group() : ActionGroup?
@@ -113347,7 +113362,8 @@ module Qt
     end
     
     def focus_proxy=(unnamed_arg_0 : Widget) : Void
-      Binding.bg_QWidget_setFocusProxy_QWidget_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+      BindgenHelper.keep_alive(unnamed_arg_0)
+    Binding.bg_QWidget_setFocusProxy_QWidget_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
     def focus_proxy() : Widget?
@@ -115744,7 +115760,8 @@ module Qt
     end
     
     protected def line_edit=(edit : LineEdit) : Void
-      Binding.bg_QAbstractSpinBox_setLineEdit_QLineEdit_X(self, (edit.try(&.to_unsafe) || Pointer(Binding::QLineEdit).null))
+      BindgenHelper.keep_alive(edit)
+    Binding.bg_QAbstractSpinBox_setLineEdit_QLineEdit_X(self, (edit.try(&.to_unsafe) || Pointer(Binding::QLineEdit).null))
     end
     
     protected def step_enabled() : AbstractSpinBox::StepEnabled
@@ -120199,7 +120216,8 @@ module Qt
     end
     
     protected def tab_bar=(unnamed_arg_0 : TabBar) : Void
-      Binding.bg_QTabWidget_setTabBar_QTabBar_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QTabBar).null))
+      BindgenHelper.keep_alive(unnamed_arg_0)
+    Binding.bg_QTabWidget_setTabBar_QTabBar_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QTabBar).null))
     end
     
     protected def change_event(unnamed_arg_0 : Event) : Void
@@ -125816,7 +125834,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def selection_model() : ItemSelectionModel?
@@ -128711,11 +128730,13 @@ module Qt
     end
     
     protected def add_child_layout(l : Layout) : Void
-      Binding.bg_QLayout_addChildLayout_QLayout_X(self, (l.try(&.to_unsafe) || Pointer(Binding::QLayout).null))
+      BindgenHelper.keep_alive(l)
+    Binding.bg_QLayout_addChildLayout_QLayout_X(self, (l.try(&.to_unsafe) || Pointer(Binding::QLayout).null))
     end
     
     protected def add_child_widget(w : Widget) : Void
-      Binding.bg_QLayout_addChildWidget_QWidget_X(self, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+      BindgenHelper.keep_alive(w)
+    Binding.bg_QLayout_addChildWidget_QWidget_X(self, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
     protected def adopt_layout(layout : Layout) : Bool
@@ -134908,11 +134929,13 @@ module Qt
     end
     
     def model=(model : AbstractItemModel) : Void
-      Binding.bg_QColumnView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QColumnView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QColumnView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QColumnView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def root_index=(index : ModelIndex) : Void
@@ -134944,7 +134967,8 @@ module Qt
     end
     
     def preview_widget=(widget : Widget) : Void
-      Binding.bg_QColumnView_setPreviewWidget_QWidget_X(self, (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+      BindgenHelper.keep_alive(widget)
+    Binding.bg_QColumnView_setPreviewWidget_QWidget_X(self, (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
     def column_widths=(list : Enumerable(Int32)) : Void
@@ -139383,7 +139407,8 @@ module Qt
     end
     
     def initialize(parent : Object? = nil)
-      result = Binding.bg_QCompleter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(parent)
+    result = Binding.bg_QCompleter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     {% begin %}
     {%
@@ -139438,7 +139463,8 @@ module Qt
     end
     
     def initialize(model : AbstractItemModel, parent : Object? = nil)
-      result = Binding.bg_QCompleter__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(model)
+    result = Binding.bg_QCompleter__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     {% begin %}
     {%
@@ -139493,7 +139519,8 @@ module Qt
     end
     
     def initialize(completions : Enumerable(String), parent : Object? = nil)
-      result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, completions).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(completions)
+    result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, completions).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     {% begin %}
     {%
@@ -140814,7 +140841,8 @@ module Qt
     end
     
     def calendar_widget=(calendar_widget : CalendarWidget) : Void
-      Binding.bg_QDateTimeEdit_setCalendarWidget_QCalendarWidget_X(self, (calendar_widget.try(&.to_unsafe) || Pointer(Binding::QCalendarWidget).null))
+      BindgenHelper.keep_alive(calendar_widget)
+    Binding.bg_QDateTimeEdit_setCalendarWidget_QCalendarWidget_X(self, (calendar_widget.try(&.to_unsafe) || Pointer(Binding::QCalendarWidget).null))
     end
     
     def section_count() : Int32
@@ -147238,7 +147266,8 @@ module Qt
     end
     
     def proxy_model=(model : AbstractProxyModel) : Void
-      Binding.bg_QFileDialog_setProxyModel_QAbstractProxyModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractProxyModel).null))
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QFileDialog_setProxyModel_QAbstractProxyModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractProxyModel).null))
     end
     
     def proxy_model() : AbstractProxyModel?
@@ -152427,7 +152456,8 @@ module Qt
     end
     
     def group=(group : GraphicsItemGroup) : Void
-      Binding.bg_QGraphicsItem_setGroup_QGraphicsItemGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QGraphicsItemGroup).null))
+      BindgenHelper.keep_alive(group)
+    Binding.bg_QGraphicsItem_setGroup_QGraphicsItemGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QGraphicsItemGroup).null))
     end
     
     def flags() : GraphicsItem::Flags
@@ -154198,7 +154228,8 @@ module Qt
     end
     
     def group=(group : GraphicsItemGroup) : Void
-      Binding.bg_QGraphicsObject_setGroup_QGraphicsItemGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QGraphicsItemGroup).null))
+      BindgenHelper.keep_alive(group)
+    Binding.bg_QGraphicsObject_setGroup_QGraphicsItemGroup_X(self, (group.try(&.to_unsafe) || Pointer(Binding::QGraphicsItemGroup).null))
     end
     
     def flags() : GraphicsItem::Flags
@@ -154322,7 +154353,8 @@ module Qt
     end
     
     def graphics_effect=(effect : GraphicsEffect) : Void
-      Binding.bg_QGraphicsObject_setGraphicsEffect_QGraphicsEffect_X(self, (effect.try(&.to_unsafe) || Pointer(Binding::QGraphicsEffect).null))
+      BindgenHelper.keep_alive(effect)
+    Binding.bg_QGraphicsObject_setGraphicsEffect_QGraphicsEffect_X(self, (effect.try(&.to_unsafe) || Pointer(Binding::QGraphicsEffect).null))
     end
     
     def accepted_mouse_buttons() : MouseButtons
@@ -154856,7 +154888,8 @@ module Qt
     end
     
     def install_scene_event_filter(filter_item : GraphicsItem) : Void
-      Binding.bg_QGraphicsObject_installSceneEventFilter_QGraphicsItem_X(self, (filter_item.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
+      BindgenHelper.keep_alive(filter_item)
+    Binding.bg_QGraphicsObject_installSceneEventFilter_QGraphicsItem_X(self, (filter_item.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     end
     
     def remove_scene_event_filter(filter_item : GraphicsItem) : Void
@@ -160755,7 +160788,8 @@ module Qt
     end
     
     def parent_layout_item=(parent : GraphicsLayoutItem) : Void
-      Binding.bg_QGraphicsLayoutItem_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
+      BindgenHelper.keep_alive(parent)
+    Binding.bg_QGraphicsLayoutItem_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     end
     
     def layout?() : Bool
@@ -161025,7 +161059,8 @@ module Qt
     end
     
     protected def add_child_layout_item(layout_item : GraphicsLayoutItem) : Void
-      Binding.bg_QGraphicsLayout_addChildLayoutItem_QGraphicsLayoutItem_X(self, (layout_item.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
+      BindgenHelper.keep_alive(layout_item)
+    Binding.bg_QGraphicsLayout_addChildLayoutItem_QGraphicsLayoutItem_X(self, (layout_item.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     end
     
     def geometry=(rect : RectF) : Void
@@ -163786,7 +163821,8 @@ module Qt
     end
     
     def style=(style : Style) : Void
-      Binding.bg_QGraphicsWidget_setStyle_QStyle_X(self, (style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
+      BindgenHelper.keep_alive(style)
+    Binding.bg_QGraphicsWidget_setStyle_QStyle_X(self, (style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
     end
     
     def font() : Font
@@ -164669,7 +164705,8 @@ module Qt
     end
     
     def parent_layout_item=(parent : GraphicsLayoutItem) : Void
-      Binding.bg_QGraphicsWidget_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
+      BindgenHelper.keep_alive(parent)
+    Binding.bg_QGraphicsWidget_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     end
     
     def layout?() : Bool
@@ -166123,7 +166160,8 @@ module Qt
     end
     
     def style=(style : Style) : Void
-      Binding.bg_QGraphicsScene_setStyle_QStyle_X(self, (style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
+      BindgenHelper.keep_alive(style)
+    Binding.bg_QGraphicsScene_setStyle_QStyle_X(self, (style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
     end
     
     def font() : Font
@@ -171341,7 +171379,8 @@ module Qt
     end
     
     def model=(model : AbstractItemModel) : Void
-      Binding.bg_QHeaderView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QHeaderView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def orientation() : Orientation
@@ -172035,7 +172074,8 @@ module Qt
       Custom = 2
     end
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def keyboard_search(search : String) : Void
@@ -176855,7 +176895,8 @@ module Qt
     end
     
     def movie=(movie : Movie) : Void
-      Binding.bg_QLabel_setMovie_QMovie_X(self, (movie.try(&.to_unsafe) || Pointer(Binding::QMovie).null))
+      BindgenHelper.keep_alive(movie)
+    Binding.bg_QLabel_setMovie_QMovie_X(self, (movie.try(&.to_unsafe) || Pointer(Binding::QMovie).null))
     end
     
     def num=(unnamed_arg_0 : Int32) : Void
@@ -178824,7 +178865,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def keyboard_search(search : String) : Void
@@ -180040,7 +180082,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QListWidget_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QListWidget_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def item(row : Int32) : ListWidgetItem?
@@ -181505,11 +181548,13 @@ module Qt
     end
     
     def split_dock_widget(after : DockWidget, dockwidget : DockWidget, orientation : Orientation) : Void
-      Binding.bg_QMainWindow_splitDockWidget_QDockWidget_X_QDockWidget_X_Qt__Orientation(self, (after.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), (dockwidget.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), orientation)
+      BindgenHelper.keep_alive(dockwidget)
+    Binding.bg_QMainWindow_splitDockWidget_QDockWidget_X_QDockWidget_X_Qt__Orientation(self, (after.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), (dockwidget.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), orientation)
     end
     
     def tabify_dock_widget(first : DockWidget, second : DockWidget) : Void
-      Binding.bg_QMainWindow_tabifyDockWidget_QDockWidget_X_QDockWidget_X(self, (first.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), (second.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null))
+      BindgenHelper.keep_alive(second)
+    Binding.bg_QMainWindow_tabifyDockWidget_QDockWidget_X_QDockWidget_X(self, (first.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null), (second.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null))
     end
     
     def tabified_dock_widgets(dockwidget : DockWidget) : Enumerable(DockWidget)
@@ -181521,7 +181566,8 @@ module Qt
     end
     
     def restore_dock_widget(dockwidget : DockWidget) : Bool
-      Binding.bg_QMainWindow_restoreDockWidget_QDockWidget_X(self, (dockwidget.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null))
+      BindgenHelper.keep_alive(dockwidget)
+    Binding.bg_QMainWindow_restoreDockWidget_QDockWidget_X(self, (dockwidget.try(&.to_unsafe) || Pointer(Binding::QDockWidget).null))
     end
     
     def dock_widget_area(dockwidget : DockWidget) : DockWidgetArea
@@ -183780,31 +183826,43 @@ module Qt
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QMenu_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenu_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenu_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String) : Action?
-      Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    Binding.bg_QMenu_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String) : Action?
@@ -183812,7 +183870,8 @@ module Qt
     end
     
     def add_action(action : Action) : Void
-      Binding.bg_QMenu_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
+      BindgenHelper.keep_alive(action)
+    Binding.bg_QMenu_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
     def add_menu(menu : Menu) : Action?
@@ -184708,31 +184767,43 @@ module Qt
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenuBar_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenuBar_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QMenuBar_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QMenuBar_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QMenuBar_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(receiver)
+    Binding.bg_QMenuBar_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String) : Action?
-      Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    Binding.bg_QMenuBar_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String) : Action?
@@ -184740,7 +184811,8 @@ module Qt
     end
     
     def add_action(action : Action) : Void
-      Binding.bg_QMenuBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
+      BindgenHelper.keep_alive(action)
+    Binding.bg_QMenuBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
     def add_menu(menu : Menu) : Action?
@@ -191308,7 +191380,8 @@ module Qt
     end
     
     def initialize(style : Style? = nil)
-      result = Binding.bg_QProxyStyle__CONSTRUCT_QStyle_X((style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
+      BindgenHelper.keep_alive(style)
+    result = Binding.bg_QProxyStyle__CONSTRUCT_QStyle_X((style.try(&.to_unsafe) || Pointer(Binding::QStyle).null))
     @unwrap = result
     {% begin %}
     {%
@@ -198829,11 +198902,13 @@ module Qt
     end
     
     def add_widget(w : Widget) : Int32
-      Binding.bg_QStackedWidget_addWidget_QWidget_X(self, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+      BindgenHelper.keep_alive(w)
+    Binding.bg_QStackedWidget_addWidget_QWidget_X(self, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
     def insert_widget(index : Int32, w : Widget) : Int32
-      Binding.bg_QStackedWidget_insertWidget_int_QWidget_X(self, index, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+      BindgenHelper.keep_alive(w)
+    Binding.bg_QStackedWidget_insertWidget_int_QWidget_X(self, index, (w.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
     def remove_widget(w : Widget) : Void
@@ -200752,7 +200827,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def do_items_layout() : Void
@@ -200768,11 +200844,13 @@ module Qt
     end
     
     def horizontal_header=(header : HeaderView) : Void
-      Binding.bg_QTableView_setHorizontalHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
+      BindgenHelper.keep_alive(header)
+    Binding.bg_QTableView_setHorizontalHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
     end
     
     def vertical_header=(header : HeaderView) : Void
-      Binding.bg_QTableView_setVerticalHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
+      BindgenHelper.keep_alive(header)
+    Binding.bg_QTableView_setVerticalHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
     end
     
     def row_viewport_position(row : Int32) : Int32
@@ -203068,7 +203146,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QTableView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def do_items_layout() : Void
@@ -204989,31 +205068,43 @@ module Qt
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QToolBar_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QToolBar_addAction_const_QString_R_const_QKeySequence_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), shortcut, (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QKeySequence_R(self, icon, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, shortcut : KeySequence) : Action?
-      Binding.bg_QToolBar_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(shortcut)
+    Binding.bg_QToolBar_addAction_const_QString_R_const_QKeySequence_R(self, Qt::Converter::QString.wrap(text), shortcut).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    BindgenHelper.keep_alive(receiver)
+    Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, icon, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String, receiver : Object, member : UInt8*, type : ConnectionType = ConnectionType::AutoConnection) : Action?
-      Binding.bg_QToolBar_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(receiver)
+    Binding.bg_QToolBar_addAction_const_QString_R_const_QObject_X_const_char_X_Qt__ConnectionType(self, Qt::Converter::QString.wrap(text), (receiver.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(icon : Icon, text : String) : Action?
-      Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
+      BindgenHelper.keep_alive(icon)
+    Binding.bg_QToolBar_addAction_const_QIcon_R_const_QString_R(self, icon, Qt::Converter::QString.wrap(text)).try {|ptr| Action.new(unwrap: ptr) unless ptr.null?}
     end
     
     def add_action(text : String) : Action?
@@ -205021,7 +205112,8 @@ module Qt
     end
     
     def add_action(action : Action) : Void
-      Binding.bg_QToolBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
+      BindgenHelper.keep_alive(action)
+    Binding.bg_QToolBar_addAction_QAction_X(self, (action.try(&.to_unsafe) || Pointer(Binding::QAction).null))
     end
     
     def add_separator() : Action?
@@ -207303,7 +207395,8 @@ module Qt
     end
     
     def model=(model : AbstractItemModel) : Void
-      Binding.bg_QTreeView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QTreeView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def root_index=(index : ModelIndex) : Void
@@ -207311,7 +207404,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QTreeView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def header() : HeaderView?
@@ -207319,7 +207413,8 @@ module Qt
     end
     
     def header=(header : HeaderView) : Void
-      Binding.bg_QTreeView_setHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
+      BindgenHelper.keep_alive(header)
+    Binding.bg_QTreeView_setHeader_QHeaderView_X(self, (header.try(&.to_unsafe) || Pointer(Binding::QHeaderView).null))
     end
     
     def auto_expand_delay() : Int32
@@ -209704,7 +209799,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QTreeWidget_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QTreeWidget_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def supported_drag_actions() : DropActions
@@ -209800,7 +209896,8 @@ module Qt
     end
     
     def model=(model : AbstractItemModel) : Void
-      Binding.bg_QTreeView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
+      BindgenHelper.keep_alive(model)
+    Binding.bg_QTreeView_setModel_QAbstractItemModel_X(self, (model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null))
     end
     
     def root_index=(index : ModelIndex) : Void
@@ -211458,7 +211555,8 @@ module Qt
     end
     
     def selection_model=(selection_model : ItemSelectionModel) : Void
-      Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
+      BindgenHelper.keep_alive(selection_model)
+    Binding.bg_QAbstractItemView_setSelectionModel_QItemSelectionModel_X(self, (selection_model.try(&.to_unsafe) || Pointer(Binding::QItemSelectionModel).null))
     end
     
     def keyboard_search(search : String) : Void
@@ -214073,7 +214171,8 @@ module Qt
     end
     
     def register_timer(timer_id : Int32, interval : Int64, timer_type : TimerType, object : Object) : Void
-      Binding.bg_QAbstractEventDispatcher_registerTimer_int_qint64_Qt__TimerType_QObject_X(self, timer_id, interval, timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+      BindgenHelper.keep_alive(object)
+    Binding.bg_QAbstractEventDispatcher_registerTimer_int_qint64_Qt__TimerType_QObject_X(self, timer_id, interval, timer_type, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
     def unregister_timer(timer_id : Int32) : Bool

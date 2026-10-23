@@ -7,6 +7,8 @@
 # `depends_on:` marks the constructors whose object uses an argument when
 # destroyed, like an iterator unregistering from its container: the GC destroys
 # the object before the argument, and releases the argument with it.
+# Bindgen applies it to constructors only, so a `setDevice` keeps its device
+# alive instead.
 #
 # Deep-merged (`<<+:`) into `types:` after `deprecated.yml`, so classes listed
 # in both keep their `ignore_methods` from there.
@@ -17,6 +19,7 @@ QLayout:
     "^addItem$": true
     "^replaceWidget$": [1]
     "^setMenuBar$": true
+    "^addChild(Widget|Layout)$": true # Protected, for layouts written in Crystal
 QBoxLayout:
   keep_alive:
     "^(add|insert)(Widget|Layout|Item|SpacerItem)$": true
@@ -38,12 +41,17 @@ QObject:
 QCoreApplication:
   keep_alive:
     "^postEvent$": [1]
+    "^setEventDispatcher$": true
+    "^installTranslator$": true
+QThread:
+  keep_alive:
+    "^setEventDispatcher$": true
 QWidget:
   keep_alive:
     "^setLayout$": true
     "^addAction$": true
     "^insertAction$": [1]
-    "^set(Style|GraphicsEffect)$": true
+    "^set(Style|GraphicsEffect|FocusProxy)$": true
 QApplication:
   keep_alive:
     "^setStyle$": true
@@ -53,6 +61,8 @@ QMainWindow:
     "^addToolBar$": true
     "^insertToolBar$": [1]
     "^addDockWidget$": true
+    "^(tabify|split)DockWidget$": [1]
+    "^restoreDockWidget$": true
 QStatusBar:
   keep_alive:
     "^(add|insert)(Permanent)?Widget$": true
@@ -60,7 +70,7 @@ QTabWidget:
   keep_alive:
     "^addTab$": [0]
     "^insertTab$": [1]
-    "^setCornerWidget$": true
+    "^set(CornerWidget|TabBar)$": true
 QScrollArea:
   keep_alive:
     "^setWidget$": true
@@ -83,6 +93,9 @@ QMenu:
     "^setDefaultAction$": true
 # QAction::setMenu is a template in Qt 6, which bindgen can't bind: the
 # hand-written `Action#menu=` keeps the menu alive itself.
+QAction:
+  keep_alive:
+    "^setActionGroup$": true
 QPushButton:
   keep_alive:
     "^setMenu$": true
@@ -101,11 +114,11 @@ QToolBar:
     "^insertWidget$": [1]
 QAbstractItemView:
   keep_alive:
-    "^set(Model|ItemDelegate|ItemDelegateForRow|ItemDelegateForColumn)$": true
+    "^set(Model|SelectionModel|ItemDelegate|ItemDelegateForRow|ItemDelegateForColumn)$": true
     "^setIndexWidget$": [1]
 QTableView:
   keep_alive:
-    "^setModel$": true
+    "^set(HorizontalHeader|VerticalHeader)$": true # The view owns its headers; setModel follows QAbstractItemView's rule
 QStyledItemDelegate:
   keep_alive:
     "^setItemEditorFactory$": true
@@ -126,12 +139,13 @@ QLineEdit:
 QCompleter:
   keep_alive:
     "^set(Model|Widget|Popup)$": true
+    "^$": [0] # QCompleter(QAbstractItemModel *, QObject *) takes ownership of a parentless model
 QFileDialog:
   keep_alive:
-    "^set(ItemDelegate|IconProvider)$": true
+    "^set(ItemDelegate|IconProvider|ProxyModel)$": true
 QLabel:
   keep_alive:
-    "^setBuddy$": true
+    "^set(Buddy|Movie)$": true
 QTabBar:
   keep_alive:
     "^setTabButton$": [2]
@@ -147,13 +161,40 @@ QGraphicsView:
 QGraphicsScene:
   keep_alive:
     "^add(Item|Widget)$": [0]
+    "^setStyle$": true
 QGraphicsItem:
   keep_alive:
     "^installSceneEventFilter$": true
+    "^set(GraphicsEffect|Group)$": true
+QGraphicsItemGroup:
+  keep_alive:
+    "^addToGroup$": true
+QGraphicsProxyWidget:
+  keep_alive:
+    "^setWidget$": true
 QGraphicsWidget:
   keep_alive:
     "^addAction$": true
     "^insertAction$": [1]
+    "^set(Layout|Style)$": true
+QGraphicsLinearLayout:
+  keep_alive:
+    "^addItem$": true
+    "^insertItem$": [1]
+QGraphicsGridLayout:
+  keep_alive:
+    "^addItem$": [0]
+QGraphicsAnchorLayout:
+  keep_alive:
+    "^add(Anchor|CornerAnchors)$": [0, 2]
+    "^addAnchors$": [0, 1]
+QGraphicsItemAnimation:
+  keep_alive:
+    "^set(Item|TimeLine)$": true
+QProxyStyle:
+  keep_alive:
+    "^setBaseStyle$": true
+    "^$": true # QProxyStyle(QStyle *) takes ownership like setBaseStyle
 QGraphicsTextItem:
   keep_alive:
     "^setDocument$": true
@@ -165,13 +206,25 @@ QStandardItem:
   keep_alive:
     "^(append|insert)(Row|Rows|Column)$": true
     "^setChild$": true
+QAbstractProxyModel:
+  keep_alive:
+    "^setSourceModel$": true
+QItemSelectionModel:
+  keep_alive:
+    "^setModel$": true
+  depends_on:
+    "^$": [0] # The model, not the parent
 QAnimationGroup:
   keep_alive:
     "^addAnimation$": true
     "^insertAnimation$": [1]
-QItemSelectionModel:
+QPropertyAnimation:
   keep_alive:
-    "^setModel$": true
+    "^setTargetObject$": true
+    "^$": [0] # The target, not the parent
+QTreeView:
+  keep_alive:
+    "^setHeader$": true
 QTreeWidget:
   keep_alive:
     "^(add|insert)TopLevelItems?$": true
@@ -209,6 +262,8 @@ QUndoGroup:
 QUndoView:
   keep_alive:
     "^set(Stack|Group)$": true
+  depends_on:
+    "^$": [0] # The stack or group, not the parent
 QSplitter:
   keep_alive:
     "^addWidget$": true
@@ -246,47 +301,26 @@ QActionGroup:
 QWidgetAction:
   keep_alive:
     "^setDefaultWidget$": true
-QGraphicsItem:
-  keep_alive:
-    "^setGraphicsEffect$": true
-QGraphicsItemGroup:
-  keep_alive:
-    "^addToGroup$": true
-QGraphicsProxyWidget:
-  keep_alive:
-    "^setWidget$": true
-QGraphicsWidget:
-  keep_alive:
-    "^setLayout$": true
-QGraphicsLinearLayout:
-  keep_alive:
-    "^addItem$": true
-    "^insertItem$": [1]
-QGraphicsGridLayout:
-  keep_alive:
-    "^addItem$": [0]
-QGraphicsAnchorLayout:
-  keep_alive:
-    "^add(Anchor|CornerAnchors)$": [0, 2]
-    "^addAnchors$": [0, 1]
-QGraphicsItemAnimation:
-  keep_alive:
-    "^set(Item|TimeLine)$": true
-QProxyStyle:
-  keep_alive:
-    "^setBaseStyle$": true
 QMovie:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": [0] # The device, not the parent
 QImageReader:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true # Reads or writes the device as long as it lives
 QImageWriter:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true # Reads or writes the device as long as it lives
 QTextDocumentWriter:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true
 QSignalMapper:
   keep_alive:
     "^setMapping$": true
@@ -296,24 +330,37 @@ QGestureRecognizer:
 QXmlStreamReader:
   keep_alive:
     "^set(Device|EntityResolver)$": true
+  depends_on:
+    "^$": true # Reads the device as long as it lives
 QXmlStreamWriter:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true
 QDataStream:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true # Reads or writes the device as long as it lives
 QBasicTimer:
   keep_alive:
     "^start$": true
+QTextStream:
+  depends_on:
+    "^$": true # The stream flushes to its device when destroyed.  (The read-only stream of a byte array copies it; depending on it is harmless)
 QObjectCleanupHandler:
   keep_alive:
     "^add$": true
 QCborStreamReader:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true # Reads or writes the device as long as it lives
 QCborStreamWriter:
   keep_alive:
     "^setDevice$": true
+  depends_on:
+    "^$": true # Reads or writes the device as long as it lives
 QConcatenateTablesProxyModel:
   keep_alive:
     "^addSourceModel$": true
@@ -327,6 +374,49 @@ QItemEditorFactory:
 QIcon:
   keep_alive:
     "^$": true # QIcon(QIconEngine *) takes ownership of the engine
+QStackedWidget:
+  keep_alive:
+    "^addWidget$": true
+    "^insertWidget$": [1]
+QColumnView:
+  keep_alive:
+    "^setPreviewWidget$": true
+QAbstractSpinBox:
+  keep_alive:
+    "^setLineEdit$": true
+QDateTimeEdit:
+  keep_alive:
+    "^setCalendarWidget$": true
+QTextDocument:
+  keep_alive:
+    "^setDocumentLayout$": true
+QGraphicsLayout:
+  keep_alive:
+    "^addChildLayoutItem$": true # Protected, for layouts written in Crystal
+QGraphicsLayoutItem:
+  keep_alive:
+    "^setParentLayoutItem$": true
+QAbstractEventDispatcher:
+  keep_alive:
+    "^registerTimer$": true # Unlike QObject::startTimer, nothing unregisters the object
+QWidgetItem:
+  depends_on:
+    "^$": true # The item refers to its widget; QWidgetItemV2 inherits the rule
+QBackingStore:
+  depends_on:
+    "^$": true # Paints into its window
+QPdfWriter:
+  depends_on:
+    "^$": true # Writes to its device
+QSemaphoreReleaser:
+  depends_on:
+    "^$": true # Releases its semaphore when destroyed
+QItemSelectionRange:
+  depends_on:
+    "^$": true # Holds persistent indexes, which unregister from the model when destroyed, through the indexes it is made of
+QItemSelection:
+  depends_on:
+    "^$": true
 QTreeWidgetItemIterator:
   depends_on:
     "^$": true # The iterator unregisters from the model of its tree widget when destroyed; a copy depends on the iterator it copies
@@ -337,9 +427,6 @@ QTreeWidgetItemIterator:
 QPainter:
   depends_on:
     "^$": true # The painter ends painting on its device when destroyed
-QTextStream:
-  depends_on:
-    "^$": true # The stream flushes to its device when destroyed.  (The read-only stream of a byte array copies it; depending on it is harmless)
 QPersistentModelIndex:
   depends_on:
     "^$": true # The index unregisters from its model when destroyed, reached through the model index it is made of

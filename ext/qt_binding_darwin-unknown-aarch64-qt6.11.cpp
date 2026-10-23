@@ -502,7 +502,7 @@ extern "C" QDataStream * bg_QDataStream__CONSTRUCT_() {
 }
 
 extern "C" QDataStream * bg_QDataStream__CONSTRUCT_QIODevice_X(QIODevice * unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<QDataStream>(unnamed_arg_0);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QDataStream>(unnamed_arg_0), {unnamed_arg_0});
 }
 
 extern "C" QDataStream * bg_QDataStream__CONSTRUCT_const_QByteArray_R(const CrystalString unnamed_arg_0) {
@@ -13603,7 +13603,7 @@ extern "C" QCborStreamReader * bg_QCborStreamReader__CONSTRUCT_const_QByteArray_
 }
 
 extern "C" QCborStreamReader * bg_QCborStreamReader__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QCborStreamReader>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QCborStreamReader>(device), {device});
 }
 
 extern "C" void bg_QCborStreamReader_setDevice_QIODevice_X(QCborStreamReader * _self_, QIODevice * device) {
@@ -13819,7 +13819,7 @@ extern "C" const QMetaObject * bg_QCborStreamReader_staticMetaObject_STATIC_GETT
 }
 
 extern "C" QCborStreamWriter * bg_QCborStreamWriter__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QCborStreamWriter>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QCborStreamWriter>(device), {device});
 }
 
 extern "C" void bg_QCborStreamWriter_setDevice_QIODevice_X(QCborStreamWriter * _self_, QIODevice * device) {
@@ -19013,11 +19013,11 @@ extern "C" QItemSelectionRange * bg_QItemSelectionRange__CONSTRUCT_() {
 }
 
 extern "C" QItemSelectionRange * bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(const QModelIndex & topL, const QModelIndex & bottomR) {
-  return new (UseGC) CrystalGCWrapper<QItemSelectionRange>(topL, bottomR);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QItemSelectionRange>(topL, bottomR), {&topL, &bottomR});
 }
 
 extern "C" QItemSelectionRange * bg_QItemSelectionRange__CONSTRUCT_const_QModelIndex_R(const QModelIndex & index) {
-  return new (UseGC) CrystalGCWrapper<QItemSelectionRange>(index);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QItemSelectionRange>(index), {&index});
 }
 
 extern "C" void bg_QItemSelectionRange_swap_QItemSelectionRange_R(QItemSelectionRange * _self_, QItemSelectionRange & other) {
@@ -19093,7 +19093,7 @@ extern "C" Container_QList_QModelIndex_ * bg_QItemSelectionRange_indexes_(QItemS
 }
 
 extern "C" QItemSelectionRange * bg_QItemSelectionRange__COPY_const_QItemSelectionRange_R(const QItemSelectionRange & unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<QItemSelectionRange>(unnamed_arg_0);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QItemSelectionRange>(unnamed_arg_0), {&unnamed_arg_0});
 }
 
 extern "C" QItemSelectionRange * bg_QItemSelectionRange__OPERATOR_assign_const_QItemSelectionRange_R(QItemSelectionRange * _self_, const QItemSelectionRange & unnamed_arg_0) {
@@ -19295,11 +19295,11 @@ extern "C" CrystalString bg_QItemSelectionModel_tr_STATIC_const_char_X_const_cha
 }
 
 extern "C" QItemSelectionModel * bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X(QAbstractItemModel * model) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QItemSelectionModel>(model);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QItemSelectionModel>(model), {model});
 }
 
 extern "C" QItemSelectionModel * bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X_QObject_X(QAbstractItemModel * model, QObject * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QItemSelectionModel>(model, parent);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QItemSelectionModel>(model, parent), {model});
 }
 
 extern "C" QModelIndex * bg_QItemSelectionModel_currentIndex_(QItemSelectionModel * _self_) {
@@ -19479,7 +19479,7 @@ extern "C" void bg_BgInherit_QItemSelectionModel_JUMPTABLE_BgJumptable_QItemSele
 }
 
 extern "C" QItemSelection * bg_QItemSelection__CONSTRUCT_const_QModelIndex_R_const_QModelIndex_R(const QModelIndex & topLeft, const QModelIndex & bottomRight) {
-  return new (UseGC) CrystalGCWrapper<QItemSelection>(topLeft, bottomRight);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QItemSelection>(topLeft, bottomRight), {&topLeft, &bottomRight});
 }
 
 extern "C" void bg_QItemSelection_select_const_QModelIndex_R_const_QModelIndex_R(QItemSelection * _self_, const QModelIndex & topLeft, const QModelIndex & bottomRight) {
@@ -19507,7 +19507,7 @@ extern "C" QItemSelection * bg_QItemSelection__CONSTRUCT_() {
 }
 
 extern "C" QItemSelection * bg_QItemSelection__COPY_const_QItemSelection_R(const QItemSelection & unnamed_arg_0) {
-  return new (UseGC) CrystalGCWrapper<QItemSelection>(unnamed_arg_0);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QItemSelection>(unnamed_arg_0), {&unnamed_arg_0});
 }
 
 extern "C" CrystalString bg_QJsonParseError_errorString_(QJsonParseError * _self_) {
@@ -26483,11 +26483,11 @@ extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_() {
 }
 
 extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_R_int(QSemaphore & sem, int n) {
-  return new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n), {&sem});
 }
 
 extern "C" QSemaphoreReleaser * bg_QSemaphoreReleaser__CONSTRUCT_QSemaphore_X_int(QSemaphore * sem, int n) {
-  return new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QSemaphoreReleaser>(sem, n), {sem});
 }
 
 extern "C" void bg_QSemaphoreReleaser_swap_QSemaphoreReleaser_R(QSemaphoreReleaser * _self_, QSemaphoreReleaser & other) {
@@ -31779,7 +31779,7 @@ extern "C" QXmlStreamReader * bg_QXmlStreamReader__CONSTRUCT_() {
 }
 
 extern "C" QXmlStreamReader * bg_QXmlStreamReader__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QXmlStreamReader>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QXmlStreamReader>(device), {device});
 }
 
 extern "C" QXmlStreamReader * bg_QXmlStreamReader__CONSTRUCT_QAnyStringView(CrystalString data) {
@@ -31971,7 +31971,7 @@ extern "C" QXmlStreamWriter * bg_QXmlStreamWriter__CONSTRUCT_() {
 }
 
 extern "C" QXmlStreamWriter * bg_QXmlStreamWriter__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QXmlStreamWriter>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QXmlStreamWriter>(device), {device});
 }
 
 extern "C" void bg_QXmlStreamWriter_setDevice_QIODevice_X(QXmlStreamWriter * _self_, QIODevice * device) {
@@ -47917,7 +47917,7 @@ extern "C" void bg_BgInherit_QWindow_JUMPTABLE_BgJumptable_QWindow_R(BgInherit_Q
 }
 
 extern "C" QBackingStore * bg_QBackingStore__CONSTRUCT_QWindow_X(QWindow * window) {
-  return new (UseGC) CrystalGCWrapper<QBackingStore>(window);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QBackingStore>(window), {window});
 }
 
 extern "C" QWindow * bg_QBackingStore_window_(QBackingStore * _self_) {
@@ -50074,11 +50074,11 @@ extern "C" QImageReader * bg_QImageReader__CONSTRUCT_() {
 }
 
 extern "C" QImageReader * bg_QImageReader__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<QImageReader>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QImageReader>(device), {device});
 }
 
 extern "C" QImageReader * bg_QImageReader__CONSTRUCT_QIODevice_X_const_QByteArray_R(QIODevice * device, const CrystalString format) {
-  return new (UseGC) CrystalGCWrapper<QImageReader>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QImageReader>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }())), {device});
 }
 
 extern "C" QImageReader * bg_QImageReader__CONSTRUCT_const_QString_R(const CrystalString fileName) {
@@ -50302,7 +50302,7 @@ extern "C" QImageWriter * bg_QImageWriter__CONSTRUCT_() {
 }
 
 extern "C" QImageWriter * bg_QImageWriter__CONSTRUCT_QIODevice_X_const_QByteArray_R(QIODevice * device, const CrystalString format) {
-  return new (UseGC) CrystalGCWrapper<QImageWriter>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QImageWriter>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }())), {device});
 }
 
 extern "C" QImageWriter * bg_QImageWriter__CONSTRUCT_const_QString_R(const CrystalString fileName) {
@@ -50828,15 +50828,15 @@ extern "C" CrystalString bg_QMovie_tr_STATIC_const_char_X_const_char_X(const cha
 }
 
 extern "C" QMovie * bg_QMovie__CONSTRUCT_QObject_X(QObject * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(parent);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(parent), {parent});
 }
 
 extern "C" QMovie * bg_QMovie__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(device), {device});
 }
 
 extern "C" QMovie * bg_QMovie__CONSTRUCT_QIODevice_X_const_QByteArray_R(QIODevice * device, const CrystalString format) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QMovie>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }())), {device});
 }
 
 extern "C" QMovie * bg_QMovie__CONSTRUCT_const_QString_R(const CrystalString fileName) {
@@ -53958,7 +53958,7 @@ extern "C" QPdfWriter * bg_QPdfWriter__CONSTRUCT_const_QString_R(const CrystalSt
 }
 
 extern "C" QPdfWriter * bg_QPdfWriter__CONSTRUCT_QIODevice_X(QIODevice * device) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QPdfWriter>(device);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QPdfWriter>(device), {device});
 }
 
 extern "C" void bg_QPdfWriter_setPdfVersion_QPagedPaintDevice__PdfVersion(QPdfWriter * _self_, QPagedPaintDevice::PdfVersion version) {
@@ -58353,7 +58353,7 @@ extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_() {
 }
 
 extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_QIODevice_X_const_QByteArray_R(QIODevice * device, const CrystalString format) {
-  return new (UseGC) CrystalGCWrapper<QTextDocumentWriter>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }()));
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<QTextDocumentWriter>(device, ([&]() { auto &&bg_value = (format); return QByteArray(bg_value.ptr, bg_value.size); }())), {device});
 }
 
 extern "C" QTextDocumentWriter * bg_QTextDocumentWriter__CONSTRUCT_const_QString_R(const CrystalString fileName) {
@@ -74767,7 +74767,7 @@ struct BgInherit_QWidgetItem : public QWidgetItem {
   
 };
 extern "C" QWidgetItem * bg_QWidgetItem__CONSTRUCT_QWidget_X(QWidget * w) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QWidgetItem>(w);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QWidgetItem>(w), {w});
 }
 
 extern "C" QSize bg_QWidgetItem_sizeHint_(QWidgetItem * _self_) {
@@ -75035,7 +75035,7 @@ struct BgInherit_QWidgetItemV2 : public QWidgetItemV2 {
   
 };
 extern "C" QWidgetItemV2 * bg_QWidgetItemV2__CONSTRUCT_QWidget_X(QWidget * widget) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QWidgetItemV2>(widget);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QWidgetItemV2>(widget), {widget});
 }
 
 extern "C" QSize bg_QWidgetItemV2_sizeHint_(QWidgetItemV2 * _self_) {
@@ -149809,15 +149809,15 @@ extern "C" CrystalString bg_QUndoView_tr_STATIC_const_char_X_const_char_X(const 
 }
 
 extern "C" QUndoView * bg_QUndoView__CONSTRUCT_QWidget_X(QWidget * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(parent);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(parent), {parent});
 }
 
 extern "C" QUndoView * bg_QUndoView__CONSTRUCT_QUndoStack_X_QWidget_X(QUndoStack * stack, QWidget * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(stack, parent);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(stack, parent), {stack});
 }
 
 extern "C" QUndoView * bg_QUndoView__CONSTRUCT_QUndoGroup_X_QWidget_X(QUndoGroup * group, QWidget * parent) {
-  return new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(group, parent);
+  return bindgen_depends_on(new (UseGC) CrystalGCWrapper<BgInherit_QUndoView>(group, parent), {group});
 }
 
 extern "C" QUndoStack * bg_QUndoView_stack_(QUndoView * _self_) {
