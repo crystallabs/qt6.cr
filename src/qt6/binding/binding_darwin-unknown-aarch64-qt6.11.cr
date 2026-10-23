@@ -9367,6 +9367,7 @@ module Qt
     fun bg_QKeyCombination__OPERATOR_assign_const_QKeyCombination_R(_self_ : KeyCombination*, unnamed_arg_0 : KeyCombination) : KeyCombination
     fun bg_QKeyCombination__OPERATOR_eq_const_QKeyCombination_R(_self_ : KeyCombination*, rhs : KeyCombination) : Bool
     fun bg_QKeyCombination__OPERATOR_ne_const_QKeyCombination_R(_self_ : KeyCombination*, rhs : KeyCombination) : Bool
+    fun bg_QKeyCombination_qHash_size_t(_self_ : KeyCombination*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QMetaObject_className_(_self_ : QMetaObject*) : UInt8*
     fun bg_QMetaObject_superClass_(_self_ : QMetaObject*) : QMetaObject*
     fun bg_QMetaObject_inherits_const_QMetaObject_X(_self_ : QMetaObject*, meta_object : QMetaObject*) : Bool
@@ -9647,6 +9648,7 @@ module Qt
     fun bg_QMetaType__COPY_const_QMetaType_R(unnamed_arg_0 : QMetaType*) : QMetaType*
     fun bg_QMetaType__OPERATOR_eq_const_QMetaType_R(_self_ : QMetaType*, rhs : QMetaType*) : Bool
     fun bg_QMetaType__OPERATOR_ne_const_QMetaType_R(_self_ : QMetaType*, rhs : QMetaType*) : Bool
+    fun bg_QMetaType_qHash_size_t(_self_ : QMetaType*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QObject_metaObject_(_self_ : QObject*) : QMetaObject*
     fun bg_QObject_qt_metacast_const_char_X(_self_ : QObject*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QObject_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QObject*, unnamed_arg_0 : ::Qt::MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -10225,6 +10227,7 @@ module Qt
     fun bg_QModelIndex__OPERATOR_gt_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QModelIndex__OPERATOR_le_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(_self_ : QModelIndex*, rhs : QPersistentModelIndex*) : Bool
+    fun bg_QModelIndex_qHash_size_t(_self_ : QModelIndex*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QPersistentModelIndex__CONSTRUCT_() : QPersistentModelIndex*
     fun bg_QPersistentModelIndex__CONSTRUCT_const_QModelIndex_R(index : QModelIndex*) : QPersistentModelIndex*
     fun bg_QPersistentModelIndex__COPY_const_QPersistentModelIndex_R(other : QPersistentModelIndex*) : QPersistentModelIndex*
@@ -10244,6 +10247,7 @@ module Qt
     fun bg_QPersistentModelIndex_flags_(_self_ : QPersistentModelIndex*) : ::Qt::ItemFlags
     fun bg_QPersistentModelIndex_model_(_self_ : QPersistentModelIndex*) : QAbstractItemModel*
     fun bg_QPersistentModelIndex_isValid_(_self_ : QPersistentModelIndex*) : Bool
+    fun bg_QPersistentModelIndex_qHash_size_t(_self_ : QPersistentModelIndex*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QPersistentModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QPersistentModelIndex__OPERATOR_ne_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
     fun bg_QPersistentModelIndex__OPERATOR_lt_const_QPersistentModelIndex_R(_self_ : QPersistentModelIndex*, rhs : QPersistentModelIndex*) : Bool
@@ -11021,6 +11025,7 @@ module Qt
     fun bg_QBitArray_bits_(_self_ : QBitArray*) : UInt8*
     fun bg_QBitArray_fromBits_STATIC_const_char_X_qsizetype(data : UInt8*, len : Int64) : QBitArray*
     fun bg_QBitArray_toUInt32_QSysInfo__Endian_bool_X(_self_ : QBitArray*, endianness : ::Qt::SysInfo::Endian, ok : Bool*) : UInt32
+    fun bg_QBitArray_qHash_size_t(_self_ : QBitArray*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QBitArray__OPERATOR_bit_and_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
     fun bg_QBitArray__OPERATOR_bit_or_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
     fun bg_QBitArray__OPERATOR_bit_xor_const_QBitArray_R(_self_ : QBitArray*, a2 : QBitArray*) : QBitArray*
@@ -11319,6 +11324,7 @@ module Qt
     fun bg_QLocale_numberOptions_(_self_ : QLocale*) : ::Qt::Locale::NumberOptions
     fun bg_QLocale_quoteString_const_QString_R_QLocale__QuotationStyle(_self_ : QLocale*, str : CrystalString, style : ::Qt::Locale::QuotationStyle) : CrystalString
     fun bg_QLocale_createSeparatedList_const_QStringList_R(_self_ : QLocale*, strl : ContainerQListQString*) : CrystalString
+    fun bg_QLocale_qHash_size_t(_self_ : QLocale*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QLocale__OPERATOR_eq_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
     fun bg_QLocale__OPERATOR_ne_const_QLocale_R(_self_ : QLocale*, rhs : QLocale*) : Bool
     fun bg_QLocale__OPERATOR_eq_const_QLocale__Language_R(_self_ : QLocale*, rhs : ::Qt::Locale::Language*) : Bool
@@ -11435,6 +11441,7 @@ module Qt
     fun bg_QDate__OPERATOR_pred_(_self_ : QDate*) : QDate*
     fun bg_QDate__OPERATOR_post_succ_(_self_ : QDate*) : QDate*
     fun bg_QDate__OPERATOR_post_pred_(_self_ : QDate*) : QDate*
+    fun bg_QDate_qHash_size_t(_self_ : QDate*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QTime__CONSTRUCT_() : QTime*
     fun bg_QTime__CONSTRUCT_int_int_int_int(h : Int32, m : Int32, s : Int32, ms : Int32) : QTime*
     fun bg_QTime_isNull_(_self_ : QTime*) : Bool
@@ -11463,6 +11470,7 @@ module Qt
     fun bg_QTime__OPERATOR_gt_const_QTime_R(_self_ : QTime*, rhs : QTime*) : Bool
     fun bg_QTime__OPERATOR_le_const_QTime_R(_self_ : QTime*, rhs : QTime*) : Bool
     fun bg_QTime__OPERATOR_ge_const_QTime_R(_self_ : QTime*, rhs : QTime*) : Bool
+    fun bg_QTime_qHash_size_t(_self_ : QTime*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QDateTime__CONSTRUCT_() : QDateTime*
     fun bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R(date : QDate*, time : QTime*, time_zone : QTimeZone*) : QDateTime*
     fun bg_QDateTime__CONSTRUCT_QDate_QTime_const_QTimeZone_R_QDateTime__TransitionResolution(date : QDate*, time : QTime*, time_zone : QTimeZone*, resolve : ::Qt::DateTime::TransitionResolution) : QDateTime*
@@ -11530,6 +11538,7 @@ module Qt
     fun bg_QDateTime__OPERATOR_gt_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
     fun bg_QDateTime__OPERATOR_le_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
     fun bg_QDateTime__OPERATOR_ge_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
+    fun bg_QDateTime_qHash_size_t(_self_ : QDateTime*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QRegularExpression_patternOptions_(_self_ : QRegularExpression*) : ::Qt::RegularExpression::PatternOptions
     fun bg_QRegularExpression_setPatternOptions_QRegularExpression__PatternOptions(_self_ : QRegularExpression*, options : ::Qt::RegularExpression::PatternOptions) : Void
     fun bg_QRegularExpression__CONSTRUCT_() : QRegularExpression*
@@ -11554,6 +11563,7 @@ module Qt
     fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R(str : CrystalString) : CrystalString
     fun bg_QRegularExpression_wildcardToRegularExpression_STATIC_const_QString_R_QRegularExpression__WildcardConversionOptions(str : CrystalString, options : ::Qt::RegularExpression::WildcardConversionOptions) : CrystalString
     fun bg_QRegularExpression_anchoredPattern_STATIC_const_QString_R(expression : CrystalString) : CrystalString
+    fun bg_QRegularExpression_qHash_size_t(_self_ : QRegularExpression*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QRegularExpression__OPERATOR_eq_const_QRegularExpression_R(_self_ : QRegularExpression*, rhs : QRegularExpression*) : Bool
     fun bg_QRegularExpression__OPERATOR_ne_const_QRegularExpression_R(_self_ : QRegularExpression*, rhs : QRegularExpression*) : Bool
     fun bg_QRegularExpressionMatch__CONSTRUCT_() : QRegularExpressionMatch*
@@ -11668,6 +11678,7 @@ module Qt
     fun bg_QUrl_toStringList_STATIC_const_QList_QUrl__R_QUrl__FormattingOptions(uris : ContainerQListQUrl*, options : Url::FormattingOptions) : ContainerQListQString*
     fun bg_QUrl_fromStringList_STATIC_const_QStringList_R_QUrl__ParsingMode(uris : ContainerQListQString*, mode : ::Qt::Url::ParsingMode) : ContainerQListQUrl*
     fun bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(unnamed_arg_0 : ContainerQListQString*) : Void
+    fun bg_QUrl_qHash_size_t(_self_ : QUrl*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QUrl__OPERATOR_eq_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_ne_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
     fun bg_QUrl__OPERATOR_lt_const_QUrl_R(_self_ : QUrl*, rhs : QUrl*) : Bool
@@ -11697,6 +11708,7 @@ module Qt
     fun bg_QUuid__OPERATOR_gt_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
     fun bg_QUuid__OPERATOR_le_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
     fun bg_QUuid__OPERATOR_ge_const_QUuid_R(_self_ : QUuid*, rhs : QUuid*) : Bool
+    fun bg_QUuid_qHash_size_t(_self_ : QUuid*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QUuid_data1_GETTER_(_self_ : QUuid*) : UInt32
     fun bg_QUuid_data1_SETTER_uint(_self_ : QUuid*, data1 : UInt32) : Void
     fun bg_QUuid_data2_GETTER_(_self_ : QUuid*) : UInt16
@@ -11806,6 +11818,7 @@ module Qt
     fun bg_QCborValue__OPERATOR_gt_const_QCborValue_R(_self_ : QCborValue*, rhs : QCborValue*) : Bool
     fun bg_QCborValue__OPERATOR_le_const_QCborValue_R(_self_ : QCborValue*, rhs : QCborValue*) : Bool
     fun bg_QCborValue__OPERATOR_ge_const_QCborValue_R(_self_ : QCborValue*, rhs : QCborValue*) : Bool
+    fun bg_QCborValue_qHash_size_t(_self_ : QCborValue*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QCborValue__OPERATOR_eq_const_QCborValueConstRef_R(_self_ : QCborValue*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborValue__OPERATOR_ne_const_QCborValueConstRef_R(_self_ : QCborValue*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborValue__OPERATOR_lt_const_QCborValueConstRef_R(_self_ : QCborValue*, rhs : QCborValueConstRef*) : Bool
@@ -11899,6 +11912,7 @@ module Qt
     fun bg_QCborValueConstRef_concreteStringView_STATIC_QCborValueConstRef_QAnyStringView(that : QCborValueConstRef*, default_value : CrystalString) : CrystalString
     fun bg_QCborValueConstRef__CONSTRUCT_() : QCborValueConstRef*
     fun bg_QCborValueConstRef__CONSTRUCT_QCborContainerPrivate_X_qsizetype(dd : QCborContainerPrivate*, ii : Int64) : QCborValueConstRef*
+    fun bg_QCborValueConstRef_qHash_size_t(_self_ : QCborValueConstRef*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QCborValueConstRef__OPERATOR_eq_const_QCborValueConstRef_R(_self_ : QCborValueConstRef*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborValueConstRef__OPERATOR_ne_const_QCborValueConstRef_R(_self_ : QCborValueConstRef*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborValueConstRef__OPERATOR_lt_const_QCborValueConstRef_R(_self_ : QCborValueConstRef*, rhs : QCborValueConstRef*) : Bool
@@ -12042,6 +12056,7 @@ module Qt
     fun bg_QCborArray__OPERATOR_gt_const_QCborValueConstRef_R(_self_ : QCborArray*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborArray__OPERATOR_le_const_QCborValueConstRef_R(_self_ : QCborArray*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborArray__OPERATOR_ge_const_QCborValueConstRef_R(_self_ : QCborArray*, rhs : QCborValueConstRef*) : Bool
+    fun bg_QCborArray_qHash_size_t(_self_ : QCborArray*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QCborMap__CONSTRUCT_() : QCborMap*
     fun bg_QCborMap__COPY_const_QCborMap_R(other : QCborMap*) : QCborMap*
     fun bg_QCborMap__OPERATOR_assign_const_QCborMap_R(_self_ : QCborMap*, other : QCborMap*) : QCborMap*
@@ -12112,6 +12127,7 @@ module Qt
     fun bg_QCborMap__OPERATOR_gt_const_QCborValueConstRef_R(_self_ : QCborMap*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborMap__OPERATOR_le_const_QCborValueConstRef_R(_self_ : QCborMap*, rhs : QCborValueConstRef*) : Bool
     fun bg_QCborMap__OPERATOR_ge_const_QCborValueConstRef_R(_self_ : QCborMap*, rhs : QCborValueConstRef*) : Bool
+    fun bg_QCborMap_qHash_size_t(_self_ : QCborMap*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QCborMap__Iterator__CONSTRUCT_() : QCborMap_Iterator*
     fun bg_QCborMap__Iterator__COPY_const_QCborMap__Iterator_R(unnamed_arg_0 : QCborMap_Iterator*) : QCborMap_Iterator*
     fun bg_QCborMap__Iterator__OPERATOR_assign_const_QCborMap__Iterator_R(_self_ : QCborMap_Iterator*, other : QCborMap_Iterator*) : QCborMap_Iterator*
@@ -13413,6 +13429,7 @@ module Qt
     fun bg_QJsonValue__OPERATOR_at_qsizetype(_self_ : QJsonValue*, i : Int64) : QJsonValue*
     fun bg_QJsonValue__OPERATOR_eq_const_QJsonValue_R(_self_ : QJsonValue*, rhs : QJsonValue*) : Bool
     fun bg_QJsonValue__OPERATOR_ne_const_QJsonValue_R(_self_ : QJsonValue*, rhs : QJsonValue*) : Bool
+    fun bg_QJsonValue_qHash_size_t(_self_ : QJsonValue*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QJsonValue__OPERATOR_eq_const_QJsonValueConstRef_R(_self_ : QJsonValue*, rhs : QJsonValueConstRef*) : Bool
     fun bg_QJsonValue__OPERATOR_ne_const_QJsonValueConstRef_R(_self_ : QJsonValue*, rhs : QJsonValueConstRef*) : Bool
     fun bg_QJsonValue__OPERATOR_eq_const_QJsonArray_R(_self_ : QJsonValue*, rhs : QJsonArray*) : Bool
@@ -13455,6 +13472,7 @@ module Qt
     fun bg_QJsonValueConstRef__CONSTRUCT_QJsonArray_X_qsizetype(array : QJsonArray*, idx : Int64) : QJsonValueConstRef*
     fun bg_QJsonValueConstRef__CONSTRUCT_QJsonObject_X_qsizetype(object : QJsonObject*, idx : Int64) : QJsonValueConstRef*
     fun bg_QJsonValueConstRef_rebind_QJsonValueConstRef(_self_ : QJsonValueConstRef*, other : QJsonValueConstRef*) : Void
+    fun bg_QJsonValueConstRef_qHash_size_t(_self_ : QJsonValueConstRef*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValueConstRef_R(_self_ : QJsonValueConstRef*, rhs : QJsonValueConstRef*) : Bool
     fun bg_QJsonValueConstRef__OPERATOR_ne_const_QJsonValueConstRef_R(_self_ : QJsonValueConstRef*, rhs : QJsonValueConstRef*) : Bool
     fun bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValue_R(_self_ : QJsonValueConstRef*, rhs : QJsonValue*) : Bool
@@ -13538,6 +13556,7 @@ module Qt
     fun bg_QJsonArray__OPERATOR_ne_const_QJsonArray_R(_self_ : QJsonArray*, rhs : QJsonArray*) : Bool
     fun bg_QJsonArray__OPERATOR_eq_const_QJsonValue_R(_self_ : QJsonArray*, rhs : QJsonValue*) : Bool
     fun bg_QJsonArray__OPERATOR_ne_const_QJsonValue_R(_self_ : QJsonArray*, rhs : QJsonValue*) : Bool
+    fun bg_QJsonArray_qHash_size_t(_self_ : QJsonArray*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QJsonObject__CONSTRUCT_() : QJsonObject*
     fun bg_QJsonObject__COPY_const_QJsonObject_R(other : QJsonObject*) : QJsonObject*
     fun bg_QJsonObject__OPERATOR_assign_const_QJsonObject_R(_self_ : QJsonObject*, other : QJsonObject*) : QJsonObject*
@@ -13568,6 +13587,7 @@ module Qt
     fun bg_QJsonObject__OPERATOR_ne_const_QJsonValue_R(_self_ : QJsonObject*, rhs : QJsonValue*) : Bool
     fun bg_QJsonObject__OPERATOR_eq_const_QJsonValueConstRef_R(_self_ : QJsonObject*, rhs : QJsonValueConstRef*) : Bool
     fun bg_QJsonObject__OPERATOR_ne_const_QJsonValueConstRef_R(_self_ : QJsonObject*, rhs : QJsonValueConstRef*) : Bool
+    fun bg_QJsonObject_qHash_size_t(_self_ : QJsonObject*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QJsonObject__iterator__CONSTRUCT_() : QJsonObject_Iterator*
     fun bg_QJsonObject__iterator__CONSTRUCT_QJsonObject_X_qsizetype(obj : QJsonObject*, index : Int64) : QJsonObject_Iterator*
     fun bg_QJsonObject__iterator__COPY_const_QJsonObject__iterator_R(other : QJsonObject_Iterator*) : QJsonObject_Iterator*
@@ -13648,6 +13668,7 @@ module Qt
     fun bg_QVersionNumber_fromString_STATIC_QAnyStringView_qsizetype_X(string : CrystalString, suffix_index : Int64*) : QVersionNumber*
     fun bg_QVersionNumber__COPY_const_QVersionNumber_R(unnamed_arg_0 : QVersionNumber*) : QVersionNumber*
     fun bg_QVersionNumber__OPERATOR_assign_const_QVersionNumber_R(_self_ : QVersionNumber*, unnamed_arg_0 : QVersionNumber*) : QVersionNumber*
+    fun bg_QVersionNumber_qHash_size_t(_self_ : QVersionNumber*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QVersionNumber__OPERATOR_eq_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
     fun bg_QVersionNumber__OPERATOR_ne_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
     fun bg_QVersionNumber__OPERATOR_lt_const_QVersionNumber_R(_self_ : QVersionNumber*, rhs : QVersionNumber*) : Bool
@@ -13693,6 +13714,7 @@ module Qt
     fun bg_QPoint__OPERATOR_plus_(_self_ : QPoint*) : QPoint
     fun bg_QPoint__OPERATOR_neg_(_self_ : QPoint*) : QPoint
     fun bg_QPoint__OPERATOR_div_qreal(_self_ : QPoint*, c : Float64) : QPoint
+    fun bg_QPoint_qHash_size_t(_self_ : QPoint*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QPoint__OPERATOR_eq_const_QPointF_R(_self_ : QPoint*, rhs : QPointF) : Bool
     fun bg_QPoint__OPERATOR_ne_const_QPointF_R(_self_ : QPoint*, rhs : QPointF) : Bool
     fun bg_QPoint__OPERATOR_mul_const_QTransform_R(_self_ : QPoint*, m : QTransform*) : QPoint
@@ -14061,6 +14083,7 @@ module Qt
     fun bg_QMimeType_preferredSuffix_(_self_ : QMimeType*) : CrystalString
     fun bg_QMimeType_inherits_const_QString_R(_self_ : QMimeType*, mime_type_name : CrystalString) : Bool
     fun bg_QMimeType_filterString_(_self_ : QMimeType*) : CrystalString
+    fun bg_QMimeType_qHash_size_t(_self_ : QMimeType*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QMimeType__OPERATOR_eq_const_QMimeType_R(_self_ : QMimeType*, rhs : QMimeType*) : Bool
     fun bg_QMimeType__OPERATOR_ne_const_QMimeType_R(_self_ : QMimeType*, rhs : QMimeType*) : Bool
     fun bg_QMimeType_staticMetaObject_STATIC_GETTER_() : QMetaObject*
@@ -14586,6 +14609,7 @@ module Qt
     fun bg_QSize__OPERATOR_sub_const_QSize_R(_self_ : QSize*, s2 : QSize) : QSize
     fun bg_QSize__OPERATOR_mul_qreal(_self_ : QSize*, c : Float64) : QSize
     fun bg_QSize__OPERATOR_div_qreal(_self_ : QSize*, c : Float64) : QSize
+    fun bg_QSize_qHash_size_t(_self_ : QSize*, unnamed_arg_0 : LibC::SizeT) : LibC::SizeT
     fun bg_QSize__OPERATOR_eq_const_QSizeF_R(_self_ : QSize*, rhs : QSizeF) : Bool
     fun bg_QSize__OPERATOR_ne_const_QSizeF_R(_self_ : QSize*, rhs : QSizeF) : Bool
     fun bg_QSizeF__CONSTRUCT_() : QSizeF
@@ -14703,6 +14727,7 @@ module Qt
     fun bg_QRect__OPERATOR_assign_const_QRect_R(_self_ : QRect*, unnamed_arg_0 : QRect) : QRect
     fun bg_QRect__OPERATOR_eq_const_QRect_R(_self_ : QRect*, rhs : QRect) : Bool
     fun bg_QRect__OPERATOR_ne_const_QRect_R(_self_ : QRect*, rhs : QRect) : Bool
+    fun bg_QRect_qHash_size_t(_self_ : QRect*, unnamed_arg_0 : LibC::SizeT) : LibC::SizeT
     fun bg_QRect__OPERATOR_add_const_QMargins_R(_self_ : QRect*, margins : QMargins*) : QRect
     fun bg_QRect__OPERATOR_sub_const_QMargins_R(_self_ : QRect*, rhs : QMargins*) : QRect
     fun bg_QRect__OPERATOR_eq_const_QRectF_R(_self_ : QRect*, rhs : QRectF) : Bool
@@ -15010,6 +15035,8 @@ module Qt
     fun bg_QNativeIpcKey_setNativeKey_const_QString_R(_self_ : QNativeIpcKey*, new_key : CrystalString) : Void
     fun bg_QNativeIpcKey_toString_(_self_ : QNativeIpcKey*) : CrystalString
     fun bg_QNativeIpcKey_fromString_STATIC_const_QString_R(string : CrystalString) : QNativeIpcKey*
+    fun bg_QNativeIpcKey_qHash_size_t(_self_ : QNativeIpcKey*, seed : LibC::SizeT) : LibC::SizeT
+    fun bg_QNativeIpcKey_qHash_(_self_ : QNativeIpcKey*) : LibC::SizeT
     fun bg_QNativeIpcKey__OPERATOR_eq_const_QNativeIpcKey_R(_self_ : QNativeIpcKey*, rhs : QNativeIpcKey*) : Bool
     fun bg_QNativeIpcKey__OPERATOR_ne_const_QNativeIpcKey_R(_self_ : QNativeIpcKey*, rhs : QNativeIpcKey*) : Bool
     fun bg_QNativeIpcKey_staticMetaObject_STATIC_GETTER_() : QMetaObject*
@@ -15798,6 +15825,7 @@ module Qt
     fun bg_QUrlQuery_removeAllQueryItems_const_QString_R(_self_ : QUrlQuery*, key : CrystalString) : Void
     fun bg_QUrlQuery_defaultQueryValueDelimiter_STATIC_() : UInt16
     fun bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_() : UInt16
+    fun bg_QUrlQuery_qHash_size_t(_self_ : QUrlQuery*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
     fun bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(_self_ : QUrlQuery*, rhs : QUrlQuery*) : Bool
     fun bg_QWaitCondition__CONSTRUCT_() : QWaitCondition*
@@ -16069,6 +16097,7 @@ module Qt
     fun bg_QRgba64__CONVERT_quint64_(_self_ : Rgba64*) : UInt64
     fun bg_QRgba64__OPERATOR_assign_quint64(_self_ : Rgba64*, _rgba : UInt64) : Rgba64
     fun bg_QRgba64__COPY_const_QRgba64_R(unnamed_arg_0 : Rgba64) : Rgba64
+    fun bg_QRgba64_qHash_size_t(_self_ : Rgba64*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QColor__CONSTRUCT_() : QColor*
     fun bg_QColor__CONSTRUCT_Qt__GlobalColor(color : ::Qt::GlobalColor) : QColor*
     fun bg_QColor__CONSTRUCT_int_int_int_int(r : Int32, g : Int32, b : Int32, a : Int32) : QColor*
@@ -16354,6 +16383,7 @@ module Qt
     fun bg_QTransform__OPERATOR_sub_assign_qreal(_self_ : QTransform*, div : Float64) : QTransform*
     fun bg_QTransform_fromTranslate_STATIC_qreal_qreal(dx : Float64, dy : Float64) : QTransform*
     fun bg_QTransform_fromScale_STATIC_qreal_qreal(dx : Float64, dy : Float64) : QTransform*
+    fun bg_QTransform_qHash_size_t(_self_ : QTransform*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QTransform__OPERATOR_mul_qreal(_self_ : QTransform*, n : Float64) : QTransform*
     fun bg_QTransform__OPERATOR_div_qreal(_self_ : QTransform*, n : Float64) : QTransform*
     fun bg_QTransform__OPERATOR_add_qreal(_self_ : QTransform*, n : Float64) : QTransform*
@@ -17046,6 +17076,7 @@ module Qt
     fun bg_QPointingDeviceUniqueId__COPY_const_QPointingDeviceUniqueId_R(unnamed_arg_0 : PointingDeviceUniqueId) : PointingDeviceUniqueId
     fun bg_QPointingDeviceUniqueId__OPERATOR_eq_QPointingDeviceUniqueId(_self_ : PointingDeviceUniqueId*, rhs : PointingDeviceUniqueId) : Bool
     fun bg_QPointingDeviceUniqueId__OPERATOR_ne_QPointingDeviceUniqueId(_self_ : PointingDeviceUniqueId*, rhs : PointingDeviceUniqueId) : Bool
+    fun bg_QPointingDeviceUniqueId_qHash_size_t(_self_ : PointingDeviceUniqueId*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QPointingDeviceUniqueId_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPointingDevice_metaObject_(_self_ : QPointingDevice*) : QMetaObject*
     fun bg_QPointingDevice_qt_metacast_const_char_X(_self_ : QPointingDevice*, unnamed_arg_0 : UInt8*) : Void*
@@ -17146,6 +17177,7 @@ module Qt
     fun bg_QKeySequence__OPERATOR_le_const_QKeySequence_R(_self_ : QKeySequence*, other : QKeySequence*) : Bool
     fun bg_QKeySequence__OPERATOR_ge_const_QKeySequence_R(_self_ : QKeySequence*, other : QKeySequence*) : Bool
     fun bg_QKeySequence_isDetached_(_self_ : QKeySequence*) : Bool
+    fun bg_QKeySequence_qHash_size_t(_self_ : QKeySequence*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QKeySequence_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QInputEvent__COPY_const_QInputEvent_R(unnamed_arg_0 : QInputEvent*) : QInputEvent*
     fun bg_QInputEvent__OPERATOR_assign_const_QInputEvent_R(_self_ : QInputEvent*, other : QInputEvent*) : QInputEvent*
@@ -17928,6 +17960,7 @@ module Qt
     fun bg_QFont_resolve_const_QFont_R(_self_ : QFont*, unnamed_arg_0 : QFont*) : QFont*
     fun bg_QFont_resolveMask_(_self_ : QFont*) : UInt32
     fun bg_QFont_setResolveMask_uint(_self_ : QFont*, mask : UInt32) : Void
+    fun bg_QFont_qHash_size_t(_self_ : QFont*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QFont_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QFont__Tag__CONSTRUCT_() : QFont_Tag*
     fun bg_QFont__Tag_isValid_(_self_ : QFont_Tag*) : Bool
@@ -17935,6 +17968,7 @@ module Qt
     fun bg_QFont__Tag_toString_(_self_ : QFont_Tag*) : CrystalString
     fun bg_QFont__Tag__COPY_const_QFont__Tag_R(unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
     fun bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(_self_ : QFont_Tag*, unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
+    fun bg_QFont__Tag_qHash_size_t(_self_ : QFont_Tag*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QFont__Tag__OPERATOR_eq_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
     fun bg_QFont__Tag__OPERATOR_ne_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
     fun bg_QFont__Tag__OPERATOR_lt_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
@@ -18026,6 +18060,7 @@ module Qt
     fun bg_QRawFont_fontTable_const_char_X(_self_ : QRawFont*, tag_name : UInt8*) : CrystalString
     fun bg_QRawFont_fontTable_QFont__Tag(_self_ : QRawFont*, tag : QFont_Tag*) : CrystalString
     fun bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(font : QFont*, writing_system : ::Qt::FontDatabase::WritingSystem) : QRawFont*
+    fun bg_QRawFont_qHash_size_t(_self_ : QRawFont*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QGlyphRun__CONSTRUCT_() : QGlyphRun*
     fun bg_QGlyphRun__COPY_const_QGlyphRun_R(other : QGlyphRun*) : QGlyphRun*
     fun bg_QGlyphRun__OPERATOR_assign_const_QGlyphRun_R(_self_ : QGlyphRun*, other : QGlyphRun*) : QGlyphRun*
@@ -20847,6 +20882,7 @@ module Qt
     fun bg_QPixmapCache__Key__OPERATOR_assign_const_QPixmapCache__Key_R(_self_ : QPixmapCache_Key*, other : QPixmapCache_Key*) : QPixmapCache_Key*
     fun bg_QPixmapCache__Key_swap_QPixmapCache__Key_R(_self_ : QPixmapCache_Key*, other : QPixmapCache_Key*) : Void
     fun bg_QPixmapCache__Key_isValid_(_self_ : QPixmapCache_Key*) : Bool
+    fun bg_QPixmapCache__Key_qHash_size_t(_self_ : QPixmapCache_Key*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QQuaternion__CONSTRUCT_() : Quaternion
     fun bg_QQuaternion__CONSTRUCT_float_float_float_float(scalar : Float32, xpos : Float32, ypos : Float32, zpos : Float32) : Quaternion
     fun bg_QQuaternion__CONSTRUCT_float_const_QVector3D_R(scalar : Float32, vector : Vector3D) : Quaternion
@@ -22003,6 +22039,7 @@ module Qt
     fun bg_QSizePolicy_transposed_(_self_ : QSizePolicy*) : QSizePolicy*
     fun bg_QSizePolicy__OPERATOR_assign_const_QSizePolicy_R(_self_ : QSizePolicy*, unnamed_arg_0 : QSizePolicy*) : QSizePolicy*
     fun bg_QSizePolicy__COPY_const_QSizePolicy_R(unnamed_arg_0 : QSizePolicy*) : QSizePolicy*
+    fun bg_QSizePolicy_qHash_size_t(_self_ : QSizePolicy*, seed : LibC::SizeT) : LibC::SizeT
     fun bg_QSizePolicy_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QWidget_metaObject_(_self_ : QWidget*) : QMetaObject*
     fun bg_QWidget_qt_metacast_const_char_X(_self_ : QWidget*, unnamed_arg_0 : UInt8*) : Void*
@@ -39080,6 +39117,13 @@ module Qt
       Binding.bg_QKeyCombination__OPERATOR_ne_const_QKeyCombination_R(pointerof(@unwrap), rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QKeyCombination_qHash_size_t(pointerof(@unwrap), seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -40327,6 +40371,10 @@ module Qt
       Binding.bg_QMetaType__OPERATOR_ne_const_QMetaType_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QMetaType_qHash_size_t(self, seed)
+    end
+    
     enum Type : UInt32
       Bool = 1
       Int = 2
@@ -40439,6 +40487,9 @@ module Qt
       IsConst = 8192
       NeedsCopyConstruction = 16384
       NeedsMoveConstruction = 32768
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
     end
     def to_unsafe
       @unwrap
@@ -43356,6 +43407,13 @@ module Qt
       Binding.bg_QModelIndex__OPERATOR_ge_const_QPersistentModelIndex_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QModelIndex_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -43448,6 +43506,10 @@ module Qt
       Binding.bg_QPersistentModelIndex_isValid_(self)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QPersistentModelIndex_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : PersistentModelIndex) : Bool
       Binding.bg_QPersistentModelIndex__OPERATOR_eq_const_QPersistentModelIndex_R(self, rhs)
     end
@@ -43496,6 +43558,9 @@ module Qt
       Binding.bg_QPersistentModelIndex__OPERATOR_ge_const_QModelIndex_R(self, rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -49806,6 +49871,10 @@ module Qt
       Binding.bg_QBitArray_toUInt32_QSysInfo__Endian_bool_X(self, endianness, ok)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QBitArray_qHash_size_t(self, seed)
+    end
+    
     def &(a2 : BitArray) : BitArray
       BitArray.new(unwrap: Binding.bg_QBitArray__OPERATOR_bit_and_const_QBitArray_R(self, a2))
     end
@@ -49830,6 +49899,9 @@ module Qt
       Binding.bg_QBitArray__OPERATOR_ne_const_QBitArray_R(self, rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -51742,6 +51814,10 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QLocale_createSeparatedList_const_QStringList_R(self, BindgenHelper.wrap_container(StringList, strl).to_unsafe))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QLocale_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : Locale) : Bool
       Binding.bg_QLocale__OPERATOR_eq_const_QLocale_R(self, rhs)
     end
@@ -51763,6 +51839,9 @@ module Qt
     end
     
     DEFAULT_TWO_DIGIT_BASE_YEAR = 1900
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -52969,6 +53048,14 @@ module Qt
       UnsupportedType = 1026
       NoError = 0
     end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -53214,6 +53301,21 @@ module Qt
       Date.new(unwrap: Binding.bg_QDate__OPERATOR_post_pred_(self))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QDate_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -53342,6 +53444,21 @@ module Qt
       Binding.bg_QTime__OPERATOR_ge_const_QTime_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QTime_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -53629,6 +53746,10 @@ module Qt
       Binding.bg_QDateTime__OPERATOR_ge_const_QDateTime_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QDateTime_qHash_size_t(self, seed)
+    end
+    
     enum TransitionResolution : Int32
       Reject = 0
       RelativeToBefore = 1
@@ -53638,6 +53759,17 @@ module Qt
       PreferStandard = 5
       PreferDaylightSaving = 6
       LegacyBehavior = 1
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -53752,6 +53884,10 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QRegularExpression_anchoredPattern_STATIC_const_QString_R(Qt::Converter::QString.wrap(expression)))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QRegularExpression_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : RegularExpression) : Bool
       Binding.bg_QRegularExpression__OPERATOR_eq_const_QRegularExpression_R(self, rhs)
     end
@@ -53789,6 +53925,9 @@ module Qt
       DefaultWildcardConversion = 0
       UnanchoredWildcardConversion = 1
       NonPathWildcardConversion = 2
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
     end
     def to_unsafe
       @unwrap
@@ -54284,6 +54423,10 @@ module Qt
       Binding.bg_QUrl_setIdnWhitelist_STATIC_const_QStringList_R(BindgenHelper.wrap_container(StringList, unnamed_arg_0).to_unsafe)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QUrl_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : Url) : Bool
       Binding.bg_QUrl__OPERATOR_eq_const_QUrl_R(self, rhs)
     end
@@ -54366,6 +54509,17 @@ module Qt
     enum AceProcessingOptions : UInt32
       IgnoreIDNWhitelist = 1
       AceTransitionalProcessing = 2
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -54476,6 +54630,10 @@ module Qt
       Binding.bg_QUuid__OPERATOR_ge_const_QUuid_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QUuid_qHash_size_t(self, seed)
+    end
+    
     def data1() : UInt32
       Binding.bg_QUuid_data1_GETTER_(self)
     end
@@ -54525,6 +54683,17 @@ module Qt
       WithBraces = 0
       WithoutBraces = 1
       Id128 = 3
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -54984,6 +55153,10 @@ module Qt
       Binding.bg_QCborValue__OPERATOR_ge_const_QCborValue_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QCborValue_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : CborValueConstRef) : Bool
       Binding.bg_QCborValue__OPERATOR_eq_const_QCborValueConstRef_R(self, rhs)
     end
@@ -55092,6 +55265,17 @@ module Qt
       RegularExpression = 65571
       Uuid = 65573
       Invalid = -1
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -55405,6 +55589,10 @@ module Qt
     @unwrap = result
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QCborValueConstRef_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : CborValueConstRef) : Bool
       Binding.bg_QCborValueConstRef__OPERATOR_eq_const_QCborValueConstRef_R(self, rhs)
     end
@@ -55517,6 +55705,17 @@ module Qt
       Binding.bg_QCborValueConstRef_i_SETTER_qsizetype(self, i)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -55773,6 +55972,14 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QCborValueRef_toDiagnosticNotation_QCborValue__DiagnosticNotationOptions(self, opt))
     end
     
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def initialize(unwrap : Binding::QCborValueRef*)
       result = unwrap
     @unwrap = result
@@ -56001,6 +56208,13 @@ module Qt
       Binding.bg_QCborArray__OPERATOR_ge_const_QCborValueConstRef_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QCborArray_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -56296,6 +56510,13 @@ module Qt
       Binding.bg_QCborMap__OPERATOR_ge_const_QCborValueConstRef_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QCborMap_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -65430,6 +65651,10 @@ module Qt
       Binding.bg_QJsonValue__OPERATOR_ne_const_QJsonValue_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QJsonValue_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : JsonValueConstRef) : Bool
       Binding.bg_QJsonValue__OPERATOR_eq_const_QJsonValueConstRef_R(self, rhs)
     end
@@ -65462,6 +65687,17 @@ module Qt
       Array = 4
       Object = 5
       Undefined = 128
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -65623,6 +65859,10 @@ module Qt
       Binding.bg_QJsonValueConstRef_rebind_QJsonValueConstRef(self, other)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QJsonValueConstRef_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : JsonValueConstRef) : Bool
       Binding.bg_QJsonValueConstRef__OPERATOR_eq_const_QJsonValueConstRef_R(self, rhs)
     end
@@ -65695,6 +65935,17 @@ module Qt
       Binding.bg_QJsonValueConstRef_index_SETTER_quint64(self, index)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -65829,6 +66080,14 @@ module Qt
       Binding.bg_QJsonValueRef__OPERATOR_ne_const_QJsonValueConstRef_R(self, rhs)
     end
     
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def initialize(unwrap : Binding::QJsonValueRef*)
       result = unwrap
     @unwrap = result
@@ -65981,6 +66240,13 @@ module Qt
       Binding.bg_QJsonArray__OPERATOR_ne_const_QJsonValue_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QJsonArray_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -66116,6 +66382,13 @@ module Qt
       Binding.bg_QJsonObject__OPERATOR_ne_const_QJsonValueConstRef_R(self, rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QJsonObject_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -66746,6 +67019,10 @@ module Qt
       VersionNumber.new(unwrap: Binding.bg_QVersionNumber__OPERATOR_assign_const_QVersionNumber_R(self, unnamed_arg_0))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QVersionNumber_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : VersionNumber) : Bool
       Binding.bg_QVersionNumber__OPERATOR_eq_const_QVersionNumber_R(self, rhs)
     end
@@ -66773,6 +67050,17 @@ module Qt
     INLINE_SEGMENT_MARKER = 0u32
     INLINE_SEGMENT_START_IDX = 1u32
     INLINE_SEGMENT_COUNT = 7u32
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -66979,6 +67267,10 @@ module Qt
       Point.new(unwrap: Binding.bg_QPoint__OPERATOR_div_qreal(pointerof(@unwrap), c))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QPoint_qHash_size_t(pointerof(@unwrap), seed)
+    end
+    
     def ==(rhs : PointF) : Bool
       Binding.bg_QPoint__OPERATOR_eq_const_QPointF_R(pointerof(@unwrap), rhs)
     end
@@ -66996,6 +67288,9 @@ module Qt
       Point.new(unwrap: Binding.bg_QPoint__OPERATOR_mul_const_QMatrix4x4_R(pointerof(@unwrap), matrix))
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -68848,6 +69143,10 @@ module Qt
       Qt::Converter::QString.unwrap(Binding.bg_QMimeType_filterString_(self))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QMimeType_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : MimeType) : Bool
       Binding.bg_QMimeType__OPERATOR_eq_const_QMimeType_R(self, rhs)
     end
@@ -68860,6 +69159,9 @@ module Qt
       MetaObject.new(unwrap: Binding.bg_QMimeType_staticMetaObject_STATIC_GETTER_())
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -72458,6 +72760,10 @@ module Qt
       Size.new(unwrap: Binding.bg_QSize__OPERATOR_div_qreal(pointerof(@unwrap), c))
     end
     
+    def q_hash(unnamed_arg_0 : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QSize_qHash_size_t(pointerof(@unwrap), unnamed_arg_0)
+    end
+    
     def ==(rhs : SizeF) : Bool
       Binding.bg_QSize__OPERATOR_eq_const_QSizeF_R(pointerof(@unwrap), rhs)
     end
@@ -72466,6 +72772,9 @@ module Qt
       Binding.bg_QSize__OPERATOR_ne_const_QSizeF_R(pointerof(@unwrap), rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -72967,6 +73276,10 @@ module Qt
       Binding.bg_QRect__OPERATOR_ne_const_QRect_R(pointerof(@unwrap), rhs)
     end
     
+    def q_hash(unnamed_arg_0 : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QRect_qHash_size_t(pointerof(@unwrap), unnamed_arg_0)
+    end
+    
     def +(margins : Margins) : Rect
       Rect.new(unwrap: Binding.bg_QRect__OPERATOR_add_const_QMargins_R(pointerof(@unwrap), margins))
     end
@@ -72983,6 +73296,9 @@ module Qt
       Binding.bg_QRect__OPERATOR_ne_const_QRectF_R(pointerof(@unwrap), rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -75409,6 +75725,14 @@ module Qt
       NativeIpcKey.new(unwrap: Binding.bg_QNativeIpcKey_fromString_STATIC_const_QString_R(Qt::Converter::QString.wrap(string)))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QNativeIpcKey_qHash_size_t(self, seed)
+    end
+    
+    def q_hash() : LibC::SizeT
+      Binding.bg_QNativeIpcKey_qHash_(self)
+    end
+    
     def ==(rhs : NativeIpcKey) : Bool
       Binding.bg_QNativeIpcKey__OPERATOR_eq_const_QNativeIpcKey_R(self, rhs)
     end
@@ -75429,6 +75753,17 @@ module Qt
       SystemV = 81
       PosixRealtime = 256
       Windows = 257
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -81888,6 +82223,10 @@ module Qt
       (Binding.bg_QUrlQuery_defaultQueryPairDelimiter_STATIC_().chr)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QUrlQuery_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : UrlQuery) : Bool
       Binding.bg_QUrlQuery__OPERATOR_eq_const_QUrlQuery_R(self, rhs)
     end
@@ -81896,6 +82235,17 @@ module Qt
       Binding.bg_QUrlQuery__OPERATOR_ne_const_QUrlQuery_R(self, rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -83107,6 +83457,13 @@ module Qt
     @unwrap = result
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QRgba64_qHash_size_t(pointerof(@unwrap), seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -84218,6 +84575,10 @@ module Qt
       Transform.new(unwrap: Binding.bg_QTransform_fromScale_STATIC_qreal_qreal(dx, dy))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QTransform_qHash_size_t(self, seed)
+    end
+    
     def *(n : Float64) : Transform
       Transform.new(unwrap: Binding.bg_QTransform__OPERATOR_mul_qreal(self, n))
     end
@@ -84241,6 +84602,9 @@ module Qt
       TxRotate = 4
       TxShear = 8
       TxProject = 16
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
     end
     def to_unsafe
       @unwrap
@@ -88073,10 +88437,17 @@ module Qt
       Binding.bg_QPointingDeviceUniqueId__OPERATOR_ne_QPointingDeviceUniqueId(pointerof(@unwrap), rhs)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QPointingDeviceUniqueId_qHash_size_t(pointerof(@unwrap), seed)
+    end
+    
     def self.static_meta_object() : MetaObject
       MetaObject.new(unwrap: Binding.bg_QPointingDeviceUniqueId_staticMetaObject_STATIC_GETTER_())
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -88860,6 +89231,10 @@ module Qt
       Binding.bg_QKeySequence_isDetached_(self)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QKeySequence_qHash_size_t(self, seed)
+    end
+    
     def self.static_meta_object() : MetaObject
       MetaObject.new(unwrap: Binding.bg_QKeySequence_staticMetaObject_STATIC_GETTER_())
     end
@@ -88945,6 +89320,17 @@ module Qt
       NoMatch = 0
       PartialMatch = 1
       ExactMatch = 2
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
     end
     def to_unsafe
       @unwrap
@@ -97360,6 +97746,10 @@ module Qt
       Binding.bg_QFont_setResolveMask_uint(self, mask)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QFont_qHash_size_t(self, seed)
+    end
+    
     def self.static_meta_object() : MetaObject
       MetaObject.new(unwrap: Binding.bg_QFont_staticMetaObject_STATIC_GETTER_())
     end
@@ -97440,6 +97830,17 @@ module Qt
       PercentageSpacing = 0
       AbsoluteSpacing = 1
     end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -97479,6 +97880,10 @@ module Qt
       FontTag.new(unwrap: Binding.bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(self, unnamed_arg_0))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QFont__Tag_qHash_size_t(self, seed)
+    end
+    
     def ==(rhs : FontTag) : Bool
       Binding.bg_QFont__Tag__OPERATOR_eq_const_QFont__Tag_R(self, rhs)
     end
@@ -97503,6 +97908,17 @@ module Qt
       Binding.bg_QFont__Tag__OPERATOR_ge_const_QFont__Tag_R(self, rhs)
     end
     
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -97918,6 +98334,10 @@ module Qt
       RawFont.new(unwrap: Binding.bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(font, writing_system))
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QRawFont_qHash_size_t(self, seed)
+    end
+    
     enum AntialiasingType : UInt32
       PixelAntialiasing = 0
       SubPixelAntialiasing = 1
@@ -97932,6 +98352,9 @@ module Qt
       SeparateAdvances = 0
       KernedAdvances = 1
       UseDesignMetrics = 2
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
     end
     def to_unsafe
       @unwrap
@@ -111449,6 +111872,14 @@ module Qt
       Binding.bg_QPageRanges__OPERATOR_ne_const_QPageRanges_R(self, rhs)
     end
     
+    def to_s(io : IO) : Nil
+      io << to_string
+    end
+    def inspect(io : IO) : Nil
+      io << "#<" << self.class.name << ' '
+      to_s(io)
+      io << '>'
+    end
     def to_unsafe
       @unwrap
     end
@@ -115014,6 +115445,13 @@ module Qt
       Binding.bg_QPixmapCache__Key_isValid_(self)
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QPixmapCache__Key_qHash_size_t(self, seed)
+    end
+    
+    def hash(hasher)
+      q_hash(0).hash(hasher)
+    end
     def to_unsafe
       @unwrap
     end
@@ -123590,6 +124028,10 @@ module Qt
     @unwrap = result
     end
     
+    def q_hash(seed : LibC::SizeT) : LibC::SizeT
+      Binding.bg_QSizePolicy_qHash_size_t(self, seed)
+    end
+    
     def self.static_meta_object() : MetaObject
       MetaObject.new(unwrap: Binding.bg_QSizePolicy_staticMetaObject_STATIC_GETTER_())
     end
@@ -123643,6 +124085,9 @@ module Qt
       SpinBox = 4096
       TabWidget = 8192
       ToolButton = 16384
+    end
+    def hash(hasher)
+      q_hash(0).hash(hasher)
     end
     def to_unsafe
       @unwrap
