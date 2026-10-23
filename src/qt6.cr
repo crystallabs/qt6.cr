@@ -1,4 +1,5 @@
 require "./qt6/version"
+require "./qt6/main_thread"
 require "./qt6/glue"
 require "./qt6/point"
 require "./qt6/variant"
