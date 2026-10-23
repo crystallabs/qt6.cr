@@ -7,6 +7,7 @@
 #include <validator_helper.hpp>
 #include <matrix_helper.hpp>
 #include <xml_helper.hpp>
+#include <data_stream_helper.hpp>
 #include <meta_helper.hpp>
 #include <action_helper.hpp>
 

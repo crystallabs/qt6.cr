@@ -4,7 +4,6 @@
 // so these return them as QString.  See src/qt6/xml_stream.cr.
 #include <QtCore/QXmlStreamReader>
 #include <QtCore/QXmlStreamWriter>
-#include <QtCore/QDataStream>
 
 #define QT6CR_XML_STRING(klass, prefix, method) \
   QString qt6cr_xml_##prefix##_##method(const klass *object) { return object->method().toString(); }
@@ -45,27 +44,4 @@ QString qt6cr_xml_attributes_value(const QXmlStreamAttributes *attributes, const
 
 QString qt6cr_xml_attributes_value(const QXmlStreamAttributes *attributes, const QString &namespaceUri, const QString &name) {
   return attributes->value(namespaceUri, name).toString();
-}
-
-// QDataStream streams QString and QByteArray through free `operator<<` and
-// `operator>>`, which bindgen doesn't wrap as methods.  See
-// src/qt6/data_stream.cr.
-void qt6cr_data_stream_write_string(QDataStream *stream, const QString &string) {
-  *stream << string;
-}
-
-QString qt6cr_data_stream_read_string(QDataStream *stream) {
-  QString string;
-  *stream >> string;
-  return string;
-}
-
-void qt6cr_data_stream_write_bytes(QDataStream *stream, const QByteArray &bytes) {
-  *stream << bytes;
-}
-
-QByteArray qt6cr_data_stream_read_bytes(QDataStream *stream) {
-  QByteArray bytes;
-  *stream >> bytes;
-  return bytes;
 }

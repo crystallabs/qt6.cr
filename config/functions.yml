@@ -10,7 +10,7 @@ functions:
     destination: "::"
   "^qt6cr_xml_\\w+$": # See ext/xml_helper.hpp
     destination: "::"
-  "^qt6cr_data_stream_\\w+$":
+  "^qt6cr_data_stream_\\w+$": # See ext/data_stream_helper.hpp
     destination: "::"
   "^qt6cr_invoke_method$": # See ext/meta_helper.hpp
     destination: "::"

@@ -1,7 +1,7 @@
 module Qt
   # Qt streams `QString` and `QByteArray` through free `operator<<` and
   # `operator>>`, which bindgen doesn't wrap as methods, so these come from
-  # `ext/xml_helper.hpp`.  The numbers are read through `#read`:
+  # `ext/data_stream_helper.hpp`.  The numbers are read through `#read`:
   #
   # ```
   # stream << 42 << "text"
