@@ -6,9 +6,8 @@
 #
 # `depends_on:` marks the constructors whose object uses an argument when
 # destroyed, like an iterator unregistering from its container: the GC destroys
-# the object before the argument, and releases the argument with it.
-# Bindgen applies it to constructors only, so a `setDevice` keeps its device
-# alive instead.
+# the object before the argument, and releases the argument with it.  On a
+# method, like `setDevice`, the call replaces the dependencies of the object.
 #
 # Deep-merged (`<<+:`) into `types:` after `deprecated.yml`, so classes listed
 # in both keep their `ignore_methods` from there.
@@ -313,24 +312,20 @@ QWidgetAction:
   keep_alive:
     "^setDefaultWidget$": true
 QMovie:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": [0] # The device, not the parent
 QImageReader:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads or writes the device as long as it lives
 QImageWriter:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads or writes the device as long as it lives
 QTextDocumentWriter:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true
 QSignalMapper:
   keep_alive:
@@ -340,37 +335,35 @@ QGestureRecognizer:
     "^registerRecognizer$": true
 QXmlStreamReader:
   keep_alive:
-    "^set(Device|EntityResolver)$": true
+    "^setEntityResolver$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads the device as long as it lives
 QXmlStreamWriter:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true
 QDataStream:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads or writes the device as long as it lives
 QBasicTimer:
   keep_alive:
     "^start$": true
 QTextStream:
   depends_on:
+    "^setDevice$": true
     "^$": true # The stream flushes to its device when destroyed.  (The read-only stream of a byte array copies it; depending on it is harmless)
 QObjectCleanupHandler:
   keep_alive:
     "^add$": true
 QCborStreamReader:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads or writes the device as long as it lives
 QCborStreamWriter:
-  keep_alive:
-    "^setDevice$": true
   depends_on:
+    "^setDevice$": true
     "^$": true # Reads or writes the device as long as it lives
 QConcatenateTablesProxyModel:
   keep_alive:
@@ -438,6 +431,7 @@ QTreeWidgetItemIterator:
 QPainter:
   depends_on:
     "^$": true # The painter ends painting on its device when destroyed
+    "^begin$": true # And paints on the device given here instead
 QPersistentModelIndex:
   depends_on:
     "^$": true # The index unregisters from its model when destroyed, reached through the model index it is made of

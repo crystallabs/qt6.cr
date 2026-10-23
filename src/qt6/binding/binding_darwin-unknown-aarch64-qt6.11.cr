@@ -20574,7 +20574,7 @@ module Qt
     fun bg_QPdfWriter_outputIntent_(_self_ : QPdfWriter*) : QPdfOutputIntent*
     fun bg_QPdfWriter_setOutputIntent_const_QPdfOutputIntent_R(_self_ : QPdfWriter*, intent : QPdfOutputIntent*) : Void
     fun bg_QPdfWriter_paintEngine_(_self_ : QPdfWriter*) : QPaintEngine*
-    fun bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPdfWriter*, id : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPdfWriter*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QPdfWriter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QPdfWriter_AS_PagedPaintDevice_(_self_ : QPdfWriter*) : QPagedPaintDevice*
     fun bg_QObject_event_QEvent_X(_self_ : QPdfWriter*, event : QEvent*) : Bool
@@ -20597,7 +20597,7 @@ module Qt
     fun bg_QPdfWriter_sharedPainter_(_self_ : QPdfWriter*) : QPainter*
     fun bg_QPdfWriter_newPage_SUPER_(_self_ : QPdfWriter*) : Bool
     fun bg_QPdfWriter_paintEngine_SUPER_(_self_ : QPdfWriter*) : QPaintEngine*
-    fun bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPdfWriter*, id : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPdfWriter*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QObject_event_SUPER_QEvent_X(_self_ : QPdfWriter*, event : QEvent*) : Bool
     fun bg_QObject_eventFilter_SUPER_QObject_X_QEvent_X(_self_ : QPdfWriter*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QPdfWriter*, event : QTimerEvent*) : Void
@@ -22125,7 +22125,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QWidget*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22197,7 +22197,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QWidget*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22286,7 +22286,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QAbstractButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QAbstractButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QAbstractButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QAbstractButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QAbstractButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22338,7 +22338,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QAbstractButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QAbstractButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QAbstractButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QAbstractButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QAbstractButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22428,7 +22428,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QAbstractSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QAbstractSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QAbstractSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QAbstractSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QAbstractSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22480,7 +22480,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QAbstractSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QAbstractSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QAbstractSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QAbstractSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QAbstractSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22567,7 +22567,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QAbstractSlider*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QAbstractSlider*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractSlider*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSlider*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSlider*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QAbstractSlider*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QAbstractSlider*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QAbstractSlider*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22620,7 +22620,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QAbstractSlider*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QAbstractSlider*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractSlider*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSlider*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractSlider*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QAbstractSlider*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QAbstractSlider*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QAbstractSlider*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22681,7 +22681,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QSlider*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QSlider*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSlider*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSlider*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSlider*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSlider*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSlider*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSlider*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22729,7 +22729,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QSlider*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QSlider*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSlider*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSlider*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSlider*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSlider*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSlider*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSlider*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22914,7 +22914,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QTabBar*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QTabBar*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTabBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTabBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTabBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTabBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTabBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QTabBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -22971,7 +22971,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QTabBar*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QTabBar*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTabBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTabBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTabBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTabBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTabBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QTabBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23078,7 +23078,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QTabWidget*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTabWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTabWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTabWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTabWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTabWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTabWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QTabWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23131,7 +23131,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QTabWidget*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTabWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTabWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTabWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTabWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTabWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTabWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QTabWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23193,7 +23193,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QRubberBand*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QRubberBand*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QRubberBand*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QRubberBand*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QRubberBand*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QRubberBand*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QRubberBand*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QRubberBand*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23240,7 +23240,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QRubberBand*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QRubberBand*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QRubberBand*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QRubberBand*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QRubberBand*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QRubberBand*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QRubberBand*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QRubberBand*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23312,7 +23312,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QFrame*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QFrame*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QFrame*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFrame*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFrame*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QFrame*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QFrame*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QFrame*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23359,7 +23359,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QFrame*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QFrame*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QFrame*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFrame*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFrame*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QFrame*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QFrame*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QFrame*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23911,7 +23911,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QAbstractScrollArea*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QAbstractScrollArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractScrollArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractScrollArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractScrollArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QAbstractScrollArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QAbstractScrollArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QAbstractScrollArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -23962,7 +23962,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QAbstractScrollArea*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QAbstractScrollArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractScrollArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractScrollArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractScrollArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QAbstractScrollArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QAbstractScrollArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QAbstractScrollArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -24148,7 +24148,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QAbstractItemView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QAbstractItemView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractItemView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractItemView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractItemView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QAbstractItemView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QAbstractItemView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QAbstractItemView*, event : QChildEvent*) : Void
@@ -24236,7 +24236,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QAbstractItemView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QAbstractItemView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QAbstractItemView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractItemView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QAbstractItemView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QAbstractItemView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QAbstractItemView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QAbstractItemView*, event : QChildEvent*) : Void
@@ -25027,7 +25027,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QCalendarWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QCalendarWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QCalendarWidget*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCalendarWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCalendarWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QCalendarWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QCalendarWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QCalendarWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25078,7 +25078,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QCalendarWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QCalendarWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QCalendarWidget*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCalendarWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCalendarWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QCalendarWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QCalendarWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QCalendarWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25142,7 +25142,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QCheckBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QCheckBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QCheckBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCheckBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCheckBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QCheckBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QCheckBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QCheckBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25193,7 +25193,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QCheckBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QCheckBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QCheckBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCheckBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCheckBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QCheckBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QCheckBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QCheckBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25264,7 +25264,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QDialog*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25318,7 +25318,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QDialog*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25397,7 +25397,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QColorDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QColorDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QColorDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QColorDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QColorDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QColorDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QColorDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QColorDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25450,7 +25450,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QColorDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QColorDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QColorDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QColorDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QColorDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QColorDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QColorDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QColorDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25565,7 +25565,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QColumnView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QColumnView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QColumnView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QColumnView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QColumnView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QColumnView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QColumnView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QColumnView*, event : QChildEvent*) : Void
@@ -25657,7 +25657,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QColumnView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QColumnView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QColumnView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QColumnView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QColumnView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QColumnView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QColumnView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QColumnView*, event : QChildEvent*) : Void
@@ -25789,7 +25789,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QComboBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QComboBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QComboBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QComboBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QComboBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QComboBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QComboBox*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_bool(_self_ : QComboBox*, next_ : Bool) : Bool
@@ -25846,7 +25846,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QComboBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QComboBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QComboBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QComboBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QComboBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QComboBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QComboBox*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_SUPER_bool(_self_ : QComboBox*, next_ : Bool) : Bool
@@ -25915,7 +25915,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QPushButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QPushButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QPushButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPushButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPushButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QPushButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QPushButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QPushButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -25965,7 +25965,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QPushButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QPushButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QPushButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPushButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPushButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QPushButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QPushButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QPushButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26027,7 +26027,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QCommandLinkButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QCommandLinkButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QCommandLinkButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCommandLinkButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QCommandLinkButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QCommandLinkButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QCommandLinkButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QCommandLinkButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26077,7 +26077,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QCommandLinkButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QCommandLinkButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QCommandLinkButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCommandLinkButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QCommandLinkButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QCommandLinkButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QCommandLinkButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QCommandLinkButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26380,7 +26380,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QDateTimeEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QDateTimeEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDateTimeEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDateTimeEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDateTimeEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDateTimeEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDateTimeEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDateTimeEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26435,7 +26435,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QDateTimeEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QDateTimeEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDateTimeEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDateTimeEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDateTimeEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDateTimeEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDateTimeEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDateTimeEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26497,7 +26497,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QTimeEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QTimeEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTimeEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTimeEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTimeEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTimeEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTimeEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QTimeEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26550,7 +26550,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QTimeEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QTimeEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTimeEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTimeEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTimeEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTimeEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTimeEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QTimeEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26612,7 +26612,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QDateEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QDateEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDateEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDateEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDateEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDateEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDateEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDateEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26665,7 +26665,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QDateEdit*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QDateEdit*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDateEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDateEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDateEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDateEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDateEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDateEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26726,7 +26726,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QDial*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QDial*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDial*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDial*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDial*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDial*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDial*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDial*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26774,7 +26774,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QDial*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QDial*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDial*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDial*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDial*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDial*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDial*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDial*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26849,7 +26849,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QDialogButtonBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QDialogButtonBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDialogButtonBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDialogButtonBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDialogButtonBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDialogButtonBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDialogButtonBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDialogButtonBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26899,7 +26899,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QDialogButtonBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QDialogButtonBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDialogButtonBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDialogButtonBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDialogButtonBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDialogButtonBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDialogButtonBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDialogButtonBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -26976,7 +26976,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QDockWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QDockWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDockWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDockWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDockWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDockWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDockWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDockWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27028,7 +27028,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QDockWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QDockWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDockWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDockWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDockWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDockWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDockWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDockWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27091,7 +27091,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QErrorMessage*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QErrorMessage*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QErrorMessage*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QErrorMessage*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QErrorMessage*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QErrorMessage*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QErrorMessage*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QErrorMessage*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27142,7 +27142,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QErrorMessage*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QErrorMessage*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QErrorMessage*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QErrorMessage*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QErrorMessage*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QErrorMessage*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QErrorMessage*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QErrorMessage*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27298,7 +27298,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QFileDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QFileDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QFileDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFileDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFileDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QFileDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QFileDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QFileDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27358,7 +27358,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QFileDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QFileDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QFileDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFileDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFileDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QFileDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QFileDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QFileDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27427,7 +27427,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QFocusFrame*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QFocusFrame*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QFocusFrame*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFocusFrame*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFocusFrame*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QFocusFrame*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QFocusFrame*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QFocusFrame*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27474,7 +27474,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QFocusFrame*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QFocusFrame*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QFocusFrame*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFocusFrame*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFocusFrame*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QFocusFrame*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QFocusFrame*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QFocusFrame*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27545,7 +27545,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QFontComboBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QFontComboBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QFontComboBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFontComboBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFontComboBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QFontComboBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QFontComboBox*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_bool(_self_ : QFontComboBox*, next_ : Bool) : Bool
@@ -27596,7 +27596,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QFontComboBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QFontComboBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QFontComboBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFontComboBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFontComboBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QFontComboBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QFontComboBox*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_SUPER_bool(_self_ : QFontComboBox*, next_ : Bool) : Bool
@@ -27669,7 +27669,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QFontDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QFontDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QFontDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFontDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QFontDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QFontDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QFontDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QFontDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27722,7 +27722,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QFontDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QFontDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QFontDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFontDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QFontDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QFontDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QFontDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QFontDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -27795,7 +27795,7 @@ module Qt
     fun bg_QFormLayout_sizeHint_(_self_ : QFormLayout*) : QSize
     fun bg_QFormLayout_invalidate_(_self_ : QFormLayout*) : Void
     fun bg_QFormLayout_hasHeightForWidth_(_self_ : QFormLayout*) : Bool
-    fun bg_QFormLayout_heightForWidth_int(_self_ : QFormLayout*, width : Int32) : Int32
+    fun bg_QFormLayout_heightForWidth_int(_self_ : QFormLayout*, unnamed_arg_0 : Int32) : Int32
     fun bg_QFormLayout_expandingDirections_(_self_ : QFormLayout*) : ::Qt::Orientations
     fun bg_QFormLayout_count_(_self_ : QFormLayout*) : Int32
     fun bg_QFormLayout_rowCount_(_self_ : QFormLayout*) : Int32
@@ -27826,7 +27826,7 @@ module Qt
     fun bg_QFormLayout_sizeHint_SUPER_(_self_ : QFormLayout*) : QSize
     fun bg_QFormLayout_invalidate_SUPER_(_self_ : QFormLayout*) : Void
     fun bg_QFormLayout_hasHeightForWidth_SUPER_(_self_ : QFormLayout*) : Bool
-    fun bg_QFormLayout_heightForWidth_SUPER_int(_self_ : QFormLayout*, width : Int32) : Int32
+    fun bg_QFormLayout_heightForWidth_SUPER_int(_self_ : QFormLayout*, unnamed_arg_0 : Int32) : Int32
     fun bg_QFormLayout_expandingDirections_SUPER_(_self_ : QFormLayout*) : ::Qt::Orientations
     fun bg_QFormLayout_count_SUPER_(_self_ : QFormLayout*) : Int32
     fun bg_QLayout_geometry_SUPER_(_self_ : QFormLayout*) : QRect
@@ -30724,7 +30724,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QScrollArea*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QScrollArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QScrollArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QScrollArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QScrollArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QScrollArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QScrollArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QScrollArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -30775,7 +30775,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QScrollArea*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QScrollArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QScrollArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QScrollArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QScrollArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QScrollArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QScrollArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QScrollArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -30922,7 +30922,7 @@ module Qt
     fun bg_QWidget_actionEvent_QActionEvent_X(_self_ : QGraphicsView*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QGraphicsView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QGraphicsView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QGraphicsView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QGraphicsView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QGraphicsView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QGraphicsView*) : QPainter*
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QGraphicsView*, event : QTimerEvent*) : Void
@@ -30977,7 +30977,7 @@ module Qt
     fun bg_QWidget_actionEvent_SUPER_QActionEvent_X(_self_ : QGraphicsView*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QGraphicsView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QGraphicsView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QGraphicsView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QGraphicsView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QGraphicsView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QGraphicsView*) : QPainter*
     fun bg_QObject_timerEvent_SUPER_QTimerEvent_X(_self_ : QGraphicsView*, event : QTimerEvent*) : Void
@@ -31042,7 +31042,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QGroupBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QGroupBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QGroupBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QGroupBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QGroupBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QGroupBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QGroupBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QGroupBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -31091,7 +31091,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QGroupBox*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QGroupBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QGroupBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QGroupBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QGroupBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QGroupBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QGroupBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QGroupBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -31282,7 +31282,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QHeaderView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QHeaderView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QHeaderView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QHeaderView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QHeaderView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QHeaderView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QHeaderView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QHeaderView*, event : QChildEvent*) : Void
@@ -31386,7 +31386,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QHeaderView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QHeaderView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QHeaderView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QHeaderView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QHeaderView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QHeaderView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QHeaderView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QHeaderView*, event : QChildEvent*) : Void
@@ -31522,7 +31522,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QLineEdit*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QLineEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QLineEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLineEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLineEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QLineEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QLineEdit*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_bool(_self_ : QLineEdit*, next_ : Bool) : Bool
@@ -31576,7 +31576,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QLineEdit*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QLineEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QLineEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLineEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLineEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QLineEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QLineEdit*) : QPainter*
     fun bg_QWidget_focusNextPrevChild_SUPER_bool(_self_ : QLineEdit*, next_ : Bool) : Bool
@@ -31696,7 +31696,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QInputDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QInputDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QInputDialog*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QInputDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QInputDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QInputDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QInputDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QInputDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -31753,7 +31753,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QInputDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QInputDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QInputDialog*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QInputDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QInputDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QInputDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QInputDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QInputDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -31897,7 +31897,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QKeySequenceEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QKeySequenceEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QKeySequenceEdit*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QKeySequenceEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QKeySequenceEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QKeySequenceEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QKeySequenceEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QKeySequenceEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -31945,7 +31945,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QKeySequenceEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QKeySequenceEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QKeySequenceEdit*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QKeySequenceEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QKeySequenceEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QKeySequenceEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QKeySequenceEdit*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QKeySequenceEdit*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32038,7 +32038,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QLabel*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QLabel*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QLabel*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLabel*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLabel*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QLabel*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QLabel*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QLabel*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32087,7 +32087,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QLabel*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QLabel*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QLabel*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLabel*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLabel*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QLabel*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QLabel*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QLabel*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32162,7 +32162,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QLCDNumber*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QLCDNumber*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QLCDNumber*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLCDNumber*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QLCDNumber*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QLCDNumber*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QLCDNumber*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QLCDNumber*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32210,7 +32210,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QLCDNumber*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QLCDNumber*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QLCDNumber*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLCDNumber*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QLCDNumber*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QLCDNumber*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QLCDNumber*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QLCDNumber*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32351,7 +32351,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QListView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QListView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QListView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QListView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QListView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QListView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QListView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QListView*, event : QChildEvent*) : Void
@@ -32442,7 +32442,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QListView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QListView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QListView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QListView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QListView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QListView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QListView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QListView*, event : QChildEvent*) : Void
@@ -32641,7 +32641,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QListWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QListWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QListWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QListWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QListWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QListWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QListWidget*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QListWidget*, event : QChildEvent*) : Void
@@ -32744,7 +32744,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QListWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QListWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QListWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QListWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QListWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QListWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QListWidget*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QListWidget*, event : QChildEvent*) : Void
@@ -32849,7 +32849,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QMainWindow*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMainWindow*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QMainWindow*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMainWindow*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMainWindow*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMainWindow*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMainWindow*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMainWindow*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32899,7 +32899,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QMainWindow*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMainWindow*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QMainWindow*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMainWindow*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMainWindow*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMainWindow*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMainWindow*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMainWindow*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -32993,7 +32993,7 @@ module Qt
     fun bg_QWidget_actionEvent_QActionEvent_X(_self_ : QMdiArea*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QMdiArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMdiArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMdiArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMdiArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMdiArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMdiArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMdiArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33045,7 +33045,7 @@ module Qt
     fun bg_QWidget_actionEvent_SUPER_QActionEvent_X(_self_ : QMdiArea*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QMdiArea*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMdiArea*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMdiArea*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMdiArea*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMdiArea*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMdiArea*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMdiArea*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33118,7 +33118,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QMdiSubWindow*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QMdiSubWindow*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMdiSubWindow*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMdiSubWindow*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMdiSubWindow*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMdiSubWindow*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMdiSubWindow*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMdiSubWindow*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33166,7 +33166,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QMdiSubWindow*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QMdiSubWindow*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMdiSubWindow*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMdiSubWindow*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMdiSubWindow*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMdiSubWindow*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMdiSubWindow*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMdiSubWindow*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33278,7 +33278,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QMenu*, event : QDropEvent*) : Void
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QMenu*, event : QShowEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMenu*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMenu*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMenu*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMenu*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMenu*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMenu*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33329,7 +33329,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QMenu*, event : QDropEvent*) : Void
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QMenu*, event : QShowEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMenu*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMenu*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMenu*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMenu*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMenu*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMenu*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33413,7 +33413,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QMenuBar*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QMenuBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMenuBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMenuBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMenuBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMenuBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMenuBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMenuBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33462,7 +33462,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QMenuBar*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QMenuBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMenuBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMenuBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMenuBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMenuBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMenuBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMenuBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33579,7 +33579,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QMessageBox*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QMessageBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QMessageBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMessageBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QMessageBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QMessageBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QMessageBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QMessageBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33631,7 +33631,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QMessageBox*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QMessageBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QMessageBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMessageBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QMessageBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QMessageBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QMessageBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QMessageBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -33800,7 +33800,7 @@ module Qt
     fun bg_QWidget_actionEvent_QActionEvent_X(_self_ : QTextEdit*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTextEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTextEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTextEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTextEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTextEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTextEdit*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextEdit*, event : QChildEvent*) : Void
@@ -33863,7 +33863,7 @@ module Qt
     fun bg_QWidget_actionEvent_SUPER_QActionEvent_X(_self_ : QTextEdit*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTextEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTextEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTextEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTextEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTextEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTextEdit*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextEdit*, event : QChildEvent*) : Void
@@ -34020,7 +34020,7 @@ module Qt
     fun bg_QWidget_actionEvent_QActionEvent_X(_self_ : QPlainTextEdit*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QPlainTextEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QPlainTextEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPlainTextEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QPlainTextEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QPlainTextEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QPlainTextEdit*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QPlainTextEdit*, event : QChildEvent*) : Void
@@ -34085,7 +34085,7 @@ module Qt
     fun bg_QWidget_actionEvent_SUPER_QActionEvent_X(_self_ : QPlainTextEdit*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QPlainTextEdit*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QPlainTextEdit*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPlainTextEdit*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QPlainTextEdit*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QPlainTextEdit*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QPlainTextEdit*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QPlainTextEdit*, event : QChildEvent*) : Void
@@ -34204,7 +34204,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QProgressBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QProgressBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QProgressBar*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QProgressBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QProgressBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QProgressBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QProgressBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QProgressBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34253,7 +34253,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QProgressBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QProgressBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QProgressBar*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QProgressBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QProgressBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QProgressBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QProgressBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QProgressBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34341,7 +34341,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QProgressDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QProgressDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QProgressDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QProgressDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QProgressDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QProgressDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QProgressDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QProgressDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34393,7 +34393,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QProgressDialog*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QProgressDialog*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QProgressDialog*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QProgressDialog*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QProgressDialog*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QProgressDialog*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QProgressDialog*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QProgressDialog*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34523,7 +34523,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QRadioButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QRadioButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QRadioButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QRadioButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QRadioButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QRadioButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QRadioButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QRadioButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34573,7 +34573,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QRadioButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QRadioButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QRadioButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QRadioButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QRadioButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QRadioButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QRadioButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QRadioButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34631,7 +34631,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QScrollBar*, event : QDropEvent*) : Void
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QScrollBar*, event : QShowEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QScrollBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QScrollBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QScrollBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QScrollBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QScrollBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QScrollBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34679,7 +34679,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QScrollBar*, event : QDropEvent*) : Void
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QScrollBar*, event : QShowEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QScrollBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QScrollBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QScrollBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QScrollBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QScrollBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QScrollBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34784,7 +34784,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QSizeGrip*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSizeGrip*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QSizeGrip*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSizeGrip*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSizeGrip*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSizeGrip*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSizeGrip*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSizeGrip*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34830,7 +34830,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QSizeGrip*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSizeGrip*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QSizeGrip*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSizeGrip*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSizeGrip*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSizeGrip*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSizeGrip*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSizeGrip*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34911,7 +34911,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -34965,7 +34965,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35045,7 +35045,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X(_self_ : QDoubleSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QDoubleSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QDoubleSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDoubleSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QDoubleSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QDoubleSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QDoubleSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QDoubleSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35099,7 +35099,7 @@ module Qt
     fun bg_QWidget_dragLeaveEvent_SUPER_QDragLeaveEvent_X(_self_ : QDoubleSpinBox*, event : QDragLeaveEvent*) : Void
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QDoubleSpinBox*, event : QDropEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QDoubleSpinBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDoubleSpinBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QDoubleSpinBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QDoubleSpinBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QDoubleSpinBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QDoubleSpinBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35166,7 +35166,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QSplashScreen*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplashScreen*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QSplashScreen*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplashScreen*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplashScreen*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSplashScreen*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSplashScreen*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSplashScreen*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35214,7 +35214,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QSplashScreen*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplashScreen*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QSplashScreen*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplashScreen*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplashScreen*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSplashScreen*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSplashScreen*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSplashScreen*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35300,7 +35300,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QSplitter*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QSplitter*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplitter*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplitter*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplitter*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSplitter*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSplitter*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSplitter*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35349,7 +35349,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QSplitter*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QSplitter*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplitter*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplitter*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplitter*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSplitter*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSplitter*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSplitter*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35408,7 +35408,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QSplitterHandle*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplitterHandle*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QSplitterHandle*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplitterHandle*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QSplitterHandle*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QSplitterHandle*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QSplitterHandle*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QSplitterHandle*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35454,7 +35454,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QSplitterHandle*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QSplitterHandle*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QSplitterHandle*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplitterHandle*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QSplitterHandle*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QSplitterHandle*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QSplitterHandle*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QSplitterHandle*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35491,7 +35491,7 @@ module Qt
     fun bg_QStackedLayout_takeAt_int(_self_ : QStackedLayout*, index : Int32) : QLayoutItem*
     fun bg_QStackedLayout_setGeometry_const_QRect_R(_self_ : QStackedLayout*, unnamed_arg_0 : QRect) : Void
     fun bg_QStackedLayout_hasHeightForWidth_(_self_ : QStackedLayout*) : Bool
-    fun bg_QStackedLayout_heightForWidth_int(_self_ : QStackedLayout*, width : Int32) : Int32
+    fun bg_QStackedLayout_heightForWidth_int(_self_ : QStackedLayout*, unnamed_arg_0 : Int32) : Int32
     fun bg_QStackedLayout_widgetRemoved_int(_self_ : QStackedLayout*, index : Int32) : Void
     fun bg_QStackedLayout_currentChanged_int(_self_ : QStackedLayout*, index : Int32) : Void
     fun bg_QStackedLayout_widgetAdded_int(_self_ : QStackedLayout*, index : Int32) : Void
@@ -35530,7 +35530,7 @@ module Qt
     fun bg_QStackedLayout_takeAt_SUPER_int(_self_ : QStackedLayout*, index : Int32) : QLayoutItem*
     fun bg_QStackedLayout_setGeometry_SUPER_const_QRect_R(_self_ : QStackedLayout*, unnamed_arg_0 : QRect) : Void
     fun bg_QStackedLayout_hasHeightForWidth_SUPER_(_self_ : QStackedLayout*) : Bool
-    fun bg_QStackedLayout_heightForWidth_SUPER_int(_self_ : QStackedLayout*, width : Int32) : Int32
+    fun bg_QStackedLayout_heightForWidth_SUPER_int(_self_ : QStackedLayout*, unnamed_arg_0 : Int32) : Int32
     fun bg_QLayout_spacing_SUPER_(_self_ : QStackedLayout*) : Int32
     fun bg_QLayout_setSpacing_SUPER_int(_self_ : QStackedLayout*, unnamed_arg_0 : Int32) : Void
     fun bg_QLayout_invalidate_SUPER_(_self_ : QStackedLayout*) : Void
@@ -35606,7 +35606,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QStackedWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QStackedWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QStackedWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QStackedWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QStackedWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QStackedWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QStackedWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QStackedWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35656,7 +35656,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QStackedWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QStackedWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QStackedWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QStackedWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QStackedWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QStackedWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QStackedWidget*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QStackedWidget*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35723,7 +35723,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QStatusBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QStatusBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QStatusBar*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QStatusBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QStatusBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QStatusBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QStatusBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QStatusBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -35770,7 +35770,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QStatusBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QStatusBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QStatusBar*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QStatusBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QStatusBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QStatusBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QStatusBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QStatusBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -36016,7 +36016,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QTableView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTableView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTableView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTableView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTableView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTableView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTableView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTableView*, event : QChildEvent*) : Void
@@ -36106,7 +36106,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QTableView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTableView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTableView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTableView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTableView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTableView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTableView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTableView*, event : QChildEvent*) : Void
@@ -36341,7 +36341,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QTableWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTableWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTableWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTableWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTableWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTableWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTableWidget*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTableWidget*, event : QChildEvent*) : Void
@@ -36449,7 +36449,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QTableWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTableWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTableWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTableWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTableWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTableWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTableWidget*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTableWidget*, event : QChildEvent*) : Void
@@ -36540,7 +36540,7 @@ module Qt
     fun bg_QWidget_actionEvent_QActionEvent_X(_self_ : QTextBrowser*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTextBrowser*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTextBrowser*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTextBrowser*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTextBrowser*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTextBrowser*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTextBrowser*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTextBrowser*, event : QChildEvent*) : Void
@@ -36607,7 +36607,7 @@ module Qt
     fun bg_QWidget_actionEvent_SUPER_QActionEvent_X(_self_ : QTextBrowser*, event : QActionEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTextBrowser*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTextBrowser*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTextBrowser*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTextBrowser*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTextBrowser*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTextBrowser*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTextBrowser*, event : QChildEvent*) : Void
@@ -36699,7 +36699,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QToolBar*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QToolBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QToolBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QToolBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QToolBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -36754,7 +36754,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QToolBar*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QToolBar*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolBar*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolBar*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolBar*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QToolBar*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QToolBar*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QToolBar*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -36833,7 +36833,7 @@ module Qt
     fun bg_QWidget_dropEvent_QDropEvent_X(_self_ : QToolBox*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QToolBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QToolBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QToolBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QToolBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -36883,7 +36883,7 @@ module Qt
     fun bg_QWidget_dropEvent_SUPER_QDropEvent_X(_self_ : QToolBox*, event : QDropEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QToolBox*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolBox*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolBox*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolBox*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QToolBox*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QToolBox*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QToolBox*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -36956,7 +36956,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QToolButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QToolButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QToolButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QToolButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QToolButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QToolButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -37007,7 +37007,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QToolButton*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QToolButton*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QToolButton*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolButton*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QToolButton*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QToolButton*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QToolButton*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QToolButton*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -37184,7 +37184,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QTreeView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTreeView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTreeView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTreeView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTreeView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTreeView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTreeView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTreeView*, event : QChildEvent*) : Void
@@ -37278,7 +37278,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QTreeView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTreeView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTreeView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTreeView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTreeView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTreeView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTreeView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTreeView*, event : QChildEvent*) : Void
@@ -37520,7 +37520,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QTreeWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QTreeWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QTreeWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTreeWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QTreeWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QTreeWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QTreeWidget*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QTreeWidget*, event : QChildEvent*) : Void
@@ -37625,7 +37625,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QTreeWidget*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QTreeWidget*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QTreeWidget*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTreeWidget*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QTreeWidget*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QTreeWidget*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QTreeWidget*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QTreeWidget*, event : QChildEvent*) : Void
@@ -37734,7 +37734,7 @@ module Qt
     fun bg_QWidget_showEvent_QShowEvent_X(_self_ : QUndoView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QUndoView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QUndoView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QUndoView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QUndoView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QUndoView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QUndoView*) : QPainter*
     fun bg_QObject_childEvent_QChildEvent_X(_self_ : QUndoView*, event : QChildEvent*) : Void
@@ -37824,7 +37824,7 @@ module Qt
     fun bg_QWidget_showEvent_SUPER_QShowEvent_X(_self_ : QUndoView*, event : QShowEvent*) : Void
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QUndoView*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QUndoView*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QUndoView*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QUndoView*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QUndoView*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QUndoView*) : QPainter*
     fun bg_QObject_childEvent_SUPER_QChildEvent_X(_self_ : QUndoView*, event : QChildEvent*) : Void
@@ -37964,7 +37964,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QWizard*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QWizard*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QWizard*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWizard*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWizard*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QWizard*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QWizard*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QWizard*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -38024,7 +38024,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QWizard*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QWizard*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QWizard*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWizard*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWizard*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QWizard*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QWizard*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QWizard*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -38101,7 +38101,7 @@ module Qt
     fun bg_QWidget_hideEvent_QHideEvent_X(_self_ : QWizardPage*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(_self_ : QWizardPage*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_QEvent_X(_self_ : QWizardPage*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWizardPage*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(_self_ : QWizardPage*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_QPainter_X(_self_ : QWizardPage*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_(_self_ : QWizardPage*) : QPainter*
     fun bg_QWidget_inputMethodEvent_QInputMethodEvent_X(_self_ : QWizardPage*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -38153,7 +38153,7 @@ module Qt
     fun bg_QWidget_hideEvent_SUPER_QHideEvent_X(_self_ : QWizardPage*, event : QHideEvent*) : Void
     fun bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(_self_ : QWizardPage*, event_type : CrystalString, message : Void*, result : Int64*) : Bool
     fun bg_QWidget_changeEvent_SUPER_QEvent_X(_self_ : QWizardPage*, unnamed_arg_0 : QEvent*) : Void
-    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWizardPage*, unnamed_arg_0 : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
+    fun bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(_self_ : QWizardPage*, metric : ::Qt::PaintDevice::PaintDeviceMetric) : Int32
     fun bg_QWidget_initPainter_SUPER_QPainter_X(_self_ : QWizardPage*, painter : QPainter*) : Void
     fun bg_QWidget_sharedPainter_SUPER_(_self_ : QWizardPage*) : QPainter*
     fun bg_QWidget_inputMethodEvent_SUPER_QInputMethodEvent_X(_self_ : QWizardPage*, unnamed_arg_0 : QInputMethodEvent*) : Void
@@ -39160,8 +39160,7 @@ module Qt
     end
     
     def device=(unnamed_arg_0 : IODevice) : Void
-      BindgenHelper.keep_alive(unnamed_arg_0)
-    Binding.bg_QDataStream_setDevice_QIODevice_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QDataStream_setDevice_QIODevice_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def at_end() : Bool
@@ -40245,6 +40244,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QObject__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -40361,8 +40361,13 @@ module Qt
       Container_QList_QObject_X_.new(unwrap: Binding.bg_QObject_children_(self))
     end
     
-    def parent=(parent : Object) : Void
+    def parent=(parent : Object?) : Void
       Binding.bg_QObject_setParent_QObject_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def install_event_filter(filter_obj : Object) : Void
@@ -40962,6 +40967,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -41102,6 +41108,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractAnimationPrivate*, parent : Object? = nil)
       result = Binding.bg_QAbstractAnimation__CONSTRUCT_QAbstractAnimationPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -41309,6 +41316,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAnimationDriver__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -41408,6 +41416,7 @@ module Qt
     protected def initialize(dd : Binding::QAnimationDriverPrivate*, parent : Object? = nil)
       result = Binding.bg_QAnimationDriver__CONSTRUCT_QAnimationDriverPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -41749,6 +41758,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QEventLoop__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -41953,6 +41963,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractEventDispatcher__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -42093,6 +42104,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QAbstractEventDispatcherPrivate*, parent : Object)
       result = Binding.bg_QAbstractEventDispatcher__CONSTRUCT_QAbstractEventDispatcherPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -42895,6 +42907,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractItemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -43295,6 +43308,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractItemModelPrivate*, parent : Object? = nil)
       result = Binding.bg_QAbstractItemModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -43854,6 +43868,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractTableModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -44021,6 +44036,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractItemModelPrivate*, parent : Object)
       result = Binding.bg_QAbstractTableModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -44549,6 +44565,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractListModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -44716,6 +44733,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractItemModelPrivate*, parent : Object)
       result = Binding.bg_QAbstractListModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -45247,6 +45265,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -45523,6 +45542,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QAbstractProxyModelPrivate*, parent : Object)
       result = Binding.bg_QAbstractProxyModel__CONSTRUCT_QAbstractProxyModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -45998,6 +46018,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -46091,6 +46112,7 @@ module Qt
     protected def initialize(dd : Binding::QAnimationGroupPrivate*, parent : Object)
       result = Binding.bg_QAnimationGroup__CONSTRUCT_QAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -47978,6 +48000,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QIODevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -48263,6 +48286,7 @@ module Qt
     protected def initialize(dd : Binding::QIODevicePrivate*, parent : Object? = nil)
       result = Binding.bg_QIODevice__CONSTRUCT_QIODevicePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -48577,6 +48601,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QBuffer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -54255,8 +54280,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QCborStreamReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QCborStreamReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -54507,8 +54531,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QCborStreamWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QCborStreamWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -54644,6 +54667,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTimer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -54885,6 +54909,7 @@ module Qt
     def initialize(nsec : ::Time::Span, parent : Object? = nil)
       result = Binding.bg_QChronoTimer__CONSTRUCT_std__chrono__nanoseconds_QObject_X(Qt::Converter::TimeSpanNanoseconds.wrap(nsec), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -54936,6 +54961,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QChronoTimer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -55519,6 +55545,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QConcatenateTablesProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -56377,6 +56404,7 @@ module Qt
     protected def initialize(parent : Object)
       result = Binding.bg_QFileDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -56470,6 +56498,7 @@ module Qt
     protected def initialize(dd : Binding::QFileDevicePrivate*, parent : Object? = nil)
       result = Binding.bg_QFileDevice__CONSTRUCT_QFileDevicePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -57049,6 +57078,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -57142,6 +57172,7 @@ module Qt
     def initialize(name : String, parent : Object)
       result = Binding.bg_QFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -57363,6 +57394,7 @@ module Qt
     protected def initialize(dd : Binding::QFilePrivate*, parent : Object? = nil)
       result = Binding.bg_QFile__CONSTRUCT_QFilePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -59038,6 +59070,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QFileSelector__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -59211,6 +59244,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QFileSystemWatcher__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -59262,6 +59296,7 @@ module Qt
     def initialize(paths : Enumerable(String), parent : Object? = nil)
       result = Binding.bg_QFileSystemWatcher__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, paths).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -59467,6 +59502,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QThread__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     end
     
     def priority=(priority : Thread::Priority) : Void
@@ -59589,6 +59625,7 @@ module Qt
     protected def initialize(dd : Binding::QThreadPrivate*, parent : Object? = nil)
       result = Binding.bg_QThread__CONSTRUCT_QThreadPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     end
     
     def self.static_meta_object() : MetaObject
@@ -59706,6 +59743,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QThreadPool__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -59951,6 +59989,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -60225,6 +60264,7 @@ module Qt
     protected def initialize(dd : Binding::QIdentityProxyModelPrivate*, parent : Object)
       result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QIdentityProxyModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -60931,6 +60971,7 @@ module Qt
     def initialize(model : AbstractItemModel, parent : Object)
       result = Binding.bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -62494,6 +62535,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QLibrary__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -62545,6 +62587,7 @@ module Qt
     def initialize(file_name : String, parent : Object? = nil)
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(file_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -62596,6 +62639,7 @@ module Qt
     def initialize(file_name : String, ver_num : Int32, parent : Object? = nil)
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_int_QObject_X(Qt::Converter::QString.wrap(file_name), ver_num, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -62647,6 +62691,7 @@ module Qt
     def initialize(file_name : String, version : String, parent : Object? = nil)
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_const_QString_R_QObject_X(Qt::Converter::QString.wrap(file_name), Qt::Converter::QString.wrap(version), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -65583,6 +65628,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -65646,6 +65692,7 @@ module Qt
     protected def initialize(dd : Binding::QParallelAnimationGroupPrivate*, parent : Object)
       result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QParallelAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -65835,6 +65882,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QPauseAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -65894,6 +65942,7 @@ module Qt
     def initialize(msecs : Int32, parent : Object? = nil)
       result = Binding.bg_QPauseAnimation__CONSTRUCT_int_QObject_X(msecs, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -66185,6 +66234,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QProcess__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -66802,6 +66852,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QVariantAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -66921,6 +66972,7 @@ module Qt
     protected def initialize(dd : Binding::QVariantAnimationPrivate*, parent : Object? = nil)
       result = Binding.bg_QVariantAnimation__CONSTRUCT_QVariantAnimationPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -67135,6 +67187,7 @@ module Qt
       BindgenHelper.keep_alive(parent)
     result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -67199,6 +67252,7 @@ module Qt
       BindgenHelper.keep_alive(target)
     result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X((target.try(&.to_unsafe) || Pointer(Binding::QObject).null), Qt::Converter::QByteArray.wrap(property_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -68941,6 +68995,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSaveFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -69034,6 +69089,7 @@ module Qt
     def initialize(name : String, parent : Object? = nil)
       result = Binding.bg_QSaveFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -69493,6 +69549,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -69572,6 +69629,7 @@ module Qt
     protected def initialize(dd : Binding::QSequentialAnimationGroupPrivate*, parent : Object)
       result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QSequentialAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -70071,6 +70129,7 @@ module Qt
     def initialize(file_name : String, format : Settings::Format, parent : Object? = nil)
       result = Binding.bg_QSettings__CONSTRUCT_const_QString_R_QSettings__Format_QObject_X(Qt::Converter::QString.wrap(file_name), format, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70122,6 +70181,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSettings__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70173,6 +70233,7 @@ module Qt
     def initialize(scope : Settings::Scope, parent : Object? = nil)
       result = Binding.bg_QSettings__CONSTRUCT_QSettings__Scope_QObject_X(scope, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70582,6 +70643,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSharedMemory__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70633,6 +70695,7 @@ module Qt
     def initialize(key : NativeIpcKey, parent : Object? = nil)
       result = Binding.bg_QSharedMemory__CONSTRUCT_const_QNativeIpcKey_R_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70684,6 +70747,7 @@ module Qt
     def initialize(key : String, parent : Object? = nil)
       result = Binding.bg_QSharedMemory__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(key), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -70944,6 +71008,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSignalMapper__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -71161,6 +71226,7 @@ module Qt
     def initialize(unnamed_arg_0 : SocketNotifier::Type, parent : Object? = nil)
       result = Binding.bg_QSocketNotifier__CONSTRUCT_QSocketNotifier__Type_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -71212,6 +71278,7 @@ module Qt
     def initialize(socket : Int64, unnamed_arg_1 : SocketNotifier::Type, parent : Object? = nil)
       result = Binding.bg_QSocketNotifier__CONSTRUCT_qintptr_QSocketNotifier__Type_QObject_X(socket, unnamed_arg_1, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -71398,6 +71465,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSortFilterProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -72460,6 +72528,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QStringListModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -72603,6 +72672,7 @@ module Qt
     def initialize(strings : Enumerable(String), parent : Object? = nil)
       result = Binding.bg_QStringListModel__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, strings).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -73523,6 +73593,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QTemporaryFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -73616,6 +73687,7 @@ module Qt
     def initialize(template_name : String, parent : Object)
       result = Binding.bg_QTemporaryFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(template_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -74117,6 +74189,7 @@ module Qt
     def initialize(duration : Int32 = 1000, parent : Object? = nil)
       result = Binding.bg_QTimeLine__CONSTRUCT_int_QObject_X(duration, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -74409,6 +74482,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTranslator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -74632,6 +74706,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTransposeProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -74890,6 +74965,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QTransposeProxyModelPrivate*, parent : Object)
       result = Binding.bg_QTransposeProxyModel__CONSTRUCT_QTransposeProxyModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -75822,8 +75898,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QXmlStreamReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QXmlStreamReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -76051,8 +76126,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QXmlStreamWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QXmlStreamWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -81004,6 +81078,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QInputDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -81213,6 +81288,7 @@ module Qt
     protected def initialize(d : Binding::QInputDevicePrivate*, parent : Object)
       result = Binding.bg_QInputDevice__CONSTRUCT_QInputDevicePrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -81479,6 +81555,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QPointingDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -81715,6 +81792,7 @@ module Qt
     protected def initialize(d : Binding::QPointingDevicePrivate*, parent : Object)
       result = Binding.bg_QPointingDevice__CONSTRUCT_QPointingDevicePrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -90283,6 +90361,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTextDocument__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -90340,6 +90419,7 @@ module Qt
     def initialize(text : String, parent : Object? = nil)
       result = Binding.bg_QTextDocument__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -95091,6 +95171,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAction__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -95142,6 +95223,7 @@ module Qt
     def initialize(text : String, parent : Object? = nil)
       result = Binding.bg_QAction__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -95193,6 +95275,7 @@ module Qt
     def initialize(icon : Icon, text : String, parent : Object? = nil)
       result = Binding.bg_QAction__CONSTRUCT_const_QIcon_R_const_QString_R_QObject_X(icon, Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -95429,6 +95512,7 @@ module Qt
     protected def initialize(dd : Binding::QActionPrivate*, parent : Object)
       result = Binding.bg_QAction__CONSTRUCT_QActionPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -95684,6 +95768,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QActionGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -95805,6 +95890,7 @@ module Qt
     protected def initialize(dd : Binding::QActionGroupPrivate*, parent : Object)
       result = Binding.bg_QActionGroup__CONSTRUCT_QActionGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -96873,6 +96959,7 @@ module Qt
     def initialize(parent : Window)
       result = Binding.bg_QWindow__CONSTRUCT_QWindow_X((parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -97001,8 +97088,13 @@ module Qt
       Binding.bg_QWindow_parent_QWindow__AncestorMode(self, mode).try {|ptr| Window.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent=(parent : Window) : Void
+    def parent=(parent : Window?) : Void
       Binding.bg_QWindow_setParent_QWindow_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def top_level?() : Bool
@@ -97592,6 +97684,7 @@ module Qt
     protected def initialize(dd : Binding::QWindowPrivate*, parent : Window)
       result = Binding.bg_QWindow__CONSTRUCT_QWindowPrivate_R_QWindow_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -98807,6 +98900,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QFileSystemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -99179,6 +99273,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QFileSystemModelPrivate*, parent : Object? = nil)
       result = Binding.bg_QFileSystemModel__CONSTRUCT_QFileSystemModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -100356,8 +100451,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QImageReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QImageReader_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -100588,8 +100682,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QImageWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QImageWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -101044,6 +101137,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QMovie__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -101301,8 +101395,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QMovie_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QMovie_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -101591,6 +101684,7 @@ module Qt
     def initialize(screen : Screen? = nil, parent : Object? = nil)
       result = Binding.bg_QOffscreenSurface__CONSTRUCT_QScreen_X_QObject_X((screen.try(&.to_unsafe) || Pointer(Binding::QScreen).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -102704,6 +102798,7 @@ module Qt
     protected def initialize(dd : Binding::QPaintDeviceWindowPrivate*, parent : Window)
       result = Binding.bg_QPaintDeviceWindow__CONSTRUCT_QPaintDeviceWindowPrivate_R_QWindow_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -104635,7 +104730,7 @@ module Qt
       bg_QPdfWriter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QPdfWriter_newPage_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_newPage_") %} Proc(Bool).new{ self.new_page() } {% else %} nil {% end %}),
       bg_QPdfWriter_paintEngine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_paintEngine_") %} Proc(Binding::QPaintEngine*).new{ self.paint_engine() } {% else %} nil {% end %}),
-      bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|id| self.metric(id) } {% else %} nil {% end %}),
+      bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -104708,7 +104803,7 @@ module Qt
       bg_QPdfWriter_qt_metacall_QMetaObject__Call_int_void_XX: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_qt_metacall_QMetaObject__Call_int_void_XX") %} Proc(::Qt::MetaObjectCall, Int32, Void**, Int32).new{|unnamed_arg_0, unnamed_arg_1, unnamed_arg_2| self.qt_metacall(unnamed_arg_0, unnamed_arg_1, unnamed_arg_2) } {% else %} nil {% end %}),
       bg_QPdfWriter_newPage_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_newPage_") %} Proc(Bool).new{ self.new_page() } {% else %} nil {% end %}),
       bg_QPdfWriter_paintEngine_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_paintEngine_") %} Proc(Binding::QPaintEngine*).new{ self.paint_engine() } {% else %} nil {% end %}),
-      bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|id| self.metric(id) } {% else %} nil {% end %}),
+      bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QObject_event_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_event_QEvent_X") %} Proc(Binding::QEvent*, Bool).new{|event| self.event(Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_eventFilter_QObject_X_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_eventFilter_QObject_X_QEvent_X") %} Proc(Binding::QObject*, Binding::QEvent*, Bool).new{|watched, event| self.event_filter(Object.new(unwrap: watched), Event.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -104817,8 +104912,8 @@ module Qt
       Binding.bg_QPdfWriter_paintEngine_(self)
     end
     
-    protected def metric(id : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(self, id)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     def self.static_meta_object() : MetaObject
@@ -104861,8 +104956,8 @@ module Qt
         Binding.bg_QPdfWriter_paintEngine_SUPER_(@myself)
       end
       
-      protected def metric(id : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, id)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       def event(event : Event) : Bool
@@ -105732,6 +105827,7 @@ module Qt
     def initialize(parent : Window? = nil)
       result = Binding.bg_QRasterWindow__CONSTRUCT_QWindow_X((parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -106135,6 +106231,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QShortcut__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106186,6 +106283,7 @@ module Qt
     def initialize(key : KeySequence, parent : Object)
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106237,6 +106335,7 @@ module Qt
     def initialize(key : KeySequence, parent : Object, member : UInt8*)
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106288,6 +106387,7 @@ module Qt
     def initialize(key : KeySequence, parent : Object, member : UInt8*, ambiguous_member : UInt8*)
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, ambiguous_member)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106339,6 +106439,7 @@ module Qt
     def initialize(key : KeySequence::StandardKey, parent : Object)
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106390,6 +106491,7 @@ module Qt
     def initialize(key : KeySequence::StandardKey, parent : Object, member : UInt8*)
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -106441,6 +106543,7 @@ module Qt
     def initialize(key : KeySequence::StandardKey, parent : Object, member : UInt8*, ambiguous_member : UInt8*)
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, ambiguous_member)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -107349,6 +107452,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QStandardItemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -107492,6 +107596,7 @@ module Qt
     def initialize(rows : Int32, columns : Int32, parent : Object? = nil)
       result = Binding.bg_QStandardItemModel__CONSTRUCT_int_int_QObject_X(rows, columns, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -107926,6 +108031,7 @@ module Qt
     protected def initialize(dd : Binding::QStandardItemModelPrivate*, parent : Object? = nil)
       result = Binding.bg_QStandardItemModel__CONSTRUCT_QStandardItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -109943,6 +110049,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QSyntaxHighlighter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -109996,6 +110103,7 @@ module Qt
     def initialize(parent : TextDocument)
       result = Binding.bg_QSyntaxHighlighter__CONSTRUCT_QTextDocument_X((parent.try(&.to_unsafe) || Pointer(Binding::QTextDocument).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -110293,8 +110401,7 @@ module Qt
     end
     
     def device=(device : IODevice) : Void
-      BindgenHelper.keep_alive(device)
-    Binding.bg_QTextDocumentWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
+      Binding.bg_QTextDocumentWriter_setDevice_QIODevice_X(self, (device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null))
     end
     
     def device() : IODevice?
@@ -110892,6 +110999,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QUndoGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -111323,6 +111431,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QUndoStack__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -111633,6 +111742,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     end
     
     def locale=(locale : Locale) : Void
@@ -111650,6 +111760,7 @@ module Qt
     protected def initialize(d : Binding::QValidatorPrivate*, parent : Object)
       result = Binding.bg_QValidator__CONSTRUCT_QValidatorPrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     end
     
     def self.static_meta_object() : MetaObject
@@ -111731,6 +111842,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QIntValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -111782,6 +111894,7 @@ module Qt
     def initialize(bottom : Int32, top : Int32, parent : Object? = nil)
       result = Binding.bg_QIntValidator__CONSTRUCT_int_int_QObject_X(bottom, top, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -111971,6 +112084,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QDoubleValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112022,6 +112136,7 @@ module Qt
     def initialize(bottom : Float64, top : Float64, decimals : Int32, parent : Object? = nil)
       result = Binding.bg_QDoubleValidator__CONSTRUCT_double_double_int_QObject_X(bottom, top, decimals, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112251,6 +112366,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QRegularExpressionValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112302,6 +112418,7 @@ module Qt
     def initialize(re : RegularExpression, parent : Object? = nil)
       result = Binding.bg_QRegularExpressionValidator__CONSTRUCT_const_QRegularExpression_R_QObject_X(re, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112644,6 +112761,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112753,7 +112871,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -112773,6 +112891,7 @@ module Qt
     def initialize(parent : Widget?, f : WindowFlags)
       result = Binding.bg_QWidget__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -112882,7 +113001,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -113791,12 +113910,22 @@ module Qt
       Binding.bg_QWidget_updateGeometry_(self)
     end
     
-    def parent=(parent : Widget) : Void
+    def parent=(parent : Widget?) : Void
       Binding.bg_QWidget_setParent_QWidget_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
-    def set_parent(parent : Widget, f : WindowFlags) : Void
+    def set_parent(parent : Widget?, f : WindowFlags) : Void
       Binding.bg_QWidget_setParent_QWidget_X_Qt__WindowFlags(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def scroll(dx : Int32, dy : Int32) : Void
@@ -114113,8 +114242,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -114168,6 +114297,7 @@ module Qt
     protected def initialize(d : Binding::QWidgetPrivate*, parent : Widget, f : WindowFlags)
       result = Binding.bg_QWidget__CONSTRUCT_QWidgetPrivate_R_QWidget_X_Qt__WindowFlags(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -114277,7 +114407,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -114567,8 +114697,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -114732,6 +114862,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QAbstractButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -114848,7 +114979,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -115040,6 +115171,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractButtonPrivate*, parent : Widget? = nil)
       result = Binding.bg_QAbstractButton__CONSTRUCT_QAbstractButtonPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -115156,7 +115288,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -115272,8 +115404,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -115480,8 +115612,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -115569,6 +115701,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QAbstractSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -115688,7 +115821,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -115923,6 +116056,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractSpinBoxPrivate*, parent : Widget? = nil)
       result = Binding.bg_QAbstractSpinBox__CONSTRUCT_QAbstractSpinBoxPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -116042,7 +116176,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -116149,8 +116283,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -116365,8 +116499,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -116442,6 +116576,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QAbstractSlider__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -116554,7 +116689,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -116725,6 +116860,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractSliderPrivate*, parent : Widget? = nil)
       result = Binding.bg_QAbstractSlider__CONSTRUCT_QAbstractSliderPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -116837,7 +116973,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -116993,8 +117129,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -117197,8 +117333,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -117294,6 +117430,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QSlider__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -117408,7 +117545,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -117427,6 +117564,7 @@ module Qt
     def initialize(orientation : Orientation, parent : Widget? = nil)
       result = Binding.bg_QSlider__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -117541,7 +117679,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -117733,8 +117871,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -117941,8 +118079,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -119099,6 +119237,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTabBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -119221,7 +119360,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -119665,8 +119804,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -119889,8 +120028,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -119982,6 +120121,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTabWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -120097,7 +120237,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -120486,8 +120626,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -120698,8 +120838,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -120902,7 +121042,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -121095,8 +121235,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -121299,8 +121439,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -121376,6 +121516,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFrame__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -121487,7 +121628,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -121507,6 +121648,7 @@ module Qt
     def initialize(parent : Widget?, f : WindowFlags)
       result = Binding.bg_QFrame__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -121618,7 +121760,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -121710,6 +121852,7 @@ module Qt
     protected def initialize(dd : Binding::QFramePrivate*, parent : Widget? = nil)
       result = Binding.bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -121821,7 +121964,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -121841,6 +121984,7 @@ module Qt
     protected def initialize(dd : Binding::QFramePrivate*, parent : Widget?, f : WindowFlags)
       result = Binding.bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X_Qt__WindowFlags(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -121952,7 +122096,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -122111,8 +122255,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -122315,8 +122459,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -124581,6 +124725,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QAbstractItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -124930,6 +125075,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QAbstractScrollArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -125050,7 +125196,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -125154,6 +125300,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractScrollAreaPrivate*, parent : Widget? = nil)
       result = Binding.bg_QAbstractScrollArea__CONSTRUCT_QAbstractScrollAreaPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -125274,7 +125421,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -125459,8 +125606,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -125679,8 +125826,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -125752,6 +125899,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QAbstractItemView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -125956,7 +126104,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -126372,6 +126520,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QAbstractItemViewPrivate*, parent : Widget? = nil)
       result = Binding.bg_QAbstractItemView__CONSTRUCT_QAbstractItemViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -126576,7 +126725,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -126834,8 +126983,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -127174,8 +127323,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -128571,6 +128720,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -129208,6 +129358,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QGridLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -129725,6 +129876,7 @@ module Qt
     def initialize(unnamed_arg_0 : BoxLayout::Direction, parent : Widget? = nil)
       result = Binding.bg_QBoxLayout__CONSTRUCT_QBoxLayout__Direction_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -130301,6 +130453,7 @@ module Qt
     def initialize(parent : Widget)
       result = Binding.bg_QHBoxLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -130780,6 +130933,7 @@ module Qt
     def initialize(parent : Widget)
       result = Binding.bg_QVBoxLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -131162,6 +131316,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QButtonGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -131420,6 +131575,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QCalendarWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -131532,7 +131688,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -131906,8 +132062,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -132110,8 +132266,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -132199,6 +132355,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QCheckBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -132317,7 +132474,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -132336,6 +132493,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QCheckBox__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -132454,7 +132612,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -132650,8 +132808,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -132866,8 +133024,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -132943,6 +133101,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -133063,7 +133222,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -133082,6 +133241,7 @@ module Qt
     def initialize(parent : Widget?, f : WindowFlags)
       result = Binding.bg_QDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -133202,7 +133362,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -133285,6 +133445,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QDialogPrivate*, parent : Widget)
       result = Binding.bg_QDialog__CONSTRUCT_QDialogPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -133405,7 +133566,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -133424,6 +133585,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QDialogPrivate*, parent : Widget, f : WindowFlags)
       result = Binding.bg_QDialog__CONSTRUCT_QDialogPrivate_R_QWidget_X_Qt__WindowFlags(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -133544,7 +133706,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -133700,8 +133862,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -133920,8 +134082,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -134005,6 +134167,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QColorDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -134125,7 +134288,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -134144,6 +134307,7 @@ module Qt
     def initialize(initial : Color, parent : Widget? = nil)
       result = Binding.bg_QColorDialog__CONSTRUCT_const_QColor_R_QWidget_X(initial, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -134264,7 +134428,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -134533,8 +134697,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -134753,8 +134917,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -134838,6 +135002,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QColumnView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -135044,7 +135209,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -135126,6 +135291,7 @@ module Qt
     protected def initialize(dd : Binding::QColumnViewPrivate*, parent : Widget? = nil)
       result = Binding.bg_QColumnView__CONSTRUCT_QColumnViewPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -135332,7 +135498,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -135660,8 +135826,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -136040,8 +136206,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -136101,6 +136267,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QComboBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -136220,7 +136387,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_focusNextPrevChild_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_focusNextPrevChild_bool") %} Proc(Bool, Bool).new{|next_| self.focus_next_prev_child(next_) } {% else %} nil {% end %}),
@@ -136755,7 +136922,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_focusNextPrevChild_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_focusNextPrevChild_bool") %} Proc(Bool, Bool).new{|next_| self.focus_next_prev_child(next_) } {% else %} nil {% end %}),
@@ -136864,8 +137031,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -137080,8 +137247,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -137177,6 +137344,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QPushButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -137295,7 +137463,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -137314,6 +137482,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QPushButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -137432,7 +137601,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -137451,6 +137620,7 @@ module Qt
     def initialize(icon : Icon, text : String, parent : Widget? = nil)
       result = Binding.bg_QPushButton__CONSTRUCT_const_QIcon_R_const_QString_R_QWidget_X(icon, Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -137569,7 +137739,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -137665,6 +137835,7 @@ module Qt
     protected def initialize(dd : Binding::QPushButtonPrivate*, parent : Widget? = nil)
       result = Binding.bg_QPushButton__CONSTRUCT_QPushButtonPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -137783,7 +137954,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -137919,8 +138090,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -138135,8 +138306,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -138208,6 +138379,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -138326,7 +138498,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -138345,6 +138517,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -138463,7 +138636,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -138482,6 +138655,7 @@ module Qt
     def initialize(text : String, description : String, parent : Widget? = nil)
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_const_QString_R_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), Qt::Converter::QString.wrap(description), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -138600,7 +138774,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -138784,8 +138958,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -139000,8 +139174,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -139554,6 +139728,7 @@ module Qt
       BindgenHelper.keep_alive(parent)
     result = Binding.bg_QCompleter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -139610,6 +139785,7 @@ module Qt
       BindgenHelper.keep_alive(model)
     result = Binding.bg_QCompleter__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -139666,6 +139842,7 @@ module Qt
       BindgenHelper.keep_alive(completions)
     result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, completions).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140012,6 +140189,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QDataWidgetMapper__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140291,6 +140469,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140415,7 +140594,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -140432,6 +140611,7 @@ module Qt
     def initialize(dt : DateTime, parent : Widget? = nil)
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_const_QDateTime_R_QWidget_X(dt, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140556,7 +140736,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -140573,6 +140753,7 @@ module Qt
     def initialize(d : Date, parent : Widget? = nil)
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QDate_QWidget_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140697,7 +140878,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -140714,6 +140895,7 @@ module Qt
     def initialize(t : Time, parent : Widget? = nil)
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QTime_QWidget_X(t, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -140838,7 +141020,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -141108,6 +141290,7 @@ module Qt
     protected def initialize(val : Variant, parser_type : MetaType::Type, parent : Widget? = nil)
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_const_QVariant_R_QMetaType__Type_QWidget_X((val.to_unsafe), parser_type, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -141232,7 +141415,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -141393,8 +141576,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -141617,8 +141800,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -141694,6 +141877,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTimeEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -141818,7 +142002,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -141835,6 +142019,7 @@ module Qt
     def initialize(time : Time, parent : Widget? = nil)
       result = Binding.bg_QTimeEdit__CONSTRUCT_QTime_QWidget_X(time, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -141959,7 +142144,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -142153,8 +142338,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -142377,8 +142562,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -142446,6 +142631,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDateEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -142570,7 +142756,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -142587,6 +142773,7 @@ module Qt
     def initialize(date : Date, parent : Widget? = nil)
       result = Binding.bg_QDateEdit__CONSTRUCT_QDate_QWidget_X(date, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -142711,7 +142898,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -142905,8 +143092,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -143129,8 +143316,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -143198,6 +143385,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDial__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -143312,7 +143500,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -143508,8 +143696,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -143716,8 +143904,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -143789,6 +143977,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -143898,7 +144087,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -143918,6 +144107,7 @@ module Qt
     def initialize(orientation : Orientation, parent : Widget? = nil)
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -144027,7 +144217,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -144047,6 +144237,7 @@ module Qt
     def initialize(buttons : DialogButtonBox::StandardButtons, parent : Widget? = nil)
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_QWidget_X(buttons, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -144156,7 +144347,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -144176,6 +144367,7 @@ module Qt
     def initialize(buttons : DialogButtonBox::StandardButtons, orientation : Orientation, parent : Widget? = nil)
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_Qt__Orientation_QWidget_X(buttons, orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -144285,7 +144477,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -144586,8 +144778,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -144786,8 +144978,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -144879,6 +145071,7 @@ module Qt
     def initialize(title : String, parent : Widget? = nil)
       result = Binding.bg_QDockWidget__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -144990,7 +145183,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -145010,6 +145203,7 @@ module Qt
     def initialize(title : String, parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QDockWidget__CONSTRUCT_const_QString_R_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -145121,7 +145315,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -145141,6 +145335,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDockWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -145252,7 +145447,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -145272,6 +145467,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QDockWidget__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -145383,7 +145579,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -145641,8 +145837,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -145845,8 +146041,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -145942,6 +146138,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QErrorMessage__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -146062,7 +146259,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -146254,8 +146451,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -146474,8 +146671,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -146547,6 +146744,7 @@ module Qt
     def initialize(parent : Widget, f : WindowFlags)
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -146667,7 +146865,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -146686,6 +146884,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -146806,7 +147005,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -146825,6 +147024,7 @@ module Qt
     def initialize(parent : Widget?, caption : String)
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -146945,7 +147145,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -146964,6 +147164,7 @@ module Qt
     def initialize(parent : Widget?, caption : String, directory : String)
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(directory))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -147084,7 +147285,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -147103,6 +147304,7 @@ module Qt
     def initialize(parent : Widget?, caption : String, directory : String, filter : String)
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R_const_QString_R_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(directory), Qt::Converter::QString.wrap(filter))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -147223,7 +147425,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -147741,7 +147943,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -147953,8 +148155,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -148173,8 +148375,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -148385,6 +148587,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFocusFrame__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -148497,7 +148700,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -148670,8 +148873,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -148874,8 +149077,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -148947,6 +149150,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFontComboBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -149066,7 +149270,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_focusNextPrevChild_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_focusNextPrevChild_bool") %} Proc(Bool, Bool).new{|next_| self.focus_next_prev_child(next_) } {% else %} nil {% end %}),
@@ -149309,8 +149513,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -149525,8 +149729,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -149598,6 +149802,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFontDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -149718,7 +149923,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -149737,6 +149942,7 @@ module Qt
     def initialize(initial : Font, parent : Widget? = nil)
       result = Binding.bg_QFontDialog__CONSTRUCT_const_QFont_R_QWidget_X(initial, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -149857,7 +150063,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -150110,8 +150316,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -150330,8 +150536,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -150411,6 +150617,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QFormLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -150479,7 +150686,7 @@ module Qt
       bg_QFormLayout_sizeHint_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_sizeHint_") %} Proc(Binding::QSize*).new{ Pointer(Binding::QSize).malloc(1, self.size_hint().to_unsafe) } {% else %} nil {% end %}),
       bg_QFormLayout_invalidate_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_invalidate_") %} Proc(Void).new{ self.invalidate() } {% else %} nil {% end %}),
       bg_QFormLayout_hasHeightForWidth_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_hasHeightForWidth_") %} Proc(Bool).new{ self.has_height_for_width?() } {% else %} nil {% end %}),
-      bg_QFormLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|width| self.height_for_width(width) } {% else %} nil {% end %}),
+      bg_QFormLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|unnamed_arg_0| self.height_for_width(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QFormLayout_expandingDirections_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_expandingDirections_") %} Proc(::Qt::Orientations).new{ self.expanding_directions().to_unsafe } {% else %} nil {% end %}),
       bg_QFormLayout_count_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QFormLayout_count_") %} Proc(Int32).new{ self.count() } {% else %} nil {% end %}),
       bg_QLayout_geometry_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_geometry_") %} Proc(Binding::QRect*).new{ Pointer(Binding::QRect).malloc(1, self.geometry().to_unsafe) } {% else %} nil {% end %}),
@@ -150743,8 +150950,8 @@ module Qt
       Binding.bg_QFormLayout_hasHeightForWidth_(self)
     end
     
-    def height_for_width(width : Int32) : Int32
-      Binding.bg_QFormLayout_heightForWidth_int(self, width)
+    def height_for_width(unnamed_arg_0 : Int32) : Int32
+      Binding.bg_QFormLayout_heightForWidth_int(self, unnamed_arg_0)
     end
     
     def expanding_directions() : Orientations
@@ -150900,8 +151107,8 @@ module Qt
         Binding.bg_QFormLayout_hasHeightForWidth_SUPER_(@myself)
       end
       
-      def height_for_width(width : Int32) : Int32
-        Binding.bg_QFormLayout_heightForWidth_SUPER_int(@myself, width)
+      def height_for_width(unnamed_arg_0 : Int32) : Int32
+        Binding.bg_QFormLayout_heightForWidth_SUPER_int(@myself, unnamed_arg_0)
       end
       
       def expanding_directions() : Orientations
@@ -151044,6 +151251,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -151127,6 +151335,7 @@ module Qt
     protected def initialize(dd : Binding::QGesturePrivate*, parent : Object)
       result = Binding.bg_QGesture__CONSTRUCT_QGesturePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -151284,6 +151493,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QPanGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -151465,6 +151675,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QPinchGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -151717,6 +151928,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSwipeGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -151893,6 +152105,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTapGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -152054,6 +152267,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QTapAndHoldGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -152496,6 +152710,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -152626,8 +152841,13 @@ module Qt
       Binding.bg_QGraphicsItem_panel_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_item=(parent : GraphicsItem) : Void
+    def parent_item=(parent : GraphicsItem?) : Void
       Binding.bg_QGraphicsItem_setParentItem_QGraphicsItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def child_items() : Enumerable(GraphicsItem)
@@ -153430,6 +153650,7 @@ module Qt
     protected def initialize(dd : Binding::QGraphicsItemPrivate*, parent : GraphicsItem)
       result = Binding.bg_QGraphicsItem__CONSTRUCT_QGraphicsItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -153841,6 +154062,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsObject__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -154030,6 +154252,7 @@ module Qt
     protected def initialize(dd : Binding::QGraphicsItemPrivate*, parent : GraphicsItem)
       result = Binding.bg_QGraphicsObject__CONSTRUCT_QGraphicsItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -154398,8 +154621,13 @@ module Qt
       Binding.bg_QGraphicsObject_panel_(self).try {|ptr| GraphicsItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_item=(parent : GraphicsItem) : Void
+    def parent_item=(parent : GraphicsItem?) : Void
       Binding.bg_QGraphicsObject_setParentItem_QGraphicsItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def child_items() : Enumerable(GraphicsItem)
@@ -155260,6 +155488,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QAbstractGraphicsShapeItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -155385,6 +155614,7 @@ module Qt
     protected def initialize(dd : Binding::QAbstractGraphicsShapeItemPrivate*, parent : GraphicsItem)
       result = Binding.bg_QAbstractGraphicsShapeItem__CONSTRUCT_QAbstractGraphicsShapeItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -155766,6 +155996,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPathItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -155867,6 +156098,7 @@ module Qt
     def initialize(path : PainterPath, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPathItem__CONSTRUCT_const_QPainterPath_R_QGraphicsItem_X(path, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -156279,6 +156511,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -156380,6 +156613,7 @@ module Qt
     def initialize(rect : RectF, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_const_QRectF_R_QGraphicsItem_X(rect, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -156481,6 +156715,7 @@ module Qt
     def initialize(x : Float64, y : Float64, w : Float64, h : Float64, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x, y, w, h, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -156897,6 +157132,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -156998,6 +157234,7 @@ module Qt
     def initialize(rect : RectF, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_const_QRectF_R_QGraphicsItem_X(rect, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -157099,6 +157336,7 @@ module Qt
     def initialize(x : Float64, y : Float64, w : Float64, h : Float64, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x, y, w, h, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -157531,6 +157769,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPolygonItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -157632,6 +157871,7 @@ module Qt
     def initialize(polygon : PolygonF, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPolygonItem__CONSTRUCT_const_QPolygonF_R_QGraphicsItem_X(polygon, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -158052,6 +158292,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -158153,6 +158394,7 @@ module Qt
     def initialize(line : LineF, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_const_QLineF_R_QGraphicsItem_X(line, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -158254,6 +158496,7 @@ module Qt
     def initialize(x1 : Float64, y1 : Float64, x2 : Float64, y2 : Float64, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x1, y1, x2, y2, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -158678,6 +158921,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPixmapItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -158779,6 +159023,7 @@ module Qt
     def initialize(pixmap : Pixmap, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsPixmapItem__CONSTRUCT_const_QPixmap_R_QGraphicsItem_X(pixmap, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -159244,6 +159489,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsTextItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -159256,7 +159502,7 @@ module Qt
         {"bg_QGraphicsTextItem_boundingRect_", "bounding_rect", [] of String},
         {"bg_QGraphicsTextItem_shape_", "shape", [] of String},
         {"bg_QGraphicsTextItem_contains_const_QPointF_R", "contains", ["PointF"] of String},
-        {"bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X", "paint", ["Painter", "StyleOptionGraphicsItem", "Widget"] of String},
+        {"bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X", "paint", ["Painter", "StyleOptionGraphicsItem", "Widget?"] of String},
         {"bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X", "is_obscured_by", ["GraphicsItem"] of String},
         {"bg_QGraphicsTextItem_opaqueArea_", "opaque_area", [] of String},
         {"bg_QGraphicsTextItem_type_", "type", [] of String},
@@ -159312,7 +159558,7 @@ module Qt
       bg_QGraphicsTextItem_boundingRect_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_boundingRect_") %} Proc(Binding::QRectF*).new{ Pointer(Binding::QRectF).malloc(1, self.bounding_rect().to_unsafe) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_shape_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_shape_") %} Proc(Binding::QPainterPath*).new{ self.shape().to_unsafe } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_contains_const_QPointF_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_contains_const_QPointF_R") %} Proc(Binding::QPointF*, Bool).new{|point| self.contains(PointF.new(unwrap: point.value)) } {% else %} nil {% end %}),
-      bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X") %} Proc(Binding::QPainter*, Binding::QStyleOptionGraphicsItem*, Binding::QWidget*, Void).new{|painter, option, widget| self.paint(Painter.new(unwrap: painter), StyleOptionGraphicsItem.new(unwrap: option), Widget.new(unwrap: widget)) } {% else %} nil {% end %}),
+      bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X") %} Proc(Binding::QPainter*, Binding::QStyleOptionGraphicsItem*, Binding::QWidget*, Void).new{|painter, option, widget| self.paint(Painter.new(unwrap: painter), StyleOptionGraphicsItem.new(unwrap: option), widget.try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X") %} Proc(Binding::QGraphicsItem*, Bool).new{|item| self.is_obscured_by(GraphicsItemImpl.new(unwrap: item)) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_opaqueArea_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_opaqueArea_") %} Proc(Binding::QPainterPath*).new{ self.opaque_area().to_unsafe } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
@@ -159353,6 +159599,7 @@ module Qt
     def initialize(text : String, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsTextItem__CONSTRUCT_const_QString_R_QGraphicsItem_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -159365,7 +159612,7 @@ module Qt
         {"bg_QGraphicsTextItem_boundingRect_", "bounding_rect", [] of String},
         {"bg_QGraphicsTextItem_shape_", "shape", [] of String},
         {"bg_QGraphicsTextItem_contains_const_QPointF_R", "contains", ["PointF"] of String},
-        {"bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X", "paint", ["Painter", "StyleOptionGraphicsItem", "Widget"] of String},
+        {"bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X", "paint", ["Painter", "StyleOptionGraphicsItem", "Widget?"] of String},
         {"bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X", "is_obscured_by", ["GraphicsItem"] of String},
         {"bg_QGraphicsTextItem_opaqueArea_", "opaque_area", [] of String},
         {"bg_QGraphicsTextItem_type_", "type", [] of String},
@@ -159421,7 +159668,7 @@ module Qt
       bg_QGraphicsTextItem_boundingRect_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_boundingRect_") %} Proc(Binding::QRectF*).new{ Pointer(Binding::QRectF).malloc(1, self.bounding_rect().to_unsafe) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_shape_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_shape_") %} Proc(Binding::QPainterPath*).new{ self.shape().to_unsafe } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_contains_const_QPointF_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_contains_const_QPointF_R") %} Proc(Binding::QPointF*, Bool).new{|point| self.contains(PointF.new(unwrap: point.value)) } {% else %} nil {% end %}),
-      bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X") %} Proc(Binding::QPainter*, Binding::QStyleOptionGraphicsItem*, Binding::QWidget*, Void).new{|painter, option, widget| self.paint(Painter.new(unwrap: painter), StyleOptionGraphicsItem.new(unwrap: option), Widget.new(unwrap: widget)) } {% else %} nil {% end %}),
+      bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X") %} Proc(Binding::QPainter*, Binding::QStyleOptionGraphicsItem*, Binding::QWidget*, Void).new{|painter, option, widget| self.paint(Painter.new(unwrap: painter), StyleOptionGraphicsItem.new(unwrap: option), widget.try {|ptr| Widget.new(unwrap: ptr) unless ptr.null?}) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_isObscuredBy_const_QGraphicsItem_X") %} Proc(Binding::QGraphicsItem*, Bool).new{|item| self.is_obscured_by(GraphicsItemImpl.new(unwrap: item)) } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_opaqueArea_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_opaqueArea_") %} Proc(Binding::QPainterPath*).new{ self.opaque_area().to_unsafe } {% else %} nil {% end %}),
       bg_QGraphicsTextItem_type_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QGraphicsTextItem_type_") %} Proc(Int32).new{ self.type() } {% else %} nil {% end %}),
@@ -159503,7 +159750,7 @@ module Qt
       Binding.bg_QGraphicsTextItem_contains_const_QPointF_R(self, point)
     end
     
-    def paint(painter : Painter, option : StyleOptionGraphicsItem, widget : Widget) : Void
+    def paint(painter : Painter, option : StyleOptionGraphicsItem, widget : Widget? = nil) : Void
       Binding.bg_QGraphicsTextItem_paint_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(self, (painter.try(&.to_unsafe) || Pointer(Binding::QPainter).null), (option.try(&.to_unsafe) || Pointer(Binding::QStyleOptionGraphicsItem).null), (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
     
@@ -159701,7 +159948,7 @@ module Qt
         Binding.bg_QGraphicsTextItem_contains_SUPER_const_QPointF_R(@myself, point)
       end
       
-      def paint(painter : Painter, option : StyleOptionGraphicsItem, widget : Widget) : Void
+      def paint(painter : Painter, option : StyleOptionGraphicsItem, widget : Widget? = nil) : Void
         Binding.bg_QGraphicsTextItem_paint_SUPER_QPainter_X_const_QStyleOptionGraphicsItem_X_QWidget_X(@myself, (painter.try(&.to_unsafe) || Pointer(Binding::QPainter).null), (option.try(&.to_unsafe) || Pointer(Binding::QStyleOptionGraphicsItem).null), (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
       end
       
@@ -159878,6 +160125,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsSimpleTextItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -159979,6 +160227,7 @@ module Qt
     def initialize(text : String, parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsSimpleTextItem__CONSTRUCT_const_QString_R_QGraphicsItem_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -160399,6 +160648,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsItemGroup__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -160814,6 +161064,7 @@ module Qt
     def initialize(parent : GraphicsLayoutItem? = nil, is_layout : Bool = false)
       result = Binding.bg_QGraphicsLayoutItem__CONSTRUCT_QGraphicsLayoutItem_X_bool((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null), is_layout)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -160986,9 +161237,14 @@ module Qt
       Binding.bg_QGraphicsLayoutItem_parentLayoutItem_(self).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_layout_item=(parent : GraphicsLayoutItem) : Void
+    def parent_layout_item=(parent : GraphicsLayoutItem?) : Void
       BindgenHelper.keep_alive(parent)
     Binding.bg_QGraphicsLayoutItem_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def layout?() : Bool
@@ -161115,6 +161371,7 @@ module Qt
     def initialize(parent : GraphicsLayoutItem? = nil)
       result = Binding.bg_QGraphicsLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -161446,6 +161703,7 @@ module Qt
     def initialize(parent : GraphicsLayoutItem? = nil)
       result = Binding.bg_QGraphicsAnchorLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -161673,6 +161931,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -161754,6 +162013,7 @@ module Qt
     protected def initialize(d : Binding::QGraphicsEffectPrivate*, parent : Object? = nil)
       result = Binding.bg_QGraphicsEffect__CONSTRUCT_QGraphicsEffectPrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -161968,6 +162228,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsColorizeEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -162183,6 +162444,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsBlurEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -162409,6 +162671,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsDropShadowEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -162664,6 +162927,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsOpacityEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -162859,6 +163123,7 @@ module Qt
     def initialize(parent : GraphicsLayoutItem? = nil)
       result = Binding.bg_QGraphicsGridLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -163206,6 +163471,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsItemAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -163461,6 +163727,7 @@ module Qt
     def initialize(parent : GraphicsLayoutItem? = nil)
       result = Binding.bg_QGraphicsLinearLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -163514,6 +163781,7 @@ module Qt
     def initialize(orientation : Orientation, parent : GraphicsLayoutItem? = nil)
       result = Binding.bg_QGraphicsLinearLayout__CONSTRUCT_Qt__Orientation_QGraphicsLayoutItem_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -163759,6 +164027,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -163876,6 +164145,7 @@ module Qt
     def initialize(parent : GraphicsItem?, w_flags : WindowFlags)
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsItem_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -164341,6 +164611,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QGraphicsWidgetPrivate*, parent : GraphicsItem)
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -164458,6 +164729,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QGraphicsWidgetPrivate*, parent : GraphicsItem, w_flags : WindowFlags)
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X_Qt__WindowFlags(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -164903,9 +165175,14 @@ module Qt
       Binding.bg_QGraphicsWidget_parentLayoutItem_(self).try {|ptr| GraphicsLayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
     end
     
-    def parent_layout_item=(parent : GraphicsLayoutItem) : Void
+    def parent_layout_item=(parent : GraphicsLayoutItem?) : Void
       BindgenHelper.keep_alive(parent)
     Binding.bg_QGraphicsWidget_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
+    if parent
+      BindgenHelper.keep_alive(self)
+    else
+      BindgenHelper.release(self)
+    end
     end
     
     def layout?() : Bool
@@ -164961,6 +165238,7 @@ module Qt
     def initialize(parent : GraphicsItem? = nil)
       result = Binding.bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -165106,6 +165384,7 @@ module Qt
     def initialize(parent : GraphicsItem?, w_flags : WindowFlags)
       result = Binding.bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -165747,6 +166026,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsScene__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -165840,6 +166120,7 @@ module Qt
     def initialize(scene_rect : RectF, parent : Object? = nil)
       result = Binding.bg_QGraphicsScene__CONSTRUCT_const_QRectF_R_QObject_X(scene_rect, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -165933,6 +166214,7 @@ module Qt
     def initialize(x : Float64, y : Float64, width : Float64, height : Float64, parent : Object? = nil)
       result = Binding.bg_QGraphicsScene__CONSTRUCT_qreal_qreal_qreal_qreal_QObject_X(x, y, width, height, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -167906,6 +168188,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsTransform__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -167964,6 +168247,7 @@ module Qt
     protected def initialize(p : Binding::QGraphicsTransformPrivate*, parent : Object)
       result = Binding.bg_QGraphicsTransform__CONSTRUCT_QGraphicsTransformPrivate_R_QObject_X(p, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -168119,6 +168403,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsScale__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -168354,6 +168639,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QGraphicsRotation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -168569,6 +168855,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QScrollArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -168690,7 +168977,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -168753,6 +169040,7 @@ module Qt
     protected def initialize(dd : Binding::QScrollAreaPrivate*, parent : Widget? = nil)
       result = Binding.bg_QScrollArea__CONSTRUCT_QScrollAreaPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -168874,7 +169162,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -169049,8 +169337,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -169269,8 +169557,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -169338,6 +169626,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QGraphicsView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -169467,7 +169756,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -169483,6 +169772,7 @@ module Qt
     def initialize(scene : GraphicsScene, parent : Widget? = nil)
       result = Binding.bg_QGraphicsView__CONSTRUCT_QGraphicsScene_X_QWidget_X((scene.try(&.to_unsafe) || Pointer(Binding::QGraphicsScene).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -169612,7 +169902,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -169965,6 +170255,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QGraphicsViewPrivate*, parent : Widget? = nil)
       result = Binding.bg_QGraphicsView__CONSTRUCT_QGraphicsViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -170094,7 +170385,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_timerEvent_QTimerEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_timerEvent_QTimerEvent_X") %} Proc(Binding::QTimerEvent*, Void).new{|event| self.timer_event(TimerEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -170316,8 +170607,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -170548,8 +170839,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -170613,6 +170904,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QGroupBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -170725,7 +171017,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -170744,6 +171036,7 @@ module Qt
     def initialize(title : String, parent : Widget? = nil)
       result = Binding.bg_QGroupBox__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -170856,7 +171149,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -171068,8 +171361,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -171272,8 +171565,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -171353,6 +171646,7 @@ module Qt
     def initialize(orientation : Orientation, parent : Widget? = nil)
       result = Binding.bg_QHeaderView__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -171565,7 +171859,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -171921,6 +172215,7 @@ module Qt
     protected def initialize(dd : Binding::QHeaderViewPrivate*, orientation : Orientation, parent : Widget? = nil)
       result = Binding.bg_QHeaderView__CONSTRUCT_QHeaderViewPrivate_R_Qt__Orientation_QWidget_X(dd, orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -172133,7 +172428,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -172501,8 +172796,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -172889,8 +173184,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -172990,6 +173285,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QLineEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -173104,7 +173400,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_focusNextPrevChild_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_focusNextPrevChild_bool") %} Proc(Bool, Bool).new{|next_| self.focus_next_prev_child(next_) } {% else %} nil {% end %}),
@@ -173121,6 +173417,7 @@ module Qt
     def initialize(unnamed_arg_0 : String, parent : Widget? = nil)
       result = Binding.bg_QLineEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(unnamed_arg_0), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -173235,7 +173532,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_focusNextPrevChild_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_focusNextPrevChild_bool") %} Proc(Bool, Bool).new{|next_| self.focus_next_prev_child(next_) } {% else %} nil {% end %}),
@@ -173752,8 +174049,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -173956,8 +174253,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -174049,6 +174346,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QInputDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -174169,7 +174467,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -174188,6 +174486,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QInputDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -174308,7 +174607,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -174752,8 +175051,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -174972,8 +175271,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -175069,6 +175368,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -175590,6 +175890,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -175700,7 +176001,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -175719,6 +176020,7 @@ module Qt
     def initialize(key_sequence : KeySequence, parent : Widget? = nil)
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_const_QKeySequence_R_QWidget_X(key_sequence, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -175829,7 +176131,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -175892,6 +176194,7 @@ module Qt
     protected def initialize(d : Binding::QKeySequenceEditPrivate*, parent : Widget, f : WindowFlags)
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_QKeySequenceEditPrivate_R_QWidget_X_Qt__WindowFlags(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -176002,7 +176305,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -176162,8 +176465,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -176362,8 +176665,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -176443,6 +176746,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QLabel__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -176555,7 +176859,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -176574,6 +176878,7 @@ module Qt
     def initialize(parent : Widget?, f : WindowFlags)
       result = Binding.bg_QLabel__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -176686,7 +176991,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -176705,6 +177010,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QLabel__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -176817,7 +177123,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -176836,6 +177142,7 @@ module Qt
     def initialize(text : String, parent : Widget?, f : WindowFlags)
       result = Binding.bg_QLabel__CONSTRUCT_const_QString_R_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -176948,7 +177255,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -177254,8 +177561,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -177458,8 +177765,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -177539,6 +177846,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QLCDNumber__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -177650,7 +177958,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -177670,6 +177978,7 @@ module Qt
     def initialize(num_digits : UInt32, parent : Widget? = nil)
       result = Binding.bg_QLCDNumber__CONSTRUCT_uint_QWidget_X(num_digits, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -177781,7 +178090,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -178033,8 +178342,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -178237,8 +178546,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -178318,6 +178627,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QListView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -178522,7 +178832,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -178689,6 +178999,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QListViewPrivate*, parent : Widget? = nil)
       result = Binding.bg_QListView__CONSTRUCT_QListViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -178893,7 +179204,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -179260,8 +179571,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -179636,8 +179947,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -180056,6 +180367,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QListWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -180268,7 +180580,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -180837,8 +181149,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -181225,8 +181537,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -181322,6 +181634,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMainWindow__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -181433,7 +181746,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -181453,6 +181766,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QMainWindow__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -181564,7 +181878,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -181962,8 +182276,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -182166,8 +182480,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -182255,6 +182569,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMdiArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -182377,7 +182692,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -182709,8 +183024,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -182929,8 +183244,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -182998,6 +183313,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMdiSubWindow__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -183110,7 +183426,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -183127,6 +183443,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QMdiSubWindow__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -183239,7 +183556,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -183492,8 +183809,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -183692,8 +184009,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -183765,6 +184082,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMenu__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -183878,7 +184196,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -183896,6 +184214,7 @@ module Qt
     def initialize(title : String, parent : Widget? = nil)
       result = Binding.bg_QMenu__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -184009,7 +184328,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -184332,6 +184651,7 @@ module Qt
     protected def initialize(dd : Binding::QMenuPrivate*, parent : Widget? = nil)
       result = Binding.bg_QMenu__CONSTRUCT_QMenuPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -184445,7 +184765,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -184548,8 +184868,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -184752,8 +185072,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -184837,6 +185157,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMenuBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -184950,7 +185271,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -185250,8 +185571,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -185454,8 +185775,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -185531,6 +185852,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QMessageBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -185651,7 +185973,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -185790,7 +186112,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -185929,7 +186251,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -185948,6 +186270,7 @@ module Qt
     def initialize(icon : MessageBox::Icon, title : String, text : String, buttons : MessageBox::StandardButtons, parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QWidget_X_Qt__WindowFlags(icon, Qt::Converter::QString.wrap(title), Qt::Converter::QString.wrap(text), buttons, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -186068,7 +186391,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -186562,8 +186885,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -186782,8 +187105,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -186859,6 +187182,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTextEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -186993,7 +187317,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -187008,6 +187332,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QTextEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -187142,7 +187467,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -187658,6 +187983,7 @@ module Qt
     protected def initialize(dd : Binding::QTextEditPrivate*, parent : Widget)
       result = Binding.bg_QTextEdit__CONSTRUCT_QTextEditPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -187792,7 +188118,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -187917,8 +188243,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -188157,8 +188483,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -188289,6 +188615,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -188423,7 +188750,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -188438,6 +188765,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -188572,7 +188900,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -189004,6 +189332,7 @@ module Qt
     protected def initialize(dd : Binding::QPlainTextEditPrivate*, parent : Widget)
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_QPlainTextEditPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -189138,7 +189467,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -189270,8 +189599,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -189510,8 +189839,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -189872,6 +190201,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QProgressBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -189985,7 +190315,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -190242,8 +190572,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -190450,8 +190780,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -190531,6 +190861,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QProgressDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -190651,7 +190982,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -190670,6 +191001,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QProgressDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -190790,7 +191122,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -190809,6 +191141,7 @@ module Qt
     def initialize(label_text : String, cancel_button_text : String, minimum : Int32, maximum : Int32, parent : Widget? = nil)
       result = Binding.bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X(Qt::Converter::QString.wrap(label_text), Qt::Converter::QString.wrap(cancel_button_text), minimum, maximum, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -190929,7 +191262,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -190948,6 +191281,7 @@ module Qt
     def initialize(label_text : String, cancel_button_text : String, minimum : Int32, maximum : Int32, parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(label_text), Qt::Converter::QString.wrap(cancel_button_text), minimum, maximum, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -191068,7 +191402,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -191351,8 +191685,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -191571,8 +191905,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -192138,6 +192472,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QRadioButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -192256,7 +192591,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -192275,6 +192610,7 @@ module Qt
     def initialize(text : String, parent : Widget? = nil)
       result = Binding.bg_QRadioButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -192393,7 +192729,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -192569,8 +192905,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -192785,8 +193121,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -192858,6 +193194,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QScrollBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -192972,7 +193309,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -192991,6 +193328,7 @@ module Qt
     def initialize(unnamed_arg_0 : Orientation, parent : Widget? = nil)
       result = Binding.bg_QScrollBar__CONSTRUCT_Qt__Orientation_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -193105,7 +193443,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -193277,8 +193615,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -193485,8 +193823,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -193842,6 +194180,7 @@ module Qt
     def initialize(parent : Widget)
       result = Binding.bg_QSizeGrip__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -193952,7 +194291,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -194112,8 +194451,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -194312,8 +194651,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -194385,6 +194724,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -194508,7 +194848,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -194775,8 +195115,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -194999,8 +195339,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -195076,6 +195416,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QDoubleSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -195199,7 +195540,7 @@ module Qt
       bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dragLeaveEvent_QDragLeaveEvent_X") %} Proc(Binding::QDragLeaveEvent*, Void).new{|event| self.drag_leave_event(DragLeaveEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -195466,8 +195807,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -195690,8 +196031,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -195878,7 +196219,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196009,7 +196350,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196140,7 +196481,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196271,7 +196612,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196402,7 +196743,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196533,7 +196874,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -196730,8 +197071,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -196934,8 +197275,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -197015,6 +197356,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QSplitter__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -197129,7 +197471,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -197148,6 +197490,7 @@ module Qt
     def initialize(unnamed_arg_0 : Orientation, parent : Widget? = nil)
       result = Binding.bg_QSplitter__CONSTRUCT_Qt__Orientation_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -197262,7 +197605,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -197545,8 +197888,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -197753,8 +198096,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -197830,6 +198173,7 @@ module Qt
     def initialize(o : Orientation, parent : Splitter)
       result = Binding.bg_QSplitterHandle__CONSTRUCT_Qt__Orientation_QSplitter_X(o, (parent.try(&.to_unsafe) || Pointer(Binding::QSplitter).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -197939,7 +198283,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -198120,8 +198464,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -198320,8 +198664,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -198465,7 +198809,7 @@ module Qt
       bg_QStackedLayout_takeAt_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_takeAt_int") %} Proc(Int32, Binding::QLayoutItem*).new{|index| (self.take_at(index).try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null) } {% else %} nil {% end %}),
       bg_QStackedLayout_setGeometry_const_QRect_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_setGeometry_const_QRect_R") %} Proc(Binding::QRect*, Void).new{|unnamed_arg_0| self.geometry=(Rect.new(unwrap: unnamed_arg_0.value)) } {% else %} nil {% end %}),
       bg_QStackedLayout_hasHeightForWidth_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_hasHeightForWidth_") %} Proc(Bool).new{ self.has_height_for_width?() } {% else %} nil {% end %}),
-      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|width| self.height_for_width(width) } {% else %} nil {% end %}),
+      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|unnamed_arg_0| self.height_for_width(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_spacing_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_spacing_") %} Proc(Int32).new{ self.spacing() } {% else %} nil {% end %}),
       bg_QLayout_setSpacing_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_setSpacing_int") %} Proc(Int32, Void).new{|unnamed_arg_0| self.spacing=(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_invalidate_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_invalidate_") %} Proc(Void).new{ self.invalidate() } {% else %} nil {% end %}),
@@ -198494,6 +198838,7 @@ module Qt
     def initialize(parent : Widget)
       result = Binding.bg_QStackedLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -198562,7 +198907,7 @@ module Qt
       bg_QStackedLayout_takeAt_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_takeAt_int") %} Proc(Int32, Binding::QLayoutItem*).new{|index| (self.take_at(index).try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null) } {% else %} nil {% end %}),
       bg_QStackedLayout_setGeometry_const_QRect_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_setGeometry_const_QRect_R") %} Proc(Binding::QRect*, Void).new{|unnamed_arg_0| self.geometry=(Rect.new(unwrap: unnamed_arg_0.value)) } {% else %} nil {% end %}),
       bg_QStackedLayout_hasHeightForWidth_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_hasHeightForWidth_") %} Proc(Bool).new{ self.has_height_for_width?() } {% else %} nil {% end %}),
-      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|width| self.height_for_width(width) } {% else %} nil {% end %}),
+      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|unnamed_arg_0| self.height_for_width(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_spacing_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_spacing_") %} Proc(Int32).new{ self.spacing() } {% else %} nil {% end %}),
       bg_QLayout_setSpacing_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_setSpacing_int") %} Proc(Int32, Void).new{|unnamed_arg_0| self.spacing=(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_invalidate_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_invalidate_") %} Proc(Void).new{ self.invalidate() } {% else %} nil {% end %}),
@@ -198659,7 +199004,7 @@ module Qt
       bg_QStackedLayout_takeAt_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_takeAt_int") %} Proc(Int32, Binding::QLayoutItem*).new{|index| (self.take_at(index).try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null) } {% else %} nil {% end %}),
       bg_QStackedLayout_setGeometry_const_QRect_R: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_setGeometry_const_QRect_R") %} Proc(Binding::QRect*, Void).new{|unnamed_arg_0| self.geometry=(Rect.new(unwrap: unnamed_arg_0.value)) } {% else %} nil {% end %}),
       bg_QStackedLayout_hasHeightForWidth_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_hasHeightForWidth_") %} Proc(Bool).new{ self.has_height_for_width?() } {% else %} nil {% end %}),
-      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|width| self.height_for_width(width) } {% else %} nil {% end %}),
+      bg_QStackedLayout_heightForWidth_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QStackedLayout_heightForWidth_int") %} Proc(Int32, Int32).new{|unnamed_arg_0| self.height_for_width(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_spacing_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_spacing_") %} Proc(Int32).new{ self.spacing() } {% else %} nil {% end %}),
       bg_QLayout_setSpacing_int: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_setSpacing_int") %} Proc(Int32, Void).new{|unnamed_arg_0| self.spacing=(unnamed_arg_0) } {% else %} nil {% end %}),
       bg_QLayout_invalidate_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QLayout_invalidate_") %} Proc(Void).new{ self.invalidate() } {% else %} nil {% end %}),
@@ -198752,8 +199097,8 @@ module Qt
       Binding.bg_QStackedLayout_hasHeightForWidth_(self)
     end
     
-    def height_for_width(width : Int32) : Int32
-      Binding.bg_QStackedLayout_heightForWidth_int(self, width)
+    def height_for_width(unnamed_arg_0 : Int32) : Int32
+      Binding.bg_QStackedLayout_heightForWidth_int(self, unnamed_arg_0)
     end
     
     def widget_removed(index : Int32) : Void
@@ -198918,8 +199263,8 @@ module Qt
         Binding.bg_QStackedLayout_hasHeightForWidth_SUPER_(@myself)
       end
       
-      def height_for_width(width : Int32) : Int32
-        Binding.bg_QStackedLayout_heightForWidth_SUPER_int(@myself, width)
+      def height_for_width(unnamed_arg_0 : Int32) : Int32
+        Binding.bg_QStackedLayout_heightForWidth_SUPER_int(@myself, unnamed_arg_0)
       end
       
       def spacing() : Int32
@@ -199039,6 +199384,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QStackedWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -199150,7 +199496,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -199365,8 +199711,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -199569,8 +199915,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -199658,6 +200004,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QStatusBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -199767,7 +200114,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -199980,8 +200327,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -200180,8 +200527,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -200261,6 +200608,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QStyledItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -200573,6 +200921,7 @@ module Qt
     def initialize(parent : Object? = nil)
       result = Binding.bg_QSystemTrayIcon__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -200624,6 +200973,7 @@ module Qt
     def initialize(icon : Icon, parent : Object? = nil)
       result = Binding.bg_QSystemTrayIcon__CONSTRUCT_const_QIcon_R_QObject_X(icon, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -200867,6 +201217,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTableView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -201071,7 +201422,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -201306,6 +201657,7 @@ module Qt
     protected def initialize(unnamed_arg_0 : Binding::QTableViewPrivate*, parent : Widget)
       result = Binding.bg_QTableView__CONSTRUCT_QTableViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -201510,7 +201862,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -201834,8 +202186,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -202210,8 +202562,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -202685,6 +203037,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTableWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -202897,7 +203250,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -202912,6 +203265,7 @@ module Qt
     def initialize(rows : Int32, columns : Int32, parent : Widget? = nil)
       result = Binding.bg_QTableWidget__CONSTRUCT_int_int_QWidget_X(rows, columns, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -203124,7 +203478,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -203791,8 +204145,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -204179,8 +204533,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -204296,6 +204650,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTextBrowser__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -204440,7 +204795,7 @@ module Qt
       bg_QWidget_actionEvent_QActionEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_actionEvent_QActionEvent_X") %} Proc(Binding::QActionEvent*, Void).new{|event| self.action_event(ActionEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -204760,8 +205115,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -205020,8 +205375,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -205101,6 +205456,7 @@ module Qt
     def initialize(title : String, parent : Widget? = nil)
       result = Binding.bg_QToolBar__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -205212,7 +205568,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -205232,6 +205588,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QToolBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -205343,7 +205700,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -205683,8 +206040,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -205887,8 +206244,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -205996,6 +206353,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QToolBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -206111,7 +206469,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -206131,6 +206489,7 @@ module Qt
     def initialize(parent : Widget?, f : WindowFlags)
       result = Binding.bg_QToolBox__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -206246,7 +206605,7 @@ module Qt
       bg_QWidget_dropEvent_QDropEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_dropEvent_QDropEvent_X") %} Proc(Binding::QDropEvent*, Void).new{|event| self.drop_event(DropEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -206503,8 +206862,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -206715,8 +207074,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -206796,6 +207155,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QToolButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -206914,7 +207274,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -207153,8 +207513,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -207369,8 +207729,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -207499,6 +207859,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTreeView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -207707,7 +208068,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -208009,6 +208370,7 @@ module Qt
     protected def initialize(dd : Binding::QTreeViewPrivate*, parent : Widget? = nil)
       result = Binding.bg_QTreeView__CONSTRUCT_QTreeViewPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -208217,7 +208579,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -208537,8 +208899,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -208921,8 +209283,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -209733,6 +210095,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QTreeWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -209949,7 +210312,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -210553,8 +210916,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -210949,8 +211312,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -211046,6 +211409,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QUndoView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -211250,7 +211614,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -211265,6 +211629,7 @@ module Qt
     def initialize(stack : UndoStack, parent : Widget? = nil)
       result = Binding.bg_QUndoView__CONSTRUCT_QUndoStack_X_QWidget_X((stack.try(&.to_unsafe) || Pointer(Binding::QUndoStack).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -211469,7 +211834,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -211484,6 +211849,7 @@ module Qt
     def initialize(group : UndoGroup, parent : Widget? = nil)
       result = Binding.bg_QUndoView__CONSTRUCT_QUndoGroup_X_QWidget_X((group.try(&.to_unsafe) || Pointer(Binding::QUndoGroup).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -211688,7 +212054,7 @@ module Qt
       bg_QWidget_showEvent_QShowEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_showEvent_QShowEvent_X") %} Proc(Binding::QShowEvent*, Void).new{|event| self.show_event(ShowEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QObject_childEvent_QChildEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QObject_childEvent_QChildEvent_X") %} Proc(Binding::QChildEvent*, Void).new{|event| self.child_event(ChildEvent.new(unwrap: event)) } {% else %} nil {% end %}),
@@ -212076,8 +212442,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -212452,8 +212818,8 @@ module Qt
         Binding.bg_QWidget_nativeEvent_SUPER_const_QByteArray_R_void_X_qintptr_X(@myself, Qt::Converter::QByteArray.wrap(event_type), message, result)
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -212550,6 +212916,7 @@ module Qt
     def initialize(parent : Object)
       result = Binding.bg_QWidgetAction__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self)
     {% begin %}
     {%
       methods = [] of Def
@@ -212744,6 +213111,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QWizard__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -212872,7 +213240,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -212891,6 +213259,7 @@ module Qt
     def initialize(parent : Widget?, flags : WindowFlags)
       result = Binding.bg_QWizard__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -213019,7 +213388,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -213457,8 +213826,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -213693,8 +214062,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -213786,6 +214155,7 @@ module Qt
     def initialize(parent : Widget? = nil)
       result = Binding.bg_QWizardPage__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
+    BindgenHelper.keep_alive(self) if parent
     {% begin %}
     {%
       methods = [] of Def
@@ -213905,7 +214275,7 @@ module Qt
       bg_QWidget_hideEvent_QHideEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_hideEvent_QHideEvent_X") %} Proc(Binding::QHideEvent*, Void).new{|event| self.hide_event(HideEvent.new(unwrap: event)) } {% else %} nil {% end %}),
       bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X") %} Proc(Binding::CrystalString*, Void*, Int64*, Bool).new{|event_type, message, result| self.native_event(Qt::Converter::QByteArray.unwrap(event_type.value), message, result) } {% else %} nil {% end %}),
       bg_QWidget_changeEvent_QEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_changeEvent_QEvent_X") %} Proc(Binding::QEvent*, Void).new{|unnamed_arg_0| self.change_event(Event.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
-      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|unnamed_arg_0| self.metric(unnamed_arg_0) } {% else %} nil {% end %}),
+      bg_QWidget_metric_QPaintDevice__PaintDeviceMetric: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_metric_QPaintDevice__PaintDeviceMetric") %} Proc(::Qt::PaintDevice::PaintDeviceMetric, Int32).new{|metric| self.metric(metric) } {% else %} nil {% end %}),
       bg_QWidget_initPainter_QPainter_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_initPainter_QPainter_X") %} Proc(Binding::QPainter*, Void).new{|painter| self.init_painter(Painter.new(unwrap: painter)) } {% else %} nil {% end %}),
       bg_QWidget_sharedPainter_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_sharedPainter_") %} Proc(Binding::QPainter*).new{ (self.shared_painter().try(&.to_unsafe) || Pointer(Binding::QPainter).null) } {% else %} nil {% end %}),
       bg_QWidget_inputMethodEvent_QInputMethodEvent_X: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QWidget_inputMethodEvent_QInputMethodEvent_X") %} Proc(Binding::QInputMethodEvent*, Void).new{|unnamed_arg_0| self.input_method_event(InputMethodEvent.new(unwrap: unnamed_arg_0)) } {% else %} nil {% end %}),
@@ -214161,8 +214531,8 @@ module Qt
       Binding.bg_QWidget_changeEvent_QEvent_X(self, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -214381,8 +214751,8 @@ module Qt
         Binding.bg_QWidget_changeEvent_SUPER_QEvent_X(@myself, (unnamed_arg_0.try(&.to_unsafe) || Pointer(Binding::QEvent).null))
       end
       
-      protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, unnamed_arg_0)
+      protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+        Binding.bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(@myself, metric)
       end
       
       protected def init_painter(painter : Painter) : Void
@@ -215608,8 +215978,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void
@@ -215925,8 +216295,8 @@ module Qt
       Binding.bg_QWidget_nativeEvent_const_QByteArray_R_void_X_qintptr_X(self, Qt::Converter::QByteArray.wrap(event_type), message, result)
     end
     
-    protected def metric(unnamed_arg_0 : PaintDevice::PaintDeviceMetric) : Int32
-      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, unnamed_arg_0)
+    protected def metric(metric : PaintDevice::PaintDeviceMetric) : Int32
+      Binding.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(self, metric)
     end
     
     protected def init_painter(painter : Painter) : Void

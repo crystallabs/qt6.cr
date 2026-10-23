@@ -517,7 +517,7 @@ extern "C" QIODevice * bg_QDataStream_device_(QDataStream * _self_) {
 }
 
 extern "C" void bg_QDataStream_setDevice_QIODevice_X(QDataStream * _self_, QIODevice * unnamed_arg_0) {
-  _self_->setDevice(unnamed_arg_0);
+  (bindgen_depends_on(_self_, {unnamed_arg_0}), _self_->setDevice(unnamed_arg_0));
 }
 
 extern "C" bool bg_QDataStream_atEnd_(QDataStream * _self_) {
@@ -3815,7 +3815,7 @@ extern "C" QLocale * bg_QTextStream_locale_(QTextStream * _self_) {
 }
 
 extern "C" void bg_QTextStream_setDevice_QIODevice_X(QTextStream * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QTextStream_device_(QTextStream * _self_) {
@@ -13610,7 +13610,7 @@ extern "C" QCborStreamReader * bg_QCborStreamReader__CONSTRUCT_QIODevice_X(QIODe
 }
 
 extern "C" void bg_QCborStreamReader_setDevice_QIODevice_X(QCborStreamReader * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QCborStreamReader_device_(QCborStreamReader * _self_) {
@@ -13826,7 +13826,7 @@ extern "C" QCborStreamWriter * bg_QCborStreamWriter__CONSTRUCT_QIODevice_X(QIODe
 }
 
 extern "C" void bg_QCborStreamWriter_setDevice_QIODevice_X(QCborStreamWriter * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QCborStreamWriter_device_(QCborStreamWriter * _self_) {
@@ -31790,7 +31790,7 @@ extern "C" QXmlStreamReader * bg_QXmlStreamReader__CONSTRUCT_QAnyStringView(Crys
 }
 
 extern "C" void bg_QXmlStreamReader_setDevice_QIODevice_X(QXmlStreamReader * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QXmlStreamReader_device_(QXmlStreamReader * _self_) {
@@ -31978,7 +31978,7 @@ extern "C" QXmlStreamWriter * bg_QXmlStreamWriter__CONSTRUCT_QIODevice_X(QIODevi
 }
 
 extern "C" void bg_QXmlStreamWriter_setDevice_QIODevice_X(QXmlStreamWriter * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QXmlStreamWriter_device_(QXmlStreamWriter * _self_) {
@@ -50181,7 +50181,7 @@ extern "C" bool bg_QImageReader_decideFormatFromContent_(QImageReader * _self_) 
 }
 
 extern "C" void bg_QImageReader_setDevice_QIODevice_X(QImageReader * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QImageReader_device_(QImageReader * _self_) {
@@ -50389,7 +50389,7 @@ extern "C" CrystalString bg_QImageWriter_format_(QImageWriter * _self_) {
 }
 
 extern "C" void bg_QImageWriter_setDevice_QIODevice_X(QImageWriter * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QImageWriter_device_(QImageWriter * _self_) {
@@ -50919,7 +50919,7 @@ extern "C" Container_QList_QByteArray_ * bg_QMovie_supportedFormats_STATIC_() {
 }
 
 extern "C" void bg_QMovie_setDevice_QIODevice_X(QMovie * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QMovie_device_(QMovie * _self_) {
@@ -52525,7 +52525,7 @@ extern "C" QPaintDevice * bg_QPainter_device_(QPainter * _self_) {
 }
 
 extern "C" bool bg_QPainter_begin_QPaintDevice_X(QPainter * _self_, QPaintDevice * unnamed_arg_0) {
-  return _self_->begin(unnamed_arg_0);
+  return (bindgen_depends_on(_self_, {unnamed_arg_0}), _self_->begin(unnamed_arg_0));
 }
 
 extern "C" bool bg_QPainter_end_(QPainter * _self_) {
@@ -53855,12 +53855,12 @@ struct BgInherit_QPdfWriter : public QPdfWriter {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric id) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QPdfWriter *_self_ = this;
     if (_self_->bgJump.bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(id);
+      return _self_->bgJump.bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QPdfWriter::metric(id);
+      return QPdfWriter::metric(metric);
     }
   }
   
@@ -54116,8 +54116,8 @@ extern "C" QPaintEngine * bg_QPdfWriter_paintEngine_(QPdfWriter * _self_) {
   return _self_->paintEngine();
 }
 
-extern "C" int bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(QPdfWriter * _self_, QPaintDevice::PaintDeviceMetric id) {
-  return _self_->metric(id);
+extern "C" int bg_QPdfWriter_metric_QPaintDevice__PaintDeviceMetric(QPdfWriter * _self_, QPaintDevice::PaintDeviceMetric metric) {
+  return _self_->metric(metric);
 }
 
 extern "C" const QMetaObject * bg_QPdfWriter_staticMetaObject_STATIC_GETTER_() {
@@ -54180,8 +54180,8 @@ extern "C" QPaintEngine * bg_QPdfWriter_paintEngine_SUPER_(QPdfWriter * _self_) 
   return _self_->QPdfWriter::paintEngine();
 }
 
-extern "C" int bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(QPdfWriter * _self_, QPaintDevice::PaintDeviceMetric id) {
-  return _self_->QPdfWriter::metric(id);
+extern "C" int bg_QPdfWriter_metric_SUPER_QPaintDevice__PaintDeviceMetric(QPdfWriter * _self_, QPaintDevice::PaintDeviceMetric metric) {
+  return _self_->QPdfWriter::metric(metric);
 }
 
 extern "C" bool bg_QPdfWriter_setPageLayout_SUPER_const_QPageLayout_R(QPdfWriter * _self_, const QPageLayout & pageLayout) {
@@ -58440,7 +58440,7 @@ extern "C" CrystalString bg_QTextDocumentWriter_format_(QTextDocumentWriter * _s
 }
 
 extern "C" void bg_QTextDocumentWriter_setDevice_QIODevice_X(QTextDocumentWriter * _self_, QIODevice * device) {
-  _self_->setDevice(device);
+  (bindgen_depends_on(_self_, {device}), _self_->setDevice(device));
 }
 
 extern "C" QIODevice * bg_QTextDocumentWriter_device_(QTextDocumentWriter * _self_) {
@@ -60716,12 +60716,12 @@ struct BgInherit_QWidget : public QWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QWidget::metric(unnamed_arg_0);
+      return QWidget::metric(metric);
     }
   }
   
@@ -62049,8 +62049,8 @@ extern "C" void bg_QWidget_changeEvent_QEvent_X(QWidget * _self_, QEvent * unnam
   _self_->changeEvent(unnamed_arg_0);
 }
 
-extern "C" int bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(QWidget * _self_, QPaintDevice::PaintDeviceMetric unnamed_arg_0) {
-  return _self_->metric(unnamed_arg_0);
+extern "C" int bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(QWidget * _self_, QPaintDevice::PaintDeviceMetric metric) {
+  return _self_->metric(metric);
 }
 
 extern "C" void bg_QWidget_initPainter_QPainter_X(QWidget * _self_, QPainter * painter) {
@@ -62313,8 +62313,8 @@ extern "C" void bg_QWidget_changeEvent_SUPER_QEvent_X(QWidget * _self_, QEvent *
   _self_->QWidget::changeEvent(unnamed_arg_0);
 }
 
-extern "C" int bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(QWidget * _self_, QPaintDevice::PaintDeviceMetric unnamed_arg_0) {
-  return _self_->QWidget::metric(unnamed_arg_0);
+extern "C" int bg_QWidget_metric_SUPER_QPaintDevice__PaintDeviceMetric(QWidget * _self_, QPaintDevice::PaintDeviceMetric metric) {
+  return _self_->QWidget::metric(metric);
 }
 
 extern "C" void bg_QWidget_initPainter_SUPER_QPainter_X(QWidget * _self_, QPainter * painter) {
@@ -62767,12 +62767,12 @@ struct BgInherit_QAbstractButton : public QAbstractButton {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QAbstractButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QAbstractButton::metric(unnamed_arg_0);
+      return QAbstractButton::metric(metric);
     }
   }
   
@@ -63592,12 +63592,12 @@ struct BgInherit_QAbstractSpinBox : public QAbstractSpinBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QAbstractSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QAbstractSpinBox::metric(unnamed_arg_0);
+      return QAbstractSpinBox::metric(metric);
     }
   }
   
@@ -64445,12 +64445,12 @@ struct BgInherit_QAbstractSlider : public QAbstractSlider {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QAbstractSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QAbstractSlider::metric(unnamed_arg_0);
+      return QAbstractSlider::metric(metric);
     }
   }
   
@@ -65197,12 +65197,12 @@ struct BgInherit_QSlider : public QSlider {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSlider *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSlider::metric(unnamed_arg_0);
+      return QSlider::metric(metric);
     }
   }
   
@@ -66409,12 +66409,12 @@ struct BgInherit_QTabBar : public QTabBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTabBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTabBar::metric(unnamed_arg_0);
+      return QTabBar::metric(metric);
     }
   }
   
@@ -67386,12 +67386,12 @@ struct BgInherit_QTabWidget : public QTabWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTabWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTabWidget::metric(unnamed_arg_0);
+      return QTabWidget::metric(metric);
     }
   }
   
@@ -68248,12 +68248,12 @@ struct BgInherit_QRubberBand : public QRubberBand {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QRubberBand *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QRubberBand::metric(unnamed_arg_0);
+      return QRubberBand::metric(metric);
     }
   }
   
@@ -68870,12 +68870,12 @@ struct BgInherit_QFrame : public QFrame {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QFrame::metric(unnamed_arg_0);
+      return QFrame::metric(metric);
     }
   }
   
@@ -71599,12 +71599,12 @@ struct BgInherit_QAbstractScrollArea : public QAbstractScrollArea {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QAbstractScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QAbstractScrollArea::metric(unnamed_arg_0);
+      return QAbstractScrollArea::metric(metric);
     }
   }
   
@@ -72856,12 +72856,12 @@ struct BgInherit_QAbstractItemView : public QAbstractItemView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QAbstractItemView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QAbstractItemView::metric(unnamed_arg_0);
+      return QAbstractItemView::metric(metric);
     }
   }
   
@@ -78400,12 +78400,12 @@ struct BgInherit_QCalendarWidget : public QCalendarWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QCalendarWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QCalendarWidget::metric(unnamed_arg_0);
+      return QCalendarWidget::metric(metric);
     }
   }
   
@@ -79244,12 +79244,12 @@ struct BgInherit_QCheckBox : public QCheckBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QCheckBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QCheckBox::metric(unnamed_arg_0);
+      return QCheckBox::metric(metric);
     }
   }
   
@@ -79922,12 +79922,12 @@ struct BgInherit_QDialog : public QDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDialog::metric(unnamed_arg_0);
+      return QDialog::metric(metric);
     }
   }
   
@@ -80672,12 +80672,12 @@ struct BgInherit_QColorDialog : public QColorDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QColorDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QColorDialog::metric(unnamed_arg_0);
+      return QColorDialog::metric(metric);
     }
   }
   
@@ -81807,12 +81807,12 @@ struct BgInherit_QColumnView : public QColumnView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QColumnView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QColumnView::metric(unnamed_arg_0);
+      return QColumnView::metric(metric);
     }
   }
   
@@ -82548,12 +82548,12 @@ struct BgInherit_QComboBox : public QComboBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QComboBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QComboBox::metric(unnamed_arg_0);
+      return QComboBox::metric(metric);
     }
   }
   
@@ -83619,12 +83619,12 @@ struct BgInherit_QPushButton : public QPushButton {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QPushButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QPushButton::metric(unnamed_arg_0);
+      return QPushButton::metric(metric);
     }
   }
   
@@ -84315,12 +84315,12 @@ struct BgInherit_QCommandLinkButton : public QCommandLinkButton {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QCommandLinkButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QCommandLinkButton::metric(unnamed_arg_0);
+      return QCommandLinkButton::metric(metric);
     }
   }
   
@@ -86123,12 +86123,12 @@ struct BgInherit_QDateTimeEdit : public QDateTimeEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDateTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDateTimeEdit::metric(unnamed_arg_0);
+      return QDateTimeEdit::metric(metric);
     }
   }
   
@@ -87047,12 +87047,12 @@ struct BgInherit_QTimeEdit : public QTimeEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTimeEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTimeEdit::metric(unnamed_arg_0);
+      return QTimeEdit::metric(metric);
     }
   }
   
@@ -87647,12 +87647,12 @@ struct BgInherit_QDateEdit : public QDateEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDateEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDateEdit::metric(unnamed_arg_0);
+      return QDateEdit::metric(metric);
     }
   }
   
@@ -88189,12 +88189,12 @@ struct BgInherit_QDial : public QDial {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDial *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDial::metric(unnamed_arg_0);
+      return QDial::metric(metric);
     }
   }
   
@@ -88816,12 +88816,12 @@ struct BgInherit_QDialogButtonBox : public QDialogButtonBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDialogButtonBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDialogButtonBox::metric(unnamed_arg_0);
+      return QDialogButtonBox::metric(metric);
     }
   }
   
@@ -89474,12 +89474,12 @@ struct BgInherit_QDockWidget : public QDockWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDockWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDockWidget::metric(unnamed_arg_0);
+      return QDockWidget::metric(metric);
     }
   }
   
@@ -90209,12 +90209,12 @@ struct BgInherit_QErrorMessage : public QErrorMessage {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QErrorMessage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QErrorMessage::metric(unnamed_arg_0);
+      return QErrorMessage::metric(metric);
     }
   }
   
@@ -90815,12 +90815,12 @@ struct BgInherit_QFileDialog : public QFileDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QFileDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QFileDialog::metric(unnamed_arg_0);
+      return QFileDialog::metric(metric);
     }
   }
   
@@ -91897,12 +91897,12 @@ struct BgInherit_QFocusFrame : public QFocusFrame {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QFocusFrame *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QFocusFrame::metric(unnamed_arg_0);
+      return QFocusFrame::metric(metric);
     }
   }
   
@@ -92514,12 +92514,12 @@ struct BgInherit_QFontComboBox : public QFontComboBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QFontComboBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QFontComboBox::metric(unnamed_arg_0);
+      return QFontComboBox::metric(metric);
     }
   }
   
@@ -93151,12 +93151,12 @@ struct BgInherit_QFontDialog : public QFontDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QFontDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QFontDialog::metric(unnamed_arg_0);
+      return QFontDialog::metric(metric);
     }
   }
   
@@ -93545,12 +93545,12 @@ struct BgInherit_QFormLayout : public QFormLayout {
     }
   }
   
-  int heightForWidth(int width) const override {
+  int heightForWidth(int unnamed_arg_0) const override {
     const BgInherit_QFormLayout *_self_ = this;
     if (_self_->bgJump.bg_QFormLayout_heightForWidth_int.isValid()) {
-      return _self_->bgJump.bg_QFormLayout_heightForWidth_int(width);
+      return _self_->bgJump.bg_QFormLayout_heightForWidth_int(unnamed_arg_0);
     } else {
-      return QFormLayout::heightForWidth(width);
+      return QFormLayout::heightForWidth(unnamed_arg_0);
     }
   }
   
@@ -93952,8 +93952,8 @@ extern "C" bool bg_QFormLayout_hasHeightForWidth_(QFormLayout * _self_) {
   return _self_->hasHeightForWidth();
 }
 
-extern "C" int bg_QFormLayout_heightForWidth_int(QFormLayout * _self_, int width) {
-  return _self_->heightForWidth(width);
+extern "C" int bg_QFormLayout_heightForWidth_int(QFormLayout * _self_, int unnamed_arg_0) {
+  return _self_->heightForWidth(unnamed_arg_0);
 }
 
 extern "C" Qt::Orientations bg_QFormLayout_expandingDirections_(QFormLayout * _self_) {
@@ -94012,8 +94012,8 @@ extern "C" bool bg_QFormLayout_hasHeightForWidth_SUPER_(QFormLayout * _self_) {
   return _self_->QFormLayout::hasHeightForWidth();
 }
 
-extern "C" int bg_QFormLayout_heightForWidth_SUPER_int(QFormLayout * _self_, int width) {
-  return _self_->QFormLayout::heightForWidth(width);
+extern "C" int bg_QFormLayout_heightForWidth_SUPER_int(QFormLayout * _self_, int unnamed_arg_0) {
+  return _self_->QFormLayout::heightForWidth(unnamed_arg_0);
 }
 
 extern "C" Qt::Orientations bg_QFormLayout_expandingDirections_SUPER_(QFormLayout * _self_) {
@@ -110695,12 +110695,12 @@ struct BgInherit_QScrollArea : public QScrollArea {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QScrollArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QScrollArea::metric(unnamed_arg_0);
+      return QScrollArea::metric(metric);
     }
   }
   
@@ -111417,12 +111417,12 @@ struct BgInherit_QGraphicsView : public QGraphicsView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QGraphicsView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QGraphicsView::metric(unnamed_arg_0);
+      return QGraphicsView::metric(metric);
     }
   }
   
@@ -112488,12 +112488,12 @@ struct BgInherit_QGroupBox : public QGroupBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QGroupBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QGroupBox::metric(unnamed_arg_0);
+      return QGroupBox::metric(metric);
     }
   }
   
@@ -113672,12 +113672,12 @@ struct BgInherit_QHeaderView : public QHeaderView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QHeaderView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QHeaderView::metric(unnamed_arg_0);
+      return QHeaderView::metric(metric);
     }
   }
   
@@ -114816,12 +114816,12 @@ struct BgInherit_QLineEdit : public QLineEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QLineEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QLineEdit::metric(unnamed_arg_0);
+      return QLineEdit::metric(metric);
     }
   }
   
@@ -115912,12 +115912,12 @@ struct BgInherit_QInputDialog : public QInputDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QInputDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QInputDialog::metric(unnamed_arg_0);
+      return QInputDialog::metric(metric);
     }
   }
   
@@ -117291,12 +117291,12 @@ struct BgInherit_QKeySequenceEdit : public QKeySequenceEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QKeySequenceEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QKeySequenceEdit::metric(unnamed_arg_0);
+      return QKeySequenceEdit::metric(metric);
     }
   }
   
@@ -117929,12 +117929,12 @@ struct BgInherit_QLabel : public QLabel {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QLabel *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QLabel::metric(unnamed_arg_0);
+      return QLabel::metric(metric);
     }
   }
   
@@ -118730,12 +118730,12 @@ struct BgInherit_QLCDNumber : public QLCDNumber {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QLCDNumber *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QLCDNumber::metric(unnamed_arg_0);
+      return QLCDNumber::metric(metric);
     }
   }
   
@@ -119856,12 +119856,12 @@ struct BgInherit_QListView : public QListView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QListView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QListView::metric(unnamed_arg_0);
+      return QListView::metric(metric);
     }
   }
   
@@ -121531,12 +121531,12 @@ struct BgInherit_QListWidget : public QListWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QListWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QListWidget::metric(unnamed_arg_0);
+      return QListWidget::metric(metric);
     }
   }
   
@@ -122316,12 +122316,12 @@ struct BgInherit_QMainWindow : public QMainWindow {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMainWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMainWindow::metric(unnamed_arg_0);
+      return QMainWindow::metric(metric);
     }
   }
   
@@ -123177,12 +123177,12 @@ struct BgInherit_QMdiArea : public QMdiArea {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMdiArea *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMdiArea::metric(unnamed_arg_0);
+      return QMdiArea::metric(metric);
     }
   }
   
@@ -123933,12 +123933,12 @@ struct BgInherit_QMdiSubWindow : public QMdiSubWindow {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMdiSubWindow *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMdiSubWindow::metric(unnamed_arg_0);
+      return QMdiSubWindow::metric(metric);
     }
   }
   
@@ -124722,12 +124722,12 @@ struct BgInherit_QMenu : public QMenu {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMenu *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMenu::metric(unnamed_arg_0);
+      return QMenu::metric(metric);
     }
   }
   
@@ -125636,12 +125636,12 @@ struct BgInherit_QMenuBar : public QMenuBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMenuBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMenuBar::metric(unnamed_arg_0);
+      return QMenuBar::metric(metric);
     }
   }
   
@@ -126481,12 +126481,12 @@ struct BgInherit_QMessageBox : public QMessageBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QMessageBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QMessageBox::metric(unnamed_arg_0);
+      return QMessageBox::metric(metric);
     }
   }
   
@@ -127441,12 +127441,12 @@ struct BgInherit_QTextEdit : public QTextEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTextEdit::metric(unnamed_arg_0);
+      return QTextEdit::metric(metric);
     }
   }
   
@@ -128765,12 +128765,12 @@ struct BgInherit_QPlainTextEdit : public QPlainTextEdit {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QPlainTextEdit *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QPlainTextEdit::metric(unnamed_arg_0);
+      return QPlainTextEdit::metric(metric);
     }
   }
   
@@ -130186,12 +130186,12 @@ struct BgInherit_QProgressBar : public QProgressBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QProgressBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QProgressBar::metric(unnamed_arg_0);
+      return QProgressBar::metric(metric);
     }
   }
   
@@ -130913,12 +130913,12 @@ struct BgInherit_QProgressDialog : public QProgressDialog {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QProgressDialog *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QProgressDialog::metric(unnamed_arg_0);
+      return QProgressDialog::metric(metric);
     }
   }
   
@@ -132217,12 +132217,12 @@ struct BgInherit_QRadioButton : public QRadioButton {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QRadioButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QRadioButton::metric(unnamed_arg_0);
+      return QRadioButton::metric(metric);
     }
   }
   
@@ -132825,12 +132825,12 @@ struct BgInherit_QScrollBar : public QScrollBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QScrollBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QScrollBar::metric(unnamed_arg_0);
+      return QScrollBar::metric(metric);
     }
   }
   
@@ -133625,12 +133625,12 @@ struct BgInherit_QSizeGrip : public QSizeGrip {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSizeGrip *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSizeGrip::metric(unnamed_arg_0);
+      return QSizeGrip::metric(metric);
     }
   }
   
@@ -134310,12 +134310,12 @@ struct BgInherit_QSpinBox : public QSpinBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSpinBox::metric(unnamed_arg_0);
+      return QSpinBox::metric(metric);
     }
   }
   
@@ -135010,12 +135010,12 @@ struct BgInherit_QDoubleSpinBox : public QDoubleSpinBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QDoubleSpinBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QDoubleSpinBox::metric(unnamed_arg_0);
+      return QDoubleSpinBox::metric(metric);
     }
   }
   
@@ -135634,12 +135634,12 @@ struct BgInherit_QSplashScreen : public QSplashScreen {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSplashScreen *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSplashScreen::metric(unnamed_arg_0);
+      return QSplashScreen::metric(metric);
     }
   }
   
@@ -136275,12 +136275,12 @@ struct BgInherit_QSplitter : public QSplitter {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSplitter *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSplitter::metric(unnamed_arg_0);
+      return QSplitter::metric(metric);
     }
   }
   
@@ -136970,12 +136970,12 @@ struct BgInherit_QSplitterHandle : public QSplitterHandle {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QSplitterHandle *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QSplitterHandle::metric(unnamed_arg_0);
+      return QSplitterHandle::metric(metric);
     }
   }
   
@@ -137337,12 +137337,12 @@ struct BgInherit_QStackedLayout : public QStackedLayout {
     }
   }
   
-  int heightForWidth(int width) const override {
+  int heightForWidth(int unnamed_arg_0) const override {
     const BgInherit_QStackedLayout *_self_ = this;
     if (_self_->bgJump.bg_QStackedLayout_heightForWidth_int.isValid()) {
-      return _self_->bgJump.bg_QStackedLayout_heightForWidth_int(width);
+      return _self_->bgJump.bg_QStackedLayout_heightForWidth_int(unnamed_arg_0);
     } else {
-      return QStackedLayout::heightForWidth(width);
+      return QStackedLayout::heightForWidth(unnamed_arg_0);
     }
   }
   
@@ -137614,8 +137614,8 @@ extern "C" bool bg_QStackedLayout_hasHeightForWidth_(QStackedLayout * _self_) {
   return _self_->hasHeightForWidth();
 }
 
-extern "C" int bg_QStackedLayout_heightForWidth_int(QStackedLayout * _self_, int width) {
-  return _self_->heightForWidth(width);
+extern "C" int bg_QStackedLayout_heightForWidth_int(QStackedLayout * _self_, int unnamed_arg_0) {
+  return _self_->heightForWidth(unnamed_arg_0);
 }
 
 extern "C" void bg_QStackedLayout_widgetRemoved_int(QStackedLayout * _self_, int index) {
@@ -137690,8 +137690,8 @@ extern "C" bool bg_QStackedLayout_hasHeightForWidth_SUPER_(QStackedLayout * _sel
   return _self_->QStackedLayout::hasHeightForWidth();
 }
 
-extern "C" int bg_QStackedLayout_heightForWidth_SUPER_int(QStackedLayout * _self_, int width) {
-  return _self_->QStackedLayout::heightForWidth(width);
+extern "C" int bg_QStackedLayout_heightForWidth_SUPER_int(QStackedLayout * _self_, int unnamed_arg_0) {
+  return _self_->QStackedLayout::heightForWidth(unnamed_arg_0);
 }
 
 extern "C" void bg_BgInherit_QStackedLayout_JUMPTABLE_BgJumptable_QStackedLayout_R(BgInherit_QStackedLayout * _self_, const BgJumptable_QStackedLayout & table) {
@@ -138095,12 +138095,12 @@ struct BgInherit_QStackedWidget : public QStackedWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QStackedWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QStackedWidget::metric(unnamed_arg_0);
+      return QStackedWidget::metric(metric);
     }
   }
   
@@ -138695,12 +138695,12 @@ struct BgInherit_QStatusBar : public QStatusBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QStatusBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QStatusBar::metric(unnamed_arg_0);
+      return QStatusBar::metric(metric);
     }
   }
   
@@ -140385,12 +140385,12 @@ struct BgInherit_QTableView : public QTableView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTableView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTableView::metric(unnamed_arg_0);
+      return QTableView::metric(metric);
     }
   }
   
@@ -142092,12 +142092,12 @@ struct BgInherit_QTableWidget : public QTableWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTableWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTableWidget::metric(unnamed_arg_0);
+      return QTableWidget::metric(metric);
     }
   }
   
@@ -143174,12 +143174,12 @@ struct BgInherit_QTextBrowser : public QTextBrowser {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTextBrowser *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTextBrowser::metric(unnamed_arg_0);
+      return QTextBrowser::metric(metric);
     }
   }
   
@@ -143891,12 +143891,12 @@ struct BgInherit_QToolBar : public QToolBar {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QToolBar *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QToolBar::metric(unnamed_arg_0);
+      return QToolBar::metric(metric);
     }
   }
   
@@ -144689,12 +144689,12 @@ struct BgInherit_QToolBox : public QToolBox {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QToolBox *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QToolBox::metric(unnamed_arg_0);
+      return QToolBox::metric(metric);
     }
   }
   
@@ -145398,12 +145398,12 @@ struct BgInherit_QToolButton : public QToolButton {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QToolButton *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QToolButton::metric(unnamed_arg_0);
+      return QToolButton::metric(metric);
     }
   }
   
@@ -146643,12 +146643,12 @@ struct BgInherit_QTreeView : public QTreeView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTreeView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTreeView::metric(unnamed_arg_0);
+      return QTreeView::metric(metric);
     }
   }
   
@@ -148638,12 +148638,12 @@ struct BgInherit_QTreeWidget : public QTreeWidget {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QTreeWidget *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QTreeWidget::metric(unnamed_arg_0);
+      return QTreeWidget::metric(metric);
     }
   }
   
@@ -149923,12 +149923,12 @@ struct BgInherit_QUndoView : public QUndoView {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QUndoView *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QUndoView::metric(unnamed_arg_0);
+      return QUndoView::metric(metric);
     }
   }
   
@@ -150783,12 +150783,12 @@ struct BgInherit_QWizard : public QWizard {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QWizard *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QWizard::metric(unnamed_arg_0);
+      return QWizard::metric(metric);
     }
   }
   
@@ -151624,12 +151624,12 @@ struct BgInherit_QWizardPage : public QWizardPage {
     }
   }
   
-  int metric(QPaintDevice::PaintDeviceMetric unnamed_arg_0) const override {
+  int metric(QPaintDevice::PaintDeviceMetric metric) const override {
     const BgInherit_QWizardPage *_self_ = this;
     if (_self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric.isValid()) {
-      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(unnamed_arg_0);
+      return _self_->bgJump.bg_QWidget_metric_QPaintDevice__PaintDeviceMetric(metric);
     } else {
-      return QWizardPage::metric(unnamed_arg_0);
+      return QWizardPage::metric(metric);
     }
   }
   
