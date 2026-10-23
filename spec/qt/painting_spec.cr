@@ -422,8 +422,7 @@ end
   describe Qt::FontTag do
     it "names font features" do
       Qt::FontTag.new.valid?.should be_false
-      # Qt::FontTag.from_string returns a std::optional, which isn't bound;
-      # read a tag from its 32-bit value instead.
+      Qt::FontTag.from_string("liga").try(&.value).should eq(0x6c696761)
       tag = Qt::FontTag.new
       Qt::DataStream.new(Bytes[0x6c, 0x69, 0x67, 0x61]) >> tag
       tag.valid?.should be_true

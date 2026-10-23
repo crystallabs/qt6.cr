@@ -99,6 +99,10 @@ typedef QList<int> Container_QList_int_;
 typedef QList<QByteArray> Container_QList_QByteArray_;
 typedef QList<unsigned int> Container_QList_unsigned_int_;
 typedef QList<qreal> Container_QList_qreal_;
+typedef std::optional<QFont> Container_std__optional_QFont_;
+typedef std::optional<QFont::Tag> Container_std__optional_QFont__Tag_;
+typedef std::optional<quint64> Container_std__optional_quint64_;
+typedef std::optional<QFileDevice::Permissions> Container_std__optional_QFileDevice__Permissions_;
 typedef std::pair<qreal, qreal> Container_std__pair_qreal__qreal_;
 typedef std::pair<qreal, QPointF> Container_std__pair_qreal__QPointF_;
 typedef std::pair<int, int> Container_std__pair_int__int_;
@@ -17354,12 +17358,20 @@ extern "C" bool bg_QDir_mkdir_const_QString_R(QDir * _self_, const CrystalString
   return _self_->mkdir(([&]() { auto &&bg_value = (dirName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
+extern "C" bool bg_QDir_mkdir_const_QString_R_std__optional_QFileDevice__Permissions_(QDir * _self_, const CrystalString dirName, Container_std__optional_QFileDevice__Permissions_ * p) {
+  return _self_->mkdir(([&]() { auto &&bg_value = (dirName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(p));
+}
+
 extern "C" bool bg_QDir_rmdir_const_QString_R(QDir * _self_, const CrystalString dirName) {
   return _self_->rmdir(([&]() { auto &&bg_value = (dirName); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
 }
 
 extern "C" bool bg_QDir_mkpath_const_QString_R(QDir * _self_, const CrystalString dirPath) {
   return _self_->mkpath(([&]() { auto &&bg_value = (dirPath); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()));
+}
+
+extern "C" bool bg_QDir_mkpath_const_QString_R_std__optional_QFileDevice__Permissions_(QDir * _self_, const CrystalString dirPath, Container_std__optional_QFileDevice__Permissions_ * p) {
+  return _self_->mkpath(([&]() { auto &&bg_value = (dirPath); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(p));
 }
 
 extern "C" bool bg_QDir_rmpath_const_QString_R(QDir * _self_, const CrystalString dirPath) {
@@ -22228,6 +22240,10 @@ extern "C" int bg_QMetaEnum_value_int(QMetaEnum * _self_, int index) {
   return _self_->value(index);
 }
 
+extern "C" Container_std__optional_quint64_ * bg_QMetaEnum_value64_int(QMetaEnum * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_quint64_>()) Container_std__optional_quint64_ (_self_->value64(index));
+}
+
 extern "C" const char * bg_QMetaEnum_scope_(QMetaEnum * _self_) {
   return _self_->scope();
 }
@@ -22238,6 +22254,14 @@ extern "C" int bg_QMetaEnum_keyToValue_const_char_X_bool_X(QMetaEnum * _self_, c
 
 extern "C" int bg_QMetaEnum_keysToValue_const_char_X_bool_X(QMetaEnum * _self_, const char * keys, bool * ok) {
   return _self_->keysToValue(keys, ok);
+}
+
+extern "C" Container_std__optional_quint64_ * bg_QMetaEnum_keyToValue64_const_char_X(QMetaEnum * _self_, const char * key) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_quint64_>()) Container_std__optional_quint64_ (_self_->keyToValue64(key));
+}
+
+extern "C" Container_std__optional_quint64_ * bg_QMetaEnum_keysToValue64_const_char_X(QMetaEnum * _self_, const char * keys) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_quint64_>()) Container_std__optional_quint64_ (_self_->keysToValue64(keys));
 }
 
 extern "C" const char * bg_QMetaEnum_valueToKey_quint64(QMetaEnum * _self_, quint64 value) {
@@ -41884,6 +41908,14 @@ extern "C" quint32 bg_QFont__Tag_value_(QFont::Tag * _self_) {
 
 extern "C" CrystalString bg_QFont__Tag_toString_(QFont::Tag * _self_) {
   return qbytearray_to_crystal(_self_->toString());
+}
+
+extern "C" Container_std__optional_QFont__Tag_ * bg_QFont__Tag_fromValue_STATIC_quint32(quint32 value) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_QFont__Tag_>()) Container_std__optional_QFont__Tag_ (QFont::Tag::fromValue(value));
+}
+
+extern "C" Container_std__optional_QFont__Tag_ * bg_QFont__Tag_fromString_STATIC_QAnyStringView(CrystalString view) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_QFont__Tag_>()) Container_std__optional_QFont__Tag_ (QFont::Tag::fromString(([&]() { auto &&bg_value = (view); return QAnyStringView(bg_value.ptr, bg_value.size); }())));
 }
 
 extern "C" QFont::Tag * bg_QFont__Tag__COPY_const_QFont__Tag_R(const QFont::Tag & unnamed_arg_0) {
@@ -94068,6 +94100,10 @@ extern "C" CrystalString bg_QFontComboBox_sampleTextForFont_const_QString_R(QFon
 
 extern "C" void bg_QFontComboBox_setDisplayFont_const_QString_R_const_QFont_R(QFontComboBox * _self_, const CrystalString fontFamily, const QFont & font) {
   _self_->setDisplayFont(([&]() { auto &&bg_value = (fontFamily); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), font);
+}
+
+extern "C" Container_std__optional_QFont_ * bg_QFontComboBox_displayFont_const_QString_R(QFontComboBox * _self_, const CrystalString fontFamily) {
+  return new (UseGC, bindgen_gc_finalizer<Container_std__optional_QFont_>()) Container_std__optional_QFont_ (_self_->displayFont(([&]() { auto &&bg_value = (fontFamily); return QString::fromUtf8(bg_value.ptr, bg_value.size); }())));
 }
 
 extern "C" void bg_QFontComboBox_setCurrentFont_const_QFont_R(QFontComboBox * _self_, const QFont & f) {
@@ -153538,6 +153574,70 @@ extern "C" qreal bg____Container_std__pair_qreal__qreal__second_Container_std__p
 
 extern "C" void bg____Container_std__pair_qreal__qreal__set_Container_std__pair_qreal__qreal__R_qreal_qreal(Container_std__pair_qreal__qreal_ & pair, qreal first, qreal second) {
   ::bindgen_pair_set(pair, first, second);
+}
+
+extern "C" Container_std__optional_QFileDevice__Permissions_ * bg_Container_std__optional_QFileDevice__Permissions___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__optional_QFileDevice__Permissions_>();
+}
+
+extern "C" bool bg_Container_std__optional_QFileDevice__Permissions__has_value_(Container_std__optional_QFileDevice__Permissions_ * _self_) {
+  return _self_->has_value();
+}
+
+extern "C" QFileDevice::Permissions bg_Container_std__optional_QFileDevice__Permissions__value_(Container_std__optional_QFileDevice__Permissions_ * _self_) {
+  return _self_->value();
+}
+
+extern "C" void bg_Container_std__optional_QFileDevice__Permissions__emplace_QFileDevice__Permissions(Container_std__optional_QFileDevice__Permissions_ * _self_, QFileDevice::Permissions value) {
+  _self_->emplace(value);
+}
+
+extern "C" Container_std__optional_quint64_ * bg_Container_std__optional_quint64___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__optional_quint64_>();
+}
+
+extern "C" bool bg_Container_std__optional_quint64__has_value_(Container_std__optional_quint64_ * _self_) {
+  return _self_->has_value();
+}
+
+extern "C" quint64 bg_Container_std__optional_quint64__value_(Container_std__optional_quint64_ * _self_) {
+  return _self_->value();
+}
+
+extern "C" void bg_Container_std__optional_quint64__emplace_quint64(Container_std__optional_quint64_ * _self_, quint64 value) {
+  _self_->emplace(value);
+}
+
+extern "C" Container_std__optional_QFont__Tag_ * bg_Container_std__optional_QFont__Tag___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__optional_QFont__Tag_>();
+}
+
+extern "C" bool bg_Container_std__optional_QFont__Tag__has_value_(Container_std__optional_QFont__Tag_ * _self_) {
+  return _self_->has_value();
+}
+
+extern "C" QFont::Tag * bg_Container_std__optional_QFont__Tag__value_(Container_std__optional_QFont__Tag_ * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont::Tag>()) QFont::Tag (_self_->value());
+}
+
+extern "C" void bg_Container_std__optional_QFont__Tag__emplace_QFont__Tag(Container_std__optional_QFont__Tag_ * _self_, QFont::Tag & value) {
+  _self_->emplace(value);
+}
+
+extern "C" Container_std__optional_QFont_ * bg_Container_std__optional_QFont___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_std__optional_QFont_>();
+}
+
+extern "C" bool bg_Container_std__optional_QFont__has_value_(Container_std__optional_QFont_ * _self_) {
+  return _self_->has_value();
+}
+
+extern "C" QFont * bg_Container_std__optional_QFont__value_(Container_std__optional_QFont_ * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QFont>()) QFont (_self_->value());
+}
+
+extern "C" void bg_Container_std__optional_QFont__emplace_QFont(Container_std__optional_QFont_ * _self_, QFont & value) {
+  _self_->emplace(value);
 }
 
 extern "C" Container_QList_qreal_ * bg_Container_QList_qreal___CONSTRUCT_() {

@@ -482,6 +482,63 @@ module Qt
       end
     end
   
+    # Wrapper for an instantiated optional type, like `std::optional`.
+    #
+    # Optionals convert to and from a `T?`, the value or `nil`, so wrapped
+    # methods take and return those; this wrapper is only seen when built
+    # directly, by `.from` or `Optional.of(T).new`.
+    module OptionalContainer(T)
+      # `#unsafe_has_value`, `#unsafe_value` and `#unsafe_emplace` will be
+      # implemented by the wrapper class.
+  
+      # Is there a value?
+      def has_value? : Bool
+        unsafe_has_value
+      end
+  
+      # The value, or `nil` if there is none.
+      def to_nilable : T?
+        unsafe_value if unsafe_has_value
+      end
+  
+      # Sets the value.
+      def value=(value : T) : T
+        unsafe_emplace(value)
+        value
+      end
+  
+      def to_s(io)
+        to_nilable.to_s(io)
+      end
+  
+      def inspect(io)
+        io << "<Wrapped "
+        to_nilable.inspect(io)
+        io << ">"
+      end
+  
+      # Note: Crystal has no dependent types, so this module must refer to its
+      # own type parameters.
+      private module ClassMethods(T)
+        # Wraps the *value* into an optional of this type, empty for `nil`, if
+        # it's not already one.
+        def from(value : T?) : self
+          optional = new
+          optional.value = value unless value.nil?
+          optional
+        end
+  
+        # :ditto:
+        def from(value : self) : self
+          value
+        end
+      end
+  
+      macro included
+        extend ClassMethods(T)
+      end
+    end
+  
     # Wrapper for an instantiated, associative container type.
     #
     # This offers a subset of the methods known from `Hash`, and is `Enumerable`
@@ -1001,6 +1058,7 @@ module Qt
     alias QFileInfoPrivate = Void
     alias QDir = Void
     alias ContainerQListQFileInfo = Void
+    alias ContainerStdOptionalQFileDevicePermissions = Void
     alias QDirPrivate = Void
     alias QDirIterator = Void
     alias ContainerQListQPointF = Void
@@ -1018,6 +1076,7 @@ module Qt
     alias QLockFile = Void
     alias QLoggingCategory = Void
     alias QMessageAuthenticationCode = Void
+    alias ContainerStdOptionalQuint64 = Void
     alias QUntypedBindable = Void
     alias QMimeType = Void
     alias QMimeTypePrivate = Void
@@ -1093,6 +1152,7 @@ module Qt
     alias ContainerQListQInputMethodEventAttribute = Void
     alias QInputMethodEvent_Attribute = Void
     alias ContainerQListQFontTag = Void
+    alias ContainerStdOptionalQFontTag = Void
     alias QFontDatabase = Void
     alias ContainerQListQFontDatabaseWritingSystem = Void
     alias QFontInfo = Void
@@ -1241,6 +1301,7 @@ module Qt
     alias QPushButtonPrivate = Void
     alias QCommonStylePrivate = Void
     alias QFileDialogArgs = Void
+    alias ContainerStdOptionalQFont = Void
     alias QFormLayout_TakeRowResult = Void
     alias QGesturePrivate = Void
     alias ContainerQListQGestureX = Void
@@ -12947,8 +13008,10 @@ module Qt
     fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters(_self_ : QDir*, name_filters : ContainerQListQString*, filters : ::Qt::Dir::Filters) : ContainerQListQFileInfo*
     fun bg_QDir_entryInfoList_const_QStringList_R_QDir__Filters_QDir__SortFlags(_self_ : QDir*, name_filters : ContainerQListQString*, filters : ::Qt::Dir::Filters, sort : ::Qt::Dir::SortFlags) : ContainerQListQFileInfo*
     fun bg_QDir_mkdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
+    fun bg_QDir_mkdir_const_QString_R_std__optional_QFileDevice__Permissions_(_self_ : QDir*, dir_name : CrystalString, p : ContainerStdOptionalQFileDevicePermissions*) : Bool
     fun bg_QDir_rmdir_const_QString_R(_self_ : QDir*, dir_name : CrystalString) : Bool
     fun bg_QDir_mkpath_const_QString_R(_self_ : QDir*, dir_path : CrystalString) : Bool
+    fun bg_QDir_mkpath_const_QString_R_std__optional_QFileDevice__Permissions_(_self_ : QDir*, dir_path : CrystalString, p : ContainerStdOptionalQFileDevicePermissions*) : Bool
     fun bg_QDir_rmpath_const_QString_R(_self_ : QDir*, dir_path : CrystalString) : Bool
     fun bg_QDir_removeRecursively_(_self_ : QDir*) : Bool
     fun bg_QDir_isReadable_(_self_ : QDir*) : Bool
@@ -14021,9 +14084,12 @@ module Qt
     fun bg_QMetaEnum_keyCount_(_self_ : QMetaEnum*) : Int32
     fun bg_QMetaEnum_key_int(_self_ : QMetaEnum*, index : Int32) : UInt8*
     fun bg_QMetaEnum_value_int(_self_ : QMetaEnum*, index : Int32) : Int32
+    fun bg_QMetaEnum_value64_int(_self_ : QMetaEnum*, index : Int32) : ContainerStdOptionalQuint64*
     fun bg_QMetaEnum_scope_(_self_ : QMetaEnum*) : UInt8*
     fun bg_QMetaEnum_keyToValue_const_char_X_bool_X(_self_ : QMetaEnum*, key : UInt8*, ok : Bool*) : Int32
     fun bg_QMetaEnum_keysToValue_const_char_X_bool_X(_self_ : QMetaEnum*, keys : UInt8*, ok : Bool*) : Int32
+    fun bg_QMetaEnum_keyToValue64_const_char_X(_self_ : QMetaEnum*, key : UInt8*) : ContainerStdOptionalQuint64*
+    fun bg_QMetaEnum_keysToValue64_const_char_X(_self_ : QMetaEnum*, keys : UInt8*) : ContainerStdOptionalQuint64*
     fun bg_QMetaEnum_valueToKey_quint64(_self_ : QMetaEnum*, value : UInt64) : UInt8*
     fun bg_QMetaEnum_valueToKeys_quint64(_self_ : QMetaEnum*, value : UInt64) : CrystalString
     fun bg_QMetaEnum_enclosingMetaObject_(_self_ : QMetaEnum*) : QMetaObject*
@@ -18055,6 +18121,8 @@ module Qt
     fun bg_QFont__Tag_isValid_(_self_ : QFont_Tag*) : Bool
     fun bg_QFont__Tag_value_(_self_ : QFont_Tag*) : UInt32
     fun bg_QFont__Tag_toString_(_self_ : QFont_Tag*) : CrystalString
+    fun bg_QFont__Tag_fromValue_STATIC_quint32(value : UInt32) : ContainerStdOptionalQFontTag*
+    fun bg_QFont__Tag_fromString_STATIC_QAnyStringView(view : CrystalString) : ContainerStdOptionalQFontTag*
     fun bg_QFont__Tag__COPY_const_QFont__Tag_R(unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
     fun bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(_self_ : QFont_Tag*, unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
     fun bg_QFont__Tag_qHash_size_t(_self_ : QFont_Tag*, seed : LibC::SizeT) : LibC::SizeT
@@ -27865,6 +27933,7 @@ module Qt
     fun bg_QFontComboBox_setSampleTextForFont_const_QString_R_const_QString_R(_self_ : QFontComboBox*, font_family : CrystalString, sample_text : CrystalString) : Void
     fun bg_QFontComboBox_sampleTextForFont_const_QString_R(_self_ : QFontComboBox*, font_family : CrystalString) : CrystalString
     fun bg_QFontComboBox_setDisplayFont_const_QString_R_const_QFont_R(_self_ : QFontComboBox*, font_family : CrystalString, font : QFont*) : Void
+    fun bg_QFontComboBox_displayFont_const_QString_R(_self_ : QFontComboBox*, font_family : CrystalString) : ContainerStdOptionalQFont*
     fun bg_QFontComboBox_setCurrentFont_const_QFont_R(_self_ : QFontComboBox*, f : QFont*) : Void
     fun bg_QFontComboBox_currentFontChanged_const_QFont_R(_self_ : QFontComboBox*, f : QFont*) : Void
     fun bg_QFontComboBox_event_QEvent_X(_self_ : QFontComboBox*, event : QEvent*) : Bool
@@ -38574,6 +38643,22 @@ module Qt
     fun bg____Container_std__pair_qreal__qreal__first_Container_std__pair_qreal__qreal__R(pair : ContainerStdPairQrealQreal*) : Float64
     fun bg____Container_std__pair_qreal__qreal__second_Container_std__pair_qreal__qreal__R(pair : ContainerStdPairQrealQreal*) : Float64
     fun bg____Container_std__pair_qreal__qreal__set_Container_std__pair_qreal__qreal__R_qreal_qreal(pair : ContainerStdPairQrealQreal*, first : Float64, second : Float64) : Void
+    fun bg_Container_std__optional_QFileDevice__Permissions___CONSTRUCT_() : ContainerStdOptionalQFileDevicePermissions*
+    fun bg_Container_std__optional_QFileDevice__Permissions__has_value_(_self_ : ContainerStdOptionalQFileDevicePermissions*) : Bool
+    fun bg_Container_std__optional_QFileDevice__Permissions__value_(_self_ : ContainerStdOptionalQFileDevicePermissions*) : ::Qt::FileDevice::Permissions
+    fun bg_Container_std__optional_QFileDevice__Permissions__emplace_QFileDevice__Permissions(_self_ : ContainerStdOptionalQFileDevicePermissions*, value : ::Qt::FileDevice::Permissions) : Void
+    fun bg_Container_std__optional_quint64___CONSTRUCT_() : ContainerStdOptionalQuint64*
+    fun bg_Container_std__optional_quint64__has_value_(_self_ : ContainerStdOptionalQuint64*) : Bool
+    fun bg_Container_std__optional_quint64__value_(_self_ : ContainerStdOptionalQuint64*) : UInt64
+    fun bg_Container_std__optional_quint64__emplace_quint64(_self_ : ContainerStdOptionalQuint64*, value : UInt64) : Void
+    fun bg_Container_std__optional_QFont__Tag___CONSTRUCT_() : ContainerStdOptionalQFontTag*
+    fun bg_Container_std__optional_QFont__Tag__has_value_(_self_ : ContainerStdOptionalQFontTag*) : Bool
+    fun bg_Container_std__optional_QFont__Tag__value_(_self_ : ContainerStdOptionalQFontTag*) : QFont_Tag*
+    fun bg_Container_std__optional_QFont__Tag__emplace_QFont__Tag(_self_ : ContainerStdOptionalQFontTag*, value : QFont_Tag*) : Void
+    fun bg_Container_std__optional_QFont___CONSTRUCT_() : ContainerStdOptionalQFont*
+    fun bg_Container_std__optional_QFont__has_value_(_self_ : ContainerStdOptionalQFont*) : Bool
+    fun bg_Container_std__optional_QFont__value_(_self_ : ContainerStdOptionalQFont*) : QFont*
+    fun bg_Container_std__optional_QFont__emplace_QFont(_self_ : ContainerStdOptionalQFont*, value : QFont*) : Void
     fun bg_Container_QList_qreal___CONSTRUCT_() : ContainerQListQreal*
     fun bg_Container_QList_qreal__at_int(_self_ : ContainerQListQreal*, index : Int32) : Float64
     fun bg_Container_QList_qreal__push_back_qreal(_self_ : ContainerQListQreal*, value : Float64) : Void
@@ -62066,12 +62151,20 @@ module Qt
       Binding.bg_QDir_mkdir_const_QString_R(self, Qt::Converter::QString.wrap(dir_name))
     end
     
+    def mkdir(dir_name : String, p : FileDevice::Permissions?) : Bool
+      Binding.bg_QDir_mkdir_const_QString_R_std__optional_QFileDevice__Permissions_(self, Qt::Converter::QString.wrap(dir_name), Container_std__optional_QFileDevice__Permissions_.from(p).to_unsafe)
+    end
+    
     def rmdir(dir_name : String) : Bool
       Binding.bg_QDir_rmdir_const_QString_R(self, Qt::Converter::QString.wrap(dir_name))
     end
     
     def mkpath(dir_path : String) : Bool
       Binding.bg_QDir_mkpath_const_QString_R(self, Qt::Converter::QString.wrap(dir_path))
+    end
+    
+    def mkpath(dir_path : String, p : FileDevice::Permissions?) : Bool
+      Binding.bg_QDir_mkpath_const_QString_R_std__optional_QFileDevice__Permissions_(self, Qt::Converter::QString.wrap(dir_path), Container_std__optional_QFileDevice__Permissions_.from(p).to_unsafe)
     end
     
     def rmpath(dir_path : String) : Bool
@@ -68701,6 +68794,10 @@ module Qt
       Binding.bg_QMetaEnum_value_int(self, index)
     end
     
+    def value64(index : Int32) : UInt64?
+      Container_std__optional_quint64_.new(unwrap: Binding.bg_QMetaEnum_value64_int(self, index)).to_nilable
+    end
+    
     def scope() : UInt8*
       Binding.bg_QMetaEnum_scope_(self)
     end
@@ -68711,6 +68808,14 @@ module Qt
     
     def keys_to_value(keys : UInt8*, ok : Bool*? = nil) : Int32
       Binding.bg_QMetaEnum_keysToValue_const_char_X_bool_X(self, keys, ok)
+    end
+    
+    def key_to_value64(key : UInt8*) : UInt64?
+      Container_std__optional_quint64_.new(unwrap: Binding.bg_QMetaEnum_keyToValue64_const_char_X(self, key)).to_nilable
+    end
+    
+    def keys_to_value64(keys : UInt8*) : UInt64?
+      Container_std__optional_quint64_.new(unwrap: Binding.bg_QMetaEnum_keysToValue64_const_char_X(self, keys)).to_nilable
     end
     
     def value_to_key(value : UInt64) : UInt8*
@@ -98226,6 +98331,14 @@ module Qt
     
     def to_string() : Bytes
       Qt::Converter::QByteArray.unwrap(Binding.bg_QFont__Tag_toString_(self))
+    end
+    
+    def self.from_value(value : UInt32) : FontTag?
+      Container_std__optional_QFont__Tag_.new(unwrap: Binding.bg_QFont__Tag_fromValue_STATIC_quint32(value)).to_nilable
+    end
+    
+    def self.from_string(view : String) : FontTag?
+      Container_std__optional_QFont__Tag_.new(unwrap: Binding.bg_QFont__Tag_fromString_STATIC_QAnyStringView(Qt::Converter::QString.wrap(view))).to_nilable
     end
     
     def initialize(unnamed_arg_0 : FontTag)
@@ -174160,6 +174273,10 @@ module Qt
     
     def set_display_font(font_family : String, font : Font) : Void
       Binding.bg_QFontComboBox_setDisplayFont_const_QString_R_const_QFont_R(self, Qt::Converter::QString.wrap(font_family), font)
+    end
+    
+    def display_font(font_family : String) : Font?
+      Container_std__optional_QFont_.new(unwrap: Binding.bg_QFontComboBox_displayFont_const_QString_R(self, Qt::Converter::QString.wrap(font_family))).to_nilable
     end
     
     def current_font=(f : Font) : Void
@@ -267766,6 +267883,33 @@ module Qt
       LibGLES = 1
     end
   end
+  module Std
+    module Optional(T)
+      macro of(*type_args)
+        {% types = type_args.map(&.resolve) %}
+        {% if types == {FileDevice::Permissions} %} {{ Container_std__optional_QFileDevice__Permissions_ }}
+        {% elsif types == {UInt64} %} {{ Container_std__optional_quint64_ }}
+        {% elsif types == {FontTag} %} {{ Container_std__optional_QFont__Tag_ }}
+        {% elsif types == {Font} %} {{ Container_std__optional_QFont_ }}
+        {% else %} {% raise "Optional(#{types.splat}) has not been instantiated" %}
+        {% end %}
+      end
+    end
+    module Pair(T1, T2)
+      macro of(*type_args)
+        {% types = type_args.map(&.resolve) %}
+        {% if types == {CborValue, CborValue} %} {{ Container_std__pair_QCborValue__QCborValue_ }}
+        {% elsif types == {Float64, Variant} %} {{ Container_std__pair_double__QVariant_ }}
+        {% elsif types == {String, String} %} {{ Container_std__pair_QString__QString_ }}
+        {% elsif types == {Float64, Color} %} {{ Container_std__pair_double__QColor_ }}
+        {% elsif types == {Int32, Int32} %} {{ Container_std__pair_int__int_ }}
+        {% elsif types == {Float64, PointF} %} {{ Container_std__pair_qreal__QPointF_ }}
+        {% elsif types == {Float64, Float64} %} {{ Container_std__pair_qreal__qreal_ }}
+        {% else %} {% raise "Pair(#{types.splat}) has not been instantiated" %}
+        {% end %}
+      end
+    end
+  end
   module QList(T)
     macro of(*type_args)
       {% types = type_args.map(&.resolve) %}
@@ -267848,22 +267992,6 @@ module Qt
       {% elsif types == {Wizard::Button} %} {{ Container_QList_QWizard__WizardButton_ }}
       {% else %} {% raise "QList(#{types.splat}) has not been instantiated" %}
       {% end %}
-    end
-  end
-  module Std
-    module Pair(T1, T2)
-      macro of(*type_args)
-        {% types = type_args.map(&.resolve) %}
-        {% if types == {CborValue, CborValue} %} {{ Container_std__pair_QCborValue__QCborValue_ }}
-        {% elsif types == {Float64, Variant} %} {{ Container_std__pair_double__QVariant_ }}
-        {% elsif types == {String, String} %} {{ Container_std__pair_QString__QString_ }}
-        {% elsif types == {Float64, Color} %} {{ Container_std__pair_double__QColor_ }}
-        {% elsif types == {Int32, Int32} %} {{ Container_std__pair_int__int_ }}
-        {% elsif types == {Float64, PointF} %} {{ Container_std__pair_qreal__QPointF_ }}
-        {% elsif types == {Float64, Float64} %} {{ Container_std__pair_qreal__qreal_ }}
-        {% else %} {% raise "Pair(#{types.splat}) has not been instantiated" %}
-        {% end %}
-      end
     end
   end
   module QMap(T1, T2)
@@ -268113,6 +268241,138 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerStdPairQrealQreal*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  @[BindgenWrapper]
+  class Container_std__optional_QFileDevice__Permissions_
+    include BindgenHelper::OptionalContainer(FileDevice::Permissions)
+    include Std::Optional(FileDevice::Permissions)
+    
+    @unwrap : Binding::ContainerStdOptionalQFileDevicePermissions*
+    
+    def initialize()
+      result = Binding.bg_Container_std__optional_QFileDevice__Permissions___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_has_value() : Bool
+      Binding.bg_Container_std__optional_QFileDevice__Permissions__has_value_(self)
+    end
+    
+    def unsafe_value() : FileDevice::Permissions
+      Binding.bg_Container_std__optional_QFileDevice__Permissions__value_(self)
+    end
+    
+    def unsafe_emplace(value : FileDevice::Permissions) : Void
+      Binding.bg_Container_std__optional_QFileDevice__Permissions__emplace_QFileDevice__Permissions(self, value)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerStdOptionalQFileDevicePermissions*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  @[BindgenWrapper]
+  class Container_std__optional_quint64_
+    include BindgenHelper::OptionalContainer(UInt64)
+    include Std::Optional(UInt64)
+    
+    @unwrap : Binding::ContainerStdOptionalQuint64*
+    
+    def initialize()
+      result = Binding.bg_Container_std__optional_quint64___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_has_value() : Bool
+      Binding.bg_Container_std__optional_quint64__has_value_(self)
+    end
+    
+    def unsafe_value() : UInt64
+      Binding.bg_Container_std__optional_quint64__value_(self)
+    end
+    
+    def unsafe_emplace(value : UInt64) : Void
+      Binding.bg_Container_std__optional_quint64__emplace_quint64(self, value)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerStdOptionalQuint64*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  @[BindgenWrapper]
+  class Container_std__optional_QFont__Tag_
+    include BindgenHelper::OptionalContainer(FontTag)
+    include Std::Optional(FontTag)
+    
+    @unwrap : Binding::ContainerStdOptionalQFontTag*
+    
+    def initialize()
+      result = Binding.bg_Container_std__optional_QFont__Tag___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_has_value() : Bool
+      Binding.bg_Container_std__optional_QFont__Tag__has_value_(self)
+    end
+    
+    def unsafe_value() : FontTag
+      FontTag.new(unwrap: Binding.bg_Container_std__optional_QFont__Tag__value_(self))
+    end
+    
+    def unsafe_emplace(value : FontTag) : Void
+      Binding.bg_Container_std__optional_QFont__Tag__emplace_QFont__Tag(self, value)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerStdOptionalQFontTag*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  @[BindgenWrapper]
+  class Container_std__optional_QFont_
+    include BindgenHelper::OptionalContainer(Font)
+    include Std::Optional(Font)
+    
+    @unwrap : Binding::ContainerStdOptionalQFont*
+    
+    def initialize()
+      result = Binding.bg_Container_std__optional_QFont___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_has_value() : Bool
+      Binding.bg_Container_std__optional_QFont__has_value_(self)
+    end
+    
+    def unsafe_value() : Font
+      Font.new(unwrap: Binding.bg_Container_std__optional_QFont__value_(self))
+    end
+    
+    def unsafe_emplace(value : Font) : Void
+      Binding.bg_Container_std__optional_QFont__emplace_QFont(self, value)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerStdOptionalQFont*)
       result = unwrap
     @unwrap = result
     end

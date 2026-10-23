@@ -1,4 +1,6 @@
 containers:
+  - class: std::optional # Converted to and from a T?: FontComboBox#display_font
+    type: Optional
   # Qt 6 has no separate QVector: it's an alias of QList.
   - class: QList
     type: Sequential

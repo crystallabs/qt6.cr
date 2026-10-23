@@ -205,8 +205,6 @@ types: # Type rewrite rules
       # itself it would shadow Indexable#[], which raises IndexError.
       - "operator[]"
 
-  "std::optional<QFont>": { ignore: true } # QFontComboBox#displayFont
-
   # Ignore private data structures
   QObjectPrivate: { ignore: true }
   QKeySequencePrivate: { ignore: true }

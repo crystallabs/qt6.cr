@@ -504,7 +504,7 @@ see the comments there:
   `Qt::PainterPixmapFragment.create(pos, source_rect)`,
   `input_method_event.attributes`, `font.feature_tags`, `stream <<
   Qt.q_set_field_width(6) << Qt.q_set_pad_char('*')`.  `QFont::Tag`'s
-  `fromValue` and `fromString` return a `std::optional`, so they are dropped.
+  `fromValue` and `fromString` return a `std::optional`, a `FontTag?`.
 * `QSettings::registerFormat` is dropped, as its `ReadFunc` and `WriteFunc`
   are C function pointers; `Qt::Settings::Format::IniFormat` and the native
   format need none.
@@ -541,8 +541,9 @@ see the comments there:
   `AbstractItemModel#role_names` of `Int32` to `Bytes`,
   `CalendarWidget#date_text_format` of `Date` to `TextCharFormat`, and the
   setters take a `Hash`: `model.set_item_data(index, {role => Qt.variant(x)})`.
-* `std::optional<QFont>` (`FontComboBox#display_font`) has no mapping yet and
-  is ignored.
+* `std::optional<T>` converts to and from a `T?` (bindgen's `Optional`
+  container kind): `FontComboBox#display_font` is a `Font?`, and
+  `Dir#mkdir(name, permissions)` takes a `FileDevice::Permissions?`.
 * `QVector2D`, `QVector3D`, `QVector4D`, `QQuaternion`, `QRgba64`,
   `QPainterPath::Element`, `QPageRanges::Range` and
   `QColorSpace::PrimaryPoints` are copied structures passed by value, like
@@ -620,8 +621,8 @@ see the comments there:
   `Qt::MetaObject.invoke_method(object, "click")` (`ext/meta_helper.hpp`)
   invokes a method without arguments.  `MetaType::Type` keeps Qt's constant
   names, `MetaType::Type::QString`.
-* Types without a mapping yet, like `std::optional` or the `QEvent`
-  constructor tags, are ignored, which drops the methods using them.  A `bool *ok =
+* Types without a mapping yet, like the `QEvent` constructor tags, are
+  ignored, which drops the methods using them.  A `bool *ok =
   nullptr` argument is `ok : Bool*? = nil`: `bits.to_u_int32(endian)`, or
   `transform.inverted(pointerof(invertible))` to learn the outcome.
 
