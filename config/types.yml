@@ -224,11 +224,6 @@ types: # Type rewrite rules
   "QInputMethodEvent::Attribute": { ignore: true }
   "QList<QInputMethodEvent::Attribute>": { ignore: true }
 
-  "QList<QTextEdit::ExtraSelection>": { ignore: true }
-  "QList<QTextOption::Tab>": { ignore: true }
-  "QTextOption::Tab": { ignore: true }
-  "QFormLayout::TakeRowResult": { ignore: true }
-
   # Bare struct holding QProcess::UnixProcessFlags and an int (Qt 6.6+).
   "QProcess::UnixProcessParameters": { ignore: true }
 

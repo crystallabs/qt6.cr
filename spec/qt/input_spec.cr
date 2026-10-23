@@ -416,3 +416,32 @@ describe Qt::BitArray do
     matches.map(&.captured).to_a.should eq(["1", "22", "333"])
   end
 end
+
+describe Qt::Process do
+  it "runs a program and reads its output" do
+    process = Qt::Process.new
+    process.start("/bin/echo", ["hi"])
+    process.wait_for_finished.should be_true
+    String.new(process.read_all_standard_output).should eq("hi\n")
+    process.exit_status.should eq(Qt::Process::ExitStatus::NormalExit)
+    process.exit_code.should eq(0)
+    process.state.should eq(Qt::Process::ProcessState::NotRunning)
+  end
+
+  it "reports a program that fails to start" do
+    process = Qt::Process.new
+    process.start("/nonexistent/qt6cr", [] of String)
+    process.wait_for_started.should be_false
+    process.error.should eq(Qt::Process::ProcessError::FailedToStart)
+  end
+end
+
+describe Qt::Clipboard do
+  it "takes mime data" do
+    clipboard = Qt::GuiApplication.clipboard.not_nil!
+    data = Qt::MimeData.new
+    data.text = "mime"
+    clipboard.set_mime_data(data)
+    clipboard.mime_data.not_nil!.text.should eq("mime")
+  end
+end

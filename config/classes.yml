@@ -66,6 +66,7 @@ classes:
   QTableView: TableView
   QTableWidget: TableWidget
   QTableWidgetItem: TableWidgetItem
+  QTableWidgetSelectionRange: TableWidgetSelectionRange
   QAbstractItemDelegate: AbstractItemDelegate
   QStyledItemDelegate: StyledItemDelegate
   QItemEditorFactory: ItemEditorFactory
@@ -79,6 +80,7 @@ classes:
   QGridLayout: GridLayout
   QStackedLayout: StackedLayout
   QFormLayout: FormLayout
+  "QFormLayout::TakeRowResult": FormLayoutTakeRowResult
   QPalette: Palette
   QPoint: Point
   QPointF: PointF
@@ -87,9 +89,10 @@ classes:
   QKeySequence: KeySequence
   QLineEdit: LineEdit
   QTextEdit: TextEdit
+  "QTextEdit::ExtraSelection": TextEditExtraSelection
   QFileDialog: FileDialog
   QTextOption: TextOption
-  # "QTextOption::Tab": TextOptionTab
+  "QTextOption::Tab": TextOptionTab
   QTextDocument: TextDocument
   QTextCursor: TextCursor
   QCursor: Cursor

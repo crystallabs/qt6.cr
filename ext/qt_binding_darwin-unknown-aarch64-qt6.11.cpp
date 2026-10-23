@@ -31,6 +31,7 @@ typedef QList<QTreeWidgetItem *> Container_QList_QTreeWidgetItem_X_;
 typedef QList<QTableWidgetSelectionRange> Container_QList_QTableWidgetSelectionRange_;
 typedef QList<QTableWidgetItem *> Container_QList_QTableWidgetItem_X_;
 typedef QList<QScroller *> Container_QList_QScroller_X_;
+typedef QList<QTextEdit::ExtraSelection> Container_QList_QTextEdit__ExtraSelection_;
 typedef QList<QMdiSubWindow *> Container_QList_QMdiSubWindow_X_;
 typedef QList<QDockWidget *> Container_QList_QDockWidget_X_;
 typedef QList<QListWidgetItem *> Container_QList_QListWidgetItem_X_;
@@ -58,6 +59,7 @@ typedef QList<QAbstractTextDocumentLayout::Selection> Container_QList_QAbstractT
 typedef QList<QGlyphRun> Container_QList_QGlyphRun_;
 typedef QList<QTextLayout::FormatRange> Container_QList_QTextLayout__FormatRange_;
 typedef QList<QTextLength> Container_QList_QTextLength_;
+typedef QList<QTextOption::Tab> Container_QList_QTextOption__Tab_;
 typedef QList<QTextFormat> Container_QList_QTextFormat_;
 typedef QList<qsizetype> Container_QList_qsizetype_;
 typedef QList<quint32> Container_QList_quint32_;
@@ -42986,12 +42988,68 @@ extern "C" Container_QList_qreal_ * bg_QTextOption_tabArray_(QTextOption * _self
   return new (UseGC, bindgen_gc_finalizer<Container_QList_qreal_>()) Container_QList_qreal_ (_self_->tabArray());
 }
 
+extern "C" void bg_QTextOption_setTabs_const_QList_QTextOption__Tab__R(QTextOption * _self_, const Container_QList_QTextOption__Tab_ * tabStops) {
+  _self_->setTabs(*(tabStops));
+}
+
+extern "C" Container_QList_QTextOption__Tab_ * bg_QTextOption_tabs_(QTextOption * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextOption__Tab_>()) Container_QList_QTextOption__Tab_ (_self_->tabs());
+}
+
 extern "C" void bg_QTextOption_setUseDesignMetrics_bool(QTextOption * _self_, bool b) {
   _self_->setUseDesignMetrics(b);
 }
 
 extern "C" bool bg_QTextOption_useDesignMetrics_(QTextOption * _self_) {
   return _self_->useDesignMetrics();
+}
+
+extern "C" QTextOption::Tab * bg_QTextOption__Tab__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextOption::Tab>();
+}
+
+extern "C" QTextOption::Tab * bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType(qreal pos, QTextOption::TabType tabType) {
+  return new (UseGC) CrystalGCWrapper<QTextOption::Tab>(pos, tabType);
+}
+
+extern "C" QTextOption::Tab * bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType_QChar(qreal pos, QTextOption::TabType tabType, int32_t delim) {
+  return new (UseGC) CrystalGCWrapper<QTextOption::Tab>(pos, tabType, QChar(delim));
+}
+
+extern "C" bool bg_QTextOption__Tab__OPERATOR_eq_const_QTextOption__Tab_R(QTextOption::Tab * _self_, const QTextOption::Tab & other) {
+  return ((*_self_) == (other));
+}
+
+extern "C" bool bg_QTextOption__Tab__OPERATOR_ne_const_QTextOption__Tab_R(QTextOption::Tab * _self_, const QTextOption::Tab & other) {
+  return ((*_self_) != (other));
+}
+
+extern "C" QTextOption::Tab * bg_QTextOption__Tab__COPY_const_QTextOption__Tab_R(const QTextOption::Tab & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextOption::Tab>(unnamed_arg_0);
+}
+
+extern "C" qreal bg_QTextOption__Tab_position_GETTER_(QTextOption::Tab * _self_) {
+  return _self_->position;
+}
+
+extern "C" void bg_QTextOption__Tab_position_SETTER_qreal(QTextOption::Tab * _self_, qreal position) {
+  _self_->position = position;
+}
+
+extern "C" QTextOption::TabType bg_QTextOption__Tab_type_GETTER_(QTextOption::Tab * _self_) {
+  return _self_->type;
+}
+
+extern "C" void bg_QTextOption__Tab_type_SETTER_QTextOption__TabType(QTextOption::Tab * _self_, QTextOption::TabType type) {
+  _self_->type = type;
+}
+
+extern "C" int32_t bg_QTextOption__Tab_delimiter_GETTER_(QTextOption::Tab * _self_) {
+  return static_cast<int32_t>(_self_->delimiter.unicode());
+}
+
+extern "C" void bg_QTextOption__Tab_delimiter_SETTER_QChar(QTextOption::Tab * _self_, int32_t delimiter) {
+  _self_->delimiter = QChar(delimiter);
 }
 
 extern "C" QTextLength * bg_QTextLength__CONSTRUCT_() {
@@ -43632,6 +43690,14 @@ extern "C" void bg_QTextBlockFormat_setPageBreakPolicy_QTextFormat__PageBreakFla
 
 extern "C" QTextFormat::PageBreakFlags bg_QTextBlockFormat_pageBreakPolicy_(QTextBlockFormat * _self_) {
   return _self_->pageBreakPolicy();
+}
+
+extern "C" void bg_QTextBlockFormat_setTabPositions_const_QList_QTextOption__Tab__R(QTextBlockFormat * _self_, const Container_QList_QTextOption__Tab_ * tabs) {
+  _self_->setTabPositions(*(tabs));
+}
+
+extern "C" Container_QList_QTextOption__Tab_ * bg_QTextBlockFormat_tabPositions_(QTextBlockFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextOption__Tab_>()) Container_QList_QTextOption__Tab_ (_self_->tabPositions());
 }
 
 extern "C" void bg_QTextBlockFormat_setMarker_QTextBlockFormat__MarkerType(QTextBlockFormat * _self_, QTextBlockFormat::MarkerType marker) {
@@ -93782,6 +93848,18 @@ extern "C" void bg_QFormLayout_removeRow_QLayout_X(QFormLayout * _self_, QLayout
   _self_->removeRow(layout);
 }
 
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout_takeRow_int(QFormLayout * _self_, int row) {
+  return new (UseGC, bindgen_gc_finalizer<QFormLayout::TakeRowResult>()) QFormLayout::TakeRowResult (_self_->takeRow(row));
+}
+
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout_takeRow_QWidget_X(QFormLayout * _self_, QWidget * widget) {
+  return new (UseGC, bindgen_gc_finalizer<QFormLayout::TakeRowResult>()) QFormLayout::TakeRowResult (_self_->takeRow(widget));
+}
+
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout_takeRow_QLayout_X(QFormLayout * _self_, QLayout * layout) {
+  return new (UseGC, bindgen_gc_finalizer<QFormLayout::TakeRowResult>()) QFormLayout::TakeRowResult (_self_->takeRow(layout));
+}
+
 extern "C" void bg_QFormLayout_setItem_int_QFormLayout__ItemRole_QLayoutItem_X(QFormLayout * _self_, int row, QFormLayout::ItemRole role, QLayoutItem * item) {
   _self_->setItem(row, role, item);
 }
@@ -93948,6 +94026,34 @@ extern "C" int bg_QFormLayout_count_SUPER_(QFormLayout * _self_) {
 
 extern "C" void bg_BgInherit_QFormLayout_JUMPTABLE_BgJumptable_QFormLayout_R(BgInherit_QFormLayout * _self_, const BgJumptable_QFormLayout & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout__TakeRowResult__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QFormLayout::TakeRowResult>();
+}
+
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout__TakeRowResult__COPY_const_QFormLayout__TakeRowResult_R(const QFormLayout::TakeRowResult & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFormLayout::TakeRowResult>(unnamed_arg_0);
+}
+
+extern "C" QFormLayout::TakeRowResult * bg_QFormLayout__TakeRowResult__AGGREGATE_QLayoutItem_X_QLayoutItem_X(QLayoutItem * labelItem, QLayoutItem * fieldItem) {
+  return new (UseGC, bindgen_gc_finalizer<QFormLayout::TakeRowResult>()) QFormLayout::TakeRowResult {labelItem, fieldItem};
+}
+
+extern "C" QLayoutItem * bg_QFormLayout__TakeRowResult_labelItem_GETTER_(QFormLayout::TakeRowResult * _self_) {
+  return _self_->labelItem;
+}
+
+extern "C" void bg_QFormLayout__TakeRowResult_labelItem_SETTER_QLayoutItem_X(QFormLayout::TakeRowResult * _self_, QLayoutItem * labelItem) {
+  _self_->labelItem = labelItem;
+}
+
+extern "C" QLayoutItem * bg_QFormLayout__TakeRowResult_fieldItem_GETTER_(QFormLayout::TakeRowResult * _self_) {
+  return _self_->fieldItem;
+}
+
+extern "C" void bg_QFormLayout__TakeRowResult_fieldItem_SETTER_QLayoutItem_X(QFormLayout::TakeRowResult * _self_, QLayoutItem * fieldItem) {
+  _self_->fieldItem = fieldItem;
 }
 
 struct BgJumptable_QGesture {
@@ -127667,6 +127773,14 @@ extern "C" void bg_QTextEdit_setAcceptRichText_bool(QTextEdit * _self_, bool acc
   _self_->setAcceptRichText(accept);
 }
 
+extern "C" void bg_QTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(QTextEdit * _self_, const Container_QList_QTextEdit__ExtraSelection_ * selections) {
+  _self_->setExtraSelections(*(selections));
+}
+
+extern "C" Container_QList_QTextEdit__ExtraSelection_ * bg_QTextEdit_extraSelections_(QTextEdit * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextEdit__ExtraSelection_>()) Container_QList_QTextEdit__ExtraSelection_ (_self_->extraSelections());
+}
+
 extern "C" void bg_QTextEdit_moveCursor_QTextCursor__MoveOperation_QTextCursor__MoveMode(QTextEdit * _self_, QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode) {
   _self_->moveCursor(operation, mode);
 }
@@ -128085,6 +128199,38 @@ extern "C" void bg_QTextEdit_doSetTextCursor_SUPER_const_QTextCursor_R(QTextEdit
 
 extern "C" void bg_BgInherit_QTextEdit_JUMPTABLE_BgJumptable_QTextEdit_R(BgInherit_QTextEdit * _self_, const BgJumptable_QTextEdit & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QTextEdit::ExtraSelection * bg_QTextEdit__ExtraSelection__COPY_const_QTextEdit__ExtraSelection_R(const QTextEdit::ExtraSelection & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextEdit::ExtraSelection>(unnamed_arg_0);
+}
+
+extern "C" QTextEdit::ExtraSelection * bg_QTextEdit__ExtraSelection__OPERATOR_assign_const_QTextEdit__ExtraSelection_R(QTextEdit::ExtraSelection * _self_, const QTextEdit::ExtraSelection & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QTextEdit::ExtraSelection * bg_QTextEdit__ExtraSelection__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTextEdit::ExtraSelection>();
+}
+
+extern "C" QTextEdit::ExtraSelection * bg_QTextEdit__ExtraSelection__AGGREGATE_QTextCursor_QTextCharFormat(QTextCursor & cursor, QTextCharFormat & format) {
+  return new (UseGC, bindgen_gc_finalizer<QTextEdit::ExtraSelection>()) QTextEdit::ExtraSelection {cursor, format};
+}
+
+extern "C" QTextCursor * bg_QTextEdit__ExtraSelection_cursor_GETTER_(QTextEdit::ExtraSelection * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCursor>()) QTextCursor (_self_->cursor);
+}
+
+extern "C" void bg_QTextEdit__ExtraSelection_cursor_SETTER_QTextCursor(QTextEdit::ExtraSelection * _self_, QTextCursor & cursor) {
+  _self_->cursor = cursor;
+}
+
+extern "C" QTextCharFormat * bg_QTextEdit__ExtraSelection_format_GETTER_(QTextEdit::ExtraSelection * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QTextCharFormat>()) QTextCharFormat (_self_->format);
+}
+
+extern "C" void bg_QTextEdit__ExtraSelection_format_SETTER_QTextCharFormat(QTextEdit::ExtraSelection * _self_, QTextCharFormat & format) {
+  _self_->format = format;
 }
 
 struct BgJumptable_QPlainTextEdit {
@@ -128901,6 +129047,14 @@ extern "C" int bg_QPlainTextEdit_cursorWidth_(QPlainTextEdit * _self_) {
 
 extern "C" void bg_QPlainTextEdit_setCursorWidth_int(QPlainTextEdit * _self_, int width) {
   _self_->setCursorWidth(width);
+}
+
+extern "C" void bg_QPlainTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(QPlainTextEdit * _self_, const Container_QList_QTextEdit__ExtraSelection_ * selections) {
+  _self_->setExtraSelections(*(selections));
+}
+
+extern "C" Container_QList_QTextEdit__ExtraSelection_ * bg_QPlainTextEdit_extraSelections_(QPlainTextEdit * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextEdit__ExtraSelection_>()) Container_QList_QTextEdit__ExtraSelection_ (_self_->extraSelections());
 }
 
 extern "C" void bg_QPlainTextEdit_moveCursor_QTextCursor__MoveOperation_QTextCursor__MoveMode(QPlainTextEdit * _self_, QTextCursor::MoveOperation operation, QTextCursor::MoveMode mode) {
@@ -140733,6 +140887,50 @@ extern "C" void bg_QTableView_currentChanged_SUPER_const_QModelIndex_R_const_QMo
 
 extern "C" void bg_BgInherit_QTableView_JUMPTABLE_BgJumptable_QTableView_R(BgInherit_QTableView * _self_, const BgJumptable_QTableView & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QTableWidgetSelectionRange * bg_QTableWidgetSelectionRange__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QTableWidgetSelectionRange>();
+}
+
+extern "C" QTableWidgetSelectionRange * bg_QTableWidgetSelectionRange__CONSTRUCT_int_int_int_int(int top, int left, int bottom, int right) {
+  return new (UseGC) CrystalGCWrapper<QTableWidgetSelectionRange>(top, left, bottom, right);
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_topRow_(QTableWidgetSelectionRange * _self_) {
+  return _self_->topRow();
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_bottomRow_(QTableWidgetSelectionRange * _self_) {
+  return _self_->bottomRow();
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_leftColumn_(QTableWidgetSelectionRange * _self_) {
+  return _self_->leftColumn();
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_rightColumn_(QTableWidgetSelectionRange * _self_) {
+  return _self_->rightColumn();
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_rowCount_(QTableWidgetSelectionRange * _self_) {
+  return _self_->rowCount();
+}
+
+extern "C" int bg_QTableWidgetSelectionRange_columnCount_(QTableWidgetSelectionRange * _self_) {
+  return _self_->columnCount();
+}
+
+extern "C" QTableWidgetSelectionRange * bg_QTableWidgetSelectionRange__COPY_const_QTableWidgetSelectionRange_R(const QTableWidgetSelectionRange & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTableWidgetSelectionRange>(unnamed_arg_0);
+}
+
+extern "C" bool bg_QTableWidgetSelectionRange__OPERATOR_eq_const_QTableWidgetSelectionRange_R(QTableWidgetSelectionRange * _self_, const QTableWidgetSelectionRange & rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QTableWidgetSelectionRange__OPERATOR_ne_const_QTableWidgetSelectionRange_R(QTableWidgetSelectionRange * _self_, const QTableWidgetSelectionRange & rhs) {
+  return ((*_self_) != (rhs));
 }
 
 struct BgJumptable_QTableWidgetItem {
@@ -152827,6 +153025,22 @@ extern "C" int bg_Container_QList_QTextFormat__size_(Container_QList_QTextFormat
   return _self_->size();
 }
 
+extern "C" Container_QList_QTextOption__Tab_ * bg_Container_QList_QTextOption__Tab___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QTextOption__Tab_>();
+}
+
+extern "C" QTextOption::Tab * bg_Container_QList_QTextOption__Tab__at_int(Container_QList_QTextOption__Tab_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QTextOption::Tab>()) QTextOption::Tab (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QTextOption__Tab__push_back_QTextOption__Tab(Container_QList_QTextOption__Tab_ * _self_, QTextOption::Tab & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QTextOption__Tab__size_(Container_QList_QTextOption__Tab_ * _self_) {
+  return _self_->size();
+}
+
 extern "C" Container_QList_QTextLength_ * bg_Container_QList_QTextLength___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_QList_QTextLength_>();
 }
@@ -153256,6 +153470,22 @@ extern "C" void bg_Container_QList_QMdiSubWindow_X__push_back_QMdiSubWindow_X(Co
 }
 
 extern "C" int bg_Container_QList_QMdiSubWindow_X__size_(Container_QList_QMdiSubWindow_X_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QTextEdit__ExtraSelection_ * bg_Container_QList_QTextEdit__ExtraSelection___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QTextEdit__ExtraSelection_>();
+}
+
+extern "C" QTextEdit::ExtraSelection * bg_Container_QList_QTextEdit__ExtraSelection__at_int(Container_QList_QTextEdit__ExtraSelection_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QTextEdit::ExtraSelection>()) QTextEdit::ExtraSelection (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QTextEdit__ExtraSelection__push_back_QTextEdit__ExtraSelection(Container_QList_QTextEdit__ExtraSelection_ * _self_, QTextEdit::ExtraSelection & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QTextEdit__ExtraSelection__size_(Container_QList_QTextEdit__ExtraSelection_ * _self_) {
   return _self_->size();
 }
 

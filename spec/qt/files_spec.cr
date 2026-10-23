@@ -223,3 +223,38 @@ describe Qt::StandardPaths do
     Qt::StandardPaths.display_name(Qt::StandardPaths::StandardLocation::HomeLocation).should_not be_empty
   end
 end
+
+describe "Qt::Settings" do
+  it "writes and reads an INI file" do
+    path = temp_path("app.ini")
+    begin
+      settings = Qt::Settings.new(path, Qt::Settings::Format::IniFormat)
+      settings.format.should eq(Qt::Settings::Format::IniFormat)
+      settings.set_value("window/title", Qt.variant("Hello"))
+      settings.sync
+      settings.status.should eq(Qt::Settings::Status::NoError)
+      ::File.exists?(path).should be_true
+      ::File.read(path).should contain("title=Hello")
+      Qt::Settings.new(path, Qt::Settings::Format::IniFormat).value("window/title").to?(String).should eq("Hello")
+    ensure
+      ::File.delete?(path)
+    end
+  end
+
+  it "groups keys" do
+    path = temp_path("groups.ini")
+    begin
+      settings = Qt::Settings.new(path, Qt::Settings::Format::IniFormat)
+      settings.begin_group("window")
+      settings.set_value("width", Qt.variant(640))
+      settings.end_group
+      settings.contains("window/width").should be_true
+      settings.child_groups.to_a.should eq(["window"])
+      settings.value("missing", Qt.variant(1)).to?(Int32).should eq(1)
+      settings.remove("window")
+      settings.all_keys.to_a.should be_empty
+    ensure
+      ::File.delete?(path)
+    end
+  end
+end

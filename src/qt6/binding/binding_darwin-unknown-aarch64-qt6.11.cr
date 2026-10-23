@@ -1032,6 +1032,8 @@ module Qt
     alias QRadialGradient = Void
     alias QConicalGradient = Void
     alias ContainerQListQreal = Void
+    alias ContainerQListQTextOptionTab = Void
+    alias QTextOption_Tab = Void
     alias ContainerQListQTextLength = Void
     alias QTextTableFormat = Void
     alias QTextImageFormat = Void
@@ -1156,6 +1158,7 @@ module Qt
     alias QPushButtonPrivate = Void
     alias QCommonStylePrivate = Void
     alias QFileDialogArgs = Void
+    alias QFormLayout_TakeRowResult = Void
     alias QGesturePrivate = Void
     alias ContainerQListQGestureX = Void
     alias QGestureRecognizer = Void
@@ -1202,14 +1205,16 @@ module Qt
     alias QPlatformMenu = Void
     alias QMenuPrivate = Void
     alias QPlatformMenuBar = Void
+    alias ContainerQListQTextEditExtraSelection = Void
     alias QTextEditPrivate = Void
+    alias QTextEdit_ExtraSelection = Void
     alias QPlainTextEditPrivate = Void
     alias QScrollerProperties = Void
     alias ContainerQListQScrollerX = Void
     alias QStyleFactory = Void
     alias QTableViewPrivate = Void
-    alias ContainerQListQTableWidgetItemX = Void
     alias QTableWidgetSelectionRange = Void
+    alias ContainerQListQTableWidgetItemX = Void
     alias ContainerQListQTableWidgetSelectionRange = Void
     alias QToolTip = Void
     alias QTreeViewPrivate = Void
@@ -18202,8 +18207,22 @@ module Qt
     fun bg_QTextOption_tabStopDistance_(_self_ : QTextOption*) : Float64
     fun bg_QTextOption_setTabArray_const_QList_qreal__R(_self_ : QTextOption*, tab_stops : ContainerQListQreal*) : Void
     fun bg_QTextOption_tabArray_(_self_ : QTextOption*) : ContainerQListQreal*
+    fun bg_QTextOption_setTabs_const_QList_QTextOption__Tab__R(_self_ : QTextOption*, tab_stops : ContainerQListQTextOptionTab*) : Void
+    fun bg_QTextOption_tabs_(_self_ : QTextOption*) : ContainerQListQTextOptionTab*
     fun bg_QTextOption_setUseDesignMetrics_bool(_self_ : QTextOption*, b : Bool) : Void
     fun bg_QTextOption_useDesignMetrics_(_self_ : QTextOption*) : Bool
+    fun bg_QTextOption__Tab__CONSTRUCT_() : QTextOption_Tab*
+    fun bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType(pos : Float64, tab_type : ::Qt::TextOption::TabType) : QTextOption_Tab*
+    fun bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType_QChar(pos : Float64, tab_type : ::Qt::TextOption::TabType, delim : Int32) : QTextOption_Tab*
+    fun bg_QTextOption__Tab__OPERATOR_eq_const_QTextOption__Tab_R(_self_ : QTextOption_Tab*, other : QTextOption_Tab*) : Bool
+    fun bg_QTextOption__Tab__OPERATOR_ne_const_QTextOption__Tab_R(_self_ : QTextOption_Tab*, other : QTextOption_Tab*) : Bool
+    fun bg_QTextOption__Tab__COPY_const_QTextOption__Tab_R(unnamed_arg_0 : QTextOption_Tab*) : QTextOption_Tab*
+    fun bg_QTextOption__Tab_position_GETTER_(_self_ : QTextOption_Tab*) : Float64
+    fun bg_QTextOption__Tab_position_SETTER_qreal(_self_ : QTextOption_Tab*, position : Float64) : Void
+    fun bg_QTextOption__Tab_type_GETTER_(_self_ : QTextOption_Tab*) : ::Qt::TextOption::TabType
+    fun bg_QTextOption__Tab_type_SETTER_QTextOption__TabType(_self_ : QTextOption_Tab*, type : ::Qt::TextOption::TabType) : Void
+    fun bg_QTextOption__Tab_delimiter_GETTER_(_self_ : QTextOption_Tab*) : Int32
+    fun bg_QTextOption__Tab_delimiter_SETTER_QChar(_self_ : QTextOption_Tab*, delimiter : Int32) : Void
     fun bg_QTextLength__CONSTRUCT_() : QTextLength*
     fun bg_QTextLength__CONSTRUCT_QTextLength__Type_qreal(type : ::Qt::TextLength::Type, value : Float64) : QTextLength*
     fun bg_QTextLength_type_(_self_ : QTextLength*) : ::Qt::TextLength::Type
@@ -18364,6 +18383,8 @@ module Qt
     fun bg_QTextBlockFormat_nonBreakableLines_(_self_ : QTextBlockFormat*) : Bool
     fun bg_QTextBlockFormat_setPageBreakPolicy_QTextFormat__PageBreakFlags(_self_ : QTextBlockFormat*, flags : ::Qt::TextFormat::PageBreakFlags) : Void
     fun bg_QTextBlockFormat_pageBreakPolicy_(_self_ : QTextBlockFormat*) : ::Qt::TextFormat::PageBreakFlags
+    fun bg_QTextBlockFormat_setTabPositions_const_QList_QTextOption__Tab__R(_self_ : QTextBlockFormat*, tabs : ContainerQListQTextOptionTab*) : Void
+    fun bg_QTextBlockFormat_tabPositions_(_self_ : QTextBlockFormat*) : ContainerQListQTextOptionTab*
     fun bg_QTextBlockFormat_setMarker_QTextBlockFormat__MarkerType(_self_ : QTextBlockFormat*, marker : ::Qt::TextBlockFormat::MarkerType) : Void
     fun bg_QTextBlockFormat_marker_(_self_ : QTextBlockFormat*) : ::Qt::TextBlockFormat::MarkerType
     fun bg_QTextBlockFormat__CONSTRUCT_const_QTextFormat_R(fmt : QTextFormat*) : QTextBlockFormat*
@@ -27748,6 +27769,9 @@ module Qt
     fun bg_QFormLayout_removeRow_int(_self_ : QFormLayout*, row : Int32) : Void
     fun bg_QFormLayout_removeRow_QWidget_X(_self_ : QFormLayout*, widget : QWidget*) : Void
     fun bg_QFormLayout_removeRow_QLayout_X(_self_ : QFormLayout*, layout : QLayout*) : Void
+    fun bg_QFormLayout_takeRow_int(_self_ : QFormLayout*, row : Int32) : QFormLayout_TakeRowResult*
+    fun bg_QFormLayout_takeRow_QWidget_X(_self_ : QFormLayout*, widget : QWidget*) : QFormLayout_TakeRowResult*
+    fun bg_QFormLayout_takeRow_QLayout_X(_self_ : QFormLayout*, layout : QLayout*) : QFormLayout_TakeRowResult*
     fun bg_QFormLayout_setItem_int_QFormLayout__ItemRole_QLayoutItem_X(_self_ : QFormLayout*, row : Int32, role : ::Qt::FormLayout::ItemRole, item : QLayoutItem*) : Void
     fun bg_QFormLayout_setWidget_int_QFormLayout__ItemRole_QWidget_X(_self_ : QFormLayout*, row : Int32, role : ::Qt::FormLayout::ItemRole, widget : QWidget*) : Void
     fun bg_QFormLayout_setLayout_int_QFormLayout__ItemRole_QLayout_X(_self_ : QFormLayout*, row : Int32, role : ::Qt::FormLayout::ItemRole, layout : QLayout*) : Void
@@ -27821,6 +27845,13 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QFormLayout*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QFormLayout*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QFormLayout_JUMPTABLE_BgJumptable_QFormLayout_R(_self_ : QFormLayout*, table : BgJumptable_QFormLayout*) : Void
+    fun bg_QFormLayout__TakeRowResult__CONSTRUCT_() : QFormLayout_TakeRowResult*
+    fun bg_QFormLayout__TakeRowResult__COPY_const_QFormLayout__TakeRowResult_R(unnamed_arg_0 : QFormLayout_TakeRowResult*) : QFormLayout_TakeRowResult*
+    fun bg_QFormLayout__TakeRowResult__AGGREGATE_QLayoutItem_X_QLayoutItem_X(label_item : QLayoutItem*, field_item : QLayoutItem*) : QFormLayout_TakeRowResult*
+    fun bg_QFormLayout__TakeRowResult_labelItem_GETTER_(_self_ : QFormLayout_TakeRowResult*) : QLayoutItem*
+    fun bg_QFormLayout__TakeRowResult_labelItem_SETTER_QLayoutItem_X(_self_ : QFormLayout_TakeRowResult*, label_item : QLayoutItem*) : Void
+    fun bg_QFormLayout__TakeRowResult_fieldItem_GETTER_(_self_ : QFormLayout_TakeRowResult*) : QLayoutItem*
+    fun bg_QFormLayout__TakeRowResult_fieldItem_SETTER_QLayoutItem_X(_self_ : QFormLayout_TakeRowResult*, field_item : QLayoutItem*) : Void
     fun bg_QGesture_metaObject_(_self_ : QGesture*) : QMetaObject*
     fun bg_QGesture_qt_metacast_const_char_X(_self_ : QGesture*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QGesture_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QGesture*, unnamed_arg_0 : ::Qt::MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -33679,6 +33710,8 @@ module Qt
     fun bg_QTextEdit_setCursorWidth_int(_self_ : QTextEdit*, width : Int32) : Void
     fun bg_QTextEdit_acceptRichText_(_self_ : QTextEdit*) : Bool
     fun bg_QTextEdit_setAcceptRichText_bool(_self_ : QTextEdit*, accept : Bool) : Void
+    fun bg_QTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(_self_ : QTextEdit*, selections : ContainerQListQTextEditExtraSelection*) : Void
+    fun bg_QTextEdit_extraSelections_(_self_ : QTextEdit*) : ContainerQListQTextEditExtraSelection*
     fun bg_QTextEdit_moveCursor_QTextCursor__MoveOperation_QTextCursor__MoveMode(_self_ : QTextEdit*, operation : ::Qt::TextCursor::MoveOperation, mode : ::Qt::TextCursor::MoveMode) : Void
     fun bg_QTextEdit_canPaste_(_self_ : QTextEdit*) : Bool
     fun bg_QTextEdit_print_QPagedPaintDevice_X(_self_ : QTextEdit*, printer : QPagedPaintDevice*) : Void
@@ -33838,6 +33871,14 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextEdit*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTextEdit*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTextEdit_JUMPTABLE_BgJumptable_QTextEdit_R(_self_ : QTextEdit*, table : BgJumptable_QTextEdit*) : Void
+    fun bg_QTextEdit__ExtraSelection__COPY_const_QTextEdit__ExtraSelection_R(unnamed_arg_0 : QTextEdit_ExtraSelection*) : QTextEdit_ExtraSelection*
+    fun bg_QTextEdit__ExtraSelection__OPERATOR_assign_const_QTextEdit__ExtraSelection_R(_self_ : QTextEdit_ExtraSelection*, unnamed_arg_0 : QTextEdit_ExtraSelection*) : QTextEdit_ExtraSelection*
+    fun bg_QTextEdit__ExtraSelection__CONSTRUCT_() : QTextEdit_ExtraSelection*
+    fun bg_QTextEdit__ExtraSelection__AGGREGATE_QTextCursor_QTextCharFormat(cursor : QTextCursor*, format : QTextCharFormat*) : QTextEdit_ExtraSelection*
+    fun bg_QTextEdit__ExtraSelection_cursor_GETTER_(_self_ : QTextEdit_ExtraSelection*) : QTextCursor*
+    fun bg_QTextEdit__ExtraSelection_cursor_SETTER_QTextCursor(_self_ : QTextEdit_ExtraSelection*, cursor : QTextCursor*) : Void
+    fun bg_QTextEdit__ExtraSelection_format_GETTER_(_self_ : QTextEdit_ExtraSelection*) : QTextCharFormat*
+    fun bg_QTextEdit__ExtraSelection_format_SETTER_QTextCharFormat(_self_ : QTextEdit_ExtraSelection*, format : QTextCharFormat*) : Void
     fun bg_QPlainTextEdit_metaObject_(_self_ : QPlainTextEdit*) : QMetaObject*
     fun bg_QPlainTextEdit_qt_metacast_const_char_X(_self_ : QPlainTextEdit*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QPlainTextEdit_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QPlainTextEdit*, unnamed_arg_0 : ::Qt::MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -33893,6 +33934,8 @@ module Qt
     fun bg_QPlainTextEdit_setTabStopDistance_qreal(_self_ : QPlainTextEdit*, distance : Float64) : Void
     fun bg_QPlainTextEdit_cursorWidth_(_self_ : QPlainTextEdit*) : Int32
     fun bg_QPlainTextEdit_setCursorWidth_int(_self_ : QPlainTextEdit*, width : Int32) : Void
+    fun bg_QPlainTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(_self_ : QPlainTextEdit*, selections : ContainerQListQTextEditExtraSelection*) : Void
+    fun bg_QPlainTextEdit_extraSelections_(_self_ : QPlainTextEdit*) : ContainerQListQTextEditExtraSelection*
     fun bg_QPlainTextEdit_moveCursor_QTextCursor__MoveOperation_QTextCursor__MoveMode(_self_ : QPlainTextEdit*, operation : ::Qt::TextCursor::MoveOperation, mode : ::Qt::TextCursor::MoveMode) : Void
     fun bg_QPlainTextEdit_canPaste_(_self_ : QPlainTextEdit*) : Bool
     fun bg_QPlainTextEdit_print_QPagedPaintDevice_X(_self_ : QPlainTextEdit*, printer : QPagedPaintDevice*) : Void
@@ -36071,6 +36114,17 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QTableView*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QTableView*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QTableView_JUMPTABLE_BgJumptable_QTableView_R(_self_ : QTableView*, table : BgJumptable_QTableView*) : Void
+    fun bg_QTableWidgetSelectionRange__CONSTRUCT_() : QTableWidgetSelectionRange*
+    fun bg_QTableWidgetSelectionRange__CONSTRUCT_int_int_int_int(top : Int32, left : Int32, bottom : Int32, right : Int32) : QTableWidgetSelectionRange*
+    fun bg_QTableWidgetSelectionRange_topRow_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange_bottomRow_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange_leftColumn_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange_rightColumn_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange_rowCount_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange_columnCount_(_self_ : QTableWidgetSelectionRange*) : Int32
+    fun bg_QTableWidgetSelectionRange__COPY_const_QTableWidgetSelectionRange_R(unnamed_arg_0 : QTableWidgetSelectionRange*) : QTableWidgetSelectionRange*
+    fun bg_QTableWidgetSelectionRange__OPERATOR_eq_const_QTableWidgetSelectionRange_R(_self_ : QTableWidgetSelectionRange*, rhs : QTableWidgetSelectionRange*) : Bool
+    fun bg_QTableWidgetSelectionRange__OPERATOR_ne_const_QTableWidgetSelectionRange_R(_self_ : QTableWidgetSelectionRange*, rhs : QTableWidgetSelectionRange*) : Bool
     fun bg_QTableWidgetItem__CONSTRUCT_int(type : Int32) : QTableWidgetItem*
     fun bg_QTableWidgetItem__CONSTRUCT_const_QString_R_int(text : CrystalString, type : Int32) : QTableWidgetItem*
     fun bg_QTableWidgetItem__CONSTRUCT_const_QIcon_R_const_QString_R_int(icon : QIcon*, text : CrystalString, type : Int32) : QTableWidgetItem*
@@ -38397,6 +38451,10 @@ module Qt
     fun bg_Container_QList_QTextFormat__at_int(_self_ : ContainerQListQTextFormat*, index : Int32) : QTextFormat*
     fun bg_Container_QList_QTextFormat__push_back_QTextFormat(_self_ : ContainerQListQTextFormat*, value : QTextFormat*) : Void
     fun bg_Container_QList_QTextFormat__size_(_self_ : ContainerQListQTextFormat*) : Int32
+    fun bg_Container_QList_QTextOption__Tab___CONSTRUCT_() : ContainerQListQTextOptionTab*
+    fun bg_Container_QList_QTextOption__Tab__at_int(_self_ : ContainerQListQTextOptionTab*, index : Int32) : QTextOption_Tab*
+    fun bg_Container_QList_QTextOption__Tab__push_back_QTextOption__Tab(_self_ : ContainerQListQTextOptionTab*, value : QTextOption_Tab*) : Void
+    fun bg_Container_QList_QTextOption__Tab__size_(_self_ : ContainerQListQTextOptionTab*) : Int32
     fun bg_Container_QList_QTextLength___CONSTRUCT_() : ContainerQListQTextLength*
     fun bg_Container_QList_QTextLength__at_int(_self_ : ContainerQListQTextLength*, index : Int32) : QTextLength*
     fun bg_Container_QList_QTextLength__push_back_QTextLength(_self_ : ContainerQListQTextLength*, value : QTextLength*) : Void
@@ -38505,6 +38563,10 @@ module Qt
     fun bg_Container_QList_QMdiSubWindow_X__at_int(_self_ : ContainerQListQMdiSubWindowX*, index : Int32) : QMdiSubWindow*
     fun bg_Container_QList_QMdiSubWindow_X__push_back_QMdiSubWindow_X(_self_ : ContainerQListQMdiSubWindowX*, value : QMdiSubWindow*) : Void
     fun bg_Container_QList_QMdiSubWindow_X__size_(_self_ : ContainerQListQMdiSubWindowX*) : Int32
+    fun bg_Container_QList_QTextEdit__ExtraSelection___CONSTRUCT_() : ContainerQListQTextEditExtraSelection*
+    fun bg_Container_QList_QTextEdit__ExtraSelection__at_int(_self_ : ContainerQListQTextEditExtraSelection*, index : Int32) : QTextEdit_ExtraSelection*
+    fun bg_Container_QList_QTextEdit__ExtraSelection__push_back_QTextEdit__ExtraSelection(_self_ : ContainerQListQTextEditExtraSelection*, value : QTextEdit_ExtraSelection*) : Void
+    fun bg_Container_QList_QTextEdit__ExtraSelection__size_(_self_ : ContainerQListQTextEditExtraSelection*) : Int32
     fun bg_Container_QList_QScroller_X___CONSTRUCT_() : ContainerQListQScrollerX*
     fun bg_Container_QList_QScroller_X__at_int(_self_ : ContainerQListQScrollerX*, index : Int32) : QScroller*
     fun bg_Container_QList_QScroller_X__push_back_QScroller_X(_self_ : ContainerQListQScrollerX*, value : QScroller*) : Void
@@ -66316,7 +66378,8 @@ module Qt
     end
     
     def standard_output_process=(destination : Process) : Void
-      Binding.bg_QProcess_setStandardOutputProcess_QProcess_X(self, (destination.try(&.to_unsafe) || Pointer(Binding::QProcess).null))
+      BindgenHelper.keep_alive(destination)
+    Binding.bg_QProcess_setStandardOutputProcess_QProcess_X(self, (destination.try(&.to_unsafe) || Pointer(Binding::QProcess).null))
     end
     
     def fail_child_process_modifier(description : UInt8*, error : Int32 = 0) : Void
@@ -91809,6 +91872,14 @@ module Qt
       Container_QList_qreal_.new(unwrap: Binding.bg_QTextOption_tabArray_(self))
     end
     
+    def tabs=(tab_stops : Enumerable(TextOptionTab)) : Void
+      Binding.bg_QTextOption_setTabs_const_QList_QTextOption__Tab__R(self, BindgenHelper.wrap_container(Container_QList_QTextOption__Tab_, tab_stops).to_unsafe)
+    end
+    
+    def tabs() : Enumerable(TextOptionTab)
+      Container_QList_QTextOption__Tab_.new(unwrap: Binding.bg_QTextOption_tabs_(self))
+    end
+    
     def use_design_metrics=(b : Bool) : Void
       Binding.bg_QTextOption_setUseDesignMetrics_bool(self, b)
     end
@@ -91845,6 +91916,70 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QTextOption*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextOptionTab
+    @unwrap : Binding::QTextOption_Tab*
+    
+    def initialize()
+      result = Binding.bg_QTextOption__Tab__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(pos : Float64, tab_type : TextOption::TabType)
+      result = Binding.bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType(pos, tab_type)
+    @unwrap = result
+    end
+    
+    def initialize(pos : Float64, tab_type : TextOption::TabType, delim : Char)
+      result = Binding.bg_QTextOption__Tab__CONSTRUCT_qreal_QTextOption__TabType_QChar(pos, tab_type, (delim.ord))
+    @unwrap = result
+    end
+    
+    def ==(other : TextOptionTab) : Bool
+      Binding.bg_QTextOption__Tab__OPERATOR_eq_const_QTextOption__Tab_R(self, other)
+    end
+    
+    def !=(other : TextOptionTab) : Bool
+      Binding.bg_QTextOption__Tab__OPERATOR_ne_const_QTextOption__Tab_R(self, other)
+    end
+    
+    def initialize(unnamed_arg_0 : TextOptionTab)
+      result = Binding.bg_QTextOption__Tab__COPY_const_QTextOption__Tab_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def position() : Float64
+      Binding.bg_QTextOption__Tab_position_GETTER_(self)
+    end
+    
+    def position=(position : Float64) : Void
+      Binding.bg_QTextOption__Tab_position_SETTER_qreal(self, position)
+    end
+    
+    def type() : TextOption::TabType
+      Binding.bg_QTextOption__Tab_type_GETTER_(self)
+    end
+    
+    def type=(type : TextOption::TabType) : Void
+      Binding.bg_QTextOption__Tab_type_SETTER_QTextOption__TabType(self, type)
+    end
+    
+    def delimiter() : Char
+      (Binding.bg_QTextOption__Tab_delimiter_GETTER_(self).chr)
+    end
+    
+    def delimiter=(delimiter : Char) : Void
+      Binding.bg_QTextOption__Tab_delimiter_SETTER_QChar(self, (delimiter.ord))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextOption_Tab*)
       result = unwrap
     @unwrap = result
     end
@@ -92701,6 +92836,14 @@ module Qt
     
     def page_break_policy() : TextFormat::PageBreakFlags
       Binding.bg_QTextBlockFormat_pageBreakPolicy_(self)
+    end
+    
+    def tab_positions=(tabs : Enumerable(TextOptionTab)) : Void
+      Binding.bg_QTextBlockFormat_setTabPositions_const_QList_QTextOption__Tab__R(self, BindgenHelper.wrap_container(Container_QList_QTextOption__Tab_, tabs).to_unsafe)
+    end
+    
+    def tab_positions() : Enumerable(TextOptionTab)
+      Container_QList_QTextOption__Tab_.new(unwrap: Binding.bg_QTextBlockFormat_tabPositions_(self))
     end
     
     def marker=(marker : TextBlockFormat::MarkerType) : Void
@@ -97955,7 +98098,8 @@ module Qt
     end
     
     def set_mime_data(data : MimeData, mode : Clipboard::Mode = Clipboard::Mode::Clipboard) : Void
-      Binding.bg_QClipboard_setMimeData_QMimeData_X_QClipboard__Mode(self, (data.try(&.to_unsafe) || Pointer(Binding::QMimeData).null), mode)
+      BindgenHelper.keep_alive(data)
+    Binding.bg_QClipboard_setMimeData_QMimeData_X_QClipboard__Mode(self, (data.try(&.to_unsafe) || Pointer(Binding::QMimeData).null), mode)
     end
     
     def image(mode : Clipboard::Mode = Clipboard::Mode::Clipboard) : Image
@@ -150491,6 +150635,18 @@ module Qt
       Binding.bg_QFormLayout_removeRow_QLayout_X(self, (layout.try(&.to_unsafe) || Pointer(Binding::QLayout).null))
     end
     
+    def take_row(row : Int32) : FormLayoutTakeRowResult
+      FormLayoutTakeRowResult.new(unwrap: Binding.bg_QFormLayout_takeRow_int(self, row))
+    end
+    
+    def take_row(widget : Widget) : FormLayoutTakeRowResult
+      FormLayoutTakeRowResult.new(unwrap: Binding.bg_QFormLayout_takeRow_QWidget_X(self, (widget.try(&.to_unsafe) || Pointer(Binding::QWidget).null)))
+    end
+    
+    def take_row(layout : Layout) : FormLayoutTakeRowResult
+      FormLayoutTakeRowResult.new(unwrap: Binding.bg_QFormLayout_takeRow_QLayout_X(self, (layout.try(&.to_unsafe) || Pointer(Binding::QLayout).null)))
+    end
+    
     def set_item(row : Int32, role : FormLayout::ItemRole, item : LayoutItem) : Void
       BindgenHelper.keep_alive(item)
     Binding.bg_QFormLayout_setItem_int_QFormLayout__ItemRole_QLayoutItem_X(self, row, role, (item.try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null))
@@ -150820,6 +150976,49 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class FormLayoutTakeRowResult
+    @unwrap : Binding::QFormLayout_TakeRowResult*
+    
+    def initialize()
+      result = Binding.bg_QFormLayout__TakeRowResult__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : FormLayoutTakeRowResult)
+      result = Binding.bg_QFormLayout__TakeRowResult__COPY_const_QFormLayout__TakeRowResult_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(*, label_item : LayoutItem, field_item : LayoutItem)
+      result = Binding.bg_QFormLayout__TakeRowResult__AGGREGATE_QLayoutItem_X_QLayoutItem_X((label_item.try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null), (field_item.try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null))
+    @unwrap = result
+    end
+    
+    def label_item() : LayoutItem?
+      Binding.bg_QFormLayout__TakeRowResult_labelItem_GETTER_(self).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def label_item=(label_item : LayoutItem) : Void
+      Binding.bg_QFormLayout__TakeRowResult_labelItem_SETTER_QLayoutItem_X(self, (label_item.try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null))
+    end
+    
+    def field_item() : LayoutItem?
+      Binding.bg_QFormLayout__TakeRowResult_fieldItem_GETTER_(self).try {|ptr| LayoutItemImpl.new(unwrap: ptr) unless ptr.null?}
+    end
+    
+    def field_item=(field_item : LayoutItem) : Void
+      Binding.bg_QFormLayout__TakeRowResult_fieldItem_SETTER_QLayoutItem_X(self, (field_item.try(&.to_unsafe) || Pointer(Binding::QLayoutItem).null))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFormLayout_TakeRowResult*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class Gesture < Object
     def meta_object() : MetaObject?
@@ -185886,7 +186085,8 @@ module Qt
     end
     
     def add_button(button : AbstractButton, role : MessageBox::ButtonRole) : Void
-      Binding.bg_QMessageBox_addButton_QAbstractButton_X_QMessageBox__ButtonRole(self, (button.try(&.to_unsafe) || Pointer(Binding::QAbstractButton).null), role)
+      BindgenHelper.keep_alive(button)
+    Binding.bg_QMessageBox_addButton_QAbstractButton_X_QMessageBox__ButtonRole(self, (button.try(&.to_unsafe) || Pointer(Binding::QAbstractButton).null), role)
     end
     
     def add_button(text : String, role : MessageBox::ButtonRole) : PushButton?
@@ -185938,7 +186138,8 @@ module Qt
     end
     
     def default_button=(button : PushButton) : Void
-      Binding.bg_QMessageBox_setDefaultButton_QPushButton_X(self, (button.try(&.to_unsafe) || Pointer(Binding::QPushButton).null))
+      BindgenHelper.keep_alive(button)
+    Binding.bg_QMessageBox_setDefaultButton_QPushButton_X(self, (button.try(&.to_unsafe) || Pointer(Binding::QPushButton).null))
     end
     
     def default_button=(button : MessageBox::StandardButton) : Void
@@ -185950,7 +186151,8 @@ module Qt
     end
     
     def escape_button=(button : AbstractButton) : Void
-      Binding.bg_QMessageBox_setEscapeButton_QAbstractButton_X(self, (button.try(&.to_unsafe) || Pointer(Binding::QAbstractButton).null))
+      BindgenHelper.keep_alive(button)
+    Binding.bg_QMessageBox_setEscapeButton_QAbstractButton_X(self, (button.try(&.to_unsafe) || Pointer(Binding::QAbstractButton).null))
     end
     
     def escape_button=(button : MessageBox::StandardButton) : Void
@@ -186002,7 +186204,8 @@ module Qt
     end
     
     def check_box=(cb : CheckBox) : Void
-      Binding.bg_QMessageBox_setCheckBox_QCheckBox_X(self, (cb.try(&.to_unsafe) || Pointer(Binding::QCheckBox).null))
+      BindgenHelper.keep_alive(cb)
+    Binding.bg_QMessageBox_setCheckBox_QCheckBox_X(self, (cb.try(&.to_unsafe) || Pointer(Binding::QCheckBox).null))
     end
     
     def check_box() : CheckBox?
@@ -187192,6 +187395,14 @@ module Qt
       Binding.bg_QTextEdit_setAcceptRichText_bool(self, accept)
     end
     
+    def extra_selections=(selections : Enumerable(TextEditExtraSelection)) : Void
+      Binding.bg_QTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(self, BindgenHelper.wrap_container(Container_QList_QTextEdit__ExtraSelection_, selections).to_unsafe)
+    end
+    
+    def extra_selections() : Enumerable(TextEditExtraSelection)
+      Container_QList_QTextEdit__ExtraSelection_.new(unwrap: Binding.bg_QTextEdit_extraSelections_(self))
+    end
+    
     def move_cursor(operation : TextCursor::MoveOperation, mode : TextCursor::MoveMode = TextCursor::MoveMode::MoveAnchor) : Void
       Binding.bg_QTextEdit_moveCursor_QTextCursor__MoveOperation_QTextCursor__MoveMode(self, operation, mode)
     end
@@ -188007,6 +188218,53 @@ module Qt
     end
     
   end
+  class TextEditExtraSelection
+    @unwrap : Binding::QTextEdit_ExtraSelection*
+    
+    def initialize(unnamed_arg_0 : TextEditExtraSelection)
+      result = Binding.bg_QTextEdit__ExtraSelection__COPY_const_QTextEdit__ExtraSelection_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : TextEditExtraSelection) : TextEditExtraSelection
+      TextEditExtraSelection.new(unwrap: Binding.bg_QTextEdit__ExtraSelection__OPERATOR_assign_const_QTextEdit__ExtraSelection_R(self, unnamed_arg_0))
+    end
+    
+    def initialize()
+      result = Binding.bg_QTextEdit__ExtraSelection__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(*, cursor : TextCursor, format : TextCharFormat)
+      result = Binding.bg_QTextEdit__ExtraSelection__AGGREGATE_QTextCursor_QTextCharFormat(cursor, format)
+    @unwrap = result
+    end
+    
+    def cursor() : TextCursor
+      TextCursor.new(unwrap: Binding.bg_QTextEdit__ExtraSelection_cursor_GETTER_(self))
+    end
+    
+    def cursor=(cursor : TextCursor) : Void
+      Binding.bg_QTextEdit__ExtraSelection_cursor_SETTER_QTextCursor(self, cursor)
+    end
+    
+    def format() : TextCharFormat
+      TextCharFormat.new(unwrap: Binding.bg_QTextEdit__ExtraSelection_format_GETTER_(self))
+    end
+    
+    def format=(format : TextCharFormat) : Void
+      Binding.bg_QTextEdit__ExtraSelection_format_SETTER_QTextCharFormat(self, format)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextEdit_ExtraSelection*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class PlainTextEdit < AbstractScrollArea
     def meta_object() : MetaObject?
       Binding.bg_QPlainTextEdit_metaObject_(self).try {|ptr| MetaObject.new(unwrap: ptr) unless ptr.null?}
@@ -188517,6 +188775,14 @@ module Qt
     
     def cursor_width=(width : Int32) : Void
       Binding.bg_QPlainTextEdit_setCursorWidth_int(self, width)
+    end
+    
+    def extra_selections=(selections : Enumerable(TextEditExtraSelection)) : Void
+      Binding.bg_QPlainTextEdit_setExtraSelections_const_QList_QTextEdit__ExtraSelection__R(self, BindgenHelper.wrap_container(Container_QList_QTextEdit__ExtraSelection_, selections).to_unsafe)
+    end
+    
+    def extra_selections() : Enumerable(TextEditExtraSelection)
+      Container_QList_QTextEdit__ExtraSelection_.new(unwrap: Binding.bg_QPlainTextEdit_extraSelections_(self))
     end
     
     def move_cursor(operation : TextCursor::MoveOperation, mode : TextCursor::MoveMode = TextCursor::MoveMode::MoveAnchor) : Void
@@ -201977,6 +202243,65 @@ module Qt
       Superclass.new(self)
     end
   end
+  class TableWidgetSelectionRange
+    @unwrap : Binding::QTableWidgetSelectionRange*
+    
+    def initialize()
+      result = Binding.bg_QTableWidgetSelectionRange__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(top : Int32, left : Int32, bottom : Int32, right : Int32)
+      result = Binding.bg_QTableWidgetSelectionRange__CONSTRUCT_int_int_int_int(top, left, bottom, right)
+    @unwrap = result
+    end
+    
+    def top_row() : Int32
+      Binding.bg_QTableWidgetSelectionRange_topRow_(self)
+    end
+    
+    def bottom_row() : Int32
+      Binding.bg_QTableWidgetSelectionRange_bottomRow_(self)
+    end
+    
+    def left_column() : Int32
+      Binding.bg_QTableWidgetSelectionRange_leftColumn_(self)
+    end
+    
+    def right_column() : Int32
+      Binding.bg_QTableWidgetSelectionRange_rightColumn_(self)
+    end
+    
+    def row_count() : Int32
+      Binding.bg_QTableWidgetSelectionRange_rowCount_(self)
+    end
+    
+    def column_count() : Int32
+      Binding.bg_QTableWidgetSelectionRange_columnCount_(self)
+    end
+    
+    def initialize(unnamed_arg_0 : TableWidgetSelectionRange)
+      result = Binding.bg_QTableWidgetSelectionRange__COPY_const_QTableWidgetSelectionRange_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def ==(rhs : TableWidgetSelectionRange) : Bool
+      Binding.bg_QTableWidgetSelectionRange__OPERATOR_eq_const_QTableWidgetSelectionRange_R(self, rhs)
+    end
+    
+    def !=(rhs : TableWidgetSelectionRange) : Bool
+      Binding.bg_QTableWidgetSelectionRange__OPERATOR_ne_const_QTableWidgetSelectionRange_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTableWidgetSelectionRange*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class TableWidgetItem
     @unwrap : Binding::QTableWidgetItem*
     
@@ -202967,11 +203292,11 @@ module Qt
       Binding.bg_QTableWidget_removeCellWidget_int_int(self, row, column)
     end
     
-    def set_range_selected(range : Binding::QTableWidgetSelectionRange*, select_ : Bool) : Void
+    def set_range_selected(range : TableWidgetSelectionRange, select_ : Bool) : Void
       Binding.bg_QTableWidget_setRangeSelected_const_QTableWidgetSelectionRange_R_bool(self, range, select_)
     end
     
-    def selected_ranges() : Enumerable(Binding::QTableWidgetSelectionRange*)
+    def selected_ranges() : Enumerable(TableWidgetSelectionRange)
       Container_QList_QTableWidgetSelectionRange_.new(unwrap: Binding.bg_QTableWidget_selectedRanges_(self))
     end
     
@@ -217960,6 +218285,7 @@ module Qt
       {% elsif types == {Int64} %} {{ Container_QList_qsizetype_ }}
       {% elsif types == {TextFormat} %} {{ Container_QList_QTextFormat_ }}
       {% elsif types == {Std::Pair(Float64, Color)} %} {{ Container_QList_std__pair_double__QColor___ }}
+      {% elsif types == {TextOptionTab} %} {{ Container_QList_QTextOption__Tab_ }}
       {% elsif types == {TextLength} %} {{ Container_QList_QTextLength_ }}
       {% elsif types == {TextLayoutFormatRange} %} {{ Container_QList_QTextLayout__FormatRange_ }}
       {% elsif types == {GlyphRun} %} {{ Container_QList_QGlyphRun_ }}
@@ -217989,9 +218315,10 @@ module Qt
       {% elsif types == {ListWidgetItem} %} {{ Container_QList_QListWidgetItem_X_ }}
       {% elsif types == {DockWidget} %} {{ Container_QList_QDockWidget_X_ }}
       {% elsif types == {MdiSubWindow} %} {{ Container_QList_QMdiSubWindow_X_ }}
+      {% elsif types == {TextEditExtraSelection} %} {{ Container_QList_QTextEdit__ExtraSelection_ }}
       {% elsif types == {Scroller} %} {{ Container_QList_QScroller_X_ }}
       {% elsif types == {TableWidgetItem} %} {{ Container_QList_QTableWidgetItem_X_ }}
-      {% elsif types == {Pointer(Binding::QTableWidgetSelectionRange)} %} {{ Container_QList_QTableWidgetSelectionRange_ }}
+      {% elsif types == {TableWidgetSelectionRange} %} {{ Container_QList_QTableWidgetSelectionRange_ }}
       {% elsif types == {TreeWidgetItem} %} {{ Container_QList_QTreeWidgetItem_X_ }}
       {% elsif types == {Wizard::Button} %} {{ Container_QList_QWizard__WizardButton_ }}
       {% else %} {% raise "QList(#{types.splat}) has not been instantiated" %}
@@ -219999,6 +220326,38 @@ module Qt
     end
     
   end
+  class Container_QList_QTextOption__Tab_
+    include BindgenHelper::SequentialContainer(TextOptionTab)
+    include QList(TextOptionTab)
+    
+    @unwrap : Binding::ContainerQListQTextOptionTab*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTextOption__Tab___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextOptionTab
+      TextOptionTab.new(unwrap: Binding.bg_Container_QList_QTextOption__Tab__at_int(self, index))
+    end
+    
+    def push(value : TextOptionTab) : Void
+      Binding.bg_Container_QList_QTextOption__Tab__push_back_QTextOption__Tab(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTextOption__Tab__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTextOptionTab*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QTextLength_
     include BindgenHelper::SequentialContainer(TextLength)
     include QList(TextLength)
@@ -220863,6 +221222,38 @@ module Qt
     end
     
   end
+  class Container_QList_QTextEdit__ExtraSelection_
+    include BindgenHelper::SequentialContainer(TextEditExtraSelection)
+    include QList(TextEditExtraSelection)
+    
+    @unwrap : Binding::ContainerQListQTextEditExtraSelection*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QTextEdit__ExtraSelection___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : TextEditExtraSelection
+      TextEditExtraSelection.new(unwrap: Binding.bg_Container_QList_QTextEdit__ExtraSelection__at_int(self, index))
+    end
+    
+    def push(value : TextEditExtraSelection) : Void
+      Binding.bg_Container_QList_QTextEdit__ExtraSelection__push_back_QTextEdit__ExtraSelection(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QTextEdit__ExtraSelection__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQTextEditExtraSelection*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class Container_QList_QScroller_X_
     include BindgenHelper::SequentialContainer(Scroller)
     include QList(Scroller)
@@ -220928,8 +221319,8 @@ module Qt
     
   end
   class Container_QList_QTableWidgetSelectionRange_
-    include BindgenHelper::SequentialContainer(Binding::QTableWidgetSelectionRange*)
-    include QList(Binding::QTableWidgetSelectionRange*)
+    include BindgenHelper::SequentialContainer(TableWidgetSelectionRange)
+    include QList(TableWidgetSelectionRange)
     
     @unwrap : Binding::ContainerQListQTableWidgetSelectionRange*
     
@@ -220938,11 +221329,11 @@ module Qt
     @unwrap = result
     end
     
-    def unsafe_at(index : Int32) : Binding::QTableWidgetSelectionRange*
-      Binding.bg_Container_QList_QTableWidgetSelectionRange__at_int(self, index)
+    def unsafe_at(index : Int32) : TableWidgetSelectionRange
+      TableWidgetSelectionRange.new(unwrap: Binding.bg_Container_QList_QTableWidgetSelectionRange__at_int(self, index))
     end
     
-    def push(value : Binding::QTableWidgetSelectionRange*) : Void
+    def push(value : TableWidgetSelectionRange) : Void
       Binding.bg_Container_QList_QTableWidgetSelectionRange__push_back_QTableWidgetSelectionRange(self, value)
     end
     
