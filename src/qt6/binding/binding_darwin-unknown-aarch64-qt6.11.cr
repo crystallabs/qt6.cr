@@ -10821,12 +10821,14 @@ module Qt
     fun bg_QMutex_try_lock_(_self_ : QMutex*) : Bool
     fun bg_QMutex_tryLock_int(_self_ : QMutex*, timeout : Int32) : Bool
     fun bg_QMutex_tryLock_QDeadlineTimer(_self_ : QMutex*, timeout : QDeadlineTimer*) : Bool
+    fun bg_QMutex_try_lock_for_std__chrono__milliseconds(_self_ : QMutex*, duration : Int64) : Bool
     fun bg_QRecursiveMutex__CONSTRUCT_() : QRecursiveMutex*
     fun bg_QRecursiveMutex_lock_(_self_ : QRecursiveMutex*) : Void
     fun bg_QRecursiveMutex_tryLock_int(_self_ : QRecursiveMutex*, timeout : Int32) : Bool
     fun bg_QRecursiveMutex_tryLock_(_self_ : QRecursiveMutex*) : Bool
     fun bg_QRecursiveMutex_tryLock_QDeadlineTimer(_self_ : QRecursiveMutex*, timer : QDeadlineTimer*) : Bool
     fun bg_QRecursiveMutex_unlock_(_self_ : QRecursiveMutex*) : Void
+    fun bg_QRecursiveMutex_try_lock_for_std__chrono__milliseconds(_self_ : QRecursiveMutex*, duration : Int64) : Bool
     fun bg_QBasicTimer__CONSTRUCT_() : QBasicTimer*
     fun bg_QBasicTimer_swap_QBasicTimer_R(_self_ : QBasicTimer*, other : QBasicTimer*) : Void
     fun bg_QBasicTimer_isActive_(_self_ : QBasicTimer*) : Bool
@@ -19117,6 +19119,8 @@ module Qt
     fun bg_QAction_triggered_bool(_self_ : QAction*, checked : Bool) : Void
     fun bg_QAction_hovered_(_self_ : QAction*) : Void
     fun bg_QAction_toggled_bool(_self_ : QAction*, unnamed_arg_0 : Bool) : Void
+    fun bg_QAction_setMenu_QMenu_X(_self_ : QAction*, menu : QMenu*) : Void
+    fun bg_QAction_menu_(_self_ : QAction*) : QMenu*
     fun bg_QAction_staticMetaObject_STATIC_GETTER_() : QMetaObject*
     fun bg_QObject_eventFilter_QObject_X_QEvent_X(_self_ : QAction*, watched : QObject*, event : QEvent*) : Bool
     fun bg_QObject_timerEvent_QTimerEvent_X(_self_ : QAction*, event : QTimerEvent*) : Void
@@ -38521,8 +38525,6 @@ module Qt
     fun bg____qt6cr_data_stream_write_bytes_STATIC_QDataStream_X_const_QByteArray_R(stream : QDataStream*, bytes : CrystalString) : Void
     fun bg____qt6cr_data_stream_read_bytes_STATIC_QDataStream_X(stream : QDataStream*) : CrystalString
     fun bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType(object : QObject*, member : UInt8*, type : ::Qt::ConnectionType) : Bool
-    fun bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X(action : QAction*, menu : QMenu*) : Void
-    fun bg____qt6cr_action_menu_STATIC_const_QAction_X(action : QAction*) : QMenu*
     fun bg____qSetFieldWidth_STATIC_int(width : Int32) : QTextStreamManipulator*
     fun bg____qSetPadChar_STATIC_QChar(ch : Int32) : QTextStreamManipulator*
     fun bg____qSetRealNumberPrecision_STATIC_int(precision : Int32) : QTextStreamManipulator*
@@ -48305,6 +48307,10 @@ module Qt
       Binding.bg_QMutex_tryLock_QDeadlineTimer(self, timeout)
     end
     
+    def try_lock_for(duration : ::Time::Span) : Bool
+      Binding.bg_QMutex_try_lock_for_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration))
+    end
+    
     def initialize(unwrap : Binding::QMutex*)
       result = unwrap
     @unwrap = result
@@ -48338,6 +48344,10 @@ module Qt
     
     def unlock() : Void
       Binding.bg_QRecursiveMutex_unlock_(self)
+    end
+    
+    def try_lock_for(duration : ::Time::Span) : Bool
+      Binding.bg_QRecursiveMutex_try_lock_for_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration))
     end
     
     def to_unsafe
@@ -104143,6 +104153,15 @@ module Qt
     
     def toggled(unnamed_arg_0 : Bool) : Void
       Binding.bg_QAction_toggled_bool(self, unnamed_arg_0)
+    end
+    
+    def menu=(menu : Menu) : Void
+      BindgenHelper.keep_alive(menu)
+    Binding.bg_QAction_setMenu_QMenu_X(self, (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null))
+    end
+    
+    def menu() : Menu?
+      Binding.bg_QAction_menu_(self).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
     end
     
     def self.static_meta_object() : MetaObject
@@ -265965,14 +265984,6 @@ module Qt
   
   def self.qt6cr_invoke_method(object : Object, member : UInt8*, type : ConnectionType) : Bool
     Binding.bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType((object.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, type)
-  end
-  
-  def self.qt6cr_action_set_menu(action : Action, menu : Menu) : Void
-    Binding.bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X((action.try(&.to_unsafe) || Pointer(Binding::QAction).null), (menu.try(&.to_unsafe) || Pointer(Binding::QMenu).null))
-  end
-  
-  def self.qt6cr_action_menu(action : Action) : Menu?
-    Binding.bg____qt6cr_action_menu_STATIC_const_QAction_X((action.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
   end
   
   def self.q_set_field_width(width : Int32) : TextStreamManipulator

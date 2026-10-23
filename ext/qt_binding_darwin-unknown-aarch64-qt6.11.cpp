@@ -7,7 +7,6 @@
 #include <xml_helper.hpp>
 #include <data_stream_helper.hpp>
 #include <meta_helper.hpp>
-#include <action_helper.hpp>
 
 typedef BindgenMapEntries<QHash<int, QByteArray>> Container_QHash_int__QByteArray__Entries;
 typedef QHash<int, QByteArray> Container_QHash_int__QByteArray_;
@@ -7604,6 +7603,10 @@ extern "C" bool bg_QMutex_tryLock_QDeadlineTimer(QMutex * _self_, QDeadlineTimer
   return _self_->tryLock(timeout);
 }
 
+extern "C" bool bg_QMutex_try_lock_for_std__chrono__milliseconds(QMutex * _self_, int64_t duration) {
+  return _self_->try_lock_for(std::chrono::milliseconds(duration));
+}
+
 extern "C" QRecursiveMutex * bg_QRecursiveMutex__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QRecursiveMutex>();
 }
@@ -7626,6 +7629,10 @@ extern "C" bool bg_QRecursiveMutex_tryLock_QDeadlineTimer(QRecursiveMutex * _sel
 
 extern "C" void bg_QRecursiveMutex_unlock_(QRecursiveMutex * _self_) {
   _self_->unlock();
+}
+
+extern "C" bool bg_QRecursiveMutex_try_lock_for_std__chrono__milliseconds(QRecursiveMutex * _self_, int64_t duration) {
+  return _self_->try_lock_for(std::chrono::milliseconds(duration));
 }
 
 extern "C" QBasicTimer * bg_QBasicTimer__CONSTRUCT_() {
@@ -46470,6 +46477,14 @@ extern "C" void bg_QAction_hovered_(QAction * _self_) {
 
 extern "C" void bg_QAction_toggled_bool(QAction * _self_, bool unnamed_arg_0) {
   _self_->toggled(unnamed_arg_0);
+}
+
+extern "C" void bg_QAction_setMenu_QMenu_X(QAction * _self_, QMenu * menu) {
+  _self_->setMenu(menu);
+}
+
+extern "C" QMenu * bg_QAction_menu_(QAction * _self_) {
+  return _self_->menu();
 }
 
 extern "C" const QMetaObject * bg_QAction_staticMetaObject_STATIC_GETTER_() {
@@ -153328,14 +153343,6 @@ extern "C" CrystalString bg____qt6cr_data_stream_read_bytes_STATIC_QDataStream_X
 
 extern "C" bool bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType(QObject * object, const char * member, Qt::ConnectionType type) {
   return ::qt6cr_invoke_method(object, member, type);
-}
-
-extern "C" void bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X(QAction * action, QMenu * menu) {
-  ::qt6cr_action_set_menu(action, menu);
-}
-
-extern "C" QMenu * bg____qt6cr_action_menu_STATIC_const_QAction_X(const QAction * action) {
-  return ::qt6cr_action_menu(action);
 }
 
 extern "C" QTextStreamManipulator * bg____qSetFieldWidth_STATIC_int(int width) {

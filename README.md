@@ -599,7 +599,11 @@ see the comments there:
   `QMutex` from `QBasicMutex`: the bases are listed so the methods are
   inherited.  The std-style `try_lock()` and `try_acquire()` aliases of
   `tryLock()` and `tryAcquire(n = 1)` would be the same Crystal methods, so
-  bindgen drops them.  `try_lock_for` and friends are templates.
+  bindgen drops them.  `try_lock_for` is a template over the duration type:
+  `config/types.yml` declares its `std::chrono::milliseconds` instantiation
+  (bindgen's `declare_methods:`), so `mutex.try_lock_for(10.milliseconds)`
+  works; `try_lock_until` isn't bound.  `QAction::setMenu` and `menu`, templates
+  over the menu type in Qt 6, are declared the same way.
   `QMutexLocker` is a template in Qt 6 and isn't bound.
   `QException`, which only serves throwing across QtConcurrent threads, isn't
   bound: it would shadow `::Exception` inside the module.
