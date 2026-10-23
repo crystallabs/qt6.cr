@@ -560,11 +560,13 @@ see the comments there:
   copied into a `String`: `reader.name`, `attribute.value`,
   `reader.attributes.value("id")`.  `QXmlStreamAttributes` is a
   `QList<QXmlStreamAttribute>`, so `reader.attributes.map(&.name)` works.
-* `QDataStream` streams `QString` and `QByteArray` through free operators,
-  which bindgen doesn't wrap as methods: `src/qt6/data_stream.cr` adds
-  `stream << "text"`, `stream.read(String)` and `stream.read(Int32)` over the
-  wrapped `>>(Int32*)`.  The `>>` of a copied structure (`QPoint &`) is
-  dropped.
+* `QDataStream` reads `QString` and `QByteArray` through free `operator>>`,
+  which take them by non-const reference: `src/qt6/data_stream.cr` adds
+  `stream.read(String)` and `stream.read(Bytes)` over helpers, and
+  `stream.read(Int32)` or `stream.read(Qt::Point)` over the wrapped
+  `>>(Int32*)` and `>>(Point*)`, which take a pointer to the Crystal value:
+  `stream >> pointerof(point)`.  `stream << "text"`, `<< bytes` and
+  `<< point` are wrapped as is.
 * `std::chrono::nanoseconds` maps to `::Time::Span` like milliseconds, and so
   do Qt's typedefs of it like `QElapsedTimer::Duration`:
   `ChronoTimer.new(5.milliseconds)`, `ElapsedTimer#duration_elapsed`.

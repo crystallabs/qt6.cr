@@ -347,6 +347,9 @@ types: # Type rewrite rules
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
+  QRawFont:
+    ignore_methods: # Writes an array of points through the pointer, not one
+      - "/^advancesForGlyphIndexes\\(const quint32 \\*/"
   QRegularExpression:
     ignore_methods: # The match keeps the view of the temporary QString: use match
       - matchView

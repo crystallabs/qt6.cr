@@ -452,6 +452,7 @@ enums:
   "Qt::ColorScheme": ColorScheme
   "Qt::ContextMenuTrigger": ContextMenuTrigger
   "QValidator::State": Validator::State
+  "QLineF::IntersectionType": LineF::IntersectionType # LineF#intersects writes the point
   "QDoubleValidator::Notation": DoubleValidator::Notation
   "QGraphicsEffect::ChangeFlag": GraphicsEffect::ChangeFlag
   "QGraphicsEffect::ChangeFlags": GraphicsEffect::ChangeFlags
