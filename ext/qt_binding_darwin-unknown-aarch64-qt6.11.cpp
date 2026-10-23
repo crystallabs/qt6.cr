@@ -5,7 +5,6 @@
 #include <QtWidgets/QtWidgets>
 #include <locale_helper.hpp>
 #include <validator_helper.hpp>
-#include <matrix_helper.hpp>
 #include <xml_helper.hpp>
 #include <data_stream_helper.hpp>
 #include <meta_helper.hpp>
@@ -11081,6 +11080,10 @@ extern "C" QDateTime * bg_QDateTime__OPERATOR_sub_assign_std__chrono__millisecon
 
 extern "C" QDateTime * bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
   return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (((*_self_) + (std::chrono::milliseconds(duration))));
+}
+
+extern "C" QDateTime * bg_QDateTime__OPERATOR_sub_std__chrono__milliseconds(QDateTime * _self_, int64_t duration) {
+  return new (UseGC, bindgen_gc_finalizer<QDateTime>()) QDateTime (((*_self_) - (std::chrono::milliseconds(duration))));
 }
 
 extern "C" bool bg_QDateTime__OPERATOR_eq_const_QDateTime_R(QDateTime * _self_, const QDateTime & rhs) {
@@ -35499,10 +35502,6 @@ extern "C" QVector3D bg_QVector3D__OPERATOR_div_QVector3D(QVector3D * _self_, QV
   return ((*_self_) / (divisor));
 }
 
-extern "C" QVector3D bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(QVector3D * _self_, const QMatrix4x4 & matrix) {
-  return ((*_self_) * (matrix));
-}
-
 extern "C" QVector4D bg_QVector4D__CONSTRUCT_() {
   return *(bg_deref<QVector4D>());
 }
@@ -51060,10 +51059,6 @@ extern "C" QMatrix4x4::Flags bg_QMatrix4x4_flags_(QMatrix4x4 * _self_) {
 
 extern "C" QMatrix4x4 * bg_QMatrix4x4__COPY_const_QMatrix4x4_R(const QMatrix4x4 & unnamed_arg_0) {
   return new (UseGC) CrystalGCWrapper<QMatrix4x4>(unnamed_arg_0);
-}
-
-extern "C" QVector3D bg_QMatrix4x4__OPERATOR_mul_const_QVector3D_R(QMatrix4x4 * _self_, const QVector3D vector) {
-  return ((*_self_) * (vector));
 }
 
 extern "C" QVector4D bg_QMatrix4x4__OPERATOR_mul_const_QVector4D_R(QMatrix4x4 * _self_, const QVector4D vector) {

@@ -495,9 +495,11 @@ see the comments there:
   `QColorSpace::PrimaryPoints` are copied structures passed by value, like
   `QPoint`, with property methods for their public fields: `element.x`,
   `range.from`.
-* `ext/matrix_helper.hpp` defines `Vector3D * Matrix4x4` and its mirror, which
-  Qt declares as friends but whose definitions are deprecated and hidden by
-  the cutoff, so the binding wouldn't link without them.
+* `Vector3D * Matrix4x4` and its mirror are dropped: Qt declares them as
+  friends but deprecated their definitions in 6.1, which the cutoff hides.
+  Use `Matrix4x4#map`.  Likewise `DateTime - DateTime`, whose
+  `std::chrono::milliseconds` result bindgen can't convert: use
+  `DateTime#msecs_to`.  `DateTime - Time::Span` works.
 * `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
   `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`.
 * The QXmlStream classes return names, values and text as `QStringView`, which

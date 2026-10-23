@@ -110,8 +110,9 @@ describe Qt::Matrix4x4 do
     rotation = Qt::Matrix4x4.new
     rotation.rotate(quaternion)
     rotation.map(Qt::Vector3D.new(1.0_f32, 0.0_f32, 0.0_f32)).y.should be_close(1.0, 1e-6)
-    (rotation * Qt::Vector3D.new(1.0_f32, 0.0_f32, 0.0_f32)).y.should be_close(1.0, 1e-6)
-    (Qt::Vector3D.new(1.0_f32, 0.0_f32, 0.0_f32) * rotation).y.should be_close(-1.0, 1e-6) # Row vector: the transpose
+    # `Matrix4x4 * Vector3D` and its mirror are deprecated and dropped, see the README
+    (rotation * Qt::Vector4D.new(1.0_f32, 0.0_f32, 0.0_f32, 1.0_f32)).y.should be_close(1.0, 1e-6)
+    (Qt::Vector4D.new(1.0_f32, 0.0_f32, 0.0_f32, 1.0_f32) * rotation).y.should be_close(-1.0, 1e-6) # Row vector: the transpose
   end
 end
 

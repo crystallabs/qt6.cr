@@ -226,6 +226,8 @@ describe Qt::TimeZone do
     zone.abbreviation(winter).should_not be_empty # "CET" or "GMT+1" by backend
     summer = Qt::DateTime.new(Qt::Date.new(2024, 7, 15), Qt::Time.new(12, 0), utc)
     zone.offset_from_utc(summer).should eq(7200)
+    (summer - 1.hour).time.hour.should eq(11) # Only `DateTime - DateTime` is dropped
+    (summer + 1.hour).time.hour.should eq(13)
     zone.is_daylight_time(summer).should be_true
     data = zone.offset_data(summer)
     data.daylight_time_offset.should eq(3600)

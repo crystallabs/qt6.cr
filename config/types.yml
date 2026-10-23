@@ -322,7 +322,8 @@ types: # Type rewrite rules
     ignore_methods:
       # Returns std::chrono::milliseconds, whose from_cpp rule bindgen applies
       # to the right operand only: `(a - (b).count())`.  Use msecs_to instead.
-      - "operator-"
+      # The friend operator is a const member taking the right operand.
+      - "operator-(const QDateTime &) const"
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
@@ -346,6 +347,15 @@ types: # Type rewrite rules
     generate_wrapper: true
     pass_by: Value
     kind: Struct
+    ignore_methods:
+      # QMatrix4x4 declares `operator*(QVector3D, QMatrix4x4)` and its mirror
+      # as friends unconditionally, but Qt deprecated their definitions in 6.1,
+      # so QT_DISABLE_DEPRECATED_BEFORE hides them: declared, never defined.
+      # Use Matrix4x4#map.  The friends are const members of the left operand.
+      - "operator*(const QMatrix4x4 &) const"
+  QMatrix4x4:
+    ignore_methods: # The mirror of the QVector3D one above
+      - "operator*(const QVector3D &) const"
   QVector4D:
     copy_structure: true
     generate_binding: true

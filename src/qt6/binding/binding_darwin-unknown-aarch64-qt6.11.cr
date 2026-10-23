@@ -11451,6 +11451,7 @@ module Qt
     fun bg_QDateTime__OPERATOR_add_assign_std__chrono__milliseconds(_self_ : QDateTime*, duration : Int64) : QDateTime*
     fun bg_QDateTime__OPERATOR_sub_assign_std__chrono__milliseconds(_self_ : QDateTime*, duration : Int64) : QDateTime*
     fun bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(_self_ : QDateTime*, duration : Int64) : QDateTime*
+    fun bg_QDateTime__OPERATOR_sub_std__chrono__milliseconds(_self_ : QDateTime*, duration : Int64) : QDateTime*
     fun bg_QDateTime__OPERATOR_eq_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
     fun bg_QDateTime__OPERATOR_ne_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
     fun bg_QDateTime__OPERATOR_lt_const_QDateTime_R(_self_ : QDateTime*, rhs : QDateTime*) : Bool
@@ -16655,7 +16656,6 @@ module Qt
     fun bg_QVector3D__OPERATOR_neg_(_self_ : Vector3D*) : Vector3D
     fun bg_QVector3D__OPERATOR_div_float(_self_ : Vector3D*, divisor : Float32) : Vector3D
     fun bg_QVector3D__OPERATOR_div_QVector3D(_self_ : Vector3D*, divisor : Vector3D) : Vector3D
-    fun bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(_self_ : Vector3D*, matrix : QMatrix4x4*) : Vector3D
     fun bg_QVector4D__CONSTRUCT_() : Vector4D
     fun bg_QVector4D__CONSTRUCT_float_float_float_float(xpos : Float32, ypos : Float32, zpos : Float32, wpos : Float32) : Vector4D
     fun bg_QVector4D__CONSTRUCT_QPoint(point : QPoint) : Vector4D
@@ -19964,7 +19964,6 @@ module Qt
     fun bg_QMatrix4x4_projectedRotate_float_float_float_float(_self_ : QMatrix4x4*, angle : Float32, x : Float32, y : Float32, z : Float32) : Void
     fun bg_QMatrix4x4_flags_(_self_ : QMatrix4x4*) : ::Qt::Matrix4x4::Flags
     fun bg_QMatrix4x4__COPY_const_QMatrix4x4_R(unnamed_arg_0 : QMatrix4x4*) : QMatrix4x4*
-    fun bg_QMatrix4x4__OPERATOR_mul_const_QVector3D_R(_self_ : QMatrix4x4*, vector : Vector3D) : Vector3D
     fun bg_QMatrix4x4__OPERATOR_mul_const_QVector4D_R(_self_ : QMatrix4x4*, vector : Vector4D) : Vector4D
     fun bg_QMatrix4x4__OPERATOR_add_const_QMatrix4x4_R(_self_ : QMatrix4x4*, m2 : QMatrix4x4*) : QMatrix4x4*
     fun bg_QMatrix4x4__OPERATOR_sub_const_QMatrix4x4_R(_self_ : QMatrix4x4*, m2 : QMatrix4x4*) : QMatrix4x4*
@@ -51545,6 +51544,10 @@ module Qt
       DateTime.new(unwrap: Binding.bg_QDateTime__OPERATOR_add_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration)))
     end
     
+    def -(duration : ::Time::Span) : DateTime
+      DateTime.new(unwrap: Binding.bg_QDateTime__OPERATOR_sub_std__chrono__milliseconds(self, Qt::Converter::TimeSpan.wrap(duration)))
+    end
+    
     def ==(rhs : DateTime) : Bool
       Binding.bg_QDateTime__OPERATOR_eq_const_QDateTime_R(self, rhs)
     end
@@ -80064,10 +80067,6 @@ module Qt
       Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_div_QVector3D(pointerof(@unwrap), divisor))
     end
     
-    def *(matrix : Matrix4x4) : Vector3D
-      Vector3D.new(unwrap: Binding.bg_QVector3D__OPERATOR_mul_const_QMatrix4x4_R(pointerof(@unwrap), matrix))
-    end
-    
     def to_unsafe
       @unwrap
     end
@@ -101631,10 +101630,6 @@ module Qt
     def initialize(unnamed_arg_0 : Matrix4x4)
       result = Binding.bg_QMatrix4x4__COPY_const_QMatrix4x4_R(unnamed_arg_0)
     @unwrap = result
-    end
-    
-    def *(vector : Vector3D) : Vector3D
-      Vector3D.new(unwrap: Binding.bg_QMatrix4x4__OPERATOR_mul_const_QVector3D_R(self, vector))
     end
     
     def *(vector : Vector4D) : Vector4D
