@@ -444,12 +444,19 @@ see the comments there:
   `StringListModel` can be subclassed too.  See `spec/qt/models_spec.cr`.
 * `QAbstractTextDocumentLayout::PaintContext` and `Selection`,
   `QTextLayout::FormatRange`, `QTextEdit::ExtraSelection`,
-  `QFormLayout::TakeRowResult` and `QTextOption::Tab`, bare structs of Qt
-  classes, are wrapped as classes with property methods:
-  `Qt::TextDocumentLayoutPaintContext`, `Qt::TextLayoutFormatRange`,
-  `Qt::TextEditExtraSelection.new(cursor: cursor, format: format)`,
-  `form_layout.take_row(0).field_item`, `Qt::TextOptionTab.new(40.0,
-  Qt::TextOption::TabType::RightTab)`.
+  `QFormLayout::TakeRowResult`, `QTextOption::Tab`,
+  `QInputMethodEvent::Attribute`, `QPainter::PixmapFragment`, `QFont::Tag`
+  (Qt 6.7+), `QProcess::UnixProcessParameters` (Qt 6.6+),
+  `QAbstractEventDispatcher::TimerInfo`, `QIconEngine::ScaledPixmapArgument`
+  and `QTextStreamManipulator`, bare structs of Qt classes, are wrapped as
+  classes with property methods: `Qt::TextDocumentLayoutPaintContext`,
+  `Qt::TextLayoutFormatRange`, `Qt::TextEditExtraSelection.new(cursor:
+  cursor, format: format)`, `form_layout.take_row(0).field_item`,
+  `Qt::TextOptionTab.new(40.0, Qt::TextOption::TabType::RightTab)`,
+  `Qt::PainterPixmapFragment.create(pos, source_rect)`,
+  `input_method_event.attributes`, `font.feature_tags`, `stream <<
+  Qt.q_set_field_width(6) << Qt.q_set_pad_char('*')`.  `QFont::Tag`'s
+  `fromValue` and `fromString` return a `std::optional`, so they are dropped.
 * `QSettings::registerFormat` is dropped, as its `ReadFunc` and `WriteFunc`
   are C function pointers; `Qt::Settings::Format::IniFormat` and the native
   format need none.
@@ -556,8 +563,8 @@ see the comments there:
   `Qt::MetaObject.invoke_method(object, "click")` (`ext/meta_helper.hpp`)
   invokes a method without arguments.  `MetaType::Type` keeps Qt's constant
   names, `MetaType::Type::QString`.
-* Types without a mapping yet, like `QFont::Tag` or the `QEvent` constructor
-  tags, are ignored, which drops the methods using them.  A `bool *ok =
+* Types without a mapping yet, like `std::optional` or the `QEvent`
+  constructor tags, are ignored, which drops the methods using them.  A `bool *ok =
   nullptr` argument is `ok : Bool*? = nil`: `bits.to_u_int32(endian)`, or
   `transform.inverted(pointerof(invertible))` to learn the outcome.
 

@@ -17,6 +17,10 @@ typedef BindgenMapEntries<QHash<QString, QVariant>> Container_QHash_QString__QVa
 typedef QHash<QString, QVariant> Container_QHash_QString__QVariant_;
 typedef BindgenMapEntries<QMap<QDate, QTextCharFormat>> Container_QMap_QDate__QTextCharFormat__Entries;
 typedef QMap<QDate, QTextCharFormat> Container_QMap_QDate__QTextCharFormat_;
+typedef BindgenMapEntries<QMap<QFont::Tag, float>> Container_QMap_QFont__Tag__float__Entries;
+typedef QMap<QFont::Tag, float> Container_QMap_QFont__Tag__float_;
+typedef BindgenMapEntries<QMap<QFont::Tag, quint32>> Container_QMap_QFont__Tag__quint32__Entries;
+typedef QMap<QFont::Tag, quint32> Container_QMap_QFont__Tag__quint32_;
 typedef BindgenMapEntries<QMap<int, QVariant>> Container_QMap_int__QVariant__Entries;
 typedef QMap<int, QVariant> Container_QMap_int__QVariant_;
 typedef BindgenMapEntries<QMap<QString, QVariant>> Container_QMap_QString__QVariant__Entries;
@@ -64,6 +68,8 @@ typedef QList<QTextFormat> Container_QList_QTextFormat_;
 typedef QList<qsizetype> Container_QList_qsizetype_;
 typedef QList<quint32> Container_QList_quint32_;
 typedef QList<QFontDatabase::WritingSystem> Container_QList_QFontDatabase__WritingSystem_;
+typedef QList<QFont::Tag> Container_QList_QFont__Tag_;
+typedef QList<QInputMethodEvent::Attribute> Container_QList_QInputMethodEvent__Attribute_;
 typedef QList<QEventPoint> Container_QList_QEventPoint_;
 typedef QList<QKeySequence> Container_QList_QKeySequence_;
 typedef QList<const QInputDevice *> Container_QList_const_QInputDevice_X_;
@@ -1014,6 +1020,14 @@ extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QKeySequence_R(QD
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QKeySequence_R(QDataStream * _self_, QKeySequence & ks) {
   return &(((*_self_) >> (ks)));
+}
+
+extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_QFont__Tag(QDataStream * _self_, QFont::Tag & unnamed_arg_0) {
+  return &(((*_self_) << (unnamed_arg_0)));
+}
+
+extern "C" QDataStream * bg_QDataStream__OPERATOR_rshift_QFont__Tag_R(QDataStream * _self_, QFont::Tag & unnamed_arg_0) {
+  return &(((*_self_) >> (unnamed_arg_0)));
 }
 
 extern "C" QDataStream * bg_QDataStream__OPERATOR_lshift_const_QFont_R(QDataStream * _self_, const QFont & unnamed_arg_0) {
@@ -3758,6 +3772,42 @@ extern "C" void bg_BgInherit_QAbstractEventDispatcher_JUMPTABLE_BgJumptable_QAbs
   _self_->bgJump = (table);
 }
 
+extern "C" QAbstractEventDispatcher::TimerInfo * bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QAbstractEventDispatcher::TimerInfo>();
+}
+
+extern "C" QAbstractEventDispatcher::TimerInfo * bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_int_int_Qt__TimerType(int id, int i, Qt::TimerType t) {
+  return new (UseGC) CrystalGCWrapper<QAbstractEventDispatcher::TimerInfo>(id, i, t);
+}
+
+extern "C" QAbstractEventDispatcher::TimerInfo * bg_QAbstractEventDispatcher__TimerInfo__COPY_const_QAbstractEventDispatcher__TimerInfo_R(const QAbstractEventDispatcher::TimerInfo & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QAbstractEventDispatcher::TimerInfo>(unnamed_arg_0);
+}
+
+extern "C" int bg_QAbstractEventDispatcher__TimerInfo_timerId_GETTER_(QAbstractEventDispatcher::TimerInfo * _self_) {
+  return _self_->timerId;
+}
+
+extern "C" void bg_QAbstractEventDispatcher__TimerInfo_timerId_SETTER_int(QAbstractEventDispatcher::TimerInfo * _self_, int timerId) {
+  _self_->timerId = timerId;
+}
+
+extern "C" int bg_QAbstractEventDispatcher__TimerInfo_interval_GETTER_(QAbstractEventDispatcher::TimerInfo * _self_) {
+  return _self_->interval;
+}
+
+extern "C" void bg_QAbstractEventDispatcher__TimerInfo_interval_SETTER_int(QAbstractEventDispatcher::TimerInfo * _self_, int interval) {
+  _self_->interval = interval;
+}
+
+extern "C" Qt::TimerType bg_QAbstractEventDispatcher__TimerInfo_timerType_GETTER_(QAbstractEventDispatcher::TimerInfo * _self_) {
+  return _self_->timerType;
+}
+
+extern "C" void bg_QAbstractEventDispatcher__TimerInfo_timerType_SETTER_Qt__TimerType(QAbstractEventDispatcher::TimerInfo * _self_, Qt::TimerType timerType) {
+  _self_->timerType = timerType;
+}
+
 extern "C" QTextStream * bg_QTextStream__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<QTextStream>();
 }
@@ -4044,6 +4094,18 @@ extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_const_void_X(QTextStrea
 
 extern "C" bool bg_QTextStream__CONVERT_bool_(QTextStream * _self_) {
   return _self_->operator bool();
+}
+
+extern "C" QTextStream * bg_QTextStream__OPERATOR_lshift_QTextStreamManipulator(QTextStream * _self_, QTextStreamManipulator & m) {
+  return &(((*_self_) << (m)));
+}
+
+extern "C" void bg_QTextStreamManipulator_exec_QTextStream_R(QTextStreamManipulator * _self_, QTextStream & s) {
+  _self_->exec(s);
+}
+
+extern "C" QTextStreamManipulator * bg_QTextStreamManipulator__COPY_const_QTextStreamManipulator_R(const QTextStreamManipulator & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QTextStreamManipulator>(unnamed_arg_0);
 }
 
 extern "C" QModelIndex * bg_QModelIndex__CONSTRUCT_() {
@@ -23958,6 +24020,14 @@ extern "C" void bg_QProcess_failChildProcessModifier_const_char_X_int(QProcess *
   _self_->failChildProcessModifier(description, error);
 }
 
+extern "C" QProcess::UnixProcessParameters * bg_QProcess_unixProcessParameters_(QProcess * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QProcess::UnixProcessParameters>()) QProcess::UnixProcessParameters (_self_->unixProcessParameters());
+}
+
+extern "C" void bg_QProcess_setUnixProcessParameters_const_QProcess__UnixProcessParameters_R(QProcess * _self_, const QProcess::UnixProcessParameters & params) {
+  _self_->setUnixProcessParameters(params);
+}
+
 extern "C" void bg_QProcess_setUnixProcessParameters_QProcess__UnixProcessFlags(QProcess * _self_, QProcess::UnixProcessFlags flagsOnly) {
   _self_->setUnixProcessParameters(flagsOnly);
 }
@@ -24160,6 +24230,34 @@ extern "C" qint64 bg_QProcess_writeData_SUPER_const_char_X_qint64(QProcess * _se
 
 extern "C" void bg_BgInherit_QProcess_JUMPTABLE_BgJumptable_QProcess_R(BgInherit_QProcess * _self_, const BgJumptable_QProcess & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QProcess::UnixProcessParameters * bg_QProcess__UnixProcessParameters__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QProcess::UnixProcessParameters>();
+}
+
+extern "C" QProcess::UnixProcessParameters * bg_QProcess__UnixProcessParameters__COPY_const_QProcess__UnixProcessParameters_R(const QProcess::UnixProcessParameters & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QProcess::UnixProcessParameters>(unnamed_arg_0);
+}
+
+extern "C" QProcess::UnixProcessFlags bg_QProcess__UnixProcessParameters_flags_GETTER_(QProcess::UnixProcessParameters * _self_) {
+  return _self_->flags;
+}
+
+extern "C" void bg_QProcess__UnixProcessParameters_flags_SETTER_QProcess__UnixProcessFlags(QProcess::UnixProcessParameters * _self_, QProcess::UnixProcessFlags flags) {
+  _self_->flags = flags;
+}
+
+extern "C" int bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_GETTER_(QProcess::UnixProcessParameters * _self_) {
+  return _self_->lowestFileDescriptorToClose;
+}
+
+extern "C" void bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_SETTER_int(QProcess::UnixProcessParameters * _self_, int lowestFileDescriptorToClose) {
+  _self_->lowestFileDescriptorToClose = lowestFileDescriptorToClose;
+}
+
+extern "C" CrystalSlice bg_QProcess__UnixProcessParameters__reserved_GETTER_(QProcess::UnixProcessParameters * _self_) {
+  return bindgen_array_to_slice(_self_->_reserved);
 }
 
 struct BgJumptable_QVariantAnimation {
@@ -39579,8 +39677,16 @@ extern "C" QInputMethodEvent * bg_QInputMethodEvent__CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<BgInherit_QInputMethodEvent>();
 }
 
+extern "C" QInputMethodEvent * bg_QInputMethodEvent__CONSTRUCT_const_QString_R_const_QList_QInputMethodEvent__Attribute__R(const CrystalString preeditText, const Container_QList_QInputMethodEvent__Attribute_ * attributes) {
+  return new (UseGC) CrystalGCWrapper<BgInherit_QInputMethodEvent>(([&]() { auto &&bg_value = (preeditText); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), *(attributes));
+}
+
 extern "C" void bg_QInputMethodEvent_setCommitString_const_QString_R_int_int(QInputMethodEvent * _self_, const CrystalString commitString, int replaceFrom, int replaceLength) {
   _self_->setCommitString(([&]() { auto &&bg_value = (commitString); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), replaceFrom, replaceLength);
+}
+
+extern "C" const Container_QList_QInputMethodEvent__Attribute_ * bg_QInputMethodEvent_attributes_(QInputMethodEvent * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QInputMethodEvent__Attribute_>()) Container_QList_QInputMethodEvent__Attribute_ (_self_->attributes());
 }
 
 extern "C" const CrystalString bg_QInputMethodEvent_preeditString_(QInputMethodEvent * _self_) {
@@ -39605,6 +39711,62 @@ extern "C" QInputMethodEvent * bg_QInputMethodEvent_clone_SUPER_(QInputMethodEve
 
 extern "C" void bg_BgInherit_QInputMethodEvent_JUMPTABLE_BgJumptable_QInputMethodEvent_R(BgInherit_QInputMethodEvent * _self_, const BgJumptable_QInputMethodEvent & table) {
   _self_->bgJump = (table);
+}
+
+extern "C" QInputMethodEvent::Attribute * bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int_QVariant(QInputMethodEvent::AttributeType typ, int s, int l, CrystalVariant val) {
+  return new (UseGC) CrystalGCWrapper<QInputMethodEvent::Attribute>(typ, s, l, crystal_to_qvariant(val));
+}
+
+extern "C" QInputMethodEvent::Attribute * bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int(QInputMethodEvent::AttributeType typ, int s, int l) {
+  return new (UseGC) CrystalGCWrapper<QInputMethodEvent::Attribute>(typ, s, l);
+}
+
+extern "C" QInputMethodEvent::Attribute * bg_QInputMethodEvent__Attribute__COPY_const_QInputMethodEvent__Attribute_R(const QInputMethodEvent::Attribute & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QInputMethodEvent::Attribute>(unnamed_arg_0);
+}
+
+extern "C" QInputMethodEvent::Attribute * bg_QInputMethodEvent__Attribute__OPERATOR_assign_const_QInputMethodEvent__Attribute_R(QInputMethodEvent::Attribute * _self_, const QInputMethodEvent::Attribute & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" bool bg_QInputMethodEvent__Attribute__OPERATOR_eq_const_QInputMethodEvent__Attribute_R(QInputMethodEvent::Attribute * _self_, const QInputMethodEvent::Attribute & rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QInputMethodEvent__Attribute__OPERATOR_ne_const_QInputMethodEvent__Attribute_R(QInputMethodEvent::Attribute * _self_, const QInputMethodEvent::Attribute & rhs) {
+  return ((*_self_) != (rhs));
+}
+
+extern "C" QInputMethodEvent::AttributeType bg_QInputMethodEvent__Attribute_type_GETTER_(QInputMethodEvent::Attribute * _self_) {
+  return _self_->type;
+}
+
+extern "C" void bg_QInputMethodEvent__Attribute_type_SETTER_QInputMethodEvent__AttributeType(QInputMethodEvent::Attribute * _self_, QInputMethodEvent::AttributeType type) {
+  _self_->type = type;
+}
+
+extern "C" int bg_QInputMethodEvent__Attribute_start_GETTER_(QInputMethodEvent::Attribute * _self_) {
+  return _self_->start;
+}
+
+extern "C" void bg_QInputMethodEvent__Attribute_start_SETTER_int(QInputMethodEvent::Attribute * _self_, int start) {
+  _self_->start = start;
+}
+
+extern "C" int bg_QInputMethodEvent__Attribute_length_GETTER_(QInputMethodEvent::Attribute * _self_) {
+  return _self_->length;
+}
+
+extern "C" void bg_QInputMethodEvent__Attribute_length_SETTER_int(QInputMethodEvent::Attribute * _self_, int length) {
+  _self_->length = length;
+}
+
+extern "C" CrystalVariant bg_QInputMethodEvent__Attribute_value_GETTER_(QInputMethodEvent::Attribute * _self_) {
+  return qvariant_to_crystal(_self_->value);
+}
+
+extern "C" void bg_QInputMethodEvent__Attribute_value_SETTER_QVariant(QInputMethodEvent::Attribute * _self_, CrystalVariant value) {
+  _self_->value = crystal_to_qvariant(value);
 }
 
 struct BgJumptable_QInputMethodQueryEvent {
@@ -41176,12 +41338,52 @@ extern "C" QFont::HintingPreference bg_QFont_hintingPreference_(QFont * _self_) 
   return _self_->hintingPreference();
 }
 
+extern "C" void bg_QFont_setFeature_QFont__Tag_quint32(QFont * _self_, QFont::Tag & tag, quint32 value) {
+  _self_->setFeature(tag, value);
+}
+
+extern "C" void bg_QFont_unsetFeature_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  _self_->unsetFeature(tag);
+}
+
+extern "C" quint32 bg_QFont_featureValue_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  return _self_->featureValue(tag);
+}
+
+extern "C" bool bg_QFont_isFeatureSet_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  return _self_->isFeatureSet(tag);
+}
+
+extern "C" Container_QList_QFont__Tag_ * bg_QFont_featureTags_(QFont * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFont__Tag_>()) Container_QList_QFont__Tag_ (_self_->featureTags());
+}
+
 extern "C" void bg_QFont_clearFeatures_(QFont * _self_) {
   _self_->clearFeatures();
 }
 
+extern "C" void bg_QFont_setVariableAxis_QFont__Tag_float(QFont * _self_, QFont::Tag & tag, float value) {
+  _self_->setVariableAxis(tag, value);
+}
+
+extern "C" void bg_QFont_unsetVariableAxis_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  _self_->unsetVariableAxis(tag);
+}
+
+extern "C" bool bg_QFont_isVariableAxisSet_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  return _self_->isVariableAxisSet(tag);
+}
+
+extern "C" float bg_QFont_variableAxisValue_QFont__Tag(QFont * _self_, QFont::Tag & tag) {
+  return _self_->variableAxisValue(tag);
+}
+
 extern "C" void bg_QFont_clearVariableAxes_(QFont * _self_) {
   _self_->clearVariableAxes();
+}
+
+extern "C" Container_QList_QFont__Tag_ * bg_QFont_variableAxisTags_(QFont * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QList_QFont__Tag_>()) Container_QList_QFont__Tag_ (_self_->variableAxisTags());
 }
 
 extern "C" bool bg_QFont_exactMatch_(QFont * _self_) {
@@ -41278,6 +41480,54 @@ extern "C" void bg_QFont_setResolveMask_uint(QFont * _self_, uint mask) {
 
 extern "C" const QMetaObject * bg_QFont_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFont::staticMetaObject);
+}
+
+extern "C" QFont::Tag * bg_QFont__Tag__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QFont::Tag>();
+}
+
+extern "C" bool bg_QFont__Tag_isValid_(QFont::Tag * _self_) {
+  return _self_->isValid();
+}
+
+extern "C" quint32 bg_QFont__Tag_value_(QFont::Tag * _self_) {
+  return _self_->value();
+}
+
+extern "C" CrystalString bg_QFont__Tag_toString_(QFont::Tag * _self_) {
+  return qbytearray_to_crystal(_self_->toString());
+}
+
+extern "C" QFont::Tag * bg_QFont__Tag__COPY_const_QFont__Tag_R(const QFont::Tag & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QFont::Tag>(unnamed_arg_0);
+}
+
+extern "C" QFont::Tag * bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_eq_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) == (rhs));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_ne_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) != (rhs));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_lt_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) < (rhs));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_gt_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) > (rhs));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_le_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) <= (rhs));
+}
+
+extern "C" bool bg_QFont__Tag__OPERATOR_ge_const_QFont__Tag_R(QFont::Tag * _self_, const QFont::Tag & rhs) {
+  return ((*_self_) >= (rhs));
 }
 
 extern "C" Container_QList_int_ * bg_QFontDatabase_standardSizes_STATIC_() {
@@ -41610,6 +41860,10 @@ extern "C" Container_QList_QFontDatabase__WritingSystem_ * bg_QRawFont_supported
 
 extern "C" CrystalString bg_QRawFont_fontTable_const_char_X(QRawFont * _self_, const char * tagName) {
   return qbytearray_to_crystal(_self_->fontTable(tagName));
+}
+
+extern "C" CrystalString bg_QRawFont_fontTable_QFont__Tag(QRawFont * _self_, QFont::Tag & tag) {
+  return qbytearray_to_crystal(_self_->fontTable(tag));
 }
 
 extern "C" QRawFont * bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(const QFont & font, QFontDatabase::WritingSystem writingSystem) {
@@ -43470,6 +43724,22 @@ extern "C" void bg_QTextCharFormat_setFontHintingPreference_QFont__HintingPrefer
 
 extern "C" QFont::HintingPreference bg_QTextCharFormat_fontHintingPreference_(QTextCharFormat * _self_) {
   return _self_->fontHintingPreference();
+}
+
+extern "C" void bg_QTextCharFormat_setFontFeatures_const_QMap_QFont__Tag__quint32__R(QTextCharFormat * _self_, const Container_QMap_QFont__Tag__quint32_ * fontFeatures) {
+  _self_->setFontFeatures(*(fontFeatures));
+}
+
+extern "C" Container_QMap_QFont__Tag__quint32_ * bg_QTextCharFormat_fontFeatures_(QTextCharFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_QFont__Tag__quint32_>()) Container_QMap_QFont__Tag__quint32_ (_self_->fontFeatures());
+}
+
+extern "C" void bg_QTextCharFormat_setFontVariableAxes_const_QMap_QFont__Tag__float__R(QTextCharFormat * _self_, const Container_QMap_QFont__Tag__float_ * fontVariableAxes) {
+  _self_->setFontVariableAxes(*(fontVariableAxes));
+}
+
+extern "C" Container_QMap_QFont__Tag__float_ * bg_QTextCharFormat_fontVariableAxes_(QTextCharFormat * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<Container_QMap_QFont__Tag__float_>()) Container_QMap_QFont__Tag__float_ (_self_->fontVariableAxes());
 }
 
 extern "C" void bg_QTextCharFormat_setFontKerning_bool(QTextCharFormat * _self_, bool enable) {
@@ -50128,6 +50398,62 @@ extern "C" void bg_BgInherit_QIconEngine_JUMPTABLE_BgJumptable_QIconEngine_R(BgI
   _self_->bgJump = (table);
 }
 
+extern "C" QIconEngine::ScaledPixmapArgument * bg_QIconEngine__ScaledPixmapArgument__COPY_const_QIconEngine__ScaledPixmapArgument_R(const QIconEngine::ScaledPixmapArgument & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QIconEngine::ScaledPixmapArgument>(unnamed_arg_0);
+}
+
+extern "C" QIconEngine::ScaledPixmapArgument * bg_QIconEngine__ScaledPixmapArgument__OPERATOR_assign_const_QIconEngine__ScaledPixmapArgument_R(QIconEngine::ScaledPixmapArgument * _self_, const QIconEngine::ScaledPixmapArgument & unnamed_arg_0) {
+  return &(((*_self_) = (unnamed_arg_0)));
+}
+
+extern "C" QIconEngine::ScaledPixmapArgument * bg_QIconEngine__ScaledPixmapArgument__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QIconEngine::ScaledPixmapArgument>();
+}
+
+extern "C" QIconEngine::ScaledPixmapArgument * bg_QIconEngine__ScaledPixmapArgument__AGGREGATE_QSize_QIcon__Mode_QIcon__State_qreal_QPixmap(QSize size, QIcon::Mode mode, QIcon::State state, qreal scale, QPixmap & pixmap) {
+  return new (UseGC, bindgen_gc_finalizer<QIconEngine::ScaledPixmapArgument>()) QIconEngine::ScaledPixmapArgument {size, mode, state, scale, pixmap};
+}
+
+extern "C" QSize bg_QIconEngine__ScaledPixmapArgument_size_GETTER_(QIconEngine::ScaledPixmapArgument * _self_) {
+  return _self_->size;
+}
+
+extern "C" void bg_QIconEngine__ScaledPixmapArgument_size_SETTER_QSize(QIconEngine::ScaledPixmapArgument * _self_, QSize size) {
+  _self_->size = size;
+}
+
+extern "C" QIcon::Mode bg_QIconEngine__ScaledPixmapArgument_mode_GETTER_(QIconEngine::ScaledPixmapArgument * _self_) {
+  return _self_->mode;
+}
+
+extern "C" void bg_QIconEngine__ScaledPixmapArgument_mode_SETTER_QIcon__Mode(QIconEngine::ScaledPixmapArgument * _self_, QIcon::Mode mode) {
+  _self_->mode = mode;
+}
+
+extern "C" QIcon::State bg_QIconEngine__ScaledPixmapArgument_state_GETTER_(QIconEngine::ScaledPixmapArgument * _self_) {
+  return _self_->state;
+}
+
+extern "C" void bg_QIconEngine__ScaledPixmapArgument_state_SETTER_QIcon__State(QIconEngine::ScaledPixmapArgument * _self_, QIcon::State state) {
+  _self_->state = state;
+}
+
+extern "C" qreal bg_QIconEngine__ScaledPixmapArgument_scale_GETTER_(QIconEngine::ScaledPixmapArgument * _self_) {
+  return _self_->scale;
+}
+
+extern "C" void bg_QIconEngine__ScaledPixmapArgument_scale_SETTER_qreal(QIconEngine::ScaledPixmapArgument * _self_, qreal scale) {
+  _self_->scale = scale;
+}
+
+extern "C" QPixmap * bg_QIconEngine__ScaledPixmapArgument_pixmap_GETTER_(QIconEngine::ScaledPixmapArgument * _self_) {
+  return new (UseGC, bindgen_gc_finalizer<QPixmap>()) QPixmap (_self_->pixmap);
+}
+
+extern "C" void bg_QIconEngine__ScaledPixmapArgument_pixmap_SETTER_QPixmap(QIconEngine::ScaledPixmapArgument * _self_, QPixmap & pixmap) {
+  _self_->pixmap = pixmap;
+}
+
 extern "C" CrystalString bg_QImageReader_tr_STATIC_const_char_X(const char * sourceText) {
   return qstring_to_crystal(QImageReader::tr(sourceText));
 }
@@ -53036,6 +53362,14 @@ extern "C" void bg_QPainter_drawPixmap_int_int_int_int_const_QPixmap_R(QPainter 
   _self_->drawPixmap(x, y, w, h, pm);
 }
 
+extern "C" void bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R(QPainter * _self_, const QPainter::PixmapFragment * fragments, int fragmentCount, const QPixmap & pixmap) {
+  _self_->drawPixmapFragments(fragments, fragmentCount, pixmap);
+}
+
+extern "C" void bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R_QPainter__PixmapFragmentHints(QPainter * _self_, const QPainter::PixmapFragment * fragments, int fragmentCount, const QPixmap & pixmap, QPainter::PixmapFragmentHints hints) {
+  _self_->drawPixmapFragments(fragments, fragmentCount, pixmap, hints);
+}
+
 extern "C" void bg_QPainter_drawImage_const_QRectF_R_const_QImage_R_const_QRectF_R(QPainter * _self_, const QRectF targetRect, const QImage & image, const QRectF sourceRect) {
   _self_->drawImage(targetRect, image, sourceRect);
 }
@@ -53274,6 +53608,102 @@ extern "C" void bg_QPainter_endNativePainting_(QPainter * _self_) {
 
 extern "C" const QMetaObject * bg_QPainter_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPainter::staticMetaObject);
+}
+
+extern "C" QPainter::PixmapFragment * bg_QPainter__PixmapFragment_create_STATIC_const_QPointF_R_const_QRectF_R_qreal_qreal_qreal_qreal(const QPointF pos, const QRectF sourceRect, qreal scaleX, qreal scaleY, qreal rotation, qreal opacity) {
+  return new (UseGC, bindgen_gc_finalizer<QPainter::PixmapFragment>()) QPainter::PixmapFragment (QPainter::PixmapFragment::create(pos, sourceRect, scaleX, scaleY, rotation, opacity));
+}
+
+extern "C" QPainter::PixmapFragment * bg_QPainter__PixmapFragment__CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<QPainter::PixmapFragment>();
+}
+
+extern "C" QPainter::PixmapFragment * bg_QPainter__PixmapFragment__COPY_const_QPainter__PixmapFragment_R(const QPainter::PixmapFragment & unnamed_arg_0) {
+  return new (UseGC) CrystalGCWrapper<QPainter::PixmapFragment>(unnamed_arg_0);
+}
+
+extern "C" QPainter::PixmapFragment * bg_QPainter__PixmapFragment__AGGREGATE_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(qreal x, qreal y, qreal sourceLeft, qreal sourceTop, qreal width, qreal height, qreal scaleX, qreal scaleY, qreal rotation, qreal opacity) {
+  return new (UseGC, bindgen_gc_finalizer<QPainter::PixmapFragment>()) QPainter::PixmapFragment {x, y, sourceLeft, sourceTop, width, height, scaleX, scaleY, rotation, opacity};
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_x_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->x;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_x_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal x) {
+  _self_->x = x;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_y_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->y;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_y_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal y) {
+  _self_->y = y;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_sourceLeft_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->sourceLeft;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_sourceLeft_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal sourceLeft) {
+  _self_->sourceLeft = sourceLeft;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_sourceTop_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->sourceTop;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_sourceTop_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal sourceTop) {
+  _self_->sourceTop = sourceTop;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_width_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->width;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_width_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal width) {
+  _self_->width = width;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_height_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->height;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_height_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal height) {
+  _self_->height = height;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_scaleX_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->scaleX;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_scaleX_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal scaleX) {
+  _self_->scaleX = scaleX;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_scaleY_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->scaleY;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_scaleY_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal scaleY) {
+  _self_->scaleY = scaleY;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_rotation_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->rotation;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_rotation_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal rotation) {
+  _self_->rotation = rotation;
+}
+
+extern "C" qreal bg_QPainter__PixmapFragment_opacity_GETTER_(QPainter::PixmapFragment * _self_) {
+  return _self_->opacity;
+}
+
+extern "C" void bg_QPainter__PixmapFragment_opacity_SETTER_qreal(QPainter::PixmapFragment * _self_, qreal opacity) {
+  _self_->opacity = opacity;
 }
 
 extern "C" QPainterPath * bg_QPainterPath__CONSTRUCT_() {
@@ -152045,6 +152475,18 @@ extern "C" QMenu * bg____qt6cr_action_menu_STATIC_const_QAction_X(const QAction 
   return ::qt6cr_action_menu(action);
 }
 
+extern "C" QTextStreamManipulator * bg____qSetFieldWidth_STATIC_int(int width) {
+  return new (UseGC, bindgen_gc_finalizer<QTextStreamManipulator>()) QTextStreamManipulator (::qSetFieldWidth(width));
+}
+
+extern "C" QTextStreamManipulator * bg____qSetPadChar_STATIC_QChar(int32_t ch) {
+  return new (UseGC, bindgen_gc_finalizer<QTextStreamManipulator>()) QTextStreamManipulator (::qSetPadChar(QChar(ch)));
+}
+
+extern "C" QTextStreamManipulator * bg____qSetRealNumberPrecision_STATIC_int(int precision) {
+  return new (UseGC, bindgen_gc_finalizer<QTextStreamManipulator>()) QTextStreamManipulator (::qSetRealNumberPrecision(precision));
+}
+
 extern "C" Container_std__pair_QCborValue__QCborValue_ * bg_Container_std__pair_QCborValue__QCborValue___CONSTRUCT_() {
   return new (UseGC) CrystalGCWrapper<Container_std__pair_QCborValue__QCborValue_>();
 }
@@ -152533,11 +152975,11 @@ extern "C" Container_QList_QAbstractEventDispatcher__TimerInfo_ * bg_Container_Q
   return new (UseGC) CrystalGCWrapper<Container_QList_QAbstractEventDispatcher__TimerInfo_>();
 }
 
-extern "C" QAbstractEventDispatcher::TimerInfo bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(Container_QList_QAbstractEventDispatcher__TimerInfo_ * _self_, int index) {
-  return _self_->at(index);
+extern "C" QAbstractEventDispatcher::TimerInfo * bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(Container_QList_QAbstractEventDispatcher__TimerInfo_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QAbstractEventDispatcher::TimerInfo>()) QAbstractEventDispatcher::TimerInfo (_self_->at(index));
 }
 
-extern "C" void bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(Container_QList_QAbstractEventDispatcher__TimerInfo_ * _self_, QAbstractEventDispatcher::TimerInfo value) {
+extern "C" void bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(Container_QList_QAbstractEventDispatcher__TimerInfo_ * _self_, QAbstractEventDispatcher::TimerInfo & value) {
   _self_->push_back(value);
 }
 
@@ -152958,6 +153400,38 @@ extern "C" void bg_Container_QList_QEventPoint__push_back_QEventPoint(Container_
 }
 
 extern "C" int bg_Container_QList_QEventPoint__size_(Container_QList_QEventPoint_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QInputMethodEvent__Attribute_ * bg_Container_QList_QInputMethodEvent__Attribute___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QInputMethodEvent__Attribute_>();
+}
+
+extern "C" QInputMethodEvent::Attribute * bg_Container_QList_QInputMethodEvent__Attribute__at_int(Container_QList_QInputMethodEvent__Attribute_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QInputMethodEvent::Attribute>()) QInputMethodEvent::Attribute (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QInputMethodEvent__Attribute__push_back_QInputMethodEvent__Attribute(Container_QList_QInputMethodEvent__Attribute_ * _self_, QInputMethodEvent::Attribute & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QInputMethodEvent__Attribute__size_(Container_QList_QInputMethodEvent__Attribute_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" Container_QList_QFont__Tag_ * bg_Container_QList_QFont__Tag___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QList_QFont__Tag_>();
+}
+
+extern "C" QFont::Tag * bg_Container_QList_QFont__Tag__at_int(Container_QList_QFont__Tag_ * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QFont::Tag>()) QFont::Tag (_self_->at(index));
+}
+
+extern "C" void bg_Container_QList_QFont__Tag__push_back_QFont__Tag(Container_QList_QFont__Tag_ * _self_, QFont::Tag & value) {
+  _self_->push_back(value);
+}
+
+extern "C" int bg_Container_QList_QFont__Tag__size_(Container_QList_QFont__Tag_ * _self_) {
   return _self_->size();
 }
 
@@ -153727,6 +154201,86 @@ extern "C" int bg_Container_QMap_int__QVariant__Entries_key_int(Container_QMap_i
 
 extern "C" CrystalVariant bg_Container_QMap_int__QVariant__Entries_value_int(Container_QMap_int__QVariant__Entries * _self_, int index) {
   return qvariant_to_crystal(_self_->value(index));
+}
+
+extern "C" Container_QMap_QFont__Tag__quint32_ * bg_Container_QMap_QFont__Tag__quint32___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QFont__Tag__quint32_>();
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__quint32__size_(Container_QMap_QFont__Tag__quint32_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__quint32__contains_QFont__Tag(Container_QMap_QFont__Tag__quint32_ * _self_, QFont::Tag & key) {
+  return _self_->contains(key);
+}
+
+extern "C" void bg_Container_QMap_QFont__Tag__quint32__remove_QFont__Tag(Container_QMap_QFont__Tag__quint32_ * _self_, QFont::Tag & key) {
+  _self_->remove(key);
+}
+
+extern "C" quint32 bg____Container_QMap_QFont__Tag__quint32__fetch_QMap_QFont__Tag__quint32__R_QFont__Tag(Container_QMap_QFont__Tag__quint32_ * map, QFont::Tag & key) {
+  return ::bindgen_map_fetch(*(map), key);
+}
+
+extern "C" void bg_Container_QMap_QFont__Tag__quint32__insert_QFont__Tag_quint32(Container_QMap_QFont__Tag__quint32_ * _self_, QFont::Tag & key, quint32 value) {
+  _self_->insert(key, value);
+}
+
+extern "C" Container_QMap_QFont__Tag__quint32__Entries * bg_Container_QMap_QFont__Tag__quint32__Entries__CONSTRUCT_const_QMap_QFont__Tag__quint32__R(const Container_QMap_QFont__Tag__quint32_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QFont__Tag__quint32__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__quint32__Entries_size_(Container_QMap_QFont__Tag__quint32__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" QFont::Tag * bg_Container_QMap_QFont__Tag__quint32__Entries_key_int(Container_QMap_QFont__Tag__quint32__Entries * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QFont::Tag>()) QFont::Tag (_self_->key(index));
+}
+
+extern "C" quint32 bg_Container_QMap_QFont__Tag__quint32__Entries_value_int(Container_QMap_QFont__Tag__quint32__Entries * _self_, int index) {
+  return _self_->value(index);
+}
+
+extern "C" Container_QMap_QFont__Tag__float_ * bg_Container_QMap_QFont__Tag__float___CONSTRUCT_() {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QFont__Tag__float_>();
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__float__size_(Container_QMap_QFont__Tag__float_ * _self_) {
+  return _self_->size();
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__float__contains_QFont__Tag(Container_QMap_QFont__Tag__float_ * _self_, QFont::Tag & key) {
+  return _self_->contains(key);
+}
+
+extern "C" void bg_Container_QMap_QFont__Tag__float__remove_QFont__Tag(Container_QMap_QFont__Tag__float_ * _self_, QFont::Tag & key) {
+  _self_->remove(key);
+}
+
+extern "C" float bg____Container_QMap_QFont__Tag__float__fetch_QMap_QFont__Tag__float__R_QFont__Tag(Container_QMap_QFont__Tag__float_ * map, QFont::Tag & key) {
+  return ::bindgen_map_fetch(*(map), key);
+}
+
+extern "C" void bg_Container_QMap_QFont__Tag__float__insert_QFont__Tag_float(Container_QMap_QFont__Tag__float_ * _self_, QFont::Tag & key, float value) {
+  _self_->insert(key, value);
+}
+
+extern "C" Container_QMap_QFont__Tag__float__Entries * bg_Container_QMap_QFont__Tag__float__Entries__CONSTRUCT_const_QMap_QFont__Tag__float__R(const Container_QMap_QFont__Tag__float_ * map) {
+  return new (UseGC) CrystalGCWrapper<Container_QMap_QFont__Tag__float__Entries>(*(map));
+}
+
+extern "C" int bg_Container_QMap_QFont__Tag__float__Entries_size_(Container_QMap_QFont__Tag__float__Entries * _self_) {
+  return _self_->size();
+}
+
+extern "C" QFont::Tag * bg_Container_QMap_QFont__Tag__float__Entries_key_int(Container_QMap_QFont__Tag__float__Entries * _self_, int index) {
+  return new (UseGC, bindgen_gc_finalizer<QFont::Tag>()) QFont::Tag (_self_->key(index));
+}
+
+extern "C" float bg_Container_QMap_QFont__Tag__float__Entries_value_int(Container_QMap_QFont__Tag__float__Entries * _self_, int index) {
+  return _self_->value(index);
 }
 
 extern "C" Container_QMap_QDate__QTextCharFormat_ * bg_Container_QMap_QDate__QTextCharFormat___CONSTRUCT_() {

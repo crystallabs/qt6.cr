@@ -589,6 +589,7 @@ module Qt
     alias QPixmap = Void
     alias QIcon = Void
     alias QKeySequence = Void
+    alias QFont_Tag = Void
     alias QFont = Void
     alias QBrush = Void
     alias QPen = Void
@@ -814,8 +815,10 @@ module Qt
     alias ContainerQListQAbstractEventDispatcherTimerInfo = Void
     alias QAbstractNativeEventFilter = Void
     alias QAbstractEventDispatcherPrivate = Void
+    alias QAbstractEventDispatcher_TimerInfo = Void
     alias QTextStream = Void
     alias FILE = Void
+    alias QTextStreamManipulator = Void
     alias QModelIndex = Void
     alias QModelRoleDataSpan = Void
     alias QPersistentModelIndex = Void
@@ -953,6 +956,7 @@ module Qt
     alias QOperatingSystemVersion = Void
     alias QParallelAnimationGroupPrivate = Void
     alias QProcessEnvironment = Void
+    alias QProcess_UnixProcessParameters = Void
     alias ContainerQListStdPairDoubleQVariant = Void
     alias QVariantAnimationPrivate = Void
     alias QRandomGenerator = Void
@@ -1014,6 +1018,9 @@ module Qt
     alias QPointingDevicePrivate = Void
     alias ContainerQListQKeySequence = Void
     alias ContainerQListQEventPoint = Void
+    alias ContainerQListQInputMethodEventAttribute = Void
+    alias QInputMethodEvent_Attribute = Void
+    alias ContainerQListQFontTag = Void
     alias QFontDatabase = Void
     alias ContainerQListQFontDatabaseWritingSystem = Void
     alias QFontInfo = Void
@@ -1037,6 +1044,8 @@ module Qt
     alias ContainerQListQTextLength = Void
     alias QTextTableFormat = Void
     alias QTextImageFormat = Void
+    alias ContainerQMapQFontTagQuint32 = Void
+    alias ContainerQMapQFontTagFloat = Void
     alias QTextCursorPrivate = Void
     alias QTextDocumentFragment = Void
     alias QTextInlineObject = Void
@@ -1070,6 +1079,7 @@ module Qt
     alias ContainerQListQFontVariableAxis = Void
     alias QFontMetrics = Void
     alias QFontMetricsF = Void
+    alias QIconEngine_ScaledPixmapArgument = Void
     alias QImageWriter = Void
     alias QPlatformOffscreenSurface = Void
     alias QPageSize = Void
@@ -1081,6 +1091,7 @@ module Qt
     alias ContainerQListQLine = Void
     alias ContainerQListQRectF = Void
     alias ContainerQListQRect = Void
+    alias QPainter_PixmapFragment = Void
     alias QStaticText = Void
     alias QTextItem = Void
     alias ContainerQListQPolygonF = Void
@@ -1231,6 +1242,8 @@ module Qt
     alias QFontVariableAxis = Void
     alias Container_QMap_QString__QVariant__Entries = Void
     alias Container_QMap_int__QVariant__Entries = Void
+    alias Container_QMap_QFont__Tag__quint32__Entries = Void
+    alias Container_QMap_QFont__Tag__float__Entries = Void
     alias Container_QMap_QDate__QTextCharFormat__Entries = Void
     alias Container_QHash_QString__QVariant__Entries = Void
     alias Container_QHash_int__QByteArray__Entries = Void
@@ -1269,11 +1282,6 @@ module Qt
       yp : Float64
       w : Float64
       h : Float64
-    end
-    struct EventDispatcherTimerInfo
-      timer_id : Int32
-      interval : Int32
-      timer_type : TimerType
     end
     struct Vector2D
       v : Float32[2]
@@ -9475,6 +9483,8 @@ module Qt
     fun bg_QDataStream__OPERATOR_lshift_QVector4D(_self_ : QDataStream*, unnamed_arg_0 : Vector4D) : QDataStream*
     fun bg_QDataStream__OPERATOR_lshift_const_QKeySequence_R(_self_ : QDataStream*, ks : QKeySequence*) : QDataStream*
     fun bg_QDataStream__OPERATOR_rshift_QKeySequence_R(_self_ : QDataStream*, ks : QKeySequence*) : QDataStream*
+    fun bg_QDataStream__OPERATOR_lshift_QFont__Tag(_self_ : QDataStream*, unnamed_arg_0 : QFont_Tag*) : QDataStream*
+    fun bg_QDataStream__OPERATOR_rshift_QFont__Tag_R(_self_ : QDataStream*, unnamed_arg_0 : QFont_Tag*) : QDataStream*
     fun bg_QDataStream__OPERATOR_lshift_const_QFont_R(_self_ : QDataStream*, unnamed_arg_0 : QFont*) : QDataStream*
     fun bg_QDataStream__OPERATOR_rshift_QFont_R(_self_ : QDataStream*, unnamed_arg_0 : QFont*) : QDataStream*
     fun bg_QDataStream__OPERATOR_lshift_const_QBrush_R(_self_ : QDataStream*, unnamed_arg_0 : QBrush*) : QDataStream*
@@ -10030,6 +10040,15 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QAbstractEventDispatcher*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QAbstractEventDispatcher_JUMPTABLE_BgJumptable_QAbstractEventDispatcher_R(_self_ : QAbstractEventDispatcher*, table : BgJumptable_QAbstractEventDispatcher*) : Void
+    fun bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_() : QAbstractEventDispatcher_TimerInfo*
+    fun bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_int_int_Qt__TimerType(id : Int32, i : Int32, t : ::Qt::TimerType) : QAbstractEventDispatcher_TimerInfo*
+    fun bg_QAbstractEventDispatcher__TimerInfo__COPY_const_QAbstractEventDispatcher__TimerInfo_R(unnamed_arg_0 : QAbstractEventDispatcher_TimerInfo*) : QAbstractEventDispatcher_TimerInfo*
+    fun bg_QAbstractEventDispatcher__TimerInfo_timerId_GETTER_(_self_ : QAbstractEventDispatcher_TimerInfo*) : Int32
+    fun bg_QAbstractEventDispatcher__TimerInfo_timerId_SETTER_int(_self_ : QAbstractEventDispatcher_TimerInfo*, timer_id : Int32) : Void
+    fun bg_QAbstractEventDispatcher__TimerInfo_interval_GETTER_(_self_ : QAbstractEventDispatcher_TimerInfo*) : Int32
+    fun bg_QAbstractEventDispatcher__TimerInfo_interval_SETTER_int(_self_ : QAbstractEventDispatcher_TimerInfo*, interval : Int32) : Void
+    fun bg_QAbstractEventDispatcher__TimerInfo_timerType_GETTER_(_self_ : QAbstractEventDispatcher_TimerInfo*) : ::Qt::TimerType
+    fun bg_QAbstractEventDispatcher__TimerInfo_timerType_SETTER_Qt__TimerType(_self_ : QAbstractEventDispatcher_TimerInfo*, timer_type : ::Qt::TimerType) : Void
     fun bg_QTextStream__CONSTRUCT_() : QTextStream*
     fun bg_QTextStream__CONSTRUCT_QIODevice_X(device : QIODevice*) : QTextStream*
     fun bg_QTextStream__CONSTRUCT_FILE_X(file_handle : FILE*) : QTextStream*
@@ -10102,6 +10121,9 @@ module Qt
     fun bg_QTextStream__OPERATOR_lshift_const_char_X(_self_ : QTextStream*, c : UInt8*) : QTextStream*
     fun bg_QTextStream__OPERATOR_lshift_const_void_X(_self_ : QTextStream*, ptr : Void*) : QTextStream*
     fun bg_QTextStream__CONVERT_bool_(_self_ : QTextStream*) : Bool
+    fun bg_QTextStream__OPERATOR_lshift_QTextStreamManipulator(_self_ : QTextStream*, m : QTextStreamManipulator*) : QTextStream*
+    fun bg_QTextStreamManipulator_exec_QTextStream_R(_self_ : QTextStreamManipulator*, s : QTextStream*) : Void
+    fun bg_QTextStreamManipulator__COPY_const_QTextStreamManipulator_R(unnamed_arg_0 : QTextStreamManipulator*) : QTextStreamManipulator*
     fun bg_QModelIndex__CONSTRUCT_() : QModelIndex*
     fun bg_QModelIndex_row_(_self_ : QModelIndex*) : Int32
     fun bg_QModelIndex_column_(_self_ : QModelIndex*) : Int32
@@ -14201,6 +14223,8 @@ module Qt
     fun bg_QProcess_setStandardErrorFile_const_QString_R_QIODeviceBase__OpenMode(_self_ : QProcess*, file_name : CrystalString, mode : ::Qt::IODevice::OpenMode) : Void
     fun bg_QProcess_setStandardOutputProcess_QProcess_X(_self_ : QProcess*, destination : QProcess*) : Void
     fun bg_QProcess_failChildProcessModifier_const_char_X_int(_self_ : QProcess*, description : UInt8*, error : Int32) : Void
+    fun bg_QProcess_unixProcessParameters_(_self_ : QProcess*) : QProcess_UnixProcessParameters*
+    fun bg_QProcess_setUnixProcessParameters_const_QProcess__UnixProcessParameters_R(_self_ : QProcess*, params : QProcess_UnixProcessParameters*) : Void
     fun bg_QProcess_setUnixProcessParameters_QProcess__UnixProcessFlags(_self_ : QProcess*, flags_only : ::Qt::Process::UnixProcessFlags) : Void
     fun bg_QProcess_workingDirectory_(_self_ : QProcess*) : CrystalString
     fun bg_QProcess_setWorkingDirectory_const_QString_R(_self_ : QProcess*, dir : CrystalString) : Void
@@ -14284,6 +14308,13 @@ module Qt
     fun bg_QObject_connectNotify_SUPER_const_QMetaMethod_R(_self_ : QProcess*, signal : QMetaMethod*) : Void
     fun bg_QObject_disconnectNotify_SUPER_const_QMetaMethod_R(_self_ : QProcess*, signal : QMetaMethod*) : Void
     fun bg_BgInherit_QProcess_JUMPTABLE_BgJumptable_QProcess_R(_self_ : QProcess*, table : BgJumptable_QProcess*) : Void
+    fun bg_QProcess__UnixProcessParameters__CONSTRUCT_() : QProcess_UnixProcessParameters*
+    fun bg_QProcess__UnixProcessParameters__COPY_const_QProcess__UnixProcessParameters_R(unnamed_arg_0 : QProcess_UnixProcessParameters*) : QProcess_UnixProcessParameters*
+    fun bg_QProcess__UnixProcessParameters_flags_GETTER_(_self_ : QProcess_UnixProcessParameters*) : ::Qt::Process::UnixProcessFlags
+    fun bg_QProcess__UnixProcessParameters_flags_SETTER_QProcess__UnixProcessFlags(_self_ : QProcess_UnixProcessParameters*, flags : ::Qt::Process::UnixProcessFlags) : Void
+    fun bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_GETTER_(_self_ : QProcess_UnixProcessParameters*) : Int32
+    fun bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_SETTER_int(_self_ : QProcess_UnixProcessParameters*, lowest_file_descriptor_to_close : Int32) : Void
+    fun bg_QProcess__UnixProcessParameters__reserved_GETTER_(_self_ : QProcess_UnixProcessParameters*) : Binding::CrystalSlice
     fun bg_QVariantAnimation_metaObject_(_self_ : QVariantAnimation*) : QMetaObject*
     fun bg_QVariantAnimation_qt_metacast_const_char_X(_self_ : QVariantAnimation*, unnamed_arg_0 : UInt8*) : Void*
     fun bg_QVariantAnimation_qt_metacall_QMetaObject__Call_int_void_XX(_self_ : QVariantAnimation*, unnamed_arg_0 : ::Qt::MetaObjectCall, unnamed_arg_1 : Int32, unnamed_arg_2 : Void**) : Int32
@@ -17471,7 +17502,9 @@ module Qt
     fun bg_QInputMethodEvent__OPERATOR_assign_const_QInputMethodEvent_R(_self_ : QInputMethodEvent*, other : QInputMethodEvent*) : QInputMethodEvent*
     fun bg_QInputMethodEvent_clone_(_self_ : QInputMethodEvent*) : QInputMethodEvent*
     fun bg_QInputMethodEvent__CONSTRUCT_() : QInputMethodEvent*
+    fun bg_QInputMethodEvent__CONSTRUCT_const_QString_R_const_QList_QInputMethodEvent__Attribute__R(preedit_text : CrystalString, attributes : ContainerQListQInputMethodEventAttribute*) : QInputMethodEvent*
     fun bg_QInputMethodEvent_setCommitString_const_QString_R_int_int(_self_ : QInputMethodEvent*, commit_string : CrystalString, replace_from : Int32, replace_length : Int32) : Void
+    fun bg_QInputMethodEvent_attributes_(_self_ : QInputMethodEvent*) : ContainerQListQInputMethodEventAttribute*
     fun bg_QInputMethodEvent_preeditString_(_self_ : QInputMethodEvent*) : CrystalString
     fun bg_QInputMethodEvent_commitString_(_self_ : QInputMethodEvent*) : CrystalString
     fun bg_QInputMethodEvent_replacementStart_(_self_ : QInputMethodEvent*) : Int32
@@ -17480,6 +17513,20 @@ module Qt
     fun bg_QInputMethodEvent_clone_SUPER_(_self_ : QInputMethodEvent*) : QInputMethodEvent*
     fun bg_QEvent_setAccepted_SUPER_bool(_self_ : QInputMethodEvent*, accepted : Bool) : Void
     fun bg_BgInherit_QInputMethodEvent_JUMPTABLE_BgJumptable_QInputMethodEvent_R(_self_ : QInputMethodEvent*, table : BgJumptable_QInputMethodEvent*) : Void
+    fun bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int_QVariant(typ : ::Qt::InputMethodEvent::AttributeType, s : Int32, l : Int32, val : CrystalVariant) : QInputMethodEvent_Attribute*
+    fun bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int(typ : ::Qt::InputMethodEvent::AttributeType, s : Int32, l : Int32) : QInputMethodEvent_Attribute*
+    fun bg_QInputMethodEvent__Attribute__COPY_const_QInputMethodEvent__Attribute_R(unnamed_arg_0 : QInputMethodEvent_Attribute*) : QInputMethodEvent_Attribute*
+    fun bg_QInputMethodEvent__Attribute__OPERATOR_assign_const_QInputMethodEvent__Attribute_R(_self_ : QInputMethodEvent_Attribute*, unnamed_arg_0 : QInputMethodEvent_Attribute*) : QInputMethodEvent_Attribute*
+    fun bg_QInputMethodEvent__Attribute__OPERATOR_eq_const_QInputMethodEvent__Attribute_R(_self_ : QInputMethodEvent_Attribute*, rhs : QInputMethodEvent_Attribute*) : Bool
+    fun bg_QInputMethodEvent__Attribute__OPERATOR_ne_const_QInputMethodEvent__Attribute_R(_self_ : QInputMethodEvent_Attribute*, rhs : QInputMethodEvent_Attribute*) : Bool
+    fun bg_QInputMethodEvent__Attribute_type_GETTER_(_self_ : QInputMethodEvent_Attribute*) : ::Qt::InputMethodEvent::AttributeType
+    fun bg_QInputMethodEvent__Attribute_type_SETTER_QInputMethodEvent__AttributeType(_self_ : QInputMethodEvent_Attribute*, type : ::Qt::InputMethodEvent::AttributeType) : Void
+    fun bg_QInputMethodEvent__Attribute_start_GETTER_(_self_ : QInputMethodEvent_Attribute*) : Int32
+    fun bg_QInputMethodEvent__Attribute_start_SETTER_int(_self_ : QInputMethodEvent_Attribute*, start : Int32) : Void
+    fun bg_QInputMethodEvent__Attribute_length_GETTER_(_self_ : QInputMethodEvent_Attribute*) : Int32
+    fun bg_QInputMethodEvent__Attribute_length_SETTER_int(_self_ : QInputMethodEvent_Attribute*, length : Int32) : Void
+    fun bg_QInputMethodEvent__Attribute_value_GETTER_(_self_ : QInputMethodEvent_Attribute*) : CrystalVariant
+    fun bg_QInputMethodEvent__Attribute_value_SETTER_QVariant(_self_ : QInputMethodEvent_Attribute*, value : CrystalVariant) : Void
     fun bg_QInputMethodQueryEvent__COPY_const_QInputMethodQueryEvent_R(unnamed_arg_0 : QInputMethodQueryEvent*) : QInputMethodQueryEvent*
     fun bg_QInputMethodQueryEvent__OPERATOR_assign_const_QInputMethodQueryEvent_R(_self_ : QInputMethodQueryEvent*, other : QInputMethodQueryEvent*) : QInputMethodQueryEvent*
     fun bg_QInputMethodQueryEvent_clone_(_self_ : QInputMethodQueryEvent*) : QInputMethodQueryEvent*
@@ -17774,8 +17821,18 @@ module Qt
     fun bg_QFont_capitalization_(_self_ : QFont*) : ::Qt::Font::Capitalization
     fun bg_QFont_setHintingPreference_QFont__HintingPreference(_self_ : QFont*, hinting_preference : ::Qt::Font::HintingPreference) : Void
     fun bg_QFont_hintingPreference_(_self_ : QFont*) : ::Qt::Font::HintingPreference
+    fun bg_QFont_setFeature_QFont__Tag_quint32(_self_ : QFont*, tag : QFont_Tag*, value : UInt32) : Void
+    fun bg_QFont_unsetFeature_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : Void
+    fun bg_QFont_featureValue_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : UInt32
+    fun bg_QFont_isFeatureSet_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : Bool
+    fun bg_QFont_featureTags_(_self_ : QFont*) : ContainerQListQFontTag*
     fun bg_QFont_clearFeatures_(_self_ : QFont*) : Void
+    fun bg_QFont_setVariableAxis_QFont__Tag_float(_self_ : QFont*, tag : QFont_Tag*, value : Float32) : Void
+    fun bg_QFont_unsetVariableAxis_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : Void
+    fun bg_QFont_isVariableAxisSet_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : Bool
+    fun bg_QFont_variableAxisValue_QFont__Tag(_self_ : QFont*, tag : QFont_Tag*) : Float32
     fun bg_QFont_clearVariableAxes_(_self_ : QFont*) : Void
+    fun bg_QFont_variableAxisTags_(_self_ : QFont*) : ContainerQListQFontTag*
     fun bg_QFont_exactMatch_(_self_ : QFont*) : Bool
     fun bg_QFont__OPERATOR_assign_const_QFont_R(_self_ : QFont*, unnamed_arg_0 : QFont*) : QFont*
     fun bg_QFont__OPERATOR_eq_const_QFont_R(_self_ : QFont*, unnamed_arg_0 : QFont*) : Bool
@@ -17800,6 +17857,18 @@ module Qt
     fun bg_QFont_resolveMask_(_self_ : QFont*) : UInt32
     fun bg_QFont_setResolveMask_uint(_self_ : QFont*, mask : UInt32) : Void
     fun bg_QFont_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QFont__Tag__CONSTRUCT_() : QFont_Tag*
+    fun bg_QFont__Tag_isValid_(_self_ : QFont_Tag*) : Bool
+    fun bg_QFont__Tag_value_(_self_ : QFont_Tag*) : UInt32
+    fun bg_QFont__Tag_toString_(_self_ : QFont_Tag*) : CrystalString
+    fun bg_QFont__Tag__COPY_const_QFont__Tag_R(unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
+    fun bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(_self_ : QFont_Tag*, unnamed_arg_0 : QFont_Tag*) : QFont_Tag*
+    fun bg_QFont__Tag__OPERATOR_eq_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
+    fun bg_QFont__Tag__OPERATOR_ne_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
+    fun bg_QFont__Tag__OPERATOR_lt_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
+    fun bg_QFont__Tag__OPERATOR_gt_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
+    fun bg_QFont__Tag__OPERATOR_le_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
+    fun bg_QFont__Tag__OPERATOR_ge_const_QFont__Tag_R(_self_ : QFont_Tag*, rhs : QFont_Tag*) : Bool
     fun bg_QFontDatabase_standardSizes_STATIC_() : ContainerQListInt*
     fun bg_QFontDatabase_writingSystems_STATIC_() : ContainerQListQFontDatabaseWritingSystem*
     fun bg_QFontDatabase_writingSystems_STATIC_const_QString_R(family : CrystalString) : ContainerQListQFontDatabaseWritingSystem*
@@ -17883,6 +17952,7 @@ module Qt
     fun bg_QRawFont_supportsCharacter_QChar(_self_ : QRawFont*, character : Int32) : Bool
     fun bg_QRawFont_supportedWritingSystems_(_self_ : QRawFont*) : ContainerQListQFontDatabaseWritingSystem*
     fun bg_QRawFont_fontTable_const_char_X(_self_ : QRawFont*, tag_name : UInt8*) : CrystalString
+    fun bg_QRawFont_fontTable_QFont__Tag(_self_ : QRawFont*, tag : QFont_Tag*) : CrystalString
     fun bg_QRawFont_fromFont_STATIC_const_QFont_R_QFontDatabase__WritingSystem(font : QFont*, writing_system : ::Qt::FontDatabase::WritingSystem) : QRawFont*
     fun bg_QGlyphRun__CONSTRUCT_() : QGlyphRun*
     fun bg_QGlyphRun__COPY_const_QGlyphRun_R(other : QGlyphRun*) : QGlyphRun*
@@ -18328,6 +18398,10 @@ module Qt
     fun bg_QTextCharFormat_fontStyleStrategy_(_self_ : QTextCharFormat*) : ::Qt::Font::StyleStrategy
     fun bg_QTextCharFormat_setFontHintingPreference_QFont__HintingPreference(_self_ : QTextCharFormat*, hinting_preference : ::Qt::Font::HintingPreference) : Void
     fun bg_QTextCharFormat_fontHintingPreference_(_self_ : QTextCharFormat*) : ::Qt::Font::HintingPreference
+    fun bg_QTextCharFormat_setFontFeatures_const_QMap_QFont__Tag__quint32__R(_self_ : QTextCharFormat*, font_features : ContainerQMapQFontTagQuint32*) : Void
+    fun bg_QTextCharFormat_fontFeatures_(_self_ : QTextCharFormat*) : ContainerQMapQFontTagQuint32*
+    fun bg_QTextCharFormat_setFontVariableAxes_const_QMap_QFont__Tag__float__R(_self_ : QTextCharFormat*, font_variable_axes : ContainerQMapQFontTagFloat*) : Void
+    fun bg_QTextCharFormat_fontVariableAxes_(_self_ : QTextCharFormat*) : ContainerQMapQFontTagFloat*
     fun bg_QTextCharFormat_setFontKerning_bool(_self_ : QTextCharFormat*, enable : Bool) : Void
     fun bg_QTextCharFormat_fontKerning_(_self_ : QTextCharFormat*) : Bool
     fun bg_QTextCharFormat_setUnderlineStyle_QTextCharFormat__UnderlineStyle(_self_ : QTextCharFormat*, style : ::Qt::TextCharFormat::UnderlineStyle) : Void
@@ -19724,6 +19798,20 @@ module Qt
     fun bg_QIconEngine_scaledPixmap_SUPER_const_QSize_R_QIcon__Mode_QIcon__State_qreal(_self_ : QIconEngine*, size : QSize, mode : ::Qt::Icon::Mode, state : ::Qt::Icon::State, scale : Float64) : QPixmap*
     fun bg_QIconEngine_virtual_hook_SUPER_int_void_X(_self_ : QIconEngine*, id : Int32, data : Void*) : Void
     fun bg_BgInherit_QIconEngine_JUMPTABLE_BgJumptable_QIconEngine_R(_self_ : QIconEngine*, table : BgJumptable_QIconEngine*) : Void
+    fun bg_QIconEngine__ScaledPixmapArgument__COPY_const_QIconEngine__ScaledPixmapArgument_R(unnamed_arg_0 : QIconEngine_ScaledPixmapArgument*) : QIconEngine_ScaledPixmapArgument*
+    fun bg_QIconEngine__ScaledPixmapArgument__OPERATOR_assign_const_QIconEngine__ScaledPixmapArgument_R(_self_ : QIconEngine_ScaledPixmapArgument*, unnamed_arg_0 : QIconEngine_ScaledPixmapArgument*) : QIconEngine_ScaledPixmapArgument*
+    fun bg_QIconEngine__ScaledPixmapArgument__CONSTRUCT_() : QIconEngine_ScaledPixmapArgument*
+    fun bg_QIconEngine__ScaledPixmapArgument__AGGREGATE_QSize_QIcon__Mode_QIcon__State_qreal_QPixmap(size : QSize, mode : ::Qt::Icon::Mode, state : ::Qt::Icon::State, scale : Float64, pixmap : QPixmap*) : QIconEngine_ScaledPixmapArgument*
+    fun bg_QIconEngine__ScaledPixmapArgument_size_GETTER_(_self_ : QIconEngine_ScaledPixmapArgument*) : QSize
+    fun bg_QIconEngine__ScaledPixmapArgument_size_SETTER_QSize(_self_ : QIconEngine_ScaledPixmapArgument*, size : QSize) : Void
+    fun bg_QIconEngine__ScaledPixmapArgument_mode_GETTER_(_self_ : QIconEngine_ScaledPixmapArgument*) : ::Qt::Icon::Mode
+    fun bg_QIconEngine__ScaledPixmapArgument_mode_SETTER_QIcon__Mode(_self_ : QIconEngine_ScaledPixmapArgument*, mode : ::Qt::Icon::Mode) : Void
+    fun bg_QIconEngine__ScaledPixmapArgument_state_GETTER_(_self_ : QIconEngine_ScaledPixmapArgument*) : ::Qt::Icon::State
+    fun bg_QIconEngine__ScaledPixmapArgument_state_SETTER_QIcon__State(_self_ : QIconEngine_ScaledPixmapArgument*, state : ::Qt::Icon::State) : Void
+    fun bg_QIconEngine__ScaledPixmapArgument_scale_GETTER_(_self_ : QIconEngine_ScaledPixmapArgument*) : Float64
+    fun bg_QIconEngine__ScaledPixmapArgument_scale_SETTER_qreal(_self_ : QIconEngine_ScaledPixmapArgument*, scale : Float64) : Void
+    fun bg_QIconEngine__ScaledPixmapArgument_pixmap_GETTER_(_self_ : QIconEngine_ScaledPixmapArgument*) : QPixmap*
+    fun bg_QIconEngine__ScaledPixmapArgument_pixmap_SETTER_QPixmap(_self_ : QIconEngine_ScaledPixmapArgument*, pixmap : QPixmap*) : Void
     fun bg_QImageReader_tr_STATIC_const_char_X(source_text : UInt8*) : CrystalString
     fun bg_QImageReader_tr_STATIC_const_char_X_const_char_X(source_text : UInt8*, disambiguation : UInt8*) : CrystalString
     fun bg_QImageReader__CONSTRUCT_() : QImageReader*
@@ -20358,6 +20446,8 @@ module Qt
     fun bg_QPainter_drawPixmap_int_int_const_QPixmap_R(_self_ : QPainter*, x : Int32, y : Int32, pm : QPixmap*) : Void
     fun bg_QPainter_drawPixmap_const_QRect_R_const_QPixmap_R(_self_ : QPainter*, r : QRect, pm : QPixmap*) : Void
     fun bg_QPainter_drawPixmap_int_int_int_int_const_QPixmap_R(_self_ : QPainter*, x : Int32, y : Int32, w : Int32, h : Int32, pm : QPixmap*) : Void
+    fun bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R(_self_ : QPainter*, fragments : QPainter_PixmapFragment*, fragment_count : Int32, pixmap : QPixmap*) : Void
+    fun bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R_QPainter__PixmapFragmentHints(_self_ : QPainter*, fragments : QPainter_PixmapFragment*, fragment_count : Int32, pixmap : QPixmap*, hints : ::Qt::Painter::PixmapFragmentHints) : Void
     fun bg_QPainter_drawImage_const_QRectF_R_const_QImage_R_const_QRectF_R(_self_ : QPainter*, target_rect : QRectF, image : QImage*, source_rect : QRectF) : Void
     fun bg_QPainter_drawImage_const_QRectF_R_const_QImage_R_const_QRectF_R_Qt__ImageConversionFlags(_self_ : QPainter*, target_rect : QRectF, image : QImage*, source_rect : QRectF, flags : ::Qt::ImageConversionFlags) : Void
     fun bg_QPainter_drawImage_const_QRect_R_const_QImage_R_const_QRect_R(_self_ : QPainter*, target_rect : QRect, image : QImage*, source_rect : QRect) : Void
@@ -20418,6 +20508,30 @@ module Qt
     fun bg_QPainter_beginNativePainting_(_self_ : QPainter*) : Void
     fun bg_QPainter_endNativePainting_(_self_ : QPainter*) : Void
     fun bg_QPainter_staticMetaObject_STATIC_GETTER_() : QMetaObject*
+    fun bg_QPainter__PixmapFragment_create_STATIC_const_QPointF_R_const_QRectF_R_qreal_qreal_qreal_qreal(pos : QPointF, source_rect : QRectF, scale_x : Float64, scale_y : Float64, rotation : Float64, opacity : Float64) : QPainter_PixmapFragment*
+    fun bg_QPainter__PixmapFragment__CONSTRUCT_() : QPainter_PixmapFragment*
+    fun bg_QPainter__PixmapFragment__COPY_const_QPainter__PixmapFragment_R(unnamed_arg_0 : QPainter_PixmapFragment*) : QPainter_PixmapFragment*
+    fun bg_QPainter__PixmapFragment__AGGREGATE_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(x : Float64, y : Float64, source_left : Float64, source_top : Float64, width : Float64, height : Float64, scale_x : Float64, scale_y : Float64, rotation : Float64, opacity : Float64) : QPainter_PixmapFragment*
+    fun bg_QPainter__PixmapFragment_x_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_x_SETTER_qreal(_self_ : QPainter_PixmapFragment*, x : Float64) : Void
+    fun bg_QPainter__PixmapFragment_y_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_y_SETTER_qreal(_self_ : QPainter_PixmapFragment*, y : Float64) : Void
+    fun bg_QPainter__PixmapFragment_sourceLeft_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_sourceLeft_SETTER_qreal(_self_ : QPainter_PixmapFragment*, source_left : Float64) : Void
+    fun bg_QPainter__PixmapFragment_sourceTop_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_sourceTop_SETTER_qreal(_self_ : QPainter_PixmapFragment*, source_top : Float64) : Void
+    fun bg_QPainter__PixmapFragment_width_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_width_SETTER_qreal(_self_ : QPainter_PixmapFragment*, width : Float64) : Void
+    fun bg_QPainter__PixmapFragment_height_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_height_SETTER_qreal(_self_ : QPainter_PixmapFragment*, height : Float64) : Void
+    fun bg_QPainter__PixmapFragment_scaleX_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_scaleX_SETTER_qreal(_self_ : QPainter_PixmapFragment*, scale_x : Float64) : Void
+    fun bg_QPainter__PixmapFragment_scaleY_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_scaleY_SETTER_qreal(_self_ : QPainter_PixmapFragment*, scale_y : Float64) : Void
+    fun bg_QPainter__PixmapFragment_rotation_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_rotation_SETTER_qreal(_self_ : QPainter_PixmapFragment*, rotation : Float64) : Void
+    fun bg_QPainter__PixmapFragment_opacity_GETTER_(_self_ : QPainter_PixmapFragment*) : Float64
+    fun bg_QPainter__PixmapFragment_opacity_SETTER_qreal(_self_ : QPainter_PixmapFragment*, opacity : Float64) : Void
     fun bg_QPainterPath__CONSTRUCT_() : QPainterPath*
     fun bg_QPainterPath__CONSTRUCT_const_QPointF_R(start_point : QPointF) : QPainterPath*
     fun bg_QPainterPath__COPY_const_QPainterPath_R(other : QPainterPath*) : QPainterPath*
@@ -38206,6 +38320,9 @@ module Qt
     fun bg____qt6cr_invoke_method_STATIC_QObject_X_const_char_X_Qt__ConnectionType(object : QObject*, member : UInt8*, type : ::Qt::ConnectionType) : Bool
     fun bg____qt6cr_action_set_menu_STATIC_QAction_X_QMenu_X(action : QAction*, menu : QMenu*) : Void
     fun bg____qt6cr_action_menu_STATIC_const_QAction_X(action : QAction*) : QMenu*
+    fun bg____qSetFieldWidth_STATIC_int(width : Int32) : QTextStreamManipulator*
+    fun bg____qSetPadChar_STATIC_QChar(ch : Int32) : QTextStreamManipulator*
+    fun bg____qSetRealNumberPrecision_STATIC_int(precision : Int32) : QTextStreamManipulator*
     fun bg_Container_std__pair_QCborValue__QCborValue___CONSTRUCT_() : ContainerStdPairQCborValueQCborValue*
     fun bg____Container_std__pair_QCborValue__QCborValue__first_Container_std__pair_QCborValue__QCborValue__R(pair : ContainerStdPairQCborValueQCborValue*) : QCborValue*
     fun bg____Container_std__pair_QCborValue__QCborValue__second_Container_std__pair_QCborValue__QCborValue__R(pair : ContainerStdPairQCborValueQCborValue*) : QCborValue*
@@ -38328,8 +38445,8 @@ module Qt
     fun bg_Container_QList_QObject_X__push_back_QObject_X(_self_ : ContainerQListQObjectX*, value : QObject*) : Void
     fun bg_Container_QList_QObject_X__size_(_self_ : ContainerQListQObjectX*) : Int32
     fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo___CONSTRUCT_() : ContainerQListQAbstractEventDispatcherTimerInfo*
-    fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, index : Int32) : EventDispatcherTimerInfo
-    fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, value : EventDispatcherTimerInfo) : Void
+    fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, index : Int32) : QAbstractEventDispatcher_TimerInfo*
+    fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*, value : QAbstractEventDispatcher_TimerInfo*) : Void
     fun bg_Container_QList_QAbstractEventDispatcher__TimerInfo__size_(_self_ : ContainerQListQAbstractEventDispatcherTimerInfo*) : Int32
     fun bg_Container_QList_QVariant___CONSTRUCT_() : ContainerQListQVariant*
     fun bg_Container_QList_QVariant__at_int(_self_ : ContainerQListQVariant*, index : Int32) : CrystalVariant
@@ -38435,6 +38552,14 @@ module Qt
     fun bg_Container_QList_QEventPoint__at_int(_self_ : ContainerQListQEventPoint*, index : Int32) : QEventPoint*
     fun bg_Container_QList_QEventPoint__push_back_QEventPoint(_self_ : ContainerQListQEventPoint*, value : QEventPoint*) : Void
     fun bg_Container_QList_QEventPoint__size_(_self_ : ContainerQListQEventPoint*) : Int32
+    fun bg_Container_QList_QInputMethodEvent__Attribute___CONSTRUCT_() : ContainerQListQInputMethodEventAttribute*
+    fun bg_Container_QList_QInputMethodEvent__Attribute__at_int(_self_ : ContainerQListQInputMethodEventAttribute*, index : Int32) : QInputMethodEvent_Attribute*
+    fun bg_Container_QList_QInputMethodEvent__Attribute__push_back_QInputMethodEvent__Attribute(_self_ : ContainerQListQInputMethodEventAttribute*, value : QInputMethodEvent_Attribute*) : Void
+    fun bg_Container_QList_QInputMethodEvent__Attribute__size_(_self_ : ContainerQListQInputMethodEventAttribute*) : Int32
+    fun bg_Container_QList_QFont__Tag___CONSTRUCT_() : ContainerQListQFontTag*
+    fun bg_Container_QList_QFont__Tag__at_int(_self_ : ContainerQListQFontTag*, index : Int32) : QFont_Tag*
+    fun bg_Container_QList_QFont__Tag__push_back_QFont__Tag(_self_ : ContainerQListQFontTag*, value : QFont_Tag*) : Void
+    fun bg_Container_QList_QFont__Tag__size_(_self_ : ContainerQListQFontTag*) : Int32
     fun bg_Container_QList_QFontDatabase__WritingSystem___CONSTRUCT_() : ContainerQListQFontDatabaseWritingSystem*
     fun bg_Container_QList_QFontDatabase__WritingSystem__at_int(_self_ : ContainerQListQFontDatabaseWritingSystem*, index : Int32) : ::Qt::FontDatabase::WritingSystem
     fun bg_Container_QList_QFontDatabase__WritingSystem__push_back_QFontDatabase__WritingSystem(_self_ : ContainerQListQFontDatabaseWritingSystem*, value : ::Qt::FontDatabase::WritingSystem) : Void
@@ -38627,6 +38752,26 @@ module Qt
     fun bg_Container_QMap_int__QVariant__Entries_size_(_self_ : Container_QMap_int__QVariant__Entries*) : Int32
     fun bg_Container_QMap_int__QVariant__Entries_key_int(_self_ : Container_QMap_int__QVariant__Entries*, index : Int32) : Int32
     fun bg_Container_QMap_int__QVariant__Entries_value_int(_self_ : Container_QMap_int__QVariant__Entries*, index : Int32) : CrystalVariant
+    fun bg_Container_QMap_QFont__Tag__quint32___CONSTRUCT_() : ContainerQMapQFontTagQuint32*
+    fun bg_Container_QMap_QFont__Tag__quint32__size_(_self_ : ContainerQMapQFontTagQuint32*) : Int32
+    fun bg_Container_QMap_QFont__Tag__quint32__contains_QFont__Tag(_self_ : ContainerQMapQFontTagQuint32*, key : QFont_Tag*) : Int32
+    fun bg_Container_QMap_QFont__Tag__quint32__remove_QFont__Tag(_self_ : ContainerQMapQFontTagQuint32*, key : QFont_Tag*) : Void
+    fun bg____Container_QMap_QFont__Tag__quint32__fetch_QMap_QFont__Tag__quint32__R_QFont__Tag(map : ContainerQMapQFontTagQuint32*, key : QFont_Tag*) : UInt32
+    fun bg_Container_QMap_QFont__Tag__quint32__insert_QFont__Tag_quint32(_self_ : ContainerQMapQFontTagQuint32*, key : QFont_Tag*, value : UInt32) : Void
+    fun bg_Container_QMap_QFont__Tag__quint32__Entries__CONSTRUCT_const_QMap_QFont__Tag__quint32__R(map : ContainerQMapQFontTagQuint32*) : Container_QMap_QFont__Tag__quint32__Entries*
+    fun bg_Container_QMap_QFont__Tag__quint32__Entries_size_(_self_ : Container_QMap_QFont__Tag__quint32__Entries*) : Int32
+    fun bg_Container_QMap_QFont__Tag__quint32__Entries_key_int(_self_ : Container_QMap_QFont__Tag__quint32__Entries*, index : Int32) : QFont_Tag*
+    fun bg_Container_QMap_QFont__Tag__quint32__Entries_value_int(_self_ : Container_QMap_QFont__Tag__quint32__Entries*, index : Int32) : UInt32
+    fun bg_Container_QMap_QFont__Tag__float___CONSTRUCT_() : ContainerQMapQFontTagFloat*
+    fun bg_Container_QMap_QFont__Tag__float__size_(_self_ : ContainerQMapQFontTagFloat*) : Int32
+    fun bg_Container_QMap_QFont__Tag__float__contains_QFont__Tag(_self_ : ContainerQMapQFontTagFloat*, key : QFont_Tag*) : Int32
+    fun bg_Container_QMap_QFont__Tag__float__remove_QFont__Tag(_self_ : ContainerQMapQFontTagFloat*, key : QFont_Tag*) : Void
+    fun bg____Container_QMap_QFont__Tag__float__fetch_QMap_QFont__Tag__float__R_QFont__Tag(map : ContainerQMapQFontTagFloat*, key : QFont_Tag*) : Float32
+    fun bg_Container_QMap_QFont__Tag__float__insert_QFont__Tag_float(_self_ : ContainerQMapQFontTagFloat*, key : QFont_Tag*, value : Float32) : Void
+    fun bg_Container_QMap_QFont__Tag__float__Entries__CONSTRUCT_const_QMap_QFont__Tag__float__R(map : ContainerQMapQFontTagFloat*) : Container_QMap_QFont__Tag__float__Entries*
+    fun bg_Container_QMap_QFont__Tag__float__Entries_size_(_self_ : Container_QMap_QFont__Tag__float__Entries*) : Int32
+    fun bg_Container_QMap_QFont__Tag__float__Entries_key_int(_self_ : Container_QMap_QFont__Tag__float__Entries*, index : Int32) : QFont_Tag*
+    fun bg_Container_QMap_QFont__Tag__float__Entries_value_int(_self_ : Container_QMap_QFont__Tag__float__Entries*, index : Int32) : Float32
     fun bg_Container_QMap_QDate__QTextCharFormat___CONSTRUCT_() : ContainerQMapQDateQTextCharFormat*
     fun bg_Container_QMap_QDate__QTextCharFormat__size_(_self_ : ContainerQMapQDateQTextCharFormat*) : Int32
     fun bg_Container_QMap_QDate__QTextCharFormat__contains_QDate(_self_ : ContainerQMapQDateQTextCharFormat*, key : QDate*) : Int32
@@ -39657,6 +39802,14 @@ module Qt
     
     def >>(ks : KeySequence) : DataStream
       DataStream.new(unwrap: Binding.bg_QDataStream__OPERATOR_rshift_QKeySequence_R(self, ks))
+    end
+    
+    def <<(unnamed_arg_0 : FontTag) : DataStream
+      DataStream.new(unwrap: Binding.bg_QDataStream__OPERATOR_lshift_QFont__Tag(self, unnamed_arg_0))
+    end
+    
+    def >>(unnamed_arg_0 : FontTag) : DataStream
+      DataStream.new(unwrap: Binding.bg_QDataStream__OPERATOR_rshift_QFont__Tag_R(self, unnamed_arg_0))
     end
     
     def <<(unnamed_arg_0 : Font) : DataStream
@@ -42056,7 +42209,7 @@ module Qt
     abstract def register_timer(timer_id : Int32, interval : Int64, timer_type : TimerType, object : Object) : Void
     abstract def unregister_timer(timer_id : Int32) : Bool
     abstract def unregister_timers(object : Object) : Bool
-    abstract def registered_timers(object : Object) : Enumerable(Binding::EventDispatcherTimerInfo)
+    abstract def registered_timers(object : Object) : Enumerable(EventDispatcherTimerInfo)
     abstract def remaining_time(timer_id : Int32) : Int32
     def register_timer(timer_id : TimerId, interval : ::Time::Span, timer_type : TimerType, object : Object) : Void
       BindgenHelper.keep_alive(object)
@@ -42274,7 +42427,56 @@ module Qt
     end
     
   end
-  module QAbstractEventDispatcher
+  class EventDispatcherTimerInfo
+    @unwrap : Binding::QAbstractEventDispatcher_TimerInfo*
+    
+    def initialize()
+      result = Binding.bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(id : Int32, i : Int32, t : TimerType)
+      result = Binding.bg_QAbstractEventDispatcher__TimerInfo__CONSTRUCT_int_int_Qt__TimerType(id, i, t)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : EventDispatcherTimerInfo)
+      result = Binding.bg_QAbstractEventDispatcher__TimerInfo__COPY_const_QAbstractEventDispatcher__TimerInfo_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def timer_id() : Int32
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_timerId_GETTER_(self)
+    end
+    
+    def timer_id=(timer_id : Int32) : Void
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_timerId_SETTER_int(self, timer_id)
+    end
+    
+    def interval() : Int32
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_interval_GETTER_(self)
+    end
+    
+    def interval=(interval : Int32) : Void
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_interval_SETTER_int(self, interval)
+    end
+    
+    def timer_type() : TimerType
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_timerType_GETTER_(self)
+    end
+    
+    def timer_type=(timer_type : TimerType) : Void
+      Binding.bg_QAbstractEventDispatcher__TimerInfo_timerType_SETTER_Qt__TimerType(self, timer_type)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QAbstractEventDispatcher_TimerInfo*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class TextStream
     @unwrap : Binding::QTextStream*
@@ -42573,6 +42775,10 @@ module Qt
       Binding.bg_QTextStream__CONVERT_bool_(self)
     end
     
+    def <<(m : TextStreamManipulator) : TextStream
+      TextStream.new(unwrap: Binding.bg_QTextStream__OPERATOR_lshift_QTextStreamManipulator(self, m))
+    end
+    
     enum RealNumberNotation : UInt32
       SmartNotation = 0
       FixedNotation = 1
@@ -42609,6 +42815,27 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QTextStream*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class TextStreamManipulator
+    @unwrap : Binding::QTextStreamManipulator*
+    
+    def exec(s : TextStream) : Void
+      Binding.bg_QTextStreamManipulator_exec_QTextStream_R(self, s)
+    end
+    
+    def initialize(unnamed_arg_0 : TextStreamManipulator)
+      result = Binding.bg_QTextStreamManipulator__COPY_const_QTextStreamManipulator_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QTextStreamManipulator*)
       result = unwrap
     @unwrap = result
     end
@@ -66436,6 +66663,14 @@ module Qt
       Binding.bg_QProcess_failChildProcessModifier_const_char_X_int(self, description, error)
     end
     
+    def unix_process_parameters() : ProcessUnixProcessParameters
+      ProcessUnixProcessParameters.new(unwrap: Binding.bg_QProcess_unixProcessParameters_(self))
+    end
+    
+    def unix_process_parameters=(params : ProcessUnixProcessParameters) : Void
+      Binding.bg_QProcess_setUnixProcessParameters_const_QProcess__UnixProcessParameters_R(self, params)
+    end
+    
     def unix_process_parameters=(flags_only : Process::UnixProcessFlags) : Void
       Binding.bg_QProcess_setUnixProcessParameters_QProcess__UnixProcessFlags(self, flags_only)
     end
@@ -66825,6 +67060,48 @@ module Qt
     
     def on_ready_read_standard_error(type : ConnectionType = ConnectionType::AutoConnection, &_proc_ : Proc(Void)) : SignalConnection
       SignalConnection.new(unwrap: Binding.bg_QProcess_CONNECT_readyReadStandardError_Qt__ConnectionType_CrystalProc_void_(self, type, BindgenHelper.wrap_proc(Proc(Void).new do  _proc_.call() end)))
+    end
+    
+  end
+  class ProcessUnixProcessParameters
+    @unwrap : Binding::QProcess_UnixProcessParameters*
+    
+    def initialize()
+      result = Binding.bg_QProcess__UnixProcessParameters__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : ProcessUnixProcessParameters)
+      result = Binding.bg_QProcess__UnixProcessParameters__COPY_const_QProcess__UnixProcessParameters_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def flags() : Process::UnixProcessFlags
+      Binding.bg_QProcess__UnixProcessParameters_flags_GETTER_(self)
+    end
+    
+    def flags=(flags : Process::UnixProcessFlags) : Void
+      Binding.bg_QProcess__UnixProcessParameters_flags_SETTER_QProcess__UnixProcessFlags(self, flags)
+    end
+    
+    def lowest_file_descriptor_to_close() : Int32
+      Binding.bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_GETTER_(self)
+    end
+    
+    def lowest_file_descriptor_to_close=(lowest_file_descriptor_to_close : Int32) : Void
+      Binding.bg_QProcess__UnixProcessParameters_lowestFileDescriptorToClose_SETTER_int(self, lowest_file_descriptor_to_close)
+    end
+    
+    def _reserved() : Slice(UInt32)
+      BindgenHelper::SliceConverter(UInt32).unwrap(Binding.bg_QProcess__UnixProcessParameters__reserved_GETTER_(self))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QProcess_UnixProcessParameters*)
+      result = unwrap
+    @unwrap = result
     end
     
   end
@@ -86645,8 +86922,47 @@ module Qt
     {% end %}
     end
     
+    def initialize(preedit_text : String, attributes : Enumerable(InputMethodEventAttribute))
+      result = Binding.bg_QInputMethodEvent__CONSTRUCT_const_QString_R_const_QList_QInputMethodEvent__Attribute__R(Qt::Converter::QString.wrap(preedit_text), BindgenHelper.wrap_container(Container_QList_QInputMethodEvent__Attribute_, attributes).to_unsafe)
+    @unwrap = result
+    {% begin %}
+    {%
+      methods = [] of Def
+      ([@type] + @type.ancestors).select(&.<(InputMethodEvent)).map{|x| methods = methods + x.methods}
+      forwarded = [] of String
+      [
+        {"bg_QInputMethodEvent_clone_", "clone", [] of String},
+        {"bg_QEvent_setAccepted_bool", "accepted=", ["Bool"] of String},
+      ].each do |sig|
+        methods.select { |m| m.name.stringify == sig[1] }.each do |m|
+          args = m.splat_index ? m.args[0...m.splat_index] : m.args
+          ok = sig[2].size >= args.select { |a| a.default_value.is_a?(Nop) }.size && (m.splat_index || sig[2].size <= args.size)
+          sig[2].each_with_index do |name, i|
+            r = ok ? (i < args.size ? args[i] : m.args[m.splat_index]).restriction : nil
+            if r.is_a?(Path) || r.is_a?(Generic) || r.is_a?(Union)
+              r = r.resolve?
+              t = parse_type(name).resolve?
+              ok = false if r && t && !(t <= r) && !(r <= t)
+            end
+          end
+          forwarded << sig[0] if ok && !forwarded.includes?(sig[0])
+        end
+      end
+    %}
+    jump_table = Binding::BgJumptable_QInputMethodEvent.new(
+      bg_QInputMethodEvent_clone_: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QInputMethodEvent_clone_") %} Proc(Binding::QInputMethodEvent*).new{ (self.clone().try(&.to_unsafe) || Pointer(Binding::QInputMethodEvent).null) } {% else %} nil {% end %}),
+      bg_QEvent_setAccepted_bool: BindgenHelper.wrap_proc({% if forwarded.includes?("bg_QEvent_setAccepted_bool") %} Proc(Bool, Void).new{|accepted| self.accepted=(accepted) } {% else %} nil {% end %}),
+    )
+    Binding.bg_BgInherit_QInputMethodEvent_JUMPTABLE_BgJumptable_QInputMethodEvent_R(result, pointerof(jump_table))
+    {% end %}
+    end
+    
     def set_commit_string(commit_string : String, replace_from : Int32 = 0, replace_length : Int32 = 0) : Void
       Binding.bg_QInputMethodEvent_setCommitString_const_QString_R_int_int(self, Qt::Converter::QString.wrap(commit_string), replace_from, replace_length)
+    end
+    
+    def attributes() : Enumerable(InputMethodEventAttribute)
+      Container_QList_QInputMethodEvent__Attribute_.new(unwrap: Binding.bg_QInputMethodEvent_attributes_(self))
     end
     
     def preedit_string() : String
@@ -86705,6 +87021,77 @@ module Qt
     private def superclass
       Superclass.new(self)
     end
+  end
+  class InputMethodEventAttribute
+    @unwrap : Binding::QInputMethodEvent_Attribute*
+    
+    def initialize(typ : InputMethodEvent::AttributeType, s : Int32, l : Int32, val : Variant)
+      result = Binding.bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int_QVariant(typ, s, l, (val.to_unsafe))
+    @unwrap = result
+    end
+    
+    def initialize(typ : InputMethodEvent::AttributeType, s : Int32, l : Int32)
+      result = Binding.bg_QInputMethodEvent__Attribute__CONSTRUCT_QInputMethodEvent__AttributeType_int_int(typ, s, l)
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : InputMethodEventAttribute)
+      result = Binding.bg_QInputMethodEvent__Attribute__COPY_const_QInputMethodEvent__Attribute_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : InputMethodEventAttribute) : InputMethodEventAttribute
+      InputMethodEventAttribute.new(unwrap: Binding.bg_QInputMethodEvent__Attribute__OPERATOR_assign_const_QInputMethodEvent__Attribute_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : InputMethodEventAttribute) : Bool
+      Binding.bg_QInputMethodEvent__Attribute__OPERATOR_eq_const_QInputMethodEvent__Attribute_R(self, rhs)
+    end
+    
+    def !=(rhs : InputMethodEventAttribute) : Bool
+      Binding.bg_QInputMethodEvent__Attribute__OPERATOR_ne_const_QInputMethodEvent__Attribute_R(self, rhs)
+    end
+    
+    def type() : InputMethodEvent::AttributeType
+      Binding.bg_QInputMethodEvent__Attribute_type_GETTER_(self)
+    end
+    
+    def type=(type : InputMethodEvent::AttributeType) : Void
+      Binding.bg_QInputMethodEvent__Attribute_type_SETTER_QInputMethodEvent__AttributeType(self, type)
+    end
+    
+    def start() : Int32
+      Binding.bg_QInputMethodEvent__Attribute_start_GETTER_(self)
+    end
+    
+    def start=(start : Int32) : Void
+      Binding.bg_QInputMethodEvent__Attribute_start_SETTER_int(self, start)
+    end
+    
+    def length() : Int32
+      Binding.bg_QInputMethodEvent__Attribute_length_GETTER_(self)
+    end
+    
+    def length=(length : Int32) : Void
+      Binding.bg_QInputMethodEvent__Attribute_length_SETTER_int(self, length)
+    end
+    
+    def value() : Variant
+      Qt::Variant.new(Binding.bg_QInputMethodEvent__Attribute_value_GETTER_(self))
+    end
+    
+    def value=(value : Variant) : Void
+      Binding.bg_QInputMethodEvent__Attribute_value_SETTER_QVariant(self, (value.to_unsafe))
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QInputMethodEvent_Attribute*)
+      result = unwrap
+    @unwrap = result
+    end
+    
   end
   class InputMethodQueryEvent < Event
     protected def initialize(unnamed_arg_0 : InputMethodQueryEvent)
@@ -89571,12 +89958,52 @@ module Qt
       Binding.bg_QFont_hintingPreference_(self)
     end
     
+    def set_feature(tag : FontTag, value : UInt32) : Void
+      Binding.bg_QFont_setFeature_QFont__Tag_quint32(self, tag, value)
+    end
+    
+    def unset_feature(tag : FontTag) : Void
+      Binding.bg_QFont_unsetFeature_QFont__Tag(self, tag)
+    end
+    
+    def feature_value(tag : FontTag) : UInt32
+      Binding.bg_QFont_featureValue_QFont__Tag(self, tag)
+    end
+    
+    def is_feature_set(tag : FontTag) : Bool
+      Binding.bg_QFont_isFeatureSet_QFont__Tag(self, tag)
+    end
+    
+    def feature_tags() : Enumerable(FontTag)
+      Container_QList_QFont__Tag_.new(unwrap: Binding.bg_QFont_featureTags_(self))
+    end
+    
     def clear_features() : Void
       Binding.bg_QFont_clearFeatures_(self)
     end
     
+    def set_variable_axis(tag : FontTag, value : Float32) : Void
+      Binding.bg_QFont_setVariableAxis_QFont__Tag_float(self, tag, value)
+    end
+    
+    def unset_variable_axis(tag : FontTag) : Void
+      Binding.bg_QFont_unsetVariableAxis_QFont__Tag(self, tag)
+    end
+    
+    def is_variable_axis_set(tag : FontTag) : Bool
+      Binding.bg_QFont_isVariableAxisSet_QFont__Tag(self, tag)
+    end
+    
+    def variable_axis_value(tag : FontTag) : Float32
+      Binding.bg_QFont_variableAxisValue_QFont__Tag(self, tag)
+    end
+    
     def clear_variable_axes() : Void
       Binding.bg_QFont_clearVariableAxes_(self)
+    end
+    
+    def variable_axis_tags() : Enumerable(FontTag)
+      Container_QList_QFont__Tag_.new(unwrap: Binding.bg_QFont_variableAxisTags_(self))
     end
     
     def exact_match() : Bool
@@ -89755,6 +90182,68 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QFont*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class FontTag
+    @unwrap : Binding::QFont_Tag*
+    
+    def initialize()
+      result = Binding.bg_QFont__Tag__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def valid?() : Bool
+      Binding.bg_QFont__Tag_isValid_(self)
+    end
+    
+    def value() : UInt32
+      Binding.bg_QFont__Tag_value_(self)
+    end
+    
+    def to_string() : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QFont__Tag_toString_(self))
+    end
+    
+    def initialize(unnamed_arg_0 : FontTag)
+      result = Binding.bg_QFont__Tag__COPY_const_QFont__Tag_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : FontTag) : FontTag
+      FontTag.new(unwrap: Binding.bg_QFont__Tag__OPERATOR_assign_const_QFont__Tag_R(self, unnamed_arg_0))
+    end
+    
+    def ==(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_eq_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def !=(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_ne_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def <(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_lt_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def >(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_gt_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def <=(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_le_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def >=(rhs : FontTag) : Bool
+      Binding.bg_QFont__Tag__OPERATOR_ge_const_QFont__Tag_R(self, rhs)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QFont_Tag*)
       result = unwrap
     @unwrap = result
     end
@@ -90154,6 +90643,10 @@ module Qt
     
     def font_table(tag_name : UInt8*) : Bytes
       Qt::Converter::QByteArray.unwrap(Binding.bg_QRawFont_fontTable_const_char_X(self, tag_name))
+    end
+    
+    def font_table(tag : FontTag) : Bytes
+      Qt::Converter::QByteArray.unwrap(Binding.bg_QRawFont_fontTable_QFont__Tag(self, tag))
     end
     
     def self.from_font(font : Font, writing_system : FontDatabase::WritingSystem = FontDatabase::WritingSystem::Any) : RawFont
@@ -92663,6 +93156,22 @@ module Qt
     
     def font_hinting_preference() : Font::HintingPreference
       Binding.bg_QTextCharFormat_fontHintingPreference_(self)
+    end
+    
+    def font_features=(font_features : Enumerable({FontTag, UInt32})) : Void
+      Binding.bg_QTextCharFormat_setFontFeatures_const_QMap_QFont__Tag__quint32__R(self, BindgenHelper.wrap_container(Container_QMap_QFont__Tag__quint32_, font_features).to_unsafe)
+    end
+    
+    def font_features() : Enumerable({FontTag, UInt32})
+      Container_QMap_QFont__Tag__quint32_.new(unwrap: Binding.bg_QTextCharFormat_fontFeatures_(self))
+    end
+    
+    def font_variable_axes=(font_variable_axes : Enumerable({FontTag, Float32})) : Void
+      Binding.bg_QTextCharFormat_setFontVariableAxes_const_QMap_QFont__Tag__float__R(self, BindgenHelper.wrap_container(Container_QMap_QFont__Tag__float_, font_variable_axes).to_unsafe)
+    end
+    
+    def font_variable_axes() : Enumerable({FontTag, Float32})
+      Container_QMap_QFont__Tag__float_.new(unwrap: Binding.bg_QTextCharFormat_fontVariableAxes_(self))
     end
     
     def font_kerning=(enable : Bool) : Void
@@ -100390,6 +100899,77 @@ module Qt
       Superclass.new(self)
     end
   end
+  class IconEngineScaledPixmapArgument
+    @unwrap : Binding::QIconEngine_ScaledPixmapArgument*
+    
+    def initialize(unnamed_arg_0 : IconEngineScaledPixmapArgument)
+      result = Binding.bg_QIconEngine__ScaledPixmapArgument__COPY_const_QIconEngine__ScaledPixmapArgument_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def assign!(unnamed_arg_0 : IconEngineScaledPixmapArgument) : IconEngineScaledPixmapArgument
+      IconEngineScaledPixmapArgument.new(unwrap: Binding.bg_QIconEngine__ScaledPixmapArgument__OPERATOR_assign_const_QIconEngine__ScaledPixmapArgument_R(self, unnamed_arg_0))
+    end
+    
+    def initialize()
+      result = Binding.bg_QIconEngine__ScaledPixmapArgument__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(*, size : Size, mode : Icon::Mode, state : Icon::State, scale : Float64, pixmap : Pixmap)
+      result = Binding.bg_QIconEngine__ScaledPixmapArgument__AGGREGATE_QSize_QIcon__Mode_QIcon__State_qreal_QPixmap(size, mode, state, scale, pixmap)
+    @unwrap = result
+    end
+    
+    def size() : Size
+      Size.new(unwrap: Binding.bg_QIconEngine__ScaledPixmapArgument_size_GETTER_(self))
+    end
+    
+    def size=(size : Size) : Void
+      Binding.bg_QIconEngine__ScaledPixmapArgument_size_SETTER_QSize(self, size)
+    end
+    
+    def mode() : Icon::Mode
+      Binding.bg_QIconEngine__ScaledPixmapArgument_mode_GETTER_(self)
+    end
+    
+    def mode=(mode : Icon::Mode) : Void
+      Binding.bg_QIconEngine__ScaledPixmapArgument_mode_SETTER_QIcon__Mode(self, mode)
+    end
+    
+    def state() : Icon::State
+      Binding.bg_QIconEngine__ScaledPixmapArgument_state_GETTER_(self)
+    end
+    
+    def state=(state : Icon::State) : Void
+      Binding.bg_QIconEngine__ScaledPixmapArgument_state_SETTER_QIcon__State(self, state)
+    end
+    
+    def scale() : Float64
+      Binding.bg_QIconEngine__ScaledPixmapArgument_scale_GETTER_(self)
+    end
+    
+    def scale=(scale : Float64) : Void
+      Binding.bg_QIconEngine__ScaledPixmapArgument_scale_SETTER_qreal(self, scale)
+    end
+    
+    def pixmap() : Pixmap
+      Pixmap.new(unwrap: Binding.bg_QIconEngine__ScaledPixmapArgument_pixmap_GETTER_(self))
+    end
+    
+    def pixmap=(pixmap : Pixmap) : Void
+      Binding.bg_QIconEngine__ScaledPixmapArgument_pixmap_SETTER_QPixmap(self, pixmap)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QIconEngine_ScaledPixmapArgument*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
   class ImageReader
     @unwrap : Binding::QImageReader*
     
@@ -103771,6 +104351,14 @@ module Qt
       Binding.bg_QPainter_drawPixmap_int_int_int_int_const_QPixmap_R(self, x, y, w, h, pm)
     end
     
+    def draw_pixmap_fragments(fragments : PainterPixmapFragment, fragment_count : Int32, pixmap : Pixmap) : Void
+      Binding.bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R(self, (fragments.try(&.to_unsafe) || Pointer(Binding::QPainter_PixmapFragment).null), fragment_count, pixmap)
+    end
+    
+    def draw_pixmap_fragments(fragments : PainterPixmapFragment, fragment_count : Int32, pixmap : Pixmap, hints : Painter::PixmapFragmentHints) : Void
+      Binding.bg_QPainter_drawPixmapFragments_const_QPainter__PixmapFragment_X_int_const_QPixmap_R_QPainter__PixmapFragmentHints(self, (fragments.try(&.to_unsafe) || Pointer(Binding::QPainter_PixmapFragment).null), fragment_count, pixmap, hints)
+    end
+    
     def draw_image(target_rect : RectF, image : Image, source_rect : RectF) : Void
       Binding.bg_QPainter_drawImage_const_QRectF_R_const_QImage_R_const_QRectF_R(self, target_rect, image, source_rect)
     end
@@ -104080,6 +104668,117 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::QPainter*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class PainterPixmapFragment
+    @unwrap : Binding::QPainter_PixmapFragment*
+    
+    def self.create(pos : PointF, source_rect : RectF, scale_x : Float64 = 1.0f64, scale_y : Float64 = 1.0f64, rotation : Float64 = 0.0f64, opacity : Float64 = 1.0f64) : PainterPixmapFragment
+      PainterPixmapFragment.new(unwrap: Binding.bg_QPainter__PixmapFragment_create_STATIC_const_QPointF_R_const_QRectF_R_qreal_qreal_qreal_qreal(pos, source_rect, scale_x, scale_y, rotation, opacity))
+    end
+    
+    def initialize()
+      result = Binding.bg_QPainter__PixmapFragment__CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def initialize(unnamed_arg_0 : PainterPixmapFragment)
+      result = Binding.bg_QPainter__PixmapFragment__COPY_const_QPainter__PixmapFragment_R(unnamed_arg_0)
+    @unwrap = result
+    end
+    
+    def initialize(*, x : Float64, y : Float64, source_left : Float64, source_top : Float64, width : Float64, height : Float64, scale_x : Float64, scale_y : Float64, rotation : Float64, opacity : Float64)
+      result = Binding.bg_QPainter__PixmapFragment__AGGREGATE_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal_qreal(x, y, source_left, source_top, width, height, scale_x, scale_y, rotation, opacity)
+    @unwrap = result
+    end
+    
+    def x() : Float64
+      Binding.bg_QPainter__PixmapFragment_x_GETTER_(self)
+    end
+    
+    def x=(x : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_x_SETTER_qreal(self, x)
+    end
+    
+    def y() : Float64
+      Binding.bg_QPainter__PixmapFragment_y_GETTER_(self)
+    end
+    
+    def y=(y : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_y_SETTER_qreal(self, y)
+    end
+    
+    def source_left() : Float64
+      Binding.bg_QPainter__PixmapFragment_sourceLeft_GETTER_(self)
+    end
+    
+    def source_left=(source_left : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_sourceLeft_SETTER_qreal(self, source_left)
+    end
+    
+    def source_top() : Float64
+      Binding.bg_QPainter__PixmapFragment_sourceTop_GETTER_(self)
+    end
+    
+    def source_top=(source_top : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_sourceTop_SETTER_qreal(self, source_top)
+    end
+    
+    def width() : Float64
+      Binding.bg_QPainter__PixmapFragment_width_GETTER_(self)
+    end
+    
+    def width=(width : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_width_SETTER_qreal(self, width)
+    end
+    
+    def height() : Float64
+      Binding.bg_QPainter__PixmapFragment_height_GETTER_(self)
+    end
+    
+    def height=(height : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_height_SETTER_qreal(self, height)
+    end
+    
+    def scale_x() : Float64
+      Binding.bg_QPainter__PixmapFragment_scaleX_GETTER_(self)
+    end
+    
+    def scale_x=(scale_x : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_scaleX_SETTER_qreal(self, scale_x)
+    end
+    
+    def scale_y() : Float64
+      Binding.bg_QPainter__PixmapFragment_scaleY_GETTER_(self)
+    end
+    
+    def scale_y=(scale_y : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_scaleY_SETTER_qreal(self, scale_y)
+    end
+    
+    def rotation() : Float64
+      Binding.bg_QPainter__PixmapFragment_rotation_GETTER_(self)
+    end
+    
+    def rotation=(rotation : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_rotation_SETTER_qreal(self, rotation)
+    end
+    
+    def opacity() : Float64
+      Binding.bg_QPainter__PixmapFragment_opacity_GETTER_(self)
+    end
+    
+    def opacity=(opacity : Float64) : Void
+      Binding.bg_QPainter__PixmapFragment_opacity_SETTER_qreal(self, opacity)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::QPainter_PixmapFragment*)
       result = unwrap
     @unwrap = result
     end
@@ -214878,7 +215577,7 @@ module Qt
       Binding.bg_QAbstractEventDispatcher_unregisterTimers_QObject_X(self, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     end
     
-    def registered_timers(object : Object) : Enumerable(Binding::EventDispatcherTimerInfo)
+    def registered_timers(object : Object) : Enumerable(EventDispatcherTimerInfo)
       Container_QList_QAbstractEventDispatcher__TimerInfo_.new(unwrap: Binding.bg_QAbstractEventDispatcher_registeredTimers_QObject_X(self, (object.try(&.to_unsafe) || Pointer(Binding::QObject).null)))
     end
     
@@ -216928,6 +217627,18 @@ module Qt
     Binding.bg____qt6cr_action_menu_STATIC_const_QAction_X((action.try(&.to_unsafe) || Pointer(Binding::QAction).null)).try {|ptr| Menu.new(unwrap: ptr) unless ptr.null?}
   end
   
+  def self.q_set_field_width(width : Int32) : TextStreamManipulator
+    TextStreamManipulator.new(unwrap: Binding.bg____qSetFieldWidth_STATIC_int(width))
+  end
+  
+  def self.q_set_pad_char(ch : Char) : TextStreamManipulator
+    TextStreamManipulator.new(unwrap: Binding.bg____qSetPadChar_STATIC_QChar((ch.ord)))
+  end
+  
+  def self.q_set_real_number_precision(precision : Int32) : TextStreamManipulator
+    TextStreamManipulator.new(unwrap: Binding.bg____qSetRealNumberPrecision_STATIC_int(precision))
+  end
+  
   enum MsgType : UInt32
     QtDebugMsg = 0
     QtWarningMsg = 1
@@ -218622,7 +219333,7 @@ module Qt
       {% elsif types == {Int32} %} {{ Container_QList_int_ }}
       {% elsif types == {String} %} {{ StringList }}
       {% elsif types == {Object} %} {{ Container_QList_QObject_X_ }}
-      {% elsif types == {Binding::EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
+      {% elsif types == {EventDispatcherTimerInfo} %} {{ Container_QList_QAbstractEventDispatcher__TimerInfo_ }}
       {% elsif types == {Variant} %} {{ Container_QList_QVariant_ }}
       {% elsif types == {ModelIndex} %} {{ Container_QList_QModelIndex_ }}
       {% elsif types == {PersistentModelIndex} %} {{ Container_QList_QPersistentModelIndex_ }}
@@ -218651,6 +219362,8 @@ module Qt
       {% elsif types == {InputDevice} %} {{ Container_QList_const_QInputDevice_X_ }}
       {% elsif types == {KeySequence} %} {{ Container_QList_QKeySequence_ }}
       {% elsif types == {EventPoint} %} {{ Container_QList_QEventPoint_ }}
+      {% elsif types == {InputMethodEventAttribute} %} {{ Container_QList_QInputMethodEvent__Attribute_ }}
+      {% elsif types == {FontTag} %} {{ Container_QList_QFont__Tag_ }}
       {% elsif types == {FontDatabase::WritingSystem} %} {{ Container_QList_QFontDatabase__WritingSystem_ }}
       {% elsif types == {Int64} %} {{ Container_QList_qsizetype_ }}
       {% elsif types == {TextFormat} %} {{ Container_QList_QTextFormat_ }}
@@ -218716,6 +219429,8 @@ module Qt
       {% types = type_args.map(&.resolve) %}
       {% if types == {String, Variant} %} {{ Container_QMap_QString__QVariant_ }}
       {% elsif types == {Int32, Variant} %} {{ Container_QMap_int__QVariant_ }}
+      {% elsif types == {FontTag, UInt32} %} {{ Container_QMap_QFont__Tag__quint32_ }}
+      {% elsif types == {FontTag, Float32} %} {{ Container_QMap_QFont__Tag__float_ }}
       {% elsif types == {Date, TextCharFormat} %} {{ Container_QMap_QDate__QTextCharFormat_ }}
       {% else %} {% raise "QMap(#{types.splat}) has not been instantiated" %}
       {% end %}
@@ -219423,8 +220138,8 @@ module Qt
     
   end
   class Container_QList_QAbstractEventDispatcher__TimerInfo_
-    include BindgenHelper::SequentialContainer(Binding::EventDispatcherTimerInfo)
-    include QList(Binding::EventDispatcherTimerInfo)
+    include BindgenHelper::SequentialContainer(EventDispatcherTimerInfo)
+    include QList(EventDispatcherTimerInfo)
     
     @unwrap : Binding::ContainerQListQAbstractEventDispatcherTimerInfo*
     
@@ -219433,11 +220148,11 @@ module Qt
     @unwrap = result
     end
     
-    def unsafe_at(index : Int32) : Binding::EventDispatcherTimerInfo
-      Binding.bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(self, index)
+    def unsafe_at(index : Int32) : EventDispatcherTimerInfo
+      EventDispatcherTimerInfo.new(unwrap: Binding.bg_Container_QList_QAbstractEventDispatcher__TimerInfo__at_int(self, index))
     end
     
-    def push(value : Binding::EventDispatcherTimerInfo) : Void
+    def push(value : EventDispatcherTimerInfo) : Void
       Binding.bg_Container_QList_QAbstractEventDispatcher__TimerInfo__push_back_QAbstractEventDispatcher__TimerInfo(self, value)
     end
     
@@ -220563,6 +221278,70 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQListQEventPoint*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QInputMethodEvent__Attribute_
+    include BindgenHelper::SequentialContainer(InputMethodEventAttribute)
+    include QList(InputMethodEventAttribute)
+    
+    @unwrap : Binding::ContainerQListQInputMethodEventAttribute*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QInputMethodEvent__Attribute___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : InputMethodEventAttribute
+      InputMethodEventAttribute.new(unwrap: Binding.bg_Container_QList_QInputMethodEvent__Attribute__at_int(self, index))
+    end
+    
+    def push(value : InputMethodEventAttribute) : Void
+      Binding.bg_Container_QList_QInputMethodEvent__Attribute__push_back_QInputMethodEvent__Attribute(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QInputMethodEvent__Attribute__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQInputMethodEventAttribute*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QList_QFont__Tag_
+    include BindgenHelper::SequentialContainer(FontTag)
+    include QList(FontTag)
+    
+    @unwrap : Binding::ContainerQListQFontTag*
+    
+    def initialize()
+      result = Binding.bg_Container_QList_QFont__Tag___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def unsafe_at(index : Int32) : FontTag
+      FontTag.new(unwrap: Binding.bg_Container_QList_QFont__Tag__at_int(self, index))
+    end
+    
+    def push(value : FontTag) : Void
+      Binding.bg_Container_QList_QFont__Tag__push_back_QFont__Tag(self, value)
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QList_QFont__Tag__size_(self)
+    end
+    
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQListQFontTag*)
       result = unwrap
     @unwrap = result
     end
@@ -222077,6 +222856,144 @@ module Qt
       @unwrap
     end
     def initialize(unwrap : Binding::ContainerQMapIntQVariant*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QMap_QFont__Tag__quint32_
+    include BindgenHelper::AssociativeContainer(FontTag, UInt32)
+    include QMap(FontTag, UInt32)
+    
+    @unwrap : Binding::ContainerQMapQFontTagQuint32*
+    
+    def initialize()
+      result = Binding.bg_Container_QMap_QFont__Tag__quint32___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QMap_QFont__Tag__quint32__size_(self)
+    end
+    
+    def unsafe_count(key : FontTag) : Int32
+      Binding.bg_Container_QMap_QFont__Tag__quint32__contains_QFont__Tag(self, key)
+    end
+    
+    def unsafe_erase(key : FontTag) : Void
+      Binding.bg_Container_QMap_QFont__Tag__quint32__remove_QFont__Tag(self, key)
+    end
+    
+    def self.unsafe_fetch(map : Enumerable({FontTag, UInt32}), key : FontTag) : UInt32
+      Binding.bg____Container_QMap_QFont__Tag__quint32__fetch_QMap_QFont__Tag__quint32__R_QFont__Tag(BindgenHelper.wrap_container(Container_QMap_QFont__Tag__quint32_, map).to_unsafe, key)
+    end
+    
+    def unsafe_store(key : FontTag, value : UInt32) : Void
+      Binding.bg_Container_QMap_QFont__Tag__quint32__insert_QFont__Tag_quint32(self, key, value)
+    end
+    
+    class Entries
+      @unwrap : Binding::Container_QMap_QFont__Tag__quint32__Entries*
+      
+      def initialize(map : Enumerable({FontTag, UInt32}))
+        result = Binding.bg_Container_QMap_QFont__Tag__quint32__Entries__CONSTRUCT_const_QMap_QFont__Tag__quint32__R(BindgenHelper.wrap_container(Container_QMap_QFont__Tag__quint32_, map).to_unsafe)
+      @unwrap = result
+      end
+      
+      def size() : Int32
+        Binding.bg_Container_QMap_QFont__Tag__quint32__Entries_size_(self)
+      end
+      
+      def unsafe_key(index : Int32) : FontTag
+        FontTag.new(unwrap: Binding.bg_Container_QMap_QFont__Tag__quint32__Entries_key_int(self, index))
+      end
+      
+      def unsafe_value(index : Int32) : UInt32
+        Binding.bg_Container_QMap_QFont__Tag__quint32__Entries_value_int(self, index)
+      end
+      
+      def to_unsafe
+        @unwrap
+      end
+      def initialize(unwrap : Binding::Container_QMap_QFont__Tag__quint32__Entries*)
+        result = unwrap
+      @unwrap = result
+      end
+      
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQMapQFontTagQuint32*)
+      result = unwrap
+    @unwrap = result
+    end
+    
+  end
+  class Container_QMap_QFont__Tag__float_
+    include BindgenHelper::AssociativeContainer(FontTag, Float32)
+    include QMap(FontTag, Float32)
+    
+    @unwrap : Binding::ContainerQMapQFontTagFloat*
+    
+    def initialize()
+      result = Binding.bg_Container_QMap_QFont__Tag__float___CONSTRUCT_()
+    @unwrap = result
+    end
+    
+    def size() : Int32
+      Binding.bg_Container_QMap_QFont__Tag__float__size_(self)
+    end
+    
+    def unsafe_count(key : FontTag) : Int32
+      Binding.bg_Container_QMap_QFont__Tag__float__contains_QFont__Tag(self, key)
+    end
+    
+    def unsafe_erase(key : FontTag) : Void
+      Binding.bg_Container_QMap_QFont__Tag__float__remove_QFont__Tag(self, key)
+    end
+    
+    def self.unsafe_fetch(map : Enumerable({FontTag, Float32}), key : FontTag) : Float32
+      Binding.bg____Container_QMap_QFont__Tag__float__fetch_QMap_QFont__Tag__float__R_QFont__Tag(BindgenHelper.wrap_container(Container_QMap_QFont__Tag__float_, map).to_unsafe, key)
+    end
+    
+    def unsafe_store(key : FontTag, value : Float32) : Void
+      Binding.bg_Container_QMap_QFont__Tag__float__insert_QFont__Tag_float(self, key, value)
+    end
+    
+    class Entries
+      @unwrap : Binding::Container_QMap_QFont__Tag__float__Entries*
+      
+      def initialize(map : Enumerable({FontTag, Float32}))
+        result = Binding.bg_Container_QMap_QFont__Tag__float__Entries__CONSTRUCT_const_QMap_QFont__Tag__float__R(BindgenHelper.wrap_container(Container_QMap_QFont__Tag__float_, map).to_unsafe)
+      @unwrap = result
+      end
+      
+      def size() : Int32
+        Binding.bg_Container_QMap_QFont__Tag__float__Entries_size_(self)
+      end
+      
+      def unsafe_key(index : Int32) : FontTag
+        FontTag.new(unwrap: Binding.bg_Container_QMap_QFont__Tag__float__Entries_key_int(self, index))
+      end
+      
+      def unsafe_value(index : Int32) : Float32
+        Binding.bg_Container_QMap_QFont__Tag__float__Entries_value_int(self, index)
+      end
+      
+      def to_unsafe
+        @unwrap
+      end
+      def initialize(unwrap : Binding::Container_QMap_QFont__Tag__float__Entries*)
+        result = unwrap
+      @unwrap = result
+      end
+      
+    end
+    def to_unsafe
+      @unwrap
+    end
+    def initialize(unwrap : Binding::ContainerQMapQFontTagFloat*)
       result = unwrap
     @unwrap = result
     end

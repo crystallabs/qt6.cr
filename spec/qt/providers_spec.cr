@@ -169,3 +169,15 @@ describe Qt::WidgetItemV2 do
     Qt::WidgetItemV2.new(Qt::Widget.new).empty?.should be_true # A window
   end
 end
+
+describe Qt::IconEngineScaledPixmapArgument do
+  it "holds the arguments of a scaled pixmap request" do
+    argument = Qt::IconEngineScaledPixmapArgument.new(size: Qt::Size.new(4, 4), mode: Qt::Icon::Mode::Disabled,
+      state: Qt::Icon::State::On, scale: 2.0, pixmap: Qt::Pixmap.new(1, 1))
+    argument.size.should eq(Qt::Size.new(4, 4))
+    argument.mode.should eq(Qt::Icon::Mode::Disabled)
+    argument.scale = 1.5
+    argument.scale.should eq(1.5)
+    argument.pixmap.size.should eq(Qt::Size.new(1, 1))
+  end
+end

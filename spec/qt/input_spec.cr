@@ -445,3 +445,38 @@ describe Qt::Clipboard do
     clipboard.mime_data.not_nil!.text.should eq("mime")
   end
 end
+
+describe Qt::InputMethodEventAttribute do
+  it "describes the preedit text of an input method event" do
+    cursor = Qt::InputMethodEventAttribute.new(Qt::InputMethodEvent::AttributeType::Cursor, 2, 1)
+    cursor.type.should eq(Qt::InputMethodEvent::AttributeType::Cursor)
+    cursor.start.should eq(2)
+    cursor.length = 0
+    cursor.length.should eq(0)
+    selection = Qt::InputMethodEventAttribute.new(Qt::InputMethodEvent::AttributeType::Selection, 0, 3, Qt::Variant.new(7))
+    selection.value.to(Int32).should eq(7)
+
+    event = Qt::InputMethodEvent.new("abc", [cursor, selection])
+    event.preedit_string.should eq("abc")
+    attributes = event.attributes.to_a
+    attributes.map(&.type).should eq([Qt::InputMethodEvent::AttributeType::Cursor, Qt::InputMethodEvent::AttributeType::Selection])
+    attributes.last.length.should eq(3)
+  end
+end
+
+{% if Qt::QT_VERSION >= 0x060600 %}
+  describe Qt::ProcessUnixProcessParameters do
+    it "sets up a process on Unix" do
+      params = Qt::ProcessUnixProcessParameters.new
+      params.flags = Qt::Process::UnixProcessFlags::CloseFileDescriptors
+      params.lowest_file_descriptor_to_close = 3
+      process = Qt::Process.new
+      process.unix_process_parameters = params
+      process.unix_process_parameters.flags.should eq(Qt::Process::UnixProcessFlags::CloseFileDescriptors)
+      process.unix_process_parameters.lowest_file_descriptor_to_close.should eq(3)
+      process.start("/bin/echo", ["hi"])
+      process.wait_for_finished.should be_true
+      String.new(process.read_all_standard_output).should eq("hi\n")
+    end
+  end
+{% end %}

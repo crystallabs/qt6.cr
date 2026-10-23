@@ -258,3 +258,16 @@ describe "Qt::Settings" do
     end
   end
 end
+
+describe Qt::TextStreamManipulator do
+  it "applies a field width and a pad character" do
+    buffer = Qt::Buffer.new
+    buffer.open(Qt::IODevice::OpenMode::ReadWrite).should be_true
+    stream = Qt::TextStream.new(buffer)
+    stream << Qt.q_set_field_width(6) << Qt.q_set_pad_char('*') << 42
+    stream << Qt.q_set_field_width(0) << Qt.q_set_real_number_precision(2) << ' ' << 3.14159
+    stream.flush
+    String.new(buffer.data).should eq("****42 3.1")
+    stream.real_number_precision.should eq(2)
+  end
+end

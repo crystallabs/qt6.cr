@@ -168,21 +168,6 @@ types: # Type rewrite rules
     crystal_type: RectF
     pass_by: Value
     kind: Struct
-  "QPainter::PixmapFragment":
-    ignore: true
-    # copy_structure: true
-    # binding_type: QPainterPixmapFragment
-    # generate_binding: false
-    # generate_wrapper: false
-    # crystal_type: PainterPixmapFragment
-    # pass_by: Pointer
-  "QAbstractEventDispatcher::TimerInfo":
-    binding_type: EventDispatcherTimerInfo
-    generate_binding: false
-    generate_wrapper: false
-    copy_structure: true
-    pass_by: Value
-    kind: Struct
 
   "QUrl::FormattingOptions":
     crystal_type: Url::FormattingOptions
@@ -220,13 +205,6 @@ types: # Type rewrite rules
       # itself it would shadow Indexable#[], which raises IndexError.
       - "operator[]"
 
-  # Structures with QVariant: Ignore for now.
-  "QInputMethodEvent::Attribute": { ignore: true }
-  "QList<QInputMethodEvent::Attribute>": { ignore: true }
-
-  # Bare struct holding QProcess::UnixProcessFlags and an int (Qt 6.6+).
-  "QProcess::UnixProcessParameters": { ignore: true }
-
   "std::optional<QFont>": { ignore: true } # QFontComboBox#displayFont
 
   # Ignore private data structures
@@ -259,8 +237,6 @@ types: # Type rewrite rules
   "QEvent::PointerEventTag": { ignore: true }
   "QEvent::SinglePointEventTag": { ignore: true }
   "std::filesystem::path": { ignore: true }
-  "QFont::Tag": { ignore: true }
-  "QList<QFont::Tag>": { ignore: true }
   "QTextDocument::ResourceProvider": { ignore: true } # std::function
   "QEasingCurve::EasingFunction": { ignore: true } # C function pointer
   "QPen::DataPtr": { ignore: true }
@@ -286,7 +262,10 @@ types: # Type rewrite rules
   # qfloat16 is Qt's half-float class, which has no Crystal counterpart.
   QTextStreamFunction: { ignore: true }
   "QTextStream &(QTextStream &)": { ignore: true }
-  QTextStreamManipulator: { ignore: true } # qSetFieldWidth etc., use the setters
+  # Member function pointers, which only Qt's qSetFieldWidth etc. pass to the
+  # QTextStreamManipulator constructors.
+  QTSMFI: { ignore: true }
+  QTSMFC: { ignore: true }
   qfloat16: { ignore: true }
   "void (void *)": { ignore: true }
   "std::__1::function<void (const QString &, const QByteArray &)>":
@@ -529,6 +508,4 @@ types: # Type rewrite rules
   # is never called from the thread.
   QThread: { sub_class: false }
   QRunnable: { sub_class: false }
-  # Remaining models, styles and providers
-  "QIconEngine::ScaledPixmapArgument": { ignore: true } # Only virtual_hook's data
   <<+: keep_alive.yml # Deep merge: adds `keep_alive` to classes listed above

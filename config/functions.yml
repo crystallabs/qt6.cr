@@ -18,3 +18,7 @@ functions:
     destination: "::"
   "^qt6cr_action_menu$":
     destination: "::"
+  # The QTextStream manipulators taking an argument, as Qt.q_set_field_width
+  # etc.: a TextStream << a TextStreamManipulator applies it.
+  "^qSet(?:FieldWidth|PadChar|RealNumberPrecision)$":
+    destination: "::"

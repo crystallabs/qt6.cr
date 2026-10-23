@@ -397,3 +397,43 @@ describe Qt::OffscreenSurface do
     store.has_static_contents?.should be_false
   end
 end
+
+describe Qt::PainterPixmapFragment do
+  it "draws a part of a pixmap" do
+    fragment = Qt::PainterPixmapFragment.create(Qt::PointF.new(2.0, 2.0), Qt::RectF.new(0.0, 0.0, 4.0, 4.0))
+    {fragment.x, fragment.y, fragment.width, fragment.height}.should eq({2.0, 2.0, 4.0, 4.0})
+    fragment.opacity.should eq(1.0)
+    fragment.rotation = 90.0
+    fragment.rotation.should eq(90.0)
+
+    pixmap = Qt::Pixmap.new(4, 4)
+    pixmap.fill(Qt::Color.new(255, 0, 0))
+    image = white_image(8)
+    painter = Qt::Painter.new(image)
+    painter.draw_pixmap_fragments(fragment, 1, pixmap)
+    painter.end
+    image.pixel_color(1, 1).name.should eq("#ff0000")
+    image.pixel_color(6, 6).name.should eq("#ffffff")
+  end
+end
+
+{% if Qt::QT_VERSION >= 0x060700 %}
+  describe Qt::FontTag do
+    it "names font features" do
+      Qt::FontTag.new.valid?.should be_false
+      # Qt::FontTag.from_string returns a std::optional, which isn't bound;
+      # read a tag from its 32-bit value instead.
+      tag = Qt::FontTag.new
+      Qt::DataStream.new(Bytes[0x6c, 0x69, 0x67, 0x61]) >> tag
+      tag.valid?.should be_true
+      String.new(tag.to_string).should eq("liga")
+      tag.value.should eq(0x6c696761)
+
+      font = Qt::Font.new("Helvetica", 12)
+      font.set_feature(tag, 0)
+      font.is_feature_set(tag).should be_true
+      font.feature_value(tag).should eq(0)
+      font.feature_tags.to_a.should eq([tag])
+    end
+  end
+{% end %}

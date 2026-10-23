@@ -34,3 +34,19 @@ describe Qt::Timer do
     ticks.should eq(1)
   end
 end
+
+describe Qt::EventDispatcherTimerInfo do
+  it "describes the timers of an object" do
+    info = Qt::EventDispatcherTimerInfo.new(1, 100, Qt::TimerType::CoarseTimer)
+    {info.timer_id, info.interval, info.timer_type}.should eq({1, 100, Qt::TimerType::CoarseTimer})
+    info.interval = 50
+    info.interval.should eq(50)
+
+    timer = Qt::Timer.new
+    timer.start(250)
+    timers = Qt::AbstractEventDispatcher.instance.not_nil!.registered_timers(timer).to_a
+    timers.map(&.timer_id).should eq([timer.timer_id])
+    timers.first.interval.should eq(250)
+    timer.stop
+  end
+end
