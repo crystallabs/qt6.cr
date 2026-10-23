@@ -14,8 +14,9 @@ describe Qt::Thread do
     thread = Qt::Thread.new
     thread.running?.should be_false
     thread.finished?.should be_false
-    started = false
-    thread.on_started { started = true }
+    main_thread_id = Qt::Thread.current_thread_id
+    started_in = Pointer(Void).null
+    thread.on_started { started_in = Qt::Thread.current_thread_id }
     thread.start
     thread.running?.should be_true
     {% if Qt::QT_VERSION >= 0x060800 %}
@@ -28,8 +29,9 @@ describe Qt::Thread do
     thread.running?.should be_false
     # The started signal is queued to the main thread: delivered by the
     # event loop, not from the Qt thread.
+    started_in.should eq(Pointer(Void).null)
     Qt::CoreApplication.process_events
-    started.should be_true
+    started_in.should eq(main_thread_id)
     {% if Qt::QT_VERSION >= 0x060600 %}
       Qt::Thread.sleep(1.millisecond)
     {% else %}
