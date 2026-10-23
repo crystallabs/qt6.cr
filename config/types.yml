@@ -245,8 +245,30 @@ types: # Type rewrite rules
 
   # String views and matchers: the Crystal String maps to QString, so the
   # overloads taking these would only duplicate the QString ones.
-  QStringView: { ignore: true }
-  QLatin1StringView: { ignore: true }
+  QStringView: # A view of a temporary QString, which lives for the call
+    converter: Qt::Converter::QString
+    crystal_type: String
+    cpp_type: CrystalString
+    binding_type: CrystalString
+    to_cpp: "qt6cr_string_view(%)" # Holds the QString, see ext/converters.hpp
+    from_cpp: "qstring_to_crystal(%.toString())"
+    kind: Struct
+    builtin: true
+    pass_by: Value
+    wrapper_pass_by: Value
+    shadowed_by: [QString] # Drop the overload where one takes a QString
+  QLatin1StringView: # A view of a temporary Latin-1 QByteArray, likewise
+    converter: Qt::Converter::QString
+    crystal_type: String
+    cpp_type: CrystalString
+    binding_type: CrystalString
+    to_cpp: "qt6cr_latin1_string_view(%)"
+    from_cpp: "qstring_to_crystal(QString(%))"
+    kind: Struct
+    builtin: true
+    pass_by: Value
+    wrapper_pass_by: Value
+    shadowed_by: [QString, QStringView]
   QStringMatcher: { ignore: true }
   QLatin1StringMatcher: { ignore: true }
 
@@ -327,6 +349,10 @@ types: # Type rewrite rules
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>
+  QRegularExpression:
+    ignore_methods: # The match keeps the view of the temporary QString: use match
+      - matchView
+      - globalMatchView
   # Template members, which the parser doesn't report: their instantiations
   # are declared, and the generated C++ instantiates them.
   QAction: # setMenu and menu are templates over the menu type since Qt 6

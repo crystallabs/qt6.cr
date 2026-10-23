@@ -455,9 +455,13 @@ see the comments there:
   `QList<QVariant>`, so methods take any `Enumerable(String)`:
   `combo_box.add_items(["a", "b"])`.  `QList<QString>` and
   `QListSpecialMethods<QString>`, which holds the `QStringList` methods, are
-  listed as classes, so the wrapper `Qt::StringList` has those methods.  The
-  overloads taking `QStringView`, `QLatin1StringView` or a string matcher are
-  dropped, as the Crystal `String` maps to `QString`.
+  listed as classes, so the wrapper `Qt::StringList` has those methods.
+  `QStringView` and `QLatin1StringView` map to `String` too, as views of a
+  temporary `QString` living for the call, and a view returned is copied, so
+  `XmlStreamReader#name` is a `String`; an overload taking a view next to one
+  taking a `QString` is dropped (bindgen's `shadowed_by:`).
+  `RegularExpression#match_view`, whose match would keep the view, and the
+  string matchers are dropped.
 * `QVariant` maps to `Qt::Variant`, which exchanges the types Qt knows in
   their native form, so Qt can display, sort and store them: `Nil`, `Bool`,
   `Int32`, `UInt32`, `Int64`, `UInt64`, `Float32`, `Float64`, `Char`, `String`,
@@ -551,10 +555,8 @@ see the comments there:
   `DateTime#msecs_to`.  `DateTime - Time::Span` works.
 * `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
   `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`.
-* The QXmlStream classes return names, values and text as `QStringView`, which
-  has no mapping (a view of a temporary `QString` would dangle in
-  `RegularExpression#match`), so `src/qt6/xml_stream.cr` wraps the helpers of
-  `ext/xml_helper.hpp`: `reader.name`, `attribute.value`,
+* The QXmlStream classes return names, values and text as `QStringView`,
+  copied into a `String`: `reader.name`, `attribute.value`,
   `reader.attributes.value("id")`.  `QXmlStreamAttributes` is a
   `QList<QXmlStreamAttribute>`, so `reader.attributes.map(&.name)` works.
 * `QDataStream` streams `QString` and `QByteArray` through free operators,

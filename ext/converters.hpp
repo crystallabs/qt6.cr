@@ -25,6 +25,23 @@ static CrystalString qstring_to_crystal(const QString &str) {
   return CrystalString{ buffer, size };
 }
 
+// Holders of a QString built from a Crystal String, converting to a view of
+// it: a holder is a temporary of the call it's passed to, so the view lives
+// for the call.  The conversions of QStringView and QLatin1StringView
+// arguments, see config/types.yml.  Each converts to one view type only, so
+// overloads taking either stay unambiguous.
+struct qt6cr_string_view {
+  QString string;
+  explicit qt6cr_string_view(CrystalString str) : string(QString::fromUtf8(str.ptr, str.size)) { }
+  operator QStringView() const { return QStringView(string); }
+};
+
+struct qt6cr_latin1_string_view {
+  QByteArray latin1;
+  explicit qt6cr_latin1_string_view(CrystalString str) : latin1(QString::fromUtf8(str.ptr, str.size).toLatin1()) { }
+  operator QLatin1StringView() const { return QLatin1StringView(latin1.constData(), latin1.size()); }
+};
+
 // Converts a QByteArray into a CrystalString of its raw bytes, which Crystal
 // turns into a `Bytes`.  The copy is GC-allocated, so the `Bytes` uses it
 // directly.
