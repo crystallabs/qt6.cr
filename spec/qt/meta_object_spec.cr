@@ -74,7 +74,7 @@ describe Qt::MetaObject do
     String.new(shape.scope).should eq("QFrame")
     shape.flag?.should be_false
     shape.key_count.should eq(Qt::Frame::Shape.values.size)
-    shape.key_to_value("Box".to_unsafe).should eq(Qt::Frame::Shape::Box.to_i)
+    shape.key_to_value("Box".to_unsafe).should eq({Qt::Frame::Shape::Box.to_i, true}) # With the `bool *ok`
     # Qt 6.9 replaced valueToKey(int) with valueToKey(quint64).
     panel = {% if Qt::QT_VERSION >= 0x060900 %} Qt::Frame::Shape::Panel.to_u64 {% else %} Qt::Frame::Shape::Panel.to_i {% end %}
     String.new(shape.value_to_key(panel)).should eq("Panel")

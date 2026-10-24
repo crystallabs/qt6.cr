@@ -57,7 +57,9 @@ describe Qt::VersionNumber do
     Qt::VersionNumber.compare(v1, v2).should be < 0
     v1.is_prefix_of(Qt::VersionNumber.new(6, 4, 2)).should be_true
     Qt::VersionNumber.common_prefix(v1, v2).to_string.should eq("6")
-    Qt::VersionNumber.from_string("1.2.3-beta").to_string.should eq("1.2.3")
+    version, suffix_index = Qt::VersionNumber.from_string("1.2.3-beta") # The `qsizetype *suffixIndex` is returned
+    version.to_string.should eq("1.2.3")
+    suffix_index.should eq(5)
     Qt::VersionNumber.new.null?.should be_true
     Qt::VersionNumber.new(1, 0).normalized.segment_count.should eq(1)
     Qt::LibraryInfo.version.major_version.should eq(6)
