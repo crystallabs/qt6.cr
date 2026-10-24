@@ -235,7 +235,6 @@ types: # Type rewrite rules
   "QEvent::PointerEventTag": { ignore: true }
   "QEvent::SinglePointEventTag": { ignore: true }
   "std::filesystem::path": { ignore: true }
-  "QTextDocument::ResourceProvider": { ignore: true } # std::function
   "QEasingCurve::EasingFunction": { ignore: true } # C function pointer
   "QPen::DataPtr": { ignore: true }
   "QPointer<QObject>": { ignore: true }
@@ -288,10 +287,6 @@ types: # Type rewrite rules
   QTSMFC: { ignore: true }
   qfloat16: { ignore: true }
   "void (void *)": { ignore: true }
-  "std::__1::function<void (const QString &, const QByteArray &)>":
-    ignore: true
-  "std::function<void (const QString &, const QByteArray &)>":
-    ignore: true
   "std::chrono::milliseconds":
     cpp_type: int64_t
     binding_type: Int64
@@ -344,6 +339,11 @@ types: # Type rewrite rules
       # to the right operand only: `(a - (b).count())`.  Use msecs_to instead.
       # The friend operator is a const member taking the right operand.
       - "operator-(const QDateTime &) const"
+  QProcess:
+    ignore_methods:
+      # Qt runs the modifier in the forked child process, where no Crystal
+      # code (GC, fibers, the main thread) can run.
+      - setChildProcessModifier
   QSettings:
     ignore_methods:
       - registerFormat # Takes C function pointers over QMap<QString, QVariant>

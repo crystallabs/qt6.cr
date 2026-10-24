@@ -278,6 +278,18 @@ the handler to log or collect them:
 Qt::BindgenHelper.on_exception = ->(exception : Exception) { Log.error(exception: exception) { "In a Qt callback" } }
 ```
 
+A `std::function` argument is a block when it is the last argument, like
+`Qt::FileDialog.get_open_file_content(filter) { |name, content| ... }`, and a
+`Proc` otherwise; a setter taking only the function takes the `Proc`, like
+`document.resource_provider = ->(url : Qt::Url) { Qt::Variant.new("...") }`.
+Qt may keep the block for as long as it keeps the function, and the block
+stays alive meanwhile.  A block runs on the thread calling it, and only the
+main thread may run Crystal code, so the functions Qt runs on other threads
+or in a child process are left out, like `QProcess::setChildProcessModifier`
+(and the `std::function` overloads of `QThreadPool` and `QRunnable`, in the Qt
+versions having them).  Methods returning a `std::function`,
+like `resourceProvider()`, are left out too.
+
 ## Null pointers
 
 A method returning a pointer to a Qt object returns `nil` when the pointer is

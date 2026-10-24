@@ -43866,6 +43866,14 @@ extern "C" void bg_QTextDocument_addResource_int_const_QUrl_R_const_QVariant_R(Q
   _self_->addResource(type, name, crystal_to_qvariant(resource));
 }
 
+extern "C" void bg_QTextDocument_setResourceProvider_const_QTextDocument__ResourceProvider_R(QTextDocument * _self_, const CrystalProc<CrystalVariant *, const QUrl *> provider) {
+  _self_->setResourceProvider(QTextDocument::ResourceProvider([proc = bindgen_hold_proc(provider)](const QUrl & arg0){ return crystal_to_qvariant(*(*proc)(&(arg0))); }));
+}
+
+extern "C" void bg_QTextDocument_setDefaultResourceProvider_STATIC_const_QTextDocument__ResourceProvider_R(const CrystalProc<CrystalVariant *, const QUrl *> provider) {
+  QTextDocument::setDefaultResourceProvider(QTextDocument::ResourceProvider([proc = bindgen_hold_proc(provider)](const QUrl & arg0){ return crystal_to_qvariant(*(*proc)(&(arg0))); }));
+}
+
 extern "C" Container_QList_QTextFormat_ * bg_QTextDocument_allFormats_(QTextDocument * _self_) {
   return new (UseGC, bindgen_gc_finalizer<Container_QList_QTextFormat_>()) Container_QList_QTextFormat_ (_self_->allFormats());
 }
@@ -94166,6 +94174,10 @@ extern "C" Container_QList_QUrl_ * bg_QFileDialog_getOpenFileUrls_STATIC_QWidget
   return _result_;
 }
 
+extern "C" void bg_QFileDialog_getOpenFileContent_STATIC_const_QString_R_const_std__function_void__const_QString_R__const_QByteArray_R___R_QWidget_X(const CrystalString nameFilter, const CrystalProc<void, const CrystalString *, const CrystalString *> fileContentsReady, QWidget * parent) {
+  QFileDialog::getOpenFileContent(([&]() { auto &&bg_value = (nameFilter); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), std::function<void (const QString &, const QByteArray &)>([proc = bindgen_hold_proc(fileContentsReady)](const QString & arg0, const QByteArray & arg1){ (*proc)(bindgen_address(qstring_to_crystal(arg0)), bindgen_address(qbytearray_to_crystal(arg1))); }), parent);
+}
+
 extern "C" void bg_QFileDialog_saveFileContent_STATIC_const_QByteArray_R_const_QString_R_QWidget_X(const CrystalString fileContent, const CrystalString fileNameHint, QWidget * parent) {
   QFileDialog::saveFileContent(([&]() { auto &&bg_value = (fileContent); return QByteArray(bg_value.ptr, bg_value.size); }()), ([&]() { auto &&bg_value = (fileNameHint); return QString::fromUtf8(bg_value.ptr, bg_value.size); }()), parent);
 }
@@ -121042,6 +121054,10 @@ extern "C" Qt::TextFormat bg_QLabel_textFormat_(QLabel * _self_) {
 
 extern "C" void bg_QLabel_setTextFormat_Qt__TextFormat(QLabel * _self_, Qt::TextFormat unnamed_arg_0) {
   _self_->setTextFormat(unnamed_arg_0);
+}
+
+extern "C" void bg_QLabel_setResourceProvider_const_QTextDocument__ResourceProvider_R(QLabel * _self_, const CrystalProc<CrystalVariant *, const QUrl *> provider) {
+  _self_->setResourceProvider(QTextDocument::ResourceProvider([proc = bindgen_hold_proc(provider)](const QUrl & arg0){ return crystal_to_qvariant(*(*proc)(&(arg0))); }));
 }
 
 extern "C" Qt::Alignment bg_QLabel_alignment_(QLabel * _self_) {

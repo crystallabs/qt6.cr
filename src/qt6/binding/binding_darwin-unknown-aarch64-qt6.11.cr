@@ -18562,6 +18562,8 @@ module Qt
     fun bg_QTextDocument_print_QPagedPaintDevice_X(_self_ : QTextDocument*, printer : QPagedPaintDevice*) : Void
     fun bg_QTextDocument_resource_int_const_QUrl_R(_self_ : QTextDocument*, type : Int32, name : QUrl*) : CrystalVariant
     fun bg_QTextDocument_addResource_int_const_QUrl_R_const_QVariant_R(_self_ : QTextDocument*, type : Int32, name : QUrl*, resource : CrystalVariant) : Void
+    fun bg_QTextDocument_setResourceProvider_const_QTextDocument__ResourceProvider_R(_self_ : QTextDocument*, provider : CrystalProc) : Void
+    fun bg_QTextDocument_setDefaultResourceProvider_STATIC_const_QTextDocument__ResourceProvider_R(provider : CrystalProc) : Void
     fun bg_QTextDocument_allFormats_(_self_ : QTextDocument*) : ContainerQListQTextFormat*
     fun bg_QTextDocument_markContentsDirty_int_int(_self_ : QTextDocument*, from : Int32, length : Int32) : Void
     fun bg_QTextDocument_setUseDesignMetrics_bool(_self_ : QTextDocument*, b : Bool) : Void
@@ -27969,6 +27971,7 @@ module Qt
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R_const_QUrl_R_const_QString_R_QString_X(parent : QWidget*, caption : CrystalString, dir : QUrl*, filter : CrystalString, selected_filter : CrystalString*) : ContainerQListQUrl*
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R_const_QUrl_R_const_QString_R_QString_X_QFileDialog__Options(parent : QWidget*, caption : CrystalString, dir : QUrl*, filter : CrystalString, selected_filter : CrystalString*, options : ::Qt::FileDialog::Options) : ContainerQListQUrl*
     fun bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R_const_QUrl_R_const_QString_R_QString_X_QFileDialog__Options_const_QStringList_R(parent : QWidget*, caption : CrystalString, dir : QUrl*, filter : CrystalString, selected_filter : CrystalString*, options : ::Qt::FileDialog::Options, supported_schemes : ContainerQListQString*) : ContainerQListQUrl*
+    fun bg_QFileDialog_getOpenFileContent_STATIC_const_QString_R_const_std__function_void__const_QString_R__const_QByteArray_R___R_QWidget_X(name_filter : CrystalString, file_contents_ready : CrystalProc, parent : QWidget*) : Void
     fun bg_QFileDialog_saveFileContent_STATIC_const_QByteArray_R_const_QString_R_QWidget_X(file_content : CrystalString, file_name_hint : CrystalString, parent : QWidget*) : Void
     fun bg_QFileDialog__CONSTRUCT_const_QFileDialogArgs_R(args : QFileDialogArgs*) : QFileDialog*
     fun bg_QFileDialog_done_int(_self_ : QFileDialog*, unnamed_arg_0 : Int32) : Void
@@ -32697,6 +32700,7 @@ module Qt
     fun bg_QLabel_movie_(_self_ : QLabel*) : QMovie*
     fun bg_QLabel_textFormat_(_self_ : QLabel*) : ::Qt::TextFormatEnum
     fun bg_QLabel_setTextFormat_Qt__TextFormat(_self_ : QLabel*, unnamed_arg_0 : ::Qt::TextFormatEnum) : Void
+    fun bg_QLabel_setResourceProvider_const_QTextDocument__ResourceProvider_R(_self_ : QLabel*, provider : CrystalProc) : Void
     fun bg_QLabel_alignment_(_self_ : QLabel*) : ::Qt::Alignment
     fun bg_QLabel_setAlignment_Qt__Alignment(_self_ : QLabel*, unnamed_arg_0 : ::Qt::Alignment) : Void
     fun bg_QLabel_setWordWrap_bool(_self_ : QLabel*, on : Bool) : Void
@@ -104264,6 +104268,14 @@ module Qt
     
     def add_resource(type : Int32, name : Url, resource : Variant) : Void
       Binding.bg_QTextDocument_addResource_int_const_QUrl_R_const_QVariant_R(self, type, name, (resource.to_unsafe))
+    end
+    
+    def resource_provider=(provider : Proc(Url, Variant)) : Void
+      Binding.bg_QTextDocument_setResourceProvider_const_QTextDocument__ResourceProvider_R(self, BindgenHelper.wrap_proc(Proc(Binding::QUrl*, Binding::CrystalVariant*).new do |arg0| BindgenHelper.rescued(Pointer(Binding::CrystalVariant).malloc(1)) do Pointer(Binding::CrystalVariant).malloc(1, (provider.call(Url.bg_discover(arg0)).to_unsafe)) end end))
+    end
+    
+    def self.default_resource_provider=(provider : Proc(Url, Variant)) : Void
+      Binding.bg_QTextDocument_setDefaultResourceProvider_STATIC_const_QTextDocument__ResourceProvider_R(BindgenHelper.wrap_proc(Proc(Binding::QUrl*, Binding::CrystalVariant*).new do |arg0| BindgenHelper.rescued(Pointer(Binding::CrystalVariant).malloc(1)) do Pointer(Binding::CrystalVariant).malloc(1, (provider.call(Url.bg_discover(arg0)).to_unsafe)) end end))
     end
     
     def all_formats() : Enumerable(TextFormat)
@@ -181136,6 +181148,10 @@ module Qt
     {Container_QList_QUrl_.new(unwrap: Binding.bg_QFileDialog_getOpenFileUrls_STATIC_QWidget_X_const_QString_R_const_QUrl_R_const_QString_R_QString_X_QFileDialog__Options_const_QStringList_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption), dir, Qt::Converter::QString.wrap(filter), pointerof(selected_filter_), options, BindgenHelper.wrap_container(StringList, supported_schemes).to_unsafe)), Qt::Converter::QString.unwrap(selected_filter_)}
     end
     
+    def self.get_open_file_content(name_filter : String, file_contents_ready : Proc(String, Bytes, Void), parent : Widget? = nil) : Void
+      Binding.bg_QFileDialog_getOpenFileContent_STATIC_const_QString_R_const_std__function_void__const_QString_R__const_QByteArray_R___R_QWidget_X(Qt::Converter::QString.wrap(name_filter), BindgenHelper.wrap_proc(Proc(Binding::CrystalString*, Binding::CrystalString*, Void).new do |arg0, arg1| BindgenHelper.rescued(nil) do file_contents_ready.call(Qt::Converter::QString.unwrap(arg0.value), Qt::Converter::QByteArray.unwrap(arg1.value)) end end), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
+    end
+    
     def self.save_file_content(file_content : Bytes, file_name_hint : String, parent : Widget? = nil) : Void
       Binding.bg_QFileDialog_saveFileContent_STATIC_const_QByteArray_R_const_QString_R_QWidget_X(Qt::Converter::QByteArray.wrap(file_content), Qt::Converter::QString.wrap(file_name_hint), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     end
@@ -222504,6 +222520,10 @@ module Qt
     
     def text_format=(unnamed_arg_0 : TextFormatEnum) : Void
       Binding.bg_QLabel_setTextFormat_Qt__TextFormat(self, unnamed_arg_0)
+    end
+    
+    def resource_provider=(provider : Proc(Url, Variant)) : Void
+      Binding.bg_QLabel_setResourceProvider_const_QTextDocument__ResourceProvider_R(self, BindgenHelper.wrap_proc(Proc(Binding::QUrl*, Binding::CrystalVariant*).new do |arg0| BindgenHelper.rescued(Pointer(Binding::CrystalVariant).malloc(1)) do Pointer(Binding::CrystalVariant).malloc(1, (provider.call(Url.bg_discover(arg0)).to_unsafe)) end end))
     end
     
     def alignment() : Alignment
