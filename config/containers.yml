@@ -24,6 +24,15 @@ containers:
     count_method: contains
     erase_method: remove
     insert_method: insert
+  # QSet<T> is an Enumerable(T) with #includes?, #<<, #delete and #concat;
+  # methods taking one accept any Enumerable.
+  - class: QSet
+    type: Set
+    count_method: contains
+    erase_method: remove
+    instantiations: # No wrapped method uses a QSet; instantiated for the specs
+      - [ "QString" ]
+      - [ "int" ]
   - class: QHash
     type: Associative
     count_method: contains

@@ -216,9 +216,6 @@ types: # Type rewrite rules
   "QBrush::DataPtr": { ignore: true }
   QPenPrivate: { ignore: true }
 
-  # QByteArray maps to Bytes; QList<QByteArray> is instantiated in
-  # containers.yml, QSet has no mapping yet.
-  "QSet<QByteArray>": { ignore: true }
 
   # Qt 6 types without a mapping yet
   "Qt::Disambiguated_t": { ignore: true } # Overload tag

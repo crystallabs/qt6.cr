@@ -357,6 +357,9 @@ these changes:
   Qt 5 had `Int32`: e.g. `Qt::Dir#count` or `Qt::ListWidget#count` of a
   `QList`-backed widget.
 * `QVector` is an alias of `QList`, so there's only one container type.
+* `QSet<T>` is an `Enumerable(T)` with `#includes?`, `#<<` and `#delete`, and
+  methods taking one accept any `Enumerable`.  No wrapped method uses one yet;
+  `Qt::QSet.of(String).from(["a", "b"])` builds one.
 * `Qt::DesktopWidget` and `Qt::DeferredDeleteEvent` are gone, like in Qt 6.
 * `Qt::MouseEvent` inherits `Qt::SinglePointEvent` and `Qt::PointerEvent`, which
   Qt 6 added.  `Qt::MouseEvent#pos` and `#buttons` work like before.
