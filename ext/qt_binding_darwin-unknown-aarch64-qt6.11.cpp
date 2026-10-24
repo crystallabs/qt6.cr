@@ -2544,7 +2544,7 @@ extern "C" QWizardPage * bg_QObject_CAST_WizardPage_(QObject * _self_) {
   return bindgen_dynamic_cast<QWizardPage *>(_self_);
 }
 
-extern "C" void *bg_QObject_DISCOVER_int(QObject * _self_, int * bg_class) {
+extern "C" void *bg_QObject_DISCOVER_int_void(QObject * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QObject> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QObject *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QTableWidget), 2, [](QObject *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
@@ -2737,7 +2737,7 @@ extern "C" void *bg_QObject_DISCOVER_int(QObject * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QWidget), 189, [](QObject *p) -> void * { return bindgen_dynamic_cast<QWidget *>(p); }},
     {BINDGEN_TYPEID(QWindow), 190, [](QObject *p) -> void * { return bindgen_dynamic_cast<QWindow *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QObject_JUMPTABLE_BgJumptable_QObject_R(BgInherit_QObject * _self_, const BgJumptable_QObject & table) {
@@ -3058,7 +3058,7 @@ extern "C" const QMetaObject * bg_QAbstractAnimation_staticMetaObject_STATIC_GET
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractAnimation::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractAnimation_DISCOVER_int(QAbstractAnimation * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractAnimation_DISCOVER_int_void(QAbstractAnimation * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractAnimation> table {
     {BINDGEN_TYPEID(QParallelAnimationGroup), 1, [](QAbstractAnimation *p) -> void * { return bindgen_dynamic_cast<QParallelAnimationGroup *>(p); }},
     {BINDGEN_TYPEID(QPropertyAnimation), 2, [](QAbstractAnimation *p) -> void * { return bindgen_dynamic_cast<QPropertyAnimation *>(p); }},
@@ -3067,7 +3067,7 @@ extern "C" void *bg_QAbstractAnimation_DISCOVER_int(QAbstractAnimation * _self_,
     {BINDGEN_TYPEID(QPauseAnimation), 5, [](QAbstractAnimation *p) -> void * { return bindgen_dynamic_cast<QPauseAnimation *>(p); }},
     {BINDGEN_TYPEID(QVariantAnimation), 6, [](QAbstractAnimation *p) -> void * { return bindgen_dynamic_cast<QVariantAnimation *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractAnimation_JUMPTABLE_BgJumptable_QAbstractAnimation_R(BgInherit_QAbstractAnimation * _self_, const BgJumptable_QAbstractAnimation & table) {
@@ -5504,7 +5504,7 @@ extern "C" const QMetaObject * bg_QAbstractItemModel_staticMetaObject_STATIC_GET
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractItemModel::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractItemModel_DISCOVER_int(QAbstractItemModel * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractItemModel_DISCOVER_int_void(QAbstractItemModel * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractItemModel> table {
     {BINDGEN_TYPEID(QIdentityProxyModel), 1, [](QAbstractItemModel *p) -> void * { return bindgen_dynamic_cast<QIdentityProxyModel *>(p); }},
     {BINDGEN_TYPEID(QSortFilterProxyModel), 2, [](QAbstractItemModel *p) -> void * { return bindgen_dynamic_cast<QSortFilterProxyModel *>(p); }},
@@ -5517,7 +5517,7 @@ extern "C" void *bg_QAbstractItemModel_DISCOVER_int(QAbstractItemModel * _self_,
     {BINDGEN_TYPEID(QFileSystemModel), 9, [](QAbstractItemModel *p) -> void * { return bindgen_dynamic_cast<QFileSystemModel *>(p); }},
     {BINDGEN_TYPEID(QStandardItemModel), 10, [](QAbstractItemModel *p) -> void * { return bindgen_dynamic_cast<QStandardItemModel *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractItemModel_JUMPTABLE_BgJumptable_QAbstractItemModel_R(BgInherit_QAbstractItemModel * _self_, const BgJumptable_QAbstractItemModel & table) {
@@ -6793,11 +6793,11 @@ extern "C" const QMetaObject * bg_QAbstractListModel_staticMetaObject_STATIC_GET
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractListModel::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractListModel_DISCOVER_int(QAbstractListModel * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractListModel_DISCOVER_int_void(QAbstractListModel * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractListModel> table {
     {BINDGEN_TYPEID(QStringListModel), 1, [](QAbstractListModel *p) -> void * { return bindgen_dynamic_cast<QStringListModel *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractListModel_JUMPTABLE_BgJumptable_QAbstractListModel_R(BgInherit_QAbstractListModel * _self_, const BgJumptable_QAbstractListModel & table) {
@@ -7515,13 +7515,13 @@ extern "C" const QMetaObject * bg_QAbstractProxyModel_staticMetaObject_STATIC_GE
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractProxyModel::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractProxyModel_DISCOVER_int(QAbstractProxyModel * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractProxyModel_DISCOVER_int_void(QAbstractProxyModel * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractProxyModel> table {
     {BINDGEN_TYPEID(QIdentityProxyModel), 1, [](QAbstractProxyModel *p) -> void * { return bindgen_dynamic_cast<QIdentityProxyModel *>(p); }},
     {BINDGEN_TYPEID(QSortFilterProxyModel), 2, [](QAbstractProxyModel *p) -> void * { return bindgen_dynamic_cast<QSortFilterProxyModel *>(p); }},
     {BINDGEN_TYPEID(QTransposeProxyModel), 3, [](QAbstractProxyModel *p) -> void * { return bindgen_dynamic_cast<QTransposeProxyModel *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractProxyModel_JUMPTABLE_BgJumptable_QAbstractProxyModel_R(BgInherit_QAbstractProxyModel * _self_, const BgJumptable_QAbstractProxyModel & table) {
@@ -7854,12 +7854,12 @@ extern "C" const QMetaObject * bg_QAnimationGroup_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAnimationGroup::staticMetaObject);
 }
 
-extern "C" void *bg_QAnimationGroup_DISCOVER_int(QAnimationGroup * _self_, int * bg_class) {
+extern "C" void *bg_QAnimationGroup_DISCOVER_int_void(QAnimationGroup * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAnimationGroup> table {
     {BINDGEN_TYPEID(QParallelAnimationGroup), 1, [](QAnimationGroup *p) -> void * { return bindgen_dynamic_cast<QParallelAnimationGroup *>(p); }},
     {BINDGEN_TYPEID(QSequentialAnimationGroup), 2, [](QAnimationGroup *p) -> void * { return bindgen_dynamic_cast<QSequentialAnimationGroup *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAnimationGroup_JUMPTABLE_BgJumptable_QAnimationGroup_R(BgInherit_QAnimationGroup * _self_, const BgJumptable_QAnimationGroup & table) {
@@ -8289,7 +8289,7 @@ extern "C" QGraphicsSceneMoveEvent * bg_QEvent_CAST_GraphicsSceneMoveEvent_(QEve
   return bindgen_dynamic_cast<QGraphicsSceneMoveEvent *>(_self_);
 }
 
-extern "C" void *bg_QEvent_DISCOVER_int(QEvent * _self_, int * bg_class) {
+extern "C" void *bg_QEvent_DISCOVER_int_void(QEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QEvent> table {
     {BINDGEN_TYPEID(QEnterEvent), 1, [](QEvent *p) -> void * { return bindgen_dynamic_cast<QEnterEvent *>(p); }},
     {BINDGEN_TYPEID(QHoverEvent), 2, [](QEvent *p) -> void * { return bindgen_dynamic_cast<QHoverEvent *>(p); }},
@@ -8346,7 +8346,7 @@ extern "C" void *bg_QEvent_DISCOVER_int(QEvent * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QWhatsThisClickedEvent), 53, [](QEvent *p) -> void * { return bindgen_dynamic_cast<QWhatsThisClickedEvent *>(p); }},
     {BINDGEN_TYPEID(QWindowStateChangeEvent), 54, [](QEvent *p) -> void * { return bindgen_dynamic_cast<QWindowStateChangeEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QEvent_JUMPTABLE_BgJumptable_QEvent_R(BgInherit_QEvent * _self_, const BgJumptable_QEvent & table) {
@@ -8926,12 +8926,12 @@ extern "C" const QMetaObject * bg_QCoreApplication_staticMetaObject_STATIC_GETTE
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCoreApplication::staticMetaObject);
 }
 
-extern "C" void *bg_QCoreApplication_DISCOVER_int(QCoreApplication * _self_, int * bg_class) {
+extern "C" void *bg_QCoreApplication_DISCOVER_int_void(QCoreApplication * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QCoreApplication> table {
     {BINDGEN_TYPEID(QApplication), 1, [](QCoreApplication *p) -> void * { return bindgen_dynamic_cast<QApplication *>(p); }},
     {BINDGEN_TYPEID(QGuiApplication), 2, [](QCoreApplication *p) -> void * { return bindgen_dynamic_cast<QGuiApplication *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QCoreApplication_JUMPTABLE_BgJumptable_QCoreApplication_R(BgInherit_QCoreApplication * _self_, const BgJumptable_QCoreApplication & table) {
@@ -9653,7 +9653,7 @@ extern "C" const QMetaObject * bg_QIODevice_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QIODevice::staticMetaObject);
 }
 
-extern "C" void *bg_QIODevice_DISCOVER_int(QIODevice * _self_, int * bg_class) {
+extern "C" void *bg_QIODevice_DISCOVER_int_void(QIODevice * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QIODevice> table {
     {BINDGEN_TYPEID(QTemporaryFile), 1, [](QIODevice *p) -> void * { return bindgen_dynamic_cast<QTemporaryFile *>(p); }},
     {BINDGEN_TYPEID(QFile), 2, [](QIODevice *p) -> void * { return bindgen_dynamic_cast<QFile *>(p); }},
@@ -9662,7 +9662,7 @@ extern "C" void *bg_QIODevice_DISCOVER_int(QIODevice * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QFileDevice), 5, [](QIODevice *p) -> void * { return bindgen_dynamic_cast<QFileDevice *>(p); }},
     {BINDGEN_TYPEID(QProcess), 6, [](QIODevice *p) -> void * { return bindgen_dynamic_cast<QProcess *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QIODevice_JUMPTABLE_BgJumptable_QIODevice_R(BgInherit_QIODevice * _self_, const BgJumptable_QIODevice & table) {
@@ -16431,13 +16431,13 @@ extern "C" const QMetaObject * bg_QFileDevice_staticMetaObject_STATIC_GETTER_() 
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFileDevice::staticMetaObject);
 }
 
-extern "C" void *bg_QFileDevice_DISCOVER_int(QFileDevice * _self_, int * bg_class) {
+extern "C" void *bg_QFileDevice_DISCOVER_int_void(QFileDevice * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QFileDevice> table {
     {BINDGEN_TYPEID(QTemporaryFile), 1, [](QFileDevice *p) -> void * { return bindgen_dynamic_cast<QTemporaryFile *>(p); }},
     {BINDGEN_TYPEID(QFile), 2, [](QFileDevice *p) -> void * { return bindgen_dynamic_cast<QFile *>(p); }},
     {BINDGEN_TYPEID(QSaveFile), 3, [](QFileDevice *p) -> void * { return bindgen_dynamic_cast<QSaveFile *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QFileDevice_JUMPTABLE_BgJumptable_QFileDevice_R(BgInherit_QFileDevice * _self_, const BgJumptable_QFileDevice & table) {
@@ -16991,11 +16991,11 @@ extern "C" const QMetaObject * bg_QFile_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFile::staticMetaObject);
 }
 
-extern "C" void *bg_QFile_DISCOVER_int(QFile * _self_, int * bg_class) {
+extern "C" void *bg_QFile_DISCOVER_int_void(QFile * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QFile> table {
     {BINDGEN_TYPEID(QTemporaryFile), 1, [](QFile *p) -> void * { return bindgen_dynamic_cast<QTemporaryFile *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QFile_JUMPTABLE_BgJumptable_QFile_R(BgInherit_QFile * _self_, const BgJumptable_QFile & table) {
@@ -25177,11 +25177,11 @@ extern "C" const QMetaObject * bg_QVariantAnimation_staticMetaObject_STATIC_GETT
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QVariantAnimation::staticMetaObject);
 }
 
-extern "C" void *bg_QVariantAnimation_DISCOVER_int(QVariantAnimation * _self_, int * bg_class) {
+extern "C" void *bg_QVariantAnimation_DISCOVER_int_void(QVariantAnimation * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QVariantAnimation> table {
     {BINDGEN_TYPEID(QPropertyAnimation), 1, [](QVariantAnimation *p) -> void * { return bindgen_dynamic_cast<QPropertyAnimation *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QVariantAnimation_JUMPTABLE_BgJumptable_QVariantAnimation_R(BgInherit_QVariantAnimation * _self_, const BgJumptable_QVariantAnimation & table) {
@@ -33502,7 +33502,7 @@ extern "C" QWizardPage * bg_QPaintDevice_CAST_WizardPage_(QPaintDevice * _self_)
   return bindgen_dynamic_cast<QWizardPage *>(_self_);
 }
 
-extern "C" void *bg_QPaintDevice_DISCOVER_int(QPaintDevice * _self_, int * bg_class) {
+extern "C" void *bg_QPaintDevice_DISCOVER_int_void(QPaintDevice * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QPaintDevice> table {
     {BINDGEN_TYPEID(QBitmap), 1, [](QPaintDevice *p) -> void * { return bindgen_dynamic_cast<QBitmap *>(p); }},
     {BINDGEN_TYPEID(QImage), 2, [](QPaintDevice *p) -> void * { return bindgen_dynamic_cast<QImage *>(p); }},
@@ -33510,7 +33510,7 @@ extern "C" void *bg_QPaintDevice_DISCOVER_int(QPaintDevice * _self_, int * bg_cl
     {BINDGEN_TYPEID(QPicture), 4, [](QPaintDevice *p) -> void * { return bindgen_dynamic_cast<QPicture *>(p); }},
     {BINDGEN_TYPEID(QPixmap), 5, [](QPaintDevice *p) -> void * { return bindgen_dynamic_cast<QPixmap *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QPaintDevice_JUMPTABLE_BgJumptable_QPaintDevice_R(BgInherit_QPaintDevice * _self_, const BgJumptable_QPaintDevice & table) {
@@ -35665,11 +35665,11 @@ extern "C" QPlatformPixmap * bg_QPixmap_handle_(QPixmap * _self_) {
   return _self_->handle();
 }
 
-extern "C" void *bg_QPixmap_DISCOVER_int(QPixmap * _self_, int * bg_class) {
+extern "C" void *bg_QPixmap_DISCOVER_int_void(QPixmap * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QPixmap> table {
     {BINDGEN_TYPEID(QBitmap), 1, [](QPixmap *p) -> void * { return bindgen_dynamic_cast<QBitmap *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" QIcon * bg_QIcon__CONSTRUCT_() {
@@ -35936,11 +35936,11 @@ extern "C" QFileIconProvider * bg_QAbstractFileIconProvider_CAST_FileIconProvide
   return bindgen_dynamic_cast<QFileIconProvider *>(_self_);
 }
 
-extern "C" void *bg_QAbstractFileIconProvider_DISCOVER_int(QAbstractFileIconProvider * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractFileIconProvider_DISCOVER_int_void(QAbstractFileIconProvider * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractFileIconProvider> table {
     {BINDGEN_TYPEID(QFileIconProvider), 1, [](QAbstractFileIconProvider *p) -> void * { return bindgen_dynamic_cast<QFileIconProvider *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractFileIconProvider_JUMPTABLE_BgJumptable_QAbstractFileIconProvider_R(BgInherit_QAbstractFileIconProvider * _self_, const BgJumptable_QAbstractFileIconProvider & table) {
@@ -37445,11 +37445,11 @@ extern "C" const QMetaObject * bg_QGuiApplication_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGuiApplication::staticMetaObject);
 }
 
-extern "C" void *bg_QGuiApplication_DISCOVER_int(QGuiApplication * _self_, int * bg_class) {
+extern "C" void *bg_QGuiApplication_DISCOVER_int_void(QGuiApplication * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGuiApplication> table {
     {BINDGEN_TYPEID(QApplication), 1, [](QGuiApplication *p) -> void * { return bindgen_dynamic_cast<QApplication *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGuiApplication_JUMPTABLE_BgJumptable_QGuiApplication_R(BgInherit_QGuiApplication * _self_, const BgJumptable_QGuiApplication & table) {
@@ -37714,11 +37714,11 @@ extern "C" const QMetaObject * bg_QInputDevice_staticMetaObject_STATIC_GETTER_()
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QInputDevice::staticMetaObject);
 }
 
-extern "C" void *bg_QInputDevice_DISCOVER_int(QInputDevice * _self_, int * bg_class) {
+extern "C" void *bg_QInputDevice_DISCOVER_int_void(QInputDevice * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QInputDevice> table {
     {BINDGEN_TYPEID(QPointingDevice), 1, [](QInputDevice *p) -> void * { return bindgen_dynamic_cast<QPointingDevice *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QInputDevice_JUMPTABLE_BgJumptable_QInputDevice_R(BgInherit_QInputDevice * _self_, const BgJumptable_QInputDevice & table) {
@@ -38332,7 +38332,7 @@ extern "C" void bg_QInputEvent_m_reserved_SETTER_quint32(QInputEvent * _self_, q
   _self_->m_reserved = m_reserved;
 }
 
-extern "C" void *bg_QInputEvent_DISCOVER_int(QInputEvent * _self_, int * bg_class) {
+extern "C" void *bg_QInputEvent_DISCOVER_int_void(QInputEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QInputEvent> table {
     {BINDGEN_TYPEID(QEnterEvent), 1, [](QInputEvent *p) -> void * { return bindgen_dynamic_cast<QEnterEvent *>(p); }},
     {BINDGEN_TYPEID(QHoverEvent), 2, [](QInputEvent *p) -> void * { return bindgen_dynamic_cast<QHoverEvent *>(p); }},
@@ -38346,7 +38346,7 @@ extern "C" void *bg_QInputEvent_DISCOVER_int(QInputEvent * _self_, int * bg_clas
     {BINDGEN_TYPEID(QKeyEvent), 10, [](QInputEvent *p) -> void * { return bindgen_dynamic_cast<QKeyEvent *>(p); }},
     {BINDGEN_TYPEID(QPointerEvent), 11, [](QInputEvent *p) -> void * { return bindgen_dynamic_cast<QPointerEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QInputEvent_JUMPTABLE_BgJumptable_QInputEvent_R(BgInherit_QInputEvent * _self_, const BgJumptable_QInputEvent & table) {
@@ -38536,7 +38536,7 @@ extern "C" void bg_QPointerEvent_m_points_SETTER_QList_QEventPoint_(QPointerEven
   _self_->m_points = m_points;
 }
 
-extern "C" void *bg_QPointerEvent_DISCOVER_int(QPointerEvent * _self_, int * bg_class) {
+extern "C" void *bg_QPointerEvent_DISCOVER_int_void(QPointerEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QPointerEvent> table {
     {BINDGEN_TYPEID(QEnterEvent), 1, [](QPointerEvent *p) -> void * { return bindgen_dynamic_cast<QEnterEvent *>(p); }},
     {BINDGEN_TYPEID(QHoverEvent), 2, [](QPointerEvent *p) -> void * { return bindgen_dynamic_cast<QHoverEvent *>(p); }},
@@ -38547,7 +38547,7 @@ extern "C" void *bg_QPointerEvent_DISCOVER_int(QPointerEvent * _self_, int * bg_
     {BINDGEN_TYPEID(QSinglePointEvent), 7, [](QPointerEvent *p) -> void * { return bindgen_dynamic_cast<QSinglePointEvent *>(p); }},
     {BINDGEN_TYPEID(QTouchEvent), 8, [](QPointerEvent *p) -> void * { return bindgen_dynamic_cast<QTouchEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QPointerEvent_JUMPTABLE_BgJumptable_QPointerEvent_R(BgInherit_QPointerEvent * _self_, const BgJumptable_QPointerEvent & table) {
@@ -38773,7 +38773,7 @@ extern "C" void bg_QSinglePointEvent_m_invertedScrolling_SETTER_quint16(QSingleP
   _self_->m_invertedScrolling = m_invertedScrolling;
 }
 
-extern "C" void *bg_QSinglePointEvent_DISCOVER_int(QSinglePointEvent * _self_, int * bg_class) {
+extern "C" void *bg_QSinglePointEvent_DISCOVER_int_void(QSinglePointEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QSinglePointEvent> table {
     {BINDGEN_TYPEID(QEnterEvent), 1, [](QSinglePointEvent *p) -> void * { return bindgen_dynamic_cast<QEnterEvent *>(p); }},
     {BINDGEN_TYPEID(QHoverEvent), 2, [](QSinglePointEvent *p) -> void * { return bindgen_dynamic_cast<QHoverEvent *>(p); }},
@@ -38782,7 +38782,7 @@ extern "C" void *bg_QSinglePointEvent_DISCOVER_int(QSinglePointEvent * _self_, i
     {BINDGEN_TYPEID(QTabletEvent), 5, [](QSinglePointEvent *p) -> void * { return bindgen_dynamic_cast<QTabletEvent *>(p); }},
     {BINDGEN_TYPEID(QWheelEvent), 6, [](QSinglePointEvent *p) -> void * { return bindgen_dynamic_cast<QWheelEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QSinglePointEvent_JUMPTABLE_BgJumptable_QSinglePointEvent_R(BgInherit_QSinglePointEvent * _self_, const BgJumptable_QSinglePointEvent & table) {
@@ -40864,12 +40864,12 @@ extern "C" const QMimeData * bg_QDropEvent_m_data_GETTER_(QDropEvent * _self_) {
   return _self_->m_data;
 }
 
-extern "C" void *bg_QDropEvent_DISCOVER_int(QDropEvent * _self_, int * bg_class) {
+extern "C" void *bg_QDropEvent_DISCOVER_int_void(QDropEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QDropEvent> table {
     {BINDGEN_TYPEID(QDragEnterEvent), 1, [](QDropEvent *p) -> void * { return bindgen_dynamic_cast<QDragEnterEvent *>(p); }},
     {BINDGEN_TYPEID(QDragMoveEvent), 2, [](QDropEvent *p) -> void * { return bindgen_dynamic_cast<QDragMoveEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QDropEvent_JUMPTABLE_BgJumptable_QDropEvent_R(BgInherit_QDropEvent * _self_, const BgJumptable_QDropEvent & table) {
@@ -40951,11 +40951,11 @@ extern "C" void bg_QDragMoveEvent_m_rect_SETTER_QRect(QDragMoveEvent * _self_, Q
   _self_->m_rect = m_rect;
 }
 
-extern "C" void *bg_QDragMoveEvent_DISCOVER_int(QDragMoveEvent * _self_, int * bg_class) {
+extern "C" void *bg_QDragMoveEvent_DISCOVER_int_void(QDragMoveEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QDragMoveEvent> table {
     {BINDGEN_TYPEID(QDragEnterEvent), 1, [](QDragMoveEvent *p) -> void * { return bindgen_dynamic_cast<QDragEnterEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QDragMoveEvent_JUMPTABLE_BgJumptable_QDragMoveEvent_R(BgInherit_QDragMoveEvent * _self_, const BgJumptable_QDragMoveEvent & table) {
@@ -46704,11 +46704,11 @@ extern "C" const QMetaObject * bg_QAbstractTextDocumentLayout_staticMetaObject_S
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractTextDocumentLayout::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractTextDocumentLayout_DISCOVER_int(QAbstractTextDocumentLayout * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractTextDocumentLayout_DISCOVER_int_void(QAbstractTextDocumentLayout * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractTextDocumentLayout> table {
     {BINDGEN_TYPEID(QPlainTextDocumentLayout), 1, [](QAbstractTextDocumentLayout *p) -> void * { return bindgen_dynamic_cast<QPlainTextDocumentLayout *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractTextDocumentLayout_JUMPTABLE_BgJumptable_QAbstractTextDocumentLayout_R(BgInherit_QAbstractTextDocumentLayout * _self_, const BgJumptable_QAbstractTextDocumentLayout & table) {
@@ -47221,11 +47221,11 @@ extern "C" const QMetaObject * bg_QAction_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAction::staticMetaObject);
 }
 
-extern "C" void *bg_QAction_DISCOVER_int(QAction * _self_, int * bg_class) {
+extern "C" void *bg_QAction_DISCOVER_int_void(QAction * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAction> table {
     {BINDGEN_TYPEID(QWidgetAction), 1, [](QAction *p) -> void * { return bindgen_dynamic_cast<QWidgetAction *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAction_JUMPTABLE_BgJumptable_QAction_R(BgInherit_QAction * _self_, const BgJumptable_QAction & table) {
@@ -49019,12 +49019,12 @@ extern "C" bool bg_QWindow_supportsOpenGL_(QWindow * _self_) {
   return _self_->supportsOpenGL();
 }
 
-extern "C" void *bg_QWindow_DISCOVER_int(QWindow * _self_, int * bg_class) {
+extern "C" void *bg_QWindow_DISCOVER_int_void(QWindow * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QWindow> table {
     {BINDGEN_TYPEID(QRasterWindow), 1, [](QWindow *p) -> void * { return bindgen_dynamic_cast<QRasterWindow *>(p); }},
     {BINDGEN_TYPEID(QPaintDeviceWindow), 2, [](QWindow *p) -> void * { return bindgen_dynamic_cast<QPaintDeviceWindow *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QWindow_JUMPTABLE_BgJumptable_QWindow_R(BgInherit_QWindow * _self_, const BgJumptable_QWindow & table) {
@@ -53771,11 +53771,11 @@ extern "C" double bg_QPaintDeviceWindow_getDecodedMetricF_QPaintDevice__PaintDev
   return _self_->getDecodedMetricF(metricA, metricB);
 }
 
-extern "C" void *bg_QPaintDeviceWindow_DISCOVER_int(QPaintDeviceWindow * _self_, int * bg_class) {
+extern "C" void *bg_QPaintDeviceWindow_DISCOVER_int_void(QPaintDeviceWindow * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QPaintDeviceWindow> table {
     {BINDGEN_TYPEID(QRasterWindow), 1, [](QPaintDeviceWindow *p) -> void * { return bindgen_dynamic_cast<QRasterWindow *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QPaintDeviceWindow_JUMPTABLE_BgJumptable_QPaintDeviceWindow_R(BgInherit_QPaintDeviceWindow * _self_, const BgJumptable_QPaintDeviceWindow & table) {
@@ -58875,14 +58875,14 @@ extern "C" const QMetaObject * bg_QTextObject_staticMetaObject_STATIC_GETTER_() 
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextObject::staticMetaObject);
 }
 
-extern "C" void *bg_QTextObject_DISCOVER_int(QTextObject * _self_, int * bg_class) {
+extern "C" void *bg_QTextObject_DISCOVER_int_void(QTextObject * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTextObject> table {
     {BINDGEN_TYPEID(QTextList), 1, [](QTextObject *p) -> void * { return bindgen_dynamic_cast<QTextList *>(p); }},
     {BINDGEN_TYPEID(QTextTable), 2, [](QTextObject *p) -> void * { return bindgen_dynamic_cast<QTextTable *>(p); }},
     {BINDGEN_TYPEID(QTextBlockGroup), 3, [](QTextObject *p) -> void * { return bindgen_dynamic_cast<QTextBlockGroup *>(p); }},
     {BINDGEN_TYPEID(QTextFrame), 4, [](QTextObject *p) -> void * { return bindgen_dynamic_cast<QTextFrame *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTextObject_JUMPTABLE_BgJumptable_QTextObject_R(BgInherit_QTextObject * _self_, const BgJumptable_QTextObject & table) {
@@ -59073,11 +59073,11 @@ extern "C" const QMetaObject * bg_QTextBlockGroup_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextBlockGroup::staticMetaObject);
 }
 
-extern "C" void *bg_QTextBlockGroup_DISCOVER_int(QTextBlockGroup * _self_, int * bg_class) {
+extern "C" void *bg_QTextBlockGroup_DISCOVER_int_void(QTextBlockGroup * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTextBlockGroup> table {
     {BINDGEN_TYPEID(QTextList), 1, [](QTextBlockGroup *p) -> void * { return bindgen_dynamic_cast<QTextList *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTextBlockGroup_JUMPTABLE_BgJumptable_QTextBlockGroup_R(BgInherit_QTextBlockGroup * _self_, const BgJumptable_QTextBlockGroup & table) {
@@ -59274,11 +59274,11 @@ extern "C" const QMetaObject * bg_QTextFrame_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextFrame::staticMetaObject);
 }
 
-extern "C" void *bg_QTextFrame_DISCOVER_int(QTextFrame * _self_, int * bg_class) {
+extern "C" void *bg_QTextFrame_DISCOVER_int_void(QTextFrame * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTextFrame> table {
     {BINDGEN_TYPEID(QTextTable), 1, [](QTextFrame *p) -> void * { return bindgen_dynamic_cast<QTextTable *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTextFrame_JUMPTABLE_BgJumptable_QTextFrame_R(BgInherit_QTextFrame * _self_, const BgJumptable_QTextFrame & table) {
@@ -61271,13 +61271,13 @@ extern "C" const QMetaObject * bg_QValidator_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QValidator::staticMetaObject);
 }
 
-extern "C" void *bg_QValidator_DISCOVER_int(QValidator * _self_, int * bg_class) {
+extern "C" void *bg_QValidator_DISCOVER_int_void(QValidator * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QValidator> table {
     {BINDGEN_TYPEID(QDoubleValidator), 1, [](QValidator *p) -> void * { return bindgen_dynamic_cast<QDoubleValidator *>(p); }},
     {BINDGEN_TYPEID(QIntValidator), 2, [](QValidator *p) -> void * { return bindgen_dynamic_cast<QIntValidator *>(p); }},
     {BINDGEN_TYPEID(QRegularExpressionValidator), 3, [](QValidator *p) -> void * { return bindgen_dynamic_cast<QRegularExpressionValidator *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QValidator_JUMPTABLE_BgJumptable_QValidator_R(BgInherit_QValidator * _self_, const BgJumptable_QValidator & table) {
@@ -63935,7 +63935,7 @@ extern "C" double bg_QWidget_getDecodedMetricF_QPaintDevice__PaintDeviceMetric_Q
   return _self_->getDecodedMetricF(metricA, metricB);
 }
 
-extern "C" void *bg_QWidget_DISCOVER_int(QWidget * _self_, int * bg_class) {
+extern "C" void *bg_QWidget_DISCOVER_int_void(QWidget * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QWidget> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QWidget *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QTableWidget), 2, [](QWidget *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
@@ -64009,7 +64009,7 @@ extern "C" void *bg_QWidget_DISCOVER_int(QWidget * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QToolBar), 70, [](QWidget *p) -> void * { return bindgen_dynamic_cast<QToolBar *>(p); }},
     {BINDGEN_TYPEID(QWizardPage), 71, [](QWidget *p) -> void * { return bindgen_dynamic_cast<QWizardPage *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QWidget_JUMPTABLE_BgJumptable_QWidget_R(BgInherit_QWidget * _self_, const BgJumptable_QWidget & table) {
@@ -64926,7 +64926,7 @@ extern "C" const QMetaObject * bg_QAbstractButton_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractButton::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractButton_DISCOVER_int(QAbstractButton * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractButton_DISCOVER_int_void(QAbstractButton * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractButton> table {
     {BINDGEN_TYPEID(QCommandLinkButton), 1, [](QAbstractButton *p) -> void * { return bindgen_dynamic_cast<QCommandLinkButton *>(p); }},
     {BINDGEN_TYPEID(QCheckBox), 2, [](QAbstractButton *p) -> void * { return bindgen_dynamic_cast<QCheckBox *>(p); }},
@@ -64934,7 +64934,7 @@ extern "C" void *bg_QAbstractButton_DISCOVER_int(QAbstractButton * _self_, int *
     {BINDGEN_TYPEID(QRadioButton), 4, [](QAbstractButton *p) -> void * { return bindgen_dynamic_cast<QRadioButton *>(p); }},
     {BINDGEN_TYPEID(QToolButton), 5, [](QAbstractButton *p) -> void * { return bindgen_dynamic_cast<QToolButton *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractButton_JUMPTABLE_BgJumptable_QAbstractButton_R(BgInherit_QAbstractButton * _self_, const BgJumptable_QAbstractButton & table) {
@@ -65833,7 +65833,7 @@ extern "C" const QMetaObject * bg_QAbstractSpinBox_staticMetaObject_STATIC_GETTE
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractSpinBox::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractSpinBox_DISCOVER_int(QAbstractSpinBox * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractSpinBox_DISCOVER_int_void(QAbstractSpinBox * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractSpinBox> table {
     {BINDGEN_TYPEID(QDateEdit), 1, [](QAbstractSpinBox *p) -> void * { return bindgen_dynamic_cast<QDateEdit *>(p); }},
     {BINDGEN_TYPEID(QTimeEdit), 2, [](QAbstractSpinBox *p) -> void * { return bindgen_dynamic_cast<QTimeEdit *>(p); }},
@@ -65841,7 +65841,7 @@ extern "C" void *bg_QAbstractSpinBox_DISCOVER_int(QAbstractSpinBox * _self_, int
     {BINDGEN_TYPEID(QDoubleSpinBox), 4, [](QAbstractSpinBox *p) -> void * { return bindgen_dynamic_cast<QDoubleSpinBox *>(p); }},
     {BINDGEN_TYPEID(QSpinBox), 5, [](QAbstractSpinBox *p) -> void * { return bindgen_dynamic_cast<QSpinBox *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractSpinBox_JUMPTABLE_BgJumptable_QAbstractSpinBox_R(BgInherit_QAbstractSpinBox * _self_, const BgJumptable_QAbstractSpinBox & table) {
@@ -66655,13 +66655,13 @@ extern "C" const QMetaObject * bg_QAbstractSlider_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractSlider::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractSlider_DISCOVER_int(QAbstractSlider * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractSlider_DISCOVER_int_void(QAbstractSlider * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractSlider> table {
     {BINDGEN_TYPEID(QDial), 1, [](QAbstractSlider *p) -> void * { return bindgen_dynamic_cast<QDial *>(p); }},
     {BINDGEN_TYPEID(QScrollBar), 2, [](QAbstractSlider *p) -> void * { return bindgen_dynamic_cast<QScrollBar *>(p); }},
     {BINDGEN_TYPEID(QSlider), 3, [](QAbstractSlider *p) -> void * { return bindgen_dynamic_cast<QSlider *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractSlider_JUMPTABLE_BgJumptable_QAbstractSlider_R(BgInherit_QAbstractSlider * _self_, const BgJumptable_QAbstractSlider & table) {
@@ -67844,12 +67844,12 @@ extern "C" const QMetaObject * bg_QStyle_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QStyle::staticMetaObject);
 }
 
-extern "C" void *bg_QStyle_DISCOVER_int(QStyle * _self_, int * bg_class) {
+extern "C" void *bg_QStyle_DISCOVER_int_void(QStyle * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QStyle> table {
     {BINDGEN_TYPEID(QProxyStyle), 1, [](QStyle *p) -> void * { return bindgen_dynamic_cast<QProxyStyle *>(p); }},
     {BINDGEN_TYPEID(QCommonStyle), 2, [](QStyle *p) -> void * { return bindgen_dynamic_cast<QCommonStyle *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QStyle_JUMPTABLE_BgJumptable_QStyle_R(BgInherit_QStyle * _self_, const BgJumptable_QStyle & table) {
@@ -71038,7 +71038,7 @@ extern "C" const QMetaObject * bg_QFrame_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QFrame::staticMetaObject);
 }
 
-extern "C" void *bg_QFrame_DISCOVER_int(QFrame * _self_, int * bg_class) {
+extern "C" void *bg_QFrame_DISCOVER_int_void(QFrame * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QFrame> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QFrame *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QTableWidget), 2, [](QFrame *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
@@ -71063,7 +71063,7 @@ extern "C" void *bg_QFrame_DISCOVER_int(QFrame * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QStackedWidget), 21, [](QFrame *p) -> void * { return bindgen_dynamic_cast<QStackedWidget *>(p); }},
     {BINDGEN_TYPEID(QToolBox), 22, [](QFrame *p) -> void * { return bindgen_dynamic_cast<QToolBox *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QFrame_JUMPTABLE_BgJumptable_QFrame_R(BgInherit_QFrame * _self_, const BgJumptable_QFrame & table) {
@@ -73076,12 +73076,12 @@ extern "C" const QMetaObject * bg_QAbstractItemDelegate_staticMetaObject_STATIC_
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractItemDelegate::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractItemDelegate_DISCOVER_int(QAbstractItemDelegate * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractItemDelegate_DISCOVER_int_void(QAbstractItemDelegate * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractItemDelegate> table {
     {BINDGEN_TYPEID(QItemDelegate), 1, [](QAbstractItemDelegate *p) -> void * { return bindgen_dynamic_cast<QItemDelegate *>(p); }},
     {BINDGEN_TYPEID(QStyledItemDelegate), 2, [](QAbstractItemDelegate *p) -> void * { return bindgen_dynamic_cast<QStyledItemDelegate *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractItemDelegate_JUMPTABLE_BgJumptable_QAbstractItemDelegate_R(BgInherit_QAbstractItemDelegate * _self_, const BgJumptable_QAbstractItemDelegate & table) {
@@ -73874,7 +73874,7 @@ extern "C" const QMetaObject * bg_QAbstractScrollArea_staticMetaObject_STATIC_GE
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractScrollArea::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractScrollArea_DISCOVER_int(QAbstractScrollArea * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractScrollArea_DISCOVER_int_void(QAbstractScrollArea * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractScrollArea> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QAbstractScrollArea *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QTableWidget), 2, [](QAbstractScrollArea *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
@@ -73893,7 +73893,7 @@ extern "C" void *bg_QAbstractScrollArea_DISCOVER_int(QAbstractScrollArea * _self
     {BINDGEN_TYPEID(QScrollArea), 15, [](QAbstractScrollArea *p) -> void * { return bindgen_dynamic_cast<QScrollArea *>(p); }},
     {BINDGEN_TYPEID(QTextEdit), 16, [](QAbstractScrollArea *p) -> void * { return bindgen_dynamic_cast<QTextEdit *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractScrollArea_JUMPTABLE_BgJumptable_QAbstractScrollArea_R(BgInherit_QAbstractScrollArea * _self_, const BgJumptable_QAbstractScrollArea & table) {
@@ -75521,7 +75521,7 @@ extern "C" const QMetaObject * bg_QAbstractItemView_staticMetaObject_STATIC_GETT
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QAbstractItemView::staticMetaObject);
 }
 
-extern "C" void *bg_QAbstractItemView_DISCOVER_int(QAbstractItemView * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractItemView_DISCOVER_int_void(QAbstractItemView * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractItemView> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QAbstractItemView *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QTableWidget), 2, [](QAbstractItemView *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
@@ -75533,7 +75533,7 @@ extern "C" void *bg_QAbstractItemView_DISCOVER_int(QAbstractItemView * _self_, i
     {BINDGEN_TYPEID(QTableView), 8, [](QAbstractItemView *p) -> void * { return bindgen_dynamic_cast<QTableView *>(p); }},
     {BINDGEN_TYPEID(QTreeView), 9, [](QAbstractItemView *p) -> void * { return bindgen_dynamic_cast<QTreeView *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractItemView_JUMPTABLE_BgJumptable_QAbstractItemView_R(BgInherit_QAbstractItemView * _self_, const BgJumptable_QAbstractItemView & table) {
@@ -76412,13 +76412,13 @@ extern "C" QStackedLayout * bg_QLayoutItem_CAST_StackedLayout_(QLayoutItem * _se
   return bindgen_dynamic_cast<QStackedLayout *>(_self_);
 }
 
-extern "C" void *bg_QLayoutItem_DISCOVER_int(QLayoutItem * _self_, int * bg_class) {
+extern "C" void *bg_QLayoutItem_DISCOVER_int_void(QLayoutItem * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QLayoutItem> table {
     {BINDGEN_TYPEID(QWidgetItemV2), 1, [](QLayoutItem *p) -> void * { return bindgen_dynamic_cast<QWidgetItemV2 *>(p); }},
     {BINDGEN_TYPEID(QSpacerItem), 2, [](QLayoutItem *p) -> void * { return bindgen_dynamic_cast<QSpacerItem *>(p); }},
     {BINDGEN_TYPEID(QWidgetItem), 3, [](QLayoutItem *p) -> void * { return bindgen_dynamic_cast<QWidgetItem *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QLayoutItem_JUMPTABLE_BgJumptable_QLayoutItem_R(BgInherit_QLayoutItem * _self_, const BgJumptable_QLayoutItem & table) {
@@ -76918,11 +76918,11 @@ extern "C" void bg_QWidgetItem_wid_SETTER_QWidget_X(QWidgetItem * _self_, QWidge
   _self_->wid = wid;
 }
 
-extern "C" void *bg_QWidgetItem_DISCOVER_int(QWidgetItem * _self_, int * bg_class) {
+extern "C" void *bg_QWidgetItem_DISCOVER_int_void(QWidgetItem * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QWidgetItem> table {
     {BINDGEN_TYPEID(QWidgetItemV2), 1, [](QWidgetItem *p) -> void * { return bindgen_dynamic_cast<QWidgetItemV2 *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QWidgetItem_JUMPTABLE_BgJumptable_QWidgetItem_R(BgInherit_QWidgetItem * _self_, const BgJumptable_QWidgetItem & table) {
@@ -77812,7 +77812,7 @@ extern "C" Qt::Alignment bg_QLayout_alignment_(QLayout * _self_) {
   return _self_->alignment();
 }
 
-extern "C" void *bg_QLayout_DISCOVER_int(QLayout * _self_, int * bg_class) {
+extern "C" void *bg_QLayout_DISCOVER_int_void(QLayout * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QLayout> table {
     {BINDGEN_TYPEID(QHBoxLayout), 1, [](QLayout *p) -> void * { return bindgen_dynamic_cast<QHBoxLayout *>(p); }},
     {BINDGEN_TYPEID(QVBoxLayout), 2, [](QLayout *p) -> void * { return bindgen_dynamic_cast<QVBoxLayout *>(p); }},
@@ -77821,7 +77821,7 @@ extern "C" void *bg_QLayout_DISCOVER_int(QLayout * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QGridLayout), 5, [](QLayout *p) -> void * { return bindgen_dynamic_cast<QGridLayout *>(p); }},
     {BINDGEN_TYPEID(QStackedLayout), 6, [](QLayout *p) -> void * { return bindgen_dynamic_cast<QStackedLayout *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QLayout_JUMPTABLE_BgJumptable_QLayout_R(BgInherit_QLayout * _self_, const BgJumptable_QLayout & table) {
@@ -79006,12 +79006,12 @@ extern "C" const QMetaObject * bg_QBoxLayout_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QBoxLayout::staticMetaObject);
 }
 
-extern "C" void *bg_QBoxLayout_DISCOVER_int(QBoxLayout * _self_, int * bg_class) {
+extern "C" void *bg_QBoxLayout_DISCOVER_int_void(QBoxLayout * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QBoxLayout> table {
     {BINDGEN_TYPEID(QHBoxLayout), 1, [](QBoxLayout *p) -> void * { return bindgen_dynamic_cast<QHBoxLayout *>(p); }},
     {BINDGEN_TYPEID(QVBoxLayout), 2, [](QBoxLayout *p) -> void * { return bindgen_dynamic_cast<QVBoxLayout *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QBoxLayout_JUMPTABLE_BgJumptable_QBoxLayout_R(BgInherit_QBoxLayout * _self_, const BgJumptable_QBoxLayout & table) {
@@ -82206,7 +82206,7 @@ extern "C" const QMetaObject * bg_QDialog_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QDialog::staticMetaObject);
 }
 
-extern "C" void *bg_QDialog_DISCOVER_int(QDialog * _self_, int * bg_class) {
+extern "C" void *bg_QDialog_DISCOVER_int_void(QDialog * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QDialog> table {
     {BINDGEN_TYPEID(QColorDialog), 1, [](QDialog *p) -> void * { return bindgen_dynamic_cast<QColorDialog *>(p); }},
     {BINDGEN_TYPEID(QErrorMessage), 2, [](QDialog *p) -> void * { return bindgen_dynamic_cast<QErrorMessage *>(p); }},
@@ -82217,7 +82217,7 @@ extern "C" void *bg_QDialog_DISCOVER_int(QDialog * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QProgressDialog), 7, [](QDialog *p) -> void * { return bindgen_dynamic_cast<QProgressDialog *>(p); }},
     {BINDGEN_TYPEID(QWizard), 8, [](QDialog *p) -> void * { return bindgen_dynamic_cast<QWizard *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QDialog_JUMPTABLE_BgJumptable_QDialog_R(BgInherit_QDialog * _self_, const BgJumptable_QDialog & table) {
@@ -85129,11 +85129,11 @@ extern "C" const QMetaObject * bg_QComboBox_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QComboBox::staticMetaObject);
 }
 
-extern "C" void *bg_QComboBox_DISCOVER_int(QComboBox * _self_, int * bg_class) {
+extern "C" void *bg_QComboBox_DISCOVER_int_void(QComboBox * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QComboBox> table {
     {BINDGEN_TYPEID(QFontComboBox), 1, [](QComboBox *p) -> void * { return bindgen_dynamic_cast<QFontComboBox *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QComboBox_JUMPTABLE_BgJumptable_QComboBox_R(BgInherit_QComboBox * _self_, const BgJumptable_QComboBox & table) {
@@ -85908,11 +85908,11 @@ extern "C" const QMetaObject * bg_QPushButton_staticMetaObject_STATIC_GETTER_() 
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QPushButton::staticMetaObject);
 }
 
-extern "C" void *bg_QPushButton_DISCOVER_int(QPushButton * _self_, int * bg_class) {
+extern "C" void *bg_QPushButton_DISCOVER_int_void(QPushButton * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QPushButton> table {
     {BINDGEN_TYPEID(QCommandLinkButton), 1, [](QPushButton *p) -> void * { return bindgen_dynamic_cast<QCommandLinkButton *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QPushButton_JUMPTABLE_BgJumptable_QPushButton_R(BgInherit_QPushButton * _self_, const BgJumptable_QPushButton & table) {
@@ -87031,11 +87031,11 @@ extern "C" const QMetaObject * bg_QCommonStyle_staticMetaObject_STATIC_GETTER_()
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QCommonStyle::staticMetaObject);
 }
 
-extern "C" void *bg_QCommonStyle_DISCOVER_int(QCommonStyle * _self_, int * bg_class) {
+extern "C" void *bg_QCommonStyle_DISCOVER_int_void(QCommonStyle * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QCommonStyle> table {
     {BINDGEN_TYPEID(QProxyStyle), 1, [](QCommonStyle *p) -> void * { return bindgen_dynamic_cast<QProxyStyle *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QCommonStyle_JUMPTABLE_BgJumptable_QCommonStyle_R(BgInherit_QCommonStyle * _self_, const BgJumptable_QCommonStyle & table) {
@@ -88628,12 +88628,12 @@ extern "C" const QMetaObject * bg_QDateTimeEdit_staticMetaObject_STATIC_GETTER_(
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QDateTimeEdit::staticMetaObject);
 }
 
-extern "C" void *bg_QDateTimeEdit_DISCOVER_int(QDateTimeEdit * _self_, int * bg_class) {
+extern "C" void *bg_QDateTimeEdit_DISCOVER_int_void(QDateTimeEdit * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QDateTimeEdit> table {
     {BINDGEN_TYPEID(QDateEdit), 1, [](QDateTimeEdit *p) -> void * { return bindgen_dynamic_cast<QDateEdit *>(p); }},
     {BINDGEN_TYPEID(QTimeEdit), 2, [](QDateTimeEdit *p) -> void * { return bindgen_dynamic_cast<QTimeEdit *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QDateTimeEdit_JUMPTABLE_BgJumptable_QDateTimeEdit_R(BgInherit_QDateTimeEdit * _self_, const BgJumptable_QDateTimeEdit & table) {
@@ -96513,7 +96513,7 @@ extern "C" const QMetaObject * bg_QGesture_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGesture::staticMetaObject);
 }
 
-extern "C" void *bg_QGesture_DISCOVER_int(QGesture * _self_, int * bg_class) {
+extern "C" void *bg_QGesture_DISCOVER_int_void(QGesture * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGesture> table {
     {BINDGEN_TYPEID(QPanGesture), 1, [](QGesture *p) -> void * { return bindgen_dynamic_cast<QPanGesture *>(p); }},
     {BINDGEN_TYPEID(QPinchGesture), 2, [](QGesture *p) -> void * { return bindgen_dynamic_cast<QPinchGesture *>(p); }},
@@ -96521,7 +96521,7 @@ extern "C" void *bg_QGesture_DISCOVER_int(QGesture * _self_, int * bg_class) {
     {BINDGEN_TYPEID(QTapAndHoldGesture), 4, [](QGesture *p) -> void * { return bindgen_dynamic_cast<QTapAndHoldGesture *>(p); }},
     {BINDGEN_TYPEID(QTapGesture), 5, [](QGesture *p) -> void * { return bindgen_dynamic_cast<QTapGesture *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGesture_JUMPTABLE_BgJumptable_QGesture_R(BgInherit_QGesture * _self_, const BgJumptable_QGesture & table) {
@@ -98837,7 +98837,7 @@ extern "C" QGraphicsProxyWidget * bg_QGraphicsItem_CAST_GraphicsProxyWidget_(QGr
   return bindgen_dynamic_cast<QGraphicsProxyWidget *>(_self_);
 }
 
-extern "C" void *bg_QGraphicsItem_DISCOVER_int(QGraphicsItem * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsItem_DISCOVER_int_void(QGraphicsItem * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsItem> table {
     {BINDGEN_TYPEID(QGraphicsEllipseItem), 1, [](QGraphicsItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsEllipseItem *>(p); }},
     {BINDGEN_TYPEID(QGraphicsPathItem), 2, [](QGraphicsItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsPathItem *>(p); }},
@@ -98849,7 +98849,7 @@ extern "C" void *bg_QGraphicsItem_DISCOVER_int(QGraphicsItem * _self_, int * bg_
     {BINDGEN_TYPEID(QGraphicsLineItem), 8, [](QGraphicsItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsLineItem *>(p); }},
     {BINDGEN_TYPEID(QGraphicsPixmapItem), 9, [](QGraphicsItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsPixmapItem *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsItem_JUMPTABLE_BgJumptable_QGraphicsItem_R(BgInherit_QGraphicsItem * _self_, const BgJumptable_QGraphicsItem & table) {
@@ -100396,13 +100396,13 @@ extern "C" void bg_QGraphicsObject_prepareGeometryChange_(QGraphicsObject * _sel
   _self_->prepareGeometryChange();
 }
 
-extern "C" void *bg_QGraphicsObject_DISCOVER_int(QGraphicsObject * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsObject_DISCOVER_int_void(QGraphicsObject * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsObject> table {
     {BINDGEN_TYPEID(QGraphicsProxyWidget), 1, [](QGraphicsObject *p) -> void * { return bindgen_dynamic_cast<QGraphicsProxyWidget *>(p); }},
     {BINDGEN_TYPEID(QGraphicsTextItem), 2, [](QGraphicsObject *p) -> void * { return bindgen_dynamic_cast<QGraphicsTextItem *>(p); }},
     {BINDGEN_TYPEID(QGraphicsWidget), 3, [](QGraphicsObject *p) -> void * { return bindgen_dynamic_cast<QGraphicsWidget *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsObject_JUMPTABLE_BgJumptable_QGraphicsObject_R(BgInherit_QGraphicsObject * _self_, const BgJumptable_QGraphicsObject & table) {
@@ -100981,7 +100981,7 @@ extern "C" QAbstractGraphicsShapeItem * bg_QAbstractGraphicsShapeItem__CONSTRUCT
   return new (UseGC) CrystalGCWrapper<BgInherit_QAbstractGraphicsShapeItem>(dd, parent);
 }
 
-extern "C" void *bg_QAbstractGraphicsShapeItem_DISCOVER_int(QAbstractGraphicsShapeItem * _self_, int * bg_class) {
+extern "C" void *bg_QAbstractGraphicsShapeItem_DISCOVER_int_void(QAbstractGraphicsShapeItem * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QAbstractGraphicsShapeItem> table {
     {BINDGEN_TYPEID(QGraphicsEllipseItem), 1, [](QAbstractGraphicsShapeItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsEllipseItem *>(p); }},
     {BINDGEN_TYPEID(QGraphicsPathItem), 2, [](QAbstractGraphicsShapeItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsPathItem *>(p); }},
@@ -100989,7 +100989,7 @@ extern "C" void *bg_QAbstractGraphicsShapeItem_DISCOVER_int(QAbstractGraphicsSha
     {BINDGEN_TYPEID(QGraphicsRectItem), 4, [](QAbstractGraphicsShapeItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsRectItem *>(p); }},
     {BINDGEN_TYPEID(QGraphicsSimpleTextItem), 5, [](QAbstractGraphicsShapeItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsSimpleTextItem *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QAbstractGraphicsShapeItem_JUMPTABLE_BgJumptable_QAbstractGraphicsShapeItem_R(BgInherit_QAbstractGraphicsShapeItem * _self_, const BgJumptable_QAbstractGraphicsShapeItem & table) {
@@ -105717,14 +105717,14 @@ extern "C" QGraphicsProxyWidget * bg_QGraphicsLayoutItem_CAST_GraphicsProxyWidge
   return bindgen_dynamic_cast<QGraphicsProxyWidget *>(_self_);
 }
 
-extern "C" void *bg_QGraphicsLayoutItem_DISCOVER_int(QGraphicsLayoutItem * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsLayoutItem_DISCOVER_int_void(QGraphicsLayoutItem * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsLayoutItem> table {
     {BINDGEN_TYPEID(QGraphicsAnchorLayout), 1, [](QGraphicsLayoutItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsAnchorLayout *>(p); }},
     {BINDGEN_TYPEID(QGraphicsGridLayout), 2, [](QGraphicsLayoutItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsGridLayout *>(p); }},
     {BINDGEN_TYPEID(QGraphicsLinearLayout), 3, [](QGraphicsLayoutItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsLinearLayout *>(p); }},
     {BINDGEN_TYPEID(QGraphicsLayout), 4, [](QGraphicsLayoutItem *p) -> void * { return bindgen_dynamic_cast<QGraphicsLayout *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsLayoutItem_JUMPTABLE_BgJumptable_QGraphicsLayoutItem_R(BgInherit_QGraphicsLayoutItem * _self_, const BgJumptable_QGraphicsLayoutItem & table) {
@@ -105914,13 +105914,13 @@ extern "C" void bg_QGraphicsLayout_addChildLayoutItem_QGraphicsLayoutItem_X(QGra
   _self_->addChildLayoutItem(layoutItem);
 }
 
-extern "C" void *bg_QGraphicsLayout_DISCOVER_int(QGraphicsLayout * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsLayout_DISCOVER_int_void(QGraphicsLayout * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsLayout> table {
     {BINDGEN_TYPEID(QGraphicsAnchorLayout), 1, [](QGraphicsLayout *p) -> void * { return bindgen_dynamic_cast<QGraphicsAnchorLayout *>(p); }},
     {BINDGEN_TYPEID(QGraphicsGridLayout), 2, [](QGraphicsLayout *p) -> void * { return bindgen_dynamic_cast<QGraphicsGridLayout *>(p); }},
     {BINDGEN_TYPEID(QGraphicsLinearLayout), 3, [](QGraphicsLayout *p) -> void * { return bindgen_dynamic_cast<QGraphicsLinearLayout *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsLayout_JUMPTABLE_BgJumptable_QGraphicsLayout_R(BgInherit_QGraphicsLayout * _self_, const BgJumptable_QGraphicsLayout & table) {
@@ -106528,14 +106528,14 @@ extern "C" const QMetaObject * bg_QGraphicsEffect_staticMetaObject_STATIC_GETTER
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsEffect::staticMetaObject);
 }
 
-extern "C" void *bg_QGraphicsEffect_DISCOVER_int(QGraphicsEffect * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsEffect_DISCOVER_int_void(QGraphicsEffect * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsEffect> table {
     {BINDGEN_TYPEID(QGraphicsBlurEffect), 1, [](QGraphicsEffect *p) -> void * { return bindgen_dynamic_cast<QGraphicsBlurEffect *>(p); }},
     {BINDGEN_TYPEID(QGraphicsColorizeEffect), 2, [](QGraphicsEffect *p) -> void * { return bindgen_dynamic_cast<QGraphicsColorizeEffect *>(p); }},
     {BINDGEN_TYPEID(QGraphicsDropShadowEffect), 3, [](QGraphicsEffect *p) -> void * { return bindgen_dynamic_cast<QGraphicsDropShadowEffect *>(p); }},
     {BINDGEN_TYPEID(QGraphicsOpacityEffect), 4, [](QGraphicsEffect *p) -> void * { return bindgen_dynamic_cast<QGraphicsOpacityEffect *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsEffect_JUMPTABLE_BgJumptable_QGraphicsEffect_R(BgInherit_QGraphicsEffect * _self_, const BgJumptable_QGraphicsEffect & table) {
@@ -109241,11 +109241,11 @@ extern "C" void bg_QGraphicsWidget_setOwnedByLayout_bool(QGraphicsWidget * _self
   _self_->setOwnedByLayout(ownedByLayout);
 }
 
-extern "C" void *bg_QGraphicsWidget_DISCOVER_int(QGraphicsWidget * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsWidget_DISCOVER_int_void(QGraphicsWidget * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsWidget> table {
     {BINDGEN_TYPEID(QGraphicsProxyWidget), 1, [](QGraphicsWidget *p) -> void * { return bindgen_dynamic_cast<QGraphicsProxyWidget *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsWidget_JUMPTABLE_BgJumptable_QGraphicsWidget_R(BgInherit_QGraphicsWidget * _self_, const BgJumptable_QGraphicsWidget & table) {
@@ -111321,7 +111321,7 @@ extern "C" QGraphicsSceneEventPrivate * bg_QGraphicsSceneEvent_d_func_(QGraphics
   return _self_->d_func();
 }
 
-extern "C" void *bg_QGraphicsSceneEvent_DISCOVER_int(QGraphicsSceneEvent * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsSceneEvent_DISCOVER_int_void(QGraphicsSceneEvent * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsSceneEvent> table {
     {BINDGEN_TYPEID(QGraphicsSceneContextMenuEvent), 1, [](QGraphicsSceneEvent *p) -> void * { return bindgen_dynamic_cast<QGraphicsSceneContextMenuEvent *>(p); }},
     {BINDGEN_TYPEID(QGraphicsSceneDragDropEvent), 2, [](QGraphicsSceneEvent *p) -> void * { return bindgen_dynamic_cast<QGraphicsSceneDragDropEvent *>(p); }},
@@ -111332,7 +111332,7 @@ extern "C" void *bg_QGraphicsSceneEvent_DISCOVER_int(QGraphicsSceneEvent * _self
     {BINDGEN_TYPEID(QGraphicsSceneResizeEvent), 7, [](QGraphicsSceneEvent *p) -> void * { return bindgen_dynamic_cast<QGraphicsSceneResizeEvent *>(p); }},
     {BINDGEN_TYPEID(QGraphicsSceneWheelEvent), 8, [](QGraphicsSceneEvent *p) -> void * { return bindgen_dynamic_cast<QGraphicsSceneWheelEvent *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsSceneEvent_JUMPTABLE_BgJumptable_QGraphicsSceneEvent_R(BgInherit_QGraphicsSceneEvent * _self_, const BgJumptable_QGraphicsSceneEvent & table) {
@@ -112187,12 +112187,12 @@ extern "C" const QMetaObject * bg_QGraphicsTransform_staticMetaObject_STATIC_GET
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QGraphicsTransform::staticMetaObject);
 }
 
-extern "C" void *bg_QGraphicsTransform_DISCOVER_int(QGraphicsTransform * _self_, int * bg_class) {
+extern "C" void *bg_QGraphicsTransform_DISCOVER_int_void(QGraphicsTransform * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QGraphicsTransform> table {
     {BINDGEN_TYPEID(QGraphicsRotation), 1, [](QGraphicsTransform *p) -> void * { return bindgen_dynamic_cast<QGraphicsRotation *>(p); }},
     {BINDGEN_TYPEID(QGraphicsScale), 2, [](QGraphicsTransform *p) -> void * { return bindgen_dynamic_cast<QGraphicsScale *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QGraphicsTransform_JUMPTABLE_BgJumptable_QGraphicsTransform_R(BgInherit_QGraphicsTransform * _self_, const BgJumptable_QGraphicsTransform & table) {
@@ -122631,12 +122631,12 @@ extern "C" const QMetaObject * bg_QListView_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QListView::staticMetaObject);
 }
 
-extern "C" void *bg_QListView_DISCOVER_int(QListView * _self_, int * bg_class) {
+extern "C" void *bg_QListView_DISCOVER_int_void(QListView * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QListView> table {
     {BINDGEN_TYPEID(QListWidget), 1, [](QListView *p) -> void * { return bindgen_dynamic_cast<QListWidget *>(p); }},
     {BINDGEN_TYPEID(QUndoView), 2, [](QListView *p) -> void * { return bindgen_dynamic_cast<QUndoView *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QListView_JUMPTABLE_BgJumptable_QListView_R(BgInherit_QListView * _self_, const BgJumptable_QListView & table) {
@@ -130460,11 +130460,11 @@ extern "C" const QMetaObject * bg_QTextEdit_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTextEdit::staticMetaObject);
 }
 
-extern "C" void *bg_QTextEdit_DISCOVER_int(QTextEdit * _self_, int * bg_class) {
+extern "C" void *bg_QTextEdit_DISCOVER_int_void(QTextEdit * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTextEdit> table {
     {BINDGEN_TYPEID(QTextBrowser), 1, [](QTextEdit *p) -> void * { return bindgen_dynamic_cast<QTextBrowser *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTextEdit_JUMPTABLE_BgJumptable_QTextEdit_R(BgInherit_QTextEdit * _self_, const BgJumptable_QTextEdit & table) {
@@ -143297,11 +143297,11 @@ extern "C" const QMetaObject * bg_QTableView_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTableView::staticMetaObject);
 }
 
-extern "C" void *bg_QTableView_DISCOVER_int(QTableView * _self_, int * bg_class) {
+extern "C" void *bg_QTableView_DISCOVER_int_void(QTableView * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTableView> table {
     {BINDGEN_TYPEID(QTableWidget), 1, [](QTableView *p) -> void * { return bindgen_dynamic_cast<QTableWidget *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTableView_JUMPTABLE_BgJumptable_QTableView_R(BgInherit_QTableView * _self_, const BgJumptable_QTableView & table) {
@@ -149674,11 +149674,11 @@ extern "C" const QMetaObject * bg_QTreeView_staticMetaObject_STATIC_GETTER_() {
   return new (UseGC, bindgen_gc_finalizer<QMetaObject>()) QMetaObject (QTreeView::staticMetaObject);
 }
 
-extern "C" void *bg_QTreeView_DISCOVER_int(QTreeView * _self_, int * bg_class) {
+extern "C" void *bg_QTreeView_DISCOVER_int_void(QTreeView * _self_, int * bg_class, void ** bg_crystal) {
   static BindgenTypeDiscovery<QTreeView> table {
     {BINDGEN_TYPEID(QTreeWidget), 1, [](QTreeView *p) -> void * { return bindgen_dynamic_cast<QTreeWidget *>(p); }},
   };
-  return table.discover(_self_, bg_class);
+  return table.discover(_self_, bg_class, bg_crystal);
 }
 
 extern "C" void bg_BgInherit_QTreeView_JUMPTABLE_BgJumptable_QTreeView_R(BgInherit_QTreeView * _self_, const BgJumptable_QTreeView & table) {
