@@ -562,8 +562,6 @@ see the comments there:
   Use `Matrix4x4#map`.  Likewise `DateTime - DateTime`, whose
   `std::chrono::milliseconds` result bindgen can't convert: use
   `DateTime#msecs_to`.  `DateTime - Time::Span` works.
-* `QMatrix3x3` (a `QGenericMatrix` instantiation) has no mapping, which drops
-  `Matrix4x4#normal_matrix` and `Quaternion#to_rotation_matrix`.
 * The QXmlStream classes return names, values and text as `QStringView`,
   copied into a `String`: `reader.name`, `attribute.value`,
   `reader.attributes.value("id")`.  `QXmlStreamAttributes` is a
