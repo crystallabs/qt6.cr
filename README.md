@@ -204,9 +204,16 @@ Qt::BindgenHelper.release(page)
 
 The methods are configured in `config/keep_alive.yml`.  An object given a
 parent, by its constructor or `#parent=`, is kept alive too, as the parent owns
-it: `Qt::Label.new("Stays alive", window)`.  Setting the parent to `nil`
-releases it.  This is bindgen's `Qt` processor at work, for the classes
-deriving from `QObject`, `QGraphicsItem` or `QGraphicsLayoutItem`.
+it: `Qt::Label.new("Stays alive", window)`.  Setting the parent to `nil` lets
+it go, unless a method above keeps it: a model given a parent, then set on a
+view, stays alive for the view.  Releasing it ends both, as a method handing an
+object back ends its ownership as well.  This is bindgen's `Qt` processor at
+work, for the classes deriving from `QObject`, `QGraphicsItem` or
+`QGraphicsLayoutItem`, and for `Qt::TreeWidgetItem`, `Qt::ListWidgetItem` and
+`Qt::UndoCommand`, whose constructors take the tree, list, item or command
+owning them (`parent_arguments:` in `config/keep_alive.yml`).  An object Qt
+created itself, which Crystal only wraps, is never kept: collecting its wrapper
+doesn't touch it.
 
 ## Threads
 

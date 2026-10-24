@@ -39,8 +39,8 @@ module Qt
     fun bindgen_add_destroyed_hook(hook : Void* -> Void) : Void
   
     # The key of a wrapped object in `BindgenHelper`'s table of kept objects:
-    # the start of its GC allocation, or the pointer itself off the GC heap.
-    # Defined in `bindgen_helper.hpp`.
+    # the start of its GC allocation, or null for an object C++ created.  Defined
+    # in `bindgen_helper.hpp`.
     fun bindgen_kept_key(object : Void*) : Void*
   
     # Remembers the Crystal object which constructed the C++ object, and reads
@@ -197,10 +197,20 @@ module Qt
       {% end %}
     end
   
-    # Objects kept alive by `.keep_alive`, by the key of their C++ object, see
-    # `.kept_key`.  Getters return a new wrapper each time, so any wrapper of the
-    # C++ object finds it.  The GC scans the pointers stored in the hash.
-    @@kept_alive = {} of UInt64 => Void*
+    # Why an object is kept alive: passed to `.keep_alive`, given an owner by
+    # `.owned_by`, or both.  It's collectable again once neither holds: `.release`
+    # ends both, `.owned_by` with `nil` the owner's only.
+    @[Flags]
+    enum KeptBy
+      KeepAlive
+      Owner
+    end
+  
+    # Objects kept alive, by the key of their C++ object, see `.kept_key`: the
+    # wrapper, and why it's kept.  Getters return a new wrapper each time, so any
+    # wrapper of the C++ object finds it.  The GC scans the pointers stored in
+    # the hash.
+    @@kept_alive = {} of UInt64 => {Void*, KeptBy}
   
     # Guards `@@kept_alive`.  Reentrant, as a GC finalizer may run C++ code
     # releasing an object while this fiber changes `@@kept_alive`.
@@ -210,18 +220,24 @@ module Qt
     # `@@pending_releases` and done afterwards.
     @@kept_alive_busy = false
   
-    # The addresses to release once `@@kept_alive` is free again.  In memory of
+    # A release queued while `@@kept_alive` was busy: the key, and the reasons to
+    # drop.
+    record PendingRelease, address : UInt64, by : KeptBy
+  
+    # The releases to do once `@@kept_alive` is free again.  In memory of
     # `malloc`, which the GC doesn't manage: a release may run in a GC finalizer,
     # and queueing it must not run more finalizers.  Grown as needed.
-    @@pending_releases = Pointer(UInt64).null
+    @@pending_releases = Pointer(PendingRelease).null
     @@pending_release_capacity = 0
     @@pending_release_count = 0
   
     # The key of the C++ object at *pointer* in `@@kept_alive`: the start of its
     # GC allocation with C++ glue, so a wrapper of a secondary base of the object,
     # like `widget.as_paint_device`, and the hook of its destruction find the
-    # entry of the object; the address itself for an object off the GC heap, or
-    # without C++ glue.
+    # entry of the object.  `0` for an object C++ created, which Crystal only
+    # wraps, off the GC heap or allocated uncollectable by the `operator new` of
+    # libgccpp: it isn't kept, as its wrapper keeps nothing C++ uses, and nothing
+    # would release it when C++ deletes it.  Without C++ glue the address itself.
     private def self.kept_key(pointer : Pointer) : UInt64
       pointer = Binding.bindgen_kept_key(pointer.as(Void*))
       pointer.address
@@ -234,7 +250,8 @@ module Qt
       yield
       while @@pending_release_count > 0
         @@pending_release_count -= 1
-        @@kept_alive.delete(@@pending_releases[@@pending_release_count])
+        pending = @@pending_releases[@@pending_release_count]
+        drop_reasons(pending.address, pending.by)
       end
     ensure
       @@kept_alive_busy = false
@@ -242,31 +259,74 @@ module Qt
   
     # Queues the release of *address* until `@@kept_alive` is free again.  Call
     # with `@@kept_alive_mutex` locked.
-    private def self.queue_release(address : UInt64) : Nil
+    private def self.queue_release(address : UInt64, by : KeptBy) : Nil
       if @@pending_release_count == @@pending_release_capacity
         capacity = Math.max(64, @@pending_release_capacity * 2)
-        buffer = LibC.realloc(@@pending_releases.as(Void*), LibC::SizeT.new(capacity * sizeof(UInt64)))
+        buffer = LibC.realloc(@@pending_releases.as(Void*), LibC::SizeT.new(capacity * sizeof(PendingRelease)))
         return if buffer.null? # Out of memory: the object stays kept alive, which is safe
-        @@pending_releases = buffer.as(UInt64*)
+        @@pending_releases = buffer.as(PendingRelease*)
         @@pending_release_capacity = capacity
       end
-      @@pending_releases[@@pending_release_count] = address
+      @@pending_releases[@@pending_release_count] = PendingRelease.new(address, by)
       @@pending_release_count += 1
+    end
+  
+    # Keeps *object* alive for the reason *by*, adding it to the reasons it's
+    # kept for.  An object C++ created isn't kept, see `.kept_key`.  If its
+    # C++ object is kept alive already, the wrapper kept first stays.
+    private def self.add_reason(object : Reference, by : KeptBy) : Nil
+      address = kept_key(object.to_unsafe)
+      return if address == 0
+  
+      @@kept_alive_mutex.synchronize do
+        change_kept_alive do
+          if entry = @@kept_alive[address]?
+            @@kept_alive[address] = {entry[0], entry[1] | by}
+          else
+            @@kept_alive[address] = {object.as(Void*), by}
+          end
+        end
+      end
+    end
+  
+    # Drops the reasons *by* the object with the key *address* is kept for,
+    # letting the GC collect it once none is left.  Call with
+    # `@@kept_alive_mutex` locked and `@@kept_alive` busy.
+    private def self.drop_reasons(address : UInt64, by : KeptBy) : Nil
+      return unless entry = @@kept_alive[address]?
+  
+      left = entry[1] & ~by
+      if left.none?
+        @@kept_alive.delete(address)
+      else
+        @@kept_alive[address] = {entry[0], left}
+      end
+    end
+  
+    # Drops the reasons *by* the object at *pointer* is kept for, queueing the
+    # release while `@@kept_alive` is busy.
+    private def self.remove_reason(pointer : Pointer, by : KeptBy) : Nil
+      address = kept_key(pointer)
+      return if address == 0
+  
+      @@kept_alive_mutex.synchronize do
+        if @@kept_alive_busy
+          queue_release(address, by)
+        else
+          change_kept_alive { drop_reasons(address, by) }
+        end
+      end
     end
   
     # Keeps *object* alive until it's passed to `.release`, or C++ deletes it, if
     # it was constructed from Crystal.  Wrapper methods call this on arguments of
     # methods configured in `keep_alive:`, as C++ keeps a pointer to them in
     # memory the GC doesn't scan.  The wrapper references the C++ object, so
-    # neither is collected.  If its C++ object is kept alive already, the wrapper
-    # kept first stays.  Returns *object*.
+    # neither is collected.  An object C++ created, which Crystal only wraps,
+    # isn't kept: its wrapper keeps nothing C++ uses.  If its C++ object is kept
+    # alive already, the wrapper kept first stays.  Returns *object*.
     def self.keep_alive(object : Reference)
-      address = kept_key(object.to_unsafe)
-      @@kept_alive_mutex.synchronize do
-        change_kept_alive do
-          @@kept_alive[address] = object.as(Void*) unless @@kept_alive.has_key?(address)
-        end
-      end
+      add_reason(object, :keep_alive)
       object
     end
   
@@ -274,13 +334,32 @@ module Qt
     def self.keep_alive(nothing : Nil) : Nil
     end
   
-    # Lets the GC collect *object* again, once it's no longer referenced.  Call
-    # this when C++ no longer uses the object passed to `.keep_alive`, but didn't
-    # delete it, or deleted an object it created itself: C++ deleting an object
-    # constructed from Crystal releases it.  Any wrapper of the same C++ object
-    # releases it.  Returns *object*.
+    # Keeps *object* alive while it has an *owner*, which deletes it, like a Qt
+    # parent: the `Qt` processor calls this from the constructors and setters
+    # giving an object a parent.  Given no owner, `nil`, the object is collectable
+    # again, unless `.keep_alive` keeps it, like a model set on a view: having an
+    # owner is a reason of its own, and a new owner replaces the former.  `.release`
+    # and C++ deleting the object end both.  Returns *object*.
+    def self.owned_by(object : Reference, owner : Reference)
+      add_reason(object, :owner)
+      object
+    end
+  
+    # `Nil` owner: Lets the GC collect *object* again, unless `.keep_alive` keeps
+    # it.  Returns *object*.
+    def self.owned_by(object : Reference, owner : Nil)
+      remove_reason(object.to_unsafe, :owner)
+      object
+    end
+  
+    # Lets the GC collect *object* again, once it's no longer referenced, also if
+    # it was given an owner by `.owned_by`: a method handing an object back, like
+    # `QTreeWidget::takeTopLevelItem`, ends its ownership.  Call this when C++ no
+    # longer uses the object passed to `.keep_alive`, but didn't delete it: C++
+    # deleting an object constructed from Crystal releases it.  Any wrapper of the
+    # same C++ object releases it.  Returns *object*.
     def self.release(object : Reference)
-      release(object.to_unsafe)
+      remove_reason(object.to_unsafe, :all)
       object
     end
   
@@ -292,18 +371,11 @@ module Qt
     # which only has the pointer: C++ calls this as it destroys a wrapped object,
     # which may happen in a GC finalizer.
     def self.release(pointer : Pointer) : Nil
-      address = kept_key(pointer)
-      @@kept_alive_mutex.synchronize do
-        if @@kept_alive_busy
-          queue_release(address)
-        else
-          change_kept_alive { @@kept_alive.delete(address) }
-        end
-      end
+      remove_reason(pointer, :all)
     end
   
     # Returns if *object*, or another wrapper of its C++ object, is kept alive by
-    # `.keep_alive`.
+    # `.keep_alive` or `.owned_by`.
     def self.kept_alive?(object : Reference) : Bool
       @@kept_alive_mutex.synchronize { @@kept_alive.has_key?(kept_key(object.to_unsafe)) }
     end
@@ -42006,7 +42078,7 @@ module Qt
       result = Binding.bg_QObject__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -42141,11 +42213,7 @@ module Qt
     
     def parent=(parent : Object?) : Void
       Binding.bg_QObject_setParent_QObject_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def install_event_filter(filter_obj : Object) : Void
@@ -42992,7 +43060,7 @@ module Qt
       result = Binding.bg_QAbstractAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -43134,7 +43202,7 @@ module Qt
       result = Binding.bg_QAbstractAnimation__CONSTRUCT_QAbstractAnimationPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -43437,7 +43505,7 @@ module Qt
       result = Binding.bg_QAnimationDriver__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -43570,7 +43638,7 @@ module Qt
       result = Binding.bg_QAnimationDriver__CONSTRUCT_QAnimationDriverPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -43993,7 +44061,7 @@ module Qt
       result = Binding.bg_QEventLoop__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -44265,7 +44333,7 @@ module Qt
       result = Binding.bg_QAbstractEventDispatcher__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -44423,7 +44491,7 @@ module Qt
       result = Binding.bg_QAbstractEventDispatcher__CONSTRUCT_QAbstractEventDispatcherPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -45446,7 +45514,7 @@ module Qt
       result = Binding.bg_QAbstractItemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -46104,7 +46172,7 @@ module Qt
       result = Binding.bg_QAbstractItemModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -46747,7 +46815,7 @@ module Qt
       result = Binding.bg_QAbstractTableModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -46948,7 +47016,7 @@ module Qt
       result = Binding.bg_QAbstractTableModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -47768,7 +47836,7 @@ module Qt
       result = Binding.bg_QAbstractListModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -47969,7 +48037,7 @@ module Qt
       result = Binding.bg_QAbstractListModel__CONSTRUCT_QAbstractItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -48799,7 +48867,7 @@ module Qt
       result = Binding.bg_QAbstractProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -49293,7 +49361,7 @@ module Qt
       result = Binding.bg_QAbstractProxyModel__CONSTRUCT_QAbstractProxyModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -49918,7 +49986,7 @@ module Qt
       result = Binding.bg_QAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -50016,7 +50084,7 @@ module Qt
       result = Binding.bg_QAnimationGroup__CONSTRUCT_QAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -52322,7 +52390,7 @@ module Qt
       result = Binding.bg_QIODevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -52718,7 +52786,7 @@ module Qt
       result = Binding.bg_QIODevice__CONSTRUCT_QIODevicePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -53128,7 +53196,7 @@ module Qt
       result = Binding.bg_QBuffer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -59913,7 +59981,7 @@ module Qt
       result = Binding.bg_QTimer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -60222,7 +60290,7 @@ module Qt
       result = Binding.bg_QChronoTimer__CONSTRUCT_std__chrono__nanoseconds_QObject_X(Qt::Converter::TimeSpanNanoseconds.wrap(nsec), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -60275,7 +60343,7 @@ module Qt
       result = Binding.bg_QChronoTimer__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -60985,7 +61053,7 @@ module Qt
       result = Binding.bg_QConcatenateTablesProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -62299,7 +62367,7 @@ module Qt
       result = Binding.bg_QFileDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -62394,7 +62462,7 @@ module Qt
       result = Binding.bg_QFileDevice__CONSTRUCT_QFileDevicePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -63140,7 +63208,7 @@ module Qt
       result = Binding.bg_QFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -63235,7 +63303,7 @@ module Qt
       result = Binding.bg_QFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -63511,7 +63579,7 @@ module Qt
       result = Binding.bg_QFile__CONSTRUCT_QFilePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -65488,7 +65556,7 @@ module Qt
       result = Binding.bg_QFileSelector__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -65729,7 +65797,7 @@ module Qt
       result = Binding.bg_QFileSystemWatcher__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -65782,7 +65850,7 @@ module Qt
       result = Binding.bg_QFileSystemWatcher__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, paths).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -66055,7 +66123,7 @@ module Qt
       result = Binding.bg_QThread__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     end
     
     def priority=(priority : Thread::Priority) : Void
@@ -66179,7 +66247,7 @@ module Qt
       result = Binding.bg_QThread__CONSTRUCT_QThreadPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     end
     
     def self.static_meta_object() : MetaObject
@@ -66317,7 +66385,7 @@ module Qt
       result = Binding.bg_QThreadPool__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -66630,7 +66698,7 @@ module Qt
       result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -67058,7 +67126,7 @@ module Qt
       result = Binding.bg_QIdentityProxyModel__CONSTRUCT_QIdentityProxyModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -68031,7 +68099,7 @@ module Qt
       result = Binding.bg_QItemSelectionModel__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -69872,7 +69940,7 @@ module Qt
       result = Binding.bg_QLibrary__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -69925,7 +69993,7 @@ module Qt
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(file_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -69978,7 +70046,7 @@ module Qt
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_int_QObject_X(Qt::Converter::QString.wrap(file_name), ver_num, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -70031,7 +70099,7 @@ module Qt
       result = Binding.bg_QLibrary__CONSTRUCT_const_QString_R_const_QString_R_QObject_X(Qt::Converter::QString.wrap(file_name), Qt::Converter::QString.wrap(version), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -73446,7 +73514,7 @@ module Qt
       result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -73519,7 +73587,7 @@ module Qt
       result = Binding.bg_QParallelAnimationGroup__CONSTRUCT_QParallelAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -73800,7 +73868,7 @@ module Qt
       result = Binding.bg_QPauseAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -73861,7 +73929,7 @@ module Qt
       result = Binding.bg_QPauseAnimation__CONSTRUCT_int_QObject_X(msecs, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -74264,7 +74332,7 @@ module Qt
       result = Binding.bg_QProcess__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -75150,7 +75218,7 @@ module Qt
       result = Binding.bg_QVariantAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -75279,7 +75347,7 @@ module Qt
       result = Binding.bg_QVariantAnimation__CONSTRUCT_QVariantAnimationPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -75608,7 +75676,7 @@ module Qt
     result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -75674,7 +75742,7 @@ module Qt
     result = Binding.bg_QPropertyAnimation__CONSTRUCT_QObject_X_const_QByteArray_R_QObject_X((target.try(&.to_unsafe) || Pointer(Binding::QObject).null), Qt::Converter::QByteArray.wrap(property_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -77618,7 +77686,7 @@ module Qt
       result = Binding.bg_QSaveFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -77713,7 +77781,7 @@ module Qt
       result = Binding.bg_QSaveFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -78422,7 +78490,7 @@ module Qt
       result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -78511,7 +78579,7 @@ module Qt
       result = Binding.bg_QSequentialAnimationGroup__CONSTRUCT_QSequentialAnimationGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -78848,7 +78916,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_const_QString_R_const_QString_R_QObject_X(Qt::Converter::QString.wrap(organization), Qt::Converter::QString.wrap(application), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -78953,7 +79021,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_QSettings__Scope_const_QString_R_const_QString_R_QObject_X(scope, Qt::Converter::QString.wrap(organization), Qt::Converter::QString.wrap(application), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79058,7 +79126,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_QSettings__Format_QSettings__Scope_const_QString_R_const_QString_R_QObject_X(format, scope, Qt::Converter::QString.wrap(organization), Qt::Converter::QString.wrap(application), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79111,7 +79179,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_const_QString_R_QSettings__Format_QObject_X(Qt::Converter::QString.wrap(file_name), format, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79164,7 +79232,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79217,7 +79285,7 @@ module Qt
       result = Binding.bg_QSettings__CONSTRUCT_QSettings__Scope_QObject_X(scope, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79727,7 +79795,7 @@ module Qt
       result = Binding.bg_QSharedMemory__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79780,7 +79848,7 @@ module Qt
       result = Binding.bg_QSharedMemory__CONSTRUCT_const_QNativeIpcKey_R_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -79833,7 +79901,7 @@ module Qt
       result = Binding.bg_QSharedMemory__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(key), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -80161,7 +80229,7 @@ module Qt
       result = Binding.bg_QSignalMapper__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -80447,7 +80515,7 @@ module Qt
       result = Binding.bg_QSocketNotifier__CONSTRUCT_QSocketNotifier__Type_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -80500,7 +80568,7 @@ module Qt
       result = Binding.bg_QSocketNotifier__CONSTRUCT_qintptr_QSocketNotifier__Type_QObject_X(socket, unnamed_arg_1, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -80754,7 +80822,7 @@ module Qt
       result = Binding.bg_QSortFilterProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -82267,7 +82335,7 @@ module Qt
       result = Binding.bg_QStringListModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -82412,7 +82480,7 @@ module Qt
       result = Binding.bg_QStringListModel__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, strings).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -83696,7 +83764,7 @@ module Qt
       result = Binding.bg_QTemporaryFile__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -83791,7 +83859,7 @@ module Qt
       result = Binding.bg_QTemporaryFile__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(template_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -84546,7 +84614,7 @@ module Qt
       result = Binding.bg_QTimeLine__CONSTRUCT_int_QObject_X(duration, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -84914,7 +84982,7 @@ module Qt
       result = Binding.bg_QTranslator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -85225,7 +85293,7 @@ module Qt
       result = Binding.bg_QTransposeProxyModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -85637,7 +85705,7 @@ module Qt
       result = Binding.bg_QTransposeProxyModel__CONSTRUCT_QTransposeProxyModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -92652,7 +92720,7 @@ module Qt
       result = Binding.bg_QInputDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -92757,7 +92825,7 @@ module Qt
       result = Binding.bg_QInputDevice__CONSTRUCT_const_QString_R_qint64_QInputDevice__DeviceType_const_QString_R_QObject_X(Qt::Converter::QString.wrap(name), system_id, type, Qt::Converter::QString.wrap(seat_name), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -92866,7 +92934,7 @@ module Qt
       result = Binding.bg_QInputDevice__CONSTRUCT_QInputDevicePrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -93217,7 +93285,7 @@ module Qt
       result = Binding.bg_QPointingDevice__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -93374,7 +93442,7 @@ module Qt
       result = Binding.bg_QPointingDevice__CONSTRUCT_const_QString_R_qint64_QInputDevice__DeviceType_QPointingDevice__PointerType_QInputDevice__Capabilities_int_int_const_QString_R_QPointingDeviceUniqueId_QObject_X(Qt::Converter::QString.wrap(name), system_id, dev_type, p_type, caps, max_points, button_count, Qt::Converter::QString.wrap(seat_name), unique_id, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -93459,7 +93527,7 @@ module Qt
       result = Binding.bg_QPointingDevice__CONSTRUCT_QPointingDevicePrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -104014,7 +104082,7 @@ module Qt
       result = Binding.bg_QTextDocument__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -104073,7 +104141,7 @@ module Qt
       result = Binding.bg_QTextDocument__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -109362,7 +109430,7 @@ module Qt
       result = Binding.bg_QAction__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -109415,7 +109483,7 @@ module Qt
       result = Binding.bg_QAction__CONSTRUCT_const_QString_R_QObject_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -109468,7 +109536,7 @@ module Qt
       result = Binding.bg_QAction__CONSTRUCT_const_QIcon_R_const_QString_R_QObject_X(icon, Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -109714,7 +109782,7 @@ module Qt
       result = Binding.bg_QAction__CONSTRUCT_QActionPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -110045,7 +110113,7 @@ module Qt
       result = Binding.bg_QActionGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -110168,7 +110236,7 @@ module Qt
       result = Binding.bg_QActionGroup__CONSTRUCT_QActionGroupPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -111398,7 +111466,7 @@ module Qt
       result = Binding.bg_QWindow__CONSTRUCT_QWindow_X((parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -111537,11 +111605,7 @@ module Qt
     
     def parent=(parent : Window?) : Void
       Binding.bg_QWindow_setParent_QWindow_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def top_level?() : Bool
@@ -112324,7 +112388,7 @@ module Qt
       result = Binding.bg_QWindow__CONSTRUCT_QWindowPrivate_R_QWindow_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -113733,7 +113797,7 @@ module Qt
       result = Binding.bg_QFileSystemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -114251,7 +114315,7 @@ module Qt
       result = Binding.bg_QFileSystemModel__CONSTRUCT_QFileSystemModelPrivate_R_QObject_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -116602,7 +116666,7 @@ module Qt
       result = Binding.bg_QMovie__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -116707,7 +116771,7 @@ module Qt
       result = Binding.bg_QMovie__CONSTRUCT_QIODevice_X_const_QByteArray_R_QObject_X((device.try(&.to_unsafe) || Pointer(Binding::QIODevice).null), Qt::Converter::QByteArray.wrap(format), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -116812,7 +116876,7 @@ module Qt
       result = Binding.bg_QMovie__CONSTRUCT_const_QString_R_const_QByteArray_R_QObject_X(Qt::Converter::QString.wrap(file_name), Qt::Converter::QByteArray.wrap(format), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -117222,7 +117286,7 @@ module Qt
       result = Binding.bg_QOffscreenSurface__CONSTRUCT_QScreen_X_QObject_X((screen.try(&.to_unsafe) || Pointer(Binding::QScreen).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -118593,7 +118657,7 @@ module Qt
       result = Binding.bg_QPaintDeviceWindow__CONSTRUCT_QPaintDeviceWindowPrivate_R_QWindow_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -122350,7 +122414,7 @@ module Qt
       result = Binding.bg_QRasterWindow__CONSTRUCT_QWindow_X((parent.try(&.to_unsafe) || Pointer(Binding::QWindow).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123021,7 +123085,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123074,7 +123138,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123127,7 +123191,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123180,7 +123244,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_const_QKeySequence_R_QObject_X_const_char_X_const_char_X_Qt__ShortcutContext(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, ambiguous_member, context)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123233,7 +123297,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123286,7 +123350,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -123339,7 +123403,7 @@ module Qt
       result = Binding.bg_QShortcut__CONSTRUCT_QKeySequence__StandardKey_QObject_X_const_char_X_const_char_X_Qt__ShortcutContext(key, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null), member, ambiguous_member, context)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -124389,7 +124453,7 @@ module Qt
       result = Binding.bg_QStandardItemModel__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -124534,7 +124598,7 @@ module Qt
       result = Binding.bg_QStandardItemModel__CONSTRUCT_int_int_QObject_X(rows, columns, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -125168,7 +125232,7 @@ module Qt
       result = Binding.bg_QStandardItemModel__CONSTRUCT_QStandardItemModelPrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -127742,7 +127806,7 @@ module Qt
       result = Binding.bg_QSyntaxHighlighter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -127797,7 +127861,7 @@ module Qt
       result = Binding.bg_QSyntaxHighlighter__CONSTRUCT_QTextDocument_X((parent.try(&.to_unsafe) || Pointer(Binding::QTextDocument).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -128955,7 +129019,7 @@ module Qt
       result = Binding.bg_QUndoGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -129280,6 +129344,7 @@ module Qt
       result = Binding.bg_QUndoCommand__CONSTRUCT_QUndoCommand_X((parent.try(&.to_unsafe) || Pointer(Binding::QUndoCommand).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -129320,6 +129385,7 @@ module Qt
       result = Binding.bg_QUndoCommand__CONSTRUCT_const_QString_R_QUndoCommand_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QUndoCommand).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -129499,7 +129565,7 @@ module Qt
       result = Binding.bg_QUndoStack__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -129877,7 +129943,7 @@ module Qt
       result = Binding.bg_QValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -129966,7 +130032,7 @@ module Qt
       result = Binding.bg_QValidator__CONSTRUCT_QValidatorPrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -130220,7 +130286,7 @@ module Qt
       result = Binding.bg_QIntValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -130282,7 +130348,7 @@ module Qt
       result = Binding.bg_QIntValidator__CONSTRUCT_int_int_QObject_X(bottom, top, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -130588,7 +130654,7 @@ module Qt
       result = Binding.bg_QDoubleValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -130650,7 +130716,7 @@ module Qt
       result = Binding.bg_QDoubleValidator__CONSTRUCT_double_double_int_QObject_X(bottom, top, decimals, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -130996,7 +131062,7 @@ module Qt
       result = Binding.bg_QRegularExpressionValidator__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -131058,7 +131124,7 @@ module Qt
       result = Binding.bg_QRegularExpressionValidator__CONSTRUCT_const_QRegularExpression_R_QObject_X(re, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -131536,7 +131602,7 @@ module Qt
       result = Binding.bg_QWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -131667,7 +131733,7 @@ module Qt
       result = Binding.bg_QWidget__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -132736,20 +132802,12 @@ module Qt
     
     def parent=(parent : Widget?) : Void
       Binding.bg_QWidget_setParent_QWidget_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def set_parent(parent : Widget?, f : WindowFlags) : Void
       Binding.bg_QWidget_setParent_QWidget_X_Qt__WindowFlags(self, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def scroll(dx : Int32, dy : Int32) : Void
@@ -133394,7 +133452,7 @@ module Qt
       result = Binding.bg_QWidget__CONSTRUCT_QWidgetPrivate_R_QWidget_X_Qt__WindowFlags(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -134095,7 +134153,7 @@ module Qt
       result = Binding.bg_QAbstractButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -134509,7 +134567,7 @@ module Qt
       result = Binding.bg_QAbstractButton__CONSTRUCT_QAbstractButtonPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -135341,7 +135399,7 @@ module Qt
       result = Binding.bg_QAbstractSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -135926,7 +135984,7 @@ module Qt
       result = Binding.bg_QAbstractSpinBox__CONSTRUCT_QAbstractSpinBoxPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -136697,7 +136755,7 @@ module Qt
       result = Binding.bg_QAbstractSlider__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -137030,7 +137088,7 @@ module Qt
       result = Binding.bg_QAbstractSlider__CONSTRUCT_QAbstractSliderPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -137948,7 +138006,7 @@ module Qt
       result = Binding.bg_QSlider__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -138083,7 +138141,7 @@ module Qt
       result = Binding.bg_QSlider__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -140307,7 +140365,7 @@ module Qt
       result = Binding.bg_QTabBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -141618,7 +141676,7 @@ module Qt
       result = Binding.bg_QTabWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -143803,7 +143861,7 @@ module Qt
       result = Binding.bg_QFrame__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -143936,7 +143994,7 @@ module Qt
       result = Binding.bg_QFrame__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -144173,7 +144231,7 @@ module Qt
       result = Binding.bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -144306,7 +144364,7 @@ module Qt
       result = Binding.bg_QFrame__CONSTRUCT_QFramePrivate_R_QWidget_X_Qt__WindowFlags(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -147773,7 +147831,7 @@ module Qt
       result = Binding.bg_QAbstractItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -148262,7 +148320,7 @@ module Qt
       result = Binding.bg_QAbstractScrollArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -148512,7 +148570,7 @@ module Qt
       result = Binding.bg_QAbstractScrollArea__CONSTRUCT_QAbstractScrollAreaPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -149528,7 +149586,7 @@ module Qt
       result = Binding.bg_QAbstractItemView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -150358,7 +150416,7 @@ module Qt
       result = Binding.bg_QAbstractItemView__CONSTRUCT_QAbstractItemViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -153587,7 +153645,7 @@ module Qt
       result = Binding.bg_QLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -154466,7 +154524,7 @@ module Qt
       result = Binding.bg_QGridLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -155239,7 +155297,7 @@ module Qt
       result = Binding.bg_QBoxLayout__CONSTRUCT_QBoxLayout__Direction_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -156080,7 +156138,7 @@ module Qt
       result = Binding.bg_QHBoxLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -156816,7 +156874,7 @@ module Qt
       result = Binding.bg_QVBoxLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -157454,7 +157512,7 @@ module Qt
       result = Binding.bg_QButtonGroup__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -157781,7 +157839,7 @@ module Qt
       result = Binding.bg_QCalendarWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -158948,7 +159006,7 @@ module Qt
       result = Binding.bg_QCheckBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -159087,7 +159145,7 @@ module Qt
       result = Binding.bg_QCheckBox__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -160106,7 +160164,7 @@ module Qt
       result = Binding.bg_QDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -160247,7 +160305,7 @@ module Qt
       result = Binding.bg_QDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -160516,7 +160574,7 @@ module Qt
       result = Binding.bg_QDialog__CONSTRUCT_QDialogPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -160657,7 +160715,7 @@ module Qt
       result = Binding.bg_QDialog__CONSTRUCT_QDialogPrivate_R_QWidget_X_Qt__WindowFlags(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -161608,7 +161666,7 @@ module Qt
       result = Binding.bg_QColorDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -161749,7 +161807,7 @@ module Qt
       result = Binding.bg_QColorDialog__CONSTRUCT_const_QColor_R_QWidget_X(initial, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -162863,7 +162921,7 @@ module Qt
       result = Binding.bg_QColumnView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -163217,7 +163275,7 @@ module Qt
       result = Binding.bg_QColumnView__CONSTRUCT_QColumnViewPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -164870,7 +164928,7 @@ module Qt
       result = Binding.bg_QComboBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -166367,7 +166425,7 @@ module Qt
       result = Binding.bg_QPushButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -166506,7 +166564,7 @@ module Qt
       result = Binding.bg_QPushButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -166645,7 +166703,7 @@ module Qt
       result = Binding.bg_QPushButton__CONSTRUCT_const_QIcon_R_const_QString_R_QWidget_X(icon, Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -166941,7 +166999,7 @@ module Qt
       result = Binding.bg_QPushButton__CONSTRUCT_QPushButtonPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -167823,7 +167881,7 @@ module Qt
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -167962,7 +168020,7 @@ module Qt
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -168101,7 +168159,7 @@ module Qt
       result = Binding.bg_QCommandLinkButton__CONSTRUCT_const_QString_R_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), Qt::Converter::QString.wrap(description), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -169844,7 +169902,7 @@ module Qt
     result = Binding.bg_QCompleter__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -169902,7 +169960,7 @@ module Qt
     result = Binding.bg_QCompleter__CONSTRUCT_QAbstractItemModel_X_QObject_X((model.try(&.to_unsafe) || Pointer(Binding::QAbstractItemModel).null), (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -169960,7 +170018,7 @@ module Qt
     result = Binding.bg_QCompleter__CONSTRUCT_const_QStringList_R_QObject_X(BindgenHelper.wrap_container(StringList, completions).to_unsafe, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -170390,7 +170448,7 @@ module Qt
       result = Binding.bg_QDataWidgetMapper__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -170746,7 +170804,7 @@ module Qt
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -170898,7 +170956,7 @@ module Qt
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_const_QDateTime_R_QWidget_X(dt, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -171050,7 +171108,7 @@ module Qt
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QDate_QWidget_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -171202,7 +171260,7 @@ module Qt
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_QTime_QWidget_X(t, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -171747,7 +171805,7 @@ module Qt
       result = Binding.bg_QDateTimeEdit__CONSTRUCT_const_QVariant_R_QMetaType__Type_QWidget_X((val.to_unsafe), parser_type, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -172678,7 +172736,7 @@ module Qt
       result = Binding.bg_QTimeEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -172830,7 +172888,7 @@ module Qt
       result = Binding.bg_QTimeEdit__CONSTRUCT_QTime_QWidget_X(time, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -173918,7 +173976,7 @@ module Qt
       result = Binding.bg_QDateEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -174070,7 +174128,7 @@ module Qt
       result = Binding.bg_QDateEdit__CONSTRUCT_QDate_QWidget_X(date, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -175158,7 +175216,7 @@ module Qt
       result = Binding.bg_QDial__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -176145,7 +176203,7 @@ module Qt
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -176276,7 +176334,7 @@ module Qt
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -176407,7 +176465,7 @@ module Qt
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_QWidget_X(buttons, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -176538,7 +176596,7 @@ module Qt
       result = Binding.bg_QDialogButtonBox__CONSTRUCT_QDialogButtonBox__StandardButtons_Qt__Orientation_QWidget_X(buttons, orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -177622,7 +177680,7 @@ module Qt
       result = Binding.bg_QDockWidget__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -177755,7 +177813,7 @@ module Qt
       result = Binding.bg_QDockWidget__CONSTRUCT_const_QString_R_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -177888,7 +177946,7 @@ module Qt
       result = Binding.bg_QDockWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -178021,7 +178079,7 @@ module Qt
       result = Binding.bg_QDockWidget__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -179079,7 +179137,7 @@ module Qt
       result = Binding.bg_QErrorMessage__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -180104,7 +180162,7 @@ module Qt
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -180245,7 +180303,7 @@ module Qt
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -180386,7 +180444,7 @@ module Qt
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -180527,7 +180585,7 @@ module Qt
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(directory))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -180668,7 +180726,7 @@ module Qt
       result = Binding.bg_QFileDialog__CONSTRUCT_QWidget_X_const_QString_R_const_QString_R_const_QString_R((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), Qt::Converter::QString.wrap(caption), Qt::Converter::QString.wrap(directory), Qt::Converter::QString.wrap(filter))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -182477,7 +182535,7 @@ module Qt
       result = Binding.bg_QFocusFrame__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -183427,7 +183485,7 @@ module Qt
       result = Binding.bg_QFontComboBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -184495,7 +184553,7 @@ module Qt
       result = Binding.bg_QFontDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -184636,7 +184694,7 @@ module Qt
       result = Binding.bg_QFontDialog__CONSTRUCT_const_QFont_R_QWidget_X(initial, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -185730,7 +185788,7 @@ module Qt
       result = Binding.bg_QFormLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -186623,7 +186681,7 @@ module Qt
       result = Binding.bg_QGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -186708,7 +186766,7 @@ module Qt
       result = Binding.bg_QGesture__CONSTRUCT_QGesturePrivate_R_QObject_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -186944,7 +187002,7 @@ module Qt
       result = Binding.bg_QPanGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -187193,7 +187251,7 @@ module Qt
       result = Binding.bg_QPinchGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -187513,7 +187571,7 @@ module Qt
       result = Binding.bg_QSwipeGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -187757,7 +187815,7 @@ module Qt
       result = Binding.bg_QTapGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -187986,7 +188044,7 @@ module Qt
       result = Binding.bg_QTapAndHoldGesture__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -188551,7 +188609,7 @@ module Qt
       result = Binding.bg_QGraphicsItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -188684,11 +188742,7 @@ module Qt
     
     def parent_item=(parent : GraphicsItem?) : Void
       Binding.bg_QGraphicsItem_setParentItem_QGraphicsItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def child_items() : Enumerable(GraphicsItem)
@@ -189756,7 +189810,7 @@ module Qt
       result = Binding.bg_QGraphicsItem__CONSTRUCT_QGraphicsItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -190194,7 +190248,7 @@ module Qt
       result = Binding.bg_QGraphicsObject__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -190385,7 +190439,7 @@ module Qt
       result = Binding.bg_QGraphicsObject__CONSTRUCT_QGraphicsItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -190828,11 +190882,7 @@ module Qt
     
     def parent_item=(parent : GraphicsItem?) : Void
       Binding.bg_QGraphicsObject_setParentItem_QGraphicsItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def child_items() : Enumerable(GraphicsItem)
@@ -191961,7 +192011,7 @@ module Qt
       result = Binding.bg_QAbstractGraphicsShapeItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -192104,7 +192154,7 @@ module Qt
       result = Binding.bg_QAbstractGraphicsShapeItem__CONSTRUCT_QAbstractGraphicsShapeItemPrivate_R_QGraphicsItem_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -192756,7 +192806,7 @@ module Qt
       result = Binding.bg_QGraphicsPathItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -192859,7 +192909,7 @@ module Qt
       result = Binding.bg_QGraphicsPathItem__CONSTRUCT_const_QPainterPath_R_QGraphicsItem_X(path, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -193563,7 +193613,7 @@ module Qt
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -193666,7 +193716,7 @@ module Qt
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_const_QRectF_R_QGraphicsItem_X(rect, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -193769,7 +193819,7 @@ module Qt
       result = Binding.bg_QGraphicsRectItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x, y, w, h, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -194477,7 +194527,7 @@ module Qt
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -194580,7 +194630,7 @@ module Qt
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_const_QRectF_R_QGraphicsItem_X(rect, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -194683,7 +194733,7 @@ module Qt
       result = Binding.bg_QGraphicsEllipseItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x, y, w, h, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -195407,7 +195457,7 @@ module Qt
       result = Binding.bg_QGraphicsPolygonItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -195510,7 +195560,7 @@ module Qt
       result = Binding.bg_QGraphicsPolygonItem__CONSTRUCT_const_QPolygonF_R_QGraphicsItem_X(polygon, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -196222,7 +196272,7 @@ module Qt
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -196325,7 +196375,7 @@ module Qt
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_const_QLineF_R_QGraphicsItem_X(line, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -196428,7 +196478,7 @@ module Qt
       result = Binding.bg_QGraphicsLineItem__CONSTRUCT_qreal_qreal_qreal_qreal_QGraphicsItem_X(x1, y1, x2, y2, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -197144,7 +197194,7 @@ module Qt
       result = Binding.bg_QGraphicsPixmapItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -197247,7 +197297,7 @@ module Qt
       result = Binding.bg_QGraphicsPixmapItem__CONSTRUCT_const_QPixmap_R_QGraphicsItem_X(pixmap, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -198004,7 +198054,7 @@ module Qt
       result = Binding.bg_QGraphicsTextItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -198115,7 +198165,7 @@ module Qt
       result = Binding.bg_QGraphicsTextItem__CONSTRUCT_const_QString_R_QGraphicsItem_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -198940,7 +198990,7 @@ module Qt
       result = Binding.bg_QGraphicsSimpleTextItem__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -199043,7 +199093,7 @@ module Qt
       result = Binding.bg_QGraphicsSimpleTextItem__CONSTRUCT_const_QString_R_QGraphicsItem_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -199755,7 +199805,7 @@ module Qt
       result = Binding.bg_QGraphicsItemGroup__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -200462,7 +200512,7 @@ module Qt
       result = Binding.bg_QGraphicsLayoutItem__CONSTRUCT_QGraphicsLayoutItem_X_bool((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null), is_layout)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -200670,11 +200720,7 @@ module Qt
     def parent_layout_item=(parent : GraphicsLayoutItem?) : Void
       BindgenHelper.keep_alive(parent)
     Binding.bg_QGraphicsLayoutItem_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def layout?() : Bool
@@ -200823,7 +200869,7 @@ module Qt
       result = Binding.bg_QGraphicsLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -201290,7 +201336,7 @@ module Qt
       result = Binding.bg_QGraphicsAnchorLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -201609,7 +201655,7 @@ module Qt
       result = Binding.bg_QGraphicsEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -201700,7 +201746,7 @@ module Qt
       result = Binding.bg_QGraphicsEffect__CONSTRUCT_QGraphicsEffectPrivate_R_QObject_X(d, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -202004,7 +202050,7 @@ module Qt
       result = Binding.bg_QGraphicsColorizeEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -202311,7 +202357,7 @@ module Qt
       result = Binding.bg_QGraphicsBlurEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -202629,7 +202675,7 @@ module Qt
       result = Binding.bg_QGraphicsDropShadowEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -202976,7 +203022,7 @@ module Qt
       result = Binding.bg_QGraphicsOpacityEffect__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -203263,7 +203309,7 @@ module Qt
       result = Binding.bg_QGraphicsGridLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -203703,7 +203749,7 @@ module Qt
       result = Binding.bg_QGraphicsItemAnimation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -204042,7 +204088,7 @@ module Qt
       result = Binding.bg_QGraphicsLinearLayout__CONSTRUCT_QGraphicsLayoutItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -204097,7 +204143,7 @@ module Qt
       result = Binding.bg_QGraphicsLinearLayout__CONSTRUCT_Qt__Orientation_QGraphicsLayoutItem_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -204435,7 +204481,7 @@ module Qt
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -204554,7 +204600,7 @@ module Qt
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsItem_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -205277,7 +205323,7 @@ module Qt
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -205396,7 +205442,7 @@ module Qt
       result = Binding.bg_QGraphicsWidget__CONSTRUCT_QGraphicsWidgetPrivate_R_QGraphicsItem_X_Qt__WindowFlags(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -205915,11 +205961,7 @@ module Qt
     def parent_layout_item=(parent : GraphicsLayoutItem?) : Void
       BindgenHelper.keep_alive(parent)
     Binding.bg_QGraphicsWidget_setParentLayoutItem_QGraphicsLayoutItem_X(self, (parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsLayoutItem).null))
-    if parent
-      BindgenHelper.keep_alive(self)
-    else
-      BindgenHelper.release(self)
-    end
+    BindgenHelper.owned_by(self, parent)
     end
     
     def layout?() : Bool
@@ -205979,7 +206021,7 @@ module Qt
       result = Binding.bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -206126,7 +206168,7 @@ module Qt
       result = Binding.bg_QGraphicsProxyWidget__CONSTRUCT_QGraphicsItem_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QGraphicsItem).null), w_flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -207203,7 +207245,7 @@ module Qt
       result = Binding.bg_QGraphicsScene__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -207298,7 +207340,7 @@ module Qt
       result = Binding.bg_QGraphicsScene__CONSTRUCT_const_QRectF_R_QObject_X(scene_rect, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -207393,7 +207435,7 @@ module Qt
       result = Binding.bg_QGraphicsScene__CONSTRUCT_qreal_qreal_qreal_qreal_QObject_X(x, y, width, height, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -209861,7 +209903,7 @@ module Qt
       result = Binding.bg_QGraphicsTransform__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -209921,7 +209963,7 @@ module Qt
       result = Binding.bg_QGraphicsTransform__CONSTRUCT_QGraphicsTransformPrivate_R_QObject_X(p, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -210152,7 +210194,7 @@ module Qt
       result = Binding.bg_QGraphicsScale__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -210463,7 +210505,7 @@ module Qt
       result = Binding.bg_QGraphicsRotation__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -210754,7 +210796,7 @@ module Qt
       result = Binding.bg_QScrollArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -210958,7 +211000,7 @@ module Qt
       result = Binding.bg_QScrollArea__CONSTRUCT_QScrollAreaPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -211947,7 +211989,7 @@ module Qt
       result = Binding.bg_QGraphicsView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -212094,7 +212136,7 @@ module Qt
       result = Binding.bg_QGraphicsView__CONSTRUCT_QGraphicsScene_X_QWidget_X((scene.try(&.to_unsafe) || Pointer(Binding::QGraphicsScene).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -212602,7 +212644,7 @@ module Qt
       result = Binding.bg_QGraphicsView__CONSTRUCT_QGraphicsViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -213670,7 +213712,7 @@ module Qt
       result = Binding.bg_QGroupBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -213803,7 +213845,7 @@ module Qt
       result = Binding.bg_QGroupBox__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -214800,7 +214842,7 @@ module Qt
       result = Binding.bg_QHeaderView__CONSTRUCT_Qt__Orientation_QWidget_X(orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -215410,7 +215452,7 @@ module Qt
       result = Binding.bg_QHeaderView__CONSTRUCT_QHeaderViewPrivate_R_Qt__Orientation_QWidget_X(dd, orientation, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -217197,7 +217239,7 @@ module Qt
       result = Binding.bg_QLineEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -217330,7 +217372,7 @@ module Qt
       result = Binding.bg_QLineEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(unnamed_arg_0), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -218646,7 +218688,7 @@ module Qt
       result = Binding.bg_QInputDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -218787,7 +218829,7 @@ module Qt
       result = Binding.bg_QInputDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -220088,7 +220130,7 @@ module Qt
       result = Binding.bg_QItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -220832,7 +220874,7 @@ module Qt
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -220963,7 +221005,7 @@ module Qt
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_const_QKeySequence_R_QWidget_X(key_sequence, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -221138,7 +221180,7 @@ module Qt
       result = Binding.bg_QKeySequenceEdit__CONSTRUCT_QKeySequenceEditPrivate_R_QWidget_X_Qt__WindowFlags(d, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -222069,7 +222111,7 @@ module Qt
       result = Binding.bg_QLabel__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -222202,7 +222244,7 @@ module Qt
       result = Binding.bg_QLabel__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -222335,7 +222377,7 @@ module Qt
       result = Binding.bg_QLabel__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -222468,7 +222510,7 @@ module Qt
       result = Binding.bg_QLabel__CONSTRUCT_const_QString_R_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -223563,7 +223605,7 @@ module Qt
       result = Binding.bg_QLCDNumber__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -223696,7 +223738,7 @@ module Qt
       result = Binding.bg_QLCDNumber__CONSTRUCT_uint_QWidget_X(num_digits, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -224732,7 +224774,7 @@ module Qt
       result = Binding.bg_QListView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -225153,7 +225195,7 @@ module Qt
       result = Binding.bg_QListView__CONSTRUCT_QListViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -226837,6 +226879,7 @@ module Qt
       result = Binding.bg_QListWidgetItem__CONSTRUCT_QListWidget_X_int((listview.try(&.to_unsafe) || Pointer(Binding::QListWidget).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, listview)
     {% begin %}
     {%
       methods = [] of Def
@@ -226881,6 +226924,7 @@ module Qt
       result = Binding.bg_QListWidgetItem__CONSTRUCT_const_QString_R_QListWidget_X_int(Qt::Converter::QString.wrap(text), (listview.try(&.to_unsafe) || Pointer(Binding::QListWidget).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, listview)
     {% begin %}
     {%
       methods = [] of Def
@@ -226925,6 +226969,7 @@ module Qt
       result = Binding.bg_QListWidgetItem__CONSTRUCT_const_QIcon_R_const_QString_R_QListWidget_X_int(icon, Qt::Converter::QString.wrap(text), (listview.try(&.to_unsafe) || Pointer(Binding::QListWidget).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, listview)
     {% begin %}
     {%
       methods = [] of Def
@@ -227268,7 +227313,7 @@ module Qt
       result = Binding.bg_QListWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -229293,7 +229338,7 @@ module Qt
       result = Binding.bg_QMainWindow__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -229426,7 +229471,7 @@ module Qt
       result = Binding.bg_QMainWindow__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -230620,7 +230665,7 @@ module Qt
       result = Binding.bg_QMdiArea__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -231784,7 +231829,7 @@ module Qt
       result = Binding.bg_QMdiSubWindow__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -231915,7 +231960,7 @@ module Qt
       result = Binding.bg_QMdiSubWindow__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -232933,7 +232978,7 @@ module Qt
       result = Binding.bg_QMenu__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -233066,7 +233111,7 @@ module Qt
       result = Binding.bg_QMenu__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -233632,7 +233677,7 @@ module Qt
       result = Binding.bg_QMenu__CONSTRUCT_QMenuPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -234397,7 +234442,7 @@ module Qt
       result = Binding.bg_QMenuBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -235479,7 +235524,7 @@ module Qt
       result = Binding.bg_QMessageBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -235760,7 +235805,7 @@ module Qt
       result = Binding.bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QWidget_X(icon, Qt::Converter::QString.wrap(title), Qt::Converter::QString.wrap(text), buttons, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -235901,7 +235946,7 @@ module Qt
       result = Binding.bg_QMessageBox__CONSTRUCT_QMessageBox__Icon_const_QString_R_const_QString_R_QMessageBox__StandardButtons_QWidget_X_Qt__WindowFlags(icon, Qt::Converter::QString.wrap(title), Qt::Converter::QString.wrap(text), buttons, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -237233,7 +237278,7 @@ module Qt
       result = Binding.bg_QTextEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -237384,7 +237429,7 @@ module Qt
       result = Binding.bg_QTextEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -238252,7 +238297,7 @@ module Qt
       result = Binding.bg_QTextEdit__CONSTRUCT_QTextEditPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -239146,7 +239191,7 @@ module Qt
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -239297,7 +239342,7 @@ module Qt
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -240081,7 +240126,7 @@ module Qt
       result = Binding.bg_QPlainTextEdit__CONSTRUCT_QPlainTextEditPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -241340,7 +241385,7 @@ module Qt
       result = Binding.bg_QProgressBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -242395,7 +242440,7 @@ module Qt
       result = Binding.bg_QProgressDialog__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -242536,7 +242581,7 @@ module Qt
       result = Binding.bg_QProgressDialog__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -242677,7 +242722,7 @@ module Qt
       result = Binding.bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X(Qt::Converter::QString.wrap(label_text), Qt::Converter::QString.wrap(cancel_button_text), minimum, maximum, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -242818,7 +242863,7 @@ module Qt
       result = Binding.bg_QProgressDialog__CONSTRUCT_const_QString_R_const_QString_R_int_int_QWidget_X_Qt__WindowFlags(Qt::Converter::QString.wrap(label_text), Qt::Converter::QString.wrap(cancel_button_text), minimum, maximum, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -244680,7 +244725,7 @@ module Qt
       result = Binding.bg_QRadioButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -244819,7 +244864,7 @@ module Qt
       result = Binding.bg_QRadioButton__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(text), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -245814,7 +245859,7 @@ module Qt
       result = Binding.bg_QScrollBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -245949,7 +245994,7 @@ module Qt
       result = Binding.bg_QScrollBar__CONSTRUCT_Qt__Orientation_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -247216,7 +247261,7 @@ module Qt
       result = Binding.bg_QSizeGrip__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -248139,7 +248184,7 @@ module Qt
       result = Binding.bg_QSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -249307,7 +249352,7 @@ module Qt
       result = Binding.bg_QDoubleSpinBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -252115,7 +252160,7 @@ module Qt
       result = Binding.bg_QSplitter__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -252250,7 +252295,7 @@ module Qt
       result = Binding.bg_QSplitter__CONSTRUCT_Qt__Orientation_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -253328,7 +253373,7 @@ module Qt
       result = Binding.bg_QSplitterHandle__CONSTRUCT_Qt__Orientation_QSplitter_X(o, (parent.try(&.to_unsafe) || Pointer(Binding::QSplitter).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -254373,7 +254418,7 @@ module Qt
       result = Binding.bg_QStackedLayout__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -255175,7 +255220,7 @@ module Qt
       result = Binding.bg_QStackedWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -256183,7 +256228,7 @@ module Qt
       result = Binding.bg_QStatusBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -257167,7 +257212,7 @@ module Qt
       result = Binding.bg_QStyledItemDelegate__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -257654,7 +257699,7 @@ module Qt
       result = Binding.bg_QSystemTrayIcon__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -257707,7 +257752,7 @@ module Qt
       result = Binding.bg_QSystemTrayIcon__CONSTRUCT_const_QIcon_R_QObject_X(icon, (parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -258018,7 +258063,7 @@ module Qt
       result = Binding.bg_QTableView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -258515,7 +258560,7 @@ module Qt
       result = Binding.bg_QTableView__CONSTRUCT_QTableViewPrivate_R_QWidget_X(unnamed_arg_0, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -260645,7 +260690,7 @@ module Qt
       result = Binding.bg_QTableWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -260874,7 +260919,7 @@ module Qt
       result = Binding.bg_QTableWidget__CONSTRUCT_int_int_QWidget_X(rows, columns, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -263021,7 +263066,7 @@ module Qt
       result = Binding.bg_QTextBrowser__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -264326,7 +264371,7 @@ module Qt
       result = Binding.bg_QToolBar__CONSTRUCT_const_QString_R_QWidget_X(Qt::Converter::QString.wrap(title), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -264459,7 +264504,7 @@ module Qt
       result = Binding.bg_QToolBar__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -265611,7 +265656,7 @@ module Qt
       result = Binding.bg_QToolBox__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -265748,7 +265793,7 @@ module Qt
       result = Binding.bg_QToolBox__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), f)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -266817,7 +266862,7 @@ module Qt
       result = Binding.bg_QToolButton__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -267942,7 +267987,7 @@ module Qt
       result = Binding.bg_QTreeView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -268550,7 +268595,7 @@ module Qt
       result = Binding.bg_QTreeView__CONSTRUCT_QTreeViewPrivate_R_QWidget_X(dd, (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -270344,6 +270389,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidget_X_int((treeview.try(&.to_unsafe) || Pointer(Binding::QTreeWidget).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, treeview)
     {% begin %}
     {%
       methods = [] of Def
@@ -270388,6 +270434,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidget_X_const_QStringList_R_int((treeview.try(&.to_unsafe) || Pointer(Binding::QTreeWidget).null), BindgenHelper.wrap_container(StringList, strings).to_unsafe, type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, treeview)
     {% begin %}
     {%
       methods = [] of Def
@@ -270432,6 +270479,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidget_X_QTreeWidgetItem_X_int((treeview.try(&.to_unsafe) || Pointer(Binding::QTreeWidget).null), (after.try(&.to_unsafe) || Pointer(Binding::QTreeWidgetItem).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, treeview)
     {% begin %}
     {%
       methods = [] of Def
@@ -270476,6 +270524,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidgetItem_X_int((parent.try(&.to_unsafe) || Pointer(Binding::QTreeWidgetItem).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -270520,6 +270569,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidgetItem_X_const_QStringList_R_int((parent.try(&.to_unsafe) || Pointer(Binding::QTreeWidgetItem).null), BindgenHelper.wrap_container(StringList, strings).to_unsafe, type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -270564,6 +270614,7 @@ module Qt
       result = Binding.bg_QTreeWidgetItem__CONSTRUCT_QTreeWidgetItem_X_QTreeWidgetItem_X_int((parent.try(&.to_unsafe) || Pointer(Binding::QTreeWidgetItem).null), (after.try(&.to_unsafe) || Pointer(Binding::QTreeWidgetItem).null), type)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -271011,7 +271062,7 @@ module Qt
       result = Binding.bg_QTreeWidget__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -273099,7 +273150,7 @@ module Qt
       result = Binding.bg_QUndoView__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -273320,7 +273371,7 @@ module Qt
       result = Binding.bg_QUndoView__CONSTRUCT_QUndoStack_X_QWidget_X((stack.try(&.to_unsafe) || Pointer(Binding::QUndoStack).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -273541,7 +273592,7 @@ module Qt
       result = Binding.bg_QUndoView__CONSTRUCT_QUndoGroup_X_QWidget_X((group.try(&.to_unsafe) || Pointer(Binding::QUndoGroup).null), (parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -275351,7 +275402,7 @@ module Qt
       result = Binding.bg_QWidgetAction__CONSTRUCT_QObject_X((parent.try(&.to_unsafe) || Pointer(Binding::QObject).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self)
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -275629,7 +275680,7 @@ module Qt
       result = Binding.bg_QWizard__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -275778,7 +275829,7 @@ module Qt
       result = Binding.bg_QWizard__CONSTRUCT_QWidget_X_Qt__WindowFlags((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null), flags)
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
@@ -277125,7 +277176,7 @@ module Qt
       result = Binding.bg_QWizardPage__CONSTRUCT_QWidget_X((parent.try(&.to_unsafe) || Pointer(Binding::QWidget).null))
     @unwrap = result
     BindgenHelper.set_crystal_object(result, self)
-    BindgenHelper.keep_alive(self) if parent
+    BindgenHelper.owned_by(self, parent)
     {% begin %}
     {%
       methods = [] of Def
