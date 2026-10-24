@@ -17,6 +17,7 @@ This is the Qt 6 successor of [qt5.cr](https://github.com/crystallabs/qt5.cr).
       * [Object lifetime](#object-lifetime)
       * [Threads](#threads)
       * [Overriding virtual methods](#overriding-virtual-methods)
+      * [Signals, slots and properties in Crystal subclasses](#signals-slots-and-properties-in-crystal-subclasses)
       * [Null pointers](#null-pointers)
       * [Downcasts](#downcasts)
       * [Differences to qt5.cr](#differences-to-qt5cr)
@@ -306,6 +307,37 @@ or in a child process are left out, like `QProcess::setChildProcessModifier`
 (and the `std::function` overloads of `QThreadPool` and `QRunnable`, in the Qt
 versions having them).  Methods returning a `std::function`,
 like `resourceProvider()`, are left out too.
+
+## Signals, slots and properties in Crystal subclasses
+
+A Crystal subclass of a `Qt::Object` class declares its own signals, slots and
+properties, and Qt sees them like those of a C++ class with `Q_OBJECT`:
+bindgen builds a `QMetaObject` for the class (bindgen's SPEC.md §Q.4).
+
+```crystal
+class Counter < Qt::Object
+  signal value_changed(value : Int32)
+
+  @[Qt::Slot]
+  def increment : Nil
+    @value += 1
+    value_changed(@value) # Emits the signal
+  end
+
+  qt_property value : Int32, write: :set_value, notify: :value_changed
+end
+
+counter.on_value_changed { |value| puts value }   # Like a Qt signal
+Qt::Object.connect(counter, "2valueChanged(int)".to_unsafe, label, "1setNum(int)".to_unsafe)
+Qt::MetaObject.invoke_method(counter, "increment")
+counter.property("value".to_unsafe).to(Int32)
+```
+
+The argument, result and property types are the numbers, `Bool`, `String`,
+`Bytes`, and the `Qt::Object` classes (as pointers, nilable or not); the C++
+names are the camel-cased Crystal names.  A Crystal class deriving from another
+Crystal class with such members chains its meta-object to the parent's.  See
+`spec/qt/meta_subclass_spec.cr`.
 
 ## Null pointers
 
