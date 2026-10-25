@@ -18,8 +18,11 @@ describe "std::optional" do
   it "takes the value or nil" do
     dir = Qt::Dir.new(Qt::Dir.temp_path)
     name = "qt6cr-optional-#{Process.pid}"
-    dir.mkdir(name, nil).should be_true
-    dir.rmdir(name).should be_true
+    {% if Qt::QT_VERSION >= 0x060A00 %}
+      # QDir::mkdir takes std::optional<QFile::Permissions> since Qt 6.10
+      dir.mkdir(name, nil).should be_true
+      dir.rmdir(name).should be_true
+    {% end %}
     owner = Qt::FileDevice::Permissions.flags(ReadOwner, WriteOwner, ExeOwner)
     dir.mkdir(name, owner).should be_true
     dir.rmdir(name).should be_true
