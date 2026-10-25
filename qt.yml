@@ -29,9 +29,9 @@ builtin_out_arguments: true
 # qHash(const QPoint &, size_t) is Point#q_hash, forwarded to #hash.
 member_functions: [qHash]
 if_os_is_darwin:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lgccpp -lm"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ `pkg-config --libs Qt6Widgets` -lm"
 else:
-  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt6Core -lQt6Gui -lQt6Widgets -lgccpp -lm"
+  library: "%/ext/binding_{BINDING_PLATFORM}.a -lstdc++ -lQt6Core -lQt6Gui -lQt6Widgets -lm"
 
 <<: config/processors_and_generators.yml
 <<: config/find_paths.yml
