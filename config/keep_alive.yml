@@ -246,7 +246,7 @@ QGraphicsTextItem:
     "^setDocument$": true
 QStandardItemModel:
   keep_alive:
-    "^appendRow$": true
+    "^(append|insert)(Row|Column)$": true
     "^set(Item|HorizontalHeaderItem|VerticalHeaderItem|ItemPrototype)$": true
   release:
     "^take(Item|HorizontalHeaderItem|VerticalHeaderItem)$": true # takeRow and takeColumn return lists, which aren't released
