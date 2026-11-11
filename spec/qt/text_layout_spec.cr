@@ -39,7 +39,7 @@ describe Qt::FontDatabase do
     metrics.horizontal_advance('W').should be > metrics.horizontal_advance('i')
     metrics.bounding_rect("Hello").width.should be > 0
     metrics.elided_text("Hello world, a long line", Qt::TextElideMode::Right, width).should end_with("…")
-    metrics.size(0, "ab\ncd").height.should be >= metrics.height * 2
+    metrics.size(0, "ab\ncd").height.should be > metrics.height # The leading may be negative
     Qt::FontMetricsF.new(Qt::FontMetrics.new(font)).height.should eq(metrics.height)
   end
 end
@@ -99,8 +99,8 @@ describe Qt::TextLayout do
   end
 
   it "sizes static text" do
-    text = Qt::StaticText.new("Static")
-    text.text.should eq("Static")
+    text = Qt::StaticText.new("Static text")
+    text.text.should eq("Static text")
     text.text_format = Qt::TextFormatEnum::PlainText
     text.performance_hint = Qt::StaticText::PerformanceHint::AggressiveCaching
     text.prepare(Qt::Transform.new, Qt::Font.new("Helvetica", 12))
