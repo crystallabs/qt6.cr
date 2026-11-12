@@ -541,6 +541,9 @@ types: # Type rewrite rules
   # Qt's std::strong_ordering (Qt 6.7+), returned by the three-way comparison
   # helpers of QCborValueConstRef; use #compare, which returns an int.
   "Qt::strong_ordering": { ignore: true }
+  # Likewise std::weak_ordering (Qt 6.12+), returned by
+  # QAbstractItemModel::compareData.
+  "Qt::weak_ordering": { ignore: true }
   "QCborArray::Iterator": { ignore: true } # Use #at and #size
   "QCborArray::ConstIterator": { ignore: true }
   "QCborArray::iterator": { ignore: true }
